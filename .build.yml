@@ -7,6 +7,7 @@ requires:
     - cppcheck
     - libglib2.0-dev
     - libgraphviz-dev
+    - meson
     - bison
     - flex
 
