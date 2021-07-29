@@ -3,6 +3,7 @@
 ##########################################################
 requires:
   debian:
+    - autoconf
     - clang-tools
     - cppcheck
     - libglib2.0-dev
