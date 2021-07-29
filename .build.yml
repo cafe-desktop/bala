@@ -7,7 +7,7 @@ requires:
     - cppcheck
     - libglib2.0-dev
     - libgraphviz-dev
-    - meson
+    - make
     - bison
     - flex
 
@@ -24,9 +24,12 @@ build_scripts:
   - export TITLESCANBUILD="${REPO_NAME} (clang-tools `dpkg -s clang-tools|grep -i version|cut -d " " -f 2`) - scan-build results"
   - mkdir html-report
   - cppcheck --enable=warning,style,performance,portability,information,missingInclude . 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
-  - scan-build $CHECKERS --keep-cc meson _build 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
-  - scan-build $CHECKERS --keep-cc -o html-report --html-title="$TITLESCANBUILD" ninja -C _build 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
+  - NOCONFIGURE=1 ./autogen.sh
+  - scan-build $CHECKERS ./configure
+  - scan-build $CHECKERS --keep-cc make 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
+  - make check 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
   - echo Warnings detected in the logs `cat ./html-report/output_${TRAVIS_COMMIT} | grep -i warning | wc -l` 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
+  - make install
 
 after_scripts:
   - ./gen-index -l 20
