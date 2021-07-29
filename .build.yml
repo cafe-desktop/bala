@@ -3,6 +3,8 @@
 ##########################################################
 requires:
   debian:
+    - clang-tools
+    - cppcheck
     - libglib2.0-dev
     - libgraphviz-dev
     - bison
