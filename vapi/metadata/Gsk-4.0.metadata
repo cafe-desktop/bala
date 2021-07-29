@@ -1,0 +1,11 @@
+*.ref unowned
+*.unref destroys_instance=false
+
+Renderer
+	// Factory method
+	.new_for_surface symbol_type="function" name="for_surface"
+GLShader
+	.format_args* skip=false
+ParseErrorFunc skip
+RenderNode
+	.deserialize skip=false
