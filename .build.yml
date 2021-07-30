@@ -4,6 +4,7 @@
 requires:
   debian:
     - autoconf
+    - autoconf-archive
     - clang-tools
     - cppcheck
     - libglib2.0-dev
