@@ -8,6 +8,7 @@ requires:
     - cppcheck
     - libglib2.0-dev
     - libgraphviz-dev
+    - libtool
     - make
     - bison
     - flex
