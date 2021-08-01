@@ -17,6 +17,52 @@ requires:
     - flex
     - valac
 
+#cte
+    - clang-tools
+    - cppcheck
+    - gettext
+    - git
+    - gtk-doc-tools
+    - libgirepository1.0-dev
+    - libglib2.0-dev
+    - libgnutls28-dev
+    - libpango1.0-dev
+    - libpcre2-dev
+    - libsystemd-dev
+    - libxml2-utils
+    - meson
+    - wget
+
+    #packages required for ctk
+    - adwaita-icon-theme
+    - dconf-gsettings-backend
+    - hicolor-icon-theme
+    - libatk-bridge2.0-dev
+    - libatk-bridge2.0-0
+    - libcolord2
+    - libcups2
+    - libegl1-mesa-dev
+    - libepoxy0
+    - libepoxy-dev
+    - libfontconfig1-dev
+    - libfribidi-dev
+    - libgdk-pixbuf2.0-dev
+    - libjson-glib-1.0-0
+    - libpango1.0-dev
+    - librest-0.7-0
+    - libwayland-dev
+    - libx11-dev
+    - libxcomposite-dev
+    - libxcursor-dev
+    - libxdamage-dev
+    - libxext-dev
+    - libxfixes-dev
+    - libxi-dev
+    - libxinerama-dev
+    - libxkbcommon-dev
+    - libxrandr-dev
+    - wayland-protocols
+
 variables:
   - CXXFLAGS="-Wall -Woverloaded-virtual -Wextra -Wshadow -Wformat-nonliteral -Werror=format-security -Wpointer-arith -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wpointer-arith -Wredundant-decls -Wshadow -Werror=format-security -Wunused-macros"
   - CFLAGS="-Wall -Wextra -Wshadow -Wformat-nonliteral -Werror=format-security -Wpointer-arith -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -Wmissing-prototypes -Wbad-function-cast -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wnested-externs -Wpointer-arith -Wredundant-decls -Wshadow -Wstrict-prototypes -Werror=format-security -Wunused-macros"
@@ -35,7 +81,27 @@ build_scripts:
   - scan-build $CHECKERS --html-title="$TITLESCANBUILD" --keep-cc -o html-report make 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
   - make check 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
   - echo Warnings detected in the logs `cat ./html-report/output_${TRAVIS_COMMIT} | grep -i warning | wc -l` 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
+  - apt purge valac -y
   - make install
+
+  # Install required ctk .deb packages
+  - wget https://github.com/cafe-desktop/ctk/releases/download/v`echo $CTK_MASTERV`/libctk-3-dev_`echo $CTK_MASTERV`-1_amd64.deb
+  - wget https://github.com/cafe-desktop/ctk/releases/download/v`echo $CTK_MASTERV`/gir1.2-ctk-3.0_`echo $CTK_MASTERV`-1_amd64.deb
+  - wget https://github.com/cafe-desktop/ctk/releases/download/v`echo $CTK_MASTERV`/libctk-3-common_`echo $CTK_MASTERV`-1_all.deb
+  - wget https://github.com/cafe-desktop/ctk/releases/download/v`echo $CTK_MASTERV`/libctk-3-0_`echo $CTK_MASTERV`-1_amd64.deb
+  - wget https://github.com/cafe-desktop/ctk/releases/download/v`echo $CTK_MASTERV`/ctk-update-icon-cache_`echo $CTK_MASTERV`-1_amd64.deb
+  - wget https://github.com/cafe-desktop/ctk/releases/download/v`echo $CTK_MASTERV`/libctk-3-bin_`echo $CTK_MASTERV`-1_amd64.deb
+  - dpkg -i *.deb
+
+  - git clone https://github.com/cafe-desktop/cte
+  - cd cte
+  - git checkout ctk
+  - git reset --hard HEAD~
+  - git reset --hard HEAD~
+  - git reset --hard HEAD~
+
+  - meson _build
+  - ninja -C _build
 
 after_scripts:
   - ./gen-index -l 20
