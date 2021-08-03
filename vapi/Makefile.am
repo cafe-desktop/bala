@@ -57,12 +57,16 @@ dist_vapi_DATA = \
 	gdesktopenums-3.0.vapi \
 	gdk-2.0.deps \
 	gdk-2.0.vapi \
+	gdk-3.0.deps \
+	gdk-3.0.vapi \
 	cdk-3.0.deps \
 	cdk-3.0.vapi \
 	gdk-pixbuf-2.0.deps \
 	gdk-pixbuf-2.0.vapi \
 	gdk-x11-2.0.deps \
 	gdk-x11-2.0.vapi \
+	gdk-x11-3.0.deps \
+	gdk-x11-3.0.vapi \
 	cdk-x11-3.0.deps \
 	cdk-x11-3.0.vapi \
 	gdl-1.0.deps \
@@ -463,6 +467,9 @@ gdesktopenums-3.0:
 gdk-2.0:
 	$(GENVAPI) --library $(srcdir)/gdk-2.0 $(PACKAGESDIR)/gdk-2.0/gdk-2.0-custom.vala $(PACKAGESDIR)/gdk-2.0/gdk-2.0.gi
 
+gdk-3.0:
+	$(GENVAPI) --library $(srcdir)/gdk-3.0 --pkg gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Gdk-3.0-custom.vala $(GIRDIR)/Gdk-3.0.gir
+
 cdk-3.0:
 	$(GENVAPI) --library $(srcdir)/cdk-3.0 --pkg gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Cdk-3.0-custom.vala $(GIRDIR)/Cdk-3.0.gir
 
@@ -471,6 +478,9 @@ gdk-pixbuf-2.0:
 
 gdk-x11-2.0:
 	$(GENVAPI) --library $(srcdir)/gdk-x11-2.0 $(PACKAGESDIR)/gdk-x11-2.0/gdk-x11-2.0-custom.vala $(PACKAGESDIR)/gdk-x11-2.0/gdk-x11-2.0.gi
+
+gdk-x11-3.0:
+	$(GENVAPI) --library $(srcdir)/gdk-x11-3.0 --pkg gio-2.0 --pkg gdk-3.0 --pkg x11 --metadatadir $(METADATADIR) $(METADATADIR)/GdkX11-3.0-custom.vala $(GIRDIR)/GdkX11-3.0.gir
 
 cdk-x11-3.0:
 	$(GENVAPI) --library $(srcdir)/cdk-x11-3.0 --pkg gio-2.0 --pkg cdk-3.0 --pkg x11 --metadatadir $(METADATADIR) $(METADATADIR)/CdkX11-3.0-custom.vala $(GIRDIR)/CdkX11-3.0.gir
