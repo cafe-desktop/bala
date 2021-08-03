@@ -355,7 +355,7 @@ namespace Ctk {
 		[Version (since = "3.0")]
 		public Ctk.License get_license_type ();
 		[Version (since = "2.6")]
-		public unowned Gdk.pixbuf get_logo ();
+		public unowned Gdk.Pixbuf get_logo ();
 		[Version (since = "2.6")]
 		public unowned string get_logo_icon_name ();
 		[Version (since = "2.12")]
@@ -385,7 +385,7 @@ namespace Ctk {
 		[Version (since = "3.0")]
 		public void set_license_type (Ctk.License license_type);
 		[Version (since = "2.6")]
-		public void set_logo (Gdk.pixbuf? logo);
+		public void set_logo (Gdk.Pixbuf? logo);
 		[Version (since = "2.6")]
 		public void set_logo_icon_name (string? icon_name);
 		[Version (since = "2.12")]
@@ -418,7 +418,7 @@ namespace Ctk {
 		[Version (since = "3.0")]
 		public Ctk.License license_type { get; set; }
 		[Version (since = "2.6")]
-		public Gdk.pixbuf logo { get; set; }
+		public Gdk.Pixbuf logo { get; set; }
 		[Version (since = "2.6")]
 		public string logo_icon_name { get; set; }
 		[Version (since = "2.12")]
@@ -999,9 +999,9 @@ namespace Ctk {
 		[Version (since = "3.18")]
 		public bool get_page_has_padding (Ctk.Widget page);
 		[Version (deprecated = true, deprecated_since = "3.2", since = "2.10")]
-		public unowned Gdk.pixbuf get_page_header_image (Ctk.Widget page);
+		public unowned Gdk.Pixbuf get_page_header_image (Ctk.Widget page);
 		[Version (deprecated = true, deprecated_since = "3.2", since = "2.10")]
-		public unowned Gdk.pixbuf get_page_side_image (Ctk.Widget page);
+		public unowned Gdk.Pixbuf get_page_side_image (Ctk.Widget page);
 		[Version (since = "2.10")]
 		public unowned string get_page_title (Ctk.Widget page);
 		[Version (since = "2.10")]
@@ -1027,9 +1027,9 @@ namespace Ctk {
 		[Version (since = "3.18")]
 		public void set_page_has_padding (Ctk.Widget page, bool has_padding);
 		[Version (deprecated = true, deprecated_since = "3.2", since = "2.10")]
-		public void set_page_header_image (Ctk.Widget page, Gdk.pixbuf? pixbuf);
+		public void set_page_header_image (Ctk.Widget page, Gdk.Pixbuf? pixbuf);
 		[Version (deprecated = true, deprecated_since = "3.2", since = "2.10")]
-		public void set_page_side_image (Ctk.Widget page, Gdk.pixbuf? pixbuf);
+		public void set_page_side_image (Ctk.Widget page, Gdk.Pixbuf? pixbuf);
 		[Version (since = "2.10")]
 		public void set_page_title (Ctk.Widget page, string title);
 		[Version (since = "2.10")]
@@ -1679,11 +1679,11 @@ namespace Ctk {
 		[Version (since = "2.8")]
 		public string icon_name { owned get; set; }
 		[NoAccessorMethod]
-		public Gdk.pixbuf pixbuf { owned get; set; }
+		public Gdk.Pixbuf pixbuf { owned get; set; }
 		[NoAccessorMethod]
-		public Gdk.pixbuf pixbuf_expander_closed { owned get; set; }
+		public Gdk.Pixbuf pixbuf_expander_closed { owned get; set; }
 		[NoAccessorMethod]
-		public Gdk.pixbuf pixbuf_expander_open { owned get; set; }
+		public Gdk.Pixbuf pixbuf_expander_open { owned get; set; }
 		[NoAccessorMethod]
 		public string stock_detail { owned get; set; }
 		[NoAccessorMethod]
@@ -1917,7 +1917,7 @@ namespace Ctk {
 		public CellView.with_markup (string markup);
 		[CCode (has_construct_function = false, type = "CtkWidget*")]
 		[Version (since = "2.6")]
-		public CellView.with_pixbuf (Gdk.pixbuf pixbuf);
+		public CellView.with_pixbuf (Gdk.Pixbuf pixbuf);
 		[CCode (has_construct_function = false, type = "CtkWidget*")]
 		[Version (since = "2.6")]
 		public CellView.with_text (string text);
@@ -2007,7 +2007,7 @@ namespace Ctk {
 		[Version (since = "2.6")]
 		public void set_can_store ([CCode (array_length_cname = "n_targets", array_length_pos = 1.1)] Ctk.TargetEntry[]? targets);
 		[Version (since = "2.6")]
-		public void set_image (Gdk.pixbuf pixbuf);
+		public void set_image (Gdk.Pixbuf pixbuf);
 		public void set_text (string text, int len);
 		public bool set_with_data ([CCode (array_length_cname = "n_targets", array_length_pos = 1.5, array_length_type = "guint")] Ctk.TargetEntry[] targets, [CCode (scope = "async")] Ctk.ClipboardGetFunc get_func, [CCode (scope = "async")] Ctk.ClipboardClearFunc clear_func, void* user_data);
 		public bool set_with_owner ([CCode (array_length_cname = "n_targets", array_length_pos = 1.5, array_length_type = "guint")] Ctk.TargetEntry[] targets, [CCode (scope = "async")] Ctk.ClipboardGetFunc get_func, [CCode (scope = "async")] Ctk.ClipboardClearFunc clear_func, GLib.Object owner);
@@ -2015,7 +2015,7 @@ namespace Ctk {
 		public void store ();
 		public Ctk.SelectionData? wait_for_contents (Cdk.Atom target);
 		[Version (since = "2.6")]
-		public Gdk.pixbuf? wait_for_image ();
+		public Gdk.Pixbuf? wait_for_image ();
 		[CCode (array_length_pos = 2.1, array_length_type = "gsize")]
 		[Version (since = "2.10")]
 		public uint8[]? wait_for_rich_text (Ctk.TextBuffer buffer, out Cdk.Atom format);
@@ -2517,7 +2517,7 @@ namespace Ctk {
 		[Version (since = "2.16")]
 		public unowned string? get_icon_name (Ctk.EntryIconPosition icon_pos);
 		[Version (since = "2.16")]
-		public unowned Gdk.pixbuf? get_icon_pixbuf (Ctk.EntryIconPosition icon_pos);
+		public unowned Gdk.Pixbuf? get_icon_pixbuf (Ctk.EntryIconPosition icon_pos);
 		[Version (since = "2.16")]
 		public bool get_icon_sensitive (Ctk.EntryIconPosition icon_pos);
 		[Version (deprecated = true, deprecated_since = "3.10", since = "2.16")]
@@ -2589,7 +2589,7 @@ namespace Ctk {
 		[Version (since = "2.16")]
 		public void set_icon_from_icon_name (Ctk.EntryIconPosition icon_pos, string? icon_name);
 		[Version (since = "2.16")]
-		public void set_icon_from_pixbuf (Ctk.EntryIconPosition icon_pos, Gdk.pixbuf? pixbuf);
+		public void set_icon_from_pixbuf (Ctk.EntryIconPosition icon_pos, Gdk.Pixbuf? pixbuf);
 		[Version (deprecated = true, deprecated_since = "3.10", since = "2.16")]
 		public void set_icon_from_stock (Ctk.EntryIconPosition icon_pos, string? stock_id);
 		[Version (since = "2.16")]
@@ -2678,7 +2678,7 @@ namespace Ctk {
 		public string primary_icon_name { owned get; set; }
 		[NoAccessorMethod]
 		[Version (since = "2.16")]
-		public Gdk.pixbuf primary_icon_pixbuf { owned get; set; }
+		public Gdk.Pixbuf primary_icon_pixbuf { owned get; set; }
 		[NoAccessorMethod]
 		[Version (since = "2.16")]
 		public bool primary_icon_sensitive { get; set; }
@@ -2711,7 +2711,7 @@ namespace Ctk {
 		public string secondary_icon_name { owned get; set; }
 		[NoAccessorMethod]
 		[Version (since = "2.16")]
-		public Gdk.pixbuf secondary_icon_pixbuf { owned get; set; }
+		public Gdk.Pixbuf secondary_icon_pixbuf { owned get; set; }
 		[NoAccessorMethod]
 		[Version (since = "2.16")]
 		public bool secondary_icon_sensitive { get; set; }
@@ -3860,7 +3860,7 @@ namespace Ctk {
 		protected IconInfo ();
 		[CCode (has_construct_function = false)]
 		[Version (since = "2.14")]
-		public IconInfo.for_pixbuf (Ctk.IconTheme icon_theme, Gdk.pixbuf pixbuf);
+		public IconInfo.for_pixbuf (Ctk.IconTheme icon_theme, Gdk.Pixbuf pixbuf);
 		[Version (deprecated = true, deprecated_since = "3.14", since = "2.4")]
 		public bool get_attach_points ([CCode (array_length_cname = "n_points", array_length_pos = 1.1)] out Cdk.Point[] points);
 		[Version (since = "3.10")]
@@ -3868,7 +3868,7 @@ namespace Ctk {
 		[Version (since = "2.4")]
 		public int get_base_size ();
 		[Version (deprecated = true, deprecated_since = "3.14", since = "2.4")]
-		public unowned Gdk.pixbuf? get_builtin_pixbuf ();
+		public unowned Gdk.Pixbuf? get_builtin_pixbuf ();
 		[Version (deprecated = true, deprecated_since = "3.14", since = "2.4")]
 		public unowned string get_display_name ();
 		[Version (deprecated = true, deprecated_since = "3.14", since = "2.4")]
@@ -3878,18 +3878,18 @@ namespace Ctk {
 		[Version (since = "3.12")]
 		public bool is_symbolic ();
 		[Version (since = "2.4")]
-		public Gdk.pixbuf load_icon () throws GLib.Error;
-		public async Gdk.pixbuf load_icon_async (GLib.Cancellable? cancellable = null) throws GLib.Error;
+		public Gdk.Pixbuf load_icon () throws GLib.Error;
+		public async Gdk.Pixbuf load_icon_async (GLib.Cancellable? cancellable = null) throws GLib.Error;
 		[Version (since = "3.10")]
 		public Cairo.Surface load_surface (Cdk.Window? for_window) throws GLib.Error;
 		[Version (since = "3.0")]
-		public Gdk.pixbuf load_symbolic (Cdk.RGBA fg, Cdk.RGBA? success_color = null, Cdk.RGBA? warning_color = null, Cdk.RGBA? error_color = null, out bool was_symbolic = null) throws GLib.Error;
-		public async Gdk.pixbuf load_symbolic_async (Cdk.RGBA fg, Cdk.RGBA? success_color = null, Cdk.RGBA? warning_color = null, Cdk.RGBA? error_color = null, GLib.Cancellable? cancellable = null, out bool was_symbolic = null) throws GLib.Error;
+		public Gdk.Pixbuf load_symbolic (Cdk.RGBA fg, Cdk.RGBA? success_color = null, Cdk.RGBA? warning_color = null, Cdk.RGBA? error_color = null, out bool was_symbolic = null) throws GLib.Error;
+		public async Gdk.Pixbuf load_symbolic_async (Cdk.RGBA fg, Cdk.RGBA? success_color = null, Cdk.RGBA? warning_color = null, Cdk.RGBA? error_color = null, GLib.Cancellable? cancellable = null, out bool was_symbolic = null) throws GLib.Error;
 		[Version (since = "3.0")]
-		public Gdk.pixbuf load_symbolic_for_context (Ctk.StyleContext context, out bool was_symbolic = null) throws GLib.Error;
-		public async Gdk.pixbuf load_symbolic_for_context_async (Ctk.StyleContext context, GLib.Cancellable? cancellable = null, out bool was_symbolic = null) throws GLib.Error;
+		public Gdk.Pixbuf load_symbolic_for_context (Ctk.StyleContext context, out bool was_symbolic = null) throws GLib.Error;
+		public async Gdk.Pixbuf load_symbolic_for_context_async (Ctk.StyleContext context, GLib.Cancellable? cancellable = null, out bool was_symbolic = null) throws GLib.Error;
 		[Version (deprecated = true, deprecated_since = "3.0", since = "3.0")]
-		public Gdk.pixbuf load_symbolic_for_style (Ctk.Style style, Ctk.StateType state, out bool was_symbolic = null) throws GLib.Error;
+		public Gdk.Pixbuf load_symbolic_for_style (Ctk.Style style, Ctk.StateType state, out bool was_symbolic = null) throws GLib.Error;
 		[Version (deprecated = true, deprecated_since = "3.14", since = "2.4")]
 		public void set_raw_coordinates (bool raw_coordinates);
 	}
@@ -3902,13 +3902,13 @@ namespace Ctk {
 		public void add_source (Ctk.IconSource source);
 		public Ctk.IconSet copy ();
 		[CCode (has_construct_function = false)]
-		public IconSet.from_pixbuf (Gdk.pixbuf pixbuf);
+		public IconSet.from_pixbuf (Gdk.Pixbuf pixbuf);
 		public void get_sizes ([CCode (array_length_cname = "n_sizes", array_length_pos = 1.1)] out Ctk.IconSize[] sizes);
 		public unowned Ctk.IconSet @ref ();
 		[Version (deprecated = true, deprecated_since = "3.0")]
-		public Gdk.pixbuf render_icon (Ctk.Style? style, Ctk.TextDirection direction, Ctk.StateType state, [CCode (type = "CtkIconSize")] Ctk.IconSize size, Ctk.Widget? widget, string? detail);
+		public Gdk.Pixbuf render_icon (Ctk.Style? style, Ctk.TextDirection direction, Ctk.StateType state, [CCode (type = "CtkIconSize")] Ctk.IconSize size, Ctk.Widget? widget, string? detail);
 		[Version (since = "3.0")]
-		public Gdk.pixbuf render_icon_pixbuf (Ctk.StyleContext context, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
+		public Gdk.Pixbuf render_icon_pixbuf (Ctk.StyleContext context, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
 		[Version (since = "3.10")]
 		public Cairo.Surface render_icon_surface (Ctk.StyleContext context, [CCode (type = "CtkIconSize")] Ctk.IconSize size, int scale, Cdk.Window? for_window);
 		public void unref ();
@@ -3925,7 +3925,7 @@ namespace Ctk {
 		public bool get_direction_wildcarded ();
 		public unowned string get_filename ();
 		public unowned string get_icon_name ();
-		public unowned Gdk.pixbuf get_pixbuf ();
+		public unowned Gdk.Pixbuf get_pixbuf ();
 		public Ctk.IconSize get_size ();
 		public bool get_size_wildcarded ();
 		public Ctk.StateType get_state ();
@@ -3934,7 +3934,7 @@ namespace Ctk {
 		public void set_direction_wildcarded (bool setting);
 		public void set_filename (string filename);
 		public void set_icon_name (string? icon_name);
-		public void set_pixbuf (Gdk.pixbuf pixbuf);
+		public void set_pixbuf (Gdk.Pixbuf pixbuf);
 		public void set_size ([CCode (type = "CtkIconSize")] Ctk.IconSize size);
 		public void set_size_wildcarded (bool setting);
 		public void set_state (Ctk.StateType state);
@@ -3946,7 +3946,7 @@ namespace Ctk {
 		[Version (since = "2.4")]
 		public IconTheme ();
 		[Version (deprecated = true, deprecated_since = "3.14", since = "2.4")]
-		public static void add_builtin_icon (string icon_name, int size, Gdk.pixbuf pixbuf);
+		public static void add_builtin_icon (string icon_name, int size, Gdk.Pixbuf pixbuf);
 		[Version (since = "3.14")]
 		public void add_resource_path (string path);
 		[Version (since = "2.4")]
@@ -3973,9 +3973,9 @@ namespace Ctk {
 		[Version (since = "2.4")]
 		public GLib.List<string> list_icons (string? context);
 		[Version (since = "2.4")]
-		public Gdk.pixbuf? load_icon (string icon_name, int size, Ctk.IconLookupFlags flags) throws GLib.Error;
+		public Gdk.Pixbuf? load_icon (string icon_name, int size, Ctk.IconLookupFlags flags) throws GLib.Error;
 		[Version (since = "3.10")]
-		public Gdk.pixbuf? load_icon_for_scale (string icon_name, int size, int scale, Ctk.IconLookupFlags flags) throws GLib.Error;
+		public Gdk.Pixbuf? load_icon_for_scale (string icon_name, int size, int scale, Ctk.IconLookupFlags flags) throws GLib.Error;
 		[Version (since = "3.10")]
 		public Cairo.Surface? load_surface (string icon_name, int size, int scale, Cdk.Window? for_window, Ctk.IconLookupFlags flags) throws GLib.Error;
 		[Version (since = "2.14")]
@@ -4182,7 +4182,7 @@ namespace Ctk {
 		[Version (since = "2.8")]
 		public void clear ();
 		[CCode (has_construct_function = false, type = "CtkWidget*")]
-		public Image.from_animation (Gdk.pixbufAnimation animation);
+		public Image.from_animation (Gdk.PixbufAnimation animation);
 		[CCode (has_construct_function = false, type = "CtkWidget*")]
 		public Image.from_file (string filename);
 		[CCode (has_construct_function = false, type = "CtkWidget*")]
@@ -4195,7 +4195,7 @@ namespace Ctk {
 		[Version (deprecated = true, deprecated_since = "3.10")]
 		public Image.from_icon_set (Ctk.IconSet icon_set, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
 		[CCode (has_construct_function = false, type = "CtkWidget*")]
-		public Image.from_pixbuf (Gdk.pixbuf? pixbuf);
+		public Image.from_pixbuf (Gdk.Pixbuf? pixbuf);
 		[CCode (has_construct_function = false, type = "CtkWidget*")]
 		[Version (since = "3.4")]
 		public Image.from_resource (string resource_path);
@@ -4205,20 +4205,20 @@ namespace Ctk {
 		[CCode (has_construct_function = false, type = "CtkWidget*")]
 		[Version (since = "3.10")]
 		public Image.from_surface (Cairo.Surface? surface);
-		public unowned Gdk.pixbufAnimation? get_animation ();
+		public unowned Gdk.PixbufAnimation? get_animation ();
 		[Version (since = "2.14")]
 		public void get_gicon (out unowned GLib.Icon gicon, [CCode (type = "CtkIconSize*")] out Ctk.IconSize size);
 		[Version (since = "2.6")]
 		public void get_icon_name (out unowned string icon_name, [CCode (type = "CtkIconSize*")] out Ctk.IconSize size);
 		[Version (deprecated = true, deprecated_since = "3.10")]
 		public void get_icon_set (out unowned Ctk.IconSet icon_set, [CCode (type = "CtkIconSize*")] out Ctk.IconSize size);
-		public unowned Gdk.pixbuf? get_pixbuf ();
+		public unowned Gdk.Pixbuf? get_pixbuf ();
 		[Version (since = "2.6")]
 		public int get_pixel_size ();
 		[Version (deprecated = true, deprecated_since = "3.10")]
 		public void get_stock (out unowned string stock_id, [CCode (type = "CtkIconSize*")] out Ctk.IconSize size);
 		public Ctk.ImageType get_storage_type ();
-		public void set_from_animation (Gdk.pixbufAnimation animation);
+		public void set_from_animation (Gdk.PixbufAnimation animation);
 		public void set_from_file (string? filename);
 		[Version (since = "2.14")]
 		public void set_from_gicon (GLib.Icon icon, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
@@ -4226,7 +4226,7 @@ namespace Ctk {
 		public void set_from_icon_name (string? icon_name, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
 		[Version (deprecated = true, deprecated_since = "3.10")]
 		public void set_from_icon_set (Ctk.IconSet icon_set, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
-		public void set_from_pixbuf (Gdk.pixbuf? pixbuf);
+		public void set_from_pixbuf (Gdk.Pixbuf? pixbuf);
 		public void set_from_resource (string? resource_path);
 		[Version (deprecated = true, deprecated_since = "3.10")]
 		public void set_from_stock (string stock_id, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
@@ -4248,9 +4248,9 @@ namespace Ctk {
 		[NoAccessorMethod]
 		public int icon_size { get; set; }
 		[NoAccessorMethod]
-		public Gdk.pixbuf pixbuf { owned get; set; }
+		public Gdk.Pixbuf pixbuf { owned get; set; }
 		[NoAccessorMethod]
-		public Gdk.pixbufAnimation pixbuf_animation { owned get; set; }
+		public Gdk.PixbufAnimation pixbuf_animation { owned get; set; }
 		[Version (since = "2.6")]
 		public int pixel_size { get; set; }
 		[NoAccessorMethod]
@@ -5339,7 +5339,7 @@ namespace Ctk {
 		[Version (since = "2.20")]
 		public OffscreenWindow ();
 		[Version (since = "2.20")]
-		public Gdk.pixbuf? get_pixbuf ();
+		public Gdk.Pixbuf? get_pixbuf ();
 		[Version (since = "2.20")]
 		public unowned Cairo.Surface? get_surface ();
 	}
@@ -6404,7 +6404,7 @@ namespace Ctk {
 		public GLib.Icon? get_gicon ();
 		[CCode (array_length = true, array_length_pos = 0.1, array_length_type = "gsize", array_null_terminated = true)]
 		public string[] get_groups ();
-		public Gdk.pixbuf? get_icon (int size);
+		public Gdk.Pixbuf? get_icon (int size);
 		public unowned string get_mime_type ();
 		public time_t get_modified ();
 		public bool get_private_hint ();
@@ -6705,7 +6705,7 @@ namespace Ctk {
 		[Version (since = "2.14")]
 		public int get_length ();
 		[Version (since = "2.6")]
-		public Gdk.pixbuf? get_pixbuf ();
+		public Gdk.Pixbuf? get_pixbuf ();
 		[Version (since = "2.16")]
 		public Cdk.Atom get_selection ();
 		[Version (since = "2.14")]
@@ -6717,7 +6717,7 @@ namespace Ctk {
 		public string[] get_uris ();
 		public void @set (Cdk.Atom type, int format, [CCode (array_length_cname = "length", array_length_pos = 3.1)] uint8[] data);
 		[Version (since = "2.6")]
-		public bool set_pixbuf (Gdk.pixbuf pixbuf);
+		public bool set_pixbuf (Gdk.Pixbuf pixbuf);
 		public bool set_text (string str, int len);
 		[Version (since = "2.6")]
 		public bool set_uris ([CCode (array_length = false, array_null_terminated = true)] string[] uris);
@@ -7291,7 +7291,7 @@ namespace Ctk {
 		public StatusIcon.from_icon_name (string icon_name);
 		[CCode (has_construct_function = false)]
 		[Version (since = "2.10")]
-		public StatusIcon.from_pixbuf (Gdk.pixbuf pixbuf);
+		public StatusIcon.from_pixbuf (Gdk.Pixbuf pixbuf);
 		[CCode (has_construct_function = false)]
 		[Version (since = "2.10")]
 		public StatusIcon.from_stock (string stock_id);
@@ -7304,7 +7304,7 @@ namespace Ctk {
 		[Version (since = "2.10")]
 		public unowned string? get_icon_name ();
 		[Version (since = "2.10")]
-		public unowned Gdk.pixbuf? get_pixbuf ();
+		public unowned Gdk.Pixbuf? get_pixbuf ();
 		[Version (since = "2.12")]
 		public unowned Cdk.Screen get_screen ();
 		[Version (since = "2.10")]
@@ -7335,7 +7335,7 @@ namespace Ctk {
 		[Version (since = "2.10")]
 		public void set_from_icon_name (string icon_name);
 		[Version (since = "2.10")]
-		public void set_from_pixbuf (Gdk.pixbuf? pixbuf);
+		public void set_from_pixbuf (Gdk.Pixbuf? pixbuf);
 		[Version (deprecated = true, deprecated_since = "3.10", since = "2.10")]
 		public void set_from_stock (string stock_id);
 		[Version (since = "2.16")]
@@ -7368,7 +7368,7 @@ namespace Ctk {
 		[Version (since = "2.12")]
 		public Ctk.Orientation orientation { get; }
 		[NoAccessorMethod]
-		public Gdk.pixbuf pixbuf { owned get; set; }
+		public Gdk.Pixbuf pixbuf { owned get; set; }
 		public Cdk.Screen screen { get; set; }
 		public int size { get; }
 		[NoAccessorMethod]
@@ -7506,7 +7506,7 @@ namespace Ctk {
 		[Version (since = "2.10")]
 		public bool lookup_color (string color_name, out Cdk.Color color);
 		public unowned Ctk.IconSet lookup_icon_set (string stock_id);
-		public virtual Gdk.pixbuf render_icon (Ctk.IconSource source, Ctk.TextDirection direction, Ctk.StateType state, int size, Ctk.Widget? widget, string? detail);
+		public virtual Gdk.Pixbuf render_icon (Ctk.IconSource source, Ctk.TextDirection direction, Ctk.StateType state, int size, Ctk.Widget? widget, string? detail);
 		public virtual void set_background (Cdk.Window window, Ctk.StateType state_type);
 		[NoAccessorMethod]
 		public Ctk.StyleContext context { owned get; construct; }
@@ -7632,10 +7632,10 @@ namespace Ctk {
 		public void render_handle (Cairo.Context cr, double x, double y, double width, double height);
 		[CCode (cheader_filename = "ctk/ctk.h", cname = "ctk_render_icon")]
 		[Version (since = "3.2")]
-		public void render_icon (Cairo.Context cr, Gdk.pixbuf pixbuf, double x, double y);
+		public void render_icon (Cairo.Context cr, Gdk.Pixbuf pixbuf, double x, double y);
 		[CCode (cheader_filename = "ctk/ctk.h", cname = "ctk_render_icon_pixbuf")]
 		[Version (deprecated = true, deprecated_since = "3.10", since = "3.0")]
-		public Gdk.pixbuf render_icon_pixbuf (Ctk.IconSource source, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
+		public Gdk.Pixbuf render_icon_pixbuf (Ctk.IconSource source, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
 		[CCode (cheader_filename = "ctk/ctk.h", cname = "ctk_render_icon_surface")]
 		[Version (since = "3.10")]
 		public void render_icon_surface (Cairo.Context cr, Cairo.Surface surface, double x, double y);
@@ -7987,7 +7987,7 @@ namespace Ctk {
 		[HasEmitter]
 		public virtual signal void insert_child_anchor (Ctk.TextIter iter, Ctk.TextChildAnchor anchor);
 		[HasEmitter]
-		public virtual signal void insert_pixbuf (Ctk.TextIter iter, Gdk.pixbuf pixbuf);
+		public virtual signal void insert_pixbuf (Ctk.TextIter iter, Gdk.Pixbuf pixbuf);
 		public virtual signal void insert_text (ref Ctk.TextIter pos, string new_text, int new_text_length);
 		public virtual signal void mark_deleted (Ctk.TextMark mark);
 		public virtual signal void mark_set (Ctk.TextIter location, Ctk.TextMark mark);
@@ -8442,9 +8442,9 @@ namespace Ctk {
 		[NoWrapper]
 		public virtual void render_handle (Cairo.Context cr, double x, double y, double width, double height);
 		[NoWrapper]
-		public virtual void render_icon (Cairo.Context cr, Gdk.pixbuf pixbuf, double x, double y);
+		public virtual void render_icon (Cairo.Context cr, Gdk.Pixbuf pixbuf, double x, double y);
 		[NoWrapper]
-		public virtual Gdk.pixbuf render_icon_pixbuf (Ctk.IconSource source, Ctk.IconSize size);
+		public virtual Gdk.Pixbuf render_icon_pixbuf (Ctk.IconSource source, Ctk.IconSize size);
 		[NoWrapper]
 		public virtual void render_icon_surface (Cairo.Context cr, Cairo.Surface surface, double x, double y);
 		[NoWrapper]
@@ -8734,7 +8734,7 @@ namespace Ctk {
 		[Version (since = "2.12")]
 		public void set_custom (Ctk.Widget? custom_widget);
 		[Version (since = "2.12")]
-		public void set_icon (Gdk.pixbuf? pixbuf);
+		public void set_icon (Gdk.Pixbuf? pixbuf);
 		[Version (since = "2.20")]
 		public void set_icon_from_gicon (GLib.Icon? gicon, int size);
 		[Version (since = "2.14")]
@@ -9643,9 +9643,9 @@ namespace Ctk {
 		[Version (since = "3.8")]
 		public void remove_tick_callback (uint id);
 		[Version (deprecated = true, deprecated_since = "3.0")]
-		public Gdk.pixbuf? render_icon (string stock_id, [CCode (type = "CtkIconSize")] Ctk.IconSize size, string? detail);
+		public Gdk.Pixbuf? render_icon (string stock_id, [CCode (type = "CtkIconSize")] Ctk.IconSize size, string? detail);
 		[Version (deprecated = true, deprecated_since = "3.10", since = "3.0")]
-		public Gdk.pixbuf? render_icon_pixbuf (string stock_id, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
+		public Gdk.Pixbuf? render_icon_pixbuf (string stock_id, [CCode (type = "CtkIconSize")] Ctk.IconSize size);
 		[Version (deprecated = true, deprecated_since = "3.14")]
 		public void reparent (Ctk.Widget new_parent);
 		[Version (deprecated = true, deprecated_since = "3.0", replacement = "reset_style")]
@@ -10054,7 +10054,7 @@ namespace Ctk {
 		[Version (since = "3.4")]
 		public unowned Ctk.Widget? get_attached_to ();
 		public bool get_decorated ();
-		public static GLib.List<weak Gdk.pixbuf> get_default_icon_list ();
+		public static GLib.List<weak Gdk.Pixbuf> get_default_icon_list ();
 		[Version (since = "2.16")]
 		public static unowned string get_default_icon_name ();
 		public void get_default_size (out int width, out int height);
@@ -10075,8 +10075,8 @@ namespace Ctk {
 		public bool get_has_resize_grip ();
 		[Version (since = "3.4")]
 		public bool get_hide_titlebar_when_maximized ();
-		public unowned Gdk.pixbuf? get_icon ();
-		public GLib.List<weak Gdk.pixbuf> get_icon_list ();
+		public unowned Gdk.Pixbuf? get_icon ();
+		public GLib.List<weak Gdk.Pixbuf> get_icon_list ();
 		[Version (since = "2.6")]
 		public unowned string? get_icon_name ();
 		public Cdk.ModifierType get_mnemonic_modifier ();
@@ -10141,10 +10141,10 @@ namespace Ctk {
 		[Version (deprecated = true, deprecated_since = "3.20", since = "3.0")]
 		public void set_default_geometry (int width, int height);
 		[Version (since = "2.4")]
-		public static void set_default_icon (Gdk.pixbuf icon);
+		public static void set_default_icon (Gdk.Pixbuf icon);
 		[Version (since = "2.2")]
 		public static bool set_default_icon_from_file (string filename) throws GLib.Error;
-		public static void set_default_icon_list (owned GLib.List<weak Gdk.pixbuf> list);
+		public static void set_default_icon_list (owned GLib.List<weak Gdk.Pixbuf> list);
 		[Version (since = "2.6")]
 		public static void set_default_icon_name (string name);
 		public void set_default_size (int width, int height);
@@ -10163,10 +10163,10 @@ namespace Ctk {
 		public void set_has_user_ref_count (bool setting);
 		[Version (since = "3.4")]
 		public void set_hide_titlebar_when_maximized (bool setting);
-		public void set_icon (Gdk.pixbuf? icon);
+		public void set_icon (Gdk.Pixbuf? icon);
 		[Version (since = "2.2")]
 		public bool set_icon_from_file (string filename) throws GLib.Error;
-		public void set_icon_list (GLib.List<Gdk.pixbuf> list);
+		public void set_icon_list (GLib.List<Gdk.Pixbuf> list);
 		[Version (since = "2.6")]
 		public void set_icon_name (string? name);
 		[Version (since = "3.14")]
@@ -10237,7 +10237,7 @@ namespace Ctk {
 		public bool has_toplevel_focus { get; }
 		[Version (since = "3.4")]
 		public bool hide_titlebar_when_maximized { get; set; }
-		public Gdk.pixbuf icon { get; set; }
+		public Gdk.Pixbuf icon { get; set; }
 		[Version (since = "2.6")]
 		public string icon_name { get; set; }
 		[NoAccessorMethod]
@@ -11107,7 +11107,7 @@ namespace Ctk {
 		public int get_line_offset ();
 		public GLib.SList<weak Ctk.TextMark> get_marks ();
 		public int get_offset ();
-		public unowned Gdk.pixbuf get_pixbuf ();
+		public unowned Gdk.Pixbuf get_pixbuf ();
 		public string get_slice (Ctk.TextIter end);
 		public GLib.SList<weak Ctk.TextTag> get_tags ();
 		public string get_text (Ctk.TextIter end);
@@ -12319,7 +12319,7 @@ namespace Ctk {
 	public delegate void ClipboardGetFunc (Ctk.Clipboard clipboard, Ctk.SelectionData selection_data, uint info, void* user_data_or_owner);
 	[CCode (cheader_filename = "ctk/ctk.h", instance_pos = 2.9)]
 	[Version (since = "2.6")]
-	public delegate void ClipboardImageReceivedFunc (Ctk.Clipboard clipboard, Gdk.pixbuf pixbuf);
+	public delegate void ClipboardImageReceivedFunc (Ctk.Clipboard clipboard, Gdk.Pixbuf pixbuf);
 	[CCode (cheader_filename = "ctk/ctk.h", instance_pos = 2.9)]
 	public delegate void ClipboardReceivedFunc (Ctk.Clipboard clipboard, Ctk.SelectionData selection_data);
 	[CCode (cheader_filename = "ctk/ctk.h", instance_pos = 3.9)]
@@ -12888,7 +12888,7 @@ namespace Ctk {
 	[Version (since = "2.8")]
 	public static void drag_set_icon_name (Cdk.DragContext context, string icon_name, int hot_x, int hot_y);
 	[CCode (cheader_filename = "ctk/ctk.h")]
-	public static void drag_set_icon_pixbuf (Cdk.DragContext context, Gdk.pixbuf pixbuf, int hot_x, int hot_y);
+	public static void drag_set_icon_pixbuf (Cdk.DragContext context, Gdk.Pixbuf pixbuf, int hot_x, int hot_y);
 	[CCode (cheader_filename = "ctk/ctk.h")]
 	[Version (deprecated = true, deprecated_since = "3.10")]
 	public static void drag_set_icon_stock (Cdk.DragContext context, string stock_id, int hot_x, int hot_y);
@@ -12917,7 +12917,7 @@ namespace Ctk {
 	[Version (since = "2.8")]
 	public static void drag_source_set_icon_name (Ctk.Widget widget, string icon_name);
 	[CCode (cheader_filename = "ctk/ctk.h")]
-	public static void drag_source_set_icon_pixbuf (Ctk.Widget widget, Gdk.pixbuf pixbuf);
+	public static void drag_source_set_icon_pixbuf (Ctk.Widget widget, Gdk.Pixbuf pixbuf);
 	[CCode (cheader_filename = "ctk/ctk.h")]
 	[Version (deprecated = true, deprecated_since = "3.10")]
 	public static void drag_source_set_icon_stock (Ctk.Widget widget, string stock_id);

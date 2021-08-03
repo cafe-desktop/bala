@@ -370,6 +370,8 @@ GIR_BINDINGS = \
 	gdesktopenums-3.0 \
 	gdk-3.0 \
 	gdk-x11-3.0 \
+	cdk-3.0 \
+	cdk-x11-3.0 \
 	gdk-pixbuf-2.0 \
 	gdl-3.0 \
 	geocode-glib-1.0 \
@@ -380,6 +382,7 @@ GIR_BINDINGS = \
 	goocanvas-2.0 \
 	graphene-gobject-1.0 \
 	gtk+-3.0 \
+	ctk+-3.0 \
 	gtk4 \
 	gudev-1.0 \
 	harfbuzz-gobject \

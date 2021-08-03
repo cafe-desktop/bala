@@ -4614,7 +4614,7 @@ namespace Cdk {
 		public Cursor.from_name (Cdk.Display display, string name);
 		[CCode (has_construct_function = false)]
 		[Version (since = "2.4")]
-		public Cursor.from_pixbuf (Cdk.Display display, Gdk.pixbuf pixbuf, int x, int y);
+		public Cursor.from_pixbuf (Cdk.Display display, Gdk.Pixbuf pixbuf, int x, int y);
 		[CCode (has_construct_function = false)]
 		[Version (since = "3.10")]
 		public Cursor.from_surface (Cdk.Display display, Cairo.Surface surface, double x, double y);
@@ -4623,7 +4623,7 @@ namespace Cdk {
 		[Version (since = "2.2")]
 		public unowned Cdk.Display get_display ();
 		[Version (since = "2.8")]
-		public Gdk.pixbuf? get_image ();
+		public Gdk.Pixbuf? get_image ();
 		[Version (since = "3.10")]
 		public Cairo.Surface? get_surface (out double x_hot, out double y_hot);
 		[Version (deprecated = true, deprecated_since = "3.0")]
@@ -5861,7 +5861,7 @@ namespace Cdk {
 		public void set_functions (Cdk.WMFunction functions);
 		public void set_geometry_hints (Cdk.Geometry geometry, Cdk.WindowHints geom_mask);
 		public void set_group (Cdk.Window? leader);
-		public void set_icon_list (GLib.List<Gdk.pixbuf> pixbufs);
+		public void set_icon_list (GLib.List<Gdk.Pixbuf> pixbufs);
 		public void set_icon_name (string? name);
 		[Version (since = "2.4")]
 		public void set_keep_above (bool setting);
@@ -6707,7 +6707,7 @@ namespace Cdk {
 	public static void cairo_set_source_color (Cairo.Context cr, Cdk.Color color);
 	[CCode (cheader_filename = "cdk/cdk.h")]
 	[Version (since = "2.8")]
-	public static void cairo_set_source_pixbuf (Cairo.Context cr, Gdk.pixbuf pixbuf, double pixbuf_x, double pixbuf_y);
+	public static void cairo_set_source_pixbuf (Cairo.Context cr, Gdk.Pixbuf pixbuf, double pixbuf_x, double pixbuf_y);
 	[CCode (cheader_filename = "cdk/cdk.h")]
 	[Version (since = "3.0")]
 	public static void cairo_set_source_rgba (Cairo.Context cr, Cdk.RGBA rgba);
@@ -6716,7 +6716,7 @@ namespace Cdk {
 	public static void cairo_set_source_window (Cairo.Context cr, Cdk.Window window, double x, double y);
 	[CCode (cheader_filename = "cdk/cdk.h")]
 	[Version (since = "3.10")]
-	public static Cairo.Surface cairo_surface_create_from_pixbuf (Gdk.pixbuf pixbuf, int scale, Cdk.Window? for_window);
+	public static Cairo.Surface cairo_surface_create_from_pixbuf (Gdk.Pixbuf pixbuf, int scale, Cdk.Window? for_window);
 	[CCode (cheader_filename = "cdk/cdk.h")]
 	[Version (since = "3.0")]
 	public static void disable_multidevice ();
@@ -6839,9 +6839,9 @@ namespace Cdk {
 	[Version (since = "2.2")]
 	public static void parse_args ([CCode (array_length_cname = "argc", array_length_pos = 0.5)] ref unowned string[] argv);
 	[CCode (cheader_filename = "cdk/cdk.h")]
-	public static Gdk.pixbuf? pixbuf_get_from_surface (Cairo.Surface surface, int src_x, int src_y, int width, int height);
+	public static Gdk.Pixbuf? pixbuf_get_from_surface (Cairo.Surface surface, int src_x, int src_y, int width, int height);
 	[CCode (cheader_filename = "cdk/cdk.h")]
-	public static Gdk.pixbuf? pixbuf_get_from_window (Cdk.Window window, int src_x, int src_y, int width, int height);
+	public static Gdk.Pixbuf? pixbuf_get_from_window (Cdk.Window window, int src_x, int src_y, int width, int height);
 	[CCode (cheader_filename = "cdk/cdk.h")]
 	[Version (deprecated = true, deprecated_since = "3.0")]
 	public static Cdk.GrabStatus pointer_grab (Cdk.Window window, bool owner_events, Cdk.EventMask event_mask, Cdk.Window? confine_to, Cdk.Cursor? cursor, uint32 time_);
