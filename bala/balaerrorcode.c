@@ -146,7 +146,7 @@ vala_error_code_new (const gchar* name,
                      ValaSourceReference* source_reference,
                      ValaComment* comment)
 {
-	return vala_error_code_construct (VALA_TYPE_ERROR_CODE, name, source_reference, comment);
+	return vala_error_code_construct (BALA_TYPE_ERROR_CODE, name, source_reference, comment);
 }
 
 /**
@@ -175,7 +175,7 @@ vala_error_code_new_with_value (const gchar* name,
                                 ValaExpression* value,
                                 ValaSourceReference* source_reference)
 {
-	return vala_error_code_construct_with_value (VALA_TYPE_ERROR_CODE, name, value, source_reference);
+	return vala_error_code_construct_with_value (BALA_TYPE_ERROR_CODE, name, value, source_reference);
 }
 
 static void
@@ -310,10 +310,10 @@ static void
 vala_error_code_finalize (ValaCodeNode * obj)
 {
 	ValaErrorCode * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ERROR_CODE, ValaErrorCode);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ERROR_CODE, ValaErrorCode);
 	_vala_code_node_unref0 (self->priv->_value);
 	_vala_code_node_unref0 (self->priv->_code);
-	VALA_CODE_NODE_CLASS (vala_error_code_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_error_code_parent_class)->finalize (obj);
 }
 
 /**
@@ -324,7 +324,7 @@ vala_error_code_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaErrorCodeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_error_code_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaErrorCode), 0, (GInstanceInitFunc) vala_error_code_instance_init, NULL };
 	GType vala_error_code_type_id;
-	vala_error_code_type_id = g_type_register_static (VALA_TYPE_TYPESYMBOL, "ValaErrorCode", &g_define_type_info, 0);
+	vala_error_code_type_id = g_type_register_static (BALA_TYPE_TYPESYMBOL, "ValaErrorCode", &g_define_type_info, 0);
 	ValaErrorCode_private_offset = g_type_add_instance_private (vala_error_code_type_id, sizeof (ValaErrorCodePrivate));
 	return vala_error_code_type_id;
 }

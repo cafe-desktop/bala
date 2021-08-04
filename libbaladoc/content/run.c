@@ -32,11 +32,11 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_RUN_0_PROPERTY,
-	VALADOC_CONTENT_RUN_STYLE_PROPERTY,
-	VALADOC_CONTENT_RUN_NUM_PROPERTIES
+	BALADOC_CONTENT_RUN_0_PROPERTY,
+	BALADOC_CONTENT_RUN_STYLE_PROPERTY,
+	BALADOC_CONTENT_RUN_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_run_properties[VALADOC_CONTENT_RUN_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_run_properties[BALADOC_CONTENT_RUN_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _vala_assert(expr, msg) if G_LIKELY (expr) ; else g_assertion_message_expr (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);
@@ -135,7 +135,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp3_;
 				ValadocContentRunStyle* _tmp4_;
-				_tmp3_ = VALADOC_CONTENT_RUN_STYLE_NONE;
+				_tmp3_ = BALADOC_CONTENT_RUN_STYLE_NONE;
 				_tmp4_ = __valadoc_content_run_style_dup0 (&_tmp3_);
 				result = _tmp4_;
 				return result;
@@ -147,7 +147,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp5_;
 				ValadocContentRunStyle* _tmp6_;
-				_tmp5_ = VALADOC_CONTENT_RUN_STYLE_BOLD;
+				_tmp5_ = BALADOC_CONTENT_RUN_STYLE_BOLD;
 				_tmp6_ = __valadoc_content_run_style_dup0 (&_tmp5_);
 				result = _tmp6_;
 				return result;
@@ -159,7 +159,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp7_;
 				ValadocContentRunStyle* _tmp8_;
-				_tmp7_ = VALADOC_CONTENT_RUN_STYLE_ITALIC;
+				_tmp7_ = BALADOC_CONTENT_RUN_STYLE_ITALIC;
 				_tmp8_ = __valadoc_content_run_style_dup0 (&_tmp7_);
 				result = _tmp8_;
 				return result;
@@ -171,7 +171,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp9_;
 				ValadocContentRunStyle* _tmp10_;
-				_tmp9_ = VALADOC_CONTENT_RUN_STYLE_UNDERLINED;
+				_tmp9_ = BALADOC_CONTENT_RUN_STYLE_UNDERLINED;
 				_tmp10_ = __valadoc_content_run_style_dup0 (&_tmp9_);
 				result = _tmp10_;
 				return result;
@@ -183,7 +183,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp11_;
 				ValadocContentRunStyle* _tmp12_;
-				_tmp11_ = VALADOC_CONTENT_RUN_STYLE_MONOSPACED;
+				_tmp11_ = BALADOC_CONTENT_RUN_STYLE_MONOSPACED;
 				_tmp12_ = __valadoc_content_run_style_dup0 (&_tmp11_);
 				result = _tmp12_;
 				return result;
@@ -195,7 +195,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp13_;
 				ValadocContentRunStyle* _tmp14_;
-				_tmp13_ = VALADOC_CONTENT_RUN_STYLE_STROKE;
+				_tmp13_ = BALADOC_CONTENT_RUN_STYLE_STROKE;
 				_tmp14_ = __valadoc_content_run_style_dup0 (&_tmp13_);
 				result = _tmp14_;
 				return result;
@@ -207,7 +207,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp15_;
 				ValadocContentRunStyle* _tmp16_;
-				_tmp15_ = VALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE;
+				_tmp15_ = BALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE;
 				_tmp16_ = __valadoc_content_run_style_dup0 (&_tmp15_);
 				result = _tmp16_;
 				return result;
@@ -219,7 +219,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp17_;
 				ValadocContentRunStyle* _tmp18_;
-				_tmp17_ = VALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD;
+				_tmp17_ = BALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD;
 				_tmp18_ = __valadoc_content_run_style_dup0 (&_tmp17_);
 				result = _tmp18_;
 				return result;
@@ -231,7 +231,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp19_;
 				ValadocContentRunStyle* _tmp20_;
-				_tmp19_ = VALADOC_CONTENT_RUN_STYLE_LANG_LITERAL;
+				_tmp19_ = BALADOC_CONTENT_RUN_STYLE_LANG_LITERAL;
 				_tmp20_ = __valadoc_content_run_style_dup0 (&_tmp19_);
 				result = _tmp20_;
 				return result;
@@ -243,7 +243,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp21_;
 				ValadocContentRunStyle* _tmp22_;
-				_tmp21_ = VALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE;
+				_tmp21_ = BALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE;
 				_tmp22_ = __valadoc_content_run_style_dup0 (&_tmp21_);
 				result = _tmp22_;
 				return result;
@@ -255,7 +255,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp23_;
 				ValadocContentRunStyle* _tmp24_;
-				_tmp23_ = VALADOC_CONTENT_RUN_STYLE_LANG_TYPE;
+				_tmp23_ = BALADOC_CONTENT_RUN_STYLE_LANG_TYPE;
 				_tmp24_ = __valadoc_content_run_style_dup0 (&_tmp23_);
 				result = _tmp24_;
 				return result;
@@ -267,7 +267,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp25_;
 				ValadocContentRunStyle* _tmp26_;
-				_tmp25_ = VALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR;
+				_tmp25_ = BALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR;
 				_tmp26_ = __valadoc_content_run_style_dup0 (&_tmp25_);
 				result = _tmp26_;
 				return result;
@@ -279,7 +279,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp27_;
 				ValadocContentRunStyle* _tmp28_;
-				_tmp27_ = VALADOC_CONTENT_RUN_STYLE_LANG_COMMENT;
+				_tmp27_ = BALADOC_CONTENT_RUN_STYLE_LANG_COMMENT;
 				_tmp28_ = __valadoc_content_run_style_dup0 (&_tmp27_);
 				result = _tmp28_;
 				return result;
@@ -291,7 +291,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp29_;
 				ValadocContentRunStyle* _tmp30_;
-				_tmp29_ = VALADOC_CONTENT_RUN_STYLE_XML_ESCAPE;
+				_tmp29_ = BALADOC_CONTENT_RUN_STYLE_XML_ESCAPE;
 				_tmp30_ = __valadoc_content_run_style_dup0 (&_tmp29_);
 				result = _tmp30_;
 				return result;
@@ -303,7 +303,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp31_;
 				ValadocContentRunStyle* _tmp32_;
-				_tmp31_ = VALADOC_CONTENT_RUN_STYLE_XML_ELEMENT;
+				_tmp31_ = BALADOC_CONTENT_RUN_STYLE_XML_ELEMENT;
 				_tmp32_ = __valadoc_content_run_style_dup0 (&_tmp31_);
 				result = _tmp32_;
 				return result;
@@ -315,7 +315,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp33_;
 				ValadocContentRunStyle* _tmp34_;
-				_tmp33_ = VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE;
+				_tmp33_ = BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE;
 				_tmp34_ = __valadoc_content_run_style_dup0 (&_tmp33_);
 				result = _tmp34_;
 				return result;
@@ -327,7 +327,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp35_;
 				ValadocContentRunStyle* _tmp36_;
-				_tmp35_ = VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE;
+				_tmp35_ = BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE;
 				_tmp36_ = __valadoc_content_run_style_dup0 (&_tmp35_);
 				result = _tmp36_;
 				return result;
@@ -339,7 +339,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp37_;
 				ValadocContentRunStyle* _tmp38_;
-				_tmp37_ = VALADOC_CONTENT_RUN_STYLE_XML_COMMENT;
+				_tmp37_ = BALADOC_CONTENT_RUN_STYLE_XML_COMMENT;
 				_tmp38_ = __valadoc_content_run_style_dup0 (&_tmp37_);
 				result = _tmp38_;
 				return result;
@@ -351,7 +351,7 @@ valadoc_content_run_style_from_string (const gchar* str)
 			{
 				ValadocContentRunStyle _tmp39_;
 				ValadocContentRunStyle* _tmp40_;
-				_tmp39_ = VALADOC_CONTENT_RUN_STYLE_XML_CDATA;
+				_tmp39_ = BALADOC_CONTENT_RUN_STYLE_XML_CDATA;
 				_tmp40_ = __valadoc_content_run_style_dup0 (&_tmp39_);
 				result = _tmp40_;
 				return result;
@@ -367,97 +367,97 @@ valadoc_content_run_style_to_string (ValadocContentRunStyle self)
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALADOC_CONTENT_RUN_STYLE_NONE:
+		case BALADOC_CONTENT_RUN_STYLE_NONE:
 		{
 			result = "none";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_BOLD:
+		case BALADOC_CONTENT_RUN_STYLE_BOLD:
 		{
 			result = "bold";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_ITALIC:
+		case BALADOC_CONTENT_RUN_STYLE_ITALIC:
 		{
 			result = "italic";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_UNDERLINED:
+		case BALADOC_CONTENT_RUN_STYLE_UNDERLINED:
 		{
 			result = "underlined";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_MONOSPACED:
+		case BALADOC_CONTENT_RUN_STYLE_MONOSPACED:
 		{
 			result = "monospaced";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_STROKE:
+		case BALADOC_CONTENT_RUN_STYLE_STROKE:
 		{
 			result = "stroke";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE:
+		case BALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE:
 		{
 			result = "lang-escape";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD:
+		case BALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD:
 		{
 			result = "lang-keyword";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_LANG_LITERAL:
+		case BALADOC_CONTENT_RUN_STYLE_LANG_LITERAL:
 		{
 			result = "lang-literal";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE:
+		case BALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE:
 		{
 			result = "lang-basic-type";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_LANG_TYPE:
+		case BALADOC_CONTENT_RUN_STYLE_LANG_TYPE:
 		{
 			result = "lang-type";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR:
+		case BALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR:
 		{
 			result = "lang-preprocessor";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_LANG_COMMENT:
+		case BALADOC_CONTENT_RUN_STYLE_LANG_COMMENT:
 		{
 			result = "lang-comment";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_XML_ESCAPE:
+		case BALADOC_CONTENT_RUN_STYLE_XML_ESCAPE:
 		{
 			result = "xml-escape";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_XML_ELEMENT:
+		case BALADOC_CONTENT_RUN_STYLE_XML_ELEMENT:
 		{
 			result = "xml-element";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE:
+		case BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE:
 		{
 			result = "xml-attribute";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE:
+		case BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE:
 		{
 			result = "xml-attribute-value";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_XML_COMMENT:
+		case BALADOC_CONTENT_RUN_STYLE_XML_COMMENT:
 		{
 			result = "xml-comment";
 			return result;
 		}
-		case VALADOC_CONTENT_RUN_STYLE_XML_CDATA:
+		case BALADOC_CONTENT_RUN_STYLE_XML_CDATA:
 		{
 			result = "xml-cdata";
 			return result;
@@ -473,7 +473,7 @@ valadoc_content_run_style_to_string (ValadocContentRunStyle self)
 static GType
 valadoc_content_run_style_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALADOC_CONTENT_RUN_STYLE_NONE, "VALADOC_CONTENT_RUN_STYLE_NONE", "none"}, {VALADOC_CONTENT_RUN_STYLE_BOLD, "VALADOC_CONTENT_RUN_STYLE_BOLD", "bold"}, {VALADOC_CONTENT_RUN_STYLE_ITALIC, "VALADOC_CONTENT_RUN_STYLE_ITALIC", "italic"}, {VALADOC_CONTENT_RUN_STYLE_UNDERLINED, "VALADOC_CONTENT_RUN_STYLE_UNDERLINED", "underlined"}, {VALADOC_CONTENT_RUN_STYLE_MONOSPACED, "VALADOC_CONTENT_RUN_STYLE_MONOSPACED", "monospaced"}, {VALADOC_CONTENT_RUN_STYLE_STROKE, "VALADOC_CONTENT_RUN_STYLE_STROKE", "stroke"}, {VALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD, "VALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD", "lang-keyword"}, {VALADOC_CONTENT_RUN_STYLE_LANG_LITERAL, "VALADOC_CONTENT_RUN_STYLE_LANG_LITERAL", "lang-literal"}, {VALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE, "VALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE", "lang-basic-type"}, {VALADOC_CONTENT_RUN_STYLE_LANG_TYPE, "VALADOC_CONTENT_RUN_STYLE_LANG_TYPE", "lang-type"}, {VALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR, "VALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR", "lang-preprocessor"}, {VALADOC_CONTENT_RUN_STYLE_LANG_COMMENT, "VALADOC_CONTENT_RUN_STYLE_LANG_COMMENT", "lang-comment"}, {VALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE, "VALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE", "lang-escape"}, {VALADOC_CONTENT_RUN_STYLE_XML_ESCAPE, "VALADOC_CONTENT_RUN_STYLE_XML_ESCAPE", "xml-escape"}, {VALADOC_CONTENT_RUN_STYLE_XML_ELEMENT, "VALADOC_CONTENT_RUN_STYLE_XML_ELEMENT", "xml-element"}, {VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE, "VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE", "xml-attribute"}, {VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE, "VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE", "xml-attribute-value"}, {VALADOC_CONTENT_RUN_STYLE_XML_COMMENT, "VALADOC_CONTENT_RUN_STYLE_XML_COMMENT", "xml-comment"}, {VALADOC_CONTENT_RUN_STYLE_XML_CDATA, "VALADOC_CONTENT_RUN_STYLE_XML_CDATA", "xml-cdata"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALADOC_CONTENT_RUN_STYLE_NONE, "BALADOC_CONTENT_RUN_STYLE_NONE", "none"}, {BALADOC_CONTENT_RUN_STYLE_BOLD, "BALADOC_CONTENT_RUN_STYLE_BOLD", "bold"}, {BALADOC_CONTENT_RUN_STYLE_ITALIC, "BALADOC_CONTENT_RUN_STYLE_ITALIC", "italic"}, {BALADOC_CONTENT_RUN_STYLE_UNDERLINED, "BALADOC_CONTENT_RUN_STYLE_UNDERLINED", "underlined"}, {BALADOC_CONTENT_RUN_STYLE_MONOSPACED, "BALADOC_CONTENT_RUN_STYLE_MONOSPACED", "monospaced"}, {BALADOC_CONTENT_RUN_STYLE_STROKE, "BALADOC_CONTENT_RUN_STYLE_STROKE", "stroke"}, {BALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD, "BALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD", "lang-keyword"}, {BALADOC_CONTENT_RUN_STYLE_LANG_LITERAL, "BALADOC_CONTENT_RUN_STYLE_LANG_LITERAL", "lang-literal"}, {BALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE, "BALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE", "lang-basic-type"}, {BALADOC_CONTENT_RUN_STYLE_LANG_TYPE, "BALADOC_CONTENT_RUN_STYLE_LANG_TYPE", "lang-type"}, {BALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR, "BALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR", "lang-preprocessor"}, {BALADOC_CONTENT_RUN_STYLE_LANG_COMMENT, "BALADOC_CONTENT_RUN_STYLE_LANG_COMMENT", "lang-comment"}, {BALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE, "BALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE", "lang-escape"}, {BALADOC_CONTENT_RUN_STYLE_XML_ESCAPE, "BALADOC_CONTENT_RUN_STYLE_XML_ESCAPE", "xml-escape"}, {BALADOC_CONTENT_RUN_STYLE_XML_ELEMENT, "BALADOC_CONTENT_RUN_STYLE_XML_ELEMENT", "xml-element"}, {BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE, "BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE", "xml-attribute"}, {BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE, "BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE", "xml-attribute-value"}, {BALADOC_CONTENT_RUN_STYLE_XML_COMMENT, "BALADOC_CONTENT_RUN_STYLE_XML_COMMENT", "xml-comment"}, {BALADOC_CONTENT_RUN_STYLE_XML_CDATA, "BALADOC_CONTENT_RUN_STYLE_XML_CDATA", "xml-cdata"}, {0, NULL, NULL}};
 	GType valadoc_content_run_style_type_id;
 	valadoc_content_run_style_type_id = g_enum_register_static ("ValadocContentRunStyle", values);
 	return valadoc_content_run_style_type_id;
@@ -511,7 +511,7 @@ valadoc_content_run_set_style (ValadocContentRun* self,
 	old_value = valadoc_content_run_get_style (self);
 	if (old_value != value) {
 		self->priv->_style = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_run_properties[VALADOC_CONTENT_RUN_STYLE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_run_properties[BALADOC_CONTENT_RUN_STYLE_PROPERTY]);
 	}
 }
 
@@ -528,7 +528,7 @@ valadoc_content_run_construct (GType object_type,
 G_GNUC_INTERNAL ValadocContentRun*
 valadoc_content_run_new (ValadocContentRunStyle style)
 {
-	return valadoc_content_run_construct (VALADOC_CONTENT_TYPE_RUN, style);
+	return valadoc_content_run_construct (BALADOC_CONTENT_TYPE_RUN, style);
 }
 
 static void
@@ -546,7 +546,7 @@ valadoc_content_run_real_check (ValadocContentContentElement* base,
 	g_return_if_fail (file_path != NULL);
 	g_return_if_fail (reporter != NULL);
 	g_return_if_fail (settings != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_run_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_run_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent), api_root, container, file_path, reporter, settings);
 }
 
 static void
@@ -627,7 +627,7 @@ valadoc_content_run_real_copy (ValadocContentContentElement* base,
 			_tmp13_ = element;
 			_tmp14_ = run;
 			_tmp15_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp13_, (ValadocContentContentElement*) _tmp14_);
-			_tmp16_ = VALADOC_CONTENT_IS_INLINE (_tmp15_) ? ((ValadocContentInline*) _tmp15_) : NULL;
+			_tmp16_ = BALADOC_CONTENT_IS_INLINE (_tmp15_) ? ((ValadocContentInline*) _tmp15_) : NULL;
 			if (_tmp16_ == NULL) {
 				_g_object_unref0 (_tmp15_);
 			}
@@ -658,7 +658,7 @@ valadoc_content_run_class_init (ValadocContentRunClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_content_run_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_content_run_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_content_run_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_RUN_STYLE_PROPERTY, valadoc_content_run_properties[VALADOC_CONTENT_RUN_STYLE_PROPERTY] = g_param_spec_enum ("style", "style", "style", VALADOC_CONTENT_RUN_TYPE_STYLE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_RUN_STYLE_PROPERTY, valadoc_content_run_properties[BALADOC_CONTENT_RUN_STYLE_PROPERTY] = g_param_spec_enum ("style", "style", "style", BALADOC_CONTENT_RUN_TYPE_STYLE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 }
 
 static void
@@ -679,7 +679,7 @@ static void
 valadoc_content_run_finalize (GObject * obj)
 {
 	ValadocContentRun * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_RUN, ValadocContentRun);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_RUN, ValadocContentRun);
 	G_OBJECT_CLASS (valadoc_content_run_parent_class)->finalize (obj);
 }
 
@@ -689,8 +689,8 @@ valadoc_content_run_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentRunClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_run_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentRun), 0, (GInstanceInitFunc) valadoc_content_run_instance_init, NULL };
 	static const GInterfaceInfo valadoc_content_inline_info = { (GInterfaceInitFunc) valadoc_content_run_valadoc_content_inline_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_content_run_type_id;
-	valadoc_content_run_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_INLINE_CONTENT, "ValadocContentRun", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_content_run_type_id, VALADOC_CONTENT_TYPE_INLINE, &valadoc_content_inline_info);
+	valadoc_content_run_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_INLINE_CONTENT, "ValadocContentRun", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_content_run_type_id, BALADOC_CONTENT_TYPE_INLINE, &valadoc_content_inline_info);
 	ValadocContentRun_private_offset = g_type_add_instance_private (valadoc_content_run_type_id, sizeof (ValadocContentRunPrivate));
 	return valadoc_content_run_type_id;
 }
@@ -714,9 +714,9 @@ _vala_valadoc_content_run_get_property (GObject * object,
                                         GParamSpec * pspec)
 {
 	ValadocContentRun * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_RUN, ValadocContentRun);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_RUN, ValadocContentRun);
 	switch (property_id) {
-		case VALADOC_CONTENT_RUN_STYLE_PROPERTY:
+		case BALADOC_CONTENT_RUN_STYLE_PROPERTY:
 		g_value_set_enum (value, valadoc_content_run_get_style (self));
 		break;
 		default:
@@ -732,9 +732,9 @@ _vala_valadoc_content_run_set_property (GObject * object,
                                         GParamSpec * pspec)
 {
 	ValadocContentRun * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_RUN, ValadocContentRun);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_RUN, ValadocContentRun);
 	switch (property_id) {
-		case VALADOC_CONTENT_RUN_STYLE_PROPERTY:
+		case BALADOC_CONTENT_RUN_STYLE_PROPERTY:
 		valadoc_content_run_set_style (self, g_value_get_enum (value));
 		break;
 		default:

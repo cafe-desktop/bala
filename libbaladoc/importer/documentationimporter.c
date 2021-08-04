@@ -30,11 +30,11 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_0_PROPERTY,
-	VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY,
-	VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_NUM_PROPERTIES
+	BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_0_PROPERTY,
+	BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY,
+	BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_importer_documentation_importer_properties[VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_NUM_PROPERTIES];
+static GParamSpec* valadoc_importer_documentation_importer_properties[BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _valadoc_api_tree_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_api_tree_unref (var), NULL)))
 
@@ -56,7 +56,7 @@ const gchar*
 valadoc_importer_documentation_importer_get_file_extension (ValadocImporterDocumentationImporter* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_GET_CLASS (self)->get_file_extension (self);
+	return BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_GET_CLASS (self)->get_file_extension (self);
 }
 
 static gpointer
@@ -112,7 +112,7 @@ valadoc_importer_documentation_importer_resolve (ValadocImporterDocumentationImp
                                                  const gchar* path)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_GET_CLASS (self)->resolve (self, path);
+	return BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_GET_CLASS (self)->resolve (self, path);
 }
 
 static void
@@ -128,7 +128,7 @@ valadoc_importer_documentation_importer_process (ValadocImporterDocumentationImp
                                                  const gchar* filename)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_GET_CLASS (self)->process (self, filename);
+	BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_GET_CLASS (self)->process (self, filename);
 }
 
 static void
@@ -140,7 +140,7 @@ valadoc_importer_documentation_importer_class_init (ValadocImporterDocumentation
 	((ValadocImporterDocumentationImporterClass *) klass)->process = (void (*) (ValadocImporterDocumentationImporter*, const gchar*)) valadoc_importer_documentation_importer_real_process;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_importer_documentation_importer_get_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_importer_documentation_importer_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY, valadoc_importer_documentation_importer_properties[VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY] = g_param_spec_string ("file-extension", "file-extension", "file-extension", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY, valadoc_importer_documentation_importer_properties[BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY] = g_param_spec_string ("file-extension", "file-extension", "file-extension", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -161,7 +161,7 @@ static void
 valadoc_importer_documentation_importer_finalize (GObject * obj)
 {
 	ValadocImporterDocumentationImporter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_IMPORTER_TYPE_DOCUMENTATION_IMPORTER, ValadocImporterDocumentationImporter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_IMPORTER_TYPE_DOCUMENTATION_IMPORTER, ValadocImporterDocumentationImporter);
 	_g_object_unref0 (self->modules);
 	_g_object_unref0 (self->settings);
 	_valadoc_api_tree_unref0 (self->tree);
@@ -175,7 +175,7 @@ valadoc_importer_documentation_importer_get_type_once (void)
 	static const GInterfaceInfo valadoc_resource_locator_info = { (GInterfaceInitFunc) valadoc_importer_documentation_importer_valadoc_resource_locator_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_importer_documentation_importer_type_id;
 	valadoc_importer_documentation_importer_type_id = g_type_register_static (G_TYPE_OBJECT, "ValadocImporterDocumentationImporter", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
-	g_type_add_interface_static (valadoc_importer_documentation_importer_type_id, VALADOC_TYPE_RESOURCE_LOCATOR, &valadoc_resource_locator_info);
+	g_type_add_interface_static (valadoc_importer_documentation_importer_type_id, BALADOC_TYPE_RESOURCE_LOCATOR, &valadoc_resource_locator_info);
 	return valadoc_importer_documentation_importer_type_id;
 }
 
@@ -198,7 +198,7 @@ _vala_valadoc_importer_documentation_importer_get_property (GObject * object,
                                                             GParamSpec * pspec)
 {
 	ValadocImporterDocumentationImporter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_IMPORTER_TYPE_DOCUMENTATION_IMPORTER, ValadocImporterDocumentationImporter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_IMPORTER_TYPE_DOCUMENTATION_IMPORTER, ValadocImporterDocumentationImporter);
 	switch (property_id) {
 		default:
 		G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);

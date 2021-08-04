@@ -215,7 +215,7 @@ class Vala.Compiler {
 		}
 
 		if (colored_output != Report.Colored.NEVER) {
-			unowned string env_colors = Environment.get_variable ("VALA_COLORS");
+			unowned string env_colors = Environment.get_variable ("BALA_COLORS");
 			if (env_colors != null) {
 				context.report.set_colors (env_colors, colored_output);
 			} else {

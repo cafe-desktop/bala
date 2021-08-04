@@ -144,7 +144,7 @@ vala_ccode_conditional_expression_new (ValaCCodeExpression* cond,
                                        ValaCCodeExpression* true_expr,
                                        ValaCCodeExpression* false_expr)
 {
-	return vala_ccode_conditional_expression_construct (VALA_TYPE_CCODE_CONDITIONAL_EXPRESSION, cond, true_expr, false_expr);
+	return vala_ccode_conditional_expression_construct (BALA_TYPE_CCODE_CONDITIONAL_EXPRESSION, cond, true_expr, false_expr);
 }
 
 static void
@@ -201,11 +201,11 @@ static void
 vala_ccode_conditional_expression_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeConditionalExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_CONDITIONAL_EXPRESSION, ValaCCodeConditionalExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_CONDITIONAL_EXPRESSION, ValaCCodeConditionalExpression);
 	_vala_ccode_node_unref0 (self->priv->_condition);
 	_vala_ccode_node_unref0 (self->priv->_true_expression);
 	_vala_ccode_node_unref0 (self->priv->_false_expression);
-	VALA_CCODE_NODE_CLASS (vala_ccode_conditional_expression_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_conditional_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -216,7 +216,7 @@ vala_ccode_conditional_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeConditionalExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_conditional_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeConditionalExpression), 0, (GInstanceInitFunc) vala_ccode_conditional_expression_instance_init, NULL };
 	GType vala_ccode_conditional_expression_type_id;
-	vala_ccode_conditional_expression_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeConditionalExpression", &g_define_type_info, 0);
+	vala_ccode_conditional_expression_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeConditionalExpression", &g_define_type_info, 0);
 	ValaCCodeConditionalExpression_private_offset = g_type_add_instance_private (vala_ccode_conditional_expression_type_id, sizeof (ValaCCodeConditionalExpressionPrivate));
 	return vala_ccode_conditional_expression_type_id;
 }

@@ -124,7 +124,7 @@ ValaIntegerLiteral*
 vala_integer_literal_new (const gchar* i,
                           ValaSourceReference* source)
 {
-	return vala_integer_literal_construct (VALA_TYPE_INTEGER_LITERAL, i, source);
+	return vala_integer_literal_construct (BALA_TYPE_INTEGER_LITERAL, i, source);
 }
 
 static void
@@ -413,7 +413,7 @@ vala_integer_literal_real_check (ValaCodeNode* base,
 	_tmp36_ = _tmp35_;
 	_tmp37_ = type_name;
 	_tmp38_ = vala_scope_lookup (_tmp36_, _tmp37_);
-	st = G_TYPE_CHECK_INSTANCE_CAST (_tmp38_, VALA_TYPE_STRUCT, ValaStruct);
+	st = G_TYPE_CHECK_INSTANCE_CAST (_tmp38_, BALA_TYPE_STRUCT, ValaStruct);
 	_tmp39_ = st;
 	vala_code_node_check ((ValaCodeNode*) _tmp39_, context);
 	_tmp40_ = st;
@@ -467,10 +467,10 @@ static void
 vala_integer_literal_finalize (ValaCodeNode * obj)
 {
 	ValaIntegerLiteral * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_INTEGER_LITERAL, ValaIntegerLiteral);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_INTEGER_LITERAL, ValaIntegerLiteral);
 	_g_free0 (self->priv->_value);
 	_g_free0 (self->priv->_type_suffix);
-	VALA_CODE_NODE_CLASS (vala_integer_literal_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_integer_literal_parent_class)->finalize (obj);
 }
 
 /**
@@ -481,7 +481,7 @@ vala_integer_literal_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaIntegerLiteralClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_integer_literal_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaIntegerLiteral), 0, (GInstanceInitFunc) vala_integer_literal_instance_init, NULL };
 	GType vala_integer_literal_type_id;
-	vala_integer_literal_type_id = g_type_register_static (VALA_TYPE_LITERAL, "ValaIntegerLiteral", &g_define_type_info, 0);
+	vala_integer_literal_type_id = g_type_register_static (BALA_TYPE_LITERAL, "ValaIntegerLiteral", &g_define_type_info, 0);
 	ValaIntegerLiteral_private_offset = g_type_add_instance_private (vala_integer_literal_type_id, sizeof (ValaIntegerLiteralPrivate));
 	return vala_integer_literal_type_id;
 }

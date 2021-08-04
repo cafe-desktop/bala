@@ -121,7 +121,7 @@ ValaDeclarationStatement*
 vala_declaration_statement_new (ValaSymbol* declaration,
                                 ValaSourceReference* source_reference)
 {
-	return vala_declaration_statement_construct (VALA_TYPE_DECLARATION_STATEMENT, declaration, source_reference);
+	return vala_declaration_statement_construct (BALA_TYPE_DECLARATION_STATEMENT, declaration, source_reference);
 }
 
 static void
@@ -170,7 +170,7 @@ vala_declaration_statement_real_get_error_types (ValaCodeNode* base,
 	}
 	_tmp2_ = vala_declaration_statement_get_declaration (self);
 	_tmp3_ = _tmp2_;
-	local = VALA_IS_LOCAL_VARIABLE (_tmp3_) ? ((ValaLocalVariable*) _tmp3_) : NULL;
+	local = BALA_IS_LOCAL_VARIABLE (_tmp3_) ? ((ValaLocalVariable*) _tmp3_) : NULL;
 	_tmp5_ = local;
 	if (_tmp5_ != NULL) {
 		ValaLocalVariable* _tmp6_;
@@ -255,7 +255,7 @@ vala_declaration_statement_real_get_defined_variables (ValaCodeNode* base,
 	g_return_if_fail (collection != NULL);
 	_tmp0_ = vala_declaration_statement_get_declaration (self);
 	_tmp1_ = _tmp0_;
-	local = VALA_IS_LOCAL_VARIABLE (_tmp1_) ? ((ValaLocalVariable*) _tmp1_) : NULL;
+	local = BALA_IS_LOCAL_VARIABLE (_tmp1_) ? ((ValaLocalVariable*) _tmp1_) : NULL;
 	_tmp2_ = local;
 	if (_tmp2_ != NULL) {
 		ValaArrayType* array_type = NULL;
@@ -268,7 +268,7 @@ vala_declaration_statement_real_get_defined_variables (ValaCodeNode* base,
 		_tmp3_ = local;
 		_tmp4_ = vala_variable_get_variable_type ((ValaVariable*) _tmp3_);
 		_tmp5_ = _tmp4_;
-		array_type = VALA_IS_ARRAY_TYPE (_tmp5_) ? ((ValaArrayType*) _tmp5_) : NULL;
+		array_type = BALA_IS_ARRAY_TYPE (_tmp5_) ? ((ValaArrayType*) _tmp5_) : NULL;
 		_tmp6_ = local;
 		_tmp7_ = vala_variable_get_initializer ((ValaVariable*) _tmp6_);
 		_tmp8_ = _tmp7_;
@@ -321,7 +321,7 @@ vala_declaration_statement_real_get_used_variables (ValaCodeNode* base,
 	g_return_if_fail (collection != NULL);
 	_tmp0_ = vala_declaration_statement_get_declaration (self);
 	_tmp1_ = _tmp0_;
-	local = VALA_IS_LOCAL_VARIABLE (_tmp1_) ? ((ValaLocalVariable*) _tmp1_) : NULL;
+	local = BALA_IS_LOCAL_VARIABLE (_tmp1_) ? ((ValaLocalVariable*) _tmp1_) : NULL;
 	_tmp3_ = local;
 	if (_tmp3_ != NULL) {
 		ValaLocalVariable* _tmp4_;
@@ -379,9 +379,9 @@ static void
 vala_declaration_statement_finalize (ValaCodeNode * obj)
 {
 	ValaDeclarationStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_DECLARATION_STATEMENT, ValaDeclarationStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_DECLARATION_STATEMENT, ValaDeclarationStatement);
 	_vala_code_node_unref0 (self->priv->_declaration);
-	VALA_CODE_NODE_CLASS (vala_declaration_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_declaration_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -393,8 +393,8 @@ vala_declaration_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaDeclarationStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_declaration_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaDeclarationStatement), 0, (GInstanceInitFunc) vala_declaration_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_declaration_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_declaration_statement_type_id;
-	vala_declaration_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaDeclarationStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_declaration_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_declaration_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaDeclarationStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_declaration_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaDeclarationStatement_private_offset = g_type_add_instance_private (vala_declaration_statement_type_id, sizeof (ValaDeclarationStatementPrivate));
 	return vala_declaration_statement_type_id;
 }

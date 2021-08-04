@@ -29,10 +29,10 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_CONTENT_VISITOR_0_PROPERTY,
-	VALADOC_CONTENT_CONTENT_VISITOR_NUM_PROPERTIES
+	BALADOC_CONTENT_CONTENT_VISITOR_0_PROPERTY,
+	BALADOC_CONTENT_CONTENT_VISITOR_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_content_visitor_properties[VALADOC_CONTENT_CONTENT_VISITOR_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_content_visitor_properties[BALADOC_CONTENT_CONTENT_VISITOR_NUM_PROPERTIES];
 
 static gpointer valadoc_content_content_visitor_parent_class = NULL;
 
@@ -88,7 +88,7 @@ valadoc_content_content_visitor_visit_comment (ValadocContentContentVisitor* sel
                                                ValadocContentComment* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_comment (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_comment (self, element);
 }
 
 static void
@@ -103,7 +103,7 @@ valadoc_content_content_visitor_visit_embedded (ValadocContentContentVisitor* se
                                                 ValadocContentEmbedded* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_embedded (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_embedded (self, element);
 }
 
 static void
@@ -118,7 +118,7 @@ valadoc_content_content_visitor_visit_headline (ValadocContentContentVisitor* se
                                                 ValadocContentHeadline* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_headline (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_headline (self, element);
 }
 
 static void
@@ -133,7 +133,7 @@ valadoc_content_content_visitor_visit_link (ValadocContentContentVisitor* self,
                                             ValadocContentLink* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_link (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_link (self, element);
 }
 
 static void
@@ -148,7 +148,7 @@ valadoc_content_content_visitor_visit_wiki_link (ValadocContentContentVisitor* s
                                                  ValadocContentWikiLink* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_wiki_link (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_wiki_link (self, element);
 }
 
 static void
@@ -163,7 +163,7 @@ valadoc_content_content_visitor_visit_symbol_link (ValadocContentContentVisitor*
                                                    ValadocContentSymbolLink* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_symbol_link (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_symbol_link (self, element);
 }
 
 static void
@@ -178,7 +178,7 @@ valadoc_content_content_visitor_visit_list (ValadocContentContentVisitor* self,
                                             ValadocContentList* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_list (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_list (self, element);
 }
 
 static void
@@ -193,7 +193,7 @@ valadoc_content_content_visitor_visit_list_item (ValadocContentContentVisitor* s
                                                  ValadocContentListItem* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_list_item (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_list_item (self, element);
 }
 
 static void
@@ -208,7 +208,7 @@ valadoc_content_content_visitor_visit_paragraph (ValadocContentContentVisitor* s
                                                  ValadocContentParagraph* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_paragraph (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_paragraph (self, element);
 }
 
 static void
@@ -223,7 +223,7 @@ valadoc_content_content_visitor_visit_warning (ValadocContentContentVisitor* sel
                                                ValadocContentWarning* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_warning (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_warning (self, element);
 }
 
 static void
@@ -238,7 +238,7 @@ valadoc_content_content_visitor_visit_note (ValadocContentContentVisitor* self,
                                             ValadocContentNote* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_note (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_note (self, element);
 }
 
 static void
@@ -253,7 +253,7 @@ valadoc_content_content_visitor_visit_page (ValadocContentContentVisitor* self,
                                             ValadocContentPage* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_page (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_page (self, element);
 }
 
 static void
@@ -268,7 +268,7 @@ valadoc_content_content_visitor_visit_run (ValadocContentContentVisitor* self,
                                            ValadocContentRun* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_run (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_run (self, element);
 }
 
 static void
@@ -283,7 +283,7 @@ valadoc_content_content_visitor_visit_source_code (ValadocContentContentVisitor*
                                                    ValadocContentSourceCode* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_source_code (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_source_code (self, element);
 }
 
 static void
@@ -298,7 +298,7 @@ valadoc_content_content_visitor_visit_table (ValadocContentContentVisitor* self,
                                              ValadocContentTable* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_table (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_table (self, element);
 }
 
 static void
@@ -313,7 +313,7 @@ valadoc_content_content_visitor_visit_table_cell (ValadocContentContentVisitor* 
                                                   ValadocContentTableCell* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_table_cell (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_table_cell (self, element);
 }
 
 static void
@@ -328,7 +328,7 @@ valadoc_content_content_visitor_visit_table_row (ValadocContentContentVisitor* s
                                                  ValadocContentTableRow* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_table_row (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_table_row (self, element);
 }
 
 static void
@@ -343,7 +343,7 @@ valadoc_content_content_visitor_visit_taglet (ValadocContentContentVisitor* self
                                               ValadocContentTaglet* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_taglet (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_taglet (self, element);
 }
 
 static void
@@ -358,7 +358,7 @@ valadoc_content_content_visitor_visit_text (ValadocContentContentVisitor* self,
                                             ValadocContentText* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_text (self, element);
+	BALADOC_CONTENT_CONTENT_VISITOR_GET_CLASS (self)->visit_text (self, element);
 }
 
 ValadocContentContentVisitor*

@@ -55,7 +55,7 @@ vala_array_length_field_construct (GType object_type,
 ValaArrayLengthField*
 vala_array_length_field_new (ValaSourceReference* source_reference)
 {
-	return vala_array_length_field_construct (VALA_TYPE_ARRAY_LENGTH_FIELD, source_reference);
+	return vala_array_length_field_construct (BALA_TYPE_ARRAY_LENGTH_FIELD, source_reference);
 }
 
 static void
@@ -79,7 +79,7 @@ vala_array_length_field_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaArrayLengthFieldClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_array_length_field_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaArrayLengthField), 0, (GInstanceInitFunc) vala_array_length_field_instance_init, NULL };
 	GType vala_array_length_field_type_id;
-	vala_array_length_field_type_id = g_type_register_static (VALA_TYPE_FIELD, "ValaArrayLengthField", &g_define_type_info, 0);
+	vala_array_length_field_type_id = g_type_register_static (BALA_TYPE_FIELD, "ValaArrayLengthField", &g_define_type_info, 0);
 	return vala_array_length_field_type_id;
 }
 

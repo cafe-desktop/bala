@@ -242,7 +242,7 @@ vala_array_creation_expression_new (ValaDataType* element_type,
                                     ValaInitializerList* initializer_list,
                                     ValaSourceReference* source_reference)
 {
-	return vala_array_creation_expression_construct (VALA_TYPE_ARRAY_CREATION_EXPRESSION, element_type, rank, initializer_list, source_reference);
+	return vala_array_creation_expression_construct (BALA_TYPE_ARRAY_CREATION_EXPRESSION, element_type, rank, initializer_list, source_reference);
 }
 
 static gpointer
@@ -735,14 +735,14 @@ vala_array_creation_expression_create_sizes_from_initializer_list (ValaArrayCrea
 			_tmp21_ = vala_list_get (_tmp20_, _e_index);
 			e = (ValaExpression*) _tmp21_;
 			_tmp23_ = e;
-			if (VALA_IS_INITIALIZER_LIST (_tmp23_)) {
+			if (BALA_IS_INITIALIZER_LIST (_tmp23_)) {
 				ValaExpression* _tmp24_;
 				ValaDataType* _tmp25_;
 				ValaDataType* _tmp26_;
 				_tmp24_ = e;
 				_tmp25_ = vala_expression_get_target_type (_tmp24_);
 				_tmp26_ = _tmp25_;
-				_tmp22_ = VALA_IS_ARRAY_TYPE (_tmp26_);
+				_tmp22_ = BALA_IS_ARRAY_TYPE (_tmp26_);
 			} else {
 				_tmp22_ = FALSE;
 			}
@@ -768,7 +768,7 @@ vala_array_creation_expression_create_sizes_from_initializer_list (ValaArrayCrea
 					return result;
 				}
 				_tmp31_ = e;
-				size = vala_array_creation_expression_create_sizes_from_initializer_list (self, context, G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, VALA_TYPE_INITIALIZER_LIST, ValaInitializerList), rank - 1, sl);
+				size = vala_array_creation_expression_create_sizes_from_initializer_list (self, context, G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, BALA_TYPE_INITIALIZER_LIST, ValaInitializerList), rank - 1, sl);
 				if (size == -1) {
 					result = -1;
 					_vala_code_node_unref0 (e);
@@ -947,7 +947,7 @@ vala_array_creation_expression_real_check (ValaCodeNode* base,
 		vala_code_node_check ((ValaCodeNode*) _tmp23_, context);
 		_tmp24_ = vala_array_creation_expression_get_length_type (self);
 		_tmp25_ = _tmp24_;
-		if (!VALA_IS_INTEGER_TYPE (_tmp25_)) {
+		if (!BALA_IS_INTEGER_TYPE (_tmp25_)) {
 			ValaDataType* _tmp26_;
 			ValaDataType* _tmp27_;
 			ValaSourceReference* _tmp28_;
@@ -1000,7 +1000,7 @@ vala_array_creation_expression_real_check (ValaCodeNode* base,
 		_vala_iterable_unref0 (_e_list);
 	}
 	_tmp40_ = g_direct_equal;
-	_tmp41_ = vala_array_list_new (VALA_TYPE_LITERAL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp40_);
+	_tmp41_ = vala_array_list_new (BALA_TYPE_LITERAL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp40_);
 	calc_sizes = _tmp41_;
 	_tmp42_ = initlist;
 	if (_tmp42_ != NULL) {
@@ -1045,7 +1045,7 @@ vala_array_creation_expression_real_check (ValaCodeNode* base,
 		_tmp55_ = _tmp54_;
 		_tmp56_ = vala_data_type_copy (_tmp55_);
 		_tmp57_ = _tmp56_;
-		vala_array_type_set_length_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp53_, VALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp57_);
+		vala_array_type_set_length_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp53_, BALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp57_);
 		_vala_code_node_unref0 (_tmp57_);
 		_tmp58_ = initlist;
 		if (!vala_code_node_check ((ValaCodeNode*) _tmp58_, context)) {
@@ -1100,7 +1100,7 @@ vala_array_creation_expression_real_check (ValaCodeNode* base,
 			_tmp74_ = actual_type;
 			_tmp75_ = vala_array_creation_expression_get_length_type (self);
 			_tmp76_ = _tmp75_;
-			vala_array_type_set_length_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp74_, VALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp76_);
+			vala_array_type_set_length_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp74_, BALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp76_);
 			_tmp77_ = initlist;
 			_tmp78_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp77_);
 			_tmp79_ = _tmp78_;
@@ -1178,7 +1178,7 @@ vala_array_creation_expression_real_check (ValaCodeNode* base,
 					_tmp105_ = e;
 					_tmp106_ = vala_expression_get_value_type (_tmp105_);
 					_tmp107_ = _tmp106_;
-					if (VALA_IS_INTEGER_TYPE (_tmp107_)) {
+					if (BALA_IS_INTEGER_TYPE (_tmp107_)) {
 						_tmp104_ = TRUE;
 					} else {
 						ValaExpression* _tmp108_;
@@ -1187,7 +1187,7 @@ vala_array_creation_expression_real_check (ValaCodeNode* base,
 						_tmp108_ = e;
 						_tmp109_ = vala_expression_get_value_type (_tmp108_);
 						_tmp110_ = _tmp109_;
-						_tmp104_ = VALA_IS_ENUM_VALUE_TYPE (_tmp110_);
+						_tmp104_ = BALA_IS_ENUM_VALUE_TYPE (_tmp110_);
 					}
 					if (!_tmp104_) {
 						ValaExpression* _tmp111_;
@@ -1317,11 +1317,11 @@ vala_array_creation_expression_real_check (ValaCodeNode* base,
 	_tmp150_ = _tmp149_;
 	_tmp151_ = vala_data_type_copy (_tmp150_);
 	_tmp152_ = _tmp151_;
-	vala_array_type_set_length_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp148_, VALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp152_);
+	vala_array_type_set_length_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp148_, BALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp152_);
 	_vala_code_node_unref0 (_tmp152_);
 	_tmp153_ = vala_expression_get_formal_target_type ((ValaExpression*) self);
 	_tmp154_ = _tmp153_;
-	if (VALA_IS_ARRAY_TYPE (_tmp154_)) {
+	if (BALA_IS_ARRAY_TYPE (_tmp154_)) {
 		ValaDataType* _tmp155_;
 		ValaDataType* _tmp156_;
 		ValaDataType* _tmp157_;
@@ -1338,16 +1338,16 @@ vala_array_creation_expression_real_check (ValaCodeNode* base,
 		_tmp156_ = _tmp155_;
 		_tmp157_ = vala_expression_get_formal_target_type ((ValaExpression*) self);
 		_tmp158_ = _tmp157_;
-		_tmp159_ = vala_array_type_get_fixed_length (G_TYPE_CHECK_INSTANCE_CAST (_tmp158_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+		_tmp159_ = vala_array_type_get_fixed_length (G_TYPE_CHECK_INSTANCE_CAST (_tmp158_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 		_tmp160_ = _tmp159_;
-		vala_array_type_set_fixed_length (G_TYPE_CHECK_INSTANCE_CAST (_tmp156_, VALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp160_);
+		vala_array_type_set_fixed_length (G_TYPE_CHECK_INSTANCE_CAST (_tmp156_, BALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp160_);
 		_tmp161_ = vala_expression_get_value_type ((ValaExpression*) self);
 		_tmp162_ = _tmp161_;
 		_tmp163_ = vala_expression_get_formal_target_type ((ValaExpression*) self);
 		_tmp164_ = _tmp163_;
-		_tmp165_ = vala_array_type_get_inline_allocated (G_TYPE_CHECK_INSTANCE_CAST (_tmp164_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+		_tmp165_ = vala_array_type_get_inline_allocated (G_TYPE_CHECK_INSTANCE_CAST (_tmp164_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 		_tmp166_ = _tmp165_;
-		vala_array_type_set_inline_allocated (G_TYPE_CHECK_INSTANCE_CAST (_tmp162_, VALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp166_);
+		vala_array_type_set_inline_allocated (G_TYPE_CHECK_INSTANCE_CAST (_tmp162_, BALA_TYPE_ARRAY_TYPE, ValaArrayType), _tmp166_);
 	}
 	_tmp167_ = vala_expression_get_value_type ((ValaExpression*) self);
 	_tmp168_ = _tmp167_;
@@ -1517,7 +1517,7 @@ vala_array_creation_expression_instance_init (ValaArrayCreationExpression * self
 	ValaArrayList* _tmp1_;
 	self->priv = vala_array_creation_expression_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->sizes = (ValaList*) _tmp1_;
 }
 
@@ -1525,12 +1525,12 @@ static void
 vala_array_creation_expression_finalize (ValaCodeNode * obj)
 {
 	ValaArrayCreationExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ARRAY_CREATION_EXPRESSION, ValaArrayCreationExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ARRAY_CREATION_EXPRESSION, ValaArrayCreationExpression);
 	_vala_iterable_unref0 (self->priv->sizes);
 	_vala_code_node_unref0 (self->priv->_element_type);
 	_vala_code_node_unref0 (self->priv->_length_type);
 	_vala_code_node_unref0 (self->priv->_initializer_list);
-	VALA_CODE_NODE_CLASS (vala_array_creation_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_array_creation_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -1543,7 +1543,7 @@ vala_array_creation_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaArrayCreationExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_array_creation_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaArrayCreationExpression), 0, (GInstanceInitFunc) vala_array_creation_expression_instance_init, NULL };
 	GType vala_array_creation_expression_type_id;
-	vala_array_creation_expression_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaArrayCreationExpression", &g_define_type_info, 0);
+	vala_array_creation_expression_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaArrayCreationExpression", &g_define_type_info, 0);
 	ValaArrayCreationExpression_private_offset = g_type_add_instance_private (vala_array_creation_expression_type_id, sizeof (ValaArrayCreationExpressionPrivate));
 	return vala_array_creation_expression_type_id;
 }

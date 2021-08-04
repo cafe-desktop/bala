@@ -32,16 +32,16 @@
 #include <vala.h>
 
 enum  {
-	VALADOC_API_TYPEREFERENCE_0_PROPERTY,
-	VALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY,
-	VALADOC_API_TYPEREFERENCE_IS_OWNED_PROPERTY,
-	VALADOC_API_TYPEREFERENCE_IS_WEAK_PROPERTY,
-	VALADOC_API_TYPEREFERENCE_IS_UNOWNED_PROPERTY,
-	VALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY,
-	VALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY,
-	VALADOC_API_TYPEREFERENCE_NUM_PROPERTIES
+	BALADOC_API_TYPEREFERENCE_0_PROPERTY,
+	BALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY,
+	BALADOC_API_TYPEREFERENCE_IS_OWNED_PROPERTY,
+	BALADOC_API_TYPEREFERENCE_IS_WEAK_PROPERTY,
+	BALADOC_API_TYPEREFERENCE_IS_UNOWNED_PROPERTY,
+	BALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY,
+	BALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY,
+	BALADOC_API_TYPEREFERENCE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_NUM_PROPERTIES];
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
@@ -112,7 +112,7 @@ valadoc_api_typereference_new (ValadocApiItem* parent,
                                const gchar* dbus_type_signature,
                                ValaDataType* data)
 {
-	return valadoc_api_typereference_construct (VALADOC_API_TYPE_TYPEREFERENCE, parent, is_dynamic, is_nullable, dbus_type_signature, data);
+	return valadoc_api_typereference_construct (BALADOC_API_TYPE_TYPEREFERENCE, parent, is_dynamic, is_nullable, dbus_type_signature, data);
 }
 
 static ValadocApiOwnership
@@ -133,7 +133,7 @@ valadoc_api_typereference_get_type_reference_ownership (ValadocApiTypeReference*
 		_tmp1_ = type;
 		_tmp2_ = vala_code_node_get_parent_node ((ValaCodeNode*) _tmp1_);
 		_tmp3_ = _tmp2_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp3_, VALA_TYPE_PARAMETER)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp3_, BALA_TYPE_PARAMETER)) {
 			ValaDataType* _tmp4_;
 			ValaCodeNode* _tmp5_;
 			ValaCodeNode* _tmp6_;
@@ -142,9 +142,9 @@ valadoc_api_typereference_get_type_reference_ownership (ValadocApiTypeReference*
 			_tmp4_ = type;
 			_tmp5_ = vala_code_node_get_parent_node ((ValaCodeNode*) _tmp4_);
 			_tmp6_ = _tmp5_;
-			_tmp7_ = vala_parameter_get_direction (G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALA_TYPE_PARAMETER, ValaParameter));
+			_tmp7_ = vala_parameter_get_direction (G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALA_TYPE_PARAMETER, ValaParameter));
 			_tmp8_ = _tmp7_;
-			if (_tmp8_ == VALA_PARAMETER_DIRECTION_IN) {
+			if (_tmp8_ == BALA_PARAMETER_DIRECTION_IN) {
 				ValaDataType* _tmp9_;
 				gboolean _tmp10_;
 				gboolean _tmp11_;
@@ -152,18 +152,18 @@ valadoc_api_typereference_get_type_reference_ownership (ValadocApiTypeReference*
 				_tmp10_ = vala_data_type_get_value_owned (_tmp9_);
 				_tmp11_ = _tmp10_;
 				if (_tmp11_) {
-					result = VALADOC_API_OWNERSHIP_OWNED;
+					result = BALADOC_API_OWNERSHIP_OWNED;
 					return result;
 				}
 			} else {
 				ValaDataType* _tmp12_;
 				_tmp12_ = type;
 				if (vala_data_type_is_weak (_tmp12_)) {
-					result = VALADOC_API_OWNERSHIP_UNOWNED;
+					result = BALADOC_API_OWNERSHIP_UNOWNED;
 					return result;
 				}
 			}
-			result = VALADOC_API_OWNERSHIP_DEFAULT;
+			result = BALADOC_API_OWNERSHIP_DEFAULT;
 			return result;
 		} else {
 			ValaDataType* _tmp13_;
@@ -172,7 +172,7 @@ valadoc_api_typereference_get_type_reference_ownership (ValadocApiTypeReference*
 			_tmp13_ = type;
 			_tmp14_ = vala_code_node_get_parent_node ((ValaCodeNode*) _tmp13_);
 			_tmp15_ = _tmp14_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp15_, VALA_TYPE_PROPERTY_ACCESSOR)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp15_, BALA_TYPE_PROPERTY_ACCESSOR)) {
 				ValaDataType* _tmp16_;
 				ValaCodeNode* _tmp17_;
 				ValaCodeNode* _tmp18_;
@@ -183,15 +183,15 @@ valadoc_api_typereference_get_type_reference_ownership (ValadocApiTypeReference*
 				_tmp16_ = type;
 				_tmp17_ = vala_code_node_get_parent_node ((ValaCodeNode*) _tmp16_);
 				_tmp18_ = _tmp17_;
-				_tmp19_ = vala_property_accessor_get_value_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, VALA_TYPE_PROPERTY_ACCESSOR, ValaPropertyAccessor));
+				_tmp19_ = vala_property_accessor_get_value_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, BALA_TYPE_PROPERTY_ACCESSOR, ValaPropertyAccessor));
 				_tmp20_ = _tmp19_;
 				_tmp21_ = vala_data_type_get_value_owned (_tmp20_);
 				_tmp22_ = _tmp21_;
 				if (_tmp22_) {
-					result = VALADOC_API_OWNERSHIP_OWNED;
+					result = BALADOC_API_OWNERSHIP_OWNED;
 					return result;
 				}
-				result = VALADOC_API_OWNERSHIP_DEFAULT;
+				result = BALADOC_API_OWNERSHIP_DEFAULT;
 				return result;
 			} else {
 				ValaDataType* _tmp23_;
@@ -200,19 +200,19 @@ valadoc_api_typereference_get_type_reference_ownership (ValadocApiTypeReference*
 				_tmp23_ = type;
 				_tmp24_ = vala_code_node_get_parent_node ((ValaCodeNode*) _tmp23_);
 				_tmp25_ = _tmp24_;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp25_, VALA_TYPE_CONSTANT)) {
-					result = VALADOC_API_OWNERSHIP_DEFAULT;
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp25_, BALA_TYPE_CONSTANT)) {
+					result = BALADOC_API_OWNERSHIP_DEFAULT;
 					return result;
 				}
 			}
 		}
 		_tmp26_ = type;
 		if (vala_data_type_is_weak (_tmp26_)) {
-			result = VALADOC_API_OWNERSHIP_UNOWNED;
+			result = BALADOC_API_OWNERSHIP_UNOWNED;
 			return result;
 		}
 	}
-	result = VALADOC_API_OWNERSHIP_DEFAULT;
+	result = BALADOC_API_OWNERSHIP_DEFAULT;
 	return result;
 }
 
@@ -280,7 +280,7 @@ valadoc_api_typereference_set_data_type (ValadocApiTypeReference* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_data_type);
 		self->priv->_data_type = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY]);
 	}
 }
 
@@ -291,7 +291,7 @@ valadoc_api_typereference_get_is_owned (ValadocApiTypeReference* self)
 	ValadocApiOwnership _tmp0_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->ownership;
-	result = _tmp0_ == VALADOC_API_OWNERSHIP_OWNED;
+	result = _tmp0_ == BALADOC_API_OWNERSHIP_OWNED;
 	return result;
 }
 
@@ -302,7 +302,7 @@ valadoc_api_typereference_get_is_weak (ValadocApiTypeReference* self)
 	ValadocApiOwnership _tmp0_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->ownership;
-	result = _tmp0_ == VALADOC_API_OWNERSHIP_WEAK;
+	result = _tmp0_ == BALADOC_API_OWNERSHIP_WEAK;
 	return result;
 }
 
@@ -313,7 +313,7 @@ valadoc_api_typereference_get_is_unowned (ValadocApiTypeReference* self)
 	ValadocApiOwnership _tmp0_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->ownership;
-	result = _tmp0_ == VALADOC_API_OWNERSHIP_UNOWNED;
+	result = _tmp0_ == BALADOC_API_OWNERSHIP_UNOWNED;
 	return result;
 }
 
@@ -335,7 +335,7 @@ valadoc_api_typereference_set_is_dynamic (ValadocApiTypeReference* self,
 	old_value = valadoc_api_typereference_get_is_dynamic (self);
 	if (old_value != value) {
 		self->priv->_is_dynamic = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY]);
 	}
 }
 
@@ -357,7 +357,7 @@ valadoc_api_typereference_set_is_nullable (ValadocApiTypeReference* self,
 	old_value = valadoc_api_typereference_get_is_nullable (self);
 	if (old_value != value) {
 		self->priv->_is_nullable = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY]);
 	}
 }
 
@@ -438,12 +438,12 @@ valadoc_api_typereference_real_build_signature (ValadocApiItem* base)
 	} else {
 		ValadocApiItem* _tmp14_;
 		_tmp14_ = self->priv->_data_type;
-		if (VALADOC_API_IS_SYMBOL (_tmp14_)) {
+		if (BALADOC_API_IS_SYMBOL (_tmp14_)) {
 			ValadocApiSignatureBuilder* _tmp15_;
 			ValadocApiItem* _tmp16_;
 			_tmp15_ = signature;
 			_tmp16_ = self->priv->_data_type;
-			valadoc_api_signature_builder_append_type (_tmp15_, (ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol), TRUE);
+			valadoc_api_signature_builder_append_type (_tmp15_, (ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol), TRUE);
 		} else {
 			ValadocApiSignatureBuilder* _tmp17_;
 			ValadocApiItem* _tmp18_;
@@ -546,27 +546,27 @@ valadoc_api_typereference_class_init (ValadocApiTypeReferenceClass * klass,
 	/**
 	 * The referred data type.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY, valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY] = g_param_spec_object ("data-type", "data-type", "data-type", VALADOC_API_TYPE_ITEM, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY, valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY] = g_param_spec_object ("data-type", "data-type", "data-type", BALADOC_API_TYPE_ITEM, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Specifies that the expression is owned.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_TYPEREFERENCE_IS_OWNED_PROPERTY, valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_IS_OWNED_PROPERTY] = g_param_spec_boolean ("is-owned", "is-owned", "is-owned", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_TYPEREFERENCE_IS_OWNED_PROPERTY, valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_IS_OWNED_PROPERTY] = g_param_spec_boolean ("is-owned", "is-owned", "is-owned", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies that the expression is weak.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_TYPEREFERENCE_IS_WEAK_PROPERTY, valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_IS_WEAK_PROPERTY] = g_param_spec_boolean ("is-weak", "is-weak", "is-weak", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_TYPEREFERENCE_IS_WEAK_PROPERTY, valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_IS_WEAK_PROPERTY] = g_param_spec_boolean ("is-weak", "is-weak", "is-weak", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies that the expression is unwoned.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_TYPEREFERENCE_IS_UNOWNED_PROPERTY, valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_IS_UNOWNED_PROPERTY] = g_param_spec_boolean ("is-unowned", "is-unowned", "is-unowned", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_TYPEREFERENCE_IS_UNOWNED_PROPERTY, valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_IS_UNOWNED_PROPERTY] = g_param_spec_boolean ("is-unowned", "is-unowned", "is-unowned", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies that the expression is dynamic.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY, valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY] = g_param_spec_boolean ("is-dynamic", "is-dynamic", "is-dynamic", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY, valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY] = g_param_spec_boolean ("is-dynamic", "is-dynamic", "is-dynamic", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies that the expression may be null.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY, valadoc_api_typereference_properties[VALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY] = g_param_spec_boolean ("is-nullable", "is-nullable", "is-nullable", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY, valadoc_api_typereference_properties[BALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY] = g_param_spec_boolean ("is-nullable", "is-nullable", "is-nullable", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -577,7 +577,7 @@ valadoc_api_typereference_instance_init (ValadocApiTypeReference * self,
 	ValaArrayList* _tmp1_;
 	self->priv = valadoc_api_typereference_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	self->priv->type_arguments = _tmp1_;
 }
 
@@ -585,7 +585,7 @@ static void
 valadoc_api_typereference_finalize (GObject * obj)
 {
 	ValadocApiTypeReference * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference);
 	_vala_iterable_unref0 (self->priv->type_arguments);
 	_g_free0 (self->priv->dbus_type_signature);
 	_g_object_unref0 (self->priv->_data_type);
@@ -600,7 +600,7 @@ valadoc_api_typereference_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiTypeReferenceClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_typereference_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiTypeReference), 0, (GInstanceInitFunc) valadoc_api_typereference_instance_init, NULL };
 	GType valadoc_api_typereference_type_id;
-	valadoc_api_typereference_type_id = g_type_register_static (VALADOC_API_TYPE_ITEM, "ValadocApiTypeReference", &g_define_type_info, 0);
+	valadoc_api_typereference_type_id = g_type_register_static (BALADOC_API_TYPE_ITEM, "ValadocApiTypeReference", &g_define_type_info, 0);
 	ValadocApiTypeReference_private_offset = g_type_add_instance_private (valadoc_api_typereference_type_id, sizeof (ValadocApiTypeReferencePrivate));
 	return valadoc_api_typereference_type_id;
 }
@@ -624,24 +624,24 @@ _vala_valadoc_api_typereference_get_property (GObject * object,
                                               GParamSpec * pspec)
 {
 	ValadocApiTypeReference * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference);
 	switch (property_id) {
-		case VALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY:
+		case BALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY:
 		g_value_set_object (value, valadoc_api_typereference_get_data_type (self));
 		break;
-		case VALADOC_API_TYPEREFERENCE_IS_OWNED_PROPERTY:
+		case BALADOC_API_TYPEREFERENCE_IS_OWNED_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_typereference_get_is_owned (self));
 		break;
-		case VALADOC_API_TYPEREFERENCE_IS_WEAK_PROPERTY:
+		case BALADOC_API_TYPEREFERENCE_IS_WEAK_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_typereference_get_is_weak (self));
 		break;
-		case VALADOC_API_TYPEREFERENCE_IS_UNOWNED_PROPERTY:
+		case BALADOC_API_TYPEREFERENCE_IS_UNOWNED_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_typereference_get_is_unowned (self));
 		break;
-		case VALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY:
+		case BALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_typereference_get_is_dynamic (self));
 		break;
-		case VALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY:
+		case BALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_typereference_get_is_nullable (self));
 		break;
 		default:
@@ -657,15 +657,15 @@ _vala_valadoc_api_typereference_set_property (GObject * object,
                                               GParamSpec * pspec)
 {
 	ValadocApiTypeReference * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference);
 	switch (property_id) {
-		case VALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY:
+		case BALADOC_API_TYPEREFERENCE_DATA_TYPE_PROPERTY:
 		valadoc_api_typereference_set_data_type (self, g_value_get_object (value));
 		break;
-		case VALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY:
+		case BALADOC_API_TYPEREFERENCE_IS_DYNAMIC_PROPERTY:
 		valadoc_api_typereference_set_is_dynamic (self, g_value_get_boolean (value));
 		break;
-		case VALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY:
+		case BALADOC_API_TYPEREFERENCE_IS_NULLABLE_PROPERTY:
 		valadoc_api_typereference_set_is_nullable (self, g_value_get_boolean (value));
 		break;
 		default:

@@ -109,7 +109,7 @@ public class Valadoc.Importer.ValadocDocumentationScanner : Object, Scanner {
 			switch (c) {
 			case '/':
 				if (get_next_char (1) == '*') {
-					emit_token (TokenType.VALADOC_COMMENT_START);
+					emit_token (TokenType.BALADOC_COMMENT_START);
 					_skip = 1;
 				} else {
 					append_char (c);
@@ -118,7 +118,7 @@ public class Valadoc.Importer.ValadocDocumentationScanner : Object, Scanner {
 
 			case '*':
 				if (get_next_char (1) == '/') {
-					emit_token (TokenType.VALADOC_COMMENT_END);
+					emit_token (TokenType.BALADOC_COMMENT_END);
 					_skip = 1;
 				} else {
 					append_char (c);
@@ -126,15 +126,15 @@ public class Valadoc.Importer.ValadocDocumentationScanner : Object, Scanner {
 				break;
 
 			case '\t':
-				emit_token (TokenType.VALADOC_TAB);
+				emit_token (TokenType.BALADOC_TAB);
 				break;
 
 			case ' ':
-				emit_token (TokenType.VALADOC_SPACE);
+				emit_token (TokenType.BALADOC_SPACE);
 				break;
 
 			case '\n':
-				emit_token (TokenType.VALADOC_EOL);
+				emit_token (TokenType.BALADOC_EOL);
 				_line++;
 				_column = 0;
 				_last_column = 0;

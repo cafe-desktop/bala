@@ -39,8 +39,8 @@ fi
 vapidir=$abs_top_srcdir/vapi
 run_prefix=""
 
-VALAC=$abs_top_builddir/compiler/valac$EXEEXT
-VALAFLAGS="$VALAFLAGS \
+BALAC=$abs_top_builddir/compiler/valac$EXEEXT
+BALAFLAGS="$BALAFLAGS \
 	--vapidir $vapidir \
 	--enable-checking \
 	--disable-warnings \
@@ -56,14 +56,14 @@ VAPIGENFLAGS="--vapidir $vapidir"
 
 # Incorporate the TEST_CFLAGS.
 for cflag in ${TEST_CFLAGS}; do
-    VALAFLAGS="${VALAFLAGS} -X ${cflag}"
+    BALAFLAGS="${BALAFLAGS} -X ${cflag}"
 done
 
 # Incorporate the user's CFLAGS. Matters if the user decided to insert
 # -m32 in CFLAGS, for example.
 for cflag in ${CFLAGS} ${CPPFLAGS} ${LDFLAGS}; do
 	if [[ ! $cflag =~ ^\-O[0-9]$ ]]; then
-		VALAFLAGS="${VALAFLAGS} -X ${cflag}"
+		BALAFLAGS="${BALAFLAGS} -X ${cflag}"
 	fi
 done
 
@@ -122,7 +122,7 @@ function sourceend() {
 	if [ $INVALIDCODE -eq 1 ]; then
 		PACKAGEFLAGS=$([ -z "$PACKAGES" ] || echo $PACKAGES | xargs -n 1 echo -n " --pkg")
 		echo '' > prepare
-		echo "$VALAC $VALAFLAGS $PACKAGEFLAGS -C $SOURCEFILE" > check
+		echo "$BALAC $BALAFLAGS $PACKAGEFLAGS -C $SOURCEFILE" > check
 		echo "RET=\$?" >> check
 		echo "if [ \$RET -ne 1 ]; then exit 1; fi" >> check
 		echo "exit 0" >> check
@@ -135,7 +135,7 @@ function sourceend() {
 		echo "$VAPIGEN $VAPIGENFLAGS $PACKAGEFLAGS --library $ns $ns.gir && tail -n +5 $ns.vapi|sed '\$d'|diff -wu $ns.vapi.ref -" > check
 	else
 		PACKAGEFLAGS=$([ -z "$PACKAGES" ] || echo $PACKAGES | xargs -n 1 echo -n " --pkg")
-		echo "$VALAC $VALAFLAGS $PACKAGEFLAGS -o $ns$EXEEXT $SOURCEFILE" >> prepare
+		echo "$BALAC $BALAFLAGS $PACKAGEFLAGS -o $ns$EXEEXT $SOURCEFILE" >> prepare
 		if [ $DBUSTEST -eq 1 ]; then
 			if [ $ISSERVER -eq 1 ]; then
 				echo "./$ns$EXEEXT" >> check
@@ -163,7 +163,7 @@ case "$testfile" in
 	SOURCEFILE=${SOURCEFILE:-$testpath.vala}
 	cat "$abs_srcdir/$testfile" > ./$SOURCEFILE
 	PACKAGEFLAGS=$([ -z "$PACKAGES" ] || echo $PACKAGES | xargs -n 1 echo -n " --pkg")
-	$VALAC $VALAFLAGS $PACKAGEFLAGS -o $testpath$EXEEXT $SOURCEFILE
+	$BALAC $BALAFLAGS $PACKAGEFLAGS -o $testpath$EXEEXT $SOURCEFILE
 	./$testpath$EXEEXT
 	;;
 *.test)

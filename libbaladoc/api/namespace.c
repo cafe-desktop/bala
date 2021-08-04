@@ -30,11 +30,11 @@
 #include <vala.h>
 
 enum  {
-	VALADOC_API_NAMESPACE_0_PROPERTY,
-	VALADOC_API_NAMESPACE_NODE_TYPE_PROPERTY,
-	VALADOC_API_NAMESPACE_NUM_PROPERTIES
+	BALADOC_API_NAMESPACE_0_PROPERTY,
+	BALADOC_API_NAMESPACE_NODE_TYPE_PROPERTY,
+	BALADOC_API_NAMESPACE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_namespace_properties[VALADOC_API_NAMESPACE_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_namespace_properties[BALADOC_API_NAMESPACE_NUM_PROPERTIES];
 #define _valadoc_api_signature_builder_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_api_signature_builder_unref (var), NULL)))
 
 static gpointer valadoc_api_namespace_parent_class = NULL;
@@ -62,7 +62,7 @@ valadoc_api_namespace_construct (GType object_type,
 	g_return_val_if_fail (parent != NULL, NULL);
 	g_return_val_if_fail (file != NULL, NULL);
 	g_return_val_if_fail (data != NULL, NULL);
-	self = (ValadocApiNamespace*) valadoc_api_symbol_construct (object_type, parent, file, name, VALA_SYMBOL_ACCESSIBILITY_PUBLIC, comment, (ValaSymbol*) data);
+	self = (ValadocApiNamespace*) valadoc_api_symbol_construct (object_type, parent, file, name, BALA_SYMBOL_ACCESSIBILITY_PUBLIC, comment, (ValaSymbol*) data);
 	return self;
 }
 
@@ -73,7 +73,7 @@ valadoc_api_namespace_new (ValadocApiNode* parent,
                            ValadocApiSourceComment* comment,
                            ValaNamespace* data)
 {
-	return valadoc_api_namespace_construct (VALADOC_API_TYPE_NAMESPACE, parent, file, name, comment, data);
+	return valadoc_api_namespace_construct (BALADOC_API_TYPE_NAMESPACE, parent, file, name, comment, data);
 }
 
 /**
@@ -116,7 +116,7 @@ valadoc_api_namespace_real_get_node_type (ValadocApiNode* base)
 	ValadocApiNodeType result;
 	ValadocApiNamespace* self;
 	self = (ValadocApiNamespace*) base;
-	result = VALADOC_API_NODE_TYPE_NAMESPACE;
+	result = BALADOC_API_NODE_TYPE_NAMESPACE;
 	return result;
 }
 
@@ -156,12 +156,12 @@ valadoc_api_namespace_class_init (ValadocApiNamespaceClass * klass,
 	((ValadocApiItemClass *) klass)->build_signature = (ValadocContentInline* (*) (ValadocApiItem*)) valadoc_api_namespace_real_build_signature;
 	((ValadocApiNodeClass *) klass)->accept = (void (*) (ValadocApiNode*, ValadocApiVisitor*)) valadoc_api_namespace_real_accept;
 	((ValadocApiNodeClass *) klass)->is_browsable = (gboolean (*) (ValadocApiNode*, ValadocSettings*)) valadoc_api_namespace_real_is_browsable;
-	VALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_namespace_real_get_node_type;
+	BALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_namespace_real_get_node_type;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_namespace_get_property;
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_NAMESPACE_NODE_TYPE_PROPERTY, valadoc_api_namespace_properties[VALADOC_API_NAMESPACE_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", VALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_NAMESPACE_NODE_TYPE_PROPERTY, valadoc_api_namespace_properties[BALADOC_API_NAMESPACE_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", BALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -178,7 +178,7 @@ valadoc_api_namespace_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiNamespaceClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_namespace_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiNamespace), 0, (GInstanceInitFunc) valadoc_api_namespace_instance_init, NULL };
 	GType valadoc_api_namespace_type_id;
-	valadoc_api_namespace_type_id = g_type_register_static (VALADOC_API_TYPE_SYMBOL, "ValadocApiNamespace", &g_define_type_info, 0);
+	valadoc_api_namespace_type_id = g_type_register_static (BALADOC_API_TYPE_SYMBOL, "ValadocApiNamespace", &g_define_type_info, 0);
 	return valadoc_api_namespace_type_id;
 }
 
@@ -201,9 +201,9 @@ _vala_valadoc_api_namespace_get_property (GObject * object,
                                           GParamSpec * pspec)
 {
 	ValadocApiNamespace * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_NAMESPACE, ValadocApiNamespace);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_NAMESPACE, ValadocApiNamespace);
 	switch (property_id) {
-		case VALADOC_API_NAMESPACE_NODE_TYPE_PROPERTY:
+		case BALADOC_API_NAMESPACE_NODE_TYPE_PROPERTY:
 		g_value_set_enum (value, valadoc_api_node_get_node_type ((ValadocApiNode*) self));
 		break;
 		default:

@@ -67,7 +67,7 @@ gboolean
 vala_typesymbol_is_reference_type (ValaTypeSymbol* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_TYPESYMBOL_GET_CLASS (self)->is_reference_type (self);
+	return BALA_TYPESYMBOL_GET_CLASS (self)->is_reference_type (self);
 }
 
 /**
@@ -92,7 +92,7 @@ vala_typesymbol_is_subtype_of (ValaTypeSymbol* self,
                                ValaTypeSymbol* t)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_TYPESYMBOL_GET_CLASS (self)->is_subtype_of (self, t);
+	return BALA_TYPESYMBOL_GET_CLASS (self)->is_subtype_of (self, t);
 }
 
 /**
@@ -113,7 +113,7 @@ vala_typesymbol_get_type_parameter_index (ValaTypeSymbol* self,
                                           const gchar* name)
 {
 	g_return_val_if_fail (self != NULL, 0);
-	return VALA_TYPESYMBOL_GET_CLASS (self)->get_type_parameter_index (self, name);
+	return BALA_TYPESYMBOL_GET_CLASS (self)->get_type_parameter_index (self, name);
 }
 
 static void
@@ -141,7 +141,7 @@ vala_typesymbol_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaTypeSymbolClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_typesymbol_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaTypeSymbol), 0, (GInstanceInitFunc) vala_typesymbol_instance_init, NULL };
 	GType vala_typesymbol_type_id;
-	vala_typesymbol_type_id = g_type_register_static (VALA_TYPE_SYMBOL, "ValaTypeSymbol", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_typesymbol_type_id = g_type_register_static (BALA_TYPE_SYMBOL, "ValaTypeSymbol", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	return vala_typesymbol_type_id;
 }
 

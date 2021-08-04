@@ -35,7 +35,7 @@ GObject*
 valadoc_parser_callback_get_rule_state (ValadocParserCallback* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->get_rule_state (self);
+	return BALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->get_rule_state (self);
 }
 
 void
@@ -43,7 +43,7 @@ valadoc_parser_callback_set_rule_state (ValadocParserCallback* self,
                                         GObject* state)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->set_rule_state (self, state);
+	BALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->set_rule_state (self, state);
 }
 
 void
@@ -51,14 +51,14 @@ valadoc_parser_callback_push_rule (ValadocParserCallback* self,
                                    ValadocRule* rule)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->push_rule (self, rule);
+	BALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->push_rule (self, rule);
 }
 
 void
 valadoc_parser_callback_reduce (ValadocParserCallback* self)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->reduce (self);
+	BALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->reduce (self);
 }
 
 gboolean
@@ -66,7 +66,7 @@ valadoc_parser_callback_would_parent_accept_token (ValadocParserCallback* self,
                                                    ValadocToken* token)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->would_parent_accept_token (self, token);
+	return BALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->would_parent_accept_token (self, token);
 }
 
 gboolean
@@ -75,7 +75,7 @@ valadoc_parser_callback_would_parent_reduce_to_rule (ValadocParserCallback* self
                                                      ValadocRule* rule)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->would_parent_reduce_to_rule (self, token, rule);
+	return BALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->would_parent_reduce_to_rule (self, token, rule);
 }
 
 void
@@ -84,7 +84,7 @@ valadoc_parser_callback_warning (ValadocParserCallback* self,
                                  const gchar* message)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->warning (self, token, message);
+	BALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->warning (self, token, message);
 }
 
 void
@@ -94,7 +94,7 @@ valadoc_parser_callback_error (ValadocParserCallback* self,
                                GError** error)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->error (self, token, message, error);
+	BALADOC_PARSER_CALLBACK_GET_INTERFACE (self)->error (self, token, message, error);
 }
 
 static void

@@ -94,7 +94,7 @@ vala_interface_new (const gchar* name,
                     ValaSourceReference* source_reference,
                     ValaComment* comment)
 {
-	return vala_interface_construct (VALA_TYPE_INTERFACE, name, source_reference, comment);
+	return vala_interface_construct (BALA_TYPE_INTERFACE, name, source_reference, comment);
 }
 
 /**
@@ -148,7 +148,7 @@ vala_interface_real_add_method (ValaSymbol* base,
 	ValaDataType* _tmp20_;
 	self = (ValaInterface*) base;
 	g_return_if_fail (m != NULL);
-	if (VALA_IS_CREATION_METHOD (m)) {
+	if (BALA_IS_CREATION_METHOD (m)) {
 		ValaSourceReference* _tmp0_;
 		ValaSourceReference* _tmp1_;
 		_tmp0_ = vala_code_node_get_source_reference ((ValaCodeNode*) m);
@@ -159,7 +159,7 @@ vala_interface_real_add_method (ValaSymbol* base,
 	}
 	_tmp2_ = vala_method_get_binding (m);
 	_tmp3_ = _tmp2_;
-	if (_tmp3_ != VALA_MEMBER_BINDING_STATIC) {
+	if (_tmp3_ != BALA_MEMBER_BINDING_STATIC) {
 		ValaDataType* _tmp4_;
 		ValaDataType* _tmp5_;
 		ValaSourceReference* _tmp6_;
@@ -195,7 +195,7 @@ vala_interface_real_add_method (ValaSymbol* base,
 	}
 	_tmp19_ = vala_callable_get_return_type ((ValaCallable*) m);
 	_tmp20_ = _tmp19_;
-	if (!VALA_IS_VOID_TYPE (_tmp20_)) {
+	if (!BALA_IS_VOID_TYPE (_tmp20_)) {
 		ValaList* _tmp21_;
 		gint _tmp22_;
 		gint _tmp23_;
@@ -232,7 +232,7 @@ vala_interface_real_add_method (ValaSymbol* base,
 		_tmp33_ = _tmp32_;
 		vala_local_variable_set_is_result (_tmp33_, TRUE);
 	}
-	VALA_SYMBOL_CLASS (vala_interface_parent_class)->add_method ((ValaSymbol*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol), m);
+	BALA_SYMBOL_CLASS (vala_interface_parent_class)->add_method ((ValaSymbol*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol), m);
 }
 
 /**
@@ -263,10 +263,10 @@ vala_interface_real_add_property (ValaSymbol* base,
 		vala_code_node_set_error ((ValaCodeNode*) prop, TRUE);
 		return;
 	}
-	VALA_SYMBOL_CLASS (vala_interface_parent_class)->add_property ((ValaSymbol*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol), prop);
+	BALA_SYMBOL_CLASS (vala_interface_parent_class)->add_property ((ValaSymbol*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol), prop);
 	_tmp4_ = vala_property_get_binding (prop);
 	_tmp5_ = _tmp4_;
-	if (_tmp5_ != VALA_MEMBER_BINDING_STATIC) {
+	if (_tmp5_ != BALA_MEMBER_BINDING_STATIC) {
 		ValaDataType* _tmp6_;
 		ValaDataType* _tmp7_;
 		ValaSourceReference* _tmp8_;
@@ -324,7 +324,7 @@ ValaList*
 vala_interface_get_virtuals (ValaInterface* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_INTERFACE_GET_CLASS (self)->get_virtuals (self);
+	return BALA_INTERFACE_GET_CLASS (self)->get_virtuals (self);
 }
 
 static void
@@ -383,7 +383,7 @@ vala_interface_real_accept_children (ValaCodeNode* base,
 		}
 		_vala_iterable_unref0 (_type_list);
 	}
-	VALA_CODE_NODE_CLASS (vala_interface_parent_class)->accept_children ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol), visitor);
+	BALA_CODE_NODE_CLASS (vala_interface_parent_class)->accept_children ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol), visitor);
 }
 
 static gboolean
@@ -404,7 +404,7 @@ vala_interface_real_is_subtype_of (ValaTypeSymbol* base,
 	gboolean result = FALSE;
 	self = (ValaInterface*) base;
 	g_return_val_if_fail (t != NULL, FALSE);
-	if (G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_TYPESYMBOL, ValaTypeSymbol) == t) {
+	if (G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_TYPESYMBOL, ValaTypeSymbol) == t) {
 		result = TRUE;
 		return result;
 	}
@@ -590,7 +590,7 @@ vala_interface_real_check (ValaCodeNode* base,
 		result = !_tmp3_;
 		return result;
 	}
-	if (!VALA_CODE_NODE_CLASS (vala_interface_parent_class)->check ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol), context)) {
+	if (!BALA_CODE_NODE_CLASS (vala_interface_parent_class)->check ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol), context)) {
 		result = FALSE;
 		return result;
 	}
@@ -738,7 +738,7 @@ vala_interface_real_check (ValaCodeNode* base,
 			_tmp53_ = vala_list_get (_tmp52_, _prereq_index);
 			prereq = (ValaDataType*) _tmp53_;
 			_tmp54_ = prereq;
-			if (!VALA_IS_OBJECT_TYPE (_tmp54_)) {
+			if (!BALA_IS_OBJECT_TYPE (_tmp54_)) {
 				ValaSourceReference* _tmp55_;
 				ValaSourceReference* _tmp56_;
 				ValaDataType* _tmp57_;
@@ -773,7 +773,7 @@ vala_interface_real_check (ValaCodeNode* base,
 			_tmp64_ = prereq;
 			_tmp65_ = vala_data_type_get_type_symbol (_tmp64_);
 			_tmp66_ = _tmp65_;
-			if (VALA_IS_CLASS (_tmp66_)) {
+			if (BALA_IS_CLASS (_tmp66_)) {
 				ValaClass* _tmp67_;
 				ValaDataType* _tmp82_;
 				ValaTypeSymbol* _tmp83_;
@@ -827,7 +827,7 @@ vala_interface_real_check (ValaCodeNode* base,
 				_tmp82_ = prereq;
 				_tmp83_ = vala_data_type_get_type_symbol (_tmp82_);
 				_tmp84_ = _tmp83_;
-				_tmp85_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp84_, VALA_TYPE_CLASS, ValaClass));
+				_tmp85_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp84_, BALA_TYPE_CLASS, ValaClass));
 				_vala_code_node_unref0 (prereq_class);
 				prereq_class = _tmp85_;
 			}
@@ -1074,7 +1074,7 @@ vala_interface_real_check (ValaCodeNode* base,
 				_tmp149_ = vala_list_get (_tmp148_, _s_index);
 				s = (ValaSymbol*) _tmp149_;
 				_tmp150_ = s;
-				if (VALA_IS_METHOD (_tmp150_)) {
+				if (BALA_IS_METHOD (_tmp150_)) {
 					ValaMethod* m = NULL;
 					ValaSymbol* _tmp151_;
 					ValaMethod* _tmp152_;
@@ -1084,7 +1084,7 @@ vala_interface_real_check (ValaCodeNode* base,
 					gboolean _tmp156_;
 					gboolean _tmp157_;
 					_tmp151_ = s;
-					_tmp152_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp151_, VALA_TYPE_METHOD, ValaMethod));
+					_tmp152_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp151_, BALA_TYPE_METHOD, ValaMethod));
 					m = _tmp152_;
 					_tmp153_ = m;
 					vala_code_node_check ((ValaCodeNode*) _tmp153_, context);
@@ -1113,7 +1113,7 @@ vala_interface_real_check (ValaCodeNode* base,
 				} else {
 					ValaSymbol* _tmp163_;
 					_tmp163_ = s;
-					if (VALA_IS_SIGNAL (_tmp163_)) {
+					if (BALA_IS_SIGNAL (_tmp163_)) {
 						ValaSignal* sig = NULL;
 						ValaSymbol* _tmp164_;
 						ValaSignal* _tmp165_;
@@ -1122,7 +1122,7 @@ vala_interface_real_check (ValaCodeNode* base,
 						gboolean _tmp168_;
 						gboolean _tmp169_;
 						_tmp164_ = s;
-						_tmp165_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp164_, VALA_TYPE_SIGNAL, ValaSignal));
+						_tmp165_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp164_, BALA_TYPE_SIGNAL, ValaSignal));
 						sig = _tmp165_;
 						_tmp166_ = sig;
 						vala_code_node_check ((ValaCodeNode*) _tmp166_, context);
@@ -1140,7 +1140,7 @@ vala_interface_real_check (ValaCodeNode* base,
 					} else {
 						ValaSymbol* _tmp172_;
 						_tmp172_ = s;
-						if (VALA_IS_PROPERTY (_tmp172_)) {
+						if (BALA_IS_PROPERTY (_tmp172_)) {
 							ValaProperty* prop = NULL;
 							ValaSymbol* _tmp173_;
 							ValaProperty* _tmp174_;
@@ -1150,7 +1150,7 @@ vala_interface_real_check (ValaCodeNode* base,
 							gboolean _tmp178_;
 							gboolean _tmp179_;
 							_tmp173_ = s;
-							_tmp174_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp173_, VALA_TYPE_PROPERTY, ValaProperty));
+							_tmp174_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp173_, BALA_TYPE_PROPERTY, ValaProperty));
 							prop = _tmp174_;
 							_tmp175_ = prop;
 							vala_code_node_check ((ValaCodeNode*) _tmp175_, context);
@@ -1524,7 +1524,7 @@ vala_interface_real_check (ValaCodeNode* base,
 	_tmp278_ = g_direct_hash;
 	_tmp279_ = g_direct_equal;
 	_tmp280_ = g_direct_equal;
-	_tmp281_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp278_, _tmp279_, _tmp280_);
+	_tmp281_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp278_, _tmp279_, _tmp280_);
 	positions = (ValaMap*) _tmp281_;
 	ordered_seen = FALSE;
 	unordered_seen = FALSE;
@@ -1841,10 +1841,10 @@ vala_interface_instance_init (ValaInterface * self,
 	ValaArrayList* _tmp3_;
 	self->priv = vala_interface_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->prerequisites = (ValaList*) _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	self->priv->virtuals = (ValaList*) _tmp3_;
 }
 
@@ -1852,10 +1852,10 @@ static void
 vala_interface_finalize (ValaCodeNode * obj)
 {
 	ValaInterface * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_INTERFACE, ValaInterface);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_INTERFACE, ValaInterface);
 	_vala_iterable_unref0 (self->priv->prerequisites);
 	_vala_iterable_unref0 (self->priv->virtuals);
-	VALA_CODE_NODE_CLASS (vala_interface_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_interface_parent_class)->finalize (obj);
 }
 
 /**
@@ -1866,7 +1866,7 @@ vala_interface_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaInterfaceClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_interface_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaInterface), 0, (GInstanceInitFunc) vala_interface_instance_init, NULL };
 	GType vala_interface_type_id;
-	vala_interface_type_id = g_type_register_static (VALA_TYPE_OBJECT_TYPE_SYMBOL, "ValaInterface", &g_define_type_info, 0);
+	vala_interface_type_id = g_type_register_static (BALA_TYPE_OBJECT_TYPE_SYMBOL, "ValaInterface", &g_define_type_info, 0);
 	ValaInterface_private_offset = g_type_add_instance_private (vala_interface_type_id, sizeof (ValaInterfacePrivate));
 	return vala_interface_type_id;
 }

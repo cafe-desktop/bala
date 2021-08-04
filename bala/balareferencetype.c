@@ -59,7 +59,7 @@ vala_reference_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaReferenceTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_reference_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaReferenceType), 0, (GInstanceInitFunc) vala_reference_type_instance_init, NULL };
 	GType vala_reference_type_type_id;
-	vala_reference_type_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaReferenceType", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_reference_type_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaReferenceType", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	return vala_reference_type_type_id;
 }
 

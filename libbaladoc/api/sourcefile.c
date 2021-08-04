@@ -31,14 +31,14 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_API_SOURCE_FILE_0_PROPERTY,
-	VALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY,
-	VALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY,
-	VALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY,
-	VALADOC_API_SOURCE_FILE_DATA_PROPERTY,
-	VALADOC_API_SOURCE_FILE_NUM_PROPERTIES
+	BALADOC_API_SOURCE_FILE_0_PROPERTY,
+	BALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY,
+	BALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY,
+	BALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY,
+	BALADOC_API_SOURCE_FILE_DATA_PROPERTY,
+	BALADOC_API_SOURCE_FILE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_source_file_properties[VALADOC_API_SOURCE_FILE_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_source_file_properties[BALADOC_API_SOURCE_FILE_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _vala_source_file_unref0(var) ((var == NULL) ? NULL : (var = (vala_source_file_unref (var), NULL)))
@@ -107,7 +107,7 @@ valadoc_api_source_file_set_package (ValadocApiSourceFile* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_package);
 		self->priv->_package = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_source_file_properties[VALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_source_file_properties[BALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY]);
 	}
 }
 
@@ -134,7 +134,7 @@ valadoc_api_source_file_set_relative_path (ValadocApiSourceFile* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_relative_path);
 		self->priv->_relative_path = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_source_file_properties[VALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_source_file_properties[BALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY]);
 	}
 }
 
@@ -161,7 +161,7 @@ valadoc_api_source_file_set_relative_c_path (ValadocApiSourceFile* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_relative_c_path);
 		self->priv->_relative_c_path = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_source_file_properties[VALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_source_file_properties[BALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY]);
 	}
 }
 
@@ -207,7 +207,7 @@ valadoc_api_source_file_set_data (ValadocApiSourceFile* self,
 		_tmp0_ = _vala_source_file_ref0 (value);
 		_vala_source_file_unref0 (self->priv->_data);
 		self->priv->_data = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_source_file_properties[VALADOC_API_SOURCE_FILE_DATA_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_source_file_properties[BALADOC_API_SOURCE_FILE_DATA_PROPERTY]);
 	}
 }
 
@@ -235,7 +235,7 @@ valadoc_api_source_file_new (ValadocApiPackage* package,
                              const gchar* relative_c_path,
                              ValaSourceFile* data)
 {
-	return valadoc_api_source_file_construct (VALADOC_API_TYPE_SOURCE_FILE, package, relative_path, relative_c_path, data);
+	return valadoc_api_source_file_construct (BALADOC_API_TYPE_SOURCE_FILE, package, relative_path, relative_c_path, data);
 }
 
 static void
@@ -247,10 +247,10 @@ valadoc_api_source_file_class_init (ValadocApiSourceFileClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_source_file_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_source_file_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_source_file_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY, valadoc_api_source_file_properties[VALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY] = g_param_spec_object ("package", "package", "package", VALADOC_API_TYPE_PACKAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY, valadoc_api_source_file_properties[VALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY] = g_param_spec_string ("relative-path", "relative-path", "relative-path", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY, valadoc_api_source_file_properties[VALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY] = g_param_spec_string ("relative-c-path", "relative-c-path", "relative-c-path", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SOURCE_FILE_DATA_PROPERTY, valadoc_api_source_file_properties[VALADOC_API_SOURCE_FILE_DATA_PROPERTY] = vala_param_spec_source_file ("data", "data", "data", VALA_TYPE_SOURCE_FILE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY, valadoc_api_source_file_properties[BALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY] = g_param_spec_object ("package", "package", "package", BALADOC_API_TYPE_PACKAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY, valadoc_api_source_file_properties[BALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY] = g_param_spec_string ("relative-path", "relative-path", "relative-path", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY, valadoc_api_source_file_properties[BALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY] = g_param_spec_string ("relative-c-path", "relative-c-path", "relative-c-path", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SOURCE_FILE_DATA_PROPERTY, valadoc_api_source_file_properties[BALADOC_API_SOURCE_FILE_DATA_PROPERTY] = vala_param_spec_source_file ("data", "data", "data", BALA_TYPE_SOURCE_FILE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -264,7 +264,7 @@ static void
 valadoc_api_source_file_finalize (GObject * obj)
 {
 	ValadocApiSourceFile * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_SOURCE_FILE, ValadocApiSourceFile);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_SOURCE_FILE, ValadocApiSourceFile);
 	_g_object_unref0 (self->priv->_package);
 	_g_free0 (self->priv->_relative_path);
 	_g_free0 (self->priv->_relative_c_path);
@@ -304,18 +304,18 @@ _vala_valadoc_api_source_file_get_property (GObject * object,
                                             GParamSpec * pspec)
 {
 	ValadocApiSourceFile * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_SOURCE_FILE, ValadocApiSourceFile);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_SOURCE_FILE, ValadocApiSourceFile);
 	switch (property_id) {
-		case VALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY:
+		case BALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY:
 		g_value_set_object (value, valadoc_api_source_file_get_package (self));
 		break;
-		case VALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY:
+		case BALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY:
 		g_value_set_string (value, valadoc_api_source_file_get_relative_path (self));
 		break;
-		case VALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY:
+		case BALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY:
 		g_value_set_string (value, valadoc_api_source_file_get_relative_c_path (self));
 		break;
-		case VALADOC_API_SOURCE_FILE_DATA_PROPERTY:
+		case BALADOC_API_SOURCE_FILE_DATA_PROPERTY:
 		vala_value_set_source_file (value, valadoc_api_source_file_get_data (self));
 		break;
 		default:
@@ -331,18 +331,18 @@ _vala_valadoc_api_source_file_set_property (GObject * object,
                                             GParamSpec * pspec)
 {
 	ValadocApiSourceFile * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_SOURCE_FILE, ValadocApiSourceFile);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_SOURCE_FILE, ValadocApiSourceFile);
 	switch (property_id) {
-		case VALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY:
+		case BALADOC_API_SOURCE_FILE_PACKAGE_PROPERTY:
 		valadoc_api_source_file_set_package (self, g_value_get_object (value));
 		break;
-		case VALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY:
+		case BALADOC_API_SOURCE_FILE_RELATIVE_PATH_PROPERTY:
 		valadoc_api_source_file_set_relative_path (self, g_value_get_string (value));
 		break;
-		case VALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY:
+		case BALADOC_API_SOURCE_FILE_RELATIVE_C_PATH_PROPERTY:
 		valadoc_api_source_file_set_relative_c_path (self, g_value_get_string (value));
 		break;
-		case VALADOC_API_SOURCE_FILE_DATA_PROPERTY:
+		case BALADOC_API_SOURCE_FILE_DATA_PROPERTY:
 		valadoc_api_source_file_set_data (self, vala_value_get_source_file (value));
 		break;
 		default:

@@ -111,7 +111,7 @@ ValaTypeofExpression*
 vala_typeof_expression_new (ValaDataType* type,
                             ValaSourceReference* source)
 {
-	return vala_typeof_expression_construct (VALA_TYPE_TYPEOF_EXPRESSION, type, source);
+	return vala_typeof_expression_construct (BALA_TYPE_TYPEOF_EXPRESSION, type, source);
 }
 
 static void
@@ -209,7 +209,7 @@ vala_typeof_expression_real_check (ValaCodeNode* base,
 	vala_expression_set_value_type ((ValaExpression*) self, _tmp8_);
 	_tmp10_ = vala_code_context_get_profile (context);
 	_tmp11_ = _tmp10_;
-	if (_tmp11_ == VALA_PROFILE_GOBJECT) {
+	if (_tmp11_ == BALA_PROFILE_GOBJECT) {
 		ValaDataType* _tmp12_;
 		ValaDataType* _tmp13_;
 		_tmp12_ = vala_typeof_expression_get_type_reference (self);
@@ -228,7 +228,7 @@ vala_typeof_expression_real_check (ValaCodeNode* base,
 		vala_report_warning (_tmp16_, "Type argument list without effect");
 	}
 	_tmp18_ = self->priv->_data_type;
-	if (VALA_IS_ARRAY_TYPE (_tmp18_)) {
+	if (BALA_IS_ARRAY_TYPE (_tmp18_)) {
 		ValaDataType* _tmp19_;
 		ValaDataType* _tmp20_;
 		ValaDataType* _tmp21_;
@@ -240,7 +240,7 @@ vala_typeof_expression_real_check (ValaCodeNode* base,
 		ValaTypeSymbol* _tmp27_;
 		ValaTypeSymbol* _tmp28_;
 		_tmp19_ = self->priv->_data_type;
-		_tmp20_ = vala_array_type_get_element_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp19_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+		_tmp20_ = vala_array_type_get_element_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp19_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 		_tmp21_ = _tmp20_;
 		_tmp22_ = vala_data_type_get_type_symbol (_tmp21_);
 		_tmp23_ = _tmp22_;
@@ -305,9 +305,9 @@ static void
 vala_typeof_expression_finalize (ValaCodeNode * obj)
 {
 	ValaTypeofExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_TYPEOF_EXPRESSION, ValaTypeofExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_TYPEOF_EXPRESSION, ValaTypeofExpression);
 	_vala_code_node_unref0 (self->priv->_data_type);
-	VALA_CODE_NODE_CLASS (vala_typeof_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_typeof_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -318,7 +318,7 @@ vala_typeof_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaTypeofExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_typeof_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaTypeofExpression), 0, (GInstanceInitFunc) vala_typeof_expression_instance_init, NULL };
 	GType vala_typeof_expression_type_id;
-	vala_typeof_expression_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaTypeofExpression", &g_define_type_info, 0);
+	vala_typeof_expression_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaTypeofExpression", &g_define_type_info, 0);
 	ValaTypeofExpression_private_offset = g_type_add_instance_private (vala_typeof_expression_type_id, sizeof (ValaTypeofExpressionPrivate));
 	return vala_typeof_expression_type_id;
 }

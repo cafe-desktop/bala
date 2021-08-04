@@ -32,23 +32,23 @@
 #include <valagee.h>
 
 enum  {
-	VALADOC_WIKI_PAGE_0_PROPERTY,
-	VALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY,
-	VALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY,
-	VALADOC_WIKI_PAGE_PATH_PROPERTY,
-	VALADOC_WIKI_PAGE_NAME_PROPERTY,
-	VALADOC_WIKI_PAGE_PACKAGE_PROPERTY,
-	VALADOC_WIKI_PAGE_NUM_PROPERTIES
+	BALADOC_WIKI_PAGE_0_PROPERTY,
+	BALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY,
+	BALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY,
+	BALADOC_WIKI_PAGE_PATH_PROPERTY,
+	BALADOC_WIKI_PAGE_NAME_PROPERTY,
+	BALADOC_WIKI_PAGE_PACKAGE_PROPERTY,
+	BALADOC_WIKI_PAGE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_NUM_PROPERTIES];
+static GParamSpec* valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_error_free0(var) ((var == NULL) ? NULL : (var = (g_error_free (var), NULL)))
 enum  {
-	VALADOC_WIKI_PAGE_TREE_0_PROPERTY,
-	VALADOC_WIKI_PAGE_TREE_NUM_PROPERTIES
+	BALADOC_WIKI_PAGE_TREE_0_PROPERTY,
+	BALADOC_WIKI_PAGE_TREE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_wiki_page_tree_properties[VALADOC_WIKI_PAGE_TREE_NUM_PROPERTIES];
+static GParamSpec* valadoc_wiki_page_tree_properties[BALADOC_WIKI_PAGE_TREE_NUM_PROPERTIES];
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _g_dir_close0(var) ((var == NULL) ? NULL : (var = (g_dir_close (var), NULL)))
 
@@ -131,7 +131,7 @@ valadoc_wiki_page_set_documentation (ValadocWikiPage* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_documentation);
 		self->priv->_documentation = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY]);
 	}
 }
 
@@ -158,7 +158,7 @@ valadoc_wiki_page_set_documentation_str (ValadocWikiPage* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_documentation_str);
 		self->priv->_documentation_str = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY]);
 	}
 }
 
@@ -185,7 +185,7 @@ valadoc_wiki_page_set_path (ValadocWikiPage* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_path);
 		self->priv->_path = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_PATH_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_PATH_PROPERTY]);
 	}
 }
 
@@ -212,7 +212,7 @@ valadoc_wiki_page_set_name (ValadocWikiPage* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_name);
 		self->priv->_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_NAME_PROPERTY]);
 	}
 }
 
@@ -270,7 +270,7 @@ valadoc_wiki_page_new (const gchar* name,
                        const gchar* path,
                        ValadocApiPackage* package)
 {
-	return valadoc_wiki_page_construct (VALADOC_TYPE_WIKI_PAGE, name, path, package);
+	return valadoc_wiki_page_construct (BALADOC_TYPE_WIKI_PAGE, name, path, package);
 }
 
 void
@@ -348,11 +348,11 @@ valadoc_wiki_page_class_init (ValadocWikiPageClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_wiki_page_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_wiki_page_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_wiki_page_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY, valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY] = g_param_spec_object ("documentation", "documentation", "documentation", VALADOC_CONTENT_TYPE_PAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY, valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY] = g_param_spec_string ("documentation-str", "documentation-str", "documentation-str", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_WIKI_PAGE_PATH_PROPERTY, valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_PATH_PROPERTY] = g_param_spec_string ("path", "path", "path", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_WIKI_PAGE_NAME_PROPERTY, valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_NAME_PROPERTY] = g_param_spec_string ("name", "name", "name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_WIKI_PAGE_PACKAGE_PROPERTY, valadoc_wiki_page_properties[VALADOC_WIKI_PAGE_PACKAGE_PROPERTY] = g_param_spec_object ("package", "package", "package", VALADOC_API_TYPE_PACKAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY, valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY] = g_param_spec_object ("documentation", "documentation", "documentation", BALADOC_CONTENT_TYPE_PAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY, valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY] = g_param_spec_string ("documentation-str", "documentation-str", "documentation-str", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_WIKI_PAGE_PATH_PROPERTY, valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_PATH_PROPERTY] = g_param_spec_string ("path", "path", "path", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_WIKI_PAGE_NAME_PROPERTY, valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_NAME_PROPERTY] = g_param_spec_string ("name", "name", "name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_WIKI_PAGE_PACKAGE_PROPERTY, valadoc_wiki_page_properties[BALADOC_WIKI_PAGE_PACKAGE_PROPERTY] = g_param_spec_object ("package", "package", "package", BALADOC_API_TYPE_PACKAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -375,7 +375,7 @@ static void
 valadoc_wiki_page_finalize (GObject * obj)
 {
 	ValadocWikiPage * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_WIKI_PAGE, ValadocWikiPage);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_WIKI_PAGE, ValadocWikiPage);
 	_g_object_unref0 (self->priv->_documentation);
 	_g_free0 (self->priv->_documentation_str);
 	_g_free0 (self->priv->_path);
@@ -391,7 +391,7 @@ valadoc_wiki_page_get_type_once (void)
 	static const GInterfaceInfo valadoc_documentation_info = { (GInterfaceInitFunc) valadoc_wiki_page_valadoc_documentation_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_wiki_page_type_id;
 	valadoc_wiki_page_type_id = g_type_register_static (G_TYPE_OBJECT, "ValadocWikiPage", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_wiki_page_type_id, VALADOC_TYPE_DOCUMENTATION, &valadoc_documentation_info);
+	g_type_add_interface_static (valadoc_wiki_page_type_id, BALADOC_TYPE_DOCUMENTATION, &valadoc_documentation_info);
 	ValadocWikiPage_private_offset = g_type_add_instance_private (valadoc_wiki_page_type_id, sizeof (ValadocWikiPagePrivate));
 	return valadoc_wiki_page_type_id;
 }
@@ -415,21 +415,21 @@ _vala_valadoc_wiki_page_get_property (GObject * object,
                                       GParamSpec * pspec)
 {
 	ValadocWikiPage * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TYPE_WIKI_PAGE, ValadocWikiPage);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TYPE_WIKI_PAGE, ValadocWikiPage);
 	switch (property_id) {
-		case VALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY:
+		case BALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY:
 		g_value_set_object (value, valadoc_wiki_page_get_documentation (self));
 		break;
-		case VALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY:
+		case BALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY:
 		g_value_set_string (value, valadoc_wiki_page_get_documentation_str (self));
 		break;
-		case VALADOC_WIKI_PAGE_PATH_PROPERTY:
+		case BALADOC_WIKI_PAGE_PATH_PROPERTY:
 		g_value_set_string (value, valadoc_wiki_page_get_path (self));
 		break;
-		case VALADOC_WIKI_PAGE_NAME_PROPERTY:
+		case BALADOC_WIKI_PAGE_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_wiki_page_get_name (self));
 		break;
-		case VALADOC_WIKI_PAGE_PACKAGE_PROPERTY:
+		case BALADOC_WIKI_PAGE_PACKAGE_PROPERTY:
 		g_value_set_object (value, valadoc_documentation_get_package ((ValadocDocumentation*) self));
 		break;
 		default:
@@ -445,18 +445,18 @@ _vala_valadoc_wiki_page_set_property (GObject * object,
                                       GParamSpec * pspec)
 {
 	ValadocWikiPage * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TYPE_WIKI_PAGE, ValadocWikiPage);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TYPE_WIKI_PAGE, ValadocWikiPage);
 	switch (property_id) {
-		case VALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY:
+		case BALADOC_WIKI_PAGE_DOCUMENTATION_PROPERTY:
 		valadoc_wiki_page_set_documentation (self, g_value_get_object (value));
 		break;
-		case VALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY:
+		case BALADOC_WIKI_PAGE_DOCUMENTATION_STR_PROPERTY:
 		valadoc_wiki_page_set_documentation_str (self, g_value_get_string (value));
 		break;
-		case VALADOC_WIKI_PAGE_PATH_PROPERTY:
+		case BALADOC_WIKI_PAGE_PATH_PROPERTY:
 		valadoc_wiki_page_set_path (self, g_value_get_string (value));
 		break;
-		case VALADOC_WIKI_PAGE_NAME_PROPERTY:
+		case BALADOC_WIKI_PAGE_NAME_PROPERTY:
 		valadoc_wiki_page_set_name (self, g_value_get_string (value));
 		break;
 		default:
@@ -482,7 +482,7 @@ valadoc_wiki_page_tree_construct (GType object_type)
 ValadocWikiPageTree*
 valadoc_wiki_page_tree_new (void)
 {
-	return valadoc_wiki_page_tree_construct (VALADOC_TYPE_WIKI_PAGE_TREE);
+	return valadoc_wiki_page_tree_construct (BALADOC_TYPE_WIKI_PAGE_TREE);
 }
 
 static gpointer
@@ -503,7 +503,7 @@ valadoc_wiki_page_tree_get_pages (ValadocWikiPageTree* self)
 		GEqualFunc _tmp2_;
 		ValaArrayList* _tmp3_;
 		_tmp2_ = g_direct_equal;
-		_tmp3_ = vala_array_list_new (VALADOC_TYPE_WIKI_PAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp2_);
+		_tmp3_ = vala_array_list_new (BALADOC_TYPE_WIKI_PAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp2_);
 		_vala_iterable_unref0 (_tmp0_);
 		_tmp0_ = _tmp3_;
 	} else {
@@ -766,7 +766,7 @@ valadoc_wiki_page_tree_parse (ValadocWikiPageTree* self,
 		return;
 	}
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALADOC_TYPE_WIKI_PAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALADOC_TYPE_WIKI_PAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp2_);
 	_vala_iterable_unref0 (self->priv->wikipages);
 	self->priv->wikipages = _tmp3_;
 	_tmp4_ = path;
@@ -888,7 +888,7 @@ static void
 valadoc_wiki_page_tree_finalize (GObject * obj)
 {
 	ValadocWikiPageTree * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_WIKI_PAGE_TREE, ValadocWikiPageTree);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_WIKI_PAGE_TREE, ValadocWikiPageTree);
 	_vala_iterable_unref0 (self->priv->wikipages);
 	G_OBJECT_CLASS (valadoc_wiki_page_tree_parent_class)->finalize (obj);
 }

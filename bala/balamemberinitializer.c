@@ -163,7 +163,7 @@ vala_member_initializer_new (const gchar* name,
                              ValaExpression* initializer,
                              ValaSourceReference* source_reference)
 {
-	return vala_member_initializer_construct (VALA_TYPE_MEMBER_INITIALIZER, name, initializer, source_reference);
+	return vala_member_initializer_construct (BALA_TYPE_MEMBER_INITIALIZER, name, initializer, source_reference);
 }
 
 static void
@@ -267,10 +267,10 @@ static void
 vala_member_initializer_finalize (ValaCodeNode * obj)
 {
 	ValaMemberInitializer * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_MEMBER_INITIALIZER, ValaMemberInitializer);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_MEMBER_INITIALIZER, ValaMemberInitializer);
 	_g_free0 (self->priv->_name);
 	_vala_code_node_unref0 (self->priv->_initializer);
-	VALA_CODE_NODE_CLASS (vala_member_initializer_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_member_initializer_parent_class)->finalize (obj);
 }
 
 /**
@@ -282,7 +282,7 @@ vala_member_initializer_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaMemberInitializerClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_member_initializer_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaMemberInitializer), 0, (GInstanceInitFunc) vala_member_initializer_instance_init, NULL };
 	GType vala_member_initializer_type_id;
-	vala_member_initializer_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaMemberInitializer", &g_define_type_info, 0);
+	vala_member_initializer_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaMemberInitializer", &g_define_type_info, 0);
 	ValaMemberInitializer_private_offset = g_type_add_instance_private (vala_member_initializer_type_id, sizeof (ValaMemberInitializerPrivate));
 	return vala_member_initializer_type_id;
 }

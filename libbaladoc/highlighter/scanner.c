@@ -32,7 +32,7 @@ ValadocHighlighterCodeToken*
 valadoc_highlighter_scanner_next (ValadocHighlighterScanner* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HIGHLIGHTER_SCANNER_GET_INTERFACE (self)->next (self);
+	return BALADOC_HIGHLIGHTER_SCANNER_GET_INTERFACE (self)->next (self);
 }
 
 static void

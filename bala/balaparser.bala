@@ -164,7 +164,7 @@ public class Vala.Parser : CodeVisitor {
 
 	string get_location_string () {
 		var begin = get_location ();
-		return "__VALA_L%d_C%d__".printf (begin.line, begin.column);
+		return "__BALA_L%d_C%d__".printf (begin.line, begin.column);
 	}
 
 	string get_current_string () {

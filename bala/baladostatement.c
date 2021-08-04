@@ -143,7 +143,7 @@ vala_do_statement_new (ValaBlock* body,
                        ValaExpression* condition,
                        ValaSourceReference* source_reference)
 {
-	return vala_do_statement_construct (VALA_TYPE_DO_STATEMENT, body, condition, source_reference);
+	return vala_do_statement_construct (BALA_TYPE_DO_STATEMENT, body, condition, source_reference);
 }
 
 static void
@@ -190,7 +190,7 @@ vala_do_statement_always_true (ValaDoStatement* self,
 	gboolean result = FALSE;
 	g_return_val_if_fail (self != NULL, FALSE);
 	g_return_val_if_fail (condition != NULL, FALSE);
-	literal = VALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
+	literal = BALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
 	_tmp1_ = literal;
 	if (_tmp1_ != NULL) {
 		ValaBooleanLiteral* _tmp2_;
@@ -392,7 +392,7 @@ vala_do_statement_real_check (ValaCodeNode* base,
 		loop = _tmp10_;
 		_tmp11_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 		_tmp12_ = _tmp11_;
-		parent_block = G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, VALA_TYPE_BLOCK, ValaBlock);
+		parent_block = G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, BALA_TYPE_BLOCK, ValaBlock);
 		_tmp13_ = parent_block;
 		_tmp14_ = loop;
 		vala_block_replace_statement (_tmp13_, (ValaStatement*) self, (ValaStatement*) _tmp14_);
@@ -443,7 +443,7 @@ vala_do_statement_real_check (ValaCodeNode* base,
 	_tmp45_ = _tmp44_;
 	_tmp46_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp45_);
 	_tmp47_ = _tmp46_;
-	_tmp48_ = vala_unary_expression_new (VALA_UNARY_OPERATOR_LOGICAL_NEGATION, _tmp43_, _tmp47_);
+	_tmp48_ = vala_unary_expression_new (BALA_UNARY_OPERATOR_LOGICAL_NEGATION, _tmp43_, _tmp47_);
 	if_condition = _tmp48_;
 	_tmp49_ = vala_do_statement_get_condition (self);
 	_tmp50_ = _tmp49_;
@@ -486,7 +486,7 @@ vala_do_statement_real_check (ValaCodeNode* base,
 	_tmp81_ = _tmp80_;
 	_tmp82_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp83_ = _tmp82_;
-	_tmp84_ = vala_unary_expression_new (VALA_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaExpression*) _tmp81_, _tmp83_);
+	_tmp84_ = vala_unary_expression_new (BALA_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaExpression*) _tmp81_, _tmp83_);
 	_tmp85_ = _tmp84_;
 	_tmp86_ = condition_block;
 	_tmp87_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
@@ -515,7 +515,7 @@ vala_do_statement_real_check (ValaCodeNode* base,
 	_tmp106_ = _tmp105_;
 	_tmp107_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp108_ = _tmp107_;
-	_tmp109_ = vala_assignment_new ((ValaExpression*) _tmp102_, (ValaExpression*) _tmp106_, VALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp108_);
+	_tmp109_ = vala_assignment_new ((ValaExpression*) _tmp102_, (ValaExpression*) _tmp106_, BALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp108_);
 	_tmp110_ = _tmp109_;
 	_tmp111_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp112_ = _tmp111_;
@@ -537,7 +537,7 @@ vala_do_statement_real_check (ValaCodeNode* base,
 	_vala_code_node_unref0 (_tmp121_);
 	_tmp122_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 	_tmp123_ = _tmp122_;
-	parent_block = G_TYPE_CHECK_INSTANCE_CAST (_tmp123_, VALA_TYPE_BLOCK, ValaBlock);
+	parent_block = G_TYPE_CHECK_INSTANCE_CAST (_tmp123_, BALA_TYPE_BLOCK, ValaBlock);
 	_tmp124_ = parent_block;
 	_tmp125_ = block;
 	vala_block_replace_statement (_tmp124_, (ValaStatement*) self, (ValaStatement*) _tmp125_);
@@ -589,10 +589,10 @@ static void
 vala_do_statement_finalize (ValaCodeNode * obj)
 {
 	ValaDoStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_DO_STATEMENT, ValaDoStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_DO_STATEMENT, ValaDoStatement);
 	_vala_code_node_unref0 (self->priv->_condition);
 	_vala_code_node_unref0 (self->priv->_body);
-	VALA_CODE_NODE_CLASS (vala_do_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_do_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -604,8 +604,8 @@ vala_do_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaDoStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_do_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaDoStatement), 0, (GInstanceInitFunc) vala_do_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_do_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_do_statement_type_id;
-	vala_do_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaDoStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_do_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_do_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaDoStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_do_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaDoStatement_private_offset = g_type_add_instance_private (vala_do_statement_type_id, sizeof (ValaDoStatementPrivate));
 	return vala_do_statement_type_id;
 }

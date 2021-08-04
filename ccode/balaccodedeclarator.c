@@ -50,7 +50,7 @@ vala_ccode_declarator_write_initialization (ValaCCodeDeclarator* self,
                                             ValaCCodeWriter* writer)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CCODE_DECLARATOR_GET_CLASS (self)->write_initialization (self, writer);
+	BALA_CCODE_DECLARATOR_GET_CLASS (self)->write_initialization (self, writer);
 }
 
 ValaCCodeDeclarator*
@@ -83,7 +83,7 @@ vala_ccode_declarator_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeDeclaratorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_declarator_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeDeclarator), 0, (GInstanceInitFunc) vala_ccode_declarator_instance_init, NULL };
 	GType vala_ccode_declarator_type_id;
-	vala_ccode_declarator_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeDeclarator", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_ccode_declarator_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeDeclarator", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	return vala_ccode_declarator_type_id;
 }
 

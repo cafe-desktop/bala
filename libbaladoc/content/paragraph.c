@@ -32,13 +32,13 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_PARAGRAPH_0_PROPERTY,
-	VALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY,
-	VALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY,
-	VALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY,
-	VALADOC_CONTENT_PARAGRAPH_NUM_PROPERTIES
+	BALADOC_CONTENT_PARAGRAPH_0_PROPERTY,
+	BALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY,
+	BALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY,
+	BALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY,
+	BALADOC_CONTENT_PARAGRAPH_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_paragraph_properties[VALADOC_CONTENT_PARAGRAPH_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_paragraph_properties[BALADOC_CONTENT_PARAGRAPH_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
@@ -108,7 +108,7 @@ valadoc_content_paragraph_real_set_horizontal_align (ValadocContentStyleAttribut
 	old_value = valadoc_content_paragraph_real_get_horizontal_align (base);
 	if (old_value != value) {
 		self->priv->_horizontal_align = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_paragraph_properties[VALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_paragraph_properties[BALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY]);
 	}
 }
 
@@ -134,7 +134,7 @@ valadoc_content_paragraph_real_set_vertical_align (ValadocContentStyleAttributes
 	old_value = valadoc_content_paragraph_real_get_vertical_align (base);
 	if (old_value != value) {
 		self->priv->_vertical_align = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_paragraph_properties[VALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_paragraph_properties[BALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY]);
 	}
 }
 
@@ -163,7 +163,7 @@ valadoc_content_paragraph_real_set_style (ValadocContentStyleAttributes* base,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_style);
 		self->priv->_style = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_paragraph_properties[VALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_paragraph_properties[BALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY]);
 	}
 }
 
@@ -178,7 +178,7 @@ valadoc_content_paragraph_construct (GType object_type)
 G_GNUC_INTERNAL ValadocContentParagraph*
 valadoc_content_paragraph_new (void)
 {
-	return valadoc_content_paragraph_construct (VALADOC_CONTENT_TYPE_PARAGRAPH);
+	return valadoc_content_paragraph_construct (BALADOC_CONTENT_TYPE_PARAGRAPH);
 }
 
 static void
@@ -196,7 +196,7 @@ valadoc_content_paragraph_real_check (ValadocContentContentElement* base,
 	g_return_if_fail (file_path != NULL);
 	g_return_if_fail (reporter != NULL);
 	g_return_if_fail (settings != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_paragraph_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_paragraph_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent), api_root, container, file_path, reporter, settings);
 }
 
 static void
@@ -296,7 +296,7 @@ valadoc_content_paragraph_real_copy (ValadocContentContentElement* base,
 			_tmp21_ = element;
 			_tmp22_ = p;
 			_tmp23_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp21_, (ValadocContentContentElement*) _tmp22_);
-			_tmp24_ = VALADOC_CONTENT_IS_INLINE (_tmp23_) ? ((ValadocContentInline*) _tmp23_) : NULL;
+			_tmp24_ = BALADOC_CONTENT_IS_INLINE (_tmp23_) ? ((ValadocContentInline*) _tmp23_) : NULL;
 			if (_tmp24_ == NULL) {
 				_g_object_unref0 (_tmp23_);
 			}
@@ -327,9 +327,9 @@ valadoc_content_paragraph_class_init (ValadocContentParagraphClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_content_paragraph_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_content_paragraph_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_content_paragraph_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY, valadoc_content_paragraph_properties[VALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY] = g_param_spec_enum ("horizontal-align", "horizontal-align", "horizontal-align", VALADOC_CONTENT_TYPE_HORIZONTAL_ALIGN, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY, valadoc_content_paragraph_properties[VALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY] = g_param_spec_enum ("vertical-align", "vertical-align", "vertical-align", VALADOC_CONTENT_TYPE_VERTICAL_ALIGN, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY, valadoc_content_paragraph_properties[VALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY] = g_param_spec_string ("style", "style", "style", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY, valadoc_content_paragraph_properties[BALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY] = g_param_spec_enum ("horizontal-align", "horizontal-align", "horizontal-align", BALADOC_CONTENT_TYPE_HORIZONTAL_ALIGN, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY, valadoc_content_paragraph_properties[BALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY] = g_param_spec_enum ("vertical-align", "vertical-align", "vertical-align", BALADOC_CONTENT_TYPE_VERTICAL_ALIGN, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY, valadoc_content_paragraph_properties[BALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY] = g_param_spec_string ("style", "style", "style", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 }
 
 static void
@@ -363,7 +363,7 @@ static void
 valadoc_content_paragraph_finalize (GObject * obj)
 {
 	ValadocContentParagraph * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 	_g_free0 (self->priv->_style);
 	G_OBJECT_CLASS (valadoc_content_paragraph_parent_class)->finalize (obj);
 }
@@ -375,9 +375,9 @@ valadoc_content_paragraph_get_type_once (void)
 	static const GInterfaceInfo valadoc_content_block_info = { (GInterfaceInitFunc) valadoc_content_paragraph_valadoc_content_block_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	static const GInterfaceInfo valadoc_content_style_attributes_info = { (GInterfaceInitFunc) valadoc_content_paragraph_valadoc_content_style_attributes_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_content_paragraph_type_id;
-	valadoc_content_paragraph_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_INLINE_CONTENT, "ValadocContentParagraph", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_content_paragraph_type_id, VALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
-	g_type_add_interface_static (valadoc_content_paragraph_type_id, VALADOC_CONTENT_TYPE_STYLE_ATTRIBUTES, &valadoc_content_style_attributes_info);
+	valadoc_content_paragraph_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_INLINE_CONTENT, "ValadocContentParagraph", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_content_paragraph_type_id, BALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
+	g_type_add_interface_static (valadoc_content_paragraph_type_id, BALADOC_CONTENT_TYPE_STYLE_ATTRIBUTES, &valadoc_content_style_attributes_info);
 	ValadocContentParagraph_private_offset = g_type_add_instance_private (valadoc_content_paragraph_type_id, sizeof (ValadocContentParagraphPrivate));
 	return valadoc_content_paragraph_type_id;
 }
@@ -401,15 +401,15 @@ _vala_valadoc_content_paragraph_get_property (GObject * object,
                                               GParamSpec * pspec)
 {
 	ValadocContentParagraph * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 	switch (property_id) {
-		case VALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY:
+		case BALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY:
 		g_value_set_enum (value, valadoc_content_style_attributes_get_horizontal_align ((ValadocContentStyleAttributes*) self));
 		break;
-		case VALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY:
+		case BALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY:
 		g_value_set_enum (value, valadoc_content_style_attributes_get_vertical_align ((ValadocContentStyleAttributes*) self));
 		break;
-		case VALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY:
+		case BALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY:
 		g_value_set_string (value, valadoc_content_style_attributes_get_style ((ValadocContentStyleAttributes*) self));
 		break;
 		default:
@@ -425,15 +425,15 @@ _vala_valadoc_content_paragraph_set_property (GObject * object,
                                               GParamSpec * pspec)
 {
 	ValadocContentParagraph * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 	switch (property_id) {
-		case VALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY:
+		case BALADOC_CONTENT_PARAGRAPH_HORIZONTAL_ALIGN_PROPERTY:
 		valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) self, g_value_get_enum (value));
 		break;
-		case VALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY:
+		case BALADOC_CONTENT_PARAGRAPH_VERTICAL_ALIGN_PROPERTY:
 		valadoc_content_style_attributes_set_vertical_align ((ValadocContentStyleAttributes*) self, g_value_get_enum (value));
 		break;
-		case VALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY:
+		case BALADOC_CONTENT_PARAGRAPH_STYLE_PROPERTY:
 		valadoc_content_style_attributes_set_style ((ValadocContentStyleAttributes*) self, g_value_get_string (value));
 		break;
 		default:

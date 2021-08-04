@@ -144,7 +144,7 @@ vala_while_statement_new (ValaExpression* condition,
                           ValaBlock* body,
                           ValaSourceReference* source_reference)
 {
-	return vala_while_statement_construct (VALA_TYPE_WHILE_STATEMENT, condition, body, source_reference);
+	return vala_while_statement_construct (BALA_TYPE_WHILE_STATEMENT, condition, body, source_reference);
 }
 
 static void
@@ -191,7 +191,7 @@ vala_while_statement_always_true (ValaWhileStatement* self,
 	gboolean result = FALSE;
 	g_return_val_if_fail (self != NULL, FALSE);
 	g_return_val_if_fail (condition != NULL, FALSE);
-	literal = VALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
+	literal = BALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
 	_tmp1_ = literal;
 	if (_tmp1_ != NULL) {
 		ValaBooleanLiteral* _tmp2_;
@@ -218,7 +218,7 @@ vala_while_statement_always_false (ValaWhileStatement* self,
 	gboolean result = FALSE;
 	g_return_val_if_fail (self != NULL, FALSE);
 	g_return_val_if_fail (condition != NULL, FALSE);
-	literal = VALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
+	literal = BALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
 	_tmp1_ = literal;
 	if (_tmp1_ != NULL) {
 		ValaBooleanLiteral* _tmp2_;
@@ -356,7 +356,7 @@ vala_while_statement_real_check (ValaCodeNode* base,
 			_tmp19_ = _tmp18_;
 			_tmp20_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp19_);
 			_tmp21_ = _tmp20_;
-			_tmp22_ = vala_unary_expression_new (VALA_UNARY_OPERATOR_LOGICAL_NEGATION, _tmp17_, _tmp21_);
+			_tmp22_ = vala_unary_expression_new (BALA_UNARY_OPERATOR_LOGICAL_NEGATION, _tmp17_, _tmp21_);
 			if_condition = _tmp22_;
 			_tmp23_ = vala_while_statement_get_condition (self);
 			_tmp24_ = _tmp23_;
@@ -398,7 +398,7 @@ vala_while_statement_real_check (ValaCodeNode* base,
 	loop = _tmp49_;
 	_tmp50_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 	_tmp51_ = _tmp50_;
-	parent_block = G_TYPE_CHECK_INSTANCE_CAST (_tmp51_, VALA_TYPE_BLOCK, ValaBlock);
+	parent_block = G_TYPE_CHECK_INSTANCE_CAST (_tmp51_, BALA_TYPE_BLOCK, ValaBlock);
 	_tmp52_ = parent_block;
 	_tmp53_ = loop;
 	vala_block_replace_statement (_tmp52_, (ValaStatement*) self, (ValaStatement*) _tmp53_);
@@ -444,10 +444,10 @@ static void
 vala_while_statement_finalize (ValaCodeNode * obj)
 {
 	ValaWhileStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_WHILE_STATEMENT, ValaWhileStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_WHILE_STATEMENT, ValaWhileStatement);
 	_vala_code_node_unref0 (self->priv->_condition);
 	_vala_code_node_unref0 (self->priv->_body);
-	VALA_CODE_NODE_CLASS (vala_while_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_while_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -459,8 +459,8 @@ vala_while_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaWhileStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_while_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaWhileStatement), 0, (GInstanceInitFunc) vala_while_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_while_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_while_statement_type_id;
-	vala_while_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaWhileStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_while_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_while_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaWhileStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_while_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaWhileStatement_private_offset = g_type_add_instance_private (vala_while_statement_type_id, sizeof (ValaWhileStatementPrivate));
 	return vala_while_statement_type_id;
 }

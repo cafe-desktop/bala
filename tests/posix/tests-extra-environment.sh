@@ -1,2 +1,2 @@
-VALAFLAGS="--profile posix"
+BALAFLAGS="--profile posix"
 PACKAGES="posix linux"

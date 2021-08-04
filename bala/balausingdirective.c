@@ -77,9 +77,9 @@ vala_using_directive_set_namespace_symbol (ValaUsingDirective* self,
                                            ValaSymbol* value)
 {
 	g_return_if_fail (self != NULL);
-	if (VALA_IS_UNRESOLVED_SYMBOL (value)) {
+	if (BALA_IS_UNRESOLVED_SYMBOL (value)) {
 		ValaUnresolvedSymbol* _tmp0_;
-		_tmp0_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (value, VALA_TYPE_UNRESOLVED_SYMBOL, ValaUnresolvedSymbol));
+		_tmp0_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (value, BALA_TYPE_UNRESOLVED_SYMBOL, ValaUnresolvedSymbol));
 		_vala_code_node_unref0 (self->priv->unresolved_symbol);
 		self->priv->unresolved_symbol = _tmp0_;
 		self->priv->_namespace_symbol = NULL;
@@ -113,7 +113,7 @@ ValaUsingDirective*
 vala_using_directive_new (ValaSymbol* namespace_symbol,
                           ValaSourceReference* source_reference)
 {
-	return vala_using_directive_construct (VALA_TYPE_USING_DIRECTIVE, namespace_symbol, source_reference);
+	return vala_using_directive_construct (BALA_TYPE_USING_DIRECTIVE, namespace_symbol, source_reference);
 }
 
 static void
@@ -147,9 +147,9 @@ static void
 vala_using_directive_finalize (ValaCodeNode * obj)
 {
 	ValaUsingDirective * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_USING_DIRECTIVE, ValaUsingDirective);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_USING_DIRECTIVE, ValaUsingDirective);
 	_vala_code_node_unref0 (self->priv->unresolved_symbol);
-	VALA_CODE_NODE_CLASS (vala_using_directive_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_using_directive_parent_class)->finalize (obj);
 }
 
 /**
@@ -160,7 +160,7 @@ vala_using_directive_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaUsingDirectiveClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_using_directive_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaUsingDirective), 0, (GInstanceInitFunc) vala_using_directive_instance_init, NULL };
 	GType vala_using_directive_type_id;
-	vala_using_directive_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaUsingDirective", &g_define_type_info, 0);
+	vala_using_directive_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaUsingDirective", &g_define_type_info, 0);
 	ValaUsingDirective_private_offset = g_type_add_instance_private (vala_using_directive_type_id, sizeof (ValaUsingDirectivePrivate));
 	return vala_using_directive_type_id;
 }

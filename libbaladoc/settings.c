@@ -28,10 +28,10 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_SETTINGS_0_PROPERTY,
-	VALADOC_SETTINGS_NUM_PROPERTIES
+	BALADOC_SETTINGS_0_PROPERTY,
+	BALADOC_SETTINGS_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_settings_properties[VALADOC_SETTINGS_NUM_PROPERTIES];
+static GParamSpec* valadoc_settings_properties[BALADOC_SETTINGS_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 
 static gpointer valadoc_settings_parent_class = NULL;
@@ -56,7 +56,7 @@ valadoc_settings_construct (GType object_type)
 ValadocSettings*
 valadoc_settings_new (void)
 {
-	return valadoc_settings_construct (VALADOC_TYPE_SETTINGS);
+	return valadoc_settings_construct (BALADOC_TYPE_SETTINGS);
 }
 
 static void
@@ -88,7 +88,7 @@ static void
 valadoc_settings_finalize (GObject * obj)
 {
 	ValadocSettings * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_SETTINGS, ValadocSettings);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_SETTINGS, ValadocSettings);
 	_g_free0 (self->path);
 	_g_free0 (self->pkg_name);
 	_g_free0 (self->pkg_version);

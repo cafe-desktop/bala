@@ -55,7 +55,7 @@ vala_array_copy_method_construct (GType object_type,
 ValaArrayCopyMethod*
 vala_array_copy_method_new (ValaSourceReference* source_reference)
 {
-	return vala_array_copy_method_construct (VALA_TYPE_ARRAY_COPY_METHOD, source_reference);
+	return vala_array_copy_method_construct (BALA_TYPE_ARRAY_COPY_METHOD, source_reference);
 }
 
 static void
@@ -79,7 +79,7 @@ vala_array_copy_method_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaArrayCopyMethodClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_array_copy_method_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaArrayCopyMethod), 0, (GInstanceInitFunc) vala_array_copy_method_instance_init, NULL };
 	GType vala_array_copy_method_type_id;
-	vala_array_copy_method_type_id = g_type_register_static (VALA_TYPE_METHOD, "ValaArrayCopyMethod", &g_define_type_info, 0);
+	vala_array_copy_method_type_id = g_type_register_static (BALA_TYPE_METHOD, "ValaArrayCopyMethod", &g_define_type_info, 0);
 	return vala_array_copy_method_type_id;
 }
 

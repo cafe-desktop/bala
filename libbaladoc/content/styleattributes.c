@@ -47,7 +47,7 @@ valadoc_content_horizontal_align_from_string (const gchar* str)
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_HORIZONTAL_ALIGN_NONE;
+				result = BALADOC_CONTENT_HORIZONTAL_ALIGN_NONE;
 				return result;
 			}
 		}
@@ -55,7 +55,7 @@ valadoc_content_horizontal_align_from_string (const gchar* str)
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_HORIZONTAL_ALIGN_LEFT;
+				result = BALADOC_CONTENT_HORIZONTAL_ALIGN_LEFT;
 				return result;
 			}
 		}
@@ -63,7 +63,7 @@ valadoc_content_horizontal_align_from_string (const gchar* str)
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT;
+				result = BALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT;
 				return result;
 			}
 		}
@@ -71,7 +71,7 @@ valadoc_content_horizontal_align_from_string (const gchar* str)
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER;
+				result = BALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER;
 				return result;
 			}
 		}
@@ -84,22 +84,22 @@ valadoc_content_horizontal_align_to_string (ValadocContentHorizontalAlign self)
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALADOC_CONTENT_HORIZONTAL_ALIGN_NONE:
+		case BALADOC_CONTENT_HORIZONTAL_ALIGN_NONE:
 		{
 			result = "none";
 			return result;
 		}
-		case VALADOC_CONTENT_HORIZONTAL_ALIGN_LEFT:
+		case BALADOC_CONTENT_HORIZONTAL_ALIGN_LEFT:
 		{
 			result = "left";
 			return result;
 		}
-		case VALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT:
+		case BALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT:
 		{
 			result = "right";
 			return result;
 		}
-		case VALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER:
+		case BALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER:
 		{
 			result = "center";
 			return result;
@@ -113,7 +113,7 @@ valadoc_content_horizontal_align_to_string (ValadocContentHorizontalAlign self)
 static GType
 valadoc_content_horizontal_align_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALADOC_CONTENT_HORIZONTAL_ALIGN_NONE, "VALADOC_CONTENT_HORIZONTAL_ALIGN_NONE", "none"}, {VALADOC_CONTENT_HORIZONTAL_ALIGN_LEFT, "VALADOC_CONTENT_HORIZONTAL_ALIGN_LEFT", "left"}, {VALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT, "VALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT", "right"}, {VALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER, "VALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER", "center"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALADOC_CONTENT_HORIZONTAL_ALIGN_NONE, "BALADOC_CONTENT_HORIZONTAL_ALIGN_NONE", "none"}, {BALADOC_CONTENT_HORIZONTAL_ALIGN_LEFT, "BALADOC_CONTENT_HORIZONTAL_ALIGN_LEFT", "left"}, {BALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT, "BALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT", "right"}, {BALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER, "BALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER", "center"}, {0, NULL, NULL}};
 	GType valadoc_content_horizontal_align_type_id;
 	valadoc_content_horizontal_align_type_id = g_enum_register_static ("ValadocContentHorizontalAlign", values);
 	return valadoc_content_horizontal_align_type_id;
@@ -148,7 +148,7 @@ valadoc_content_vertical_align_from_string (const gchar* str)
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_VERTICAL_ALIGN_NONE;
+				result = BALADOC_CONTENT_VERTICAL_ALIGN_NONE;
 				return result;
 			}
 		}
@@ -156,7 +156,7 @@ valadoc_content_vertical_align_from_string (const gchar* str)
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_VERTICAL_ALIGN_TOP;
+				result = BALADOC_CONTENT_VERTICAL_ALIGN_TOP;
 				return result;
 			}
 		}
@@ -164,7 +164,7 @@ valadoc_content_vertical_align_from_string (const gchar* str)
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_VERTICAL_ALIGN_MIDDLE;
+				result = BALADOC_CONTENT_VERTICAL_ALIGN_MIDDLE;
 				return result;
 			}
 		}
@@ -172,7 +172,7 @@ valadoc_content_vertical_align_from_string (const gchar* str)
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM;
+				result = BALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM;
 				return result;
 			}
 		}
@@ -185,22 +185,22 @@ valadoc_content_vertical_align_to_string (ValadocContentVerticalAlign self)
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALADOC_CONTENT_VERTICAL_ALIGN_NONE:
+		case BALADOC_CONTENT_VERTICAL_ALIGN_NONE:
 		{
 			result = "none";
 			return result;
 		}
-		case VALADOC_CONTENT_VERTICAL_ALIGN_TOP:
+		case BALADOC_CONTENT_VERTICAL_ALIGN_TOP:
 		{
 			result = "top";
 			return result;
 		}
-		case VALADOC_CONTENT_VERTICAL_ALIGN_MIDDLE:
+		case BALADOC_CONTENT_VERTICAL_ALIGN_MIDDLE:
 		{
 			result = "middle";
 			return result;
 		}
-		case VALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM:
+		case BALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM:
 		{
 			result = "bottom";
 			return result;
@@ -214,7 +214,7 @@ valadoc_content_vertical_align_to_string (ValadocContentVerticalAlign self)
 static GType
 valadoc_content_vertical_align_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALADOC_CONTENT_VERTICAL_ALIGN_NONE, "VALADOC_CONTENT_VERTICAL_ALIGN_NONE", "none"}, {VALADOC_CONTENT_VERTICAL_ALIGN_TOP, "VALADOC_CONTENT_VERTICAL_ALIGN_TOP", "top"}, {VALADOC_CONTENT_VERTICAL_ALIGN_MIDDLE, "VALADOC_CONTENT_VERTICAL_ALIGN_MIDDLE", "middle"}, {VALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM, "VALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM", "bottom"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALADOC_CONTENT_VERTICAL_ALIGN_NONE, "BALADOC_CONTENT_VERTICAL_ALIGN_NONE", "none"}, {BALADOC_CONTENT_VERTICAL_ALIGN_TOP, "BALADOC_CONTENT_VERTICAL_ALIGN_TOP", "top"}, {BALADOC_CONTENT_VERTICAL_ALIGN_MIDDLE, "BALADOC_CONTENT_VERTICAL_ALIGN_MIDDLE", "middle"}, {BALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM, "BALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM", "bottom"}, {0, NULL, NULL}};
 	GType valadoc_content_vertical_align_type_id;
 	valadoc_content_vertical_align_type_id = g_enum_register_static ("ValadocContentVerticalAlign", values);
 	return valadoc_content_vertical_align_type_id;
@@ -236,7 +236,7 @@ ValadocContentHorizontalAlign
 valadoc_content_style_attributes_get_horizontal_align (ValadocContentStyleAttributes* self)
 {
 	g_return_val_if_fail (self != NULL, 0);
-	return VALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->get_horizontal_align (self);
+	return BALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->get_horizontal_align (self);
 }
 
 void
@@ -244,14 +244,14 @@ valadoc_content_style_attributes_set_horizontal_align (ValadocContentStyleAttrib
                                                        ValadocContentHorizontalAlign value)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->set_horizontal_align (self, value);
+	BALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->set_horizontal_align (self, value);
 }
 
 ValadocContentVerticalAlign
 valadoc_content_style_attributes_get_vertical_align (ValadocContentStyleAttributes* self)
 {
 	g_return_val_if_fail (self != NULL, 0);
-	return VALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->get_vertical_align (self);
+	return BALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->get_vertical_align (self);
 }
 
 void
@@ -259,14 +259,14 @@ valadoc_content_style_attributes_set_vertical_align (ValadocContentStyleAttribut
                                                      ValadocContentVerticalAlign value)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->set_vertical_align (self, value);
+	BALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->set_vertical_align (self, value);
 }
 
 const gchar*
 valadoc_content_style_attributes_get_style (ValadocContentStyleAttributes* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->get_style (self);
+	return BALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->get_style (self);
 }
 
 void
@@ -274,15 +274,15 @@ valadoc_content_style_attributes_set_style (ValadocContentStyleAttributes* self,
                                             const gchar* value)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->set_style (self, value);
+	BALADOC_CONTENT_STYLE_ATTRIBUTES_GET_INTERFACE (self)->set_style (self, value);
 }
 
 static void
 valadoc_content_style_attributes_default_init (ValadocContentStyleAttributesIface * iface,
                                                gpointer iface_data)
 {
-	g_object_interface_install_property (iface, g_param_spec_enum ("horizontal-align", "horizontal-align", "horizontal-align", VALADOC_CONTENT_TYPE_HORIZONTAL_ALIGN, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_interface_install_property (iface, g_param_spec_enum ("vertical-align", "vertical-align", "vertical-align", VALADOC_CONTENT_TYPE_VERTICAL_ALIGN, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_interface_install_property (iface, g_param_spec_enum ("horizontal-align", "horizontal-align", "horizontal-align", BALADOC_CONTENT_TYPE_HORIZONTAL_ALIGN, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_interface_install_property (iface, g_param_spec_enum ("vertical-align", "vertical-align", "vertical-align", BALADOC_CONTENT_TYPE_VERTICAL_ALIGN, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	g_object_interface_install_property (iface, g_param_spec_string ("style", "style", "style", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 }
 
@@ -292,7 +292,7 @@ valadoc_content_style_attributes_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentStyleAttributesIface), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_style_attributes_default_init, (GClassFinalizeFunc) NULL, NULL, 0, 0, (GInstanceInitFunc) NULL, NULL };
 	GType valadoc_content_style_attributes_type_id;
 	valadoc_content_style_attributes_type_id = g_type_register_static (G_TYPE_INTERFACE, "ValadocContentStyleAttributes", &g_define_type_info, 0);
-	g_type_interface_add_prerequisite (valadoc_content_style_attributes_type_id, VALADOC_CONTENT_TYPE_CONTENT_ELEMENT);
+	g_type_interface_add_prerequisite (valadoc_content_style_attributes_type_id, BALADOC_CONTENT_TYPE_CONTENT_ELEMENT);
 	return valadoc_content_style_attributes_type_id;
 }
 

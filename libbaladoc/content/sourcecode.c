@@ -33,13 +33,13 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_SOURCE_CODE_0_PROPERTY,
-	VALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY,
-	VALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY,
-	VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY,
-	VALADOC_CONTENT_SOURCE_CODE_NUM_PROPERTIES
+	BALADOC_CONTENT_SOURCE_CODE_0_PROPERTY,
+	BALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY,
+	BALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY,
+	BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY,
+	BALADOC_CONTENT_SOURCE_CODE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_source_code_properties[VALADOC_CONTENT_SOURCE_CODE_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_source_code_properties[BALADOC_CONTENT_SOURCE_CODE_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_error_free0(var) ((var == NULL) ? NULL : (var = (g_error_free (var), NULL)))
@@ -214,7 +214,7 @@ valadoc_content_source_code_language_from_path (const gchar* path)
 	g_return_val_if_fail (path != NULL, 0);
 	pos = string_last_index_of (path, ".", 0);
 	if (pos < 0) {
-		result = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN;
+		result = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN;
 		return result;
 	}
 	_tmp0_ = string_substring (path, (glong) (pos + 1), (glong) -1);
@@ -246,10 +246,10 @@ valadoc_content_source_code_language_from_string (const gchar* str,
 			default:
 			{
 				if (is_extension) {
-					result = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN;
+					result = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN;
 					return result;
 				}
-				result = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE;
+				result = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE;
 				return result;
 			}
 		}
@@ -257,7 +257,7 @@ valadoc_content_source_code_language_from_string (const gchar* str,
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE;
+				result = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE;
 				return result;
 			}
 		}
@@ -265,7 +265,7 @@ valadoc_content_source_code_language_from_string (const gchar* str,
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML;
+				result = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML;
 				return result;
 			}
 		}
@@ -273,7 +273,7 @@ valadoc_content_source_code_language_from_string (const gchar* str,
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_VALA;
+				result = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_BALA;
 				return result;
 			}
 		}
@@ -281,12 +281,12 @@ valadoc_content_source_code_language_from_string (const gchar* str,
 		switch (0) {
 			default:
 			{
-				result = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C;
+				result = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C;
 				return result;
 			}
 		}
 	}
-	result = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN;
+	result = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN;
 	return result;
 }
 
@@ -295,22 +295,22 @@ valadoc_content_source_code_language_to_string (ValadocContentSourceCodeLanguage
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE:
+		case BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE:
 		{
 			result = "genie";
 			return result;
 		}
-		case VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_VALA:
+		case BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_BALA:
 		{
 			result = "vala";
 			return result;
 		}
-		case VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML:
+		case BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML:
 		{
 			result = "xml";
 			return result;
 		}
-		case VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C:
+		case BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C:
 		{
 			result = "c";
 			return result;
@@ -324,7 +324,7 @@ valadoc_content_source_code_language_to_string (ValadocContentSourceCodeLanguage
 static GType
 valadoc_content_source_code_language_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN, "VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN", "unknown"}, {VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE, "VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE", "genie"}, {VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_VALA, "VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_VALA", "vala"}, {VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML, "VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML", "xml"}, {VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C, "VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C", "c"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN, "BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN", "unknown"}, {BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE, "BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_GENIE", "genie"}, {BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_BALA, "BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_BALA", "vala"}, {BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML, "BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML", "xml"}, {BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C, "BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C", "c"}, {0, NULL, NULL}};
 	GType valadoc_content_source_code_language_type_id;
 	valadoc_content_source_code_language_type_id = g_enum_register_static ("ValadocContentSourceCodeLanguage", values);
 	return valadoc_content_source_code_language_type_id;
@@ -365,7 +365,7 @@ valadoc_content_source_code_set_code (ValadocContentSourceCode* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_code);
 		self->priv->_code = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_source_code_properties[VALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_source_code_properties[BALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY]);
 	}
 }
 
@@ -398,7 +398,7 @@ valadoc_content_source_code_set_highlighted_code (ValadocContentSourceCode* self
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_highlighted_code);
 		self->priv->_highlighted_code = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_source_code_properties[VALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_source_code_properties[BALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY]);
 	}
 }
 
@@ -422,7 +422,7 @@ valadoc_content_source_code_set_language (ValadocContentSourceCode* self,
 	old_value = valadoc_content_source_code_get_language (self);
 	if (old_value != value) {
 		self->priv->_language = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_source_code_properties[VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_source_code_properties[BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY]);
 	}
 }
 
@@ -431,14 +431,14 @@ valadoc_content_source_code_construct (GType object_type)
 {
 	ValadocContentSourceCode * self = NULL;
 	self = (ValadocContentSourceCode*) valadoc_content_content_element_construct (object_type);
-	self->priv->_language = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_VALA;
+	self->priv->_language = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_BALA;
 	return self;
 }
 
 G_GNUC_INTERNAL ValadocContentSourceCode*
 valadoc_content_source_code_new (void)
 {
-	return valadoc_content_source_code_construct (VALADOC_CONTENT_TYPE_SOURCE_CODE);
+	return valadoc_content_source_code_construct (BALADOC_CONTENT_TYPE_SOURCE_CODE);
 }
 
 static gchar*
@@ -489,7 +489,7 @@ valadoc_content_source_code_get_path (ValadocContentSourceCode* self,
 		gchar* _tmp15_;
 		gchar* _tmp16_;
 		const gchar* _tmp17_;
-		if (VALADOC_API_IS_PACKAGE (container)) {
+		if (BALADOC_API_IS_PACKAGE (container)) {
 			gchar* _tmp7_;
 			_tmp7_ = g_strdup ("");
 			_g_free0 (_tmp6_);
@@ -596,7 +596,7 @@ valadoc_content_source_code_load_source_code (ValadocContentSourceCode* self,
 		const gchar* _tmp18_;
 		err = _inner_error0_;
 		_inner_error0_ = NULL;
-		if (VALADOC_API_IS_PACKAGE (container)) {
+		if (BALADOC_API_IS_PACKAGE (container)) {
 			gchar* _tmp8_;
 			_tmp8_ = g_strdup ("");
 			_g_free0 (_tmp7_);
@@ -1082,7 +1082,7 @@ valadoc_content_source_code_real_check (ValadocContentContentElement* base,
 				}
 				valadoc_content_source_code_set_code (self, _tmp24_);
 				_tmp28_ = self->priv->_language;
-				if (_tmp28_ == VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN) {
+				if (_tmp28_ == BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_UNKNOWN) {
 					const gchar* _tmp29_;
 					_tmp29_ = name;
 					_tmp27_ = g_strcmp0 (_tmp29_, "none") != 0;
@@ -1097,7 +1097,7 @@ valadoc_content_source_code_real_check (ValadocContentContentElement* base,
 					gchar* _tmp37_;
 					gchar* _tmp38_;
 					const gchar* _tmp39_;
-					if (VALADOC_API_IS_PACKAGE (container)) {
+					if (BALADOC_API_IS_PACKAGE (container)) {
 						gchar* _tmp31_;
 						_tmp31_ = g_strdup ("");
 						_g_free0 (_tmp30_);
@@ -1134,7 +1134,7 @@ valadoc_content_source_code_real_check (ValadocContentContentElement* base,
 	valadoc_content_source_code_set_code (self, _tmp42_);
 	_g_free0 (_tmp42_);
 	_tmp43_ = self->priv->_language;
-	if (_tmp43_ == VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_VALA) {
+	if (_tmp43_ == BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_BALA) {
 		ValadocHighlighterHighlighter* _tmp44_;
 		ValadocHighlighterHighlighter* _tmp45_;
 		const gchar* _tmp46_;
@@ -1150,7 +1150,7 @@ valadoc_content_source_code_real_check (ValadocContentContentElement* base,
 	} else {
 		ValadocContentSourceCodeLanguage _tmp49_;
 		_tmp49_ = self->priv->_language;
-		if (_tmp49_ == VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML) {
+		if (_tmp49_ == BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML) {
 			ValadocHighlighterHighlighter* _tmp50_;
 			ValadocHighlighterHighlighter* _tmp51_;
 			const gchar* _tmp52_;
@@ -1166,7 +1166,7 @@ valadoc_content_source_code_real_check (ValadocContentContentElement* base,
 		} else {
 			ValadocContentSourceCodeLanguage _tmp55_;
 			_tmp55_ = self->priv->_language;
-			if (_tmp55_ == VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C) {
+			if (_tmp55_ == BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C) {
 				ValadocHighlighterHighlighter* _tmp56_;
 				ValadocHighlighterHighlighter* _tmp57_;
 				const gchar* _tmp58_;
@@ -1188,7 +1188,7 @@ valadoc_content_source_code_real_check (ValadocContentContentElement* base,
 				const gchar* _tmp66_;
 				ValadocContentText* _tmp67_;
 				ValadocContentText* _tmp68_;
-				_tmp61_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+				_tmp61_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 				_tmp62_ = _tmp61_;
 				valadoc_content_source_code_set_highlighted_code (self, _tmp62_);
 				_g_object_unref0 (_tmp62_);
@@ -1278,9 +1278,9 @@ valadoc_content_source_code_class_init (ValadocContentSourceCodeClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_content_source_code_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_content_source_code_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_content_source_code_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY, valadoc_content_source_code_properties[VALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY] = g_param_spec_string ("code", "code", "code", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY, valadoc_content_source_code_properties[VALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY] = g_param_spec_object ("highlighted-code", "highlighted-code", "highlighted-code", VALADOC_CONTENT_TYPE_RUN, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY, valadoc_content_source_code_properties[VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY] = g_param_spec_enum ("language", "language", "language", VALADOC_CONTENT_SOURCE_CODE_TYPE_LANGUAGE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY, valadoc_content_source_code_properties[BALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY] = g_param_spec_string ("code", "code", "code", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY, valadoc_content_source_code_properties[BALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY] = g_param_spec_object ("highlighted-code", "highlighted-code", "highlighted-code", BALADOC_CONTENT_TYPE_RUN, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY, valadoc_content_source_code_properties[BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY] = g_param_spec_enum ("language", "language", "language", BALADOC_CONTENT_SOURCE_CODE_TYPE_LANGUAGE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 }
 
 static void
@@ -1301,7 +1301,7 @@ static void
 valadoc_content_source_code_finalize (GObject * obj)
 {
 	ValadocContentSourceCode * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
 	_g_free0 (self->priv->_code);
 	_g_object_unref0 (self->priv->_highlighted_code);
 	G_OBJECT_CLASS (valadoc_content_source_code_parent_class)->finalize (obj);
@@ -1313,8 +1313,8 @@ valadoc_content_source_code_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentSourceCodeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_source_code_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentSourceCode), 0, (GInstanceInitFunc) valadoc_content_source_code_instance_init, NULL };
 	static const GInterfaceInfo valadoc_content_inline_info = { (GInterfaceInitFunc) valadoc_content_source_code_valadoc_content_inline_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_content_source_code_type_id;
-	valadoc_content_source_code_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocContentSourceCode", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_content_source_code_type_id, VALADOC_CONTENT_TYPE_INLINE, &valadoc_content_inline_info);
+	valadoc_content_source_code_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocContentSourceCode", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_content_source_code_type_id, BALADOC_CONTENT_TYPE_INLINE, &valadoc_content_inline_info);
 	ValadocContentSourceCode_private_offset = g_type_add_instance_private (valadoc_content_source_code_type_id, sizeof (ValadocContentSourceCodePrivate));
 	return valadoc_content_source_code_type_id;
 }
@@ -1338,15 +1338,15 @@ _vala_valadoc_content_source_code_get_property (GObject * object,
                                                 GParamSpec * pspec)
 {
 	ValadocContentSourceCode * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
 	switch (property_id) {
-		case VALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY:
+		case BALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY:
 		g_value_set_string (value, valadoc_content_source_code_get_code (self));
 		break;
-		case VALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY:
+		case BALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY:
 		g_value_set_object (value, valadoc_content_source_code_get_highlighted_code (self));
 		break;
-		case VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY:
+		case BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY:
 		g_value_set_enum (value, valadoc_content_source_code_get_language (self));
 		break;
 		default:
@@ -1362,15 +1362,15 @@ _vala_valadoc_content_source_code_set_property (GObject * object,
                                                 GParamSpec * pspec)
 {
 	ValadocContentSourceCode * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
 	switch (property_id) {
-		case VALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY:
+		case BALADOC_CONTENT_SOURCE_CODE_CODE_PROPERTY:
 		valadoc_content_source_code_set_code (self, g_value_get_string (value));
 		break;
-		case VALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY:
+		case BALADOC_CONTENT_SOURCE_CODE_HIGHLIGHTED_CODE_PROPERTY:
 		valadoc_content_source_code_set_highlighted_code (self, g_value_get_object (value));
 		break;
-		case VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY:
+		case BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_PROPERTY:
 		valadoc_content_source_code_set_language (self, g_value_get_enum (value));
 		break;
 		default:

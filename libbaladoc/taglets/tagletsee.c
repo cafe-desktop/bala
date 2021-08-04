@@ -31,12 +31,12 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_TAGLETS_SEE_0_PROPERTY,
-	VALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY,
-	VALADOC_TAGLETS_SEE_SYMBOL_PROPERTY,
-	VALADOC_TAGLETS_SEE_NUM_PROPERTIES
+	BALADOC_TAGLETS_SEE_0_PROPERTY,
+	BALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY,
+	BALADOC_TAGLETS_SEE_SYMBOL_PROPERTY,
+	BALADOC_TAGLETS_SEE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_taglets_see_properties[VALADOC_TAGLETS_SEE_NUM_PROPERTIES];
+static GParamSpec* valadoc_taglets_see_properties[BALADOC_TAGLETS_SEE_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 
@@ -121,7 +121,7 @@ valadoc_taglets_see_set_symbol_name (ValadocTagletsSee* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_symbol_name);
 		self->priv->_symbol_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_see_properties[VALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_see_properties[BALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY]);
 	}
 }
 
@@ -154,7 +154,7 @@ valadoc_taglets_see_set_symbol (ValadocTagletsSee* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_symbol);
 		self->priv->_symbol = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_see_properties[VALADOC_TAGLETS_SEE_SYMBOL_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_see_properties[BALADOC_TAGLETS_SEE_SYMBOL_PROPERTY]);
 	}
 }
 
@@ -431,7 +431,7 @@ valadoc_taglets_see_construct (GType object_type)
 ValadocTagletsSee*
 valadoc_taglets_see_new (void)
 {
-	return valadoc_taglets_see_construct (VALADOC_TAGLETS_TYPE_SEE);
+	return valadoc_taglets_see_construct (BALADOC_TAGLETS_TYPE_SEE);
 }
 
 static void
@@ -447,8 +447,8 @@ valadoc_taglets_see_class_init (ValadocTagletsSeeClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_taglets_see_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_taglets_see_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_taglets_see_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY, valadoc_taglets_see_properties[VALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY] = g_param_spec_string ("symbol-name", "symbol-name", "symbol-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TAGLETS_SEE_SYMBOL_PROPERTY, valadoc_taglets_see_properties[VALADOC_TAGLETS_SEE_SYMBOL_PROPERTY] = g_param_spec_object ("symbol", "symbol", "symbol", VALADOC_API_TYPE_NODE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY, valadoc_taglets_see_properties[BALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY] = g_param_spec_string ("symbol-name", "symbol-name", "symbol-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TAGLETS_SEE_SYMBOL_PROPERTY, valadoc_taglets_see_properties[BALADOC_TAGLETS_SEE_SYMBOL_PROPERTY] = g_param_spec_object ("symbol", "symbol", "symbol", BALADOC_API_TYPE_NODE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -477,7 +477,7 @@ static void
 valadoc_taglets_see_finalize (GObject * obj)
 {
 	ValadocTagletsSee * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TAGLETS_TYPE_SEE, ValadocTagletsSee);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TAGLETS_TYPE_SEE, ValadocTagletsSee);
 	_g_free0 (self->priv->_symbol_name);
 	_g_object_unref0 (self->priv->_symbol);
 	G_OBJECT_CLASS (valadoc_taglets_see_parent_class)->finalize (obj);
@@ -490,9 +490,9 @@ valadoc_taglets_see_get_type_once (void)
 	static const GInterfaceInfo valadoc_content_taglet_info = { (GInterfaceInitFunc) valadoc_taglets_see_valadoc_content_taglet_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	static const GInterfaceInfo valadoc_content_block_info = { (GInterfaceInitFunc) valadoc_taglets_see_valadoc_content_block_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_taglets_see_type_id;
-	valadoc_taglets_see_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocTagletsSee", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_taglets_see_type_id, VALADOC_CONTENT_TYPE_TAGLET, &valadoc_content_taglet_info);
-	g_type_add_interface_static (valadoc_taglets_see_type_id, VALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
+	valadoc_taglets_see_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocTagletsSee", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_taglets_see_type_id, BALADOC_CONTENT_TYPE_TAGLET, &valadoc_content_taglet_info);
+	g_type_add_interface_static (valadoc_taglets_see_type_id, BALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
 	ValadocTagletsSee_private_offset = g_type_add_instance_private (valadoc_taglets_see_type_id, sizeof (ValadocTagletsSeePrivate));
 	return valadoc_taglets_see_type_id;
 }
@@ -516,12 +516,12 @@ _vala_valadoc_taglets_see_get_property (GObject * object,
                                         GParamSpec * pspec)
 {
 	ValadocTagletsSee * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TAGLETS_TYPE_SEE, ValadocTagletsSee);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TAGLETS_TYPE_SEE, ValadocTagletsSee);
 	switch (property_id) {
-		case VALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY:
+		case BALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_taglets_see_get_symbol_name (self));
 		break;
-		case VALADOC_TAGLETS_SEE_SYMBOL_PROPERTY:
+		case BALADOC_TAGLETS_SEE_SYMBOL_PROPERTY:
 		g_value_set_object (value, valadoc_taglets_see_get_symbol (self));
 		break;
 		default:
@@ -537,12 +537,12 @@ _vala_valadoc_taglets_see_set_property (GObject * object,
                                         GParamSpec * pspec)
 {
 	ValadocTagletsSee * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TAGLETS_TYPE_SEE, ValadocTagletsSee);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TAGLETS_TYPE_SEE, ValadocTagletsSee);
 	switch (property_id) {
-		case VALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY:
+		case BALADOC_TAGLETS_SEE_SYMBOL_NAME_PROPERTY:
 		valadoc_taglets_see_set_symbol_name (self, g_value_get_string (value));
 		break;
-		case VALADOC_TAGLETS_SEE_SYMBOL_PROPERTY:
+		case BALADOC_TAGLETS_SEE_SYMBOL_PROPERTY:
 		valadoc_taglets_see_set_symbol (self, g_value_get_object (value));
 		break;
 		default:

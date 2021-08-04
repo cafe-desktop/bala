@@ -83,7 +83,7 @@ vala_literal_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaLiteralClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_literal_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaLiteral), 0, (GInstanceInitFunc) vala_literal_instance_init, NULL };
 	GType vala_literal_type_id;
-	vala_literal_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaLiteral", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_literal_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaLiteral", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	return vala_literal_type_id;
 }
 

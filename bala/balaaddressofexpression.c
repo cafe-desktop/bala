@@ -116,7 +116,7 @@ ValaAddressofExpression*
 vala_addressof_expression_new (ValaExpression* inner,
                                ValaSourceReference* source_reference)
 {
-	return vala_addressof_expression_construct (VALA_TYPE_ADDRESSOF_EXPRESSION, inner, source_reference);
+	return vala_addressof_expression_construct (BALA_TYPE_ADDRESSOF_EXPRESSION, inner, source_reference);
 }
 
 static void
@@ -264,10 +264,10 @@ vala_addressof_expression_real_check (ValaCodeNode* base,
 	}
 	_tmp8_ = vala_addressof_expression_get_inner (self);
 	_tmp9_ = _tmp8_;
-	ea = VALA_IS_ELEMENT_ACCESS (_tmp9_) ? ((ValaElementAccess*) _tmp9_) : NULL;
+	ea = BALA_IS_ELEMENT_ACCESS (_tmp9_) ? ((ValaElementAccess*) _tmp9_) : NULL;
 	_tmp11_ = vala_addressof_expression_get_inner (self);
 	_tmp12_ = _tmp11_;
-	if (VALA_IS_MEMBER_ACCESS (_tmp12_)) {
+	if (BALA_IS_MEMBER_ACCESS (_tmp12_)) {
 		ValaExpression* _tmp13_;
 		ValaExpression* _tmp14_;
 		ValaSymbol* _tmp15_;
@@ -276,7 +276,7 @@ vala_addressof_expression_real_check (ValaCodeNode* base,
 		_tmp14_ = _tmp13_;
 		_tmp15_ = vala_expression_get_symbol_reference (_tmp14_);
 		_tmp16_ = _tmp15_;
-		_tmp10_ = VALA_IS_VARIABLE (_tmp16_);
+		_tmp10_ = BALA_IS_VARIABLE (_tmp16_);
 	} else {
 		_tmp10_ = FALSE;
 	}
@@ -297,7 +297,7 @@ vala_addressof_expression_real_check (ValaCodeNode* base,
 			_tmp22_ = _tmp21_;
 			_tmp23_ = vala_expression_get_value_type (_tmp22_);
 			_tmp24_ = _tmp23_;
-			if (VALA_IS_ARRAY_TYPE (_tmp24_)) {
+			if (BALA_IS_ARRAY_TYPE (_tmp24_)) {
 				_tmp19_ = TRUE;
 			} else {
 				ValaElementAccess* _tmp25_;
@@ -310,7 +310,7 @@ vala_addressof_expression_real_check (ValaCodeNode* base,
 				_tmp27_ = _tmp26_;
 				_tmp28_ = vala_expression_get_value_type (_tmp27_);
 				_tmp29_ = _tmp28_;
-				_tmp19_ = VALA_IS_POINTER_TYPE (_tmp29_);
+				_tmp19_ = BALA_IS_POINTER_TYPE (_tmp29_);
 			}
 			_tmp17_ = _tmp19_;
 		} else {
@@ -418,9 +418,9 @@ static void
 vala_addressof_expression_finalize (ValaCodeNode * obj)
 {
 	ValaAddressofExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ADDRESSOF_EXPRESSION, ValaAddressofExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ADDRESSOF_EXPRESSION, ValaAddressofExpression);
 	_vala_code_node_unref0 (self->priv->_inner);
-	VALA_CODE_NODE_CLASS (vala_addressof_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_addressof_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -433,7 +433,7 @@ vala_addressof_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaAddressofExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_addressof_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaAddressofExpression), 0, (GInstanceInitFunc) vala_addressof_expression_instance_init, NULL };
 	GType vala_addressof_expression_type_id;
-	vala_addressof_expression_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaAddressofExpression", &g_define_type_info, 0);
+	vala_addressof_expression_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaAddressofExpression", &g_define_type_info, 0);
 	ValaAddressofExpression_private_offset = g_type_add_instance_private (vala_addressof_expression_type_id, sizeof (ValaAddressofExpressionPrivate));
 	return vala_addressof_expression_type_id;
 }

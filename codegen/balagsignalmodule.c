@@ -353,10 +353,10 @@ vala_gsignal_module_get_value_type_name_from_type_reference (ValaGSignalModule* 
 	gchar* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (t != NULL, NULL);
-	if (G_TYPE_CHECK_INSTANCE_TYPE (t, VALA_TYPE_POINTER_TYPE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (t, BALA_TYPE_POINTER_TYPE)) {
 		_tmp0_ = TRUE;
 	} else {
-		_tmp0_ = G_TYPE_CHECK_INSTANCE_TYPE (t, VALA_TYPE_GENERIC_TYPE);
+		_tmp0_ = G_TYPE_CHECK_INSTANCE_TYPE (t, BALA_TYPE_GENERIC_TYPE);
 	}
 	if (_tmp0_) {
 		gchar* _tmp1_;
@@ -364,7 +364,7 @@ vala_gsignal_module_get_value_type_name_from_type_reference (ValaGSignalModule* 
 		result = _tmp1_;
 		return result;
 	} else {
-		if (G_TYPE_CHECK_INSTANCE_TYPE (t, VALA_TYPE_VOID_TYPE)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (t, BALA_TYPE_VOID_TYPE)) {
 			gchar* _tmp2_;
 			_tmp2_ = g_strdup ("void");
 			result = _tmp2_;
@@ -395,14 +395,14 @@ vala_gsignal_module_get_value_type_name_from_type_reference (ValaGSignalModule* 
 				ValaTypeSymbol* _tmp12_;
 				_tmp11_ = vala_data_type_get_type_symbol (t);
 				_tmp12_ = _tmp11_;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp12_, VALA_TYPE_CLASS)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp12_, BALA_TYPE_CLASS)) {
 					_tmp10_ = TRUE;
 				} else {
 					ValaTypeSymbol* _tmp13_;
 					ValaTypeSymbol* _tmp14_;
 					_tmp13_ = vala_data_type_get_type_symbol (t);
 					_tmp14_ = _tmp13_;
-					_tmp10_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp14_, VALA_TYPE_INTERFACE);
+					_tmp10_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp14_, BALA_TYPE_INTERFACE);
 				}
 				if (_tmp10_) {
 					gchar* _tmp15_;
@@ -411,7 +411,7 @@ vala_gsignal_module_get_value_type_name_from_type_reference (ValaGSignalModule* 
 					return result;
 				} else {
 					gboolean _tmp16_ = FALSE;
-					if (G_TYPE_CHECK_INSTANCE_TYPE (t, VALA_TYPE_VALUE_TYPE)) {
+					if (G_TYPE_CHECK_INSTANCE_TYPE (t, BALA_TYPE_VALUE_TYPE)) {
 						gboolean _tmp17_;
 						gboolean _tmp18_;
 						_tmp17_ = vala_data_type_get_nullable (t);
@@ -430,14 +430,14 @@ vala_gsignal_module_get_value_type_name_from_type_reference (ValaGSignalModule* 
 						ValaTypeSymbol* _tmp21_;
 						_tmp20_ = vala_data_type_get_type_symbol (t);
 						_tmp21_ = _tmp20_;
-						if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp21_, VALA_TYPE_STRUCT)) {
+						if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp21_, BALA_TYPE_STRUCT)) {
 							ValaStruct* st = NULL;
 							ValaTypeSymbol* _tmp22_;
 							ValaTypeSymbol* _tmp23_;
 							ValaStruct* _tmp24_;
 							_tmp22_ = vala_data_type_get_type_symbol (t);
 							_tmp23_ = _tmp22_;
-							st = G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, VALA_TYPE_STRUCT, ValaStruct);
+							st = G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, BALA_TYPE_STRUCT, ValaStruct);
 							_tmp24_ = st;
 							if (vala_struct_is_simple_type (_tmp24_)) {
 								ValaTypeSymbol* _tmp25_;
@@ -459,7 +459,7 @@ vala_gsignal_module_get_value_type_name_from_type_reference (ValaGSignalModule* 
 							ValaTypeSymbol* _tmp30_;
 							_tmp29_ = vala_data_type_get_type_symbol (t);
 							_tmp30_ = _tmp29_;
-							if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp30_, VALA_TYPE_ENUM)) {
+							if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp30_, BALA_TYPE_ENUM)) {
 								ValaEnum* en = NULL;
 								ValaTypeSymbol* _tmp31_;
 								ValaTypeSymbol* _tmp32_;
@@ -468,7 +468,7 @@ vala_gsignal_module_get_value_type_name_from_type_reference (ValaGSignalModule* 
 								gboolean _tmp35_;
 								_tmp31_ = vala_data_type_get_type_symbol (t);
 								_tmp32_ = _tmp31_;
-								en = G_TYPE_CHECK_INSTANCE_CAST (_tmp32_, VALA_TYPE_ENUM, ValaEnum);
+								en = G_TYPE_CHECK_INSTANCE_CAST (_tmp32_, BALA_TYPE_ENUM, ValaEnum);
 								_tmp33_ = en;
 								_tmp34_ = vala_enum_get_is_flags (_tmp33_);
 								_tmp35_ = _tmp34_;
@@ -484,19 +484,19 @@ vala_gsignal_module_get_value_type_name_from_type_reference (ValaGSignalModule* 
 									return result;
 								}
 							} else {
-								if (G_TYPE_CHECK_INSTANCE_TYPE (t, VALA_TYPE_ARRAY_TYPE)) {
+								if (G_TYPE_CHECK_INSTANCE_TYPE (t, BALA_TYPE_ARRAY_TYPE)) {
 									gchar* _tmp38_;
 									_tmp38_ = g_strdup ("gpointer");
 									result = _tmp38_;
 									return result;
 								} else {
-									if (G_TYPE_CHECK_INSTANCE_TYPE (t, VALA_TYPE_DELEGATE_TYPE)) {
+									if (G_TYPE_CHECK_INSTANCE_TYPE (t, BALA_TYPE_DELEGATE_TYPE)) {
 										gchar* _tmp39_;
 										_tmp39_ = g_strdup ("gpointer");
 										result = _tmp39_;
 										return result;
 									} else {
-										if (G_TYPE_CHECK_INSTANCE_TYPE (t, VALA_TYPE_ERROR_TYPE)) {
+										if (G_TYPE_CHECK_INSTANCE_TYPE (t, BALA_TYPE_ERROR_TYPE)) {
 											gchar* _tmp40_;
 											_tmp40_ = g_strdup ("gpointer");
 											result = _tmp40_;
@@ -526,7 +526,7 @@ vala_gsignal_module_get_value_type_name_from_parameter (ValaGSignalModule* self,
 	g_return_val_if_fail (p != NULL, NULL);
 	_tmp0_ = vala_parameter_get_direction (p);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ != VALA_PARAMETER_DIRECTION_IN) {
+	if (_tmp1_ != BALA_PARAMETER_DIRECTION_IN) {
 		gchar* _tmp2_;
 		_tmp2_ = g_strdup ("gpointer");
 		result = _tmp2_;
@@ -716,12 +716,12 @@ vala_gsignal_module_get_signal_name_cexpression (ValaGSignalModule* self,
 		result = (ValaCCodeExpression*) _tmp0_;
 		return result;
 	}
-	if (G_TYPE_CHECK_INSTANCE_TYPE (detail_expr, VALA_TYPE_STRING_LITERAL)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (detail_expr, BALA_TYPE_STRING_LITERAL)) {
 		gchar* _tmp1_;
 		gchar* _tmp2_;
 		ValaCCodeConstant* _tmp3_;
 		ValaCCodeExpression* _tmp4_;
-		_tmp1_ = vala_string_literal_eval (G_TYPE_CHECK_INSTANCE_CAST (detail_expr, VALA_TYPE_STRING_LITERAL, ValaStringLiteral));
+		_tmp1_ = vala_string_literal_eval (G_TYPE_CHECK_INSTANCE_CAST (detail_expr, BALA_TYPE_STRING_LITERAL, ValaStringLiteral));
 		_tmp2_ = _tmp1_;
 		_tmp3_ = vala_ccode_base_module_get_signal_canonical_constant ((ValaCCodeBaseModule*) self, sig, _tmp2_);
 		_tmp4_ = (ValaCCodeExpression*) _tmp3_;
@@ -808,7 +808,7 @@ vala_gsignal_module_get_signal_id_cexpression (ValaGSignalModule* self,
 	g_return_val_if_fail (sig != NULL, NULL);
 	_tmp0_ = vala_symbol_get_parent_symbol ((ValaSymbol*) sig);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
+	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
 	cl = _tmp2_;
 	_tmp3_ = vala_get_ccode_lower_case_name ((ValaCodeNode*) cl, NULL);
 	_tmp4_ = _tmp3_;
@@ -907,7 +907,7 @@ vala_gsignal_module_real_visit_signal (ValaCodeVisitor* base,
 		ValaSymbol* _tmp3_;
 		_tmp2_ = vala_symbol_get_parent_symbol ((ValaSymbol*) sig);
 		_tmp3_ = _tmp2_;
-		_tmp0_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp3_, VALA_TYPE_TYPESYMBOL);
+		_tmp0_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp3_, BALA_TYPE_TYPESYMBOL);
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -926,7 +926,7 @@ vala_gsignal_module_real_visit_signal (ValaCodeVisitor* base,
 		_tmp4_ = ((ValaCCodeBaseModule*) self)->signal_enum;
 		_tmp5_ = vala_symbol_get_parent_symbol ((ValaSymbol*) sig);
 		_tmp6_ = _tmp5_;
-		_tmp7_ = vala_get_ccode_upper_case_name ((ValaSymbol*) G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALA_TYPE_TYPESYMBOL, ValaTypeSymbol), NULL);
+		_tmp7_ = vala_get_ccode_upper_case_name ((ValaSymbol*) G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALA_TYPE_TYPESYMBOL, ValaTypeSymbol), NULL);
 		_tmp8_ = _tmp7_;
 		_tmp9_ = vala_get_ccode_upper_case_name ((ValaSymbol*) sig, NULL);
 		_tmp10_ = _tmp9_;
@@ -989,7 +989,7 @@ vala_gsignal_module_real_visit_signal (ValaCodeVisitor* base,
 			_tmp27_ = g_direct_hash;
 			_tmp28_ = g_direct_equal;
 			_tmp29_ = g_direct_equal;
-			_tmp30_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp27_, _tmp28_, _tmp29_);
+			_tmp30_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp27_, _tmp28_, _tmp29_);
 			_tmp31_ = _tmp30_;
 			_tmp32_ = vala_ccode_method_module_generate_parameter ((ValaCCodeMethodModule*) self, _tmp25_, _tmp26_, (ValaMap*) _tmp31_, NULL);
 			_tmp33_ = _tmp32_;
@@ -1236,7 +1236,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 	_g_free0 (_tmp7_);
 	signal_marshaller = _tmp9_;
 	_tmp10_ = signal_marshaller;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp10_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp10_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp11_ = signal_marshaller;
 	_tmp12_ = vala_ccode_parameter_new ("closure", "GClosure *");
 	_tmp13_ = _tmp12_;
@@ -1340,7 +1340,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 			_tmp54_ = p;
 			_tmp55_ = vala_variable_get_variable_type ((ValaVariable*) _tmp54_);
 			_tmp56_ = _tmp55_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp56_, VALA_TYPE_ARRAY_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp56_, BALA_TYPE_ARRAY_TYPE)) {
 				ValaArrayType* array_type = NULL;
 				ValaParameter* _tmp57_;
 				ValaDataType* _tmp58_;
@@ -1352,7 +1352,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 				_tmp57_ = p;
 				_tmp58_ = vala_variable_get_variable_type ((ValaVariable*) _tmp57_);
 				_tmp59_ = _tmp58_;
-				_tmp60_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp59_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+				_tmp60_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp59_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 				array_type = _tmp60_;
 				_tmp61_ = p;
 				_tmp62_ = vala_get_ccode_array_length_type ((ValaCodeNode*) _tmp61_);
@@ -1409,7 +1409,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 				_tmp75_ = p;
 				_tmp76_ = vala_variable_get_variable_type ((ValaVariable*) _tmp75_);
 				_tmp77_ = _tmp76_;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp77_, VALA_TYPE_DELEGATE_TYPE)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp77_, BALA_TYPE_DELEGATE_TYPE)) {
 					ValaDelegateType* delegate_type = NULL;
 					ValaParameter* _tmp78_;
 					ValaDataType* _tmp79_;
@@ -1422,7 +1422,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 					_tmp78_ = p;
 					_tmp79_ = vala_variable_get_variable_type ((ValaVariable*) _tmp78_);
 					_tmp80_ = _tmp79_;
-					delegate_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp80_, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
+					delegate_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp80_, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
 					_tmp81_ = delegate_type;
 					_tmp82_ = vala_delegate_type_get_delegate_symbol (_tmp81_);
 					_tmp83_ = _tmp82_;
@@ -1527,7 +1527,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 	_tmp126_ = _tmp125_;
 	_tmp127_ = vala_ccode_variable_declarator_new ("callback", NULL, NULL);
 	_tmp128_ = _tmp127_;
-	vala_ccode_function_add_declaration (_tmp124_, _tmp126_, (ValaCCodeDeclarator*) _tmp128_, VALA_CCODE_MODIFIERS_REGISTER);
+	vala_ccode_function_add_declaration (_tmp124_, _tmp126_, (ValaCCodeDeclarator*) _tmp128_, BALA_CCODE_MODIFIERS_REGISTER);
 	_vala_ccode_node_unref0 (_tmp128_);
 	_g_free0 (_tmp126_);
 	_tmp129_ = vala_ccode_base_module_get_ccode ((ValaCCodeBaseModule*) self);
@@ -1538,7 +1538,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 	_tmp134_ = _tmp133_;
 	_tmp135_ = vala_ccode_variable_declarator_new ("cc", (ValaCCodeExpression*) _tmp134_, NULL);
 	_tmp136_ = _tmp135_;
-	vala_ccode_function_add_declaration (_tmp130_, "GCClosure *", (ValaCCodeDeclarator*) _tmp136_, VALA_CCODE_MODIFIERS_REGISTER);
+	vala_ccode_function_add_declaration (_tmp130_, "GCClosure *", (ValaCCodeDeclarator*) _tmp136_, BALA_CCODE_MODIFIERS_REGISTER);
 	_vala_ccode_node_unref0 (_tmp136_);
 	_vala_ccode_node_unref0 (_tmp134_);
 	_vala_ccode_node_unref0 (_tmp132_);
@@ -1546,20 +1546,20 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 	_tmp138_ = _tmp137_;
 	_tmp139_ = vala_ccode_variable_declarator_new ("data1", NULL, NULL);
 	_tmp140_ = _tmp139_;
-	vala_ccode_function_add_declaration (_tmp138_, "gpointer", (ValaCCodeDeclarator*) _tmp140_, VALA_CCODE_MODIFIERS_REGISTER);
+	vala_ccode_function_add_declaration (_tmp138_, "gpointer", (ValaCCodeDeclarator*) _tmp140_, BALA_CCODE_MODIFIERS_REGISTER);
 	_vala_ccode_node_unref0 (_tmp140_);
 	_tmp141_ = vala_ccode_base_module_get_ccode ((ValaCCodeBaseModule*) self);
 	_tmp142_ = _tmp141_;
 	_tmp143_ = vala_ccode_variable_declarator_new ("data2", NULL, NULL);
 	_tmp144_ = _tmp143_;
-	vala_ccode_function_add_declaration (_tmp142_, "gpointer", (ValaCCodeDeclarator*) _tmp144_, VALA_CCODE_MODIFIERS_REGISTER);
+	vala_ccode_function_add_declaration (_tmp142_, "gpointer", (ValaCCodeDeclarator*) _tmp144_, BALA_CCODE_MODIFIERS_REGISTER);
 	_vala_ccode_node_unref0 (_tmp144_);
 	_tmp146_ = vala_data_type_get_type_symbol (return_type);
 	_tmp147_ = _tmp146_;
 	if (_tmp147_ != NULL) {
 		_tmp145_ = TRUE;
 	} else {
-		_tmp145_ = G_TYPE_CHECK_INSTANCE_TYPE (return_type, VALA_TYPE_ARRAY_TYPE);
+		_tmp145_ = G_TYPE_CHECK_INSTANCE_TYPE (return_type, BALA_TYPE_ARRAY_TYPE);
 	}
 	if (_tmp145_) {
 		ValaCCodeFunction* _tmp148_;
@@ -1601,7 +1601,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 		_tmp159_ = _tmp158_;
 		_tmp160_ = vala_ccode_constant_new ("NULL");
 		_tmp161_ = _tmp160_;
-		_tmp162_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp159_, (ValaCCodeExpression*) _tmp161_);
+		_tmp162_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp159_, (ValaCCodeExpression*) _tmp161_);
 		_tmp163_ = _tmp162_;
 		vala_ccode_function_call_add_argument (_tmp157_, (ValaCCodeExpression*) _tmp163_);
 		_vala_ccode_node_unref0 (_tmp163_);
@@ -1625,7 +1625,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 	_tmp174_ = _tmp173_;
 	_tmp175_ = vala_ccode_constant_new (_tmp174_);
 	_tmp176_ = _tmp175_;
-	_tmp177_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_EQUALITY, (ValaCCodeExpression*) _tmp172_, (ValaCCodeExpression*) _tmp176_);
+	_tmp177_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_EQUALITY, (ValaCCodeExpression*) _tmp172_, (ValaCCodeExpression*) _tmp176_);
 	_tmp178_ = _tmp177_;
 	vala_ccode_function_call_add_argument (_tmp170_, (ValaCCodeExpression*) _tmp178_);
 	_vala_ccode_node_unref0 (_tmp178_);
@@ -1792,7 +1792,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 			_tmp259_ = p;
 			_tmp260_ = vala_parameter_get_direction (_tmp259_);
 			_tmp261_ = _tmp260_;
-			if (_tmp261_ != VALA_PARAMETER_DIRECTION_IN) {
+			if (_tmp261_ != BALA_PARAMETER_DIRECTION_IN) {
 				ValaCCodeIdentifier* _tmp262_;
 				ValaCCodeIdentifier* _tmp263_;
 				ValaCCodeFunctionCall* _tmp264_;
@@ -1810,7 +1810,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 				_tmp266_ = p;
 				_tmp267_ = vala_variable_get_variable_type ((ValaVariable*) _tmp266_);
 				_tmp268_ = _tmp267_;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp268_, VALA_TYPE_VALUE_TYPE)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp268_, BALA_TYPE_VALUE_TYPE)) {
 					ValaParameter* _tmp269_;
 					ValaDataType* _tmp270_;
 					ValaDataType* _tmp271_;
@@ -1860,7 +1860,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 			_tmp287_ = _tmp286_;
 			_tmp288_ = vala_ccode_identifier_new (_tmp287_);
 			_tmp289_ = _tmp288_;
-			_tmp290_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp285_, (ValaCCodeExpression*) _tmp289_);
+			_tmp290_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp285_, (ValaCCodeExpression*) _tmp289_);
 			_tmp291_ = _tmp290_;
 			vala_ccode_function_call_add_argument (_tmp283_, (ValaCCodeExpression*) _tmp291_);
 			_vala_ccode_node_unref0 (_tmp291_);
@@ -1875,7 +1875,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 			_tmp295_ = p;
 			_tmp296_ = vala_variable_get_variable_type ((ValaVariable*) _tmp295_);
 			_tmp297_ = _tmp296_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp297_, VALA_TYPE_ARRAY_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp297_, BALA_TYPE_ARRAY_TYPE)) {
 				ValaArrayType* array_type = NULL;
 				ValaParameter* _tmp298_;
 				ValaDataType* _tmp299_;
@@ -1893,7 +1893,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 				_tmp298_ = p;
 				_tmp299_ = vala_variable_get_variable_type ((ValaVariable*) _tmp298_);
 				_tmp300_ = _tmp299_;
-				_tmp301_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp300_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+				_tmp301_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp300_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 				array_type = _tmp301_;
 				_tmp302_ = array_type;
 				_tmp303_ = vala_array_type_get_length_type (_tmp302_);
@@ -1963,7 +1963,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 							_tmp324_ = _tmp323_;
 							_tmp325_ = vala_ccode_identifier_new (_tmp324_);
 							_tmp326_ = _tmp325_;
-							_tmp327_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp322_, (ValaCCodeExpression*) _tmp326_);
+							_tmp327_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp322_, (ValaCCodeExpression*) _tmp326_);
 							_tmp328_ = _tmp327_;
 							vala_ccode_function_call_add_argument (_tmp320_, (ValaCCodeExpression*) _tmp328_);
 							_vala_ccode_node_unref0 (_tmp328_);
@@ -1987,7 +1987,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 				_tmp332_ = p;
 				_tmp333_ = vala_variable_get_variable_type ((ValaVariable*) _tmp332_);
 				_tmp334_ = _tmp333_;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp334_, VALA_TYPE_DELEGATE_TYPE)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp334_, BALA_TYPE_DELEGATE_TYPE)) {
 					ValaDelegateType* delegate_type = NULL;
 					ValaParameter* _tmp335_;
 					ValaDataType* _tmp336_;
@@ -2000,7 +2000,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 					_tmp335_ = p;
 					_tmp336_ = vala_variable_get_variable_type ((ValaVariable*) _tmp335_);
 					_tmp337_ = _tmp336_;
-					delegate_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp337_, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
+					delegate_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp337_, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
 					_tmp338_ = delegate_type;
 					_tmp339_ = vala_delegate_type_get_delegate_symbol (_tmp338_);
 					_tmp340_ = _tmp339_;
@@ -2036,7 +2036,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 						_tmp350_ = _tmp349_;
 						_tmp351_ = vala_ccode_identifier_new (_tmp350_);
 						_tmp352_ = _tmp351_;
-						_tmp353_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp348_, (ValaCCodeExpression*) _tmp352_);
+						_tmp353_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp348_, (ValaCCodeExpression*) _tmp352_);
 						_tmp354_ = _tmp353_;
 						vala_ccode_function_call_add_argument (_tmp346_, (ValaCCodeExpression*) _tmp354_);
 						_vala_ccode_node_unref0 (_tmp354_);
@@ -2078,7 +2078,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 							_tmp366_ = _tmp365_;
 							_tmp367_ = vala_ccode_identifier_new (_tmp366_);
 							_tmp368_ = _tmp367_;
-							_tmp369_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp364_, (ValaCCodeExpression*) _tmp368_);
+							_tmp369_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp364_, (ValaCCodeExpression*) _tmp368_);
 							_tmp370_ = _tmp369_;
 							vala_ccode_function_call_add_argument (_tmp362_, (ValaCCodeExpression*) _tmp370_);
 							_vala_ccode_node_unref0 (_tmp370_);
@@ -2132,7 +2132,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 		_tmp384_ = _tmp383_;
 		_tmp385_ = vala_ccode_identifier_new (_tmp384_);
 		_tmp386_ = _tmp385_;
-		_tmp387_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp382_, (ValaCCodeExpression*) _tmp386_);
+		_tmp387_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp382_, (ValaCCodeExpression*) _tmp386_);
 		_tmp388_ = _tmp387_;
 		vala_ccode_function_call_add_argument (_tmp380_, (ValaCCodeExpression*) _tmp388_);
 		_vala_ccode_node_unref0 (_tmp388_);
@@ -2156,7 +2156,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 	if (_tmp397_ != NULL) {
 		_tmp395_ = TRUE;
 	} else {
-		_tmp395_ = G_TYPE_CHECK_INSTANCE_TYPE (return_type, VALA_TYPE_ARRAY_TYPE);
+		_tmp395_ = G_TYPE_CHECK_INSTANCE_TYPE (return_type, BALA_TYPE_ARRAY_TYPE);
 	}
 	if (_tmp395_) {
 		ValaCCodeFunction* _tmp398_;
@@ -2181,7 +2181,7 @@ vala_gsignal_module_generate_marshaller (ValaGSignalModule* self,
 		_tmp402_ = fc;
 		vala_ccode_function_add_assignment (_tmp399_, (ValaCCodeExpression*) _tmp401_, (ValaCCodeExpression*) _tmp402_);
 		_vala_ccode_node_unref0 (_tmp401_);
-		if (G_TYPE_CHECK_INSTANCE_TYPE (return_type, VALA_TYPE_VALUE_TYPE)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (return_type, BALA_TYPE_VALUE_TYPE)) {
 			gboolean _tmp403_;
 			gboolean _tmp404_;
 			_tmp403_ = vala_data_type_get_nullable (return_type);
@@ -2808,14 +2808,14 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 	vala_ccode_function_call_add_argument (_tmp80_, (ValaCCodeExpression*) _tmp81_);
 	_tmp83_ = vala_callable_get_return_type ((ValaCallable*) sig);
 	_tmp84_ = _tmp83_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp84_, VALA_TYPE_POINTER_TYPE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp84_, BALA_TYPE_POINTER_TYPE)) {
 		_tmp82_ = TRUE;
 	} else {
 		ValaDataType* _tmp85_;
 		ValaDataType* _tmp86_;
 		_tmp85_ = vala_callable_get_return_type ((ValaCallable*) sig);
 		_tmp86_ = _tmp85_;
-		_tmp82_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp86_, VALA_TYPE_GENERIC_TYPE);
+		_tmp82_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp86_, BALA_TYPE_GENERIC_TYPE);
 	}
 	if (_tmp82_) {
 		ValaCCodeFunctionCall* _tmp87_;
@@ -2831,7 +2831,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 		ValaDataType* _tmp91_;
 		_tmp90_ = vala_callable_get_return_type ((ValaCallable*) sig);
 		_tmp91_ = _tmp90_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp91_, VALA_TYPE_ERROR_TYPE)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp91_, BALA_TYPE_ERROR_TYPE)) {
 			ValaCCodeFunctionCall* _tmp92_;
 			ValaCCodeConstant* _tmp93_;
 			ValaCCodeConstant* _tmp94_;
@@ -2846,7 +2846,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 			ValaDataType* _tmp97_;
 			_tmp96_ = vala_callable_get_return_type ((ValaCallable*) sig);
 			_tmp97_ = _tmp96_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp97_, VALA_TYPE_VALUE_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp97_, BALA_TYPE_VALUE_TYPE)) {
 				ValaDataType* _tmp98_;
 				ValaDataType* _tmp99_;
 				gboolean _tmp100_;
@@ -2969,7 +2969,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 			_tmp136_ = param;
 			_tmp137_ = vala_variable_get_variable_type ((ValaVariable*) _tmp136_);
 			_tmp138_ = _tmp137_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp138_, VALA_TYPE_ARRAY_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp138_, BALA_TYPE_ARRAY_TYPE)) {
 				ValaParameter* _tmp139_;
 				ValaDataType* _tmp140_;
 				ValaDataType* _tmp141_;
@@ -2978,7 +2978,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 				_tmp139_ = param;
 				_tmp140_ = vala_variable_get_variable_type ((ValaVariable*) _tmp139_);
 				_tmp141_ = _tmp140_;
-				_tmp142_ = vala_array_type_get_rank (G_TYPE_CHECK_INSTANCE_CAST (_tmp141_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+				_tmp142_ = vala_array_type_get_rank (G_TYPE_CHECK_INSTANCE_CAST (_tmp141_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 				_tmp143_ = _tmp142_;
 				params_len += _tmp143_;
 			} else {
@@ -2988,7 +2988,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 				_tmp144_ = param;
 				_tmp145_ = vala_variable_get_variable_type ((ValaVariable*) _tmp144_);
 				_tmp146_ = _tmp145_;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp146_, VALA_TYPE_DELEGATE_TYPE)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp146_, BALA_TYPE_DELEGATE_TYPE)) {
 					ValaDelegateType* delegate_type = NULL;
 					ValaParameter* _tmp147_;
 					ValaDataType* _tmp148_;
@@ -3001,7 +3001,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 					_tmp147_ = param;
 					_tmp148_ = vala_variable_get_variable_type ((ValaVariable*) _tmp147_);
 					_tmp149_ = _tmp148_;
-					delegate_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp149_, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
+					delegate_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp149_, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
 					_tmp150_ = delegate_type;
 					_tmp151_ = vala_delegate_type_get_delegate_symbol (_tmp150_);
 					_tmp152_ = _tmp151_;
@@ -3078,7 +3078,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 			_tmp175_ = param;
 			_tmp176_ = vala_variable_get_variable_type ((ValaVariable*) _tmp175_);
 			_tmp177_ = _tmp176_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp177_, VALA_TYPE_ARRAY_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp177_, BALA_TYPE_ARRAY_TYPE)) {
 				ValaArrayType* array_type = NULL;
 				ValaParameter* _tmp178_;
 				ValaDataType* _tmp179_;
@@ -3107,7 +3107,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 				_tmp178_ = param;
 				_tmp179_ = vala_variable_get_variable_type ((ValaVariable*) _tmp178_);
 				_tmp180_ = _tmp179_;
-				_tmp181_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp180_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+				_tmp181_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp180_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 				array_type = _tmp181_;
 				_tmp182_ = array_type;
 				_tmp183_ = vala_array_type_get_element_type (_tmp182_);
@@ -3193,7 +3193,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 				_tmp216_ = param;
 				_tmp217_ = vala_variable_get_variable_type ((ValaVariable*) _tmp216_);
 				_tmp218_ = _tmp217_;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp218_, VALA_TYPE_DELEGATE_TYPE)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp218_, BALA_TYPE_DELEGATE_TYPE)) {
 					ValaDelegateType* delegate_type = NULL;
 					ValaParameter* _tmp219_;
 					ValaDataType* _tmp220_;
@@ -3209,7 +3209,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 					_tmp219_ = param;
 					_tmp220_ = vala_variable_get_variable_type ((ValaVariable*) _tmp219_);
 					_tmp221_ = _tmp220_;
-					delegate_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp221_, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
+					delegate_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp221_, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
 					_tmp222_ = csignew;
 					_tmp223_ = vala_ccode_constant_new ("G_TYPE_POINTER");
 					_tmp224_ = _tmp223_;
@@ -3251,7 +3251,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 					_tmp239_ = param;
 					_tmp240_ = vala_variable_get_variable_type ((ValaVariable*) _tmp239_);
 					_tmp241_ = _tmp240_;
-					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp241_, VALA_TYPE_POINTER_TYPE)) {
+					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp241_, BALA_TYPE_POINTER_TYPE)) {
 						_tmp238_ = TRUE;
 					} else {
 						ValaParameter* _tmp242_;
@@ -3260,7 +3260,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 						_tmp242_ = param;
 						_tmp243_ = vala_variable_get_variable_type ((ValaVariable*) _tmp242_);
 						_tmp244_ = _tmp243_;
-						_tmp238_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp244_, VALA_TYPE_GENERIC_TYPE);
+						_tmp238_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp244_, BALA_TYPE_GENERIC_TYPE);
 					}
 					if (_tmp238_) {
 						_tmp237_ = TRUE;
@@ -3271,7 +3271,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 						_tmp245_ = param;
 						_tmp246_ = vala_parameter_get_direction (_tmp245_);
 						_tmp247_ = _tmp246_;
-						_tmp237_ = _tmp247_ != VALA_PARAMETER_DIRECTION_IN;
+						_tmp237_ = _tmp247_ != BALA_PARAMETER_DIRECTION_IN;
 					}
 					if (_tmp237_) {
 						ValaCCodeFunctionCall* _tmp248_;
@@ -3289,7 +3289,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 						_tmp251_ = param;
 						_tmp252_ = vala_variable_get_variable_type ((ValaVariable*) _tmp251_);
 						_tmp253_ = _tmp252_;
-						if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp253_, VALA_TYPE_ERROR_TYPE)) {
+						if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp253_, BALA_TYPE_ERROR_TYPE)) {
 							ValaCCodeFunctionCall* _tmp254_;
 							ValaCCodeConstant* _tmp255_;
 							ValaCCodeConstant* _tmp256_;
@@ -3306,7 +3306,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 							_tmp258_ = param;
 							_tmp259_ = vala_variable_get_variable_type ((ValaVariable*) _tmp258_);
 							_tmp260_ = _tmp259_;
-							if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp260_, VALA_TYPE_VALUE_TYPE)) {
+							if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp260_, BALA_TYPE_VALUE_TYPE)) {
 								ValaParameter* _tmp261_;
 								ValaDataType* _tmp262_;
 								ValaDataType* _tmp263_;
@@ -3381,7 +3381,7 @@ vala_gsignal_module_real_get_signal_creation (ValaCCodeBaseModule* base,
 	_tmp286_ = vala_gsignal_module_get_signal_id_cexpression (self, sig);
 	_tmp287_ = _tmp286_;
 	_tmp288_ = csignew;
-	_tmp289_ = vala_ccode_assignment_new (_tmp287_, (ValaCCodeExpression*) _tmp288_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+	_tmp289_ = vala_ccode_assignment_new (_tmp287_, (ValaCCodeExpression*) _tmp288_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 	_tmp290_ = (ValaCCodeExpression*) _tmp289_;
 	_vala_ccode_node_unref0 (_tmp287_);
 	result = _tmp290_;
@@ -3405,7 +3405,7 @@ vala_gsignal_module_real_visit_element_access (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp1_ = vala_element_access_get_container (expr);
 	_tmp2_ = _tmp1_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp2_, VALA_TYPE_MEMBER_ACCESS)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp2_, BALA_TYPE_MEMBER_ACCESS)) {
 		ValaExpression* _tmp3_;
 		ValaExpression* _tmp4_;
 		ValaSymbol* _tmp5_;
@@ -3414,7 +3414,7 @@ vala_gsignal_module_real_visit_element_access (ValaCodeVisitor* base,
 		_tmp4_ = _tmp3_;
 		_tmp5_ = vala_expression_get_symbol_reference (_tmp4_);
 		_tmp6_ = _tmp5_;
-		_tmp0_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp6_, VALA_TYPE_SIGNAL);
+		_tmp0_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp6_, BALA_TYPE_SIGNAL);
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -3423,7 +3423,7 @@ vala_gsignal_module_real_visit_element_access (ValaCodeVisitor* base,
 		ValaCodeNode* _tmp8_;
 		_tmp7_ = vala_code_node_get_parent_node ((ValaCodeNode*) expr);
 		_tmp8_ = _tmp7_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp8_, VALA_TYPE_METHOD_CALL)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp8_, BALA_TYPE_METHOD_CALL)) {
 			ValaSignal* sig = NULL;
 			ValaSymbol* _tmp9_;
 			ValaSymbol* _tmp10_;
@@ -3443,11 +3443,11 @@ vala_gsignal_module_real_visit_element_access (ValaCodeVisitor* base,
 			ValaCCodeFunctionCall* _tmp59_;
 			_tmp9_ = vala_expression_get_symbol_reference ((ValaExpression*) expr);
 			_tmp10_ = _tmp9_;
-			_tmp11_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp10_, VALA_TYPE_SIGNAL, ValaSignal));
+			_tmp11_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp10_, BALA_TYPE_SIGNAL, ValaSignal));
 			sig = _tmp11_;
 			_tmp12_ = vala_element_access_get_container (expr);
 			_tmp13_ = _tmp12_;
-			_tmp14_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
+			_tmp14_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
 			ma = _tmp14_;
 			_tmp15_ = vala_element_access_get_indices (expr);
 			_tmp16_ = vala_list_get (_tmp15_, 0);
@@ -3566,7 +3566,7 @@ vala_gsignal_module_real_visit_element_access (ValaCodeVisitor* base,
 		} else {
 		}
 	} else {
-		VALA_CODE_VISITOR_CLASS (vala_gsignal_module_parent_class)->visit_element_access ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GOBJECT_MODULE, ValaGObjectModule), expr);
+		BALA_CODE_VISITOR_CLASS (vala_gsignal_module_parent_class)->visit_element_access ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GOBJECT_MODULE, ValaGObjectModule), expr);
 	}
 }
 
@@ -3583,7 +3583,7 @@ vala_gsignal_module_in_gobject_instance (ValaGSignalModule* self,
 	_result_ = FALSE;
 	_tmp0_ = vala_method_get_binding (m);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp1_ == BALA_MEMBER_BINDING_INSTANCE) {
 		ValaParameter* _tmp2_;
 		ValaParameter* _tmp3_;
 		ValaDataType* _tmp4_;
@@ -3615,7 +3615,7 @@ vala_gsignal_module_real_visit_member_access (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = vala_expression_get_symbol_reference ((ValaExpression*) expr);
 	_tmp1_ = _tmp0_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALA_TYPE_SIGNAL)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALA_TYPE_SIGNAL)) {
 		ValaCCodeExpression* pub_inst = NULL;
 		ValaExpression* _tmp2_;
 		ValaExpression* _tmp3_;
@@ -3652,16 +3652,16 @@ vala_gsignal_module_real_visit_member_access (ValaCodeVisitor* base,
 		}
 		_tmp8_ = vala_expression_get_symbol_reference ((ValaExpression*) expr);
 		_tmp9_ = _tmp8_;
-		_tmp10_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, VALA_TYPE_SIGNAL, ValaSignal));
+		_tmp10_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, BALA_TYPE_SIGNAL, ValaSignal));
 		sig = _tmp10_;
 		_tmp11_ = sig;
 		_tmp12_ = vala_symbol_get_parent_symbol ((ValaSymbol*) _tmp11_);
 		_tmp13_ = _tmp12_;
-		_tmp14_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, VALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
+		_tmp14_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, BALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
 		cl = _tmp14_;
 		_tmp16_ = vala_member_access_get_inner (expr);
 		_tmp17_ = _tmp16_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp17_, VALA_TYPE_BASE_ACCESS)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp17_, BALA_TYPE_BASE_ACCESS)) {
 			ValaSignal* _tmp18_;
 			gboolean _tmp19_;
 			gboolean _tmp20_;
@@ -3714,7 +3714,7 @@ vala_gsignal_module_real_visit_member_access (ValaCodeVisitor* base,
 			_tmp25_ = m;
 			_tmp26_ = vala_symbol_get_parent_symbol ((ValaSymbol*) _tmp25_);
 			_tmp27_ = _tmp26_;
-			_tmp28_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp27_, VALA_TYPE_CLASS, ValaClass));
+			_tmp28_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp27_, BALA_TYPE_CLASS, ValaClass));
 			base_class = _tmp28_;
 			_tmp29_ = base_class;
 			_tmp30_ = vala_get_ccode_class_type_function (_tmp29_);
@@ -3963,7 +3963,7 @@ vala_gsignal_module_real_visit_member_access (ValaCodeVisitor* base,
 		_vala_code_node_unref0 (sig);
 		_vala_ccode_node_unref0 (pub_inst);
 	} else {
-		VALA_CODE_VISITOR_CLASS (vala_gsignal_module_parent_class)->visit_member_access ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GOBJECT_MODULE, ValaGObjectModule), expr);
+		BALA_CODE_VISITOR_CLASS (vala_gsignal_module_parent_class)->visit_member_access ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GOBJECT_MODULE, ValaGObjectModule), expr);
 	}
 }
 
@@ -4020,7 +4020,7 @@ vala_gsignal_module_real_visit_method_call (ValaCodeVisitor* base,
 	_tmp1_ = _tmp0_;
 	_tmp2_ = vala_expression_get_value_type (_tmp1_);
 	_tmp3_ = _tmp2_;
-	_tmp4_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp3_, VALA_TYPE_METHOD_TYPE) ? ((ValaMethodType*) _tmp3_) : NULL);
+	_tmp4_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp3_, BALA_TYPE_METHOD_TYPE) ? ((ValaMethodType*) _tmp3_) : NULL);
 	method_type = _tmp4_;
 	_tmp6_ = method_type;
 	if (_tmp6_ == NULL) {
@@ -4036,10 +4036,10 @@ vala_gsignal_module_real_visit_method_call (ValaCodeVisitor* base,
 		_tmp9_ = _tmp8_;
 		_tmp10_ = vala_symbol_get_parent_symbol ((ValaSymbol*) _tmp9_);
 		_tmp11_ = _tmp10_;
-		_tmp5_ = !G_TYPE_CHECK_INSTANCE_TYPE (_tmp11_, VALA_TYPE_SIGNAL);
+		_tmp5_ = !G_TYPE_CHECK_INSTANCE_TYPE (_tmp11_, BALA_TYPE_SIGNAL);
 	}
 	if (_tmp5_) {
-		VALA_CODE_VISITOR_CLASS (vala_gsignal_module_parent_class)->visit_method_call ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GOBJECT_MODULE, ValaGObjectModule), expr);
+		BALA_CODE_VISITOR_CLASS (vala_gsignal_module_parent_class)->visit_method_call ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GOBJECT_MODULE, ValaGObjectModule), expr);
 		_vala_code_node_unref0 (method_type);
 		return;
 	}
@@ -4048,11 +4048,11 @@ vala_gsignal_module_real_visit_method_call (ValaCodeVisitor* base,
 	_tmp14_ = _tmp13_;
 	_tmp15_ = vala_symbol_get_parent_symbol ((ValaSymbol*) _tmp14_);
 	_tmp16_ = _tmp15_;
-	_tmp17_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, VALA_TYPE_SIGNAL, ValaSignal));
+	_tmp17_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, BALA_TYPE_SIGNAL, ValaSignal));
 	sig = _tmp17_;
 	_tmp18_ = vala_method_call_get_call (expr);
 	_tmp19_ = _tmp18_;
-	_tmp20_ = vala_member_access_get_inner (G_TYPE_CHECK_INSTANCE_CAST (_tmp19_, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
+	_tmp20_ = vala_member_access_get_inner (G_TYPE_CHECK_INSTANCE_CAST (_tmp19_, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
 	_tmp21_ = _tmp20_;
 	_tmp22_ = _vala_code_node_ref0 (_tmp21_);
 	signal_access = _tmp22_;
@@ -4129,7 +4129,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 	dt = NULL;
 	_tmp0_ = vala_expression_get_symbol_reference (handler);
 	_tmp1_ = _tmp0_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALA_TYPE_VARIABLE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALA_TYPE_VARIABLE)) {
 		ValaSymbol* _tmp2_;
 		ValaSymbol* _tmp3_;
 		ValaDataType* _tmp4_;
@@ -4143,9 +4143,9 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 		ValaExpression* _tmp18_;
 		_tmp2_ = vala_expression_get_symbol_reference (handler);
 		_tmp3_ = _tmp2_;
-		_tmp4_ = vala_variable_get_variable_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALA_TYPE_VARIABLE, ValaVariable));
+		_tmp4_ = vala_variable_get_variable_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALA_TYPE_VARIABLE, ValaVariable));
 		_tmp5_ = _tmp4_;
-		_tmp6_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp5_, VALA_TYPE_DELEGATE_TYPE) ? ((ValaDelegateType*) _tmp5_) : NULL);
+		_tmp6_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp5_, BALA_TYPE_DELEGATE_TYPE) ? ((ValaDelegateType*) _tmp5_) : NULL);
 		_vala_code_node_unref0 (dt);
 		dt = _tmp6_;
 		_tmp8_ = dt;
@@ -4171,34 +4171,34 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 		}
 		_tmp15_ = vala_expression_get_symbol_reference (handler);
 		_tmp16_ = _tmp15_;
-		_tmp17_ = vala_variable_get_initializer (G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, VALA_TYPE_VARIABLE, ValaVariable));
+		_tmp17_ = vala_variable_get_initializer (G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, BALA_TYPE_VARIABLE, ValaVariable));
 		_tmp18_ = _tmp17_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp18_, VALA_TYPE_LAMBDA_EXPRESSION)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp18_, BALA_TYPE_LAMBDA_EXPRESSION)) {
 			ValaSymbol* _tmp19_;
 			ValaSymbol* _tmp20_;
 			ValaExpression* _tmp21_;
 			ValaExpression* _tmp22_;
 			_tmp19_ = vala_expression_get_symbol_reference (handler);
 			_tmp20_ = _tmp19_;
-			_tmp21_ = vala_variable_get_initializer (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, VALA_TYPE_VARIABLE, ValaVariable));
+			_tmp21_ = vala_variable_get_initializer (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, BALA_TYPE_VARIABLE, ValaVariable));
 			_tmp22_ = _tmp21_;
 			handler = _tmp22_;
 		}
 	}
 	_tmp23_ = vala_expression_get_symbol_reference (handler);
 	_tmp24_ = _tmp23_;
-	_tmp25_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp24_, VALA_TYPE_METHOD) ? ((ValaMethod*) _tmp24_) : NULL);
+	_tmp25_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp24_, BALA_TYPE_METHOD) ? ((ValaMethod*) _tmp24_) : NULL);
 	m = _tmp25_;
 	if (!disconnect) {
-		if (G_TYPE_CHECK_INSTANCE_TYPE (sig, VALA_TYPE_DYNAMIC_SIGNAL)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (sig, BALA_TYPE_DYNAMIC_SIGNAL)) {
 			if (!after) {
 				gchar* _tmp26_;
-				_tmp26_ = vala_ccode_base_module_get_dynamic_signal_connect_wrapper_name ((ValaCCodeBaseModule*) self, G_TYPE_CHECK_INSTANCE_CAST (sig, VALA_TYPE_DYNAMIC_SIGNAL, ValaDynamicSignal));
+				_tmp26_ = vala_ccode_base_module_get_dynamic_signal_connect_wrapper_name ((ValaCCodeBaseModule*) self, G_TYPE_CHECK_INSTANCE_CAST (sig, BALA_TYPE_DYNAMIC_SIGNAL, ValaDynamicSignal));
 				_g_free0 (connect_func);
 				connect_func = _tmp26_;
 			} else {
 				gchar* _tmp27_;
-				_tmp27_ = vala_ccode_base_module_get_dynamic_signal_connect_after_wrapper_name ((ValaCCodeBaseModule*) self, G_TYPE_CHECK_INSTANCE_CAST (sig, VALA_TYPE_DYNAMIC_SIGNAL, ValaDynamicSignal));
+				_tmp27_ = vala_ccode_base_module_get_dynamic_signal_connect_after_wrapper_name ((ValaCCodeBaseModule*) self, G_TYPE_CHECK_INSTANCE_CAST (sig, BALA_TYPE_DYNAMIC_SIGNAL, ValaDynamicSignal));
 				_g_free0 (connect_func);
 				connect_func = _tmp27_;
 			}
@@ -4274,9 +4274,9 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 			}
 		}
 	} else {
-		if (G_TYPE_CHECK_INSTANCE_TYPE (sig, VALA_TYPE_DYNAMIC_SIGNAL)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (sig, BALA_TYPE_DYNAMIC_SIGNAL)) {
 			gchar* _tmp46_;
-			_tmp46_ = vala_ccode_base_module_get_dynamic_signal_disconnect_wrapper_name ((ValaCCodeBaseModule*) self, G_TYPE_CHECK_INSTANCE_CAST (sig, VALA_TYPE_DYNAMIC_SIGNAL, ValaDynamicSignal));
+			_tmp46_ = vala_ccode_base_module_get_dynamic_signal_disconnect_wrapper_name ((ValaCCodeBaseModule*) self, G_TYPE_CHECK_INSTANCE_CAST (sig, BALA_TYPE_DYNAMIC_SIGNAL, ValaDynamicSignal));
 			_g_free0 (connect_func);
 			connect_func = _tmp46_;
 		} else {
@@ -4294,7 +4294,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 	_vala_ccode_node_unref0 (_tmp50_);
 	ccall = _tmp52_;
 	signal_name_cexpr = NULL;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (signal_access, VALA_TYPE_ELEMENT_ACCESS)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (signal_access, BALA_TYPE_ELEMENT_ACCESS)) {
 		ValaElementAccess* ea = NULL;
 		ValaElementAccess* _tmp53_;
 		ValaElementAccess* _tmp54_;
@@ -4307,12 +4307,12 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 		gpointer _tmp60_;
 		ValaExpression* _tmp61_;
 		ValaCCodeExpression* _tmp62_;
-		_tmp53_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (signal_access, VALA_TYPE_ELEMENT_ACCESS, ValaElementAccess));
+		_tmp53_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (signal_access, BALA_TYPE_ELEMENT_ACCESS, ValaElementAccess));
 		ea = _tmp53_;
 		_tmp54_ = ea;
 		_tmp55_ = vala_element_access_get_container (_tmp54_);
 		_tmp56_ = _tmp55_;
-		_tmp57_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp56_, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
+		_tmp57_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp56_, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
 		_vala_code_node_unref0 (ma);
 		ma = _tmp57_;
 		_tmp58_ = ea;
@@ -4328,7 +4328,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 	} else {
 		ValaMemberAccess* _tmp63_;
 		ValaCCodeExpression* _tmp64_;
-		_tmp63_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (signal_access, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
+		_tmp63_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (signal_access, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
 		_vala_code_node_unref0 (ma);
 		ma = _tmp63_;
 		_tmp64_ = vala_gsignal_module_get_signal_name_cexpression (self, sig, NULL, expr);
@@ -4350,7 +4350,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 		_tmp70_ = vala_member_access_get_inner (_tmp69_);
 		_tmp71_ = _tmp70_;
 		_tmp72_ = vala_ccode_base_module_get_ccodenode ((ValaCCodeBaseModule*) self, _tmp71_);
-		_tmp73_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp72_, VALA_TYPE_CCODE_EXPRESSION, ValaCCodeExpression);
+		_tmp73_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp72_, BALA_TYPE_CCODE_EXPRESSION, ValaCCodeExpression);
 		vala_ccode_function_call_add_argument (_tmp68_, _tmp73_);
 		_vala_ccode_node_unref0 (_tmp73_);
 	} else {
@@ -4363,7 +4363,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 		vala_ccode_function_call_add_argument (_tmp74_, _tmp76_);
 		_vala_ccode_node_unref0 (_tmp76_);
 	}
-	if (G_TYPE_CHECK_INSTANCE_TYPE (sig, VALA_TYPE_DYNAMIC_SIGNAL)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (sig, BALA_TYPE_DYNAMIC_SIGNAL)) {
 		ValaCCodeFunctionCall* _tmp77_;
 		gchar* _tmp78_;
 		gchar* _tmp79_;
@@ -4433,7 +4433,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 			ValaCCodeFunctionCall* _tmp157_;
 			ValaCCodeConstant* _tmp158_;
 			ValaCCodeConstant* _tmp159_;
-			if (!G_TYPE_CHECK_INSTANCE_TYPE (signal_access, VALA_TYPE_ELEMENT_ACCESS)) {
+			if (!G_TYPE_CHECK_INSTANCE_TYPE (signal_access, BALA_TYPE_ELEMENT_ACCESS)) {
 				ValaCCodeFunctionCall* _tmp86_;
 				ValaCCodeConstant* _tmp87_;
 				ValaCCodeConstant* _tmp88_;
@@ -4469,7 +4469,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 			vala_ccode_function_call_add_argument (_tmp99_, _tmp100_);
 			_tmp101_ = vala_symbol_get_parent_symbol ((ValaSymbol*) sig);
 			_tmp102_ = _tmp101_;
-			_tmp103_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp102_, VALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
+			_tmp103_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp102_, BALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
 			decl_type = _tmp103_;
 			_tmp104_ = parse_call;
 			_tmp105_ = decl_type;
@@ -4486,13 +4486,13 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 			_tmp113_ = _tmp112_;
 			_tmp114_ = vala_ccode_base_module_get_variable_cexpression ((ValaCCodeBaseModule*) self, _tmp113_);
 			_tmp115_ = _tmp114_;
-			_tmp116_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp115_);
+			_tmp116_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp115_);
 			_tmp117_ = _tmp116_;
 			vala_ccode_function_call_add_argument (_tmp110_, (ValaCCodeExpression*) _tmp117_);
 			_vala_ccode_node_unref0 (_tmp117_);
 			_vala_ccode_node_unref0 (_tmp115_);
 			detail_temp_decl = NULL;
-			if (!G_TYPE_CHECK_INSTANCE_TYPE (signal_access, VALA_TYPE_ELEMENT_ACCESS)) {
+			if (!G_TYPE_CHECK_INSTANCE_TYPE (signal_access, BALA_TYPE_ELEMENT_ACCESS)) {
 				ValaCCodeFunctionCall* _tmp118_;
 				ValaCCodeConstant* _tmp119_;
 				ValaCCodeConstant* _tmp120_;
@@ -4536,7 +4536,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 				_tmp130_ = _tmp129_;
 				_tmp131_ = vala_ccode_base_module_get_variable_cexpression ((ValaCCodeBaseModule*) self, _tmp130_);
 				_tmp132_ = _tmp131_;
-				_tmp133_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp132_);
+				_tmp133_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp132_);
 				_tmp134_ = _tmp133_;
 				vala_ccode_function_call_add_argument (_tmp127_, (ValaCCodeExpression*) _tmp134_);
 				_vala_ccode_node_unref0 (_tmp134_);
@@ -4668,20 +4668,20 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 			_tmp185_ = m;
 			_tmp186_ = vala_method_get_binding (_tmp185_);
 			_tmp187_ = _tmp186_;
-			_tmp183_ = _tmp187_ == VALA_MEMBER_BINDING_INSTANCE;
+			_tmp183_ = _tmp187_ == BALA_MEMBER_BINDING_INSTANCE;
 		} else {
 			_tmp183_ = FALSE;
 		}
 		if (_tmp183_) {
 			gboolean _tmp203_ = FALSE;
 			gboolean _tmp204_ = FALSE;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (handler, VALA_TYPE_MEMBER_ACCESS)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (handler, BALA_TYPE_MEMBER_ACCESS)) {
 				ValaMemberAccess* right_ma = NULL;
 				ValaMemberAccess* _tmp188_;
 				ValaMemberAccess* _tmp189_;
 				ValaExpression* _tmp190_;
 				ValaExpression* _tmp191_;
-				_tmp188_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (handler, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
+				_tmp188_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (handler, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
 				right_ma = _tmp188_;
 				_tmp189_ = right_ma;
 				_tmp190_ = vala_member_access_get_inner (_tmp189_);
@@ -4710,7 +4710,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 				}
 				_vala_code_node_unref0 (right_ma);
 			} else {
-				if (G_TYPE_CHECK_INSTANCE_TYPE (handler, VALA_TYPE_LAMBDA_EXPRESSION)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (handler, BALA_TYPE_LAMBDA_EXPRESSION)) {
 					ValaCCodeFunctionCall* _tmp200_;
 					ValaCCodeExpression* _tmp201_;
 					ValaCCodeExpression* _tmp202_;
@@ -4722,7 +4722,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 				}
 			}
 			if (!disconnect) {
-				_tmp204_ = !G_TYPE_CHECK_INSTANCE_TYPE (sig, VALA_TYPE_DYNAMIC_SIGNAL);
+				_tmp204_ = !G_TYPE_CHECK_INSTANCE_TYPE (sig, BALA_TYPE_DYNAMIC_SIGNAL);
 			} else {
 				_tmp204_ = FALSE;
 			}
@@ -4849,7 +4849,7 @@ vala_gsignal_module_connect_signal (ValaGSignalModule* self,
 		ValaCodeNode* _tmp242_;
 		_tmp241_ = vala_code_node_get_parent_node (expr);
 		_tmp242_ = _tmp241_;
-		_tmp240_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp242_, VALA_TYPE_EXPRESSION_STATEMENT);
+		_tmp240_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp242_, BALA_TYPE_EXPRESSION_STATEMENT);
 	}
 	if (_tmp240_) {
 		ValaCCodeFunction* _tmp243_;
@@ -4925,7 +4925,7 @@ vala_gsignal_module_construct (GType object_type)
 ValaGSignalModule*
 vala_gsignal_module_new (void)
 {
-	return vala_gsignal_module_construct (VALA_TYPE_GSIGNAL_MODULE);
+	return vala_gsignal_module_construct (BALA_TYPE_GSIGNAL_MODULE);
 }
 
 static void
@@ -4951,7 +4951,7 @@ vala_gsignal_module_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaGSignalModuleClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_gsignal_module_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaGSignalModule), 0, (GInstanceInitFunc) vala_gsignal_module_instance_init, NULL };
 	GType vala_gsignal_module_type_id;
-	vala_gsignal_module_type_id = g_type_register_static (VALA_TYPE_GOBJECT_MODULE, "ValaGSignalModule", &g_define_type_info, 0);
+	vala_gsignal_module_type_id = g_type_register_static (BALA_TYPE_GOBJECT_MODULE, "ValaGSignalModule", &g_define_type_info, 0);
 	return vala_gsignal_module_type_id;
 }
 

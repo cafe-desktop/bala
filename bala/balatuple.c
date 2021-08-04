@@ -72,7 +72,7 @@ vala_tuple_construct (GType object_type,
 ValaTuple*
 vala_tuple_new (ValaSourceReference* source_reference)
 {
-	return vala_tuple_construct (VALA_TYPE_TUPLE, source_reference);
+	return vala_tuple_construct (BALA_TYPE_TUPLE, source_reference);
 }
 
 static gpointer
@@ -328,7 +328,7 @@ vala_tuple_instance_init (ValaTuple * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_tuple_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->expression_list = (ValaList*) _tmp1_;
 }
 
@@ -336,9 +336,9 @@ static void
 vala_tuple_finalize (ValaCodeNode * obj)
 {
 	ValaTuple * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_TUPLE, ValaTuple);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_TUPLE, ValaTuple);
 	_vala_iterable_unref0 (self->priv->expression_list);
-	VALA_CODE_NODE_CLASS (vala_tuple_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_tuple_parent_class)->finalize (obj);
 }
 
 /**
@@ -349,7 +349,7 @@ vala_tuple_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaTupleClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_tuple_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaTuple), 0, (GInstanceInitFunc) vala_tuple_instance_init, NULL };
 	GType vala_tuple_type_id;
-	vala_tuple_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaTuple", &g_define_type_info, 0);
+	vala_tuple_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaTuple", &g_define_type_info, 0);
 	ValaTuple_private_offset = g_type_add_instance_private (vala_tuple_type_id, sizeof (ValaTuplePrivate));
 	return vala_tuple_type_id;
 }

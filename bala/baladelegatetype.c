@@ -76,7 +76,7 @@ vala_delegate_type_get_delegate_symbol (ValaDelegateType* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_DELEGATE, ValaDelegate);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_DELEGATE, ValaDelegate);
 	return result;
 }
 
@@ -116,7 +116,7 @@ vala_delegate_type_construct (GType object_type,
 ValaDelegateType*
 vala_delegate_type_new (ValaDelegate* delegate_symbol)
 {
-	return vala_delegate_type_construct (VALA_TYPE_DELEGATE_TYPE, delegate_symbol);
+	return vala_delegate_type_construct (BALA_TYPE_DELEGATE_TYPE, delegate_symbol);
 }
 
 static gpointer
@@ -173,7 +173,7 @@ vala_delegate_type_get_target_field (ValaDelegateType* self)
 		_vala_code_node_unref0 (self->priv->target_field);
 		self->priv->target_field = _tmp3_;
 		_tmp4_ = self->priv->target_field;
-		vala_symbol_set_access ((ValaSymbol*) _tmp4_, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+		vala_symbol_set_access ((ValaSymbol*) _tmp4_, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	}
 	_tmp5_ = self->priv->target_field;
 	result = _tmp5_;
@@ -199,7 +199,7 @@ vala_delegate_type_get_destroy_field (ValaDelegateType* self)
 		_vala_code_node_unref0 (self->priv->destroy_field);
 		self->priv->destroy_field = _tmp3_;
 		_tmp4_ = self->priv->destroy_field;
-		vala_symbol_set_access ((ValaSymbol*) _tmp4_, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+		vala_symbol_set_access ((ValaSymbol*) _tmp4_, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	}
 	_tmp5_ = self->priv->destroy_field;
 	result = _tmp5_;
@@ -422,7 +422,7 @@ vala_delegate_type_real_compatible (ValaDataType* base,
 	gboolean result = FALSE;
 	self = (ValaDelegateType*) base;
 	g_return_val_if_fail (target_type != NULL, FALSE);
-	dt_target = VALA_IS_DELEGATE_TYPE (target_type) ? ((ValaDelegateType*) target_type) : NULL;
+	dt_target = BALA_IS_DELEGATE_TYPE (target_type) ? ((ValaDelegateType*) target_type) : NULL;
 	_tmp0_ = dt_target;
 	if (_tmp0_ == NULL) {
 		result = FALSE;
@@ -473,7 +473,7 @@ vala_delegate_type_real_compatible (ValaDataType* base,
 	_tmp30_ = _tmp29_;
 	_tmp31_ = vala_symbol_get_parent_symbol ((ValaSymbol*) _tmp30_);
 	_tmp32_ = _tmp31_;
-	if (VALA_IS_SIGNAL (_tmp32_)) {
+	if (BALA_IS_SIGNAL (_tmp32_)) {
 		ValaDelegateType* _tmp33_;
 		ValaDelegate* _tmp34_;
 		ValaDelegate* _tmp35_;
@@ -633,7 +633,7 @@ vala_delegate_type_real_compatible (ValaDataType* base,
 		return result;
 	}
 	_tmp79_ = g_direct_equal;
-	_tmp80_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp79_);
+	_tmp80_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp79_);
 	error_types = _tmp80_;
 	_tmp81_ = error_types;
 	vala_code_node_get_error_types ((ValaCodeNode*) self, (ValaCollection*) _tmp81_, NULL);
@@ -677,7 +677,7 @@ vala_delegate_type_real_compatible (ValaDataType* base,
 			error_type = (ValaDataType*) _tmp90_;
 			match = FALSE;
 			_tmp91_ = g_direct_equal;
-			_tmp92_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp91_);
+			_tmp92_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp91_);
 			delegate_error_types = _tmp92_;
 			_tmp93_ = dt_target;
 			_tmp94_ = delegate_error_types;
@@ -812,10 +812,10 @@ static void
 vala_delegate_type_finalize (ValaCodeNode * obj)
 {
 	ValaDelegateType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType);
 	_vala_code_node_unref0 (self->priv->target_field);
 	_vala_code_node_unref0 (self->priv->destroy_field);
-	VALA_CODE_NODE_CLASS (vala_delegate_type_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_delegate_type_parent_class)->finalize (obj);
 }
 
 /**
@@ -826,7 +826,7 @@ vala_delegate_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaDelegateTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_delegate_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaDelegateType), 0, (GInstanceInitFunc) vala_delegate_type_instance_init, NULL };
 	GType vala_delegate_type_type_id;
-	vala_delegate_type_type_id = g_type_register_static (VALA_TYPE_CALLABLE_TYPE, "ValaDelegateType", &g_define_type_info, 0);
+	vala_delegate_type_type_id = g_type_register_static (BALA_TYPE_CALLABLE_TYPE, "ValaDelegateType", &g_define_type_info, 0);
 	ValaDelegateType_private_offset = g_type_add_instance_private (vala_delegate_type_type_id, sizeof (ValaDelegateTypePrivate));
 	return vala_delegate_type_type_id;
 }

@@ -30,11 +30,11 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_HTML_LINK_HELPER_0_PROPERTY,
-	VALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY,
-	VALADOC_HTML_LINK_HELPER_NUM_PROPERTIES
+	BALADOC_HTML_LINK_HELPER_0_PROPERTY,
+	BALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY,
+	BALADOC_HTML_LINK_HELPER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_html_link_helper_properties[VALADOC_HTML_LINK_HELPER_NUM_PROPERTIES];
+static GParamSpec* valadoc_html_link_helper_properties[BALADOC_HTML_LINK_HELPER_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_regex_unref0(var) ((var == NULL) ? NULL : (var = (g_regex_unref (var), NULL)))
@@ -115,7 +115,7 @@ valadoc_html_link_helper_set_enable_browsable_check (ValadocHtmlLinkHelper* self
 	old_value = valadoc_html_link_helper_get_enable_browsable_check (self);
 	if (old_value != value) {
 		self->priv->_enable_browsable_check = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_html_link_helper_properties[VALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_html_link_helper_properties[BALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY]);
 	}
 }
 
@@ -155,7 +155,7 @@ valadoc_html_link_helper_get_package_link (ValadocHtmlLinkHelper* self,
                                            ValadocSettings* settings)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->get_package_link (self, package, settings);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->get_package_link (self, package, settings);
 }
 
 static gpointer
@@ -179,22 +179,22 @@ valadoc_html_link_helper_get_relative_link (ValadocHtmlLinkHelper* self,
 	_tmp0_ = _g_object_ref0 (settings);
 	_g_object_unref0 (self->_settings);
 	self->_settings = _tmp0_;
-	if (VALADOC_API_IS_PACKAGE (from)) {
-		if (VALADOC_API_IS_PACKAGE (to)) {
+	if (BALADOC_API_IS_PACKAGE (from)) {
+		if (BALADOC_API_IS_PACKAGE (to)) {
 			gchar* _tmp1_;
-			_tmp1_ = valadoc_html_link_helper_from_package_to_package (self, G_TYPE_CHECK_INSTANCE_CAST (from, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage), G_TYPE_CHECK_INSTANCE_CAST (to, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage));
+			_tmp1_ = valadoc_html_link_helper_from_package_to_package (self, G_TYPE_CHECK_INSTANCE_CAST (from, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage), G_TYPE_CHECK_INSTANCE_CAST (to, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage));
 			result = _tmp1_;
 			return result;
 		} else {
-			if (VALADOC_API_IS_NODE (to)) {
+			if (BALADOC_API_IS_NODE (to)) {
 				gchar* _tmp2_;
-				_tmp2_ = valadoc_html_link_helper_from_package_to_node (self, G_TYPE_CHECK_INSTANCE_CAST (from, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage), G_TYPE_CHECK_INSTANCE_CAST (to, VALADOC_API_TYPE_NODE, ValadocApiNode));
+				_tmp2_ = valadoc_html_link_helper_from_package_to_node (self, G_TYPE_CHECK_INSTANCE_CAST (from, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage), G_TYPE_CHECK_INSTANCE_CAST (to, BALADOC_API_TYPE_NODE, ValadocApiNode));
 				result = _tmp2_;
 				return result;
 			} else {
-				if (VALADOC_IS_WIKI_PAGE (to)) {
+				if (BALADOC_IS_WIKI_PAGE (to)) {
 					gchar* _tmp3_;
-					_tmp3_ = valadoc_html_link_helper_from_package_to_wiki (self, G_TYPE_CHECK_INSTANCE_CAST (from, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage), G_TYPE_CHECK_INSTANCE_CAST (to, VALADOC_TYPE_WIKI_PAGE, ValadocWikiPage));
+					_tmp3_ = valadoc_html_link_helper_from_package_to_wiki (self, G_TYPE_CHECK_INSTANCE_CAST (from, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage), G_TYPE_CHECK_INSTANCE_CAST (to, BALADOC_TYPE_WIKI_PAGE, ValadocWikiPage));
 					result = _tmp3_;
 					return result;
 				} else {
@@ -203,22 +203,22 @@ valadoc_html_link_helper_get_relative_link (ValadocHtmlLinkHelper* self,
 			}
 		}
 	} else {
-		if (VALADOC_API_IS_NODE (from)) {
-			if (VALADOC_API_IS_PACKAGE (to)) {
+		if (BALADOC_API_IS_NODE (from)) {
+			if (BALADOC_API_IS_PACKAGE (to)) {
 				gchar* _tmp4_;
-				_tmp4_ = valadoc_html_link_helper_from_node_to_package (self, G_TYPE_CHECK_INSTANCE_CAST (from, VALADOC_API_TYPE_NODE, ValadocApiNode), G_TYPE_CHECK_INSTANCE_CAST (to, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage));
+				_tmp4_ = valadoc_html_link_helper_from_node_to_package (self, G_TYPE_CHECK_INSTANCE_CAST (from, BALADOC_API_TYPE_NODE, ValadocApiNode), G_TYPE_CHECK_INSTANCE_CAST (to, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage));
 				result = _tmp4_;
 				return result;
 			} else {
-				if (VALADOC_API_IS_NODE (to)) {
+				if (BALADOC_API_IS_NODE (to)) {
 					gchar* _tmp5_;
-					_tmp5_ = valadoc_html_link_helper_from_node_to_node (self, G_TYPE_CHECK_INSTANCE_CAST (from, VALADOC_API_TYPE_NODE, ValadocApiNode), G_TYPE_CHECK_INSTANCE_CAST (to, VALADOC_API_TYPE_NODE, ValadocApiNode));
+					_tmp5_ = valadoc_html_link_helper_from_node_to_node (self, G_TYPE_CHECK_INSTANCE_CAST (from, BALADOC_API_TYPE_NODE, ValadocApiNode), G_TYPE_CHECK_INSTANCE_CAST (to, BALADOC_API_TYPE_NODE, ValadocApiNode));
 					result = _tmp5_;
 					return result;
 				} else {
-					if (VALADOC_IS_WIKI_PAGE (to)) {
+					if (BALADOC_IS_WIKI_PAGE (to)) {
 						gchar* _tmp6_;
-						_tmp6_ = valadoc_html_link_helper_from_node_to_wiki (self, G_TYPE_CHECK_INSTANCE_CAST (from, VALADOC_API_TYPE_NODE, ValadocApiNode), G_TYPE_CHECK_INSTANCE_CAST (to, VALADOC_TYPE_WIKI_PAGE, ValadocWikiPage));
+						_tmp6_ = valadoc_html_link_helper_from_node_to_wiki (self, G_TYPE_CHECK_INSTANCE_CAST (from, BALADOC_API_TYPE_NODE, ValadocApiNode), G_TYPE_CHECK_INSTANCE_CAST (to, BALADOC_TYPE_WIKI_PAGE, ValadocWikiPage));
 						result = _tmp6_;
 						return result;
 					} else {
@@ -227,22 +227,22 @@ valadoc_html_link_helper_get_relative_link (ValadocHtmlLinkHelper* self,
 				}
 			}
 		} else {
-			if (VALADOC_IS_WIKI_PAGE (from)) {
-				if (VALADOC_API_IS_PACKAGE (to)) {
+			if (BALADOC_IS_WIKI_PAGE (from)) {
+				if (BALADOC_API_IS_PACKAGE (to)) {
 					gchar* _tmp7_;
-					_tmp7_ = valadoc_html_link_helper_from_wiki_to_package (self, G_TYPE_CHECK_INSTANCE_CAST (from, VALADOC_TYPE_WIKI_PAGE, ValadocWikiPage), G_TYPE_CHECK_INSTANCE_CAST (to, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage));
+					_tmp7_ = valadoc_html_link_helper_from_wiki_to_package (self, G_TYPE_CHECK_INSTANCE_CAST (from, BALADOC_TYPE_WIKI_PAGE, ValadocWikiPage), G_TYPE_CHECK_INSTANCE_CAST (to, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage));
 					result = _tmp7_;
 					return result;
 				} else {
-					if (VALADOC_API_IS_NODE (to)) {
+					if (BALADOC_API_IS_NODE (to)) {
 						gchar* _tmp8_;
-						_tmp8_ = valadoc_html_link_helper_from_wiki_to_node (self, G_TYPE_CHECK_INSTANCE_CAST (from, VALADOC_TYPE_WIKI_PAGE, ValadocWikiPage), G_TYPE_CHECK_INSTANCE_CAST (to, VALADOC_API_TYPE_NODE, ValadocApiNode));
+						_tmp8_ = valadoc_html_link_helper_from_wiki_to_node (self, G_TYPE_CHECK_INSTANCE_CAST (from, BALADOC_TYPE_WIKI_PAGE, ValadocWikiPage), G_TYPE_CHECK_INSTANCE_CAST (to, BALADOC_API_TYPE_NODE, ValadocApiNode));
 						result = _tmp8_;
 						return result;
 					} else {
-						if (VALADOC_IS_WIKI_PAGE (to)) {
+						if (BALADOC_IS_WIKI_PAGE (to)) {
 							gchar* _tmp9_;
-							_tmp9_ = valadoc_html_link_helper_from_wiki_to_wiki (self, G_TYPE_CHECK_INSTANCE_CAST (from, VALADOC_TYPE_WIKI_PAGE, ValadocWikiPage), G_TYPE_CHECK_INSTANCE_CAST (to, VALADOC_TYPE_WIKI_PAGE, ValadocWikiPage));
+							_tmp9_ = valadoc_html_link_helper_from_wiki_to_wiki (self, G_TYPE_CHECK_INSTANCE_CAST (from, BALADOC_TYPE_WIKI_PAGE, ValadocWikiPage), G_TYPE_CHECK_INSTANCE_CAST (to, BALADOC_TYPE_WIKI_PAGE, ValadocWikiPage));
 							result = _tmp9_;
 							return result;
 						} else {
@@ -509,7 +509,7 @@ valadoc_html_link_helper_from_package_to_package (ValadocHtmlLinkHelper* self,
                                                   ValadocApiPackage* to)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_package_to_package (self, from, to);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_package_to_package (self, from, to);
 }
 
 static gchar*
@@ -554,7 +554,7 @@ valadoc_html_link_helper_from_package_to_wiki (ValadocHtmlLinkHelper* self,
                                                ValadocWikiPage* to)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_package_to_wiki (self, from, to);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_package_to_wiki (self, from, to);
 }
 
 static gchar*
@@ -646,7 +646,7 @@ valadoc_html_link_helper_from_package_to_node (ValadocHtmlLinkHelper* self,
                                                ValadocApiNode* to)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_package_to_node (self, from, to);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_package_to_node (self, from, to);
 }
 
 static gchar*
@@ -698,7 +698,7 @@ valadoc_html_link_helper_from_wiki_to_package (ValadocHtmlLinkHelper* self,
                                                ValadocApiPackage* to)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_wiki_to_package (self, from, to);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_wiki_to_package (self, from, to);
 }
 
 static gchar*
@@ -721,7 +721,7 @@ valadoc_html_link_helper_from_wiki_to_wiki (ValadocHtmlLinkHelper* self,
                                             ValadocWikiPage* to)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_wiki_to_wiki (self, from, to);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_wiki_to_wiki (self, from, to);
 }
 
 static gchar*
@@ -812,7 +812,7 @@ valadoc_html_link_helper_from_wiki_to_node (ValadocHtmlLinkHelper* self,
                                             ValadocApiNode* to)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_wiki_to_node (self, from, to);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_wiki_to_node (self, from, to);
 }
 
 static gchar*
@@ -864,7 +864,7 @@ valadoc_html_link_helper_from_node_to_package (ValadocHtmlLinkHelper* self,
                                                ValadocApiPackage* to)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_node_to_package (self, from, to);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_node_to_package (self, from, to);
 }
 
 static gchar*
@@ -913,7 +913,7 @@ valadoc_html_link_helper_from_node_to_wiki (ValadocHtmlLinkHelper* self,
                                             ValadocWikiPage* to)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_node_to_wiki (self, from, to);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_node_to_wiki (self, from, to);
 }
 
 static gchar*
@@ -1009,7 +1009,7 @@ valadoc_html_link_helper_from_node_to_node (ValadocHtmlLinkHelper* self,
                                             ValadocApiNode* to)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_node_to_node (self, from, to);
+	return BALADOC_HTML_LINK_HELPER_GET_CLASS (self)->from_node_to_node (self, from, to);
 }
 
 ValadocHtmlLinkHelper*
@@ -1023,7 +1023,7 @@ valadoc_html_link_helper_construct (GType object_type)
 ValadocHtmlLinkHelper*
 valadoc_html_link_helper_new (void)
 {
-	return valadoc_html_link_helper_construct (VALADOC_HTML_TYPE_LINK_HELPER);
+	return valadoc_html_link_helper_construct (BALADOC_HTML_TYPE_LINK_HELPER);
 }
 
 static void
@@ -1045,7 +1045,7 @@ valadoc_html_link_helper_class_init (ValadocHtmlLinkHelperClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_html_link_helper_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_html_link_helper_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_html_link_helper_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY, valadoc_html_link_helper_properties[VALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY] = g_param_spec_boolean ("enable-browsable-check", "enable-browsable-check", "enable-browsable-check", TRUE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY, valadoc_html_link_helper_properties[BALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY] = g_param_spec_boolean ("enable-browsable-check", "enable-browsable-check", "enable-browsable-check", TRUE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 }
 
 static void
@@ -1061,7 +1061,7 @@ static void
 valadoc_html_link_helper_finalize (GObject * obj)
 {
 	ValadocHtmlLinkHelper * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper);
 	_g_object_unref0 (self->_settings);
 	G_OBJECT_CLASS (valadoc_html_link_helper_parent_class)->finalize (obj);
 }
@@ -1095,9 +1095,9 @@ _vala_valadoc_html_link_helper_get_property (GObject * object,
                                              GParamSpec * pspec)
 {
 	ValadocHtmlLinkHelper * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper);
 	switch (property_id) {
-		case VALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY:
+		case BALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY:
 		g_value_set_boolean (value, valadoc_html_link_helper_get_enable_browsable_check (self));
 		break;
 		default:
@@ -1113,9 +1113,9 @@ _vala_valadoc_html_link_helper_set_property (GObject * object,
                                              GParamSpec * pspec)
 {
 	ValadocHtmlLinkHelper * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper);
 	switch (property_id) {
-		case VALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY:
+		case BALADOC_HTML_LINK_HELPER_ENABLE_BROWSABLE_CHECK_PROPERTY:
 		valadoc_html_link_helper_set_enable_browsable_check (self, g_value_get_boolean (value));
 		break;
 		default:

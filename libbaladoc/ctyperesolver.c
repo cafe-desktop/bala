@@ -31,10 +31,10 @@
 #include <glib.h>
 
 enum  {
-	VALADOC_CTYPE_RESOLVER_0_PROPERTY,
-	VALADOC_CTYPE_RESOLVER_NUM_PROPERTIES
+	BALADOC_CTYPE_RESOLVER_0_PROPERTY,
+	BALADOC_CTYPE_RESOLVER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_ctype_resolver_properties[VALADOC_CTYPE_RESOLVER_NUM_PROPERTIES];
+static GParamSpec* valadoc_ctype_resolver_properties[BALADOC_CTYPE_RESOLVER_NUM_PROPERTIES];
 #define _vala_map_unref0(var) ((var == NULL) ? NULL : (var = (vala_map_unref (var), NULL)))
 #define _valadoc_api_tree_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_api_tree_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
@@ -146,7 +146,7 @@ valadoc_ctype_resolver_construct (GType object_type,
 ValadocCTypeResolver*
 valadoc_ctype_resolver_new (ValadocApiTree* tree)
 {
-	return valadoc_ctype_resolver_construct (VALADOC_TYPE_CTYPE_RESOLVER, tree);
+	return valadoc_ctype_resolver_construct (BALADOC_TYPE_CTYPE_RESOLVER, tree);
 }
 
 static gchar*
@@ -781,12 +781,12 @@ valadoc_ctype_resolver_resolve_symbol (ValadocCTypeResolver* self,
 				gboolean _tmp9_ = FALSE;
 				ValadocApiItem* _tmp10_;
 				_tmp10_ = parent;
-				if (VALADOC_API_IS_CLASS (_tmp10_)) {
+				if (BALADOC_API_IS_CLASS (_tmp10_)) {
 					_tmp9_ = TRUE;
 				} else {
 					ValadocApiItem* _tmp11_;
 					_tmp11_ = parent;
-					_tmp9_ = VALADOC_API_IS_INTERFACE (_tmp11_);
+					_tmp9_ = BALADOC_API_IS_INTERFACE (_tmp11_);
 				}
 				_tmp7_ = !_tmp9_;
 			} else {
@@ -803,12 +803,12 @@ valadoc_ctype_resolver_resolve_symbol (ValadocCTypeResolver* self,
 			parent = _tmp15_;
 		}
 		_tmp17_ = parent;
-		if (VALADOC_API_IS_CLASS (_tmp17_)) {
+		if (BALADOC_API_IS_CLASS (_tmp17_)) {
 			ValadocApiItem* _tmp18_;
 			gchar* _tmp19_;
 			gchar* _tmp20_;
 			_tmp18_ = parent;
-			_tmp19_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp19_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_tmp20_ = _tmp19_;
 			_tmp16_ = _tmp20_ != NULL;
 			_g_free0 (_tmp20_);
@@ -822,7 +822,7 @@ valadoc_ctype_resolver_resolve_symbol (ValadocCTypeResolver* self,
 			const gchar* _tmp24_;
 			gchar* _tmp25_;
 			_tmp21_ = parent;
-			_tmp22_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp21_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp22_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp21_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_tmp23_ = _tmp22_;
 			_tmp24_ = name;
 			_tmp25_ = g_strconcat (_tmp23_, _tmp24_, NULL);
@@ -833,12 +833,12 @@ valadoc_ctype_resolver_resolve_symbol (ValadocCTypeResolver* self,
 			gboolean _tmp26_ = FALSE;
 			ValadocApiItem* _tmp27_;
 			_tmp27_ = parent;
-			if (VALADOC_API_IS_INTERFACE (_tmp27_)) {
+			if (BALADOC_API_IS_INTERFACE (_tmp27_)) {
 				ValadocApiItem* _tmp28_;
 				gchar* _tmp29_;
 				gchar* _tmp30_;
 				_tmp28_ = parent;
-				_tmp29_ = valadoc_api_interface_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp28_, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
+				_tmp29_ = valadoc_api_interface_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp28_, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
 				_tmp30_ = _tmp29_;
 				_tmp26_ = _tmp30_ != NULL;
 				_g_free0 (_tmp30_);
@@ -852,7 +852,7 @@ valadoc_ctype_resolver_resolve_symbol (ValadocCTypeResolver* self,
 				const gchar* _tmp34_;
 				gchar* _tmp35_;
 				_tmp31_ = parent;
-				_tmp32_ = valadoc_api_interface_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
+				_tmp32_ = valadoc_api_interface_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
 				_tmp33_ = _tmp32_;
 				_tmp34_ = name;
 				_tmp35_ = g_strconcat (_tmp33_, _tmp34_, NULL);
@@ -904,10 +904,10 @@ valadoc_ctype_resolver_resolve_symbol (ValadocCTypeResolver* self,
 	}
 	if (_tmp46_) {
 		gboolean _tmp48_ = FALSE;
-		if (VALADOC_API_IS_CLASS (element)) {
+		if (BALADOC_API_IS_CLASS (element)) {
 			gchar* _tmp49_;
 			gchar* _tmp50_;
-			_tmp49_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (element, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp49_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (element, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_tmp50_ = _tmp49_;
 			_tmp48_ = _tmp50_ != NULL;
 			_g_free0 (_tmp50_);
@@ -926,7 +926,7 @@ valadoc_ctype_resolver_resolve_symbol (ValadocCTypeResolver* self,
 			gpointer _tmp59_;
 			ValadocApiNode* _tmp60_;
 			_tmp51_ = self->priv->nodes;
-			_tmp52_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (element, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp52_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (element, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_tmp53_ = _tmp52_;
 			_tmp54_ = g_strconcat (_tmp53_, ".", NULL);
 			_tmp55_ = _tmp54_;
@@ -945,10 +945,10 @@ valadoc_ctype_resolver_resolve_symbol (ValadocCTypeResolver* self,
 			return result;
 		} else {
 			gboolean _tmp61_ = FALSE;
-			if (VALADOC_API_IS_STRUCT (element)) {
+			if (BALADOC_API_IS_STRUCT (element)) {
 				gchar* _tmp62_;
 				gchar* _tmp63_;
-				_tmp62_ = valadoc_api_struct_get_cname (G_TYPE_CHECK_INSTANCE_CAST (element, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+				_tmp62_ = valadoc_api_struct_get_cname (G_TYPE_CHECK_INSTANCE_CAST (element, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 				_tmp63_ = _tmp62_;
 				_tmp61_ = _tmp63_ != NULL;
 				_g_free0 (_tmp63_);
@@ -967,7 +967,7 @@ valadoc_ctype_resolver_resolve_symbol (ValadocCTypeResolver* self,
 				gpointer _tmp72_;
 				ValadocApiNode* _tmp73_;
 				_tmp64_ = self->priv->nodes;
-				_tmp65_ = valadoc_api_struct_get_cname (G_TYPE_CHECK_INSTANCE_CAST (element, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+				_tmp65_ = valadoc_api_struct_get_cname (G_TYPE_CHECK_INSTANCE_CAST (element, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 				_tmp66_ = _tmp65_;
 				_tmp67_ = g_strconcat (_tmp66_, ".", NULL);
 				_tmp68_ = _tmp67_;
@@ -1109,13 +1109,13 @@ valadoc_ctype_resolver_get_parent_type_cname (ValadocCTypeResolver* self,
 	parent_cname = NULL;
 	_tmp0_ = valadoc_api_item_get_parent (item);
 	_tmp1_ = _tmp0_;
-	if (VALADOC_API_IS_CLASS (_tmp1_)) {
+	if (BALADOC_API_IS_CLASS (_tmp1_)) {
 		ValadocApiItem* _tmp2_;
 		ValadocApiItem* _tmp3_;
 		gchar* _tmp4_;
 		_tmp2_ = valadoc_api_item_get_parent (item);
 		_tmp3_ = _tmp2_;
-		_tmp4_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+		_tmp4_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 		_g_free0 (parent_cname);
 		parent_cname = _tmp4_;
 	} else {
@@ -1123,13 +1123,13 @@ valadoc_ctype_resolver_get_parent_type_cname (ValadocCTypeResolver* self,
 		ValadocApiItem* _tmp6_;
 		_tmp5_ = valadoc_api_item_get_parent (item);
 		_tmp6_ = _tmp5_;
-		if (VALADOC_API_IS_INTERFACE (_tmp6_)) {
+		if (BALADOC_API_IS_INTERFACE (_tmp6_)) {
 			ValadocApiItem* _tmp7_;
 			ValadocApiItem* _tmp8_;
 			gchar* _tmp9_;
 			_tmp7_ = valadoc_api_item_get_parent (item);
 			_tmp8_ = _tmp7_;
-			_tmp9_ = valadoc_api_interface_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
+			_tmp9_ = valadoc_api_interface_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
 			_g_free0 (parent_cname);
 			parent_cname = _tmp9_;
 		} else {
@@ -1137,13 +1137,13 @@ valadoc_ctype_resolver_get_parent_type_cname (ValadocCTypeResolver* self,
 			ValadocApiItem* _tmp11_;
 			_tmp10_ = valadoc_api_item_get_parent (item);
 			_tmp11_ = _tmp10_;
-			if (VALADOC_API_IS_STRUCT (_tmp11_)) {
+			if (BALADOC_API_IS_STRUCT (_tmp11_)) {
 				ValadocApiItem* _tmp12_;
 				ValadocApiItem* _tmp13_;
 				gchar* _tmp14_;
 				_tmp12_ = valadoc_api_item_get_parent (item);
 				_tmp13_ = _tmp12_;
-				_tmp14_ = valadoc_api_struct_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+				_tmp14_ = valadoc_api_struct_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 				_g_free0 (parent_cname);
 				parent_cname = _tmp14_;
 			} else {
@@ -1151,13 +1151,13 @@ valadoc_ctype_resolver_get_parent_type_cname (ValadocCTypeResolver* self,
 				ValadocApiItem* _tmp16_;
 				_tmp15_ = valadoc_api_item_get_parent (item);
 				_tmp16_ = _tmp15_;
-				if (VALADOC_API_IS_ERROR_DOMAIN (_tmp16_)) {
+				if (BALADOC_API_IS_ERROR_DOMAIN (_tmp16_)) {
 					ValadocApiItem* _tmp17_;
 					ValadocApiItem* _tmp18_;
 					gchar* _tmp19_;
 					_tmp17_ = valadoc_api_item_get_parent (item);
 					_tmp18_ = _tmp17_;
-					_tmp19_ = valadoc_api_error_domain_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, VALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain));
+					_tmp19_ = valadoc_api_error_domain_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, BALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain));
 					_g_free0 (parent_cname);
 					parent_cname = _tmp19_;
 				} else {
@@ -1165,13 +1165,13 @@ valadoc_ctype_resolver_get_parent_type_cname (ValadocCTypeResolver* self,
 					ValadocApiItem* _tmp21_;
 					_tmp20_ = valadoc_api_item_get_parent (item);
 					_tmp21_ = _tmp20_;
-					if (VALADOC_API_IS_ENUM (_tmp21_)) {
+					if (BALADOC_API_IS_ENUM (_tmp21_)) {
 						ValadocApiItem* _tmp22_;
 						ValadocApiItem* _tmp23_;
 						gchar* _tmp24_;
 						_tmp22_ = valadoc_api_item_get_parent (item);
 						_tmp23_ = _tmp22_;
-						_tmp24_ = valadoc_api_enum_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, VALADOC_API_TYPE_ENUM, ValadocApiEnum));
+						_tmp24_ = valadoc_api_enum_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, BALADOC_API_TYPE_ENUM, ValadocApiEnum));
 						_g_free0 (parent_cname);
 						parent_cname = _tmp24_;
 					} else {
@@ -1341,7 +1341,7 @@ valadoc_ctype_resolver_real_visit_property (ValadocApiVisitor* base,
 	_g_free0 (_tmp5_);
 	_tmp9_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 	_tmp10_ = _tmp9_;
-	if (VALADOC_API_IS_INTERFACE (_tmp10_)) {
+	if (BALADOC_API_IS_INTERFACE (_tmp10_)) {
 		ValadocApiItem* _tmp11_;
 		ValadocApiItem* _tmp12_;
 		ValaCollection* _tmp13_;
@@ -1350,12 +1350,12 @@ valadoc_ctype_resolver_real_visit_property (ValadocApiVisitor* base,
 		ValaCollection* _tmp16_;
 		_tmp11_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 		_tmp12_ = _tmp11_;
-		_tmp13_ = valadoc_api_interface_get_known_related_interfaces (G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
+		_tmp13_ = valadoc_api_interface_get_known_related_interfaces (G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
 		_vala_iterable_unref0 (interfaces);
 		interfaces = _tmp13_;
 		_tmp14_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 		_tmp15_ = _tmp14_;
-		_tmp16_ = valadoc_api_interface_get_known_implementations (G_TYPE_CHECK_INSTANCE_CAST (_tmp15_, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
+		_tmp16_ = valadoc_api_interface_get_known_implementations (G_TYPE_CHECK_INSTANCE_CAST (_tmp15_, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
 		_vala_iterable_unref0 (classes);
 		classes = _tmp16_;
 	} else {
@@ -1363,7 +1363,7 @@ valadoc_ctype_resolver_real_visit_property (ValadocApiVisitor* base,
 		ValadocApiItem* _tmp18_;
 		_tmp17_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 		_tmp18_ = _tmp17_;
-		if (VALADOC_API_IS_CLASS (_tmp18_)) {
+		if (BALADOC_API_IS_CLASS (_tmp18_)) {
 			ValadocApiItem* _tmp19_;
 			ValadocApiItem* _tmp20_;
 			ValaCollection* _tmp21_;
@@ -1372,12 +1372,12 @@ valadoc_ctype_resolver_real_visit_property (ValadocApiVisitor* base,
 			ValaCollection* _tmp24_;
 			_tmp19_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 			_tmp20_ = _tmp19_;
-			_tmp21_ = valadoc_api_class_get_known_derived_interfaces (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp21_ = valadoc_api_class_get_known_derived_interfaces (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_vala_iterable_unref0 (interfaces);
 			interfaces = _tmp21_;
 			_tmp22_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 			_tmp23_ = _tmp22_;
-			_tmp24_ = valadoc_api_class_get_known_child_classes (G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp24_ = valadoc_api_class_get_known_child_classes (G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_vala_iterable_unref0 (classes);
 			classes = _tmp24_;
 		} else {
@@ -1385,7 +1385,7 @@ valadoc_ctype_resolver_real_visit_property (ValadocApiVisitor* base,
 			ValadocApiItem* _tmp26_;
 			_tmp25_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 			_tmp26_ = _tmp25_;
-			if (VALADOC_API_IS_STRUCT (_tmp26_)) {
+			if (BALADOC_API_IS_STRUCT (_tmp26_)) {
 				_vala_iterable_unref0 (classes);
 				_vala_iterable_unref0 (interfaces);
 				_g_free0 (cname);
@@ -1503,7 +1503,7 @@ valadoc_ctype_resolver_real_visit_field (ValadocApiVisitor* base,
 	g_return_if_fail (item != NULL);
 	_tmp1_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 	_tmp2_ = _tmp1_;
-	if (VALADOC_API_IS_NAMESPACE (_tmp2_)) {
+	if (BALADOC_API_IS_NAMESPACE (_tmp2_)) {
 		_tmp0_ = TRUE;
 	} else {
 		gboolean _tmp3_;
@@ -1658,7 +1658,7 @@ valadoc_ctype_resolver_real_visit_signal (ValadocApiVisitor* base,
 	classes = NULL;
 	_tmp19_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 	_tmp20_ = _tmp19_;
-	if (VALADOC_API_IS_INTERFACE (_tmp20_)) {
+	if (BALADOC_API_IS_INTERFACE (_tmp20_)) {
 		ValadocApiItem* _tmp21_;
 		ValadocApiItem* _tmp22_;
 		ValaCollection* _tmp23_;
@@ -1667,12 +1667,12 @@ valadoc_ctype_resolver_real_visit_signal (ValadocApiVisitor* base,
 		ValaCollection* _tmp26_;
 		_tmp21_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 		_tmp22_ = _tmp21_;
-		_tmp23_ = valadoc_api_interface_get_known_related_interfaces (G_TYPE_CHECK_INSTANCE_CAST (_tmp22_, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
+		_tmp23_ = valadoc_api_interface_get_known_related_interfaces (G_TYPE_CHECK_INSTANCE_CAST (_tmp22_, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
 		_vala_iterable_unref0 (interfaces);
 		interfaces = _tmp23_;
 		_tmp24_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 		_tmp25_ = _tmp24_;
-		_tmp26_ = valadoc_api_interface_get_known_implementations (G_TYPE_CHECK_INSTANCE_CAST (_tmp25_, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
+		_tmp26_ = valadoc_api_interface_get_known_implementations (G_TYPE_CHECK_INSTANCE_CAST (_tmp25_, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface));
 		_vala_iterable_unref0 (classes);
 		classes = _tmp26_;
 	} else {
@@ -1680,7 +1680,7 @@ valadoc_ctype_resolver_real_visit_signal (ValadocApiVisitor* base,
 		ValadocApiItem* _tmp28_;
 		_tmp27_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 		_tmp28_ = _tmp27_;
-		if (VALADOC_API_IS_CLASS (_tmp28_)) {
+		if (BALADOC_API_IS_CLASS (_tmp28_)) {
 			ValadocApiItem* _tmp29_;
 			ValadocApiItem* _tmp30_;
 			ValaCollection* _tmp31_;
@@ -1689,12 +1689,12 @@ valadoc_ctype_resolver_real_visit_signal (ValadocApiVisitor* base,
 			ValaCollection* _tmp34_;
 			_tmp29_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 			_tmp30_ = _tmp29_;
-			_tmp31_ = valadoc_api_class_get_known_derived_interfaces (G_TYPE_CHECK_INSTANCE_CAST (_tmp30_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp31_ = valadoc_api_class_get_known_derived_interfaces (G_TYPE_CHECK_INSTANCE_CAST (_tmp30_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_vala_iterable_unref0 (interfaces);
 			interfaces = _tmp31_;
 			_tmp32_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 			_tmp33_ = _tmp32_;
-			_tmp34_ = valadoc_api_class_get_known_child_classes (G_TYPE_CHECK_INSTANCE_CAST (_tmp33_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp34_ = valadoc_api_class_get_known_child_classes (G_TYPE_CHECK_INSTANCE_CAST (_tmp33_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_vala_iterable_unref0 (classes);
 			classes = _tmp34_;
 		}
@@ -1850,7 +1850,7 @@ valadoc_ctype_resolver_real_visit_method (ValadocApiVisitor* base,
 		parent_cname = _tmp8_;
 		_tmp9_ = valadoc_api_item_get_parent ((ValadocApiItem*) item);
 		_tmp10_ = _tmp9_;
-		if (VALADOC_API_IS_CLASS (_tmp10_)) {
+		if (BALADOC_API_IS_CLASS (_tmp10_)) {
 			const gchar* _tmp11_;
 			gchar* _tmp12_;
 			gchar* _tmp13_;
@@ -2026,12 +2026,12 @@ valadoc_ctype_resolver_instance_init (ValadocCTypeResolver * self,
 	_tmp0_ = g_str_hash;
 	_tmp1_ = g_str_equal;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALADOC_API_TYPE_TYPESYMBOL, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_, _tmp2_);
+	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALADOC_API_TYPE_TYPESYMBOL, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_, _tmp2_);
 	self->priv->types = (ValaMap*) _tmp3_;
 	_tmp4_ = g_str_hash;
 	_tmp5_ = g_str_equal;
 	_tmp6_ = g_direct_equal;
-	_tmp7_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALADOC_API_TYPE_NODE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp4_, _tmp5_, _tmp6_);
+	_tmp7_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALADOC_API_TYPE_NODE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp4_, _tmp5_, _tmp6_);
 	self->priv->nodes = (ValaMap*) _tmp7_;
 }
 
@@ -2039,7 +2039,7 @@ static void
 valadoc_ctype_resolver_finalize (GObject * obj)
 {
 	ValadocCTypeResolver * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_CTYPE_RESOLVER, ValadocCTypeResolver);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_CTYPE_RESOLVER, ValadocCTypeResolver);
 	_vala_map_unref0 (self->priv->types);
 	_vala_map_unref0 (self->priv->nodes);
 	_valadoc_api_tree_unref0 (self->priv->tree);
@@ -2054,7 +2054,7 @@ valadoc_ctype_resolver_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocCTypeResolverClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_ctype_resolver_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocCTypeResolver), 0, (GInstanceInitFunc) valadoc_ctype_resolver_instance_init, NULL };
 	GType valadoc_ctype_resolver_type_id;
-	valadoc_ctype_resolver_type_id = g_type_register_static (VALADOC_API_TYPE_VISITOR, "ValadocCTypeResolver", &g_define_type_info, 0);
+	valadoc_ctype_resolver_type_id = g_type_register_static (BALADOC_API_TYPE_VISITOR, "ValadocCTypeResolver", &g_define_type_info, 0);
 	ValadocCTypeResolver_private_offset = g_type_add_instance_private (valadoc_ctype_resolver_type_id, sizeof (ValadocCTypeResolverPrivate));
 	return valadoc_ctype_resolver_type_id;
 }

@@ -56,7 +56,7 @@ ValaTypeParameter*
 vala_typeparameter_new (const gchar* name,
                         ValaSourceReference* source_reference)
 {
-	return vala_typeparameter_construct (VALA_TYPE_TYPEPARAMETER, name, source_reference);
+	return vala_typeparameter_construct (BALA_TYPE_TYPEPARAMETER, name, source_reference);
 }
 
 static void
@@ -162,7 +162,7 @@ vala_typeparameter_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaTypeParameterClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_typeparameter_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaTypeParameter), 0, (GInstanceInitFunc) vala_typeparameter_instance_init, NULL };
 	GType vala_typeparameter_type_id;
-	vala_typeparameter_type_id = g_type_register_static (VALA_TYPE_SYMBOL, "ValaTypeParameter", &g_define_type_info, 0);
+	vala_typeparameter_type_id = g_type_register_static (BALA_TYPE_SYMBOL, "ValaTypeParameter", &g_define_type_info, 0);
 	return vala_typeparameter_type_id;
 }
 

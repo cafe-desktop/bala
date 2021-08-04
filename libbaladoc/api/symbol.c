@@ -33,16 +33,16 @@
 #include <string.h>
 
 enum  {
-	VALADOC_API_SYMBOL_0_PROPERTY,
-	VALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY,
-	VALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY,
-	VALADOC_API_SYMBOL_IS_PUBLIC_PROPERTY,
-	VALADOC_API_SYMBOL_IS_PROTECTED_PROPERTY,
-	VALADOC_API_SYMBOL_IS_INTERNAL_PROPERTY,
-	VALADOC_API_SYMBOL_IS_PRIVATE_PROPERTY,
-	VALADOC_API_SYMBOL_NUM_PROPERTIES
+	BALADOC_API_SYMBOL_0_PROPERTY,
+	BALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY,
+	BALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY,
+	BALADOC_API_SYMBOL_IS_PUBLIC_PROPERTY,
+	BALADOC_API_SYMBOL_IS_PROTECTED_PROPERTY,
+	BALADOC_API_SYMBOL_IS_INTERNAL_PROPERTY,
+	BALADOC_API_SYMBOL_IS_PRIVATE_PROPERTY,
+	BALADOC_API_SYMBOL_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_symbol_properties[VALADOC_API_SYMBOL_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_symbol_properties[BALADOC_API_SYMBOL_NUM_PROPERTIES];
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _valadoc_api_source_comment_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_api_source_comment_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
@@ -117,7 +117,7 @@ valadoc_api_symbol_set_is_deprecated (ValadocApiSymbol* self,
 	old_value = valadoc_api_symbol_get_is_deprecated (self);
 	if (old_value != value) {
 		self->priv->_is_deprecated = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_symbol_properties[VALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_symbol_properties[BALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY]);
 	}
 }
 
@@ -174,13 +174,13 @@ valadoc_api_symbol_add_attribute (ValadocApiSymbol* self,
 		GEqualFunc _tmp1_;
 		ValaArrayList* _tmp2_;
 		_tmp1_ = g_direct_equal;
-		_tmp2_ = vala_array_list_new (VALADOC_API_TYPE_ATTRIBUTE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
+		_tmp2_ = vala_array_list_new (BALADOC_API_TYPE_ATTRIBUTE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
 		_vala_iterable_unref0 (self->priv->attributes);
 		self->priv->attributes = _tmp2_;
 	}
 	_tmp3_ = valadoc_api_item_get_data ((ValadocApiItem*) att);
 	_tmp4_ = _tmp3_;
-	_tmp5_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp4_, VALA_TYPE_ATTRIBUTE, ValaAttribute));
+	_tmp5_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp4_, BALA_TYPE_ATTRIBUTE, ValaAttribute));
 	attr = _tmp5_;
 	_tmp6_ = valadoc_api_attribute_get_name (att);
 	_tmp7_ = _tmp6_;
@@ -259,7 +259,7 @@ valadoc_api_symbol_get_attributes (ValadocApiSymbol* self)
 		GEqualFunc _tmp1_;
 		ValaArrayList* _tmp2_;
 		_tmp1_ = g_direct_equal;
-		_tmp2_ = vala_array_list_new (VALADOC_API_TYPE_ATTRIBUTE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
+		_tmp2_ = vala_array_list_new (BALADOC_API_TYPE_ATTRIBUTE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
 		result = (ValaCollection*) _tmp2_;
 		return result;
 	} else {
@@ -414,14 +414,14 @@ valadoc_api_symbol_real_is_browsable (ValadocApiNode* base,
 		if (_tmp14_ != NULL) {
 			ValadocApiItem* _tmp15_;
 			_tmp15_ = pos;
-			_tmp13_ = VALADOC_API_IS_SYMBOL (_tmp15_);
+			_tmp13_ = BALADOC_API_IS_SYMBOL (_tmp15_);
 		} else {
 			_tmp13_ = FALSE;
 		}
 		if (_tmp13_) {
 			ValadocApiItem* _tmp16_;
 			_tmp16_ = pos;
-			_tmp12_ = VALADOC_API_IS_NAMESPACE (_tmp16_) == FALSE;
+			_tmp12_ = BALADOC_API_IS_NAMESPACE (_tmp16_) == FALSE;
 		} else {
 			_tmp12_ = FALSE;
 		}
@@ -429,7 +429,7 @@ valadoc_api_symbol_real_is_browsable (ValadocApiNode* base,
 			break;
 		}
 		_tmp17_ = pos;
-		if (valadoc_api_node_is_browsable ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol), settings) == FALSE) {
+		if (valadoc_api_node_is_browsable ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol), settings) == FALSE) {
 			result = FALSE;
 			_g_object_unref0 (pos);
 			return result;
@@ -466,7 +466,7 @@ valadoc_api_symbol_set_accessibility (ValadocApiSymbol* self,
 	old_value = valadoc_api_symbol_get_accessibility (self);
 	if (old_value != value) {
 		self->priv->_accessibility = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_symbol_properties[VALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_symbol_properties[BALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY]);
 	}
 }
 
@@ -477,7 +477,7 @@ valadoc_api_symbol_get_is_public (ValadocApiSymbol* self)
 	ValaSymbolAccessibility _tmp0_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->_accessibility;
-	result = _tmp0_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC;
+	result = _tmp0_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC;
 	return result;
 }
 
@@ -488,7 +488,7 @@ valadoc_api_symbol_get_is_protected (ValadocApiSymbol* self)
 	ValaSymbolAccessibility _tmp0_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->_accessibility;
-	result = _tmp0_ == VALA_SYMBOL_ACCESSIBILITY_PROTECTED;
+	result = _tmp0_ == BALA_SYMBOL_ACCESSIBILITY_PROTECTED;
 	return result;
 }
 
@@ -499,7 +499,7 @@ valadoc_api_symbol_get_is_internal (ValadocApiSymbol* self)
 	ValaSymbolAccessibility _tmp0_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->_accessibility;
-	result = _tmp0_ == VALA_SYMBOL_ACCESSIBILITY_INTERNAL;
+	result = _tmp0_ == BALA_SYMBOL_ACCESSIBILITY_INTERNAL;
 	return result;
 }
 
@@ -510,7 +510,7 @@ valadoc_api_symbol_get_is_private (ValadocApiSymbol* self)
 	ValaSymbolAccessibility _tmp0_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->_accessibility;
-	result = _tmp0_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE;
+	result = _tmp0_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE;
 	return result;
 }
 
@@ -545,7 +545,7 @@ valadoc_api_symbol_real_parse_comments (ValadocApiItem* base,
 		valadoc_api_node_set_documentation ((ValadocApiNode*) self, _tmp5_);
 		_g_object_unref0 (_tmp5_);
 	}
-	VALADOC_API_ITEM_CLASS (valadoc_api_symbol_parent_class)->parse_comments ((ValadocApiItem*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_API_TYPE_NODE, ValadocApiNode), settings, parser);
+	BALADOC_API_ITEM_CLASS (valadoc_api_symbol_parent_class)->parse_comments ((ValadocApiItem*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_API_TYPE_NODE, ValadocApiNode), settings, parser);
 }
 
 /**
@@ -571,7 +571,7 @@ valadoc_api_symbol_real_check_comments (ValadocApiItem* base,
 		_tmp3_ = _tmp2_;
 		valadoc_documentation_parser_check (parser, (ValadocApiNode*) self, _tmp3_);
 	}
-	VALADOC_API_ITEM_CLASS (valadoc_api_symbol_parent_class)->check_comments ((ValadocApiItem*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_API_TYPE_NODE, ValadocApiNode), settings, parser);
+	BALADOC_API_ITEM_CLASS (valadoc_api_symbol_parent_class)->check_comments ((ValadocApiItem*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_API_TYPE_NODE, ValadocApiNode), settings, parser);
 }
 
 static void
@@ -586,24 +586,24 @@ valadoc_api_symbol_class_init (ValadocApiSymbolClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_symbol_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_symbol_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_symbol_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY, valadoc_api_symbol_properties[VALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY] = g_param_spec_boolean ("is-deprecated", "is-deprecated", "is-deprecated", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY, valadoc_api_symbol_properties[VALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY] = g_param_spec_enum ("accessibility", "accessibility", "accessibility", VALA_TYPE_SYMBOL_ACCESSIBILITY, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY, valadoc_api_symbol_properties[BALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY] = g_param_spec_boolean ("is-deprecated", "is-deprecated", "is-deprecated", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY, valadoc_api_symbol_properties[BALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY] = g_param_spec_enum ("accessibility", "accessibility", "accessibility", BALA_TYPE_SYMBOL_ACCESSIBILITY, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this symbol is public.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SYMBOL_IS_PUBLIC_PROPERTY, valadoc_api_symbol_properties[VALADOC_API_SYMBOL_IS_PUBLIC_PROPERTY] = g_param_spec_boolean ("is-public", "is-public", "is-public", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SYMBOL_IS_PUBLIC_PROPERTY, valadoc_api_symbol_properties[BALADOC_API_SYMBOL_IS_PUBLIC_PROPERTY] = g_param_spec_boolean ("is-public", "is-public", "is-public", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this symbol is protected.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SYMBOL_IS_PROTECTED_PROPERTY, valadoc_api_symbol_properties[VALADOC_API_SYMBOL_IS_PROTECTED_PROPERTY] = g_param_spec_boolean ("is-protected", "is-protected", "is-protected", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SYMBOL_IS_PROTECTED_PROPERTY, valadoc_api_symbol_properties[BALADOC_API_SYMBOL_IS_PROTECTED_PROPERTY] = g_param_spec_boolean ("is-protected", "is-protected", "is-protected", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this symbol is internal.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SYMBOL_IS_INTERNAL_PROPERTY, valadoc_api_symbol_properties[VALADOC_API_SYMBOL_IS_INTERNAL_PROPERTY] = g_param_spec_boolean ("is-internal", "is-internal", "is-internal", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SYMBOL_IS_INTERNAL_PROPERTY, valadoc_api_symbol_properties[BALADOC_API_SYMBOL_IS_INTERNAL_PROPERTY] = g_param_spec_boolean ("is-internal", "is-internal", "is-internal", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this symbol is private.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_SYMBOL_IS_PRIVATE_PROPERTY, valadoc_api_symbol_properties[VALADOC_API_SYMBOL_IS_PRIVATE_PROPERTY] = g_param_spec_boolean ("is-private", "is-private", "is-private", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_SYMBOL_IS_PRIVATE_PROPERTY, valadoc_api_symbol_properties[BALADOC_API_SYMBOL_IS_PRIVATE_PROPERTY] = g_param_spec_boolean ("is-private", "is-private", "is-private", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -618,7 +618,7 @@ static void
 valadoc_api_symbol_finalize (GObject * obj)
 {
 	ValadocApiSymbol * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol);
 	_vala_iterable_unref0 (self->priv->attributes);
 	_valadoc_api_source_comment_unref0 (self->priv->source_comment);
 	G_OBJECT_CLASS (valadoc_api_symbol_parent_class)->finalize (obj);
@@ -632,7 +632,7 @@ valadoc_api_symbol_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiSymbolClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_symbol_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiSymbol), 0, (GInstanceInitFunc) valadoc_api_symbol_instance_init, NULL };
 	GType valadoc_api_symbol_type_id;
-	valadoc_api_symbol_type_id = g_type_register_static (VALADOC_API_TYPE_NODE, "ValadocApiSymbol", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	valadoc_api_symbol_type_id = g_type_register_static (BALADOC_API_TYPE_NODE, "ValadocApiSymbol", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	ValadocApiSymbol_private_offset = g_type_add_instance_private (valadoc_api_symbol_type_id, sizeof (ValadocApiSymbolPrivate));
 	return valadoc_api_symbol_type_id;
 }
@@ -656,24 +656,24 @@ _vala_valadoc_api_symbol_get_property (GObject * object,
                                        GParamSpec * pspec)
 {
 	ValadocApiSymbol * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol);
 	switch (property_id) {
-		case VALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY:
+		case BALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_symbol_get_is_deprecated (self));
 		break;
-		case VALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY:
+		case BALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY:
 		g_value_set_enum (value, valadoc_api_symbol_get_accessibility (self));
 		break;
-		case VALADOC_API_SYMBOL_IS_PUBLIC_PROPERTY:
+		case BALADOC_API_SYMBOL_IS_PUBLIC_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_symbol_get_is_public (self));
 		break;
-		case VALADOC_API_SYMBOL_IS_PROTECTED_PROPERTY:
+		case BALADOC_API_SYMBOL_IS_PROTECTED_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_symbol_get_is_protected (self));
 		break;
-		case VALADOC_API_SYMBOL_IS_INTERNAL_PROPERTY:
+		case BALADOC_API_SYMBOL_IS_INTERNAL_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_symbol_get_is_internal (self));
 		break;
-		case VALADOC_API_SYMBOL_IS_PRIVATE_PROPERTY:
+		case BALADOC_API_SYMBOL_IS_PRIVATE_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_symbol_get_is_private (self));
 		break;
 		default:
@@ -689,12 +689,12 @@ _vala_valadoc_api_symbol_set_property (GObject * object,
                                        GParamSpec * pspec)
 {
 	ValadocApiSymbol * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol);
 	switch (property_id) {
-		case VALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY:
+		case BALADOC_API_SYMBOL_IS_DEPRECATED_PROPERTY:
 		valadoc_api_symbol_set_is_deprecated (self, g_value_get_boolean (value));
 		break;
-		case VALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY:
+		case BALADOC_API_SYMBOL_ACCESSIBILITY_PROPERTY:
 		valadoc_api_symbol_set_accessibility (self, g_value_get_enum (value));
 		break;
 		default:

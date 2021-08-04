@@ -31,10 +31,10 @@
 #include <stdio.h>
 
 enum  {
-	VALADOC_CHARTS_CHART_0_PROPERTY,
-	VALADOC_CHARTS_CHART_NUM_PROPERTIES
+	BALADOC_CHARTS_CHART_0_PROPERTY,
+	BALADOC_CHARTS_CHART_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_charts_chart_properties[VALADOC_CHARTS_CHART_NUM_PROPERTIES];
+static GParamSpec* valadoc_charts_chart_properties[BALADOC_CHARTS_CHART_NUM_PROPERTIES];
 #define _gvFreeContext0(var) ((var == NULL) ? NULL : (var = (gvFreeContext (var), NULL)))
 #define _agclose0(var) ((var == NULL) ? NULL : (var = (agclose (var), NULL)))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
@@ -76,7 +76,7 @@ ValadocChartsChart*
 valadoc_charts_chart_new (ValadocChartsFactory* factory,
                           ValadocApiNode* node)
 {
-	return valadoc_charts_chart_construct (VALADOC_CHARTS_TYPE_CHART, factory, node);
+	return valadoc_charts_chart_construct (BALADOC_CHARTS_TYPE_CHART, factory, node);
 }
 
 void
@@ -198,7 +198,7 @@ valadoc_charts_chart_finalize (GObject * obj)
 {
 	ValadocChartsChart * self;
 	GVC_t* _tmp0_;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CHARTS_TYPE_CHART, ValadocChartsChart);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CHARTS_TYPE_CHART, ValadocChartsChart);
 	_tmp0_ = self->context;
 	if (_tmp0_ != NULL) {
 		GVC_t* _tmp1_;
@@ -218,7 +218,7 @@ valadoc_charts_chart_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocChartsChartClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_charts_chart_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocChartsChart), 0, (GInstanceInitFunc) valadoc_charts_chart_instance_init, NULL };
 	GType valadoc_charts_chart_type_id;
-	valadoc_charts_chart_type_id = g_type_register_static (VALADOC_API_TYPE_VISITOR, "ValadocChartsChart", &g_define_type_info, 0);
+	valadoc_charts_chart_type_id = g_type_register_static (BALADOC_API_TYPE_VISITOR, "ValadocChartsChart", &g_define_type_info, 0);
 	return valadoc_charts_chart_type_id;
 }
 

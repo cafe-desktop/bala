@@ -78,7 +78,7 @@ valadoc_api_signature_builder_construct (GType object_type)
 	ValadocApiSignatureBuilder* self = NULL;
 	ValadocContentRun* _tmp0_;
 	self = (ValadocApiSignatureBuilder*) g_type_create_instance (object_type);
-	_tmp0_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_NONE);
+	_tmp0_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_NONE);
 	_g_object_unref0 (self->priv->run);
 	self->priv->run = _tmp0_;
 	return self;
@@ -87,7 +87,7 @@ valadoc_api_signature_builder_construct (GType object_type)
 ValadocApiSignatureBuilder*
 valadoc_api_signature_builder_new (void)
 {
-	return valadoc_api_signature_builder_construct (VALADOC_API_TYPE_SIGNATURE_BUILDER);
+	return valadoc_api_signature_builder_construct (BALADOC_API_TYPE_SIGNATURE_BUILDER);
 }
 
 static void
@@ -98,7 +98,7 @@ valadoc_api_signature_builder_append_text (ValadocApiSignatureBuilder* self,
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (text != NULL);
 	_tmp0_ = self->priv->last_appended;
-	if (VALADOC_CONTENT_IS_TEXT (_tmp0_)) {
+	if (BALADOC_CONTENT_IS_TEXT (_tmp0_)) {
 		ValadocContentInline* _tmp1_;
 		ValadocContentInline* _tmp2_;
 		const gchar* _tmp3_;
@@ -107,11 +107,11 @@ valadoc_api_signature_builder_append_text (ValadocApiSignatureBuilder* self,
 		gchar* _tmp6_;
 		_tmp1_ = self->priv->last_appended;
 		_tmp2_ = self->priv->last_appended;
-		_tmp3_ = valadoc_content_text_get_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_TEXT, ValadocContentText));
+		_tmp3_ = valadoc_content_text_get_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_TEXT, ValadocContentText));
 		_tmp4_ = _tmp3_;
 		_tmp5_ = g_strconcat (_tmp4_, text, NULL);
 		_tmp6_ = _tmp5_;
-		valadoc_content_text_set_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_TEXT, ValadocContentText), _tmp6_);
+		valadoc_content_text_set_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_TEXT, ValadocContentText), _tmp6_);
 		_g_free0 (_tmp6_);
 	} else {
 		ValadocContentRun* _tmp7_;
@@ -248,7 +248,7 @@ valadoc_api_signature_builder_append_highlighted (ValadocApiSignatureBuilder* se
 	}
 	_tmp3_ = g_strconcat (_tmp0_, text, NULL);
 	content = _tmp3_;
-	_tmp4_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_ITALIC);
+	_tmp4_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_ITALIC);
 	inner = _tmp4_;
 	_tmp5_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) inner);
 	_tmp6_ = _tmp5_;
@@ -334,7 +334,7 @@ valadoc_api_signature_builder_append_keyword (ValadocApiSignatureBuilder* self,
 	ValadocApiSignatureBuilder* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (keyword != NULL, NULL);
-	_tmp0_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
+	_tmp0_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
 	inner = _tmp0_;
 	_tmp1_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) inner);
 	_tmp2_ = _tmp1_;
@@ -372,7 +372,7 @@ valadoc_api_signature_builder_append_symbol (ValadocApiSignatureBuilder* self,
 	ValadocApiSignatureBuilder* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (node != NULL, NULL);
-	_tmp0_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_BOLD);
+	_tmp0_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_BOLD);
 	inner = _tmp0_;
 	_tmp1_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) inner);
 	_tmp2_ = _tmp1_;
@@ -415,18 +415,18 @@ valadoc_api_signature_builder_append_type (ValadocApiSignatureBuilder* self,
 	ValadocApiSignatureBuilder* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (node != NULL, NULL);
-	style = VALADOC_CONTENT_RUN_STYLE_LANG_TYPE;
-	if (VALADOC_API_IS_TYPESYMBOL (node)) {
+	style = BALADOC_CONTENT_RUN_STYLE_LANG_TYPE;
+	if (BALADOC_API_IS_TYPESYMBOL (node)) {
 		gboolean _tmp1_;
 		gboolean _tmp2_;
-		_tmp1_ = valadoc_api_typesymbol_get_is_basic_type (G_TYPE_CHECK_INSTANCE_CAST (node, VALADOC_API_TYPE_TYPESYMBOL, ValadocApiTypeSymbol));
+		_tmp1_ = valadoc_api_typesymbol_get_is_basic_type (G_TYPE_CHECK_INSTANCE_CAST (node, BALADOC_API_TYPE_TYPESYMBOL, ValadocApiTypeSymbol));
 		_tmp2_ = _tmp1_;
 		_tmp0_ = _tmp2_;
 	} else {
 		_tmp0_ = FALSE;
 	}
 	if (_tmp0_) {
-		style = VALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE;
+		style = BALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE;
 	}
 	_tmp3_ = style;
 	_tmp4_ = valadoc_content_run_new (_tmp3_);
@@ -467,7 +467,7 @@ valadoc_api_signature_builder_append_type_name (ValadocApiSignatureBuilder* self
 	ValadocApiSignatureBuilder* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (name != NULL, NULL);
-	_tmp0_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_TYPE);
+	_tmp0_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_TYPE);
 	inner = _tmp0_;
 	_tmp1_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) inner);
 	_tmp2_ = _tmp1_;
@@ -503,7 +503,7 @@ valadoc_api_signature_builder_append_literal (ValadocApiSignatureBuilder* self,
 	ValadocApiSignatureBuilder* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (literal != NULL, NULL);
-	_tmp0_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_LITERAL);
+	_tmp0_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_LITERAL);
 	inner = _tmp0_;
 	_tmp1_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) inner);
 	_tmp2_ = _tmp1_;
@@ -614,7 +614,7 @@ valadoc_api_param_spec_signature_builder (const gchar* name,
                                           GParamFlags flags)
 {
 	ValadocApiParamSpecSignatureBuilder* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALADOC_API_TYPE_SIGNATURE_BUILDER), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALADOC_API_TYPE_SIGNATURE_BUILDER), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -623,7 +623,7 @@ valadoc_api_param_spec_signature_builder (const gchar* name,
 gpointer
 valadoc_api_value_get_signature_builder (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TYPE_SIGNATURE_BUILDER), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TYPE_SIGNATURE_BUILDER), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -632,10 +632,10 @@ valadoc_api_value_set_signature_builder (GValue* value,
                                          gpointer v_object)
 {
 	ValadocApiSignatureBuilder * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TYPE_SIGNATURE_BUILDER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TYPE_SIGNATURE_BUILDER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_API_TYPE_SIGNATURE_BUILDER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_API_TYPE_SIGNATURE_BUILDER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		valadoc_api_signature_builder_ref (value->data[0].v_pointer);
@@ -652,10 +652,10 @@ valadoc_api_value_take_signature_builder (GValue* value,
                                           gpointer v_object)
 {
 	ValadocApiSignatureBuilder * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TYPE_SIGNATURE_BUILDER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TYPE_SIGNATURE_BUILDER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_API_TYPE_SIGNATURE_BUILDER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_API_TYPE_SIGNATURE_BUILDER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -687,7 +687,7 @@ static void
 valadoc_api_signature_builder_finalize (ValadocApiSignatureBuilder * obj)
 {
 	ValadocApiSignatureBuilder * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_SIGNATURE_BUILDER, ValadocApiSignatureBuilder);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_SIGNATURE_BUILDER, ValadocApiSignatureBuilder);
 	g_signal_handlers_destroy (self);
 	_g_object_unref0 (self->priv->run);
 	_g_object_unref0 (self->priv->last_appended);
@@ -735,7 +735,7 @@ valadoc_api_signature_builder_unref (gpointer instance)
 	ValadocApiSignatureBuilder * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALADOC_API_SIGNATURE_BUILDER_GET_CLASS (self)->finalize (self);
+		BALADOC_API_SIGNATURE_BUILDER_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

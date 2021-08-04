@@ -167,7 +167,7 @@ vala_try_statement_new (ValaBlock* body,
                         ValaBlock* finally_body,
                         ValaSourceReference* source_reference)
 {
-	return vala_try_statement_construct (VALA_TYPE_TRY_STATEMENT, body, finally_body, source_reference);
+	return vala_try_statement_construct (BALA_TYPE_TRY_STATEMENT, body, finally_body, source_reference);
 }
 
 /**
@@ -300,7 +300,7 @@ vala_try_statement_real_get_error_types (ValaCodeNode* base,
 	self = (ValaTryStatement*) base;
 	g_return_if_fail (collection != NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	error_types = _tmp1_;
 	_tmp2_ = vala_try_statement_get_body (self);
 	_tmp3_ = _tmp2_;
@@ -495,7 +495,7 @@ vala_try_statement_real_check (ValaCodeNode* base,
 	vala_code_node_set_checked ((ValaCodeNode*) self, TRUE);
 	_tmp4_ = vala_code_context_get_profile (context);
 	_tmp5_ = _tmp4_;
-	if (_tmp5_ == VALA_PROFILE_POSIX) {
+	if (_tmp5_ == BALA_PROFILE_POSIX) {
 		ValaSourceReference* _tmp6_;
 		ValaSourceReference* _tmp7_;
 		_tmp6_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
@@ -602,7 +602,7 @@ vala_try_statement_instance_init (ValaTryStatement * self,
 	self->priv = vala_try_statement_get_instance_private (self);
 	self->priv->_after_try_block_reachable = TRUE;
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CATCH_CLAUSE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CATCH_CLAUSE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->catch_clauses = (ValaList*) _tmp1_;
 }
 
@@ -610,11 +610,11 @@ static void
 vala_try_statement_finalize (ValaCodeNode * obj)
 {
 	ValaTryStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_TRY_STATEMENT, ValaTryStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_TRY_STATEMENT, ValaTryStatement);
 	_vala_code_node_unref0 (self->priv->_body);
 	_vala_code_node_unref0 (self->priv->_finally_body);
 	_vala_iterable_unref0 (self->priv->catch_clauses);
-	VALA_CODE_NODE_CLASS (vala_try_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_try_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -626,8 +626,8 @@ vala_try_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaTryStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_try_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaTryStatement), 0, (GInstanceInitFunc) vala_try_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_try_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_try_statement_type_id;
-	vala_try_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaTryStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_try_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_try_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaTryStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_try_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaTryStatement_private_offset = g_type_add_instance_private (vala_try_statement_type_id, sizeof (ValaTryStatementPrivate));
 	return vala_try_statement_type_id;
 }

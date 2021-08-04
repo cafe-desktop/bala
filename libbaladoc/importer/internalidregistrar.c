@@ -80,7 +80,7 @@ valadoc_importer_internal_id_registrar_construct (GType object_type)
 	_tmp4_ = g_str_hash;
 	_tmp5_ = g_str_equal;
 	_tmp6_ = g_direct_equal;
-	_tmp7_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALADOC_API_TYPE_NODE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp4_, _tmp5_, _tmp6_);
+	_tmp7_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALADOC_API_TYPE_NODE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp4_, _tmp5_, _tmp6_);
 	_vala_map_unref0 (self->priv->symbol_map);
 	self->priv->symbol_map = _tmp7_;
 	return self;
@@ -89,7 +89,7 @@ valadoc_importer_internal_id_registrar_construct (GType object_type)
 ValadocImporterInternalIdRegistrar*
 valadoc_importer_internal_id_registrar_new (void)
 {
-	return valadoc_importer_internal_id_registrar_construct (VALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR);
+	return valadoc_importer_internal_id_registrar_construct (BALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR);
 }
 
 void
@@ -180,11 +180,11 @@ valadoc_importer_internal_id_registrar_read_index_sgml_file (ValadocImporterInte
 		end = _tmp7_;
 		token = _tmp8_;
 		_tmp9_ = token;
-		if (!(_tmp9_ != VALA_MARKUP_TOKEN_TYPE_EOF)) {
+		if (!(_tmp9_ != BALA_MARKUP_TOKEN_TYPE_EOF)) {
 			break;
 		}
 		_tmp11_ = token;
-		if (_tmp11_ == VALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
+		if (_tmp11_ == BALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
 			ValaMarkupReader* _tmp12_;
 			const gchar* _tmp13_;
 			const gchar* _tmp14_;
@@ -213,7 +213,7 @@ valadoc_importer_internal_id_registrar_read_index_sgml_file (ValadocImporterInte
 			gboolean _tmp18_ = FALSE;
 			ValaMarkupTokenType _tmp19_;
 			_tmp19_ = token;
-			if (_tmp19_ == VALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
+			if (_tmp19_ == BALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
 				ValaMarkupReader* _tmp20_;
 				const gchar* _tmp21_;
 				const gchar* _tmp22_;
@@ -363,7 +363,7 @@ valadoc_importer_param_spec_internal_id_registrar (const gchar* name,
                                                    GParamFlags flags)
 {
 	ValadocImporterParamSpecInternalIdRegistrar* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -372,7 +372,7 @@ valadoc_importer_param_spec_internal_id_registrar (const gchar* name,
 gpointer
 valadoc_importer_value_get_internal_id_registrar (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -381,10 +381,10 @@ valadoc_importer_value_set_internal_id_registrar (GValue* value,
                                                   gpointer v_object)
 {
 	ValadocImporterInternalIdRegistrar * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		valadoc_importer_internal_id_registrar_ref (value->data[0].v_pointer);
@@ -401,10 +401,10 @@ valadoc_importer_value_take_internal_id_registrar (GValue* value,
                                                    gpointer v_object)
 {
 	ValadocImporterInternalIdRegistrar * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -436,7 +436,7 @@ static void
 valadoc_importer_internal_id_registrar_finalize (ValadocImporterInternalIdRegistrar * obj)
 {
 	ValadocImporterInternalIdRegistrar * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR, ValadocImporterInternalIdRegistrar);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_IMPORTER_TYPE_INTERNAL_ID_REGISTRAR, ValadocImporterInternalIdRegistrar);
 	g_signal_handlers_destroy (self);
 	_vala_map_unref0 (self->priv->symbol_map);
 	_vala_map_unref0 (self->priv->map);
@@ -481,7 +481,7 @@ valadoc_importer_internal_id_registrar_unref (gpointer instance)
 	ValadocImporterInternalIdRegistrar * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALADOC_IMPORTER_INTERNAL_ID_REGISTRAR_GET_CLASS (self)->finalize (self);
+		BALADOC_IMPORTER_INTERNAL_ID_REGISTRAR_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

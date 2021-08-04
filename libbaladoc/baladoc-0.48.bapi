@@ -728,7 +728,7 @@ namespace Valadoc {
 			public enum Language {
 				UNKNOWN,
 				GENIE,
-				VALA,
+				BALA,
 				XML,
 				C;
 				public static Valadoc.Content.SourceCode.Language from_path (string path);
@@ -1528,12 +1528,12 @@ namespace Valadoc {
 		public static Valadoc.TokenType TRIPLE_CLOSED_BRACE;
 		public static Valadoc.TokenType TRIPLE_OPEN_BRACE;
 		public static Valadoc.TokenType UNDERSCORE_2;
-		public static Valadoc.TokenType VALADOC_ANY_WORD;
-		public static Valadoc.TokenType VALADOC_COMMENT_END;
-		public static Valadoc.TokenType VALADOC_COMMENT_START;
-		public static Valadoc.TokenType VALADOC_EOL;
-		public static Valadoc.TokenType VALADOC_SPACE;
-		public static Valadoc.TokenType VALADOC_TAB;
+		public static Valadoc.TokenType BALADOC_ANY_WORD;
+		public static Valadoc.TokenType BALADOC_COMMENT_END;
+		public static Valadoc.TokenType BALADOC_COMMENT_START;
+		public static Valadoc.TokenType BALADOC_EOL;
+		public static Valadoc.TokenType BALADOC_SPACE;
+		public static Valadoc.TokenType BALADOC_TAB;
 		public Valadoc.TokenType action (Valadoc.TokenType.Action action);
 		public static Valadoc.TokenType any ();
 		public static Valadoc.TokenType any_number ();

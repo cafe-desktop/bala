@@ -163,7 +163,7 @@ ValaAttribute*
 vala_attribute_new (const gchar* name,
                     ValaSourceReference* source_reference)
 {
-	return vala_attribute_construct (VALA_TYPE_ATTRIBUTE, name, source_reference);
+	return vala_attribute_construct (BALA_TYPE_ATTRIBUTE, name, source_reference);
 }
 
 /**
@@ -461,10 +461,10 @@ static void
 vala_attribute_finalize (ValaCodeNode * obj)
 {
 	ValaAttribute * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ATTRIBUTE, ValaAttribute);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ATTRIBUTE, ValaAttribute);
 	_g_free0 (self->priv->_name);
 	_vala_map_unref0 (self->priv->_args);
-	VALA_CODE_NODE_CLASS (vala_attribute_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_attribute_parent_class)->finalize (obj);
 }
 
 /**
@@ -475,7 +475,7 @@ vala_attribute_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaAttributeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_attribute_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaAttribute), 0, (GInstanceInitFunc) vala_attribute_instance_init, NULL };
 	GType vala_attribute_type_id;
-	vala_attribute_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaAttribute", &g_define_type_info, 0);
+	vala_attribute_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaAttribute", &g_define_type_info, 0);
 	ValaAttribute_private_offset = g_type_add_instance_private (vala_attribute_type_id, sizeof (ValaAttributePrivate));
 	return vala_attribute_type_id;
 }

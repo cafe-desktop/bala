@@ -31,11 +31,11 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_CONTENT_ELEMENT_0_PROPERTY,
-	VALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY,
-	VALADOC_CONTENT_CONTENT_ELEMENT_NUM_PROPERTIES
+	BALADOC_CONTENT_CONTENT_ELEMENT_0_PROPERTY,
+	BALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY,
+	BALADOC_CONTENT_CONTENT_ELEMENT_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_content_element_properties[VALADOC_CONTENT_CONTENT_ELEMENT_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_content_element_properties[BALADOC_CONTENT_CONTENT_ELEMENT_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 
 struct _ValadocContentContentElementPrivate {
@@ -109,7 +109,7 @@ valadoc_content_content_element_set_parent (ValadocContentContentElement* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_parent);
 		self->priv->_parent = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_content_element_properties[VALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_content_element_properties[BALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY]);
 	}
 }
 
@@ -126,7 +126,7 @@ valadoc_content_content_element_copy (ValadocContentContentElement* self,
                                       ValadocContentContentElement* new_parent)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->copy (self, new_parent);
+	return BALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->copy (self, new_parent);
 }
 
 static void
@@ -144,7 +144,7 @@ valadoc_content_content_element_configure (ValadocContentContentElement* self,
                                            ValadocResourceLocator* locator)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->configure (self, settings, locator);
+	BALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->configure (self, settings, locator);
 }
 
 static void
@@ -168,7 +168,7 @@ valadoc_content_content_element_check (ValadocContentContentElement* self,
                                        ValadocSettings* settings)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->check (self, api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->check (self, api_root, container, file_path, reporter, settings);
 }
 
 static void
@@ -184,7 +184,7 @@ valadoc_content_content_element_accept (ValadocContentContentElement* self,
                                         ValadocContentContentVisitor* visitor)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->accept (self, visitor);
+	BALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->accept (self, visitor);
 }
 
 static gboolean
@@ -199,7 +199,7 @@ gboolean
 valadoc_content_content_element_is_empty (ValadocContentContentElement* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->is_empty (self);
+	return BALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->is_empty (self);
 }
 
 static void
@@ -214,7 +214,7 @@ valadoc_content_content_element_accept_children (ValadocContentContentElement* s
                                                  ValadocContentContentVisitor* visitor)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->accept_children (self, visitor);
+	BALADOC_CONTENT_CONTENT_ELEMENT_GET_CLASS (self)->accept_children (self, visitor);
 }
 
 ValadocContentContentElement*
@@ -240,7 +240,7 @@ valadoc_content_content_element_class_init (ValadocContentContentElementClass * 
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_content_content_element_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_content_content_element_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_content_content_element_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY, valadoc_content_content_element_properties[VALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY] = g_param_spec_object ("parent", "parent", "parent", VALADOC_CONTENT_TYPE_CONTENT_ELEMENT, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY, valadoc_content_content_element_properties[BALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY] = g_param_spec_object ("parent", "parent", "parent", BALADOC_CONTENT_TYPE_CONTENT_ELEMENT, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 }
 
 static void
@@ -254,7 +254,7 @@ static void
 valadoc_content_content_element_finalize (GObject * obj)
 {
 	ValadocContentContentElement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_CONTENT_ELEMENT, ValadocContentContentElement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_CONTENT_ELEMENT, ValadocContentContentElement);
 	_g_object_unref0 (self->priv->_parent);
 	G_OBJECT_CLASS (valadoc_content_content_element_parent_class)->finalize (obj);
 }
@@ -288,9 +288,9 @@ _vala_valadoc_content_content_element_get_property (GObject * object,
                                                     GParamSpec * pspec)
 {
 	ValadocContentContentElement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_CONTENT_ELEMENT, ValadocContentContentElement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_CONTENT_ELEMENT, ValadocContentContentElement);
 	switch (property_id) {
-		case VALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY:
+		case BALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY:
 		g_value_set_object (value, valadoc_content_content_element_get_parent (self));
 		break;
 		default:
@@ -306,9 +306,9 @@ _vala_valadoc_content_content_element_set_property (GObject * object,
                                                     GParamSpec * pspec)
 {
 	ValadocContentContentElement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_CONTENT_ELEMENT, ValadocContentContentElement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_CONTENT_ELEMENT, ValadocContentContentElement);
 	switch (property_id) {
-		case VALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY:
+		case BALADOC_CONTENT_CONTENT_ELEMENT_PARENT_PROPERTY:
 		valadoc_content_content_element_set_parent (self, g_value_get_object (value));
 		break;
 		default:

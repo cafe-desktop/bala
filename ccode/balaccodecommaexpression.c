@@ -164,7 +164,7 @@ vala_ccode_comma_expression_construct (GType object_type)
 ValaCCodeCommaExpression*
 vala_ccode_comma_expression_new (void)
 {
-	return vala_ccode_comma_expression_construct (VALA_TYPE_CCODE_COMMA_EXPRESSION);
+	return vala_ccode_comma_expression_construct (BALA_TYPE_CCODE_COMMA_EXPRESSION);
 }
 
 static void
@@ -185,7 +185,7 @@ vala_ccode_comma_expression_instance_init (ValaCCodeCommaExpression * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_ccode_comma_expression_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
 	self->priv->inner = (ValaList*) _tmp1_;
 }
 
@@ -193,9 +193,9 @@ static void
 vala_ccode_comma_expression_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeCommaExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_COMMA_EXPRESSION, ValaCCodeCommaExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_COMMA_EXPRESSION, ValaCCodeCommaExpression);
 	_vala_iterable_unref0 (self->priv->inner);
-	VALA_CCODE_NODE_CLASS (vala_ccode_comma_expression_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_comma_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -206,7 +206,7 @@ vala_ccode_comma_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeCommaExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_comma_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeCommaExpression), 0, (GInstanceInitFunc) vala_ccode_comma_expression_instance_init, NULL };
 	GType vala_ccode_comma_expression_type_id;
-	vala_ccode_comma_expression_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeCommaExpression", &g_define_type_info, 0);
+	vala_ccode_comma_expression_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeCommaExpression", &g_define_type_info, 0);
 	ValaCCodeCommaExpression_private_offset = g_type_add_instance_private (vala_ccode_comma_expression_type_id, sizeof (ValaCCodeCommaExpressionPrivate));
 	return vala_ccode_comma_expression_type_id;
 }

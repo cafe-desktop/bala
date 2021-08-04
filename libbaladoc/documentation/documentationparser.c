@@ -32,10 +32,10 @@
 #include <string.h>
 
 enum  {
-	VALADOC_DOCUMENTATION_PARSER_0_PROPERTY,
-	VALADOC_DOCUMENTATION_PARSER_NUM_PROPERTIES
+	BALADOC_DOCUMENTATION_PARSER_0_PROPERTY,
+	BALADOC_DOCUMENTATION_PARSER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_documentation_parser_properties[VALADOC_DOCUMENTATION_PARSER_NUM_PROPERTIES];
+static GParamSpec* valadoc_documentation_parser_properties[BALADOC_DOCUMENTATION_PARSER_NUM_PROPERTIES];
 #define _vala_map_unref0(var) ((var == NULL) ? NULL : (var = (vala_map_unref (var), NULL)))
 #define _valadoc_importer_internal_id_registrar_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_importer_internal_id_registrar_unref (var), NULL)))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
@@ -614,7 +614,7 @@ valadoc_documentation_parser_construct (GType object_type,
 	_tmp25_ = g_direct_hash;
 	_tmp26_ = g_direct_equal;
 	_tmp27_ = g_direct_equal;
-	_tmp28_ = vala_hash_map_new (VALADOC_API_TYPE_SOURCE_FILE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, VALADOC_TYPE_GIR_META_DATA, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp25_, _tmp26_, _tmp27_);
+	_tmp28_ = vala_hash_map_new (BALADOC_API_TYPE_SOURCE_FILE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, BALADOC_TYPE_GIR_META_DATA, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp25_, _tmp26_, _tmp27_);
 	_vala_map_unref0 (self->priv->metadata);
 	self->priv->metadata = _tmp28_;
 	_tmp29_ = valadoc_importer_internal_id_registrar_new ();
@@ -630,7 +630,7 @@ valadoc_documentation_parser_new (ValadocSettings* settings,
                                   ValadocApiTree* tree,
                                   ValadocModuleLoader* modules)
 {
-	return valadoc_documentation_parser_construct (VALADOC_TYPE_DOCUMENTATION_PARSER, settings, reporter, tree, modules);
+	return valadoc_documentation_parser_construct (BALADOC_TYPE_DOCUMENTATION_PARSER, settings, reporter, tree, modules);
 }
 
 static gpointer
@@ -648,7 +648,7 @@ valadoc_documentation_parser_parse (ValadocDocumentationParser* self,
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (element != NULL, NULL);
 	g_return_val_if_fail (comment != NULL, NULL);
-	if (VALADOC_API_IS_GIR_SOURCE_COMMENT (comment)) {
+	if (BALADOC_API_IS_GIR_SOURCE_COMMENT (comment)) {
 		ValadocApiGirSourceComment* gir_comment = NULL;
 		ValadocApiGirSourceComment* _tmp0_;
 		ValadocGirMetaData* metadata = NULL;
@@ -657,7 +657,7 @@ valadoc_documentation_parser_parse (ValadocDocumentationParser* self,
 		ValadocGirMetaData* _tmp3_;
 		gboolean _tmp4_;
 		gboolean _tmp5_;
-		_tmp0_ = _valadoc_api_source_comment_ref0 (G_TYPE_CHECK_INSTANCE_CAST (comment, VALADOC_API_TYPE_GIR_SOURCE_COMMENT, ValadocApiGirSourceComment));
+		_tmp0_ = _valadoc_api_source_comment_ref0 (G_TYPE_CHECK_INSTANCE_CAST (comment, BALADOC_API_TYPE_GIR_SOURCE_COMMENT, ValadocApiGirSourceComment));
 		gir_comment = _tmp0_;
 		_tmp1_ = gir_comment;
 		_tmp2_ = valadoc_documentation_parser_get_metadata_for_comment (self, _tmp1_);
@@ -753,7 +753,7 @@ valadoc_documentation_parser_parse_comment_str (ValadocDocumentationParser* self
 		_tmp0_ = valadoc_documentation_parser_parse_comment (self, content, filename, first_line, first_column, &_inner_error0_);
 		doc_comment = _tmp0_;
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				goto __catch0_valadoc_parser_error;
 			}
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
@@ -825,7 +825,7 @@ valadoc_documentation_parser_parse_wikipage (ValadocDocumentationParser* self,
 		_g_free0 (_tmp10_);
 		documentation = _tmp12_;
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				goto __catch0_valadoc_parser_error;
 			}
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
@@ -887,7 +887,7 @@ valadoc_documentation_parser_parse_comment (ValadocDocumentationParser* self,
 	_tmp5_ = self->priv->_comment_parser;
 	valadoc_parser_parse (_tmp5_, content, filename, first_line, first_column, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return NULL;
 		} else {
@@ -897,7 +897,7 @@ valadoc_documentation_parser_parse_comment (ValadocDocumentationParser* self,
 		}
 	}
 	_tmp6_ = valadoc_documentation_parser_pop (self);
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
 	return result;
 }
 
@@ -932,7 +932,7 @@ valadoc_documentation_parser_parse_wiki (ValadocDocumentationParser* self,
 	_tmp5_ = self->priv->_wiki_parser;
 	valadoc_parser_parse (_tmp5_, content, filename, 0, 0, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return NULL;
 		} else {
@@ -942,7 +942,7 @@ valadoc_documentation_parser_parse_wiki (ValadocDocumentationParser* self,
 		}
 	}
 	_tmp6_ = valadoc_documentation_parser_pop (self);
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALADOC_CONTENT_TYPE_PAGE, ValadocContentPage);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALADOC_CONTENT_TYPE_PAGE, ValadocContentPage);
 	return result;
 }
 
@@ -1295,7 +1295,7 @@ valadoc_documentation_parser_new_list_item (ValadocDocumentationParser* self,
 			_tmp8_ = list;
 			valadoc_content_list_set_bullet (_tmp8_, bullet);
 			_tmp9_ = valadoc_documentation_parser_peek (self, -1);
-			_tmp10_ = VALADOC_CONTENT_IS_LIST_ITEM (_tmp9_) ? ((ValadocContentListItem*) _tmp9_) : NULL;
+			_tmp10_ = BALADOC_CONTENT_IS_LIST_ITEM (_tmp9_) ? ((ValadocContentListItem*) _tmp9_) : NULL;
 			if (_tmp10_ == NULL) {
 				_g_object_unref0 (_tmp9_);
 			}
@@ -1354,14 +1354,14 @@ valadoc_documentation_parser_new_list_item (ValadocDocumentationParser* self,
 				poped_some_lists = TRUE;
 			}
 			_tmp25_ = valadoc_documentation_parser_peek (self, -2);
-			_tmp26_ = VALADOC_CONTENT_IS_LIST (_tmp25_) ? ((ValadocContentList*) _tmp25_) : NULL;
+			_tmp26_ = BALADOC_CONTENT_IS_LIST (_tmp25_) ? ((ValadocContentList*) _tmp25_) : NULL;
 			if (_tmp26_ == NULL) {
 				_g_object_unref0 (_tmp25_);
 			}
 			_g_object_unref0 (list);
 			list = _tmp26_;
 			if (!poped_some_lists) {
-				_tmp27_ = bullet == VALADOC_CONTENT_LIST_BULLET_NONE;
+				_tmp27_ = bullet == BALADOC_CONTENT_LIST_BULLET_NONE;
 			} else {
 				_tmp27_ = FALSE;
 			}
@@ -1378,11 +1378,11 @@ valadoc_documentation_parser_new_list_item (ValadocDocumentationParser* self,
 				ValadocContentText* _tmp37_;
 				ValadocContentText* _tmp38_;
 				_tmp28_ = valadoc_documentation_parser_peek (self, -1);
-				_tmp29_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp28_, VALADOC_CONTENT_TYPE_LIST_ITEM, ValadocContentListItem);
+				_tmp29_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp28_, BALADOC_CONTENT_TYPE_LIST_ITEM, ValadocContentListItem);
 				_tmp30_ = valadoc_content_block_content_get_content ((ValadocContentBlockContent*) _tmp29_);
 				_tmp31_ = _tmp30_;
 				_tmp32_ = vala_list_get (_tmp31_, 0);
-				_tmp33_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentBlock*) _tmp32_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+				_tmp33_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentBlock*) _tmp32_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 				_tmp34_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp33_);
 				_tmp35_ = _tmp34_;
 				_tmp36_ = self->priv->_factory;
@@ -1428,7 +1428,7 @@ valadoc_documentation_parser_new_list_item (ValadocDocumentationParser* self,
 					_g_free0 (_tmp49_);
 					_g_free0 (_tmp44_);
 					if (G_UNLIKELY (_inner_error0_ != NULL)) {
-						if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+						if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 							g_propagate_error (error, _inner_error0_);
 							_g_object_unref0 (list);
 							_g_object_unref0 (new_item);
@@ -1468,7 +1468,7 @@ valadoc_documentation_parser_new_list_item (ValadocDocumentationParser* self,
 		_tmp56_ = list;
 		valadoc_content_list_set_bullet (_tmp56_, bullet);
 		_tmp57_ = valadoc_documentation_parser_peek (self, -1);
-		_tmp58_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp57_, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
+		_tmp58_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp57_, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
 		_tmp59_ = valadoc_content_block_content_get_content (_tmp58_);
 		_tmp60_ = _tmp59_;
 		_tmp61_ = list;
@@ -1502,56 +1502,56 @@ valadoc_documentation_parser_bullet_type_string (ValadocDocumentationParser* sel
 	gchar* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	switch (bullet) {
-		case VALADOC_CONTENT_LIST_BULLET_NONE:
+		case BALADOC_CONTENT_LIST_BULLET_NONE:
 		{
 			gchar* _tmp0_;
 			_tmp0_ = g_strdup (".");
 			result = _tmp0_;
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_UNORDERED:
+		case BALADOC_CONTENT_LIST_BULLET_UNORDERED:
 		{
 			gchar* _tmp1_;
 			_tmp1_ = g_strdup ("*");
 			result = _tmp1_;
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED:
 		{
 			gchar* _tmp2_;
 			_tmp2_ = g_strdup ("#");
 			result = _tmp2_;
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER:
 		{
 			gchar* _tmp3_;
 			_tmp3_ = g_strdup ("1.");
 			result = _tmp3_;
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA:
 		{
 			gchar* _tmp4_;
 			_tmp4_ = g_strdup ("a.");
 			result = _tmp4_;
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA:
 		{
 			gchar* _tmp5_;
 			_tmp5_ = g_strdup ("A.");
 			result = _tmp5_;
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN:
 		{
 			gchar* _tmp6_;
 			_tmp6_ = g_strdup ("i.");
 			result = _tmp6_;
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN:
 		{
 			gchar* _tmp7_;
 			_tmp7_ = g_strdup ("I.");
@@ -1583,7 +1583,7 @@ valadoc_documentation_parser_finish_list (ValadocDocumentationParser* self)
 		gint _tmp8_;
 		_tmp0_ = valadoc_documentation_parser_peek (self, -1);
 		_tmp1_ = _tmp0_;
-		_tmp2_ = !VALADOC_CONTENT_IS_LIST_ITEM (_tmp1_);
+		_tmp2_ = !BALADOC_CONTENT_IS_LIST_ITEM (_tmp1_);
 		_g_object_unref0 (_tmp1_);
 		if (_tmp2_) {
 			break;
@@ -1621,7 +1621,7 @@ valadoc_documentation_parser_add_content_string (ValadocDocumentationParser* sel
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (str != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = VALADOC_CONTENT_IS_TEXT (_tmp0_) ? ((ValadocContentText*) _tmp0_) : NULL;
+	_tmp1_ = BALADOC_CONTENT_IS_TEXT (_tmp0_) ? ((ValadocContentText*) _tmp0_) : NULL;
 	if (_tmp1_ == NULL) {
 		_g_object_unref0 (_tmp0_);
 	}
@@ -1667,11 +1667,11 @@ valadoc_documentation_parser_add_content_space (ValadocDocumentationParser* self
 	head = _tmp0_;
 	text_node = NULL;
 	_tmp1_ = head;
-	if (VALADOC_CONTENT_IS_TEXT (_tmp1_)) {
+	if (BALADOC_CONTENT_IS_TEXT (_tmp1_)) {
 		GObject* _tmp2_;
 		ValadocContentText* _tmp3_;
 		_tmp2_ = head;
-		_tmp3_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_TEXT, ValadocContentText));
+		_tmp3_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_TEXT, ValadocContentText));
 		_g_object_unref0 (text_node);
 		text_node = _tmp3_;
 	} else {
@@ -1679,14 +1679,14 @@ valadoc_documentation_parser_add_content_space (ValadocDocumentationParser* self
 		gboolean _tmp5_ = FALSE;
 		GObject* _tmp6_;
 		_tmp6_ = head;
-		if (VALADOC_CONTENT_IS_INLINE_CONTENT (_tmp6_)) {
+		if (BALADOC_CONTENT_IS_INLINE_CONTENT (_tmp6_)) {
 			GObject* _tmp7_;
 			ValaList* _tmp8_;
 			ValaList* _tmp9_;
 			gint _tmp10_;
 			gint _tmp11_;
 			_tmp7_ = head;
-			_tmp8_ = valadoc_content_inline_content_get_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent));
+			_tmp8_ = valadoc_content_inline_content_get_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent));
 			_tmp9_ = _tmp8_;
 			_tmp10_ = vala_collection_get_size ((ValaCollection*) _tmp9_);
 			_tmp11_ = _tmp10_;
@@ -1701,11 +1701,11 @@ valadoc_documentation_parser_add_content_space (ValadocDocumentationParser* self
 			gpointer _tmp15_;
 			ValadocContentInline* _tmp16_;
 			_tmp12_ = head;
-			_tmp13_ = valadoc_content_inline_content_get_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent));
+			_tmp13_ = valadoc_content_inline_content_get_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent));
 			_tmp14_ = _tmp13_;
 			_tmp15_ = vala_list_last (_tmp14_);
 			_tmp16_ = (ValadocContentInline*) _tmp15_;
-			_tmp4_ = VALADOC_CONTENT_IS_TEXT (_tmp16_);
+			_tmp4_ = BALADOC_CONTENT_IS_TEXT (_tmp16_);
 			_g_object_unref0 (_tmp16_);
 		} else {
 			_tmp4_ = FALSE;
@@ -1716,11 +1716,11 @@ valadoc_documentation_parser_add_content_space (ValadocDocumentationParser* self
 			ValaList* _tmp19_;
 			gpointer _tmp20_;
 			_tmp17_ = head;
-			_tmp18_ = valadoc_content_inline_content_get_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent));
+			_tmp18_ = valadoc_content_inline_content_get_content (G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent));
 			_tmp19_ = _tmp18_;
 			_tmp20_ = vala_list_last (_tmp19_);
 			_g_object_unref0 (text_node);
-			text_node = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentInline*) _tmp20_, VALADOC_CONTENT_TYPE_TEXT, ValadocContentText);
+			text_node = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentInline*) _tmp20_, BALADOC_CONTENT_TYPE_TEXT, ValadocContentText);
 		} else {
 			ValadocContentContentFactory* _tmp21_;
 			ValadocContentText* _tmp22_;
@@ -1734,7 +1734,7 @@ valadoc_documentation_parser_add_content_space (ValadocDocumentationParser* self
 			_g_object_unref0 (text_node);
 			text_node = _tmp22_;
 			_tmp23_ = valadoc_documentation_parser_peek (self, -1);
-			_tmp24_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
+			_tmp24_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
 			_tmp25_ = valadoc_content_inline_content_get_content (_tmp24_);
 			_tmp26_ = _tmp25_;
 			_tmp27_ = text_node;
@@ -1854,7 +1854,7 @@ __lambda58_ (ValadocDocumentationParser* self,
 	_tmp2_ = valadoc_content_content_factory_create_taglet (_tmp0_, _tmp1_);
 	taglet = _tmp2_;
 	_tmp3_ = taglet;
-	if (!VALADOC_CONTENT_IS_INLINE (_tmp3_)) {
+	if (!BALADOC_CONTENT_IS_INLINE (_tmp3_)) {
 		ValadocParser* _tmp4_;
 		const gchar* _tmp5_;
 		gchar* _tmp6_;
@@ -1866,7 +1866,7 @@ __lambda58_ (ValadocDocumentationParser* self,
 		valadoc_parser_callback_error ((ValadocParserCallback*) _tmp4_, NULL, _tmp7_, &_inner_error0_);
 		_g_free0 (_tmp7_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				g_propagate_error (error, _inner_error0_);
 				_g_object_unref0 (taglet);
 				return;
@@ -1961,7 +1961,7 @@ __lambda60_ (ValadocDocumentationParser* self,
 	ValadocContentRun* _tmp1_;
 	ValadocContentRun* _tmp2_;
 	_tmp0_ = self->priv->_factory;
-	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, VALADOC_CONTENT_RUN_STYLE_BOLD);
+	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, BALADOC_CONTENT_RUN_STYLE_BOLD);
 	_tmp2_ = _tmp1_;
 	valadoc_documentation_parser_push (self, (GObject*) _tmp2_);
 	_g_object_unref0 (_tmp2_);
@@ -1982,7 +1982,7 @@ __lambda61_ (ValadocDocumentationParser* self,
 	ValadocContentRun* _tmp1_;
 	ValadocContentRun* _tmp2_;
 	_tmp0_ = self->priv->_factory;
-	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, VALADOC_CONTENT_RUN_STYLE_ITALIC);
+	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, BALADOC_CONTENT_RUN_STYLE_ITALIC);
 	_tmp2_ = _tmp1_;
 	valadoc_documentation_parser_push (self, (GObject*) _tmp2_);
 	_g_object_unref0 (_tmp2_);
@@ -2003,7 +2003,7 @@ __lambda62_ (ValadocDocumentationParser* self,
 	ValadocContentRun* _tmp1_;
 	ValadocContentRun* _tmp2_;
 	_tmp0_ = self->priv->_factory;
-	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, VALADOC_CONTENT_RUN_STYLE_UNDERLINED);
+	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, BALADOC_CONTENT_RUN_STYLE_UNDERLINED);
 	_tmp2_ = _tmp1_;
 	valadoc_documentation_parser_push (self, (GObject*) _tmp2_);
 	_g_object_unref0 (_tmp2_);
@@ -2024,7 +2024,7 @@ __lambda63_ (ValadocDocumentationParser* self,
 	ValadocContentRun* _tmp1_;
 	ValadocContentRun* _tmp2_;
 	_tmp0_ = self->priv->_factory;
-	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 	_tmp2_ = _tmp1_;
 	valadoc_documentation_parser_push (self, (GObject*) _tmp2_);
 	_g_object_unref0 (_tmp2_);
@@ -2043,7 +2043,7 @@ __lambda64_ (ValadocDocumentationParser* self,
 {
 	ValadocScanner* _tmp0_;
 	_tmp0_ = self->priv->_scanner;
-	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), TRUE);
+	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), TRUE);
 }
 
 static void
@@ -2064,7 +2064,7 @@ __lambda65_ (ValadocDocumentationParser* self,
 	const gchar* _tmp2_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_EMBEDDED, ValadocContentEmbedded);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_EMBEDDED, ValadocContentEmbedded);
 	_tmp2_ = valadoc_token_to_string (token);
 	valadoc_content_embedded_set_url (_tmp1_, _tmp2_);
 	_g_object_unref0 (_tmp1_);
@@ -2084,7 +2084,7 @@ __lambda66_ (ValadocDocumentationParser* self,
 {
 	ValadocScanner* _tmp0_;
 	_tmp0_ = self->priv->_scanner;
-	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
+	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
 }
 
 static void
@@ -2107,13 +2107,13 @@ __lambda67_ (ValadocDocumentationParser* self,
 	const gchar* _tmp4_;
 	const gchar* _tmp5_;
 	_tmp0_ = valadoc_documentation_parser_pop (self);
-	_tmp1_ = VALADOC_CONTENT_IS_TEXT (_tmp0_) ? ((ValadocContentText*) _tmp0_) : NULL;
+	_tmp1_ = BALADOC_CONTENT_IS_TEXT (_tmp0_) ? ((ValadocContentText*) _tmp0_) : NULL;
 	if (_tmp1_ == NULL) {
 		_g_object_unref0 (_tmp0_);
 	}
 	caption = _tmp1_;
 	_tmp2_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_EMBEDDED, ValadocContentEmbedded);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_EMBEDDED, ValadocContentEmbedded);
 	_tmp4_ = valadoc_content_text_get_content (caption);
 	_tmp5_ = _tmp4_;
 	valadoc_content_embedded_set_caption (_tmp3_, _tmp5_);
@@ -2134,7 +2134,7 @@ __lambda68_ (ValadocDocumentationParser* self,
 {
 	ValadocScanner* _tmp0_;
 	_tmp0_ = self->priv->_scanner;
-	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
+	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
 }
 
 static void
@@ -2172,7 +2172,7 @@ __lambda70_ (ValadocDocumentationParser* self,
 {
 	ValadocScanner* _tmp0_;
 	_tmp0_ = self->priv->_scanner;
-	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), TRUE);
+	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), TRUE);
 }
 
 static void
@@ -2247,7 +2247,7 @@ __lambda72_ (ValadocDocumentationParser* self,
 {
 	ValadocScanner* _tmp0_;
 	_tmp0_ = self->priv->_scanner;
-	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
+	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
 }
 
 static void
@@ -2264,7 +2264,7 @@ __lambda73_ (ValadocDocumentationParser* self,
 {
 	ValadocScanner* _tmp0_;
 	_tmp0_ = self->priv->_scanner;
-	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
+	valadoc_wiki_scanner_set_url_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
 }
 
 static void
@@ -2283,7 +2283,7 @@ __lambda74_ (ValadocDocumentationParser* self,
 	ValadocScanner* _tmp0_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = self->priv->_scanner;
-	valadoc_wiki_scanner_set_code_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), TRUE);
+	valadoc_wiki_scanner_set_code_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), TRUE);
 }
 
 static void
@@ -2304,7 +2304,7 @@ __lambda75_ (ValadocDocumentationParser* self,
 	const gchar* _tmp2_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
 	_tmp2_ = valadoc_token_to_string (token);
 	valadoc_content_source_code_set_code (_tmp1_, _tmp2_);
 	_g_object_unref0 (_tmp1_);
@@ -2326,7 +2326,7 @@ __lambda76_ (ValadocDocumentationParser* self,
 	ValadocScanner* _tmp0_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = self->priv->_scanner;
-	valadoc_wiki_scanner_set_code_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
+	valadoc_wiki_scanner_set_code_escape_mode (G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), FALSE);
 }
 
 static void
@@ -2369,9 +2369,9 @@ __lambda78_ (ValadocDocumentationParser* self,
 	ValaList* _tmp3_;
 	ValaList* _tmp4_;
 	_tmp0_ = valadoc_documentation_parser_pop (self);
-	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_INLINE, ValadocContentInline);
+	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_INLINE, ValadocContentInline);
 	_tmp1_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
 	_tmp3_ = valadoc_content_inline_content_get_content (_tmp2_);
 	_tmp4_ = _tmp3_;
 	vala_collection_add ((ValaCollection*) _tmp4_, head);
@@ -2406,9 +2406,9 @@ __lambda79_ (ValadocDocumentationParser* self,
 	ValadocContentText* _tmp11_;
 	ValadocContentText* _tmp12_;
 	_tmp0_ = valadoc_documentation_parser_pop (self);
-	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 	_tmp1_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
 	_tmp3_ = valadoc_content_block_content_get_content (_tmp2_);
 	_tmp4_ = _tmp3_;
 	_tmp5_ = head;
@@ -2419,7 +2419,7 @@ __lambda79_ (ValadocDocumentationParser* self,
 	_tmp8_ = _tmp7_;
 	_tmp9_ = vala_list_last (_tmp8_);
 	_tmp10_ = (ValadocContentInline*) _tmp9_;
-	_tmp11_ = VALADOC_CONTENT_IS_TEXT (_tmp10_) ? ((ValadocContentText*) _tmp10_) : NULL;
+	_tmp11_ = BALADOC_CONTENT_IS_TEXT (_tmp10_) ? ((ValadocContentText*) _tmp10_) : NULL;
 	if (_tmp11_ == NULL) {
 		_g_object_unref0 (_tmp10_);
 	}
@@ -2452,8 +2452,8 @@ __lambda80_ (ValadocDocumentationParser* self,
 	GObject* _tmp0_;
 	ValadocContentParagraph* _tmp1_;
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
-	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp1_, VALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp1_, BALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER);
 	_g_object_unref0 (_tmp1_);
 }
 
@@ -2472,8 +2472,8 @@ __lambda81_ (ValadocDocumentationParser* self,
 	GObject* _tmp0_;
 	ValadocContentParagraph* _tmp1_;
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
-	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp1_, VALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp1_, BALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT);
 	_g_object_unref0 (_tmp1_);
 }
 
@@ -2559,11 +2559,11 @@ __lambda84_ (ValadocDocumentationParser* self,
 	_tmp3_ = valadoc_content_block_content_get_content ((ValadocContentBlockContent*) _tmp2_);
 	_tmp4_ = _tmp3_;
 	_tmp5_ = valadoc_documentation_parser_pop (self);
-	_tmp6_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	_tmp6_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 	vala_collection_add ((ValaCollection*) _tmp4_, (ValadocContentBlock*) _tmp6_);
 	_g_object_unref0 (_tmp6_);
 	_tmp7_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
+	_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
 	_tmp9_ = valadoc_content_block_content_get_content (_tmp8_);
 	_tmp10_ = _tmp9_;
 	_tmp11_ = head;
@@ -2574,7 +2574,7 @@ __lambda84_ (ValadocDocumentationParser* self,
 	_tmp14_ = _tmp13_;
 	_tmp15_ = vala_list_last (_tmp14_);
 	_tmp16_ = (ValadocContentBlock*) _tmp15_;
-	_tmp17_ = VALADOC_CONTENT_IS_TEXT (_tmp16_) ? ((ValadocContentText*) _tmp16_) : NULL;
+	_tmp17_ = BALADOC_CONTENT_IS_TEXT (_tmp16_) ? ((ValadocContentText*) _tmp16_) : NULL;
 	if (_tmp17_ == NULL) {
 		_g_object_unref0 (_tmp16_);
 	}
@@ -2653,11 +2653,11 @@ __lambda86_ (ValadocDocumentationParser* self,
 	_tmp3_ = valadoc_content_block_content_get_content ((ValadocContentBlockContent*) _tmp2_);
 	_tmp4_ = _tmp3_;
 	_tmp5_ = valadoc_documentation_parser_pop (self);
-	_tmp6_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	_tmp6_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 	vala_collection_add ((ValaCollection*) _tmp4_, (ValadocContentBlock*) _tmp6_);
 	_g_object_unref0 (_tmp6_);
 	_tmp7_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
+	_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
 	_tmp9_ = valadoc_content_block_content_get_content (_tmp8_);
 	_tmp10_ = _tmp9_;
 	_tmp11_ = head;
@@ -2668,7 +2668,7 @@ __lambda86_ (ValadocDocumentationParser* self,
 	_tmp14_ = _tmp13_;
 	_tmp15_ = vala_list_last (_tmp14_);
 	_tmp16_ = (ValadocContentBlock*) _tmp15_;
-	_tmp17_ = VALADOC_CONTENT_IS_TEXT (_tmp16_) ? ((ValadocContentText*) _tmp16_) : NULL;
+	_tmp17_ = BALADOC_CONTENT_IS_TEXT (_tmp16_) ? ((ValadocContentText*) _tmp16_) : NULL;
 	if (_tmp17_ == NULL) {
 		_g_object_unref0 (_tmp16_);
 	}
@@ -2720,9 +2720,9 @@ __lambda88_ (ValadocDocumentationParser* self,
 {
 	GError* _inner_error0_ = NULL;
 	g_return_if_fail (token != NULL);
-	valadoc_documentation_parser_new_list_item (self, VALADOC_CONTENT_LIST_BULLET_NONE, &_inner_error0_);
+	valadoc_documentation_parser_new_list_item (self, BALADOC_CONTENT_LIST_BULLET_NONE, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -2748,9 +2748,9 @@ __lambda89_ (ValadocDocumentationParser* self,
 {
 	GError* _inner_error0_ = NULL;
 	g_return_if_fail (token != NULL);
-	valadoc_documentation_parser_new_list_item (self, VALADOC_CONTENT_LIST_BULLET_UNORDERED, &_inner_error0_);
+	valadoc_documentation_parser_new_list_item (self, BALADOC_CONTENT_LIST_BULLET_UNORDERED, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -2776,9 +2776,9 @@ __lambda90_ (ValadocDocumentationParser* self,
 {
 	GError* _inner_error0_ = NULL;
 	g_return_if_fail (token != NULL);
-	valadoc_documentation_parser_new_list_item (self, VALADOC_CONTENT_LIST_BULLET_ORDERED, &_inner_error0_);
+	valadoc_documentation_parser_new_list_item (self, BALADOC_CONTENT_LIST_BULLET_ORDERED, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -2804,9 +2804,9 @@ __lambda91_ (ValadocDocumentationParser* self,
 {
 	GError* _inner_error0_ = NULL;
 	g_return_if_fail (token != NULL);
-	valadoc_documentation_parser_new_list_item (self, VALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER, &_inner_error0_);
+	valadoc_documentation_parser_new_list_item (self, BALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -2832,9 +2832,9 @@ __lambda92_ (ValadocDocumentationParser* self,
 {
 	GError* _inner_error0_ = NULL;
 	g_return_if_fail (token != NULL);
-	valadoc_documentation_parser_new_list_item (self, VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA, &_inner_error0_);
+	valadoc_documentation_parser_new_list_item (self, BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -2860,9 +2860,9 @@ __lambda93_ (ValadocDocumentationParser* self,
 {
 	GError* _inner_error0_ = NULL;
 	g_return_if_fail (token != NULL);
-	valadoc_documentation_parser_new_list_item (self, VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA, &_inner_error0_);
+	valadoc_documentation_parser_new_list_item (self, BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -2888,9 +2888,9 @@ __lambda94_ (ValadocDocumentationParser* self,
 {
 	GError* _inner_error0_ = NULL;
 	g_return_if_fail (token != NULL);
-	valadoc_documentation_parser_new_list_item (self, VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN, &_inner_error0_);
+	valadoc_documentation_parser_new_list_item (self, BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -2916,9 +2916,9 @@ __lambda95_ (ValadocDocumentationParser* self,
 {
 	GError* _inner_error0_ = NULL;
 	g_return_if_fail (token != NULL);
-	valadoc_documentation_parser_new_list_item (self, VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN, &_inner_error0_);
+	valadoc_documentation_parser_new_list_item (self, BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -2952,7 +2952,7 @@ __lambda96_ (ValadocDocumentationParser* self,
 	_tmp1_ = valadoc_content_content_factory_create_paragraph (_tmp0_);
 	content = _tmp1_;
 	_tmp2_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
 	_tmp4_ = valadoc_content_block_content_get_content (_tmp3_);
 	_tmp5_ = _tmp4_;
 	vala_collection_add ((ValaCollection*) _tmp5_, (ValadocContentBlock*) content);
@@ -3022,7 +3022,7 @@ __lambda99_ (ValadocDocumentationParser* self,
 	gint _tmp8_;
 	gint _tmp9_;
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
 	_tmp2_ = valadoc_content_block_content_get_content (_tmp1_);
 	_tmp3_ = _tmp2_;
 	_tmp4_ = _vala_iterable_ref0 (_tmp3_);
@@ -3039,7 +3039,7 @@ __lambda99_ (ValadocDocumentationParser* self,
 		_tmp10_ = content_list;
 		_tmp11_ = vala_list_last (_tmp10_);
 		_tmp12_ = (ValadocContentBlock*) _tmp11_;
-		_tmp6_ = VALADOC_CONTENT_IS_TEXT (_tmp12_);
+		_tmp6_ = BALADOC_CONTENT_IS_TEXT (_tmp12_);
 		_g_object_unref0 (_tmp12_);
 	} else {
 		_tmp6_ = FALSE;
@@ -3052,7 +3052,7 @@ __lambda99_ (ValadocDocumentationParser* self,
 		const gchar* _tmp17_;
 		_tmp13_ = content_list;
 		_tmp14_ = vala_list_last (_tmp13_);
-		_tmp15_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentBlock*) _tmp14_, VALADOC_CONTENT_TYPE_TEXT, ValadocContentText);
+		_tmp15_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentBlock*) _tmp14_, BALADOC_CONTENT_TYPE_TEXT, ValadocContentText);
 		_tmp16_ = valadoc_content_text_get_content (_tmp15_);
 		_tmp17_ = _tmp16_;
 		g_strchomp (_tmp17_);
@@ -3091,8 +3091,8 @@ __lambda101_ (ValadocDocumentationParser* self,
 	ValadocContentTableCell* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
-	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp1_, VALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
+	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp1_, BALADOC_CONTENT_HORIZONTAL_ALIGN_RIGHT);
 	_g_object_unref0 (_tmp1_);
 }
 
@@ -3113,8 +3113,8 @@ __lambda102_ (ValadocDocumentationParser* self,
 	ValadocContentTableCell* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
-	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp1_, VALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
+	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp1_, BALADOC_CONTENT_HORIZONTAL_ALIGN_CENTER);
 	_g_object_unref0 (_tmp1_);
 }
 
@@ -3135,8 +3135,8 @@ __lambda103_ (ValadocDocumentationParser* self,
 	ValadocContentTableCell* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
-	valadoc_content_style_attributes_set_vertical_align ((ValadocContentStyleAttributes*) _tmp1_, VALADOC_CONTENT_VERTICAL_ALIGN_TOP);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
+	valadoc_content_style_attributes_set_vertical_align ((ValadocContentStyleAttributes*) _tmp1_, BALADOC_CONTENT_VERTICAL_ALIGN_TOP);
 	_g_object_unref0 (_tmp1_);
 }
 
@@ -3157,8 +3157,8 @@ __lambda104_ (ValadocDocumentationParser* self,
 	ValadocContentTableCell* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
-	valadoc_content_style_attributes_set_vertical_align ((ValadocContentStyleAttributes*) _tmp1_, VALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
+	valadoc_content_style_attributes_set_vertical_align ((ValadocContentStyleAttributes*) _tmp1_, BALADOC_CONTENT_VERTICAL_ALIGN_BOTTOM);
 	_g_object_unref0 (_tmp1_);
 }
 
@@ -3180,7 +3180,7 @@ __lambda105_ (ValadocDocumentationParser* self,
 	const gchar* _tmp2_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
 	_tmp2_ = valadoc_token_to_string (token);
 	valadoc_content_style_attributes_set_style ((ValadocContentStyleAttributes*) _tmp1_, _tmp2_);
 	_g_object_unref0 (_tmp1_);
@@ -3203,7 +3203,7 @@ __lambda106_ (ValadocDocumentationParser* self,
 	ValadocContentTableCell* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
 	valadoc_content_table_cell_set_rowspan (_tmp1_, valadoc_token_to_int (token));
 	_g_object_unref0 (_tmp1_);
 }
@@ -3225,7 +3225,7 @@ __lambda107_ (ValadocDocumentationParser* self,
 	ValadocContentTableCell* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
 	valadoc_content_table_cell_set_colspan (_tmp1_, valadoc_token_to_int (token));
 	_g_object_unref0 (_tmp1_);
 }
@@ -3277,9 +3277,9 @@ __lambda109_ (ValadocDocumentationParser* self,
 	gint _tmp10_;
 	gint _tmp11_;
 	_tmp0_ = valadoc_documentation_parser_pop (self);
-	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
+	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
 	_tmp1_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALADOC_CONTENT_TYPE_TABLE_ROW, ValadocContentTableRow);
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALADOC_CONTENT_TYPE_TABLE_ROW, ValadocContentTableRow);
 	_tmp3_ = valadoc_content_table_row_get_cells (_tmp2_);
 	_tmp4_ = _tmp3_;
 	_tmp5_ = head;
@@ -3301,7 +3301,7 @@ __lambda109_ (ValadocDocumentationParser* self,
 		_tmp14_ = _tmp13_;
 		_tmp15_ = vala_list_last (_tmp14_);
 		_tmp16_ = (ValadocContentInline*) _tmp15_;
-		_tmp6_ = VALADOC_CONTENT_IS_TEXT (_tmp16_);
+		_tmp6_ = BALADOC_CONTENT_IS_TEXT (_tmp16_);
 		_g_object_unref0 (_tmp16_);
 	} else {
 		_tmp6_ = FALSE;
@@ -3318,7 +3318,7 @@ __lambda109_ (ValadocDocumentationParser* self,
 		_tmp18_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp17_);
 		_tmp19_ = _tmp18_;
 		_tmp20_ = vala_list_last (_tmp19_);
-		_tmp21_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentInline*) _tmp20_, VALADOC_CONTENT_TYPE_TEXT, ValadocContentText);
+		_tmp21_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentInline*) _tmp20_, BALADOC_CONTENT_TYPE_TEXT, ValadocContentText);
 		_tmp22_ = valadoc_content_text_get_content (_tmp21_);
 		_tmp23_ = _tmp22_;
 		g_strchomp (_tmp23_);
@@ -3366,9 +3366,9 @@ __lambda111_ (ValadocDocumentationParser* self,
 	ValaList* _tmp3_;
 	ValaList* _tmp4_;
 	_tmp0_ = valadoc_documentation_parser_pop (self);
-	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TABLE_ROW, ValadocContentTableRow);
+	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TABLE_ROW, ValadocContentTableRow);
 	_tmp1_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALADOC_CONTENT_TYPE_TABLE, ValadocContentTable);
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALADOC_CONTENT_TYPE_TABLE, ValadocContentTable);
 	_tmp3_ = valadoc_content_table_get_rows (_tmp2_);
 	_tmp4_ = _tmp3_;
 	vala_collection_add ((ValaCollection*) _tmp4_, head);
@@ -3415,9 +3415,9 @@ __lambda113_ (ValadocDocumentationParser* self,
 	ValaList* _tmp3_;
 	ValaList* _tmp4_;
 	_tmp0_ = valadoc_documentation_parser_pop (self);
-	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_BLOCK, ValadocContentBlock);
+	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_BLOCK, ValadocContentBlock);
 	_tmp1_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
 	_tmp3_ = valadoc_content_block_content_get_content (_tmp2_);
 	_tmp4_ = _tmp3_;
 	vala_collection_add ((ValaCollection*) _tmp4_, head);
@@ -3441,7 +3441,7 @@ __lambda114_ (ValadocDocumentationParser* self,
 	ValadocContentHeadline* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
 	valadoc_content_headline_set_level (_tmp1_, 1);
 	_g_object_unref0 (_tmp1_);
 }
@@ -3463,7 +3463,7 @@ __lambda115_ (ValadocDocumentationParser* self,
 	ValadocContentHeadline* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
 	valadoc_content_headline_set_level (_tmp1_, 2);
 	_g_object_unref0 (_tmp1_);
 }
@@ -3485,7 +3485,7 @@ __lambda116_ (ValadocDocumentationParser* self,
 	ValadocContentHeadline* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
 	valadoc_content_headline_set_level (_tmp1_, 3);
 	_g_object_unref0 (_tmp1_);
 }
@@ -3507,7 +3507,7 @@ __lambda117_ (ValadocDocumentationParser* self,
 	ValadocContentHeadline* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
 	valadoc_content_headline_set_level (_tmp1_, 4);
 	_g_object_unref0 (_tmp1_);
 }
@@ -3529,7 +3529,7 @@ __lambda118_ (ValadocDocumentationParser* self,
 	ValadocContentHeadline* _tmp1_;
 	g_return_if_fail (token != NULL);
 	_tmp0_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
+	_tmp1_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
 	valadoc_content_headline_set_level (_tmp1_, 5);
 	_g_object_unref0 (_tmp1_);
 }
@@ -3574,9 +3574,9 @@ __lambda120_ (ValadocDocumentationParser* self,
 	ValaList* _tmp3_;
 	ValaList* _tmp4_;
 	_tmp0_ = valadoc_documentation_parser_pop (self);
-	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_BLOCK, ValadocContentBlock);
+	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_BLOCK, ValadocContentBlock);
 	_tmp1_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
 	_tmp3_ = valadoc_content_block_content_get_content (_tmp2_);
 	_tmp4_ = _tmp3_;
 	vala_collection_add ((ValaCollection*) _tmp4_, head);
@@ -3644,9 +3644,9 @@ __lambda123_ (ValadocDocumentationParser* self,
 	ValaList* _tmp3_;
 	ValaList* _tmp4_;
 	_tmp0_ = valadoc_documentation_parser_pop (self);
-	p = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	p = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 	_tmp1_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent);
 	_tmp3_ = valadoc_content_block_content_get_content (_tmp2_);
 	_tmp4_ = _tmp3_;
 	vala_collection_add ((ValaCollection*) _tmp4_, (ValadocContentBlock*) p);
@@ -3688,12 +3688,12 @@ __lambda124_ (ValadocDocumentationParser* self,
 	_tmp4_ = valadoc_content_content_factory_create_taglet (_tmp2_, _tmp3_);
 	taglet = _tmp4_;
 	_tmp5_ = taglet;
-	if (!VALADOC_CONTENT_IS_BLOCK (_tmp5_)) {
+	if (!BALADOC_CONTENT_IS_BLOCK (_tmp5_)) {
 		ValadocParser* _tmp6_;
 		_tmp6_ = self->priv->_parser;
 		valadoc_parser_callback_error ((ValadocParserCallback*) _tmp6_, token, "Invalid taglet in this context", &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				g_propagate_error (error, _inner_error0_);
 				_g_object_unref0 (taglet);
 				_g_free0 (tag_name);
@@ -3710,7 +3710,7 @@ __lambda124_ (ValadocDocumentationParser* self,
 	_tmp7_ = taglet;
 	valadoc_documentation_parser_push (self, (GObject*) _tmp7_);
 	_tmp8_ = taglet;
-	if (VALADOC_CONTENT_IS_BLOCK_CONTENT (_tmp8_)) {
+	if (BALADOC_CONTENT_IS_BLOCK_CONTENT (_tmp8_)) {
 		ValadocContentTaglet* _tmp9_;
 		ValadocRule* _tmp10_;
 		ValadocRule* _tmp11_;
@@ -3781,9 +3781,9 @@ __lambda125_ (ValadocDocumentationParser* self,
 	ValaList* _tmp3_;
 	ValaList* _tmp4_;
 	_tmp0_ = valadoc_documentation_parser_pop (self);
-	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_CONTENT_TYPE_TAGLET, ValadocContentTaglet);
+	head = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_CONTENT_TYPE_TAGLET, ValadocContentTaglet);
 	_tmp1_ = valadoc_documentation_parser_peek (self, -1);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
 	_tmp3_ = valadoc_content_comment_get_taglets (_tmp2_);
 	_tmp4_ = _tmp3_;
 	vala_collection_add ((ValaCollection*) _tmp4_, head);
@@ -6172,7 +6172,7 @@ static void
 valadoc_documentation_parser_finalize (GObject * obj)
 {
 	ValadocDocumentationParser * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_DOCUMENTATION_PARSER, ValadocDocumentationParser);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_DOCUMENTATION_PARSER, ValadocDocumentationParser);
 	_vala_map_unref0 (self->priv->metadata);
 	_valadoc_importer_internal_id_registrar_unref0 (self->priv->id_registrar);
 	_g_object_unref0 (self->priv->gtkdoc_parser);
@@ -6202,7 +6202,7 @@ valadoc_documentation_parser_get_type_once (void)
 	static const GInterfaceInfo valadoc_resource_locator_info = { (GInterfaceInitFunc) valadoc_documentation_parser_valadoc_resource_locator_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_documentation_parser_type_id;
 	valadoc_documentation_parser_type_id = g_type_register_static (G_TYPE_OBJECT, "ValadocDocumentationParser", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_documentation_parser_type_id, VALADOC_TYPE_RESOURCE_LOCATOR, &valadoc_resource_locator_info);
+	g_type_add_interface_static (valadoc_documentation_parser_type_id, BALADOC_TYPE_RESOURCE_LOCATOR, &valadoc_resource_locator_info);
 	ValadocDocumentationParser_private_offset = g_type_add_instance_private (valadoc_documentation_parser_type_id, sizeof (ValadocDocumentationParserPrivate));
 	return valadoc_documentation_parser_type_id;
 }

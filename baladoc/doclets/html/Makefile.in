@@ -226,7 +226,7 @@ CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 COVERAGE_CFLAGS = @COVERAGE_CFLAGS@
 COVERAGE_LIBS = @COVERAGE_LIBS@
-COVERAGE_VALAFLAGS = @COVERAGE_VALAFLAGS@
+COVERAGE_BALAFLAGS = @COVERAGE_BALAFLAGS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -295,11 +295,11 @@ SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
 TEST_CFLAGS = @TEST_CFLAGS@
-VALAC = @VALAC@
-VALAFLAGS = @VALAFLAGS@
-VALA_MAJOR_VERSION = @VALA_MAJOR_VERSION@
-VALA_MICRO_VERSION = @VALA_MICRO_VERSION@
-VALA_MINOR_VERSION = @VALA_MINOR_VERSION@
+BALAC = @BALAC@
+BALAFLAGS = @BALAFLAGS@
+BALA_MAJOR_VERSION = @BALA_MAJOR_VERSION@
+BALA_MICRO_VERSION = @BALA_MICRO_VERSION@
+BALA_MINOR_VERSION = @BALA_MINOR_VERSION@
 VERSION = @VERSION@
 WEASYPRINT = @WEASYPRINT@
 XSLTPROC = @XSLTPROC@
@@ -359,13 +359,13 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-VALA_V = $(VALA_V_$(V))
-VALA_V_ = $(VALA_V_$(AM_DEFAULT_VERBOSITY))
-VALA_V_0 = @echo "  VALAC " $^;
+BALA_V = $(BALA_V_$(V))
+BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
+BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 AM_CFLAGS = \
 	-DG_LOG_DOMAIN=\"valadoc-html\" \
-	-DPACKAGE_VALADOC_ICONDIR=\"$(datadir)/valadoc@PACKAGE_SUFFIX@/icons/\" \
+	-DPACKAGE_BALADOC_ICONDIR=\"$(datadir)/valadoc@PACKAGE_SUFFIX@/icons/\" \
 	-I$(top_srcdir)/gee/ \
 	-I$(top_srcdir)/vala/ \
 	-I$(top_srcdir)/libvaladoc/ \
@@ -378,13 +378,13 @@ BUILT_SOURCES = libdoclet.vala.stamp
 doclet_LTLIBRARIES = libdoclet.la
 docletdir = $(libdir)/valadoc@PACKAGE_SUFFIX@/doclets/html
 libdoclet_la_LDFLAGS = -module -avoid-version -no-undefined
-libdoclet_la_VALASOURCES = \
+libdoclet_la_BALASOURCES = \
 	doclet.vala \
 	$(NULL)
 
 libdoclet_la_SOURCES = \
 	libdoclet.vala.stamp \
-	$(libdoclet_la_VALASOURCES:.vala=.c) \
+	$(libdoclet_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 libdoclet_la_LIBADD = \
@@ -395,12 +395,12 @@ libdoclet_la_LIBADD = \
 	$(NULL)
 
 EXTRA_DIST = \
-	$(libdoclet_la_VALASOURCES) \
+	$(libdoclet_la_BALASOURCES) \
 	libdoclet.vala.stamp \
 	$(NULL)
 
 MAINTAINERCLEANFILES = \
-	$(libdoclet_la_VALASOURCES:.vala=.c) \
+	$(libdoclet_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -739,10 +739,10 @@ uninstall-am: uninstall-docletLTLIBRARIES
 .PRECIOUS: Makefile
 
 
-libdoclet.vala.stamp: $(libdoclet_la_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+libdoclet.vala.stamp: $(libdoclet_la_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vala --pkg libvala@PACKAGE_SUFFIX@ \
 		--vapidir $(top_srcdir)/vapi --pkg config \

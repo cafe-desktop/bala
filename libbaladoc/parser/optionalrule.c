@@ -29,39 +29,39 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define VALADOC_TYPE_OPTIONAL_RULE (valadoc_optional_rule_get_type ())
-#define VALADOC_OPTIONAL_RULE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TYPE_OPTIONAL_RULE, ValadocOptionalRule))
-#define VALADOC_OPTIONAL_RULE_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TYPE_OPTIONAL_RULE, ValadocOptionalRuleClass))
-#define VALADOC_IS_OPTIONAL_RULE(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TYPE_OPTIONAL_RULE))
-#define VALADOC_IS_OPTIONAL_RULE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TYPE_OPTIONAL_RULE))
-#define VALADOC_OPTIONAL_RULE_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TYPE_OPTIONAL_RULE, ValadocOptionalRuleClass))
+#define BALADOC_TYPE_OPTIONAL_RULE (valadoc_optional_rule_get_type ())
+#define BALADOC_OPTIONAL_RULE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TYPE_OPTIONAL_RULE, ValadocOptionalRule))
+#define BALADOC_OPTIONAL_RULE_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TYPE_OPTIONAL_RULE, ValadocOptionalRuleClass))
+#define BALADOC_IS_OPTIONAL_RULE(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TYPE_OPTIONAL_RULE))
+#define BALADOC_IS_OPTIONAL_RULE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TYPE_OPTIONAL_RULE))
+#define BALADOC_OPTIONAL_RULE_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TYPE_OPTIONAL_RULE, ValadocOptionalRuleClass))
 
 typedef struct _ValadocOptionalRule ValadocOptionalRule;
 typedef struct _ValadocOptionalRuleClass ValadocOptionalRuleClass;
 typedef struct _ValadocOptionalRulePrivate ValadocOptionalRulePrivate;
 enum  {
-	VALADOC_OPTIONAL_RULE_0_PROPERTY,
-	VALADOC_OPTIONAL_RULE_NUM_PROPERTIES
+	BALADOC_OPTIONAL_RULE_0_PROPERTY,
+	BALADOC_OPTIONAL_RULE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_optional_rule_properties[VALADOC_OPTIONAL_RULE_NUM_PROPERTIES];
+static GParamSpec* valadoc_optional_rule_properties[BALADOC_OPTIONAL_RULE_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 
-#define VALADOC_OPTIONAL_RULE_TYPE_STATE (valadoc_optional_rule_state_get_type ())
-#define VALADOC_OPTIONAL_RULE_STATE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_OPTIONAL_RULE_TYPE_STATE, ValadocOptionalRuleState))
-#define VALADOC_OPTIONAL_RULE_STATE_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_OPTIONAL_RULE_TYPE_STATE, ValadocOptionalRuleStateClass))
-#define VALADOC_OPTIONAL_RULE_IS_STATE(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_OPTIONAL_RULE_TYPE_STATE))
-#define VALADOC_OPTIONAL_RULE_IS_STATE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_OPTIONAL_RULE_TYPE_STATE))
-#define VALADOC_OPTIONAL_RULE_STATE_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_OPTIONAL_RULE_TYPE_STATE, ValadocOptionalRuleStateClass))
+#define BALADOC_OPTIONAL_RULE_TYPE_STATE (valadoc_optional_rule_state_get_type ())
+#define BALADOC_OPTIONAL_RULE_STATE(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_OPTIONAL_RULE_TYPE_STATE, ValadocOptionalRuleState))
+#define BALADOC_OPTIONAL_RULE_STATE_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_OPTIONAL_RULE_TYPE_STATE, ValadocOptionalRuleStateClass))
+#define BALADOC_OPTIONAL_RULE_IS_STATE(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_OPTIONAL_RULE_TYPE_STATE))
+#define BALADOC_OPTIONAL_RULE_IS_STATE_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_OPTIONAL_RULE_TYPE_STATE))
+#define BALADOC_OPTIONAL_RULE_STATE_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_OPTIONAL_RULE_TYPE_STATE, ValadocOptionalRuleStateClass))
 
 typedef struct _ValadocOptionalRuleState ValadocOptionalRuleState;
 typedef struct _ValadocOptionalRuleStateClass ValadocOptionalRuleStateClass;
 typedef struct _ValadocOptionalRuleStatePrivate ValadocOptionalRuleStatePrivate;
 #define _g_free0(var) (var = (g_free (var), NULL))
 enum  {
-	VALADOC_OPTIONAL_RULE_STATE_0_PROPERTY,
-	VALADOC_OPTIONAL_RULE_STATE_NUM_PROPERTIES
+	BALADOC_OPTIONAL_RULE_STATE_0_PROPERTY,
+	BALADOC_OPTIONAL_RULE_STATE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_optional_rule_state_properties[VALADOC_OPTIONAL_RULE_STATE_NUM_PROPERTIES];
+static GParamSpec* valadoc_optional_rule_state_properties[BALADOC_OPTIONAL_RULE_STATE_NUM_PROPERTIES];
 
 struct _ValadocOptionalRule {
 	ValadocRule parent_instance;
@@ -147,7 +147,7 @@ valadoc_optional_rule_construct (GType object_type,
 G_GNUC_INTERNAL ValadocOptionalRule*
 valadoc_optional_rule_new (GObject* scheme)
 {
-	return valadoc_optional_rule_construct (VALADOC_TYPE_OPTIONAL_RULE, scheme);
+	return valadoc_optional_rule_construct (BALADOC_TYPE_OPTIONAL_RULE, scheme);
 }
 
 static gboolean
@@ -193,7 +193,7 @@ valadoc_optional_rule_real_accept_token (ValadocRule* base,
 	g_return_val_if_fail (token != NULL, FALSE);
 	g_return_val_if_fail (parser != NULL, FALSE);
 	_tmp0_ = valadoc_parser_callback_get_rule_state (parser);
-	_tmp1_ = VALADOC_OPTIONAL_RULE_IS_STATE (_tmp0_) ? ((ValadocOptionalRuleState*) _tmp0_) : NULL;
+	_tmp1_ = BALADOC_OPTIONAL_RULE_IS_STATE (_tmp0_) ? ((ValadocOptionalRuleState*) _tmp0_) : NULL;
 	if (_tmp1_ == NULL) {
 		_g_object_unref0 (_tmp0_);
 	}
@@ -218,7 +218,7 @@ valadoc_optional_rule_real_accept_token (ValadocRule* base,
 		gboolean _tmp12_;
 		valadoc_rule_do_start ((ValadocRule*) self, parser, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				gboolean _tmp6_ = FALSE;
 				g_propagate_error (error, _inner_error0_);
 				_g_object_unref0 (state);
@@ -238,7 +238,7 @@ valadoc_optional_rule_real_accept_token (ValadocRule* base,
 		handled = _tmp11_;
 		_tmp9_ = _tmp12_;
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				gboolean _tmp13_ = FALSE;
 				g_propagate_error (error, _inner_error0_);
 				_g_object_unref0 (state);
@@ -258,7 +258,7 @@ valadoc_optional_rule_real_accept_token (ValadocRule* base,
 		} else {
 			valadoc_rule_do_skip ((ValadocRule*) self, parser, &_inner_error0_);
 			if (G_UNLIKELY (_inner_error0_ != NULL)) {
-				if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+				if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 					gboolean _tmp15_ = FALSE;
 					g_propagate_error (error, _inner_error0_);
 					_g_object_unref0 (state);
@@ -278,7 +278,7 @@ valadoc_optional_rule_real_accept_token (ValadocRule* base,
 	} else {
 		valadoc_rule_do_reduce ((ValadocRule*) self, parser, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				gboolean _tmp17_ = FALSE;
 				g_propagate_error (error, _inner_error0_);
 				_g_object_unref0 (state);
@@ -359,7 +359,7 @@ valadoc_optional_rule_real_to_string (ValadocRule* base,
 	gchar* _tmp12_;
 	gchar* result = NULL;
 	self = (ValadocOptionalRule*) base;
-	_tmp0_ = _g_object_ref0 (VALADOC_OPTIONAL_RULE_IS_STATE (rule_state) ? ((ValadocOptionalRuleState*) rule_state) : NULL);
+	_tmp0_ = _g_object_ref0 (BALADOC_OPTIONAL_RULE_IS_STATE (rule_state) ? ((ValadocOptionalRuleState*) rule_state) : NULL);
 	state = _tmp0_;
 	_tmp1_ = state;
 	if (_tmp1_ == NULL) {
@@ -401,7 +401,7 @@ valadoc_optional_rule_state_construct (GType object_type)
 static ValadocOptionalRuleState*
 valadoc_optional_rule_state_new (void)
 {
-	return valadoc_optional_rule_state_construct (VALADOC_OPTIONAL_RULE_TYPE_STATE);
+	return valadoc_optional_rule_state_construct (BALADOC_OPTIONAL_RULE_TYPE_STATE);
 }
 
 static void
@@ -423,7 +423,7 @@ static void
 valadoc_optional_rule_state_finalize (GObject * obj)
 {
 	ValadocOptionalRuleState * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_OPTIONAL_RULE_TYPE_STATE, ValadocOptionalRuleState);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_OPTIONAL_RULE_TYPE_STATE, ValadocOptionalRuleState);
 	G_OBJECT_CLASS (valadoc_optional_rule_state_parent_class)->finalize (obj);
 }
 
@@ -474,7 +474,7 @@ static void
 valadoc_optional_rule_finalize (GObject * obj)
 {
 	ValadocOptionalRule * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_OPTIONAL_RULE, ValadocOptionalRule);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_OPTIONAL_RULE, ValadocOptionalRule);
 	_g_object_unref0 (self->priv->_scheme);
 	G_OBJECT_CLASS (valadoc_optional_rule_parent_class)->finalize (obj);
 }
@@ -484,7 +484,7 @@ valadoc_optional_rule_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocOptionalRuleClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_optional_rule_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocOptionalRule), 0, (GInstanceInitFunc) valadoc_optional_rule_instance_init, NULL };
 	GType valadoc_optional_rule_type_id;
-	valadoc_optional_rule_type_id = g_type_register_static (VALADOC_TYPE_RULE, "ValadocOptionalRule", &g_define_type_info, 0);
+	valadoc_optional_rule_type_id = g_type_register_static (BALADOC_TYPE_RULE, "ValadocOptionalRule", &g_define_type_info, 0);
 	ValadocOptionalRule_private_offset = g_type_add_instance_private (valadoc_optional_rule_type_id, sizeof (ValadocOptionalRulePrivate));
 	return valadoc_optional_rule_type_id;
 }

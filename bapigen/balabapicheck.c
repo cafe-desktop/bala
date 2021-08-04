@@ -36,12 +36,12 @@
 #include <glib/gstdio.h>
 #include <gobject/gvaluecollector.h>
 
-#define VALA_TYPE_VAPI_CHECK (vala_vapi_check_get_type ())
-#define VALA_VAPI_CHECK(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_TYPE_VAPI_CHECK, ValaVAPICheck))
-#define VALA_VAPI_CHECK_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_TYPE_VAPI_CHECK, ValaVAPICheckClass))
-#define VALA_IS_VAPI_CHECK(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_TYPE_VAPI_CHECK))
-#define VALA_IS_VAPI_CHECK_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_TYPE_VAPI_CHECK))
-#define VALA_VAPI_CHECK_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_TYPE_VAPI_CHECK, ValaVAPICheckClass))
+#define BALA_TYPE_VAPI_CHECK (vala_vapi_check_get_type ())
+#define BALA_VAPI_CHECK(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_TYPE_VAPI_CHECK, ValaVAPICheck))
+#define BALA_VAPI_CHECK_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_TYPE_VAPI_CHECK, ValaVAPICheckClass))
+#define BALA_IS_VAPI_CHECK(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_TYPE_VAPI_CHECK))
+#define BALA_IS_VAPI_CHECK_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_TYPE_VAPI_CHECK))
+#define BALA_VAPI_CHECK_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_TYPE_VAPI_CHECK, ValaVAPICheckClass))
 
 typedef struct _ValaVAPICheck ValaVAPICheck;
 typedef struct _ValaVAPICheckClass ValaVAPICheckClass;
@@ -223,7 +223,7 @@ vala_vapi_check_construct (GType object_type,
 	g_return_val_if_fail (gidlname != NULL, NULL);
 	g_return_val_if_fail (context != NULL, NULL);
 	self = (ValaVAPICheck*) g_type_create_instance (object_type);
-	_tmp0_ = vala_source_file_new (context, VALA_SOURCE_FILE_TYPE_SOURCE, gidlname, NULL, FALSE);
+	_tmp0_ = vala_source_file_new (context, BALA_SOURCE_FILE_TYPE_SOURCE, gidlname, NULL, FALSE);
 	_tmp1_ = _tmp0_;
 	vala_vapi_check_set_gidl (self, _tmp1_);
 	_vala_source_file_unref0 (_tmp1_);
@@ -233,7 +233,7 @@ vala_vapi_check_construct (GType object_type,
 	_tmp5_ = _tmp4_;
 	_tmp6_ = g_strconcat (_tmp5_, ".metadata", NULL);
 	_tmp7_ = _tmp6_;
-	_tmp8_ = vala_source_file_new (context, VALA_SOURCE_FILE_TYPE_SOURCE, _tmp7_, NULL, FALSE);
+	_tmp8_ = vala_source_file_new (context, BALA_SOURCE_FILE_TYPE_SOURCE, _tmp7_, NULL, FALSE);
 	_tmp9_ = _tmp8_;
 	vala_vapi_check_set_metadata (self, _tmp9_);
 	_vala_source_file_unref0 (_tmp9_);
@@ -247,7 +247,7 @@ G_GNUC_INTERNAL ValaVAPICheck*
 vala_vapi_check_new (const gchar* gidlname,
                      ValaCodeContext* context)
 {
-	return vala_vapi_check_construct (VALA_TYPE_VAPI_CHECK, gidlname, context);
+	return vala_vapi_check_construct (BALA_TYPE_VAPI_CHECK, gidlname, context);
 }
 
 G_GNUC_INTERNAL ValaCodeContext*
@@ -986,7 +986,7 @@ vala_param_spec_vapi_check (const gchar* name,
                             GParamFlags flags)
 {
 	ValaParamSpecVAPICheck* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_VAPI_CHECK), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_VAPI_CHECK), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -995,7 +995,7 @@ vala_param_spec_vapi_check (const gchar* name,
 G_GNUC_INTERNAL gpointer
 vala_value_get_vapi_check (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_VAPI_CHECK), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_CHECK), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1004,10 +1004,10 @@ vala_value_set_vapi_check (GValue* value,
                            gpointer v_object)
 {
 	ValaVAPICheck * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_VAPI_CHECK));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_CHECK));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_VAPI_CHECK));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VAPI_CHECK));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_vapi_check_ref (value->data[0].v_pointer);
@@ -1024,10 +1024,10 @@ vala_value_take_vapi_check (GValue* value,
                             gpointer v_object)
 {
 	ValaVAPICheck * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_VAPI_CHECK));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_CHECK));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_VAPI_CHECK));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VAPI_CHECK));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1059,7 +1059,7 @@ static void
 vala_vapi_check_finalize (ValaVAPICheck * obj)
 {
 	ValaVAPICheck * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_VAPI_CHECK, ValaVAPICheck);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_VAPI_CHECK, ValaVAPICheck);
 	g_signal_handlers_destroy (self);
 	_vala_code_context_unref0 (self->priv->_context);
 	_vala_source_file_unref0 (self->priv->_gidl);
@@ -1107,7 +1107,7 @@ vala_vapi_check_unref (gpointer instance)
 	ValaVAPICheck * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_VAPI_CHECK_GET_CLASS (self)->finalize (self);
+		BALA_VAPI_CHECK_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

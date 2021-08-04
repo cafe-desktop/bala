@@ -28,7 +28,7 @@
 static GType
 vala_profile_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_PROFILE_GOBJECT, "VALA_PROFILE_GOBJECT", "gobject"}, {VALA_PROFILE_POSIX, "VALA_PROFILE_POSIX", "posix"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_PROFILE_GOBJECT, "BALA_PROFILE_GOBJECT", "gobject"}, {BALA_PROFILE_POSIX, "BALA_PROFILE_POSIX", "posix"}, {0, NULL, NULL}};
 	GType vala_profile_type_id;
 	vala_profile_type_id = g_enum_register_static ("ValaProfile", values);
 	return vala_profile_type_id;

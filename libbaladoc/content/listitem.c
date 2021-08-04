@@ -32,10 +32,10 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_LIST_ITEM_0_PROPERTY,
-	VALADOC_CONTENT_LIST_ITEM_NUM_PROPERTIES
+	BALADOC_CONTENT_LIST_ITEM_0_PROPERTY,
+	BALADOC_CONTENT_LIST_ITEM_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_list_item_properties[VALADOC_CONTENT_LIST_ITEM_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_list_item_properties[BALADOC_CONTENT_LIST_ITEM_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 
@@ -71,7 +71,7 @@ valadoc_content_list_item_construct (GType object_type)
 G_GNUC_INTERNAL ValadocContentListItem*
 valadoc_content_list_item_new (void)
 {
-	return valadoc_content_list_item_construct (VALADOC_CONTENT_TYPE_LIST_ITEM);
+	return valadoc_content_list_item_construct (BALADOC_CONTENT_TYPE_LIST_ITEM);
 }
 
 static void
@@ -89,7 +89,7 @@ valadoc_content_list_item_real_check (ValadocContentContentElement* base,
 	g_return_if_fail (file_path != NULL);
 	g_return_if_fail (reporter != NULL);
 	g_return_if_fail (settings != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_list_item_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_list_item_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
 }
 
 static void
@@ -109,7 +109,7 @@ valadoc_content_list_item_real_accept_children (ValadocContentContentElement* ba
 	ValadocContentListItem * self;
 	self = (ValadocContentListItem*) base;
 	g_return_if_fail (visitor != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_list_item_parent_class)->accept_children ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), visitor);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_list_item_parent_class)->accept_children ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), visitor);
 }
 
 static gpointer
@@ -178,7 +178,7 @@ valadoc_content_list_item_real_copy (ValadocContentContentElement* base,
 			_tmp12_ = block;
 			_tmp13_ = item;
 			_tmp14_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp12_, (ValadocContentContentElement*) _tmp13_);
-			_tmp15_ = VALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
+			_tmp15_ = BALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
 			if (_tmp15_ == NULL) {
 				_g_object_unref0 (_tmp14_);
 			}
@@ -219,7 +219,7 @@ valadoc_content_list_item_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentListItemClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_list_item_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentListItem), 0, (GInstanceInitFunc) valadoc_content_list_item_instance_init, NULL };
 	GType valadoc_content_list_item_type_id;
-	valadoc_content_list_item_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocContentListItem", &g_define_type_info, 0);
+	valadoc_content_list_item_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocContentListItem", &g_define_type_info, 0);
 	return valadoc_content_list_item_type_id;
 }
 

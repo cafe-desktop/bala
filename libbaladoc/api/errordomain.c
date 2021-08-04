@@ -31,11 +31,11 @@
 #include <valacodegen.h>
 
 enum  {
-	VALADOC_API_ERROR_DOMAIN_0_PROPERTY,
-	VALADOC_API_ERROR_DOMAIN_NODE_TYPE_PROPERTY,
-	VALADOC_API_ERROR_DOMAIN_NUM_PROPERTIES
+	BALADOC_API_ERROR_DOMAIN_0_PROPERTY,
+	BALADOC_API_ERROR_DOMAIN_NODE_TYPE_PROPERTY,
+	BALADOC_API_ERROR_DOMAIN_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_error_domain_properties[VALADOC_API_ERROR_DOMAIN_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_error_domain_properties[BALADOC_API_ERROR_DOMAIN_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _valadoc_api_signature_builder_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_api_signature_builder_unref (var), NULL)))
 
@@ -111,7 +111,7 @@ valadoc_api_error_domain_new (ValadocApiNode* parent,
                               ValadocApiSourceComment* comment,
                               ValaErrorDomain* data)
 {
-	return valadoc_api_error_domain_construct (VALADOC_API_TYPE_ERROR_DOMAIN, parent, file, name, accessibility, comment, data);
+	return valadoc_api_error_domain_construct (BALADOC_API_TYPE_ERROR_DOMAIN, parent, file, name, accessibility, comment, data);
 }
 
 static gchar*
@@ -217,7 +217,7 @@ valadoc_api_error_domain_real_get_node_type (ValadocApiNode* base)
 	ValadocApiNodeType result;
 	ValadocApiErrorDomain* self;
 	self = (ValadocApiErrorDomain*) base;
-	result = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+	result = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
 	return result;
 }
 
@@ -276,13 +276,13 @@ valadoc_api_error_domain_class_init (ValadocApiErrorDomainClass * klass,
 	g_type_class_adjust_private_offset (klass, &ValadocApiErrorDomain_private_offset);
 	((ValadocApiNodeClass *) klass)->accept = (void (*) (ValadocApiNode*, ValadocApiVisitor*)) valadoc_api_error_domain_real_accept;
 	((ValadocApiItemClass *) klass)->build_signature = (ValadocContentInline* (*) (ValadocApiItem*)) valadoc_api_error_domain_real_build_signature;
-	VALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_error_domain_real_get_node_type;
+	BALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_error_domain_real_get_node_type;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_error_domain_get_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_error_domain_finalize;
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_ERROR_DOMAIN_NODE_TYPE_PROPERTY, valadoc_api_error_domain_properties[VALADOC_API_ERROR_DOMAIN_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", VALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_ERROR_DOMAIN_NODE_TYPE_PROPERTY, valadoc_api_error_domain_properties[BALADOC_API_ERROR_DOMAIN_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", BALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -296,7 +296,7 @@ static void
 valadoc_api_error_domain_finalize (GObject * obj)
 {
 	ValadocApiErrorDomain * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain);
 	_g_free0 (self->priv->quark_function_name);
 	_g_free0 (self->priv->quark_macro_name);
 	_g_free0 (self->priv->dbus_name);
@@ -312,7 +312,7 @@ valadoc_api_error_domain_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiErrorDomainClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_error_domain_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiErrorDomain), 0, (GInstanceInitFunc) valadoc_api_error_domain_instance_init, NULL };
 	GType valadoc_api_error_domain_type_id;
-	valadoc_api_error_domain_type_id = g_type_register_static (VALADOC_API_TYPE_TYPESYMBOL, "ValadocApiErrorDomain", &g_define_type_info, 0);
+	valadoc_api_error_domain_type_id = g_type_register_static (BALADOC_API_TYPE_TYPESYMBOL, "ValadocApiErrorDomain", &g_define_type_info, 0);
 	ValadocApiErrorDomain_private_offset = g_type_add_instance_private (valadoc_api_error_domain_type_id, sizeof (ValadocApiErrorDomainPrivate));
 	return valadoc_api_error_domain_type_id;
 }
@@ -336,9 +336,9 @@ _vala_valadoc_api_error_domain_get_property (GObject * object,
                                              GParamSpec * pspec)
 {
 	ValadocApiErrorDomain * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain);
 	switch (property_id) {
-		case VALADOC_API_ERROR_DOMAIN_NODE_TYPE_PROPERTY:
+		case BALADOC_API_ERROR_DOMAIN_NODE_TYPE_PROPERTY:
 		g_value_set_enum (value, valadoc_api_node_get_node_type ((ValadocApiNode*) self));
 		break;
 		default:

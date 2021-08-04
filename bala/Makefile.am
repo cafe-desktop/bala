@@ -14,9 +14,9 @@ AM_CPPFLAGS = \
 BUILT_SOURCES = vala.vala.stamp $(srcdir)/valaversion.vala
 
 $(srcdir)/valaversion.vala:
-	sed -e "s#\@VALA_MAJOR_VERSION\@#$(VALA_MAJOR_VERSION)#g" \
-		-e "s#\@VALA_MINOR_VERSION\@#$(VALA_MINOR_VERSION)#g" \
-		-e "s#\@VALA_MICRO_VERSION\@#$(VALA_MICRO_VERSION)#g" \
+	sed -e "s#\@BALA_MAJOR_VERSION\@#$(BALA_MAJOR_VERSION)#g" \
+		-e "s#\@BALA_MINOR_VERSION\@#$(BALA_MINOR_VERSION)#g" \
+		-e "s#\@BALA_MICRO_VERSION\@#$(BALA_MICRO_VERSION)#g" \
 		-e "s#\@API_VERSION\@#$(API_VERSION)#g" \
 		-e "s#\@PACKAGE_VERSION\@#$(PACKAGE_VERSION)#g" \
 		< $@.in > $@
@@ -25,7 +25,7 @@ lib_LTLIBRARIES = \
 	libvala@PACKAGE_SUFFIX@.la \
 	$(NULL)
 
-libvala_la_VALASOURCES = \
+libvala_la_BALASOURCES = \
 	valaaddressofexpression.vala \
 	valaarraycopymethod.vala \
 	valaarraycreationexpression.vala \
@@ -188,7 +188,7 @@ libvala_la_VALASOURCES = \
 
 libvala@PACKAGE_SUFFIX@_la_SOURCES = \
 	vala.vala.stamp \
-	$(libvala_la_VALASOURCES:.vala=.c) \
+	$(libvala_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 valaincludedir = $(includedir)/vala@PACKAGE_SUFFIX@
@@ -197,10 +197,10 @@ valainclude_HEADERS = \
 	vala.h \
 	$(NULL)
 
-vala.vapi vala.vala.stamp: $(libvala_la_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+vala.vapi vala.vala.stamp: $(libvala_la_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi --pkg gmodule-2.0 --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
@@ -228,10 +228,10 @@ dist_vapi_DATA = libvala@PACKAGE_SUFFIX@.vapi
 libvala@PACKAGE_SUFFIX@.vapi: $(top_srcdir)/gee/gee.vapi $(top_srcdir)/vala/vala.vapi
 	cat $^ > $@
 
-EXTRA_DIST = $(libvala_la_VALASOURCES) vala.vapi vala.vala.stamp vala.h valaversion.vala.in
+EXTRA_DIST = $(libvala_la_BALASOURCES) vala.vapi vala.vala.stamp vala.h valaversion.vala.in
 
 MAINTAINERCLEANFILES = \
 	vala.vapi \
 	vala.h \
-	$(libvala_la_VALASOURCES:.vala=.c) \
+	$(libvala_la_BALASOURCES:.vala=.c) \
 	$(NULL)

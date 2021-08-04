@@ -26,29 +26,29 @@ noinst_PROGRAMS = \
 
 BUILT_SOURCES = vapigen.vala.stamp vapicheck.vala.stamp
 
-vapigen_VALASOURCES = \
+vapigen_BALASOURCES = \
 	valagidlparser.vala \
 	valavapigen.vala \
 	$(NULL)
 
 vapigen_SOURCES = \
 	vapigen.vala.stamp \
-	$(vapigen_VALASOURCES:.vala=.c) \
+	$(vapigen_BALASOURCES:.vala=.c) \
 	$(NULL)
 
-vapicheck_VALASOURCES = \
+vapicheck_BALASOURCES = \
 	valavapicheck.vala \
 	$(NULL)
 
 vapicheck_SOURCES = \
 	vapicheck.vala.stamp \
-	$(vapicheck_VALASOURCES:.vala=.c) \
+	$(vapicheck_BALASOURCES:.vala=.c) \
 	$(NULL)
 
-vapigen.vala.stamp: $(vapigen_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+vapigen.vala.stamp: $(vapigen_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--vapidir $(top_srcdir)/gee --pkg gee \
@@ -58,10 +58,10 @@ vapigen.vala.stamp: $(vapigen_VALASOURCES)
 		$^
 	@touch $@
 
-vapicheck.vala.stamp: $(vapicheck_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+vapicheck.vala.stamp: $(vapicheck_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--vapidir $(top_srcdir)/gee --pkg gee \
@@ -100,8 +100,8 @@ vapigen@PACKAGE_SUFFIX@.pc: vapigen.pc
 	cp $< $@
 
 EXTRA_DIST = \
-	$(vapigen_VALASOURCES) \
-	$(vapicheck_VALASOURCES) \
+	$(vapigen_BALASOURCES) \
+	$(vapicheck_BALASOURCES) \
 	Makefile.vapigen \
 	vapigen.m4 \
 	vapigen.vala.stamp \
@@ -121,6 +121,6 @@ install-data-hook:
 endif
 
 MAINTAINERCLEANFILES = \
-	$(vapigen_VALASOURCES:.vala=.c) \
-	$(vapicheck_VALASOURCES:.vala=.c) \
+	$(vapigen_BALASOURCES:.vala=.c) \
+	$(vapicheck_BALASOURCES:.vala=.c) \
 	$(NULL)

@@ -85,11 +85,11 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-@ENABLE_VALADOC_TRUE@am__append_1 = \
-@ENABLE_VALADOC_TRUE@	valadoc.1 \
-@ENABLE_VALADOC_TRUE@	$(NULL)
+@ENABLE_BALADOC_TRUE@am__append_1 = \
+@ENABLE_BALADOC_TRUE@	valadoc.1 \
+@ENABLE_BALADOC_TRUE@	$(NULL)
 
-@ENABLE_VALADOC_TRUE@@HAVE_CGRAPH_TRUE@am__append_2 = -D WITH_CGRAPH
+@ENABLE_BALADOC_TRUE@@HAVE_CGRAPH_TRUE@am__append_2 = -D WITH_CGRAPH
 subdir = doc
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
@@ -233,7 +233,7 @@ CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 COVERAGE_CFLAGS = @COVERAGE_CFLAGS@
 COVERAGE_LIBS = @COVERAGE_LIBS@
-COVERAGE_VALAFLAGS = @COVERAGE_VALAFLAGS@
+COVERAGE_BALAFLAGS = @COVERAGE_BALAFLAGS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -302,11 +302,11 @@ SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
 TEST_CFLAGS = @TEST_CFLAGS@
-VALAC = @VALAC@
-VALAFLAGS = @VALAFLAGS@
-VALA_MAJOR_VERSION = @VALA_MAJOR_VERSION@
-VALA_MICRO_VERSION = @VALA_MICRO_VERSION@
-VALA_MINOR_VERSION = @VALA_MINOR_VERSION@
+BALAC = @BALAC@
+BALAFLAGS = @BALAFLAGS@
+BALA_MAJOR_VERSION = @BALA_MAJOR_VERSION@
+BALA_MICRO_VERSION = @BALA_MICRO_VERSION@
+BALA_MINOR_VERSION = @BALA_MINOR_VERSION@
 VERSION = @VERSION@
 WEASYPRINT = @WEASYPRINT@
 XSLTPROC = @XSLTPROC@
@@ -380,20 +380,20 @@ EXTRA_DIST = \
 	vapigen.h2m \
 	$(NULL)
 
-@ENABLE_VALADOC_TRUE@COMMON_VALADOCFLAGS = --force --verbose --private \
-@ENABLE_VALADOC_TRUE@	--internal --use-svg-images \
-@ENABLE_VALADOC_TRUE@	--vapidir=$(top_builddir)/vapi --pkg \
-@ENABLE_VALADOC_TRUE@	config --pkg gmodule-2.0 \
-@ENABLE_VALADOC_TRUE@	--directory=internal-apis/ \
-@ENABLE_VALADOC_TRUE@	--doclet=$(top_builddir)/valadoc/doclets/html/.libs \
-@ENABLE_VALADOC_TRUE@	--doclet-arg "--no-browsable-check" \
-@ENABLE_VALADOC_TRUE@	--basedir=internal-apis/ $(NULL) \
-@ENABLE_VALADOC_TRUE@	$(am__append_2)
-@ENABLE_VALADOC_TRUE@gee_VALASOURCES = $(top_srcdir)/gee/*.vala
-@ENABLE_VALADOC_TRUE@vala_VALASOURCES = $(top_srcdir)/vala/*.vala
-@ENABLE_VALADOC_TRUE@ccode_VALASOURCES = $(top_srcdir)/ccode/*.vala
-@ENABLE_VALADOC_TRUE@codegen_VALASOURCES = $(top_srcdir)/codegen/*.vala
-@ENABLE_VALADOC_TRUE@valadoc_VALASOURCES = $(top_srcdir)/libvaladoc/*.vala $(top_srcdir)/libvaladoc/*/*.vala
+@ENABLE_BALADOC_TRUE@COMMON_BALADOCFLAGS = --force --verbose --private \
+@ENABLE_BALADOC_TRUE@	--internal --use-svg-images \
+@ENABLE_BALADOC_TRUE@	--vapidir=$(top_builddir)/vapi --pkg \
+@ENABLE_BALADOC_TRUE@	config --pkg gmodule-2.0 \
+@ENABLE_BALADOC_TRUE@	--directory=internal-apis/ \
+@ENABLE_BALADOC_TRUE@	--doclet=$(top_builddir)/valadoc/doclets/html/.libs \
+@ENABLE_BALADOC_TRUE@	--doclet-arg "--no-browsable-check" \
+@ENABLE_BALADOC_TRUE@	--basedir=internal-apis/ $(NULL) \
+@ENABLE_BALADOC_TRUE@	$(am__append_2)
+@ENABLE_BALADOC_TRUE@gee_BALASOURCES = $(top_srcdir)/gee/*.vala
+@ENABLE_BALADOC_TRUE@vala_BALASOURCES = $(top_srcdir)/vala/*.vala
+@ENABLE_BALADOC_TRUE@ccode_BALASOURCES = $(top_srcdir)/ccode/*.vala
+@ENABLE_BALADOC_TRUE@codegen_BALASOURCES = $(top_srcdir)/codegen/*.vala
+@ENABLE_BALADOC_TRUE@valadoc_BALASOURCES = $(top_srcdir)/libvaladoc/*.vala $(top_srcdir)/libvaladoc/*/*.vala
 all: all-recursive
 
 .SUFFIXES:
@@ -762,8 +762,8 @@ uninstall-man: uninstall-man1
 .PRECIOUS: Makefile
 
 
-@ENABLE_VALADOC_TRUE@@HAVE_HELP2MAN_TRUE@manpages: valac.1 valadoc.1 vala-gen-introspect.1 vapigen.1
-@ENABLE_VALADOC_FALSE@@HAVE_HELP2MAN_TRUE@manpages: valac.1 vala-gen-introspect.1 vapigen.1
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@manpages: valac.1 valadoc.1 vala-gen-introspect.1 vapigen.1
+@ENABLE_BALADOC_FALSE@@HAVE_HELP2MAN_TRUE@manpages: valac.1 vala-gen-introspect.1 vapigen.1
 @HAVE_HELP2MAN_TRUE@	@rm $^
 @HAVE_HELP2MAN_TRUE@	$(MAKE) $(AM_MAKEFLAGS) $^
 
@@ -772,11 +772,11 @@ uninstall-man: uninstall-man1
 @HAVE_HELP2MAN_TRUE@		--include $(srcdir)/valac.h2m \
 @HAVE_HELP2MAN_TRUE@		--libtool --no-info \
 @HAVE_HELP2MAN_TRUE@		--output=$@
-@ENABLE_VALADOC_TRUE@@HAVE_HELP2MAN_TRUE@valadoc.1:
-@ENABLE_VALADOC_TRUE@@HAVE_HELP2MAN_TRUE@	$(HELP2MAN) $(top_builddir)/valadoc/valadoc \
-@ENABLE_VALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--include $(srcdir)/valadoc.h2m \
-@ENABLE_VALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--libtool --no-info \
-@ENABLE_VALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--output=$@
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@valadoc.1:
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@	$(HELP2MAN) $(top_builddir)/valadoc/valadoc \
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--include $(srcdir)/valadoc.h2m \
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--libtool --no-info \
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--output=$@
 @HAVE_HELP2MAN_TRUE@vala-gen-introspect.1:
 @HAVE_HELP2MAN_TRUE@	$(HELP2MAN) $(top_builddir)/gobject-introspection/gen-introspect \
 @HAVE_HELP2MAN_TRUE@		--include $(srcdir)/vala-gen-introspect.h2m \
@@ -791,62 +791,62 @@ uninstall-man: uninstall-man1
 
 @ENABLE_UNVERSIONED_TRUE@install-data-hook:
 @ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f valac@PACKAGE_SUFFIX@.1 valac.1
-@ENABLE_UNVERSIONED_TRUE@@ENABLE_VALADOC_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f valadoc@PACKAGE_SUFFIX@.1 valadoc.1
+@ENABLE_UNVERSIONED_TRUE@@ENABLE_BALADOC_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f valadoc@PACKAGE_SUFFIX@.1 valadoc.1
 @ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f vala-gen-introspect@PACKAGE_SUFFIX@.1 vala-gen-introspect.1
 @ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f vapigen@PACKAGE_SUFFIX@.1 vapigen.1
-@ENABLE_VALADOC_TRUE@internal-apis/gee: $(gee_VALASOURCES)
-@ENABLE_VALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
-@ENABLE_VALADOC_TRUE@		$(COMMON_VALADOCFLAGS) \
-@ENABLE_VALADOC_TRUE@		--package-name gee \
-@ENABLE_VALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
-@ENABLE_VALADOC_TRUE@		--deps \
-@ENABLE_VALADOC_TRUE@		$(filter %.vala,$^)
-@ENABLE_VALADOC_TRUE@	@touch $@
-@ENABLE_VALADOC_TRUE@internal-apis/vala: $(vala_VALASOURCES) internal-apis/gee
-@ENABLE_VALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
-@ENABLE_VALADOC_TRUE@		$(COMMON_VALADOCFLAGS) \
-@ENABLE_VALADOC_TRUE@		--package-name vala \
-@ENABLE_VALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
-@ENABLE_VALADOC_TRUE@		--deps \
-@ENABLE_VALADOC_TRUE@		$(filter %.vala,$^)
-@ENABLE_VALADOC_TRUE@	@touch $@
-@ENABLE_VALADOC_TRUE@internal-apis/ccode: $(ccode_VALASOURCES) internal-apis/gee
-@ENABLE_VALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
-@ENABLE_VALADOC_TRUE@		$(COMMON_VALADOCFLAGS) \
-@ENABLE_VALADOC_TRUE@		--package-name ccode \
-@ENABLE_VALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/vala --pkg vala \
-@ENABLE_VALADOC_TRUE@		--deps \
-@ENABLE_VALADOC_TRUE@		$(filter %.vala,$^)
-@ENABLE_VALADOC_TRUE@	@touch $@
-@ENABLE_VALADOC_TRUE@internal-apis/codegen: $(codegen_VALASOURCES) internal-apis/vala internal-apis/ccode
-@ENABLE_VALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
-@ENABLE_VALADOC_TRUE@		$(COMMON_VALADOCFLAGS) \
-@ENABLE_VALADOC_TRUE@		--package-name codegen \
-@ENABLE_VALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/vala --pkg vala \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/ccode --pkg ccode \
-@ENABLE_VALADOC_TRUE@		--deps \
-@ENABLE_VALADOC_TRUE@		$(filter %.vala,$^)
-@ENABLE_VALADOC_TRUE@	@touch $@
-@ENABLE_VALADOC_TRUE@internal-apis/valadoc: $(valadoc_VALASOURCES) internal-apis/codegen
-@ENABLE_VALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
-@ENABLE_VALADOC_TRUE@		$(COMMON_VALADOCFLAGS) \
-@ENABLE_VALADOC_TRUE@		--package-name valadoc \
-@ENABLE_VALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_srcdir)/vapi --pkg libgvc \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/vala --pkg vala \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/ccode --pkg ccode \
-@ENABLE_VALADOC_TRUE@		--vapidir=$(top_builddir)/codegen --pkg codegen \
-@ENABLE_VALADOC_TRUE@		--deps \
-@ENABLE_VALADOC_TRUE@		$(filter %.vala,$^)
-@ENABLE_VALADOC_TRUE@	@touch $@
+@ENABLE_BALADOC_TRUE@internal-apis/gee: $(gee_BALASOURCES)
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
+@ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
+@ENABLE_BALADOC_TRUE@		--package-name gee \
+@ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
+@ENABLE_BALADOC_TRUE@		--deps \
+@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@	@touch $@
+@ENABLE_BALADOC_TRUE@internal-apis/vala: $(vala_BALASOURCES) internal-apis/gee
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
+@ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
+@ENABLE_BALADOC_TRUE@		--package-name vala \
+@ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
+@ENABLE_BALADOC_TRUE@		--deps \
+@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@	@touch $@
+@ENABLE_BALADOC_TRUE@internal-apis/ccode: $(ccode_BALASOURCES) internal-apis/gee
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
+@ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
+@ENABLE_BALADOC_TRUE@		--package-name ccode \
+@ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/vala --pkg vala \
+@ENABLE_BALADOC_TRUE@		--deps \
+@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@	@touch $@
+@ENABLE_BALADOC_TRUE@internal-apis/codegen: $(codegen_BALASOURCES) internal-apis/vala internal-apis/ccode
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
+@ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
+@ENABLE_BALADOC_TRUE@		--package-name codegen \
+@ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/vala --pkg vala \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/ccode --pkg ccode \
+@ENABLE_BALADOC_TRUE@		--deps \
+@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@	@touch $@
+@ENABLE_BALADOC_TRUE@internal-apis/valadoc: $(valadoc_BALASOURCES) internal-apis/codegen
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
+@ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
+@ENABLE_BALADOC_TRUE@		--package-name valadoc \
+@ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_srcdir)/vapi --pkg libgvc \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/vala --pkg vala \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/ccode --pkg ccode \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/codegen --pkg codegen \
+@ENABLE_BALADOC_TRUE@		--deps \
+@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@	@touch $@
 
-@ENABLE_VALADOC_TRUE@internal-api-docs: internal-apis/gee internal-apis/vala internal-apis/ccode internal-apis/codegen internal-apis/valadoc
+@ENABLE_BALADOC_TRUE@internal-api-docs: internal-apis/gee internal-apis/vala internal-apis/ccode internal-apis/codegen internal-apis/valadoc
 
 clean-local:
 	rm -rf $(builddir)/internal-apis

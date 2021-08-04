@@ -73,7 +73,7 @@ vala_signal_type_get_signal_symbol (ValaSignalType* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_SIGNAL, ValaSignal);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_SIGNAL, ValaSignal);
 	return result;
 }
 
@@ -90,7 +90,7 @@ vala_signal_type_construct (GType object_type,
 ValaSignalType*
 vala_signal_type_new (ValaSignal* signal_symbol)
 {
-	return vala_signal_type_construct (VALA_TYPE_SIGNAL_TYPE, signal_symbol);
+	return vala_signal_type_construct (BALA_TYPE_SIGNAL_TYPE, signal_symbol);
 }
 
 static ValaDataType*
@@ -180,7 +180,7 @@ vala_signal_type_get_handler_type (ValaSignalType* self)
 	_tmp1_ = _tmp0_;
 	_tmp2_ = vala_symbol_get_parent_symbol ((ValaSymbol*) _tmp1_);
 	_tmp3_ = _tmp2_;
-	_tmp4_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol));
+	_tmp4_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol));
 	type_sym = _tmp4_;
 	_tmp5_ = type_sym;
 	_tmp6_ = vala_semantic_analyzer_get_data_type_for_symbol ((ValaSymbol*) _tmp5_);
@@ -301,7 +301,7 @@ vala_signal_type_get_connect_method (ValaSignalType* self)
 		_tmp5_ = vala_symbol_get_scope ((ValaSymbol*) _tmp4_);
 		_tmp6_ = _tmp5_;
 		_tmp7_ = vala_scope_lookup (_tmp6_, "ulong");
-		_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, VALA_TYPE_STRUCT, ValaStruct);
+		_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, BALA_TYPE_STRUCT, ValaStruct);
 		_tmp9_ = vala_integer_type_new (_tmp8_, NULL, NULL);
 		_tmp10_ = _tmp9_;
 		_vala_code_node_unref0 (_tmp8_);
@@ -312,7 +312,7 @@ vala_signal_type_get_connect_method (ValaSignalType* self)
 		_vala_code_node_unref0 (self->priv->connect_method);
 		self->priv->connect_method = _tmp12_;
 		_tmp13_ = self->priv->connect_method;
-		vala_symbol_set_access ((ValaSymbol*) _tmp13_, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+		vala_symbol_set_access ((ValaSymbol*) _tmp13_, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 		_tmp14_ = self->priv->connect_method;
 		vala_symbol_set_external ((ValaSymbol*) _tmp14_, TRUE);
 		_tmp15_ = self->priv->connect_method;
@@ -377,7 +377,7 @@ vala_signal_type_get_connect_after_method (ValaSignalType* self)
 		_tmp5_ = vala_symbol_get_scope ((ValaSymbol*) _tmp4_);
 		_tmp6_ = _tmp5_;
 		_tmp7_ = vala_scope_lookup (_tmp6_, "ulong");
-		_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, VALA_TYPE_STRUCT, ValaStruct);
+		_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, BALA_TYPE_STRUCT, ValaStruct);
 		_tmp9_ = vala_integer_type_new (_tmp8_, NULL, NULL);
 		_tmp10_ = _tmp9_;
 		_vala_code_node_unref0 (_tmp8_);
@@ -388,7 +388,7 @@ vala_signal_type_get_connect_after_method (ValaSignalType* self)
 		_vala_code_node_unref0 (self->priv->connect_after_method);
 		self->priv->connect_after_method = _tmp12_;
 		_tmp13_ = self->priv->connect_after_method;
-		vala_symbol_set_access ((ValaSymbol*) _tmp13_, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+		vala_symbol_set_access ((ValaSymbol*) _tmp13_, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 		_tmp14_ = self->priv->connect_after_method;
 		vala_symbol_set_external ((ValaSymbol*) _tmp14_, TRUE);
 		_tmp15_ = self->priv->connect_after_method;
@@ -443,7 +443,7 @@ vala_signal_type_get_disconnect_method (ValaSignalType* self)
 		self->priv->disconnect_method = _tmp3_;
 		_vala_code_node_unref0 (_tmp2_);
 		_tmp4_ = self->priv->disconnect_method;
-		vala_symbol_set_access ((ValaSymbol*) _tmp4_, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+		vala_symbol_set_access ((ValaSymbol*) _tmp4_, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 		_tmp5_ = self->priv->disconnect_method;
 		vala_symbol_set_external ((ValaSymbol*) _tmp5_, TRUE);
 		_tmp6_ = self->priv->disconnect_method;
@@ -545,11 +545,11 @@ static void
 vala_signal_type_finalize (ValaCodeNode * obj)
 {
 	ValaSignalType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SIGNAL_TYPE, ValaSignalType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SIGNAL_TYPE, ValaSignalType);
 	_vala_code_node_unref0 (self->priv->connect_method);
 	_vala_code_node_unref0 (self->priv->connect_after_method);
 	_vala_code_node_unref0 (self->priv->disconnect_method);
-	VALA_CODE_NODE_CLASS (vala_signal_type_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_signal_type_parent_class)->finalize (obj);
 }
 
 /**
@@ -560,7 +560,7 @@ vala_signal_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaSignalTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_signal_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaSignalType), 0, (GInstanceInitFunc) vala_signal_type_instance_init, NULL };
 	GType vala_signal_type_type_id;
-	vala_signal_type_type_id = g_type_register_static (VALA_TYPE_CALLABLE_TYPE, "ValaSignalType", &g_define_type_info, 0);
+	vala_signal_type_type_id = g_type_register_static (BALA_TYPE_CALLABLE_TYPE, "ValaSignalType", &g_define_type_info, 0);
 	ValaSignalType_private_offset = g_type_add_instance_private (vala_signal_type_type_id, sizeof (ValaSignalTypePrivate));
 	return vala_signal_type_type_id;
 }

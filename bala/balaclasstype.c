@@ -45,7 +45,7 @@ vala_class_type_get_class_symbol (ValaClassType* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_CLASS, ValaClass);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_CLASS, ValaClass);
 	return result;
 }
 
@@ -62,7 +62,7 @@ vala_class_type_construct (GType object_type,
 ValaClassType*
 vala_class_type_new (ValaClass* class_symbol)
 {
-	return vala_class_type_construct (VALA_TYPE_CLASS_TYPE, class_symbol);
+	return vala_class_type_construct (BALA_TYPE_CLASS_TYPE, class_symbol);
 }
 
 static gpointer
@@ -192,7 +192,7 @@ vala_class_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaClassTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_class_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaClassType), 0, (GInstanceInitFunc) vala_class_type_instance_init, NULL };
 	GType vala_class_type_type_id;
-	vala_class_type_type_id = g_type_register_static (VALA_TYPE_REFERENCE_TYPE, "ValaClassType", &g_define_type_info, 0);
+	vala_class_type_type_id = g_type_register_static (BALA_TYPE_REFERENCE_TYPE, "ValaClassType", &g_define_type_info, 0);
 	return vala_class_type_type_id;
 }
 

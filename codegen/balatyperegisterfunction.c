@@ -165,7 +165,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 	type_symbol = _tmp0_;
 	fundamental = FALSE;
 	_tmp1_ = type_symbol;
-	cl = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALA_TYPE_CLASS) ? ((ValaClass*) _tmp1_) : NULL;
+	cl = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALA_TYPE_CLASS) ? ((ValaClass*) _tmp1_) : NULL;
 	_tmp4_ = cl;
 	if (_tmp4_ != NULL) {
 		ValaClass* _tmp5_;
@@ -232,7 +232,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		_vala_ccode_node_unref0 (_tmp24_);
 		_g_free0 (_tmp22_);
 		_tmp27_ = _cdecl_;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp27_, VALA_CCODE_MODIFIERS_STATIC | VALA_CCODE_MODIFIERS_VOLATILE);
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp27_, BALA_CCODE_MODIFIERS_STATIC | BALA_CCODE_MODIFIERS_VOLATILE);
 		_tmp28_ = type_block;
 		_tmp29_ = _cdecl_;
 		vala_ccode_block_add_statement (_tmp28_, (ValaCCodeNode*) _tmp29_);
@@ -260,7 +260,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		_vala_ccode_node_unref0 (_tmp36_);
 		_vala_ccode_node_unref0 (_tmp34_);
 		_tmp37_ = _cdecl_;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp37_, VALA_CCODE_MODIFIERS_STATIC);
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp37_, BALA_CCODE_MODIFIERS_STATIC);
 		_tmp38_ = self->priv->source_declaration_fragment;
 		_tmp39_ = _cdecl_;
 		vala_ccode_fragment_append (_tmp38_, (ValaCCodeNode*) _tmp39_);
@@ -299,8 +299,8 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		fun = _tmp43_;
 		_g_free0 (_tmp42_);
 		_tmp44_ = fun;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp44_, VALA_CCODE_MODIFIERS_CONST);
-		if (vala_typeregister_function_get_accessibility (self) == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp44_, BALA_CCODE_MODIFIERS_CONST);
+		if (vala_typeregister_function_get_accessibility (self) == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
 			ValaCCodeFunction* _tmp45_;
 			ValaCCodeFunction* _tmp46_;
 			ValaCCodeModifiers _tmp47_;
@@ -309,7 +309,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 			_tmp46_ = fun;
 			_tmp47_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp46_);
 			_tmp48_ = _tmp47_;
-			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp46_, _tmp48_ | (VALA_CCODE_MODIFIERS_STATIC | VALA_CCODE_MODIFIERS_UNUSED));
+			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp46_, _tmp48_ | (BALA_CCODE_MODIFIERS_STATIC | BALA_CCODE_MODIFIERS_UNUSED));
 		} else {
 			gboolean _tmp49_ = FALSE;
 			gboolean _tmp50_;
@@ -317,7 +317,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 			_tmp50_ = vala_code_context_get_hide_internal (context);
 			_tmp51_ = _tmp50_;
 			if (_tmp51_) {
-				_tmp49_ = vala_typeregister_function_get_accessibility (self) == VALA_SYMBOL_ACCESSIBILITY_INTERNAL;
+				_tmp49_ = vala_typeregister_function_get_accessibility (self) == BALA_SYMBOL_ACCESSIBILITY_INTERNAL;
 			} else {
 				_tmp49_ = FALSE;
 			}
@@ -330,7 +330,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 				_tmp53_ = fun;
 				_tmp54_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp53_);
 				_tmp55_ = _tmp54_;
-				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp53_, _tmp55_ | (VALA_CCODE_MODIFIERS_INTERNAL | VALA_CCODE_MODIFIERS_UNUSED));
+				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp53_, _tmp55_ | (BALA_CCODE_MODIFIERS_INTERNAL | BALA_CCODE_MODIFIERS_UNUSED));
 			}
 		}
 		_tmp56_ = fun;
@@ -353,7 +353,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		fun_once = _tmp67_;
 		_g_free0 (_tmp66_);
 		_tmp68_ = fun_once;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp68_, VALA_CCODE_MODIFIERS_STATIC);
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp68_, BALA_CCODE_MODIFIERS_STATIC);
 		if (vala_code_context_require_glib_version (context, 2, 58)) {
 			ValaCCodeFunction* _tmp69_;
 			ValaCCodeFunction* _tmp70_;
@@ -363,7 +363,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 			_tmp70_ = fun_once;
 			_tmp71_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp70_);
 			_tmp72_ = _tmp71_;
-			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp70_, _tmp72_ | VALA_CCODE_MODIFIERS_NO_INLINE);
+			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp70_, _tmp72_ | BALA_CCODE_MODIFIERS_NO_INLINE);
 		}
 		_tmp73_ = fun_once;
 		vala_ccode_function_set_is_declaration (_tmp73_, TRUE);
@@ -450,7 +450,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		_g_free0 (_tmp96_);
 		get_fun = _tmp98_;
 		_tmp99_ = get_fun;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp99_, VALA_CCODE_MODIFIERS_CONST);
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp99_, BALA_CCODE_MODIFIERS_CONST);
 		_tmp100_ = get_fun;
 		vala_ccode_function_set_is_declaration (_tmp100_, TRUE);
 		_tmp101_ = self->priv->declaration_fragment;
@@ -514,7 +514,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		_tmp120_ = vala_ccode_declaration_new ("const GTypeValueTable");
 		cgtypetabledecl = _tmp120_;
 		_tmp121_ = cgtypetabledecl;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp121_, VALA_CCODE_MODIFIERS_STATIC);
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp121_, BALA_CCODE_MODIFIERS_STATIC);
 		_tmp122_ = cgtypetabledecl;
 		_tmp123_ = vala_typeregister_function_get_gtype_value_table_init_function_name (self);
 		_tmp124_ = _tmp123_;
@@ -558,7 +558,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		type_value_table_decl_name = _tmp144_;
 	}
 	_tmp145_ = type_symbol;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp145_, VALA_TYPE_OBJECT_TYPE_SYMBOL)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp145_, BALA_TYPE_OBJECT_TYPE_SYMBOL)) {
 		ValaCCodeDeclaration* ctypedecl = NULL;
 		ValaCCodeDeclaration* _tmp146_;
 		ValaCCodeDeclaration* _tmp147_;
@@ -588,7 +588,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		_tmp146_ = vala_ccode_declaration_new ("const GTypeInfo");
 		ctypedecl = _tmp146_;
 		_tmp147_ = ctypedecl;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp147_, VALA_CCODE_MODIFIERS_STATIC);
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp147_, BALA_CCODE_MODIFIERS_STATIC);
 		if (plugin) {
 			gchar* _tmp149_;
 			_tmp149_ = vala_typeregister_function_get_base_finalize_func_name (self);
@@ -649,7 +649,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 			_tmp173_ = vala_ccode_declaration_new ("const GTypeFundamentalInfo");
 			ctypefundamentaldecl = _tmp173_;
 			_tmp174_ = ctypefundamentaldecl;
-			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp174_, VALA_CCODE_MODIFIERS_STATIC);
+			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp174_, BALA_CCODE_MODIFIERS_STATIC);
 			_tmp175_ = ctypefundamentaldecl;
 			_tmp176_ = vala_ccode_constant_new ("{ (G_TYPE_FLAG_CLASSED | G_TYPE_FLAG_INSTANTIATABLE | G_TYPE_FLAG_DERI" \
 "VABLE | G_TYPE_FLAG_DEEP_DERIVABLE) }");
@@ -673,7 +673,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 	vala_ccode_block_add_statement (_tmp182_, (ValaCCodeNode*) _tmp184_);
 	_vala_ccode_node_unref0 (_tmp184_);
 	_tmp185_ = type_symbol;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp185_, VALA_TYPE_STRUCT)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp185_, BALA_TYPE_STRUCT)) {
 		ValaCCodeIdentifier* _tmp186_;
 		ValaCCodeIdentifier* _tmp187_;
 		ValaCCodeFunctionCall* _tmp188_;
@@ -686,14 +686,14 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 	} else {
 		ValaTypeSymbol* _tmp189_;
 		_tmp189_ = type_symbol;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp189_, VALA_TYPE_ENUM)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp189_, BALA_TYPE_ENUM)) {
 			ValaEnum* en = NULL;
 			ValaTypeSymbol* _tmp190_;
 			ValaEnum* _tmp191_;
 			gboolean _tmp192_;
 			gboolean _tmp193_;
 			_tmp190_ = type_symbol;
-			en = G_TYPE_CHECK_INSTANCE_CAST (_tmp190_, VALA_TYPE_ENUM, ValaEnum);
+			en = G_TYPE_CHECK_INSTANCE_CAST (_tmp190_, BALA_TYPE_ENUM, ValaEnum);
 			_tmp191_ = en;
 			_tmp192_ = vala_enum_get_is_flags (_tmp191_);
 			_tmp193_ = _tmp192_;
@@ -814,7 +814,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 	_g_free0 (_tmp232_);
 	_g_free0 (_tmp230_);
 	_tmp235_ = type_symbol;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp235_, VALA_TYPE_STRUCT)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp235_, BALA_TYPE_STRUCT)) {
 		ValaStruct* st = NULL;
 		ValaTypeSymbol* _tmp236_;
 		ValaStruct* _tmp237_;
@@ -835,7 +835,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		ValaCCodeCastExpression* _tmp252_;
 		ValaCCodeCastExpression* _tmp253_;
 		_tmp236_ = type_symbol;
-		_tmp237_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp236_, VALA_TYPE_STRUCT, ValaStruct));
+		_tmp237_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp236_, BALA_TYPE_STRUCT, ValaStruct));
 		st = _tmp237_;
 		_tmp238_ = reg_call;
 		_tmp239_ = st;
@@ -865,7 +865,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 	} else {
 		ValaTypeSymbol* _tmp254_;
 		_tmp254_ = type_symbol;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp254_, VALA_TYPE_ENUM)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp254_, BALA_TYPE_ENUM)) {
 			ValaEnum* en = NULL;
 			ValaTypeSymbol* _tmp255_;
 			ValaCCodeInitializerList* clist = NULL;
@@ -898,7 +898,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 			ValaCCodeIdentifier* _tmp317_;
 			ValaCCodeIdentifier* _tmp318_;
 			_tmp255_ = type_symbol;
-			en = G_TYPE_CHECK_INSTANCE_CAST (_tmp255_, VALA_TYPE_ENUM, ValaEnum);
+			en = G_TYPE_CHECK_INSTANCE_CAST (_tmp255_, BALA_TYPE_ENUM, ValaEnum);
 			_tmp256_ = vala_ccode_initializer_list_new ();
 			clist = _tmp256_;
 			clist_ev = NULL;
@@ -1045,7 +1045,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 			_tmp312_ = enum_decl;
 			vala_ccode_declaration_add_declarator (_tmp311_, (ValaCCodeDeclarator*) _tmp312_);
 			_tmp313_ = _cdecl_;
-			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp313_, VALA_CCODE_MODIFIERS_STATIC);
+			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp313_, BALA_CCODE_MODIFIERS_STATIC);
 			_tmp314_ = type_init;
 			_tmp315_ = _cdecl_;
 			vala_ccode_block_add_statement (_tmp314_, (ValaCCodeNode*) _tmp315_);
@@ -1166,7 +1166,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		_tmp355_ = vala_ccode_identifier_new (_tmp354_);
 		_tmp356_ = _tmp355_;
 		_tmp357_ = reg_call;
-		_tmp358_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp356_, (ValaCCodeExpression*) _tmp357_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+		_tmp358_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp356_, (ValaCCodeExpression*) _tmp357_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 		_tmp359_ = _tmp358_;
 		_tmp360_ = vala_ccode_expression_statement_new ((ValaCCodeExpression*) _tmp359_);
 		_tmp361_ = _tmp360_;
@@ -1330,7 +1330,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 			_tmp416_ = vala_ccode_identifier_new (_tmp415_);
 			_tmp417_ = _tmp416_;
 			_tmp418_ = ccall;
-			_tmp419_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp417_, (ValaCCodeExpression*) _tmp418_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+			_tmp419_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp417_, (ValaCCodeExpression*) _tmp418_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 			_tmp420_ = _tmp419_;
 			_tmp421_ = vala_ccode_expression_statement_new ((ValaCCodeExpression*) _tmp420_);
 			_tmp422_ = _tmp421_;
@@ -1376,7 +1376,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 			_tmp435_ = _tmp434_;
 			_tmp436_ = vala_ccode_identifier_new (_tmp435_);
 			_tmp437_ = _tmp436_;
-			_tmp438_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp430_, (ValaCCodeExpression*) _tmp437_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+			_tmp438_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp430_, (ValaCCodeExpression*) _tmp437_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 			_tmp439_ = _tmp438_;
 			_tmp440_ = vala_ccode_expression_statement_new ((ValaCCodeExpression*) _tmp439_);
 			_tmp441_ = _tmp440_;
@@ -1460,7 +1460,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		_tmp449_ = _tmp448_;
 		_tmp450_ = vala_ccode_identifier_new (_tmp449_);
 		_tmp451_ = _tmp450_;
-		_tmp452_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp451_);
+		_tmp452_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp451_);
 		_tmp453_ = _tmp452_;
 		vala_ccode_function_call_add_argument (_tmp446_, (ValaCCodeExpression*) _tmp453_);
 		_vala_ccode_node_unref0 (_tmp453_);
@@ -1478,7 +1478,7 @@ vala_typeregister_function_init_from_type (ValaTypeRegisterFunction* self,
 		_tmp461_ = _tmp460_;
 		_tmp462_ = vala_ccode_identifier_new (_tmp461_);
 		_tmp463_ = _tmp462_;
-		_tmp464_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp463_);
+		_tmp464_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp463_);
 		_tmp465_ = _tmp464_;
 		vala_ccode_function_call_add_argument (_tmp458_, (ValaCCodeExpression*) _tmp465_);
 		_vala_ccode_node_unref0 (_tmp465_);
@@ -1601,7 +1601,7 @@ ValaTypeSymbol*
 vala_typeregister_function_get_type_declaration (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_declaration (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_declaration (self);
 }
 
 /**
@@ -1619,7 +1619,7 @@ gchar*
 vala_typeregister_function_get_type_struct_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_struct_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_struct_name (self);
 }
 
 /**
@@ -1637,7 +1637,7 @@ gchar*
 vala_typeregister_function_get_base_init_func_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_base_init_func_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_base_init_func_name (self);
 }
 
 /**
@@ -1655,7 +1655,7 @@ gchar*
 vala_typeregister_function_get_class_finalize_func_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_class_finalize_func_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_class_finalize_func_name (self);
 }
 
 /**
@@ -1673,7 +1673,7 @@ gchar*
 vala_typeregister_function_get_base_finalize_func_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_base_finalize_func_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_base_finalize_func_name (self);
 }
 
 /**
@@ -1691,7 +1691,7 @@ gchar*
 vala_typeregister_function_get_class_init_func_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_class_init_func_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_class_init_func_name (self);
 }
 
 /**
@@ -1709,7 +1709,7 @@ gchar*
 vala_typeregister_function_get_instance_struct_size (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_instance_struct_size (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_instance_struct_size (self);
 }
 
 /**
@@ -1727,7 +1727,7 @@ gchar*
 vala_typeregister_function_get_instance_init_func_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_instance_init_func_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_instance_init_func_name (self);
 }
 
 /**
@@ -1745,7 +1745,7 @@ gchar*
 vala_typeregister_function_get_parent_type_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_parent_type_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_parent_type_name (self);
 }
 
 /**
@@ -1765,7 +1765,7 @@ gchar*
 vala_typeregister_function_get_gtype_value_table_init_function_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_init_function_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_init_function_name (self);
 }
 
 /**
@@ -1785,7 +1785,7 @@ gchar*
 vala_typeregister_function_get_gtype_value_table_peek_pointer_function_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_peek_pointer_function_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_peek_pointer_function_name (self);
 }
 
 /**
@@ -1805,7 +1805,7 @@ gchar*
 vala_typeregister_function_get_gtype_value_table_free_function_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_free_function_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_free_function_name (self);
 }
 
 /**
@@ -1825,7 +1825,7 @@ gchar*
 vala_typeregister_function_get_gtype_value_table_copy_function_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_copy_function_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_copy_function_name (self);
 }
 
 /**
@@ -1845,7 +1845,7 @@ gchar*
 vala_typeregister_function_get_gtype_value_table_lcopy_value_function_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_lcopy_value_function_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_lcopy_value_function_name (self);
 }
 
 /**
@@ -1865,7 +1865,7 @@ gchar*
 vala_typeregister_function_get_gtype_value_table_collect_value_function_name (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_collect_value_function_name (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_gtype_value_table_collect_value_function_name (self);
 }
 
 /**
@@ -1887,7 +1887,7 @@ gchar*
 vala_typeregister_function_get_type_flags (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_flags (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_flags (self);
 }
 
 /**
@@ -1909,7 +1909,7 @@ ValaCCodeFragment*
 vala_typeregister_function_get_type_interface_init_declaration (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_interface_init_declaration (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_interface_init_declaration (self);
 }
 
 /**
@@ -1932,7 +1932,7 @@ vala_typeregister_function_get_type_interface_init_statements (ValaTypeRegisterF
                                                                gboolean plugin)
 {
 	g_return_if_fail (self != NULL);
-	VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_interface_init_statements (self, context, block, plugin);
+	BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_type_interface_init_statements (self, context, block, plugin);
 }
 
 ValaCCodeFragment*
@@ -1998,7 +1998,7 @@ ValaSymbolAccessibility
 vala_typeregister_function_get_accessibility (ValaTypeRegisterFunction* self)
 {
 	g_return_val_if_fail (self != NULL, 0);
-	return VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_accessibility (self);
+	return BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->get_accessibility (self);
 }
 
 ValaTypeRegisterFunction*
@@ -2090,7 +2090,7 @@ vala_param_spec_typeregister_function (const gchar* name,
                                        GParamFlags flags)
 {
 	ValaParamSpecTypeRegisterFunction* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_TYPEREGISTER_FUNCTION), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_TYPEREGISTER_FUNCTION), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -2099,7 +2099,7 @@ vala_param_spec_typeregister_function (const gchar* name,
 gpointer
 vala_value_get_typeregister_function (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_TYPEREGISTER_FUNCTION), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_TYPEREGISTER_FUNCTION), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -2108,10 +2108,10 @@ vala_value_set_typeregister_function (GValue* value,
                                       gpointer v_object)
 {
 	ValaTypeRegisterFunction * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_TYPEREGISTER_FUNCTION));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_TYPEREGISTER_FUNCTION));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_TYPEREGISTER_FUNCTION));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_TYPEREGISTER_FUNCTION));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_typeregister_function_ref (value->data[0].v_pointer);
@@ -2128,10 +2128,10 @@ vala_value_take_typeregister_function (GValue* value,
                                        gpointer v_object)
 {
 	ValaTypeRegisterFunction * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_TYPEREGISTER_FUNCTION));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_TYPEREGISTER_FUNCTION));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_TYPEREGISTER_FUNCTION));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_TYPEREGISTER_FUNCTION));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -2191,7 +2191,7 @@ static void
 vala_typeregister_function_finalize (ValaTypeRegisterFunction * obj)
 {
 	ValaTypeRegisterFunction * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_TYPEREGISTER_FUNCTION, ValaTypeRegisterFunction);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_TYPEREGISTER_FUNCTION, ValaTypeRegisterFunction);
 	g_signal_handlers_destroy (self);
 	_vala_ccode_node_unref0 (self->priv->source_declaration_fragment);
 	_vala_ccode_node_unref0 (self->priv->declaration_fragment);
@@ -2240,7 +2240,7 @@ vala_typeregister_function_unref (gpointer instance)
 	ValaTypeRegisterFunction * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->finalize (self);
+		BALA_TYPEREGISTER_FUNCTION_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

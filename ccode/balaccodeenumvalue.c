@@ -117,7 +117,7 @@ ValaCCodeEnumValue*
 vala_ccode_enum_value_new (const gchar* name,
                            ValaCCodeExpression* value)
 {
-	return vala_ccode_enum_value_construct (VALA_TYPE_CCODE_ENUM_VALUE, name, value);
+	return vala_ccode_enum_value_construct (BALA_TYPE_CCODE_ENUM_VALUE, name, value);
 }
 
 static void
@@ -135,7 +135,7 @@ vala_ccode_enum_value_real_write (ValaCCodeNode* base,
 	vala_ccode_writer_write_string (writer, _tmp0_);
 	_tmp1_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) self);
 	_tmp2_ = _tmp1_;
-	if ((_tmp2_ & VALA_CCODE_MODIFIERS_DEPRECATED) == VALA_CCODE_MODIFIERS_DEPRECATED) {
+	if ((_tmp2_ & BALA_CCODE_MODIFIERS_DEPRECATED) == BALA_CCODE_MODIFIERS_DEPRECATED) {
 	}
 	_tmp3_ = self->priv->_value;
 	if (_tmp3_ != NULL) {
@@ -167,10 +167,10 @@ static void
 vala_ccode_enum_value_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeEnumValue * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_ENUM_VALUE, ValaCCodeEnumValue);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_ENUM_VALUE, ValaCCodeEnumValue);
 	_g_free0 (self->priv->_name);
 	_vala_ccode_node_unref0 (self->priv->_value);
-	VALA_CCODE_NODE_CLASS (vala_ccode_enum_value_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_enum_value_parent_class)->finalize (obj);
 }
 
 /**
@@ -181,7 +181,7 @@ vala_ccode_enum_value_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeEnumValueClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_enum_value_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeEnumValue), 0, (GInstanceInitFunc) vala_ccode_enum_value_instance_init, NULL };
 	GType vala_ccode_enum_value_type_id;
-	vala_ccode_enum_value_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeEnumValue", &g_define_type_info, 0);
+	vala_ccode_enum_value_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeEnumValue", &g_define_type_info, 0);
 	ValaCCodeEnumValue_private_offset = g_type_add_instance_private (vala_ccode_enum_value_type_id, sizeof (ValaCCodeEnumValuePrivate));
 	return vala_ccode_enum_value_type_id;
 }

@@ -1,6 +1,6 @@
 Invalid Code
 
-#if (VALA_0_46 && VALA_0_48
+#if (BALA_0_46 && BALA_0_48
 void main () {
 }
 #endif

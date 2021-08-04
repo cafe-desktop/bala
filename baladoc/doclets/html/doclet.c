@@ -32,29 +32,29 @@
 #include <config.h>
 #include <stdio.h>
 
-#define VALADOC_HTML_TYPE_DOCLET (valadoc_html_doclet_get_type ())
-#define VALADOC_HTML_DOCLET(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_HTML_TYPE_DOCLET, ValadocHtmlDoclet))
-#define VALADOC_HTML_DOCLET_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_HTML_TYPE_DOCLET, ValadocHtmlDocletClass))
-#define VALADOC_HTML_IS_DOCLET(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_HTML_TYPE_DOCLET))
-#define VALADOC_HTML_IS_DOCLET_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_HTML_TYPE_DOCLET))
-#define VALADOC_HTML_DOCLET_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_HTML_TYPE_DOCLET, ValadocHtmlDocletClass))
+#define BALADOC_HTML_TYPE_DOCLET (valadoc_html_doclet_get_type ())
+#define BALADOC_HTML_DOCLET(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_HTML_TYPE_DOCLET, ValadocHtmlDoclet))
+#define BALADOC_HTML_DOCLET_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_HTML_TYPE_DOCLET, ValadocHtmlDocletClass))
+#define BALADOC_HTML_IS_DOCLET(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_HTML_TYPE_DOCLET))
+#define BALADOC_HTML_IS_DOCLET_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_HTML_TYPE_DOCLET))
+#define BALADOC_HTML_DOCLET_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_HTML_TYPE_DOCLET, ValadocHtmlDocletClass))
 
 typedef struct _ValadocHtmlDoclet ValadocHtmlDoclet;
 typedef struct _ValadocHtmlDocletClass ValadocHtmlDocletClass;
 typedef struct _ValadocHtmlDocletPrivate ValadocHtmlDocletPrivate;
 enum  {
-	VALADOC_HTML_DOCLET_0_PROPERTY,
-	VALADOC_HTML_DOCLET_NUM_PROPERTIES
+	BALADOC_HTML_DOCLET_0_PROPERTY,
+	BALADOC_HTML_DOCLET_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_html_doclet_properties[VALADOC_HTML_DOCLET_NUM_PROPERTIES];
+static GParamSpec* valadoc_html_doclet_properties[BALADOC_HTML_DOCLET_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 
-#define VALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER (valadoc_html_doclet_index_link_helper_get_type ())
-#define VALADOC_HTML_DOCLET_INDEX_LINK_HELPER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER, ValadocHtmlDocletIndexLinkHelper))
-#define VALADOC_HTML_DOCLET_INDEX_LINK_HELPER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER, ValadocHtmlDocletIndexLinkHelperClass))
-#define VALADOC_HTML_DOCLET_IS_INDEX_LINK_HELPER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER))
-#define VALADOC_HTML_DOCLET_IS_INDEX_LINK_HELPER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER))
-#define VALADOC_HTML_DOCLET_INDEX_LINK_HELPER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER, ValadocHtmlDocletIndexLinkHelperClass))
+#define BALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER (valadoc_html_doclet_index_link_helper_get_type ())
+#define BALADOC_HTML_DOCLET_INDEX_LINK_HELPER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER, ValadocHtmlDocletIndexLinkHelper))
+#define BALADOC_HTML_DOCLET_INDEX_LINK_HELPER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER, ValadocHtmlDocletIndexLinkHelperClass))
+#define BALADOC_HTML_DOCLET_IS_INDEX_LINK_HELPER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER))
+#define BALADOC_HTML_DOCLET_IS_INDEX_LINK_HELPER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER))
+#define BALADOC_HTML_DOCLET_INDEX_LINK_HELPER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER, ValadocHtmlDocletIndexLinkHelperClass))
 
 typedef struct _ValadocHtmlDocletIndexLinkHelper ValadocHtmlDocletIndexLinkHelper;
 typedef struct _ValadocHtmlDocletIndexLinkHelperClass ValadocHtmlDocletIndexLinkHelperClass;
@@ -63,10 +63,10 @@ typedef struct _ValadocHtmlDocletIndexLinkHelperClass ValadocHtmlDocletIndexLink
 #define _fclose0(var) ((var == NULL) ? NULL : (var = (fclose (var), NULL)))
 typedef struct _ValadocHtmlDocletIndexLinkHelperPrivate ValadocHtmlDocletIndexLinkHelperPrivate;
 enum  {
-	VALADOC_HTML_DOCLET_INDEX_LINK_HELPER_0_PROPERTY,
-	VALADOC_HTML_DOCLET_INDEX_LINK_HELPER_NUM_PROPERTIES
+	BALADOC_HTML_DOCLET_INDEX_LINK_HELPER_0_PROPERTY,
+	BALADOC_HTML_DOCLET_INDEX_LINK_HELPER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_html_doclet_index_link_helper_properties[VALADOC_HTML_DOCLET_INDEX_LINK_HELPER_NUM_PROPERTIES];
+static GParamSpec* valadoc_html_doclet_index_link_helper_properties[BALADOC_HTML_DOCLET_INDEX_LINK_HELPER_NUM_PROPERTIES];
 
 struct _ValadocHtmlDoclet {
 	ValadocHtmlBasicDoclet parent_instance;
@@ -91,12 +91,12 @@ static gpointer valadoc_html_doclet_index_link_helper_parent_class = NULL;
 
 GType valadoc_html_doclet_get_type (void) G_GNUC_CONST;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (ValadocHtmlDoclet, g_object_unref)
-#define VALADOC_HTML_DOCLET_css_path_package "style.css"
-#define VALADOC_HTML_DOCLET_css_path_wiki "../style.css"
-#define VALADOC_HTML_DOCLET_css_path "../style.css"
-#define VALADOC_HTML_DOCLET_js_path_package "scripts.js"
-#define VALADOC_HTML_DOCLET_js_path_wiki "../scripts.js"
-#define VALADOC_HTML_DOCLET_js_path "../scripts.js"
+#define BALADOC_HTML_DOCLET_css_path_package "style.css"
+#define BALADOC_HTML_DOCLET_css_path_wiki "../style.css"
+#define BALADOC_HTML_DOCLET_css_path "../style.css"
+#define BALADOC_HTML_DOCLET_js_path_package "scripts.js"
+#define BALADOC_HTML_DOCLET_js_path_wiki "../scripts.js"
+#define BALADOC_HTML_DOCLET_js_path "../scripts.js"
 static gchar* valadoc_html_doclet_get_real_path (ValadocHtmlDoclet* self,
                                           ValadocApiNode* element);
 static void valadoc_html_doclet_real_process (ValadocHtmlBasicDoclet* base,
@@ -262,16 +262,16 @@ valadoc_html_doclet_real_process (ValadocHtmlBasicDoclet* base,
 	g_return_if_fail (settings != NULL);
 	g_return_if_fail (tree != NULL);
 	g_return_if_fail (reporter != NULL);
-	VALADOC_HTML_BASIC_DOCLET_CLASS (valadoc_html_doclet_parent_class)->process (G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_HTML_TYPE_BASIC_DOCLET, ValadocHtmlBasicDoclet), settings, tree, reporter);
+	BALADOC_HTML_BASIC_DOCLET_CLASS (valadoc_html_doclet_parent_class)->process (G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_HTML_TYPE_BASIC_DOCLET, ValadocHtmlBasicDoclet), settings, tree, reporter);
 	_tmp0_ = valadoc_html_basic_doclet_get_settings ((ValadocHtmlBasicDoclet*) self);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = _tmp1_->path;
 	g_mkdir_with_parents (_tmp2_, 0777);
 	_tmp3_ = settings->path;
-	if (!valadoc_copy_directory (PACKAGE_VALADOC_ICONDIR, _tmp3_)) {
+	if (!valadoc_copy_directory (PACKAGE_BALADOC_ICONDIR, _tmp3_)) {
 		gchar* _tmp4_;
 		gchar* _tmp5_;
-		_tmp4_ = g_strdup_printf ("Couldn't copy resources from `%s'", PACKAGE_VALADOC_ICONDIR);
+		_tmp4_ = g_strdup_printf ("Couldn't copy resources from `%s'", PACKAGE_BALADOC_ICONDIR);
 		_tmp5_ = _tmp4_;
 		valadoc_error_reporter_simple_warning (reporter, "Html", "%s", _tmp5_);
 		_g_free0 (_tmp5_);
@@ -280,7 +280,7 @@ valadoc_html_doclet_real_process (ValadocHtmlBasicDoclet* base,
 	_tmp7_ = settings->pkg_name;
 	_tmp8_ = g_build_filename (_tmp6_, _tmp7_, NULL);
 	_tmp9_ = _tmp8_;
-	valadoc_html_basic_doclet_write_wiki_pages ((ValadocHtmlBasicDoclet*) self, tree, VALADOC_HTML_DOCLET_css_path_wiki, VALADOC_HTML_DOCLET_js_path_wiki, _tmp9_);
+	valadoc_html_basic_doclet_write_wiki_pages ((ValadocHtmlBasicDoclet*) self, tree, BALADOC_HTML_DOCLET_css_path_wiki, BALADOC_HTML_DOCLET_js_path_wiki, _tmp9_);
 	_g_free0 (_tmp9_);
 	_tmp10_ = ((ValadocHtmlBasicDoclet*) self)->_renderer;
 	_tmp11_ = _g_object_ref0 (_tmp10_);
@@ -323,7 +323,7 @@ valadoc_html_doclet_real_process (ValadocHtmlBasicDoclet* base,
 	_tmp28_ = ((ValadocHtmlBasicDoclet*) self)->writer;
 	valadoc_html_html_renderer_set_writer (_tmp27_, _tmp28_);
 	_tmp29_ = settings->pkg_name;
-	valadoc_html_basic_doclet_write_file_header ((ValadocHtmlBasicDoclet*) self, VALADOC_HTML_DOCLET_css_path_package, VALADOC_HTML_DOCLET_js_path_package, _tmp29_);
+	valadoc_html_basic_doclet_write_file_header ((ValadocHtmlBasicDoclet*) self, BALADOC_HTML_DOCLET_css_path_package, BALADOC_HTML_DOCLET_js_path_package, _tmp29_);
 	valadoc_html_basic_doclet_write_navi_packages ((ValadocHtmlBasicDoclet*) self, tree);
 	valadoc_html_basic_doclet_write_package_index_content ((ValadocHtmlBasicDoclet*) self, tree);
 	valadoc_html_basic_doclet_write_file_footer ((ValadocHtmlBasicDoclet*) self);
@@ -438,7 +438,7 @@ valadoc_html_doclet_real_visit_package (ValadocApiVisitor* base,
 	_tmp26_ = ((ValadocHtmlBasicDoclet*) self)->writer;
 	valadoc_html_html_renderer_set_writer (_tmp25_, _tmp26_);
 	_tmp27_ = pkg_name;
-	valadoc_html_basic_doclet_write_file_header ((ValadocHtmlBasicDoclet*) self, VALADOC_HTML_DOCLET_css_path, VALADOC_HTML_DOCLET_js_path, _tmp27_);
+	valadoc_html_basic_doclet_write_file_header ((ValadocHtmlBasicDoclet*) self, BALADOC_HTML_DOCLET_css_path, BALADOC_HTML_DOCLET_js_path, _tmp27_);
 	valadoc_html_basic_doclet_write_navi_package ((ValadocHtmlBasicDoclet*) self, package);
 	valadoc_html_basic_doclet_write_package_content ((ValadocHtmlBasicDoclet*) self, package, (ValadocApiNode*) package);
 	valadoc_html_basic_doclet_write_file_footer ((ValadocHtmlBasicDoclet*) self);
@@ -503,7 +503,7 @@ valadoc_html_doclet_real_visit_namespace (ValadocApiVisitor* base,
 		_tmp16_ = _tmp15_;
 		_tmp17_ = g_strconcat (_tmp12_, _tmp16_, NULL);
 		_tmp18_ = _tmp17_;
-		valadoc_html_basic_doclet_write_file_header ((ValadocHtmlBasicDoclet*) self, VALADOC_HTML_DOCLET_css_path, VALADOC_HTML_DOCLET_js_path, _tmp18_);
+		valadoc_html_basic_doclet_write_file_header ((ValadocHtmlBasicDoclet*) self, BALADOC_HTML_DOCLET_css_path, BALADOC_HTML_DOCLET_js_path, _tmp18_);
 		_g_free0 (_tmp18_);
 		_g_free0 (_tmp12_);
 		_g_free0 (_tmp10_);
@@ -566,7 +566,7 @@ valadoc_html_doclet_process_node (ValadocHtmlDoclet* self,
 	_tmp14_ = _tmp13_;
 	_tmp15_ = g_strconcat (_tmp10_, _tmp14_, NULL);
 	_tmp16_ = _tmp15_;
-	valadoc_html_basic_doclet_write_file_header ((ValadocHtmlBasicDoclet*) self, VALADOC_HTML_DOCLET_css_path, VALADOC_HTML_DOCLET_js_path, _tmp16_);
+	valadoc_html_basic_doclet_write_file_header ((ValadocHtmlBasicDoclet*) self, BALADOC_HTML_DOCLET_css_path, BALADOC_HTML_DOCLET_js_path, _tmp16_);
 	_g_free0 (_tmp16_);
 	_g_free0 (_tmp10_);
 	_g_free0 (_tmp8_);
@@ -727,7 +727,7 @@ valadoc_html_doclet_construct (GType object_type)
 ValadocHtmlDoclet*
 valadoc_html_doclet_new (void)
 {
-	return valadoc_html_doclet_construct (VALADOC_HTML_TYPE_DOCLET);
+	return valadoc_html_doclet_construct (BALADOC_HTML_TYPE_DOCLET);
 }
 
 static gchar*
@@ -754,7 +754,7 @@ valadoc_html_doclet_index_link_helper_real_from_wiki_to_package (ValadocHtmlLink
 	_tmp1_ = _tmp0_;
 	if (g_strcmp0 (_tmp1_, "index.valadoc") != 0) {
 		gchar* _tmp2_;
-		_tmp2_ = VALADOC_HTML_LINK_HELPER_CLASS (valadoc_html_doclet_index_link_helper_parent_class)->from_wiki_to_package (G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper), from, to);
+		_tmp2_ = BALADOC_HTML_LINK_HELPER_CLASS (valadoc_html_doclet_index_link_helper_parent_class)->from_wiki_to_package (G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper), from, to);
 		result = _tmp2_;
 		return result;
 	}
@@ -793,7 +793,7 @@ valadoc_html_doclet_index_link_helper_real_from_wiki_to_wiki (ValadocHtmlLinkHel
 	_tmp1_ = _tmp0_;
 	if (g_strcmp0 (_tmp1_, "index.valadoc") != 0) {
 		gchar* _tmp2_;
-		_tmp2_ = VALADOC_HTML_LINK_HELPER_CLASS (valadoc_html_doclet_index_link_helper_parent_class)->from_wiki_to_wiki (G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper), from, to);
+		_tmp2_ = BALADOC_HTML_LINK_HELPER_CLASS (valadoc_html_doclet_index_link_helper_parent_class)->from_wiki_to_wiki (G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper), from, to);
 		result = _tmp2_;
 		return result;
 	}
@@ -837,7 +837,7 @@ valadoc_html_doclet_index_link_helper_real_from_wiki_to_node (ValadocHtmlLinkHel
 	_tmp1_ = _tmp0_;
 	if (g_strcmp0 (_tmp1_, "index.valadoc") != 0) {
 		gchar* _tmp2_;
-		_tmp2_ = VALADOC_HTML_LINK_HELPER_CLASS (valadoc_html_doclet_index_link_helper_parent_class)->from_wiki_to_node (G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper), from, to);
+		_tmp2_ = BALADOC_HTML_LINK_HELPER_CLASS (valadoc_html_doclet_index_link_helper_parent_class)->from_wiki_to_node (G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_HTML_TYPE_LINK_HELPER, ValadocHtmlLinkHelper), from, to);
 		result = _tmp2_;
 		return result;
 	}
@@ -893,7 +893,7 @@ valadoc_html_doclet_index_link_helper_construct (GType object_type)
 static ValadocHtmlDocletIndexLinkHelper*
 valadoc_html_doclet_index_link_helper_new (void)
 {
-	return valadoc_html_doclet_index_link_helper_construct (VALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER);
+	return valadoc_html_doclet_index_link_helper_construct (BALADOC_HTML_DOCLET_TYPE_INDEX_LINK_HELPER);
 }
 
 static void
@@ -917,7 +917,7 @@ valadoc_html_doclet_index_link_helper_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocHtmlDocletIndexLinkHelperClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_html_doclet_index_link_helper_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocHtmlDocletIndexLinkHelper), 0, (GInstanceInitFunc) valadoc_html_doclet_index_link_helper_instance_init, NULL };
 	GType valadoc_html_doclet_index_link_helper_type_id;
-	valadoc_html_doclet_index_link_helper_type_id = g_type_register_static (VALADOC_HTML_TYPE_LINK_HELPER, "ValadocHtmlDocletIndexLinkHelper", &g_define_type_info, 0);
+	valadoc_html_doclet_index_link_helper_type_id = g_type_register_static (BALADOC_HTML_TYPE_LINK_HELPER, "ValadocHtmlDocletIndexLinkHelper", &g_define_type_info, 0);
 	return valadoc_html_doclet_index_link_helper_type_id;
 }
 
@@ -968,7 +968,7 @@ valadoc_html_doclet_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocHtmlDocletClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_html_doclet_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocHtmlDoclet), 0, (GInstanceInitFunc) valadoc_html_doclet_instance_init, NULL };
 	GType valadoc_html_doclet_type_id;
-	valadoc_html_doclet_type_id = g_type_register_static (VALADOC_HTML_TYPE_BASIC_DOCLET, "ValadocHtmlDoclet", &g_define_type_info, 0);
+	valadoc_html_doclet_type_id = g_type_register_static (BALADOC_HTML_TYPE_BASIC_DOCLET, "ValadocHtmlDoclet", &g_define_type_info, 0);
 	return valadoc_html_doclet_type_id;
 }
 
@@ -989,7 +989,7 @@ register_plugin (ValadocModuleLoader* module_loader)
 {
 	GType result = 0UL;
 	g_return_val_if_fail (module_loader != NULL, 0UL);
-	result = VALADOC_HTML_TYPE_DOCLET;
+	result = BALADOC_HTML_TYPE_DOCLET;
 	return result;
 }
 

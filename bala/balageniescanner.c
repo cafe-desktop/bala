@@ -31,18 +31,18 @@
 #include <string.h>
 #include <gobject/gvaluecollector.h>
 
-#define VALA_GENIE_SCANNER_TYPE_CONDITIONAL (vala_genie_scanner_conditional_get_type ())
+#define BALA_GENIE_SCANNER_TYPE_CONDITIONAL (vala_genie_scanner_conditional_get_type ())
 typedef struct _ValaGenieScannerConditional ValaGenieScannerConditional;
 typedef enum  {
-	VALA_GENIE_SCANNER_STATE_PARENS,
-	VALA_GENIE_SCANNER_STATE_BRACE,
-	VALA_GENIE_SCANNER_STATE_BRACKET,
-	VALA_GENIE_SCANNER_STATE_REGEX_LITERAL,
-	VALA_GENIE_SCANNER_STATE_TEMPLATE,
-	VALA_GENIE_SCANNER_STATE_TEMPLATE_PART
+	BALA_GENIE_SCANNER_STATE_PARENS,
+	BALA_GENIE_SCANNER_STATE_BRACE,
+	BALA_GENIE_SCANNER_STATE_BRACKET,
+	BALA_GENIE_SCANNER_STATE_REGEX_LITERAL,
+	BALA_GENIE_SCANNER_STATE_TEMPLATE,
+	BALA_GENIE_SCANNER_STATE_TEMPLATE_PART
 } ValaGenieScannerState;
 
-#define VALA_GENIE_SCANNER_TYPE_STATE (vala_genie_scanner_state_get_type ())
+#define BALA_GENIE_SCANNER_TYPE_STATE (vala_genie_scanner_state_get_type ())
 #define _vala_source_file_unref0(var) ((var == NULL) ? NULL : (var = (vala_source_file_unref (var), NULL)))
 #define _vala_comment_unref0(var) ((var == NULL) ? NULL : (var = (vala_comment_unref (var), NULL)))
 #define _vala_source_reference_unref0(var) ((var == NULL) ? NULL : (var = (vala_source_reference_unref (var), NULL)))
@@ -182,7 +182,7 @@ vala_genie_scanner_get_instance_private (ValaGenieScanner* self)
 static GType
 vala_genie_scanner_state_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_GENIE_SCANNER_STATE_PARENS, "VALA_GENIE_SCANNER_STATE_PARENS", "parens"}, {VALA_GENIE_SCANNER_STATE_BRACE, "VALA_GENIE_SCANNER_STATE_BRACE", "brace"}, {VALA_GENIE_SCANNER_STATE_BRACKET, "VALA_GENIE_SCANNER_STATE_BRACKET", "bracket"}, {VALA_GENIE_SCANNER_STATE_REGEX_LITERAL, "VALA_GENIE_SCANNER_STATE_REGEX_LITERAL", "regex-literal"}, {VALA_GENIE_SCANNER_STATE_TEMPLATE, "VALA_GENIE_SCANNER_STATE_TEMPLATE", "template"}, {VALA_GENIE_SCANNER_STATE_TEMPLATE_PART, "VALA_GENIE_SCANNER_STATE_TEMPLATE_PART", "template-part"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_GENIE_SCANNER_STATE_PARENS, "BALA_GENIE_SCANNER_STATE_PARENS", "parens"}, {BALA_GENIE_SCANNER_STATE_BRACE, "BALA_GENIE_SCANNER_STATE_BRACE", "brace"}, {BALA_GENIE_SCANNER_STATE_BRACKET, "BALA_GENIE_SCANNER_STATE_BRACKET", "bracket"}, {BALA_GENIE_SCANNER_STATE_REGEX_LITERAL, "BALA_GENIE_SCANNER_STATE_REGEX_LITERAL", "regex-literal"}, {BALA_GENIE_SCANNER_STATE_TEMPLATE, "BALA_GENIE_SCANNER_STATE_TEMPLATE", "template"}, {BALA_GENIE_SCANNER_STATE_TEMPLATE_PART, "BALA_GENIE_SCANNER_STATE_TEMPLATE_PART", "template-part"}, {0, NULL, NULL}};
 	GType vala_genie_scanner_state_type_id;
 	vala_genie_scanner_state_type_id = g_enum_register_static ("ValaGenieScannerState", values);
 	return vala_genie_scanner_state_type_id;
@@ -271,14 +271,14 @@ vala_genie_scanner_construct (GType object_type,
 	self->priv->open_parens_count = 0;
 	self->priv->open_brace_count = 0;
 	self->priv->parse_started = FALSE;
-	self->priv->last_token = VALA_GENIE_TOKEN_TYPE_NONE;
+	self->priv->last_token = BALA_GENIE_TOKEN_TYPE_NONE;
 	return self;
 }
 
 ValaGenieScanner*
 vala_genie_scanner_new (ValaSourceFile* source_file)
 {
-	return vala_genie_scanner_construct (VALA_GENIE_TYPE_SCANNER, source_file);
+	return vala_genie_scanner_construct (BALA_GENIE_TYPE_SCANNER, source_file);
 }
 
 static gboolean
@@ -302,7 +302,7 @@ vala_genie_scanner_in_template (ValaGenieScanner* self)
 		_tmp3_ = self->priv->state_stack;
 		_tmp3__length1 = self->priv->state_stack_length1;
 		_tmp4_ = _tmp2_[_tmp3__length1 - 1];
-		_tmp0_ = _tmp4_ == VALA_GENIE_SCANNER_STATE_TEMPLATE;
+		_tmp0_ = _tmp4_ == BALA_GENIE_SCANNER_STATE_TEMPLATE;
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -331,7 +331,7 @@ vala_genie_scanner_in_template_part (ValaGenieScanner* self)
 		_tmp3_ = self->priv->state_stack;
 		_tmp3__length1 = self->priv->state_stack_length1;
 		_tmp4_ = _tmp2_[_tmp3__length1 - 1];
-		_tmp0_ = _tmp4_ == VALA_GENIE_SCANNER_STATE_TEMPLATE_PART;
+		_tmp0_ = _tmp4_ == BALA_GENIE_SCANNER_STATE_TEMPLATE_PART;
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -376,7 +376,7 @@ vala_genie_scanner_in_regex_literal (ValaGenieScanner* self)
 		_tmp3_ = self->priv->state_stack;
 		_tmp3__length1 = self->priv->state_stack_length1;
 		_tmp4_ = _tmp2_[_tmp3__length1 - 1];
-		_tmp0_ = _tmp4_ == VALA_GENIE_SCANNER_STATE_REGEX_LITERAL;
+		_tmp0_ = _tmp4_ == BALA_GENIE_SCANNER_STATE_REGEX_LITERAL;
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -432,7 +432,7 @@ vala_genie_scanner_read_regex_token (ValaGenieScanner* self,
 	_tmp2_ = self->priv->current;
 	_tmp3_ = self->priv->end;
 	if (_tmp2_ >= _tmp3_) {
-		type = VALA_GENIE_TOKEN_TYPE_EOF;
+		type = BALA_GENIE_TOKEN_TYPE_EOF;
 	} else {
 		gchar* _tmp4_;
 		gchar _tmp5_;
@@ -447,7 +447,7 @@ vala_genie_scanner_read_regex_token (ValaGenieScanner* self,
 				gboolean fl_s = FALSE;
 				gboolean fl_m = FALSE;
 				gboolean fl_x = FALSE;
-				type = VALA_GENIE_TOKEN_TYPE_CLOSE_REGEX_LITERAL;
+				type = BALA_GENIE_TOKEN_TYPE_CLOSE_REGEX_LITERAL;
 				_tmp6_ = self->priv->current;
 				self->priv->current = _tmp6_ + 1;
 				_tmp7_ = self->priv->state_stack_length1;
@@ -568,7 +568,7 @@ vala_genie_scanner_read_regex_token (ValaGenieScanner* self,
 				gboolean _tmp98_ = FALSE;
 				gchar* _tmp99_;
 				gchar* _tmp100_;
-				type = VALA_GENIE_TOKEN_TYPE_REGEX_LITERAL;
+				type = BALA_GENIE_TOKEN_TYPE_REGEX_LITERAL;
 				token_length_in_chars = 0;
 				while (TRUE) {
 					gboolean _tmp31_ = FALSE;
@@ -981,7 +981,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'a':
 				{
 					if (vala_genie_scanner_matches (begin, "as")) {
-						result = VALA_GENIE_TOKEN_TYPE_AS;
+						result = BALA_GENIE_TOKEN_TYPE_AS;
 						return result;
 					}
 					break;
@@ -989,7 +989,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'd':
 				{
 					if (vala_genie_scanner_matches (begin, "do")) {
-						result = VALA_GENIE_TOKEN_TYPE_DO;
+						result = BALA_GENIE_TOKEN_TYPE_DO;
 						return result;
 					}
 					break;
@@ -1001,17 +1001,17 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 					switch (_tmp1_) {
 						case 'f':
 						{
-							result = VALA_GENIE_TOKEN_TYPE_IF;
+							result = BALA_GENIE_TOKEN_TYPE_IF;
 							return result;
 						}
 						case 'n':
 						{
-							result = VALA_GENIE_TOKEN_TYPE_IN;
+							result = BALA_GENIE_TOKEN_TYPE_IN;
 							return result;
 						}
 						case 's':
 						{
-							result = VALA_GENIE_TOKEN_TYPE_IS;
+							result = BALA_GENIE_TOKEN_TYPE_IS;
 							return result;
 						}
 						default:
@@ -1022,11 +1022,11 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'o':
 				{
 					if (vala_genie_scanner_matches (begin, "of")) {
-						result = VALA_GENIE_TOKEN_TYPE_OF;
+						result = BALA_GENIE_TOKEN_TYPE_OF;
 						return result;
 					}
 					if (vala_genie_scanner_matches (begin, "or")) {
-						result = VALA_GENIE_TOKEN_TYPE_OP_OR;
+						result = BALA_GENIE_TOKEN_TYPE_OP_OR;
 						return result;
 					}
 					break;
@@ -1034,7 +1034,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 't':
 				{
 					if (vala_genie_scanner_matches (begin, "to")) {
-						result = VALA_GENIE_TOKEN_TYPE_TO;
+						result = BALA_GENIE_TOKEN_TYPE_TO;
 						return result;
 					}
 					break;
@@ -1052,7 +1052,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'a':
 				{
 					if (vala_genie_scanner_matches (begin, "and")) {
-						result = VALA_GENIE_TOKEN_TYPE_OP_AND;
+						result = BALA_GENIE_TOKEN_TYPE_OP_AND;
 						return result;
 					}
 					break;
@@ -1060,7 +1060,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'd':
 				{
 					if (vala_genie_scanner_matches (begin, "def")) {
-						result = VALA_GENIE_TOKEN_TYPE_DEF;
+						result = BALA_GENIE_TOKEN_TYPE_DEF;
 						return result;
 					}
 					break;
@@ -1068,7 +1068,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'f':
 				{
 					if (vala_genie_scanner_matches (begin, "for")) {
-						result = VALA_GENIE_TOKEN_TYPE_FOR;
+						result = BALA_GENIE_TOKEN_TYPE_FOR;
 						return result;
 					}
 					break;
@@ -1076,7 +1076,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'g':
 				{
 					if (vala_genie_scanner_matches (begin, "get")) {
-						result = VALA_GENIE_TOKEN_TYPE_GET;
+						result = BALA_GENIE_TOKEN_TYPE_GET;
 						return result;
 					}
 					break;
@@ -1084,7 +1084,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'i':
 				{
 					if (vala_genie_scanner_matches (begin, "isa")) {
-						result = VALA_GENIE_TOKEN_TYPE_ISA;
+						result = BALA_GENIE_TOKEN_TYPE_ISA;
 						return result;
 					}
 					break;
@@ -1097,7 +1097,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'e':
 						{
 							if (vala_genie_scanner_matches (begin, "new")) {
-								result = VALA_GENIE_TOKEN_TYPE_NEW;
+								result = BALA_GENIE_TOKEN_TYPE_NEW;
 								return result;
 							}
 							break;
@@ -1105,7 +1105,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'o':
 						{
 							if (vala_genie_scanner_matches (begin, "not")) {
-								result = VALA_GENIE_TOKEN_TYPE_OP_NEG;
+								result = BALA_GENIE_TOKEN_TYPE_OP_NEG;
 								return result;
 							}
 							break;
@@ -1118,7 +1118,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'o':
 				{
 					if (vala_genie_scanner_matches (begin, "out")) {
-						result = VALA_GENIE_TOKEN_TYPE_OUT;
+						result = BALA_GENIE_TOKEN_TYPE_OUT;
 						return result;
 					}
 					break;
@@ -1126,7 +1126,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'r':
 				{
 					if (vala_genie_scanner_matches (begin, "ref")) {
-						result = VALA_GENIE_TOKEN_TYPE_REF;
+						result = BALA_GENIE_TOKEN_TYPE_REF;
 						return result;
 					}
 					break;
@@ -1134,7 +1134,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 's':
 				{
 					if (vala_genie_scanner_matches (begin, "set")) {
-						result = VALA_GENIE_TOKEN_TYPE_SET;
+						result = BALA_GENIE_TOKEN_TYPE_SET;
 						return result;
 					}
 					break;
@@ -1142,7 +1142,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 't':
 				{
 					if (vala_genie_scanner_matches (begin, "try")) {
-						result = VALA_GENIE_TOKEN_TYPE_TRY;
+						result = BALA_GENIE_TOKEN_TYPE_TRY;
 						return result;
 					}
 					break;
@@ -1150,7 +1150,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'v':
 				{
 					if (vala_genie_scanner_matches (begin, "var")) {
-						result = VALA_GENIE_TOKEN_TYPE_VAR;
+						result = BALA_GENIE_TOKEN_TYPE_VAR;
 						return result;
 					}
 					break;
@@ -1168,7 +1168,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'c':
 				{
 					if (vala_genie_scanner_matches (begin, "case")) {
-						result = VALA_GENIE_TOKEN_TYPE_CASE;
+						result = BALA_GENIE_TOKEN_TYPE_CASE;
 						return result;
 					}
 					break;
@@ -1176,7 +1176,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'd':
 				{
 					if (vala_genie_scanner_matches (begin, "dict")) {
-						result = VALA_GENIE_TOKEN_TYPE_DICT;
+						result = BALA_GENIE_TOKEN_TYPE_DICT;
 						return result;
 					}
 					break;
@@ -1189,7 +1189,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'l':
 						{
 							if (vala_genie_scanner_matches (begin, "else")) {
-								result = VALA_GENIE_TOKEN_TYPE_ELSE;
+								result = BALA_GENIE_TOKEN_TYPE_ELSE;
 								return result;
 							}
 							break;
@@ -1197,7 +1197,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'n':
 						{
 							if (vala_genie_scanner_matches (begin, "enum")) {
-								result = VALA_GENIE_TOKEN_TYPE_ENUM;
+								result = BALA_GENIE_TOKEN_TYPE_ENUM;
 								return result;
 							}
 							break;
@@ -1210,7 +1210,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'i':
 				{
 					if (vala_genie_scanner_matches (begin, "init")) {
-						result = VALA_GENIE_TOKEN_TYPE_INIT;
+						result = BALA_GENIE_TOKEN_TYPE_INIT;
 						return result;
 					}
 					break;
@@ -1223,7 +1223,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'i':
 						{
 							if (vala_genie_scanner_matches (begin, "list")) {
-								result = VALA_GENIE_TOKEN_TYPE_LIST;
+								result = BALA_GENIE_TOKEN_TYPE_LIST;
 								return result;
 							}
 							break;
@@ -1231,7 +1231,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'o':
 						{
 							if (vala_genie_scanner_matches (begin, "lock")) {
-								result = VALA_GENIE_TOKEN_TYPE_LOCK;
+								result = BALA_GENIE_TOKEN_TYPE_LOCK;
 								return result;
 							}
 							break;
@@ -1244,7 +1244,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'n':
 				{
 					if (vala_genie_scanner_matches (begin, "null")) {
-						result = VALA_GENIE_TOKEN_TYPE_NULL;
+						result = BALA_GENIE_TOKEN_TYPE_NULL;
 						return result;
 					}
 					break;
@@ -1257,7 +1257,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'a':
 						{
 							if (vala_genie_scanner_matches (begin, "pass")) {
-								result = VALA_GENIE_TOKEN_TYPE_PASS;
+								result = BALA_GENIE_TOKEN_TYPE_PASS;
 								return result;
 							}
 							break;
@@ -1265,7 +1265,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'r':
 						{
 							if (vala_genie_scanner_matches (begin, "prop")) {
-								result = VALA_GENIE_TOKEN_TYPE_PROP;
+								result = BALA_GENIE_TOKEN_TYPE_PROP;
 								return result;
 							}
 							break;
@@ -1278,7 +1278,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 's':
 				{
 					if (vala_genie_scanner_matches (begin, "self")) {
-						result = VALA_GENIE_TOKEN_TYPE_SELF;
+						result = BALA_GENIE_TOKEN_TYPE_SELF;
 						return result;
 					}
 					break;
@@ -1286,7 +1286,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 't':
 				{
 					if (vala_genie_scanner_matches (begin, "true")) {
-						result = VALA_GENIE_TOKEN_TYPE_TRUE;
+						result = BALA_GENIE_TOKEN_TYPE_TRUE;
 						return result;
 					}
 					break;
@@ -1294,7 +1294,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'u':
 				{
 					if (vala_genie_scanner_matches (begin, "uses")) {
-						result = VALA_GENIE_TOKEN_TYPE_USES;
+						result = BALA_GENIE_TOKEN_TYPE_USES;
 						return result;
 					}
 					break;
@@ -1302,7 +1302,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'v':
 				{
 					if (vala_genie_scanner_matches (begin, "void")) {
-						result = VALA_GENIE_TOKEN_TYPE_VOID;
+						result = BALA_GENIE_TOKEN_TYPE_VOID;
 						return result;
 					}
 					break;
@@ -1315,7 +1315,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'e':
 						{
 							if (vala_genie_scanner_matches (begin, "weak")) {
-								result = VALA_GENIE_TOKEN_TYPE_WEAK;
+								result = BALA_GENIE_TOKEN_TYPE_WEAK;
 								return result;
 							}
 							break;
@@ -1323,7 +1323,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'h':
 						{
 							if (vala_genie_scanner_matches (begin, "when")) {
-								result = VALA_GENIE_TOKEN_TYPE_WHEN;
+								result = BALA_GENIE_TOKEN_TYPE_WHEN;
 								return result;
 							}
 							break;
@@ -1351,7 +1351,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'r':
 						{
 							if (vala_genie_scanner_matches (begin, "array")) {
-								result = VALA_GENIE_TOKEN_TYPE_ARRAY;
+								result = BALA_GENIE_TOKEN_TYPE_ARRAY;
 								return result;
 							}
 							break;
@@ -1359,7 +1359,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 's':
 						{
 							if (vala_genie_scanner_matches (begin, "async")) {
-								result = VALA_GENIE_TOKEN_TYPE_ASYNC;
+								result = BALA_GENIE_TOKEN_TYPE_ASYNC;
 								return result;
 							}
 							break;
@@ -1372,7 +1372,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'b':
 				{
 					if (vala_genie_scanner_matches (begin, "break")) {
-						result = VALA_GENIE_TOKEN_TYPE_BREAK;
+						result = BALA_GENIE_TOKEN_TYPE_BREAK;
 						return result;
 					}
 					break;
@@ -1385,7 +1385,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'l':
 						{
 							if (vala_genie_scanner_matches (begin, "class")) {
-								result = VALA_GENIE_TOKEN_TYPE_CLASS;
+								result = BALA_GENIE_TOKEN_TYPE_CLASS;
 								return result;
 							}
 							break;
@@ -1393,7 +1393,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'o':
 						{
 							if (vala_genie_scanner_matches (begin, "const")) {
-								result = VALA_GENIE_TOKEN_TYPE_CONST;
+								result = BALA_GENIE_TOKEN_TYPE_CONST;
 								return result;
 							}
 							break;
@@ -1406,7 +1406,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'e':
 				{
 					if (vala_genie_scanner_matches (begin, "event")) {
-						result = VALA_GENIE_TOKEN_TYPE_EVENT;
+						result = BALA_GENIE_TOKEN_TYPE_EVENT;
 						return result;
 					}
 					break;
@@ -1419,7 +1419,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'a':
 						{
 							if (vala_genie_scanner_matches (begin, "false")) {
-								result = VALA_GENIE_TOKEN_TYPE_FALSE;
+								result = BALA_GENIE_TOKEN_TYPE_FALSE;
 								return result;
 							}
 							break;
@@ -1427,7 +1427,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'i':
 						{
 							if (vala_genie_scanner_matches (begin, "final")) {
-								result = VALA_GENIE_TOKEN_TYPE_FINAL;
+								result = BALA_GENIE_TOKEN_TYPE_FINAL;
 								return result;
 							}
 							break;
@@ -1440,7 +1440,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'o':
 				{
 					if (vala_genie_scanner_matches (begin, "owned")) {
-						result = VALA_GENIE_TOKEN_TYPE_OWNED;
+						result = BALA_GENIE_TOKEN_TYPE_OWNED;
 						return result;
 					}
 					break;
@@ -1448,7 +1448,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'p':
 				{
 					if (vala_genie_scanner_matches (begin, "print")) {
-						result = VALA_GENIE_TOKEN_TYPE_PRINT;
+						result = BALA_GENIE_TOKEN_TYPE_PRINT;
 						return result;
 					}
 					break;
@@ -1456,7 +1456,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 's':
 				{
 					if (vala_genie_scanner_matches (begin, "super")) {
-						result = VALA_GENIE_TOKEN_TYPE_SUPER;
+						result = BALA_GENIE_TOKEN_TYPE_SUPER;
 						return result;
 					}
 					break;
@@ -1464,7 +1464,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'r':
 				{
 					if (vala_genie_scanner_matches (begin, "raise")) {
-						result = VALA_GENIE_TOKEN_TYPE_RAISE;
+						result = BALA_GENIE_TOKEN_TYPE_RAISE;
 						return result;
 					}
 					break;
@@ -1472,7 +1472,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'w':
 				{
 					if (vala_genie_scanner_matches (begin, "while")) {
-						result = VALA_GENIE_TOKEN_TYPE_WHILE;
+						result = BALA_GENIE_TOKEN_TYPE_WHILE;
 						return result;
 					}
 					break;
@@ -1480,7 +1480,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'y':
 				{
 					if (vala_genie_scanner_matches (begin, "yield")) {
-						result = VALA_GENIE_TOKEN_TYPE_YIELD;
+						result = BALA_GENIE_TOKEN_TYPE_YIELD;
 						return result;
 					}
 					break;
@@ -1498,7 +1498,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'a':
 				{
 					if (vala_genie_scanner_matches (begin, "assert")) {
-						result = VALA_GENIE_TOKEN_TYPE_ASSERT;
+						result = BALA_GENIE_TOKEN_TYPE_ASSERT;
 						return result;
 					}
 					break;
@@ -1511,7 +1511,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'e':
 						{
 							if (vala_genie_scanner_matches (begin, "delete")) {
-								result = VALA_GENIE_TOKEN_TYPE_DELETE;
+								result = BALA_GENIE_TOKEN_TYPE_DELETE;
 								return result;
 							}
 							break;
@@ -1519,7 +1519,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'o':
 						{
 							if (vala_genie_scanner_matches (begin, "downto")) {
-								result = VALA_GENIE_TOKEN_TYPE_DOWNTO;
+								result = BALA_GENIE_TOKEN_TYPE_DOWNTO;
 								return result;
 							}
 							break;
@@ -1542,7 +1542,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 								case 'c':
 								{
 									if (vala_genie_scanner_matches (begin, "except")) {
-										result = VALA_GENIE_TOKEN_TYPE_EXCEPT;
+										result = BALA_GENIE_TOKEN_TYPE_EXCEPT;
 										return result;
 									}
 									break;
@@ -1550,7 +1550,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 								case 't':
 								{
 									if (vala_genie_scanner_matches (begin, "extern")) {
-										result = VALA_GENIE_TOKEN_TYPE_EXTERN;
+										result = BALA_GENIE_TOKEN_TYPE_EXTERN;
 										return result;
 									}
 									break;
@@ -1568,7 +1568,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'i':
 				{
 					if (vala_genie_scanner_matches (begin, "inline")) {
-						result = VALA_GENIE_TOKEN_TYPE_INLINE;
+						result = BALA_GENIE_TOKEN_TYPE_INLINE;
 						return result;
 					}
 					break;
@@ -1581,7 +1581,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'a':
 						{
 							if (vala_genie_scanner_matches (begin, "params")) {
-								result = VALA_GENIE_TOKEN_TYPE_PARAMS;
+								result = BALA_GENIE_TOKEN_TYPE_PARAMS;
 								return result;
 							}
 							break;
@@ -1589,7 +1589,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'u':
 						{
 							if (vala_genie_scanner_matches (begin, "public")) {
-								result = VALA_GENIE_TOKEN_TYPE_PUBLIC;
+								result = BALA_GENIE_TOKEN_TYPE_PUBLIC;
 								return result;
 							}
 							break;
@@ -1607,7 +1607,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'a':
 						{
 							if (vala_genie_scanner_matches (begin, "raises")) {
-								result = VALA_GENIE_TOKEN_TYPE_RAISES;
+								result = BALA_GENIE_TOKEN_TYPE_RAISES;
 								return result;
 							}
 							break;
@@ -1615,7 +1615,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'e':
 						{
 							if (vala_genie_scanner_matches (begin, "return")) {
-								result = VALA_GENIE_TOKEN_TYPE_RETURN;
+								result = BALA_GENIE_TOKEN_TYPE_RETURN;
 								return result;
 							}
 							break;
@@ -1633,7 +1633,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'e':
 						{
 							if (vala_genie_scanner_matches (begin, "sealed")) {
-								result = VALA_GENIE_TOKEN_TYPE_SEALED;
+								result = BALA_GENIE_TOKEN_TYPE_SEALED;
 								return result;
 							}
 							break;
@@ -1641,7 +1641,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'i':
 						{
 							if (vala_genie_scanner_matches (begin, "sizeof")) {
-								result = VALA_GENIE_TOKEN_TYPE_SIZEOF;
+								result = BALA_GENIE_TOKEN_TYPE_SIZEOF;
 								return result;
 							}
 							break;
@@ -1654,7 +1654,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 								case 'a':
 								{
 									if (vala_genie_scanner_matches (begin, "static")) {
-										result = VALA_GENIE_TOKEN_TYPE_STATIC;
+										result = BALA_GENIE_TOKEN_TYPE_STATIC;
 										return result;
 									}
 									break;
@@ -1662,7 +1662,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 								case 'r':
 								{
 									if (vala_genie_scanner_matches (begin, "struct")) {
-										result = VALA_GENIE_TOKEN_TYPE_STRUCT;
+										result = BALA_GENIE_TOKEN_TYPE_STRUCT;
 										return result;
 									}
 									break;
@@ -1680,7 +1680,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 't':
 				{
 					if (vala_genie_scanner_matches (begin, "typeof")) {
-						result = VALA_GENIE_TOKEN_TYPE_TYPEOF;
+						result = BALA_GENIE_TOKEN_TYPE_TYPEOF;
 						return result;
 					}
 					break;
@@ -1703,7 +1703,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'e':
 						{
 							if (vala_genie_scanner_matches (begin, "default")) {
-								result = VALA_GENIE_TOKEN_TYPE_DEFAULT;
+								result = BALA_GENIE_TOKEN_TYPE_DEFAULT;
 								return result;
 							}
 							break;
@@ -1711,7 +1711,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'y':
 						{
 							if (vala_genie_scanner_matches (begin, "dynamic")) {
-								result = VALA_GENIE_TOKEN_TYPE_DYNAMIC;
+								result = BALA_GENIE_TOKEN_TYPE_DYNAMIC;
 								return result;
 							}
 							break;
@@ -1724,7 +1724,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'e':
 				{
 					if (vala_genie_scanner_matches (begin, "ensures")) {
-						result = VALA_GENIE_TOKEN_TYPE_ENSURES;
+						result = BALA_GENIE_TOKEN_TYPE_ENSURES;
 						return result;
 					}
 					break;
@@ -1737,7 +1737,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'i':
 						{
 							if (vala_genie_scanner_matches (begin, "finally")) {
-								result = VALA_GENIE_TOKEN_TYPE_FINALLY;
+								result = BALA_GENIE_TOKEN_TYPE_FINALLY;
 								return result;
 							}
 							break;
@@ -1750,7 +1750,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'p':
 				{
 					if (vala_genie_scanner_matches (begin, "private")) {
-						result = VALA_GENIE_TOKEN_TYPE_PRIVATE;
+						result = BALA_GENIE_TOKEN_TYPE_PRIVATE;
 						return result;
 					}
 					break;
@@ -1758,7 +1758,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'u':
 				{
 					if (vala_genie_scanner_matches (begin, "unowned")) {
-						result = VALA_GENIE_TOKEN_TYPE_UNOWNED;
+						result = BALA_GENIE_TOKEN_TYPE_UNOWNED;
 						return result;
 					}
 					break;
@@ -1766,7 +1766,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'v':
 				{
 					if (vala_genie_scanner_matches (begin, "virtual")) {
-						result = VALA_GENIE_TOKEN_TYPE_VIRTUAL;
+						result = BALA_GENIE_TOKEN_TYPE_VIRTUAL;
 						return result;
 					}
 					break;
@@ -1784,7 +1784,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'a':
 				{
 					if (vala_genie_scanner_matches (begin, "abstract")) {
-						result = VALA_GENIE_TOKEN_TYPE_ABSTRACT;
+						result = BALA_GENIE_TOKEN_TYPE_ABSTRACT;
 						return result;
 					}
 					break;
@@ -1792,7 +1792,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'c':
 				{
 					if (vala_genie_scanner_matches (begin, "continue")) {
-						result = VALA_GENIE_TOKEN_TYPE_CONTINUE;
+						result = BALA_GENIE_TOKEN_TYPE_CONTINUE;
 						return result;
 					}
 					break;
@@ -1800,7 +1800,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'd':
 				{
 					if (vala_genie_scanner_matches (begin, "delegate")) {
-						result = VALA_GENIE_TOKEN_TYPE_DELEGATE;
+						result = BALA_GENIE_TOKEN_TYPE_DELEGATE;
 						return result;
 					}
 					break;
@@ -1808,7 +1808,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'i':
 				{
 					if (vala_genie_scanner_matches (begin, "internal")) {
-						result = VALA_GENIE_TOKEN_TYPE_INTERNAL;
+						result = BALA_GENIE_TOKEN_TYPE_INTERNAL;
 						return result;
 					}
 					break;
@@ -1816,7 +1816,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'o':
 				{
 					if (vala_genie_scanner_matches (begin, "override")) {
-						result = VALA_GENIE_TOKEN_TYPE_OVERRIDE;
+						result = BALA_GENIE_TOKEN_TYPE_OVERRIDE;
 						return result;
 					}
 					break;
@@ -1829,7 +1829,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'a':
 						{
 							if (vala_genie_scanner_matches (begin, "readonly")) {
-								result = VALA_GENIE_TOKEN_TYPE_READONLY;
+								result = BALA_GENIE_TOKEN_TYPE_READONLY;
 								return result;
 							}
 							break;
@@ -1837,7 +1837,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'q':
 						{
 							if (vala_genie_scanner_matches (begin, "requires")) {
-								result = VALA_GENIE_TOKEN_TYPE_REQUIRES;
+								result = BALA_GENIE_TOKEN_TYPE_REQUIRES;
 								return result;
 							}
 							break;
@@ -1850,7 +1850,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'v':
 				{
 					if (vala_genie_scanner_matches (begin, "volatile")) {
-						result = VALA_GENIE_TOKEN_TYPE_VOLATILE;
+						result = BALA_GENIE_TOKEN_TYPE_VOLATILE;
 						return result;
 					}
 					break;
@@ -1868,7 +1868,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'c':
 				{
 					if (vala_genie_scanner_matches (begin, "construct")) {
-						result = VALA_GENIE_TOKEN_TYPE_CONSTRUCT;
+						result = BALA_GENIE_TOKEN_TYPE_CONSTRUCT;
 						return result;
 					}
 					break;
@@ -1876,7 +1876,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'e':
 				{
 					if (vala_genie_scanner_matches (begin, "exception")) {
-						result = VALA_GENIE_TOKEN_TYPE_ERRORDOMAIN;
+						result = BALA_GENIE_TOKEN_TYPE_ERRORDOMAIN;
 						return result;
 					}
 					break;
@@ -1884,7 +1884,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'i':
 				{
 					if (vala_genie_scanner_matches (begin, "interface")) {
-						result = VALA_GENIE_TOKEN_TYPE_INTERFACE;
+						result = BALA_GENIE_TOKEN_TYPE_INTERFACE;
 						return result;
 					}
 					break;
@@ -1892,7 +1892,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'n':
 				{
 					if (vala_genie_scanner_matches (begin, "namespace")) {
-						result = VALA_GENIE_TOKEN_TYPE_NAMESPACE;
+						result = BALA_GENIE_TOKEN_TYPE_NAMESPACE;
 						return result;
 					}
 					break;
@@ -1900,7 +1900,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'p':
 				{
 					if (vala_genie_scanner_matches (begin, "protected")) {
-						result = VALA_GENIE_TOKEN_TYPE_PROTECTED;
+						result = BALA_GENIE_TOKEN_TYPE_PROTECTED;
 						return result;
 					}
 					break;
@@ -1918,7 +1918,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'i':
 				{
 					if (vala_genie_scanner_matches (begin, "implements")) {
-						result = VALA_GENIE_TOKEN_TYPE_IMPLEMENTS;
+						result = BALA_GENIE_TOKEN_TYPE_IMPLEMENTS;
 						return result;
 					}
 					break;
@@ -1931,7 +1931,7 @@ vala_genie_scanner_get_identifier_or_keyword (gchar* begin,
 		default:
 		break;
 	}
-	result = VALA_GENIE_TOKEN_TYPE_IDENTIFIER;
+	result = BALA_GENIE_TOKEN_TYPE_IDENTIFIER;
 	return result;
 }
 
@@ -2012,7 +2012,7 @@ vala_genie_scanner_read_template_token (ValaGenieScanner* self,
 	_tmp2_ = self->priv->current;
 	_tmp3_ = self->priv->end;
 	if (_tmp2_ >= _tmp3_) {
-		type = VALA_GENIE_TOKEN_TYPE_EOF;
+		type = BALA_GENIE_TOKEN_TYPE_EOF;
 	} else {
 		gchar* _tmp4_;
 		gchar _tmp5_;
@@ -2023,7 +2023,7 @@ vala_genie_scanner_read_template_token (ValaGenieScanner* self,
 			{
 				gchar* _tmp6_;
 				gint _tmp7_;
-				type = VALA_GENIE_TOKEN_TYPE_CLOSE_TEMPLATE;
+				type = BALA_GENIE_TOKEN_TYPE_CLOSE_TEMPLATE;
 				_tmp6_ = self->priv->current;
 				self->priv->current = _tmp6_ + 1;
 				_tmp7_ = self->priv->state_stack_length1;
@@ -2080,8 +2080,8 @@ vala_genie_scanner_read_template_token (ValaGenieScanner* self,
 						_tmp21_ = len;
 						len = _tmp21_ + 1;
 					}
-					type = VALA_GENIE_TOKEN_TYPE_IDENTIFIER;
-					_vala_array_add2 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_GENIE_SCANNER_STATE_TEMPLATE_PART);
+					type = BALA_GENIE_TOKEN_TYPE_IDENTIFIER;
+					_vala_array_add2 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_GENIE_SCANNER_STATE_TEMPLATE_PART);
 				} else {
 					gchar* _tmp22_;
 					gchar _tmp23_;
@@ -2095,7 +2095,7 @@ vala_genie_scanner_read_template_token (ValaGenieScanner* self,
 						_tmp24_ = self->priv->current;
 						self->priv->current = _tmp24_ + 1;
 						self->priv->column = self->priv->column + 2;
-						_vala_array_add3 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_GENIE_SCANNER_STATE_PARENS);
+						_vala_array_add3 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_GENIE_SCANNER_STATE_PARENS);
 						_tmp27_ = vala_genie_scanner_read_token (self, &_tmp25_, &_tmp26_);
 						_vala_token_begin = _tmp25_;
 						_vala_token_end = _tmp26_;
@@ -2114,10 +2114,10 @@ vala_genie_scanner_read_template_token (ValaGenieScanner* self,
 						_tmp29_ = _tmp28_[0];
 						if (_tmp29_ == '$') {
 							gchar* _tmp30_;
-							type = VALA_GENIE_TOKEN_TYPE_TEMPLATE_STRING_LITERAL;
+							type = BALA_GENIE_TOKEN_TYPE_TEMPLATE_STRING_LITERAL;
 							_tmp30_ = self->priv->current;
 							self->priv->current = _tmp30_ + 1;
-							_vala_array_add4 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_GENIE_SCANNER_STATE_TEMPLATE_PART);
+							_vala_array_add4 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_GENIE_SCANNER_STATE_TEMPLATE_PART);
 						} else {
 							ValaSourceReference* _tmp31_;
 							ValaSourceReference* _tmp32_;
@@ -2148,7 +2148,7 @@ vala_genie_scanner_read_template_token (ValaGenieScanner* self,
 			{
 				gchar* _tmp100_;
 				gchar* _tmp101_;
-				type = VALA_GENIE_TOKEN_TYPE_TEMPLATE_STRING_LITERAL;
+				type = BALA_GENIE_TOKEN_TYPE_TEMPLATE_STRING_LITERAL;
 				token_length_in_chars = 0;
 				while (TRUE) {
 					gboolean _tmp36_ = FALSE;
@@ -2436,7 +2436,7 @@ vala_genie_scanner_read_template_token (ValaGenieScanner* self,
 					}
 					return result;
 				}
-				_vala_array_add5 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_GENIE_SCANNER_STATE_TEMPLATE_PART);
+				_vala_array_add5 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_GENIE_SCANNER_STATE_TEMPLATE_PART);
 				break;
 			}
 		}
@@ -2558,7 +2558,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 		vala_source_location_init (&_vala_token_begin, _tmp1_, self->priv->line, self->priv->column);
 		_tmp2_ = self->priv->current;
 		vala_source_location_init (&_vala_token_end, _tmp2_, self->priv->line, self->priv->column);
-		result = VALA_GENIE_TOKEN_TYPE_EOF;
+		result = BALA_GENIE_TOKEN_TYPE_EOF;
 		if (token_begin) {
 			*token_begin = _vala_token_begin;
 		}
@@ -2593,7 +2593,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 			vala_source_location_init (&_vala_token_begin, _tmp7_, self->priv->line, self->priv->column);
 			_tmp8_ = self->priv->current;
 			vala_source_location_init (&_vala_token_end, _tmp8_, self->priv->line, self->priv->column - 1);
-			result = VALA_GENIE_TOKEN_TYPE_COMMA;
+			result = BALA_GENIE_TOKEN_TYPE_COMMA;
 			if (token_begin) {
 				*token_begin = _vala_token_begin;
 			}
@@ -2633,8 +2633,8 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 		vala_source_location_init (&_vala_token_begin, _tmp14_, self->priv->line, self->priv->column);
 		_tmp15_ = self->priv->current;
 		vala_source_location_init (&_vala_token_end, _tmp15_, self->priv->line, self->priv->column);
-		self->priv->last_token = VALA_GENIE_TOKEN_TYPE_DEDENT;
-		result = VALA_GENIE_TOKEN_TYPE_DEDENT;
+		self->priv->last_token = BALA_GENIE_TOKEN_TYPE_DEDENT;
+		result = BALA_GENIE_TOKEN_TYPE_DEDENT;
 		if (token_begin) {
 			*token_begin = _vala_token_begin;
 		}
@@ -2648,7 +2648,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 	} else {
 		ValaGenieTokenType _tmp17_;
 		_tmp17_ = self->priv->last_token;
-		_tmp16_ = _tmp17_ != VALA_GENIE_TOKEN_TYPE_EOL;
+		_tmp16_ = _tmp17_ != BALA_GENIE_TOKEN_TYPE_EOL;
 	}
 	if (_tmp16_) {
 		vala_genie_scanner_space (self);
@@ -2735,14 +2735,14 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 	if (_tmp39_) {
 		ValaGenieTokenType _tmp40_;
 		_tmp40_ = self->priv->last_token;
-		_tmp38_ = _tmp40_ != VALA_GENIE_TOKEN_TYPE_EOL;
+		_tmp38_ = _tmp40_ != BALA_GENIE_TOKEN_TYPE_EOL;
 	} else {
 		_tmp38_ = FALSE;
 	}
 	if (_tmp38_) {
 		ValaGenieTokenType _tmp41_;
 		_tmp41_ = self->priv->last_token;
-		_tmp37_ = _tmp41_ != VALA_GENIE_TOKEN_TYPE_SEMICOLON;
+		_tmp37_ = _tmp41_ != BALA_GENIE_TOKEN_TYPE_SEMICOLON;
 	} else {
 		_tmp37_ = FALSE;
 	}
@@ -2753,8 +2753,8 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 		vala_source_location_init (&_vala_token_begin, _tmp42_, self->priv->line, self->priv->column);
 		_tmp43_ = self->priv->current;
 		vala_source_location_init (&_vala_token_end, _tmp43_, self->priv->line, self->priv->column);
-		self->priv->last_token = VALA_GENIE_TOKEN_TYPE_EOL;
-		result = VALA_GENIE_TOKEN_TYPE_EOL;
+		self->priv->last_token = BALA_GENIE_TOKEN_TYPE_EOL;
+		result = BALA_GENIE_TOKEN_TYPE_EOL;
 		if (token_begin) {
 			*token_begin = _vala_token_begin;
 		}
@@ -2779,8 +2779,8 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 			self->priv->indent_level = self->priv->current_indent_level;
 			_tmp45_ = self->priv->current;
 			vala_source_location_init (&_vala_token_end, _tmp45_, self->priv->line, self->priv->column);
-			self->priv->last_token = VALA_GENIE_TOKEN_TYPE_INDENT;
-			result = VALA_GENIE_TOKEN_TYPE_INDENT;
+			self->priv->last_token = BALA_GENIE_TOKEN_TYPE_INDENT;
+			result = BALA_GENIE_TOKEN_TYPE_INDENT;
 			if (token_begin) {
 				*token_begin = _vala_token_begin;
 			}
@@ -2797,8 +2797,8 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 				self->priv->pending_dedents = self->priv->indent_level - self->priv->current_indent_level;
 				_tmp47_ = self->priv->current;
 				vala_source_location_init (&_vala_token_end, _tmp47_, self->priv->line, self->priv->column);
-				self->priv->last_token = VALA_GENIE_TOKEN_TYPE_DEDENT;
-				result = VALA_GENIE_TOKEN_TYPE_DEDENT;
+				self->priv->last_token = BALA_GENIE_TOKEN_TYPE_DEDENT;
+				result = BALA_GENIE_TOKEN_TYPE_DEDENT;
 				if (token_begin) {
 					*token_begin = _vala_token_begin;
 				}
@@ -2823,9 +2823,9 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 			_tmp52_ = self->priv->indent_level;
 			self->priv->indent_level = _tmp52_ - 1;
 			self->priv->pending_dedents = self->priv->indent_level;
-			type = VALA_GENIE_TOKEN_TYPE_DEDENT;
+			type = BALA_GENIE_TOKEN_TYPE_DEDENT;
 		} else {
-			type = VALA_GENIE_TOKEN_TYPE_EOF;
+			type = BALA_GENIE_TOKEN_TYPE_EOF;
 		}
 	} else {
 		gboolean _tmp53_ = FALSE;
@@ -2895,10 +2895,10 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 				}
 				if (_tmp68_) {
 					gchar* _tmp73_;
-					type = VALA_GENIE_TOKEN_TYPE_OPEN_TEMPLATE;
+					type = BALA_GENIE_TOKEN_TYPE_OPEN_TEMPLATE;
 					_tmp73_ = self->priv->current;
 					self->priv->current = _tmp73_ + 2;
-					_vala_array_add6 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_GENIE_SCANNER_STATE_TEMPLATE);
+					_vala_array_add6 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_GENIE_SCANNER_STATE_TEMPLATE);
 				} else {
 					gchar* _tmp74_;
 					gchar* _tmp75_;
@@ -2933,7 +2933,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						_tmp82_ = len;
 						len = _tmp82_ + 1;
 					}
-					type = VALA_GENIE_TOKEN_TYPE_IDENTIFIER;
+					type = BALA_GENIE_TOKEN_TYPE_IDENTIFIER;
 				}
 			} else {
 				gchar* _tmp83_;
@@ -2966,7 +2966,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						_tmp90_ = self->priv->current;
 						self->priv->current = _tmp90_ + 1;
 					}
-					type = VALA_GENIE_TOKEN_TYPE_INTEGER_LITERAL;
+					type = BALA_GENIE_TOKEN_TYPE_INTEGER_LITERAL;
 					_tmp92_ = self->priv->current;
 					_tmp93_ = self->priv->end;
 					if (_tmp92_ < _tmp93_) {
@@ -3198,7 +3198,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									_tmp162_ = self->priv->current;
 									self->priv->current = _tmp162_ + 1;
 								}
-								type = VALA_GENIE_TOKEN_TYPE_REAL_LITERAL;
+								type = BALA_GENIE_TOKEN_TYPE_REAL_LITERAL;
 							} else {
 								gboolean _tmp163_ = FALSE;
 								gboolean _tmp164_ = FALSE;
@@ -3308,7 +3308,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 											_tmp194_ = self->priv->current;
 											self->priv->current = _tmp194_ + 1;
 										}
-										type = VALA_GENIE_TOKEN_TYPE_IDENTIFIER;
+										type = BALA_GENIE_TOKEN_TYPE_IDENTIFIER;
 									}
 								}
 							}
@@ -3324,10 +3324,10 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						{
 							gint _tmp197_;
 							gchar* _tmp198_;
-							type = VALA_GENIE_TOKEN_TYPE_OPEN_BRACE;
+							type = BALA_GENIE_TOKEN_TYPE_OPEN_BRACE;
 							_tmp197_ = self->priv->open_brace_count;
 							self->priv->open_brace_count = _tmp197_ + 1;
-							_vala_array_add7 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_GENIE_SCANNER_STATE_BRACE);
+							_vala_array_add7 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_GENIE_SCANNER_STATE_BRACE);
 							_tmp198_ = self->priv->current;
 							self->priv->current = _tmp198_ + 1;
 							break;
@@ -3338,7 +3338,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							ValaGenieScannerState* _tmp200_;
 							gint _tmp200__length1;
 							gchar* _tmp202_;
-							type = VALA_GENIE_TOKEN_TYPE_CLOSE_BRACE;
+							type = BALA_GENIE_TOKEN_TYPE_CLOSE_BRACE;
 							_tmp199_ = self->priv->open_brace_count;
 							self->priv->open_brace_count = _tmp199_ - 1;
 							_tmp200_ = self->priv->state_stack;
@@ -3356,10 +3356,10 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						{
 							gint _tmp203_;
 							gchar* _tmp204_;
-							type = VALA_GENIE_TOKEN_TYPE_OPEN_PARENS;
+							type = BALA_GENIE_TOKEN_TYPE_OPEN_PARENS;
 							_tmp203_ = self->priv->open_parens_count;
 							self->priv->open_parens_count = _tmp203_ + 1;
-							_vala_array_add8 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_GENIE_SCANNER_STATE_PARENS);
+							_vala_array_add8 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_GENIE_SCANNER_STATE_PARENS);
 							_tmp204_ = self->priv->current;
 							self->priv->current = _tmp204_ + 1;
 							break;
@@ -3370,7 +3370,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gchar* _tmp206_;
 							ValaGenieScannerState* _tmp207_;
 							gint _tmp207__length1;
-							type = VALA_GENIE_TOKEN_TYPE_CLOSE_PARENS;
+							type = BALA_GENIE_TOKEN_TYPE_CLOSE_PARENS;
 							_tmp205_ = self->priv->open_parens_count;
 							self->priv->open_parens_count = _tmp205_ - 1;
 							_tmp206_ = self->priv->current;
@@ -3383,15 +3383,15 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 								self->priv->state_stack_length1 = _tmp208_ - 1;
 							}
 							if (vala_genie_scanner_in_template (self)) {
-								type = VALA_GENIE_TOKEN_TYPE_COMMA;
+								type = BALA_GENIE_TOKEN_TYPE_COMMA;
 							}
 							break;
 						}
 						case '[':
 						{
 							gchar* _tmp209_;
-							type = VALA_GENIE_TOKEN_TYPE_OPEN_BRACKET;
-							_vala_array_add9 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_GENIE_SCANNER_STATE_BRACKET);
+							type = BALA_GENIE_TOKEN_TYPE_OPEN_BRACKET;
+							_vala_array_add9 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_GENIE_SCANNER_STATE_BRACKET);
 							_tmp209_ = self->priv->current;
 							self->priv->current = _tmp209_ + 1;
 							break;
@@ -3401,7 +3401,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							ValaGenieScannerState* _tmp210_;
 							gint _tmp210__length1;
 							gchar* _tmp212_;
-							type = VALA_GENIE_TOKEN_TYPE_CLOSE_BRACKET;
+							type = BALA_GENIE_TOKEN_TYPE_CLOSE_BRACKET;
 							_tmp210_ = self->priv->state_stack;
 							_tmp210__length1 = self->priv->state_stack_length1;
 							if (_tmp210__length1 > 0) {
@@ -3418,7 +3418,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gchar* _tmp213_;
 							gchar* _tmp214_;
 							gchar* _tmp215_;
-							type = VALA_GENIE_TOKEN_TYPE_DOT;
+							type = BALA_GENIE_TOKEN_TYPE_DOT;
 							_tmp213_ = self->priv->current;
 							self->priv->current = _tmp213_ + 1;
 							_tmp214_ = self->priv->current;
@@ -3440,7 +3440,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 								}
 								if (_tmp216_) {
 									gchar* _tmp221_;
-									type = VALA_GENIE_TOKEN_TYPE_ELLIPSIS;
+									type = BALA_GENIE_TOKEN_TYPE_ELLIPSIS;
 									_tmp221_ = self->priv->current;
 									self->priv->current = _tmp221_ + 2;
 								}
@@ -3450,7 +3450,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						case ':':
 						{
 							gchar* _tmp222_;
-							type = VALA_GENIE_TOKEN_TYPE_COLON;
+							type = BALA_GENIE_TOKEN_TYPE_COLON;
 							_tmp222_ = self->priv->current;
 							self->priv->current = _tmp222_ + 1;
 							break;
@@ -3458,7 +3458,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						case ',':
 						{
 							gchar* _tmp223_;
-							type = VALA_GENIE_TOKEN_TYPE_COMMA;
+							type = BALA_GENIE_TOKEN_TYPE_COMMA;
 							_tmp223_ = self->priv->current;
 							self->priv->current = _tmp223_ + 1;
 							break;
@@ -3466,7 +3466,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						case ';':
 						{
 							gchar* _tmp224_;
-							type = VALA_GENIE_TOKEN_TYPE_SEMICOLON;
+							type = BALA_GENIE_TOKEN_TYPE_SEMICOLON;
 							_tmp224_ = self->priv->current;
 							self->priv->current = _tmp224_ + 1;
 							break;
@@ -3474,7 +3474,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						case '#':
 						{
 							gchar* _tmp225_;
-							type = VALA_GENIE_TOKEN_TYPE_HASH;
+							type = BALA_GENIE_TOKEN_TYPE_HASH;
 							_tmp225_ = self->priv->current;
 							self->priv->current = _tmp225_ + 1;
 							break;
@@ -3482,7 +3482,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						case '?':
 						{
 							gchar* _tmp226_;
-							type = VALA_GENIE_TOKEN_TYPE_INTERR;
+							type = BALA_GENIE_TOKEN_TYPE_INTERR;
 							_tmp226_ = self->priv->current;
 							self->priv->current = _tmp226_ + 1;
 							break;
@@ -3492,7 +3492,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gchar* _tmp227_;
 							gchar* _tmp228_;
 							gchar* _tmp229_;
-							type = VALA_GENIE_TOKEN_TYPE_BITWISE_OR;
+							type = BALA_GENIE_TOKEN_TYPE_BITWISE_OR;
 							_tmp227_ = self->priv->current;
 							self->priv->current = _tmp227_ + 1;
 							_tmp228_ = self->priv->current;
@@ -3506,7 +3506,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '=':
 									{
 										gchar* _tmp232_;
-										type = VALA_GENIE_TOKEN_TYPE_ASSIGN_BITWISE_OR;
+										type = BALA_GENIE_TOKEN_TYPE_ASSIGN_BITWISE_OR;
 										_tmp232_ = self->priv->current;
 										self->priv->current = _tmp232_ + 1;
 										break;
@@ -3514,7 +3514,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '|':
 									{
 										gchar* _tmp233_;
-										type = VALA_GENIE_TOKEN_TYPE_OP_OR;
+										type = BALA_GENIE_TOKEN_TYPE_OP_OR;
 										_tmp233_ = self->priv->current;
 										self->priv->current = _tmp233_ + 1;
 										break;
@@ -3530,7 +3530,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gchar* _tmp234_;
 							gchar* _tmp235_;
 							gchar* _tmp236_;
-							type = VALA_GENIE_TOKEN_TYPE_BITWISE_AND;
+							type = BALA_GENIE_TOKEN_TYPE_BITWISE_AND;
 							_tmp234_ = self->priv->current;
 							self->priv->current = _tmp234_ + 1;
 							_tmp235_ = self->priv->current;
@@ -3544,7 +3544,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '=':
 									{
 										gchar* _tmp239_;
-										type = VALA_GENIE_TOKEN_TYPE_ASSIGN_BITWISE_AND;
+										type = BALA_GENIE_TOKEN_TYPE_ASSIGN_BITWISE_AND;
 										_tmp239_ = self->priv->current;
 										self->priv->current = _tmp239_ + 1;
 										break;
@@ -3552,7 +3552,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '&':
 									{
 										gchar* _tmp240_;
-										type = VALA_GENIE_TOKEN_TYPE_OP_AND;
+										type = BALA_GENIE_TOKEN_TYPE_OP_AND;
 										_tmp240_ = self->priv->current;
 										self->priv->current = _tmp240_ + 1;
 										break;
@@ -3569,7 +3569,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gboolean _tmp242_ = FALSE;
 							gchar* _tmp243_;
 							gchar* _tmp244_;
-							type = VALA_GENIE_TOKEN_TYPE_CARRET;
+							type = BALA_GENIE_TOKEN_TYPE_CARRET;
 							_tmp241_ = self->priv->current;
 							self->priv->current = _tmp241_ + 1;
 							_tmp243_ = self->priv->current;
@@ -3585,7 +3585,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							}
 							if (_tmp242_) {
 								gchar* _tmp247_;
-								type = VALA_GENIE_TOKEN_TYPE_ASSIGN_BITWISE_XOR;
+								type = BALA_GENIE_TOKEN_TYPE_ASSIGN_BITWISE_XOR;
 								_tmp247_ = self->priv->current;
 								self->priv->current = _tmp247_ + 1;
 							}
@@ -3594,7 +3594,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 						case '~':
 						{
 							gchar* _tmp248_;
-							type = VALA_GENIE_TOKEN_TYPE_TILDE;
+							type = BALA_GENIE_TOKEN_TYPE_TILDE;
 							_tmp248_ = self->priv->current;
 							self->priv->current = _tmp248_ + 1;
 							break;
@@ -3604,7 +3604,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gchar* _tmp249_;
 							gchar* _tmp250_;
 							gchar* _tmp251_;
-							type = VALA_GENIE_TOKEN_TYPE_ASSIGN;
+							type = BALA_GENIE_TOKEN_TYPE_ASSIGN;
 							_tmp249_ = self->priv->current;
 							self->priv->current = _tmp249_ + 1;
 							_tmp250_ = self->priv->current;
@@ -3618,7 +3618,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '=':
 									{
 										gchar* _tmp254_;
-										type = VALA_GENIE_TOKEN_TYPE_OP_EQ;
+										type = BALA_GENIE_TOKEN_TYPE_OP_EQ;
 										_tmp254_ = self->priv->current;
 										self->priv->current = _tmp254_ + 1;
 										break;
@@ -3626,7 +3626,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '>':
 									{
 										gchar* _tmp255_;
-										type = VALA_GENIE_TOKEN_TYPE_LAMBDA;
+										type = BALA_GENIE_TOKEN_TYPE_LAMBDA;
 										_tmp255_ = self->priv->current;
 										self->priv->current = _tmp255_ + 1;
 										break;
@@ -3642,7 +3642,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gchar* _tmp256_;
 							gchar* _tmp257_;
 							gchar* _tmp258_;
-							type = VALA_GENIE_TOKEN_TYPE_OP_LT;
+							type = BALA_GENIE_TOKEN_TYPE_OP_LT;
 							_tmp256_ = self->priv->current;
 							self->priv->current = _tmp256_ + 1;
 							_tmp257_ = self->priv->current;
@@ -3656,7 +3656,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '=':
 									{
 										gchar* _tmp261_;
-										type = VALA_GENIE_TOKEN_TYPE_OP_LE;
+										type = BALA_GENIE_TOKEN_TYPE_OP_LE;
 										_tmp261_ = self->priv->current;
 										self->priv->current = _tmp261_ + 1;
 										break;
@@ -3667,7 +3667,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 										gboolean _tmp263_ = FALSE;
 										gchar* _tmp264_;
 										gchar* _tmp265_;
-										type = VALA_GENIE_TOKEN_TYPE_OP_SHIFT_LEFT;
+										type = BALA_GENIE_TOKEN_TYPE_OP_SHIFT_LEFT;
 										_tmp262_ = self->priv->current;
 										self->priv->current = _tmp262_ + 1;
 										_tmp264_ = self->priv->current;
@@ -3683,7 +3683,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 										}
 										if (_tmp263_) {
 											gchar* _tmp268_;
-											type = VALA_GENIE_TOKEN_TYPE_ASSIGN_SHIFT_LEFT;
+											type = BALA_GENIE_TOKEN_TYPE_ASSIGN_SHIFT_LEFT;
 											_tmp268_ = self->priv->current;
 											self->priv->current = _tmp268_ + 1;
 										}
@@ -3701,7 +3701,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gboolean _tmp270_ = FALSE;
 							gchar* _tmp271_;
 							gchar* _tmp272_;
-							type = VALA_GENIE_TOKEN_TYPE_OP_GT;
+							type = BALA_GENIE_TOKEN_TYPE_OP_GT;
 							_tmp269_ = self->priv->current;
 							self->priv->current = _tmp269_ + 1;
 							_tmp271_ = self->priv->current;
@@ -3717,7 +3717,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							}
 							if (_tmp270_) {
 								gchar* _tmp275_;
-								type = VALA_GENIE_TOKEN_TYPE_OP_GE;
+								type = BALA_GENIE_TOKEN_TYPE_OP_GE;
 								_tmp275_ = self->priv->current;
 								self->priv->current = _tmp275_ + 1;
 							}
@@ -3729,7 +3729,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gboolean _tmp277_ = FALSE;
 							gchar* _tmp278_;
 							gchar* _tmp279_;
-							type = VALA_GENIE_TOKEN_TYPE_OP_NEG;
+							type = BALA_GENIE_TOKEN_TYPE_OP_NEG;
 							_tmp276_ = self->priv->current;
 							self->priv->current = _tmp276_ + 1;
 							_tmp278_ = self->priv->current;
@@ -3745,7 +3745,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							}
 							if (_tmp277_) {
 								gchar* _tmp282_;
-								type = VALA_GENIE_TOKEN_TYPE_OP_NE;
+								type = BALA_GENIE_TOKEN_TYPE_OP_NE;
 								_tmp282_ = self->priv->current;
 								self->priv->current = _tmp282_ + 1;
 							}
@@ -3756,7 +3756,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gchar* _tmp283_;
 							gchar* _tmp284_;
 							gchar* _tmp285_;
-							type = VALA_GENIE_TOKEN_TYPE_PLUS;
+							type = BALA_GENIE_TOKEN_TYPE_PLUS;
 							_tmp283_ = self->priv->current;
 							self->priv->current = _tmp283_ + 1;
 							_tmp284_ = self->priv->current;
@@ -3770,7 +3770,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '=':
 									{
 										gchar* _tmp288_;
-										type = VALA_GENIE_TOKEN_TYPE_ASSIGN_ADD;
+										type = BALA_GENIE_TOKEN_TYPE_ASSIGN_ADD;
 										_tmp288_ = self->priv->current;
 										self->priv->current = _tmp288_ + 1;
 										break;
@@ -3778,7 +3778,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '+':
 									{
 										gchar* _tmp289_;
-										type = VALA_GENIE_TOKEN_TYPE_OP_INC;
+										type = BALA_GENIE_TOKEN_TYPE_OP_INC;
 										_tmp289_ = self->priv->current;
 										self->priv->current = _tmp289_ + 1;
 										break;
@@ -3794,7 +3794,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gchar* _tmp290_;
 							gchar* _tmp291_;
 							gchar* _tmp292_;
-							type = VALA_GENIE_TOKEN_TYPE_MINUS;
+							type = BALA_GENIE_TOKEN_TYPE_MINUS;
 							_tmp290_ = self->priv->current;
 							self->priv->current = _tmp290_ + 1;
 							_tmp291_ = self->priv->current;
@@ -3808,7 +3808,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '=':
 									{
 										gchar* _tmp295_;
-										type = VALA_GENIE_TOKEN_TYPE_ASSIGN_SUB;
+										type = BALA_GENIE_TOKEN_TYPE_ASSIGN_SUB;
 										_tmp295_ = self->priv->current;
 										self->priv->current = _tmp295_ + 1;
 										break;
@@ -3816,7 +3816,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '-':
 									{
 										gchar* _tmp296_;
-										type = VALA_GENIE_TOKEN_TYPE_OP_DEC;
+										type = BALA_GENIE_TOKEN_TYPE_OP_DEC;
 										_tmp296_ = self->priv->current;
 										self->priv->current = _tmp296_ + 1;
 										break;
@@ -3824,7 +3824,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									case '>':
 									{
 										gchar* _tmp297_;
-										type = VALA_GENIE_TOKEN_TYPE_OP_PTR;
+										type = BALA_GENIE_TOKEN_TYPE_OP_PTR;
 										_tmp297_ = self->priv->current;
 										self->priv->current = _tmp297_ + 1;
 										break;
@@ -3841,7 +3841,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gboolean _tmp299_ = FALSE;
 							gchar* _tmp300_;
 							gchar* _tmp301_;
-							type = VALA_GENIE_TOKEN_TYPE_STAR;
+							type = BALA_GENIE_TOKEN_TYPE_STAR;
 							_tmp298_ = self->priv->current;
 							self->priv->current = _tmp298_ + 1;
 							_tmp300_ = self->priv->current;
@@ -3857,7 +3857,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							}
 							if (_tmp299_) {
 								gchar* _tmp304_;
-								type = VALA_GENIE_TOKEN_TYPE_ASSIGN_MUL;
+								type = BALA_GENIE_TOKEN_TYPE_ASSIGN_MUL;
 								_tmp304_ = self->priv->current;
 								self->priv->current = _tmp304_ + 1;
 							}
@@ -3868,27 +3868,27 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							ValaGenieTokenType _tmp305_;
 							_tmp305_ = self->priv->last_token;
 							switch (_tmp305_) {
-								case VALA_GENIE_TOKEN_TYPE_ASSIGN:
-								case VALA_GENIE_TOKEN_TYPE_COMMA:
-								case VALA_GENIE_TOKEN_TYPE_MINUS:
-								case VALA_GENIE_TOKEN_TYPE_OP_AND:
-								case VALA_GENIE_TOKEN_TYPE_OP_EQ:
-								case VALA_GENIE_TOKEN_TYPE_OP_GE:
-								case VALA_GENIE_TOKEN_TYPE_OP_GT:
-								case VALA_GENIE_TOKEN_TYPE_OP_INC:
-								case VALA_GENIE_TOKEN_TYPE_OP_LE:
-								case VALA_GENIE_TOKEN_TYPE_OP_LT:
-								case VALA_GENIE_TOKEN_TYPE_OP_NE:
-								case VALA_GENIE_TOKEN_TYPE_OP_NEG:
-								case VALA_GENIE_TOKEN_TYPE_OP_OR:
-								case VALA_GENIE_TOKEN_TYPE_OPEN_BRACE:
-								case VALA_GENIE_TOKEN_TYPE_OPEN_PARENS:
-								case VALA_GENIE_TOKEN_TYPE_PLUS:
-								case VALA_GENIE_TOKEN_TYPE_RETURN:
+								case BALA_GENIE_TOKEN_TYPE_ASSIGN:
+								case BALA_GENIE_TOKEN_TYPE_COMMA:
+								case BALA_GENIE_TOKEN_TYPE_MINUS:
+								case BALA_GENIE_TOKEN_TYPE_OP_AND:
+								case BALA_GENIE_TOKEN_TYPE_OP_EQ:
+								case BALA_GENIE_TOKEN_TYPE_OP_GE:
+								case BALA_GENIE_TOKEN_TYPE_OP_GT:
+								case BALA_GENIE_TOKEN_TYPE_OP_INC:
+								case BALA_GENIE_TOKEN_TYPE_OP_LE:
+								case BALA_GENIE_TOKEN_TYPE_OP_LT:
+								case BALA_GENIE_TOKEN_TYPE_OP_NE:
+								case BALA_GENIE_TOKEN_TYPE_OP_NEG:
+								case BALA_GENIE_TOKEN_TYPE_OP_OR:
+								case BALA_GENIE_TOKEN_TYPE_OPEN_BRACE:
+								case BALA_GENIE_TOKEN_TYPE_OPEN_PARENS:
+								case BALA_GENIE_TOKEN_TYPE_PLUS:
+								case BALA_GENIE_TOKEN_TYPE_RETURN:
 								{
 									gchar* _tmp306_;
-									type = VALA_GENIE_TOKEN_TYPE_OPEN_REGEX_LITERAL;
-									_vala_array_add10 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_GENIE_SCANNER_STATE_REGEX_LITERAL);
+									type = BALA_GENIE_TOKEN_TYPE_OPEN_REGEX_LITERAL;
+									_vala_array_add10 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_GENIE_SCANNER_STATE_REGEX_LITERAL);
 									_tmp306_ = self->priv->current;
 									self->priv->current = _tmp306_ + 1;
 									break;
@@ -3899,7 +3899,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									gboolean _tmp308_ = FALSE;
 									gchar* _tmp309_;
 									gchar* _tmp310_;
-									type = VALA_GENIE_TOKEN_TYPE_DIV;
+									type = BALA_GENIE_TOKEN_TYPE_DIV;
 									_tmp307_ = self->priv->current;
 									self->priv->current = _tmp307_ + 1;
 									_tmp309_ = self->priv->current;
@@ -3915,7 +3915,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									}
 									if (_tmp308_) {
 										gchar* _tmp313_;
-										type = VALA_GENIE_TOKEN_TYPE_ASSIGN_DIV;
+										type = BALA_GENIE_TOKEN_TYPE_ASSIGN_DIV;
 										_tmp313_ = self->priv->current;
 										self->priv->current = _tmp313_ + 1;
 									}
@@ -3930,7 +3930,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							gboolean _tmp315_ = FALSE;
 							gchar* _tmp316_;
 							gchar* _tmp317_;
-							type = VALA_GENIE_TOKEN_TYPE_PERCENT;
+							type = BALA_GENIE_TOKEN_TYPE_PERCENT;
 							_tmp314_ = self->priv->current;
 							self->priv->current = _tmp314_ + 1;
 							_tmp316_ = self->priv->current;
@@ -3946,7 +3946,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							}
 							if (_tmp315_) {
 								gchar* _tmp320_;
-								type = VALA_GENIE_TOKEN_TYPE_ASSIGN_PERCENT;
+								type = BALA_GENIE_TOKEN_TYPE_ASSIGN_PERCENT;
 								_tmp320_ = self->priv->current;
 								self->priv->current = _tmp320_ + 1;
 							}
@@ -3963,7 +3963,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 							_tmp321_ = begin;
 							_tmp322_ = _tmp321_[0];
 							if (_tmp322_ == '\'') {
-								type = VALA_GENIE_TOKEN_TYPE_CHARACTER_LITERAL;
+								type = BALA_GENIE_TOKEN_TYPE_CHARACTER_LITERAL;
 							} else {
 								gboolean _tmp323_ = FALSE;
 								gboolean _tmp324_ = FALSE;
@@ -3995,7 +3995,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									gboolean _tmp357_ = FALSE;
 									gchar* _tmp358_;
 									gchar _tmp359_;
-									type = VALA_GENIE_TOKEN_TYPE_VERBATIM_STRING_LITERAL;
+									type = BALA_GENIE_TOKEN_TYPE_VERBATIM_STRING_LITERAL;
 									token_length_in_chars = 6;
 									_tmp331_ = self->priv->current;
 									self->priv->current = _tmp331_ + 3;
@@ -4118,7 +4118,7 @@ vala_genie_scanner_read_token (ValaGenieScanner* self,
 									}
 									break;
 								} else {
-									type = VALA_GENIE_TOKEN_TYPE_STRING_LITERAL;
+									type = BALA_GENIE_TOKEN_TYPE_STRING_LITERAL;
 								}
 							}
 							token_length_in_chars = 2;
@@ -4924,7 +4924,7 @@ vala_genie_scanner_comment (ValaGenieScanner* self,
 		if (_tmp25_ == '\n') {
 			ValaGenieTokenType _tmp26_;
 			_tmp26_ = self->priv->last_token;
-			_tmp23_ = _tmp26_ == VALA_GENIE_TOKEN_TYPE_EOL;
+			_tmp23_ = _tmp26_ == BALA_GENIE_TOKEN_TYPE_EOL;
 		} else {
 			_tmp23_ = FALSE;
 		}
@@ -6370,7 +6370,7 @@ vala_genie_param_spec_scanner (const gchar* name,
                                GParamFlags flags)
 {
 	ValaGenieParamSpecScanner* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_GENIE_TYPE_SCANNER), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_GENIE_TYPE_SCANNER), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -6379,7 +6379,7 @@ vala_genie_param_spec_scanner (const gchar* name,
 gpointer
 vala_genie_value_get_scanner (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_GENIE_TYPE_SCANNER), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_GENIE_TYPE_SCANNER), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -6388,10 +6388,10 @@ vala_genie_value_set_scanner (GValue* value,
                               gpointer v_object)
 {
 	ValaGenieScanner * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_GENIE_TYPE_SCANNER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_GENIE_TYPE_SCANNER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_GENIE_TYPE_SCANNER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_GENIE_TYPE_SCANNER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_genie_scanner_ref (value->data[0].v_pointer);
@@ -6408,10 +6408,10 @@ vala_genie_value_take_scanner (GValue* value,
                                gpointer v_object)
 {
 	ValaGenieScanner * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_GENIE_TYPE_SCANNER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_GENIE_TYPE_SCANNER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_GENIE_TYPE_SCANNER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_GENIE_TYPE_SCANNER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -6443,7 +6443,7 @@ static void
 vala_genie_scanner_finalize (ValaGenieScanner * obj)
 {
 	ValaGenieScanner * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_GENIE_TYPE_SCANNER, ValaGenieScanner);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_GENIE_TYPE_SCANNER, ValaGenieScanner);
 	g_signal_handlers_destroy (self);
 	_vala_source_file_unref0 (self->priv->_source_file);
 	_vala_comment_unref0 (self->priv->_comment);
@@ -6493,7 +6493,7 @@ vala_genie_scanner_unref (gpointer instance)
 	ValaGenieScanner * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_GENIE_SCANNER_GET_CLASS (self)->finalize (self);
+		BALA_GENIE_SCANNER_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

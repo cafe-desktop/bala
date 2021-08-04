@@ -198,7 +198,7 @@ vala_traverse_visitor_new (ValaTraverseFunc func,
                            gpointer func_target,
                            GDestroyNotify func_target_destroy_notify)
 {
-	return vala_traverse_visitor_construct (VALA_TYPE_TRAVERSE_VISITOR, func, func_target, func_target_destroy_notify);
+	return vala_traverse_visitor_construct (BALA_TYPE_TRAVERSE_VISITOR, func, func_target, func_target_destroy_notify);
 }
 
 static void
@@ -212,7 +212,7 @@ vala_traverse_visitor_real_visit_namespace (ValaCodeVisitor* base,
 	g_return_if_fail (ns != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) ns, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) ns, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) ns, (ValaCodeVisitor*) self);
 	}
 }
@@ -228,7 +228,7 @@ vala_traverse_visitor_real_visit_class (ValaCodeVisitor* base,
 	g_return_if_fail (cl != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) cl, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) cl, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) cl, (ValaCodeVisitor*) self);
 	}
 }
@@ -244,7 +244,7 @@ vala_traverse_visitor_real_visit_struct (ValaCodeVisitor* base,
 	g_return_if_fail (st != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) st, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) st, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) st, (ValaCodeVisitor*) self);
 	}
 }
@@ -260,7 +260,7 @@ vala_traverse_visitor_real_visit_interface (ValaCodeVisitor* base,
 	g_return_if_fail (iface != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) iface, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) iface, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) iface, (ValaCodeVisitor*) self);
 	}
 }
@@ -276,7 +276,7 @@ vala_traverse_visitor_real_visit_enum (ValaCodeVisitor* base,
 	g_return_if_fail (en != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) en, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) en, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) en, (ValaCodeVisitor*) self);
 	}
 }
@@ -292,7 +292,7 @@ vala_traverse_visitor_real_visit_enum_value (ValaCodeVisitor* base,
 	g_return_if_fail (ev != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) ev, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) ev, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) ev, (ValaCodeVisitor*) self);
 	}
 }
@@ -308,7 +308,7 @@ vala_traverse_visitor_real_visit_error_domain (ValaCodeVisitor* base,
 	g_return_if_fail (edomain != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) edomain, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) edomain, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) edomain, (ValaCodeVisitor*) self);
 	}
 }
@@ -324,7 +324,7 @@ vala_traverse_visitor_real_visit_error_code (ValaCodeVisitor* base,
 	g_return_if_fail (ecode != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) ecode, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) ecode, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) ecode, (ValaCodeVisitor*) self);
 	}
 }
@@ -340,7 +340,7 @@ vala_traverse_visitor_real_visit_delegate (ValaCodeVisitor* base,
 	g_return_if_fail (d != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) d, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) d, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) d, (ValaCodeVisitor*) self);
 	}
 }
@@ -356,7 +356,7 @@ vala_traverse_visitor_real_visit_constant (ValaCodeVisitor* base,
 	g_return_if_fail (c != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) c, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) c, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) c, (ValaCodeVisitor*) self);
 	}
 }
@@ -372,7 +372,7 @@ vala_traverse_visitor_real_visit_field (ValaCodeVisitor* base,
 	g_return_if_fail (f != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) f, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) f, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) f, (ValaCodeVisitor*) self);
 	}
 }
@@ -388,7 +388,7 @@ vala_traverse_visitor_real_visit_method (ValaCodeVisitor* base,
 	g_return_if_fail (m != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) m, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) m, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) m, (ValaCodeVisitor*) self);
 	}
 }
@@ -404,7 +404,7 @@ vala_traverse_visitor_real_visit_creation_method (ValaCodeVisitor* base,
 	g_return_if_fail (m != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) m, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) m, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) m, (ValaCodeVisitor*) self);
 	}
 }
@@ -420,7 +420,7 @@ vala_traverse_visitor_real_visit_formal_parameter (ValaCodeVisitor* base,
 	g_return_if_fail (p != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) p, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) p, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) p, (ValaCodeVisitor*) self);
 	}
 }
@@ -436,7 +436,7 @@ vala_traverse_visitor_real_visit_property (ValaCodeVisitor* base,
 	g_return_if_fail (prop != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) prop, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) prop, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) prop, (ValaCodeVisitor*) self);
 	}
 }
@@ -452,7 +452,7 @@ vala_traverse_visitor_real_visit_property_accessor (ValaCodeVisitor* base,
 	g_return_if_fail (acc != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) acc, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) acc, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) acc, (ValaCodeVisitor*) self);
 	}
 }
@@ -468,7 +468,7 @@ vala_traverse_visitor_real_visit_signal (ValaCodeVisitor* base,
 	g_return_if_fail (sig != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) sig, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) sig, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) sig, (ValaCodeVisitor*) self);
 	}
 }
@@ -484,7 +484,7 @@ vala_traverse_visitor_real_visit_constructor (ValaCodeVisitor* base,
 	g_return_if_fail (c != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) c, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) c, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) c, (ValaCodeVisitor*) self);
 	}
 }
@@ -500,7 +500,7 @@ vala_traverse_visitor_real_visit_destructor (ValaCodeVisitor* base,
 	g_return_if_fail (d != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) d, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) d, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) d, (ValaCodeVisitor*) self);
 	}
 }
@@ -516,7 +516,7 @@ vala_traverse_visitor_real_visit_block (ValaCodeVisitor* base,
 	g_return_if_fail (b != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) b, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) b, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) b, (ValaCodeVisitor*) self);
 	}
 }
@@ -532,7 +532,7 @@ vala_traverse_visitor_real_visit_declaration_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -548,7 +548,7 @@ vala_traverse_visitor_real_visit_local_variable (ValaCodeVisitor* base,
 	g_return_if_fail (local != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) local, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) local, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) local, (ValaCodeVisitor*) self);
 	}
 }
@@ -564,7 +564,7 @@ vala_traverse_visitor_real_visit_initializer_list (ValaCodeVisitor* base,
 	g_return_if_fail (list != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) list, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) list, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) list, (ValaCodeVisitor*) self);
 	}
 }
@@ -580,7 +580,7 @@ vala_traverse_visitor_real_visit_expression_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -596,7 +596,7 @@ vala_traverse_visitor_real_visit_if_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -612,7 +612,7 @@ vala_traverse_visitor_real_visit_switch_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -628,7 +628,7 @@ vala_traverse_visitor_real_visit_switch_section (ValaCodeVisitor* base,
 	g_return_if_fail (section != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) section, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) section, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) section, (ValaCodeVisitor*) self);
 	}
 }
@@ -644,7 +644,7 @@ vala_traverse_visitor_real_visit_switch_label (ValaCodeVisitor* base,
 	g_return_if_fail (label != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) label, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) label, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) label, (ValaCodeVisitor*) self);
 	}
 }
@@ -660,7 +660,7 @@ vala_traverse_visitor_real_visit_loop (ValaCodeVisitor* base,
 	g_return_if_fail (loop != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) loop, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) loop, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) loop, (ValaCodeVisitor*) self);
 	}
 }
@@ -676,7 +676,7 @@ vala_traverse_visitor_real_visit_while_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -692,7 +692,7 @@ vala_traverse_visitor_real_visit_do_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -708,7 +708,7 @@ vala_traverse_visitor_real_visit_for_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -724,7 +724,7 @@ vala_traverse_visitor_real_visit_foreach_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -740,7 +740,7 @@ vala_traverse_visitor_real_visit_break_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -756,7 +756,7 @@ vala_traverse_visitor_real_visit_continue_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -772,7 +772,7 @@ vala_traverse_visitor_real_visit_return_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -788,7 +788,7 @@ vala_traverse_visitor_real_visit_yield_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -804,7 +804,7 @@ vala_traverse_visitor_real_visit_throw_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -820,7 +820,7 @@ vala_traverse_visitor_real_visit_try_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -836,7 +836,7 @@ vala_traverse_visitor_real_visit_catch_clause (ValaCodeVisitor* base,
 	g_return_if_fail (clause != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) clause, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) clause, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) clause, (ValaCodeVisitor*) self);
 	}
 }
@@ -852,7 +852,7 @@ vala_traverse_visitor_real_visit_lock_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -868,7 +868,7 @@ vala_traverse_visitor_real_visit_unlock_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -884,7 +884,7 @@ vala_traverse_visitor_real_visit_delete_statement (ValaCodeVisitor* base,
 	g_return_if_fail (stmt != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) stmt, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) stmt, (ValaCodeVisitor*) self);
 	}
 }
@@ -900,7 +900,7 @@ vala_traverse_visitor_real_visit_member_access (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -916,7 +916,7 @@ vala_traverse_visitor_real_visit_assignment (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -932,7 +932,7 @@ vala_traverse_visitor_real_visit_method_call (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -948,7 +948,7 @@ vala_traverse_visitor_real_visit_conditional_expression (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -964,7 +964,7 @@ vala_traverse_visitor_real_visit_binary_expression (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -980,7 +980,7 @@ vala_traverse_visitor_real_visit_unary_expression (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -996,7 +996,7 @@ vala_traverse_visitor_real_visit_reference_transfer_expression (ValaCodeVisitor*
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1012,7 +1012,7 @@ vala_traverse_visitor_real_visit_object_creation_expression (ValaCodeVisitor* ba
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1028,7 +1028,7 @@ vala_traverse_visitor_real_visit_postfix_expression (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1044,7 +1044,7 @@ vala_traverse_visitor_real_visit_array_creation_expression (ValaCodeVisitor* bas
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1060,7 +1060,7 @@ vala_traverse_visitor_real_visit_cast_expression (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1076,7 +1076,7 @@ vala_traverse_visitor_real_visit_element_access (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1092,7 +1092,7 @@ vala_traverse_visitor_real_visit_lambda_expression (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1108,7 +1108,7 @@ vala_traverse_visitor_real_visit_pointer_indirection (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1124,7 +1124,7 @@ vala_traverse_visitor_real_visit_addressof_expression (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1140,7 +1140,7 @@ vala_traverse_visitor_real_visit_slice_expression (ValaCodeVisitor* base,
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = self->priv->func;
 	_tmp0__target = self->priv->func_target;
-	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == VALA_TRAVERSE_STATUS_CONTINUE) {
+	if (_tmp0_ ((ValaCodeNode*) expr, _tmp0__target) == BALA_TRAVERSE_STATUS_CONTINUE) {
 		vala_code_node_accept_children ((ValaCodeNode*) expr, (ValaCodeVisitor*) self);
 	}
 }
@@ -1224,12 +1224,12 @@ static void
 vala_traverse_visitor_finalize (ValaCodeVisitor * obj)
 {
 	ValaTraverseVisitor * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_TRAVERSE_VISITOR, ValaTraverseVisitor);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_TRAVERSE_VISITOR, ValaTraverseVisitor);
 	(self->priv->func_target_destroy_notify == NULL) ? NULL : (self->priv->func_target_destroy_notify (self->priv->func_target), NULL);
 	self->priv->func = NULL;
 	self->priv->func_target = NULL;
 	self->priv->func_target_destroy_notify = NULL;
-	VALA_CODE_VISITOR_CLASS (vala_traverse_visitor_parent_class)->finalize (obj);
+	BALA_CODE_VISITOR_CLASS (vala_traverse_visitor_parent_class)->finalize (obj);
 }
 
 /**
@@ -1240,7 +1240,7 @@ vala_traverse_visitor_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaTraverseVisitorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_traverse_visitor_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaTraverseVisitor), 0, (GInstanceInitFunc) vala_traverse_visitor_instance_init, NULL };
 	GType vala_traverse_visitor_type_id;
-	vala_traverse_visitor_type_id = g_type_register_static (VALA_TYPE_CODE_VISITOR, "ValaTraverseVisitor", &g_define_type_info, 0);
+	vala_traverse_visitor_type_id = g_type_register_static (BALA_TYPE_CODE_VISITOR, "ValaTraverseVisitor", &g_define_type_info, 0);
 	ValaTraverseVisitor_private_offset = g_type_add_instance_private (vala_traverse_visitor_type_id, sizeof (ValaTraverseVisitorPrivate));
 	return vala_traverse_visitor_type_id;
 }
@@ -1260,7 +1260,7 @@ vala_traverse_visitor_get_type (void)
 static GType
 vala_traverse_status_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_TRAVERSE_STATUS_STOP, "VALA_TRAVERSE_STATUS_STOP", "stop"}, {VALA_TRAVERSE_STATUS_CONTINUE, "VALA_TRAVERSE_STATUS_CONTINUE", "continue"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_TRAVERSE_STATUS_STOP, "BALA_TRAVERSE_STATUS_STOP", "stop"}, {BALA_TRAVERSE_STATUS_CONTINUE, "BALA_TRAVERSE_STATUS_CONTINUE", "continue"}, {0, NULL, NULL}};
 	GType vala_traverse_status_type_id;
 	vala_traverse_status_type_id = g_enum_register_static ("ValaTraverseStatus", values);
 	return vala_traverse_status_type_id;

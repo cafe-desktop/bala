@@ -93,7 +93,7 @@ vala_list_get (ValaList* self,
                gint index)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_LIST_GET_CLASS (self)->get (self, index);
+	return BALA_LIST_GET_CLASS (self)->get (self, index);
 }
 
 /**
@@ -116,7 +116,7 @@ vala_list_set (ValaList* self,
                gconstpointer item)
 {
 	g_return_if_fail (self != NULL);
-	VALA_LIST_GET_CLASS (self)->set (self, index, item);
+	BALA_LIST_GET_CLASS (self)->set (self, index, item);
 }
 
 /**
@@ -140,7 +140,7 @@ vala_list_index_of (ValaList* self,
                     gconstpointer item)
 {
 	g_return_val_if_fail (self != NULL, 0);
-	return VALA_LIST_GET_CLASS (self)->index_of (self, item);
+	return BALA_LIST_GET_CLASS (self)->index_of (self, item);
 }
 
 /**
@@ -164,7 +164,7 @@ vala_list_insert (ValaList* self,
                   gconstpointer item)
 {
 	g_return_if_fail (self != NULL);
-	VALA_LIST_GET_CLASS (self)->insert (self, index, item);
+	BALA_LIST_GET_CLASS (self)->insert (self, index, item);
 }
 
 /**
@@ -187,7 +187,7 @@ vala_list_remove_at (ValaList* self,
                      gint index)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_LIST_GET_CLASS (self)->remove_at (self, index);
+	return BALA_LIST_GET_CLASS (self)->remove_at (self, index);
 }
 
 /**
@@ -209,7 +209,7 @@ gpointer
 vala_list_first (ValaList* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_LIST_GET_CLASS (self)->first (self);
+	return BALA_LIST_GET_CLASS (self)->first (self);
 }
 
 /**
@@ -235,7 +235,7 @@ gpointer
 vala_list_last (ValaList* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_LIST_GET_CLASS (self)->last (self);
+	return BALA_LIST_GET_CLASS (self)->last (self);
 }
 
 /**
@@ -293,7 +293,7 @@ vala_list_insert_all (ValaList* self,
                       ValaCollection* collection)
 {
 	g_return_if_fail (self != NULL);
-	VALA_LIST_GET_CLASS (self)->insert_all (self, index, collection);
+	BALA_LIST_GET_CLASS (self)->insert_all (self, index, collection);
 }
 
 /**
@@ -321,7 +321,7 @@ vala_list_sort (ValaList* self,
                 GDestroyNotify compare_func_target_destroy_notify)
 {
 	g_return_if_fail (self != NULL);
-	VALA_LIST_GET_CLASS (self)->sort (self, compare_func, compare_func_target, compare_func_target_destroy_notify);
+	BALA_LIST_GET_CLASS (self)->sort (self, compare_func, compare_func_target, compare_func_target_destroy_notify);
 }
 
 ValaList*
@@ -370,7 +370,7 @@ vala_list_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaListClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_list_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaList), 0, (GInstanceInitFunc) vala_list_instance_init, NULL };
 	GType vala_list_type_id;
-	vala_list_type_id = g_type_register_static (VALA_TYPE_COLLECTION, "ValaList", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_list_type_id = g_type_register_static (BALA_TYPE_COLLECTION, "ValaList", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	ValaList_private_offset = g_type_add_instance_private (vala_list_type_id, sizeof (ValaListPrivate));
 	return vala_list_type_id;
 }

@@ -33,23 +33,23 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_API_METHOD_0_PROPERTY,
-	VALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY,
-	VALADOC_API_METHOD_BASE_METHOD_PROPERTY,
-	VALADOC_API_METHOD_RETURN_TYPE_PROPERTY,
-	VALADOC_API_METHOD_IS_YIELDS_PROPERTY,
-	VALADOC_API_METHOD_IS_ABSTRACT_PROPERTY,
-	VALADOC_API_METHOD_IS_VIRTUAL_PROPERTY,
-	VALADOC_API_METHOD_IS_OVERRIDE_PROPERTY,
-	VALADOC_API_METHOD_IS_STATIC_PROPERTY,
-	VALADOC_API_METHOD_IS_CLASS_PROPERTY,
-	VALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY,
-	VALADOC_API_METHOD_IS_INLINE_PROPERTY,
-	VALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY,
-	VALADOC_API_METHOD_NODE_TYPE_PROPERTY,
-	VALADOC_API_METHOD_NUM_PROPERTIES
+	BALADOC_API_METHOD_0_PROPERTY,
+	BALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY,
+	BALADOC_API_METHOD_BASE_METHOD_PROPERTY,
+	BALADOC_API_METHOD_RETURN_TYPE_PROPERTY,
+	BALADOC_API_METHOD_IS_YIELDS_PROPERTY,
+	BALADOC_API_METHOD_IS_ABSTRACT_PROPERTY,
+	BALADOC_API_METHOD_IS_VIRTUAL_PROPERTY,
+	BALADOC_API_METHOD_IS_OVERRIDE_PROPERTY,
+	BALADOC_API_METHOD_IS_STATIC_PROPERTY,
+	BALADOC_API_METHOD_IS_CLASS_PROPERTY,
+	BALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY,
+	BALADOC_API_METHOD_IS_INLINE_PROPERTY,
+	BALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY,
+	BALADOC_API_METHOD_NODE_TYPE_PROPERTY,
+	BALADOC_API_METHOD_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_method_properties[VALADOC_API_METHOD_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_method_properties[BALADOC_API_METHOD_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
@@ -126,7 +126,7 @@ valadoc_api_method_real_set_implicit_array_length_cparameter_name (ValadocApiCal
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_implicit_array_length_cparameter_name);
 		self->priv->_implicit_array_length_cparameter_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[VALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[BALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY]);
 	}
 }
 
@@ -178,7 +178,7 @@ valadoc_api_method_construct (GType object_type,
 	_g_free0 (self->priv->cname);
 	self->priv->cname = _tmp7_;
 	valadoc_api_method_set_is_dbus_visible (self, vala_gd_bus_module_is_dbus_visible ((ValaCodeNode*) data));
-	valadoc_api_method_set_is_constructor (self, G_TYPE_CHECK_INSTANCE_TYPE (data, VALA_TYPE_CREATION_METHOD));
+	valadoc_api_method_set_is_constructor (self, G_TYPE_CHECK_INSTANCE_TYPE (data, BALA_TYPE_CREATION_METHOD));
 	_tmp8_ = vala_method_get_coroutine (data);
 	_tmp9_ = _tmp8_;
 	valadoc_api_method_set_is_yields (self, _tmp9_);
@@ -194,7 +194,7 @@ valadoc_api_method_new (ValadocApiNode* parent,
                         ValadocApiSourceComment* comment,
                         ValaMethod* data)
 {
-	return valadoc_api_method_construct (VALADOC_API_TYPE_METHOD, parent, file, name, accessibility, comment, data);
+	return valadoc_api_method_construct (BALADOC_API_TYPE_METHOD, parent, file, name, accessibility, comment, data);
 }
 
 /**
@@ -278,7 +278,7 @@ valadoc_api_method_set_base_method (ValadocApiMethod* self,
 	old_value = valadoc_api_method_get_base_method (self);
 	if (old_value != value) {
 		self->priv->_base_method = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[VALADOC_API_METHOD_BASE_METHOD_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[BALADOC_API_METHOD_BASE_METHOD_PROPERTY]);
 	}
 }
 
@@ -313,7 +313,7 @@ valadoc_api_method_real_set_return_type (ValadocApiCallable* base,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_return_type);
 		self->priv->_return_type = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[VALADOC_API_METHOD_RETURN_TYPE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[BALADOC_API_METHOD_RETURN_TYPE_PROPERTY]);
 	}
 }
 
@@ -335,7 +335,7 @@ valadoc_api_method_set_is_yields (ValadocApiMethod* self,
 	old_value = valadoc_api_method_get_is_yields (self);
 	if (old_value != value) {
 		self->priv->_is_yields = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[VALADOC_API_METHOD_IS_YIELDS_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[BALADOC_API_METHOD_IS_YIELDS_PROPERTY]);
 	}
 }
 
@@ -350,7 +350,7 @@ valadoc_api_method_get_is_abstract (ValadocApiMethod* self)
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = valadoc_api_item_get_data ((ValadocApiItem*) self);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = vala_method_get_is_abstract (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_METHOD, ValaMethod));
+	_tmp2_ = vala_method_get_is_abstract (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_METHOD, ValaMethod));
 	_tmp3_ = _tmp2_;
 	result = _tmp3_;
 	return result;
@@ -367,7 +367,7 @@ valadoc_api_method_get_is_virtual (ValadocApiMethod* self)
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = valadoc_api_item_get_data ((ValadocApiItem*) self);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = vala_method_get_is_virtual (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_METHOD, ValaMethod));
+	_tmp2_ = vala_method_get_is_virtual (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_METHOD, ValaMethod));
 	_tmp3_ = _tmp2_;
 	result = _tmp3_;
 	return result;
@@ -384,7 +384,7 @@ valadoc_api_method_get_is_override (ValadocApiMethod* self)
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = valadoc_api_item_get_data ((ValadocApiItem*) self);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = vala_method_get_overrides (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_METHOD, ValaMethod));
+	_tmp2_ = vala_method_get_overrides (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_METHOD, ValaMethod));
 	_tmp3_ = _tmp2_;
 	result = _tmp3_;
 	return result;
@@ -406,9 +406,9 @@ valadoc_api_method_get_is_static (ValadocApiMethod* self)
 		ValaMemberBinding _tmp6_;
 		_tmp3_ = valadoc_api_item_get_data ((ValadocApiItem*) self);
 		_tmp4_ = _tmp3_;
-		_tmp5_ = vala_method_get_binding (G_TYPE_CHECK_INSTANCE_CAST (_tmp4_, VALA_TYPE_METHOD, ValaMethod));
+		_tmp5_ = vala_method_get_binding (G_TYPE_CHECK_INSTANCE_CAST (_tmp4_, BALA_TYPE_METHOD, ValaMethod));
 		_tmp6_ = _tmp5_;
-		_tmp1_ = _tmp6_ == VALA_MEMBER_BINDING_STATIC;
+		_tmp1_ = _tmp6_ == BALA_MEMBER_BINDING_STATIC;
 	} else {
 		_tmp1_ = FALSE;
 	}
@@ -417,7 +417,7 @@ valadoc_api_method_get_is_static (ValadocApiMethod* self)
 		ValadocApiItem* _tmp8_;
 		_tmp7_ = valadoc_api_item_get_parent ((ValadocApiItem*) self);
 		_tmp8_ = _tmp7_;
-		_tmp0_ = VALADOC_API_IS_NAMESPACE (_tmp8_) == FALSE;
+		_tmp0_ = BALADOC_API_IS_NAMESPACE (_tmp8_) == FALSE;
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -436,9 +436,9 @@ valadoc_api_method_get_is_class (ValadocApiMethod* self)
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = valadoc_api_item_get_data ((ValadocApiItem*) self);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = vala_method_get_binding (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_METHOD, ValaMethod));
+	_tmp2_ = vala_method_get_binding (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_METHOD, ValaMethod));
 	_tmp3_ = _tmp2_;
-	result = _tmp3_ == VALA_MEMBER_BINDING_CLASS;
+	result = _tmp3_ == BALA_MEMBER_BINDING_CLASS;
 	return result;
 }
 
@@ -460,7 +460,7 @@ valadoc_api_method_set_is_constructor (ValadocApiMethod* self,
 	old_value = valadoc_api_method_get_is_constructor (self);
 	if (old_value != value) {
 		self->priv->_is_constructor = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[VALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[BALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY]);
 	}
 }
 
@@ -475,7 +475,7 @@ valadoc_api_method_get_is_inline (ValadocApiMethod* self)
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = valadoc_api_item_get_data ((ValadocApiItem*) self);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = vala_method_get_is_inline (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_METHOD, ValaMethod));
+	_tmp2_ = vala_method_get_is_inline (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_METHOD, ValaMethod));
 	_tmp3_ = _tmp2_;
 	result = _tmp3_;
 	return result;
@@ -499,7 +499,7 @@ valadoc_api_method_set_is_dbus_visible (ValadocApiMethod* self,
 	old_value = valadoc_api_method_get_is_dbus_visible (self);
 	if (old_value != value) {
 		self->priv->_is_dbus_visible = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[VALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_method_properties[BALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY]);
 	}
 }
 
@@ -637,7 +637,7 @@ valadoc_api_method_real_build_signature (ValadocApiItem* base)
 	}
 	_tmp32_ = signature;
 	valadoc_api_signature_builder_append_symbol (_tmp32_, (ValadocApiNode*) self, TRUE);
-	_tmp33_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, VALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
+	_tmp33_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, BALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
 	type_parameters = _tmp33_;
 	_tmp34_ = type_parameters;
 	_tmp35_ = vala_collection_get_size ((ValaCollection*) _tmp34_);
@@ -714,7 +714,7 @@ valadoc_api_method_real_build_signature (ValadocApiItem* base)
 		gint _tmp56_;
 		gint _tmp57_;
 		gint _param_index = 0;
-		_tmp54_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, VALADOC_API_NODE_TYPE_FORMAL_PARAMETER, FALSE);
+		_tmp54_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, BALADOC_API_NODE_TYPE_FORMAL_PARAMETER, FALSE);
 		_param_list = _tmp54_;
 		_tmp55_ = _param_list;
 		_tmp56_ = vala_collection_get_size ((ValaCollection*) _tmp55_);
@@ -758,8 +758,8 @@ valadoc_api_method_real_build_signature (ValadocApiItem* base)
 	_tmp67_ = signature;
 	valadoc_api_signature_builder_append (_tmp67_, ")", FALSE);
 	_tmp68_ = g_new0 (ValadocApiNodeType, 2);
-	_tmp68_[0] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-	_tmp68_[1] = VALADOC_API_NODE_TYPE_CLASS;
+	_tmp68_[0] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+	_tmp68_[1] = BALADOC_API_NODE_TYPE_CLASS;
 	_tmp69_ = _tmp68_;
 	_tmp69__length1 = 2;
 	_tmp70_ = valadoc_api_node_get_children_by_types ((ValadocApiNode*) self, _tmp69_, (gint) 2, TRUE);
@@ -841,7 +841,7 @@ valadoc_api_method_real_get_node_type (ValadocApiNode* base)
 	self = (ValadocApiMethod*) base;
 	_tmp1_ = self->priv->_is_constructor;
 	if (_tmp1_) {
-		_tmp0_ = VALADOC_API_NODE_TYPE_CREATION_METHOD;
+		_tmp0_ = BALADOC_API_NODE_TYPE_CREATION_METHOD;
 	} else {
 		ValadocApiNodeType _tmp2_ = 0;
 		gboolean _tmp3_;
@@ -849,9 +849,9 @@ valadoc_api_method_real_get_node_type (ValadocApiNode* base)
 		_tmp3_ = valadoc_api_method_get_is_static (self);
 		_tmp4_ = _tmp3_;
 		if (_tmp4_) {
-			_tmp2_ = VALADOC_API_NODE_TYPE_STATIC_METHOD;
+			_tmp2_ = BALADOC_API_NODE_TYPE_STATIC_METHOD;
 		} else {
-			_tmp2_ = VALADOC_API_NODE_TYPE_METHOD;
+			_tmp2_ = BALADOC_API_NODE_TYPE_METHOD;
 		}
 		_tmp0_ = _tmp2_;
 	}
@@ -880,62 +880,62 @@ valadoc_api_method_class_init (ValadocApiMethodClass * klass,
 	g_type_class_adjust_private_offset (klass, &ValadocApiMethod_private_offset);
 	((ValadocApiItemClass *) klass)->build_signature = (ValadocContentInline* (*) (ValadocApiItem*)) valadoc_api_method_real_build_signature;
 	((ValadocApiNodeClass *) klass)->accept = (void (*) (ValadocApiNode*, ValadocApiVisitor*)) valadoc_api_method_real_accept;
-	VALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_method_real_get_node_type;
+	BALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_method_real_get_node_type;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_method_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_method_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_method_finalize;
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Specifies the virtual or abstract method this method overrides.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_BASE_METHOD_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_BASE_METHOD_PROPERTY] = g_param_spec_object ("base-method", "base-method", "base-method", VALADOC_API_TYPE_METHOD, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_BASE_METHOD_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_BASE_METHOD_PROPERTY] = g_param_spec_object ("base-method", "base-method", "base-method", BALADOC_API_TYPE_METHOD, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_RETURN_TYPE_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_RETURN_TYPE_PROPERTY] = g_param_spec_object ("return-type", "return-type", "return-type", VALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_RETURN_TYPE_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_RETURN_TYPE_PROPERTY] = g_param_spec_object ("return-type", "return-type", "return-type", BALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Specifies whether this method is asynchronous
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IS_YIELDS_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IS_YIELDS_PROPERTY] = g_param_spec_boolean ("is-yields", "is-yields", "is-yields", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IS_YIELDS_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IS_YIELDS_PROPERTY] = g_param_spec_boolean ("is-yields", "is-yields", "is-yields", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this method is abstract
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IS_ABSTRACT_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IS_ABSTRACT_PROPERTY] = g_param_spec_boolean ("is-abstract", "is-abstract", "is-abstract", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IS_ABSTRACT_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IS_ABSTRACT_PROPERTY] = g_param_spec_boolean ("is-abstract", "is-abstract", "is-abstract", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this method is virtual
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IS_VIRTUAL_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IS_VIRTUAL_PROPERTY] = g_param_spec_boolean ("is-virtual", "is-virtual", "is-virtual", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IS_VIRTUAL_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IS_VIRTUAL_PROPERTY] = g_param_spec_boolean ("is-virtual", "is-virtual", "is-virtual", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this method overrides another one
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IS_OVERRIDE_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IS_OVERRIDE_PROPERTY] = g_param_spec_boolean ("is-override", "is-override", "is-override", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IS_OVERRIDE_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IS_OVERRIDE_PROPERTY] = g_param_spec_boolean ("is-override", "is-override", "is-override", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this method is static
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IS_STATIC_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IS_STATIC_PROPERTY] = g_param_spec_boolean ("is-static", "is-static", "is-static", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IS_STATIC_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IS_STATIC_PROPERTY] = g_param_spec_boolean ("is-static", "is-static", "is-static", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this method is a class method
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IS_CLASS_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IS_CLASS_PROPERTY] = g_param_spec_boolean ("is-class", "is-class", "is-class", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IS_CLASS_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IS_CLASS_PROPERTY] = g_param_spec_boolean ("is-class", "is-class", "is-class", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this method is a creation method
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY] = g_param_spec_boolean ("is-constructor", "is-constructor", "is-constructor", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY] = g_param_spec_boolean ("is-constructor", "is-constructor", "is-constructor", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this method is inline
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IS_INLINE_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IS_INLINE_PROPERTY] = g_param_spec_boolean ("is-inline", "is-inline", "is-inline", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IS_INLINE_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IS_INLINE_PROPERTY] = g_param_spec_boolean ("is-inline", "is-inline", "is-inline", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this method is visible for dbus
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY] = g_param_spec_boolean ("is-dbus-visible", "is-dbus-visible", "is-dbus-visible", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY] = g_param_spec_boolean ("is-dbus-visible", "is-dbus-visible", "is-dbus-visible", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_METHOD_NODE_TYPE_PROPERTY, valadoc_api_method_properties[VALADOC_API_METHOD_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", VALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_METHOD_NODE_TYPE_PROPERTY, valadoc_api_method_properties[BALADOC_API_METHOD_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", BALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -960,7 +960,7 @@ static void
 valadoc_api_method_finalize (GObject * obj)
 {
 	ValadocApiMethod * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_METHOD, ValadocApiMethod);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_METHOD, ValadocApiMethod);
 	_g_free0 (self->priv->finish_function_cname);
 	_g_free0 (self->priv->dbus_result_name);
 	_g_free0 (self->priv->dbus_name);
@@ -979,8 +979,8 @@ valadoc_api_method_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiMethodClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_method_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiMethod), 0, (GInstanceInitFunc) valadoc_api_method_instance_init, NULL };
 	static const GInterfaceInfo valadoc_api_callable_info = { (GInterfaceInitFunc) valadoc_api_method_valadoc_api_callable_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_api_method_type_id;
-	valadoc_api_method_type_id = g_type_register_static (VALADOC_API_TYPE_SYMBOL, "ValadocApiMethod", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_api_method_type_id, VALADOC_API_TYPE_CALLABLE, &valadoc_api_callable_info);
+	valadoc_api_method_type_id = g_type_register_static (BALADOC_API_TYPE_SYMBOL, "ValadocApiMethod", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_api_method_type_id, BALADOC_API_TYPE_CALLABLE, &valadoc_api_callable_info);
 	ValadocApiMethod_private_offset = g_type_add_instance_private (valadoc_api_method_type_id, sizeof (ValadocApiMethodPrivate));
 	return valadoc_api_method_type_id;
 }
@@ -1004,45 +1004,45 @@ _vala_valadoc_api_method_get_property (GObject * object,
                                        GParamSpec * pspec)
 {
 	ValadocApiMethod * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_METHOD, ValadocApiMethod);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_METHOD, ValadocApiMethod);
 	switch (property_id) {
-		case VALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_api_callable_get_implicit_array_length_cparameter_name ((ValadocApiCallable*) self));
 		break;
-		case VALADOC_API_METHOD_BASE_METHOD_PROPERTY:
+		case BALADOC_API_METHOD_BASE_METHOD_PROPERTY:
 		g_value_set_object (value, valadoc_api_method_get_base_method (self));
 		break;
-		case VALADOC_API_METHOD_RETURN_TYPE_PROPERTY:
+		case BALADOC_API_METHOD_RETURN_TYPE_PROPERTY:
 		g_value_set_object (value, valadoc_api_callable_get_return_type ((ValadocApiCallable*) self));
 		break;
-		case VALADOC_API_METHOD_IS_YIELDS_PROPERTY:
+		case BALADOC_API_METHOD_IS_YIELDS_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_method_get_is_yields (self));
 		break;
-		case VALADOC_API_METHOD_IS_ABSTRACT_PROPERTY:
+		case BALADOC_API_METHOD_IS_ABSTRACT_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_method_get_is_abstract (self));
 		break;
-		case VALADOC_API_METHOD_IS_VIRTUAL_PROPERTY:
+		case BALADOC_API_METHOD_IS_VIRTUAL_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_method_get_is_virtual (self));
 		break;
-		case VALADOC_API_METHOD_IS_OVERRIDE_PROPERTY:
+		case BALADOC_API_METHOD_IS_OVERRIDE_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_method_get_is_override (self));
 		break;
-		case VALADOC_API_METHOD_IS_STATIC_PROPERTY:
+		case BALADOC_API_METHOD_IS_STATIC_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_method_get_is_static (self));
 		break;
-		case VALADOC_API_METHOD_IS_CLASS_PROPERTY:
+		case BALADOC_API_METHOD_IS_CLASS_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_method_get_is_class (self));
 		break;
-		case VALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY:
+		case BALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_method_get_is_constructor (self));
 		break;
-		case VALADOC_API_METHOD_IS_INLINE_PROPERTY:
+		case BALADOC_API_METHOD_IS_INLINE_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_method_get_is_inline (self));
 		break;
-		case VALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY:
+		case BALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_method_get_is_dbus_visible (self));
 		break;
-		case VALADOC_API_METHOD_NODE_TYPE_PROPERTY:
+		case BALADOC_API_METHOD_NODE_TYPE_PROPERTY:
 		g_value_set_enum (value, valadoc_api_node_get_node_type ((ValadocApiNode*) self));
 		break;
 		default:
@@ -1058,24 +1058,24 @@ _vala_valadoc_api_method_set_property (GObject * object,
                                        GParamSpec * pspec)
 {
 	ValadocApiMethod * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_METHOD, ValadocApiMethod);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_METHOD, ValadocApiMethod);
 	switch (property_id) {
-		case VALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_METHOD_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
 		valadoc_api_callable_set_implicit_array_length_cparameter_name ((ValadocApiCallable*) self, g_value_get_string (value));
 		break;
-		case VALADOC_API_METHOD_BASE_METHOD_PROPERTY:
+		case BALADOC_API_METHOD_BASE_METHOD_PROPERTY:
 		valadoc_api_method_set_base_method (self, g_value_get_object (value));
 		break;
-		case VALADOC_API_METHOD_RETURN_TYPE_PROPERTY:
+		case BALADOC_API_METHOD_RETURN_TYPE_PROPERTY:
 		valadoc_api_callable_set_return_type ((ValadocApiCallable*) self, g_value_get_object (value));
 		break;
-		case VALADOC_API_METHOD_IS_YIELDS_PROPERTY:
+		case BALADOC_API_METHOD_IS_YIELDS_PROPERTY:
 		valadoc_api_method_set_is_yields (self, g_value_get_boolean (value));
 		break;
-		case VALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY:
+		case BALADOC_API_METHOD_IS_CONSTRUCTOR_PROPERTY:
 		valadoc_api_method_set_is_constructor (self, g_value_get_boolean (value));
 		break;
-		case VALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY:
+		case BALADOC_API_METHOD_IS_DBUS_VISIBLE_PROPERTY:
 		valadoc_api_method_set_is_dbus_visible (self, g_value_get_boolean (value));
 		break;
 		default:

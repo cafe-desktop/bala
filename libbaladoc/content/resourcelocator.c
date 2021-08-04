@@ -35,7 +35,7 @@ valadoc_resource_locator_resolve (ValadocResourceLocator* self,
                                   const gchar* path)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_RESOURCE_LOCATOR_GET_INTERFACE (self)->resolve (self, path);
+	return BALADOC_RESOURCE_LOCATOR_GET_INTERFACE (self)->resolve (self, path);
 }
 
 static void

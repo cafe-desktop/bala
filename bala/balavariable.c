@@ -151,7 +151,7 @@ vala_variable_new (ValaDataType* variable_type,
                    ValaSourceReference* source_reference,
                    ValaComment* comment)
 {
-	return vala_variable_construct (VALA_TYPE_VARIABLE, variable_type, name, initializer, source_reference, comment);
+	return vala_variable_construct (BALA_TYPE_VARIABLE, variable_type, name, initializer, source_reference, comment);
 }
 
 static void
@@ -174,10 +174,10 @@ static void
 vala_variable_finalize (ValaCodeNode * obj)
 {
 	ValaVariable * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_VARIABLE, ValaVariable);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_VARIABLE, ValaVariable);
 	_vala_code_node_unref0 (self->priv->_initializer);
 	_vala_code_node_unref0 (self->priv->_variable_type);
-	VALA_CODE_NODE_CLASS (vala_variable_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_variable_parent_class)->finalize (obj);
 }
 
 static GType
@@ -185,7 +185,7 @@ vala_variable_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaVariableClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_variable_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaVariable), 0, (GInstanceInitFunc) vala_variable_instance_init, NULL };
 	GType vala_variable_type_id;
-	vala_variable_type_id = g_type_register_static (VALA_TYPE_SYMBOL, "ValaVariable", &g_define_type_info, 0);
+	vala_variable_type_id = g_type_register_static (BALA_TYPE_SYMBOL, "ValaVariable", &g_define_type_info, 0);
 	ValaVariable_private_offset = g_type_add_instance_private (vala_variable_type_id, sizeof (ValaVariablePrivate));
 	return vala_variable_type_id;
 }

@@ -227,7 +227,7 @@ vala_catch_clause_new (ValaDataType* error_type,
                        ValaBlock* body,
                        ValaSourceReference* source_reference)
 {
-	return vala_catch_clause_construct (VALA_TYPE_CATCH_CLAUSE, error_type, variable_name, body, source_reference);
+	return vala_catch_clause_construct (BALA_TYPE_CATCH_CLAUSE, error_type, variable_name, body, source_reference);
 }
 
 static void
@@ -316,7 +316,7 @@ vala_catch_clause_real_check (ValaCodeNode* base,
 	vala_code_node_set_checked ((ValaCodeNode*) self, TRUE);
 	_tmp4_ = vala_code_context_get_profile (context);
 	_tmp5_ = _tmp4_;
-	if (_tmp5_ == VALA_PROFILE_POSIX) {
+	if (_tmp5_ == BALA_PROFILE_POSIX) {
 		ValaSourceReference* _tmp6_;
 		ValaSourceReference* _tmp7_;
 		_tmp6_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
@@ -334,7 +334,7 @@ vala_catch_clause_real_check (ValaCodeNode* base,
 		const gchar* _tmp20_;
 		_tmp10_ = vala_catch_clause_get_error_type (self);
 		_tmp11_ = _tmp10_;
-		if (!VALA_IS_ERROR_TYPE (_tmp11_)) {
+		if (!BALA_IS_ERROR_TYPE (_tmp11_)) {
 			ValaSourceReference* _tmp12_;
 			ValaSourceReference* _tmp13_;
 			ValaDataType* _tmp14_;
@@ -500,13 +500,13 @@ static void
 vala_catch_clause_finalize (ValaCodeNode * obj)
 {
 	ValaCatchClause * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CATCH_CLAUSE, ValaCatchClause);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CATCH_CLAUSE, ValaCatchClause);
 	_g_free0 (self->priv->_variable_name);
 	_g_free0 (self->priv->_clabel_name);
 	_vala_code_node_unref0 (self->priv->_data_type);
 	_vala_code_node_unref0 (self->priv->_body);
 	_vala_code_node_unref0 (self->priv->_error_variable);
-	VALA_CODE_NODE_CLASS (vala_catch_clause_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_catch_clause_parent_class)->finalize (obj);
 }
 
 /**
@@ -517,7 +517,7 @@ vala_catch_clause_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCatchClauseClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_catch_clause_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCatchClause), 0, (GInstanceInitFunc) vala_catch_clause_instance_init, NULL };
 	GType vala_catch_clause_type_id;
-	vala_catch_clause_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaCatchClause", &g_define_type_info, 0);
+	vala_catch_clause_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaCatchClause", &g_define_type_info, 0);
 	ValaCatchClause_private_offset = g_type_add_instance_private (vala_catch_clause_type_id, sizeof (ValaCatchClausePrivate));
 	return vala_catch_clause_type_id;
 }

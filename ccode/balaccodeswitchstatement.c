@@ -88,7 +88,7 @@ vala_ccode_switch_statement_construct (GType object_type,
 ValaCCodeSwitchStatement*
 vala_ccode_switch_statement_new (ValaCCodeExpression* expression)
 {
-	return vala_ccode_switch_statement_construct (VALA_TYPE_CCODE_SWITCH_STATEMENT, expression);
+	return vala_ccode_switch_statement_construct (BALA_TYPE_CCODE_SWITCH_STATEMENT, expression);
 }
 
 static void
@@ -108,7 +108,7 @@ vala_ccode_switch_statement_real_write (ValaCCodeNode* base,
 	_tmp2_ = self->priv->_expression;
 	vala_ccode_node_write ((ValaCCodeNode*) _tmp2_, writer);
 	vala_ccode_writer_write_string (writer, ")");
-	VALA_CCODE_NODE_CLASS (vala_ccode_switch_statement_parent_class)->write ((ValaCCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_CCODE_BLOCK, ValaCCodeBlock), writer);
+	BALA_CCODE_NODE_CLASS (vala_ccode_switch_statement_parent_class)->write ((ValaCCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_CCODE_BLOCK, ValaCCodeBlock), writer);
 }
 
 static void
@@ -132,9 +132,9 @@ static void
 vala_ccode_switch_statement_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeSwitchStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_SWITCH_STATEMENT, ValaCCodeSwitchStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_SWITCH_STATEMENT, ValaCCodeSwitchStatement);
 	_vala_ccode_node_unref0 (self->priv->_expression);
-	VALA_CCODE_NODE_CLASS (vala_ccode_switch_statement_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_switch_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -145,7 +145,7 @@ vala_ccode_switch_statement_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeSwitchStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_switch_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeSwitchStatement), 0, (GInstanceInitFunc) vala_ccode_switch_statement_instance_init, NULL };
 	GType vala_ccode_switch_statement_type_id;
-	vala_ccode_switch_statement_type_id = g_type_register_static (VALA_TYPE_CCODE_BLOCK, "ValaCCodeSwitchStatement", &g_define_type_info, 0);
+	vala_ccode_switch_statement_type_id = g_type_register_static (BALA_TYPE_CCODE_BLOCK, "ValaCCodeSwitchStatement", &g_define_type_info, 0);
 	ValaCCodeSwitchStatement_private_offset = g_type_add_instance_private (vala_ccode_switch_statement_type_id, sizeof (ValaCCodeSwitchStatementPrivate));
 	return vala_ccode_switch_statement_type_id;
 }

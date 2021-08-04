@@ -71,7 +71,7 @@ vala_value_type_real_is_disposable (ValaDataType* base)
 	}
 	_tmp4_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp5_ = _tmp4_;
-	st = VALA_IS_STRUCT (_tmp5_) ? ((ValaStruct*) _tmp5_) : NULL;
+	st = BALA_IS_STRUCT (_tmp5_) ? ((ValaStruct*) _tmp5_) : NULL;
 	_tmp6_ = st;
 	if (_tmp6_ != NULL) {
 		ValaStruct* _tmp7_;
@@ -122,7 +122,7 @@ vala_value_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaValueTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_value_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaValueType), 0, (GInstanceInitFunc) vala_value_type_instance_init, NULL };
 	GType vala_value_type_type_id;
-	vala_value_type_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaValueType", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_value_type_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaValueType", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	return vala_value_type_type_id;
 }
 

@@ -208,7 +208,7 @@ vala_cast_expression_new (ValaExpression* inner,
                           ValaDataType* type_reference,
                           ValaSourceReference* source_reference)
 {
-	return vala_cast_expression_construct (VALA_TYPE_CAST_EXPRESSION, inner, type_reference, source_reference);
+	return vala_cast_expression_construct (BALA_TYPE_CAST_EXPRESSION, inner, type_reference, source_reference);
 }
 
 ValaCastExpression*
@@ -234,7 +234,7 @@ vala_cast_expression_new_silent (ValaExpression* inner,
                                  ValaDataType* type_reference,
                                  ValaSourceReference* source_reference)
 {
-	return vala_cast_expression_construct_silent (VALA_TYPE_CAST_EXPRESSION, inner, type_reference, source_reference);
+	return vala_cast_expression_construct_silent (BALA_TYPE_CAST_EXPRESSION, inner, type_reference, source_reference);
 }
 
 ValaCastExpression*
@@ -255,7 +255,7 @@ ValaCastExpression*
 vala_cast_expression_new_non_null (ValaExpression* inner,
                                    ValaSourceReference* source_reference)
 {
-	return vala_cast_expression_construct_non_null (VALA_TYPE_CAST_EXPRESSION, inner, source_reference);
+	return vala_cast_expression_construct_non_null (BALA_TYPE_CAST_EXPRESSION, inner, source_reference);
 }
 
 static void
@@ -576,7 +576,7 @@ vala_cast_expression_real_check (ValaCodeNode* base,
 	vala_code_node_check ((ValaCodeNode*) _tmp22_, context);
 	_tmp24_ = vala_cast_expression_get_type_reference (self);
 	_tmp25_ = _tmp24_;
-	if (VALA_IS_DELEGATE_TYPE (_tmp25_)) {
+	if (BALA_IS_DELEGATE_TYPE (_tmp25_)) {
 		ValaExpression* _tmp26_;
 		ValaExpression* _tmp27_;
 		ValaDataType* _tmp28_;
@@ -585,7 +585,7 @@ vala_cast_expression_real_check (ValaCodeNode* base,
 		_tmp27_ = _tmp26_;
 		_tmp28_ = vala_expression_get_value_type (_tmp27_);
 		_tmp29_ = _tmp28_;
-		_tmp23_ = VALA_IS_METHOD_TYPE (_tmp29_);
+		_tmp23_ = BALA_IS_METHOD_TYPE (_tmp29_);
 	} else {
 		_tmp23_ = FALSE;
 	}
@@ -638,7 +638,7 @@ vala_cast_expression_real_check (ValaCodeNode* base,
 		ValaDataType* _tmp51_;
 		_tmp50_ = vala_cast_expression_get_type_reference (self);
 		_tmp51_ = _tmp50_;
-		if (VALA_IS_VALUE_TYPE (_tmp51_)) {
+		if (BALA_IS_VALUE_TYPE (_tmp51_)) {
 			ValaDataType* _tmp52_;
 			ValaDataType* _tmp53_;
 			gboolean _tmp54_;
@@ -791,7 +791,7 @@ vala_cast_expression_real_check (ValaCodeNode* base,
 	}
 	_tmp119_ = vala_code_context_get_profile (context);
 	_tmp120_ = _tmp119_;
-	if (_tmp120_ == VALA_PROFILE_GOBJECT) {
+	if (_tmp120_ == BALA_PROFILE_GOBJECT) {
 		ValaExpression* _tmp121_;
 		ValaExpression* _tmp122_;
 		ValaDataType* _tmp123_;
@@ -855,7 +855,7 @@ vala_cast_expression_real_check (ValaCodeNode* base,
 	}
 	_tmp144_ = vala_code_context_get_profile (context);
 	_tmp145_ = _tmp144_;
-	if (_tmp145_ == VALA_PROFILE_GOBJECT) {
+	if (_tmp145_ == BALA_PROFILE_GOBJECT) {
 		ValaExpression* _tmp146_;
 		ValaExpression* _tmp147_;
 		ValaDataType* _tmp148_;
@@ -1123,10 +1123,10 @@ static void
 vala_cast_expression_finalize (ValaCodeNode * obj)
 {
 	ValaCastExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CAST_EXPRESSION, ValaCastExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CAST_EXPRESSION, ValaCastExpression);
 	_vala_code_node_unref0 (self->priv->_inner);
 	_vala_code_node_unref0 (self->priv->_data_type);
-	VALA_CODE_NODE_CLASS (vala_cast_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_cast_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -1137,7 +1137,7 @@ vala_cast_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCastExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_cast_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCastExpression), 0, (GInstanceInitFunc) vala_cast_expression_instance_init, NULL };
 	GType vala_cast_expression_type_id;
-	vala_cast_expression_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaCastExpression", &g_define_type_info, 0);
+	vala_cast_expression_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaCastExpression", &g_define_type_info, 0);
 	ValaCastExpression_private_offset = g_type_add_instance_private (vala_cast_expression_type_id, sizeof (ValaCastExpressionPrivate));
 	return vala_cast_expression_type_id;
 }

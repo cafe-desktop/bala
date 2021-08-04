@@ -98,7 +98,7 @@ vala_switch_label_get_section (ValaSwitchLabel* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_SWITCH_SECTION, ValaSwitchSection);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_SWITCH_SECTION, ValaSwitchSection);
 	return result;
 }
 
@@ -126,7 +126,7 @@ ValaSwitchLabel*
 vala_switch_label_new (ValaExpression* expr,
                        ValaSourceReference* source)
 {
-	return vala_switch_label_construct (VALA_TYPE_SWITCH_LABEL, expr, source);
+	return vala_switch_label_construct (BALA_TYPE_SWITCH_LABEL, expr, source);
 }
 
 /**
@@ -148,7 +148,7 @@ vala_switch_label_construct_with_default (GType object_type,
 ValaSwitchLabel*
 vala_switch_label_new_with_default (ValaSourceReference* source)
 {
-	return vala_switch_label_construct_with_default (VALA_TYPE_SWITCH_LABEL, source);
+	return vala_switch_label_construct_with_default (BALA_TYPE_SWITCH_LABEL, source);
 }
 
 static void
@@ -254,7 +254,7 @@ vala_switch_label_real_check (ValaCodeNode* base,
 		_tmp7_ = _tmp6_;
 		_tmp8_ = vala_code_node_get_parent_node ((ValaCodeNode*) _tmp7_);
 		_tmp9_ = _tmp8_;
-		_tmp10_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, VALA_TYPE_SWITCH_STATEMENT, ValaSwitchStatement));
+		_tmp10_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, BALA_TYPE_SWITCH_STATEMENT, ValaSwitchStatement));
 		switch_statement = _tmp10_;
 		_tmp11_ = switch_statement;
 		_tmp12_ = vala_switch_statement_get_expression (_tmp11_);
@@ -281,7 +281,7 @@ vala_switch_label_real_check (ValaCodeNode* base,
 			_tmp24_ = condition_target_type;
 			_tmp25_ = vala_data_type_get_type_symbol (_tmp24_);
 			_tmp26_ = _tmp25_;
-			_tmp17_ = VALA_IS_ENUM (_tmp26_);
+			_tmp17_ = BALA_IS_ENUM (_tmp26_);
 		} else {
 			_tmp17_ = FALSE;
 		}
@@ -294,7 +294,7 @@ vala_switch_label_real_check (ValaCodeNode* base,
 			_tmp27_ = condition_target_type;
 			_tmp28_ = vala_data_type_get_type_symbol (_tmp27_);
 			_tmp29_ = _tmp28_;
-			_tmp30_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp29_, VALA_TYPE_ENUM, ValaEnum));
+			_tmp30_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp29_, BALA_TYPE_ENUM, ValaEnum));
 			enum_type = _tmp30_;
 			{
 				ValaList* _val_list = NULL;
@@ -502,9 +502,9 @@ static void
 vala_switch_label_finalize (ValaCodeNode * obj)
 {
 	ValaSwitchLabel * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SWITCH_LABEL, ValaSwitchLabel);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SWITCH_LABEL, ValaSwitchLabel);
 	_vala_code_node_unref0 (self->priv->_expression);
-	VALA_CODE_NODE_CLASS (vala_switch_label_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_switch_label_parent_class)->finalize (obj);
 }
 
 /**
@@ -515,7 +515,7 @@ vala_switch_label_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaSwitchLabelClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_switch_label_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaSwitchLabel), 0, (GInstanceInitFunc) vala_switch_label_instance_init, NULL };
 	GType vala_switch_label_type_id;
-	vala_switch_label_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaSwitchLabel", &g_define_type_info, 0);
+	vala_switch_label_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaSwitchLabel", &g_define_type_info, 0);
 	ValaSwitchLabel_private_offset = g_type_add_instance_private (vala_switch_label_type_id, sizeof (ValaSwitchLabelPrivate));
 	return vala_switch_label_type_id;
 }

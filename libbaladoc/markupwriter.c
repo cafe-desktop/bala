@@ -44,7 +44,7 @@ struct _ValadocParamSpecMarkupWriter {
 static gint ValadocMarkupWriter_private_offset;
 static gpointer valadoc_markup_writer_parent_class = NULL;
 
-#define VALADOC_MARKUP_WRITER_MAX_COLUMN 150
+#define BALADOC_MARKUP_WRITER_MAX_COLUMN 150
 static void valadoc_markup_writer_check_column (ValadocMarkupWriter* self,
                                          const gchar* name,
                                          gboolean end_tag);
@@ -292,7 +292,7 @@ valadoc_markup_writer_new (ValadocMarkupWriterWriteFunc write,
                            GDestroyNotify write_target_destroy_notify,
                            gboolean xml_declaration)
 {
-	return valadoc_markup_writer_construct (VALADOC_TYPE_MARKUP_WRITER, write, write_target, write_target_destroy_notify, xml_declaration);
+	return valadoc_markup_writer_construct (BALADOC_TYPE_MARKUP_WRITER, write, write_target, write_target_destroy_notify, xml_declaration);
 }
 
 /**
@@ -566,7 +566,7 @@ valadoc_markup_writer_text (ValadocMarkupWriter* self,
 		gint _tmp2_;
 		_tmp1_ = strlen (text);
 		_tmp2_ = _tmp1_;
-		_tmp0_ = (_tmp2_ + self->current_column) > ((glong) VALADOC_MARKUP_WRITER_MAX_COLUMN);
+		_tmp0_ = (_tmp2_ + self->current_column) > ((glong) BALADOC_MARKUP_WRITER_MAX_COLUMN);
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -608,7 +608,7 @@ valadoc_markup_writer_text (ValadocMarkupWriter* self,
 							break;
 						}
 						if (string_get (text, i) == ' ') {
-							if (((i - wrote) + self->current_column) > ((glong) VALADOC_MARKUP_WRITER_MAX_COLUMN)) {
+							if (((i - wrote) + self->current_column) > ((glong) BALADOC_MARKUP_WRITER_MAX_COLUMN)) {
 								break;
 							}
 							space_pos = i;
@@ -618,7 +618,7 @@ valadoc_markup_writer_text (ValadocMarkupWriter* self,
 			}
 			_tmp9_ = strlen (text);
 			_tmp10_ = _tmp9_;
-			if (((_tmp10_ - wrote) + self->current_column) <= ((glong) VALADOC_MARKUP_WRITER_MAX_COLUMN)) {
+			if (((_tmp10_ - wrote) + self->current_column) <= ((glong) BALADOC_MARKUP_WRITER_MAX_COLUMN)) {
 				gchar* _tmp11_;
 				gchar* _tmp12_;
 				gint _tmp13_;
@@ -722,7 +722,7 @@ valadoc_markup_writer_do_write (ValadocMarkupWriter* self,
 		gint _tmp2_;
 		_tmp1_ = strlen (text);
 		_tmp2_ = _tmp1_;
-		_tmp0_ = (self->current_column + _tmp2_) > ((glong) VALADOC_MARKUP_WRITER_MAX_COLUMN);
+		_tmp0_ = (self->current_column + _tmp2_) > ((glong) BALADOC_MARKUP_WRITER_MAX_COLUMN);
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -795,7 +795,7 @@ valadoc_markup_writer_inline_element (ValadocMarkupWriter* self,
                                       const gchar* name)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALADOC_MARKUP_WRITER_GET_CLASS (self)->inline_element (self, name);
+	return BALADOC_MARKUP_WRITER_GET_CLASS (self)->inline_element (self, name);
 }
 
 static gboolean
@@ -813,7 +813,7 @@ valadoc_markup_writer_content_inline_element (ValadocMarkupWriter* self,
                                               const gchar* name)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALADOC_MARKUP_WRITER_GET_CLASS (self)->content_inline_element (self, name);
+	return BALADOC_MARKUP_WRITER_GET_CLASS (self)->content_inline_element (self, name);
 }
 
 static void
@@ -897,7 +897,7 @@ valadoc_param_spec_markup_writer (const gchar* name,
                                   GParamFlags flags)
 {
 	ValadocParamSpecMarkupWriter* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALADOC_TYPE_MARKUP_WRITER), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALADOC_TYPE_MARKUP_WRITER), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -906,7 +906,7 @@ valadoc_param_spec_markup_writer (const gchar* name,
 gpointer
 valadoc_value_get_markup_writer (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_TYPE_MARKUP_WRITER), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_TYPE_MARKUP_WRITER), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -915,10 +915,10 @@ valadoc_value_set_markup_writer (GValue* value,
                                  gpointer v_object)
 {
 	ValadocMarkupWriter * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_TYPE_MARKUP_WRITER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_TYPE_MARKUP_WRITER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_TYPE_MARKUP_WRITER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_TYPE_MARKUP_WRITER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		valadoc_markup_writer_ref (value->data[0].v_pointer);
@@ -935,10 +935,10 @@ valadoc_value_take_markup_writer (GValue* value,
                                   gpointer v_object)
 {
 	ValadocMarkupWriter * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_TYPE_MARKUP_WRITER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_TYPE_MARKUP_WRITER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_TYPE_MARKUP_WRITER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_TYPE_MARKUP_WRITER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -974,7 +974,7 @@ static void
 valadoc_markup_writer_finalize (ValadocMarkupWriter * obj)
 {
 	ValadocMarkupWriter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_MARKUP_WRITER, ValadocMarkupWriter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_MARKUP_WRITER, ValadocMarkupWriter);
 	g_signal_handlers_destroy (self);
 	(self->write_target_destroy_notify == NULL) ? NULL : (self->write_target_destroy_notify (self->write_target), NULL);
 	self->write = NULL;
@@ -1024,7 +1024,7 @@ valadoc_markup_writer_unref (gpointer instance)
 	ValadocMarkupWriter * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALADOC_MARKUP_WRITER_GET_CLASS (self)->finalize (self);
+		BALADOC_MARKUP_WRITER_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

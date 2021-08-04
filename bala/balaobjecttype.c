@@ -52,7 +52,7 @@ vala_object_type_get_object_type_symbol (ValaObjectType* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol);
 	return result;
 }
 
@@ -69,7 +69,7 @@ vala_object_type_construct (GType object_type,
 ValaObjectType*
 vala_object_type_new (ValaObjectTypeSymbol* type_symbol)
 {
-	return vala_object_type_construct (VALA_TYPE_OBJECT_TYPE, type_symbol);
+	return vala_object_type_construct (BALA_TYPE_OBJECT_TYPE, type_symbol);
 }
 
 static gpointer
@@ -199,7 +199,7 @@ vala_object_type_real_stricter (ValaDataType* base,
 	gboolean result = FALSE;
 	self = (ValaObjectType*) base;
 	g_return_val_if_fail (target_type != NULL, FALSE);
-	obj_target_type = VALA_IS_OBJECT_TYPE (target_type) ? ((ValaObjectType*) target_type) : NULL;
+	obj_target_type = BALA_IS_OBJECT_TYPE (target_type) ? ((ValaObjectType*) target_type) : NULL;
 	_tmp0_ = obj_target_type;
 	if (_tmp0_ == NULL) {
 		result = FALSE;
@@ -250,7 +250,7 @@ vala_object_type_real_is_invokable (ValaDataType* base)
 	self = (ValaObjectType*) base;
 	_tmp0_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	cl = VALA_IS_CLASS (_tmp1_) ? ((ValaClass*) _tmp1_) : NULL;
+	cl = BALA_IS_CLASS (_tmp1_) ? ((ValaClass*) _tmp1_) : NULL;
 	_tmp3_ = cl;
 	if (_tmp3_ != NULL) {
 		ValaClass* _tmp4_;
@@ -285,7 +285,7 @@ vala_object_type_real_get_return_type (ValaDataType* base)
 	self = (ValaObjectType*) base;
 	_tmp0_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	cl = VALA_IS_CLASS (_tmp1_) ? ((ValaClass*) _tmp1_) : NULL;
+	cl = BALA_IS_CLASS (_tmp1_) ? ((ValaClass*) _tmp1_) : NULL;
 	_tmp3_ = cl;
 	if (_tmp3_ != NULL) {
 		ValaClass* _tmp4_;
@@ -330,7 +330,7 @@ vala_object_type_real_get_parameters (ValaDataType* base)
 	self = (ValaObjectType*) base;
 	_tmp0_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	cl = VALA_IS_CLASS (_tmp1_) ? ((ValaClass*) _tmp1_) : NULL;
+	cl = BALA_IS_CLASS (_tmp1_) ? ((ValaClass*) _tmp1_) : NULL;
 	_tmp3_ = cl;
 	if (_tmp3_ != NULL) {
 		ValaClass* _tmp4_;
@@ -411,7 +411,7 @@ vala_object_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaObjectTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_object_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaObjectType), 0, (GInstanceInitFunc) vala_object_type_instance_init, NULL };
 	GType vala_object_type_type_id;
-	vala_object_type_type_id = g_type_register_static (VALA_TYPE_REFERENCE_TYPE, "ValaObjectType", &g_define_type_info, 0);
+	vala_object_type_type_id = g_type_register_static (BALA_TYPE_REFERENCE_TYPE, "ValaObjectType", &g_define_type_info, 0);
 	return vala_object_type_type_id;
 }
 

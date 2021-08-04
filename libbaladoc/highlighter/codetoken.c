@@ -117,7 +117,7 @@ ValadocHighlighterCodeToken*
 valadoc_highlighter_code_token_new (ValadocHighlighterCodeTokenType type,
                                     const gchar* content)
 {
-	return valadoc_highlighter_code_token_construct (VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN, type, content);
+	return valadoc_highlighter_code_token_construct (BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN, type, content);
 }
 
 static void
@@ -201,7 +201,7 @@ valadoc_highlighter_param_spec_code_token (const gchar* name,
                                            GParamFlags flags)
 {
 	ValadocHighlighterParamSpecCodeToken* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -210,7 +210,7 @@ valadoc_highlighter_param_spec_code_token (const gchar* name,
 gpointer
 valadoc_highlighter_value_get_code_token (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -219,10 +219,10 @@ valadoc_highlighter_value_set_code_token (GValue* value,
                                           gpointer v_object)
 {
 	ValadocHighlighterCodeToken * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		valadoc_highlighter_code_token_ref (value->data[0].v_pointer);
@@ -239,10 +239,10 @@ valadoc_highlighter_value_take_code_token (GValue* value,
                                            gpointer v_object)
 {
 	ValadocHighlighterCodeToken * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -274,7 +274,7 @@ static void
 valadoc_highlighter_code_token_finalize (ValadocHighlighterCodeToken * obj)
 {
 	ValadocHighlighterCodeToken * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN, ValadocHighlighterCodeToken);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN, ValadocHighlighterCodeToken);
 	g_signal_handlers_destroy (self);
 	_g_free0 (self->priv->_content);
 }
@@ -318,7 +318,7 @@ valadoc_highlighter_code_token_unref (gpointer instance)
 	ValadocHighlighterCodeToken * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALADOC_HIGHLIGHTER_CODE_TOKEN_GET_CLASS (self)->finalize (self);
+		BALADOC_HIGHLIGHTER_CODE_TOKEN_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }
@@ -331,7 +331,7 @@ valadoc_highlighter_code_token_type_to_string (ValadocHighlighterCodeTokenType s
 	GEnumValue* eval = NULL;
 	const gchar* _tmp1_;
 	const gchar* result = NULL;
-	_tmp0_ = g_type_class_ref (VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN_TYPE);
+	_tmp0_ = g_type_class_ref (BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN_TYPE);
 	enumc = (GEnumClass*) _tmp0_;
 	eval = g_enum_get_value (enumc, (gint) self);
 	g_return_val_if_fail (eval != NULL, NULL);
@@ -344,7 +344,7 @@ valadoc_highlighter_code_token_type_to_string (ValadocHighlighterCodeTokenType s
 static GType
 valadoc_highlighter_code_token_type_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ESCAPE, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ESCAPE", "xml-escape"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ELEMENT, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ELEMENT", "xml-element"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE", "xml-attribute"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE_VALUE, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE_VALUE", "xml-attribute-value"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_COMMENT, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_COMMENT", "xml-comment"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_CDATA, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_CDATA", "xml-cdata"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PREPROCESSOR, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PREPROCESSOR", "preprocessor"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_COMMENT, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_COMMENT", "comment"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD", "keyword"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL", "literal"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_ESCAPE, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_ESCAPE", "escape"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PLAIN, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PLAIN", "plain"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE", "type"}, {VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_EOF, "VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_EOF", "eof"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ESCAPE, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ESCAPE", "xml-escape"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ELEMENT, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ELEMENT", "xml-element"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE", "xml-attribute"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE_VALUE, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE_VALUE", "xml-attribute-value"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_COMMENT, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_COMMENT", "xml-comment"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_CDATA, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_CDATA", "xml-cdata"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PREPROCESSOR, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PREPROCESSOR", "preprocessor"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_COMMENT, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_COMMENT", "comment"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD", "keyword"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL", "literal"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_ESCAPE, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_ESCAPE", "escape"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PLAIN, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PLAIN", "plain"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE", "type"}, {BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_EOF, "BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_EOF", "eof"}, {0, NULL, NULL}};
 	GType valadoc_highlighter_code_token_type_type_id;
 	valadoc_highlighter_code_token_type_type_id = g_enum_register_static ("ValadocHighlighterCodeTokenType", values);
 	return valadoc_highlighter_code_token_type_type_id;

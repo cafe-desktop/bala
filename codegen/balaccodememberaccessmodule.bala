@@ -195,7 +195,7 @@ public abstract class Vala.CCodeMemberAccessModule : CCodeControlFlowModule {
 					CCodeFunctionCall ccall;
 					if (context.profile == Profile.POSIX) {
 						requires_array_n_elements = true;
-						ccall = new CCodeFunctionCall (new CCodeIdentifier ("VALA_N_ELEMENTS"));
+						ccall = new CCodeFunctionCall (new CCodeIdentifier ("BALA_N_ELEMENTS"));
 					} else {
 						ccall = new CCodeFunctionCall (new CCodeIdentifier ("G_N_ELEMENTS"));
 					}

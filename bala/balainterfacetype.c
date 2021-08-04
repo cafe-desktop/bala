@@ -45,7 +45,7 @@ vala_interface_type_get_interface_symbol (ValaInterfaceType* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_INTERFACE, ValaInterface);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_INTERFACE, ValaInterface);
 	return result;
 }
 
@@ -62,7 +62,7 @@ vala_interface_type_construct (GType object_type,
 ValaInterfaceType*
 vala_interface_type_new (ValaInterface* interface_symbol)
 {
-	return vala_interface_type_construct (VALA_TYPE_INTERFACE_TYPE, interface_symbol);
+	return vala_interface_type_construct (BALA_TYPE_INTERFACE_TYPE, interface_symbol);
 }
 
 static gpointer
@@ -192,7 +192,7 @@ vala_interface_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaInterfaceTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_interface_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaInterfaceType), 0, (GInstanceInitFunc) vala_interface_type_instance_init, NULL };
 	GType vala_interface_type_type_id;
-	vala_interface_type_type_id = g_type_register_static (VALA_TYPE_REFERENCE_TYPE, "ValaInterfaceType", &g_define_type_info, 0);
+	vala_interface_type_type_id = g_type_register_static (BALA_TYPE_REFERENCE_TYPE, "ValaInterfaceType", &g_define_type_info, 0);
 	return vala_interface_type_type_id;
 }
 

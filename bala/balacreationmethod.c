@@ -130,7 +130,7 @@ vala_creation_method_new (const gchar* class_name,
                           ValaSourceReference* source_reference,
                           ValaComment* comment)
 {
-	return vala_creation_method_construct (VALA_TYPE_CREATION_METHOD, class_name, name, source_reference, comment);
+	return vala_creation_method_construct (BALA_TYPE_CREATION_METHOD, class_name, name, source_reference, comment);
 }
 
 static void
@@ -648,7 +648,7 @@ vala_creation_method_real_check (ValaCodeNode* base,
 				_tmp84_ = vala_variable_get_variable_type ((ValaVariable*) _tmp83_);
 				_tmp85_ = _tmp84_;
 				_tmp86_ = vala_data_type_copy (_tmp85_);
-				type = G_TYPE_CHECK_INSTANCE_CAST (_tmp86_, VALA_TYPE_ARRAY_TYPE, ValaArrayType);
+				type = G_TYPE_CHECK_INSTANCE_CAST (_tmp86_, BALA_TYPE_ARRAY_TYPE, ValaArrayType);
 				_tmp87_ = type;
 				_tmp88_ = vala_array_type_get_element_type (_tmp87_);
 				_tmp89_ = _tmp88_;
@@ -900,7 +900,7 @@ vala_creation_method_real_check (ValaCodeNode* base,
 		vala_code_node_check ((ValaCodeNode*) _tmp176_, context);
 		_tmp177_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 		_tmp178_ = _tmp177_;
-		cl = VALA_IS_CLASS (_tmp178_) ? ((ValaClass*) _tmp178_) : NULL;
+		cl = BALA_IS_CLASS (_tmp178_) ? ((ValaClass*) _tmp178_) : NULL;
 		_tmp181_ = self->priv->_chain_up;
 		if (!_tmp181_) {
 			ValaClass* _tmp182_;
@@ -927,7 +927,7 @@ vala_creation_method_real_check (ValaCodeNode* base,
 			ValaProfile _tmp189_;
 			_tmp188_ = vala_code_context_get_profile (context);
 			_tmp189_ = _tmp188_;
-			if (_tmp189_ == VALA_PROFILE_GOBJECT) {
+			if (_tmp189_ == BALA_PROFILE_GOBJECT) {
 				ValaClass* _tmp190_;
 				ValaClass* _tmp191_;
 				ValaClass* _tmp192_;
@@ -1086,7 +1086,7 @@ vala_creation_method_real_check (ValaCodeNode* base,
 					_tmp251_ = _tmp250_;
 					_tmp252_ = vala_symbol_get_access ((ValaSymbol*) _tmp251_);
 					_tmp253_ = _tmp252_;
-					_tmp241_ = _tmp253_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE;
+					_tmp241_ = _tmp253_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE;
 				}
 				if (_tmp241_) {
 					ValaSourceReference* _tmp254_;
@@ -1277,7 +1277,7 @@ vala_creation_method_real_check (ValaCodeNode* base,
 		ValaBlock* _tmp328_;
 		ValaArrayList* _tmp329_;
 		_tmp325_ = g_direct_equal;
-		_tmp326_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp325_);
+		_tmp326_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp325_);
 		body_errors = _tmp326_;
 		_tmp327_ = vala_subroutine_get_body ((ValaSubroutine*) self);
 		_tmp328_ = _tmp327_;
@@ -1370,7 +1370,7 @@ vala_creation_method_real_check (ValaCodeNode* base,
 					gboolean _tmp353_;
 					gboolean _tmp354_;
 					_tmp352_ = body_error_type;
-					_tmp353_ = vala_error_type_get_dynamic_error (G_TYPE_CHECK_INSTANCE_CAST (_tmp352_, VALA_TYPE_ERROR_TYPE, ValaErrorType));
+					_tmp353_ = vala_error_type_get_dynamic_error (G_TYPE_CHECK_INSTANCE_CAST (_tmp352_, BALA_TYPE_ERROR_TYPE, ValaErrorType));
 					_tmp354_ = _tmp353_;
 					_tmp351_ = !_tmp354_;
 				} else {
@@ -1434,9 +1434,9 @@ static void
 vala_creation_method_finalize (ValaCodeNode * obj)
 {
 	ValaCreationMethod * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CREATION_METHOD, ValaCreationMethod);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CREATION_METHOD, ValaCreationMethod);
 	_g_free0 (self->priv->_class_name);
-	VALA_CODE_NODE_CLASS (vala_creation_method_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_creation_method_parent_class)->finalize (obj);
 }
 
 /**
@@ -1447,7 +1447,7 @@ vala_creation_method_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCreationMethodClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_creation_method_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCreationMethod), 0, (GInstanceInitFunc) vala_creation_method_instance_init, NULL };
 	GType vala_creation_method_type_id;
-	vala_creation_method_type_id = g_type_register_static (VALA_TYPE_METHOD, "ValaCreationMethod", &g_define_type_info, 0);
+	vala_creation_method_type_id = g_type_register_static (BALA_TYPE_METHOD, "ValaCreationMethod", &g_define_type_info, 0);
 	ValaCreationMethod_private_offset = g_type_add_instance_private (vala_creation_method_type_id, sizeof (ValaCreationMethodPrivate));
 	return vala_creation_method_type_id;
 }

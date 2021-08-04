@@ -32,10 +32,10 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_TAGLETS_RETURN_0_PROPERTY,
-	VALADOC_TAGLETS_RETURN_NUM_PROPERTIES
+	BALADOC_TAGLETS_RETURN_0_PROPERTY,
+	BALADOC_TAGLETS_RETURN_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_taglets_return_properties[VALADOC_TAGLETS_RETURN_NUM_PROPERTIES];
+static GParamSpec* valadoc_taglets_return_properties[BALADOC_TAGLETS_RETURN_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
@@ -106,26 +106,26 @@ valadoc_taglets_return_real_check (ValadocContentContentElement* base,
 	g_return_if_fail (settings != NULL);
 	type_ref = NULL;
 	creation_method = FALSE;
-	if (VALADOC_API_IS_METHOD (container)) {
+	if (BALADOC_API_IS_METHOD (container)) {
 		gboolean _tmp0_;
 		gboolean _tmp1_;
 		ValadocApiTypeReference* _tmp2_;
 		ValadocApiTypeReference* _tmp3_;
 		ValadocApiTypeReference* _tmp4_;
-		_tmp0_ = valadoc_api_method_get_is_constructor (G_TYPE_CHECK_INSTANCE_CAST (container, VALADOC_API_TYPE_METHOD, ValadocApiMethod));
+		_tmp0_ = valadoc_api_method_get_is_constructor (G_TYPE_CHECK_INSTANCE_CAST (container, BALADOC_API_TYPE_METHOD, ValadocApiMethod));
 		_tmp1_ = _tmp0_;
 		creation_method = _tmp1_;
-		_tmp2_ = valadoc_api_callable_get_return_type ((ValadocApiCallable*) G_TYPE_CHECK_INSTANCE_CAST (container, VALADOC_API_TYPE_METHOD, ValadocApiMethod));
+		_tmp2_ = valadoc_api_callable_get_return_type ((ValadocApiCallable*) G_TYPE_CHECK_INSTANCE_CAST (container, BALADOC_API_TYPE_METHOD, ValadocApiMethod));
 		_tmp3_ = _tmp2_;
 		_tmp4_ = _g_object_ref0 (_tmp3_);
 		_g_object_unref0 (type_ref);
 		type_ref = _tmp4_;
 	} else {
-		if (VALADOC_API_IS_CALLABLE (container)) {
+		if (BALADOC_API_IS_CALLABLE (container)) {
 			ValadocApiTypeReference* _tmp5_;
 			ValadocApiTypeReference* _tmp6_;
 			ValadocApiTypeReference* _tmp7_;
-			_tmp5_ = valadoc_api_callable_get_return_type (G_TYPE_CHECK_INSTANCE_CAST (container, VALADOC_API_TYPE_CALLABLE, ValadocApiCallable));
+			_tmp5_ = valadoc_api_callable_get_return_type (G_TYPE_CHECK_INSTANCE_CAST (container, BALADOC_API_TYPE_CALLABLE, ValadocApiCallable));
 			_tmp6_ = _tmp5_;
 			_tmp7_ = _g_object_ref0 (_tmp6_);
 			_g_object_unref0 (type_ref);
@@ -174,7 +174,7 @@ valadoc_taglets_return_real_check (ValadocContentContentElement* base,
 		_g_free0 (_tmp21_);
 		_g_free0 (_tmp19_);
 	}
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_taglets_return_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_taglets_return_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
 	_g_object_unref0 (type_ref);
 }
 
@@ -218,7 +218,7 @@ valadoc_taglets_return_real_inheritable (ValadocContentTaglet* base,
 	gboolean result = FALSE;
 	self = (ValadocTagletsReturn*) base;
 	g_return_val_if_fail (taglet != NULL, FALSE);
-	result = VALADOC_TAGLETS_IS_RETURN (taglet);
+	result = BALADOC_TAGLETS_IS_RETURN (taglet);
 	return result;
 }
 
@@ -282,7 +282,7 @@ valadoc_taglets_return_real_copy (ValadocContentContentElement* base,
 			_tmp12_ = element;
 			_tmp13_ = ret;
 			_tmp14_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp12_, (ValadocContentContentElement*) _tmp13_);
-			_tmp15_ = VALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
+			_tmp15_ = BALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
 			if (_tmp15_ == NULL) {
 				_g_object_unref0 (_tmp14_);
 			}
@@ -312,7 +312,7 @@ valadoc_taglets_return_construct (GType object_type)
 ValadocTagletsReturn*
 valadoc_taglets_return_new (void)
 {
-	return valadoc_taglets_return_construct (VALADOC_TAGLETS_TYPE_RETURN);
+	return valadoc_taglets_return_construct (BALADOC_TAGLETS_TYPE_RETURN);
 }
 
 static void
@@ -355,9 +355,9 @@ valadoc_taglets_return_get_type_once (void)
 	static const GInterfaceInfo valadoc_content_taglet_info = { (GInterfaceInitFunc) valadoc_taglets_return_valadoc_content_taglet_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	static const GInterfaceInfo valadoc_content_block_info = { (GInterfaceInitFunc) valadoc_taglets_return_valadoc_content_block_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_taglets_return_type_id;
-	valadoc_taglets_return_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocTagletsReturn", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_taglets_return_type_id, VALADOC_CONTENT_TYPE_TAGLET, &valadoc_content_taglet_info);
-	g_type_add_interface_static (valadoc_taglets_return_type_id, VALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
+	valadoc_taglets_return_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocTagletsReturn", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_taglets_return_type_id, BALADOC_CONTENT_TYPE_TAGLET, &valadoc_content_taglet_info);
+	g_type_add_interface_static (valadoc_taglets_return_type_id, BALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
 	return valadoc_taglets_return_type_id;
 }
 

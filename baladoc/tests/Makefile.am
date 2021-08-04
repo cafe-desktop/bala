@@ -31,7 +31,7 @@ check-local:
 	G_DEBUG=fatal_warnings $(builddir)/driver
 
 AM_CFLAGS = \
-	-DPACKAGE_VALADOC_LIBDIR=\"$(libdir)/valadoc@PACKAGE_SUFFIX@\" \
+	-DPACKAGE_BALADOC_LIBDIR=\"$(libdir)/valadoc@PACKAGE_SUFFIX@\" \
 	-DPACKAGE_VERSION=\"$(VERSION)\" \
 	-DTOP_SRC_DIR=\"$(abs_top_srcdir)\" \
 	-I$(top_srcdir)/libvaladoc/ \
@@ -49,7 +49,7 @@ BUILT_SOURCES = driver.vala.stamp
 
 check_PROGRAMS = driver
 
-driver_VALASOURCES = \
+driver_BALASOURCES = \
 	drivers/driver-test.vala \
 	drivers/generic-api-test.vala \
 	$(top_srcdir)/valadoc/girwriter.vala \
@@ -79,10 +79,10 @@ driver_LDADD = \
 	$(LIBGVC_LIBS) \
 	$(NULL)
 
-driver.vala.stamp: $(driver_VALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libvaladoc/valadoc@PACKAGE_SUFFIX@.vapi
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+driver.vala.stamp: $(driver_BALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libvaladoc/valadoc@PACKAGE_SUFFIX@.vapi
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--pkg gmodule-2.0 \

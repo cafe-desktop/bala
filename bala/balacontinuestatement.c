@@ -54,7 +54,7 @@ vala_continue_statement_construct (GType object_type,
 ValaContinueStatement*
 vala_continue_statement_new (ValaSourceReference* source)
 {
-	return vala_continue_statement_construct (VALA_TYPE_CONTINUE_STATEMENT, source);
+	return vala_continue_statement_construct (BALA_TYPE_CONTINUE_STATEMENT, source);
 }
 
 static void
@@ -108,8 +108,8 @@ vala_continue_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaContinueStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_continue_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaContinueStatement), 0, (GInstanceInitFunc) vala_continue_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_continue_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_continue_statement_type_id;
-	vala_continue_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaContinueStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_continue_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_continue_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaContinueStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_continue_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	return vala_continue_statement_type_id;
 }
 

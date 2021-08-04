@@ -33,12 +33,12 @@
 #include <valacodegen.h>
 
 enum  {
-	VALADOC_API_STRUCT_0_PROPERTY,
-	VALADOC_API_STRUCT_BASE_TYPE_PROPERTY,
-	VALADOC_API_STRUCT_NODE_TYPE_PROPERTY,
-	VALADOC_API_STRUCT_NUM_PROPERTIES
+	BALADOC_API_STRUCT_0_PROPERTY,
+	BALADOC_API_STRUCT_BASE_TYPE_PROPERTY,
+	BALADOC_API_STRUCT_NODE_TYPE_PROPERTY,
+	BALADOC_API_STRUCT_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_struct_properties[VALADOC_API_STRUCT_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_struct_properties[BALADOC_API_STRUCT_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
@@ -152,7 +152,7 @@ valadoc_api_struct_new (ValadocApiNode* parent,
                         ValadocApiSourceComment* comment,
                         ValaStruct* data)
 {
-	return valadoc_api_struct_construct (VALADOC_API_TYPE_STRUCT, parent, file, name, accessibility, comment, data);
+	return valadoc_api_struct_construct (BALADOC_API_TYPE_STRUCT, parent, file, name, accessibility, comment, data);
 }
 
 ValadocApiTypeReference*
@@ -184,7 +184,7 @@ valadoc_api_struct_set_base_type (ValadocApiStruct* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_base_type);
 		self->priv->_base_type = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_struct_properties[VALADOC_API_STRUCT_BASE_TYPE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_struct_properties[BALADOC_API_STRUCT_BASE_TYPE_PROPERTY]);
 	}
 }
 
@@ -292,7 +292,7 @@ valadoc_api_struct_real_get_node_type (ValadocApiNode* base)
 	ValadocApiNodeType result;
 	ValadocApiStruct* self;
 	self = (ValadocApiStruct*) base;
-	result = VALADOC_API_NODE_TYPE_STRUCT;
+	result = BALADOC_API_NODE_TYPE_STRUCT;
 	return result;
 }
 
@@ -347,7 +347,7 @@ valadoc_api_struct_register_child_struct (ValadocApiStruct* self,
 		_tmp1_ = self->priv->_base_type;
 		_tmp2_ = valadoc_api_typereference_get_data_type (_tmp1_);
 		_tmp3_ = _tmp2_;
-		valadoc_api_struct_register_child_struct (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct), stru);
+		valadoc_api_struct_register_child_struct (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct), stru);
 	}
 	_tmp4_ = self->priv->_known_child_structs;
 	vala_collection_add ((ValaCollection*) _tmp4_, stru);
@@ -389,7 +389,7 @@ valadoc_api_struct_real_build_signature (ValadocApiItem* base)
 	valadoc_api_signature_builder_append_keyword (_tmp5_, "struct", TRUE);
 	_tmp6_ = signature;
 	valadoc_api_signature_builder_append_symbol (_tmp6_, (ValadocApiNode*) self, TRUE);
-	_tmp7_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, VALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
+	_tmp7_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, BALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
 	type_parameters = _tmp7_;
 	_tmp8_ = type_parameters;
 	_tmp9_ = vala_collection_get_size ((ValaCollection*) _tmp8_);
@@ -486,18 +486,18 @@ valadoc_api_struct_class_init (ValadocApiStructClass * klass,
 	g_type_class_adjust_private_offset (klass, &ValadocApiStruct_private_offset);
 	((ValadocApiNodeClass *) klass)->accept = (void (*) (ValadocApiNode*, ValadocApiVisitor*)) valadoc_api_struct_real_accept;
 	((ValadocApiItemClass *) klass)->build_signature = (ValadocContentInline* (*) (ValadocApiItem*)) valadoc_api_struct_real_build_signature;
-	VALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_struct_real_get_node_type;
+	BALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_struct_real_get_node_type;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_struct_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_struct_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_struct_finalize;
 	/**
 	 * Specifies the base struct.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_STRUCT_BASE_TYPE_PROPERTY, valadoc_api_struct_properties[VALADOC_API_STRUCT_BASE_TYPE_PROPERTY] = g_param_spec_object ("base-type", "base-type", "base-type", VALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_STRUCT_BASE_TYPE_PROPERTY, valadoc_api_struct_properties[BALADOC_API_STRUCT_BASE_TYPE_PROPERTY] = g_param_spec_object ("base-type", "base-type", "base-type", BALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_STRUCT_NODE_TYPE_PROPERTY, valadoc_api_struct_properties[VALADOC_API_STRUCT_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", VALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_STRUCT_NODE_TYPE_PROPERTY, valadoc_api_struct_properties[BALADOC_API_STRUCT_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", BALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -510,7 +510,7 @@ valadoc_api_struct_instance_init (ValadocApiStruct * self,
 	self->priv = valadoc_api_struct_get_instance_private (self);
 	_tmp0_ = g_direct_hash;
 	_tmp1_ = g_direct_equal;
-	_tmp2_ = vala_hash_set_new (VALADOC_API_TYPE_STRUCT, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_);
+	_tmp2_ = vala_hash_set_new (BALADOC_API_TYPE_STRUCT, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_);
 	self->priv->_known_child_structs = (ValaSet*) _tmp2_;
 }
 
@@ -518,7 +518,7 @@ static void
 valadoc_api_struct_finalize (GObject * obj)
 {
 	ValadocApiStruct * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_STRUCT, ValadocApiStruct);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_STRUCT, ValadocApiStruct);
 	_g_free0 (self->priv->dup_function_cname);
 	_g_free0 (self->priv->copy_function_cname);
 	_g_free0 (self->priv->free_function_cname);
@@ -538,7 +538,7 @@ valadoc_api_struct_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiStructClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_struct_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiStruct), 0, (GInstanceInitFunc) valadoc_api_struct_instance_init, NULL };
 	GType valadoc_api_struct_type_id;
-	valadoc_api_struct_type_id = g_type_register_static (VALADOC_API_TYPE_TYPESYMBOL, "ValadocApiStruct", &g_define_type_info, 0);
+	valadoc_api_struct_type_id = g_type_register_static (BALADOC_API_TYPE_TYPESYMBOL, "ValadocApiStruct", &g_define_type_info, 0);
 	ValadocApiStruct_private_offset = g_type_add_instance_private (valadoc_api_struct_type_id, sizeof (ValadocApiStructPrivate));
 	return valadoc_api_struct_type_id;
 }
@@ -562,12 +562,12 @@ _vala_valadoc_api_struct_get_property (GObject * object,
                                        GParamSpec * pspec)
 {
 	ValadocApiStruct * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_STRUCT, ValadocApiStruct);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_STRUCT, ValadocApiStruct);
 	switch (property_id) {
-		case VALADOC_API_STRUCT_BASE_TYPE_PROPERTY:
+		case BALADOC_API_STRUCT_BASE_TYPE_PROPERTY:
 		g_value_set_object (value, valadoc_api_struct_get_base_type (self));
 		break;
-		case VALADOC_API_STRUCT_NODE_TYPE_PROPERTY:
+		case BALADOC_API_STRUCT_NODE_TYPE_PROPERTY:
 		g_value_set_enum (value, valadoc_api_node_get_node_type ((ValadocApiNode*) self));
 		break;
 		default:
@@ -583,9 +583,9 @@ _vala_valadoc_api_struct_set_property (GObject * object,
                                        GParamSpec * pspec)
 {
 	ValadocApiStruct * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_STRUCT, ValadocApiStruct);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_STRUCT, ValadocApiStruct);
 	switch (property_id) {
-		case VALADOC_API_STRUCT_BASE_TYPE_PROPERTY:
+		case BALADOC_API_STRUCT_BASE_TYPE_PROPERTY:
 		valadoc_api_struct_set_base_type (self, g_value_get_object (value));
 		break;
 		default:

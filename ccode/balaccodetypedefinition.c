@@ -120,7 +120,7 @@ ValaCCodeTypeDefinition*
 vala_ccode_type_definition_new (const gchar* type,
                                 ValaCCodeDeclarator* decl)
 {
-	return vala_ccode_type_definition_construct (VALA_TYPE_CCODE_TYPE_DEFINITION, type, decl);
+	return vala_ccode_type_definition_construct (BALA_TYPE_CCODE_TYPE_DEFINITION, type, decl);
 }
 
 static void
@@ -152,7 +152,7 @@ vala_ccode_type_definition_real_write_declaration (ValaCCodeNode* base,
 	vala_ccode_node_write_declaration ((ValaCCodeNode*) _tmp1_, writer);
 	_tmp2_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) self);
 	_tmp3_ = _tmp2_;
-	if ((_tmp3_ & VALA_CCODE_MODIFIERS_DEPRECATED) == VALA_CCODE_MODIFIERS_DEPRECATED) {
+	if ((_tmp3_ & BALA_CCODE_MODIFIERS_DEPRECATED) == BALA_CCODE_MODIFIERS_DEPRECATED) {
 		vala_ccode_writer_write_string (writer, " G_GNUC_DEPRECATED");
 	}
 	vala_ccode_writer_write_string (writer, ";");
@@ -181,10 +181,10 @@ static void
 vala_ccode_type_definition_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeTypeDefinition * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_TYPE_DEFINITION, ValaCCodeTypeDefinition);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_TYPE_DEFINITION, ValaCCodeTypeDefinition);
 	_g_free0 (self->priv->_type_name);
 	_vala_ccode_node_unref0 (self->priv->_declarator);
-	VALA_CCODE_NODE_CLASS (vala_ccode_type_definition_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_type_definition_parent_class)->finalize (obj);
 }
 
 /**
@@ -195,7 +195,7 @@ vala_ccode_type_definition_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeTypeDefinitionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_type_definition_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeTypeDefinition), 0, (GInstanceInitFunc) vala_ccode_type_definition_instance_init, NULL };
 	GType vala_ccode_type_definition_type_id;
-	vala_ccode_type_definition_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeTypeDefinition", &g_define_type_info, 0);
+	vala_ccode_type_definition_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeTypeDefinition", &g_define_type_info, 0);
 	ValaCCodeTypeDefinition_private_offset = g_type_add_instance_private (vala_ccode_type_definition_type_id, sizeof (ValaCCodeTypeDefinitionPrivate));
 	return vala_ccode_type_definition_type_id;
 }

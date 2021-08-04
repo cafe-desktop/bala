@@ -31,13 +31,13 @@ void
 valadoc_taglets_init (ValadocModuleLoader* loader)
 {
 	g_return_if_fail (loader != NULL);
-	valadoc_module_loader_register_taglet (loader, "see", VALADOC_TAGLETS_TYPE_SEE);
-	valadoc_module_loader_register_taglet (loader, "since", VALADOC_TAGLETS_TYPE_SINCE);
-	valadoc_module_loader_register_taglet (loader, "link", VALADOC_TAGLETS_TYPE_LINK);
-	valadoc_module_loader_register_taglet (loader, "throws", VALADOC_TAGLETS_TYPE_THROWS);
-	valadoc_module_loader_register_taglet (loader, "return", VALADOC_TAGLETS_TYPE_RETURN);
-	valadoc_module_loader_register_taglet (loader, "param", VALADOC_TAGLETS_TYPE_PARAM);
-	valadoc_module_loader_register_taglet (loader, "deprecated", VALADOC_TAGLETS_TYPE_DEPRECATED);
-	valadoc_module_loader_register_taglet (loader, "inheritDoc", VALADOC_TAGLETS_TYPE_INHERIT_DOC);
+	valadoc_module_loader_register_taglet (loader, "see", BALADOC_TAGLETS_TYPE_SEE);
+	valadoc_module_loader_register_taglet (loader, "since", BALADOC_TAGLETS_TYPE_SINCE);
+	valadoc_module_loader_register_taglet (loader, "link", BALADOC_TAGLETS_TYPE_LINK);
+	valadoc_module_loader_register_taglet (loader, "throws", BALADOC_TAGLETS_TYPE_THROWS);
+	valadoc_module_loader_register_taglet (loader, "return", BALADOC_TAGLETS_TYPE_RETURN);
+	valadoc_module_loader_register_taglet (loader, "param", BALADOC_TAGLETS_TYPE_PARAM);
+	valadoc_module_loader_register_taglet (loader, "deprecated", BALADOC_TAGLETS_TYPE_DEPRECATED);
+	valadoc_module_loader_register_taglet (loader, "inheritDoc", BALADOC_TAGLETS_TYPE_INHERIT_DOC);
 }
 

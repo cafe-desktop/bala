@@ -84,7 +84,7 @@ vala_struct_register_function_construct (GType object_type,
 ValaStructRegisterFunction*
 vala_struct_register_function_new (ValaStruct* st)
 {
-	return vala_struct_register_function_construct (VALA_TYPE_STRUCT_REGISTER_FUNCTION, st);
+	return vala_struct_register_function_construct (BALA_TYPE_STRUCT_REGISTER_FUNCTION, st);
 }
 
 static gpointer
@@ -145,8 +145,8 @@ static void
 vala_struct_register_function_finalize (ValaTypeRegisterFunction * obj)
 {
 	ValaStructRegisterFunction * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_STRUCT_REGISTER_FUNCTION, ValaStructRegisterFunction);
-	VALA_TYPEREGISTER_FUNCTION_CLASS (vala_struct_register_function_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_STRUCT_REGISTER_FUNCTION, ValaStructRegisterFunction);
+	BALA_TYPEREGISTER_FUNCTION_CLASS (vala_struct_register_function_parent_class)->finalize (obj);
 }
 
 /**
@@ -157,7 +157,7 @@ vala_struct_register_function_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaStructRegisterFunctionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_struct_register_function_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaStructRegisterFunction), 0, (GInstanceInitFunc) vala_struct_register_function_instance_init, NULL };
 	GType vala_struct_register_function_type_id;
-	vala_struct_register_function_type_id = g_type_register_static (VALA_TYPE_TYPEREGISTER_FUNCTION, "ValaStructRegisterFunction", &g_define_type_info, 0);
+	vala_struct_register_function_type_id = g_type_register_static (BALA_TYPE_TYPEREGISTER_FUNCTION, "ValaStructRegisterFunction", &g_define_type_info, 0);
 	ValaStructRegisterFunction_private_offset = g_type_add_instance_private (vala_struct_register_function_type_id, sizeof (ValaStructRegisterFunctionPrivate));
 	return vala_struct_register_function_type_id;
 }

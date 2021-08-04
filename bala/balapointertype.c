@@ -127,7 +127,7 @@ ValaPointerType*
 vala_pointer_type_new (ValaDataType* base_type,
                        ValaSourceReference* source_reference)
 {
-	return vala_pointer_type_construct (VALA_TYPE_POINTER_TYPE, base_type, source_reference);
+	return vala_pointer_type_construct (BALA_TYPE_POINTER_TYPE, base_type, source_reference);
 }
 
 static gchar*
@@ -197,7 +197,7 @@ vala_pointer_type_real_compatible (ValaDataType* base,
 	gboolean result = FALSE;
 	self = (ValaPointerType*) base;
 	g_return_val_if_fail (target_type != NULL, FALSE);
-	if (VALA_IS_POINTER_TYPE (target_type)) {
+	if (BALA_IS_POINTER_TYPE (target_type)) {
 		ValaPointerType* tt = NULL;
 		gboolean _tmp0_ = FALSE;
 		ValaPointerType* _tmp1_;
@@ -213,18 +213,18 @@ vala_pointer_type_real_compatible (ValaDataType* base,
 		ValaPointerType* _tmp13_;
 		ValaDataType* _tmp14_;
 		ValaDataType* _tmp15_;
-		tt = VALA_IS_POINTER_TYPE (target_type) ? ((ValaPointerType*) target_type) : NULL;
+		tt = BALA_IS_POINTER_TYPE (target_type) ? ((ValaPointerType*) target_type) : NULL;
 		_tmp1_ = tt;
 		_tmp2_ = vala_pointer_type_get_base_type (_tmp1_);
 		_tmp3_ = _tmp2_;
-		if (VALA_IS_VOID_TYPE (_tmp3_)) {
+		if (BALA_IS_VOID_TYPE (_tmp3_)) {
 			_tmp0_ = TRUE;
 		} else {
 			ValaDataType* _tmp4_;
 			ValaDataType* _tmp5_;
 			_tmp4_ = vala_pointer_type_get_base_type (self);
 			_tmp5_ = _tmp4_;
-			_tmp0_ = VALA_IS_VOID_TYPE (_tmp5_);
+			_tmp0_ = BALA_IS_VOID_TYPE (_tmp5_);
 		}
 		if (_tmp0_) {
 			result = TRUE;
@@ -264,7 +264,7 @@ vala_pointer_type_real_compatible (ValaDataType* base,
 		result = TRUE;
 		return result;
 	}
-	if (VALA_IS_GENERIC_TYPE (target_type)) {
+	if (BALA_IS_GENERIC_TYPE (target_type)) {
 		result = TRUE;
 		return result;
 	}
@@ -283,7 +283,7 @@ vala_pointer_type_real_compatible (ValaDataType* base,
 	_tmp29_ = context;
 	_tmp30_ = vala_code_context_get_profile (_tmp29_);
 	_tmp31_ = _tmp30_;
-	if (_tmp31_ == VALA_PROFILE_GOBJECT) {
+	if (_tmp31_ == BALA_PROFILE_GOBJECT) {
 		ValaTypeSymbol* _tmp32_;
 		ValaTypeSymbol* _tmp33_;
 		_tmp32_ = vala_data_type_get_type_symbol (target_type);
@@ -409,14 +409,14 @@ vala_pointer_type_real_stricter (ValaDataType* base,
 	gboolean result = FALSE;
 	self = (ValaPointerType*) base;
 	g_return_val_if_fail (type2 != NULL, FALSE);
-	if (VALA_IS_POINTER_TYPE (type2)) {
+	if (BALA_IS_POINTER_TYPE (type2)) {
 		result = vala_data_type_compatible ((ValaDataType*) self, type2);
 		return result;
 	}
 	_tmp0_ = vala_pointer_type_get_base_type (self);
 	_tmp1_ = _tmp0_;
-	if (VALA_IS_VOID_TYPE (_tmp1_)) {
-		result = VALA_IS_REFERENCE_TYPE (type2);
+	if (BALA_IS_VOID_TYPE (_tmp1_)) {
+		result = BALA_IS_REFERENCE_TYPE (type2);
 		return result;
 	}
 	_tmp2_ = vala_pointer_type_get_base_type (self);
@@ -469,7 +469,7 @@ vala_pointer_type_real_get_actual_type (ValaDataType* base,
 	ValaDataType* result = NULL;
 	self = (ValaPointerType*) base;
 	_tmp0_ = vala_data_type_copy ((ValaDataType*) self);
-	_result_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALA_TYPE_POINTER_TYPE, ValaPointerType);
+	_result_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALA_TYPE_POINTER_TYPE, ValaPointerType);
 	if (derived_instance_type == NULL) {
 		_tmp1_ = method_type_arguments == NULL;
 	} else {
@@ -481,7 +481,7 @@ vala_pointer_type_real_get_actual_type (ValaDataType* base,
 	}
 	_tmp3_ = vala_pointer_type_get_base_type (self);
 	_tmp4_ = _tmp3_;
-	if (VALA_IS_GENERIC_TYPE (_tmp4_)) {
+	if (BALA_IS_GENERIC_TYPE (_tmp4_)) {
 		_tmp2_ = TRUE;
 	} else {
 		ValaDataType* _tmp5_;
@@ -522,7 +522,7 @@ vala_pointer_type_real_infer_type_argument (ValaDataType* base,
 	self = (ValaPointerType*) base;
 	g_return_val_if_fail (type_param != NULL, NULL);
 	g_return_val_if_fail (value_type != NULL, NULL);
-	pointer_type = VALA_IS_POINTER_TYPE (value_type) ? ((ValaPointerType*) value_type) : NULL;
+	pointer_type = BALA_IS_POINTER_TYPE (value_type) ? ((ValaPointerType*) value_type) : NULL;
 	_tmp0_ = pointer_type;
 	if (_tmp0_ != NULL) {
 		ValaDataType* _tmp1_;
@@ -598,9 +598,9 @@ static void
 vala_pointer_type_finalize (ValaCodeNode * obj)
 {
 	ValaPointerType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_POINTER_TYPE, ValaPointerType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_POINTER_TYPE, ValaPointerType);
 	_vala_code_node_unref0 (self->priv->_base_type);
-	VALA_CODE_NODE_CLASS (vala_pointer_type_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_pointer_type_parent_class)->finalize (obj);
 }
 
 /**
@@ -611,7 +611,7 @@ vala_pointer_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaPointerTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_pointer_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaPointerType), 0, (GInstanceInitFunc) vala_pointer_type_instance_init, NULL };
 	GType vala_pointer_type_type_id;
-	vala_pointer_type_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaPointerType", &g_define_type_info, 0);
+	vala_pointer_type_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaPointerType", &g_define_type_info, 0);
 	ValaPointerType_private_offset = g_type_add_instance_private (vala_pointer_type_type_id, sizeof (ValaPointerTypePrivate));
 	return vala_pointer_type_type_id;
 }

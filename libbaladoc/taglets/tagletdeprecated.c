@@ -32,10 +32,10 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_TAGLETS_DEPRECATED_0_PROPERTY,
-	VALADOC_TAGLETS_DEPRECATED_NUM_PROPERTIES
+	BALADOC_TAGLETS_DEPRECATED_0_PROPERTY,
+	BALADOC_TAGLETS_DEPRECATED_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_taglets_deprecated_properties[VALADOC_TAGLETS_DEPRECATED_NUM_PROPERTIES];
+static GParamSpec* valadoc_taglets_deprecated_properties[BALADOC_TAGLETS_DEPRECATED_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
@@ -101,7 +101,7 @@ valadoc_taglets_deprecated_real_check (ValadocContentContentElement* base,
 	g_return_if_fail (file_path != NULL);
 	g_return_if_fail (reporter != NULL);
 	g_return_if_fail (settings != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_taglets_deprecated_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_taglets_deprecated_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
 	_tmp0_ = valadoc_api_node_get_full_name (container);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = g_strdup_printf ("%s: %s: @deprecated", file_path, _tmp1_);
@@ -197,7 +197,7 @@ valadoc_taglets_deprecated_real_copy (ValadocContentContentElement* base,
 			_tmp12_ = element;
 			_tmp13_ = deprecated;
 			_tmp14_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp12_, (ValadocContentContentElement*) _tmp13_);
-			_tmp15_ = VALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
+			_tmp15_ = BALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
 			if (_tmp15_ == NULL) {
 				_g_object_unref0 (_tmp14_);
 			}
@@ -227,7 +227,7 @@ valadoc_taglets_deprecated_construct (GType object_type)
 ValadocTagletsDeprecated*
 valadoc_taglets_deprecated_new (void)
 {
-	return valadoc_taglets_deprecated_construct (VALADOC_TAGLETS_TYPE_DEPRECATED);
+	return valadoc_taglets_deprecated_construct (BALADOC_TAGLETS_TYPE_DEPRECATED);
 }
 
 static void
@@ -269,9 +269,9 @@ valadoc_taglets_deprecated_get_type_once (void)
 	static const GInterfaceInfo valadoc_content_taglet_info = { (GInterfaceInitFunc) valadoc_taglets_deprecated_valadoc_content_taglet_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	static const GInterfaceInfo valadoc_content_block_info = { (GInterfaceInitFunc) valadoc_taglets_deprecated_valadoc_content_block_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_taglets_deprecated_type_id;
-	valadoc_taglets_deprecated_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocTagletsDeprecated", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_taglets_deprecated_type_id, VALADOC_CONTENT_TYPE_TAGLET, &valadoc_content_taglet_info);
-	g_type_add_interface_static (valadoc_taglets_deprecated_type_id, VALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
+	valadoc_taglets_deprecated_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocTagletsDeprecated", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_taglets_deprecated_type_id, BALADOC_CONTENT_TYPE_TAGLET, &valadoc_content_taglet_info);
+	g_type_add_interface_static (valadoc_taglets_deprecated_type_id, BALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
 	return valadoc_taglets_deprecated_type_id;
 }
 

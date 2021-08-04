@@ -1,1 +1,1 @@
-VALAFLAGS="--enable-experimental-non-null"
+BALAFLAGS="--enable-experimental-non-null"

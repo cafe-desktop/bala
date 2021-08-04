@@ -29,13 +29,13 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_API_ITEM_0_PROPERTY,
-	VALADOC_API_ITEM_DATA_PROPERTY,
-	VALADOC_API_ITEM_PARENT_PROPERTY,
-	VALADOC_API_ITEM_SIGNATURE_PROPERTY,
-	VALADOC_API_ITEM_NUM_PROPERTIES
+	BALADOC_API_ITEM_0_PROPERTY,
+	BALADOC_API_ITEM_DATA_PROPERTY,
+	BALADOC_API_ITEM_PARENT_PROPERTY,
+	BALADOC_API_ITEM_SIGNATURE_PROPERTY,
+	BALADOC_API_ITEM_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_item_properties[VALADOC_API_ITEM_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_item_properties[BALADOC_API_ITEM_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_code_node_unref0(var) ((var == NULL) ? NULL : (var = (vala_code_node_unref (var), NULL)))
 
@@ -109,7 +109,7 @@ valadoc_api_item_set_data (ValadocApiItem* self,
 		_tmp0_ = _vala_code_node_ref0 (value);
 		_vala_code_node_unref0 (self->priv->_data);
 		self->priv->_data = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_item_properties[VALADOC_API_ITEM_DATA_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_item_properties[BALADOC_API_ITEM_DATA_PROPERTY]);
 	}
 }
 
@@ -142,7 +142,7 @@ valadoc_api_item_set_parent (ValadocApiItem* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_parent);
 		self->priv->_parent = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_item_properties[VALADOC_API_ITEM_PARENT_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_item_properties[BALADOC_API_ITEM_PARENT_PROPERTY]);
 	}
 }
 
@@ -171,7 +171,7 @@ valadoc_api_item_parse_comments (ValadocApiItem* self,
                                  ValadocDocumentationParser* parser)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_API_ITEM_GET_CLASS (self)->parse_comments (self, settings, parser);
+	BALADOC_API_ITEM_GET_CLASS (self)->parse_comments (self, settings, parser);
 }
 
 static void
@@ -189,7 +189,7 @@ valadoc_api_item_check_comments (ValadocApiItem* self,
                                  ValadocDocumentationParser* parser)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_API_ITEM_GET_CLASS (self)->check_comments (self, settings, parser);
+	BALADOC_API_ITEM_GET_CLASS (self)->check_comments (self, settings, parser);
 }
 
 ValadocContentInline*
@@ -222,7 +222,7 @@ ValadocContentInline*
 valadoc_api_item_build_signature (ValadocApiItem* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_API_ITEM_GET_CLASS (self)->build_signature (self);
+	return BALADOC_API_ITEM_GET_CLASS (self)->build_signature (self);
 }
 
 static void
@@ -237,15 +237,15 @@ valadoc_api_item_class_init (ValadocApiItemClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_item_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_item_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_item_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_ITEM_DATA_PROPERTY, valadoc_api_item_properties[VALADOC_API_ITEM_DATA_PROPERTY] = vala_param_spec_code_node ("data", "data", "data", VALA_TYPE_CODE_NODE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_ITEM_DATA_PROPERTY, valadoc_api_item_properties[BALADOC_API_ITEM_DATA_PROPERTY] = vala_param_spec_code_node ("data", "data", "data", BALA_TYPE_CODE_NODE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * The parent of this item.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_ITEM_PARENT_PROPERTY, valadoc_api_item_properties[VALADOC_API_ITEM_PARENT_PROPERTY] = g_param_spec_object ("parent", "parent", "parent", VALADOC_API_TYPE_ITEM, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_ITEM_PARENT_PROPERTY, valadoc_api_item_properties[BALADOC_API_ITEM_PARENT_PROPERTY] = g_param_spec_object ("parent", "parent", "parent", BALADOC_API_TYPE_ITEM, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * The signature of this item.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_ITEM_SIGNATURE_PROPERTY, valadoc_api_item_properties[VALADOC_API_ITEM_SIGNATURE_PROPERTY] = g_param_spec_object ("signature", "signature", "signature", VALADOC_CONTENT_TYPE_INLINE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_ITEM_SIGNATURE_PROPERTY, valadoc_api_item_properties[BALADOC_API_ITEM_SIGNATURE_PROPERTY] = g_param_spec_object ("signature", "signature", "signature", BALADOC_CONTENT_TYPE_INLINE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -259,7 +259,7 @@ static void
 valadoc_api_item_finalize (GObject * obj)
 {
 	ValadocApiItem * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_ITEM, ValadocApiItem);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_ITEM, ValadocApiItem);
 	_g_object_unref0 (self->priv->_signature);
 	_vala_code_node_unref0 (self->priv->_data);
 	_g_object_unref0 (self->priv->_parent);
@@ -298,15 +298,15 @@ _vala_valadoc_api_item_get_property (GObject * object,
                                      GParamSpec * pspec)
 {
 	ValadocApiItem * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_ITEM, ValadocApiItem);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_ITEM, ValadocApiItem);
 	switch (property_id) {
-		case VALADOC_API_ITEM_DATA_PROPERTY:
+		case BALADOC_API_ITEM_DATA_PROPERTY:
 		vala_value_set_code_node (value, valadoc_api_item_get_data (self));
 		break;
-		case VALADOC_API_ITEM_PARENT_PROPERTY:
+		case BALADOC_API_ITEM_PARENT_PROPERTY:
 		g_value_set_object (value, valadoc_api_item_get_parent (self));
 		break;
-		case VALADOC_API_ITEM_SIGNATURE_PROPERTY:
+		case BALADOC_API_ITEM_SIGNATURE_PROPERTY:
 		g_value_set_object (value, valadoc_api_item_get_signature (self));
 		break;
 		default:
@@ -322,12 +322,12 @@ _vala_valadoc_api_item_set_property (GObject * object,
                                      GParamSpec * pspec)
 {
 	ValadocApiItem * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_ITEM, ValadocApiItem);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_ITEM, ValadocApiItem);
 	switch (property_id) {
-		case VALADOC_API_ITEM_DATA_PROPERTY:
+		case BALADOC_API_ITEM_DATA_PROPERTY:
 		valadoc_api_item_set_data (self, vala_value_get_code_node (value));
 		break;
-		case VALADOC_API_ITEM_PARENT_PROPERTY:
+		case BALADOC_API_ITEM_PARENT_PROPERTY:
 		valadoc_api_item_set_parent (self, g_value_get_object (value));
 		break;
 		default:

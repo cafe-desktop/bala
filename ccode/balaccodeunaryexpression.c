@@ -113,7 +113,7 @@ ValaCCodeUnaryExpression*
 vala_ccode_unary_expression_new (ValaCCodeUnaryOperator op,
                                  ValaCCodeExpression* expr)
 {
-	return vala_ccode_unary_expression_construct (VALA_TYPE_CCODE_UNARY_EXPRESSION, op, expr);
+	return vala_ccode_unary_expression_construct (BALA_TYPE_CCODE_UNARY_EXPRESSION, op, expr);
 }
 
 static void
@@ -126,7 +126,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 	g_return_if_fail (writer != NULL);
 	_tmp0_ = self->priv->_operator;
 	switch (_tmp0_) {
-		case VALA_CCODE_UNARY_OPERATOR_PLUS:
+		case BALA_CCODE_UNARY_OPERATOR_PLUS:
 		{
 			ValaCCodeExpression* _tmp1_;
 			vala_ccode_writer_write_string (writer, "+");
@@ -134,7 +134,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 			vala_ccode_expression_write_inner (_tmp1_, writer);
 			break;
 		}
-		case VALA_CCODE_UNARY_OPERATOR_MINUS:
+		case BALA_CCODE_UNARY_OPERATOR_MINUS:
 		{
 			ValaCCodeExpression* _tmp2_;
 			vala_ccode_writer_write_string (writer, "-");
@@ -142,7 +142,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 			vala_ccode_expression_write_inner (_tmp2_, writer);
 			break;
 		}
-		case VALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION:
+		case BALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION:
 		{
 			ValaCCodeExpression* _tmp3_;
 			vala_ccode_writer_write_string (writer, "!");
@@ -150,7 +150,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 			vala_ccode_expression_write_inner (_tmp3_, writer);
 			break;
 		}
-		case VALA_CCODE_UNARY_OPERATOR_BITWISE_COMPLEMENT:
+		case BALA_CCODE_UNARY_OPERATOR_BITWISE_COMPLEMENT:
 		{
 			ValaCCodeExpression* _tmp4_;
 			vala_ccode_writer_write_string (writer, "~");
@@ -158,7 +158,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 			vala_ccode_expression_write_inner (_tmp4_, writer);
 			break;
 		}
-		case VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION:
+		case BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION:
 		{
 			ValaCCodeUnaryExpression* inner_unary = NULL;
 			ValaCCodeExpression* _tmp5_;
@@ -167,7 +167,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 			ValaCCodeUnaryExpression* _tmp8_;
 			ValaCCodeExpression* _tmp13_;
 			_tmp5_ = self->priv->_inner;
-			_tmp6_ = _vala_ccode_node_ref0 (VALA_IS_CCODE_UNARY_EXPRESSION (_tmp5_) ? ((ValaCCodeUnaryExpression*) _tmp5_) : NULL);
+			_tmp6_ = _vala_ccode_node_ref0 (BALA_IS_CCODE_UNARY_EXPRESSION (_tmp5_) ? ((ValaCCodeUnaryExpression*) _tmp5_) : NULL);
 			inner_unary = _tmp6_;
 			_tmp8_ = inner_unary;
 			if (_tmp8_ != NULL) {
@@ -175,7 +175,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 				ValaCCodeUnaryOperator _tmp10_;
 				_tmp9_ = inner_unary;
 				_tmp10_ = _tmp9_->priv->_operator;
-				_tmp7_ = _tmp10_ == VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF;
+				_tmp7_ = _tmp10_ == BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF;
 			} else {
 				_tmp7_ = FALSE;
 			}
@@ -194,7 +194,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 			_vala_ccode_node_unref0 (inner_unary);
 			break;
 		}
-		case VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF:
+		case BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF:
 		{
 			ValaCCodeUnaryExpression* inner_unary = NULL;
 			ValaCCodeExpression* _tmp14_;
@@ -203,7 +203,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 			ValaCCodeUnaryExpression* _tmp17_;
 			ValaCCodeExpression* _tmp22_;
 			_tmp14_ = self->priv->_inner;
-			_tmp15_ = _vala_ccode_node_ref0 (VALA_IS_CCODE_UNARY_EXPRESSION (_tmp14_) ? ((ValaCCodeUnaryExpression*) _tmp14_) : NULL);
+			_tmp15_ = _vala_ccode_node_ref0 (BALA_IS_CCODE_UNARY_EXPRESSION (_tmp14_) ? ((ValaCCodeUnaryExpression*) _tmp14_) : NULL);
 			inner_unary = _tmp15_;
 			_tmp17_ = inner_unary;
 			if (_tmp17_ != NULL) {
@@ -211,7 +211,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 				ValaCCodeUnaryOperator _tmp19_;
 				_tmp18_ = inner_unary;
 				_tmp19_ = _tmp18_->priv->_operator;
-				_tmp16_ = _tmp19_ == VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION;
+				_tmp16_ = _tmp19_ == BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION;
 			} else {
 				_tmp16_ = FALSE;
 			}
@@ -230,17 +230,17 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 			_vala_ccode_node_unref0 (inner_unary);
 			break;
 		}
-		case VALA_CCODE_UNARY_OPERATOR_PREFIX_INCREMENT:
+		case BALA_CCODE_UNARY_OPERATOR_PREFIX_INCREMENT:
 		{
 			vala_ccode_writer_write_string (writer, "++");
 			break;
 		}
-		case VALA_CCODE_UNARY_OPERATOR_PREFIX_DECREMENT:
+		case BALA_CCODE_UNARY_OPERATOR_PREFIX_DECREMENT:
 		{
 			vala_ccode_writer_write_string (writer, "--");
 			break;
 		}
-		case VALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT:
+		case BALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT:
 		{
 			ValaCCodeExpression* _tmp23_;
 			_tmp23_ = self->priv->_inner;
@@ -248,7 +248,7 @@ vala_ccode_unary_expression_real_write (ValaCCodeNode* base,
 			vala_ccode_writer_write_string (writer, "++");
 			break;
 		}
-		case VALA_CCODE_UNARY_OPERATOR_POSTFIX_DECREMENT:
+		case BALA_CCODE_UNARY_OPERATOR_POSTFIX_DECREMENT:
 		{
 			ValaCCodeExpression* _tmp24_;
 			_tmp24_ = self->priv->_inner;
@@ -297,9 +297,9 @@ static void
 vala_ccode_unary_expression_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeUnaryExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_UNARY_EXPRESSION, ValaCCodeUnaryExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_UNARY_EXPRESSION, ValaCCodeUnaryExpression);
 	_vala_ccode_node_unref0 (self->priv->_inner);
-	VALA_CCODE_NODE_CLASS (vala_ccode_unary_expression_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_unary_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -310,7 +310,7 @@ vala_ccode_unary_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeUnaryExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_unary_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeUnaryExpression), 0, (GInstanceInitFunc) vala_ccode_unary_expression_instance_init, NULL };
 	GType vala_ccode_unary_expression_type_id;
-	vala_ccode_unary_expression_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeUnaryExpression", &g_define_type_info, 0);
+	vala_ccode_unary_expression_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeUnaryExpression", &g_define_type_info, 0);
 	ValaCCodeUnaryExpression_private_offset = g_type_add_instance_private (vala_ccode_unary_expression_type_id, sizeof (ValaCCodeUnaryExpressionPrivate));
 	return vala_ccode_unary_expression_type_id;
 }
@@ -330,7 +330,7 @@ vala_ccode_unary_expression_get_type (void)
 static GType
 vala_ccode_unary_operator_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_CCODE_UNARY_OPERATOR_PLUS, "VALA_CCODE_UNARY_OPERATOR_PLUS", "plus"}, {VALA_CCODE_UNARY_OPERATOR_MINUS, "VALA_CCODE_UNARY_OPERATOR_MINUS", "minus"}, {VALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, "VALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION", "logical-negation"}, {VALA_CCODE_UNARY_OPERATOR_BITWISE_COMPLEMENT, "VALA_CCODE_UNARY_OPERATOR_BITWISE_COMPLEMENT", "bitwise-complement"}, {VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, "VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION", "pointer-indirection"}, {VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, "VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF", "address-of"}, {VALA_CCODE_UNARY_OPERATOR_PREFIX_INCREMENT, "VALA_CCODE_UNARY_OPERATOR_PREFIX_INCREMENT", "prefix-increment"}, {VALA_CCODE_UNARY_OPERATOR_PREFIX_DECREMENT, "VALA_CCODE_UNARY_OPERATOR_PREFIX_DECREMENT", "prefix-decrement"}, {VALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, "VALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT", "postfix-increment"}, {VALA_CCODE_UNARY_OPERATOR_POSTFIX_DECREMENT, "VALA_CCODE_UNARY_OPERATOR_POSTFIX_DECREMENT", "postfix-decrement"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_CCODE_UNARY_OPERATOR_PLUS, "BALA_CCODE_UNARY_OPERATOR_PLUS", "plus"}, {BALA_CCODE_UNARY_OPERATOR_MINUS, "BALA_CCODE_UNARY_OPERATOR_MINUS", "minus"}, {BALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, "BALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION", "logical-negation"}, {BALA_CCODE_UNARY_OPERATOR_BITWISE_COMPLEMENT, "BALA_CCODE_UNARY_OPERATOR_BITWISE_COMPLEMENT", "bitwise-complement"}, {BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, "BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION", "pointer-indirection"}, {BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, "BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF", "address-of"}, {BALA_CCODE_UNARY_OPERATOR_PREFIX_INCREMENT, "BALA_CCODE_UNARY_OPERATOR_PREFIX_INCREMENT", "prefix-increment"}, {BALA_CCODE_UNARY_OPERATOR_PREFIX_DECREMENT, "BALA_CCODE_UNARY_OPERATOR_PREFIX_DECREMENT", "prefix-decrement"}, {BALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, "BALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT", "postfix-increment"}, {BALA_CCODE_UNARY_OPERATOR_POSTFIX_DECREMENT, "BALA_CCODE_UNARY_OPERATOR_POSTFIX_DECREMENT", "postfix-decrement"}, {0, NULL, NULL}};
 	GType vala_ccode_unary_operator_type_id;
 	vala_ccode_unary_operator_type_id = g_enum_register_static ("ValaCCodeUnaryOperator", values);
 	return vala_ccode_unary_operator_type_id;

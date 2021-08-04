@@ -32,12 +32,12 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_WIKI_LINK_0_PROPERTY,
-	VALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY,
-	VALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY,
-	VALADOC_CONTENT_WIKI_LINK_NUM_PROPERTIES
+	BALADOC_CONTENT_WIKI_LINK_0_PROPERTY,
+	BALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY,
+	BALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY,
+	BALADOC_CONTENT_WIKI_LINK_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_wiki_link_properties[VALADOC_CONTENT_WIKI_LINK_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_wiki_link_properties[BALADOC_CONTENT_WIKI_LINK_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
@@ -115,7 +115,7 @@ valadoc_content_wiki_link_set_page (ValadocContentWikiLink* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_page);
 		self->priv->_page = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_wiki_link_properties[VALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_wiki_link_properties[BALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY]);
 	}
 }
 
@@ -142,7 +142,7 @@ valadoc_content_wiki_link_set_name (ValadocContentWikiLink* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_name);
 		self->priv->_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_wiki_link_properties[VALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_wiki_link_properties[BALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY]);
 	}
 }
 
@@ -157,7 +157,7 @@ valadoc_content_wiki_link_construct (GType object_type)
 G_GNUC_INTERNAL ValadocContentWikiLink*
 valadoc_content_wiki_link_new (void)
 {
-	return valadoc_content_wiki_link_construct (VALADOC_CONTENT_TYPE_WIKI_LINK);
+	return valadoc_content_wiki_link_construct (BALADOC_CONTENT_TYPE_WIKI_LINK);
 }
 
 static void
@@ -181,7 +181,7 @@ valadoc_content_wiki_link_real_check (ValadocContentContentElement* base,
 	g_return_if_fail (file_path != NULL);
 	g_return_if_fail (reporter != NULL);
 	g_return_if_fail (settings != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_wiki_link_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_wiki_link_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent), api_root, container, file_path, reporter, settings);
 	_tmp0_ = valadoc_api_tree_get_wikitree (api_root);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = self->priv->_name;
@@ -198,7 +198,7 @@ valadoc_content_wiki_link_real_check (ValadocContentContentElement* base,
 		gchar* _tmp13_;
 		gchar* _tmp14_;
 		const gchar* _tmp15_;
-		if (VALADOC_API_IS_PACKAGE (container)) {
+		if (BALADOC_API_IS_PACKAGE (container)) {
 			gchar* _tmp7_;
 			_tmp7_ = g_strdup ("");
 			_g_free0 (_tmp6_);
@@ -324,7 +324,7 @@ valadoc_content_wiki_link_real_copy (ValadocContentContentElement* base,
 			_tmp16_ = element;
 			_tmp17_ = link;
 			_tmp18_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp16_, (ValadocContentContentElement*) _tmp17_);
-			_tmp19_ = VALADOC_CONTENT_IS_INLINE (_tmp18_) ? ((ValadocContentInline*) _tmp18_) : NULL;
+			_tmp19_ = BALADOC_CONTENT_IS_INLINE (_tmp18_) ? ((ValadocContentInline*) _tmp18_) : NULL;
 			if (_tmp19_ == NULL) {
 				_g_object_unref0 (_tmp18_);
 			}
@@ -356,8 +356,8 @@ valadoc_content_wiki_link_class_init (ValadocContentWikiLinkClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_content_wiki_link_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_content_wiki_link_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_content_wiki_link_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY, valadoc_content_wiki_link_properties[VALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY] = g_param_spec_object ("page", "page", "page", VALADOC_TYPE_WIKI_PAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY, valadoc_content_wiki_link_properties[VALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY] = g_param_spec_string ("name", "name", "name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY, valadoc_content_wiki_link_properties[BALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY] = g_param_spec_object ("page", "page", "page", BALADOC_TYPE_WIKI_PAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY, valadoc_content_wiki_link_properties[BALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY] = g_param_spec_string ("name", "name", "name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 }
 
 static void
@@ -378,7 +378,7 @@ static void
 valadoc_content_wiki_link_finalize (GObject * obj)
 {
 	ValadocContentWikiLink * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_WIKI_LINK, ValadocContentWikiLink);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_WIKI_LINK, ValadocContentWikiLink);
 	_g_object_unref0 (self->priv->_page);
 	_g_free0 (self->priv->_name);
 	G_OBJECT_CLASS (valadoc_content_wiki_link_parent_class)->finalize (obj);
@@ -390,8 +390,8 @@ valadoc_content_wiki_link_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentWikiLinkClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_wiki_link_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentWikiLink), 0, (GInstanceInitFunc) valadoc_content_wiki_link_instance_init, NULL };
 	static const GInterfaceInfo valadoc_content_inline_info = { (GInterfaceInitFunc) valadoc_content_wiki_link_valadoc_content_inline_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_content_wiki_link_type_id;
-	valadoc_content_wiki_link_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_INLINE_CONTENT, "ValadocContentWikiLink", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_content_wiki_link_type_id, VALADOC_CONTENT_TYPE_INLINE, &valadoc_content_inline_info);
+	valadoc_content_wiki_link_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_INLINE_CONTENT, "ValadocContentWikiLink", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_content_wiki_link_type_id, BALADOC_CONTENT_TYPE_INLINE, &valadoc_content_inline_info);
 	ValadocContentWikiLink_private_offset = g_type_add_instance_private (valadoc_content_wiki_link_type_id, sizeof (ValadocContentWikiLinkPrivate));
 	return valadoc_content_wiki_link_type_id;
 }
@@ -415,12 +415,12 @@ _vala_valadoc_content_wiki_link_get_property (GObject * object,
                                               GParamSpec * pspec)
 {
 	ValadocContentWikiLink * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_WIKI_LINK, ValadocContentWikiLink);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_WIKI_LINK, ValadocContentWikiLink);
 	switch (property_id) {
-		case VALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY:
+		case BALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY:
 		g_value_set_object (value, valadoc_content_wiki_link_get_page (self));
 		break;
-		case VALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY:
+		case BALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_content_wiki_link_get_name (self));
 		break;
 		default:
@@ -436,12 +436,12 @@ _vala_valadoc_content_wiki_link_set_property (GObject * object,
                                               GParamSpec * pspec)
 {
 	ValadocContentWikiLink * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_WIKI_LINK, ValadocContentWikiLink);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_WIKI_LINK, ValadocContentWikiLink);
 	switch (property_id) {
-		case VALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY:
+		case BALADOC_CONTENT_WIKI_LINK_PAGE_PROPERTY:
 		valadoc_content_wiki_link_set_page (self, g_value_get_object (value));
 		break;
-		case VALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY:
+		case BALADOC_CONTENT_WIKI_LINK_NAME_PROPERTY:
 		valadoc_content_wiki_link_set_name (self, g_value_get_string (value));
 		break;
 		default:

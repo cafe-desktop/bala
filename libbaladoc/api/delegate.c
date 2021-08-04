@@ -33,14 +33,14 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_API_DELEGATE_0_PROPERTY,
-	VALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY,
-	VALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY,
-	VALADOC_API_DELEGATE_NODE_TYPE_PROPERTY,
-	VALADOC_API_DELEGATE_IS_STATIC_PROPERTY,
-	VALADOC_API_DELEGATE_NUM_PROPERTIES
+	BALADOC_API_DELEGATE_0_PROPERTY,
+	BALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY,
+	BALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY,
+	BALADOC_API_DELEGATE_NODE_TYPE_PROPERTY,
+	BALADOC_API_DELEGATE_IS_STATIC_PROPERTY,
+	BALADOC_API_DELEGATE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_delegate_properties[VALADOC_API_DELEGATE_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_delegate_properties[BALADOC_API_DELEGATE_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
@@ -107,7 +107,7 @@ valadoc_api_delegate_real_set_implicit_array_length_cparameter_name (ValadocApiC
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_implicit_array_length_cparameter_name);
 		self->priv->_implicit_array_length_cparameter_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_delegate_properties[VALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_delegate_properties[BALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY]);
 	}
 }
 
@@ -146,7 +146,7 @@ valadoc_api_delegate_new (ValadocApiNode* parent,
                           ValadocApiSourceComment* comment,
                           ValaDelegate* data)
 {
-	return valadoc_api_delegate_construct (VALADOC_API_TYPE_DELEGATE, parent, file, name, accessibility, comment, data);
+	return valadoc_api_delegate_construct (BALADOC_API_TYPE_DELEGATE, parent, file, name, accessibility, comment, data);
 }
 
 /**
@@ -196,7 +196,7 @@ valadoc_api_delegate_real_set_return_type (ValadocApiCallable* base,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_return_type);
 		self->priv->_return_type = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_delegate_properties[VALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_delegate_properties[BALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY]);
 	}
 }
 
@@ -206,7 +206,7 @@ valadoc_api_delegate_real_get_node_type (ValadocApiNode* base)
 	ValadocApiNodeType result;
 	ValadocApiDelegate* self;
 	self = (ValadocApiDelegate*) base;
-	result = VALADOC_API_NODE_TYPE_DELEGATE;
+	result = BALADOC_API_NODE_TYPE_DELEGATE;
 	return result;
 }
 
@@ -241,7 +241,7 @@ valadoc_api_delegate_set_is_static (ValadocApiDelegate* self,
 	old_value = valadoc_api_delegate_get_is_static (self);
 	if (old_value != value) {
 		self->priv->_is_static = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_delegate_properties[VALADOC_API_DELEGATE_IS_STATIC_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_delegate_properties[BALADOC_API_DELEGATE_IS_STATIC_PROPERTY]);
 	}
 }
 
@@ -309,7 +309,7 @@ valadoc_api_delegate_real_build_signature (ValadocApiItem* base)
 	valadoc_api_signature_builder_append_content (_tmp6_, _tmp10_, TRUE);
 	_tmp11_ = signature;
 	valadoc_api_signature_builder_append_symbol (_tmp11_, (ValadocApiNode*) self, TRUE);
-	_tmp12_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, VALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
+	_tmp12_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, BALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
 	type_parameters = _tmp12_;
 	_tmp13_ = type_parameters;
 	_tmp14_ = vala_collection_get_size ((ValaCollection*) _tmp13_);
@@ -386,7 +386,7 @@ valadoc_api_delegate_real_build_signature (ValadocApiItem* base)
 		gint _tmp35_;
 		gint _tmp36_;
 		gint _param_index = 0;
-		_tmp33_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, VALADOC_API_NODE_TYPE_FORMAL_PARAMETER, FALSE);
+		_tmp33_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, BALADOC_API_NODE_TYPE_FORMAL_PARAMETER, FALSE);
 		_param_list = _tmp33_;
 		_tmp34_ = _param_list;
 		_tmp35_ = vala_collection_get_size ((ValaCollection*) _tmp34_);
@@ -430,8 +430,8 @@ valadoc_api_delegate_real_build_signature (ValadocApiItem* base)
 	_tmp46_ = signature;
 	valadoc_api_signature_builder_append (_tmp46_, ")", FALSE);
 	_tmp47_ = g_new0 (ValadocApiNodeType, 2);
-	_tmp47_[0] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-	_tmp47_[1] = VALADOC_API_NODE_TYPE_CLASS;
+	_tmp47_[0] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+	_tmp47_[1] = BALADOC_API_NODE_TYPE_CLASS;
 	_tmp48_ = _tmp47_;
 	_tmp48__length1 = 2;
 	_tmp49_ = valadoc_api_node_get_children_by_types ((ValadocApiNode*) self, _tmp48_, (gint) 2, TRUE);
@@ -511,26 +511,26 @@ valadoc_api_delegate_class_init (ValadocApiDelegateClass * klass,
 	g_type_class_adjust_private_offset (klass, &ValadocApiDelegate_private_offset);
 	((ValadocApiNodeClass *) klass)->accept = (void (*) (ValadocApiNode*, ValadocApiVisitor*)) valadoc_api_delegate_real_accept;
 	((ValadocApiItemClass *) klass)->build_signature = (ValadocContentInline* (*) (ValadocApiItem*)) valadoc_api_delegate_real_build_signature;
-	VALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_delegate_real_get_node_type;
+	BALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_delegate_real_get_node_type;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_delegate_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_delegate_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_delegate_finalize;
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY, valadoc_api_delegate_properties[VALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY, valadoc_api_delegate_properties[BALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY, valadoc_api_delegate_properties[VALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY] = g_param_spec_object ("return-type", "return-type", "return-type", VALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY, valadoc_api_delegate_properties[BALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY] = g_param_spec_object ("return-type", "return-type", "return-type", BALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_DELEGATE_NODE_TYPE_PROPERTY, valadoc_api_delegate_properties[VALADOC_API_DELEGATE_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", VALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_DELEGATE_NODE_TYPE_PROPERTY, valadoc_api_delegate_properties[BALADOC_API_DELEGATE_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", BALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this delegate is static
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_DELEGATE_IS_STATIC_PROPERTY, valadoc_api_delegate_properties[VALADOC_API_DELEGATE_IS_STATIC_PROPERTY] = g_param_spec_boolean ("is-static", "is-static", "is-static", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_DELEGATE_IS_STATIC_PROPERTY, valadoc_api_delegate_properties[BALADOC_API_DELEGATE_IS_STATIC_PROPERTY] = g_param_spec_boolean ("is-static", "is-static", "is-static", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -555,7 +555,7 @@ static void
 valadoc_api_delegate_finalize (GObject * obj)
 {
 	ValadocApiDelegate * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_DELEGATE, ValadocApiDelegate);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_DELEGATE, ValadocApiDelegate);
 	_g_free0 (self->priv->cname);
 	_g_free0 (self->priv->_implicit_array_length_cparameter_name);
 	_g_object_unref0 (self->priv->_return_type);
@@ -571,8 +571,8 @@ valadoc_api_delegate_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiDelegateClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_delegate_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiDelegate), 0, (GInstanceInitFunc) valadoc_api_delegate_instance_init, NULL };
 	static const GInterfaceInfo valadoc_api_callable_info = { (GInterfaceInitFunc) valadoc_api_delegate_valadoc_api_callable_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_api_delegate_type_id;
-	valadoc_api_delegate_type_id = g_type_register_static (VALADOC_API_TYPE_TYPESYMBOL, "ValadocApiDelegate", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_api_delegate_type_id, VALADOC_API_TYPE_CALLABLE, &valadoc_api_callable_info);
+	valadoc_api_delegate_type_id = g_type_register_static (BALADOC_API_TYPE_TYPESYMBOL, "ValadocApiDelegate", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_api_delegate_type_id, BALADOC_API_TYPE_CALLABLE, &valadoc_api_callable_info);
 	ValadocApiDelegate_private_offset = g_type_add_instance_private (valadoc_api_delegate_type_id, sizeof (ValadocApiDelegatePrivate));
 	return valadoc_api_delegate_type_id;
 }
@@ -596,18 +596,18 @@ _vala_valadoc_api_delegate_get_property (GObject * object,
                                          GParamSpec * pspec)
 {
 	ValadocApiDelegate * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_DELEGATE, ValadocApiDelegate);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_DELEGATE, ValadocApiDelegate);
 	switch (property_id) {
-		case VALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_api_callable_get_implicit_array_length_cparameter_name ((ValadocApiCallable*) self));
 		break;
-		case VALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY:
+		case BALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY:
 		g_value_set_object (value, valadoc_api_callable_get_return_type ((ValadocApiCallable*) self));
 		break;
-		case VALADOC_API_DELEGATE_NODE_TYPE_PROPERTY:
+		case BALADOC_API_DELEGATE_NODE_TYPE_PROPERTY:
 		g_value_set_enum (value, valadoc_api_node_get_node_type ((ValadocApiNode*) self));
 		break;
-		case VALADOC_API_DELEGATE_IS_STATIC_PROPERTY:
+		case BALADOC_API_DELEGATE_IS_STATIC_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_delegate_get_is_static (self));
 		break;
 		default:
@@ -623,15 +623,15 @@ _vala_valadoc_api_delegate_set_property (GObject * object,
                                          GParamSpec * pspec)
 {
 	ValadocApiDelegate * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_DELEGATE, ValadocApiDelegate);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_DELEGATE, ValadocApiDelegate);
 	switch (property_id) {
-		case VALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_DELEGATE_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
 		valadoc_api_callable_set_implicit_array_length_cparameter_name ((ValadocApiCallable*) self, g_value_get_string (value));
 		break;
-		case VALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY:
+		case BALADOC_API_DELEGATE_RETURN_TYPE_PROPERTY:
 		valadoc_api_callable_set_return_type ((ValadocApiCallable*) self, g_value_get_object (value));
 		break;
-		case VALADOC_API_DELEGATE_IS_STATIC_PROPERTY:
+		case BALADOC_API_DELEGATE_IS_STATIC_PROPERTY:
 		valadoc_api_delegate_set_is_static (self, g_value_get_boolean (value));
 		break;
 		default:

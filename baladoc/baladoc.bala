@@ -320,7 +320,7 @@ public class ValaDoc : Object {
 		}
 
 		if (disable_diagnostic_colors == false) {
-			unowned string env_colors = Environment.get_variable ("VALA_COLORS");
+			unowned string env_colors = Environment.get_variable ("BALA_COLORS");
 			if (env_colors != null) {
 				reporter.set_colors (env_colors);
 			} else {

@@ -53,7 +53,7 @@ vala_ccode_newline_construct (GType object_type)
 ValaCCodeNewline*
 vala_ccode_newline_new (void)
 {
-	return vala_ccode_newline_construct (VALA_TYPE_CCODE_NEWLINE);
+	return vala_ccode_newline_construct (BALA_TYPE_CCODE_NEWLINE);
 }
 
 static void
@@ -78,7 +78,7 @@ vala_ccode_newline_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeNewlineClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_newline_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeNewline), 0, (GInstanceInitFunc) vala_ccode_newline_instance_init, NULL };
 	GType vala_ccode_newline_type_id;
-	vala_ccode_newline_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeNewline", &g_define_type_info, 0);
+	vala_ccode_newline_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeNewline", &g_define_type_info, 0);
 	return vala_ccode_newline_type_id;
 }
 

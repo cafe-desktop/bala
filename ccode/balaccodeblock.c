@@ -156,12 +156,12 @@ vala_ccode_block_real_write (ValaCCodeNode* base,
 			_tmp9_ = statement;
 			vala_ccode_node_write_declaration (_tmp9_, writer);
 			_tmp11_ = statement;
-			if (VALA_IS_CCODE_LABEL (_tmp11_)) {
+			if (BALA_IS_CCODE_LABEL (_tmp11_)) {
 				_tmp10_ = TRUE;
 			} else {
 				ValaCCodeNode* _tmp12_;
 				_tmp12_ = statement;
-				_tmp10_ = VALA_IS_CCODE_CASE_STATEMENT (_tmp12_);
+				_tmp10_ = BALA_IS_CCODE_CASE_STATEMENT (_tmp12_);
 			}
 			if (_tmp10_) {
 				_vala_ccode_node_unref0 (last_statement);
@@ -172,26 +172,26 @@ vala_ccode_block_real_write (ValaCCodeNode* base,
 				gboolean _tmp15_ = FALSE;
 				ValaCCodeNode* _tmp16_;
 				_tmp16_ = statement;
-				if (VALA_IS_CCODE_RETURN_STATEMENT (_tmp16_)) {
+				if (BALA_IS_CCODE_RETURN_STATEMENT (_tmp16_)) {
 					_tmp15_ = TRUE;
 				} else {
 					ValaCCodeNode* _tmp17_;
 					_tmp17_ = statement;
-					_tmp15_ = VALA_IS_CCODE_GOTO_STATEMENT (_tmp17_);
+					_tmp15_ = BALA_IS_CCODE_GOTO_STATEMENT (_tmp17_);
 				}
 				if (_tmp15_) {
 					_tmp14_ = TRUE;
 				} else {
 					ValaCCodeNode* _tmp18_;
 					_tmp18_ = statement;
-					_tmp14_ = VALA_IS_CCODE_CONTINUE_STATEMENT (_tmp18_);
+					_tmp14_ = BALA_IS_CCODE_CONTINUE_STATEMENT (_tmp18_);
 				}
 				if (_tmp14_) {
 					_tmp13_ = TRUE;
 				} else {
 					ValaCCodeNode* _tmp19_;
 					_tmp19_ = statement;
-					_tmp13_ = VALA_IS_CCODE_BREAK_STATEMENT (_tmp19_);
+					_tmp13_ = BALA_IS_CCODE_BREAK_STATEMENT (_tmp19_);
 				}
 				if (_tmp13_) {
 					ValaCCodeNode* _tmp20_;
@@ -272,7 +272,7 @@ vala_ccode_block_construct (GType object_type)
 ValaCCodeBlock*
 vala_ccode_block_new (void)
 {
-	return vala_ccode_block_construct (VALA_TYPE_CCODE_BLOCK);
+	return vala_ccode_block_construct (BALA_TYPE_CCODE_BLOCK);
 }
 
 static void
@@ -293,7 +293,7 @@ vala_ccode_block_instance_init (ValaCCodeBlock * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_ccode_block_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CCODE_NODE, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CCODE_NODE, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
 	self->priv->statements = (ValaList*) _tmp1_;
 }
 
@@ -301,9 +301,9 @@ static void
 vala_ccode_block_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeBlock * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_BLOCK, ValaCCodeBlock);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_BLOCK, ValaCCodeBlock);
 	_vala_iterable_unref0 (self->priv->statements);
-	VALA_CCODE_NODE_CLASS (vala_ccode_block_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_block_parent_class)->finalize (obj);
 }
 
 /**
@@ -314,7 +314,7 @@ vala_ccode_block_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeBlockClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_block_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeBlock), 0, (GInstanceInitFunc) vala_ccode_block_instance_init, NULL };
 	GType vala_ccode_block_type_id;
-	vala_ccode_block_type_id = g_type_register_static (VALA_TYPE_CCODE_STATEMENT, "ValaCCodeBlock", &g_define_type_info, 0);
+	vala_ccode_block_type_id = g_type_register_static (BALA_TYPE_CCODE_STATEMENT, "ValaCCodeBlock", &g_define_type_info, 0);
 	ValaCCodeBlock_private_offset = g_type_add_instance_private (vala_ccode_block_type_id, sizeof (ValaCCodeBlockPrivate));
 	return vala_ccode_block_type_id;
 }

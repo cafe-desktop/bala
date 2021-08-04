@@ -186,7 +186,7 @@ vala_conditional_expression_new (ValaExpression* cond,
                                  ValaExpression* false_expr,
                                  ValaSourceReference* source)
 {
-	return vala_conditional_expression_construct (VALA_TYPE_CONDITIONAL_EXPRESSION, cond, true_expr, false_expr, source);
+	return vala_conditional_expression_construct (BALA_TYPE_CONDITIONAL_EXPRESSION, cond, true_expr, false_expr, source);
 }
 
 static void
@@ -672,7 +672,7 @@ vala_conditional_expression_real_check (ValaCodeNode* base,
 	_tmp5_ = _tmp4_;
 	_tmp6_ = vala_semantic_analyzer_get_current_symbol (_tmp5_);
 	_tmp7_ = _tmp6_;
-	if (!VALA_IS_BLOCK (_tmp7_)) {
+	if (!BALA_IS_BLOCK (_tmp7_)) {
 		ValaSourceReference* _tmp8_;
 		ValaSourceReference* _tmp9_;
 		_tmp8_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
@@ -1037,7 +1037,7 @@ vala_conditional_expression_real_check (ValaCodeNode* base,
 	_tmp210_ = _tmp209_;
 	_tmp211_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp210_);
 	_tmp212_ = _tmp211_;
-	_tmp213_ = vala_assignment_new ((ValaExpression*) _tmp206_, _tmp208_, VALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp212_);
+	_tmp213_ = vala_assignment_new ((ValaExpression*) _tmp206_, _tmp208_, BALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp212_);
 	_tmp214_ = _tmp213_;
 	_tmp215_ = vala_conditional_expression_get_true_expression (self);
 	_tmp216_ = _tmp215_;
@@ -1063,7 +1063,7 @@ vala_conditional_expression_real_check (ValaCodeNode* base,
 	_tmp233_ = _tmp232_;
 	_tmp234_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp233_);
 	_tmp235_ = _tmp234_;
-	_tmp236_ = vala_assignment_new ((ValaExpression*) _tmp229_, _tmp231_, VALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp235_);
+	_tmp236_ = vala_assignment_new ((ValaExpression*) _tmp229_, _tmp231_, BALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp235_);
 	_tmp237_ = _tmp236_;
 	_tmp238_ = vala_conditional_expression_get_false_expression (self);
 	_tmp239_ = _tmp238_;
@@ -1154,11 +1154,11 @@ static void
 vala_conditional_expression_finalize (ValaCodeNode * obj)
 {
 	ValaConditionalExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CONDITIONAL_EXPRESSION, ValaConditionalExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CONDITIONAL_EXPRESSION, ValaConditionalExpression);
 	_vala_code_node_unref0 (self->priv->_condition);
 	_vala_code_node_unref0 (self->priv->_true_expression);
 	_vala_code_node_unref0 (self->priv->_false_expression);
-	VALA_CODE_NODE_CLASS (vala_conditional_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_conditional_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -1169,7 +1169,7 @@ vala_conditional_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaConditionalExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_conditional_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaConditionalExpression), 0, (GInstanceInitFunc) vala_conditional_expression_instance_init, NULL };
 	GType vala_conditional_expression_type_id;
-	vala_conditional_expression_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaConditionalExpression", &g_define_type_info, 0);
+	vala_conditional_expression_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaConditionalExpression", &g_define_type_info, 0);
 	ValaConditionalExpression_private_offset = g_type_add_instance_private (vala_conditional_expression_type_id, sizeof (ValaConditionalExpressionPrivate));
 	return vala_conditional_expression_type_id;
 }

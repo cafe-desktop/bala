@@ -113,7 +113,7 @@ ValaLoop*
 vala_loop_new (ValaBlock* body,
                ValaSourceReference* source_reference)
 {
-	return vala_loop_construct (VALA_TYPE_LOOP, body, source_reference);
+	return vala_loop_construct (BALA_TYPE_LOOP, body, source_reference);
 }
 
 static void
@@ -231,9 +231,9 @@ static void
 vala_loop_finalize (ValaCodeNode * obj)
 {
 	ValaLoop * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_LOOP, ValaLoop);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_LOOP, ValaLoop);
 	_vala_code_node_unref0 (self->priv->_body);
-	VALA_CODE_NODE_CLASS (vala_loop_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_loop_parent_class)->finalize (obj);
 }
 
 /**
@@ -245,8 +245,8 @@ vala_loop_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaLoopClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_loop_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaLoop), 0, (GInstanceInitFunc) vala_loop_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_loop_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_loop_type_id;
-	vala_loop_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaLoop", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_loop_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_loop_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaLoop", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_loop_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaLoop_private_offset = g_type_add_instance_private (vala_loop_type_id, sizeof (ValaLoopPrivate));
 	return vala_loop_type_id;
 }

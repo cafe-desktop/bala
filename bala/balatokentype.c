@@ -33,652 +33,652 @@ vala_token_type_to_string (ValaTokenType self)
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALA_TOKEN_TYPE_ABSTRACT:
+		case BALA_TOKEN_TYPE_ABSTRACT:
 		{
 			result = "`abstract'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_AS:
+		case BALA_TOKEN_TYPE_AS:
 		{
 			result = "`as'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN:
+		case BALA_TOKEN_TYPE_ASSIGN:
 		{
 			result = "`='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN_ADD:
+		case BALA_TOKEN_TYPE_ASSIGN_ADD:
 		{
 			result = "`+='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN_BITWISE_AND:
+		case BALA_TOKEN_TYPE_ASSIGN_BITWISE_AND:
 		{
 			result = "`&='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN_BITWISE_OR:
+		case BALA_TOKEN_TYPE_ASSIGN_BITWISE_OR:
 		{
 			result = "`|='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN_BITWISE_XOR:
+		case BALA_TOKEN_TYPE_ASSIGN_BITWISE_XOR:
 		{
 			result = "`^='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN_DIV:
+		case BALA_TOKEN_TYPE_ASSIGN_DIV:
 		{
 			result = "`/='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN_MUL:
+		case BALA_TOKEN_TYPE_ASSIGN_MUL:
 		{
 			result = "`*='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN_PERCENT:
+		case BALA_TOKEN_TYPE_ASSIGN_PERCENT:
 		{
 			result = "`%='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN_SHIFT_LEFT:
+		case BALA_TOKEN_TYPE_ASSIGN_SHIFT_LEFT:
 		{
 			result = "`<<='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASSIGN_SUB:
+		case BALA_TOKEN_TYPE_ASSIGN_SUB:
 		{
 			result = "`-='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ASYNC:
+		case BALA_TOKEN_TYPE_ASYNC:
 		{
 			result = "`async'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_BASE:
+		case BALA_TOKEN_TYPE_BASE:
 		{
 			result = "`base'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_BITWISE_AND:
+		case BALA_TOKEN_TYPE_BITWISE_AND:
 		{
 			result = "`&'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_BITWISE_OR:
+		case BALA_TOKEN_TYPE_BITWISE_OR:
 		{
 			result = "`|'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_BREAK:
+		case BALA_TOKEN_TYPE_BREAK:
 		{
 			result = "`break'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CARRET:
+		case BALA_TOKEN_TYPE_CARRET:
 		{
 			result = "`^'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CASE:
+		case BALA_TOKEN_TYPE_CASE:
 		{
 			result = "`case'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CATCH:
+		case BALA_TOKEN_TYPE_CATCH:
 		{
 			result = "`catch'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CHARACTER_LITERAL:
+		case BALA_TOKEN_TYPE_CHARACTER_LITERAL:
 		{
 			result = "character literal";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CLASS:
+		case BALA_TOKEN_TYPE_CLASS:
 		{
 			result = "`class'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CLOSE_BRACE:
+		case BALA_TOKEN_TYPE_CLOSE_BRACE:
 		{
 			result = "`}'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CLOSE_BRACKET:
+		case BALA_TOKEN_TYPE_CLOSE_BRACKET:
 		{
 			result = "`]'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CLOSE_PARENS:
+		case BALA_TOKEN_TYPE_CLOSE_PARENS:
 		{
 			result = "`)'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CLOSE_REGEX_LITERAL:
+		case BALA_TOKEN_TYPE_CLOSE_REGEX_LITERAL:
 		{
 			result = "`/'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CLOSE_TEMPLATE:
+		case BALA_TOKEN_TYPE_CLOSE_TEMPLATE:
 		{
 			result = "close template";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_COLON:
+		case BALA_TOKEN_TYPE_COLON:
 		{
 			result = "`:'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_COMMA:
+		case BALA_TOKEN_TYPE_COMMA:
 		{
 			result = "`,'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CONST:
+		case BALA_TOKEN_TYPE_CONST:
 		{
 			result = "`const'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CONSTRUCT:
+		case BALA_TOKEN_TYPE_CONSTRUCT:
 		{
 			result = "`construct'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_CONTINUE:
+		case BALA_TOKEN_TYPE_CONTINUE:
 		{
 			result = "`continue'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_DEFAULT:
+		case BALA_TOKEN_TYPE_DEFAULT:
 		{
 			result = "`default'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_DELEGATE:
+		case BALA_TOKEN_TYPE_DELEGATE:
 		{
 			result = "`delegate'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_DELETE:
+		case BALA_TOKEN_TYPE_DELETE:
 		{
 			result = "`delete'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_DIV:
+		case BALA_TOKEN_TYPE_DIV:
 		{
 			result = "`/'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_DO:
+		case BALA_TOKEN_TYPE_DO:
 		{
 			result = "`do'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_DOUBLE_COLON:
+		case BALA_TOKEN_TYPE_DOUBLE_COLON:
 		{
 			result = "`::'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_DOT:
+		case BALA_TOKEN_TYPE_DOT:
 		{
 			result = "`.'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_DYNAMIC:
+		case BALA_TOKEN_TYPE_DYNAMIC:
 		{
 			result = "`dynamic'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ELLIPSIS:
+		case BALA_TOKEN_TYPE_ELLIPSIS:
 		{
 			result = "`...'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ELSE:
+		case BALA_TOKEN_TYPE_ELSE:
 		{
 			result = "`else'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ENUM:
+		case BALA_TOKEN_TYPE_ENUM:
 		{
 			result = "`enum'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ENSURES:
+		case BALA_TOKEN_TYPE_ENSURES:
 		{
 			result = "`ensures'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_ERRORDOMAIN:
+		case BALA_TOKEN_TYPE_ERRORDOMAIN:
 		{
 			result = "`errordomain'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_EOF:
+		case BALA_TOKEN_TYPE_EOF:
 		{
 			result = "end of file";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_EXTERN:
+		case BALA_TOKEN_TYPE_EXTERN:
 		{
 			result = "`extern'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_FALSE:
+		case BALA_TOKEN_TYPE_FALSE:
 		{
 			result = "`false'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_FINALLY:
+		case BALA_TOKEN_TYPE_FINALLY:
 		{
 			result = "`finally'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_FOR:
+		case BALA_TOKEN_TYPE_FOR:
 		{
 			result = "`for'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_FOREACH:
+		case BALA_TOKEN_TYPE_FOREACH:
 		{
 			result = "`foreach'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_GET:
+		case BALA_TOKEN_TYPE_GET:
 		{
 			result = "`get'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_HASH:
+		case BALA_TOKEN_TYPE_HASH:
 		{
 			result = "`#'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_IDENTIFIER:
+		case BALA_TOKEN_TYPE_IDENTIFIER:
 		{
 			result = "identifier";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_IF:
+		case BALA_TOKEN_TYPE_IF:
 		{
 			result = "`if'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_IN:
+		case BALA_TOKEN_TYPE_IN:
 		{
 			result = "`in'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_INLINE:
+		case BALA_TOKEN_TYPE_INLINE:
 		{
 			result = "`inline'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_INTEGER_LITERAL:
+		case BALA_TOKEN_TYPE_INTEGER_LITERAL:
 		{
 			result = "integer literal";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_INTERFACE:
+		case BALA_TOKEN_TYPE_INTERFACE:
 		{
 			result = "`interface'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_INTERNAL:
+		case BALA_TOKEN_TYPE_INTERNAL:
 		{
 			result = "`internal'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_INTERR:
+		case BALA_TOKEN_TYPE_INTERR:
 		{
 			result = "`?'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_IS:
+		case BALA_TOKEN_TYPE_IS:
 		{
 			result = "`is'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_LAMBDA:
+		case BALA_TOKEN_TYPE_LAMBDA:
 		{
 			result = "`=>'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_LOCK:
+		case BALA_TOKEN_TYPE_LOCK:
 		{
 			result = "`lock'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_MINUS:
+		case BALA_TOKEN_TYPE_MINUS:
 		{
 			result = "`-'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_NAMESPACE:
+		case BALA_TOKEN_TYPE_NAMESPACE:
 		{
 			result = "`namespace'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_NEW:
+		case BALA_TOKEN_TYPE_NEW:
 		{
 			result = "`new'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_NULL:
+		case BALA_TOKEN_TYPE_NULL:
 		{
 			result = "`null'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OUT:
+		case BALA_TOKEN_TYPE_OUT:
 		{
 			result = "`out'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_AND:
+		case BALA_TOKEN_TYPE_OP_AND:
 		{
 			result = "`&&'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_COALESCING:
+		case BALA_TOKEN_TYPE_OP_COALESCING:
 		{
 			result = "`??'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_DEC:
+		case BALA_TOKEN_TYPE_OP_DEC:
 		{
 			result = "`--'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_EQ:
+		case BALA_TOKEN_TYPE_OP_EQ:
 		{
 			result = "`=='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_GE:
+		case BALA_TOKEN_TYPE_OP_GE:
 		{
 			result = "`>='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_GT:
+		case BALA_TOKEN_TYPE_OP_GT:
 		{
 			result = "`>'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_INC:
+		case BALA_TOKEN_TYPE_OP_INC:
 		{
 			result = "`++'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_LE:
+		case BALA_TOKEN_TYPE_OP_LE:
 		{
 			result = "`<='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_LT:
+		case BALA_TOKEN_TYPE_OP_LT:
 		{
 			result = "`<'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_NE:
+		case BALA_TOKEN_TYPE_OP_NE:
 		{
 			result = "`!='";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_NEG:
+		case BALA_TOKEN_TYPE_OP_NEG:
 		{
 			result = "`!'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_OR:
+		case BALA_TOKEN_TYPE_OP_OR:
 		{
 			result = "`||'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_PTR:
+		case BALA_TOKEN_TYPE_OP_PTR:
 		{
 			result = "`->'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OP_SHIFT_LEFT:
+		case BALA_TOKEN_TYPE_OP_SHIFT_LEFT:
 		{
 			result = "`<<'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OPEN_BRACE:
+		case BALA_TOKEN_TYPE_OPEN_BRACE:
 		{
 			result = "`{'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OPEN_BRACKET:
+		case BALA_TOKEN_TYPE_OPEN_BRACKET:
 		{
 			result = "`['";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OPEN_PARENS:
+		case BALA_TOKEN_TYPE_OPEN_PARENS:
 		{
 			result = "`('";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OPEN_REGEX_LITERAL:
+		case BALA_TOKEN_TYPE_OPEN_REGEX_LITERAL:
 		{
 			result = "`/'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OPEN_TEMPLATE:
+		case BALA_TOKEN_TYPE_OPEN_TEMPLATE:
 		{
 			result = "open template";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OVERRIDE:
+		case BALA_TOKEN_TYPE_OVERRIDE:
 		{
 			result = "`override'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_OWNED:
+		case BALA_TOKEN_TYPE_OWNED:
 		{
 			result = "`owned'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_PARAMS:
+		case BALA_TOKEN_TYPE_PARAMS:
 		{
 			result = "`params'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_PERCENT:
+		case BALA_TOKEN_TYPE_PERCENT:
 		{
 			result = "`%'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_PLUS:
+		case BALA_TOKEN_TYPE_PLUS:
 		{
 			result = "`+'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_PRIVATE:
+		case BALA_TOKEN_TYPE_PRIVATE:
 		{
 			result = "`private'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_PROTECTED:
+		case BALA_TOKEN_TYPE_PROTECTED:
 		{
 			result = "`protected'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_PUBLIC:
+		case BALA_TOKEN_TYPE_PUBLIC:
 		{
 			result = "`public'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_REAL_LITERAL:
+		case BALA_TOKEN_TYPE_REAL_LITERAL:
 		{
 			result = "real literal";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_REF:
+		case BALA_TOKEN_TYPE_REF:
 		{
 			result = "`ref'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_REGEX_LITERAL:
+		case BALA_TOKEN_TYPE_REGEX_LITERAL:
 		{
 			result = "regex literal";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_REQUIRES:
+		case BALA_TOKEN_TYPE_REQUIRES:
 		{
 			result = "`requires'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_RETURN:
+		case BALA_TOKEN_TYPE_RETURN:
 		{
 			result = "`return'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_SEALED:
+		case BALA_TOKEN_TYPE_SEALED:
 		{
 			result = "`sealed'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_SEMICOLON:
+		case BALA_TOKEN_TYPE_SEMICOLON:
 		{
 			result = "`;'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_SET:
+		case BALA_TOKEN_TYPE_SET:
 		{
 			result = "`set'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_SIGNAL:
+		case BALA_TOKEN_TYPE_SIGNAL:
 		{
 			result = "`signal'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_SIZEOF:
+		case BALA_TOKEN_TYPE_SIZEOF:
 		{
 			result = "`sizeof'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_STAR:
+		case BALA_TOKEN_TYPE_STAR:
 		{
 			result = "`*'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_STATIC:
+		case BALA_TOKEN_TYPE_STATIC:
 		{
 			result = "`static'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_STRING_LITERAL:
+		case BALA_TOKEN_TYPE_STRING_LITERAL:
 		{
 			result = "string literal";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_STRUCT:
+		case BALA_TOKEN_TYPE_STRUCT:
 		{
 			result = "`struct'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_SWITCH:
+		case BALA_TOKEN_TYPE_SWITCH:
 		{
 			result = "`switch'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL:
+		case BALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL:
 		{
 			result = "template string literal";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_THIS:
+		case BALA_TOKEN_TYPE_THIS:
 		{
 			result = "`this'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_THROW:
+		case BALA_TOKEN_TYPE_THROW:
 		{
 			result = "`throw'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_THROWS:
+		case BALA_TOKEN_TYPE_THROWS:
 		{
 			result = "`throws'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_TILDE:
+		case BALA_TOKEN_TYPE_TILDE:
 		{
 			result = "`~'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_TRUE:
+		case BALA_TOKEN_TYPE_TRUE:
 		{
 			result = "`true'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_TRY:
+		case BALA_TOKEN_TYPE_TRY:
 		{
 			result = "`try'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_TYPEOF:
+		case BALA_TOKEN_TYPE_TYPEOF:
 		{
 			result = "`typeof'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_UNLOCK:
+		case BALA_TOKEN_TYPE_UNLOCK:
 		{
 			result = "`unlock'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_UNOWNED:
+		case BALA_TOKEN_TYPE_UNOWNED:
 		{
 			result = "`unowned'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_USING:
+		case BALA_TOKEN_TYPE_USING:
 		{
 			result = "`using'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_VAR:
+		case BALA_TOKEN_TYPE_VAR:
 		{
 			result = "`var'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_VERBATIM_STRING_LITERAL:
+		case BALA_TOKEN_TYPE_VERBATIM_STRING_LITERAL:
 		{
 			result = "verbatim string literal";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_VIRTUAL:
+		case BALA_TOKEN_TYPE_VIRTUAL:
 		{
 			result = "`virtual'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_VOID:
+		case BALA_TOKEN_TYPE_VOID:
 		{
 			result = "`void'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_VOLATILE:
+		case BALA_TOKEN_TYPE_VOLATILE:
 		{
 			result = "`volatile'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_WEAK:
+		case BALA_TOKEN_TYPE_WEAK:
 		{
 			result = "`weak'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_WHILE:
+		case BALA_TOKEN_TYPE_WHILE:
 		{
 			result = "`while'";
 			return result;
 		}
-		case VALA_TOKEN_TYPE_YIELD:
+		case BALA_TOKEN_TYPE_YIELD:
 		{
 			result = "`yield'";
 			return result;
@@ -694,7 +694,7 @@ vala_token_type_to_string (ValaTokenType self)
 static GType
 vala_token_type_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_TOKEN_TYPE_NONE, "VALA_TOKEN_TYPE_NONE", "none"}, {VALA_TOKEN_TYPE_ABSTRACT, "VALA_TOKEN_TYPE_ABSTRACT", "abstract"}, {VALA_TOKEN_TYPE_AS, "VALA_TOKEN_TYPE_AS", "as"}, {VALA_TOKEN_TYPE_ASSIGN, "VALA_TOKEN_TYPE_ASSIGN", "assign"}, {VALA_TOKEN_TYPE_ASSIGN_ADD, "VALA_TOKEN_TYPE_ASSIGN_ADD", "assign-add"}, {VALA_TOKEN_TYPE_ASSIGN_BITWISE_AND, "VALA_TOKEN_TYPE_ASSIGN_BITWISE_AND", "assign-bitwise-and"}, {VALA_TOKEN_TYPE_ASSIGN_BITWISE_OR, "VALA_TOKEN_TYPE_ASSIGN_BITWISE_OR", "assign-bitwise-or"}, {VALA_TOKEN_TYPE_ASSIGN_BITWISE_XOR, "VALA_TOKEN_TYPE_ASSIGN_BITWISE_XOR", "assign-bitwise-xor"}, {VALA_TOKEN_TYPE_ASSIGN_DIV, "VALA_TOKEN_TYPE_ASSIGN_DIV", "assign-div"}, {VALA_TOKEN_TYPE_ASSIGN_MUL, "VALA_TOKEN_TYPE_ASSIGN_MUL", "assign-mul"}, {VALA_TOKEN_TYPE_ASSIGN_PERCENT, "VALA_TOKEN_TYPE_ASSIGN_PERCENT", "assign-percent"}, {VALA_TOKEN_TYPE_ASSIGN_SHIFT_LEFT, "VALA_TOKEN_TYPE_ASSIGN_SHIFT_LEFT", "assign-shift-left"}, {VALA_TOKEN_TYPE_ASSIGN_SUB, "VALA_TOKEN_TYPE_ASSIGN_SUB", "assign-sub"}, {VALA_TOKEN_TYPE_ASYNC, "VALA_TOKEN_TYPE_ASYNC", "async"}, {VALA_TOKEN_TYPE_BASE, "VALA_TOKEN_TYPE_BASE", "base"}, {VALA_TOKEN_TYPE_BITWISE_AND, "VALA_TOKEN_TYPE_BITWISE_AND", "bitwise-and"}, {VALA_TOKEN_TYPE_BITWISE_OR, "VALA_TOKEN_TYPE_BITWISE_OR", "bitwise-or"}, {VALA_TOKEN_TYPE_BREAK, "VALA_TOKEN_TYPE_BREAK", "break"}, {VALA_TOKEN_TYPE_CARRET, "VALA_TOKEN_TYPE_CARRET", "carret"}, {VALA_TOKEN_TYPE_CASE, "VALA_TOKEN_TYPE_CASE", "case"}, {VALA_TOKEN_TYPE_CATCH, "VALA_TOKEN_TYPE_CATCH", "catch"}, {VALA_TOKEN_TYPE_CHARACTER_LITERAL, "VALA_TOKEN_TYPE_CHARACTER_LITERAL", "character-literal"}, {VALA_TOKEN_TYPE_CLASS, "VALA_TOKEN_TYPE_CLASS", "class"}, {VALA_TOKEN_TYPE_CLOSE_BRACE, "VALA_TOKEN_TYPE_CLOSE_BRACE", "close-brace"}, {VALA_TOKEN_TYPE_CLOSE_BRACKET, "VALA_TOKEN_TYPE_CLOSE_BRACKET", "close-bracket"}, {VALA_TOKEN_TYPE_CLOSE_PARENS, "VALA_TOKEN_TYPE_CLOSE_PARENS", "close-parens"}, {VALA_TOKEN_TYPE_CLOSE_REGEX_LITERAL, "VALA_TOKEN_TYPE_CLOSE_REGEX_LITERAL", "close-regex-literal"}, {VALA_TOKEN_TYPE_CLOSE_TEMPLATE, "VALA_TOKEN_TYPE_CLOSE_TEMPLATE", "close-template"}, {VALA_TOKEN_TYPE_COLON, "VALA_TOKEN_TYPE_COLON", "colon"}, {VALA_TOKEN_TYPE_COMMA, "VALA_TOKEN_TYPE_COMMA", "comma"}, {VALA_TOKEN_TYPE_CONST, "VALA_TOKEN_TYPE_CONST", "const"}, {VALA_TOKEN_TYPE_CONSTRUCT, "VALA_TOKEN_TYPE_CONSTRUCT", "construct"}, {VALA_TOKEN_TYPE_CONTINUE, "VALA_TOKEN_TYPE_CONTINUE", "continue"}, {VALA_TOKEN_TYPE_DEFAULT, "VALA_TOKEN_TYPE_DEFAULT", "default"}, {VALA_TOKEN_TYPE_DELEGATE, "VALA_TOKEN_TYPE_DELEGATE", "delegate"}, {VALA_TOKEN_TYPE_DELETE, "VALA_TOKEN_TYPE_DELETE", "delete"}, {VALA_TOKEN_TYPE_DIV, "VALA_TOKEN_TYPE_DIV", "div"}, {VALA_TOKEN_TYPE_DO, "VALA_TOKEN_TYPE_DO", "do"}, {VALA_TOKEN_TYPE_DOUBLE_COLON, "VALA_TOKEN_TYPE_DOUBLE_COLON", "double-colon"}, {VALA_TOKEN_TYPE_DOT, "VALA_TOKEN_TYPE_DOT", "dot"}, {VALA_TOKEN_TYPE_DYNAMIC, "VALA_TOKEN_TYPE_DYNAMIC", "dynamic"}, {VALA_TOKEN_TYPE_ELLIPSIS, "VALA_TOKEN_TYPE_ELLIPSIS", "ellipsis"}, {VALA_TOKEN_TYPE_ELSE, "VALA_TOKEN_TYPE_ELSE", "else"}, {VALA_TOKEN_TYPE_ENUM, "VALA_TOKEN_TYPE_ENUM", "enum"}, {VALA_TOKEN_TYPE_ENSURES, "VALA_TOKEN_TYPE_ENSURES", "ensures"}, {VALA_TOKEN_TYPE_ERRORDOMAIN, "VALA_TOKEN_TYPE_ERRORDOMAIN", "errordomain"}, {VALA_TOKEN_TYPE_EOF, "VALA_TOKEN_TYPE_EOF", "eof"}, {VALA_TOKEN_TYPE_EXTERN, "VALA_TOKEN_TYPE_EXTERN", "extern"}, {VALA_TOKEN_TYPE_FALSE, "VALA_TOKEN_TYPE_FALSE", "false"}, {VALA_TOKEN_TYPE_FINALLY, "VALA_TOKEN_TYPE_FINALLY", "finally"}, {VALA_TOKEN_TYPE_FOR, "VALA_TOKEN_TYPE_FOR", "for"}, {VALA_TOKEN_TYPE_FOREACH, "VALA_TOKEN_TYPE_FOREACH", "foreach"}, {VALA_TOKEN_TYPE_GET, "VALA_TOKEN_TYPE_GET", "get"}, {VALA_TOKEN_TYPE_HASH, "VALA_TOKEN_TYPE_HASH", "hash"}, {VALA_TOKEN_TYPE_IDENTIFIER, "VALA_TOKEN_TYPE_IDENTIFIER", "identifier"}, {VALA_TOKEN_TYPE_IF, "VALA_TOKEN_TYPE_IF", "if"}, {VALA_TOKEN_TYPE_IN, "VALA_TOKEN_TYPE_IN", "in"}, {VALA_TOKEN_TYPE_INLINE, "VALA_TOKEN_TYPE_INLINE", "inline"}, {VALA_TOKEN_TYPE_INTEGER_LITERAL, "VALA_TOKEN_TYPE_INTEGER_LITERAL", "integer-literal"}, {VALA_TOKEN_TYPE_INTERFACE, "VALA_TOKEN_TYPE_INTERFACE", "interface"}, {VALA_TOKEN_TYPE_INTERNAL, "VALA_TOKEN_TYPE_INTERNAL", "internal"}, {VALA_TOKEN_TYPE_INTERR, "VALA_TOKEN_TYPE_INTERR", "interr"}, {VALA_TOKEN_TYPE_IS, "VALA_TOKEN_TYPE_IS", "is"}, {VALA_TOKEN_TYPE_LAMBDA, "VALA_TOKEN_TYPE_LAMBDA", "lambda"}, {VALA_TOKEN_TYPE_LOCK, "VALA_TOKEN_TYPE_LOCK", "lock"}, {VALA_TOKEN_TYPE_MINUS, "VALA_TOKEN_TYPE_MINUS", "minus"}, {VALA_TOKEN_TYPE_NAMESPACE, "VALA_TOKEN_TYPE_NAMESPACE", "namespace"}, {VALA_TOKEN_TYPE_NEW, "VALA_TOKEN_TYPE_NEW", "new"}, {VALA_TOKEN_TYPE_NULL, "VALA_TOKEN_TYPE_NULL", "null"}, {VALA_TOKEN_TYPE_OUT, "VALA_TOKEN_TYPE_OUT", "out"}, {VALA_TOKEN_TYPE_OP_AND, "VALA_TOKEN_TYPE_OP_AND", "op-and"}, {VALA_TOKEN_TYPE_OP_COALESCING, "VALA_TOKEN_TYPE_OP_COALESCING", "op-coalescing"}, {VALA_TOKEN_TYPE_OP_DEC, "VALA_TOKEN_TYPE_OP_DEC", "op-dec"}, {VALA_TOKEN_TYPE_OP_EQ, "VALA_TOKEN_TYPE_OP_EQ", "op-eq"}, {VALA_TOKEN_TYPE_OP_GE, "VALA_TOKEN_TYPE_OP_GE", "op-ge"}, {VALA_TOKEN_TYPE_OP_GT, "VALA_TOKEN_TYPE_OP_GT", "op-gt"}, {VALA_TOKEN_TYPE_OP_INC, "VALA_TOKEN_TYPE_OP_INC", "op-inc"}, {VALA_TOKEN_TYPE_OP_LE, "VALA_TOKEN_TYPE_OP_LE", "op-le"}, {VALA_TOKEN_TYPE_OP_LT, "VALA_TOKEN_TYPE_OP_LT", "op-lt"}, {VALA_TOKEN_TYPE_OP_NE, "VALA_TOKEN_TYPE_OP_NE", "op-ne"}, {VALA_TOKEN_TYPE_OP_NEG, "VALA_TOKEN_TYPE_OP_NEG", "op-neg"}, {VALA_TOKEN_TYPE_OP_OR, "VALA_TOKEN_TYPE_OP_OR", "op-or"}, {VALA_TOKEN_TYPE_OP_PTR, "VALA_TOKEN_TYPE_OP_PTR", "op-ptr"}, {VALA_TOKEN_TYPE_OP_SHIFT_LEFT, "VALA_TOKEN_TYPE_OP_SHIFT_LEFT", "op-shift-left"}, {VALA_TOKEN_TYPE_OPEN_BRACE, "VALA_TOKEN_TYPE_OPEN_BRACE", "open-brace"}, {VALA_TOKEN_TYPE_OPEN_BRACKET, "VALA_TOKEN_TYPE_OPEN_BRACKET", "open-bracket"}, {VALA_TOKEN_TYPE_OPEN_PARENS, "VALA_TOKEN_TYPE_OPEN_PARENS", "open-parens"}, {VALA_TOKEN_TYPE_OPEN_REGEX_LITERAL, "VALA_TOKEN_TYPE_OPEN_REGEX_LITERAL", "open-regex-literal"}, {VALA_TOKEN_TYPE_OPEN_TEMPLATE, "VALA_TOKEN_TYPE_OPEN_TEMPLATE", "open-template"}, {VALA_TOKEN_TYPE_OVERRIDE, "VALA_TOKEN_TYPE_OVERRIDE", "override"}, {VALA_TOKEN_TYPE_OWNED, "VALA_TOKEN_TYPE_OWNED", "owned"}, {VALA_TOKEN_TYPE_PARAMS, "VALA_TOKEN_TYPE_PARAMS", "params"}, {VALA_TOKEN_TYPE_PERCENT, "VALA_TOKEN_TYPE_PERCENT", "percent"}, {VALA_TOKEN_TYPE_PLUS, "VALA_TOKEN_TYPE_PLUS", "plus"}, {VALA_TOKEN_TYPE_PRIVATE, "VALA_TOKEN_TYPE_PRIVATE", "private"}, {VALA_TOKEN_TYPE_PROTECTED, "VALA_TOKEN_TYPE_PROTECTED", "protected"}, {VALA_TOKEN_TYPE_PUBLIC, "VALA_TOKEN_TYPE_PUBLIC", "public"}, {VALA_TOKEN_TYPE_REAL_LITERAL, "VALA_TOKEN_TYPE_REAL_LITERAL", "real-literal"}, {VALA_TOKEN_TYPE_REF, "VALA_TOKEN_TYPE_REF", "ref"}, {VALA_TOKEN_TYPE_REGEX_LITERAL, "VALA_TOKEN_TYPE_REGEX_LITERAL", "regex-literal"}, {VALA_TOKEN_TYPE_REQUIRES, "VALA_TOKEN_TYPE_REQUIRES", "requires"}, {VALA_TOKEN_TYPE_RETURN, "VALA_TOKEN_TYPE_RETURN", "return"}, {VALA_TOKEN_TYPE_SEALED, "VALA_TOKEN_TYPE_SEALED", "sealed"}, {VALA_TOKEN_TYPE_SEMICOLON, "VALA_TOKEN_TYPE_SEMICOLON", "semicolon"}, {VALA_TOKEN_TYPE_SET, "VALA_TOKEN_TYPE_SET", "set"}, {VALA_TOKEN_TYPE_SIGNAL, "VALA_TOKEN_TYPE_SIGNAL", "signal"}, {VALA_TOKEN_TYPE_SIZEOF, "VALA_TOKEN_TYPE_SIZEOF", "sizeof"}, {VALA_TOKEN_TYPE_STAR, "VALA_TOKEN_TYPE_STAR", "star"}, {VALA_TOKEN_TYPE_STATIC, "VALA_TOKEN_TYPE_STATIC", "static"}, {VALA_TOKEN_TYPE_STRING_LITERAL, "VALA_TOKEN_TYPE_STRING_LITERAL", "string-literal"}, {VALA_TOKEN_TYPE_STRUCT, "VALA_TOKEN_TYPE_STRUCT", "struct"}, {VALA_TOKEN_TYPE_SWITCH, "VALA_TOKEN_TYPE_SWITCH", "switch"}, {VALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL, "VALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL", "template-string-literal"}, {VALA_TOKEN_TYPE_THIS, "VALA_TOKEN_TYPE_THIS", "this"}, {VALA_TOKEN_TYPE_THROW, "VALA_TOKEN_TYPE_THROW", "throw"}, {VALA_TOKEN_TYPE_THROWS, "VALA_TOKEN_TYPE_THROWS", "throws"}, {VALA_TOKEN_TYPE_TILDE, "VALA_TOKEN_TYPE_TILDE", "tilde"}, {VALA_TOKEN_TYPE_TRUE, "VALA_TOKEN_TYPE_TRUE", "true"}, {VALA_TOKEN_TYPE_TRY, "VALA_TOKEN_TYPE_TRY", "try"}, {VALA_TOKEN_TYPE_TYPEOF, "VALA_TOKEN_TYPE_TYPEOF", "typeof"}, {VALA_TOKEN_TYPE_UNLOCK, "VALA_TOKEN_TYPE_UNLOCK", "unlock"}, {VALA_TOKEN_TYPE_UNOWNED, "VALA_TOKEN_TYPE_UNOWNED", "unowned"}, {VALA_TOKEN_TYPE_USING, "VALA_TOKEN_TYPE_USING", "using"}, {VALA_TOKEN_TYPE_VAR, "VALA_TOKEN_TYPE_VAR", "var"}, {VALA_TOKEN_TYPE_VERBATIM_STRING_LITERAL, "VALA_TOKEN_TYPE_VERBATIM_STRING_LITERAL", "verbatim-string-literal"}, {VALA_TOKEN_TYPE_VIRTUAL, "VALA_TOKEN_TYPE_VIRTUAL", "virtual"}, {VALA_TOKEN_TYPE_VOID, "VALA_TOKEN_TYPE_VOID", "void"}, {VALA_TOKEN_TYPE_VOLATILE, "VALA_TOKEN_TYPE_VOLATILE", "volatile"}, {VALA_TOKEN_TYPE_WEAK, "VALA_TOKEN_TYPE_WEAK", "weak"}, {VALA_TOKEN_TYPE_WHILE, "VALA_TOKEN_TYPE_WHILE", "while"}, {VALA_TOKEN_TYPE_YIELD, "VALA_TOKEN_TYPE_YIELD", "yield"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_TOKEN_TYPE_NONE, "BALA_TOKEN_TYPE_NONE", "none"}, {BALA_TOKEN_TYPE_ABSTRACT, "BALA_TOKEN_TYPE_ABSTRACT", "abstract"}, {BALA_TOKEN_TYPE_AS, "BALA_TOKEN_TYPE_AS", "as"}, {BALA_TOKEN_TYPE_ASSIGN, "BALA_TOKEN_TYPE_ASSIGN", "assign"}, {BALA_TOKEN_TYPE_ASSIGN_ADD, "BALA_TOKEN_TYPE_ASSIGN_ADD", "assign-add"}, {BALA_TOKEN_TYPE_ASSIGN_BITWISE_AND, "BALA_TOKEN_TYPE_ASSIGN_BITWISE_AND", "assign-bitwise-and"}, {BALA_TOKEN_TYPE_ASSIGN_BITWISE_OR, "BALA_TOKEN_TYPE_ASSIGN_BITWISE_OR", "assign-bitwise-or"}, {BALA_TOKEN_TYPE_ASSIGN_BITWISE_XOR, "BALA_TOKEN_TYPE_ASSIGN_BITWISE_XOR", "assign-bitwise-xor"}, {BALA_TOKEN_TYPE_ASSIGN_DIV, "BALA_TOKEN_TYPE_ASSIGN_DIV", "assign-div"}, {BALA_TOKEN_TYPE_ASSIGN_MUL, "BALA_TOKEN_TYPE_ASSIGN_MUL", "assign-mul"}, {BALA_TOKEN_TYPE_ASSIGN_PERCENT, "BALA_TOKEN_TYPE_ASSIGN_PERCENT", "assign-percent"}, {BALA_TOKEN_TYPE_ASSIGN_SHIFT_LEFT, "BALA_TOKEN_TYPE_ASSIGN_SHIFT_LEFT", "assign-shift-left"}, {BALA_TOKEN_TYPE_ASSIGN_SUB, "BALA_TOKEN_TYPE_ASSIGN_SUB", "assign-sub"}, {BALA_TOKEN_TYPE_ASYNC, "BALA_TOKEN_TYPE_ASYNC", "async"}, {BALA_TOKEN_TYPE_BASE, "BALA_TOKEN_TYPE_BASE", "base"}, {BALA_TOKEN_TYPE_BITWISE_AND, "BALA_TOKEN_TYPE_BITWISE_AND", "bitwise-and"}, {BALA_TOKEN_TYPE_BITWISE_OR, "BALA_TOKEN_TYPE_BITWISE_OR", "bitwise-or"}, {BALA_TOKEN_TYPE_BREAK, "BALA_TOKEN_TYPE_BREAK", "break"}, {BALA_TOKEN_TYPE_CARRET, "BALA_TOKEN_TYPE_CARRET", "carret"}, {BALA_TOKEN_TYPE_CASE, "BALA_TOKEN_TYPE_CASE", "case"}, {BALA_TOKEN_TYPE_CATCH, "BALA_TOKEN_TYPE_CATCH", "catch"}, {BALA_TOKEN_TYPE_CHARACTER_LITERAL, "BALA_TOKEN_TYPE_CHARACTER_LITERAL", "character-literal"}, {BALA_TOKEN_TYPE_CLASS, "BALA_TOKEN_TYPE_CLASS", "class"}, {BALA_TOKEN_TYPE_CLOSE_BRACE, "BALA_TOKEN_TYPE_CLOSE_BRACE", "close-brace"}, {BALA_TOKEN_TYPE_CLOSE_BRACKET, "BALA_TOKEN_TYPE_CLOSE_BRACKET", "close-bracket"}, {BALA_TOKEN_TYPE_CLOSE_PARENS, "BALA_TOKEN_TYPE_CLOSE_PARENS", "close-parens"}, {BALA_TOKEN_TYPE_CLOSE_REGEX_LITERAL, "BALA_TOKEN_TYPE_CLOSE_REGEX_LITERAL", "close-regex-literal"}, {BALA_TOKEN_TYPE_CLOSE_TEMPLATE, "BALA_TOKEN_TYPE_CLOSE_TEMPLATE", "close-template"}, {BALA_TOKEN_TYPE_COLON, "BALA_TOKEN_TYPE_COLON", "colon"}, {BALA_TOKEN_TYPE_COMMA, "BALA_TOKEN_TYPE_COMMA", "comma"}, {BALA_TOKEN_TYPE_CONST, "BALA_TOKEN_TYPE_CONST", "const"}, {BALA_TOKEN_TYPE_CONSTRUCT, "BALA_TOKEN_TYPE_CONSTRUCT", "construct"}, {BALA_TOKEN_TYPE_CONTINUE, "BALA_TOKEN_TYPE_CONTINUE", "continue"}, {BALA_TOKEN_TYPE_DEFAULT, "BALA_TOKEN_TYPE_DEFAULT", "default"}, {BALA_TOKEN_TYPE_DELEGATE, "BALA_TOKEN_TYPE_DELEGATE", "delegate"}, {BALA_TOKEN_TYPE_DELETE, "BALA_TOKEN_TYPE_DELETE", "delete"}, {BALA_TOKEN_TYPE_DIV, "BALA_TOKEN_TYPE_DIV", "div"}, {BALA_TOKEN_TYPE_DO, "BALA_TOKEN_TYPE_DO", "do"}, {BALA_TOKEN_TYPE_DOUBLE_COLON, "BALA_TOKEN_TYPE_DOUBLE_COLON", "double-colon"}, {BALA_TOKEN_TYPE_DOT, "BALA_TOKEN_TYPE_DOT", "dot"}, {BALA_TOKEN_TYPE_DYNAMIC, "BALA_TOKEN_TYPE_DYNAMIC", "dynamic"}, {BALA_TOKEN_TYPE_ELLIPSIS, "BALA_TOKEN_TYPE_ELLIPSIS", "ellipsis"}, {BALA_TOKEN_TYPE_ELSE, "BALA_TOKEN_TYPE_ELSE", "else"}, {BALA_TOKEN_TYPE_ENUM, "BALA_TOKEN_TYPE_ENUM", "enum"}, {BALA_TOKEN_TYPE_ENSURES, "BALA_TOKEN_TYPE_ENSURES", "ensures"}, {BALA_TOKEN_TYPE_ERRORDOMAIN, "BALA_TOKEN_TYPE_ERRORDOMAIN", "errordomain"}, {BALA_TOKEN_TYPE_EOF, "BALA_TOKEN_TYPE_EOF", "eof"}, {BALA_TOKEN_TYPE_EXTERN, "BALA_TOKEN_TYPE_EXTERN", "extern"}, {BALA_TOKEN_TYPE_FALSE, "BALA_TOKEN_TYPE_FALSE", "false"}, {BALA_TOKEN_TYPE_FINALLY, "BALA_TOKEN_TYPE_FINALLY", "finally"}, {BALA_TOKEN_TYPE_FOR, "BALA_TOKEN_TYPE_FOR", "for"}, {BALA_TOKEN_TYPE_FOREACH, "BALA_TOKEN_TYPE_FOREACH", "foreach"}, {BALA_TOKEN_TYPE_GET, "BALA_TOKEN_TYPE_GET", "get"}, {BALA_TOKEN_TYPE_HASH, "BALA_TOKEN_TYPE_HASH", "hash"}, {BALA_TOKEN_TYPE_IDENTIFIER, "BALA_TOKEN_TYPE_IDENTIFIER", "identifier"}, {BALA_TOKEN_TYPE_IF, "BALA_TOKEN_TYPE_IF", "if"}, {BALA_TOKEN_TYPE_IN, "BALA_TOKEN_TYPE_IN", "in"}, {BALA_TOKEN_TYPE_INLINE, "BALA_TOKEN_TYPE_INLINE", "inline"}, {BALA_TOKEN_TYPE_INTEGER_LITERAL, "BALA_TOKEN_TYPE_INTEGER_LITERAL", "integer-literal"}, {BALA_TOKEN_TYPE_INTERFACE, "BALA_TOKEN_TYPE_INTERFACE", "interface"}, {BALA_TOKEN_TYPE_INTERNAL, "BALA_TOKEN_TYPE_INTERNAL", "internal"}, {BALA_TOKEN_TYPE_INTERR, "BALA_TOKEN_TYPE_INTERR", "interr"}, {BALA_TOKEN_TYPE_IS, "BALA_TOKEN_TYPE_IS", "is"}, {BALA_TOKEN_TYPE_LAMBDA, "BALA_TOKEN_TYPE_LAMBDA", "lambda"}, {BALA_TOKEN_TYPE_LOCK, "BALA_TOKEN_TYPE_LOCK", "lock"}, {BALA_TOKEN_TYPE_MINUS, "BALA_TOKEN_TYPE_MINUS", "minus"}, {BALA_TOKEN_TYPE_NAMESPACE, "BALA_TOKEN_TYPE_NAMESPACE", "namespace"}, {BALA_TOKEN_TYPE_NEW, "BALA_TOKEN_TYPE_NEW", "new"}, {BALA_TOKEN_TYPE_NULL, "BALA_TOKEN_TYPE_NULL", "null"}, {BALA_TOKEN_TYPE_OUT, "BALA_TOKEN_TYPE_OUT", "out"}, {BALA_TOKEN_TYPE_OP_AND, "BALA_TOKEN_TYPE_OP_AND", "op-and"}, {BALA_TOKEN_TYPE_OP_COALESCING, "BALA_TOKEN_TYPE_OP_COALESCING", "op-coalescing"}, {BALA_TOKEN_TYPE_OP_DEC, "BALA_TOKEN_TYPE_OP_DEC", "op-dec"}, {BALA_TOKEN_TYPE_OP_EQ, "BALA_TOKEN_TYPE_OP_EQ", "op-eq"}, {BALA_TOKEN_TYPE_OP_GE, "BALA_TOKEN_TYPE_OP_GE", "op-ge"}, {BALA_TOKEN_TYPE_OP_GT, "BALA_TOKEN_TYPE_OP_GT", "op-gt"}, {BALA_TOKEN_TYPE_OP_INC, "BALA_TOKEN_TYPE_OP_INC", "op-inc"}, {BALA_TOKEN_TYPE_OP_LE, "BALA_TOKEN_TYPE_OP_LE", "op-le"}, {BALA_TOKEN_TYPE_OP_LT, "BALA_TOKEN_TYPE_OP_LT", "op-lt"}, {BALA_TOKEN_TYPE_OP_NE, "BALA_TOKEN_TYPE_OP_NE", "op-ne"}, {BALA_TOKEN_TYPE_OP_NEG, "BALA_TOKEN_TYPE_OP_NEG", "op-neg"}, {BALA_TOKEN_TYPE_OP_OR, "BALA_TOKEN_TYPE_OP_OR", "op-or"}, {BALA_TOKEN_TYPE_OP_PTR, "BALA_TOKEN_TYPE_OP_PTR", "op-ptr"}, {BALA_TOKEN_TYPE_OP_SHIFT_LEFT, "BALA_TOKEN_TYPE_OP_SHIFT_LEFT", "op-shift-left"}, {BALA_TOKEN_TYPE_OPEN_BRACE, "BALA_TOKEN_TYPE_OPEN_BRACE", "open-brace"}, {BALA_TOKEN_TYPE_OPEN_BRACKET, "BALA_TOKEN_TYPE_OPEN_BRACKET", "open-bracket"}, {BALA_TOKEN_TYPE_OPEN_PARENS, "BALA_TOKEN_TYPE_OPEN_PARENS", "open-parens"}, {BALA_TOKEN_TYPE_OPEN_REGEX_LITERAL, "BALA_TOKEN_TYPE_OPEN_REGEX_LITERAL", "open-regex-literal"}, {BALA_TOKEN_TYPE_OPEN_TEMPLATE, "BALA_TOKEN_TYPE_OPEN_TEMPLATE", "open-template"}, {BALA_TOKEN_TYPE_OVERRIDE, "BALA_TOKEN_TYPE_OVERRIDE", "override"}, {BALA_TOKEN_TYPE_OWNED, "BALA_TOKEN_TYPE_OWNED", "owned"}, {BALA_TOKEN_TYPE_PARAMS, "BALA_TOKEN_TYPE_PARAMS", "params"}, {BALA_TOKEN_TYPE_PERCENT, "BALA_TOKEN_TYPE_PERCENT", "percent"}, {BALA_TOKEN_TYPE_PLUS, "BALA_TOKEN_TYPE_PLUS", "plus"}, {BALA_TOKEN_TYPE_PRIVATE, "BALA_TOKEN_TYPE_PRIVATE", "private"}, {BALA_TOKEN_TYPE_PROTECTED, "BALA_TOKEN_TYPE_PROTECTED", "protected"}, {BALA_TOKEN_TYPE_PUBLIC, "BALA_TOKEN_TYPE_PUBLIC", "public"}, {BALA_TOKEN_TYPE_REAL_LITERAL, "BALA_TOKEN_TYPE_REAL_LITERAL", "real-literal"}, {BALA_TOKEN_TYPE_REF, "BALA_TOKEN_TYPE_REF", "ref"}, {BALA_TOKEN_TYPE_REGEX_LITERAL, "BALA_TOKEN_TYPE_REGEX_LITERAL", "regex-literal"}, {BALA_TOKEN_TYPE_REQUIRES, "BALA_TOKEN_TYPE_REQUIRES", "requires"}, {BALA_TOKEN_TYPE_RETURN, "BALA_TOKEN_TYPE_RETURN", "return"}, {BALA_TOKEN_TYPE_SEALED, "BALA_TOKEN_TYPE_SEALED", "sealed"}, {BALA_TOKEN_TYPE_SEMICOLON, "BALA_TOKEN_TYPE_SEMICOLON", "semicolon"}, {BALA_TOKEN_TYPE_SET, "BALA_TOKEN_TYPE_SET", "set"}, {BALA_TOKEN_TYPE_SIGNAL, "BALA_TOKEN_TYPE_SIGNAL", "signal"}, {BALA_TOKEN_TYPE_SIZEOF, "BALA_TOKEN_TYPE_SIZEOF", "sizeof"}, {BALA_TOKEN_TYPE_STAR, "BALA_TOKEN_TYPE_STAR", "star"}, {BALA_TOKEN_TYPE_STATIC, "BALA_TOKEN_TYPE_STATIC", "static"}, {BALA_TOKEN_TYPE_STRING_LITERAL, "BALA_TOKEN_TYPE_STRING_LITERAL", "string-literal"}, {BALA_TOKEN_TYPE_STRUCT, "BALA_TOKEN_TYPE_STRUCT", "struct"}, {BALA_TOKEN_TYPE_SWITCH, "BALA_TOKEN_TYPE_SWITCH", "switch"}, {BALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL, "BALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL", "template-string-literal"}, {BALA_TOKEN_TYPE_THIS, "BALA_TOKEN_TYPE_THIS", "this"}, {BALA_TOKEN_TYPE_THROW, "BALA_TOKEN_TYPE_THROW", "throw"}, {BALA_TOKEN_TYPE_THROWS, "BALA_TOKEN_TYPE_THROWS", "throws"}, {BALA_TOKEN_TYPE_TILDE, "BALA_TOKEN_TYPE_TILDE", "tilde"}, {BALA_TOKEN_TYPE_TRUE, "BALA_TOKEN_TYPE_TRUE", "true"}, {BALA_TOKEN_TYPE_TRY, "BALA_TOKEN_TYPE_TRY", "try"}, {BALA_TOKEN_TYPE_TYPEOF, "BALA_TOKEN_TYPE_TYPEOF", "typeof"}, {BALA_TOKEN_TYPE_UNLOCK, "BALA_TOKEN_TYPE_UNLOCK", "unlock"}, {BALA_TOKEN_TYPE_UNOWNED, "BALA_TOKEN_TYPE_UNOWNED", "unowned"}, {BALA_TOKEN_TYPE_USING, "BALA_TOKEN_TYPE_USING", "using"}, {BALA_TOKEN_TYPE_VAR, "BALA_TOKEN_TYPE_VAR", "var"}, {BALA_TOKEN_TYPE_VERBATIM_STRING_LITERAL, "BALA_TOKEN_TYPE_VERBATIM_STRING_LITERAL", "verbatim-string-literal"}, {BALA_TOKEN_TYPE_VIRTUAL, "BALA_TOKEN_TYPE_VIRTUAL", "virtual"}, {BALA_TOKEN_TYPE_VOID, "BALA_TOKEN_TYPE_VOID", "void"}, {BALA_TOKEN_TYPE_VOLATILE, "BALA_TOKEN_TYPE_VOLATILE", "volatile"}, {BALA_TOKEN_TYPE_WEAK, "BALA_TOKEN_TYPE_WEAK", "weak"}, {BALA_TOKEN_TYPE_WHILE, "BALA_TOKEN_TYPE_WHILE", "while"}, {BALA_TOKEN_TYPE_YIELD, "BALA_TOKEN_TYPE_YIELD", "yield"}, {0, NULL, NULL}};
 	GType vala_token_type_type_id;
 	vala_token_type_type_id = g_enum_register_static ("ValaTokenType", values);
 	return vala_token_type_type_id;

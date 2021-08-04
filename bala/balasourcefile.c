@@ -198,7 +198,7 @@ vala_source_file_get_package_name (ValaSourceFile* self)
 	const gchar* _tmp7_;
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = self->priv->_file_type;
-	if (_tmp0_ != VALA_SOURCE_FILE_TYPE_PACKAGE) {
+	if (_tmp0_ != BALA_SOURCE_FILE_TYPE_PACKAGE) {
 		result = NULL;
 		return result;
 	}
@@ -481,7 +481,7 @@ vala_source_file_new (ValaCodeContext* context,
                       const gchar* content,
                       gboolean cmdline)
 {
-	return vala_source_file_construct (VALA_TYPE_SOURCE_FILE, context, type, filename, content, cmdline);
+	return vala_source_file_construct (BALA_TYPE_SOURCE_FILE, context, type, filename, content, cmdline);
 }
 
 /**
@@ -536,7 +536,7 @@ vala_source_file_add_using_directive (ValaSourceFile* self,
 	_tmp1_ = _vala_iterable_ref0 (_tmp0_);
 	old_using_directives = _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_USING_DIRECTIVE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_USING_DIRECTIVE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	_tmp4_ = _tmp3_;
 	vala_source_file_set_current_using_directives (self, (ValaList*) _tmp4_);
 	_vala_iterable_unref0 (_tmp4_);
@@ -1516,7 +1516,7 @@ vala_param_spec_source_file (const gchar* name,
                              GParamFlags flags)
 {
 	ValaParamSpecSourceFile* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_SOURCE_FILE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_SOURCE_FILE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1525,7 +1525,7 @@ vala_param_spec_source_file (const gchar* name,
 gpointer
 vala_value_get_source_file (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SOURCE_FILE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SOURCE_FILE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1534,10 +1534,10 @@ vala_value_set_source_file (GValue* value,
                             gpointer v_object)
 {
 	ValaSourceFile * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SOURCE_FILE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SOURCE_FILE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_SOURCE_FILE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_SOURCE_FILE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_source_file_ref (value->data[0].v_pointer);
@@ -1554,10 +1554,10 @@ vala_value_take_source_file (GValue* value,
                              gpointer v_object)
 {
 	ValaSourceFile * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SOURCE_FILE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SOURCE_FILE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_SOURCE_FILE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_SOURCE_FILE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1591,13 +1591,13 @@ vala_source_file_instance_init (ValaSourceFile * self,
 	self->priv->_installed_version = NULL;
 	self->priv->_version_requested = FALSE;
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_COMMENT, (GBoxedCopyFunc) vala_comment_ref, (GDestroyNotify) vala_comment_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_COMMENT, (GBoxedCopyFunc) vala_comment_ref, (GDestroyNotify) vala_comment_unref, _tmp0_);
 	self->priv->comments = _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_USING_DIRECTIVE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_USING_DIRECTIVE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	self->priv->_current_using_directives = (ValaList*) _tmp3_;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_array_list_new (VALA_TYPE_CODE_NODE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
+	_tmp5_ = vala_array_list_new (BALA_TYPE_CODE_NODE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
 	self->priv->nodes = (ValaList*) _tmp5_;
 	self->priv->csource_filename = NULL;
 	self->priv->cinclude_filename = NULL;
@@ -1611,7 +1611,7 @@ static void
 vala_source_file_finalize (ValaSourceFile * obj)
 {
 	ValaSourceFile * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SOURCE_FILE, ValaSourceFile);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SOURCE_FILE, ValaSourceFile);
 	g_signal_handlers_destroy (self);
 	_g_free0 (self->priv->_filename);
 	_g_free0 (self->priv->_package_name);
@@ -1671,7 +1671,7 @@ vala_source_file_unref (gpointer instance)
 	ValaSourceFile * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_SOURCE_FILE_GET_CLASS (self)->finalize (self);
+		BALA_SOURCE_FILE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }
@@ -1679,7 +1679,7 @@ vala_source_file_unref (gpointer instance)
 static GType
 vala_source_file_type_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_SOURCE_FILE_TYPE_NONE, "VALA_SOURCE_FILE_TYPE_NONE", "none"}, {VALA_SOURCE_FILE_TYPE_SOURCE, "VALA_SOURCE_FILE_TYPE_SOURCE", "source"}, {VALA_SOURCE_FILE_TYPE_PACKAGE, "VALA_SOURCE_FILE_TYPE_PACKAGE", "package"}, {VALA_SOURCE_FILE_TYPE_FAST, "VALA_SOURCE_FILE_TYPE_FAST", "fast"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_SOURCE_FILE_TYPE_NONE, "BALA_SOURCE_FILE_TYPE_NONE", "none"}, {BALA_SOURCE_FILE_TYPE_SOURCE, "BALA_SOURCE_FILE_TYPE_SOURCE", "source"}, {BALA_SOURCE_FILE_TYPE_PACKAGE, "BALA_SOURCE_FILE_TYPE_PACKAGE", "package"}, {BALA_SOURCE_FILE_TYPE_FAST, "BALA_SOURCE_FILE_TYPE_FAST", "fast"}, {0, NULL, NULL}};
 	GType vala_source_file_type_type_id;
 	vala_source_file_type_type_id = g_enum_register_static ("ValaSourceFileType", values);
 	return vala_source_file_type_type_id;

@@ -94,7 +94,7 @@ vala_unresolved_type_construct (GType object_type)
 ValaUnresolvedType*
 vala_unresolved_type_new (void)
 {
-	return vala_unresolved_type_construct (VALA_TYPE_UNRESOLVED_TYPE);
+	return vala_unresolved_type_construct (BALA_TYPE_UNRESOLVED_TYPE);
 }
 
 /**
@@ -121,7 +121,7 @@ ValaUnresolvedType*
 vala_unresolved_type_new_from_symbol (ValaUnresolvedSymbol* symbol,
                                       ValaSourceReference* source)
 {
-	return vala_unresolved_type_construct_from_symbol (VALA_TYPE_UNRESOLVED_TYPE, symbol, source);
+	return vala_unresolved_type_construct_from_symbol (BALA_TYPE_UNRESOLVED_TYPE, symbol, source);
 }
 
 /**
@@ -163,7 +163,7 @@ vala_unresolved_type_new_from_expression (ValaExpression* expr)
 		type_ref = _tmp5_;
 		_tmp6_ = type_ref;
 		vala_data_type_set_value_owned ((ValaDataType*) _tmp6_, TRUE);
-		_tmp7_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (expr, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
+		_tmp7_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (expr, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
 		ma = _tmp7_;
 		{
 			ValaList* _arg_list = NULL;
@@ -480,9 +480,9 @@ static void
 vala_unresolved_type_finalize (ValaCodeNode * obj)
 {
 	ValaUnresolvedType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_UNRESOLVED_TYPE, ValaUnresolvedType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_UNRESOLVED_TYPE, ValaUnresolvedType);
 	_vala_code_node_unref0 (self->priv->_unresolved_symbol);
-	VALA_CODE_NODE_CLASS (vala_unresolved_type_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_unresolved_type_parent_class)->finalize (obj);
 }
 
 /**
@@ -493,7 +493,7 @@ vala_unresolved_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaUnresolvedTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_unresolved_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaUnresolvedType), 0, (GInstanceInitFunc) vala_unresolved_type_instance_init, NULL };
 	GType vala_unresolved_type_type_id;
-	vala_unresolved_type_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaUnresolvedType", &g_define_type_info, 0);
+	vala_unresolved_type_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaUnresolvedType", &g_define_type_info, 0);
 	ValaUnresolvedType_private_offset = g_type_add_instance_private (vala_unresolved_type_type_id, sizeof (ValaUnresolvedTypePrivate));
 	return vala_unresolved_type_type_id;
 }

@@ -52,7 +52,7 @@ vala_struct_value_type_construct (GType object_type,
 ValaStructValueType*
 vala_struct_value_type_new (ValaStruct* type_symbol)
 {
-	return vala_struct_value_type_construct (VALA_TYPE_STRUCT_VALUE_TYPE, type_symbol);
+	return vala_struct_value_type_construct (BALA_TYPE_STRUCT_VALUE_TYPE, type_symbol);
 }
 
 static gboolean
@@ -68,7 +68,7 @@ vala_struct_value_type_real_is_invokable (ValaDataType* base)
 	self = (ValaStructValueType*) base;
 	_tmp0_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	st = VALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
+	st = BALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
 	_tmp3_ = st;
 	if (_tmp3_ != NULL) {
 		ValaStruct* _tmp4_;
@@ -103,7 +103,7 @@ vala_struct_value_type_real_get_return_type (ValaDataType* base)
 	self = (ValaStructValueType*) base;
 	_tmp0_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	st = VALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
+	st = BALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
 	_tmp3_ = st;
 	if (_tmp3_ != NULL) {
 		ValaStruct* _tmp4_;
@@ -148,7 +148,7 @@ vala_struct_value_type_real_get_parameters (ValaDataType* base)
 	self = (ValaStructValueType*) base;
 	_tmp0_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	st = VALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
+	st = BALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
 	_tmp3_ = st;
 	if (_tmp3_ != NULL) {
 		ValaStruct* _tmp4_;
@@ -205,7 +205,7 @@ vala_struct_value_type_real_copy (ValaDataType* base)
 	self = (ValaStructValueType*) base;
 	_tmp0_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = vala_struct_value_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_STRUCT, ValaStruct));
+	_tmp2_ = vala_struct_value_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_STRUCT, ValaStruct));
 	_result_ = _tmp2_;
 	_tmp3_ = _result_;
 	_tmp4_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
@@ -294,7 +294,7 @@ vala_struct_value_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaStructValueTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_struct_value_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaStructValueType), 0, (GInstanceInitFunc) vala_struct_value_type_instance_init, NULL };
 	GType vala_struct_value_type_type_id;
-	vala_struct_value_type_type_id = g_type_register_static (VALA_TYPE_VALUE_TYPE, "ValaStructValueType", &g_define_type_info, 0);
+	vala_struct_value_type_type_id = g_type_register_static (BALA_TYPE_VALUE_TYPE, "ValaStructValueType", &g_define_type_info, 0);
 	return vala_struct_value_type_type_id;
 }
 

@@ -153,7 +153,7 @@ vala_for_statement_new (ValaExpression* condition,
                         ValaBlock* body,
                         ValaSourceReference* source_reference)
 {
-	return vala_for_statement_construct (VALA_TYPE_FOR_STATEMENT, condition, body, source_reference);
+	return vala_for_statement_construct (BALA_TYPE_FOR_STATEMENT, condition, body, source_reference);
 }
 
 /**
@@ -460,7 +460,7 @@ vala_for_statement_always_true (ValaForStatement* self,
 	gboolean result = FALSE;
 	g_return_val_if_fail (self != NULL, FALSE);
 	g_return_val_if_fail (condition != NULL, FALSE);
-	literal = VALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
+	literal = BALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
 	_tmp1_ = literal;
 	if (_tmp1_ != NULL) {
 		ValaBooleanLiteral* _tmp2_;
@@ -487,7 +487,7 @@ vala_for_statement_always_false (ValaForStatement* self,
 	gboolean result = FALSE;
 	g_return_val_if_fail (self != NULL, FALSE);
 	g_return_val_if_fail (condition != NULL, FALSE);
-	literal = VALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
+	literal = BALA_IS_BOOLEAN_LITERAL (condition) ? ((ValaBooleanLiteral*) condition) : NULL;
 	_tmp1_ = literal;
 	if (_tmp1_ != NULL) {
 		ValaBooleanLiteral* _tmp2_;
@@ -745,7 +745,7 @@ vala_for_statement_real_check (ValaCodeNode* base,
 			_tmp41_ = _tmp40_;
 			_tmp42_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp41_);
 			_tmp43_ = _tmp42_;
-			_tmp44_ = vala_unary_expression_new (VALA_UNARY_OPERATOR_LOGICAL_NEGATION, _tmp39_, _tmp43_);
+			_tmp44_ = vala_unary_expression_new (BALA_UNARY_OPERATOR_LOGICAL_NEGATION, _tmp39_, _tmp43_);
 			if_condition = _tmp44_;
 			_tmp45_ = vala_for_statement_get_condition (self);
 			_tmp46_ = _tmp45_;
@@ -871,7 +871,7 @@ vala_for_statement_real_check (ValaCodeNode* base,
 	_tmp113_ = _tmp112_;
 	_tmp114_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp115_ = _tmp114_;
-	_tmp116_ = vala_unary_expression_new (VALA_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaExpression*) _tmp113_, _tmp115_);
+	_tmp116_ = vala_unary_expression_new (BALA_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaExpression*) _tmp113_, _tmp115_);
 	_tmp117_ = _tmp116_;
 	_tmp118_ = iterator_block;
 	_tmp119_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
@@ -900,7 +900,7 @@ vala_for_statement_real_check (ValaCodeNode* base,
 	_tmp138_ = _tmp137_;
 	_tmp139_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp140_ = _tmp139_;
-	_tmp141_ = vala_assignment_new ((ValaExpression*) _tmp134_, (ValaExpression*) _tmp138_, VALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp140_);
+	_tmp141_ = vala_assignment_new ((ValaExpression*) _tmp134_, (ValaExpression*) _tmp138_, BALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp140_);
 	_tmp142_ = _tmp141_;
 	_tmp143_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp144_ = _tmp143_;
@@ -922,7 +922,7 @@ vala_for_statement_real_check (ValaCodeNode* base,
 	_vala_code_node_unref0 (_tmp153_);
 	_tmp154_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 	_tmp155_ = _tmp154_;
-	parent_block = G_TYPE_CHECK_INSTANCE_CAST (_tmp155_, VALA_TYPE_BLOCK, ValaBlock);
+	parent_block = G_TYPE_CHECK_INSTANCE_CAST (_tmp155_, BALA_TYPE_BLOCK, ValaBlock);
 	_tmp156_ = parent_block;
 	_tmp157_ = block;
 	vala_block_replace_statement (_tmp156_, (ValaStatement*) self, (ValaStatement*) _tmp157_);
@@ -970,10 +970,10 @@ vala_for_statement_instance_init (ValaForStatement * self,
 	ValaArrayList* _tmp3_;
 	self->priv = vala_for_statement_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->initializer = (ValaList*) _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	self->priv->iterator = (ValaList*) _tmp3_;
 }
 
@@ -981,12 +981,12 @@ static void
 vala_for_statement_finalize (ValaCodeNode * obj)
 {
 	ValaForStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_FOR_STATEMENT, ValaForStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_FOR_STATEMENT, ValaForStatement);
 	_vala_iterable_unref0 (self->priv->initializer);
 	_vala_iterable_unref0 (self->priv->iterator);
 	_vala_code_node_unref0 (self->priv->_condition);
 	_vala_code_node_unref0 (self->priv->_body);
-	VALA_CODE_NODE_CLASS (vala_for_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_for_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -998,8 +998,8 @@ vala_for_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaForStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_for_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaForStatement), 0, (GInstanceInitFunc) vala_for_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_for_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_for_statement_type_id;
-	vala_for_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaForStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_for_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_for_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaForStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_for_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaForStatement_private_offset = g_type_add_instance_private (vala_for_statement_type_id, sizeof (ValaForStatementPrivate));
 	return vala_for_statement_type_id;
 }

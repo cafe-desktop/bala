@@ -190,7 +190,7 @@ vala_source_reference_new (ValaSourceFile* _file,
                            ValaSourceLocation* begin,
                            ValaSourceLocation* end)
 {
-	return vala_source_reference_construct (VALA_TYPE_SOURCE_REFERENCE, _file, begin, end);
+	return vala_source_reference_construct (BALA_TYPE_SOURCE_REFERENCE, _file, begin, end);
 }
 
 /**
@@ -402,7 +402,7 @@ vala_param_spec_source_reference (const gchar* name,
                                   GParamFlags flags)
 {
 	ValaParamSpecSourceReference* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_SOURCE_REFERENCE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_SOURCE_REFERENCE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -411,7 +411,7 @@ vala_param_spec_source_reference (const gchar* name,
 gpointer
 vala_value_get_source_reference (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SOURCE_REFERENCE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SOURCE_REFERENCE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -420,10 +420,10 @@ vala_value_set_source_reference (GValue* value,
                                  gpointer v_object)
 {
 	ValaSourceReference * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SOURCE_REFERENCE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SOURCE_REFERENCE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_SOURCE_REFERENCE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_SOURCE_REFERENCE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_source_reference_ref (value->data[0].v_pointer);
@@ -440,10 +440,10 @@ vala_value_take_source_reference (GValue* value,
                                   gpointer v_object)
 {
 	ValaSourceReference * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SOURCE_REFERENCE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SOURCE_REFERENCE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_SOURCE_REFERENCE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_SOURCE_REFERENCE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -475,7 +475,7 @@ static void
 vala_source_reference_finalize (ValaSourceReference * obj)
 {
 	ValaSourceReference * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SOURCE_REFERENCE, ValaSourceReference);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SOURCE_REFERENCE, ValaSourceReference);
 	g_signal_handlers_destroy (self);
 	_vala_iterable_unref0 (self->priv->_using_directives);
 }
@@ -522,7 +522,7 @@ vala_source_reference_unref (gpointer instance)
 	ValaSourceReference * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_SOURCE_REFERENCE_GET_CLASS (self)->finalize (self);
+		BALA_SOURCE_REFERENCE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

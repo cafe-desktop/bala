@@ -192,7 +192,7 @@ vala_param_spec_target_value (const gchar* name,
                               GParamFlags flags)
 {
 	ValaParamSpecTargetValue* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_TARGET_VALUE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_TARGET_VALUE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -201,7 +201,7 @@ vala_param_spec_target_value (const gchar* name,
 gpointer
 vala_value_get_target_value (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_TARGET_VALUE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_TARGET_VALUE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -210,10 +210,10 @@ vala_value_set_target_value (GValue* value,
                              gpointer v_object)
 {
 	ValaTargetValue * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_TARGET_VALUE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_TARGET_VALUE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_TARGET_VALUE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_TARGET_VALUE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_target_value_ref (value->data[0].v_pointer);
@@ -230,10 +230,10 @@ vala_value_take_target_value (GValue* value,
                               gpointer v_object)
 {
 	ValaTargetValue * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_TARGET_VALUE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_TARGET_VALUE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_TARGET_VALUE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_TARGET_VALUE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -265,7 +265,7 @@ static void
 vala_target_value_finalize (ValaTargetValue * obj)
 {
 	ValaTargetValue * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_TARGET_VALUE, ValaTargetValue);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_TARGET_VALUE, ValaTargetValue);
 	g_signal_handlers_destroy (self);
 	_vala_code_node_unref0 (self->priv->_value_type);
 	_vala_code_node_unref0 (self->priv->_actual_value_type);
@@ -310,7 +310,7 @@ vala_target_value_unref (gpointer instance)
 	ValaTargetValue * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_TARGET_VALUE_GET_CLASS (self)->finalize (self);
+		BALA_TARGET_VALUE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

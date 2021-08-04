@@ -42,7 +42,7 @@ vala_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaStatementIface), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_statement_default_init, (GClassFinalizeFunc) NULL, NULL, 0, 0, (GInstanceInitFunc) NULL, NULL };
 	GType vala_statement_type_id;
 	vala_statement_type_id = g_type_register_static (G_TYPE_INTERFACE, "ValaStatement", &g_define_type_info, 0);
-	g_type_interface_add_prerequisite (vala_statement_type_id, VALA_TYPE_CODE_NODE);
+	g_type_interface_add_prerequisite (vala_statement_type_id, BALA_TYPE_CODE_NODE);
 	return vala_statement_type_id;
 }
 

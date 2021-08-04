@@ -107,7 +107,7 @@ ValaDeleteStatement*
 vala_delete_statement_new (ValaExpression* expression,
                            ValaSourceReference* source_reference)
 {
-	return vala_delete_statement_construct (VALA_TYPE_DELETE_STATEMENT, expression, source_reference);
+	return vala_delete_statement_construct (BALA_TYPE_DELETE_STATEMENT, expression, source_reference);
 }
 
 static void
@@ -193,7 +193,7 @@ vala_delete_statement_real_check (ValaCodeNode* base,
 	_tmp8_ = _tmp7_;
 	_tmp9_ = vala_expression_get_value_type (_tmp8_);
 	_tmp10_ = _tmp9_;
-	if (!VALA_IS_POINTER_TYPE (_tmp10_)) {
+	if (!BALA_IS_POINTER_TYPE (_tmp10_)) {
 		ValaExpression* _tmp11_;
 		ValaExpression* _tmp12_;
 		ValaDataType* _tmp13_;
@@ -202,7 +202,7 @@ vala_delete_statement_real_check (ValaCodeNode* base,
 		_tmp12_ = _tmp11_;
 		_tmp13_ = vala_expression_get_value_type (_tmp12_);
 		_tmp14_ = _tmp13_;
-		_tmp6_ = !VALA_IS_ARRAY_TYPE (_tmp14_);
+		_tmp6_ = !BALA_IS_ARRAY_TYPE (_tmp14_);
 	} else {
 		_tmp6_ = FALSE;
 	}
@@ -285,9 +285,9 @@ static void
 vala_delete_statement_finalize (ValaCodeNode * obj)
 {
 	ValaDeleteStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_DELETE_STATEMENT, ValaDeleteStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_DELETE_STATEMENT, ValaDeleteStatement);
 	_vala_code_node_unref0 (self->priv->_expression);
-	VALA_CODE_NODE_CLASS (vala_delete_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_delete_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -301,8 +301,8 @@ vala_delete_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaDeleteStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_delete_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaDeleteStatement), 0, (GInstanceInitFunc) vala_delete_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_delete_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_delete_statement_type_id;
-	vala_delete_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaDeleteStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_delete_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_delete_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaDeleteStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_delete_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaDeleteStatement_private_offset = g_type_add_instance_private (vala_delete_statement_type_id, sizeof (ValaDeleteStatementPrivate));
 	return vala_delete_statement_type_id;
 }

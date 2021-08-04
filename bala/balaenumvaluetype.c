@@ -63,7 +63,7 @@ vala_enum_value_type_construct (GType object_type,
 ValaEnumValueType*
 vala_enum_value_type_new (ValaEnum* type_symbol)
 {
-	return vala_enum_value_type_construct (VALA_TYPE_ENUM_VALUE_TYPE, type_symbol);
+	return vala_enum_value_type_construct (BALA_TYPE_ENUM_VALUE_TYPE, type_symbol);
 }
 
 static ValaDataType*
@@ -84,7 +84,7 @@ vala_enum_value_type_real_copy (ValaDataType* base)
 	self = (ValaEnumValueType*) base;
 	_tmp0_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = vala_enum_value_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_ENUM, ValaEnum));
+	_tmp2_ = vala_enum_value_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_ENUM, ValaEnum));
 	_result_ = _tmp2_;
 	_tmp3_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp4_ = _tmp3_;
@@ -157,7 +157,7 @@ vala_enum_value_type_get_to_string_method (ValaEnumValueType* self)
 		_tmp5_ = vala_symbol_get_scope ((ValaSymbol*) _tmp4_);
 		_tmp6_ = _tmp5_;
 		_tmp7_ = vala_scope_lookup (_tmp6_, "string");
-		_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, VALA_TYPE_CLASS, ValaClass);
+		_tmp8_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, BALA_TYPE_CLASS, ValaClass);
 		_tmp9_ = vala_object_type_new ((ValaObjectTypeSymbol*) _tmp8_);
 		_tmp10_ = _tmp9_;
 		_vala_code_node_unref0 (_tmp8_);
@@ -170,14 +170,14 @@ vala_enum_value_type_get_to_string_method (ValaEnumValueType* self)
 		_vala_code_node_unref0 (self->priv->to_string_method);
 		self->priv->to_string_method = _tmp13_;
 		_tmp14_ = self->priv->to_string_method;
-		vala_symbol_set_access ((ValaSymbol*) _tmp14_, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+		vala_symbol_set_access ((ValaSymbol*) _tmp14_, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 		_tmp15_ = self->priv->to_string_method;
 		vala_symbol_set_is_extern ((ValaSymbol*) _tmp15_, TRUE);
 		_tmp16_ = vala_code_context_get ();
 		_tmp17_ = _tmp16_;
 		_tmp18_ = vala_code_context_get_profile (_tmp17_);
 		_tmp19_ = _tmp18_;
-		_tmp20_ = _tmp19_ == VALA_PROFILE_POSIX;
+		_tmp20_ = _tmp19_ == BALA_PROFILE_POSIX;
 		_vala_code_context_unref0 (_tmp17_);
 		if (_tmp20_) {
 			ValaMethod* _tmp21_;
@@ -239,7 +239,7 @@ vala_enum_value_type_real_get_member (ValaDataType* base,
 	ValaSymbol* result = NULL;
 	self = (ValaEnumValueType*) base;
 	g_return_val_if_fail (member_name != NULL, NULL);
-	_tmp0_ = VALA_DATA_TYPE_CLASS (vala_enum_value_type_parent_class)->get_member ((ValaDataType*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_VALUE_TYPE, ValaValueType), member_name);
+	_tmp0_ = BALA_DATA_TYPE_CLASS (vala_enum_value_type_parent_class)->get_member ((ValaDataType*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_VALUE_TYPE, ValaValueType), member_name);
 	_result_ = _tmp0_;
 	_tmp2_ = _result_;
 	if (_tmp2_ == NULL) {
@@ -282,9 +282,9 @@ static void
 vala_enum_value_type_finalize (ValaCodeNode * obj)
 {
 	ValaEnumValueType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ENUM_VALUE_TYPE, ValaEnumValueType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ENUM_VALUE_TYPE, ValaEnumValueType);
 	_vala_code_node_unref0 (self->priv->to_string_method);
-	VALA_CODE_NODE_CLASS (vala_enum_value_type_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_enum_value_type_parent_class)->finalize (obj);
 }
 
 /**
@@ -295,7 +295,7 @@ vala_enum_value_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaEnumValueTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_enum_value_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaEnumValueType), 0, (GInstanceInitFunc) vala_enum_value_type_instance_init, NULL };
 	GType vala_enum_value_type_type_id;
-	vala_enum_value_type_type_id = g_type_register_static (VALA_TYPE_VALUE_TYPE, "ValaEnumValueType", &g_define_type_info, 0);
+	vala_enum_value_type_type_id = g_type_register_static (BALA_TYPE_VALUE_TYPE, "ValaEnumValueType", &g_define_type_info, 0);
 	ValaEnumValueType_private_offset = g_type_add_instance_private (vala_enum_value_type_type_id, sizeof (ValaEnumValueTypePrivate));
 	return vala_enum_value_type_type_id;
 }

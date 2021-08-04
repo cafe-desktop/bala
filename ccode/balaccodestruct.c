@@ -104,7 +104,7 @@ vala_ccode_struct_construct (GType object_type,
 ValaCCodeStruct*
 vala_ccode_struct_new (const gchar* name)
 {
-	return vala_ccode_struct_construct (VALA_TYPE_CCODE_STRUCT, name);
+	return vala_ccode_struct_construct (BALA_TYPE_CCODE_STRUCT, name);
 }
 
 /**
@@ -216,7 +216,7 @@ vala_ccode_struct_real_write (ValaCCodeNode* base,
 	vala_ccode_writer_write_end_block (writer);
 	_tmp11_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) self);
 	_tmp12_ = _tmp11_;
-	if ((_tmp12_ & VALA_CCODE_MODIFIERS_DEPRECATED) == VALA_CCODE_MODIFIERS_DEPRECATED) {
+	if ((_tmp12_ & BALA_CCODE_MODIFIERS_DEPRECATED) == BALA_CCODE_MODIFIERS_DEPRECATED) {
 		vala_ccode_writer_write_string (writer, " G_GNUC_DEPRECATED");
 	}
 	vala_ccode_writer_write_string (writer, ";");
@@ -242,7 +242,7 @@ vala_ccode_struct_instance_init (ValaCCodeStruct * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_ccode_struct_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CCODE_DECLARATION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CCODE_DECLARATION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
 	self->priv->declarations = (ValaList*) _tmp1_;
 }
 
@@ -250,10 +250,10 @@ static void
 vala_ccode_struct_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeStruct * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_STRUCT, ValaCCodeStruct);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_STRUCT, ValaCCodeStruct);
 	_g_free0 (self->priv->_name);
 	_vala_iterable_unref0 (self->priv->declarations);
-	VALA_CCODE_NODE_CLASS (vala_ccode_struct_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_struct_parent_class)->finalize (obj);
 }
 
 /**
@@ -264,7 +264,7 @@ vala_ccode_struct_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeStructClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_struct_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeStruct), 0, (GInstanceInitFunc) vala_ccode_struct_instance_init, NULL };
 	GType vala_ccode_struct_type_id;
-	vala_ccode_struct_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeStruct", &g_define_type_info, 0);
+	vala_ccode_struct_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeStruct", &g_define_type_info, 0);
 	ValaCCodeStruct_private_offset = g_type_add_instance_private (vala_ccode_struct_type_id, sizeof (ValaCCodeStructPrivate));
 	return vala_ccode_struct_type_id;
 }

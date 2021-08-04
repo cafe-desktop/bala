@@ -120,7 +120,7 @@ ValaCCodeCastExpression*
 vala_ccode_cast_expression_new (ValaCCodeExpression* expr,
                                 const gchar* type)
 {
-	return vala_ccode_cast_expression_construct (VALA_TYPE_CCODE_CAST_EXPRESSION, expr, type);
+	return vala_ccode_cast_expression_construct (BALA_TYPE_CCODE_CAST_EXPRESSION, expr, type);
 }
 
 static void
@@ -174,10 +174,10 @@ static void
 vala_ccode_cast_expression_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeCastExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_CAST_EXPRESSION, ValaCCodeCastExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_CAST_EXPRESSION, ValaCCodeCastExpression);
 	_vala_ccode_node_unref0 (self->priv->_inner);
 	_g_free0 (self->priv->_type_name);
-	VALA_CCODE_NODE_CLASS (vala_ccode_cast_expression_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_cast_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -188,7 +188,7 @@ vala_ccode_cast_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeCastExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_cast_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeCastExpression), 0, (GInstanceInitFunc) vala_ccode_cast_expression_instance_init, NULL };
 	GType vala_ccode_cast_expression_type_id;
-	vala_ccode_cast_expression_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeCastExpression", &g_define_type_info, 0);
+	vala_ccode_cast_expression_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeCastExpression", &g_define_type_info, 0);
 	ValaCCodeCastExpression_private_offset = g_type_add_instance_private (vala_ccode_cast_expression_type_id, sizeof (ValaCCodeCastExpressionPrivate));
 	return vala_ccode_cast_expression_type_id;
 }

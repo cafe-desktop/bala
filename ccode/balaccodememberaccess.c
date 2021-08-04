@@ -139,7 +139,7 @@ vala_ccode_member_access_new (ValaCCodeExpression* container,
                               const gchar* member,
                               gboolean pointer)
 {
-	return vala_ccode_member_access_construct (VALA_TYPE_CCODE_MEMBER_ACCESS, container, member, pointer);
+	return vala_ccode_member_access_construct (BALA_TYPE_CCODE_MEMBER_ACCESS, container, member, pointer);
 }
 
 ValaCCodeMemberAccess*
@@ -161,7 +161,7 @@ ValaCCodeMemberAccess*
 vala_ccode_member_access_new_pointer (ValaCCodeExpression* container,
                                       const gchar* member)
 {
-	return vala_ccode_member_access_construct_pointer (VALA_TYPE_CCODE_MEMBER_ACCESS, container, member);
+	return vala_ccode_member_access_construct_pointer (BALA_TYPE_CCODE_MEMBER_ACCESS, container, member);
 }
 
 static void
@@ -207,10 +207,10 @@ static void
 vala_ccode_member_access_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeMemberAccess * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_MEMBER_ACCESS, ValaCCodeMemberAccess);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_MEMBER_ACCESS, ValaCCodeMemberAccess);
 	_vala_ccode_node_unref0 (self->priv->_inner);
 	_g_free0 (self->priv->_member_name);
-	VALA_CCODE_NODE_CLASS (vala_ccode_member_access_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_member_access_parent_class)->finalize (obj);
 }
 
 /**
@@ -221,7 +221,7 @@ vala_ccode_member_access_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeMemberAccessClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_member_access_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeMemberAccess), 0, (GInstanceInitFunc) vala_ccode_member_access_instance_init, NULL };
 	GType vala_ccode_member_access_type_id;
-	vala_ccode_member_access_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeMemberAccess", &g_define_type_info, 0);
+	vala_ccode_member_access_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeMemberAccess", &g_define_type_info, 0);
 	ValaCCodeMemberAccess_private_offset = g_type_add_instance_private (vala_ccode_member_access_type_id, sizeof (ValaCCodeMemberAccessPrivate));
 	return vala_ccode_member_access_type_id;
 }

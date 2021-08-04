@@ -39,7 +39,7 @@ valadoc_content_inline_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentInlineIface), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_inline_default_init, (GClassFinalizeFunc) NULL, NULL, 0, 0, (GInstanceInitFunc) NULL, NULL };
 	GType valadoc_content_inline_type_id;
 	valadoc_content_inline_type_id = g_type_register_static (G_TYPE_INTERFACE, "ValadocContentInline", &g_define_type_info, 0);
-	g_type_interface_add_prerequisite (valadoc_content_inline_type_id, VALADOC_CONTENT_TYPE_CONTENT_ELEMENT);
+	g_type_interface_add_prerequisite (valadoc_content_inline_type_id, BALADOC_CONTENT_TYPE_CONTENT_ELEMENT);
 	return valadoc_content_inline_type_id;
 }
 

@@ -44,7 +44,7 @@ vala_boolean_type_construct (GType object_type,
 ValaBooleanType*
 vala_boolean_type_new (ValaStruct* type_symbol)
 {
-	return vala_boolean_type_construct (VALA_TYPE_BOOLEAN_TYPE, type_symbol);
+	return vala_boolean_type_construct (BALA_TYPE_BOOLEAN_TYPE, type_symbol);
 }
 
 static ValaDataType*
@@ -65,7 +65,7 @@ vala_boolean_type_real_copy (ValaDataType* base)
 	self = (ValaBooleanType*) base;
 	_tmp0_ = vala_data_type_get_type_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = vala_boolean_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_STRUCT, ValaStruct));
+	_tmp2_ = vala_boolean_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_STRUCT, ValaStruct));
 	_result_ = _tmp2_;
 	_tmp3_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp4_ = _tmp3_;
@@ -102,7 +102,7 @@ vala_boolean_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaBooleanTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_boolean_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaBooleanType), 0, (GInstanceInitFunc) vala_boolean_type_instance_init, NULL };
 	GType vala_boolean_type_type_id;
-	vala_boolean_type_type_id = g_type_register_static (VALA_TYPE_VALUE_TYPE, "ValaBooleanType", &g_define_type_info, 0);
+	vala_boolean_type_type_id = g_type_register_static (BALA_TYPE_VALUE_TYPE, "ValaBooleanType", &g_define_type_info, 0);
 	return vala_boolean_type_type_id;
 }
 

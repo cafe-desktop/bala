@@ -30,10 +30,10 @@
 #include <string.h>
 
 enum  {
-	VALADOC_STUB_RULE_0_PROPERTY,
-	VALADOC_STUB_RULE_NUM_PROPERTIES
+	BALADOC_STUB_RULE_0_PROPERTY,
+	BALADOC_STUB_RULE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_stub_rule_properties[VALADOC_STUB_RULE_NUM_PROPERTIES];
+static GParamSpec* valadoc_stub_rule_properties[BALADOC_STUB_RULE_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 
 struct _ValadocStubRulePrivate {
@@ -79,7 +79,7 @@ valadoc_stub_rule_construct (GType object_type)
 ValadocStubRule*
 valadoc_stub_rule_new (void)
 {
-	return valadoc_stub_rule_construct (VALADOC_TYPE_STUB_RULE);
+	return valadoc_stub_rule_construct (BALADOC_TYPE_STUB_RULE);
 }
 
 static gpointer
@@ -149,7 +149,7 @@ valadoc_stub_rule_real_accept_token (ValadocRule* base,
 	_tmp1_ = self->priv->_rule;
 	_tmp0_ = valadoc_rule_accept_token (_tmp1_, token, parser, forward, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			gboolean _tmp2_ = FALSE;
 			g_propagate_error (error, _inner_error0_);
 			return _tmp2_;
@@ -235,7 +235,7 @@ static void
 valadoc_stub_rule_finalize (GObject * obj)
 {
 	ValadocStubRule * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_STUB_RULE, ValadocStubRule);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_STUB_RULE, ValadocStubRule);
 	_g_object_unref0 (self->priv->_rule);
 	G_OBJECT_CLASS (valadoc_stub_rule_parent_class)->finalize (obj);
 }
@@ -245,7 +245,7 @@ valadoc_stub_rule_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocStubRuleClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_stub_rule_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocStubRule), 0, (GInstanceInitFunc) valadoc_stub_rule_instance_init, NULL };
 	GType valadoc_stub_rule_type_id;
-	valadoc_stub_rule_type_id = g_type_register_static (VALADOC_TYPE_RULE, "ValadocStubRule", &g_define_type_info, 0);
+	valadoc_stub_rule_type_id = g_type_register_static (BALADOC_TYPE_RULE, "ValadocStubRule", &g_define_type_info, 0);
 	ValadocStubRule_private_offset = g_type_add_instance_private (valadoc_stub_rule_type_id, sizeof (ValadocStubRulePrivate));
 	return valadoc_stub_rule_type_id;
 }

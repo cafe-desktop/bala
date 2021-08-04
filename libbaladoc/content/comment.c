@@ -32,11 +32,11 @@
 #include <string.h>
 
 enum  {
-	VALADOC_CONTENT_COMMENT_0_PROPERTY,
-	VALADOC_CONTENT_COMMENT_TAGLETS_PROPERTY,
-	VALADOC_CONTENT_COMMENT_NUM_PROPERTIES
+	BALADOC_CONTENT_COMMENT_0_PROPERTY,
+	BALADOC_CONTENT_COMMENT_TAGLETS_PROPERTY,
+	BALADOC_CONTENT_COMMENT_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_comment_properties[VALADOC_CONTENT_COMMENT_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_comment_properties[BALADOC_CONTENT_COMMENT_NUM_PROPERTIES];
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_assert(expr, msg) if G_LIKELY (expr) ; else g_assertion_message_expr (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);
@@ -104,7 +104,7 @@ valadoc_content_comment_construct (GType object_type)
 	ValaArrayList* _tmp1_;
 	self = (ValadocContentComment*) valadoc_content_block_content_construct (object_type);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_CONTENT_TYPE_TAGLET, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_CONTENT_TYPE_TAGLET, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	_vala_iterable_unref0 (self->priv->_taglets);
 	self->priv->_taglets = (ValaList*) _tmp1_;
 	return self;
@@ -113,7 +113,7 @@ valadoc_content_comment_construct (GType object_type)
 G_GNUC_INTERNAL ValadocContentComment*
 valadoc_content_comment_new (void)
 {
-	return valadoc_content_comment_construct (VALADOC_CONTENT_TYPE_COMMENT);
+	return valadoc_content_comment_construct (BALADOC_CONTENT_TYPE_COMMENT);
 }
 
 static void
@@ -152,7 +152,7 @@ valadoc_content_comment_real_check (ValadocContentContentElement* base,
 		return;
 	}
 	self->priv->checked = TRUE;
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_comment_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_comment_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
 	{
 		ValaList* _element_list = NULL;
 		ValaList* _tmp0_;
@@ -214,7 +214,7 @@ valadoc_content_comment_real_accept_children (ValadocContentContentElement* base
 	ValadocContentComment * self;
 	self = (ValadocContentComment*) base;
 	g_return_if_fail (visitor != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_comment_parent_class)->accept_children ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), visitor);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_comment_parent_class)->accept_children ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), visitor);
 	{
 		ValaList* _element_list = NULL;
 		ValaList* _tmp0_;
@@ -267,7 +267,7 @@ valadoc_content_comment_find_taglets (ValadocContentComment* self,
 	ValaList* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_CONTENT_TYPE_TAGLET, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_CONTENT_TYPE_TAGLET, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	selected_taglets = (ValaList*) _tmp1_;
 	{
 		ValaList* _taglet_list = NULL;
@@ -379,7 +379,7 @@ valadoc_content_comment_real_copy (ValadocContentContentElement* base,
 			_tmp12_ = element;
 			_tmp13_ = comment;
 			_tmp14_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp12_, (ValadocContentContentElement*) _tmp13_);
-			_tmp15_ = VALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
+			_tmp15_ = BALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
 			if (_tmp15_ == NULL) {
 				_g_object_unref0 (_tmp14_);
 			}
@@ -438,7 +438,7 @@ valadoc_content_comment_real_copy (ValadocContentContentElement* base,
 			_tmp29_ = taglet;
 			_tmp30_ = comment;
 			_tmp31_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp29_, (ValadocContentContentElement*) _tmp30_);
-			_tmp32_ = VALADOC_CONTENT_IS_TAGLET (_tmp31_) ? ((ValadocContentTaglet*) _tmp31_) : NULL;
+			_tmp32_ = BALADOC_CONTENT_IS_TAGLET (_tmp31_) ? ((ValadocContentTaglet*) _tmp31_) : NULL;
 			if (_tmp32_ == NULL) {
 				_g_object_unref0 (_tmp31_);
 			}
@@ -470,7 +470,7 @@ valadoc_content_comment_class_init (ValadocContentCommentClass * klass,
 	((ValadocContentContentElementClass *) klass)->copy = (ValadocContentContentElement* (*) (ValadocContentContentElement*, ValadocContentContentElement*)) valadoc_content_comment_real_copy;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_content_comment_get_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_content_comment_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_COMMENT_TAGLETS_PROPERTY, valadoc_content_comment_properties[VALADOC_CONTENT_COMMENT_TAGLETS_PROPERTY] = vala_param_spec_iterable ("taglets", "taglets", "taglets", VALA_TYPE_LIST, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_COMMENT_TAGLETS_PROPERTY, valadoc_content_comment_properties[BALADOC_CONTENT_COMMENT_TAGLETS_PROPERTY] = vala_param_spec_iterable ("taglets", "taglets", "taglets", BALA_TYPE_LIST, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -485,7 +485,7 @@ static void
 valadoc_content_comment_finalize (GObject * obj)
 {
 	ValadocContentComment * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
 	_vala_iterable_unref0 (self->priv->_taglets);
 	G_OBJECT_CLASS (valadoc_content_comment_parent_class)->finalize (obj);
 }
@@ -495,7 +495,7 @@ valadoc_content_comment_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentCommentClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_comment_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentComment), 0, (GInstanceInitFunc) valadoc_content_comment_instance_init, NULL };
 	GType valadoc_content_comment_type_id;
-	valadoc_content_comment_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocContentComment", &g_define_type_info, 0);
+	valadoc_content_comment_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocContentComment", &g_define_type_info, 0);
 	ValadocContentComment_private_offset = g_type_add_instance_private (valadoc_content_comment_type_id, sizeof (ValadocContentCommentPrivate));
 	return valadoc_content_comment_type_id;
 }
@@ -519,9 +519,9 @@ _vala_valadoc_content_comment_get_property (GObject * object,
                                             GParamSpec * pspec)
 {
 	ValadocContentComment * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
 	switch (property_id) {
-		case VALADOC_CONTENT_COMMENT_TAGLETS_PROPERTY:
+		case BALADOC_CONTENT_COMMENT_TAGLETS_PROPERTY:
 		vala_value_set_iterable (value, valadoc_content_comment_get_taglets (self));
 		break;
 		default:

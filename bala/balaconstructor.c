@@ -132,7 +132,7 @@ vala_constructor_construct (GType object_type,
 ValaConstructor*
 vala_constructor_new (ValaSourceReference* source)
 {
-	return vala_constructor_construct (VALA_TYPE_CONSTRUCTOR, source);
+	return vala_constructor_construct (BALA_TYPE_CONSTRUCTOR, source);
 }
 
 static void
@@ -247,7 +247,7 @@ vala_constructor_real_check (ValaCodeNode* base,
 		ValaBlock* _tmp22_;
 		ValaArrayList* _tmp23_;
 		_tmp19_ = g_direct_equal;
-		_tmp20_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp19_);
+		_tmp20_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp19_);
 		body_errors = _tmp20_;
 		_tmp21_ = vala_subroutine_get_body ((ValaSubroutine*) self);
 		_tmp22_ = _tmp21_;
@@ -289,7 +289,7 @@ vala_constructor_real_check (ValaCodeNode* base,
 				_tmp32_ = vala_list_get ((ValaList*) _tmp31_, _body_error_type_index);
 				body_error_type = (ValaDataType*) _tmp32_;
 				_tmp33_ = body_error_type;
-				_tmp34_ = vala_error_type_get_dynamic_error (G_TYPE_CHECK_INSTANCE_CAST (_tmp33_, VALA_TYPE_ERROR_TYPE, ValaErrorType));
+				_tmp34_ = vala_error_type_get_dynamic_error (G_TYPE_CHECK_INSTANCE_CAST (_tmp33_, BALA_TYPE_ERROR_TYPE, ValaErrorType));
 				_tmp35_ = _tmp34_;
 				if (!_tmp35_) {
 					ValaDataType* _tmp36_;
@@ -339,7 +339,7 @@ vala_constructor_class_init (ValaConstructorClass * klass,
 	((ValaCodeNodeClass *) klass)->accept = (void (*) (ValaCodeNode*, ValaCodeVisitor*)) vala_constructor_real_accept;
 	((ValaCodeNodeClass *) klass)->accept_children = (void (*) (ValaCodeNode*, ValaCodeVisitor*)) vala_constructor_real_accept_children;
 	((ValaCodeNodeClass *) klass)->check = (gboolean (*) (ValaCodeNode*, ValaCodeContext*)) vala_constructor_real_check;
-	VALA_SUBROUTINE_CLASS (klass)->get_has_result = vala_constructor_real_get_has_result;
+	BALA_SUBROUTINE_CLASS (klass)->get_has_result = vala_constructor_real_get_has_result;
 }
 
 static void
@@ -347,16 +347,16 @@ vala_constructor_instance_init (ValaConstructor * self,
                                 gpointer klass)
 {
 	self->priv = vala_constructor_get_instance_private (self);
-	self->priv->_binding = VALA_MEMBER_BINDING_INSTANCE;
+	self->priv->_binding = BALA_MEMBER_BINDING_INSTANCE;
 }
 
 static void
 vala_constructor_finalize (ValaCodeNode * obj)
 {
 	ValaConstructor * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CONSTRUCTOR, ValaConstructor);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CONSTRUCTOR, ValaConstructor);
 	_vala_code_node_unref0 (self->priv->_this_parameter);
-	VALA_CODE_NODE_CLASS (vala_constructor_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_constructor_parent_class)->finalize (obj);
 }
 
 /**
@@ -367,7 +367,7 @@ vala_constructor_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaConstructorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_constructor_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaConstructor), 0, (GInstanceInitFunc) vala_constructor_instance_init, NULL };
 	GType vala_constructor_type_id;
-	vala_constructor_type_id = g_type_register_static (VALA_TYPE_SUBROUTINE, "ValaConstructor", &g_define_type_info, 0);
+	vala_constructor_type_id = g_type_register_static (BALA_TYPE_SUBROUTINE, "ValaConstructor", &g_define_type_info, 0);
 	ValaConstructor_private_offset = g_type_add_instance_private (vala_constructor_type_id, sizeof (ValaConstructorPrivate));
 	return vala_constructor_type_id;
 }

@@ -45,7 +45,7 @@ vala_ccode_expression_write_inner (ValaCCodeExpression* self,
                                    ValaCCodeWriter* writer)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CCODE_EXPRESSION_GET_CLASS (self)->write_inner (self, writer);
+	BALA_CCODE_EXPRESSION_GET_CLASS (self)->write_inner (self, writer);
 }
 
 ValaCCodeExpression*
@@ -78,7 +78,7 @@ vala_ccode_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeExpression), 0, (GInstanceInitFunc) vala_ccode_expression_instance_init, NULL };
 	GType vala_ccode_expression_type_id;
-	vala_ccode_expression_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeExpression", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_ccode_expression_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeExpression", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	return vala_ccode_expression_type_id;
 }
 

@@ -48,7 +48,7 @@ ValaCCodeMacroReplacement*
 vala_ccode_macro_replacement_new (const gchar* name,
                                   const gchar* replacement)
 {
-	return vala_ccode_macro_replacement_construct (VALA_TYPE_CCODE_MACRO_REPLACEMENT, name, replacement);
+	return vala_ccode_macro_replacement_construct (BALA_TYPE_CCODE_MACRO_REPLACEMENT, name, replacement);
 }
 
 ValaCCodeMacroReplacement*
@@ -67,7 +67,7 @@ ValaCCodeMacroReplacement*
 vala_ccode_macro_replacement_new_with_expression (const gchar* name,
                                                   ValaCCodeExpression* replacement_expression)
 {
-	return vala_ccode_macro_replacement_construct_with_expression (VALA_TYPE_CCODE_MACRO_REPLACEMENT, name, replacement_expression);
+	return vala_ccode_macro_replacement_construct_with_expression (BALA_TYPE_CCODE_MACRO_REPLACEMENT, name, replacement_expression);
 }
 
 static void
@@ -91,7 +91,7 @@ vala_ccode_macro_replacement_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeMacroReplacementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_macro_replacement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeMacroReplacement), 0, (GInstanceInitFunc) vala_ccode_macro_replacement_instance_init, NULL };
 	GType vala_ccode_macro_replacement_type_id;
-	vala_ccode_macro_replacement_type_id = g_type_register_static (VALA_TYPE_CCODE_DEFINE, "ValaCCodeMacroReplacement", &g_define_type_info, 0);
+	vala_ccode_macro_replacement_type_id = g_type_register_static (BALA_TYPE_CCODE_DEFINE, "ValaCCodeMacroReplacement", &g_define_type_info, 0);
 	return vala_ccode_macro_replacement_type_id;
 }
 

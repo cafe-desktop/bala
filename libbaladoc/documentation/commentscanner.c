@@ -27,10 +27,10 @@
 #include <glib.h>
 
 enum  {
-	VALADOC_COMMENT_SCANNER_0_PROPERTY,
-	VALADOC_COMMENT_SCANNER_NUM_PROPERTIES
+	BALADOC_COMMENT_SCANNER_0_PROPERTY,
+	BALADOC_COMMENT_SCANNER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_comment_scanner_properties[VALADOC_COMMENT_SCANNER_NUM_PROPERTIES];
+static GParamSpec* valadoc_comment_scanner_properties[BALADOC_COMMENT_SCANNER_NUM_PROPERTIES];
 
 struct _ValadocCommentScannerPrivate {
 	gboolean in_line_start;
@@ -68,7 +68,7 @@ valadoc_comment_scanner_construct (GType object_type,
 ValadocCommentScanner*
 valadoc_comment_scanner_new (ValadocSettings* settings)
 {
-	return valadoc_comment_scanner_construct (VALADOC_TYPE_COMMENT_SCANNER, settings);
+	return valadoc_comment_scanner_construct (BALADOC_TYPE_COMMENT_SCANNER, settings);
 }
 
 static void
@@ -76,7 +76,7 @@ valadoc_comment_scanner_real_reset (ValadocWikiScanner* base)
 {
 	ValadocCommentScanner * self;
 	self = (ValadocCommentScanner*) base;
-	VALADOC_WIKI_SCANNER_CLASS (valadoc_comment_scanner_parent_class)->reset (G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner));
+	BALADOC_WIKI_SCANNER_CLASS (valadoc_comment_scanner_parent_class)->reset (G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner));
 	self->priv->in_line_start = TRUE;
 	self->priv->past_star = FALSE;
 	self->priv->start_column = 0;
@@ -110,9 +110,9 @@ valadoc_comment_scanner_real_accept (ValadocWikiScanner* base,
 			if (self->priv->past_star) {
 				self->priv->past_star = FALSE;
 				if (c == ((gunichar) '\n')) {
-					VALADOC_WIKI_SCANNER_CLASS (valadoc_comment_scanner_parent_class)->accept (G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), c, &_inner_error0_);
+					BALADOC_WIKI_SCANNER_CLASS (valadoc_comment_scanner_parent_class)->accept (G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), c, &_inner_error0_);
 					if (G_UNLIKELY (_inner_error0_ != NULL)) {
-						if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+						if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 							g_propagate_error (error, _inner_error0_);
 							return;
 						} else {
@@ -129,9 +129,9 @@ valadoc_comment_scanner_real_accept (ValadocWikiScanner* base,
 			}
 		}
 	} else {
-		VALADOC_WIKI_SCANNER_CLASS (valadoc_comment_scanner_parent_class)->accept (G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), c, &_inner_error0_);
+		BALADOC_WIKI_SCANNER_CLASS (valadoc_comment_scanner_parent_class)->accept (G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_TYPE_WIKI_SCANNER, ValadocWikiScanner), c, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				g_propagate_error (error, _inner_error0_);
 				return;
 			} else {
@@ -170,7 +170,7 @@ static void
 valadoc_comment_scanner_finalize (GObject * obj)
 {
 	ValadocCommentScanner * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_COMMENT_SCANNER, ValadocCommentScanner);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_COMMENT_SCANNER, ValadocCommentScanner);
 	G_OBJECT_CLASS (valadoc_comment_scanner_parent_class)->finalize (obj);
 }
 
@@ -179,7 +179,7 @@ valadoc_comment_scanner_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocCommentScannerClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_comment_scanner_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocCommentScanner), 0, (GInstanceInitFunc) valadoc_comment_scanner_instance_init, NULL };
 	GType valadoc_comment_scanner_type_id;
-	valadoc_comment_scanner_type_id = g_type_register_static (VALADOC_TYPE_WIKI_SCANNER, "ValadocCommentScanner", &g_define_type_info, 0);
+	valadoc_comment_scanner_type_id = g_type_register_static (BALADOC_TYPE_WIKI_SCANNER, "ValadocCommentScanner", &g_define_type_info, 0);
 	ValadocCommentScanner_private_offset = g_type_add_instance_private (valadoc_comment_scanner_type_id, sizeof (ValadocCommentScannerPrivate));
 	return valadoc_comment_scanner_type_id;
 }

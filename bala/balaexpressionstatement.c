@@ -120,7 +120,7 @@ ValaExpressionStatement*
 vala_expression_statement_new (ValaExpression* expression,
                                ValaSourceReference* source_reference)
 {
-	return vala_expression_statement_construct (VALA_TYPE_EXPRESSION_STATEMENT, expression, source_reference);
+	return vala_expression_statement_construct (BALA_TYPE_EXPRESSION_STATEMENT, expression, source_reference);
 }
 
 static void
@@ -201,7 +201,7 @@ vala_expression_statement_real_check (ValaCodeNode* base,
 		ValaExpression* _tmp7_;
 		_tmp6_ = vala_expression_statement_get_expression (self);
 		_tmp7_ = _tmp6_;
-		if (VALA_IS_LITERAL (_tmp7_)) {
+		if (BALA_IS_LITERAL (_tmp7_)) {
 			ValaSourceReference* _tmp8_;
 			ValaSourceReference* _tmp9_;
 			_tmp8_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
@@ -311,9 +311,9 @@ static void
 vala_expression_statement_finalize (ValaCodeNode * obj)
 {
 	ValaExpressionStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_EXPRESSION_STATEMENT, ValaExpressionStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_EXPRESSION_STATEMENT, ValaExpressionStatement);
 	_vala_code_node_unref0 (self->priv->_expression);
-	VALA_CODE_NODE_CLASS (vala_expression_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_expression_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -326,8 +326,8 @@ vala_expression_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaExpressionStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_expression_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaExpressionStatement), 0, (GInstanceInitFunc) vala_expression_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_expression_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_expression_statement_type_id;
-	vala_expression_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaExpressionStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_expression_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_expression_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaExpressionStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_expression_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaExpressionStatement_private_offset = g_type_add_instance_private (vala_expression_statement_type_id, sizeof (ValaExpressionStatementPrivate));
 	return vala_expression_statement_type_id;
 }

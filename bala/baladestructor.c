@@ -126,7 +126,7 @@ vala_destructor_construct (GType object_type,
 ValaDestructor*
 vala_destructor_new (ValaSourceReference* source_reference)
 {
-	return vala_destructor_construct (VALA_TYPE_DESTRUCTOR, source_reference);
+	return vala_destructor_construct (BALA_TYPE_DESTRUCTOR, source_reference);
 }
 
 static void
@@ -230,7 +230,7 @@ vala_destructor_class_init (ValaDestructorClass * klass,
 	((ValaCodeNodeClass *) klass)->accept = (void (*) (ValaCodeNode*, ValaCodeVisitor*)) vala_destructor_real_accept;
 	((ValaCodeNodeClass *) klass)->accept_children = (void (*) (ValaCodeNode*, ValaCodeVisitor*)) vala_destructor_real_accept_children;
 	((ValaCodeNodeClass *) klass)->check = (gboolean (*) (ValaCodeNode*, ValaCodeContext*)) vala_destructor_real_check;
-	VALA_SUBROUTINE_CLASS (klass)->get_has_result = vala_destructor_real_get_has_result;
+	BALA_SUBROUTINE_CLASS (klass)->get_has_result = vala_destructor_real_get_has_result;
 }
 
 static void
@@ -238,16 +238,16 @@ vala_destructor_instance_init (ValaDestructor * self,
                                gpointer klass)
 {
 	self->priv = vala_destructor_get_instance_private (self);
-	self->priv->_binding = VALA_MEMBER_BINDING_INSTANCE;
+	self->priv->_binding = BALA_MEMBER_BINDING_INSTANCE;
 }
 
 static void
 vala_destructor_finalize (ValaCodeNode * obj)
 {
 	ValaDestructor * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_DESTRUCTOR, ValaDestructor);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_DESTRUCTOR, ValaDestructor);
 	_vala_code_node_unref0 (self->priv->_this_parameter);
-	VALA_CODE_NODE_CLASS (vala_destructor_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_destructor_parent_class)->finalize (obj);
 }
 
 /**
@@ -258,7 +258,7 @@ vala_destructor_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaDestructorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_destructor_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaDestructor), 0, (GInstanceInitFunc) vala_destructor_instance_init, NULL };
 	GType vala_destructor_type_id;
-	vala_destructor_type_id = g_type_register_static (VALA_TYPE_SUBROUTINE, "ValaDestructor", &g_define_type_info, 0);
+	vala_destructor_type_id = g_type_register_static (BALA_TYPE_SUBROUTINE, "ValaDestructor", &g_define_type_info, 0);
 	ValaDestructor_private_offset = g_type_add_instance_private (vala_destructor_type_id, sizeof (ValaDestructorPrivate));
 	return vala_destructor_type_id;
 }

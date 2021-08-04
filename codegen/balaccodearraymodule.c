@@ -175,7 +175,7 @@ vala_ccode_array_module_append_initializer_list (ValaCCodeArrayModule* self,
 			if (rank > 1) {
 				ValaExpression* _tmp9_;
 				_tmp9_ = e;
-				vala_ccode_array_module_append_initializer_list (self, name_cnode, G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, VALA_TYPE_INITIALIZER_LIST, ValaInitializerList), rank - 1, i);
+				vala_ccode_array_module_append_initializer_list (self, name_cnode, G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, BALA_TYPE_INITIALIZER_LIST, ValaInitializerList), rank - 1, i);
 			} else {
 				ValaCCodeFunction* _tmp10_;
 				ValaCCodeFunction* _tmp11_;
@@ -274,7 +274,7 @@ vala_ccode_array_module_real_visit_array_creation_expression (ValaCodeVisitor* b
 	g_return_if_fail (expr != NULL);
 	_tmp0_ = vala_expression_get_target_type ((ValaExpression*) expr);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp1_) : NULL);
+	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp1_) : NULL);
 	array_type = _tmp2_;
 	_tmp4_ = array_type;
 	if (_tmp4_ != NULL) {
@@ -336,7 +336,7 @@ vala_ccode_array_module_real_visit_array_creation_expression (ValaCodeVisitor* b
 	_tmp23_ = _tmp22_;
 	_tmp24_ = vala_code_context_get_profile (_tmp23_);
 	_tmp25_ = _tmp24_;
-	if (_tmp25_ == VALA_PROFILE_POSIX) {
+	if (_tmp25_ == BALA_PROFILE_POSIX) {
 		ValaCCodeFile* _tmp26_;
 		ValaCCodeIdentifier* _tmp27_;
 		ValaCCodeIdentifier* _tmp28_;
@@ -436,7 +436,7 @@ vala_ccode_array_module_real_visit_array_creation_expression (ValaCodeVisitor* b
 				ValaCCodeBinaryExpression* _tmp57_;
 				_tmp55_ = cexpr;
 				_tmp56_ = csize;
-				_tmp57_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, _tmp55_, _tmp56_);
+				_tmp57_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, _tmp55_, _tmp56_);
 				_vala_ccode_node_unref0 (cexpr);
 				cexpr = (ValaCCodeExpression*) _tmp57_;
 			}
@@ -470,7 +470,7 @@ vala_ccode_array_module_real_visit_array_creation_expression (ValaCodeVisitor* b
 		_tmp67_ = cexpr;
 		_tmp68_ = vala_ccode_constant_new ("1");
 		_tmp69_ = _tmp68_;
-		_tmp70_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, _tmp67_, (ValaCCodeExpression*) _tmp69_);
+		_tmp70_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, _tmp67_, (ValaCCodeExpression*) _tmp69_);
 		_vala_ccode_node_unref0 (cexpr);
 		cexpr = (ValaCCodeExpression*) _tmp70_;
 		_vala_ccode_node_unref0 (_tmp69_);
@@ -482,7 +482,7 @@ vala_ccode_array_module_real_visit_array_creation_expression (ValaCodeVisitor* b
 	_tmp74_ = _tmp73_;
 	_tmp75_ = vala_code_context_get_profile (_tmp74_);
 	_tmp76_ = _tmp75_;
-	if (_tmp76_ == VALA_PROFILE_POSIX) {
+	if (_tmp76_ == BALA_PROFILE_POSIX) {
 		ValaCCodeFunctionCall* csizeof = NULL;
 		ValaCCodeIdentifier* _tmp77_;
 		ValaCCodeIdentifier* _tmp78_;
@@ -652,7 +652,7 @@ vala_ccode_array_module_real_get_array_length_cvalue (ValaCCodeBaseModule* base,
 	g_return_val_if_fail (value != NULL, NULL);
 	_tmp0_ = vala_target_value_get_value_type (value);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp1_) : NULL);
+	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp1_) : NULL);
 	array_type = _tmp2_;
 	_tmp4_ = array_type;
 	if (_tmp4_ != NULL) {
@@ -726,7 +726,7 @@ vala_ccode_array_module_real_get_array_length_cvalue (ValaCCodeBaseModule* base,
 					_tmp23_ = cexpr;
 					_tmp24_ = vala_ccode_base_module_get_array_length_cvalue ((ValaCCodeBaseModule*) self, value, dim);
 					_tmp25_ = _tmp24_;
-					_tmp26_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, _tmp23_, _tmp25_);
+					_tmp26_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, _tmp23_, _tmp25_);
 					_vala_ccode_node_unref0 (cexpr);
 					cexpr = (ValaCCodeExpression*) _tmp26_;
 					_vala_ccode_node_unref0 (_tmp25_);
@@ -739,7 +739,7 @@ vala_ccode_array_module_real_get_array_length_cvalue (ValaCCodeBaseModule* base,
 			dim = 1;
 		}
 	}
-	_tmp27_ = G_TYPE_CHECK_INSTANCE_CAST (value, VALA_TYPE_GLIB_VALUE, ValaGLibValue)->array_length_cvalues;
+	_tmp27_ = G_TYPE_CHECK_INSTANCE_CAST (value, BALA_TYPE_GLIB_VALUE, ValaGLibValue)->array_length_cvalues;
 	_tmp28_ = _vala_iterable_ref0 (_tmp27_);
 	size = _tmp28_;
 	_tmp30_ = size;
@@ -855,7 +855,7 @@ vala_ccode_array_module_real_visit_element_access (ValaCodeVisitor* base,
 	_tmp16_ = _tmp15_;
 	_tmp17_ = vala_expression_get_symbol_reference (_tmp16_);
 	_tmp18_ = _tmp17_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp18_, VALA_TYPE_ARRAY_LENGTH_FIELD)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp18_, BALA_TYPE_ARRAY_LENGTH_FIELD)) {
 		ValaIntegerLiteral* lit = NULL;
 		ValaList* _tmp19_;
 		gpointer _tmp20_;
@@ -870,14 +870,14 @@ vala_ccode_array_module_real_visit_element_access (ValaCodeVisitor* base,
 		_tmp19_ = indices;
 		_tmp20_ = vala_list_get (_tmp19_, 0);
 		_tmp21_ = (ValaExpression*) _tmp20_;
-		_tmp22_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp21_, VALA_TYPE_INTEGER_LITERAL) ? ((ValaIntegerLiteral*) _tmp21_) : NULL;
+		_tmp22_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp21_, BALA_TYPE_INTEGER_LITERAL) ? ((ValaIntegerLiteral*) _tmp21_) : NULL;
 		if (_tmp22_ == NULL) {
 			_vala_code_node_unref0 (_tmp21_);
 		}
 		lit = _tmp22_;
 		_tmp23_ = vala_element_access_get_container (expr);
 		_tmp24_ = _tmp23_;
-		_tmp25_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp24_, VALA_TYPE_MEMBER_ACCESS) ? ((ValaMemberAccess*) _tmp24_) : NULL);
+		_tmp25_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp24_, BALA_TYPE_MEMBER_ACCESS) ? ((ValaMemberAccess*) _tmp24_) : NULL);
 		memberaccess = _tmp25_;
 		_tmp27_ = lit;
 		if (_tmp27_ != NULL) {
@@ -927,7 +927,7 @@ vala_ccode_array_module_real_visit_element_access (ValaCodeVisitor* base,
 		_tmp41_ = _tmp40_;
 		_tmp42_ = vala_expression_get_symbol_reference (_tmp41_);
 		_tmp43_ = _tmp42_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp43_, VALA_TYPE_CONSTANT)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp43_, BALA_TYPE_CONSTANT)) {
 			_tmp39_ = rank > 1;
 		} else {
 			_tmp39_ = FALSE;
@@ -943,7 +943,7 @@ vala_ccode_array_module_real_visit_element_access (ValaCodeVisitor* base,
 			ValaCCodeElementAccess* _tmp57_;
 			ValaCCodeElementAccess* _tmp58_;
 			_tmp44_ = g_direct_equal;
-			_tmp45_ = vala_array_list_new (VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp44_);
+			_tmp45_ = vala_array_list_new (BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp44_);
 			cindices = _tmp45_;
 			_tmp46_ = cindices;
 			_tmp47_ = cindex;
@@ -1028,7 +1028,7 @@ vala_ccode_array_module_real_visit_element_access (ValaCodeVisitor* base,
 						_tmp63_ = _tmp62_;
 						_tmp64_ = vala_ccode_base_module_get_array_length_cexpression ((ValaCCodeBaseModule*) self, _tmp63_, i + 1);
 						_tmp65_ = _tmp64_;
-						_tmp66_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, _tmp61_, _tmp65_);
+						_tmp66_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, _tmp61_, _tmp65_);
 						_tmp67_ = _tmp66_;
 						_vala_ccode_node_unref0 (_tmp65_);
 						cmul = _tmp67_;
@@ -1037,7 +1037,7 @@ vala_ccode_array_module_real_visit_element_access (ValaCodeVisitor* base,
 						_tmp70_ = vala_list_get (_tmp69_, i);
 						_tmp71_ = (ValaExpression*) _tmp70_;
 						_tmp72_ = vala_get_cvalue (_tmp71_);
-						_tmp73_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp68_, _tmp72_);
+						_tmp73_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp68_, _tmp72_);
 						_vala_ccode_node_unref0 (cindex);
 						cindex = (ValaCCodeExpression*) _tmp73_;
 						_vala_code_node_unref0 (_tmp71_);
@@ -1047,7 +1047,7 @@ vala_ccode_array_module_real_visit_element_access (ValaCodeVisitor* base,
 							ValaCCodeExpression* _tmp76_;
 							ValaCCodeUnaryExpression* _tmp77_;
 							_tmp76_ = ccontainer;
-							_tmp77_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, _tmp76_);
+							_tmp77_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, _tmp76_);
 							_vala_ccode_node_unref0 (ccontainer);
 							ccontainer = (ValaCCodeExpression*) _tmp77_;
 						}
@@ -1087,7 +1087,7 @@ vala_ccode_array_module_real_visit_element_access (ValaCodeVisitor* base,
 	}
 	_tmp94_ = vala_expression_get_target_value ((ValaExpression*) expr);
 	_tmp95_ = _tmp94_;
-	G_TYPE_CHECK_INSTANCE_CAST (_tmp95_, VALA_TYPE_GLIB_VALUE, ValaGLibValue)->lvalue = TRUE;
+	G_TYPE_CHECK_INSTANCE_CAST (_tmp95_, BALA_TYPE_GLIB_VALUE, ValaGLibValue)->lvalue = TRUE;
 	_vala_ccode_node_unref0 (cindex);
 	_vala_ccode_node_unref0 (ccontainer);
 	_vala_iterable_unref0 (indices);
@@ -1134,9 +1134,9 @@ vala_ccode_array_module_real_visit_slice_expression (ValaCodeVisitor* base,
 	_tmp10_ = vala_get_cvalue (_tmp9_);
 	_tmp11_ = _vala_ccode_node_ref0 (_tmp10_);
 	cstop = _tmp11_;
-	_tmp12_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, ccontainer, cstart);
+	_tmp12_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, ccontainer, cstart);
 	cstartpointer = _tmp12_;
-	_tmp13_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MINUS, cstop, cstart);
+	_tmp13_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MINUS, cstop, cstart);
 	splicelen = _tmp13_;
 	vala_set_cvalue ((ValaExpression*) expr, (ValaCCodeExpression*) cstartpointer);
 	vala_append_array_length ((ValaExpression*) expr, (ValaCCodeExpression*) splicelen);
@@ -1204,7 +1204,7 @@ vala_ccode_array_module_append_struct_array_free_loop (ValaCCodeArrayModule* sel
 	_tmp1_ = _tmp0_;
 	_tmp2_ = vala_ccode_constant_new ("0");
 	_tmp3_ = _tmp2_;
-	_tmp4_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp1_, (ValaCCodeExpression*) _tmp3_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+	_tmp4_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp1_, (ValaCCodeExpression*) _tmp3_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 	_tmp5_ = _tmp4_;
 	_vala_ccode_node_unref0 (_tmp3_);
 	_vala_ccode_node_unref0 (_tmp1_);
@@ -1213,7 +1213,7 @@ vala_ccode_array_module_append_struct_array_free_loop (ValaCCodeArrayModule* sel
 	_tmp7_ = _tmp6_;
 	_tmp8_ = vala_ccode_identifier_new ("array_length");
 	_tmp9_ = _tmp8_;
-	_tmp10_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) _tmp7_, (ValaCCodeExpression*) _tmp9_);
+	_tmp10_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) _tmp7_, (ValaCCodeExpression*) _tmp9_);
 	_tmp11_ = _tmp10_;
 	_vala_ccode_node_unref0 (_tmp9_);
 	_vala_ccode_node_unref0 (_tmp7_);
@@ -1224,9 +1224,9 @@ vala_ccode_array_module_append_struct_array_free_loop (ValaCCodeArrayModule* sel
 	_tmp15_ = _tmp14_;
 	_tmp16_ = vala_ccode_constant_new ("1");
 	_tmp17_ = _tmp16_;
-	_tmp18_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp15_, (ValaCCodeExpression*) _tmp17_);
+	_tmp18_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp15_, (ValaCCodeExpression*) _tmp17_);
 	_tmp19_ = _tmp18_;
-	_tmp20_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp13_, (ValaCCodeExpression*) _tmp19_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+	_tmp20_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp13_, (ValaCCodeExpression*) _tmp19_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 	_tmp21_ = _tmp20_;
 	_vala_ccode_node_unref0 (_tmp19_);
 	_vala_ccode_node_unref0 (_tmp17_);
@@ -1253,7 +1253,7 @@ vala_ccode_array_module_append_struct_array_free_loop (ValaCCodeArrayModule* sel
 	_vala_ccode_node_unref0 (_tmp32_);
 	_vala_code_node_unref0 (_tmp30_);
 	cfreecall = _tmp34_;
-	_tmp35_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) cea);
+	_tmp35_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) cea);
 	_tmp36_ = _tmp35_;
 	vala_ccode_function_call_add_argument (cfreecall, (ValaCCodeExpression*) _tmp36_);
 	_vala_ccode_node_unref0 (_tmp36_);
@@ -1354,7 +1354,7 @@ vala_ccode_array_module_real_append_struct_array_free (ValaCCodeBaseModule* base
 	_tmp7_ = vala_ccode_function_new (_tmp6_, "void");
 	fun = _tmp7_;
 	_tmp8_ = fun;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp8_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp8_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp9_ = fun;
 	_tmp10_ = vala_get_ccode_name ((ValaCodeNode*) st);
 	_tmp11_ = _tmp10_;
@@ -1381,7 +1381,7 @@ vala_ccode_array_module_real_append_struct_array_free (ValaCCodeBaseModule* base
 	_tmp24_ = _tmp23_;
 	_tmp25_ = vala_ccode_constant_new ("NULL");
 	_tmp26_ = _tmp25_;
-	_tmp27_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp24_, (ValaCCodeExpression*) _tmp26_);
+	_tmp27_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp24_, (ValaCCodeExpression*) _tmp26_);
 	_tmp28_ = _tmp27_;
 	_vala_ccode_node_unref0 (_tmp26_);
 	_vala_ccode_node_unref0 (_tmp24_);
@@ -1408,7 +1408,7 @@ vala_ccode_array_module_real_append_struct_array_free (ValaCCodeBaseModule* base
 	_tmp42_ = _tmp41_;
 	_tmp43_ = vala_code_context_get_profile (_tmp42_);
 	_tmp44_ = _tmp43_;
-	if (_tmp44_ == VALA_PROFILE_POSIX) {
+	if (_tmp44_ == BALA_PROFILE_POSIX) {
 		ValaCCodeFile* _tmp45_;
 		ValaCCodeIdentifier* _tmp46_;
 		ValaCCodeIdentifier* _tmp47_;
@@ -1527,7 +1527,7 @@ vala_ccode_array_module_real_append_struct_array_destroy (ValaCCodeBaseModule* b
 	_tmp7_ = vala_ccode_function_new (_tmp6_, "void");
 	fun = _tmp7_;
 	_tmp8_ = fun;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp8_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp8_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp9_ = fun;
 	_tmp10_ = vala_get_ccode_name ((ValaCodeNode*) st);
 	_tmp11_ = _tmp10_;
@@ -1554,7 +1554,7 @@ vala_ccode_array_module_real_append_struct_array_destroy (ValaCCodeBaseModule* b
 	_tmp24_ = _tmp23_;
 	_tmp25_ = vala_ccode_constant_new ("NULL");
 	_tmp26_ = _tmp25_;
-	_tmp27_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp24_, (ValaCCodeExpression*) _tmp26_);
+	_tmp27_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp24_, (ValaCCodeExpression*) _tmp26_);
 	_tmp28_ = _tmp27_;
 	_vala_ccode_node_unref0 (_tmp26_);
 	_vala_ccode_node_unref0 (_tmp24_);
@@ -1656,7 +1656,7 @@ vala_ccode_array_module_append_vala_array_free_loop (ValaCCodeArrayModule* self)
 	_tmp1_ = _tmp0_;
 	_tmp2_ = vala_ccode_constant_new ("0");
 	_tmp3_ = _tmp2_;
-	_tmp4_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp1_, (ValaCCodeExpression*) _tmp3_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+	_tmp4_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp1_, (ValaCCodeExpression*) _tmp3_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 	_tmp5_ = _tmp4_;
 	_vala_ccode_node_unref0 (_tmp3_);
 	_vala_ccode_node_unref0 (_tmp1_);
@@ -1665,7 +1665,7 @@ vala_ccode_array_module_append_vala_array_free_loop (ValaCCodeArrayModule* self)
 	_tmp7_ = _tmp6_;
 	_tmp8_ = vala_ccode_identifier_new ("array_length");
 	_tmp9_ = _tmp8_;
-	_tmp10_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) _tmp7_, (ValaCCodeExpression*) _tmp9_);
+	_tmp10_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) _tmp7_, (ValaCCodeExpression*) _tmp9_);
 	_tmp11_ = _tmp10_;
 	_vala_ccode_node_unref0 (_tmp9_);
 	_vala_ccode_node_unref0 (_tmp7_);
@@ -1676,9 +1676,9 @@ vala_ccode_array_module_append_vala_array_free_loop (ValaCCodeArrayModule* self)
 	_tmp15_ = _tmp14_;
 	_tmp16_ = vala_ccode_constant_new ("1");
 	_tmp17_ = _tmp16_;
-	_tmp18_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp15_, (ValaCCodeExpression*) _tmp17_);
+	_tmp18_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp15_, (ValaCCodeExpression*) _tmp17_);
 	_tmp19_ = _tmp18_;
-	_tmp20_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp13_, (ValaCCodeExpression*) _tmp19_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+	_tmp20_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp13_, (ValaCCodeExpression*) _tmp19_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 	_tmp21_ = _tmp20_;
 	_vala_ccode_node_unref0 (_tmp19_);
 	_vala_ccode_node_unref0 (_tmp17_);
@@ -1709,7 +1709,7 @@ vala_ccode_array_module_append_vala_array_free_loop (ValaCCodeArrayModule* self)
 	cea = _tmp36_;
 	_tmp37_ = vala_ccode_constant_new ("NULL");
 	_tmp38_ = _tmp37_;
-	_tmp39_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) cea, (ValaCCodeExpression*) _tmp38_);
+	_tmp39_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) cea, (ValaCCodeExpression*) _tmp38_);
 	_tmp40_ = _tmp39_;
 	_vala_ccode_node_unref0 (_tmp38_);
 	cfreecond = _tmp40_;
@@ -1859,7 +1859,7 @@ vala_ccode_array_module_real_append_vala_array_free (ValaCCodeBaseModule* base)
 	_tmp2_ = vala_ccode_function_new ("_vala_array_destroy", "void");
 	fun = _tmp2_;
 	_tmp3_ = fun;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp3_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp3_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp4_ = fun;
 	_tmp5_ = ((ValaCCodeBaseModule*) self)->pointer_type;
 	_tmp6_ = vala_get_ccode_name ((ValaCodeNode*) _tmp5_);
@@ -1893,7 +1893,7 @@ vala_ccode_array_module_real_append_vala_array_free (ValaCCodeBaseModule* base)
 	_tmp24_ = _tmp23_;
 	_tmp25_ = vala_ccode_constant_new ("NULL");
 	_tmp26_ = _tmp25_;
-	_tmp27_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp24_, (ValaCCodeExpression*) _tmp26_);
+	_tmp27_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp24_, (ValaCCodeExpression*) _tmp26_);
 	_tmp28_ = _tmp27_;
 	_vala_ccode_node_unref0 (_tmp26_);
 	_vala_ccode_node_unref0 (_tmp24_);
@@ -1902,7 +1902,7 @@ vala_ccode_array_module_real_append_vala_array_free (ValaCCodeBaseModule* base)
 	_tmp30_ = _tmp29_;
 	_tmp31_ = vala_ccode_constant_new ("NULL");
 	_tmp32_ = _tmp31_;
-	_tmp33_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp30_, (ValaCCodeExpression*) _tmp32_);
+	_tmp33_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) _tmp30_, (ValaCCodeExpression*) _tmp32_);
 	_tmp34_ = _tmp33_;
 	_vala_ccode_node_unref0 (_tmp32_);
 	_vala_ccode_node_unref0 (_tmp30_);
@@ -1911,7 +1911,7 @@ vala_ccode_array_module_real_append_vala_array_free (ValaCCodeBaseModule* base)
 	_tmp36_ = _tmp35_;
 	_tmp37_ = ccondarr;
 	_tmp38_ = ccondfunc;
-	_tmp39_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp37_, (ValaCCodeExpression*) _tmp38_);
+	_tmp39_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp37_, (ValaCCodeExpression*) _tmp38_);
 	_tmp40_ = _tmp39_;
 	vala_ccode_function_open_if (_tmp36_, (ValaCCodeExpression*) _tmp40_);
 	_vala_ccode_node_unref0 (_tmp40_);
@@ -1940,7 +1940,7 @@ vala_ccode_array_module_real_append_vala_array_free (ValaCCodeBaseModule* base)
 	_vala_ccode_node_unref0 (fun);
 	fun = _tmp54_;
 	_tmp55_ = fun;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp55_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp55_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp56_ = fun;
 	_tmp57_ = ((ValaCCodeBaseModule*) self)->pointer_type;
 	_tmp58_ = vala_get_ccode_name ((ValaCodeNode*) _tmp57_);
@@ -1999,7 +1999,7 @@ vala_ccode_array_module_real_append_vala_array_free (ValaCCodeBaseModule* base)
 	_tmp92_ = _tmp91_;
 	_tmp93_ = vala_code_context_get_profile (_tmp92_);
 	_tmp94_ = _tmp93_;
-	if (_tmp94_ == VALA_PROFILE_POSIX) {
+	if (_tmp94_ == BALA_PROFILE_POSIX) {
 		ValaCCodeFile* _tmp95_;
 		ValaCCodeIdentifier* _tmp96_;
 		ValaCCodeIdentifier* _tmp97_;
@@ -2185,7 +2185,7 @@ vala_ccode_array_module_real_append_vala_array_move (ValaCCodeBaseModule* base)
 	vala_ccode_file_add_include (_tmp0_, "string.h", FALSE);
 	_tmp1_ = vala_ccode_function_new ("_vala_array_move", "void");
 	fun = _tmp1_;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) fun, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) fun, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp2_ = ((ValaCCodeBaseModule*) self)->pointer_type;
 	_tmp3_ = vala_get_ccode_name ((ValaCodeNode*) _tmp2_);
 	_tmp4_ = _tmp3_;
@@ -2239,27 +2239,27 @@ vala_ccode_array_module_real_append_vala_array_move (ValaCCodeBaseModule* base)
 	length = _tmp32_;
 	_tmp33_ = vala_ccode_identifier_new ("src");
 	src = _tmp33_;
-	_tmp34_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) src, (ValaCCodeExpression*) length);
+	_tmp34_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) src, (ValaCCodeExpression*) length);
 	src_end = _tmp34_;
 	_tmp35_ = vala_ccode_identifier_new ("dest");
 	dest = _tmp35_;
-	_tmp36_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) dest, (ValaCCodeExpression*) length);
+	_tmp36_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) dest, (ValaCCodeExpression*) length);
 	dest_end = _tmp36_;
-	_tmp37_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) src, (ValaCCodeExpression*) element_size);
+	_tmp37_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) src, (ValaCCodeExpression*) element_size);
 	_tmp38_ = _tmp37_;
-	_tmp39_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) array, (ValaCCodeExpression*) _tmp38_);
+	_tmp39_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) array, (ValaCCodeExpression*) _tmp38_);
 	_tmp40_ = _tmp39_;
 	_vala_ccode_node_unref0 (_tmp38_);
 	src_address = _tmp40_;
-	_tmp41_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) dest, (ValaCCodeExpression*) element_size);
+	_tmp41_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) dest, (ValaCCodeExpression*) element_size);
 	_tmp42_ = _tmp41_;
-	_tmp43_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) array, (ValaCCodeExpression*) _tmp42_);
+	_tmp43_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) array, (ValaCCodeExpression*) _tmp42_);
 	_tmp44_ = _tmp43_;
 	_vala_ccode_node_unref0 (_tmp42_);
 	dest_address = _tmp44_;
-	_tmp45_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) dest_end, (ValaCCodeExpression*) element_size);
+	_tmp45_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) dest_end, (ValaCCodeExpression*) element_size);
 	_tmp46_ = _tmp45_;
-	_tmp47_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) array, (ValaCCodeExpression*) _tmp46_);
+	_tmp47_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) array, (ValaCCodeExpression*) _tmp46_);
 	_tmp48_ = _tmp47_;
 	_vala_ccode_node_unref0 (_tmp46_);
 	dest_end_address = _tmp48_;
@@ -2271,7 +2271,7 @@ vala_ccode_array_module_real_append_vala_array_move (ValaCCodeBaseModule* base)
 	ccall = _tmp52_;
 	vala_ccode_function_call_add_argument (ccall, (ValaCCodeExpression*) dest_address);
 	vala_ccode_function_call_add_argument (ccall, (ValaCCodeExpression*) src_address);
-	_tmp53_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) length, (ValaCCodeExpression*) element_size);
+	_tmp53_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) length, (ValaCCodeExpression*) element_size);
 	_tmp54_ = _tmp53_;
 	vala_ccode_function_call_add_argument (ccall, (ValaCCodeExpression*) _tmp54_);
 	_vala_ccode_node_unref0 (_tmp54_);
@@ -2280,11 +2280,11 @@ vala_ccode_array_module_real_append_vala_array_move (ValaCCodeBaseModule* base)
 	vala_ccode_function_add_expression (_tmp56_, (ValaCCodeExpression*) ccall);
 	_tmp57_ = vala_ccode_base_module_get_ccode ((ValaCCodeBaseModule*) self);
 	_tmp58_ = _tmp57_;
-	_tmp59_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest);
+	_tmp59_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest);
 	_tmp60_ = _tmp59_;
-	_tmp61_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_GREATER_THAN, (ValaCCodeExpression*) src_end, (ValaCCodeExpression*) dest);
+	_tmp61_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_GREATER_THAN, (ValaCCodeExpression*) src_end, (ValaCCodeExpression*) dest);
 	_tmp62_ = _tmp61_;
-	_tmp63_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp60_, (ValaCCodeExpression*) _tmp62_);
+	_tmp63_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp60_, (ValaCCodeExpression*) _tmp62_);
 	_tmp64_ = _tmp63_;
 	vala_ccode_function_open_if (_tmp58_, (ValaCCodeExpression*) _tmp64_);
 	_vala_ccode_node_unref0 (_tmp64_);
@@ -2301,9 +2301,9 @@ vala_ccode_array_module_real_append_vala_array_move (ValaCCodeBaseModule* base)
 	_tmp70_ = _tmp69_;
 	vala_ccode_function_call_add_argument (czero1, (ValaCCodeExpression*) _tmp70_);
 	_vala_ccode_node_unref0 (_tmp70_);
-	_tmp71_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MINUS, (ValaCCodeExpression*) dest, (ValaCCodeExpression*) src);
+	_tmp71_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MINUS, (ValaCCodeExpression*) dest, (ValaCCodeExpression*) src);
 	_tmp72_ = _tmp71_;
-	_tmp73_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp72_, (ValaCCodeExpression*) element_size);
+	_tmp73_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp72_, (ValaCCodeExpression*) element_size);
 	_tmp74_ = _tmp73_;
 	vala_ccode_function_call_add_argument (czero1, (ValaCCodeExpression*) _tmp74_);
 	_vala_ccode_node_unref0 (_tmp74_);
@@ -2313,11 +2313,11 @@ vala_ccode_array_module_real_append_vala_array_move (ValaCCodeBaseModule* base)
 	vala_ccode_function_add_expression (_tmp76_, (ValaCCodeExpression*) czero1);
 	_tmp77_ = vala_ccode_base_module_get_ccode ((ValaCCodeBaseModule*) self);
 	_tmp78_ = _tmp77_;
-	_tmp79_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_GREATER_THAN, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest);
+	_tmp79_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_GREATER_THAN, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest);
 	_tmp80_ = _tmp79_;
-	_tmp81_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest_end);
+	_tmp81_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest_end);
 	_tmp82_ = _tmp81_;
-	_tmp83_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp80_, (ValaCCodeExpression*) _tmp82_);
+	_tmp83_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp80_, (ValaCCodeExpression*) _tmp82_);
 	_tmp84_ = _tmp83_;
 	vala_ccode_function_else_if (_tmp78_, (ValaCCodeExpression*) _tmp84_);
 	_vala_ccode_node_unref0 (_tmp84_);
@@ -2334,9 +2334,9 @@ vala_ccode_array_module_real_append_vala_array_move (ValaCCodeBaseModule* base)
 	_tmp90_ = _tmp89_;
 	vala_ccode_function_call_add_argument (czero2, (ValaCCodeExpression*) _tmp90_);
 	_vala_ccode_node_unref0 (_tmp90_);
-	_tmp91_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MINUS, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest);
+	_tmp91_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MINUS, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest);
 	_tmp92_ = _tmp91_;
-	_tmp93_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp92_, (ValaCCodeExpression*) element_size);
+	_tmp93_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp92_, (ValaCCodeExpression*) element_size);
 	_tmp94_ = _tmp93_;
 	vala_ccode_function_call_add_argument (czero2, (ValaCCodeExpression*) _tmp94_);
 	_vala_ccode_node_unref0 (_tmp94_);
@@ -2346,7 +2346,7 @@ vala_ccode_array_module_real_append_vala_array_move (ValaCCodeBaseModule* base)
 	vala_ccode_function_add_expression (_tmp96_, (ValaCCodeExpression*) czero2);
 	_tmp97_ = vala_ccode_base_module_get_ccode ((ValaCCodeBaseModule*) self);
 	_tmp98_ = _tmp97_;
-	_tmp99_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest);
+	_tmp99_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_INEQUALITY, (ValaCCodeExpression*) src, (ValaCCodeExpression*) dest);
 	_tmp100_ = _tmp99_;
 	vala_ccode_function_else_if (_tmp98_, (ValaCCodeExpression*) _tmp100_);
 	_vala_ccode_node_unref0 (_tmp100_);
@@ -2361,7 +2361,7 @@ vala_ccode_array_module_real_append_vala_array_move (ValaCCodeBaseModule* base)
 	_tmp106_ = _tmp105_;
 	vala_ccode_function_call_add_argument (czero3, (ValaCCodeExpression*) _tmp106_);
 	_vala_ccode_node_unref0 (_tmp106_);
-	_tmp107_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) length, (ValaCCodeExpression*) element_size);
+	_tmp107_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) length, (ValaCCodeExpression*) element_size);
 	_tmp108_ = _tmp107_;
 	vala_ccode_function_call_add_argument (czero3, (ValaCCodeExpression*) _tmp108_);
 	_vala_ccode_node_unref0 (_tmp108_);
@@ -2461,7 +2461,7 @@ vala_ccode_array_module_real_append_vala_array_length (ValaCCodeBaseModule* base
 	_tmp4_ = _tmp3_;
 	_g_free0 (_tmp2_);
 	fun = _tmp4_;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) fun, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) fun, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp5_ = ((ValaCCodeBaseModule*) self)->pointer_type;
 	_tmp6_ = vala_get_ccode_name ((ValaCodeNode*) _tmp5_);
 	_tmp7_ = _tmp6_;
@@ -2515,7 +2515,7 @@ vala_ccode_array_module_real_append_vala_array_length (ValaCCodeBaseModule* base
 	_tmp38_ = _tmp37_;
 	_tmp39_ = vala_ccode_identifier_new ("length");
 	_tmp40_ = _tmp39_;
-	_tmp41_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, (ValaCCodeExpression*) _tmp40_);
+	_tmp41_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, (ValaCCodeExpression*) _tmp40_);
 	_tmp42_ = _tmp41_;
 	vala_ccode_function_add_expression (_tmp38_, (ValaCCodeExpression*) _tmp42_);
 	_vala_ccode_node_unref0 (_tmp42_);
@@ -2568,7 +2568,7 @@ vala_ccode_array_module_real_copy_value (ValaCCodeBaseModule* base,
 	_tmp4_ = _vala_ccode_node_ref0 (_tmp3_);
 	cexpr = _tmp4_;
 	_tmp5_ = type;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp5_, VALA_TYPE_ARRAY_TYPE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp5_, BALA_TYPE_ARRAY_TYPE)) {
 		ValaArrayType* array_type = NULL;
 		ValaDataType* _tmp6_;
 		ValaArrayType* _tmp7_;
@@ -2595,14 +2595,14 @@ vala_ccode_array_module_real_copy_value (ValaCCodeBaseModule* base,
 		ValaCCodeFunction* _tmp27_;
 		ValaCCodeFunctionCall* _tmp28_;
 		_tmp6_ = type;
-		_tmp7_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+		_tmp7_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 		array_type = _tmp7_;
 		_tmp8_ = array_type;
 		_tmp9_ = vala_array_type_get_fixed_length (_tmp8_);
 		_tmp10_ = _tmp9_;
 		if (!_tmp10_) {
 			ValaTargetValue* _tmp11_;
-			_tmp11_ = VALA_CCODE_BASE_MODULE_CLASS (vala_ccode_array_module_parent_class)->copy_value ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), value, node);
+			_tmp11_ = BALA_CCODE_BASE_MODULE_CLASS (vala_ccode_array_module_parent_class)->copy_value ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), value, node);
 			result = _tmp11_;
 			_vala_code_node_unref0 (array_type);
 			_vala_ccode_node_unref0 (cexpr);
@@ -2641,7 +2641,7 @@ vala_ccode_array_module_real_copy_value (ValaCCodeBaseModule* base,
 		return result;
 	} else {
 		ValaTargetValue* _tmp29_;
-		_tmp29_ = VALA_CCODE_BASE_MODULE_CLASS (vala_ccode_array_module_parent_class)->copy_value ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), value, node);
+		_tmp29_ = BALA_CCODE_BASE_MODULE_CLASS (vala_ccode_array_module_parent_class)->copy_value ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), value, node);
 		result = _tmp29_;
 		_vala_ccode_node_unref0 (cexpr);
 		_vala_code_node_unref0 (type);
@@ -2661,7 +2661,7 @@ vala_ccode_array_module_real_get_dup_func_expression (ValaCCodeBaseModule* base,
 	ValaCCodeExpression* result = NULL;
 	self = (ValaCCodeArrayModule*) base;
 	g_return_val_if_fail (type != NULL, NULL);
-	if (G_TYPE_CHECK_INSTANCE_TYPE (type, VALA_TYPE_ARRAY_TYPE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (type, BALA_TYPE_ARRAY_TYPE)) {
 		ValaArrayType* array_type = NULL;
 		ValaArrayType* _tmp0_;
 		ValaArrayType* _tmp1_;
@@ -2672,7 +2672,7 @@ vala_ccode_array_module_real_get_dup_func_expression (ValaCCodeBaseModule* base,
 		gchar* _tmp6_;
 		ValaCCodeIdentifier* _tmp7_;
 		ValaCCodeExpression* _tmp8_;
-		_tmp0_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (type, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+		_tmp0_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (type, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 		array_type = _tmp0_;
 		_tmp1_ = array_type;
 		_tmp2_ = vala_array_type_get_fixed_length (_tmp1_);
@@ -2689,7 +2689,7 @@ vala_ccode_array_module_real_get_dup_func_expression (ValaCCodeBaseModule* base,
 		return result;
 	} else {
 		ValaCCodeExpression* _tmp9_;
-		_tmp9_ = VALA_CCODE_BASE_MODULE_CLASS (vala_ccode_array_module_parent_class)->get_dup_func_expression ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), type, source_reference, is_chainup);
+		_tmp9_ = BALA_CCODE_BASE_MODULE_CLASS (vala_ccode_array_module_parent_class)->get_dup_func_expression ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), type, source_reference, is_chainup);
 		result = _tmp9_;
 		return result;
 	}
@@ -2711,7 +2711,7 @@ vala_ccode_array_module_real_destroy_value (ValaCCodeBaseModule* base,
 	g_return_val_if_fail (value != NULL, NULL);
 	_tmp0_ = vala_target_value_get_value_type (value);
 	_tmp1_ = _tmp0_;
-	array_type = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp1_) : NULL;
+	array_type = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp1_) : NULL;
 	_tmp3_ = array_type;
 	if (_tmp3_ != NULL) {
 		ValaArrayType* _tmp4_;
@@ -2764,7 +2764,7 @@ vala_ccode_array_module_real_destroy_value (ValaCCodeBaseModule* base,
 		_tmp9_ = _tmp8_;
 		_tmp10_ = vala_data_type_get_type_symbol (_tmp9_);
 		_tmp11_ = _tmp10_;
-		st = G_TYPE_CHECK_INSTANCE_TYPE (_tmp11_, VALA_TYPE_STRUCT) ? ((ValaStruct*) _tmp11_) : NULL;
+		st = G_TYPE_CHECK_INSTANCE_TYPE (_tmp11_, BALA_TYPE_STRUCT) ? ((ValaStruct*) _tmp11_) : NULL;
 		_tmp13_ = st;
 		if (_tmp13_ != NULL) {
 			ValaArrayType* _tmp14_;
@@ -2862,7 +2862,7 @@ vala_ccode_array_module_real_destroy_value (ValaCCodeBaseModule* base,
 		return result;
 	} else {
 		ValaCCodeExpression* _tmp59_;
-		_tmp59_ = VALA_CCODE_BASE_MODULE_CLASS (vala_ccode_array_module_parent_class)->destroy_value ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), value, is_macro_definition);
+		_tmp59_ = BALA_CCODE_BASE_MODULE_CLASS (vala_ccode_array_module_parent_class)->destroy_value ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), value, is_macro_definition);
 		result = _tmp59_;
 		return result;
 	}
@@ -2925,7 +2925,7 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 	_g_free0 (_tmp5_);
 	function = _tmp7_;
 	_tmp8_ = function;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp8_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp8_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp9_ = function;
 	_tmp10_ = vala_get_ccode_name ((ValaCodeNode*) array_type);
 	_tmp11_ = _tmp10_;
@@ -2945,7 +2945,7 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 	_g_free0 (_tmp17_);
 	_tmp20_ = vala_array_type_get_element_type (array_type);
 	_tmp21_ = _tmp20_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp21_, VALA_TYPE_GENERIC_TYPE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp21_, BALA_TYPE_GENERIC_TYPE)) {
 		gchar* func_name = NULL;
 		ValaDataType* _tmp22_;
 		ValaDataType* _tmp23_;
@@ -2963,7 +2963,7 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 		ValaCCodeParameter* _tmp35_;
 		_tmp22_ = vala_array_type_get_element_type (array_type);
 		_tmp23_ = _tmp22_;
-		_tmp24_ = vala_generic_type_get_type_parameter (G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, VALA_TYPE_GENERIC_TYPE, ValaGenericType));
+		_tmp24_ = vala_generic_type_get_type_parameter (G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, BALA_TYPE_GENERIC_TYPE, ValaGenericType));
 		_tmp25_ = _tmp24_;
 		_tmp26_ = vala_symbol_get_name ((ValaSymbol*) _tmp25_);
 		_tmp27_ = _tmp26_;
@@ -3096,7 +3096,7 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 		_tmp43_ = _tmp42_;
 		_tmp44_ = vala_code_context_get_profile (_tmp43_);
 		_tmp45_ = _tmp44_;
-		if (_tmp45_ == VALA_PROFILE_POSIX) {
+		if (_tmp45_ == BALA_PROFILE_POSIX) {
 			ValaCCodeFile* _tmp46_;
 			ValaCCodeIdentifier* _tmp47_;
 			ValaCCodeIdentifier* _tmp48_;
@@ -3164,13 +3164,13 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 			_tmp70_ = length_expr;
 			_tmp71_ = vala_ccode_constant_new ("1");
 			_tmp72_ = _tmp71_;
-			_tmp73_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, _tmp70_, (ValaCCodeExpression*) _tmp72_);
+			_tmp73_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, _tmp70_, (ValaCCodeExpression*) _tmp72_);
 			_vala_ccode_node_unref0 (length_expr);
 			length_expr = (ValaCCodeExpression*) _tmp73_;
 			_vala_ccode_node_unref0 (_tmp72_);
-			length_check_op = VALA_CCODE_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL;
+			length_check_op = BALA_CCODE_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL;
 		} else {
-			length_check_op = VALA_CCODE_BINARY_OPERATOR_GREATER_THAN;
+			length_check_op = BALA_CCODE_BINARY_OPERATOR_GREATER_THAN;
 		}
 		_tmp74_ = gnew;
 		_tmp75_ = length_expr;
@@ -3179,7 +3179,7 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 		_tmp77_ = _tmp76_;
 		_tmp78_ = vala_code_context_get_profile (_tmp77_);
 		_tmp79_ = _tmp78_;
-		if (_tmp79_ == VALA_PROFILE_POSIX) {
+		if (_tmp79_ == BALA_PROFILE_POSIX) {
 			ValaCCodeFunctionCall* csizeof = NULL;
 			ValaCCodeIdentifier* _tmp80_;
 			ValaCCodeIdentifier* _tmp81_;
@@ -3259,17 +3259,17 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 		_tmp123_ = _tmp122_;
 		_tmp124_ = vala_ccode_constant_new ("0");
 		_tmp125_ = _tmp124_;
-		_tmp126_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp123_, (ValaCCodeExpression*) _tmp125_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+		_tmp126_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp123_, (ValaCCodeExpression*) _tmp125_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 		_tmp127_ = _tmp126_;
 		_tmp128_ = vala_ccode_identifier_new ("i");
 		_tmp129_ = _tmp128_;
 		_tmp130_ = vala_ccode_identifier_new ("length");
 		_tmp131_ = _tmp130_;
-		_tmp132_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) _tmp129_, (ValaCCodeExpression*) _tmp131_);
+		_tmp132_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) _tmp129_, (ValaCCodeExpression*) _tmp131_);
 		_tmp133_ = _tmp132_;
 		_tmp134_ = vala_ccode_identifier_new ("i");
 		_tmp135_ = _tmp134_;
-		_tmp136_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, (ValaCCodeExpression*) _tmp135_);
+		_tmp136_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, (ValaCCodeExpression*) _tmp135_);
 		_tmp137_ = _tmp136_;
 		vala_ccode_function_open_for (_tmp121_, (ValaCCodeExpression*) _tmp127_, (ValaCCodeExpression*) _tmp133_, (ValaCCodeExpression*) _tmp137_);
 		_vala_ccode_node_unref0 (_tmp137_);
@@ -3371,7 +3371,7 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 		_tmp172_ = _tmp171_;
 		_tmp173_ = vala_ccode_constant_new ("0");
 		_tmp174_ = _tmp173_;
-		_tmp175_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_GREATER_THAN, (ValaCCodeExpression*) _tmp172_, (ValaCCodeExpression*) _tmp174_);
+		_tmp175_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_GREATER_THAN, (ValaCCodeExpression*) _tmp172_, (ValaCCodeExpression*) _tmp174_);
 		_tmp176_ = _tmp175_;
 		_vala_ccode_node_unref0 (_tmp174_);
 		_vala_ccode_node_unref0 (_tmp172_);
@@ -3402,7 +3402,7 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 		_tmp193_ = _tmp192_;
 		_tmp194_ = vala_code_context_get_profile (_tmp193_);
 		_tmp195_ = _tmp194_;
-		if (_tmp195_ == VALA_PROFILE_POSIX) {
+		if (_tmp195_ == BALA_PROFILE_POSIX) {
 			ValaCCodeFile* _tmp196_;
 			ValaCCodeFile* _tmp197_;
 			ValaCCodeFunctionCall* alloc = NULL;
@@ -3500,7 +3500,7 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 			_tmp227_ = dup_call;
 			_tmp228_ = length_expr;
 			_tmp229_ = sizeof_call;
-			_tmp230_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp228_, (ValaCCodeExpression*) _tmp229_);
+			_tmp230_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp228_, (ValaCCodeExpression*) _tmp229_);
 			_tmp231_ = _tmp230_;
 			vala_ccode_function_call_add_argument (_tmp227_, (ValaCCodeExpression*) _tmp231_);
 			_vala_ccode_node_unref0 (_tmp231_);
@@ -3548,7 +3548,7 @@ vala_ccode_array_module_generate_array_dup_wrapper (ValaCCodeArrayModule* self,
 			_tmp246_ = dup_call;
 			_tmp247_ = length_expr;
 			_tmp248_ = sizeof_call;
-			_tmp249_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp247_, (ValaCCodeExpression*) _tmp248_);
+			_tmp249_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp247_, (ValaCCodeExpression*) _tmp248_);
 			_tmp250_ = _tmp249_;
 			vala_ccode_function_call_add_argument (_tmp246_, (ValaCCodeExpression*) _tmp250_);
 			_vala_ccode_node_unref0 (_tmp250_);
@@ -3634,7 +3634,7 @@ vala_ccode_array_module_generate_array_copy_wrapper (ValaCCodeArrayModule* self,
 	_tmp4_ = vala_ccode_function_new (_tmp3_, "void");
 	function = _tmp4_;
 	_tmp5_ = function;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp5_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp5_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp6_ = function;
 	_tmp7_ = vala_get_ccode_name ((ValaCodeNode*) array_type);
 	_tmp8_ = _tmp7_;
@@ -3730,7 +3730,7 @@ vala_ccode_array_module_generate_array_copy_wrapper (ValaCCodeArrayModule* self,
 		_tmp35_ = _tmp34_;
 		_tmp36_ = vala_ccode_constant_new ("0");
 		_tmp37_ = _tmp36_;
-		_tmp38_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp35_, (ValaCCodeExpression*) _tmp37_, VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
+		_tmp38_ = vala_ccode_assignment_new ((ValaCCodeExpression*) _tmp35_, (ValaCCodeExpression*) _tmp37_, BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE);
 		_tmp39_ = _tmp38_;
 		_tmp40_ = vala_ccode_identifier_new ("i");
 		_tmp41_ = _tmp40_;
@@ -3738,11 +3738,11 @@ vala_ccode_array_module_generate_array_copy_wrapper (ValaCCodeArrayModule* self,
 		_tmp43_ = _tmp42_;
 		_tmp44_ = vala_ccode_base_module_get_ccodenode ((ValaCCodeBaseModule*) self, _tmp43_);
 		_tmp45_ = _tmp44_;
-		_tmp46_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) _tmp41_, _tmp45_);
+		_tmp46_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_LESS_THAN, (ValaCCodeExpression*) _tmp41_, _tmp45_);
 		_tmp47_ = _tmp46_;
 		_tmp48_ = vala_ccode_identifier_new ("i");
 		_tmp49_ = _tmp48_;
-		_tmp50_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, (ValaCCodeExpression*) _tmp49_);
+		_tmp50_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, (ValaCCodeExpression*) _tmp49_);
 		_tmp51_ = _tmp50_;
 		vala_ccode_function_open_for (_tmp33_, (ValaCCodeExpression*) _tmp39_, (ValaCCodeExpression*) _tmp47_, (ValaCCodeExpression*) _tmp51_);
 		_vala_ccode_node_unref0 (_tmp51_);
@@ -3859,7 +3859,7 @@ vala_ccode_array_module_generate_array_copy_wrapper (ValaCCodeArrayModule* self,
 		_tmp98_ = vala_ccode_base_module_get_ccodenode ((ValaCCodeBaseModule*) self, _tmp97_);
 		_tmp99_ = _tmp98_;
 		_tmp100_ = sizeof_call;
-		_tmp101_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, _tmp99_, (ValaCCodeExpression*) _tmp100_);
+		_tmp101_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, _tmp99_, (ValaCCodeExpression*) _tmp100_);
 		_tmp102_ = _tmp101_;
 		vala_ccode_function_call_add_argument (_tmp95_, (ValaCCodeExpression*) _tmp102_);
 		_vala_ccode_node_unref0 (_tmp102_);
@@ -4017,7 +4017,7 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 	_tmp4_ = vala_ccode_function_new (_tmp3_, "void");
 	function = _tmp4_;
 	_tmp5_ = function;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp5_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp5_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp6_ = function;
 	_tmp7_ = vala_get_ccode_name ((ValaCodeNode*) array_type);
 	_tmp8_ = _tmp7_;
@@ -4112,7 +4112,7 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 			_g_free0 (typename);
 			typename = _tmp52_;
 			_tmp53_ = value;
-			_tmp54_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, _tmp53_);
+			_tmp54_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, _tmp53_);
 			_vala_ccode_node_unref0 (value);
 			value = (ValaCCodeExpression*) _tmp54_;
 		}
@@ -4125,19 +4125,19 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 	_vala_ccode_node_unref0 (_tmp58_);
 	_tmp59_ = vala_ccode_identifier_new ("array");
 	_tmp60_ = _tmp59_;
-	_tmp61_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp60_);
+	_tmp61_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp60_);
 	_tmp62_ = _tmp61_;
 	_vala_ccode_node_unref0 (_tmp60_);
 	array = _tmp62_;
 	_tmp63_ = vala_ccode_identifier_new ("length");
 	_tmp64_ = _tmp63_;
-	_tmp65_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp64_);
+	_tmp65_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp64_);
 	_tmp66_ = _tmp65_;
 	_vala_ccode_node_unref0 (_tmp64_);
 	length = _tmp66_;
 	_tmp67_ = vala_ccode_identifier_new ("size");
 	_tmp68_ = _tmp67_;
-	_tmp69_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp68_);
+	_tmp69_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp68_);
 	_tmp70_ = _tmp69_;
 	_vala_ccode_node_unref0 (_tmp68_);
 	size = _tmp70_;
@@ -4145,7 +4145,7 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 	_tmp72_ = _tmp71_;
 	_tmp73_ = vala_code_context_get_profile (_tmp72_);
 	_tmp74_ = _tmp73_;
-	if (_tmp74_ == VALA_PROFILE_POSIX) {
+	if (_tmp74_ == BALA_PROFILE_POSIX) {
 		ValaCCodeFile* _tmp75_;
 		ValaCCodeIdentifier* _tmp76_;
 		ValaCCodeIdentifier* _tmp77_;
@@ -4206,7 +4206,7 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 		_tmp95_ = size;
 		_tmp96_ = vala_ccode_constant_new ("1");
 		_tmp97_ = _tmp96_;
-		_tmp98_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp95_, (ValaCCodeExpression*) _tmp97_);
+		_tmp98_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp95_, (ValaCCodeExpression*) _tmp97_);
 		_vala_ccode_node_unref0 (renew_call_size);
 		renew_call_size = (ValaCCodeExpression*) _tmp98_;
 		_vala_ccode_node_unref0 (_tmp97_);
@@ -4222,7 +4222,7 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 	_tmp102_ = _tmp101_;
 	_tmp103_ = vala_code_context_get_profile (_tmp102_);
 	_tmp104_ = _tmp103_;
-	if (_tmp104_ == VALA_PROFILE_POSIX) {
+	if (_tmp104_ == BALA_PROFILE_POSIX) {
 		ValaCCodeFunctionCall* csizeof = NULL;
 		ValaCCodeIdentifier* _tmp105_;
 		ValaCCodeIdentifier* _tmp106_;
@@ -4256,7 +4256,7 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 		_g_free0 (_tmp113_);
 		_tmp116_ = size;
 		_tmp117_ = csizeof;
-		_tmp118_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp116_, (ValaCCodeExpression*) _tmp117_);
+		_tmp118_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp116_, (ValaCCodeExpression*) _tmp117_);
 		_vala_ccode_node_unref0 (renew_call_size);
 		renew_call_size = (ValaCCodeExpression*) _tmp118_;
 		_vala_ccode_node_unref0 (csizeof);
@@ -4266,7 +4266,7 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 	vala_ccode_function_call_add_argument (_tmp119_, _tmp120_);
 	_tmp121_ = length;
 	_tmp122_ = size;
-	_tmp123_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_EQUALITY, (ValaCCodeExpression*) _tmp121_, (ValaCCodeExpression*) _tmp122_);
+	_tmp123_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_EQUALITY, (ValaCCodeExpression*) _tmp121_, (ValaCCodeExpression*) _tmp122_);
 	csizecheck = _tmp123_;
 	_tmp124_ = vala_ccode_base_module_get_ccode ((ValaCCodeBaseModule*) self);
 	_tmp125_ = _tmp124_;
@@ -4279,7 +4279,7 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 	_tmp131_ = vala_ccode_constant_new ("2");
 	_tmp132_ = _tmp131_;
 	_tmp133_ = size;
-	_tmp134_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp132_, (ValaCCodeExpression*) _tmp133_);
+	_tmp134_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, (ValaCCodeExpression*) _tmp132_, (ValaCCodeExpression*) _tmp133_);
 	_tmp135_ = _tmp134_;
 	_tmp136_ = vala_ccode_constant_new ("4");
 	_tmp137_ = _tmp136_;
@@ -4302,7 +4302,7 @@ vala_ccode_array_module_generate_array_add_wrapper (ValaCCodeArrayModule* self,
 	_tmp147_ = _tmp146_;
 	_tmp148_ = array;
 	_tmp149_ = length;
-	_tmp150_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, (ValaCCodeExpression*) _tmp149_);
+	_tmp150_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POSTFIX_INCREMENT, (ValaCCodeExpression*) _tmp149_);
 	_tmp151_ = _tmp150_;
 	_tmp152_ = vala_ccode_element_access_new ((ValaCCodeExpression*) _tmp148_, (ValaCCodeExpression*) _tmp151_);
 	_tmp153_ = _tmp152_;
@@ -4368,7 +4368,7 @@ vala_ccode_array_module_is_array_add (ValaCCodeArrayModule* self,
 	g_return_val_if_fail (assignment != NULL, FALSE);
 	_tmp0_ = vala_assignment_get_right (assignment);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALA_TYPE_BINARY_EXPRESSION) ? ((ValaBinaryExpression*) _tmp1_) : NULL);
+	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALA_TYPE_BINARY_EXPRESSION) ? ((ValaBinaryExpression*) _tmp1_) : NULL);
 	binary = _tmp2_;
 	_tmp4_ = binary;
 	if (_tmp4_ != NULL) {
@@ -4382,7 +4382,7 @@ vala_ccode_array_module_is_array_add (ValaCCodeArrayModule* self,
 		_tmp7_ = _tmp6_;
 		_tmp8_ = vala_expression_get_value_type (_tmp7_);
 		_tmp9_ = _tmp8_;
-		_tmp3_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp9_, VALA_TYPE_ARRAY_TYPE);
+		_tmp3_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp9_, BALA_TYPE_ARRAY_TYPE);
 	} else {
 		_tmp3_ = FALSE;
 	}
@@ -4393,7 +4393,7 @@ vala_ccode_array_module_is_array_add (ValaCCodeArrayModule* self,
 		_tmp10_ = binary;
 		_tmp11_ = vala_binary_expression_get_operator (_tmp10_);
 		_tmp12_ = _tmp11_;
-		if (_tmp12_ == VALA_BINARY_OPERATOR_PLUS) {
+		if (_tmp12_ == BALA_BINARY_OPERATOR_PLUS) {
 			ValaExpression* _tmp13_;
 			ValaExpression* _tmp14_;
 			ValaSymbol* _tmp15_;
@@ -4502,12 +4502,12 @@ vala_ccode_array_module_real_visit_assignment (ValaCodeVisitor* base,
 	self = (ValaCCodeArrayModule*) base;
 	g_return_if_fail (assignment != NULL);
 	if (!vala_ccode_array_module_is_array_add (self, assignment)) {
-		VALA_CODE_VISITOR_CLASS (vala_ccode_array_module_parent_class)->visit_assignment ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), assignment);
+		BALA_CODE_VISITOR_CLASS (vala_ccode_array_module_parent_class)->visit_assignment ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), assignment);
 		return;
 	}
 	_tmp0_ = vala_assignment_get_right (assignment);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_BINARY_EXPRESSION, ValaBinaryExpression));
+	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_BINARY_EXPRESSION, ValaBinaryExpression));
 	binary = _tmp2_;
 	_tmp3_ = vala_assignment_get_left (assignment);
 	_tmp4_ = _tmp3_;
@@ -4516,7 +4516,7 @@ vala_ccode_array_module_real_visit_assignment (ValaCodeVisitor* base,
 	_tmp6_ = array;
 	_tmp7_ = vala_expression_get_value_type (_tmp6_);
 	_tmp8_ = _tmp7_;
-	_tmp9_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+	_tmp9_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 	array_type = _tmp9_;
 	_tmp10_ = binary;
 	_tmp11_ = vala_binary_expression_get_right (_tmp10_);
@@ -4549,12 +4549,12 @@ vala_ccode_array_module_real_visit_assignment (ValaCodeVisitor* base,
 		gboolean _tmp26_ = FALSE;
 		ValaSymbol* _tmp27_;
 		_tmp27_ = array_var;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp27_, VALA_TYPE_LOCAL_VARIABLE)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp27_, BALA_TYPE_LOCAL_VARIABLE)) {
 			_tmp26_ = TRUE;
 		} else {
 			ValaSymbol* _tmp28_;
 			_tmp28_ = array_var;
-			_tmp26_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp28_, VALA_TYPE_FIELD);
+			_tmp26_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp28_, BALA_TYPE_FIELD);
 		}
 		_tmp18_ = _tmp26_;
 	} else {
@@ -4593,7 +4593,7 @@ vala_ccode_array_module_real_visit_assignment (ValaCodeVisitor* base,
 	_tmp42_ = ccall;
 	_tmp43_ = array;
 	_tmp44_ = vala_get_cvalue (_tmp43_);
-	_tmp45_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp44_);
+	_tmp45_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp44_);
 	_tmp46_ = _tmp45_;
 	vala_ccode_function_call_add_argument (_tmp42_, (ValaCCodeExpression*) _tmp46_);
 	_vala_ccode_node_unref0 (_tmp46_);
@@ -4601,7 +4601,7 @@ vala_ccode_array_module_real_visit_assignment (ValaCodeVisitor* base,
 	_tmp48_ = array;
 	_tmp49_ = vala_ccode_base_module_get_array_length_cexpression ((ValaCCodeBaseModule*) self, _tmp48_, -1);
 	_tmp50_ = _tmp49_;
-	_tmp51_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp50_);
+	_tmp51_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp50_);
 	_tmp52_ = _tmp51_;
 	vala_ccode_function_call_add_argument (_tmp47_, (ValaCCodeExpression*) _tmp52_);
 	_vala_ccode_node_unref0 (_tmp52_);
@@ -4611,7 +4611,7 @@ vala_ccode_array_module_real_visit_assignment (ValaCodeVisitor* base,
 	_tmp55_ = vala_expression_get_target_value (_tmp54_);
 	_tmp56_ = _tmp55_;
 	_tmp57_ = vala_get_array_size_cvalue (_tmp56_);
-	_tmp58_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp57_);
+	_tmp58_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp57_);
 	_tmp59_ = _tmp58_;
 	vala_ccode_function_call_add_argument (_tmp53_, (ValaCCodeExpression*) _tmp59_);
 	_vala_ccode_node_unref0 (_tmp59_);
@@ -4689,11 +4689,11 @@ vala_ccode_array_module_real_generate_parameter (ValaCCodeMethodModule* base,
 		ValaDataType* _tmp4_;
 		_tmp3_ = vala_variable_get_variable_type ((ValaVariable*) param);
 		_tmp4_ = _tmp3_;
-		_tmp0_ = !G_TYPE_CHECK_INSTANCE_TYPE (_tmp4_, VALA_TYPE_ARRAY_TYPE);
+		_tmp0_ = !G_TYPE_CHECK_INSTANCE_TYPE (_tmp4_, BALA_TYPE_ARRAY_TYPE);
 	}
 	if (_tmp0_) {
 		ValaCCodeParameter* _tmp5_;
-		_tmp5_ = VALA_CCODE_METHOD_MODULE_CLASS (vala_ccode_array_module_parent_class)->generate_parameter ((ValaCCodeMethodModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), param, decl_space, cparam_map, carg_map);
+		_tmp5_ = BALA_CCODE_METHOD_MODULE_CLASS (vala_ccode_array_module_parent_class)->generate_parameter ((ValaCCodeMethodModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_CCODE_METHOD_CALL_MODULE, ValaCCodeMethodCallModule), param, decl_space, cparam_map, carg_map);
 		result = _tmp5_;
 		return result;
 	}
@@ -4705,7 +4705,7 @@ vala_ccode_array_module_real_generate_parameter (ValaCCodeMethodModule* base,
 	name = _tmp9_;
 	_tmp10_ = vala_variable_get_variable_type ((ValaVariable*) param);
 	_tmp11_ = _tmp10_;
-	_tmp12_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp11_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+	_tmp12_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp11_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 	array_type = _tmp12_;
 	_tmp13_ = array_type;
 	_tmp14_ = vala_array_type_get_fixed_length (_tmp13_);
@@ -4720,7 +4720,7 @@ vala_ccode_array_module_real_generate_parameter (ValaCCodeMethodModule* base,
 	}
 	_tmp18_ = vala_parameter_get_direction (param);
 	_tmp19_ = _tmp18_;
-	if (_tmp19_ != VALA_PARAMETER_DIRECTION_IN) {
+	if (_tmp19_ != BALA_PARAMETER_DIRECTION_IN) {
 		const gchar* _tmp20_;
 		gchar* _tmp21_;
 		_tmp20_ = ctypename;
@@ -4763,7 +4763,7 @@ vala_ccode_array_module_real_generate_parameter (ValaCCodeMethodModule* base,
 		length_ctype = _tmp35_;
 		_tmp36_ = vala_parameter_get_direction (param);
 		_tmp37_ = _tmp36_;
-		if (_tmp37_ != VALA_PARAMETER_DIRECTION_IN) {
+		if (_tmp37_ != BALA_PARAMETER_DIRECTION_IN) {
 			const gchar* _tmp38_;
 			gchar* _tmp39_;
 			_tmp38_ = length_ctype;
@@ -5024,7 +5024,7 @@ vala_ccode_array_module_real_append_params_array (ValaCCodeBaseModule* base,
 	_tmp3_ = local;
 	_tmp4_ = vala_variable_get_variable_type ((ValaVariable*) _tmp3_);
 	_tmp5_ = _tmp4_;
-	_tmp6_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+	_tmp6_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 	array_type = _tmp6_;
 	_tmp7_ = array_type;
 	_tmp8_ = vala_array_type_get_length_type (_tmp7_);
@@ -5064,7 +5064,7 @@ vala_ccode_array_module_real_append_params_array (ValaCCodeBaseModule* base,
 	_tmp35_ = _tmp34_;
 	_tmp36_ = vala_code_context_get_profile (_tmp35_);
 	_tmp37_ = _tmp36_;
-	if (_tmp37_ == VALA_PROFILE_POSIX) {
+	if (_tmp37_ == BALA_PROFILE_POSIX) {
 		ValaCCodeFile* _tmp38_;
 		ValaCCodeIdentifier* _tmp39_;
 		ValaCCodeIdentifier* _tmp40_;
@@ -5138,7 +5138,7 @@ vala_ccode_array_module_real_append_params_array (ValaCCodeBaseModule* base,
 		_tmp66_ = length_expr;
 		_tmp67_ = vala_ccode_constant_new ("1");
 		_tmp68_ = _tmp67_;
-		_tmp69_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, _tmp66_, (ValaCCodeExpression*) _tmp68_);
+		_tmp69_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, _tmp66_, (ValaCCodeExpression*) _tmp68_);
 		_vala_ccode_node_unref0 (length_expr);
 		length_expr = (ValaCCodeExpression*) _tmp69_;
 		_vala_ccode_node_unref0 (_tmp68_);
@@ -5150,7 +5150,7 @@ vala_ccode_array_module_real_append_params_array (ValaCCodeBaseModule* base,
 	_tmp73_ = _tmp72_;
 	_tmp74_ = vala_code_context_get_profile (_tmp73_);
 	_tmp75_ = _tmp74_;
-	if (_tmp75_ == VALA_PROFILE_POSIX) {
+	if (_tmp75_ == BALA_PROFILE_POSIX) {
 		ValaCCodeFunctionCall* csizeof = NULL;
 		ValaCCodeIdentifier* _tmp76_;
 		ValaCCodeIdentifier* _tmp77_;
@@ -5221,12 +5221,12 @@ vala_ccode_array_module_real_append_params_array (ValaCCodeBaseModule* base,
 	_tmp113_ = _tmp112_;
 	_tmp114_ = vala_code_context_get_profile (_tmp113_);
 	_tmp115_ = _tmp114_;
-	if (_tmp115_ == VALA_PROFILE_POSIX) {
+	if (_tmp115_ == BALA_PROFILE_POSIX) {
 		ValaCCodeFile* _tmp116_;
 		_tmp116_ = ((ValaCCodeBaseModule*) self)->cfile;
 		vala_ccode_file_add_include (_tmp116_, "stdarg.h", FALSE);
 	}
-	if (!G_TYPE_CHECK_INSTANCE_TYPE (m, VALA_TYPE_CREATION_METHOD)) {
+	if (!G_TYPE_CHECK_INSTANCE_TYPE (m, BALA_TYPE_CREATION_METHOD)) {
 		ValaCCodeFunction* _tmp117_;
 		ValaCCodeFunction* _tmp118_;
 		ValaLocalVariable* _tmp119_;
@@ -5333,7 +5333,7 @@ vala_ccode_array_module_real_append_params_array (ValaCCodeBaseModule* base,
 	_tmp165_ = _tmp164_;
 	_tmp166_ = vala_ccode_constant_new ("NULL");
 	_tmp167_ = _tmp166_;
-	_tmp168_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_INEQUALITY, _tmp165_, (ValaCCodeExpression*) _tmp167_);
+	_tmp168_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_INEQUALITY, _tmp165_, (ValaCCodeExpression*) _tmp167_);
 	_tmp169_ = _tmp168_;
 	vala_ccode_function_open_while (_tmp162_, (ValaCCodeExpression*) _tmp169_);
 	_vala_ccode_node_unref0 (_tmp169_);
@@ -5379,7 +5379,7 @@ vala_ccode_array_module_real_append_params_array (ValaCCodeBaseModule* base,
 	_tmp195_ = local;
 	_tmp196_ = vala_ccode_base_module_get_local_cexpression ((ValaCCodeBaseModule*) self, _tmp195_);
 	_tmp197_ = _tmp196_;
-	_tmp198_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp197_);
+	_tmp198_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp197_);
 	_tmp199_ = _tmp198_;
 	vala_ccode_function_call_add_argument (ccall, (ValaCCodeExpression*) _tmp199_);
 	_vala_ccode_node_unref0 (_tmp199_);
@@ -5387,7 +5387,7 @@ vala_ccode_array_module_real_append_params_array (ValaCCodeBaseModule* base,
 	_tmp200_ = local_length;
 	_tmp201_ = vala_ccode_base_module_get_local_cexpression ((ValaCCodeBaseModule*) self, _tmp200_);
 	_tmp202_ = _tmp201_;
-	_tmp203_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp202_);
+	_tmp203_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp202_);
 	_tmp204_ = _tmp203_;
 	vala_ccode_function_call_add_argument (ccall, (ValaCCodeExpression*) _tmp204_);
 	_vala_ccode_node_unref0 (_tmp204_);
@@ -5395,7 +5395,7 @@ vala_ccode_array_module_real_append_params_array (ValaCCodeBaseModule* base,
 	_tmp205_ = local_size;
 	_tmp206_ = vala_ccode_base_module_get_local_cexpression ((ValaCCodeBaseModule*) self, _tmp205_);
 	_tmp207_ = _tmp206_;
-	_tmp208_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp207_);
+	_tmp208_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp207_);
 	_tmp209_ = _tmp208_;
 	vala_ccode_function_call_add_argument (ccall, (ValaCCodeExpression*) _tmp209_);
 	_vala_ccode_node_unref0 (_tmp209_);
@@ -5461,7 +5461,7 @@ vala_ccode_array_module_construct (GType object_type)
 ValaCCodeArrayModule*
 vala_ccode_array_module_new (void)
 {
-	return vala_ccode_array_module_construct (VALA_TYPE_CCODE_ARRAY_MODULE);
+	return vala_ccode_array_module_construct (BALA_TYPE_CCODE_ARRAY_MODULE);
 }
 
 static void
@@ -5505,8 +5505,8 @@ static void
 vala_ccode_array_module_finalize (ValaCodeVisitor * obj)
 {
 	ValaCCodeArrayModule * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_ARRAY_MODULE, ValaCCodeArrayModule);
-	VALA_CODE_VISITOR_CLASS (vala_ccode_array_module_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_ARRAY_MODULE, ValaCCodeArrayModule);
+	BALA_CODE_VISITOR_CLASS (vala_ccode_array_module_parent_class)->finalize (obj);
 }
 
 static GType
@@ -5514,7 +5514,7 @@ vala_ccode_array_module_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeArrayModuleClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_array_module_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeArrayModule), 0, (GInstanceInitFunc) vala_ccode_array_module_instance_init, NULL };
 	GType vala_ccode_array_module_type_id;
-	vala_ccode_array_module_type_id = g_type_register_static (VALA_TYPE_CCODE_METHOD_CALL_MODULE, "ValaCCodeArrayModule", &g_define_type_info, 0);
+	vala_ccode_array_module_type_id = g_type_register_static (BALA_TYPE_CCODE_METHOD_CALL_MODULE, "ValaCCodeArrayModule", &g_define_type_info, 0);
 	ValaCCodeArrayModule_private_offset = g_type_add_instance_private (vala_ccode_array_module_type_id, sizeof (ValaCCodeArrayModulePrivate));
 	return vala_ccode_array_module_type_id;
 }

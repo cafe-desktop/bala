@@ -29,12 +29,12 @@
 #include <valadoc.h>
 #include <glib.h>
 
-#define VALADOC_API_TYPE_INITIALIZER_BUILDER (valadoc_api_initializer_builder_get_type ())
-#define VALADOC_API_INITIALIZER_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_API_TYPE_INITIALIZER_BUILDER, ValadocApiInitializerBuilder))
-#define VALADOC_API_INITIALIZER_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_API_TYPE_INITIALIZER_BUILDER, ValadocApiInitializerBuilderClass))
-#define VALADOC_API_IS_INITIALIZER_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_API_TYPE_INITIALIZER_BUILDER))
-#define VALADOC_API_IS_INITIALIZER_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_API_TYPE_INITIALIZER_BUILDER))
-#define VALADOC_API_INITIALIZER_BUILDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_API_TYPE_INITIALIZER_BUILDER, ValadocApiInitializerBuilderClass))
+#define BALADOC_API_TYPE_INITIALIZER_BUILDER (valadoc_api_initializer_builder_get_type ())
+#define BALADOC_API_INITIALIZER_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_API_TYPE_INITIALIZER_BUILDER, ValadocApiInitializerBuilder))
+#define BALADOC_API_INITIALIZER_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_API_TYPE_INITIALIZER_BUILDER, ValadocApiInitializerBuilderClass))
+#define BALADOC_API_IS_INITIALIZER_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_API_TYPE_INITIALIZER_BUILDER))
+#define BALADOC_API_IS_INITIALIZER_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_API_TYPE_INITIALIZER_BUILDER))
+#define BALADOC_API_INITIALIZER_BUILDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_API_TYPE_INITIALIZER_BUILDER, ValadocApiInitializerBuilderClass))
 
 typedef struct _ValadocApiInitializerBuilder ValadocApiInitializerBuilder;
 typedef struct _ValadocApiInitializerBuilderClass ValadocApiInitializerBuilderClass;
@@ -446,7 +446,7 @@ G_GNUC_INTERNAL ValadocApiInitializerBuilder*
 valadoc_api_initializer_builder_new (ValadocApiSignatureBuilder* signature,
                                      ValaHashMap* symbol_map)
 {
-	return valadoc_api_initializer_builder_construct (VALADOC_API_TYPE_INITIALIZER_BUILDER, signature, symbol_map);
+	return valadoc_api_initializer_builder_construct (BALADOC_API_TYPE_INITIALIZER_BUILDER, signature, symbol_map);
 }
 
 /**
@@ -471,11 +471,11 @@ valadoc_api_initializer_builder_real_visit_binary_expression (ValaCodeVisitor* b
 	vala_code_node_accept ((ValaCodeNode*) _tmp1_, (ValaCodeVisitor*) self);
 	_tmp2_ = vala_binary_expression_get_operator (expr);
 	_tmp3_ = _tmp2_;
-	if (_tmp3_ == VALA_BINARY_OPERATOR_IN) {
+	if (_tmp3_ == BALA_BINARY_OPERATOR_IN) {
 		ValadocApiSignatureBuilder* _tmp4_;
 		const gchar* _tmp5_;
 		_tmp4_ = self->priv->signature;
-		_tmp5_ = vala_binary_operator_to_string (VALA_BINARY_OPERATOR_IN);
+		_tmp5_ = vala_binary_operator_to_string (BALA_BINARY_OPERATOR_IN);
 		valadoc_api_signature_builder_append_keyword (_tmp4_, _tmp5_, TRUE);
 	} else {
 		ValadocApiSignatureBuilder* _tmp6_;
@@ -512,14 +512,14 @@ valadoc_api_initializer_builder_real_visit_unary_expression (ValaCodeVisitor* ba
 	g_return_if_fail (expr != NULL);
 	_tmp1_ = vala_unary_expression_get_operator (expr);
 	_tmp2_ = _tmp1_;
-	if (_tmp2_ == VALA_UNARY_OPERATOR_REF) {
+	if (_tmp2_ == BALA_UNARY_OPERATOR_REF) {
 		_tmp0_ = TRUE;
 	} else {
 		ValaUnaryOperator _tmp3_;
 		ValaUnaryOperator _tmp4_;
 		_tmp3_ = vala_unary_expression_get_operator (expr);
 		_tmp4_ = _tmp3_;
-		_tmp0_ = _tmp4_ == VALA_UNARY_OPERATOR_OUT;
+		_tmp0_ = _tmp4_ == BALA_UNARY_OPERATOR_OUT;
 	}
 	if (_tmp0_) {
 		ValadocApiSignatureBuilder* _tmp5_;
@@ -1647,10 +1647,10 @@ static void
 valadoc_api_initializer_builder_finalize (ValaCodeVisitor * obj)
 {
 	ValadocApiInitializerBuilder * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_INITIALIZER_BUILDER, ValadocApiInitializerBuilder);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_INITIALIZER_BUILDER, ValadocApiInitializerBuilder);
 	_vala_map_unref0 (self->priv->symbol_map);
 	_valadoc_api_signature_builder_unref0 (self->priv->signature);
-	VALA_CODE_VISITOR_CLASS (valadoc_api_initializer_builder_parent_class)->finalize (obj);
+	BALA_CODE_VISITOR_CLASS (valadoc_api_initializer_builder_parent_class)->finalize (obj);
 }
 
 static GType
@@ -1658,7 +1658,7 @@ valadoc_api_initializer_builder_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiInitializerBuilderClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_initializer_builder_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiInitializerBuilder), 0, (GInstanceInitFunc) valadoc_api_initializer_builder_instance_init, NULL };
 	GType valadoc_api_initializer_builder_type_id;
-	valadoc_api_initializer_builder_type_id = g_type_register_static (VALA_TYPE_CODE_VISITOR, "ValadocApiInitializerBuilder", &g_define_type_info, 0);
+	valadoc_api_initializer_builder_type_id = g_type_register_static (BALA_TYPE_CODE_VISITOR, "ValadocApiInitializerBuilder", &g_define_type_info, 0);
 	ValadocApiInitializerBuilder_private_offset = g_type_add_instance_private (valadoc_api_initializer_builder_type_id, sizeof (ValadocApiInitializerBuilderPrivate));
 	return valadoc_api_initializer_builder_type_id;
 }

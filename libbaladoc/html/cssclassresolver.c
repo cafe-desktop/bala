@@ -29,10 +29,10 @@
 #include <glib.h>
 
 enum  {
-	VALADOC_HTML_CSS_CLASS_RESOLVER_0_PROPERTY,
-	VALADOC_HTML_CSS_CLASS_RESOLVER_NUM_PROPERTIES
+	BALADOC_HTML_CSS_CLASS_RESOLVER_0_PROPERTY,
+	BALADOC_HTML_CSS_CLASS_RESOLVER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_html_css_class_resolver_properties[VALADOC_HTML_CSS_CLASS_RESOLVER_NUM_PROPERTIES];
+static GParamSpec* valadoc_html_css_class_resolver_properties[BALADOC_HTML_CSS_CLASS_RESOLVER_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 
 struct _ValadocHtmlCssClassResolverPrivate {
@@ -399,7 +399,7 @@ valadoc_html_css_class_resolver_construct (GType object_type)
 ValadocHtmlCssClassResolver*
 valadoc_html_css_class_resolver_new (void)
 {
-	return valadoc_html_css_class_resolver_construct (VALADOC_HTML_TYPE_CSS_CLASS_RESOLVER);
+	return valadoc_html_css_class_resolver_construct (BALADOC_HTML_TYPE_CSS_CLASS_RESOLVER);
 }
 
 static void
@@ -438,7 +438,7 @@ static void
 valadoc_html_css_class_resolver_finalize (GObject * obj)
 {
 	ValadocHtmlCssClassResolver * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_HTML_TYPE_CSS_CLASS_RESOLVER, ValadocHtmlCssClassResolver);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_HTML_TYPE_CSS_CLASS_RESOLVER, ValadocHtmlCssClassResolver);
 	_g_free0 (self->priv->css_class);
 	G_OBJECT_CLASS (valadoc_html_css_class_resolver_parent_class)->finalize (obj);
 }
@@ -448,7 +448,7 @@ valadoc_html_css_class_resolver_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocHtmlCssClassResolverClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_html_css_class_resolver_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocHtmlCssClassResolver), 0, (GInstanceInitFunc) valadoc_html_css_class_resolver_instance_init, NULL };
 	GType valadoc_html_css_class_resolver_type_id;
-	valadoc_html_css_class_resolver_type_id = g_type_register_static (VALADOC_API_TYPE_VISITOR, "ValadocHtmlCssClassResolver", &g_define_type_info, 0);
+	valadoc_html_css_class_resolver_type_id = g_type_register_static (BALADOC_API_TYPE_VISITOR, "ValadocHtmlCssClassResolver", &g_define_type_info, 0);
 	ValadocHtmlCssClassResolver_private_offset = g_type_add_instance_private (valadoc_html_css_class_resolver_type_id, sizeof (ValadocHtmlCssClassResolverPrivate));
 	return valadoc_html_css_class_resolver_type_id;
 }

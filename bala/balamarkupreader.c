@@ -221,7 +221,7 @@ vala_markup_reader_construct (GType object_type,
 ValaMarkupReader*
 vala_markup_reader_new (const gchar* filename)
 {
-	return vala_markup_reader_construct (VALA_TYPE_MARKUP_READER, filename);
+	return vala_markup_reader_construct (BALA_TYPE_MARKUP_READER, filename);
 }
 
 ValaMarkupReader*
@@ -254,7 +254,7 @@ ValaMarkupReader*
 vala_markup_reader_new_from_string (const gchar* filename,
                                     const gchar* content)
 {
-	return vala_markup_reader_construct_from_string (VALA_TYPE_MARKUP_READER, filename, content);
+	return vala_markup_reader_construct_from_string (BALA_TYPE_MARKUP_READER, filename, content);
 }
 
 gchar*
@@ -531,7 +531,7 @@ vala_markup_reader_read_token (ValaMarkupReader* self,
 		vala_source_location_init (&_vala_token_begin, _tmp1_, self->priv->line, self->priv->column);
 		_tmp2_ = self->priv->begin;
 		vala_source_location_init (&_vala_token_end, _tmp2_, self->priv->line, self->priv->column);
-		result = VALA_MARKUP_TOKEN_TYPE_END_ELEMENT;
+		result = BALA_MARKUP_TOKEN_TYPE_END_ELEMENT;
 		if (token_begin) {
 			*token_begin = _vala_token_begin;
 		}
@@ -543,7 +543,7 @@ vala_markup_reader_read_token (ValaMarkupReader* self,
 	vala_markup_reader_set_content (self, NULL);
 	vala_markup_reader_set_name (self, NULL);
 	vala_markup_reader_space (self);
-	type = VALA_MARKUP_TOKEN_TYPE_NONE;
+	type = BALA_MARKUP_TOKEN_TYPE_NONE;
 	_tmp3_ = self->priv->current;
 	begin = _tmp3_;
 	_tmp4_ = begin;
@@ -551,7 +551,7 @@ vala_markup_reader_read_token (ValaMarkupReader* self,
 	_tmp5_ = self->priv->current;
 	_tmp6_ = self->priv->end;
 	if (_tmp5_ >= _tmp6_) {
-		type = VALA_MARKUP_TOKEN_TYPE_EOF;
+		type = BALA_MARKUP_TOKEN_TYPE_EOF;
 	} else {
 		gchar* _tmp7_;
 		gchar _tmp8_;
@@ -690,7 +690,7 @@ vala_markup_reader_read_token (ValaMarkupReader* self,
 							gchar* _tmp50_;
 							gchar* _tmp51_;
 							gchar* _tmp54_;
-							type = VALA_MARKUP_TOKEN_TYPE_END_ELEMENT;
+							type = BALA_MARKUP_TOKEN_TYPE_END_ELEMENT;
 							_tmp46_ = self->priv->current;
 							self->priv->current = _tmp46_ + 1;
 							_tmp47_ = vala_markup_reader_read_name (self);
@@ -721,7 +721,7 @@ vala_markup_reader_read_token (ValaMarkupReader* self,
 							gchar* _tmp97_;
 							gchar* _tmp98_;
 							gchar* _tmp101_;
-							type = VALA_MARKUP_TOKEN_TYPE_START_ELEMENT;
+							type = BALA_MARKUP_TOKEN_TYPE_START_ELEMENT;
 							_tmp55_ = vala_markup_reader_read_name (self);
 							_tmp56_ = _tmp55_;
 							vala_markup_reader_set_name (self, _tmp56_);
@@ -908,7 +908,7 @@ vala_markup_reader_read_token (ValaMarkupReader* self,
 				}
 				return result;
 			}
-			type = VALA_MARKUP_TOKEN_TYPE_TEXT;
+			type = BALA_MARKUP_TOKEN_TYPE_TEXT;
 		}
 	}
 	_tmp109_ = self->priv->current;
@@ -1377,7 +1377,7 @@ vala_param_spec_markup_reader (const gchar* name,
                                GParamFlags flags)
 {
 	ValaParamSpecMarkupReader* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_MARKUP_READER), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_MARKUP_READER), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1386,7 +1386,7 @@ vala_param_spec_markup_reader (const gchar* name,
 gpointer
 vala_value_get_markup_reader (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_MARKUP_READER), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_MARKUP_READER), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1395,10 +1395,10 @@ vala_value_set_markup_reader (GValue* value,
                               gpointer v_object)
 {
 	ValaMarkupReader * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_MARKUP_READER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_MARKUP_READER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_MARKUP_READER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_MARKUP_READER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_markup_reader_ref (value->data[0].v_pointer);
@@ -1415,10 +1415,10 @@ vala_value_take_markup_reader (GValue* value,
                                gpointer v_object)
 {
 	ValaMarkupReader * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_MARKUP_READER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_MARKUP_READER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_MARKUP_READER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_MARKUP_READER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1459,7 +1459,7 @@ static void
 vala_markup_reader_finalize (ValaMarkupReader * obj)
 {
 	ValaMarkupReader * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_MARKUP_READER, ValaMarkupReader);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_MARKUP_READER, ValaMarkupReader);
 	g_signal_handlers_destroy (self);
 	_g_free0 (self->priv->_filename);
 	_g_free0 (self->priv->_name);
@@ -1510,7 +1510,7 @@ vala_markup_reader_unref (gpointer instance)
 	ValaMarkupReader * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_MARKUP_READER_GET_CLASS (self)->finalize (self);
+		BALA_MARKUP_READER_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }
@@ -1520,22 +1520,22 @@ vala_markup_token_type_to_string (ValaMarkupTokenType self)
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALA_MARKUP_TOKEN_TYPE_START_ELEMENT:
+		case BALA_MARKUP_TOKEN_TYPE_START_ELEMENT:
 		{
 			result = "start element";
 			return result;
 		}
-		case VALA_MARKUP_TOKEN_TYPE_END_ELEMENT:
+		case BALA_MARKUP_TOKEN_TYPE_END_ELEMENT:
 		{
 			result = "end element";
 			return result;
 		}
-		case VALA_MARKUP_TOKEN_TYPE_TEXT:
+		case BALA_MARKUP_TOKEN_TYPE_TEXT:
 		{
 			result = "text";
 			return result;
 		}
-		case VALA_MARKUP_TOKEN_TYPE_EOF:
+		case BALA_MARKUP_TOKEN_TYPE_EOF:
 		{
 			result = "end of file";
 			return result;
@@ -1551,7 +1551,7 @@ vala_markup_token_type_to_string (ValaMarkupTokenType self)
 static GType
 vala_markup_token_type_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_MARKUP_TOKEN_TYPE_NONE, "VALA_MARKUP_TOKEN_TYPE_NONE", "none"}, {VALA_MARKUP_TOKEN_TYPE_START_ELEMENT, "VALA_MARKUP_TOKEN_TYPE_START_ELEMENT", "start-element"}, {VALA_MARKUP_TOKEN_TYPE_END_ELEMENT, "VALA_MARKUP_TOKEN_TYPE_END_ELEMENT", "end-element"}, {VALA_MARKUP_TOKEN_TYPE_TEXT, "VALA_MARKUP_TOKEN_TYPE_TEXT", "text"}, {VALA_MARKUP_TOKEN_TYPE_EOF, "VALA_MARKUP_TOKEN_TYPE_EOF", "eof"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_MARKUP_TOKEN_TYPE_NONE, "BALA_MARKUP_TOKEN_TYPE_NONE", "none"}, {BALA_MARKUP_TOKEN_TYPE_START_ELEMENT, "BALA_MARKUP_TOKEN_TYPE_START_ELEMENT", "start-element"}, {BALA_MARKUP_TOKEN_TYPE_END_ELEMENT, "BALA_MARKUP_TOKEN_TYPE_END_ELEMENT", "end-element"}, {BALA_MARKUP_TOKEN_TYPE_TEXT, "BALA_MARKUP_TOKEN_TYPE_TEXT", "text"}, {BALA_MARKUP_TOKEN_TYPE_EOF, "BALA_MARKUP_TOKEN_TYPE_EOF", "eof"}, {0, NULL, NULL}};
 	GType vala_markup_token_type_type_id;
 	vala_markup_token_type_type_id = g_enum_register_static ("ValaMarkupTokenType", values);
 	return vala_markup_token_type_type_id;

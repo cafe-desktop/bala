@@ -168,7 +168,7 @@ namespace GLib {
 		public static unowned GLib.ParamSpec? interface_find_property (GLib.TypeInterface g_iface, string property_name);
 		public static void interface_install_property (GLib.TypeInterface g_iface, GLib.ParamSpec pspec);
 		[CCode (array_length_pos = 1.1, array_length_type = "guint")]
-#if VALA_0_26
+#if BALA_0_26
 		public static (unowned GLib.ParamSpec)[] interface_list_properties (GLib.TypeInterface g_iface);
 #else
 		public static unowned GLib.ParamSpec[] interface_list_properties (GLib.TypeInterface g_iface);
@@ -226,7 +226,7 @@ namespace GLib {
 		public void install_properties ([CCode (array_length_pos = 0.9, array_length_type = "guint")] GLib.ParamSpec[] pspecs);
 		public void install_property (uint property_id, GLib.ParamSpec pspec);
 		[CCode (array_length_type = "guint")]
-#if VALA_0_26
+#if BALA_0_26
 		public (unowned GLib.ParamSpec)[] list_properties ();
 #else
 		public unowned GLib.ParamSpec[] list_properties ();
@@ -379,7 +379,7 @@ namespace GLib {
 		public ParamSpecPool (bool type_prefixing = false);
 		public void insert (GLib.ParamSpec pspec, GLib.Type owner_type);
 		[CCode (array_length_pos = 1.1, array_length_type = "guint")]
-#if VALA_0_26
+#if BALA_0_26
 		public (unowned GLib.ParamSpec)[] list (GLib.Type owner_type);
 #else
 		public unowned GLib.ParamSpec[] list (GLib.Type owner_type);

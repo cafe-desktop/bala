@@ -31,10 +31,10 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_PAGE_0_PROPERTY,
-	VALADOC_CONTENT_PAGE_NUM_PROPERTIES
+	BALADOC_CONTENT_PAGE_0_PROPERTY,
+	BALADOC_CONTENT_PAGE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_page_properties[VALADOC_CONTENT_PAGE_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_page_properties[BALADOC_CONTENT_PAGE_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _vala_assert(expr, msg) if G_LIKELY (expr) ; else g_assertion_message_expr (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);
@@ -84,7 +84,7 @@ valadoc_content_page_construct (GType object_type)
 G_GNUC_INTERNAL ValadocContentPage*
 valadoc_content_page_new (void)
 {
-	return valadoc_content_page_construct (VALADOC_CONTENT_TYPE_PAGE);
+	return valadoc_content_page_construct (BALADOC_CONTENT_TYPE_PAGE);
 }
 
 static void
@@ -116,7 +116,7 @@ valadoc_content_page_real_check (ValadocContentContentElement* base,
 		return;
 	}
 	self->priv->checked = TRUE;
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_page_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_page_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
 }
 
 static gpointer
@@ -186,7 +186,7 @@ valadoc_content_page_real_copy (ValadocContentContentElement* base,
 			_tmp12_ = block;
 			_tmp13_ = page;
 			_tmp14_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp12_, (ValadocContentContentElement*) _tmp13_);
-			_tmp15_ = VALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
+			_tmp15_ = BALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
 			if (_tmp15_ == NULL) {
 				_g_object_unref0 (_tmp14_);
 			}
@@ -229,7 +229,7 @@ static void
 valadoc_content_page_finalize (GObject * obj)
 {
 	ValadocContentPage * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_PAGE, ValadocContentPage);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_PAGE, ValadocContentPage);
 	G_OBJECT_CLASS (valadoc_content_page_parent_class)->finalize (obj);
 }
 
@@ -238,7 +238,7 @@ valadoc_content_page_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentPageClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_page_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentPage), 0, (GInstanceInitFunc) valadoc_content_page_instance_init, NULL };
 	GType valadoc_content_page_type_id;
-	valadoc_content_page_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocContentPage", &g_define_type_info, 0);
+	valadoc_content_page_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocContentPage", &g_define_type_info, 0);
 	ValadocContentPage_private_offset = g_type_add_instance_private (valadoc_content_page_type_id, sizeof (ValadocContentPagePrivate));
 	return valadoc_content_page_type_id;
 }

@@ -157,7 +157,7 @@ vala_unary_expression_new (ValaUnaryOperator op,
                            ValaExpression* _inner,
                            ValaSourceReference* source)
 {
-	return vala_unary_expression_construct (VALA_TYPE_UNARY_EXPRESSION, op, _inner, source);
+	return vala_unary_expression_construct (BALA_TYPE_UNARY_EXPRESSION, op, _inner, source);
 }
 
 static void
@@ -241,24 +241,24 @@ vala_unary_expression_real_is_constant (ValaExpression* base)
 	gboolean result = FALSE;
 	self = (ValaUnaryExpression*) base;
 	_tmp1_ = self->priv->_operator;
-	if (_tmp1_ == VALA_UNARY_OPERATOR_INCREMENT) {
+	if (_tmp1_ == BALA_UNARY_OPERATOR_INCREMENT) {
 		_tmp0_ = TRUE;
 	} else {
 		ValaUnaryOperator _tmp2_;
 		_tmp2_ = self->priv->_operator;
-		_tmp0_ = _tmp2_ == VALA_UNARY_OPERATOR_DECREMENT;
+		_tmp0_ = _tmp2_ == BALA_UNARY_OPERATOR_DECREMENT;
 	}
 	if (_tmp0_) {
 		result = FALSE;
 		return result;
 	}
 	_tmp4_ = self->priv->_operator;
-	if (_tmp4_ == VALA_UNARY_OPERATOR_REF) {
+	if (_tmp4_ == BALA_UNARY_OPERATOR_REF) {
 		_tmp3_ = TRUE;
 	} else {
 		ValaUnaryOperator _tmp5_;
 		_tmp5_ = self->priv->_operator;
-		_tmp3_ = _tmp5_ == VALA_UNARY_OPERATOR_OUT;
+		_tmp3_ = _tmp5_ == BALA_UNARY_OPERATOR_OUT;
 	}
 	if (_tmp3_) {
 		ValaField* field = NULL;
@@ -272,7 +272,7 @@ vala_unary_expression_real_is_constant (ValaExpression* base)
 		_tmp7_ = _tmp6_;
 		_tmp8_ = vala_expression_get_symbol_reference (_tmp7_);
 		_tmp9_ = _tmp8_;
-		field = VALA_IS_FIELD (_tmp9_) ? ((ValaField*) _tmp9_) : NULL;
+		field = BALA_IS_FIELD (_tmp9_) ? ((ValaField*) _tmp9_) : NULL;
 		_tmp11_ = field;
 		if (_tmp11_ != NULL) {
 			ValaField* _tmp12_;
@@ -281,7 +281,7 @@ vala_unary_expression_real_is_constant (ValaExpression* base)
 			_tmp12_ = field;
 			_tmp13_ = vala_field_get_binding (_tmp12_);
 			_tmp14_ = _tmp13_;
-			_tmp10_ = _tmp14_ == VALA_MEMBER_BINDING_STATIC;
+			_tmp10_ = _tmp14_ == BALA_MEMBER_BINDING_STATIC;
 		} else {
 			_tmp10_ = FALSE;
 		}
@@ -310,12 +310,12 @@ vala_unary_expression_real_is_pure (ValaExpression* base)
 	gboolean result = FALSE;
 	self = (ValaUnaryExpression*) base;
 	_tmp1_ = self->priv->_operator;
-	if (_tmp1_ == VALA_UNARY_OPERATOR_INCREMENT) {
+	if (_tmp1_ == BALA_UNARY_OPERATOR_INCREMENT) {
 		_tmp0_ = TRUE;
 	} else {
 		ValaUnaryOperator _tmp2_;
 		_tmp2_ = self->priv->_operator;
-		_tmp0_ = _tmp2_ == VALA_UNARY_OPERATOR_DECREMENT;
+		_tmp0_ = _tmp2_ == BALA_UNARY_OPERATOR_DECREMENT;
 	}
 	if (_tmp0_) {
 		result = FALSE;
@@ -360,7 +360,7 @@ vala_unary_expression_is_numeric_type (ValaUnaryExpression* self,
 	g_return_val_if_fail (type != NULL, FALSE);
 	_tmp0_ = vala_data_type_get_type_symbol (type);
 	_tmp1_ = _tmp0_;
-	st = VALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
+	st = BALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
 	_tmp3_ = vala_data_type_get_nullable (type);
 	_tmp4_ = _tmp3_;
 	if (_tmp4_) {
@@ -402,7 +402,7 @@ vala_unary_expression_is_integer_type (ValaUnaryExpression* self,
 	g_return_val_if_fail (type != NULL, FALSE);
 	_tmp0_ = vala_data_type_get_type_symbol (type);
 	_tmp1_ = _tmp0_;
-	st = VALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
+	st = BALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
 	_tmp3_ = vala_data_type_get_nullable (type);
 	_tmp4_ = _tmp3_;
 	if (_tmp4_) {
@@ -428,9 +428,9 @@ vala_unary_expression_find_member_access (ValaUnaryExpression* self,
 	ValaMemberAccess* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (expr != NULL, NULL);
-	if (VALA_IS_MEMBER_ACCESS (expr)) {
+	if (BALA_IS_MEMBER_ACCESS (expr)) {
 		ValaMemberAccess* _tmp0_;
-		_tmp0_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (expr, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
+		_tmp0_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (expr, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
 		result = _tmp0_;
 		return result;
 	}
@@ -489,12 +489,12 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 	}
 	vala_code_node_set_checked ((ValaCodeNode*) self, TRUE);
 	_tmp5_ = self->priv->_operator;
-	if (_tmp5_ == VALA_UNARY_OPERATOR_REF) {
+	if (_tmp5_ == BALA_UNARY_OPERATOR_REF) {
 		_tmp4_ = TRUE;
 	} else {
 		ValaUnaryOperator _tmp6_;
 		_tmp6_ = self->priv->_operator;
-		_tmp4_ = _tmp6_ == VALA_UNARY_OPERATOR_OUT;
+		_tmp4_ = _tmp6_ == BALA_UNARY_OPERATOR_OUT;
 	}
 	if (_tmp4_) {
 		ValaExpression* _tmp7_;
@@ -515,12 +515,12 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 		gboolean _tmp13_ = FALSE;
 		ValaUnaryOperator _tmp14_;
 		_tmp14_ = self->priv->_operator;
-		if (_tmp14_ == VALA_UNARY_OPERATOR_INCREMENT) {
+		if (_tmp14_ == BALA_UNARY_OPERATOR_INCREMENT) {
 			_tmp13_ = TRUE;
 		} else {
 			ValaUnaryOperator _tmp15_;
 			_tmp15_ = self->priv->_operator;
-			_tmp13_ = _tmp15_ == VALA_UNARY_OPERATOR_DECREMENT;
+			_tmp13_ = _tmp15_ == BALA_UNARY_OPERATOR_DECREMENT;
 		}
 		if (_tmp13_) {
 			ValaExpression* _tmp16_;
@@ -564,7 +564,7 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 	_tmp30_ = _tmp29_;
 	_tmp31_ = vala_expression_get_value_type (_tmp30_);
 	_tmp32_ = _tmp31_;
-	if (VALA_IS_FIELD_PROTOTYPE (_tmp32_)) {
+	if (BALA_IS_FIELD_PROTOTYPE (_tmp32_)) {
 		_tmp28_ = TRUE;
 	} else {
 		ValaExpression* _tmp33_;
@@ -575,7 +575,7 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 		_tmp34_ = _tmp33_;
 		_tmp35_ = vala_expression_get_value_type (_tmp34_);
 		_tmp36_ = _tmp35_;
-		_tmp28_ = VALA_IS_PROPERTY_PROTOTYPE (_tmp36_);
+		_tmp28_ = BALA_IS_PROPERTY_PROTOTYPE (_tmp36_);
 	}
 	if (_tmp28_) {
 		ValaExpression* _tmp37_;
@@ -611,8 +611,8 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 	}
 	_tmp49_ = self->priv->_operator;
 	switch (_tmp49_) {
-		case VALA_UNARY_OPERATOR_PLUS:
-		case VALA_UNARY_OPERATOR_MINUS:
+		case BALA_UNARY_OPERATOR_PLUS:
+		case BALA_UNARY_OPERATOR_MINUS:
 		{
 			ValaExpression* _tmp50_;
 			ValaExpression* _tmp51_;
@@ -661,7 +661,7 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 			vala_expression_set_value_type ((ValaExpression*) self, _tmp67_);
 			break;
 		}
-		case VALA_UNARY_OPERATOR_LOGICAL_NEGATION:
+		case BALA_UNARY_OPERATOR_LOGICAL_NEGATION:
 		{
 			gboolean _tmp68_ = FALSE;
 			ValaExpression* _tmp69_;
@@ -734,7 +734,7 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 			vala_expression_set_value_type ((ValaExpression*) self, _tmp95_);
 			break;
 		}
-		case VALA_UNARY_OPERATOR_BITWISE_COMPLEMENT:
+		case BALA_UNARY_OPERATOR_BITWISE_COMPLEMENT:
 		{
 			gboolean _tmp96_ = FALSE;
 			ValaExpression* _tmp97_;
@@ -758,7 +758,7 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 				_tmp102_ = _tmp101_;
 				_tmp103_ = vala_expression_get_value_type (_tmp102_);
 				_tmp104_ = _tmp103_;
-				_tmp96_ = !VALA_IS_ENUM_VALUE_TYPE (_tmp104_);
+				_tmp96_ = !BALA_IS_ENUM_VALUE_TYPE (_tmp104_);
 			} else {
 				_tmp96_ = FALSE;
 			}
@@ -797,8 +797,8 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 			vala_expression_set_value_type ((ValaExpression*) self, _tmp118_);
 			break;
 		}
-		case VALA_UNARY_OPERATOR_INCREMENT:
-		case VALA_UNARY_OPERATOR_DECREMENT:
+		case BALA_UNARY_OPERATOR_INCREMENT:
+		case BALA_UNARY_OPERATOR_DECREMENT:
 		{
 			ValaExpression* _tmp119_;
 			ValaExpression* _tmp120_;
@@ -869,8 +869,8 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 			_vala_code_node_unref0 (ma);
 			break;
 		}
-		case VALA_UNARY_OPERATOR_REF:
-		case VALA_UNARY_OPERATOR_OUT:
+		case BALA_UNARY_OPERATOR_REF:
+		case BALA_UNARY_OPERATOR_OUT:
 		{
 			ValaElementAccess* ea = NULL;
 			ValaExpression* _tmp143_;
@@ -884,12 +884,12 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 			ValaSymbol* _tmp151_;
 			_tmp143_ = vala_unary_expression_get_inner (self);
 			_tmp144_ = _tmp143_;
-			ea = VALA_IS_ELEMENT_ACCESS (_tmp144_) ? ((ValaElementAccess*) _tmp144_) : NULL;
+			ea = BALA_IS_ELEMENT_ACCESS (_tmp144_) ? ((ValaElementAccess*) _tmp144_) : NULL;
 			_tmp148_ = vala_unary_expression_get_inner (self);
 			_tmp149_ = _tmp148_;
 			_tmp150_ = vala_expression_get_symbol_reference (_tmp149_);
 			_tmp151_ = _tmp150_;
-			if (VALA_IS_FIELD (_tmp151_)) {
+			if (BALA_IS_FIELD (_tmp151_)) {
 				_tmp147_ = TRUE;
 			} else {
 				ValaExpression* _tmp152_;
@@ -900,7 +900,7 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 				_tmp153_ = _tmp152_;
 				_tmp154_ = vala_expression_get_symbol_reference (_tmp153_);
 				_tmp155_ = _tmp154_;
-				_tmp147_ = VALA_IS_PARAMETER (_tmp155_);
+				_tmp147_ = BALA_IS_PARAMETER (_tmp155_);
 			}
 			if (_tmp147_) {
 				_tmp146_ = TRUE;
@@ -913,7 +913,7 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 				_tmp157_ = _tmp156_;
 				_tmp158_ = vala_expression_get_symbol_reference (_tmp157_);
 				_tmp159_ = _tmp158_;
-				_tmp146_ = VALA_IS_LOCAL_VARIABLE (_tmp159_);
+				_tmp146_ = BALA_IS_LOCAL_VARIABLE (_tmp159_);
 			}
 			if (_tmp146_) {
 				_tmp145_ = TRUE;
@@ -932,7 +932,7 @@ vala_unary_expression_real_check (ValaCodeNode* base,
 					_tmp164_ = _tmp163_;
 					_tmp165_ = vala_expression_get_value_type (_tmp164_);
 					_tmp166_ = _tmp165_;
-					_tmp160_ = VALA_IS_ARRAY_TYPE (_tmp166_);
+					_tmp160_ = BALA_IS_ARRAY_TYPE (_tmp166_);
 				} else {
 					_tmp160_ = FALSE;
 				}
@@ -1014,12 +1014,12 @@ vala_unary_expression_real_get_defined_variables (ValaCodeNode* base,
 	_tmp1_ = _tmp0_;
 	vala_code_node_get_defined_variables ((ValaCodeNode*) _tmp1_, collection);
 	_tmp3_ = self->priv->_operator;
-	if (_tmp3_ == VALA_UNARY_OPERATOR_OUT) {
+	if (_tmp3_ == BALA_UNARY_OPERATOR_OUT) {
 		_tmp2_ = TRUE;
 	} else {
 		ValaUnaryOperator _tmp4_;
 		_tmp4_ = self->priv->_operator;
-		_tmp2_ = _tmp4_ == VALA_UNARY_OPERATOR_REF;
+		_tmp2_ = _tmp4_ == BALA_UNARY_OPERATOR_REF;
 	}
 	if (_tmp2_) {
 		ValaLocalVariable* local = NULL;
@@ -1039,12 +1039,12 @@ vala_unary_expression_real_get_defined_variables (ValaCodeNode* base,
 		_tmp6_ = _tmp5_;
 		_tmp7_ = vala_expression_get_symbol_reference (_tmp6_);
 		_tmp8_ = _tmp7_;
-		local = VALA_IS_LOCAL_VARIABLE (_tmp8_) ? ((ValaLocalVariable*) _tmp8_) : NULL;
+		local = BALA_IS_LOCAL_VARIABLE (_tmp8_) ? ((ValaLocalVariable*) _tmp8_) : NULL;
 		_tmp9_ = vala_unary_expression_get_inner (self);
 		_tmp10_ = _tmp9_;
 		_tmp11_ = vala_expression_get_symbol_reference (_tmp10_);
 		_tmp12_ = _tmp11_;
-		param = VALA_IS_PARAMETER (_tmp12_) ? ((ValaParameter*) _tmp12_) : NULL;
+		param = BALA_IS_PARAMETER (_tmp12_) ? ((ValaParameter*) _tmp12_) : NULL;
 		_tmp13_ = local;
 		if (_tmp13_ != NULL) {
 			ValaLocalVariable* _tmp14_;
@@ -1059,7 +1059,7 @@ vala_unary_expression_real_get_defined_variables (ValaCodeNode* base,
 			_tmp17_ = param;
 			_tmp18_ = vala_parameter_get_direction (_tmp17_);
 			_tmp19_ = _tmp18_;
-			_tmp15_ = _tmp19_ == VALA_PARAMETER_DIRECTION_OUT;
+			_tmp15_ = _tmp19_ == BALA_PARAMETER_DIRECTION_OUT;
 		} else {
 			_tmp15_ = FALSE;
 		}
@@ -1080,7 +1080,7 @@ vala_unary_expression_real_get_used_variables (ValaCodeNode* base,
 	self = (ValaUnaryExpression*) base;
 	g_return_if_fail (collection != NULL);
 	_tmp0_ = self->priv->_operator;
-	if (_tmp0_ != VALA_UNARY_OPERATOR_OUT) {
+	if (_tmp0_ != BALA_UNARY_OPERATOR_OUT) {
 		ValaExpression* _tmp1_;
 		ValaExpression* _tmp2_;
 		_tmp1_ = vala_unary_expression_get_inner (self);
@@ -1121,9 +1121,9 @@ static void
 vala_unary_expression_finalize (ValaCodeNode * obj)
 {
 	ValaUnaryExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_UNARY_EXPRESSION, ValaUnaryExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_UNARY_EXPRESSION, ValaUnaryExpression);
 	_vala_code_node_unref0 (self->priv->_inner);
-	VALA_CODE_NODE_CLASS (vala_unary_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_unary_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -1136,7 +1136,7 @@ vala_unary_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaUnaryExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_unary_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaUnaryExpression), 0, (GInstanceInitFunc) vala_unary_expression_instance_init, NULL };
 	GType vala_unary_expression_type_id;
-	vala_unary_expression_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaUnaryExpression", &g_define_type_info, 0);
+	vala_unary_expression_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaUnaryExpression", &g_define_type_info, 0);
 	ValaUnaryExpression_private_offset = g_type_add_instance_private (vala_unary_expression_type_id, sizeof (ValaUnaryExpressionPrivate));
 	return vala_unary_expression_type_id;
 }
@@ -1158,42 +1158,42 @@ vala_unary_operator_to_string (ValaUnaryOperator self)
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALA_UNARY_OPERATOR_PLUS:
+		case BALA_UNARY_OPERATOR_PLUS:
 		{
 			result = "+";
 			return result;
 		}
-		case VALA_UNARY_OPERATOR_MINUS:
+		case BALA_UNARY_OPERATOR_MINUS:
 		{
 			result = "-";
 			return result;
 		}
-		case VALA_UNARY_OPERATOR_LOGICAL_NEGATION:
+		case BALA_UNARY_OPERATOR_LOGICAL_NEGATION:
 		{
 			result = "!";
 			return result;
 		}
-		case VALA_UNARY_OPERATOR_BITWISE_COMPLEMENT:
+		case BALA_UNARY_OPERATOR_BITWISE_COMPLEMENT:
 		{
 			result = "~";
 			return result;
 		}
-		case VALA_UNARY_OPERATOR_INCREMENT:
+		case BALA_UNARY_OPERATOR_INCREMENT:
 		{
 			result = "++";
 			return result;
 		}
-		case VALA_UNARY_OPERATOR_DECREMENT:
+		case BALA_UNARY_OPERATOR_DECREMENT:
 		{
 			result = "--";
 			return result;
 		}
-		case VALA_UNARY_OPERATOR_REF:
+		case BALA_UNARY_OPERATOR_REF:
 		{
 			result = "ref ";
 			return result;
 		}
-		case VALA_UNARY_OPERATOR_OUT:
+		case BALA_UNARY_OPERATOR_OUT:
 		{
 			result = "out ";
 			return result;
@@ -1208,7 +1208,7 @@ vala_unary_operator_to_string (ValaUnaryOperator self)
 static GType
 vala_unary_operator_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_UNARY_OPERATOR_NONE, "VALA_UNARY_OPERATOR_NONE", "none"}, {VALA_UNARY_OPERATOR_PLUS, "VALA_UNARY_OPERATOR_PLUS", "plus"}, {VALA_UNARY_OPERATOR_MINUS, "VALA_UNARY_OPERATOR_MINUS", "minus"}, {VALA_UNARY_OPERATOR_LOGICAL_NEGATION, "VALA_UNARY_OPERATOR_LOGICAL_NEGATION", "logical-negation"}, {VALA_UNARY_OPERATOR_BITWISE_COMPLEMENT, "VALA_UNARY_OPERATOR_BITWISE_COMPLEMENT", "bitwise-complement"}, {VALA_UNARY_OPERATOR_INCREMENT, "VALA_UNARY_OPERATOR_INCREMENT", "increment"}, {VALA_UNARY_OPERATOR_DECREMENT, "VALA_UNARY_OPERATOR_DECREMENT", "decrement"}, {VALA_UNARY_OPERATOR_REF, "VALA_UNARY_OPERATOR_REF", "ref"}, {VALA_UNARY_OPERATOR_OUT, "VALA_UNARY_OPERATOR_OUT", "out"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_UNARY_OPERATOR_NONE, "BALA_UNARY_OPERATOR_NONE", "none"}, {BALA_UNARY_OPERATOR_PLUS, "BALA_UNARY_OPERATOR_PLUS", "plus"}, {BALA_UNARY_OPERATOR_MINUS, "BALA_UNARY_OPERATOR_MINUS", "minus"}, {BALA_UNARY_OPERATOR_LOGICAL_NEGATION, "BALA_UNARY_OPERATOR_LOGICAL_NEGATION", "logical-negation"}, {BALA_UNARY_OPERATOR_BITWISE_COMPLEMENT, "BALA_UNARY_OPERATOR_BITWISE_COMPLEMENT", "bitwise-complement"}, {BALA_UNARY_OPERATOR_INCREMENT, "BALA_UNARY_OPERATOR_INCREMENT", "increment"}, {BALA_UNARY_OPERATOR_DECREMENT, "BALA_UNARY_OPERATOR_DECREMENT", "decrement"}, {BALA_UNARY_OPERATOR_REF, "BALA_UNARY_OPERATOR_REF", "ref"}, {BALA_UNARY_OPERATOR_OUT, "BALA_UNARY_OPERATOR_OUT", "out"}, {0, NULL, NULL}};
 	GType vala_unary_operator_type_id;
 	vala_unary_operator_type_id = g_enum_register_static ("ValaUnaryOperator", values);
 	return vala_unary_operator_type_id;

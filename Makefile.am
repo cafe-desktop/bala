@@ -15,7 +15,7 @@ SUBDIRS = \
 	vapigen \
 	$(NULL)
 
-if ENABLE_VALADOC
+if ENABLE_BALADOC
 SUBDIRS += \
 	libvaladoc \
 	valadoc \
@@ -41,8 +41,8 @@ libvala@PACKAGE_SUFFIX@.pc: libvala.pc
 .PHONY: bootstrap
 bootstrap: all
 	find $(top_srcdir) -name "*.vala.stamp" | xargs rm -f
-	$(MAKE) $(AM_MAKEFLAGS) all VALAC=$(abs_top_builddir)/compiler/valac$(EXEEXT) V=$V \
-		VALAFLAGS="$(VALAFLAGS) --hide-internal --abi-stability"
+	$(MAKE) $(AM_MAKEFLAGS) all BALAC=$(abs_top_builddir)/compiler/valac$(EXEEXT) V=$V \
+		BALAFLAGS="$(BALAFLAGS) --hide-internal --abi-stability"
 
 .PHONY: test
 test:

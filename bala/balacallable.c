@@ -34,7 +34,7 @@ ValaDataType*
 vala_callable_get_return_type (ValaCallable* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_CALLABLE_GET_INTERFACE (self)->get_return_type (self);
+	return BALA_CALLABLE_GET_INTERFACE (self)->get_return_type (self);
 }
 
 void
@@ -42,7 +42,7 @@ vala_callable_set_return_type (ValaCallable* self,
                                ValaDataType* value)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CALLABLE_GET_INTERFACE (self)->set_return_type (self, value);
+	BALA_CALLABLE_GET_INTERFACE (self)->set_return_type (self, value);
 }
 
 /**
@@ -55,7 +55,7 @@ vala_callable_add_parameter (ValaCallable* self,
                              ValaParameter* param)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CALLABLE_GET_INTERFACE (self)->add_parameter (self, param);
+	BALA_CALLABLE_GET_INTERFACE (self)->add_parameter (self, param);
 }
 
 /**
@@ -65,7 +65,7 @@ ValaList*
 vala_callable_get_parameters (ValaCallable* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_CALLABLE_GET_INTERFACE (self)->get_parameters (self);
+	return BALA_CALLABLE_GET_INTERFACE (self)->get_parameters (self);
 }
 
 static void
@@ -83,7 +83,7 @@ vala_callable_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCallableIface), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_callable_default_init, (GClassFinalizeFunc) NULL, NULL, 0, 0, (GInstanceInitFunc) NULL, NULL };
 	GType vala_callable_type_id;
 	vala_callable_type_id = g_type_register_static (G_TYPE_INTERFACE, "ValaCallable", &g_define_type_info, 0);
-	g_type_interface_add_prerequisite (vala_callable_type_id, VALA_TYPE_SYMBOL);
+	g_type_interface_add_prerequisite (vala_callable_type_id, BALA_TYPE_SYMBOL);
 	return vala_callable_type_id;
 }
 

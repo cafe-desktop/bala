@@ -27,10 +27,10 @@
 #include <glib.h>
 
 enum  {
-	VALADOC_CONTENT_CONTENT_RENDERER_0_PROPERTY,
-	VALADOC_CONTENT_CONTENT_RENDERER_NUM_PROPERTIES
+	BALADOC_CONTENT_CONTENT_RENDERER_0_PROPERTY,
+	BALADOC_CONTENT_CONTENT_RENDERER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_content_renderer_properties[VALADOC_CONTENT_CONTENT_RENDERER_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_content_renderer_properties[BALADOC_CONTENT_CONTENT_RENDERER_NUM_PROPERTIES];
 
 static gpointer valadoc_content_content_renderer_parent_class = NULL;
 
@@ -53,7 +53,7 @@ valadoc_content_content_renderer_render (ValadocContentContentRenderer* self,
                                          ValadocContentContentElement* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_RENDERER_GET_CLASS (self)->render (self, element);
+	BALADOC_CONTENT_CONTENT_RENDERER_GET_CLASS (self)->render (self, element);
 }
 
 static void
@@ -69,7 +69,7 @@ valadoc_content_content_renderer_render_children (ValadocContentContentRenderer*
                                                   ValadocContentContentElement* element)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_CONTENT_CONTENT_RENDERER_GET_CLASS (self)->render_children (self, element);
+	BALADOC_CONTENT_CONTENT_RENDERER_GET_CLASS (self)->render_children (self, element);
 }
 
 ValadocContentContentRenderer*
@@ -100,7 +100,7 @@ valadoc_content_content_renderer_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentContentRendererClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_content_renderer_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentContentRenderer), 0, (GInstanceInitFunc) valadoc_content_content_renderer_instance_init, NULL };
 	GType valadoc_content_content_renderer_type_id;
-	valadoc_content_content_renderer_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_CONTENT_VISITOR, "ValadocContentContentRenderer", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	valadoc_content_content_renderer_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_CONTENT_VISITOR, "ValadocContentContentRenderer", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	return valadoc_content_content_renderer_type_id;
 }
 

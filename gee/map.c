@@ -72,7 +72,7 @@ gint
 vala_map_get_size (ValaMap* self)
 {
 	g_return_val_if_fail (self != NULL, 0);
-	return VALA_MAP_GET_CLASS (self)->get_size (self);
+	return BALA_MAP_GET_CLASS (self)->get_size (self);
 }
 
 /**
@@ -91,7 +91,7 @@ ValaSet*
 vala_map_get_keys (ValaMap* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_MAP_GET_CLASS (self)->get_keys (self);
+	return BALA_MAP_GET_CLASS (self)->get_keys (self);
 }
 
 /**
@@ -110,7 +110,7 @@ ValaCollection*
 vala_map_get_values (ValaMap* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_MAP_GET_CLASS (self)->get_values (self);
+	return BALA_MAP_GET_CLASS (self)->get_values (self);
 }
 
 /**
@@ -134,7 +134,7 @@ vala_map_contains (ValaMap* self,
                    gconstpointer key)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_MAP_GET_CLASS (self)->contains (self, key);
+	return BALA_MAP_GET_CLASS (self)->contains (self, key);
 }
 
 /**
@@ -158,7 +158,7 @@ vala_map_get (ValaMap* self,
               gconstpointer key)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_MAP_GET_CLASS (self)->get (self, key);
+	return BALA_MAP_GET_CLASS (self)->get (self, key);
 }
 
 /**
@@ -182,7 +182,7 @@ vala_map_set (ValaMap* self,
               gconstpointer value)
 {
 	g_return_if_fail (self != NULL);
-	VALA_MAP_GET_CLASS (self)->set (self, key, value);
+	BALA_MAP_GET_CLASS (self)->set (self, key, value);
 }
 
 /**
@@ -206,7 +206,7 @@ vala_map_remove (ValaMap* self,
                  gconstpointer key)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_MAP_GET_CLASS (self)->remove (self, key);
+	return BALA_MAP_GET_CLASS (self)->remove (self, key);
 }
 
 /**
@@ -224,7 +224,7 @@ void
 vala_map_clear (ValaMap* self)
 {
 	g_return_if_fail (self != NULL);
-	VALA_MAP_GET_CLASS (self)->clear (self);
+	BALA_MAP_GET_CLASS (self)->clear (self);
 }
 
 /**
@@ -245,7 +245,7 @@ ValaMapIterator*
 vala_map_map_iterator (ValaMap* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_MAP_GET_CLASS (self)->map_iterator (self);
+	return BALA_MAP_GET_CLASS (self)->map_iterator (self);
 }
 
 ValaMap*
@@ -349,7 +349,7 @@ vala_param_spec_map (const gchar* name,
                      GParamFlags flags)
 {
 	ValaParamSpecMap* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_MAP), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_MAP), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -358,7 +358,7 @@ vala_param_spec_map (const gchar* name,
 gpointer
 vala_value_get_map (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_MAP), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_MAP), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -367,10 +367,10 @@ vala_value_set_map (GValue* value,
                     gpointer v_object)
 {
 	ValaMap * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_MAP));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_MAP));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_MAP));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_MAP));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_map_ref (value->data[0].v_pointer);
@@ -387,10 +387,10 @@ vala_value_take_map (GValue* value,
                      gpointer v_object)
 {
 	ValaMap * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_MAP));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_MAP));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_MAP));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_MAP));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -430,7 +430,7 @@ static void
 vala_map_finalize (ValaMap * obj)
 {
 	ValaMap * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_MAP, ValaMap);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_MAP, ValaMap);
 	g_signal_handlers_destroy (self);
 }
 
@@ -476,7 +476,7 @@ vala_map_unref (gpointer instance)
 	ValaMap * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_MAP_GET_CLASS (self)->finalize (self);
+		BALA_MAP_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

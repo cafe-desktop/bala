@@ -127,7 +127,7 @@ vala_ccode_file_construct (GType object_type,
 ValaCCodeFile*
 vala_ccode_file_new (ValaSourceFile* source_file)
 {
-	return vala_ccode_file_construct (VALA_TYPE_CCODE_FILE, source_file);
+	return vala_ccode_file_construct (BALA_TYPE_CCODE_FILE, source_file);
 }
 
 gboolean
@@ -381,17 +381,17 @@ vala_ccode_file_get_symbols_from_fragment (ValaCCodeFile* self,
 			_tmp7_ = vala_list_get (_tmp6_, _node_index);
 			node = (ValaCCodeNode*) _tmp7_;
 			_tmp8_ = node;
-			if (VALA_IS_CCODE_FRAGMENT (_tmp8_)) {
+			if (BALA_IS_CCODE_FRAGMENT (_tmp8_)) {
 				ValaCCodeNode* _tmp9_;
 				_tmp9_ = node;
-				vala_ccode_file_get_symbols_from_fragment (self, symbols, G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, VALA_TYPE_CCODE_FRAGMENT, ValaCCodeFragment));
+				vala_ccode_file_get_symbols_from_fragment (self, symbols, G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, BALA_TYPE_CCODE_FRAGMENT, ValaCCodeFragment));
 			} else {
 				ValaCCodeFunction* func = NULL;
 				ValaCCodeNode* _tmp10_;
 				ValaCCodeFunction* _tmp11_;
 				ValaCCodeFunction* _tmp12_;
 				_tmp10_ = node;
-				_tmp11_ = _vala_ccode_node_ref0 (VALA_IS_CCODE_FUNCTION (_tmp10_) ? ((ValaCCodeFunction*) _tmp10_) : NULL);
+				_tmp11_ = _vala_ccode_node_ref0 (BALA_IS_CCODE_FUNCTION (_tmp10_) ? ((ValaCCodeFunction*) _tmp10_) : NULL);
 				func = _tmp11_;
 				_tmp12_ = func;
 				if (_tmp12_ != NULL) {
@@ -830,7 +830,7 @@ vala_param_spec_ccode_file (const gchar* name,
                             GParamFlags flags)
 {
 	ValaParamSpecCCodeFile* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_CCODE_FILE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_CCODE_FILE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -839,7 +839,7 @@ vala_param_spec_ccode_file (const gchar* name,
 gpointer
 vala_value_get_ccode_file (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CCODE_FILE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CCODE_FILE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -848,10 +848,10 @@ vala_value_set_ccode_file (GValue* value,
                            gpointer v_object)
 {
 	ValaCCodeFile * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CCODE_FILE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CCODE_FILE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CCODE_FILE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CCODE_FILE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_ccode_file_ref (value->data[0].v_pointer);
@@ -868,10 +868,10 @@ vala_value_take_ccode_file (GValue* value,
                             gpointer v_object)
 {
 	ValaCCodeFile * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CCODE_FILE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CCODE_FILE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CCODE_FILE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CCODE_FILE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -955,7 +955,7 @@ static void
 vala_ccode_file_finalize (ValaCCodeFile * obj)
 {
 	ValaCCodeFile * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_FILE, ValaCCodeFile);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_FILE, ValaCCodeFile);
 	g_signal_handlers_destroy (self);
 	_vala_iterable_unref0 (self->priv->features);
 	_vala_iterable_unref0 (self->priv->declarations);
@@ -1010,7 +1010,7 @@ vala_ccode_file_unref (gpointer instance)
 	ValaCCodeFile * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_CCODE_FILE_GET_CLASS (self)->finalize (self);
+		BALA_CCODE_FILE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

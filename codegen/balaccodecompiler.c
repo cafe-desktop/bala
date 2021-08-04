@@ -60,7 +60,7 @@ vala_ccode_compiler_construct (GType object_type)
 ValaCCodeCompiler*
 vala_ccode_compiler_new (void)
 {
-	return vala_ccode_compiler_construct (VALA_TYPE_CCODE_COMPILER);
+	return vala_ccode_compiler_construct (BALA_TYPE_CCODE_COMPILER);
 }
 
 /**
@@ -134,7 +134,7 @@ vala_ccode_compiler_compile (ValaCCodeCompiler* self,
 	pc = _tmp0_;
 	_tmp1_ = vala_code_context_get_profile (context);
 	_tmp2_ = _tmp1_;
-	if (_tmp2_ == VALA_PROFILE_GOBJECT) {
+	if (_tmp2_ == BALA_PROFILE_GOBJECT) {
 		const gchar* _tmp3_;
 		gchar* _tmp4_;
 		_tmp3_ = pc;
@@ -356,7 +356,7 @@ vala_ccode_compiler_compile (ValaCCodeCompiler* self,
 			_tmp72_ = file;
 			_tmp73_ = vala_source_file_get_file_type (_tmp72_);
 			_tmp74_ = _tmp73_;
-			if (_tmp74_ == VALA_SOURCE_FILE_TYPE_SOURCE) {
+			if (_tmp74_ == BALA_SOURCE_FILE_TYPE_SOURCE) {
 				const gchar* _tmp75_;
 				ValaSourceFile* _tmp76_;
 				gchar* _tmp77_;
@@ -591,7 +591,7 @@ vala_ccode_compiler_compile (ValaCCodeCompiler* self,
 				_tmp138_ = file;
 				_tmp139_ = vala_source_file_get_file_type (_tmp138_);
 				_tmp140_ = _tmp139_;
-				if (_tmp140_ == VALA_SOURCE_FILE_TYPE_SOURCE) {
+				if (_tmp140_ == BALA_SOURCE_FILE_TYPE_SOURCE) {
 					ValaSourceFile* _tmp141_;
 					gchar* _tmp142_;
 					gchar* _tmp143_;
@@ -694,7 +694,7 @@ vala_param_spec_ccode_compiler (const gchar* name,
                                 GParamFlags flags)
 {
 	ValaParamSpecCCodeCompiler* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_CCODE_COMPILER), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_CCODE_COMPILER), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -703,7 +703,7 @@ vala_param_spec_ccode_compiler (const gchar* name,
 gpointer
 vala_value_get_ccode_compiler (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CCODE_COMPILER), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CCODE_COMPILER), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -712,10 +712,10 @@ vala_value_set_ccode_compiler (GValue* value,
                                gpointer v_object)
 {
 	ValaCCodeCompiler * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CCODE_COMPILER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CCODE_COMPILER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CCODE_COMPILER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CCODE_COMPILER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_ccode_compiler_ref (value->data[0].v_pointer);
@@ -732,10 +732,10 @@ vala_value_take_ccode_compiler (GValue* value,
                                 gpointer v_object)
 {
 	ValaCCodeCompiler * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CCODE_COMPILER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CCODE_COMPILER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CCODE_COMPILER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CCODE_COMPILER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -765,7 +765,7 @@ static void
 vala_ccode_compiler_finalize (ValaCCodeCompiler * obj)
 {
 	ValaCCodeCompiler * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_COMPILER, ValaCCodeCompiler);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_COMPILER, ValaCCodeCompiler);
 	g_signal_handlers_destroy (self);
 }
 
@@ -810,7 +810,7 @@ vala_ccode_compiler_unref (gpointer instance)
 	ValaCCodeCompiler * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_CCODE_COMPILER_GET_CLASS (self)->finalize (self);
+		BALA_CCODE_COMPILER_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

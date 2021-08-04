@@ -230,7 +230,7 @@ gboolean
 vala_expression_is_constant (ValaExpression* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_EXPRESSION_GET_CLASS (self)->is_constant (self);
+	return BALA_EXPRESSION_GET_CLASS (self)->is_constant (self);
 }
 
 /**
@@ -249,7 +249,7 @@ gboolean
 vala_expression_is_pure (ValaExpression* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_EXPRESSION_GET_CLASS (self)->is_pure (self);
+	return BALA_EXPRESSION_GET_CLASS (self)->is_pure (self);
 }
 
 /**
@@ -267,7 +267,7 @@ gboolean
 vala_expression_is_non_null (ValaExpression* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_EXPRESSION_GET_CLASS (self)->is_non_null (self);
+	return BALA_EXPRESSION_GET_CLASS (self)->is_non_null (self);
 }
 
 /**
@@ -289,7 +289,7 @@ vala_expression_is_accessible (ValaExpression* self,
                                ValaSymbol* sym)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_EXPRESSION_GET_CLASS (self)->is_accessible (self, sym);
+	return BALA_EXPRESSION_GET_CLASS (self)->is_accessible (self, sym);
 }
 
 ValaStatement*
@@ -312,23 +312,23 @@ vala_expression_get_parent_statement (ValaExpression* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 	_tmp1_ = _tmp0_;
-	expr = VALA_IS_EXPRESSION (_tmp1_) ? ((ValaExpression*) _tmp1_) : NULL;
+	expr = BALA_IS_EXPRESSION (_tmp1_) ? ((ValaExpression*) _tmp1_) : NULL;
 	_tmp2_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 	_tmp3_ = _tmp2_;
-	stmt = VALA_IS_STATEMENT (_tmp3_) ? ((ValaStatement*) _tmp3_) : NULL;
+	stmt = BALA_IS_STATEMENT (_tmp3_) ? ((ValaStatement*) _tmp3_) : NULL;
 	_tmp4_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 	_tmp5_ = _tmp4_;
-	local = VALA_IS_LOCAL_VARIABLE (_tmp5_) ? ((ValaLocalVariable*) _tmp5_) : NULL;
+	local = BALA_IS_LOCAL_VARIABLE (_tmp5_) ? ((ValaLocalVariable*) _tmp5_) : NULL;
 	_tmp6_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 	_tmp7_ = _tmp6_;
-	initializer = VALA_IS_MEMBER_INITIALIZER (_tmp7_) ? ((ValaMemberInitializer*) _tmp7_) : NULL;
+	initializer = BALA_IS_MEMBER_INITIALIZER (_tmp7_) ? ((ValaMemberInitializer*) _tmp7_) : NULL;
 	_tmp8_ = stmt;
 	if (_tmp8_ != NULL) {
 		ValaCodeNode* _tmp9_;
 		ValaCodeNode* _tmp10_;
 		_tmp9_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 		_tmp10_ = _tmp9_;
-		result = G_TYPE_CHECK_INSTANCE_CAST (_tmp10_, VALA_TYPE_STATEMENT, ValaStatement);
+		result = G_TYPE_CHECK_INSTANCE_CAST (_tmp10_, BALA_TYPE_STATEMENT, ValaStatement);
 		return result;
 	} else {
 		ValaExpression* _tmp11_;
@@ -352,7 +352,7 @@ vala_expression_get_parent_statement (ValaExpression* self)
 				_tmp16_ = local;
 				_tmp17_ = vala_code_node_get_parent_node ((ValaCodeNode*) _tmp16_);
 				_tmp18_ = _tmp17_;
-				result = G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, VALA_TYPE_STATEMENT, ValaStatement);
+				result = G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, BALA_TYPE_STATEMENT, ValaStatement);
 				return result;
 			} else {
 				ValaMemberInitializer* _tmp19_;
@@ -366,7 +366,7 @@ vala_expression_get_parent_statement (ValaExpression* self)
 					_tmp20_ = initializer;
 					_tmp21_ = vala_code_node_get_parent_node ((ValaCodeNode*) _tmp20_);
 					_tmp22_ = _tmp21_;
-					_tmp23_ = vala_expression_get_parent_statement (G_TYPE_CHECK_INSTANCE_CAST (_tmp22_, VALA_TYPE_EXPRESSION, ValaExpression));
+					_tmp23_ = vala_expression_get_parent_statement (G_TYPE_CHECK_INSTANCE_CAST (_tmp22_, BALA_TYPE_EXPRESSION, ValaExpression));
 					_tmp24_ = _tmp23_;
 					result = _tmp24_;
 					return result;
@@ -426,13 +426,13 @@ static void
 vala_expression_finalize (ValaCodeNode * obj)
 {
 	ValaExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_EXPRESSION, ValaExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_EXPRESSION, ValaExpression);
 	_vala_code_node_unref0 (self->priv->_value_type);
 	_vala_code_node_unref0 (self->priv->_formal_value_type);
 	_vala_code_node_unref0 (self->priv->_target_type);
 	_vala_code_node_unref0 (self->priv->_formal_target_type);
 	_vala_target_value_unref0 (self->priv->_target_value);
-	VALA_CODE_NODE_CLASS (vala_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -443,7 +443,7 @@ vala_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaExpression), 0, (GInstanceInitFunc) vala_expression_instance_init, NULL };
 	GType vala_expression_type_id;
-	vala_expression_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaExpression", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_expression_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaExpression", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	ValaExpression_private_offset = g_type_add_instance_private (vala_expression_type_id, sizeof (ValaExpressionPrivate));
 	return vala_expression_type_id;
 }

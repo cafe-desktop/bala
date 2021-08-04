@@ -136,7 +136,7 @@ ValadocHtmlMarkupWriter*
 valadoc_html_markup_writer_new (FILE* stream,
                                 gboolean html5_declaration)
 {
-	return valadoc_html_markup_writer_construct (VALADOC_HTML_TYPE_MARKUP_WRITER, stream, html5_declaration);
+	return valadoc_html_markup_writer_construct (BALADOC_HTML_TYPE_MARKUP_WRITER, stream, html5_declaration);
 }
 
 static Block8Data*
@@ -203,7 +203,7 @@ ValadocHtmlMarkupWriter*
 valadoc_html_markup_writer_new_builder (GString* builder,
                                         gboolean html5_declaration)
 {
-	return valadoc_html_markup_writer_construct_builder (VALADOC_HTML_TYPE_MARKUP_WRITER, builder, html5_declaration);
+	return valadoc_html_markup_writer_construct_builder (BALADOC_HTML_TYPE_MARKUP_WRITER, builder, html5_declaration);
 }
 
 ValadocHtmlMarkupWriter*
@@ -669,7 +669,7 @@ valadoc_html_markup_writer_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocHtmlMarkupWriterClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_html_markup_writer_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocHtmlMarkupWriter), 0, (GInstanceInitFunc) valadoc_html_markup_writer_instance_init, NULL };
 	GType valadoc_html_markup_writer_type_id;
-	valadoc_html_markup_writer_type_id = g_type_register_static (VALADOC_TYPE_MARKUP_WRITER, "ValadocHtmlMarkupWriter", &g_define_type_info, 0);
+	valadoc_html_markup_writer_type_id = g_type_register_static (BALADOC_TYPE_MARKUP_WRITER, "ValadocHtmlMarkupWriter", &g_define_type_info, 0);
 	return valadoc_html_markup_writer_type_id;
 }
 

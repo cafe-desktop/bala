@@ -201,7 +201,7 @@ vala_enum_value_new (const gchar* name,
                      ValaSourceReference* source_reference,
                      ValaComment* comment)
 {
-	return vala_enum_value_construct (VALA_TYPE_ENUM_VALUE, name, value, source_reference, comment);
+	return vala_enum_value_construct (BALA_TYPE_ENUM_VALUE, name, value, source_reference, comment);
 }
 
 static void
@@ -298,9 +298,9 @@ static void
 vala_enum_value_finalize (ValaCodeNode * obj)
 {
 	ValaEnumValue * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ENUM_VALUE, ValaEnumValue);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ENUM_VALUE, ValaEnumValue);
 	_g_free0 (self->priv->_nick);
-	VALA_CODE_NODE_CLASS (vala_enum_value_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_enum_value_parent_class)->finalize (obj);
 }
 
 /**
@@ -311,7 +311,7 @@ vala_enum_value_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaEnumValueClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_enum_value_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaEnumValue), 0, (GInstanceInitFunc) vala_enum_value_instance_init, NULL };
 	GType vala_enum_value_type_id;
-	vala_enum_value_type_id = g_type_register_static (VALA_TYPE_CONSTANT, "ValaEnumValue", &g_define_type_info, 0);
+	vala_enum_value_type_id = g_type_register_static (BALA_TYPE_CONSTANT, "ValaEnumValue", &g_define_type_info, 0);
 	ValaEnumValue_private_offset = g_type_add_instance_private (vala_enum_value_type_id, sizeof (ValaEnumValuePrivate));
 	return vala_enum_value_type_id;
 }

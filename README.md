@@ -110,7 +110,7 @@ An example of downloading and compiling from the bootstrap module:
 git clone https://gitlab.gnome.org/Archive/vala-bootstrap
 cd vala-bootstrap
 touch */*.stamp
-VALAC=/no-valac ./configure --prefix=/opt/vala-bootstrap
+BALAC=/no-valac ./configure --prefix=/opt/vala-bootstrap
 make && sudo make install
 ```
 
@@ -129,7 +129,7 @@ To use `valac` from a bootstrapped build detailed in step two use:
 ```sh
 git clone https://gitlab.gnome.org/GNOME/vala
 cd vala
-VALAC=/opt/vala-bootstrap/bin/vala ./autogen.sh
+BALAC=/opt/vala-bootstrap/bin/vala ./autogen.sh
 make && sudo make install
 ```
 

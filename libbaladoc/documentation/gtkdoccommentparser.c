@@ -31,10 +31,10 @@
 #include <glib.h>
 
 enum  {
-	VALADOC_GTKDOC_PARSER_0_PROPERTY,
-	VALADOC_GTKDOC_PARSER_NUM_PROPERTIES
+	BALADOC_GTKDOC_PARSER_0_PROPERTY,
+	BALADOC_GTKDOC_PARSER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_gtkdoc_parser_properties[VALADOC_GTKDOC_PARSER_NUM_PROPERTIES];
+static GParamSpec* valadoc_gtkdoc_parser_properties[BALADOC_GTKDOC_PARSER_NUM_PROPERTIES];
 #define _valadoc_gtkdoc_scanner_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_gtkdoc_scanner_unref (var), NULL)))
 #define _valadoc_gtkdoc_token_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_gtkdoc_token_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
@@ -572,7 +572,7 @@ valadoc_gtkdoc_parser_new (ValadocSettings* settings,
                            ValadocApiTree* tree,
                            ValadocModuleLoader* modules)
 {
-	return valadoc_gtkdoc_parser_construct (VALADOC_GTKDOC_TYPE_PARSER, settings, reporter, tree, modules);
+	return valadoc_gtkdoc_parser_construct (BALADOC_GTKDOC_TYPE_PARSER, settings, reporter, tree, modules);
 }
 
 static ValadocContentNote*
@@ -858,7 +858,7 @@ valadoc_gtkdoc_parser_parse (ValadocGtkdocParser* self,
 				_tmp38_ = vala_map_iterator_get_value (_tmp37_);
 				_tmp39_ = (ValadocApiSourceComment*) _tmp38_;
 				_tmp40_ = valadoc_gtkdoc_parser_parse_block_taglet (self, _tmp39_, "param");
-				_tmp41_ = VALADOC_TAGLETS_IS_PARAM (_tmp40_) ? ((ValadocTagletsParam*) _tmp40_) : NULL;
+				_tmp41_ = BALADOC_TAGLETS_IS_PARAM (_tmp40_) ? ((ValadocTagletsParam*) _tmp40_) : NULL;
 				if (_tmp41_ == NULL) {
 					_g_object_unref0 (_tmp40_);
 				}
@@ -948,7 +948,7 @@ valadoc_gtkdoc_parser_parse (ValadocGtkdocParser* self,
 				_tmp65_ = note;
 				_tmp66_ = vala_list_first (_tmp65_);
 				_tmp67_ = (ValadocContentBlock*) _tmp66_;
-				_tmp68_ = VALADOC_CONTENT_IS_PARAGRAPH (_tmp67_) ? ((ValadocContentParagraph*) _tmp67_) : NULL;
+				_tmp68_ = BALADOC_CONTENT_IS_PARAGRAPH (_tmp67_) ? ((ValadocContentParagraph*) _tmp67_) : NULL;
 				if (_tmp68_ == NULL) {
 					_g_object_unref0 (_tmp67_);
 				}
@@ -1037,7 +1037,7 @@ valadoc_gtkdoc_parser_parse_block_taglet (ValadocGtkdocParser* self,
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, FALSE);
 	_tmp3_ = self->priv->factory;
 	_tmp4_ = valadoc_content_content_factory_create_taglet (_tmp3_, taglet_name);
-	_tmp5_ = VALADOC_CONTENT_IS_BLOCK_CONTENT (_tmp4_) ? ((ValadocContentBlockContent*) _tmp4_) : NULL;
+	_tmp5_ = BALADOC_CONTENT_IS_BLOCK_CONTENT (_tmp4_) ? ((ValadocContentBlockContent*) _tmp4_) : NULL;
 	if (_tmp5_ == NULL) {
 		_g_object_unref0 (_tmp4_);
 	}
@@ -1049,7 +1049,7 @@ valadoc_gtkdoc_parser_parse_block_taglet (ValadocGtkdocParser* self,
 	paragraph = _tmp8_;
 	_tmp9_ = self->priv->current;
 	_tmp10_ = _tmp9_->type;
-	if (_tmp10_ == VALADOC_GTKDOC_TOKEN_TYPE_EOF) {
+	if (_tmp10_ == BALADOC_GTKDOC_TOKEN_TYPE_EOF) {
 		ValadocContentParagraph* _tmp11_;
 		ValaList* _tmp12_;
 		ValaList* _tmp13_;
@@ -1070,7 +1070,7 @@ valadoc_gtkdoc_parser_parse_block_taglet (ValadocGtkdocParser* self,
 	_tmp19_ = paragraph;
 	vala_collection_add ((ValaCollection*) _tmp18_, (ValadocContentBlock*) _tmp19_);
 	_tmp20_ = taglet;
-	_tmp21_ = _g_object_ref0 (VALADOC_CONTENT_IS_TAGLET (_tmp20_) ? ((ValadocContentTaglet*) _tmp20_) : NULL);
+	_tmp21_ = _g_object_ref0 (BALADOC_CONTENT_IS_TAGLET (_tmp20_) ? ((ValadocContentTaglet*) _tmp20_) : NULL);
 	result = _tmp21_;
 	_g_object_unref0 (paragraph);
 	_g_object_unref0 (taglet);
@@ -1128,7 +1128,7 @@ valadoc_gtkdoc_parser_parse_root_content (ValadocGtkdocParser* self,
 		ValaCollection* _tmp31_;
 		_tmp5_ = self->priv->current;
 		_tmp6_ = _tmp5_->type;
-		if (_tmp6_ != VALADOC_GTKDOC_TOKEN_TYPE_EOF) {
+		if (_tmp6_ != BALADOC_GTKDOC_TOKEN_TYPE_EOF) {
 			ValadocGtkdocToken* _tmp7_;
 			ValadocGtkdocToken* _tmp8_;
 			_tmp7_ = tmp;
@@ -1219,7 +1219,7 @@ valadoc_gtkdoc_parser_parse_root_content (ValadocGtkdocParser* self,
 	}
 	_tmp39_ = self->priv->current;
 	_tmp40_ = _tmp39_->type;
-	if (_tmp40_ != VALADOC_GTKDOC_TOKEN_TYPE_EOF) {
+	if (_tmp40_ != BALADOC_GTKDOC_TOKEN_TYPE_EOF) {
 		ValadocGtkdocToken* _tmp41_;
 		_tmp41_ = self->priv->current;
 		valadoc_gtkdoc_parser_report_unexpected_token (self, _tmp41_, "<INLINE|BLOCK>");
@@ -1270,7 +1270,7 @@ valadoc_gtkdoc_parser_ignore_current_xml_close (ValadocGtkdocParser* self)
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->current;
 	_tmp1_ = _tmp0_->type;
-	if (_tmp1_ != VALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
+	if (_tmp1_ != BALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
 		result = FALSE;
 		return result;
 	}
@@ -1304,7 +1304,7 @@ valadoc_gtkdoc_parser_check_xml_open_tag (ValadocGtkdocParser* self,
 	g_return_val_if_fail (tagname != NULL, FALSE);
 	_tmp2_ = self->priv->current;
 	_tmp3_ = _tmp2_->type;
-	if (_tmp3_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+	if (_tmp3_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 		ValadocGtkdocToken* _tmp4_;
 		const gchar* _tmp5_;
 		_tmp4_ = self->priv->current;
@@ -1320,7 +1320,7 @@ valadoc_gtkdoc_parser_check_xml_open_tag (ValadocGtkdocParser* self,
 		ValadocGtkdocTokenType _tmp7_;
 		_tmp6_ = self->priv->current;
 		_tmp7_ = _tmp6_->type;
-		_tmp0_ = _tmp7_ != VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN;
+		_tmp0_ = _tmp7_ != BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN;
 	}
 	if (_tmp0_) {
 		result = FALSE;
@@ -1348,7 +1348,7 @@ valadoc_gtkdoc_parser_check_xml_close_tag (ValadocGtkdocParser* self,
 	g_return_val_if_fail (tagname != NULL, FALSE);
 	_tmp2_ = self->priv->current;
 	_tmp3_ = _tmp2_->type;
-	if (_tmp3_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
+	if (_tmp3_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
 		ValadocGtkdocToken* _tmp4_;
 		const gchar* _tmp5_;
 		_tmp4_ = self->priv->current;
@@ -1364,7 +1364,7 @@ valadoc_gtkdoc_parser_check_xml_close_tag (ValadocGtkdocParser* self,
 		ValadocGtkdocTokenType _tmp7_;
 		_tmp6_ = self->priv->current;
 		_tmp7_ = _tmp6_->type;
-		_tmp0_ = _tmp7_ != VALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE;
+		_tmp0_ = _tmp7_ != BALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE;
 	}
 	if (_tmp0_) {
 		result = FALSE;
@@ -1389,7 +1389,7 @@ valadoc_gtkdoc_parser_parse_docbook_spaces (ValadocGtkdocParser* self,
 		ValadocGtkdocTokenType _tmp1_;
 		_tmp0_ = self->priv->current;
 		_tmp1_ = _tmp0_->type;
-		if (_tmp1_ == VALADOC_GTKDOC_TOKEN_TYPE_SPACE) {
+		if (_tmp1_ == BALADOC_GTKDOC_TOKEN_TYPE_SPACE) {
 			ValadocGtkdocToken* _tmp2_;
 			ValadocGtkdocToken* _tmp3_;
 			_tmp2_ = valadoc_gtkdoc_parser_next (self);
@@ -1400,7 +1400,7 @@ valadoc_gtkdoc_parser_parse_docbook_spaces (ValadocGtkdocParser* self,
 			ValadocGtkdocTokenType _tmp5_;
 			_tmp4_ = self->priv->current;
 			_tmp5_ = _tmp4_->type;
-			if (_tmp5_ == VALADOC_GTKDOC_TOKEN_TYPE_NEWLINE) {
+			if (_tmp5_ == BALADOC_GTKDOC_TOKEN_TYPE_NEWLINE) {
 				ValadocGtkdocToken* _tmp6_;
 				ValadocGtkdocToken* _tmp7_;
 				_tmp6_ = valadoc_gtkdoc_parser_next (self);
@@ -1413,7 +1413,7 @@ valadoc_gtkdoc_parser_parse_docbook_spaces (ValadocGtkdocParser* self,
 					ValadocGtkdocTokenType _tmp10_;
 					_tmp9_ = self->priv->current;
 					_tmp10_ = _tmp9_->type;
-					_tmp8_ = _tmp10_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PARAGRAPH;
+					_tmp8_ = _tmp10_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PARAGRAPH;
 				} else {
 					_tmp8_ = FALSE;
 				}
@@ -1499,7 +1499,7 @@ valadoc_gtkdoc_parser_parse_docbook_link_tempalte (ValadocGtkdocParser* self,
 		ValadocGtkdocToken* _tmp30_;
 		_tmp14_ = self->priv->current;
 		_tmp15_ = _tmp14_->type;
-		if (_tmp15_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
+		if (_tmp15_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
 			ValadocGtkdocToken* _tmp16_;
 			const gchar* _tmp17_;
 			_tmp16_ = self->priv->current;
@@ -1513,7 +1513,7 @@ valadoc_gtkdoc_parser_parse_docbook_link_tempalte (ValadocGtkdocParser* self,
 			ValadocGtkdocTokenType _tmp19_;
 			_tmp18_ = self->priv->current;
 			_tmp19_ = _tmp18_->type;
-			_tmp12_ = _tmp19_ != VALADOC_GTKDOC_TOKEN_TYPE_EOF;
+			_tmp12_ = _tmp19_ != BALADOC_GTKDOC_TOKEN_TYPE_EOF;
 		} else {
 			_tmp12_ = FALSE;
 		}
@@ -1522,19 +1522,19 @@ valadoc_gtkdoc_parser_parse_docbook_link_tempalte (ValadocGtkdocParser* self,
 		}
 		_tmp20_ = self->priv->current;
 		_tmp21_ = _tmp20_->type;
-		if (_tmp21_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+		if (_tmp21_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 		} else {
 			ValadocGtkdocToken* _tmp22_;
 			ValadocGtkdocTokenType _tmp23_;
 			_tmp22_ = self->priv->current;
 			_tmp23_ = _tmp22_->type;
-			if (_tmp23_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
+			if (_tmp23_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
 			} else {
 				ValadocGtkdocToken* _tmp24_;
 				ValadocGtkdocTokenType _tmp25_;
 				_tmp24_ = self->priv->current;
 				_tmp25_ = _tmp24_->type;
-				if (_tmp25_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_COMMENT) {
+				if (_tmp25_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_COMMENT) {
 				} else {
 					GString* _tmp26_;
 					ValadocGtkdocToken* _tmp27_;
@@ -1672,7 +1672,7 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 	_tmp3_ = valadoc_gtkdoc_parser_next (self);
 	_tmp4_ = _tmp3_;
 	_tmp5_ = _tmp4_->type;
-	_tmp6_ = _tmp5_ == VALADOC_GTKDOC_TOKEN_TYPE_SPACE;
+	_tmp6_ = _tmp5_ == BALADOC_GTKDOC_TOKEN_TYPE_SPACE;
 	_valadoc_gtkdoc_token_unref0 (_tmp4_);
 	if (_tmp6_) {
 		ValadocGtkdocToken* _tmp7_;
@@ -1684,7 +1684,7 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 	taglet = NULL;
 	_tmp10_ = self->priv->current;
 	_tmp11_ = _tmp10_->type;
-	if (_tmp11_ == VALADOC_GTKDOC_TOKEN_TYPE_WORD) {
+	if (_tmp11_ == BALADOC_GTKDOC_TOKEN_TYPE_WORD) {
 		ValadocGtkdocToken* _tmp12_;
 		const gchar* _tmp13_;
 		_tmp12_ = self->priv->current;
@@ -1706,7 +1706,7 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 		_tmp16_ = valadoc_gtkdoc_parser_next (self);
 		_tmp17_ = _tmp16_;
 		_tmp18_ = _tmp17_->type;
-		_tmp19_ = _tmp18_ == VALADOC_GTKDOC_TOKEN_TYPE_SPACE;
+		_tmp19_ = _tmp18_ == BALADOC_GTKDOC_TOKEN_TYPE_SPACE;
 		_valadoc_gtkdoc_token_unref0 (_tmp17_);
 		if (_tmp19_) {
 			ValadocGtkdocToken* _tmp20_;
@@ -1718,14 +1718,14 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 	}
 	_tmp27_ = self->priv->current;
 	_tmp28_ = _tmp27_->type;
-	if (_tmp28_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_FUNCTION) {
+	if (_tmp28_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_FUNCTION) {
 		_tmp26_ = TRUE;
 	} else {
 		ValadocGtkdocToken* _tmp29_;
 		ValadocGtkdocTokenType _tmp30_;
 		_tmp29_ = self->priv->current;
 		_tmp30_ = _tmp29_->type;
-		_tmp26_ = _tmp30_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_CONST;
+		_tmp26_ = _tmp30_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_CONST;
 	}
 	if (_tmp26_) {
 		_tmp25_ = TRUE;
@@ -1734,7 +1734,7 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 		ValadocGtkdocTokenType _tmp32_;
 		_tmp31_ = self->priv->current;
 		_tmp32_ = _tmp31_->type;
-		_tmp25_ = _tmp32_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_TYPE;
+		_tmp25_ = _tmp32_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_TYPE;
 	}
 	if (_tmp25_) {
 		_tmp24_ = TRUE;
@@ -1743,7 +1743,7 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 		ValadocGtkdocTokenType _tmp34_;
 		_tmp33_ = self->priv->current;
 		_tmp34_ = _tmp33_->type;
-		_tmp24_ = _tmp34_ == VALADOC_GTKDOC_TOKEN_TYPE_WORD;
+		_tmp24_ = _tmp34_ == BALADOC_GTKDOC_TOKEN_TYPE_WORD;
 	}
 	if (_tmp24_) {
 		_tmp23_ = TRUE;
@@ -1752,7 +1752,7 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 		ValadocGtkdocTokenType _tmp36_;
 		_tmp35_ = self->priv->current;
 		_tmp36_ = _tmp35_->type;
-		_tmp23_ = _tmp36_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PROPERTY;
+		_tmp23_ = _tmp36_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PROPERTY;
 	}
 	if (_tmp23_) {
 		_tmp22_ = TRUE;
@@ -1761,7 +1761,7 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 		ValadocGtkdocTokenType _tmp38_;
 		_tmp37_ = self->priv->current;
 		_tmp38_ = _tmp37_->type;
-		_tmp22_ = _tmp38_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SIGNAL;
+		_tmp22_ = _tmp38_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SIGNAL;
 	}
 	if (_tmp22_) {
 		ValadocGtkdocToken* _tmp39_;
@@ -1772,7 +1772,7 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 		_tmp39_ = self->priv->current;
 		_tmp40_ = _tmp39_->content;
 		_tmp41_ = valadoc_gtkdoc_parser_create_type_link (self, _tmp40_, FALSE);
-		_tmp42_ = VALADOC_CONTENT_IS_INLINE_TAGLET (_tmp41_) ? ((ValadocContentInlineTaglet*) _tmp41_) : NULL;
+		_tmp42_ = BALADOC_CONTENT_IS_INLINE_TAGLET (_tmp41_) ? ((ValadocContentInlineTaglet*) _tmp41_) : NULL;
 		if (_tmp42_ == NULL) {
 			_g_object_unref0 (_tmp41_);
 		}
@@ -1784,7 +1784,7 @@ valadoc_gtkdoc_parser_parse_symbol_link (ValadocGtkdocParser* self,
 	_tmp44_ = valadoc_gtkdoc_parser_next (self);
 	_tmp45_ = _tmp44_;
 	_tmp46_ = _tmp45_->type;
-	_tmp47_ = _tmp46_ == VALADOC_GTKDOC_TOKEN_TYPE_SPACE;
+	_tmp47_ = _tmp46_ == BALADOC_GTKDOC_TOKEN_TYPE_SPACE;
 	_valadoc_gtkdoc_token_unref0 (_tmp45_);
 	if (_tmp47_) {
 		ValadocGtkdocToken* _tmp48_;
@@ -1974,7 +1974,7 @@ valadoc_gtkdoc_parser_parse_highlighted_template (ValadocGtkdocParser* self,
 	_tmp7_ = run;
 	_tmp8_ = valadoc_content_run_get_style (_tmp7_);
 	_tmp9_ = _tmp8_;
-	if (_tmp9_ != VALADOC_CONTENT_RUN_STYLE_NONE) {
+	if (_tmp9_ != BALADOC_CONTENT_RUN_STYLE_NONE) {
 		ValadocContentRun* _tmp10_;
 		ValadocContentRunStyle _tmp11_;
 		ValadocContentRunStyle _tmp12_;
@@ -2131,12 +2131,12 @@ valadoc_gtkdoc_parser_parse_docbook_information_box_template (ValadocGtkdocParse
 		ValaCollection* _tmp31_;
 		_tmp6_ = self->priv->current;
 		_tmp7_ = _tmp6_->type;
-		if (_tmp7_ != VALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
+		if (_tmp7_ != BALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
 			ValadocGtkdocToken* _tmp8_;
 			ValadocGtkdocTokenType _tmp9_;
 			_tmp8_ = self->priv->current;
 			_tmp9_ = _tmp8_->type;
-			_tmp5_ = _tmp9_ != VALADOC_GTKDOC_TOKEN_TYPE_EOF;
+			_tmp5_ = _tmp9_ != BALADOC_GTKDOC_TOKEN_TYPE_EOF;
 		} else {
 			_tmp5_ = FALSE;
 		}
@@ -2255,7 +2255,7 @@ valadoc_gtkdoc_parser_parse_docbook_important (ValadocGtkdocParser* self)
 	_tmp1_ = valadoc_content_content_factory_create_note (_tmp0_);
 	_tmp2_ = _tmp1_;
 	_tmp3_ = valadoc_gtkdoc_parser_parse_docbook_information_box_template (self, "important", (ValadocContentBlockContent*) _tmp2_);
-	_tmp4_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALADOC_CONTENT_TYPE_NOTE, ValadocContentNote);
+	_tmp4_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALADOC_CONTENT_TYPE_NOTE, ValadocContentNote);
 	_g_object_unref0 (_tmp2_);
 	result = _tmp4_;
 	return result;
@@ -2275,7 +2275,7 @@ valadoc_gtkdoc_parser_parse_docbook_note (ValadocGtkdocParser* self)
 	_tmp1_ = valadoc_content_content_factory_create_note (_tmp0_);
 	_tmp2_ = _tmp1_;
 	_tmp3_ = valadoc_gtkdoc_parser_parse_docbook_information_box_template (self, "note", (ValadocContentBlockContent*) _tmp2_);
-	_tmp4_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALADOC_CONTENT_TYPE_NOTE, ValadocContentNote);
+	_tmp4_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALADOC_CONTENT_TYPE_NOTE, ValadocContentNote);
 	_g_object_unref0 (_tmp2_);
 	result = _tmp4_;
 	return result;
@@ -2295,7 +2295,7 @@ valadoc_gtkdoc_parser_parse_docbook_warning (ValadocGtkdocParser* self)
 	_tmp1_ = valadoc_content_content_factory_create_warning (_tmp0_);
 	_tmp2_ = _tmp1_;
 	_tmp3_ = valadoc_gtkdoc_parser_parse_docbook_information_box_template (self, "warning", (ValadocContentBlockContent*) _tmp2_);
-	_tmp4_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALADOC_CONTENT_TYPE_WARNING, ValadocContentWarning);
+	_tmp4_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALADOC_CONTENT_TYPE_WARNING, ValadocContentWarning);
 	_g_object_unref0 (_tmp2_);
 	result = _tmp4_;
 	return result;
@@ -2307,7 +2307,7 @@ valadoc_gtkdoc_parser_parse_docbook_orderedlist (ValadocGtkdocParser* self)
 	ValaCollection* _tmp0_;
 	ValaCollection* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
-	_tmp0_ = valadoc_gtkdoc_parser_parse_docbook_itemizedlist (self, "orderedlist", VALADOC_CONTENT_LIST_BULLET_ORDERED);
+	_tmp0_ = valadoc_gtkdoc_parser_parse_docbook_itemizedlist (self, "orderedlist", BALADOC_CONTENT_LIST_BULLET_ORDERED);
 	result = _tmp0_;
 	return result;
 }
@@ -2352,12 +2352,12 @@ valadoc_gtkdoc_parser_parse_docbook_itemizedlist (ValadocGtkdocParser* self,
 	_tmp4_ = _tmp3_;
 	_valadoc_gtkdoc_token_unref0 (_tmp4_);
 	_tmp5_ = g_direct_equal;
-	_tmp6_ = vala_array_list_new (VALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp5_);
+	_tmp6_ = vala_array_list_new (BALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp5_);
 	content = (ValaCollection*) _tmp6_;
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
 	_tmp8_ = self->priv->current;
 	_tmp9_ = _tmp8_->type;
-	if (_tmp9_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+	if (_tmp9_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 		ValadocGtkdocToken* _tmp10_;
 		const gchar* _tmp11_;
 		_tmp10_ = self->priv->current;
@@ -2392,7 +2392,7 @@ valadoc_gtkdoc_parser_parse_docbook_itemizedlist (ValadocGtkdocParser* self,
 		const gchar* _tmp23_;
 		_tmp20_ = self->priv->current;
 		_tmp21_ = _tmp20_->type;
-		if (!(_tmp21_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN)) {
+		if (!(_tmp21_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN)) {
 			break;
 		}
 		_tmp22_ = self->priv->current;
@@ -2456,7 +2456,7 @@ valadoc_gtkdoc_parser_parse_gtkdoc_paragraph (ValadocGtkdocParser* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = self->priv->current;
 	_tmp1_ = _tmp0_->type;
-	if (_tmp1_ != VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PARAGRAPH) {
+	if (_tmp1_ != BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PARAGRAPH) {
 		ValadocGtkdocToken* _tmp2_;
 		_tmp2_ = self->priv->current;
 		valadoc_gtkdoc_parser_report_unexpected_token (self, _tmp2_, "<GTKDOC-PARAGRAPH>");
@@ -2491,7 +2491,7 @@ valadoc_gtkdoc_parser_parse_mixed_content (ValadocGtkdocParser* self)
 	ValaCollection* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	content = (ValaCollection*) _tmp1_;
 	tmp = NULL;
 	while (TRUE) {
@@ -2639,7 +2639,7 @@ valadoc_gtkdoc_parser_parse_docbook_para (ValadocGtkdocParser* self,
 		ValadocGtkdocTokenType _tmp8_;
 		_tmp7_ = self->priv->current;
 		_tmp8_ = _tmp7_->type;
-		_tmp6_ = _tmp8_ != VALADOC_GTKDOC_TOKEN_TYPE_EOF;
+		_tmp6_ = _tmp8_ != BALADOC_GTKDOC_TOKEN_TYPE_EOF;
 	} else {
 		_tmp6_ = FALSE;
 	}
@@ -2749,7 +2749,7 @@ valadoc_gtkdoc_parser_parse_gtkdoc_source (ValadocGtkdocParser* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = self->priv->current;
 	_tmp1_ = _tmp0_->type;
-	if (_tmp1_ != VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SOURCE_OPEN) {
+	if (_tmp1_ != BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SOURCE_OPEN) {
 		ValadocGtkdocToken* _tmp2_;
 		_tmp2_ = self->priv->current;
 		valadoc_gtkdoc_parser_report_unexpected_token (self, _tmp2_, "|[");
@@ -2785,12 +2785,12 @@ valadoc_gtkdoc_parser_parse_gtkdoc_source (ValadocGtkdocParser* self)
 			_tmp8_ = FALSE;
 			_tmp12_ = self->priv->current;
 			_tmp13_ = _tmp12_->type;
-			if (_tmp13_ != VALADOC_GTKDOC_TOKEN_TYPE_EOF) {
+			if (_tmp13_ != BALADOC_GTKDOC_TOKEN_TYPE_EOF) {
 				ValadocGtkdocToken* _tmp14_;
 				ValadocGtkdocTokenType _tmp15_;
 				_tmp14_ = self->priv->current;
 				_tmp15_ = _tmp14_->type;
-				_tmp11_ = _tmp15_ != VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SOURCE_CLOSE;
+				_tmp11_ = _tmp15_ != BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SOURCE_CLOSE;
 			} else {
 				_tmp11_ = FALSE;
 			}
@@ -2799,7 +2799,7 @@ valadoc_gtkdoc_parser_parse_gtkdoc_source (ValadocGtkdocParser* self)
 			}
 			_tmp16_ = self->priv->current;
 			_tmp17_ = _tmp16_->type;
-			if (_tmp17_ == VALADOC_GTKDOC_TOKEN_TYPE_WORD) {
+			if (_tmp17_ == BALADOC_GTKDOC_TOKEN_TYPE_WORD) {
 				GString* _tmp18_;
 				ValadocGtkdocToken* _tmp19_;
 				const gchar* _tmp20_;
@@ -2812,7 +2812,7 @@ valadoc_gtkdoc_parser_parse_gtkdoc_source (ValadocGtkdocParser* self)
 				ValadocGtkdocTokenType _tmp22_;
 				_tmp21_ = self->priv->current;
 				_tmp22_ = _tmp21_->type;
-				if (_tmp22_ != VALADOC_GTKDOC_TOKEN_TYPE_XML_COMMENT) {
+				if (_tmp22_ != BALADOC_GTKDOC_TOKEN_TYPE_XML_COMMENT) {
 					GString* _tmp23_;
 					ValadocGtkdocToken* _tmp24_;
 					const gchar* _tmp25_;
@@ -2893,9 +2893,9 @@ valadoc_gtkdoc_parser_parse_gtkdoc_source (ValadocGtkdocParser* self)
 		ValadocContentSourceCode* _tmp55_;
 		_tmp54_ = source;
 		if (valadoc_highlighter_xml_scanner_is_xml (_tmp54_)) {
-			_tmp53_ = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML;
+			_tmp53_ = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_XML;
 		} else {
-			_tmp53_ = VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C;
+			_tmp53_ = BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C;
 		}
 		_tmp55_ = code;
 		valadoc_content_source_code_set_language (_tmp55_, _tmp53_);
@@ -2913,7 +2913,7 @@ valadoc_gtkdoc_parser_parse_gtkdoc_source (ValadocGtkdocParser* self)
 	vala_collection_add ((ValaCollection*) _tmp62_, (ValadocContentInline*) _tmp63_);
 	_tmp64_ = self->priv->current;
 	_tmp65_ = _tmp64_->type;
-	if (_tmp65_ != VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SOURCE_CLOSE) {
+	if (_tmp65_ != BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SOURCE_CLOSE) {
 		ValadocGtkdocToken* _tmp66_;
 		_tmp66_ = self->priv->current;
 		valadoc_gtkdoc_parser_report_unexpected_token (self, _tmp66_, "|]");
@@ -2984,7 +2984,7 @@ valadoc_gtkdoc_parser_parse_docbook_title (ValadocGtkdocParser* self)
 	vala_collection_add ((ValaCollection*) _tmp8_, (ValadocContentInline*) _tmp11_);
 	_g_object_unref0 (_tmp11_);
 	_tmp12_ = content;
-	valadoc_content_run_set_style (_tmp12_, VALADOC_CONTENT_RUN_STYLE_BOLD);
+	valadoc_content_run_set_style (_tmp12_, BALADOC_CONTENT_RUN_STYLE_BOLD);
 	_tmp13_ = p;
 	_tmp14_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp13_);
 	_tmp15_ = _tmp14_;
@@ -3167,13 +3167,13 @@ valadoc_gtkdoc_parser_parse_docbook_programlisting (ValadocGtkdocParser* self)
 			_tmp4_ = FALSE;
 			_tmp8_ = self->priv->current;
 			_tmp9_ = _tmp8_->type;
-			if (_tmp9_ != VALADOC_GTKDOC_TOKEN_TYPE_EOF) {
+			if (_tmp9_ != BALADOC_GTKDOC_TOKEN_TYPE_EOF) {
 				gboolean _tmp10_ = FALSE;
 				ValadocGtkdocToken* _tmp11_;
 				ValadocGtkdocTokenType _tmp12_;
 				_tmp11_ = self->priv->current;
 				_tmp12_ = _tmp11_->type;
-				if (_tmp12_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
+				if (_tmp12_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
 					ValadocGtkdocToken* _tmp13_;
 					const gchar* _tmp14_;
 					_tmp13_ = self->priv->current;
@@ -3191,7 +3191,7 @@ valadoc_gtkdoc_parser_parse_docbook_programlisting (ValadocGtkdocParser* self)
 			}
 			_tmp15_ = self->priv->current;
 			_tmp16_ = _tmp15_->type;
-			if (_tmp16_ == VALADOC_GTKDOC_TOKEN_TYPE_WORD) {
+			if (_tmp16_ == BALADOC_GTKDOC_TOKEN_TYPE_WORD) {
 				GString* _tmp17_;
 				ValadocGtkdocToken* _tmp18_;
 				const gchar* _tmp19_;
@@ -3204,7 +3204,7 @@ valadoc_gtkdoc_parser_parse_docbook_programlisting (ValadocGtkdocParser* self)
 				ValadocGtkdocTokenType _tmp21_;
 				_tmp20_ = self->priv->current;
 				_tmp21_ = _tmp20_->type;
-				if (_tmp21_ != VALADOC_GTKDOC_TOKEN_TYPE_XML_COMMENT) {
+				if (_tmp21_ != BALADOC_GTKDOC_TOKEN_TYPE_XML_COMMENT) {
 					GString* _tmp22_;
 					ValadocGtkdocToken* _tmp23_;
 					const gchar* _tmp24_;
@@ -3222,7 +3222,7 @@ valadoc_gtkdoc_parser_parse_docbook_programlisting (ValadocGtkdocParser* self)
 	_tmp27_ = valadoc_content_content_factory_create_source_code (_tmp26_);
 	src = _tmp27_;
 	_tmp28_ = src;
-	valadoc_content_source_code_set_language (_tmp28_, VALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C);
+	valadoc_content_source_code_set_language (_tmp28_, BALADOC_CONTENT_SOURCE_CODE_LANGUAGE_C);
 	_tmp29_ = src;
 	_tmp30_ = builder;
 	_tmp31_ = _tmp30_->str;
@@ -3298,7 +3298,7 @@ valadoc_gtkdoc_parser_parse_docbook_example (ValadocGtkdocParser* self,
 	_valadoc_gtkdoc_token_unref0 (_tmp4_);
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
 	_tmp5_ = g_direct_equal;
-	_tmp6_ = vala_array_list_new (VALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp5_);
+	_tmp6_ = vala_array_list_new (BALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp5_);
 	content = (ValaCollection*) _tmp6_;
 	_tmp7_ = content;
 	_tmp8_ = valadoc_gtkdoc_parser_parse_mixed_content (self);
@@ -3386,7 +3386,7 @@ valadoc_gtkdoc_parser_parse_docbook_refsect2 (ValadocGtkdocParser* self,
 	_valadoc_gtkdoc_token_unref0 (_tmp14_);
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
 	_tmp15_ = g_direct_equal;
-	_tmp16_ = vala_array_list_new (VALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp15_);
+	_tmp16_ = vala_array_list_new (BALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp15_);
 	content = (ValaList*) _tmp16_;
 	_tmp17_ = content;
 	_tmp18_ = valadoc_gtkdoc_parser_parse_mixed_content (self);
@@ -3444,12 +3444,12 @@ valadoc_gtkdoc_parser_parse_docbook_figure (ValadocGtkdocParser* self)
 	_tmp2_ = _tmp1_;
 	_valadoc_gtkdoc_token_unref0 (_tmp2_);
 	_tmp3_ = g_direct_equal;
-	_tmp4_ = vala_array_list_new (VALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp3_);
+	_tmp4_ = vala_array_list_new (BALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp3_);
 	content = (ValaList*) _tmp4_;
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
 	_tmp6_ = self->priv->current;
 	_tmp7_ = _tmp6_->type;
-	if (_tmp7_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+	if (_tmp7_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 		ValadocGtkdocToken* _tmp8_;
 		const gchar* _tmp9_;
 		_tmp8_ = self->priv->current;
@@ -3476,7 +3476,7 @@ valadoc_gtkdoc_parser_parse_docbook_figure (ValadocGtkdocParser* self)
 		const gchar* _tmp16_;
 		_tmp13_ = self->priv->current;
 		_tmp14_ = _tmp13_->type;
-		if (!(_tmp14_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN)) {
+		if (!(_tmp14_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN)) {
 			break;
 		}
 		_tmp15_ = self->priv->current;
@@ -3500,7 +3500,7 @@ valadoc_gtkdoc_parser_parse_docbook_figure (ValadocGtkdocParser* self)
 				_tmp21_ = content;
 				_tmp22_ = vala_list_get (_tmp21_, 0);
 				_tmp23_ = (ValadocContentBlock*) _tmp22_;
-				_tmp24_ = VALADOC_CONTENT_IS_PARAGRAPH (_tmp23_) ? ((ValadocContentParagraph*) _tmp23_) : NULL;
+				_tmp24_ = BALADOC_CONTENT_IS_PARAGRAPH (_tmp23_) ? ((ValadocContentParagraph*) _tmp23_) : NULL;
 				if (_tmp24_ == NULL) {
 					_g_object_unref0 (_tmp23_);
 				}
@@ -3532,7 +3532,7 @@ valadoc_gtkdoc_parser_parse_docbook_figure (ValadocGtkdocParser* self)
 				ValadocContentEmbedded* _tmp38_;
 				_tmp30_ = self->priv->current;
 				_tmp31_ = _tmp30_->type;
-				if (_tmp31_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+				if (_tmp31_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 					ValadocGtkdocToken* _tmp32_;
 					const gchar* _tmp33_;
 					_tmp32_ = self->priv->current;
@@ -3660,7 +3660,7 @@ valadoc_gtkdoc_parser_parse_docbook_footnote (ValadocGtkdocParser* self)
 	_tmp5_ = _tmp4_;
 	counter = _tmp5_ + 1;
 	_tmp6_ = self->priv->factory;
-	_tmp7_ = valadoc_content_content_factory_create_run (_tmp6_, VALADOC_CONTENT_RUN_STYLE_ITALIC);
+	_tmp7_ = valadoc_content_content_factory_create_run (_tmp6_, BALADOC_CONTENT_RUN_STYLE_ITALIC);
 	nr = _tmp7_;
 	_tmp8_ = nr;
 	_tmp9_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp8_);
@@ -3674,7 +3674,7 @@ valadoc_gtkdoc_parser_parse_docbook_footnote (ValadocGtkdocParser* self)
 	_g_object_unref0 (_tmp15_);
 	_g_free0 (_tmp13_);
 	_tmp16_ = g_direct_equal;
-	_tmp17_ = vala_array_list_new (VALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp16_);
+	_tmp17_ = vala_array_list_new (BALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp16_);
 	content = (ValaList*) _tmp17_;
 	_tmp18_ = self->priv->footnotes;
 	_tmp19_ = content;
@@ -3698,7 +3698,7 @@ valadoc_gtkdoc_parser_parse_docbook_footnote (ValadocGtkdocParser* self)
 		_tmp27_ = content;
 		_tmp28_ = vala_list_first (_tmp27_);
 		_tmp29_ = (ValadocContentBlock*) _tmp28_;
-		_tmp30_ = VALADOC_CONTENT_IS_PARAGRAPH (_tmp29_) ? ((ValadocContentParagraph*) _tmp29_) : NULL;
+		_tmp30_ = BALADOC_CONTENT_IS_PARAGRAPH (_tmp29_) ? ((ValadocContentParagraph*) _tmp29_) : NULL;
 		if (_tmp30_ == NULL) {
 			_g_object_unref0 (_tmp29_);
 		}
@@ -3722,7 +3722,7 @@ valadoc_gtkdoc_parser_parse_docbook_footnote (ValadocGtkdocParser* self)
 		vala_list_insert (_tmp35_, 0, (ValadocContentBlock*) _tmp36_);
 	}
 	_tmp37_ = self->priv->factory;
-	_tmp38_ = valadoc_content_content_factory_create_run (_tmp37_, VALADOC_CONTENT_RUN_STYLE_ITALIC);
+	_tmp38_ = valadoc_content_content_factory_create_run (_tmp37_, BALADOC_CONTENT_RUN_STYLE_ITALIC);
 	entry = _tmp38_;
 	_tmp39_ = entry;
 	_tmp40_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp39_);
@@ -3811,7 +3811,7 @@ valadoc_gtkdoc_parser_parse_docbook_thead (ValadocGtkdocParser* self)
 	_tmp2_ = _tmp1_;
 	_valadoc_gtkdoc_token_unref0 (_tmp2_);
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
-	_tmp3_ = valadoc_gtkdoc_parser_parse_docbook_row (self, VALADOC_CONTENT_RUN_STYLE_BOLD);
+	_tmp3_ = valadoc_gtkdoc_parser_parse_docbook_row (self, BALADOC_CONTENT_RUN_STYLE_BOLD);
 	row = _tmp3_;
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
 	if (!valadoc_gtkdoc_parser_check_xml_close_tag (self, "thead")) {
@@ -3937,7 +3937,7 @@ valadoc_gtkdoc_parser_parse_docbook_row (ValadocGtkdocParser* self,
 		ValadocContentTableCell* _tmp15_;
 		_tmp6_ = self->priv->current;
 		_tmp7_ = _tmp6_->type;
-		if (_tmp7_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+		if (_tmp7_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 			ValadocGtkdocToken* _tmp8_;
 			const gchar* _tmp9_;
 			_tmp8_ = self->priv->current;
@@ -4002,7 +4002,7 @@ valadoc_gtkdoc_parser_parse_docbook_tbody (ValadocGtkdocParser* self)
 	_valadoc_gtkdoc_token_unref0 (_tmp2_);
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
 	_tmp3_ = g_direct_equal;
-	_tmp4_ = vala_array_list_new (VALADOC_CONTENT_TYPE_TABLE_ROW, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp3_);
+	_tmp4_ = vala_array_list_new (BALADOC_CONTENT_TYPE_TABLE_ROW, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp3_);
 	rows = (ValaCollection*) _tmp4_;
 	while (TRUE) {
 		gboolean _tmp5_ = FALSE;
@@ -4015,7 +4015,7 @@ valadoc_gtkdoc_parser_parse_docbook_tbody (ValadocGtkdocParser* self)
 		ValadocContentTableRow* _tmp13_;
 		_tmp6_ = self->priv->current;
 		_tmp7_ = _tmp6_->type;
-		if (_tmp7_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+		if (_tmp7_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 			ValadocGtkdocToken* _tmp8_;
 			const gchar* _tmp9_;
 			_tmp8_ = self->priv->current;
@@ -4027,7 +4027,7 @@ valadoc_gtkdoc_parser_parse_docbook_tbody (ValadocGtkdocParser* self)
 		if (!_tmp5_) {
 			break;
 		}
-		_tmp10_ = valadoc_gtkdoc_parser_parse_docbook_row (self, VALADOC_CONTENT_RUN_STYLE_NONE);
+		_tmp10_ = valadoc_gtkdoc_parser_parse_docbook_row (self, BALADOC_CONTENT_RUN_STYLE_NONE);
 		row = _tmp10_;
 		_tmp11_ = row;
 		if (_tmp11_ == NULL) {
@@ -4088,7 +4088,7 @@ valadoc_gtkdoc_parser_parse_docbook_tgroup (ValadocGtkdocParser* self)
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
 	_tmp6_ = self->priv->current;
 	_tmp7_ = _tmp6_->type;
-	if (_tmp7_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+	if (_tmp7_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 		ValadocGtkdocToken* _tmp8_;
 		const gchar* _tmp9_;
 		_tmp8_ = self->priv->current;
@@ -4121,7 +4121,7 @@ valadoc_gtkdoc_parser_parse_docbook_tgroup (ValadocGtkdocParser* self)
 	}
 	_tmp17_ = self->priv->current;
 	_tmp18_ = _tmp17_->type;
-	if (_tmp18_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+	if (_tmp18_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 		ValadocGtkdocToken* _tmp19_;
 		const gchar* _tmp20_;
 		_tmp19_ = self->priv->current;
@@ -4371,7 +4371,7 @@ valadoc_gtkdoc_parser_parse_docbook_simplelist (ValadocGtkdocParser* self)
 		ValadocContentListItem* _tmp15_;
 		_tmp6_ = self->priv->current;
 		_tmp7_ = _tmp6_->type;
-		if (_tmp7_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+		if (_tmp7_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 			ValadocGtkdocToken* _tmp8_;
 			const gchar* _tmp9_;
 			_tmp8_ = self->priv->current;
@@ -4448,7 +4448,7 @@ valadoc_gtkdoc_parser_parse_docbook_term (ValadocGtkdocParser* self)
 	_tmp5_ = valadoc_gtkdoc_parser_parse_inline_content (self);
 	run = _tmp5_;
 	_tmp6_ = run;
-	valadoc_content_run_set_style (_tmp6_, VALADOC_CONTENT_RUN_STYLE_ITALIC);
+	valadoc_content_run_set_style (_tmp6_, BALADOC_CONTENT_RUN_STYLE_ITALIC);
 	_tmp7_ = p;
 	_tmp8_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp7_);
 	_tmp9_ = _tmp8_;
@@ -4519,7 +4519,7 @@ valadoc_gtkdoc_parser_parse_docbook_varlistentry (ValadocGtkdocParser* self)
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
 	_tmp4_ = self->priv->current;
 	_tmp5_ = _tmp4_->type;
-	if (_tmp5_ != VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+	if (_tmp5_ != BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 		_tmp3_ = TRUE;
 	} else {
 		ValadocGtkdocToken* _tmp6_;
@@ -4624,11 +4624,11 @@ valadoc_gtkdoc_parser_parse_docbook_variablelist (ValadocGtkdocParser* self)
 	_valadoc_gtkdoc_token_unref0 (_tmp2_);
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, TRUE);
 	_tmp3_ = g_direct_equal;
-	_tmp4_ = vala_array_list_new (VALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp3_);
+	_tmp4_ = vala_array_list_new (BALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp3_);
 	content = (ValaCollection*) _tmp4_;
 	_tmp6_ = self->priv->current;
 	_tmp7_ = _tmp6_->type;
-	if (_tmp7_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+	if (_tmp7_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 		ValadocGtkdocToken* _tmp8_;
 		const gchar* _tmp9_;
 		_tmp8_ = self->priv->current;
@@ -4667,7 +4667,7 @@ valadoc_gtkdoc_parser_parse_docbook_variablelist (ValadocGtkdocParser* self)
 		ValadocContentListItem* _tmp27_;
 		_tmp18_ = self->priv->current;
 		_tmp19_ = _tmp18_->type;
-		if (_tmp19_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+		if (_tmp19_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 			ValadocGtkdocToken* _tmp20_;
 			const gchar* _tmp21_;
 			_tmp20_ = self->priv->current;
@@ -4719,7 +4719,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 	ValaCollection* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_CONTENT_TYPE_BLOCK, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	content = (ValaCollection*) _tmp1_;
 	while (TRUE) {
 		ValadocGtkdocToken* _tmp2_;
@@ -4729,13 +4729,13 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 		ValadocGtkdocTokenType _tmp6_;
 		_tmp2_ = self->priv->current;
 		_tmp3_ = _tmp2_->type;
-		if (!(_tmp3_ != VALADOC_GTKDOC_TOKEN_TYPE_EOF)) {
+		if (!(_tmp3_ != BALADOC_GTKDOC_TOKEN_TYPE_EOF)) {
 			break;
 		}
 		valadoc_gtkdoc_parser_parse_docbook_spaces (self, FALSE);
 		_tmp5_ = self->priv->current;
 		_tmp6_ = _tmp5_->type;
-		if (_tmp6_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+		if (_tmp6_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 			ValadocGtkdocToken* _tmp7_;
 			const gchar* _tmp8_;
 			_tmp7_ = self->priv->current;
@@ -4749,7 +4749,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 			ValaCollection* _tmp10_;
 			ValaCollection* _tmp11_;
 			_tmp9_ = content;
-			_tmp10_ = valadoc_gtkdoc_parser_parse_docbook_itemizedlist (self, "itemizedlist", VALADOC_CONTENT_LIST_BULLET_UNORDERED);
+			_tmp10_ = valadoc_gtkdoc_parser_parse_docbook_itemizedlist (self, "itemizedlist", BALADOC_CONTENT_LIST_BULLET_UNORDERED);
 			_tmp11_ = _tmp10_;
 			valadoc_gtkdoc_parser_append_block_content_not_null_all (self, _tmp9_, _tmp11_);
 			_vala_iterable_unref0 (_tmp11_);
@@ -4759,7 +4759,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 			ValadocGtkdocTokenType _tmp14_;
 			_tmp13_ = self->priv->current;
 			_tmp14_ = _tmp13_->type;
-			if (_tmp14_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+			if (_tmp14_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 				ValadocGtkdocToken* _tmp15_;
 				const gchar* _tmp16_;
 				_tmp15_ = self->priv->current;
@@ -4783,7 +4783,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 				ValadocGtkdocTokenType _tmp22_;
 				_tmp21_ = self->priv->current;
 				_tmp22_ = _tmp21_->type;
-				if (_tmp22_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+				if (_tmp22_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 					ValadocGtkdocToken* _tmp23_;
 					const gchar* _tmp24_;
 					_tmp23_ = self->priv->current;
@@ -4807,7 +4807,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 					ValadocGtkdocTokenType _tmp30_;
 					_tmp29_ = self->priv->current;
 					_tmp30_ = _tmp29_->type;
-					if (_tmp30_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+					if (_tmp30_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 						ValadocGtkdocToken* _tmp31_;
 						const gchar* _tmp32_;
 						_tmp31_ = self->priv->current;
@@ -4831,7 +4831,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 						ValadocGtkdocTokenType _tmp38_;
 						_tmp37_ = self->priv->current;
 						_tmp38_ = _tmp37_->type;
-						if (_tmp38_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+						if (_tmp38_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 							ValadocGtkdocToken* _tmp39_;
 							const gchar* _tmp40_;
 							_tmp39_ = self->priv->current;
@@ -4855,7 +4855,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 							ValadocGtkdocTokenType _tmp46_;
 							_tmp45_ = self->priv->current;
 							_tmp46_ = _tmp45_->type;
-							if (_tmp46_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+							if (_tmp46_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 								ValadocGtkdocToken* _tmp47_;
 								const gchar* _tmp48_;
 								_tmp47_ = self->priv->current;
@@ -4879,7 +4879,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 								ValadocGtkdocTokenType _tmp54_;
 								_tmp53_ = self->priv->current;
 								_tmp54_ = _tmp53_->type;
-								if (_tmp54_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+								if (_tmp54_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 									ValadocGtkdocToken* _tmp55_;
 									const gchar* _tmp56_;
 									_tmp55_ = self->priv->current;
@@ -4903,7 +4903,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 									ValadocGtkdocTokenType _tmp62_;
 									_tmp61_ = self->priv->current;
 									_tmp62_ = _tmp61_->type;
-									if (_tmp62_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+									if (_tmp62_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 										ValadocGtkdocToken* _tmp63_;
 										const gchar* _tmp64_;
 										_tmp63_ = self->priv->current;
@@ -4927,7 +4927,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 										ValadocGtkdocTokenType _tmp70_;
 										_tmp69_ = self->priv->current;
 										_tmp70_ = _tmp69_->type;
-										if (_tmp70_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+										if (_tmp70_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 											ValadocGtkdocToken* _tmp71_;
 											const gchar* _tmp72_;
 											_tmp71_ = self->priv->current;
@@ -4951,7 +4951,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 											ValadocGtkdocTokenType _tmp78_;
 											_tmp77_ = self->priv->current;
 											_tmp78_ = _tmp77_->type;
-											if (_tmp78_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+											if (_tmp78_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 												ValadocGtkdocToken* _tmp79_;
 												const gchar* _tmp80_;
 												_tmp79_ = self->priv->current;
@@ -4975,7 +4975,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 												ValadocGtkdocTokenType _tmp86_;
 												_tmp85_ = self->priv->current;
 												_tmp86_ = _tmp85_->type;
-												if (_tmp86_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+												if (_tmp86_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 													ValadocGtkdocToken* _tmp87_;
 													const gchar* _tmp88_;
 													_tmp87_ = self->priv->current;
@@ -4999,7 +4999,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 													ValadocGtkdocTokenType _tmp94_;
 													_tmp93_ = self->priv->current;
 													_tmp94_ = _tmp93_->type;
-													if (_tmp94_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+													if (_tmp94_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 														ValadocGtkdocToken* _tmp95_;
 														const gchar* _tmp96_;
 														_tmp95_ = self->priv->current;
@@ -5023,7 +5023,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 														ValadocGtkdocTokenType _tmp102_;
 														_tmp101_ = self->priv->current;
 														_tmp102_ = _tmp101_->type;
-														if (_tmp102_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+														if (_tmp102_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 															ValadocGtkdocToken* _tmp103_;
 															const gchar* _tmp104_;
 															_tmp103_ = self->priv->current;
@@ -5047,7 +5047,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 															ValadocGtkdocTokenType _tmp110_;
 															_tmp109_ = self->priv->current;
 															_tmp110_ = _tmp109_->type;
-															if (_tmp110_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+															if (_tmp110_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																ValadocGtkdocToken* _tmp111_;
 																const gchar* _tmp112_;
 																_tmp111_ = self->priv->current;
@@ -5071,7 +5071,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 																ValadocGtkdocTokenType _tmp118_;
 																_tmp117_ = self->priv->current;
 																_tmp118_ = _tmp117_->type;
-																if (_tmp118_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																if (_tmp118_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																	ValadocGtkdocToken* _tmp119_;
 																	const gchar* _tmp120_;
 																	_tmp119_ = self->priv->current;
@@ -5095,7 +5095,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 																	ValadocGtkdocTokenType _tmp126_;
 																	_tmp125_ = self->priv->current;
 																	_tmp126_ = _tmp125_->type;
-																	if (_tmp126_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																	if (_tmp126_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																		ValadocGtkdocToken* _tmp127_;
 																		const gchar* _tmp128_;
 																		_tmp127_ = self->priv->current;
@@ -5119,7 +5119,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 																		ValadocGtkdocTokenType _tmp134_;
 																		_tmp133_ = self->priv->current;
 																		_tmp134_ = _tmp133_->type;
-																		if (_tmp134_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																		if (_tmp134_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																			ValadocGtkdocToken* _tmp135_;
 																			const gchar* _tmp136_;
 																			_tmp135_ = self->priv->current;
@@ -5143,7 +5143,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 																			ValadocGtkdocTokenType _tmp142_;
 																			_tmp141_ = self->priv->current;
 																			_tmp142_ = _tmp141_->type;
-																			if (_tmp142_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																			if (_tmp142_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																				ValadocGtkdocToken* _tmp143_;
 																				const gchar* _tmp144_;
 																				_tmp143_ = self->priv->current;
@@ -5166,7 +5166,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 																				ValadocGtkdocTokenType _tmp149_;
 																				_tmp148_ = self->priv->current;
 																				_tmp149_ = _tmp148_->type;
-																				if (_tmp149_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PARAGRAPH) {
+																				if (_tmp149_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PARAGRAPH) {
 																					ValaCollection* _tmp150_;
 																					ValadocContentParagraph* _tmp151_;
 																					ValadocContentParagraph* _tmp152_;
@@ -5180,7 +5180,7 @@ valadoc_gtkdoc_parser_parse_block_content (ValadocGtkdocParser* self)
 																					ValadocGtkdocTokenType _tmp154_;
 																					_tmp153_ = self->priv->current;
 																					_tmp154_ = _tmp153_->type;
-																					if (_tmp154_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SOURCE_OPEN) {
+																					if (_tmp154_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SOURCE_OPEN) {
 																						ValaCollection* _tmp155_;
 																						ValadocContentParagraph* _tmp156_;
 																						ValadocContentParagraph* _tmp157_;
@@ -5253,7 +5253,7 @@ valadoc_gtkdoc_parser_parse_xml_tag (ValadocGtkdocParser* self)
 	valadoc_gtkdoc_parser_parse_docbook_spaces (self, FALSE);
 	_tmp6_ = self->priv->current;
 	_tmp7_ = _tmp6_->type;
-	if (_tmp7_ != VALADOC_GTKDOC_TOKEN_TYPE_WORD) {
+	if (_tmp7_ != BALADOC_GTKDOC_TOKEN_TYPE_WORD) {
 		ValadocGtkdocToken* _tmp8_;
 		_tmp8_ = self->priv->current;
 		valadoc_gtkdoc_parser_report_unexpected_token (self, _tmp8_, "<WORD>");
@@ -5262,7 +5262,7 @@ valadoc_gtkdoc_parser_parse_xml_tag (ValadocGtkdocParser* self)
 		return result;
 	}
 	_tmp9_ = self->priv->factory;
-	_tmp10_ = valadoc_content_content_factory_create_run (_tmp9_, VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+	_tmp10_ = valadoc_content_content_factory_create_run (_tmp9_, BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 	run = _tmp10_;
 	_tmp12_ = _class;
 	if (_tmp12_ == NULL) {
@@ -5419,7 +5419,7 @@ valadoc_gtkdoc_parser_append_inline_content_string (ValadocGtkdocParser* self,
 		_tmp5_ = _tmp4_;
 		_tmp6_ = vala_list_last (_tmp5_);
 		_tmp7_ = (ValadocContentInline*) _tmp6_;
-		_tmp8_ = VALADOC_CONTENT_IS_TEXT (_tmp7_) ? ((ValadocContentText*) _tmp7_) : NULL;
+		_tmp8_ = BALADOC_CONTENT_IS_TEXT (_tmp7_) ? ((ValadocContentText*) _tmp7_) : NULL;
 		if (_tmp8_ == NULL) {
 			_g_object_unref0 (_tmp7_);
 		}
@@ -5532,7 +5532,7 @@ valadoc_gtkdoc_parser_create_type_link (ValadocGtkdocParser* self,
 		ValadocContentText* _tmp11_;
 		ValadocContentText* _tmp12_;
 		_tmp3_ = self->priv->factory;
-		_tmp4_ = valadoc_content_content_factory_create_run (_tmp3_, VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+		_tmp4_ = valadoc_content_content_factory_create_run (_tmp3_, BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 		monospaced = _tmp4_;
 		_tmp5_ = monospaced;
 		_tmp6_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp5_);
@@ -5559,7 +5559,7 @@ valadoc_gtkdoc_parser_create_type_link (ValadocGtkdocParser* self,
 		gchar* _tmp20_;
 		_tmp13_ = self->priv->factory;
 		_tmp14_ = valadoc_content_content_factory_create_taglet (_tmp13_, "link");
-		_tmp15_ = VALADOC_TAGLETS_IS_LINK (_tmp14_) ? ((ValadocTagletsLink*) _tmp14_) : NULL;
+		_tmp15_ = BALADOC_TAGLETS_IS_LINK (_tmp14_) ? ((ValadocTagletsLink*) _tmp14_) : NULL;
 		if (_tmp15_ == NULL) {
 			_g_object_unref0 (_tmp14_);
 		}
@@ -5604,7 +5604,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 	ValadocContentRun* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = self->priv->factory;
-	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, VALADOC_CONTENT_RUN_STYLE_NONE);
+	_tmp1_ = valadoc_content_content_factory_create_run (_tmp0_, BALADOC_CONTENT_RUN_STYLE_NONE);
 	run = _tmp1_;
 	while (TRUE) {
 		ValadocGtkdocToken* _tmp2_;
@@ -5614,12 +5614,12 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 		ValadocGtkdocTokenType _tmp6_;
 		_tmp2_ = self->priv->current;
 		_tmp3_ = _tmp2_->type;
-		if (!(_tmp3_ != VALADOC_GTKDOC_TOKEN_TYPE_EOF)) {
+		if (!(_tmp3_ != BALADOC_GTKDOC_TOKEN_TYPE_EOF)) {
 			break;
 		}
 		_tmp5_ = self->priv->current;
 		_tmp6_ = _tmp5_->type;
-		if (_tmp6_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+		if (_tmp6_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 			ValadocGtkdocToken* _tmp7_;
 			const gchar* _tmp8_;
 			_tmp7_ = self->priv->current;
@@ -5633,7 +5633,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 			ValadocContentRun* _tmp10_;
 			ValadocContentRun* _tmp11_;
 			_tmp9_ = run;
-			_tmp10_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "firstterm", VALADOC_CONTENT_RUN_STYLE_ITALIC);
+			_tmp10_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "firstterm", BALADOC_CONTENT_RUN_STYLE_ITALIC);
 			_tmp11_ = _tmp10_;
 			valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp9_, (ValadocContentInline*) _tmp11_);
 			_g_object_unref0 (_tmp11_);
@@ -5643,7 +5643,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 			ValadocGtkdocTokenType _tmp14_;
 			_tmp13_ = self->priv->current;
 			_tmp14_ = _tmp13_->type;
-			if (_tmp14_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+			if (_tmp14_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 				ValadocGtkdocToken* _tmp15_;
 				const gchar* _tmp16_;
 				_tmp15_ = self->priv->current;
@@ -5657,7 +5657,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 				ValadocContentRun* _tmp18_;
 				ValadocContentRun* _tmp19_;
 				_tmp17_ = run;
-				_tmp18_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "abbrev", VALADOC_CONTENT_RUN_STYLE_ITALIC);
+				_tmp18_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "abbrev", BALADOC_CONTENT_RUN_STYLE_ITALIC);
 				_tmp19_ = _tmp18_;
 				valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp17_, (ValadocContentInline*) _tmp19_);
 				_g_object_unref0 (_tmp19_);
@@ -5667,7 +5667,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 				ValadocGtkdocTokenType _tmp22_;
 				_tmp21_ = self->priv->current;
 				_tmp22_ = _tmp21_->type;
-				if (_tmp22_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+				if (_tmp22_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 					ValadocGtkdocToken* _tmp23_;
 					const gchar* _tmp24_;
 					_tmp23_ = self->priv->current;
@@ -5681,7 +5681,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 					ValadocContentRun* _tmp26_;
 					ValadocContentRun* _tmp27_;
 					_tmp25_ = run;
-					_tmp26_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "term", VALADOC_CONTENT_RUN_STYLE_ITALIC);
+					_tmp26_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "term", BALADOC_CONTENT_RUN_STYLE_ITALIC);
 					_tmp27_ = _tmp26_;
 					valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp25_, (ValadocContentInline*) _tmp27_);
 					_g_object_unref0 (_tmp27_);
@@ -5691,7 +5691,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 					ValadocGtkdocTokenType _tmp30_;
 					_tmp29_ = self->priv->current;
 					_tmp30_ = _tmp29_->type;
-					if (_tmp30_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+					if (_tmp30_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 						ValadocGtkdocToken* _tmp31_;
 						const gchar* _tmp32_;
 						_tmp31_ = self->priv->current;
@@ -5705,7 +5705,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 						ValadocContentRun* _tmp34_;
 						ValadocContentRun* _tmp35_;
 						_tmp33_ = run;
-						_tmp34_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "literal", VALADOC_CONTENT_RUN_STYLE_ITALIC);
+						_tmp34_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "literal", BALADOC_CONTENT_RUN_STYLE_ITALIC);
 						_tmp35_ = _tmp34_;
 						valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp33_, (ValadocContentInline*) _tmp35_);
 						_g_object_unref0 (_tmp35_);
@@ -5715,7 +5715,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 						ValadocGtkdocTokenType _tmp38_;
 						_tmp37_ = self->priv->current;
 						_tmp38_ = _tmp37_->type;
-						if (_tmp38_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+						if (_tmp38_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 							ValadocGtkdocToken* _tmp39_;
 							const gchar* _tmp40_;
 							_tmp39_ = self->priv->current;
@@ -5729,7 +5729,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 							ValadocContentRun* _tmp42_;
 							ValadocContentRun* _tmp43_;
 							_tmp41_ = run;
-							_tmp42_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "literallayout", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+							_tmp42_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "literallayout", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 							_tmp43_ = _tmp42_;
 							valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp41_, (ValadocContentInline*) _tmp43_);
 							_g_object_unref0 (_tmp43_);
@@ -5739,7 +5739,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 							ValadocGtkdocTokenType _tmp46_;
 							_tmp45_ = self->priv->current;
 							_tmp46_ = _tmp45_->type;
-							if (_tmp46_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+							if (_tmp46_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 								ValadocGtkdocToken* _tmp47_;
 								const gchar* _tmp48_;
 								_tmp47_ = self->priv->current;
@@ -5753,7 +5753,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 								ValadocContentRun* _tmp50_;
 								ValadocContentRun* _tmp51_;
 								_tmp49_ = run;
-								_tmp50_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "application", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+								_tmp50_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "application", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 								_tmp51_ = _tmp50_;
 								valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp49_, (ValadocContentInline*) _tmp51_);
 								_g_object_unref0 (_tmp51_);
@@ -5763,7 +5763,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 								ValadocGtkdocTokenType _tmp54_;
 								_tmp53_ = self->priv->current;
 								_tmp54_ = _tmp53_->type;
-								if (_tmp54_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+								if (_tmp54_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 									ValadocGtkdocToken* _tmp55_;
 									const gchar* _tmp56_;
 									_tmp55_ = self->priv->current;
@@ -5777,7 +5777,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 									ValadocContentRun* _tmp58_;
 									ValadocContentRun* _tmp59_;
 									_tmp57_ = run;
-									_tmp58_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "varname", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+									_tmp58_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "varname", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 									_tmp59_ = _tmp58_;
 									valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp57_, (ValadocContentInline*) _tmp59_);
 									_g_object_unref0 (_tmp59_);
@@ -5787,7 +5787,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 									ValadocGtkdocTokenType _tmp62_;
 									_tmp61_ = self->priv->current;
 									_tmp62_ = _tmp61_->type;
-									if (_tmp62_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+									if (_tmp62_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 										ValadocGtkdocToken* _tmp63_;
 										const gchar* _tmp64_;
 										_tmp63_ = self->priv->current;
@@ -5801,7 +5801,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 										ValadocContentRun* _tmp66_;
 										ValadocContentRun* _tmp67_;
 										_tmp65_ = run;
-										_tmp66_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "computeroutput", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+										_tmp66_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "computeroutput", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 										_tmp67_ = _tmp66_;
 										valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp65_, (ValadocContentInline*) _tmp67_);
 										_g_object_unref0 (_tmp67_);
@@ -5811,7 +5811,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 										ValadocGtkdocTokenType _tmp70_;
 										_tmp69_ = self->priv->current;
 										_tmp70_ = _tmp69_->type;
-										if (_tmp70_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+										if (_tmp70_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 											ValadocGtkdocToken* _tmp71_;
 											const gchar* _tmp72_;
 											_tmp71_ = self->priv->current;
@@ -5825,7 +5825,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 											ValadocContentRun* _tmp74_;
 											ValadocContentRun* _tmp75_;
 											_tmp73_ = run;
-											_tmp74_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "emphasis", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+											_tmp74_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "emphasis", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 											_tmp75_ = _tmp74_;
 											valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp73_, (ValadocContentInline*) _tmp75_);
 											_g_object_unref0 (_tmp75_);
@@ -5835,7 +5835,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 											ValadocGtkdocTokenType _tmp78_;
 											_tmp77_ = self->priv->current;
 											_tmp78_ = _tmp77_->type;
-											if (_tmp78_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+											if (_tmp78_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 												ValadocGtkdocToken* _tmp79_;
 												const gchar* _tmp80_;
 												_tmp79_ = self->priv->current;
@@ -5849,7 +5849,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 												ValadocContentRun* _tmp82_;
 												ValadocContentRun* _tmp83_;
 												_tmp81_ = run;
-												_tmp82_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "pre", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+												_tmp82_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "pre", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 												_tmp83_ = _tmp82_;
 												valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp81_, (ValadocContentInline*) _tmp83_);
 												_g_object_unref0 (_tmp83_);
@@ -5859,7 +5859,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 												ValadocGtkdocTokenType _tmp86_;
 												_tmp85_ = self->priv->current;
 												_tmp86_ = _tmp85_->type;
-												if (_tmp86_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+												if (_tmp86_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 													ValadocGtkdocToken* _tmp87_;
 													const gchar* _tmp88_;
 													_tmp87_ = self->priv->current;
@@ -5873,7 +5873,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 													ValadocContentRun* _tmp90_;
 													ValadocContentRun* _tmp91_;
 													_tmp89_ = run;
-													_tmp90_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "code", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+													_tmp90_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "code", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 													_tmp91_ = _tmp90_;
 													valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp89_, (ValadocContentInline*) _tmp91_);
 													_g_object_unref0 (_tmp91_);
@@ -5883,7 +5883,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 													ValadocGtkdocTokenType _tmp94_;
 													_tmp93_ = self->priv->current;
 													_tmp94_ = _tmp93_->type;
-													if (_tmp94_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+													if (_tmp94_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 														ValadocGtkdocToken* _tmp95_;
 														const gchar* _tmp96_;
 														_tmp95_ = self->priv->current;
@@ -5897,7 +5897,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 														ValadocContentRun* _tmp98_;
 														ValadocContentRun* _tmp99_;
 														_tmp97_ = run;
-														_tmp98_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "guimenuitem", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+														_tmp98_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "guimenuitem", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 														_tmp99_ = _tmp98_;
 														valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp97_, (ValadocContentInline*) _tmp99_);
 														_g_object_unref0 (_tmp99_);
@@ -5907,7 +5907,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 														ValadocGtkdocTokenType _tmp102_;
 														_tmp101_ = self->priv->current;
 														_tmp102_ = _tmp101_->type;
-														if (_tmp102_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+														if (_tmp102_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 															ValadocGtkdocToken* _tmp103_;
 															const gchar* _tmp104_;
 															_tmp103_ = self->priv->current;
@@ -5921,7 +5921,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 															ValadocContentRun* _tmp106_;
 															ValadocContentRun* _tmp107_;
 															_tmp105_ = run;
-															_tmp106_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "command", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+															_tmp106_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "command", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 															_tmp107_ = _tmp106_;
 															valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp105_, (ValadocContentInline*) _tmp107_);
 															_g_object_unref0 (_tmp107_);
@@ -5931,7 +5931,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 															ValadocGtkdocTokenType _tmp110_;
 															_tmp109_ = self->priv->current;
 															_tmp110_ = _tmp109_->type;
-															if (_tmp110_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+															if (_tmp110_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																ValadocGtkdocToken* _tmp111_;
 																const gchar* _tmp112_;
 																_tmp111_ = self->priv->current;
@@ -5945,7 +5945,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																ValadocContentRun* _tmp114_;
 																ValadocContentRun* _tmp115_;
 																_tmp113_ = run;
-																_tmp114_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "option", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+																_tmp114_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "option", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 																_tmp115_ = _tmp114_;
 																valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp113_, (ValadocContentInline*) _tmp115_);
 																_g_object_unref0 (_tmp115_);
@@ -5955,7 +5955,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																ValadocGtkdocTokenType _tmp118_;
 																_tmp117_ = self->priv->current;
 																_tmp118_ = _tmp117_->type;
-																if (_tmp118_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																if (_tmp118_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																	ValadocGtkdocToken* _tmp119_;
 																	const gchar* _tmp120_;
 																	_tmp119_ = self->priv->current;
@@ -5969,7 +5969,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																	ValadocContentRun* _tmp122_;
 																	ValadocContentRun* _tmp123_;
 																	_tmp121_ = run;
-																	_tmp122_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "keycap", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+																	_tmp122_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "keycap", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 																	_tmp123_ = _tmp122_;
 																	valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp121_, (ValadocContentInline*) _tmp123_);
 																	_g_object_unref0 (_tmp123_);
@@ -5979,7 +5979,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																	ValadocGtkdocTokenType _tmp126_;
 																	_tmp125_ = self->priv->current;
 																	_tmp126_ = _tmp125_->type;
-																	if (_tmp126_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																	if (_tmp126_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																		ValadocGtkdocToken* _tmp127_;
 																		const gchar* _tmp128_;
 																		_tmp127_ = self->priv->current;
@@ -5993,7 +5993,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																		ValadocContentRun* _tmp130_;
 																		ValadocContentRun* _tmp131_;
 																		_tmp129_ = run;
-																		_tmp130_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "keycombo", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+																		_tmp130_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "keycombo", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 																		_tmp131_ = _tmp130_;
 																		valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp129_, (ValadocContentInline*) _tmp131_);
 																		_g_object_unref0 (_tmp131_);
@@ -6003,7 +6003,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																		ValadocGtkdocTokenType _tmp134_;
 																		_tmp133_ = self->priv->current;
 																		_tmp134_ = _tmp133_->type;
-																		if (_tmp134_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																		if (_tmp134_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																			ValadocGtkdocToken* _tmp135_;
 																			const gchar* _tmp136_;
 																			_tmp135_ = self->priv->current;
@@ -6017,7 +6017,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																			ValadocContentRun* _tmp138_;
 																			ValadocContentRun* _tmp139_;
 																			_tmp137_ = run;
-																			_tmp138_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "envar", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+																			_tmp138_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "envar", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 																			_tmp139_ = _tmp138_;
 																			valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp137_, (ValadocContentInline*) _tmp139_);
 																			_g_object_unref0 (_tmp139_);
@@ -6027,7 +6027,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																			ValadocGtkdocTokenType _tmp142_;
 																			_tmp141_ = self->priv->current;
 																			_tmp142_ = _tmp141_->type;
-																			if (_tmp142_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																			if (_tmp142_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																				ValadocGtkdocToken* _tmp143_;
 																				const gchar* _tmp144_;
 																				_tmp143_ = self->priv->current;
@@ -6041,7 +6041,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																				ValadocContentRun* _tmp146_;
 																				ValadocContentRun* _tmp147_;
 																				_tmp145_ = run;
-																				_tmp146_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "filename", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+																				_tmp146_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "filename", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 																				_tmp147_ = _tmp146_;
 																				valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp145_, (ValadocContentInline*) _tmp147_);
 																				_g_object_unref0 (_tmp147_);
@@ -6051,7 +6051,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																				ValadocGtkdocTokenType _tmp150_;
 																				_tmp149_ = self->priv->current;
 																				_tmp150_ = _tmp149_->type;
-																				if (_tmp150_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																				if (_tmp150_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																					ValadocGtkdocToken* _tmp151_;
 																					const gchar* _tmp152_;
 																					_tmp151_ = self->priv->current;
@@ -6065,7 +6065,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																					ValadocContentRun* _tmp154_;
 																					ValadocContentRun* _tmp155_;
 																					_tmp153_ = run;
-																					_tmp154_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "parameter", VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+																					_tmp154_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "parameter", BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 																					_tmp155_ = _tmp154_;
 																					valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp153_, (ValadocContentInline*) _tmp155_);
 																					_g_object_unref0 (_tmp155_);
@@ -6075,7 +6075,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																					ValadocGtkdocTokenType _tmp158_;
 																					_tmp157_ = self->priv->current;
 																					_tmp158_ = _tmp157_->type;
-																					if (_tmp158_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																					if (_tmp158_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																						ValadocGtkdocToken* _tmp159_;
 																						const gchar* _tmp160_;
 																						_tmp159_ = self->priv->current;
@@ -6089,7 +6089,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																						ValadocContentRun* _tmp162_;
 																						ValadocContentRun* _tmp163_;
 																						_tmp161_ = run;
-																						_tmp162_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "replaceable", VALADOC_CONTENT_RUN_STYLE_ITALIC);
+																						_tmp162_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "replaceable", BALADOC_CONTENT_RUN_STYLE_ITALIC);
 																						_tmp163_ = _tmp162_;
 																						valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp161_, (ValadocContentInline*) _tmp163_);
 																						_g_object_unref0 (_tmp163_);
@@ -6099,7 +6099,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																						ValadocGtkdocTokenType _tmp166_;
 																						_tmp165_ = self->priv->current;
 																						_tmp166_ = _tmp165_->type;
-																						if (_tmp166_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																						if (_tmp166_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																							ValadocGtkdocToken* _tmp167_;
 																							const gchar* _tmp168_;
 																							_tmp167_ = self->priv->current;
@@ -6133,7 +6133,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																							vala_collection_add ((ValaCollection*) _tmp171_, (ValadocContentInline*) _tmp174_);
 																							_g_object_unref0 (_tmp174_);
 																							_tmp175_ = run;
-																							_tmp176_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "quote", VALADOC_CONTENT_RUN_STYLE_NONE);
+																							_tmp176_ = valadoc_gtkdoc_parser_parse_highlighted_template (self, "quote", BALADOC_CONTENT_RUN_STYLE_NONE);
 																							_tmp177_ = _tmp176_;
 																							valadoc_gtkdoc_parser_append_inline_content_not_null (self, _tmp175_, (ValadocContentInline*) _tmp177_);
 																							_g_object_unref0 (_tmp177_);
@@ -6151,7 +6151,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																							ValadocGtkdocTokenType _tmp186_;
 																							_tmp185_ = self->priv->current;
 																							_tmp186_ = _tmp185_->type;
-																							if (_tmp186_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																							if (_tmp186_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																								ValadocGtkdocToken* _tmp187_;
 																								const gchar* _tmp188_;
 																								_tmp187_ = self->priv->current;
@@ -6175,7 +6175,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																								ValadocGtkdocTokenType _tmp194_;
 																								_tmp193_ = self->priv->current;
 																								_tmp194_ = _tmp193_->type;
-																								if (_tmp194_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																								if (_tmp194_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																									ValadocGtkdocToken* _tmp195_;
 																									const gchar* _tmp196_;
 																									_tmp195_ = self->priv->current;
@@ -6199,7 +6199,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																									ValadocGtkdocTokenType _tmp202_;
 																									_tmp201_ = self->priv->current;
 																									_tmp202_ = _tmp201_->type;
-																									if (_tmp202_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																									if (_tmp202_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																										ValadocGtkdocToken* _tmp203_;
 																										const gchar* _tmp204_;
 																										_tmp203_ = self->priv->current;
@@ -6223,7 +6223,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																										ValadocGtkdocTokenType _tmp210_;
 																										_tmp209_ = self->priv->current;
 																										_tmp210_ = _tmp209_->type;
-																										if (_tmp210_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																										if (_tmp210_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																											ValadocGtkdocToken* _tmp211_;
 																											const gchar* _tmp212_;
 																											_tmp211_ = self->priv->current;
@@ -6247,7 +6247,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																											ValadocGtkdocTokenType _tmp218_;
 																											_tmp217_ = self->priv->current;
 																											_tmp218_ = _tmp217_->type;
-																											if (_tmp218_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																											if (_tmp218_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																												ValadocGtkdocToken* _tmp219_;
 																												const gchar* _tmp220_;
 																												_tmp219_ = self->priv->current;
@@ -6271,7 +6271,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																												ValadocGtkdocTokenType _tmp226_;
 																												_tmp225_ = self->priv->current;
 																												_tmp226_ = _tmp225_->type;
-																												if (_tmp226_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																												if (_tmp226_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																													ValadocGtkdocToken* _tmp227_;
 																													const gchar* _tmp228_;
 																													_tmp227_ = self->priv->current;
@@ -6295,7 +6295,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																													ValadocGtkdocTokenType _tmp234_;
 																													_tmp233_ = self->priv->current;
 																													_tmp234_ = _tmp233_->type;
-																													if (_tmp234_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																													if (_tmp234_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																														ValadocGtkdocToken* _tmp235_;
 																														const gchar* _tmp236_;
 																														_tmp235_ = self->priv->current;
@@ -6319,7 +6319,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																														ValadocGtkdocTokenType _tmp242_;
 																														_tmp241_ = self->priv->current;
 																														_tmp242_ = _tmp241_->type;
-																														if (_tmp242_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																														if (_tmp242_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																															ValadocGtkdocToken* _tmp243_;
 																															const gchar* _tmp244_;
 																															_tmp243_ = self->priv->current;
@@ -6343,7 +6343,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																															ValadocGtkdocTokenType _tmp250_;
 																															_tmp249_ = self->priv->current;
 																															_tmp250_ = _tmp249_->type;
-																															if (_tmp250_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																															if (_tmp250_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																																ValadocGtkdocToken* _tmp251_;
 																																const gchar* _tmp252_;
 																																_tmp251_ = self->priv->current;
@@ -6367,7 +6367,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																ValadocGtkdocTokenType _tmp258_;
 																																_tmp257_ = self->priv->current;
 																																_tmp258_ = _tmp257_->type;
-																																if (_tmp258_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																																if (_tmp258_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																																	ValadocGtkdocToken* _tmp259_;
 																																	const gchar* _tmp260_;
 																																	_tmp259_ = self->priv->current;
@@ -6384,7 +6384,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																	ValadocGtkdocTokenType _tmp263_;
 																																	_tmp262_ = self->priv->current;
 																																	_tmp263_ = _tmp262_->type;
-																																	if (_tmp263_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																																	if (_tmp263_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																																		ValadocGtkdocToken* _tmp264_;
 																																		const gchar* _tmp265_;
 																																		_tmp264_ = self->priv->current;
@@ -6408,7 +6408,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																		ValadocGtkdocTokenType _tmp271_;
 																																		_tmp270_ = self->priv->current;
 																																		_tmp271_ = _tmp270_->type;
-																																		if (_tmp271_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																																		if (_tmp271_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																																			ValadocGtkdocToken* _tmp272_;
 																																			const gchar* _tmp273_;
 																																			_tmp272_ = self->priv->current;
@@ -6432,7 +6432,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																			ValadocGtkdocTokenType _tmp279_;
 																																			_tmp278_ = self->priv->current;
 																																			_tmp279_ = _tmp278_->type;
-																																			if (_tmp279_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																																			if (_tmp279_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																																				ValadocGtkdocToken* _tmp280_;
 																																				const gchar* _tmp281_;
 																																				_tmp280_ = self->priv->current;
@@ -6456,7 +6456,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																				ValadocGtkdocTokenType _tmp287_;
 																																				_tmp286_ = self->priv->current;
 																																				_tmp287_ = _tmp286_->type;
-																																				if (_tmp287_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
+																																				if (_tmp287_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_OPEN) {
 																																					ValadocGtkdocToken* _tmp288_;
 																																					const gchar* _tmp289_;
 																																					_tmp288_ = self->priv->current;
@@ -6479,7 +6479,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																					ValadocGtkdocTokenType _tmp294_;
 																																					_tmp293_ = self->priv->current;
 																																					_tmp294_ = _tmp293_->type;
-																																					if (_tmp294_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_FUNCTION) {
+																																					if (_tmp294_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_FUNCTION) {
 																																						ValadocContentRun* _tmp295_;
 																																						ValaList* _tmp296_;
 																																						ValaList* _tmp297_;
@@ -6506,7 +6506,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																						ValadocGtkdocTokenType _tmp305_;
 																																						_tmp304_ = self->priv->current;
 																																						_tmp305_ = _tmp304_->type;
-																																						if (_tmp305_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PARAM) {
+																																						if (_tmp305_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PARAM) {
 																																							ValadocGtkdocToken* _tmp306_;
 																																							const gchar* _tmp307_;
 																																							const gchar* _tmp308_;
@@ -6531,7 +6531,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																								ValaList* _tmp319_;
 																																								ValadocContentRun* _tmp320_;
 																																								_tmp309_ = self->priv->factory;
-																																								_tmp310_ = valadoc_content_content_factory_create_run (_tmp309_, VALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
+																																								_tmp310_ = valadoc_content_content_factory_create_run (_tmp309_, BALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
 																																								keyword_run = _tmp310_;
 																																								_tmp311_ = self->priv->factory;
 																																								_tmp312_ = valadoc_content_content_factory_create_text (_tmp311_, "this");
@@ -6581,7 +6581,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																								is_return_type_len = _tmp327_;
 																																								cname = _tmp328_;
 																																								_tmp329_ = self->priv->factory;
-																																								_tmp330_ = valadoc_content_content_factory_create_run (_tmp329_, VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+																																								_tmp330_ = valadoc_content_content_factory_create_run (_tmp329_, BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 																																								current_run = _tmp330_;
 																																								_tmp331_ = run;
 																																								_tmp332_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp331_);
@@ -6609,7 +6609,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																									ValadocContentText* _tmp351_;
 																																									ValadocContentText* _tmp352_;
 																																									_tmp335_ = self->priv->factory;
-																																									_tmp336_ = valadoc_content_content_factory_create_run (_tmp335_, VALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
+																																									_tmp336_ = valadoc_content_content_factory_create_run (_tmp335_, BALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
 																																									keyword_run = _tmp336_;
 																																									_tmp337_ = keyword_run;
 																																									_tmp338_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp337_);
@@ -6705,7 +6705,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																									_g_object_unref0 (_tmp376_);
 																																									_tmp377_ = self->priv->factory;
 																																									_tmp378_ = valadoc_content_content_factory_create_taglet (_tmp377_, "link");
-																																									_tmp379_ = VALADOC_TAGLETS_IS_LINK (_tmp378_) ? ((ValadocTagletsLink*) _tmp378_) : NULL;
+																																									_tmp379_ = BALADOC_TAGLETS_IS_LINK (_tmp378_) ? ((ValadocTagletsLink*) _tmp378_) : NULL;
 																																									if (_tmp379_ == NULL) {
 																																										_g_object_unref0 (_tmp378_);
 																																									}
@@ -6733,7 +6733,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																							ValadocGtkdocTokenType _tmp389_;
 																																							_tmp388_ = self->priv->current;
 																																							_tmp389_ = _tmp388_->type;
-																																							if (_tmp389_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SIGNAL) {
+																																							if (_tmp389_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_SIGNAL) {
 																																								ValadocContentRun* _tmp390_;
 																																								ValaList* _tmp391_;
 																																								ValaList* _tmp392_;
@@ -6765,7 +6765,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																								ValadocGtkdocTokenType _tmp402_;
 																																								_tmp401_ = self->priv->current;
 																																								_tmp402_ = _tmp401_->type;
-																																								if (_tmp402_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PROPERTY) {
+																																								if (_tmp402_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_PROPERTY) {
 																																									ValadocContentRun* _tmp403_;
 																																									ValaList* _tmp404_;
 																																									ValaList* _tmp405_;
@@ -6797,7 +6797,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																									ValadocGtkdocTokenType _tmp415_;
 																																									_tmp414_ = self->priv->current;
 																																									_tmp415_ = _tmp414_->type;
-																																									if (_tmp415_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_CONST) {
+																																									if (_tmp415_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_CONST) {
 																																										ValadocContentRun* _tmp416_;
 																																										ValaList* _tmp417_;
 																																										ValaList* _tmp418_;
@@ -6824,7 +6824,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																										ValadocGtkdocTokenType _tmp426_;
 																																										_tmp425_ = self->priv->current;
 																																										_tmp426_ = _tmp425_->type;
-																																										if (_tmp426_ == VALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_TYPE) {
+																																										if (_tmp426_ == BALADOC_GTKDOC_TOKEN_TYPE_GTKDOC_TYPE) {
 																																											ValadocContentRun* _tmp427_;
 																																											ValaList* _tmp428_;
 																																											ValaList* _tmp429_;
@@ -6852,14 +6852,14 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																											ValadocGtkdocTokenType _tmp438_;
 																																											_tmp437_ = self->priv->current;
 																																											_tmp438_ = _tmp437_->type;
-																																											if (_tmp438_ == VALADOC_GTKDOC_TOKEN_TYPE_NEWLINE) {
+																																											if (_tmp438_ == BALADOC_GTKDOC_TOKEN_TYPE_NEWLINE) {
 																																												_tmp436_ = TRUE;
 																																											} else {
 																																												ValadocGtkdocToken* _tmp439_;
 																																												ValadocGtkdocTokenType _tmp440_;
 																																												_tmp439_ = self->priv->current;
 																																												_tmp440_ = _tmp439_->type;
-																																												_tmp436_ = _tmp440_ == VALADOC_GTKDOC_TOKEN_TYPE_SPACE;
+																																												_tmp436_ = _tmp440_ == BALADOC_GTKDOC_TOKEN_TYPE_SPACE;
 																																											}
 																																											if (_tmp436_) {
 																																												ValadocContentRun* _tmp441_;
@@ -6875,7 +6875,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																												ValadocGtkdocTokenType _tmp445_;
 																																												_tmp444_ = self->priv->current;
 																																												_tmp445_ = _tmp444_->type;
-																																												if (_tmp445_ == VALADOC_GTKDOC_TOKEN_TYPE_WORD) {
+																																												if (_tmp445_ == BALADOC_GTKDOC_TOKEN_TYPE_WORD) {
 																																													ValadocContentRun* _tmp446_;
 																																													ValadocGtkdocToken* _tmp447_;
 																																													const gchar* _tmp448_;
@@ -6894,7 +6894,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																													ValadocGtkdocTokenType _tmp453_;
 																																													_tmp452_ = self->priv->current;
 																																													_tmp453_ = _tmp452_->type;
-																																													if (_tmp453_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
+																																													if (_tmp453_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_CLOSE) {
 																																														_tmp451_ = valadoc_gtkdoc_parser_ignore_current_xml_close (self);
 																																													} else {
 																																														_tmp451_ = FALSE;
@@ -6910,7 +6910,7 @@ valadoc_gtkdoc_parser_parse_inline_content (ValadocGtkdocParser* self)
 																																														ValadocGtkdocTokenType _tmp457_;
 																																														_tmp456_ = self->priv->current;
 																																														_tmp457_ = _tmp456_->type;
-																																														if (_tmp457_ == VALADOC_GTKDOC_TOKEN_TYPE_XML_COMMENT) {
+																																														if (_tmp457_ == BALADOC_GTKDOC_TOKEN_TYPE_XML_COMMENT) {
 																																															ValadocGtkdocToken* _tmp458_;
 																																															ValadocGtkdocToken* _tmp459_;
 																																															_tmp458_ = valadoc_gtkdoc_parser_next (self);
@@ -7015,7 +7015,7 @@ valadoc_gtkdoc_parser_instance_init (ValadocGtkdocParser * self,
 	_tmp2_ = vala_array_list_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, _tmp1_);
 	self->priv->stack = (ValaList*) _tmp2_;
 	_tmp3_ = g_direct_equal;
-	_tmp4_ = vala_array_list_new (VALA_TYPE_ARRAY_LIST, (GBoxedCopyFunc) vala_iterable_ref, (GDestroyNotify) vala_iterable_unref, _tmp3_);
+	_tmp4_ = vala_array_list_new (BALA_TYPE_ARRAY_LIST, (GBoxedCopyFunc) vala_iterable_ref, (GDestroyNotify) vala_iterable_unref, _tmp3_);
 	self->priv->footnotes = (ValaList*) _tmp4_;
 	self->priv->is_numeric_regex = NULL;
 	self->priv->normalize_regex = NULL;
@@ -7028,7 +7028,7 @@ static void
 valadoc_gtkdoc_parser_finalize (GObject * obj)
 {
 	ValadocGtkdocParser * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_GTKDOC_TYPE_PARSER, ValadocGtkdocParser);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_GTKDOC_TYPE_PARSER, ValadocGtkdocParser);
 	_valadoc_gtkdoc_scanner_unref0 (self->priv->scanner);
 	_valadoc_gtkdoc_token_unref0 (self->priv->current);
 	_vala_iterable_unref0 (self->priv->stack);
@@ -7055,7 +7055,7 @@ valadoc_gtkdoc_parser_get_type_once (void)
 	static const GInterfaceInfo valadoc_resource_locator_info = { (GInterfaceInitFunc) valadoc_gtkdoc_parser_valadoc_resource_locator_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_gtkdoc_parser_type_id;
 	valadoc_gtkdoc_parser_type_id = g_type_register_static (G_TYPE_OBJECT, "ValadocGtkdocParser", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_gtkdoc_parser_type_id, VALADOC_TYPE_RESOURCE_LOCATOR, &valadoc_resource_locator_info);
+	g_type_add_interface_static (valadoc_gtkdoc_parser_type_id, BALADOC_TYPE_RESOURCE_LOCATOR, &valadoc_resource_locator_info);
 	ValadocGtkdocParser_private_offset = g_type_add_instance_private (valadoc_gtkdoc_parser_type_id, sizeof (ValadocGtkdocParserPrivate));
 	return valadoc_gtkdoc_parser_type_id;
 }

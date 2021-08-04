@@ -34,7 +34,7 @@ ValadocApiPackage*
 valadoc_documentation_get_package (ValadocDocumentation* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_DOCUMENTATION_GET_INTERFACE (self)->get_package (self);
+	return BALADOC_DOCUMENTATION_GET_INTERFACE (self)->get_package (self);
 }
 
 /**
@@ -44,7 +44,7 @@ gchar*
 valadoc_documentation_get_filename (ValadocDocumentation* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_DOCUMENTATION_GET_INTERFACE (self)->get_filename (self);
+	return BALADOC_DOCUMENTATION_GET_INTERFACE (self)->get_filename (self);
 }
 
 static void
@@ -54,7 +54,7 @@ valadoc_documentation_default_init (ValadocDocumentationIface * iface,
 	/**
 	 * The corresponding package
 	 */
-	g_object_interface_install_property (iface, g_param_spec_object ("package", "package", "package", VALADOC_API_TYPE_PACKAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_interface_install_property (iface, g_param_spec_object ("package", "package", "package", BALADOC_API_TYPE_PACKAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static GType

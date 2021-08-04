@@ -84,7 +84,7 @@ vala_error_domain_new (const gchar* name,
                        ValaSourceReference* source_reference,
                        ValaComment* comment)
 {
-	return vala_error_domain_construct (VALA_TYPE_ERROR_DOMAIN, name, source_reference, comment);
+	return vala_error_domain_construct (BALA_TYPE_ERROR_DOMAIN, name, source_reference, comment);
 }
 
 /**
@@ -131,7 +131,7 @@ vala_error_domain_real_add_method (ValaSymbol* base,
 	const gchar* _tmp22_;
 	self = (ValaErrorDomain*) base;
 	g_return_if_fail (m != NULL);
-	if (VALA_IS_CREATION_METHOD (m)) {
+	if (BALA_IS_CREATION_METHOD (m)) {
 		ValaSourceReference* _tmp0_;
 		ValaSourceReference* _tmp1_;
 		_tmp0_ = vala_code_node_get_source_reference ((ValaCodeNode*) m);
@@ -142,7 +142,7 @@ vala_error_domain_real_add_method (ValaSymbol* base,
 	}
 	_tmp2_ = vala_method_get_binding (m);
 	_tmp3_ = _tmp2_;
-	if (_tmp3_ == VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp3_ == BALA_MEMBER_BINDING_INSTANCE) {
 		ValaErrorType* _tmp4_;
 		ValaErrorType* _tmp5_;
 		ValaSourceReference* _tmp6_;
@@ -457,7 +457,7 @@ vala_error_domain_real_check (ValaCodeNode* base,
 			_tmp32_ = m;
 			_tmp33_ = vala_method_get_binding (_tmp32_);
 			_tmp34_ = _tmp33_;
-			if (_tmp34_ == VALA_MEMBER_BINDING_INSTANCE) {
+			if (_tmp34_ == BALA_MEMBER_BINDING_INSTANCE) {
 				gboolean _tmp35_;
 				gboolean _tmp36_;
 				_tmp35_ = vala_symbol_get_external_package ((ValaSymbol*) self);
@@ -517,10 +517,10 @@ vala_error_domain_instance_init (ValaErrorDomain * self,
 	ValaArrayList* _tmp3_;
 	self->priv = vala_error_domain_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_ERROR_CODE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_ERROR_CODE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->codes = (ValaList*) _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	self->priv->methods = (ValaList*) _tmp3_;
 }
 
@@ -528,10 +528,10 @@ static void
 vala_error_domain_finalize (ValaCodeNode * obj)
 {
 	ValaErrorDomain * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ERROR_DOMAIN, ValaErrorDomain);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ERROR_DOMAIN, ValaErrorDomain);
 	_vala_iterable_unref0 (self->priv->codes);
 	_vala_iterable_unref0 (self->priv->methods);
-	VALA_CODE_NODE_CLASS (vala_error_domain_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_error_domain_parent_class)->finalize (obj);
 }
 
 /**
@@ -542,7 +542,7 @@ vala_error_domain_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaErrorDomainClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_error_domain_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaErrorDomain), 0, (GInstanceInitFunc) vala_error_domain_instance_init, NULL };
 	GType vala_error_domain_type_id;
-	vala_error_domain_type_id = g_type_register_static (VALA_TYPE_TYPESYMBOL, "ValaErrorDomain", &g_define_type_info, 0);
+	vala_error_domain_type_id = g_type_register_static (BALA_TYPE_TYPESYMBOL, "ValaErrorDomain", &g_define_type_info, 0);
 	ValaErrorDomain_private_offset = g_type_add_instance_private (vala_error_domain_type_id, sizeof (ValaErrorDomainPrivate));
 	return vala_error_domain_type_id;
 }

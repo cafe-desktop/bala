@@ -138,7 +138,7 @@ vala_struct_get_base_struct (ValaStruct* self)
 		_tmp1_ = self->priv->_base_type;
 		_tmp2_ = vala_data_type_get_type_symbol (_tmp1_);
 		_tmp3_ = _tmp2_;
-		result = VALA_IS_STRUCT (_tmp3_) ? ((ValaStruct*) _tmp3_) : NULL;
+		result = BALA_IS_STRUCT (_tmp3_) ? ((ValaStruct*) _tmp3_) : NULL;
 		return result;
 	}
 	result = NULL;
@@ -426,7 +426,7 @@ vala_struct_new (const gchar* name,
                  ValaSourceReference* source_reference,
                  ValaComment* comment)
 {
-	return vala_struct_construct (VALA_TYPE_STRUCT, name, source_reference, comment);
+	return vala_struct_construct (BALA_TYPE_STRUCT, name, source_reference, comment);
 }
 
 /**
@@ -513,7 +513,7 @@ vala_struct_real_add_field (ValaSymbol* base,
 	const gchar* _tmp4_;
 	self = (ValaStruct*) base;
 	g_return_if_fail (f != NULL);
-	vala_symbol_set_access ((ValaSymbol*) f, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+	vala_symbol_set_access ((ValaSymbol*) f, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	_tmp0_ = self->priv->fields;
 	vala_collection_add ((ValaCollection*) _tmp0_, f);
 	_tmp1_ = vala_symbol_get_scope ((ValaSymbol*) self);
@@ -580,10 +580,10 @@ vala_struct_real_add_method (ValaSymbol* base,
 	g_return_if_fail (m != NULL);
 	_tmp1_ = vala_method_get_binding (m);
 	_tmp2_ = _tmp1_;
-	if (_tmp2_ == VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp2_ == BALA_MEMBER_BINDING_INSTANCE) {
 		_tmp0_ = TRUE;
 	} else {
-		_tmp0_ = VALA_IS_CREATION_METHOD (m);
+		_tmp0_ = BALA_IS_CREATION_METHOD (m);
 	}
 	if (_tmp0_) {
 		ValaDataType* _tmp3_;
@@ -621,7 +621,7 @@ vala_struct_real_add_method (ValaSymbol* base,
 	}
 	_tmp18_ = vala_callable_get_return_type ((ValaCallable*) m);
 	_tmp19_ = _tmp18_;
-	if (!VALA_IS_VOID_TYPE (_tmp19_)) {
+	if (!BALA_IS_VOID_TYPE (_tmp19_)) {
 		ValaList* _tmp20_;
 		gint _tmp21_;
 		gint _tmp22_;
@@ -658,7 +658,7 @@ vala_struct_real_add_method (ValaSymbol* base,
 		_tmp32_ = _tmp31_;
 		vala_local_variable_set_is_result (_tmp32_, TRUE);
 	}
-	if (VALA_IS_CREATION_METHOD (m)) {
+	if (BALA_IS_CREATION_METHOD (m)) {
 		const gchar* _tmp33_;
 		const gchar* _tmp34_;
 		ValaCreationMethod* cm = NULL;
@@ -670,10 +670,10 @@ vala_struct_real_add_method (ValaSymbol* base,
 		_tmp33_ = vala_symbol_get_name ((ValaSymbol*) m);
 		_tmp34_ = _tmp33_;
 		if (_tmp34_ == NULL) {
-			vala_struct_set_default_construction_method (self, G_TYPE_CHECK_INSTANCE_CAST (m, VALA_TYPE_CREATION_METHOD, ValaCreationMethod));
+			vala_struct_set_default_construction_method (self, G_TYPE_CHECK_INSTANCE_CAST (m, BALA_TYPE_CREATION_METHOD, ValaCreationMethod));
 			vala_symbol_set_name ((ValaSymbol*) m, ".new");
 		}
-		_tmp35_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (m, VALA_TYPE_CREATION_METHOD, ValaCreationMethod));
+		_tmp35_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (m, BALA_TYPE_CREATION_METHOD, ValaCreationMethod));
 		cm = _tmp35_;
 		_tmp37_ = cm;
 		_tmp38_ = vala_creation_method_get_class_name (_tmp37_);
@@ -776,7 +776,7 @@ vala_struct_real_add_property (ValaSymbol* base,
 	vala_scope_add (_tmp2_, _tmp4_, (ValaSymbol*) prop);
 	_tmp5_ = vala_property_get_binding (prop);
 	_tmp6_ = _tmp5_;
-	if (_tmp6_ == VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp6_ == BALA_MEMBER_BINDING_INSTANCE) {
 		ValaDataType* _tmp7_;
 		ValaDataType* _tmp8_;
 		ValaSourceReference* _tmp9_;
@@ -1438,7 +1438,7 @@ vala_struct_real_is_subtype_of (ValaTypeSymbol* base,
 	gboolean result = FALSE;
 	self = (ValaStruct*) base;
 	g_return_val_if_fail (t != NULL, FALSE);
-	if (G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_TYPESYMBOL, ValaTypeSymbol) == t) {
+	if (G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_TYPESYMBOL, ValaTypeSymbol) == t) {
 		result = TRUE;
 		return result;
 	}
@@ -1544,7 +1544,7 @@ vala_struct_is_disposable (ValaStruct* self)
 			_tmp18_ = f;
 			_tmp19_ = vala_field_get_binding (_tmp18_);
 			_tmp20_ = _tmp19_;
-			if (_tmp20_ == VALA_MEMBER_BINDING_INSTANCE) {
+			if (_tmp20_ == BALA_MEMBER_BINDING_INSTANCE) {
 				ValaField* _tmp21_;
 				_tmp21_ = f;
 				_tmp17_ = vala_code_node_get_attribute_bool ((ValaCodeNode*) _tmp21_, "CCode", "delegate_target", TRUE);
@@ -1608,7 +1608,7 @@ vala_struct_is_recursive_value_type (ValaStruct* self,
 	g_return_val_if_fail (self != NULL, FALSE);
 	g_return_val_if_fail (context != NULL, FALSE);
 	g_return_val_if_fail (type != NULL, FALSE);
-	struct_type = VALA_IS_STRUCT_VALUE_TYPE (type) ? ((ValaStructValueType*) type) : NULL;
+	struct_type = BALA_IS_STRUCT_VALUE_TYPE (type) ? ((ValaStructValueType*) type) : NULL;
 	_tmp1_ = struct_type;
 	if (_tmp1_ != NULL) {
 		ValaStructValueType* _tmp2_;
@@ -1631,7 +1631,7 @@ vala_struct_is_recursive_value_type (ValaStruct* self,
 		_tmp5_ = struct_type;
 		_tmp6_ = vala_data_type_get_type_symbol ((ValaDataType*) _tmp5_);
 		_tmp7_ = _tmp6_;
-		st = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, VALA_TYPE_STRUCT, ValaStruct);
+		st = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, BALA_TYPE_STRUCT, ValaStruct);
 		_tmp8_ = st;
 		if (_tmp8_ == self) {
 			result = TRUE;
@@ -1683,7 +1683,7 @@ vala_struct_is_recursive_value_type (ValaStruct* self,
 				_tmp21_ = f;
 				_tmp22_ = vala_field_get_binding (_tmp21_);
 				_tmp23_ = _tmp22_;
-				if (_tmp23_ == VALA_MEMBER_BINDING_INSTANCE) {
+				if (_tmp23_ == BALA_MEMBER_BINDING_INSTANCE) {
 					ValaField* _tmp24_;
 					ValaDataType* _tmp25_;
 					ValaDataType* _tmp26_;
@@ -1809,7 +1809,7 @@ vala_struct_real_check (ValaCodeNode* base,
 		vala_code_node_check ((ValaCodeNode*) _tmp27_, context);
 		_tmp28_ = vala_struct_get_base_type (self);
 		_tmp29_ = _tmp28_;
-		if (!VALA_IS_VALUE_TYPE (_tmp29_)) {
+		if (!BALA_IS_VALUE_TYPE (_tmp29_)) {
 			ValaSourceReference* _tmp30_;
 			ValaSourceReference* _tmp31_;
 			ValaDataType* _tmp32_;
@@ -1930,7 +1930,7 @@ vala_struct_real_check (ValaCodeNode* base,
 			_tmp61_ = f;
 			_tmp62_ = vala_field_get_binding (_tmp61_);
 			_tmp63_ = _tmp62_;
-			if (_tmp63_ == VALA_MEMBER_BINDING_INSTANCE) {
+			if (_tmp63_ == BALA_MEMBER_BINDING_INSTANCE) {
 				ValaField* _tmp64_;
 				ValaDataType* _tmp65_;
 				ValaDataType* _tmp66_;
@@ -1960,7 +1960,7 @@ vala_struct_real_check (ValaCodeNode* base,
 			_tmp71_ = f;
 			_tmp72_ = vala_field_get_binding (_tmp71_);
 			_tmp73_ = _tmp72_;
-			if (_tmp73_ == VALA_MEMBER_BINDING_INSTANCE) {
+			if (_tmp73_ == BALA_MEMBER_BINDING_INSTANCE) {
 				ValaField* _tmp74_;
 				ValaExpression* _tmp75_;
 				ValaExpression* _tmp76_;
@@ -1990,7 +1990,7 @@ vala_struct_real_check (ValaCodeNode* base,
 			_tmp81_ = f;
 			_tmp82_ = vala_field_get_binding (_tmp81_);
 			_tmp83_ = _tmp82_;
-			if (_tmp83_ == VALA_MEMBER_BINDING_STATIC) {
+			if (_tmp83_ == BALA_MEMBER_BINDING_STATIC) {
 				ValaField* _tmp84_;
 				ValaExpression* _tmp85_;
 				ValaExpression* _tmp86_;
@@ -2020,7 +2020,7 @@ vala_struct_real_check (ValaCodeNode* base,
 					_tmp94_ = _tmp93_;
 					_tmp95_ = vala_expression_get_value_type (_tmp94_);
 					_tmp96_ = _tmp95_;
-					_tmp89_ = !VALA_IS_NULL_TYPE (_tmp96_);
+					_tmp89_ = !BALA_IS_NULL_TYPE (_tmp96_);
 				} else {
 					_tmp89_ = FALSE;
 				}
@@ -2189,7 +2189,7 @@ vala_struct_real_check (ValaCodeNode* base,
 			_tmp140_ = prop;
 			_tmp141_ = vala_property_get_binding (_tmp140_);
 			_tmp142_ = _tmp141_;
-			if (_tmp142_ == VALA_MEMBER_BINDING_STATIC) {
+			if (_tmp142_ == BALA_MEMBER_BINDING_STATIC) {
 				ValaField* field = NULL;
 				ValaProperty* _tmp143_;
 				ValaField* _tmp144_;
@@ -2226,7 +2226,7 @@ vala_struct_real_check (ValaCodeNode* base,
 					_tmp156_ = _tmp155_;
 					_tmp157_ = vala_expression_get_value_type (_tmp156_);
 					_tmp158_ = _tmp157_;
-					_tmp148_ = !VALA_IS_NULL_TYPE (_tmp158_);
+					_tmp148_ = !BALA_IS_NULL_TYPE (_tmp158_);
 				} else {
 					_tmp148_ = FALSE;
 				}
@@ -2334,7 +2334,7 @@ vala_struct_real_check (ValaCodeNode* base,
 				_tmp186_ = f;
 				_tmp187_ = vala_field_get_binding (_tmp186_);
 				_tmp188_ = _tmp187_;
-				if (_tmp188_ == VALA_MEMBER_BINDING_INSTANCE) {
+				if (_tmp188_ == BALA_MEMBER_BINDING_INSTANCE) {
 					has_instance_field = TRUE;
 					_vala_code_node_unref0 (f);
 					break;
@@ -2467,23 +2467,23 @@ vala_struct_instance_init (ValaStruct * self,
 	ValaHashSet* _tmp12_;
 	self->priv = vala_struct_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_TYPEPARAMETER, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_TYPEPARAMETER, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->type_parameters = (ValaList*) _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	self->priv->constants = (ValaList*) _tmp3_;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_array_list_new (VALA_TYPE_FIELD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
+	_tmp5_ = vala_array_list_new (BALA_TYPE_FIELD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
 	self->priv->fields = (ValaList*) _tmp5_;
 	_tmp6_ = g_direct_equal;
-	_tmp7_ = vala_array_list_new (VALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp6_);
+	_tmp7_ = vala_array_list_new (BALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp6_);
 	self->priv->methods = (ValaList*) _tmp7_;
 	_tmp8_ = g_direct_equal;
-	_tmp9_ = vala_array_list_new (VALA_TYPE_PROPERTY, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp8_);
+	_tmp9_ = vala_array_list_new (BALA_TYPE_PROPERTY, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp8_);
 	self->priv->properties = (ValaList*) _tmp9_;
 	_tmp10_ = g_direct_hash;
 	_tmp11_ = g_direct_equal;
-	_tmp12_ = vala_hash_set_new (VALA_TYPE_FIELD, NULL, NULL, _tmp10_, _tmp11_);
+	_tmp12_ = vala_hash_set_new (BALA_TYPE_FIELD, NULL, NULL, _tmp10_, _tmp11_);
 	self->priv->property_fields = (ValaSet*) _tmp12_;
 	self->priv->_base_type = NULL;
 }
@@ -2492,7 +2492,7 @@ static void
 vala_struct_finalize (ValaCodeNode * obj)
 {
 	ValaStruct * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_STRUCT, ValaStruct);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_STRUCT, ValaStruct);
 	_vala_iterable_unref0 (self->priv->type_parameters);
 	_vala_iterable_unref0 (self->priv->constants);
 	_vala_iterable_unref0 (self->priv->fields);
@@ -2510,7 +2510,7 @@ vala_struct_finalize (ValaCodeNode * obj)
 	_g_free0 (self->priv->_signed);
 	_g_free0 (self->priv->_is_immutable);
 	_vala_code_node_unref0 (self->priv->_default_construction_method);
-	VALA_CODE_NODE_CLASS (vala_struct_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_struct_parent_class)->finalize (obj);
 }
 
 /**
@@ -2521,7 +2521,7 @@ vala_struct_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaStructClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_struct_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaStruct), 0, (GInstanceInitFunc) vala_struct_instance_init, NULL };
 	GType vala_struct_type_id;
-	vala_struct_type_id = g_type_register_static (VALA_TYPE_TYPESYMBOL, "ValaStruct", &g_define_type_info, 0);
+	vala_struct_type_id = g_type_register_static (BALA_TYPE_TYPESYMBOL, "ValaStruct", &g_define_type_info, 0);
 	ValaStruct_private_offset = g_type_add_instance_private (vala_struct_type_id, sizeof (ValaStructPrivate));
 	return vala_struct_type_id;
 }

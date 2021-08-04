@@ -33,16 +33,16 @@
 #include <stdarg.h>
 
 enum  {
-	VALADOC_ERROR_REPORTER_0_PROPERTY,
-	VALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY,
-	VALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY,
-	VALADOC_ERROR_REPORTER_STREAM_PROPERTY,
-	VALADOC_ERROR_REPORTER_SETTINGS_PROPERTY,
-	VALADOC_ERROR_REPORTER_ERRORS_PROPERTY,
-	VALADOC_ERROR_REPORTER_WARNINGS_PROPERTY,
-	VALADOC_ERROR_REPORTER_NUM_PROPERTIES
+	BALADOC_ERROR_REPORTER_0_PROPERTY,
+	BALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY,
+	BALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY,
+	BALADOC_ERROR_REPORTER_STREAM_PROPERTY,
+	BALADOC_ERROR_REPORTER_SETTINGS_PROPERTY,
+	BALADOC_ERROR_REPORTER_ERRORS_PROPERTY,
+	BALADOC_ERROR_REPORTER_WARNINGS_PROPERTY,
+	BALADOC_ERROR_REPORTER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_NUM_PROPERTIES];
+static GParamSpec* valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_regex_unref0(var) ((var == NULL) ? NULL : (var = (g_regex_unref (var), NULL)))
@@ -73,7 +73,7 @@ struct _ValadocErrorReporterPrivate {
 static gint ValadocErrorReporter_private_offset;
 static gpointer valadoc_error_reporter_parent_class = NULL;
 
-#define VALADOC_ERROR_REPORTER_ANSI_COLOR_END "\x1b[0m"
+#define BALADOC_ERROR_REPORTER_ANSI_COLOR_END "\x1b[0m"
 static gboolean valadoc_error_reporter_is_atty (ValadocErrorReporter* self,
                                          gint fd);
 static inline void valadoc_error_reporter_msg (ValadocErrorReporter* self,
@@ -131,7 +131,7 @@ valadoc_error_reporter_set_warnings_offset (ValadocErrorReporter* self,
 	old_value = valadoc_error_reporter_get_warnings_offset (self);
 	if (old_value != value) {
 		self->priv->_warnings_offset = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY]);
 	}
 }
 
@@ -153,7 +153,7 @@ valadoc_error_reporter_set_errors_offset (ValadocErrorReporter* self,
 	old_value = valadoc_error_reporter_get_errors_offset (self);
 	if (old_value != value) {
 		self->priv->_errors_offset = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY]);
 	}
 }
 
@@ -177,7 +177,7 @@ valadoc_error_reporter_set_stream (ValadocErrorReporter* self,
 	old_value = valadoc_error_reporter_get_stream (self);
 	if (old_value != value) {
 		self->priv->_stream = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_STREAM_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_STREAM_PROPERTY]);
 	}
 }
 
@@ -210,7 +210,7 @@ valadoc_error_reporter_set_settings (ValadocErrorReporter* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_settings);
 		self->priv->_settings = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_SETTINGS_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_SETTINGS_PROPERTY]);
 	}
 }
 
@@ -252,7 +252,7 @@ valadoc_error_reporter_construct (GType object_type,
 ValadocErrorReporter*
 valadoc_error_reporter_new (ValadocSettings* settings)
 {
-	return valadoc_error_reporter_construct (VALADOC_TYPE_ERROR_REPORTER, settings);
+	return valadoc_error_reporter_construct (BALADOC_TYPE_ERROR_REPORTER, settings);
 }
 
 /**
@@ -542,7 +542,7 @@ valadoc_error_reporter_set_colors (ValadocErrorReporter* self,
 			_g_free0 (self->priv->error_color_start);
 			self->priv->error_color_start = _tmp41_;
 			_g_free0 (_tmp40_);
-			self->priv->error_color_end = VALADOC_ERROR_REPORTER_ANSI_COLOR_END;
+			self->priv->error_color_end = BALADOC_ERROR_REPORTER_ANSI_COLOR_END;
 		}
 		_tmp42_ = warning_color;
 		if (_tmp42_ != NULL) {
@@ -557,7 +557,7 @@ valadoc_error_reporter_set_colors (ValadocErrorReporter* self,
 			_g_free0 (self->priv->warning_color_start);
 			self->priv->warning_color_start = _tmp46_;
 			_g_free0 (_tmp45_);
-			self->priv->warning_color_end = VALADOC_ERROR_REPORTER_ANSI_COLOR_END;
+			self->priv->warning_color_end = BALADOC_ERROR_REPORTER_ANSI_COLOR_END;
 		}
 		_tmp47_ = note_color;
 		if (_tmp47_ != NULL) {
@@ -572,7 +572,7 @@ valadoc_error_reporter_set_colors (ValadocErrorReporter* self,
 			_g_free0 (self->priv->note_color_start);
 			self->priv->note_color_start = _tmp51_;
 			_g_free0 (_tmp50_);
-			self->priv->note_color_end = VALADOC_ERROR_REPORTER_ANSI_COLOR_END;
+			self->priv->note_color_end = BALADOC_ERROR_REPORTER_ANSI_COLOR_END;
 		}
 		_tmp52_ = caret_color;
 		if (_tmp52_ != NULL) {
@@ -587,7 +587,7 @@ valadoc_error_reporter_set_colors (ValadocErrorReporter* self,
 			_g_free0 (self->priv->caret_color_start);
 			self->priv->caret_color_start = _tmp56_;
 			_g_free0 (_tmp55_);
-			self->priv->caret_color_end = VALADOC_ERROR_REPORTER_ANSI_COLOR_END;
+			self->priv->caret_color_end = BALADOC_ERROR_REPORTER_ANSI_COLOR_END;
 		}
 		_tmp57_ = locus_color;
 		if (_tmp57_ != NULL) {
@@ -602,7 +602,7 @@ valadoc_error_reporter_set_colors (ValadocErrorReporter* self,
 			_g_free0 (self->priv->locus_color_start);
 			self->priv->locus_color_start = _tmp61_;
 			_g_free0 (_tmp60_);
-			self->priv->locus_color_end = VALADOC_ERROR_REPORTER_ANSI_COLOR_END;
+			self->priv->locus_color_end = BALADOC_ERROR_REPORTER_ANSI_COLOR_END;
 		}
 		_tmp62_ = quote_color;
 		if (_tmp62_ != NULL) {
@@ -617,7 +617,7 @@ valadoc_error_reporter_set_colors (ValadocErrorReporter* self,
 			_g_free0 (self->priv->quote_color_start);
 			self->priv->quote_color_start = _tmp66_;
 			_g_free0 (_tmp65_);
-			self->priv->quote_color_end = VALADOC_ERROR_REPORTER_ANSI_COLOR_END;
+			self->priv->quote_color_end = BALADOC_ERROR_REPORTER_ANSI_COLOR_END;
 		}
 	}
 	result = TRUE;
@@ -1223,12 +1223,12 @@ valadoc_error_reporter_class_init (ValadocErrorReporterClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_error_reporter_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_error_reporter_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_error_reporter_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY] = g_param_spec_int ("warnings-offset", "warnings-offset", "warnings-offset", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY] = g_param_spec_int ("errors-offset", "errors-offset", "errors-offset", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_ERROR_REPORTER_STREAM_PROPERTY, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_STREAM_PROPERTY] = g_param_spec_pointer ("stream", "stream", "stream", G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_ERROR_REPORTER_SETTINGS_PROPERTY, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_SETTINGS_PROPERTY] = g_param_spec_object ("settings", "settings", "settings", VALADOC_TYPE_SETTINGS, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_ERROR_REPORTER_ERRORS_PROPERTY, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_ERRORS_PROPERTY] = g_param_spec_int ("errors", "errors", "errors", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_ERROR_REPORTER_WARNINGS_PROPERTY, valadoc_error_reporter_properties[VALADOC_ERROR_REPORTER_WARNINGS_PROPERTY] = g_param_spec_int ("warnings", "warnings", "warnings", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY] = g_param_spec_int ("warnings-offset", "warnings-offset", "warnings-offset", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY] = g_param_spec_int ("errors-offset", "errors-offset", "errors-offset", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_ERROR_REPORTER_STREAM_PROPERTY, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_STREAM_PROPERTY] = g_param_spec_pointer ("stream", "stream", "stream", G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_ERROR_REPORTER_SETTINGS_PROPERTY, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_SETTINGS_PROPERTY] = g_param_spec_object ("settings", "settings", "settings", BALADOC_TYPE_SETTINGS, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_ERROR_REPORTER_ERRORS_PROPERTY, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_ERRORS_PROPERTY] = g_param_spec_int ("errors", "errors", "errors", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_ERROR_REPORTER_WARNINGS_PROPERTY, valadoc_error_reporter_properties[BALADOC_ERROR_REPORTER_WARNINGS_PROPERTY] = g_param_spec_int ("warnings", "warnings", "warnings", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -1268,7 +1268,7 @@ static void
 valadoc_error_reporter_finalize (GObject * obj)
 {
 	ValadocErrorReporter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_ERROR_REPORTER, ValadocErrorReporter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_ERROR_REPORTER, ValadocErrorReporter);
 	_g_free0 (self->priv->locus_color_start);
 	_g_free0 (self->priv->warning_color_start);
 	_g_free0 (self->priv->error_color_start);
@@ -1308,24 +1308,24 @@ _vala_valadoc_error_reporter_get_property (GObject * object,
                                            GParamSpec * pspec)
 {
 	ValadocErrorReporter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TYPE_ERROR_REPORTER, ValadocErrorReporter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TYPE_ERROR_REPORTER, ValadocErrorReporter);
 	switch (property_id) {
-		case VALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY:
+		case BALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY:
 		g_value_set_int (value, valadoc_error_reporter_get_warnings_offset (self));
 		break;
-		case VALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY:
+		case BALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY:
 		g_value_set_int (value, valadoc_error_reporter_get_errors_offset (self));
 		break;
-		case VALADOC_ERROR_REPORTER_STREAM_PROPERTY:
+		case BALADOC_ERROR_REPORTER_STREAM_PROPERTY:
 		g_value_set_pointer (value, valadoc_error_reporter_get_stream (self));
 		break;
-		case VALADOC_ERROR_REPORTER_SETTINGS_PROPERTY:
+		case BALADOC_ERROR_REPORTER_SETTINGS_PROPERTY:
 		g_value_set_object (value, valadoc_error_reporter_get_settings (self));
 		break;
-		case VALADOC_ERROR_REPORTER_ERRORS_PROPERTY:
+		case BALADOC_ERROR_REPORTER_ERRORS_PROPERTY:
 		g_value_set_int (value, valadoc_error_reporter_get_errors (self));
 		break;
-		case VALADOC_ERROR_REPORTER_WARNINGS_PROPERTY:
+		case BALADOC_ERROR_REPORTER_WARNINGS_PROPERTY:
 		g_value_set_int (value, valadoc_error_reporter_get_warnings (self));
 		break;
 		default:
@@ -1341,18 +1341,18 @@ _vala_valadoc_error_reporter_set_property (GObject * object,
                                            GParamSpec * pspec)
 {
 	ValadocErrorReporter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TYPE_ERROR_REPORTER, ValadocErrorReporter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TYPE_ERROR_REPORTER, ValadocErrorReporter);
 	switch (property_id) {
-		case VALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY:
+		case BALADOC_ERROR_REPORTER_WARNINGS_OFFSET_PROPERTY:
 		valadoc_error_reporter_set_warnings_offset (self, g_value_get_int (value));
 		break;
-		case VALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY:
+		case BALADOC_ERROR_REPORTER_ERRORS_OFFSET_PROPERTY:
 		valadoc_error_reporter_set_errors_offset (self, g_value_get_int (value));
 		break;
-		case VALADOC_ERROR_REPORTER_STREAM_PROPERTY:
+		case BALADOC_ERROR_REPORTER_STREAM_PROPERTY:
 		valadoc_error_reporter_set_stream (self, g_value_get_pointer (value));
 		break;
-		case VALADOC_ERROR_REPORTER_SETTINGS_PROPERTY:
+		case BALADOC_ERROR_REPORTER_SETTINGS_PROPERTY:
 		valadoc_error_reporter_set_settings (self, g_value_get_object (value));
 		break;
 		default:

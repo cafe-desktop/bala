@@ -44,7 +44,7 @@ vala_property_prototype_get_property_symbol (ValaPropertyPrototype* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_PROPERTY, ValaProperty);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_PROPERTY, ValaProperty);
 	return result;
 }
 
@@ -61,7 +61,7 @@ vala_property_prototype_construct (GType object_type,
 ValaPropertyPrototype*
 vala_property_prototype_new (ValaProperty* property_symbol)
 {
-	return vala_property_prototype_construct (VALA_TYPE_PROPERTY_PROTOTYPE, property_symbol);
+	return vala_property_prototype_construct (BALA_TYPE_PROPERTY_PROTOTYPE, property_symbol);
 }
 
 static ValaDataType*
@@ -122,7 +122,7 @@ vala_property_prototype_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaPropertyPrototypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_property_prototype_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaPropertyPrototype), 0, (GInstanceInitFunc) vala_property_prototype_instance_init, NULL };
 	GType vala_property_prototype_type_id;
-	vala_property_prototype_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaPropertyPrototype", &g_define_type_info, 0);
+	vala_property_prototype_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaPropertyPrototype", &g_define_type_info, 0);
 	return vala_property_prototype_type_id;
 }
 

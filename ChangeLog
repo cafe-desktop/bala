@@ -2810,7 +2810,7 @@
 
 	tests: Extent "post-condition" creation method test to increase coverage
 
-	tests: Extend preprocessor-vala test with VALA_0_46
+	tests: Extend preprocessor-vala test with BALA_0_46
 
 2019-09-23  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -4525,7 +4525,7 @@
 	glib-2.0: Cast strcmp to GCompareFunc
 	This will silence some incompatible pointer type warnings.
 
-	build: Use dedicated PACKAGE_VALADOC_* defines
+	build: Use dedicated PACKAGE_BALADOC_* defines
 
 	libvaladoc: Drop cname parameter from Api.* constructors
 
@@ -4571,9 +4571,9 @@
 
 2018-11-24  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	tests: Add default defines test for VALA_0_XX and GLIB_2_XX
+	tests: Add default defines test for BALA_0_XX and GLIB_2_XX
 
-	vala: Move setting of default defines for VALA_0_XX and GLIB_2_XX to Context
+	vala: Move setting of default defines for BALA_0_XX and GLIB_2_XX to Context
 	This avoids duplicated code and reduces the setup burden for library users.
 
 	Also start to warn about redefinitions, especially for our default defines.
@@ -5074,7 +5074,7 @@
 
 2018-09-26  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	build: Unconditionally add conditional VALAFLAGS to make bootstrap
+	build: Unconditionally add conditional BALAFLAGS to make bootstrap
 	This avoids another configure pass after an initial build with an older
 	valac <= 0.39.5.8.
 
@@ -6204,7 +6204,7 @@
 
 	Bump version suffix
 
-	valadoc: Bump VALA_0_xx defines and glib_minor to match 0.40 series
+	valadoc: Bump BALA_0_xx defines and glib_minor to match 0.40 series
 
 	tests: Add basic GLib.Node test
 
@@ -6811,7 +6811,7 @@
 
 	valadoc: Add coverage build-flags
 
-	valadoc/tests: split VALAFLAGS over multiple lines in testrunner.sh
+	valadoc/tests: split BALAFLAGS over multiple lines in testrunner.sh
 
 	codegen: Drop dead lambda-in-constructor path
 	Unreachable since 097b31af35cd587674a8cddd5dccc49c01b89858
@@ -7220,7 +7220,7 @@
 
 2017-11-14  Alistair Thomas  <astavale@yahoo.co.uk>
 
-	tests: split VALAFLAGS over multiple lines in testrunner.sh
+	tests: split BALAFLAGS over multiple lines in testrunner.sh
 	This improves readability of script and makes it easier for out of tree
 	patches to the script.
 
@@ -7580,7 +7580,7 @@
 
 2017-07-08  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	valadoc: Drop superfluous VALA_0_32 conditionals
+	valadoc: Drop superfluous BALA_0_32 conditionals
 	Fixes tests while bootstapping with valac < 0.31/32
 
 	libvaladoc: Keep bootstrap-support with valac >= 0.16.1
@@ -7867,7 +7867,7 @@
 	vala: Handle non-null in coalescing expression
 	https://bugzilla.gnome.org/show_bug.cgi?id=611223
 
-	testrunner: Respect given VALAFLAGS
+	testrunner: Respect given BALAFLAGS
 	https://bugzilla.gnome.org/show_bug.cgi?id=611223
 
 2017-04-17  Rico Tzschichholz  <ricotz@ubuntu.com>
@@ -8964,13 +8964,13 @@
 
 2016-10-25  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	build: Conditionally adjust VALAFLAGS in case of proper bootsrapped builds
-	This adds --hide-internal to VALAFLAGS to allow symbols to be marked
+	build: Conditionally adjust BALAFLAGS in case of proper bootsrapped builds
+	This adds --hide-internal to BALAFLAGS to allow symbols to be marked
 	'internal' in Vala source files and not appear in the dynamic symbol table
 	of libvala.
 
 	The build system checks for minimum valac version to fullfill required
-	support of needed VALAFLAGS.
+	support of needed BALAFLAGS.
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=771920
 
@@ -9994,9 +9994,9 @@
 
 	Add colored output
 	Use --no-color to disable colors
-	Use VALA_COLORS to change colors
+	Use BALA_COLORS to change colors
 
-	E.g. VALA_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+	E.g. BALA_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
 	Allow to link to named constructors directly
 	Fixes bug #746062
@@ -10885,9 +10885,9 @@
 
 	Add colored output
 	Use --no-color to disable colors
-	Use VALA_COLORS to change colors
+	Use BALA_COLORS to change colors
 
-	E.g. VALA_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+	E.g. BALA_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 
 	Fixes bug 734627.
 
@@ -10905,7 +10905,7 @@
 
 2014-09-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapigen: Don't override VALAC and use the available one like the rest
+	vapigen: Don't override BALAC and use the available one like the rest
 	There is no reason to special case vapigen while the rest of the source
 	is built with the available valac version. For a proper build bootstrapping
 	is required anyway.
@@ -11376,7 +11376,7 @@
 
 2014-06-27  Evan Nemerson  <evan@nemerson.com>
 
-	vala.m4: don't escape modules argument to VALA_CHECK_MODULES
+	vala.m4: don't escape modules argument to BALA_CHECK_MODULES
 	Fixes bug 729495.
 
 2014-06-27  Luca Bruno  <lucabru@src.gnome.org>
@@ -12228,7 +12228,7 @@
 
 2014-01-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	driver/0.24.x: Don't overwrite VALAFLAGS
+	driver/0.24.x: Don't overwrite BALAFLAGS
 
 	build: Don't rely on bashism and use $(shell ...)
 
@@ -12257,7 +12257,7 @@
 
 	driver/0.24.x: Fix build with valac 0.23.1+ git master
 
-	build: Follow VALA_FLAGS renaming
+	build: Follow BALA_FLAGS renaming
 
 	build: Avoid shipping generated c-code in tarball
 	Also clean up and refactor Makefiles on the way.
@@ -12452,7 +12452,7 @@
 
 2013-11-07  Rico Tzschichholz  <ricotz@t-online.de>
 
-	driver: Add matching VALA_0_XX defines to every driver
+	driver: Add matching BALA_0_XX defines to every driver
 	This is needed to properly handle conditional sources and avoid
 	parsing failures.
 
@@ -14435,8 +14435,8 @@
 
 2012-07-27  Jens Georg  <mail@jensge.org>
 
-	vala.m4: Fix calling VALA_CHECK_PACKAGES multiple times
-	If you call VALA_CHECK_PACKAGES more than once, each call would append
+	vala.m4: Fix calling BALA_CHECK_PACKAGES multiple times
+	If you call BALA_CHECK_PACKAGES more than once, each call would append
 	its packages to the list of checked packages.
 
 	Also fixes a leading whitespace error.
@@ -15020,7 +15020,7 @@
 
 2012-04-18  Rodney Dawes  <dobey.pwns@gmail.com>
 
-	vala.m4: Add VALA_CHECK_MODULES and VALA_PROG_VAPIGEN
+	vala.m4: Add BALA_CHECK_MODULES and BALA_PROG_VAPIGEN
 	Fixes bug 642301.
 
 2012-04-12  Robert Ancell  <robert.ancell@canonical.com>
@@ -21498,7 +21498,7 @@
 
 2010-08-09  Marc-André Lureau  <marcandre.lureau@gmail.com>
 
-	Add vala.m4 with VALA_CHECK_PACKAGES macro
+	Add vala.m4 with BALA_CHECK_PACKAGES macro
 	Fixes bug 626321.
 
 2010-08-09  Michal Hruby  <michal.mhr@gmail.com>
@@ -21558,7 +21558,7 @@
 
 	Add version suffix to installed files to allow parallel installation
 
-	Define VALA_X_Y according to compiler version
+	Define BALA_X_Y according to compiler version
 
 	dova: Do not generate empty structs
 
@@ -27857,7 +27857,7 @@
 
 2009-07-08  Jaap A. Haitsma  <jaap@haitsma.org>
 
-	Add VALAFLAGS
+	Add BALAFLAGS
 	Fixes bug 585070.
 
 2009-07-08  Matias De la Puente  <mfpuente.ar@gmail.com>

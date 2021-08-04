@@ -42,7 +42,7 @@ struct _ValaCCodeConstantPrivate {
 static gint ValaCCodeConstant_private_offset;
 static gpointer vala_ccode_constant_parent_class = NULL;
 
-#define VALA_CCODE_CONSTANT_LINE_LENGTH 70
+#define BALA_CCODE_CONSTANT_LINE_LENGTH 70
 static void vala_ccode_constant_real_write (ValaCCodeNode* base,
                                      ValaCCodeWriter* writer);
 static void vala_ccode_constant_finalize (ValaCCodeNode * obj);
@@ -90,7 +90,7 @@ vala_ccode_constant_construct (GType object_type,
 ValaCCodeConstant*
 vala_ccode_constant_new (const gchar* _name)
 {
-	return vala_ccode_constant_construct (VALA_TYPE_CCODE_CONSTANT, _name);
+	return vala_ccode_constant_construct (BALA_TYPE_CCODE_CONSTANT, _name);
 }
 
 static gchar
@@ -140,7 +140,7 @@ vala_ccode_constant_construct_string (GType object_type,
 	_vala_assert (string_get (_name, (glong) 0) == '\"', "_name[0] == '\\\"'");
 	_tmp0_ = strlen (_name);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ <= VALA_CCODE_CONSTANT_LINE_LENGTH) {
+	if (_tmp1_ <= BALA_CCODE_CONSTANT_LINE_LENGTH) {
 		vala_ccode_constant_set_name (self, _name);
 		return self;
 	}
@@ -165,7 +165,7 @@ vala_ccode_constant_construct_string (GType object_type,
 		if (!(_tmp8_ < _tmp9_)) {
 			break;
 		}
-		if (col >= VALA_CCODE_CONSTANT_LINE_LENGTH) {
+		if (col >= BALA_CCODE_CONSTANT_LINE_LENGTH) {
 			GString* _tmp10_;
 			_tmp10_ = builder;
 			g_string_append (_tmp10_, "\" \\\n\"");
@@ -286,7 +286,7 @@ vala_ccode_constant_construct_string (GType object_type,
 				}
 				case 'n':
 				{
-					col = VALA_CCODE_CONSTANT_LINE_LENGTH;
+					col = BALA_CCODE_CONSTANT_LINE_LENGTH;
 					break;
 				}
 				default:
@@ -327,7 +327,7 @@ vala_ccode_constant_construct_string (GType object_type,
 ValaCCodeConstant*
 vala_ccode_constant_new_string (const gchar* _name)
 {
-	return vala_ccode_constant_construct_string (VALA_TYPE_CCODE_CONSTANT, _name);
+	return vala_ccode_constant_construct_string (BALA_TYPE_CCODE_CONSTANT, _name);
 }
 
 static void
@@ -363,9 +363,9 @@ static void
 vala_ccode_constant_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeConstant * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_CONSTANT, ValaCCodeConstant);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_CONSTANT, ValaCCodeConstant);
 	_g_free0 (self->priv->_name);
-	VALA_CCODE_NODE_CLASS (vala_ccode_constant_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_constant_parent_class)->finalize (obj);
 }
 
 /**
@@ -376,7 +376,7 @@ vala_ccode_constant_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeConstantClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_constant_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeConstant), 0, (GInstanceInitFunc) vala_ccode_constant_instance_init, NULL };
 	GType vala_ccode_constant_type_id;
-	vala_ccode_constant_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeConstant", &g_define_type_info, 0);
+	vala_ccode_constant_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeConstant", &g_define_type_info, 0);
 	ValaCCodeConstant_private_offset = g_type_add_instance_private (vala_ccode_constant_type_id, sizeof (ValaCCodeConstantPrivate));
 	return vala_ccode_constant_type_id;
 }

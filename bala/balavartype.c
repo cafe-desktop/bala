@@ -48,7 +48,7 @@ vala_var_type_construct (GType object_type,
 ValaVarType*
 vala_var_type_new (gboolean value_owned)
 {
-	return vala_var_type_construct (VALA_TYPE_VAR_TYPE, value_owned);
+	return vala_var_type_construct (BALA_TYPE_VAR_TYPE, value_owned);
 }
 
 static gchar*
@@ -103,7 +103,7 @@ vala_var_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaVarTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_var_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaVarType), 0, (GInstanceInitFunc) vala_var_type_instance_init, NULL };
 	GType vala_var_type_type_id;
-	vala_var_type_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaVarType", &g_define_type_info, 0);
+	vala_var_type_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaVarType", &g_define_type_info, 0);
 	return vala_var_type_type_id;
 }
 

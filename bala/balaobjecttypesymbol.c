@@ -230,7 +230,7 @@ vala_object_type_symbol_real_add_method (ValaSymbol* base,
 	vala_collection_add ((ValaCollection*) _tmp0_, m);
 	_tmp1_ = self->priv->members;
 	vala_collection_add ((ValaCollection*) _tmp1_, (ValaSymbol*) m);
-	if (VALA_IS_CLASS (self)) {
+	if (BALA_IS_CLASS (self)) {
 		ValaDataType* _tmp4_;
 		ValaDataType* _tmp5_;
 		_tmp4_ = vala_method_get_base_interface_type (m);
@@ -748,7 +748,7 @@ vala_object_type_symbol_add_hidden_method (ValaObjectTypeSymbol* self,
 	g_return_if_fail (m != NULL);
 	_tmp0_ = vala_method_get_binding (m);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp1_ == BALA_MEMBER_BINDING_INSTANCE) {
 		ValaParameter* _tmp2_;
 		ValaParameter* _tmp3_;
 		ValaDataType* _tmp10_;
@@ -803,7 +803,7 @@ vala_object_type_symbol_add_hidden_method (ValaObjectTypeSymbol* self,
 	}
 	_tmp25_ = vala_callable_get_return_type ((ValaCallable*) m);
 	_tmp26_ = _tmp25_;
-	if (!VALA_IS_VOID_TYPE (_tmp26_)) {
+	if (!BALA_IS_VOID_TYPE (_tmp26_)) {
 		ValaList* _tmp27_;
 		gint _tmp28_;
 		gint _tmp29_;
@@ -1461,40 +1461,40 @@ vala_object_type_symbol_instance_init (ValaObjectTypeSymbol * self,
 	ValaArrayList* _tmp23_;
 	self->priv = vala_object_type_symbol_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_TYPEPARAMETER, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_TYPEPARAMETER, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->type_parameters = (ValaList*) _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	self->priv->members = (ValaList*) _tmp3_;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_array_list_new (VALA_TYPE_FIELD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
+	_tmp5_ = vala_array_list_new (BALA_TYPE_FIELD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
 	self->priv->fields = (ValaList*) _tmp5_;
 	_tmp6_ = g_direct_equal;
-	_tmp7_ = vala_array_list_new (VALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp6_);
+	_tmp7_ = vala_array_list_new (BALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp6_);
 	self->priv->methods = (ValaList*) _tmp7_;
 	_tmp8_ = g_direct_equal;
-	_tmp9_ = vala_array_list_new (VALA_TYPE_PROPERTY, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp8_);
+	_tmp9_ = vala_array_list_new (BALA_TYPE_PROPERTY, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp8_);
 	self->priv->properties = (ValaList*) _tmp9_;
 	_tmp10_ = g_direct_equal;
-	_tmp11_ = vala_array_list_new (VALA_TYPE_SIGNAL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp10_);
+	_tmp11_ = vala_array_list_new (BALA_TYPE_SIGNAL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp10_);
 	self->priv->signals = (ValaList*) _tmp11_;
 	_tmp12_ = g_direct_equal;
-	_tmp13_ = vala_array_list_new (VALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp12_);
+	_tmp13_ = vala_array_list_new (BALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp12_);
 	self->priv->classes = (ValaList*) _tmp13_;
 	_tmp14_ = g_direct_equal;
-	_tmp15_ = vala_array_list_new (VALA_TYPE_INTERFACE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp14_);
+	_tmp15_ = vala_array_list_new (BALA_TYPE_INTERFACE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp14_);
 	self->priv->interfaces = (ValaList*) _tmp15_;
 	_tmp16_ = g_direct_equal;
-	_tmp17_ = vala_array_list_new (VALA_TYPE_STRUCT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp16_);
+	_tmp17_ = vala_array_list_new (BALA_TYPE_STRUCT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp16_);
 	self->priv->structs = (ValaList*) _tmp17_;
 	_tmp18_ = g_direct_equal;
-	_tmp19_ = vala_array_list_new (VALA_TYPE_ENUM, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp18_);
+	_tmp19_ = vala_array_list_new (BALA_TYPE_ENUM, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp18_);
 	self->priv->enums = (ValaList*) _tmp19_;
 	_tmp20_ = g_direct_equal;
-	_tmp21_ = vala_array_list_new (VALA_TYPE_DELEGATE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp20_);
+	_tmp21_ = vala_array_list_new (BALA_TYPE_DELEGATE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp20_);
 	self->priv->delegates = (ValaList*) _tmp21_;
 	_tmp22_ = g_direct_equal;
-	_tmp23_ = vala_array_list_new (VALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp22_);
+	_tmp23_ = vala_array_list_new (BALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp22_);
 	self->priv->constants = (ValaList*) _tmp23_;
 }
 
@@ -1502,7 +1502,7 @@ static void
 vala_object_type_symbol_finalize (ValaCodeNode * obj)
 {
 	ValaObjectTypeSymbol * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol);
 	_vala_iterable_unref0 (self->priv->type_parameters);
 	_vala_iterable_unref0 (self->priv->members);
 	_vala_iterable_unref0 (self->priv->fields);
@@ -1515,7 +1515,7 @@ vala_object_type_symbol_finalize (ValaCodeNode * obj)
 	_vala_iterable_unref0 (self->priv->enums);
 	_vala_iterable_unref0 (self->priv->delegates);
 	_vala_iterable_unref0 (self->priv->constants);
-	VALA_CODE_NODE_CLASS (vala_object_type_symbol_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_object_type_symbol_parent_class)->finalize (obj);
 }
 
 /**
@@ -1528,7 +1528,7 @@ vala_object_type_symbol_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaObjectTypeSymbolClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_object_type_symbol_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaObjectTypeSymbol), 0, (GInstanceInitFunc) vala_object_type_symbol_instance_init, NULL };
 	GType vala_object_type_symbol_type_id;
-	vala_object_type_symbol_type_id = g_type_register_static (VALA_TYPE_TYPESYMBOL, "ValaObjectTypeSymbol", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_object_type_symbol_type_id = g_type_register_static (BALA_TYPE_TYPESYMBOL, "ValaObjectTypeSymbol", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	ValaObjectTypeSymbol_private_offset = g_type_add_instance_private (vala_object_type_symbol_type_id, sizeof (ValaObjectTypeSymbolPrivate));
 	return vala_object_type_symbol_type_id;
 }

@@ -139,7 +139,7 @@ vala_local_variable_new (ValaDataType* variable_type,
                          ValaExpression* initializer,
                          ValaSourceReference* source_reference)
 {
-	return vala_local_variable_construct (VALA_TYPE_LOCAL_VARIABLE, variable_type, name, initializer, source_reference);
+	return vala_local_variable_construct (BALA_TYPE_LOCAL_VARIABLE, variable_type, name, initializer, source_reference);
 }
 
 static void
@@ -309,7 +309,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 		ValaDataType* _tmp11_;
 		_tmp10_ = vala_variable_get_variable_type ((ValaVariable*) self);
 		_tmp11_ = _tmp10_;
-		if (VALA_IS_REFERENCE_TYPE (_tmp11_)) {
+		if (BALA_IS_REFERENCE_TYPE (_tmp11_)) {
 			ValaArrayType* array_type = NULL;
 			ValaDataType* _tmp12_;
 			ValaDataType* _tmp13_;
@@ -317,7 +317,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 			ValaArrayType* _tmp15_;
 			_tmp12_ = vala_variable_get_variable_type ((ValaVariable*) self);
 			_tmp13_ = _tmp12_;
-			array_type = VALA_IS_ARRAY_TYPE (_tmp13_) ? ((ValaArrayType*) _tmp13_) : NULL;
+			array_type = BALA_IS_ARRAY_TYPE (_tmp13_) ? ((ValaArrayType*) _tmp13_) : NULL;
 			_tmp15_ = array_type;
 			if (_tmp15_ != NULL) {
 				ValaArrayType* _tmp16_;
@@ -342,14 +342,14 @@ vala_local_variable_real_check (ValaCodeNode* base,
 	}
 	_tmp21_ = vala_variable_get_variable_type ((ValaVariable*) self);
 	_tmp22_ = _tmp21_;
-	if (!VALA_IS_VAR_TYPE (_tmp22_)) {
+	if (!BALA_IS_VAR_TYPE (_tmp22_)) {
 		ValaDataType* _tmp23_;
 		ValaDataType* _tmp24_;
 		gboolean _tmp29_;
 		gboolean _tmp30_;
 		_tmp23_ = vala_variable_get_variable_type ((ValaVariable*) self);
 		_tmp24_ = _tmp23_;
-		if (VALA_IS_VOID_TYPE (_tmp24_)) {
+		if (BALA_IS_VOID_TYPE (_tmp24_)) {
 			ValaSourceReference* _tmp25_;
 			ValaSourceReference* _tmp26_;
 			vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -408,14 +408,14 @@ vala_local_variable_real_check (ValaCodeNode* base,
 		vala_expression_set_target_type (_tmp41_, _tmp43_);
 		_tmp44_ = vala_variable_get_initializer ((ValaVariable*) self);
 		_tmp45_ = _tmp44_;
-		if (VALA_IS_INITIALIZER_LIST (_tmp45_)) {
+		if (BALA_IS_INITIALIZER_LIST (_tmp45_)) {
 			ValaExpression* _tmp46_;
 			ValaExpression* _tmp47_;
 			gint _tmp48_;
 			gint _tmp49_;
 			_tmp46_ = vala_variable_get_initializer ((ValaVariable*) self);
 			_tmp47_ = _tmp46_;
-			_tmp48_ = vala_initializer_list_get_size (G_TYPE_CHECK_INSTANCE_CAST (_tmp47_, VALA_TYPE_INITIALIZER_LIST, ValaInitializerList));
+			_tmp48_ = vala_initializer_list_get_size (G_TYPE_CHECK_INSTANCE_CAST (_tmp47_, BALA_TYPE_INITIALIZER_LIST, ValaInitializerList));
 			_tmp49_ = _tmp48_;
 			initializer_size = _tmp49_;
 			is_initializer_list = TRUE;
@@ -433,7 +433,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 			_tmp53_ = _tmp52_;
 			_tmp54_ = vala_expression_get_value_type (_tmp53_);
 			_tmp55_ = _tmp54_;
-			if (VALA_IS_VOID_TYPE (_tmp55_)) {
+			if (BALA_IS_VOID_TYPE (_tmp55_)) {
 				ValaExpression* _tmp56_;
 				ValaExpression* _tmp57_;
 				ValaSourceReference* _tmp58_;
@@ -464,7 +464,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 	}
 	_tmp70_ = vala_variable_get_variable_type ((ValaVariable*) self);
 	_tmp71_ = _tmp70_;
-	if (VALA_IS_VAR_TYPE (_tmp71_)) {
+	if (BALA_IS_VAR_TYPE (_tmp71_)) {
 		ValaExpression* _tmp72_;
 		ValaExpression* _tmp73_;
 		ValaExpression* _tmp76_;
@@ -527,7 +527,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 		_tmp84_ = _tmp83_;
 		_tmp85_ = vala_expression_get_value_type (_tmp84_);
 		_tmp86_ = _tmp85_;
-		if (VALA_IS_FIELD_PROTOTYPE (_tmp86_)) {
+		if (BALA_IS_FIELD_PROTOTYPE (_tmp86_)) {
 			_tmp82_ = TRUE;
 		} else {
 			ValaExpression* _tmp87_;
@@ -538,7 +538,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 			_tmp88_ = _tmp87_;
 			_tmp89_ = vala_expression_get_value_type (_tmp88_);
 			_tmp90_ = _tmp89_;
-			_tmp82_ = VALA_IS_PROPERTY_PROTOTYPE (_tmp90_);
+			_tmp82_ = BALA_IS_PROPERTY_PROTOTYPE (_tmp90_);
 		}
 		if (_tmp82_) {
 			ValaExpression* _tmp91_;
@@ -633,7 +633,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 	}
 	_tmp137_ = vala_variable_get_variable_type ((ValaVariable*) self);
 	_tmp138_ = _tmp137_;
-	variable_array_type = VALA_IS_ARRAY_TYPE (_tmp138_) ? ((ValaArrayType*) _tmp138_) : NULL;
+	variable_array_type = BALA_IS_ARRAY_TYPE (_tmp138_) ? ((ValaArrayType*) _tmp138_) : NULL;
 	_tmp142_ = variable_array_type;
 	if (_tmp142_ != NULL) {
 		ValaArrayType* _tmp143_;
@@ -651,7 +651,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 		ValaExpression* _tmp147_;
 		_tmp146_ = vala_variable_get_initializer ((ValaVariable*) self);
 		_tmp147_ = _tmp146_;
-		_tmp140_ = VALA_IS_ARRAY_CREATION_EXPRESSION (_tmp147_);
+		_tmp140_ = BALA_IS_ARRAY_CREATION_EXPRESSION (_tmp147_);
 	} else {
 		_tmp140_ = FALSE;
 	}
@@ -662,7 +662,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 		ValaInitializerList* _tmp151_;
 		_tmp148_ = vala_variable_get_initializer ((ValaVariable*) self);
 		_tmp149_ = _tmp148_;
-		_tmp150_ = vala_array_creation_expression_get_initializer_list (G_TYPE_CHECK_INSTANCE_CAST (_tmp149_, VALA_TYPE_ARRAY_CREATION_EXPRESSION, ValaArrayCreationExpression));
+		_tmp150_ = vala_array_creation_expression_get_initializer_list (G_TYPE_CHECK_INSTANCE_CAST (_tmp149_, BALA_TYPE_ARRAY_CREATION_EXPRESSION, ValaArrayCreationExpression));
 		_tmp151_ = _tmp150_;
 		_tmp139_ = _tmp151_ == NULL;
 	} else {
@@ -704,7 +704,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 		ValaExpression* _tmp165_;
 		_tmp164_ = vala_variable_get_initializer ((ValaVariable*) self);
 		_tmp165_ = _tmp164_;
-		_tmp154_ = !VALA_IS_ARRAY_CREATION_EXPRESSION (_tmp165_);
+		_tmp154_ = !BALA_IS_ARRAY_CREATION_EXPRESSION (_tmp165_);
 	} else {
 		_tmp154_ = FALSE;
 	}
@@ -758,7 +758,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 		_tmp176_ = _tmp175_;
 		_tmp177_ = vala_expression_get_value_type (_tmp176_);
 		_tmp178_ = _tmp177_;
-		if (VALA_IS_METHOD_TYPE (_tmp178_)) {
+		if (BALA_IS_METHOD_TYPE (_tmp178_)) {
 			gboolean _tmp179_ = FALSE;
 			ValaExpression* _tmp180_;
 			ValaExpression* _tmp181_;
@@ -766,12 +766,12 @@ vala_local_variable_real_check (ValaCodeNode* base,
 			ValaDataType* _tmp187_;
 			_tmp180_ = vala_variable_get_initializer ((ValaVariable*) self);
 			_tmp181_ = _tmp180_;
-			if (!VALA_IS_MEMBER_ACCESS (_tmp181_)) {
+			if (!BALA_IS_MEMBER_ACCESS (_tmp181_)) {
 				ValaExpression* _tmp182_;
 				ValaExpression* _tmp183_;
 				_tmp182_ = vala_variable_get_initializer ((ValaVariable*) self);
 				_tmp183_ = _tmp182_;
-				_tmp179_ = !VALA_IS_LAMBDA_EXPRESSION (_tmp183_);
+				_tmp179_ = !BALA_IS_LAMBDA_EXPRESSION (_tmp183_);
 			} else {
 				_tmp179_ = FALSE;
 			}
@@ -787,7 +787,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 			}
 			_tmp186_ = vala_variable_get_variable_type ((ValaVariable*) self);
 			_tmp187_ = _tmp186_;
-			if (VALA_IS_DELEGATE_TYPE (_tmp187_)) {
+			if (BALA_IS_DELEGATE_TYPE (_tmp187_)) {
 				ValaExpression* _tmp188_;
 				ValaExpression* _tmp189_;
 				ValaDataType* _tmp190_;
@@ -825,10 +825,10 @@ vala_local_variable_real_check (ValaCodeNode* base,
 					_tmp195_ = _tmp194_;
 					_tmp196_ = vala_expression_get_symbol_reference (_tmp195_);
 					_tmp197_ = _tmp196_;
-					m = G_TYPE_CHECK_INSTANCE_CAST (_tmp197_, VALA_TYPE_METHOD, ValaMethod);
+					m = G_TYPE_CHECK_INSTANCE_CAST (_tmp197_, BALA_TYPE_METHOD, ValaMethod);
 					_tmp198_ = vala_variable_get_variable_type ((ValaVariable*) self);
 					_tmp199_ = _tmp198_;
-					_tmp200_ = vala_delegate_type_get_delegate_symbol (G_TYPE_CHECK_INSTANCE_CAST (_tmp199_, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
+					_tmp200_ = vala_delegate_type_get_delegate_symbol (G_TYPE_CHECK_INSTANCE_CAST (_tmp199_, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
 					_tmp201_ = _tmp200_;
 					cb = _tmp201_;
 					vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -973,7 +973,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 			_tmp258_ = _tmp257_;
 			_tmp259_ = vala_expression_get_value_type (_tmp258_);
 			_tmp260_ = _tmp259_;
-			_tmp251_ = VALA_IS_ARRAY_TYPE (_tmp260_) == FALSE;
+			_tmp251_ = BALA_IS_ARRAY_TYPE (_tmp260_) == FALSE;
 		} else {
 			_tmp251_ = FALSE;
 		}
@@ -997,7 +997,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 			ValaDataType* _tmp269_;
 			_tmp268_ = vala_variable_get_variable_type ((ValaVariable*) self);
 			_tmp269_ = _tmp268_;
-			if (!VALA_IS_POINTER_TYPE (_tmp269_)) {
+			if (!BALA_IS_POINTER_TYPE (_tmp269_)) {
 				ValaDataType* _tmp270_;
 				ValaDataType* _tmp271_;
 				gboolean _tmp272_;
@@ -1026,7 +1026,7 @@ vala_local_variable_real_check (ValaCodeNode* base,
 	_tmp277_ = _tmp276_;
 	_tmp278_ = vala_semantic_analyzer_get_current_symbol (_tmp277_);
 	_tmp279_ = _tmp278_;
-	block = VALA_IS_BLOCK (_tmp279_) ? ((ValaBlock*) _tmp279_) : NULL;
+	block = BALA_IS_BLOCK (_tmp279_) ? ((ValaBlock*) _tmp279_) : NULL;
 	_tmp280_ = block;
 	if (_tmp280_ != NULL) {
 		ValaBlock* _tmp281_;
@@ -1065,8 +1065,8 @@ static void
 vala_local_variable_finalize (ValaCodeNode * obj)
 {
 	ValaLocalVariable * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_LOCAL_VARIABLE, ValaLocalVariable);
-	VALA_CODE_NODE_CLASS (vala_local_variable_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_LOCAL_VARIABLE, ValaLocalVariable);
+	BALA_CODE_NODE_CLASS (vala_local_variable_parent_class)->finalize (obj);
 }
 
 /**
@@ -1077,7 +1077,7 @@ vala_local_variable_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaLocalVariableClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_local_variable_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaLocalVariable), 0, (GInstanceInitFunc) vala_local_variable_instance_init, NULL };
 	GType vala_local_variable_type_id;
-	vala_local_variable_type_id = g_type_register_static (VALA_TYPE_VARIABLE, "ValaLocalVariable", &g_define_type_info, 0);
+	vala_local_variable_type_id = g_type_register_static (BALA_TYPE_VARIABLE, "ValaLocalVariable", &g_define_type_info, 0);
 	ValaLocalVariable_private_offset = g_type_add_instance_private (vala_local_variable_type_id, sizeof (ValaLocalVariablePrivate));
 	return vala_local_variable_type_id;
 }

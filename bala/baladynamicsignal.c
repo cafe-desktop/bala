@@ -121,7 +121,7 @@ vala_dynamic_signal_new (ValaDataType* dynamic_type,
                          ValaSourceReference* source_reference,
                          ValaComment* comment)
 {
-	return vala_dynamic_signal_construct (VALA_TYPE_DYNAMIC_SIGNAL, dynamic_type, name, return_type, source_reference, comment);
+	return vala_dynamic_signal_construct (BALA_TYPE_DYNAMIC_SIGNAL, dynamic_type, name, return_type, source_reference, comment);
 }
 
 static void
@@ -144,10 +144,10 @@ static void
 vala_dynamic_signal_finalize (ValaCodeNode * obj)
 {
 	ValaDynamicSignal * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_DYNAMIC_SIGNAL, ValaDynamicSignal);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_DYNAMIC_SIGNAL, ValaDynamicSignal);
 	_vala_code_node_unref0 (self->priv->_dynamic_type);
 	_vala_code_node_unref0 (self->priv->_handler);
-	VALA_CODE_NODE_CLASS (vala_dynamic_signal_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_dynamic_signal_parent_class)->finalize (obj);
 }
 
 /**
@@ -158,7 +158,7 @@ vala_dynamic_signal_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaDynamicSignalClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_dynamic_signal_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaDynamicSignal), 0, (GInstanceInitFunc) vala_dynamic_signal_instance_init, NULL };
 	GType vala_dynamic_signal_type_id;
-	vala_dynamic_signal_type_id = g_type_register_static (VALA_TYPE_SIGNAL, "ValaDynamicSignal", &g_define_type_info, 0);
+	vala_dynamic_signal_type_id = g_type_register_static (BALA_TYPE_SIGNAL, "ValaDynamicSignal", &g_define_type_info, 0);
 	ValaDynamicSignal_private_offset = g_type_add_instance_private (vala_dynamic_signal_type_id, sizeof (ValaDynamicSignalPrivate));
 	return vala_dynamic_signal_type_id;
 }

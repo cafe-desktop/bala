@@ -1201,7 +1201,7 @@ Vala 0.43.1
   - Add profile specific delegate target/destroy types
   - Don't explicitly add glib headers, the use of symbols will do that [#623]
   - Add --enable-debug configure option
-  - Move setting of default defines for VALA_0_XX and GLIB_2_XX to CodeContext
+  - Move setting of default defines for BALA_0_XX and GLIB_2_XX to CodeContext
   - Add support for delegate parameters in signals [#205]
   - Admit that structs are emtpy even with a static property [#446]
 
@@ -1287,7 +1287,7 @@ Vala 0.42.3
     + Add replacement for G_(BEGIN|END)_DECLS
     + Don't check for GLib.Variant casting
   - testrunner: Reset $run_prefix before generating next test script
-  - build: Unconditionally add conditional VALAFLAGS to make bootstrap
+  - build: Unconditionally add conditional BALAFLAGS to make bootstrap
   - doc: Fix build of internal-api-docs
   - manual: Update from wiki.gnome.org
 
@@ -1548,7 +1548,7 @@ Vala 0.40.1
  * Various bug fixes:
   - codegen: Don't add target fields for captured delegates without target
   - codegen: Don't add length fields for captured fixed-length array variables
-  - valadoc: Bump VALA_0_xx defines and glib_minor to match 0.40 series
+  - valadoc: Bump BALA_0_xx defines and glib_minor to match 0.40 series
 
  * Bindings:
   - Add libgeoclue-2.0 bindings [#794376]
@@ -1990,7 +1990,7 @@ Vala 0.36.0
   - clutter-json-1.0
 
  * Updated bindings. Some fixes may need to be wrapped in your Vala code
-   with the preparser directive #if VALA_0_36
+   with the preparser directive #if BALA_0_36
   - cairo: Add bindings for cairo_*_user_data()
   - clutter-1.0: Fix constructors which weren't detected as such
   - clutter-gst-2.0: Skip VideoTexture.get_audio_streams/get_subtitle_tracks
@@ -2351,7 +2351,7 @@ Vala 0.17.0
 ===========
 
  * Support simple method-level profiling.
- * Add VALA_CHECK_MODULES and VALA_PROG_VAPIGEN to vala.m4.
+ * Add BALA_CHECK_MODULES and BALA_PROG_VAPIGEN to vala.m4.
  * Bug fixes and binding updates.
 
 Vala 0.16.0
@@ -2540,9 +2540,9 @@ Vala 0.9.5
 ==========
 
  * Add version suffix to support parallel installation.
- * Define VALA_X_Y according to compiler version.
+ * Define BALA_X_Y according to compiler version.
  * Enable version header by default.
- * Add vala.m4 with VALA_CHECK_PACKAGES macro.
+ * Add vala.m4 with BALA_CHECK_PACKAGES macro.
  * Add gedit-2.20 bindings (Andrea Del Signore).
  * Add tokyocabinet bindings (Evan Nemerson).
  * Various improvements to the Dova profile.

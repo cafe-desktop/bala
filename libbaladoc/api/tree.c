@@ -33,12 +33,12 @@
 #include <glib/gstdio.h>
 #include <gobject/gvaluecollector.h>
 
-#define VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER (valadoc_api_tree_inherit_doc_container_get_type ())
-#define VALADOC_API_TREE_INHERIT_DOC_CONTAINER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, ValadocApiTreeInheritDocContainer))
-#define VALADOC_API_TREE_INHERIT_DOC_CONTAINER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, ValadocApiTreeInheritDocContainerClass))
-#define VALADOC_API_TREE_IS_INHERIT_DOC_CONTAINER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER))
-#define VALADOC_API_TREE_IS_INHERIT_DOC_CONTAINER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER))
-#define VALADOC_API_TREE_INHERIT_DOC_CONTAINER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, ValadocApiTreeInheritDocContainerClass))
+#define BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER (valadoc_api_tree_inherit_doc_container_get_type ())
+#define BALADOC_API_TREE_INHERIT_DOC_CONTAINER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, ValadocApiTreeInheritDocContainer))
+#define BALADOC_API_TREE_INHERIT_DOC_CONTAINER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, ValadocApiTreeInheritDocContainerClass))
+#define BALADOC_API_TREE_IS_INHERIT_DOC_CONTAINER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER))
+#define BALADOC_API_TREE_IS_INHERIT_DOC_CONTAINER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER))
+#define BALADOC_API_TREE_INHERIT_DOC_CONTAINER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, ValadocApiTreeInheritDocContainerClass))
 
 typedef struct _ValadocApiTreeInheritDocContainer ValadocApiTreeInheritDocContainer;
 typedef struct _ValadocApiTreeInheritDocContainerClass ValadocApiTreeInheritDocContainerClass;
@@ -310,7 +310,7 @@ valadoc_api_tree_add_dependencies_to_source_package (ValadocApiTree* self)
 		ValadocApiPackage* _tmp16_;
 		ValaArrayList* _tmp17_;
 		_tmp1_ = g_direct_equal;
-		_tmp2_ = vala_array_list_new (VALADOC_API_TYPE_PACKAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
+		_tmp2_ = vala_array_list_new (BALADOC_API_TYPE_PACKAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
 		deplst = _tmp2_;
 		{
 			ValaArrayList* _pkg_list = NULL;
@@ -494,7 +494,7 @@ valadoc_api_tree_search_relative_to (ValadocApiTree* self,
 		ValadocApiNode* _tmp12_;
 		_tmp10_ = valadoc_api_item_get_parent ((ValadocApiItem*) element);
 		_tmp11_ = _tmp10_;
-		_tmp12_ = valadoc_api_tree_search_relative_to (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp11_, VALADOC_API_TYPE_NODE, ValadocApiNode), path, (gint) path_length1);
+		_tmp12_ = valadoc_api_tree_search_relative_to (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp11_, BALADOC_API_TYPE_NODE, ValadocApiNode), path, (gint) path_length1);
 		_g_object_unref0 (node);
 		node = _tmp12_;
 	}
@@ -838,7 +838,7 @@ valadoc_api_tree_new (ValadocErrorReporter* reporter,
                       ValadocSettings* settings,
                       ValaCodeContext* context)
 {
-	return valadoc_api_tree_construct (VALADOC_API_TYPE_TREE, reporter, settings, context);
+	return valadoc_api_tree_construct (BALADOC_API_TYPE_TREE, reporter, settings, context);
 }
 
 static gchar*
@@ -1362,7 +1362,7 @@ static ValadocApiTreeInheritDocContainer*
 valadoc_api_tree_inherit_doc_container_new (ValadocApiNode* taglet_container,
                                             ValadocTagletsInheritDoc* taglet)
 {
-	return valadoc_api_tree_inherit_doc_container_construct (VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, taglet_container, taglet);
+	return valadoc_api_tree_inherit_doc_container_construct (BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, taglet_container, taglet);
 }
 
 static void
@@ -1446,7 +1446,7 @@ valadoc_api_tree_param_spec_inherit_doc_container (const gchar* name,
                                                    GParamFlags flags)
 {
 	ValadocApiTreeParamSpecInheritDocContainer* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1455,7 +1455,7 @@ valadoc_api_tree_param_spec_inherit_doc_container (const gchar* name,
 static gpointer
 valadoc_api_tree_value_get_inherit_doc_container (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1464,10 +1464,10 @@ valadoc_api_tree_value_set_inherit_doc_container (GValue* value,
                                                   gpointer v_object)
 {
 	ValadocApiTreeInheritDocContainer * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		valadoc_api_tree_inherit_doc_container_ref (value->data[0].v_pointer);
@@ -1484,10 +1484,10 @@ valadoc_api_tree_value_take_inherit_doc_container (GValue* value,
                                                    gpointer v_object)
 {
 	ValadocApiTreeInheritDocContainer * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1517,7 +1517,7 @@ static void
 valadoc_api_tree_inherit_doc_container_finalize (ValadocApiTreeInheritDocContainer * obj)
 {
 	ValadocApiTreeInheritDocContainer * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, ValadocApiTreeInheritDocContainer);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, ValadocApiTreeInheritDocContainer);
 	g_signal_handlers_destroy (self);
 }
 
@@ -1559,7 +1559,7 @@ valadoc_api_tree_inherit_doc_container_unref (gpointer instance)
 	ValadocApiTreeInheritDocContainer * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALADOC_API_TREE_INHERIT_DOC_CONTAINER_GET_CLASS (self)->finalize (self);
+		BALADOC_API_TREE_INHERIT_DOC_CONTAINER_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }
@@ -1645,7 +1645,7 @@ valadoc_api_param_spec_tree (const gchar* name,
                              GParamFlags flags)
 {
 	ValadocApiParamSpecTree* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALADOC_API_TYPE_TREE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALADOC_API_TYPE_TREE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1654,7 +1654,7 @@ valadoc_api_param_spec_tree (const gchar* name,
 gpointer
 valadoc_api_value_get_tree (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TYPE_TREE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TYPE_TREE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1663,10 +1663,10 @@ valadoc_api_value_set_tree (GValue* value,
                             gpointer v_object)
 {
 	ValadocApiTree * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TYPE_TREE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TYPE_TREE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_API_TYPE_TREE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_API_TYPE_TREE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		valadoc_api_tree_ref (value->data[0].v_pointer);
@@ -1683,10 +1683,10 @@ valadoc_api_value_take_tree (GValue* value,
                              gpointer v_object)
 {
 	ValadocApiTree * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TYPE_TREE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TYPE_TREE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_API_TYPE_TREE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_API_TYPE_TREE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1718,13 +1718,13 @@ valadoc_api_tree_instance_init (ValadocApiTree * self,
 	ValaArrayList* _tmp5_;
 	self->priv = valadoc_api_tree_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, (GBoxedCopyFunc) valadoc_api_tree_inherit_doc_container_ref, (GDestroyNotify) valadoc_api_tree_inherit_doc_container_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_API_TREE_TYPE_INHERIT_DOC_CONTAINER, (GBoxedCopyFunc) valadoc_api_tree_inherit_doc_container_ref, (GDestroyNotify) valadoc_api_tree_inherit_doc_container_unref, _tmp0_);
 	self->priv->inheritdocs = (ValaList*) _tmp1_;
 	_tmp2_ = g_str_equal;
 	_tmp3_ = vala_array_list_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, _tmp2_);
 	self->priv->external_c_files = _tmp3_;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_array_list_new (VALADOC_API_TYPE_PACKAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp4_);
+	_tmp5_ = vala_array_list_new (BALADOC_API_TYPE_PACKAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp4_);
 	self->priv->packages = _tmp5_;
 	self->priv->source_package = NULL;
 	self->priv->_cresolver = NULL;
@@ -1735,7 +1735,7 @@ static void
 valadoc_api_tree_finalize (ValadocApiTree * obj)
 {
 	ValadocApiTree * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_TREE, ValadocApiTree);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_TREE, ValadocApiTree);
 	g_signal_handlers_destroy (self);
 	_vala_iterable_unref0 (self->priv->inheritdocs);
 	_vala_iterable_unref0 (self->priv->external_c_files);
@@ -1792,7 +1792,7 @@ valadoc_api_tree_unref (gpointer instance)
 	ValadocApiTree * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALADOC_API_TREE_GET_CLASS (self)->finalize (self);
+		BALADOC_API_TREE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

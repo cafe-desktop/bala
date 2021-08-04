@@ -16,7 +16,7 @@ noinst_LTLIBRARIES = \
 	libvalaccode.la \
 	$(NULL)
 
-libvalaccode_la_VALASOURCES = \
+libvalaccode_la_BALASOURCES = \
 	valaccodeassignment.vala \
 	valaccodebinaryexpression.vala \
 	valaccodeblock.vala \
@@ -75,13 +75,13 @@ libvalaccode_la_VALASOURCES = \
 
 libvalaccode_la_SOURCES = \
 	ccode.vala.stamp \
-	$(libvalaccode_la_VALASOURCES:.vala=.c) \
+	$(libvalaccode_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 
-ccode.vapi ccode.vala.stamp: $(libvalaccode_la_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+ccode.vapi ccode.vala.stamp: $(libvalaccode_la_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
@@ -99,10 +99,10 @@ libvalaccode_la_LIBADD = \
 	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
 	$(NULL)
 
-EXTRA_DIST = $(libvalaccode_la_VALASOURCES) ccode.vapi ccode.vala.stamp valaccode.h
+EXTRA_DIST = $(libvalaccode_la_BALASOURCES) ccode.vapi ccode.vala.stamp valaccode.h
 
 MAINTAINERCLEANFILES = \
 	ccode.vapi \
 	valaccode.h \
-	$(libvalaccode_la_VALASOURCES:.vala=.c) \
+	$(libvalaccode_la_BALASOURCES:.vala=.c) \
 	$(NULL)

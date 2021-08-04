@@ -123,7 +123,7 @@ vala_dynamic_method_new (ValaDataType* dynamic_type,
                          ValaSourceReference* source_reference,
                          ValaComment* comment)
 {
-	return vala_dynamic_method_construct (VALA_TYPE_DYNAMIC_METHOD, dynamic_type, name, return_type, source_reference, comment);
+	return vala_dynamic_method_construct (BALA_TYPE_DYNAMIC_METHOD, dynamic_type, name, return_type, source_reference, comment);
 }
 
 static gboolean
@@ -159,10 +159,10 @@ static void
 vala_dynamic_method_finalize (ValaCodeNode * obj)
 {
 	ValaDynamicMethod * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_DYNAMIC_METHOD, ValaDynamicMethod);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_DYNAMIC_METHOD, ValaDynamicMethod);
 	_vala_code_node_unref0 (self->priv->_dynamic_type);
 	_vala_code_node_unref0 (self->priv->_invocation);
-	VALA_CODE_NODE_CLASS (vala_dynamic_method_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_dynamic_method_parent_class)->finalize (obj);
 }
 
 /**
@@ -173,7 +173,7 @@ vala_dynamic_method_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaDynamicMethodClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_dynamic_method_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaDynamicMethod), 0, (GInstanceInitFunc) vala_dynamic_method_instance_init, NULL };
 	GType vala_dynamic_method_type_id;
-	vala_dynamic_method_type_id = g_type_register_static (VALA_TYPE_METHOD, "ValaDynamicMethod", &g_define_type_info, 0);
+	vala_dynamic_method_type_id = g_type_register_static (BALA_TYPE_METHOD, "ValaDynamicMethod", &g_define_type_info, 0);
 	ValaDynamicMethod_private_offset = g_type_add_instance_private (vala_dynamic_method_type_id, sizeof (ValaDynamicMethodPrivate));
 	return vala_dynamic_method_type_id;
 }

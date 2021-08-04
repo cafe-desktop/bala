@@ -708,8 +708,8 @@ XSLTPROC
 HAVE_G_IR_COMPILER_FALSE
 HAVE_G_IR_COMPILER_TRUE
 G_IR_COMPILER
-ENABLE_VALADOC_FALSE
-ENABLE_VALADOC_TRUE
+ENABLE_BALADOC_FALSE
+ENABLE_BALADOC_TRUE
 HAVE_CGRAPH_FALSE
 HAVE_CGRAPH_TRUE
 LIBGVC_LIBS
@@ -721,13 +721,13 @@ GLIB_CFLAGS
 TEST_CFLAGS
 COVERAGE_LIBS
 COVERAGE_CFLAGS
-COVERAGE_VALAFLAGS
+COVERAGE_BALAFLAGS
 ENABLE_COVERAGE_FALSE
 ENABLE_COVERAGE_TRUE
 ENABLE_UNVERSIONED_FALSE
 ENABLE_UNVERSIONED_TRUE
-VALAFLAGS
-VALAC
+BALAFLAGS
+BALAC
 YACC
 LEXLIB
 LEX_OUTPUT_ROOT
@@ -790,9 +790,9 @@ pkglibdir
 pkgdatadir
 PACKAGE_SUFFIX
 API_VERSION
-VALA_MICRO_VERSION
-VALA_MINOR_VERSION
-VALA_MAJOR_VERSION
+BALA_MICRO_VERSION
+BALA_MINOR_VERSION
+BALA_MAJOR_VERSION
 MAINT
 MAINTAINER_MODE_FALSE
 MAINTAINER_MODE_TRUE
@@ -2917,9 +2917,9 @@ fi
 API_VERSION=0.48
 PACKAGE_SUFFIX="-$API_VERSION"
 
-VALA_MAJOR_VERSION=`echo $PACKAGE_VERSION | cut -d. -f1 | sed s/[a-zA-Z\-].*//g`
-VALA_MINOR_VERSION=`echo $PACKAGE_VERSION | cut -d. -f2 | sed s/[a-zA-Z\-].*//g`
-VALA_MICRO_VERSION=`echo $PACKAGE_VERSION | cut -d. -f3 | sed s/[a-zA-Z\-].*//g`
+BALA_MAJOR_VERSION=`echo $PACKAGE_VERSION | cut -d. -f1 | sed s/[a-zA-Z\-].*//g`
+BALA_MINOR_VERSION=`echo $PACKAGE_VERSION | cut -d. -f2 | sed s/[a-zA-Z\-].*//g`
+BALA_MICRO_VERSION=`echo $PACKAGE_VERSION | cut -d. -f3 | sed s/[a-zA-Z\-].*//g`
 
 
 
@@ -12436,12 +12436,12 @@ fi
 set dummy valac; ac_word=$2
 { $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
 $as_echo_n "checking for $ac_word... " >&6; }
-if ${ac_cv_path_VALAC+:} false; then :
+if ${ac_cv_path_BALAC+:} false; then :
   $as_echo_n "(cached) " >&6
 else
-  case $VALAC in
+  case $BALAC in
   [\\/]* | ?:[\\/]*)
-  ac_cv_path_VALAC="$VALAC" # Let the user override the test with a path.
+  ac_cv_path_BALAC="$BALAC" # Let the user override the test with a path.
   ;;
   *)
   as_save_IFS=$IFS; IFS=$PATH_SEPARATOR
@@ -12451,7 +12451,7 @@ do
   test -z "$as_dir" && as_dir=.
     for ac_exec_ext in '' $ac_executable_extensions; do
   if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
-    ac_cv_path_VALAC="$as_dir/$ac_word$ac_exec_ext"
+    ac_cv_path_BALAC="$as_dir/$ac_word$ac_exec_ext"
     $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
     break 2
   fi
@@ -12459,14 +12459,14 @@ done
   done
 IFS=$as_save_IFS
 
-  test -z "$ac_cv_path_VALAC" && ac_cv_path_VALAC="valac"
+  test -z "$ac_cv_path_BALAC" && ac_cv_path_BALAC="valac"
   ;;
 esac
 fi
-VALAC=$ac_cv_path_VALAC
-if test -n "$VALAC"; then
-  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $VALAC" >&5
-$as_echo "$VALAC" >&6; }
+BALAC=$ac_cv_path_BALAC
+if test -n "$BALAC"; then
+  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $BALAC" >&5
+$as_echo "$BALAC" >&6; }
 else
   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
 $as_echo "no" >&6; }
@@ -12475,12 +12475,12 @@ fi
 
 
 
-VALAC_BOOTSTRAP_REQUIRED=0.39.5.8
+BALAC_BOOTSTRAP_REQUIRED=0.39.5.8
 
-if test "$VALAC" != valac; then :
-  FOUND_VALAC_VERION=`$VALAC --version | sed 's/Vala  *//'`
-	as_arg_v1="$VALAC_BOOTSTRAP_REQUIRED"
-as_arg_v2="$FOUND_VALAC_VERION"
+if test "$BALAC" != valac; then :
+  FOUND_BALAC_VERION=`$BALAC --version | sed 's/Vala  *//'`
+	as_arg_v1="$BALAC_BOOTSTRAP_REQUIRED"
+as_arg_v2="$FOUND_BALAC_VERION"
 awk "$as_awk_strverscmp" v1="$as_arg_v1" v2="$as_arg_v2" /dev/null
 case $? in #(
   1) :
@@ -12494,9 +12494,9 @@ case $? in #(
 esac
 fi
 
-VALAFLAGS="$VALAFLAGS --disable-version-header"
+BALAFLAGS="$BALAFLAGS --disable-version-header"
 if test x$enable_boostrap = xyes; then
-	VALAFLAGS="$VALAFLAGS --hide-internal --abi-stability"
+	BALAFLAGS="$BALAFLAGS --hide-internal --abi-stability"
 fi
 
 # Check whether --enable-debug was given.
@@ -12507,7 +12507,7 @@ else
 fi
 
 if test "$enable_debug" = "yes"; then
-	VALAFLAGS="$VALAFLAGS -g"
+	BALAFLAGS="$BALAFLAGS -g"
 	CFLAGS="$CFLAGS -g -O0"
 fi
 
@@ -12549,11 +12549,11 @@ fi
 
 
 if test "$enable_coverage" = "yes"; then
-	COVERAGE_VALAFLAGS="-g"
+	COVERAGE_BALAFLAGS="-g"
 	COVERAGE_CFLAGS="-fprofile-arcs -ftest-coverage"
 	COVERAGE_LIBS="-lgcov"
 else
-	COVERAGE_VALAFLAGS=
+	COVERAGE_BALAFLAGS=
 	COVERAGE_CFLAGS=
 	COVERAGE_LIBS=
 fi
@@ -12945,7 +12945,7 @@ $as_echo_n "checking for CGRAPH... " >&6; }
 			elif test x$with_cgraph = xyes; then
 				{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }
-				VALAFLAGS="$VALAFLAGS -D WITH_CGRAPH"
+				BALAFLAGS="$BALAFLAGS -D WITH_CGRAPH"
 				have_cgraph=yes
 			else
 				{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
@@ -12972,7 +12972,7 @@ if ac_fn_c_try_run "$LINENO"; then :
 
 			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
 $as_echo "yes" >&6; }
-			VALAFLAGS="$VALAFLAGS -D WITH_CGRAPH"
+			BALAFLAGS="$BALAFLAGS -D WITH_CGRAPH"
 			have_cgraph=yes
 
 else
@@ -12998,11 +12998,11 @@ else
 fi
 
  if test x$enable_valadoc = xyes; then
-  ENABLE_VALADOC_TRUE=
-  ENABLE_VALADOC_FALSE='#'
+  ENABLE_BALADOC_TRUE=
+  ENABLE_BALADOC_FALSE='#'
 else
-  ENABLE_VALADOC_TRUE='#'
-  ENABLE_VALADOC_FALSE=
+  ENABLE_BALADOC_TRUE='#'
+  ENABLE_BALADOC_FALSE=
 fi
 
 
@@ -13394,8 +13394,8 @@ if test -z "${HAVE_CGRAPH_TRUE}" && test -z "${HAVE_CGRAPH_FALSE}"; then
   as_fn_error $? "conditional \"HAVE_CGRAPH\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
-if test -z "${ENABLE_VALADOC_TRUE}" && test -z "${ENABLE_VALADOC_FALSE}"; then
-  as_fn_error $? "conditional \"ENABLE_VALADOC\" was never defined.
+if test -z "${ENABLE_BALADOC_TRUE}" && test -z "${ENABLE_BALADOC_FALSE}"; then
+  as_fn_error $? "conditional \"ENABLE_BALADOC\" was never defined.
 Usually this means the macro was only invoked conditionally." "$LINENO" 5
 fi
 if test -z "${HAVE_G_IR_COMPILER_TRUE}" && test -z "${HAVE_G_IR_COMPILER_FALSE}"; then
