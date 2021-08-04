@@ -16,17 +16,17 @@ dnl You should have received a copy of the GNU Lesser General Public
 dnl License along with this library; if not, write to the Free Software
 dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  USA
 
-# VAPIGEN_CHECK([VERSION], [API_VERSION], [FOUND_INTROSPECTION], [DEFAULT])
+# BAPIGEN_CHECK([VERSION], [API_VERSION], [FOUND_INTROSPECTION], [DEFAULT])
 # --------------------------------------
 # Check vapigen existence and version
 #
 # See http://live.gnome.org/Bala/UpstreamGuide for detailed documentation
-AC_DEFUN([VAPIGEN_CHECK],
+AC_DEFUN([BAPIGEN_CHECK],
 [
   AS_IF([test "x$3" != "xyes"], [
       m4_provide_if([GOBJECT_INTROSPECTION_CHECK], [], [
           m4_provide_if([GOBJECT_INTROSPECTION_REQUIRE], [], [
-              AC_MSG_ERROR([[You must call GOBJECT_INTROSPECTION_CHECK or GOBJECT_INTROSPECTION_REQUIRE before using VAPIGEN_CHECK unless using the FOUND_INTROSPECTION argument is "yes"]])
+              AC_MSG_ERROR([[You must call GOBJECT_INTROSPECTION_CHECK or GOBJECT_INTROSPECTION_REQUIRE before using BAPIGEN_CHECK unless using the FOUND_INTROSPECTION argument is "yes"]])
             ])
         ])
     ])
@@ -82,20 +82,20 @@ AC_DEFUN([VAPIGEN_CHECK],
 
   AS_CASE([$enable_bala],
     [yes], [
-      VAPIGEN=`$PKG_CONFIG --variable=vapigen $vapigen_pkg_name`
-      VAPIGEN_MAKEFILE=`$PKG_CONFIG --variable=datadir $vapigen_pkg_name`/bala/Makefile.vapigen
+      BAPIGEN=`$PKG_CONFIG --variable=vapigen $vapigen_pkg_name`
+      BAPIGEN_MAKEFILE=`$PKG_CONFIG --variable=datadir $vapigen_pkg_name`/bala/Makefile.vapigen
       AS_IF([test "x$2" = "x"], [
-          VAPIGEN_VAPIDIR=`$PKG_CONFIG --variable=vapidir $vapigen_pkg_name`
+          BAPIGEN_BAPIDIR=`$PKG_CONFIG --variable=vapidir $vapigen_pkg_name`
         ], [
-          VAPIGEN_VAPIDIR=`$PKG_CONFIG --variable=vapidir_versioned $vapigen_pkg_name`
+          BAPIGEN_BAPIDIR=`$PKG_CONFIG --variable=vapidir_versioned $vapigen_pkg_name`
         ])
     ])
 
   AC_MSG_RESULT([$enable_bala])
 
-  AC_SUBST([VAPIGEN])
-  AC_SUBST([VAPIGEN_VAPIDIR])
-  AC_SUBST([VAPIGEN_MAKEFILE])
+  AC_SUBST([BAPIGEN])
+  AC_SUBST([BAPIGEN_BAPIDIR])
+  AC_SUBST([BAPIGEN_MAKEFILE])
 
-  AM_CONDITIONAL(ENABLE_VAPIGEN, test "x$enable_bala" = "xyes")
+  AM_CONDITIONAL(ENABLE_BAPIGEN, test "x$enable_bala" = "xyes")
 ])

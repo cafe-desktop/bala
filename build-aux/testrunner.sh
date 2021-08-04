@@ -51,8 +51,8 @@ BALAFLAGS="$BALAFLAGS \
 	-X -pipe \
 	-X -lm \
 	-X -DGETTEXT_PACKAGE=\"balac\""
-VAPIGEN=$abs_top_builddir/vapigen/vapigen$EXEEXT
-VAPIGENFLAGS="--vapidir $vapidir"
+BAPIGEN=$abs_top_builddir/vapigen/vapigen$EXEEXT
+BAPIGENFLAGS="--vapidir $vapidir"
 
 # Incorporate the TEST_CFLAGS.
 for cflag in ${TEST_CFLAGS}; do
@@ -132,7 +132,7 @@ function sourceend() {
 			echo "</repository>" >> $SOURCEFILE
 		fi
 		PACKAGEFLAGS=$([ -z "$PACKAGES" ] || echo $PACKAGES | xargs -n 1 echo -n " --pkg")
-		echo "$VAPIGEN $VAPIGENFLAGS $PACKAGEFLAGS --library $ns $ns.gir && tail -n +5 $ns.vapi|sed '\$d'|diff -wu $ns.vapi.ref -" > check
+		echo "$BAPIGEN $BAPIGENFLAGS $PACKAGEFLAGS --library $ns $ns.gir && tail -n +5 $ns.vapi|sed '\$d'|diff -wu $ns.vapi.ref -" > check
 	else
 		PACKAGEFLAGS=$([ -z "$PACKAGES" ] || echo $PACKAGES | xargs -n 1 echo -n " --pkg")
 		echo "$BALAC $BALAFLAGS $PACKAGEFLAGS -o $ns$EXEEXT $SOURCEFILE" >> prepare

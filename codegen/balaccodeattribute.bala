@@ -884,7 +884,7 @@ public class Bala.CCodeAttribute : AttributeCache {
 			}
 		}
 		if (sym.source_reference != null && !sym.external_package && !sym.is_extern) {
-			// don't add default include directives for VAPI files
+			// don't add default include directives for BAPI files
 			return sym.source_reference.file.get_cinclude_filename ();
 		}
 		return "";

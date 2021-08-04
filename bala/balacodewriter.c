@@ -1482,7 +1482,7 @@ bala_code_writer_visit_sorted (BalaCodeWriter* self,
 	if (_tmp1_ != BALA_CODE_WRITER_TYPE_EXTERNAL) {
 		BalaCodeWriterType _tmp2_;
 		_tmp2_ = self->priv->type;
-		_tmp0_ = _tmp2_ != BALA_CODE_WRITER_TYPE_VAPIGEN;
+		_tmp0_ = _tmp2_ != BALA_CODE_WRITER_TYPE_BAPIGEN;
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -5473,7 +5473,7 @@ bala_code_writer_write_code_block (BalaCodeWriter* self,
 		if (_tmp2_ != BALA_CODE_WRITER_TYPE_DUMP) {
 			BalaCodeWriterType _tmp3_;
 			_tmp3_ = self->priv->type;
-			_tmp1_ = _tmp3_ != BALA_CODE_WRITER_TYPE_VAPIGEN;
+			_tmp1_ = _tmp3_ != BALA_CODE_WRITER_TYPE_BAPIGEN;
 		} else {
 			_tmp1_ = FALSE;
 		}
@@ -5530,7 +5530,7 @@ bala_code_writer_check_accessibility (BalaCodeWriter* self,
 	_tmp0_ = self->priv->type;
 	switch (_tmp0_) {
 		case BALA_CODE_WRITER_TYPE_EXTERNAL:
-		case BALA_CODE_WRITER_TYPE_VAPIGEN:
+		case BALA_CODE_WRITER_TYPE_BAPIGEN:
 		{
 			gboolean _tmp1_ = FALSE;
 			BalaSymbolAccessibility _tmp2_;
@@ -6291,7 +6291,7 @@ bala_code_writer_write_accessibility (BalaCodeWriter* self,
 	if (_tmp6_ != BALA_CODE_WRITER_TYPE_EXTERNAL) {
 		BalaCodeWriterType _tmp7_;
 		_tmp7_ = self->priv->type;
-		_tmp5_ = _tmp7_ != BALA_CODE_WRITER_TYPE_VAPIGEN;
+		_tmp5_ = _tmp7_ != BALA_CODE_WRITER_TYPE_BAPIGEN;
 	} else {
 		_tmp5_ = FALSE;
 	}
@@ -6532,7 +6532,7 @@ bala_code_writer_get_type (void)
 static GType
 bala_code_writer_type_get_type_once (void)
 {
-	static const GEnumValue values[] = {{BALA_CODE_WRITER_TYPE_EXTERNAL, "BALA_CODE_WRITER_TYPE_EXTERNAL", "external"}, {BALA_CODE_WRITER_TYPE_INTERNAL, "BALA_CODE_WRITER_TYPE_INTERNAL", "internal"}, {BALA_CODE_WRITER_TYPE_FAST, "BALA_CODE_WRITER_TYPE_FAST", "fast"}, {BALA_CODE_WRITER_TYPE_DUMP, "BALA_CODE_WRITER_TYPE_DUMP", "dump"}, {BALA_CODE_WRITER_TYPE_VAPIGEN, "BALA_CODE_WRITER_TYPE_VAPIGEN", "vapigen"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_CODE_WRITER_TYPE_EXTERNAL, "BALA_CODE_WRITER_TYPE_EXTERNAL", "external"}, {BALA_CODE_WRITER_TYPE_INTERNAL, "BALA_CODE_WRITER_TYPE_INTERNAL", "internal"}, {BALA_CODE_WRITER_TYPE_FAST, "BALA_CODE_WRITER_TYPE_FAST", "fast"}, {BALA_CODE_WRITER_TYPE_DUMP, "BALA_CODE_WRITER_TYPE_DUMP", "dump"}, {BALA_CODE_WRITER_TYPE_BAPIGEN, "BALA_CODE_WRITER_TYPE_BAPIGEN", "vapigen"}, {0, NULL, NULL}};
 	GType bala_code_writer_type_type_id;
 	bala_code_writer_type_type_id = g_enum_register_static ("BalaCodeWriterType", values);
 	return bala_code_writer_type_type_id;

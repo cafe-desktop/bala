@@ -23,7 +23,7 @@
 using GLib;
 
 /**
- * Represents a Bala source or VAPI package file.
+ * Represents a Bala source or BAPI package file.
  */
 public class Bala.SourceFile {
 	/**
@@ -84,7 +84,7 @@ public class Bala.SourceFile {
 
 
 	/**
-	 * Specifies whether this file is a VAPI package file.
+	 * Specifies whether this file is a BAPI package file.
 	 */
 	public SourceFileType file_type { get; set; }
 
@@ -94,13 +94,13 @@ public class Bala.SourceFile {
 	public bool from_commandline { get; set; }
 
 	/**
-	 *  GIR Namespace for this source file, if it's a VAPI package
+	 *  GIR Namespace for this source file, if it's a BAPI package
 	 */
 
 	public string gir_namespace { get; set; }
 
 	/**
-	 *  GIR Namespace version for this source file, if it's a VAPI package
+	 *  GIR Namespace version for this source file, if it's a BAPI package
 	 */
 
 	public string gir_version { get; set; }

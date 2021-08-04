@@ -36,16 +36,16 @@
 #include <glib/gstdio.h>
 #include <gobject/gvaluecollector.h>
 
-#define BALA_TYPE_VAPI_CHECK (bala_vapi_check_get_type ())
-#define BALA_VAPI_CHECK(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_TYPE_VAPI_CHECK, BalaVAPICheck))
-#define BALA_VAPI_CHECK_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_TYPE_VAPI_CHECK, BalaVAPICheckClass))
-#define BALA_IS_VAPI_CHECK(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_TYPE_VAPI_CHECK))
-#define BALA_IS_VAPI_CHECK_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_TYPE_VAPI_CHECK))
-#define BALA_VAPI_CHECK_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_TYPE_VAPI_CHECK, BalaVAPICheckClass))
+#define BALA_TYPE_BAPI_CHECK (bala_vapi_check_get_type ())
+#define BALA_BAPI_CHECK(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_TYPE_BAPI_CHECK, BalaBAPICheck))
+#define BALA_BAPI_CHECK_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_TYPE_BAPI_CHECK, BalaBAPICheckClass))
+#define BALA_IS_BAPI_CHECK(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_TYPE_BAPI_CHECK))
+#define BALA_IS_BAPI_CHECK_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_TYPE_BAPI_CHECK))
+#define BALA_BAPI_CHECK_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_TYPE_BAPI_CHECK, BalaBAPICheckClass))
 
-typedef struct _BalaVAPICheck BalaVAPICheck;
-typedef struct _BalaVAPICheckClass BalaVAPICheckClass;
-typedef struct _BalaVAPICheckPrivate BalaVAPICheckPrivate;
+typedef struct _BalaBAPICheck BalaBAPICheck;
+typedef struct _BalaBAPICheckClass BalaBAPICheckClass;
+typedef struct _BalaBAPICheckPrivate BalaBAPICheckPrivate;
 #define _bala_source_file_unref0(var) ((var == NULL) ? NULL : (var = (bala_source_file_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _bala_code_context_unref0(var) ((var == NULL) ? NULL : (var = (bala_code_context_unref (var), NULL)))
@@ -54,20 +54,20 @@ typedef struct _BalaVAPICheckPrivate BalaVAPICheckPrivate;
 #define _g_io_channel_unref0(var) ((var == NULL) ? NULL : (var = (g_io_channel_unref (var), NULL)))
 #define _bala_source_reference_unref0(var) ((var == NULL) ? NULL : (var = (bala_source_reference_unref (var), NULL)))
 #define _bala_vapi_check_unref0(var) ((var == NULL) ? NULL : (var = (bala_vapi_check_unref (var), NULL)))
-typedef struct _BalaParamSpecVAPICheck BalaParamSpecVAPICheck;
+typedef struct _BalaParamSpecBAPICheck BalaParamSpecBAPICheck;
 
-struct _BalaVAPICheck {
+struct _BalaBAPICheck {
 	GTypeInstance parent_instance;
 	volatile int ref_count;
-	BalaVAPICheckPrivate * priv;
+	BalaBAPICheckPrivate * priv;
 };
 
-struct _BalaVAPICheckClass {
+struct _BalaBAPICheckClass {
 	GTypeClass parent_class;
-	void (*finalize) (BalaVAPICheck *self);
+	void (*finalize) (BalaBAPICheck *self);
 };
 
-struct _BalaVAPICheckPrivate {
+struct _BalaBAPICheckPrivate {
 	BalaCodeContext* _context;
 	BalaSourceFile* _gidl;
 	BalaSourceFile* _metadata;
@@ -75,11 +75,11 @@ struct _BalaVAPICheckPrivate {
 	BalaSet* _symbols;
 };
 
-struct _BalaParamSpecVAPICheck {
+struct _BalaParamSpecBAPICheck {
 	GParamSpec parent_instance;
 };
 
-static gint BalaVAPICheck_private_offset;
+static gint BalaBAPICheck_private_offset;
 static gpointer bala_vapi_check_parent_class = NULL;
 
 G_GNUC_INTERNAL gpointer bala_vapi_check_ref (gpointer instance);
@@ -95,39 +95,39 @@ G_GNUC_INTERNAL void bala_value_take_vapi_check (GValue* value,
                                  gpointer v_object);
 G_GNUC_INTERNAL gpointer bala_value_get_vapi_check (const GValue* value) G_GNUC_UNUSED;
 G_GNUC_INTERNAL GType bala_vapi_check_get_type (void) G_GNUC_CONST G_GNUC_UNUSED;
-G_DEFINE_AUTOPTR_CLEANUP_FUNC (BalaVAPICheck, bala_vapi_check_unref)
-G_GNUC_INTERNAL BalaVAPICheck* bala_vapi_check_new (const gchar* gidlname,
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (BalaBAPICheck, bala_vapi_check_unref)
+G_GNUC_INTERNAL BalaBAPICheck* bala_vapi_check_new (const gchar* gidlname,
                                     BalaCodeContext* context);
-G_GNUC_INTERNAL BalaVAPICheck* bala_vapi_check_construct (GType object_type,
+G_GNUC_INTERNAL BalaBAPICheck* bala_vapi_check_construct (GType object_type,
                                           const gchar* gidlname,
                                           BalaCodeContext* context);
-static void bala_vapi_check_set_gidl (BalaVAPICheck* self,
+static void bala_vapi_check_set_gidl (BalaBAPICheck* self,
                                BalaSourceFile* value);
-static void bala_vapi_check_set_metadata (BalaVAPICheck* self,
+static void bala_vapi_check_set_metadata (BalaBAPICheck* self,
                                    BalaSourceFile* value);
-static void bala_vapi_check_set_context (BalaVAPICheck* self,
+static void bala_vapi_check_set_context (BalaBAPICheck* self,
                                   BalaCodeContext* value);
-G_GNUC_INTERNAL BalaCodeContext* bala_vapi_check_get_context (BalaVAPICheck* self);
-G_GNUC_INTERNAL BalaSourceFile* bala_vapi_check_get_gidl (BalaVAPICheck* self);
-G_GNUC_INTERNAL BalaSourceFile* bala_vapi_check_get_metadata (BalaVAPICheck* self);
-static void bala_vapi_check_parse_gidl (BalaVAPICheck* self);
-static void bala_vapi_check_parse_members (BalaVAPICheck* self,
+G_GNUC_INTERNAL BalaCodeContext* bala_vapi_check_get_context (BalaBAPICheck* self);
+G_GNUC_INTERNAL BalaSourceFile* bala_vapi_check_get_gidl (BalaBAPICheck* self);
+G_GNUC_INTERNAL BalaSourceFile* bala_vapi_check_get_metadata (BalaBAPICheck* self);
+static void bala_vapi_check_parse_gidl (BalaBAPICheck* self);
+static void bala_vapi_check_parse_members (BalaBAPICheck* self,
                                     const gchar* name,
                                     GList* members);
 static void _g_idl_module_free0_ (gpointer var);
 static inline void _g_list_free__g_idl_module_free0_ (GList* self);
-static void bala_vapi_check_add_symbol (BalaVAPICheck* self,
+static void bala_vapi_check_add_symbol (BalaBAPICheck* self,
                                  const gchar* name,
                                  const gchar* separator);
-static gchar* bala_vapi_check_get_scope (BalaVAPICheck* self);
-static void bala_vapi_check_enter_scope (BalaVAPICheck* self,
+static gchar* bala_vapi_check_get_scope (BalaBAPICheck* self);
+static void bala_vapi_check_enter_scope (BalaBAPICheck* self,
                                   const gchar* name);
-static void bala_vapi_check_leave_scope (BalaVAPICheck* self);
-static gint bala_vapi_check_check_metadata (BalaVAPICheck* self);
-G_GNUC_INTERNAL gint bala_vapi_check_run (BalaVAPICheck* self);
+static void bala_vapi_check_leave_scope (BalaBAPICheck* self);
+static gint bala_vapi_check_check_metadata (BalaBAPICheck* self);
+G_GNUC_INTERNAL gint bala_vapi_check_run (BalaBAPICheck* self);
 static gint bala_vapi_check_main (gchar** args,
                            gint args_length1);
-static void bala_vapi_check_finalize (BalaVAPICheck * obj);
+static void bala_vapi_check_finalize (BalaBAPICheck * obj);
 static GType bala_vapi_check_get_type_once (void);
 static void _bala_array_destroy (gpointer array,
                           gint array_length,
@@ -138,9 +138,9 @@ static void _bala_array_free (gpointer array,
 static gint _bala_array_length (gpointer array);
 
 static inline gpointer
-bala_vapi_check_get_instance_private (BalaVAPICheck* self)
+bala_vapi_check_get_instance_private (BalaBAPICheck* self)
 {
-	return G_STRUCT_MEMBER_P (self, BalaVAPICheck_private_offset);
+	return G_STRUCT_MEMBER_P (self, BalaBAPICheck_private_offset);
 }
 
 static glong
@@ -204,12 +204,12 @@ string_substring (const gchar* self,
 	return result;
 }
 
-G_GNUC_INTERNAL BalaVAPICheck*
+G_GNUC_INTERNAL BalaBAPICheck*
 bala_vapi_check_construct (GType object_type,
                            const gchar* gidlname,
                            BalaCodeContext* context)
 {
-	BalaVAPICheck* self = NULL;
+	BalaBAPICheck* self = NULL;
 	BalaSourceFile* _tmp0_;
 	BalaSourceFile* _tmp1_;
 	gint _tmp2_;
@@ -222,7 +222,7 @@ bala_vapi_check_construct (GType object_type,
 	BalaSourceFile* _tmp9_;
 	g_return_val_if_fail (gidlname != NULL, NULL);
 	g_return_val_if_fail (context != NULL, NULL);
-	self = (BalaVAPICheck*) g_type_create_instance (object_type);
+	self = (BalaBAPICheck*) g_type_create_instance (object_type);
 	_tmp0_ = bala_source_file_new (context, BALA_SOURCE_FILE_TYPE_SOURCE, gidlname, NULL, FALSE);
 	_tmp1_ = _tmp0_;
 	bala_vapi_check_set_gidl (self, _tmp1_);
@@ -243,15 +243,15 @@ bala_vapi_check_construct (GType object_type,
 	return self;
 }
 
-G_GNUC_INTERNAL BalaVAPICheck*
+G_GNUC_INTERNAL BalaBAPICheck*
 bala_vapi_check_new (const gchar* gidlname,
                      BalaCodeContext* context)
 {
-	return bala_vapi_check_construct (BALA_TYPE_VAPI_CHECK, gidlname, context);
+	return bala_vapi_check_construct (BALA_TYPE_BAPI_CHECK, gidlname, context);
 }
 
 G_GNUC_INTERNAL BalaCodeContext*
-bala_vapi_check_get_context (BalaVAPICheck* self)
+bala_vapi_check_get_context (BalaBAPICheck* self)
 {
 	BalaCodeContext* result;
 	BalaCodeContext* _tmp0_;
@@ -268,7 +268,7 @@ _bala_code_context_ref0 (gpointer self)
 }
 
 static void
-bala_vapi_check_set_context (BalaVAPICheck* self,
+bala_vapi_check_set_context (BalaBAPICheck* self,
                              BalaCodeContext* value)
 {
 	BalaCodeContext* _tmp0_;
@@ -279,7 +279,7 @@ bala_vapi_check_set_context (BalaVAPICheck* self,
 }
 
 G_GNUC_INTERNAL BalaSourceFile*
-bala_vapi_check_get_gidl (BalaVAPICheck* self)
+bala_vapi_check_get_gidl (BalaBAPICheck* self)
 {
 	BalaSourceFile* result;
 	BalaSourceFile* _tmp0_;
@@ -296,7 +296,7 @@ _bala_source_file_ref0 (gpointer self)
 }
 
 static void
-bala_vapi_check_set_gidl (BalaVAPICheck* self,
+bala_vapi_check_set_gidl (BalaBAPICheck* self,
                           BalaSourceFile* value)
 {
 	BalaSourceFile* _tmp0_;
@@ -307,7 +307,7 @@ bala_vapi_check_set_gidl (BalaVAPICheck* self,
 }
 
 G_GNUC_INTERNAL BalaSourceFile*
-bala_vapi_check_get_metadata (BalaVAPICheck* self)
+bala_vapi_check_get_metadata (BalaBAPICheck* self)
 {
 	BalaSourceFile* result;
 	BalaSourceFile* _tmp0_;
@@ -318,7 +318,7 @@ bala_vapi_check_get_metadata (BalaVAPICheck* self)
 }
 
 static void
-bala_vapi_check_set_metadata (BalaVAPICheck* self,
+bala_vapi_check_set_metadata (BalaBAPICheck* self,
                               BalaSourceFile* value)
 {
 	BalaSourceFile* _tmp0_;
@@ -341,7 +341,7 @@ _g_list_free__g_idl_module_free0_ (GList* self)
 }
 
 static void
-bala_vapi_check_parse_gidl (BalaVAPICheck* self)
+bala_vapi_check_parse_gidl (BalaBAPICheck* self)
 {
 	GEqualFunc _tmp0_;
 	BalaArrayList* _tmp1_;
@@ -430,7 +430,7 @@ bala_vapi_check_parse_gidl (BalaVAPICheck* self)
 }
 
 static void
-bala_vapi_check_add_symbol (BalaVAPICheck* self,
+bala_vapi_check_add_symbol (BalaBAPICheck* self,
                             const gchar* name,
                             const gchar* separator)
 {
@@ -467,7 +467,7 @@ bala_vapi_check_add_symbol (BalaVAPICheck* self,
 }
 
 static gchar*
-bala_vapi_check_get_scope (BalaVAPICheck* self)
+bala_vapi_check_get_scope (BalaBAPICheck* self)
 {
 	BalaList* _tmp0_;
 	BalaList* _tmp1_;
@@ -486,7 +486,7 @@ bala_vapi_check_get_scope (BalaVAPICheck* self)
 }
 
 static void
-bala_vapi_check_enter_scope (BalaVAPICheck* self,
+bala_vapi_check_enter_scope (BalaBAPICheck* self,
                              const gchar* name)
 {
 	BalaList* _tmp0_;
@@ -498,7 +498,7 @@ bala_vapi_check_enter_scope (BalaVAPICheck* self,
 }
 
 static void
-bala_vapi_check_leave_scope (BalaVAPICheck* self)
+bala_vapi_check_leave_scope (BalaBAPICheck* self)
 {
 	BalaList* _tmp0_;
 	BalaList* _tmp1_;
@@ -517,7 +517,7 @@ bala_vapi_check_leave_scope (BalaVAPICheck* self)
 }
 
 static void
-bala_vapi_check_parse_members (BalaVAPICheck* self,
+bala_vapi_check_parse_members (BalaBAPICheck* self,
                                const gchar* name,
                                GList* members)
 {
@@ -649,7 +649,7 @@ bala_vapi_check_parse_members (BalaVAPICheck* self,
 }
 
 static gint
-bala_vapi_check_check_metadata (BalaVAPICheck* self)
+bala_vapi_check_check_metadata (BalaBAPICheck* self)
 {
 	gint _tmp38_ = -1;
 	GError* _inner_error0_ = NULL;
@@ -798,7 +798,7 @@ bala_vapi_check_check_metadata (BalaVAPICheck* self)
 }
 
 G_GNUC_INTERNAL gint
-bala_vapi_check_run (BalaVAPICheck* self)
+bala_vapi_check_run (BalaBAPICheck* self)
 {
 	BalaSourceFile* _tmp0_;
 	const gchar* _tmp1_;
@@ -856,13 +856,13 @@ bala_vapi_check_main (gchar** args,
                       gint args_length1)
 {
 	gboolean _tmp0_ = FALSE;
-	BalaVAPICheck* vapicheck = NULL;
+	BalaBAPICheck* vapicheck = NULL;
 	const gchar* _tmp6_;
 	BalaCodeContext* _tmp7_;
 	BalaCodeContext* _tmp8_;
-	BalaVAPICheck* _tmp9_;
-	BalaVAPICheck* _tmp10_;
-	BalaVAPICheck* _tmp11_;
+	BalaBAPICheck* _tmp9_;
+	BalaBAPICheck* _tmp10_;
+	BalaBAPICheck* _tmp11_;
 	gint result = 0;
 	if (2 != args_length1) {
 		_tmp0_ = TRUE;
@@ -943,7 +943,7 @@ bala_value_vapi_check_collect_value (GValue* value,
                                      guint collect_flags)
 {
 	if (collect_values[0].v_pointer) {
-		BalaVAPICheck * object;
+		BalaBAPICheck * object;
 		object = collect_values[0].v_pointer;
 		if (object->parent_instance.g_class == NULL) {
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
@@ -963,7 +963,7 @@ bala_value_vapi_check_lcopy_value (const GValue* value,
                                    GTypeCValue* collect_values,
                                    guint collect_flags)
 {
-	BalaVAPICheck ** object_p;
+	BalaBAPICheck ** object_p;
 	object_p = collect_values[0].v_pointer;
 	if (!object_p) {
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
@@ -985,8 +985,8 @@ bala_param_spec_vapi_check (const gchar* name,
                             GType object_type,
                             GParamFlags flags)
 {
-	BalaParamSpecVAPICheck* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_VAPI_CHECK), NULL);
+	BalaParamSpecBAPICheck* spec;
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_BAPI_CHECK), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -995,7 +995,7 @@ bala_param_spec_vapi_check (const gchar* name,
 G_GNUC_INTERNAL gpointer
 bala_value_get_vapi_check (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_CHECK), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_BAPI_CHECK), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1003,11 +1003,11 @@ G_GNUC_INTERNAL void
 bala_value_set_vapi_check (GValue* value,
                            gpointer v_object)
 {
-	BalaVAPICheck * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_CHECK));
+	BalaBAPICheck * old;
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_BAPI_CHECK));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VAPI_CHECK));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_BAPI_CHECK));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		bala_vapi_check_ref (value->data[0].v_pointer);
@@ -1023,11 +1023,11 @@ G_GNUC_INTERNAL void
 bala_value_take_vapi_check (GValue* value,
                             gpointer v_object)
 {
-	BalaVAPICheck * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_CHECK));
+	BalaBAPICheck * old;
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_BAPI_CHECK));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VAPI_CHECK));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_BAPI_CHECK));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1039,16 +1039,16 @@ bala_value_take_vapi_check (GValue* value,
 }
 
 static void
-bala_vapi_check_class_init (BalaVAPICheckClass * klass,
+bala_vapi_check_class_init (BalaBAPICheckClass * klass,
                             gpointer klass_data)
 {
 	bala_vapi_check_parent_class = g_type_class_peek_parent (klass);
-	((BalaVAPICheckClass *) klass)->finalize = bala_vapi_check_finalize;
-	g_type_class_adjust_private_offset (klass, &BalaVAPICheck_private_offset);
+	((BalaBAPICheckClass *) klass)->finalize = bala_vapi_check_finalize;
+	g_type_class_adjust_private_offset (klass, &BalaBAPICheck_private_offset);
 }
 
 static void
-bala_vapi_check_instance_init (BalaVAPICheck * self,
+bala_vapi_check_instance_init (BalaBAPICheck * self,
                                gpointer klass)
 {
 	self->priv = bala_vapi_check_get_instance_private (self);
@@ -1056,10 +1056,10 @@ bala_vapi_check_instance_init (BalaVAPICheck * self,
 }
 
 static void
-bala_vapi_check_finalize (BalaVAPICheck * obj)
+bala_vapi_check_finalize (BalaBAPICheck * obj)
 {
-	BalaVAPICheck * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_VAPI_CHECK, BalaVAPICheck);
+	BalaBAPICheck * self;
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_BAPI_CHECK, BalaBAPICheck);
 	g_signal_handlers_destroy (self);
 	_bala_code_context_unref0 (self->priv->_context);
 	_bala_source_file_unref0 (self->priv->_gidl);
@@ -1072,11 +1072,11 @@ static GType
 bala_vapi_check_get_type_once (void)
 {
 	static const GTypeValueTable g_define_type_value_table = { bala_value_vapi_check_init, bala_value_vapi_check_free_value, bala_value_vapi_check_copy_value, bala_value_vapi_check_peek_pointer, "p", bala_value_vapi_check_collect_value, "p", bala_value_vapi_check_lcopy_value };
-	static const GTypeInfo g_define_type_info = { sizeof (BalaVAPICheckClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) bala_vapi_check_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (BalaVAPICheck), 0, (GInstanceInitFunc) bala_vapi_check_instance_init, &g_define_type_value_table };
+	static const GTypeInfo g_define_type_info = { sizeof (BalaBAPICheckClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) bala_vapi_check_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (BalaBAPICheck), 0, (GInstanceInitFunc) bala_vapi_check_instance_init, &g_define_type_value_table };
 	static const GTypeFundamentalInfo g_define_type_fundamental_info = { (G_TYPE_FLAG_CLASSED | G_TYPE_FLAG_INSTANTIATABLE | G_TYPE_FLAG_DERIVABLE | G_TYPE_FLAG_DEEP_DERIVABLE) };
 	GType bala_vapi_check_type_id;
-	bala_vapi_check_type_id = g_type_register_fundamental (g_type_fundamental_next (), "BalaVAPICheck", &g_define_type_info, &g_define_type_fundamental_info, 0);
-	BalaVAPICheck_private_offset = g_type_add_instance_private (bala_vapi_check_type_id, sizeof (BalaVAPICheckPrivate));
+	bala_vapi_check_type_id = g_type_register_fundamental (g_type_fundamental_next (), "BalaBAPICheck", &g_define_type_info, &g_define_type_fundamental_info, 0);
+	BalaBAPICheck_private_offset = g_type_add_instance_private (bala_vapi_check_type_id, sizeof (BalaBAPICheckPrivate));
 	return bala_vapi_check_type_id;
 }
 
@@ -1095,7 +1095,7 @@ bala_vapi_check_get_type (void)
 G_GNUC_INTERNAL gpointer
 bala_vapi_check_ref (gpointer instance)
 {
-	BalaVAPICheck * self;
+	BalaBAPICheck * self;
 	self = instance;
 	g_atomic_int_inc (&self->ref_count);
 	return instance;
@@ -1104,10 +1104,10 @@ bala_vapi_check_ref (gpointer instance)
 G_GNUC_INTERNAL void
 bala_vapi_check_unref (gpointer instance)
 {
-	BalaVAPICheck * self;
+	BalaBAPICheck * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		BALA_VAPI_CHECK_GET_CLASS (self)->finalize (self);
+		BALA_BAPI_CHECK_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

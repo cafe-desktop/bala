@@ -6270,7 +6270,7 @@ public abstract class Bala.CCodeBaseModule : CodeGenerator {
 				set_func = get_ccode_name (base_prop.set_accessor);
 
 				if (!prop.external && prop.external_package) {
-					// internal VAPI properties
+					// internal BAPI properties
 					// only add them once per source file
 					if (add_generated_external_symbol (prop)) {
 						visit_property (prop);

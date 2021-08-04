@@ -22,8 +22,8 @@
 
 using GLib;
 
-class Bala.VAPICheck {
-	public VAPICheck (string gidlname, CodeContext context = new CodeContext ()) {
+class Bala.BAPICheck {
+	public BAPICheck (string gidlname, CodeContext context = new CodeContext ()) {
 		gidl = new SourceFile (context, SourceFileType.SOURCE, gidlname);
 		metadata = new SourceFile (context, SourceFileType.SOURCE, gidlname.substring (0, gidlname.length - 5) + ".metadata");
 		this.context = context;
@@ -174,7 +174,7 @@ class Bala.VAPICheck {
 			return 2;
 		}
 
-		var vapicheck = new VAPICheck (args[1]);
+		var vapicheck = new BAPICheck (args[1]);
 		return vapicheck.run ();
 	}
 }

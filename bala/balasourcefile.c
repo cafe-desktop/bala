@@ -1630,7 +1630,7 @@ bala_source_file_finalize (BalaSourceFile * obj)
 }
 
 /**
- * Represents a Bala source or VAPI package file.
+ * Represents a Bala source or BAPI package file.
  */
 static GType
 bala_source_file_get_type_once (void)

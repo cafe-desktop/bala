@@ -745,7 +745,7 @@ public class Bala.Class : ObjectTypeSymbol {
 			Report.error (source_reference, error_string);
 		}
 
-		/* VAPI classes don't have to specify overridden methods */
+		/* BAPI classes don't have to specify overridden methods */
 		if (source_type == SourceFileType.SOURCE) {
 			/* all abstract symbols defined in base types have to be at least defined (or implemented) also in this type */
 			foreach (DataType base_type in get_base_types ()) {

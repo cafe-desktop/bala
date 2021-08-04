@@ -1031,7 +1031,7 @@
 
 	* gobject/balaccodegenerator.bala:
 
-	Fix crash when using VAPI properties outside of a class
+	Fix crash when using BAPI properties outside of a class
 
 2008-08-05  Thijs Vermeir  <thijsvermeir@gmail.com>
 
@@ -1522,13 +1522,13 @@
 	* gobject/balaccodegenerator.bala:
 	* gobject/balaccodegeneratorsourcefile.bala:
 
-	Support methods and property accessors with body in VAPI files
+	Support methods and property accessors with body in BAPI files
 
 2008-07-07  Jürg Billeter  <j@bitron.ch>
 
 	* bala/balasemanticanalyzer.bala:
 
-	Allow non-external methods in VAPI files
+	Allow non-external methods in BAPI files
 
 2008-07-05  Jürg Billeter  <j@bitron.ch>
 
@@ -4181,7 +4181,7 @@
 	* vapi/gmodule-2.0.vapi:
 	* vapi/gstreamer-0.10.deps:
 
-	Move dynamic module loading support into separate VAPI file and
+	Move dynamic module loading support into separate BAPI file and
 	improve bindings, fixes bug 531583
 
 2008-05-11  Jürg Billeter  <j@bitron.ch>
@@ -6033,7 +6033,7 @@
 	* vapi/glib-2.0.vapi: add bindings for g_get_system_*_dirs
 
 	* bala/balacodecontext.bala: use g_get_system_data_dirs to find
-	  VAPI files, should make balac relocatable on Windows
+	  BAPI files, should make balac relocatable on Windows
 
 2008-03-02  Jürg Billeter  <j@bitron.ch>
 
@@ -7350,7 +7350,7 @@
 
 2008-01-21  Jürg Billeter  <j@bitron.ch>
 
-	* bala/balasemanticanalyzer.bala: set base_method also in VAPI classes
+	* bala/balasemanticanalyzer.bala: set base_method also in BAPI classes
 	  for virtual and abstract methods, fixes `base´ access
 
 2008-01-21  Jürg Billeter  <j@bitron.ch>
@@ -7433,7 +7433,7 @@
 
 2008-01-19  Jürg Billeter  <j@bitron.ch>
 
-	* bala/balainterfacewriter.bala, bala/balasemanticanalyzer.bala: VAPI
+	* bala/balainterfacewriter.bala, bala/balasemanticanalyzer.bala: BAPI
 	  classes don't specify overridden methods or properties, fix generic
 	  type argument tracing to use the same algorithm as inherited symbol
 	  lookup
@@ -8865,7 +8865,7 @@
 
 2007-10-09  Jürg Billeter  <j@bitron.ch>
 
-	Use --basedir in build system and rename all VAPI files to .vapi,
+	Use --basedir in build system and rename all BAPI files to .vapi,
 	requires r646 to build
 
 2007-10-09  Jürg Billeter  <j@bitron.ch>
@@ -9200,7 +9200,7 @@
 2007-09-08  Jürg Billeter  <j@bitron.ch>
 
 	* bala/parser.y: ensure there is always a default construction method
-	  for non-abstract non-VAPI classes
+	  for non-abstract non-BAPI classes
 
 2007-09-08  Jürg Billeter  <j@bitron.ch>
 
@@ -9236,7 +9236,7 @@
 
 	* vapi/packages/gnet-2.0/*: create bindings for gnet-2.0
 	* vapi/gnet-2.0.bala: first attempt to generate gnet-2.0 bindings. 
-	  not adding to Makefile.am for now, as this VAPI is untested, 
+	  not adding to Makefile.am for now, as this BAPI is untested, 
 	  well and because gnet-2.0 uses depricated glib API
 
 2007-09-06  Mathias Hasselmann  <mathias.hasselmann@gmx.de>
@@ -9662,7 +9662,7 @@
 2007-08-28  Jürg Billeter  <j@bitron.ch>
 
 	* bala/balafield.bala, bala/balainterfacewriter.bala: support custom
-	  field cname in generated VAPI file
+	  field cname in generated BAPI file
 
 	* vapigen/balagidlparser.bala: add mode_t support
 
@@ -9706,7 +9706,7 @@
 2007-08-28  Jürg Billeter  <j@bitron.ch>
 
 	* vapi/Makefile.am, vapi/glib-2.0.bala, vapi/math.bala: move math
-	  functions to GLib VAPI, remove math.bala
+	  functions to GLib BAPI, remove math.bala
 
 2007-08-28  Jürg Billeter  <j@bitron.ch>
 
@@ -10528,7 +10528,7 @@
 
 2007-07-24  Jürg Billeter  <j@bitron.ch>
 
-	* bala/balamemorymanager.bala: skip memory manager for VAPI files
+	* bala/balamemorymanager.bala: skip memory manager for BAPI files
 	* bala/balasemanticanalyzer.bala: remove unnecessary code in
 	  visit_creation_method
 
@@ -10934,7 +10934,7 @@
 
 	* vapi/glib-2.0.bala: fix TimeVal binding
 	* vapi/dbus-glib-1.bala, vapi/hal.deps, vapi/hal.bala: add experimental
-	  VAPI for HAL
+	  BAPI for HAL
 	* vapi/Makefile.am: update
 
 2007-07-04  Jürg Billeter  <j@bitron.ch>
@@ -10956,7 +10956,7 @@
 	* vapi/atk.bala, vapi/gdk-2.0.bala, vapi/gtk+-2.0.bala, vapi/pango.bala:
 	  regenerated
 	* vapi/gio-standalone.bala, vapi/packages/gio-standalone/: add
-	  experimental VAPI for GVFS
+	  experimental BAPI for GVFS
 	* vapi/Makefile.am: update
 
 2007-07-01  Jürg Billeter  <j@bitron.ch>
@@ -11111,7 +11111,7 @@
 2007-05-09  Jürg Billeter  <j@bitron.ch>
 
 	* bala/balanamespace.bala: don't add default include directives for
-	  VAPI files, fixes bug 436761
+	  BAPI files, fixes bug 436761
 
 2007-05-07  Jürg Billeter  <j@bitron.ch>
 
@@ -12286,7 +12286,7 @@
 	* bala/balasemanticanalyzer.bala: set return type in property set
 	  accessors to void
 	* bala/balacodegenerator.bala: move public constants to header file
-	* bala/balaclass.bala: don't create fields for properties in VAPI files
+	* bala/balaclass.bala: don't create fields for properties in BAPI files
 	* bala/balaconstant.bala: add access member
 
 2006-09-02  Jürg Billeter  <j@bitron.ch>
@@ -12618,7 +12618,7 @@
 	* bala/balacodecontext.bala: adapt to changes in SourceFile
 	* bala/balaparser.bala: correct handling of source files without header
 	  comments
-	* bala/balasymbolbuilder.bala: don't generate code for VAPI files
+	* bala/balasymbolbuilder.bala: don't generate code for BAPI files
 	* bala/balasemanticanalyzer.bala: report error respectively warning if
 	  method return type misses ownership transfer
 	* bala/balainterfacewriter.bala: correct property declaration output
