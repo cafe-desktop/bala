@@ -34,16 +34,16 @@
 #include <locale.h>
 #include <gobject/gvaluecollector.h>
 
-#define BALA_TYPE_VAPI_GEN (bala_vapi_gen_get_type ())
-#define BALA_VAPI_GEN(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_TYPE_VAPI_GEN, BalaVAPIGen))
-#define BALA_VAPI_GEN_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_TYPE_VAPI_GEN, BalaVAPIGenClass))
-#define BALA_IS_VAPI_GEN(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_TYPE_VAPI_GEN))
-#define BALA_IS_VAPI_GEN_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_TYPE_VAPI_GEN))
-#define BALA_VAPI_GEN_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_TYPE_VAPI_GEN, BalaVAPIGenClass))
+#define BALA_TYPE_BAPI_GEN (bala_vapi_gen_get_type ())
+#define BALA_BAPI_GEN(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_TYPE_BAPI_GEN, BalaBAPIGen))
+#define BALA_BAPI_GEN_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_TYPE_BAPI_GEN, BalaBAPIGenClass))
+#define BALA_IS_BAPI_GEN(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_TYPE_BAPI_GEN))
+#define BALA_IS_BAPI_GEN_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_TYPE_BAPI_GEN))
+#define BALA_BAPI_GEN_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_TYPE_BAPI_GEN, BalaBAPIGenClass))
 
-typedef struct _BalaVAPIGen BalaVAPIGen;
-typedef struct _BalaVAPIGenClass BalaVAPIGenClass;
-typedef struct _BalaVAPIGenPrivate BalaVAPIGenPrivate;
+typedef struct _BalaBAPIGen BalaBAPIGen;
+typedef struct _BalaBAPIGenClass BalaBAPIGenClass;
+typedef struct _BalaBAPIGenPrivate BalaBAPIGenPrivate;
 #define _bala_code_context_unref0(var) ((var == NULL) ? NULL : (var = (bala_code_context_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _bala_source_file_unref0(var) ((var == NULL) ? NULL : (var = (bala_source_file_unref (var), NULL)))
@@ -62,28 +62,28 @@ typedef struct _BalaGIdlParserClass BalaGIdlParserClass;
 #define _g_option_context_free0(var) ((var == NULL) ? NULL : (var = (g_option_context_free (var), NULL)))
 #define _g_error_free0(var) ((var == NULL) ? NULL : (var = (g_error_free (var), NULL)))
 #define _bala_vapi_gen_unref0(var) ((var == NULL) ? NULL : (var = (bala_vapi_gen_unref (var), NULL)))
-typedef struct _BalaParamSpecVAPIGen BalaParamSpecVAPIGen;
+typedef struct _BalaParamSpecBAPIGen BalaParamSpecBAPIGen;
 
-struct _BalaVAPIGen {
+struct _BalaBAPIGen {
 	GTypeInstance parent_instance;
 	volatile int ref_count;
-	BalaVAPIGenPrivate * priv;
+	BalaBAPIGenPrivate * priv;
 };
 
-struct _BalaVAPIGenClass {
+struct _BalaBAPIGenClass {
 	GTypeClass parent_class;
-	void (*finalize) (BalaVAPIGen *self);
+	void (*finalize) (BalaBAPIGen *self);
 };
 
-struct _BalaVAPIGenPrivate {
+struct _BalaBAPIGenPrivate {
 	BalaCodeContext* context;
 };
 
-struct _BalaParamSpecVAPIGen {
+struct _BalaParamSpecBAPIGen {
 	GParamSpec parent_instance;
 };
 
-static gint BalaVAPIGen_private_offset;
+static gint BalaBAPIGen_private_offset;
 static gpointer bala_vapi_gen_parent_class = NULL;
 static gchar** bala_vapi_gen_vapi_directories;
 static gchar** bala_vapi_gen_gir_directories;
@@ -121,9 +121,9 @@ G_GNUC_INTERNAL void bala_value_take_vapi_gen (GValue* value,
                                gpointer v_object);
 G_GNUC_INTERNAL gpointer bala_value_get_vapi_gen (const GValue* value) G_GNUC_UNUSED;
 G_GNUC_INTERNAL GType bala_vapi_gen_get_type (void) G_GNUC_CONST G_GNUC_UNUSED;
-G_DEFINE_AUTOPTR_CLEANUP_FUNC (BalaVAPIGen, bala_vapi_gen_unref)
-static gint bala_vapi_gen_quit (BalaVAPIGen* self);
-static gint bala_vapi_gen_run (BalaVAPIGen* self);
+G_DEFINE_AUTOPTR_CLEANUP_FUNC (BalaBAPIGen, bala_vapi_gen_unref)
+static gint bala_vapi_gen_quit (BalaBAPIGen* self);
+static gint bala_vapi_gen_run (BalaBAPIGen* self);
 GType bala_gidl_parser_get_type (void) G_GNUC_CONST;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (BalaGIdlParser, bala_code_visitor_unref)
 BalaGIdlParser* bala_gidl_parser_new (void);
@@ -139,9 +139,9 @@ static void _bala_array_add1 (gchar** * array,
                        gchar* value);
 static gint bala_vapi_gen_main (gchar** args,
                          gint args_length1);
-G_GNUC_INTERNAL BalaVAPIGen* bala_vapi_gen_new (void);
-G_GNUC_INTERNAL BalaVAPIGen* bala_vapi_gen_construct (GType object_type);
-static void bala_vapi_gen_finalize (BalaVAPIGen * obj);
+G_GNUC_INTERNAL BalaBAPIGen* bala_vapi_gen_new (void);
+G_GNUC_INTERNAL BalaBAPIGen* bala_vapi_gen_construct (GType object_type);
+static void bala_vapi_gen_finalize (BalaBAPIGen * obj);
 static GType bala_vapi_gen_get_type_once (void);
 static void _bala_array_destroy (gpointer array,
                           gint array_length,
@@ -151,16 +151,16 @@ static void _bala_array_free (gpointer array,
                        GDestroyNotify destroy_func);
 static gint _bala_array_length (gpointer array);
 
-static const GOptionEntry BALA_VAPI_GEN_options[12] = {{"vapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_vapi_gen_vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_vapi_gen_gir_directories, "Look for GIR bindings in DIRECTORY", "DIRECTORY..."}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_vapi_gen_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"nostdpkg", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_vapi_gen_nostdpkg, "Do not include standard packages", NULL}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &bala_vapi_gen_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"library", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_vapi_gen_library, "Library name", "NAME"}, {"directory", 'd', 0, G_OPTION_ARG_FILENAME, &bala_vapi_gen_directory, "Output directory", "DIRECTORY"}, {"disable-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_vapi_gen_disable_warnings, "Disable warnings", NULL}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_vapi_gen_version, "Display version number", NULL}, {"quiet", 'q', 0, G_OPTION_ARG_NONE, &bala_vapi_gen_quiet_mode, "Do not print messages to the console", NULL}, {G_OPTION_REMAINING, (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_vapi_gen_sources, NULL, "FILE..."}, {NULL}};
+static const GOptionEntry BALA_BAPI_GEN_options[12] = {{"vapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_vapi_gen_vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_vapi_gen_gir_directories, "Look for GIR bindings in DIRECTORY", "DIRECTORY..."}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_vapi_gen_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"nostdpkg", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_vapi_gen_nostdpkg, "Do not include standard packages", NULL}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &bala_vapi_gen_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"library", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_vapi_gen_library, "Library name", "NAME"}, {"directory", 'd', 0, G_OPTION_ARG_FILENAME, &bala_vapi_gen_directory, "Output directory", "DIRECTORY"}, {"disable-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_vapi_gen_disable_warnings, "Disable warnings", NULL}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_vapi_gen_version, "Display version number", NULL}, {"quiet", 'q', 0, G_OPTION_ARG_NONE, &bala_vapi_gen_quiet_mode, "Do not print messages to the console", NULL}, {G_OPTION_REMAINING, (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_vapi_gen_sources, NULL, "FILE..."}, {NULL}};
 
 static inline gpointer
-bala_vapi_gen_get_instance_private (BalaVAPIGen* self)
+bala_vapi_gen_get_instance_private (BalaBAPIGen* self)
 {
-	return G_STRUCT_MEMBER_P (self, BalaVAPIGen_private_offset);
+	return G_STRUCT_MEMBER_P (self, BalaBAPIGen_private_offset);
 }
 
 static gint
-bala_vapi_gen_quit (BalaVAPIGen* self)
+bala_vapi_gen_quit (BalaBAPIGen* self)
 {
 	BalaCodeContext* _tmp0_;
 	BalaReport* _tmp1_;
@@ -305,7 +305,7 @@ _bala_array_add1 (gchar** * array,
 }
 
 static gint
-bala_vapi_gen_run (BalaVAPIGen* self)
+bala_vapi_gen_run (BalaBAPIGen* self)
 {
 	BalaCodeContext* _tmp0_;
 	BalaCodeContext* _tmp1_;
@@ -846,7 +846,7 @@ bala_vapi_gen_run (BalaVAPIGen* self)
 		_g_free0 (_tmp148_);
 		_g_free0 (_tmp146_);
 	}
-	_tmp149_ = bala_code_writer_new (BALA_CODE_WRITER_TYPE_VAPIGEN);
+	_tmp149_ = bala_code_writer_new (BALA_CODE_WRITER_TYPE_BAPIGEN);
 	interface_writer = _tmp149_;
 	_tmp150_ = bala_vapi_gen_library;
 	_tmp151_ = g_strdup_printf ("%s.vapi", _tmp150_);
@@ -885,9 +885,9 @@ bala_vapi_gen_main (gchar** args,
 {
 	gchar** _tmp12_;
 	gint _tmp12__length1;
-	BalaVAPIGen* vapigen = NULL;
-	BalaVAPIGen* _tmp14_;
-	BalaVAPIGen* _tmp15_;
+	BalaBAPIGen* vapigen = NULL;
+	BalaBAPIGen* _tmp14_;
+	BalaBAPIGen* _tmp15_;
 	GError* _inner_error0_ = NULL;
 	gint result = 0;
 	setlocale (LC_ALL, "");
@@ -902,7 +902,7 @@ bala_vapi_gen_main (gchar** args,
 		_tmp1_ = opt_context;
 		g_option_context_set_help_enabled (_tmp1_, TRUE);
 		_tmp2_ = opt_context;
-		g_option_context_add_main_entries (_tmp2_, BALA_VAPI_GEN_options, NULL);
+		g_option_context_add_main_entries (_tmp2_, BALA_BAPI_GEN_options, NULL);
 		_tmp3_ = opt_context;
 		g_option_context_parse (_tmp3_, (gint*) (&args_length1), &args, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
@@ -977,18 +977,18 @@ main (int argc,
 	return bala_vapi_gen_main (argv, argc);
 }
 
-G_GNUC_INTERNAL BalaVAPIGen*
+G_GNUC_INTERNAL BalaBAPIGen*
 bala_vapi_gen_construct (GType object_type)
 {
-	BalaVAPIGen* self = NULL;
-	self = (BalaVAPIGen*) g_type_create_instance (object_type);
+	BalaBAPIGen* self = NULL;
+	self = (BalaBAPIGen*) g_type_create_instance (object_type);
 	return self;
 }
 
-G_GNUC_INTERNAL BalaVAPIGen*
+G_GNUC_INTERNAL BalaBAPIGen*
 bala_vapi_gen_new (void)
 {
-	return bala_vapi_gen_construct (BALA_TYPE_VAPI_GEN);
+	return bala_vapi_gen_construct (BALA_TYPE_BAPI_GEN);
 }
 
 static void
@@ -1029,7 +1029,7 @@ bala_value_vapi_gen_collect_value (GValue* value,
                                    guint collect_flags)
 {
 	if (collect_values[0].v_pointer) {
-		BalaVAPIGen * object;
+		BalaBAPIGen * object;
 		object = collect_values[0].v_pointer;
 		if (object->parent_instance.g_class == NULL) {
 			return g_strconcat ("invalid unclassed object pointer for value type `", G_VALUE_TYPE_NAME (value), "'", NULL);
@@ -1049,7 +1049,7 @@ bala_value_vapi_gen_lcopy_value (const GValue* value,
                                  GTypeCValue* collect_values,
                                  guint collect_flags)
 {
-	BalaVAPIGen ** object_p;
+	BalaBAPIGen ** object_p;
 	object_p = collect_values[0].v_pointer;
 	if (!object_p) {
 		return g_strdup_printf ("value location for `%s' passed as NULL", G_VALUE_TYPE_NAME (value));
@@ -1071,8 +1071,8 @@ bala_param_spec_vapi_gen (const gchar* name,
                           GType object_type,
                           GParamFlags flags)
 {
-	BalaParamSpecVAPIGen* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_VAPI_GEN), NULL);
+	BalaParamSpecBAPIGen* spec;
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_BAPI_GEN), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1081,7 +1081,7 @@ bala_param_spec_vapi_gen (const gchar* name,
 G_GNUC_INTERNAL gpointer
 bala_value_get_vapi_gen (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_GEN), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_BAPI_GEN), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1089,11 +1089,11 @@ G_GNUC_INTERNAL void
 bala_value_set_vapi_gen (GValue* value,
                          gpointer v_object)
 {
-	BalaVAPIGen * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_GEN));
+	BalaBAPIGen * old;
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_BAPI_GEN));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VAPI_GEN));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_BAPI_GEN));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		bala_vapi_gen_ref (value->data[0].v_pointer);
@@ -1109,11 +1109,11 @@ G_GNUC_INTERNAL void
 bala_value_take_vapi_gen (GValue* value,
                           gpointer v_object)
 {
-	BalaVAPIGen * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_GEN));
+	BalaBAPIGen * old;
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_BAPI_GEN));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VAPI_GEN));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_BAPI_GEN));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1125,16 +1125,16 @@ bala_value_take_vapi_gen (GValue* value,
 }
 
 static void
-bala_vapi_gen_class_init (BalaVAPIGenClass * klass,
+bala_vapi_gen_class_init (BalaBAPIGenClass * klass,
                           gpointer klass_data)
 {
 	bala_vapi_gen_parent_class = g_type_class_peek_parent (klass);
-	((BalaVAPIGenClass *) klass)->finalize = bala_vapi_gen_finalize;
-	g_type_class_adjust_private_offset (klass, &BalaVAPIGen_private_offset);
+	((BalaBAPIGenClass *) klass)->finalize = bala_vapi_gen_finalize;
+	g_type_class_adjust_private_offset (klass, &BalaBAPIGen_private_offset);
 }
 
 static void
-bala_vapi_gen_instance_init (BalaVAPIGen * self,
+bala_vapi_gen_instance_init (BalaBAPIGen * self,
                              gpointer klass)
 {
 	self->priv = bala_vapi_gen_get_instance_private (self);
@@ -1142,10 +1142,10 @@ bala_vapi_gen_instance_init (BalaVAPIGen * self,
 }
 
 static void
-bala_vapi_gen_finalize (BalaVAPIGen * obj)
+bala_vapi_gen_finalize (BalaBAPIGen * obj)
 {
-	BalaVAPIGen * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_VAPI_GEN, BalaVAPIGen);
+	BalaBAPIGen * self;
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_BAPI_GEN, BalaBAPIGen);
 	g_signal_handlers_destroy (self);
 	_bala_code_context_unref0 (self->priv->context);
 }
@@ -1154,11 +1154,11 @@ static GType
 bala_vapi_gen_get_type_once (void)
 {
 	static const GTypeValueTable g_define_type_value_table = { bala_value_vapi_gen_init, bala_value_vapi_gen_free_value, bala_value_vapi_gen_copy_value, bala_value_vapi_gen_peek_pointer, "p", bala_value_vapi_gen_collect_value, "p", bala_value_vapi_gen_lcopy_value };
-	static const GTypeInfo g_define_type_info = { sizeof (BalaVAPIGenClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) bala_vapi_gen_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (BalaVAPIGen), 0, (GInstanceInitFunc) bala_vapi_gen_instance_init, &g_define_type_value_table };
+	static const GTypeInfo g_define_type_info = { sizeof (BalaBAPIGenClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) bala_vapi_gen_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (BalaBAPIGen), 0, (GInstanceInitFunc) bala_vapi_gen_instance_init, &g_define_type_value_table };
 	static const GTypeFundamentalInfo g_define_type_fundamental_info = { (G_TYPE_FLAG_CLASSED | G_TYPE_FLAG_INSTANTIATABLE | G_TYPE_FLAG_DERIVABLE | G_TYPE_FLAG_DEEP_DERIVABLE) };
 	GType bala_vapi_gen_type_id;
-	bala_vapi_gen_type_id = g_type_register_fundamental (g_type_fundamental_next (), "BalaVAPIGen", &g_define_type_info, &g_define_type_fundamental_info, 0);
-	BalaVAPIGen_private_offset = g_type_add_instance_private (bala_vapi_gen_type_id, sizeof (BalaVAPIGenPrivate));
+	bala_vapi_gen_type_id = g_type_register_fundamental (g_type_fundamental_next (), "BalaBAPIGen", &g_define_type_info, &g_define_type_fundamental_info, 0);
+	BalaBAPIGen_private_offset = g_type_add_instance_private (bala_vapi_gen_type_id, sizeof (BalaBAPIGenPrivate));
 	return bala_vapi_gen_type_id;
 }
 
@@ -1177,7 +1177,7 @@ bala_vapi_gen_get_type (void)
 G_GNUC_INTERNAL gpointer
 bala_vapi_gen_ref (gpointer instance)
 {
-	BalaVAPIGen * self;
+	BalaBAPIGen * self;
 	self = instance;
 	g_atomic_int_inc (&self->ref_count);
 	return instance;
@@ -1186,10 +1186,10 @@ bala_vapi_gen_ref (gpointer instance)
 G_GNUC_INTERNAL void
 bala_vapi_gen_unref (gpointer instance)
 {
-	BalaVAPIGen * self;
+	BalaBAPIGen * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		BALA_VAPI_GEN_GET_CLASS (self)->finalize (self);
+		BALA_BAPI_GEN_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

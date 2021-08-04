@@ -2484,7 +2484,7 @@
 	See https://gitlab.gnome.org/GNOME/bala/issues/649
 
 	glib-2.0: Add optional "base" parameter to *.parse/try_parse() of integers
-	Appending optional parameters to method implementations in VAPIs is not an
+	Appending optional parameters to method implementations in BAPIs is not an
 	API break.
 
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/223
@@ -5469,7 +5469,7 @@
 	codegen: Let methods return -1 on error by default if possible
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/526
 
-	codewriter: Output bodies of code-blocks if in VAPIGEN mode
+	codewriter: Output bodies of code-blocks if in BAPIGEN mode
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/231
 
 2018-07-04  Alistair Thomas  <astavale@yahoo.co.uk>
@@ -6260,7 +6260,7 @@
 	posix: Add ptsname(3)
 
 	linux: add getgroups(2), setgroups(2), getresgid(2), getresuid(2), setresgid(2), setresuid(2)
-	Based on a VAPI by Colin Watson.
+	Based on a BAPI by Colin Watson.
 
 	posix: Add setegid(2) and seteuid(2)
 
@@ -9696,8 +9696,8 @@
 
 2016-04-07  Maciej Borzecki  <maciej.borzecki@open-rnd.pl>
 
-	libnl-3.0.vapi: extend VAPI
-	The patch extends VAPI of libnl-3.0 with cache
+	libnl-3.0.vapi: extend BAPI
+	The patch extends BAPI of libnl-3.0 with cache
 	manager (nl_cache_mngr_*), additional methods of LinkCache and a helper
 	CachedLink type. The CachedLink type is a wrapper for the Link object,
 	however since the object is obtained from cache, rtnl_link_put() must be
@@ -12571,7 +12571,7 @@
 	girparser: skip doc-version, -deprecated, and -stability
 	These element aren't in GObject Introspection yet, but should be coming
 	soon.  Since we don't want to parse the docbook we'll just skip them
-	instead of tryin to add the information to the VAPI.
+	instead of tryin to add the information to the BAPI.
 
 2013-10-07  Timm Bäder  <mail@baedert.org>
 
@@ -14041,7 +14041,7 @@
 
 	vapigen.m4: use $vapigen_pkg_name as the name of the vapigen package
 	We should use $vapigen_pkg_name, not "vapigen", as the name of the
-	vapigen package; if the second parameter to VAPIGEN_CHECK is set, then
+	vapigen package; if the second parameter to BAPIGEN_CHECK is set, then
 	$vapigen_pkg_name != "vapigen".
 
 	Fixes bug 682203.
@@ -15020,7 +15020,7 @@
 
 2012-04-18  Rodney Dawes  <dobey.pwns@gmail.com>
 
-	bala.m4: Add BALA_CHECK_MODULES and BALA_PROG_VAPIGEN
+	bala.m4: Add BALA_CHECK_MODULES and BALA_PROG_BAPIGEN
 	Fixes bug 642301.
 
 2012-04-12  Robert Ancell  <robert.ancell@canonical.com>
@@ -21640,7 +21640,7 @@
 
 2010-08-04  Marc-André Lureau  <marcandre.lureau@gmail.com>
 
-	Write CCode attributes for property accessors in VAPI files
+	Write CCode attributes for property accessors in BAPI files
 	Fixes bug 614206.
 
 	Fix default values of flag enums
@@ -22090,7 +22090,7 @@
 
 	dova: Support calling equals on generic type parameters
 
-	Write [NoReturn] in VAPI files
+	Write [NoReturn] in BAPI files
 
 2010-07-04  Jürg Billeter  <j@bitron.ch>
 
@@ -22238,7 +22238,7 @@
 
 	gio-2.0: Various fixes for g_dbus_* bindings
 
-	Fix writing of async creation methods in VAPI files
+	Fix writing of async creation methods in BAPI files
 
 2010-06-28  Evan Nemerson  <evan@coeus-group.com>
 
@@ -24147,10 +24147,10 @@
 
 2010-03-13  Jürg Billeter  <j@bitron.ch>
 
-	Fix instance_pos attribute writing in VAPI files
+	Fix instance_pos attribute writing in BAPI files
 	Fixes bug 609088.
 
-	dova: Do not write `owned' in VAPI files
+	dova: Do not write `owned' in BAPI files
 
 	dova: Do not support foreach without iterator
 
@@ -24446,7 +24446,7 @@
 
 2010-02-18  Jürg Billeter  <j@bitron.ch>
 
-	Support nullable error types in VAPI files
+	Support nullable error types in BAPI files
 
 2010-02-17  Sandino Flores  <sandino@ti.com>
 
@@ -24739,7 +24739,7 @@
 2010-02-01  Rob Taylor  <rob.taylor@codethink.co.uk>
 
 	GIR Namespace support
-	This patch introduces two new CCode annotations for use in VAPI files,
+	This patch introduces two new CCode annotations for use in BAPI files,
 	gir_namespace and gir_version. This allows us to correctly map bala
 	namespaces to gobject-introspection namespaces when generating GIR
 	files.
@@ -25006,9 +25006,9 @@
 
 2010-01-16  Jürg Billeter  <j@bitron.ch>
 
-	Fix has_type_id attribute writing in VAPI files
+	Fix has_type_id attribute writing in BAPI files
 
-	Write has_type_id attribute for structs in VAPI files
+	Write has_type_id attribute for structs in BAPI files
 	Make sure we don't lose has_type_id if it's false.
 
 	Based on patch by Marc-André Lureau, fixes bug 606580.
@@ -25321,7 +25321,7 @@
 
 	bala-gen-introspect: Allow absolute path in .files
 	This allows one to specify absolute paths to headers and libraries in
-	.files. This will make it possible to generate the VAPI as part of the
+	.files. This will make it possible to generate the BAPI as part of the
 	library's build process.
 
 2009-12-15  Jürg Billeter  <j@bitron.ch>
@@ -25343,7 +25343,7 @@
 	gstreamer-0.10: Fix gst_bus_add_watch binding
 	Use gst_bus_add_watch_full to accept owned delegates.
 
-	Write parameter positions in VAPI files
+	Write parameter positions in BAPI files
 
 	NULL-terminate array copies
 
@@ -27011,7 +27011,7 @@
 
 2009-09-05  Jürg Billeter  <j@bitron.ch>
 
-	Write type parameters of generic methods in VAPI files
+	Write type parameters of generic methods in BAPI files
 
 	Add support for properties in structs
 
@@ -27060,7 +27060,7 @@
 	gstreamer-0.10: Fix gst_element_class_get_pad_template_list
 	Fixes bug 593973.
 
-	Do not write default param_spec_function in VAPI files
+	Do not write default param_spec_function in BAPI files
 
 2009-09-03  Evan Nemerson  <evan@polussystems.com>
 
@@ -27113,7 +27113,7 @@
 
 	add initial GSettings support to gio-2.0 vapi
 
-	Add partial GVariant bindings to glib VAPI
+	Add partial GVariant bindings to glib BAPI
 
 2009-09-01  Jürg Billeter  <j@bitron.ch>
 
@@ -27198,7 +27198,7 @@
 2009-08-20  Mark Lee  <marklee@src.gnome.org>
 
 	balac: Add flag to specify a separate basedir for the public header
-	This basedir is used in the VAPI file. Needed because of the way that build
+	This basedir is used in the BAPI file. Needed because of the way that build
 	systems such as Waf deal with the location of the public header.
 
 	Fixes GNOME Bug #589964.
@@ -28727,7 +28727,7 @@
 
 2009-04-15  Jürg Billeter  <j@bitron.ch>
 
-	Fix temp variable declaration in internal VAPI properties
+	Fix temp variable declaration in internal BAPI properties
 
 	Remove gnet-2.0 bindings
 	The generated bindings are broken as the C library does not follow
@@ -28765,7 +28765,7 @@
 
 2009-04-14  Jürg Billeter  <j@bitron.ch>
 
-	Support set accessors in internal VAPI properties
+	Support set accessors in internal BAPI properties
 	Fixes bug 545187.
 
 	Regenerate more bindings
@@ -29040,7 +29040,7 @@
 
 	Fix declaration order of classes and field types
 
-	Fix temp variable declaration in internal VAPI methods
+	Fix temp variable declaration in internal BAPI methods
 
 	Fix error messages when using preprocessing directives
 	The line information was off when skipping conditional sections.
@@ -29303,7 +29303,7 @@
 
 2009-03-29  Didier 'Ptitjes  <ptitjes@free.fr>
 
-	Write custom attributes in VAPI files
+	Write custom attributes in BAPI files
 	Fixes bug 577063.
 
 2009-03-29  Iain  <iain@gnome.org>

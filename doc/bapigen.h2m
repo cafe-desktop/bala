@@ -7,7 +7,7 @@ vapigen \- generate a Bala API
 
 [DESCRIPTION]
 .B vapigen
-is a utility which generates Bala API (VAPI) files from GI files,
+is a utility which generates Bala API (BAPI) files from GI files,
 which may be generated using the bala-gen-introspect(1) utility.
 
 [EXAMPLES]

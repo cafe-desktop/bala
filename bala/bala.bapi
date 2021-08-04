@@ -2593,7 +2593,7 @@ namespace Bala {
 		INTERNAL,
 		FAST,
 		DUMP,
-		VAPIGEN
+		BAPIGEN
 	}
 	[CCode (cheader_filename = "bala.h")]
 	public enum MarkupTokenType {

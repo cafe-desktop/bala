@@ -115,18 +115,18 @@ AC_DEFUN([BALA_CHECK_MODULES],
 ])
 
 # Check whether the Bala API Generator exists in `PATH'. If it is found,
-# the variable VAPIGEN is set. Optionally a minimum release number of the
+# the variable BAPIGEN is set. Optionally a minimum release number of the
 # generator can be requested.
 #
-# BALA_PROG_VAPIGEN([MINIMUM-VERSION])
+# BALA_PROG_BAPIGEN([MINIMUM-VERSION])
 # ------------------------------------
-AC_DEFUN([BALA_PROG_VAPIGEN],
-[AC_PATH_PROG([VAPIGEN], [vapigen], [])
-  AS_IF([test -z "$VAPIGEN"],
+AC_DEFUN([BALA_PROG_BAPIGEN],
+[AC_PATH_PROG([BAPIGEN], [vapigen], [])
+  AS_IF([test -z "$BAPIGEN"],
     [AC_MSG_WARN([No Bala API Generator found. You will not be able to generate .vapi files.])],
     [AS_IF([test -n "$1"],
-        [AC_MSG_CHECKING([$VAPIGEN is at least version $1])
-         am__vapigen_version=`$VAPIGEN --version | sed 's/Bala API Generator  *//'`
+        [AC_MSG_CHECKING([$BAPIGEN is at least version $1])
+         am__vapigen_version=`$BAPIGEN --version | sed 's/Bala API Generator  *//'`
          AS_VERSION_COMPARE([$1], ["$am__vapigen_version"],
            [AC_MSG_RESULT([yes])],
            [AC_MSG_RESULT([yes])],

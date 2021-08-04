@@ -116,7 +116,7 @@ public abstract class Bala.Symbol : CodeNode {
 	 */
 	public bool is_internal_symbol () {
 		if (!external && external_package) {
-			// non-external symbols in VAPI files are internal symbols
+			// non-external symbols in BAPI files are internal symbols
 			return true;
 		}
 
@@ -132,7 +132,7 @@ public abstract class Bala.Symbol : CodeNode {
 
 	public bool is_private_symbol () {
 		if (!external && external_package) {
-			// non-external symbols in VAPI files are private symbols
+			// non-external symbols in BAPI files are private symbols
 			return true;
 		}
 

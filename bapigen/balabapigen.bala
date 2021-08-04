@@ -22,7 +22,7 @@
 
 using GLib;
 
-class Bala.VAPIGen {
+class Bala.BAPIGen {
 	static string directory;
 	static bool version;
 	static bool quiet_mode;
@@ -204,7 +204,7 @@ class Bala.VAPIGen {
 			Report.warning (null, "Given library name `%s' does not match pkg-config name `%s'".printf (library_name, string.join ("', `", package_names)));
 		}
 
-		var interface_writer = new CodeWriter (CodeWriterType.VAPIGEN);
+		var interface_writer = new CodeWriter (CodeWriterType.BAPIGEN);
 		var vapi_filename = "%s.vapi".printf (library);
 		if (directory != null) {
 			vapi_filename = Path.build_path ("/", directory, vapi_filename);
@@ -240,7 +240,7 @@ class Bala.VAPIGen {
 			return 1;
 		}
 		
-		var vapigen = new VAPIGen ();
+		var vapigen = new BAPIGen ();
 		return vapigen.run ();
 	}
 }

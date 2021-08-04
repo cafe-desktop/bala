@@ -314,7 +314,7 @@ public class Bala.CodeWriter : CodeVisitor {
 	}
 
 	void visit_sorted (List<Symbol> symbols) {
-		if (type != CodeWriterType.EXTERNAL && type != CodeWriterType.VAPIGEN) {
+		if (type != CodeWriterType.EXTERNAL && type != CodeWriterType.BAPIGEN) {
 			// order of virtual methods matters for fast vapis
 			foreach (Symbol sym in symbols) {
 				sym.accept (this);
@@ -1559,7 +1559,7 @@ public class Bala.CodeWriter : CodeVisitor {
 	}
 
 	void write_code_block (Block? block) {
-		if (block == null || (type != CodeWriterType.DUMP && type != CodeWriterType.VAPIGEN)) {
+		if (block == null || (type != CodeWriterType.DUMP && type != CodeWriterType.BAPIGEN)) {
 			write_string (";");
 			return;
 		}
@@ -1587,7 +1587,7 @@ public class Bala.CodeWriter : CodeVisitor {
 	private bool check_accessibility (Symbol sym) {
 		switch (type) {
 		case CodeWriterType.EXTERNAL:
-		case CodeWriterType.VAPIGEN:
+		case CodeWriterType.BAPIGEN:
 			return sym.access == SymbolAccessibility.PUBLIC ||
 			       sym.access == SymbolAccessibility.PROTECTED;
 
@@ -1712,7 +1712,7 @@ public class Bala.CodeWriter : CodeVisitor {
 		write_string (sym.access.to_string ());
 		write_string (" ");
 
-		if (type != CodeWriterType.EXTERNAL && type != CodeWriterType.VAPIGEN && sym.external && !sym.external_package) {
+		if (type != CodeWriterType.EXTERNAL && type != CodeWriterType.BAPIGEN && sym.external && !sym.external_package) {
 			write_string ("extern ");
 		}
 	}
@@ -1748,5 +1748,5 @@ public enum Bala.CodeWriterType {
 	INTERNAL,
 	FAST,
 	DUMP,
-	VAPIGEN
+	BAPIGEN
 }

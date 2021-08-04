@@ -40,7 +40,7 @@ public abstract class Bala.CCodeMemberAccessModule : CCodeControlFlowModule {
 				generate_method_declaration (m, cfile);
 
 				if (!m.external && m.external_package) {
-					// internal VAPI methods
+					// internal BAPI methods
 					// only add them once per source file
 					if (add_generated_external_symbol (m)) {
 						visit_method (m);
@@ -212,7 +212,7 @@ public abstract class Bala.CCodeMemberAccessModule : CCodeControlFlowModule {
 				generate_property_accessor_declaration (prop.get_accessor, cfile);
 
 				if (!prop.external && prop.external_package) {
-					// internal VAPI properties
+					// internal BAPI properties
 					// only add them once per source file
 					if (add_generated_external_symbol (prop)) {
 						visit_property (prop);

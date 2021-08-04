@@ -242,7 +242,7 @@
 
 	* bala/balacodewriter.bala:
 
-	Add error domains to VAPI files, fixes bug 571692
+	Add error domains to BAPI files, fixes bug 571692
 
 2009-02-13  Ryan Lortie  <desrt@desrt.ca>
 
@@ -2257,7 +2257,7 @@
 	* gobject/balaccodemethodmodule.bala:
 
 	Fix temporary variable handling when using methods defined in
-	VAPI files
+	BAPI files
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
@@ -2405,7 +2405,7 @@
 	* gobject/balaccodemethodcallmodule.bala:
 	* vapi/glib-2.0.vapi:
 
-	Move substring method to VAPI file, handle negative and out of
+	Move substring method to BAPI file, handle negative and out of
 	bounds values, fixes bug 443524
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
@@ -2791,7 +2791,7 @@
 
 	* gobject/balaccodemethodmodule.bala:
 
-	Fix inline struct methods in VAPI files
+	Fix inline struct methods in BAPI files
 
 2008-12-07  Thijs Vermeir  <thijsvermeir@gmail.com>
 
@@ -5112,7 +5112,7 @@
 	* vapi/gobject-2.0.vapi:
 	* vapi/Makefile.am:
 
-	Move gobject-2.0 bindings to separate VAPI file
+	Move gobject-2.0 bindings to separate BAPI file
 
 	* compiler/balacompiler.bala:
 	* vapigen/balavapigen.bala:

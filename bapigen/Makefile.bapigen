@@ -12,50 +12,50 @@
 #
 # Variables:
 #
-#   VAPIGEN_FILES
+#   BAPIGEN_FILES
 #
-#     VAPIs to create
+#     BAPIs to create
 #
-#   *_DEPS / VAPIGEN_DEPS
+#   *_DEPS / BAPIGEN_DEPS
 #
 #       The dependencies. Generally the pkg-config names.
 #
-#   *_METADATADIRS / VAPIGEN_METADATADIRS
+#   *_METADATADIRS / BAPIGEN_METADATADIRS
 #
 #       Directory containing the metadata.
 #
-#   *_VAPIDIRS / VAPIGEN_VAPIDIRS
+#   *_BAPIDIRS / BAPIGEN_BAPIDIRS
 #
-#       Additional location(s) to search for VAPI dependencies.
+#       Additional location(s) to search for BAPI dependencies.
 #
-#   *_GIRDIRS / VAPIGEN_GIRDIRS
+#   *_GIRDIRS / BAPIGEN_GIRDIRS
 #
 #       Additional location(s) to search for GIR dependencies.
 #
 #   *_FILES
 #
-#       The files which should be used to generate the VAPI.
+#       The files which should be used to generate the BAPI.
 
 _vapigen_silent_prefix = $(_vapigen_silent_prefix_$(V))
 _vapigen_silent_prefix_ = $(_vapigen_silent_prefix_$(AM_DEFAULT_VERBOSITY))
-_vapigen_silent_prefix_0 = @echo " VAPIGEN $(1)";
+_vapigen_silent_prefix_0 = @echo " BAPIGEN $(1)";
 _vapigen_silent_opts = $(_vapigen_silent_opts_$(V))
 _vapigen_silent_opts_ = $(_vapigen_silent_opts_$(AM_DEFAULT_VERBOSITY))
 _vapigen_silent_opts_0 = --quiet
 
-$(if $(VAPIGEN),,$(error You must define VAPIGEN))
+$(if $(BAPIGEN),,$(error You must define BAPIGEN))
 
 _vapi_name = $(subst /,_,$(subst -,_,$(subst .,_,$(1))))
 
 define vapigen
 $(1): $$($(_vapi_name)_GIR)
-	$(_vapigen_silent_prefix) $(VAPIGEN) $(_vapigen_silent_opts) \
+	$(_vapigen_silent_prefix) $(BAPIGEN) $(_vapigen_silent_opts) \
 	  --library $(1:.vapi=) \
-	  $(foreach _vapi_metadatadir_name,$(if $($(_vapi_name)_METADATADIRS),$($(_vapi_name)_METADATADIRS),$(VAPIGEN_METADATADIRS)),--metadatadir $(_vapi_metadatadir_name)) \
-	  $(foreach _vapi_dir_name,$(if $($(_vapi_name)_VAPIDIRS),$($(_vapi_name)_VAPIDIRS),$(VAPIGEN_VAPIDIRS)),--vapidir $(_vapi_dir_name)) \
-	  $(foreach _gir_dir_name,$(if $($(_vapi_name)_GIRDIRS),$($(_vapi_name)_GIRDIRS),$(VAPIGEN_GIRDIRS)),--girdir $(_gir_dir_name)) \
-	  $(foreach _vapi_dep_name,$(if $($(_vapi_name)_DEPS),$($(_vapi_name)_DEPS),$(VAPIGEN_DEPS)),--pkg $(_vapi_dep_name)) \
+	  $(foreach _vapi_metadatadir_name,$(if $($(_vapi_name)_METADATADIRS),$($(_vapi_name)_METADATADIRS),$(BAPIGEN_METADATADIRS)),--metadatadir $(_vapi_metadatadir_name)) \
+	  $(foreach _vapi_dir_name,$(if $($(_vapi_name)_BAPIDIRS),$($(_vapi_name)_BAPIDIRS),$(BAPIGEN_BAPIDIRS)),--vapidir $(_vapi_dir_name)) \
+	  $(foreach _gir_dir_name,$(if $($(_vapi_name)_GIRDIRS),$($(_vapi_name)_GIRDIRS),$(BAPIGEN_GIRDIRS)),--girdir $(_gir_dir_name)) \
+	  $(foreach _vapi_dep_name,$(if $($(_vapi_name)_DEPS),$($(_vapi_name)_DEPS),$(BAPIGEN_DEPS)),--pkg $(_vapi_dep_name)) \
 	  $$($(_vapi_name)_FILES)
 endef
 
-$(foreach vapi,$(VAPIGEN_VAPIS),$(eval $(call vapigen,$(vapi))))
+$(foreach vapi,$(BAPIGEN_BAPIS),$(eval $(call vapigen,$(vapi))))

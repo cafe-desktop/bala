@@ -8,7 +8,7 @@
 <section>
 <title>Overview</title>
 <para>Bala is a programming language that aims to bring modern language features to GNOME developers without imposing any additional runtime requirements and without using a different ABI than applications and libraries written in C.  It provides a concise way of using GLib and GObject features, but does not attempt to expose all possibilities.  In particular, Bala is primarily a statically typed language - this is a design decision, not an oversight. </para>
-<para>The only support that Bala applications require at runtime are the standard GLib and GObject libraries.  It is possible to use any system library from Bala, provided that a VAPI file is written to describe the interface - Bala is distributed with VAPI descriptions of most libraries commonly used by GNOME applications, and many others as well. </para>
+<para>The only support that Bala applications require at runtime are the standard GLib and GObject libraries.  It is possible to use any system library from Bala, provided that a BAPI file is written to describe the interface - Bala is distributed with BAPI descriptions of most libraries commonly used by GNOME applications, and many others as well. </para>
 <para>Bala provides easy integration with DBus, by automatically writing boiler plate code where required, for exposing objects, dispatching methods, etc. </para>
 
 <section>
@@ -42,8 +42,8 @@
 
 <section>
 <title>Bala source files</title>
-<para>There are two types of Bala input files.  Bala source files (with a &quot;.bala&quot; extension) contain compileable Bala code. VAPI files (with a &quot;.vapi&quot; extension) describe an interface to a library, which can be written in either Bala or C.  VAPI files are not compileable, and cannot contain any executable code - they are used when compiling Bala source files. </para>
-<para>There are no requirements for how Bala source files are named, although there are conventions that can be followed. VAPI files are usually named to matched the pkg-config name of the library they relate to; they are described more fully in the documentation about bindings. </para>
+<para>There are two types of Bala input files.  Bala source files (with a &quot;.bala&quot; extension) contain compileable Bala code. BAPI files (with a &quot;.vapi&quot; extension) describe an interface to a library, which can be written in either Bala or C.  BAPI files are not compileable, and cannot contain any executable code - they are used when compiling Bala source files. </para>
+<para>There are no requirements for how Bala source files are named, although there are conventions that can be followed. BAPI files are usually named to matched the pkg-config name of the library they relate to; they are described more fully in the documentation about bindings. </para>
 <para>All Bala input files should be encoded in UTF-8. </para>
 </section>
 

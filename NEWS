@@ -1419,7 +1419,7 @@ Bala 0.40.8
   - girwriter: Add boolean GIR visible attribute to allow skipping symbols
   - bala: Report error for error-domains without any code
   - parser: Accept "empty" enums/error-domains [#253]
-  - codewriter: Output bodies of code-blocks if in VAPIGEN mode [#253]
+  - codewriter: Output bodies of code-blocks if in BAPIGEN mode [#253]
 
  * Bindings:
   - gobject-2.0: Add lower_case_csuffix attributes to Type* symbols
@@ -2351,7 +2351,7 @@ Bala 0.17.0
 ===========
 
  * Support simple method-level profiling.
- * Add BALA_CHECK_MODULES and BALA_PROG_VAPIGEN to bala.m4.
+ * Add BALA_CHECK_MODULES and BALA_PROG_BAPIGEN to bala.m4.
  * Bug fixes and binding updates.
 
 Bala 0.16.0
