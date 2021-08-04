@@ -30,10 +30,10 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_TOKEN_TYPE_0_PROPERTY,
-	VALADOC_TOKEN_TYPE_NUM_PROPERTIES
+	BALADOC_TOKEN_TYPE_0_PROPERTY,
+	BALADOC_TOKEN_TYPE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_token_type_properties[VALADOC_TOKEN_TYPE_NUM_PROPERTIES];
+static GParamSpec* valadoc_token_type_properties[BALADOC_TOKEN_TYPE_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 typedef struct _Block6Data Block6Data;
 #define _g_free0(var) (var = (g_free (var), NULL))
@@ -91,12 +91,12 @@ ValadocTokenType* valadoc_token_type_PIPE = NULL;
 ValadocTokenType* valadoc_token_type_DOUBLE_PIPE = NULL;
 ValadocTokenType* valadoc_token_type_ALIGN_RIGHT = NULL;
 ValadocTokenType* valadoc_token_type_ALIGN_CENTER = NULL;
-ValadocTokenType* valadoc_token_type_VALADOC_COMMENT_START = NULL;
-ValadocTokenType* valadoc_token_type_VALADOC_COMMENT_END = NULL;
-ValadocTokenType* valadoc_token_type_VALADOC_ANY_WORD = NULL;
-ValadocTokenType* valadoc_token_type_VALADOC_SPACE = NULL;
-ValadocTokenType* valadoc_token_type_VALADOC_TAB = NULL;
-ValadocTokenType* valadoc_token_type_VALADOC_EOL = NULL;
+ValadocTokenType* valadoc_token_type_BALADOC_COMMENT_START = NULL;
+ValadocTokenType* valadoc_token_type_BALADOC_COMMENT_END = NULL;
+ValadocTokenType* valadoc_token_type_BALADOC_ANY_WORD = NULL;
+ValadocTokenType* valadoc_token_type_BALADOC_SPACE = NULL;
+ValadocTokenType* valadoc_token_type_BALADOC_TAB = NULL;
+ValadocTokenType* valadoc_token_type_BALADOC_EOL = NULL;
 ValadocTokenType* valadoc_token_type_MARKDOWN_PARAGRAPH = NULL;
 ValadocTokenType* valadoc_token_type_MARKDOWN_ANY_WORD = NULL;
 ValadocTokenType* valadoc_token_type_MARKDOWN_SPACE = NULL;
@@ -360,27 +360,27 @@ valadoc_token_type_init_token_types (void)
 		_g_object_unref0 (valadoc_token_type_ALIGN_CENTER);
 		valadoc_token_type_ALIGN_CENTER = _tmp34_;
 		_tmp35_ = valadoc_token_type_new_basic ("/*", NULL);
-		_g_object_unref0 (valadoc_token_type_VALADOC_COMMENT_START);
-		valadoc_token_type_VALADOC_COMMENT_START = _tmp35_;
+		_g_object_unref0 (valadoc_token_type_BALADOC_COMMENT_START);
+		valadoc_token_type_BALADOC_COMMENT_START = _tmp35_;
 		_tmp36_ = valadoc_token_type_new_basic ("*/", NULL);
-		_g_object_unref0 (valadoc_token_type_VALADOC_COMMENT_END);
-		valadoc_token_type_VALADOC_COMMENT_END = _tmp36_;
+		_g_object_unref0 (valadoc_token_type_BALADOC_COMMENT_END);
+		valadoc_token_type_BALADOC_COMMENT_END = _tmp36_;
 		_tmp37_ = valadoc_token_type_ANY_WORD;
 		_tmp38_ = _g_object_ref0 (_tmp37_);
-		_g_object_unref0 (valadoc_token_type_VALADOC_ANY_WORD);
-		valadoc_token_type_VALADOC_ANY_WORD = _tmp38_;
+		_g_object_unref0 (valadoc_token_type_BALADOC_ANY_WORD);
+		valadoc_token_type_BALADOC_ANY_WORD = _tmp38_;
 		_tmp39_ = valadoc_token_type_SPACE;
 		_tmp40_ = _g_object_ref0 (_tmp39_);
-		_g_object_unref0 (valadoc_token_type_VALADOC_SPACE);
-		valadoc_token_type_VALADOC_SPACE = _tmp40_;
+		_g_object_unref0 (valadoc_token_type_BALADOC_SPACE);
+		valadoc_token_type_BALADOC_SPACE = _tmp40_;
 		_tmp41_ = valadoc_token_type_TAB;
 		_tmp42_ = _g_object_ref0 (_tmp41_);
-		_g_object_unref0 (valadoc_token_type_VALADOC_TAB);
-		valadoc_token_type_VALADOC_TAB = _tmp42_;
+		_g_object_unref0 (valadoc_token_type_BALADOC_TAB);
+		valadoc_token_type_BALADOC_TAB = _tmp42_;
 		_tmp43_ = valadoc_token_type_EOL;
 		_tmp44_ = _g_object_ref0 (_tmp43_);
-		_g_object_unref0 (valadoc_token_type_VALADOC_EOL);
-		valadoc_token_type_VALADOC_EOL = _tmp44_;
+		_g_object_unref0 (valadoc_token_type_BALADOC_EOL);
+		valadoc_token_type_BALADOC_EOL = _tmp44_;
 		valadoc_token_type_initialized = TRUE;
 		_tmp45_ = valadoc_token_type_new_basic ("<paragraph>", NULL);
 		_g_object_unref0 (valadoc_token_type_MARKDOWN_PARAGRAPH);
@@ -555,7 +555,7 @@ ___lambda4_ (Block6Data* _data6_,
 	g_return_if_fail (token != NULL);
 	_data6_->__action (token, _data6_->__action_target, &_inner_error0_);
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -623,7 +623,7 @@ valadoc_token_type_new (const gchar* string_value,
                         ValadocTokenTypeAction __action,
                         gpointer __action_target)
 {
-	return valadoc_token_type_construct (VALADOC_TYPE_TOKEN_TYPE, string_value, basic_value, __action, __action_target);
+	return valadoc_token_type_construct (BALADOC_TYPE_TOKEN_TYPE, string_value, basic_value, __action, __action_target);
 }
 
 static ValadocTokenType*
@@ -653,7 +653,7 @@ static ValadocTokenType*
 valadoc_token_type_new_basic (const gchar* string_value,
                               const gchar* pretty_string)
 {
-	return valadoc_token_type_construct_basic (VALADOC_TYPE_TOKEN_TYPE, string_value, pretty_string);
+	return valadoc_token_type_construct_basic (BALADOC_TYPE_TOKEN_TYPE, string_value, pretty_string);
 }
 
 ValadocTokenType*
@@ -690,7 +690,7 @@ valadoc_token_type_do_action (ValadocTokenType* self,
 		_tmp1__target = self->priv->_action_target;
 		_tmp1_ (matched_token, _tmp1__target, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				g_propagate_error (error, _inner_error0_);
 				return;
 			} else {
@@ -853,7 +853,7 @@ static void
 valadoc_token_type_finalize (GObject * obj)
 {
 	ValadocTokenType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_TOKEN_TYPE, ValadocTokenType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_TOKEN_TYPE, ValadocTokenType);
 	_g_free0 (self->priv->_string_value);
 	_g_free0 (self->priv->_pretty_string);
 	(self->priv->_action_target_destroy_notify == NULL) ? NULL : (self->priv->_action_target_destroy_notify (self->priv->_action_target), NULL);

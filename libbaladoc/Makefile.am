@@ -4,7 +4,7 @@ NULL =
 
 AM_CFLAGS = \
 	-DG_LOG_DOMAIN=\"valadoc\" \
-	-DPACKAGE_VALADOC_LIBDIR=\"$(libdir)/valadoc@PACKAGE_SUFFIX@\" \
+	-DPACKAGE_BALADOC_LIBDIR=\"$(libdir)/valadoc@PACKAGE_SUFFIX@\" \
 	-DPACKAGE_VERSION=\"$(VERSION)\" \
 	$(COVERAGE_CFLAGS) \
 	$(LIBGVC_CFLAGS) \
@@ -16,7 +16,7 @@ AM_CFLAGS = \
 	-I$(top_srcdir)/codegen \
 	$(NULL)
 
-AM_VALAFLAGS = \
+AM_BALAFLAGS = \
 	$(NULL)
 
 BUILT_SOURCES = \
@@ -26,7 +26,7 @@ BUILT_SOURCES = \
 
 lib_LTLIBRARIES = libvaladoc@PACKAGE_SUFFIX@.la
 
-libvaladoc_la_VALASOURCES = \
+libvaladoc_la_BALASOURCES = \
 	doclet.vala \
 	errorreporter.vala \
 	filehelper.vala \
@@ -158,15 +158,15 @@ libvaladoc_la_VALASOURCES = \
 
 libvaladoc@PACKAGE_SUFFIX@_la_SOURCES = \
 	libvaladoc.vala.stamp \
-	$(libvaladoc_la_VALASOURCES:.vala=.c) \
+	$(libvaladoc_la_BALASOURCES:.vala=.c) \
 	gvc-compat.c \
 	$(NULL)
 
 valadoc@PACKAGE_SUFFIX@.vapi valadoc.h: libvaladoc.vala.stamp
-libvaladoc.vala.stamp: $(libvaladoc_la_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+libvaladoc.vala.stamp: $(libvaladoc_la_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		--basedir $(srcdir) \
 		--directory $(builddir) \
 		-C \
@@ -216,7 +216,7 @@ valadoc@PACKAGE_SUFFIX@.deps: valadoc.deps
 	cp $< $@
 
 EXTRA_DIST = \
-	$(libvaladoc_la_VALASOURCES) \
+	$(libvaladoc_la_BALASOURCES) \
 	libvaladoc.vala.stamp \
 	valadoc.deps.in \
 	valadoc.pc.in \
@@ -232,6 +232,6 @@ MAINTAINERCLEANFILES = \
 	valadoc.pc \
 	valadoc.vapi \
 	valadoc.h \
-	$(libvaladoc_la_VALASOURCES:.vala=.c) \
+	$(libvaladoc_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 

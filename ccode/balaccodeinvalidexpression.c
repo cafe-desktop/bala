@@ -43,7 +43,7 @@ vala_ccode_invalid_expression_construct (GType object_type)
 ValaCCodeInvalidExpression*
 vala_ccode_invalid_expression_new (void)
 {
-	return vala_ccode_invalid_expression_construct (VALA_TYPE_CCODE_INVALID_EXPRESSION);
+	return vala_ccode_invalid_expression_construct (BALA_TYPE_CCODE_INVALID_EXPRESSION);
 }
 
 static void
@@ -78,7 +78,7 @@ vala_ccode_invalid_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeInvalidExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_invalid_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeInvalidExpression), 0, (GInstanceInitFunc) vala_ccode_invalid_expression_instance_init, NULL };
 	GType vala_ccode_invalid_expression_type_id;
-	vala_ccode_invalid_expression_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeInvalidExpression", &g_define_type_info, 0);
+	vala_ccode_invalid_expression_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeInvalidExpression", &g_define_type_info, 0);
 	return vala_ccode_invalid_expression_type_id;
 }
 

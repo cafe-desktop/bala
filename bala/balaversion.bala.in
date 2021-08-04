@@ -25,17 +25,17 @@ namespace Vala {
 	 * Like get_major_version, but from the headers used at application compile time,
 	 * rather than from the library linked against at application run time
 	 */
-	public const int MAJOR_VERSION = @VALA_MAJOR_VERSION@;
+	public const int MAJOR_VERSION = @BALA_MAJOR_VERSION@;
 	/**
 	 * Like get_minor_version, but from the headers used at application compile time,
 	 * rather than from the library linked against at application run time
 	 */
-	public const int MINOR_VERSION = @VALA_MINOR_VERSION@;
+	public const int MINOR_VERSION = @BALA_MINOR_VERSION@;
 	/**
 	 * Like get_micro_version, but from the headers used at application compile time,
 	 * rather than from the library linked against at application run time
 	 */
-	public const int MICRO_VERSION = @VALA_MICRO_VERSION@;
+	public const int MICRO_VERSION = @BALA_MICRO_VERSION@;
 
 	/**
 	 * The API version string

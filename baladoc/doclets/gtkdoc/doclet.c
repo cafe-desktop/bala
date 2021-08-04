@@ -2541,7 +2541,7 @@ gtkdoc_director_get_type_once (void)
 	static const GInterfaceInfo valadoc_doclet_info = { (GInterfaceInitFunc) gtkdoc_director_valadoc_doclet_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType gtkdoc_director_type_id;
 	gtkdoc_director_type_id = g_type_register_static (G_TYPE_OBJECT, "GtkdocDirector", &g_define_type_info, 0);
-	g_type_add_interface_static (gtkdoc_director_type_id, VALADOC_TYPE_DOCLET, &valadoc_doclet_info);
+	g_type_add_interface_static (gtkdoc_director_type_id, BALADOC_TYPE_DOCLET, &valadoc_doclet_info);
 	GtkdocDirector_private_offset = g_type_add_instance_private (gtkdoc_director_type_id, sizeof (GtkdocDirectorPrivate));
 	return gtkdoc_director_type_id;
 }

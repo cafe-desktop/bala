@@ -88,7 +88,7 @@ vala_ccode_enum_construct (GType object_type,
 ValaCCodeEnum*
 vala_ccode_enum_new (const gchar* name)
 {
-	return vala_ccode_enum_construct (VALA_TYPE_CCODE_ENUM, name);
+	return vala_ccode_enum_construct (BALA_TYPE_CCODE_ENUM, name);
 }
 
 /**
@@ -190,7 +190,7 @@ vala_ccode_enum_real_write (ValaCCodeNode* base,
 	}
 	_tmp13_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) self);
 	_tmp14_ = _tmp13_;
-	if ((_tmp14_ & VALA_CCODE_MODIFIERS_DEPRECATED) == VALA_CCODE_MODIFIERS_DEPRECATED) {
+	if ((_tmp14_ & BALA_CCODE_MODIFIERS_DEPRECATED) == BALA_CCODE_MODIFIERS_DEPRECATED) {
 		vala_ccode_writer_write_string (writer, " G_GNUC_DEPRECATED");
 	}
 	vala_ccode_writer_write_string (writer, ";");
@@ -215,7 +215,7 @@ vala_ccode_enum_instance_init (ValaCCodeEnum * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_ccode_enum_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CCODE_ENUM_VALUE, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CCODE_ENUM_VALUE, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
 	self->priv->values = (ValaList*) _tmp1_;
 }
 
@@ -223,10 +223,10 @@ static void
 vala_ccode_enum_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeEnum * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_ENUM, ValaCCodeEnum);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_ENUM, ValaCCodeEnum);
 	_g_free0 (self->priv->_name);
 	_vala_iterable_unref0 (self->priv->values);
-	VALA_CCODE_NODE_CLASS (vala_ccode_enum_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_enum_parent_class)->finalize (obj);
 }
 
 /**
@@ -237,7 +237,7 @@ vala_ccode_enum_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeEnumClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_enum_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeEnum), 0, (GInstanceInitFunc) vala_ccode_enum_instance_init, NULL };
 	GType vala_ccode_enum_type_id;
-	vala_ccode_enum_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeEnum", &g_define_type_info, 0);
+	vala_ccode_enum_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeEnum", &g_define_type_info, 0);
 	ValaCCodeEnum_private_offset = g_type_add_instance_private (vala_ccode_enum_type_id, sizeof (ValaCCodeEnumPrivate));
 	return vala_ccode_enum_type_id;
 }

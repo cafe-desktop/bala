@@ -64,7 +64,7 @@ vala_base_access_construct (GType object_type,
 ValaBaseAccess*
 vala_base_access_new (ValaSourceReference* source)
 {
-	return vala_base_access_construct (VALA_TYPE_BASE_ACCESS, source);
+	return vala_base_access_construct (BALA_TYPE_BASE_ACCESS, source);
 }
 
 static void
@@ -270,7 +270,7 @@ vala_base_access_real_check (ValaCodeNode* base,
 				_tmp54_ = _tmp53_;
 				_tmp55_ = vala_semantic_analyzer_get_current_method (_tmp54_);
 				_tmp56_ = _tmp55_;
-				_tmp41_ = !VALA_IS_CREATION_METHOD (_tmp56_);
+				_tmp41_ = !BALA_IS_CREATION_METHOD (_tmp56_);
 			} else {
 				_tmp41_ = FALSE;
 			}
@@ -445,7 +445,7 @@ vala_base_access_real_check (ValaCodeNode* base,
 							_tmp116_ = base_type;
 							_tmp117_ = vala_data_type_get_type_symbol (_tmp116_);
 							_tmp118_ = _tmp117_;
-							if (VALA_IS_CLASS (_tmp118_)) {
+							if (BALA_IS_CLASS (_tmp118_)) {
 								ValaDataType* _tmp119_;
 								ValaDataType* _tmp120_;
 								ValaDataType* _tmp121_;
@@ -516,7 +516,7 @@ vala_base_access_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaBaseAccessClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_base_access_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaBaseAccess), 0, (GInstanceInitFunc) vala_base_access_instance_init, NULL };
 	GType vala_base_access_type_id;
-	vala_base_access_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaBaseAccess", &g_define_type_info, 0);
+	vala_base_access_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaBaseAccess", &g_define_type_info, 0);
 	return vala_base_access_type_id;
 }
 

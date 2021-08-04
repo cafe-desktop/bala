@@ -181,7 +181,7 @@ vala_slice_expression_new (ValaExpression* container,
                            ValaExpression* stop,
                            ValaSourceReference* source_reference)
 {
-	return vala_slice_expression_construct (VALA_TYPE_SLICE_EXPRESSION, container, start, stop, source_reference);
+	return vala_slice_expression_construct (BALA_TYPE_SLICE_EXPRESSION, container, start, stop, source_reference);
 }
 
 static void
@@ -351,7 +351,7 @@ vala_slice_expression_real_check (ValaCodeNode* base,
 	_tmp7_ = _tmp6_;
 	_tmp8_ = vala_expression_get_value_type (_tmp7_);
 	_tmp9_ = _tmp8_;
-	if (VALA_IS_ARRAY_TYPE (_tmp9_)) {
+	if (BALA_IS_ARRAY_TYPE (_tmp9_)) {
 		ValaArrayType* array_type = NULL;
 		ValaExpression* _tmp10_;
 		ValaExpression* _tmp11_;
@@ -375,7 +375,7 @@ vala_slice_expression_real_check (ValaCodeNode* base,
 		_tmp11_ = _tmp10_;
 		_tmp12_ = vala_expression_get_value_type (_tmp11_);
 		_tmp13_ = _tmp12_;
-		array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, VALA_TYPE_ARRAY_TYPE, ValaArrayType);
+		array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, BALA_TYPE_ARRAY_TYPE, ValaArrayType);
 		_tmp14_ = vala_slice_expression_get_start (self);
 		_tmp15_ = _tmp14_;
 		_tmp16_ = array_type;
@@ -447,7 +447,7 @@ vala_slice_expression_real_check (ValaCodeNode* base,
 	_tmp47_ = _tmp46_;
 	_tmp48_ = vala_expression_get_value_type (_tmp47_);
 	_tmp49_ = _tmp48_;
-	if (VALA_IS_ARRAY_TYPE (_tmp49_)) {
+	if (BALA_IS_ARRAY_TYPE (_tmp49_)) {
 		ValaExpression* _tmp50_;
 		ValaExpression* _tmp51_;
 		ValaDataType* _tmp52_;
@@ -487,7 +487,7 @@ vala_slice_expression_real_check (ValaCodeNode* base,
 		vala_data_type_set_value_owned (_tmp57_, FALSE);
 		_tmp58_ = vala_expression_get_value_type ((ValaExpression*) self);
 		_tmp59_ = _tmp58_;
-		array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp59_, VALA_TYPE_ARRAY_TYPE, ValaArrayType);
+		array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp59_, BALA_TYPE_ARRAY_TYPE, ValaArrayType);
 		_tmp60_ = array_type;
 		vala_array_type_set_fixed_length (_tmp60_, FALSE);
 		_tmp61_ = array_type;
@@ -501,7 +501,7 @@ vala_slice_expression_real_check (ValaCodeNode* base,
 		_tmp67_ = _tmp66_;
 		_tmp68_ = vala_expression_get_value_type (_tmp67_);
 		_tmp69_ = _tmp68_;
-		if (VALA_IS_INTEGER_TYPE (_tmp69_)) {
+		if (BALA_IS_INTEGER_TYPE (_tmp69_)) {
 			_tmp65_ = TRUE;
 		} else {
 			ValaExpression* _tmp70_;
@@ -512,7 +512,7 @@ vala_slice_expression_real_check (ValaCodeNode* base,
 			_tmp71_ = _tmp70_;
 			_tmp72_ = vala_expression_get_value_type (_tmp71_);
 			_tmp73_ = _tmp72_;
-			_tmp65_ = VALA_IS_ENUM_VALUE_TYPE (_tmp73_);
+			_tmp65_ = BALA_IS_ENUM_VALUE_TYPE (_tmp73_);
 		}
 		if (!_tmp65_) {
 			ValaExpression* _tmp74_;
@@ -530,7 +530,7 @@ vala_slice_expression_real_check (ValaCodeNode* base,
 		_tmp80_ = _tmp79_;
 		_tmp81_ = vala_expression_get_value_type (_tmp80_);
 		_tmp82_ = _tmp81_;
-		if (VALA_IS_INTEGER_TYPE (_tmp82_)) {
+		if (BALA_IS_INTEGER_TYPE (_tmp82_)) {
 			_tmp78_ = TRUE;
 		} else {
 			ValaExpression* _tmp83_;
@@ -541,7 +541,7 @@ vala_slice_expression_real_check (ValaCodeNode* base,
 			_tmp84_ = _tmp83_;
 			_tmp85_ = vala_expression_get_value_type (_tmp84_);
 			_tmp86_ = _tmp85_;
-			_tmp78_ = VALA_IS_ENUM_VALUE_TYPE (_tmp86_);
+			_tmp78_ = BALA_IS_ENUM_VALUE_TYPE (_tmp86_);
 		}
 		if (!_tmp78_) {
 			ValaExpression* _tmp87_;
@@ -579,7 +579,7 @@ vala_slice_expression_real_check (ValaCodeNode* base,
 		_tmp93_ = vala_expression_get_value_type (_tmp92_);
 		_tmp94_ = _tmp93_;
 		_tmp95_ = vala_data_type_get_member (_tmp94_, "slice");
-		_tmp96_ = VALA_IS_METHOD (_tmp95_) ? ((ValaMethod*) _tmp95_) : NULL;
+		_tmp96_ = BALA_IS_METHOD (_tmp95_) ? ((ValaMethod*) _tmp95_) : NULL;
 		if (_tmp96_ == NULL) {
 			_vala_code_node_unref0 (_tmp95_);
 		}
@@ -761,11 +761,11 @@ static void
 vala_slice_expression_finalize (ValaCodeNode * obj)
 {
 	ValaSliceExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SLICE_EXPRESSION, ValaSliceExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SLICE_EXPRESSION, ValaSliceExpression);
 	_vala_code_node_unref0 (self->priv->_container);
 	_vala_code_node_unref0 (self->priv->_start);
 	_vala_code_node_unref0 (self->priv->_stop);
-	VALA_CODE_NODE_CLASS (vala_slice_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_slice_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -778,7 +778,7 @@ vala_slice_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaSliceExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_slice_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaSliceExpression), 0, (GInstanceInitFunc) vala_slice_expression_instance_init, NULL };
 	GType vala_slice_expression_type_id;
-	vala_slice_expression_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaSliceExpression", &g_define_type_info, 0);
+	vala_slice_expression_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaSliceExpression", &g_define_type_info, 0);
 	ValaSliceExpression_private_offset = g_type_add_instance_private (vala_slice_expression_type_id, sizeof (ValaSliceExpressionPrivate));
 	return vala_slice_expression_type_id;
 }

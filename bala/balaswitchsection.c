@@ -73,7 +73,7 @@ vala_switch_section_construct (GType object_type,
 ValaSwitchSection*
 vala_switch_section_new (ValaSourceReference* source_reference)
 {
-	return vala_switch_section_construct (VALA_TYPE_SWITCH_SECTION, source_reference);
+	return vala_switch_section_construct (BALA_TYPE_SWITCH_SECTION, source_reference);
 }
 
 /**
@@ -241,7 +241,7 @@ vala_switch_section_real_accept_children (ValaCodeNode* base,
 		}
 		_vala_iterable_unref0 (_label_list);
 	}
-	VALA_CODE_NODE_CLASS (vala_switch_section_parent_class)->accept_children ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_BLOCK, ValaBlock), visitor);
+	BALA_CODE_NODE_CLASS (vala_switch_section_parent_class)->accept_children ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_BLOCK, ValaBlock), visitor);
 }
 
 static gboolean
@@ -305,7 +305,7 @@ vala_switch_section_real_check (ValaCodeNode* base,
 		}
 		_vala_iterable_unref0 (_label_list);
 	}
-	if (!VALA_CODE_NODE_CLASS (vala_switch_section_parent_class)->check ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_BLOCK, ValaBlock), context)) {
+	if (!BALA_CODE_NODE_CLASS (vala_switch_section_parent_class)->check ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_BLOCK, ValaBlock), context)) {
 		vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
 	}
 	vala_code_node_set_checked ((ValaCodeNode*) self, TRUE);
@@ -361,7 +361,7 @@ vala_switch_section_real_emit (ValaCodeNode* base,
 		}
 		_vala_iterable_unref0 (_label_list);
 	}
-	VALA_CODE_NODE_CLASS (vala_switch_section_parent_class)->emit ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_BLOCK, ValaBlock), codegen);
+	BALA_CODE_NODE_CLASS (vala_switch_section_parent_class)->emit ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_BLOCK, ValaBlock), codegen);
 }
 
 static void
@@ -385,7 +385,7 @@ vala_switch_section_instance_init (ValaSwitchSection * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_switch_section_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_SWITCH_LABEL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_SWITCH_LABEL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->labels = (ValaList*) _tmp1_;
 }
 
@@ -393,9 +393,9 @@ static void
 vala_switch_section_finalize (ValaCodeNode * obj)
 {
 	ValaSwitchSection * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SWITCH_SECTION, ValaSwitchSection);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SWITCH_SECTION, ValaSwitchSection);
 	_vala_iterable_unref0 (self->priv->labels);
-	VALA_CODE_NODE_CLASS (vala_switch_section_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_switch_section_parent_class)->finalize (obj);
 }
 
 /**
@@ -406,7 +406,7 @@ vala_switch_section_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaSwitchSectionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_switch_section_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaSwitchSection), 0, (GInstanceInitFunc) vala_switch_section_instance_init, NULL };
 	GType vala_switch_section_type_id;
-	vala_switch_section_type_id = g_type_register_static (VALA_TYPE_BLOCK, "ValaSwitchSection", &g_define_type_info, 0);
+	vala_switch_section_type_id = g_type_register_static (BALA_TYPE_BLOCK, "ValaSwitchSection", &g_define_type_info, 0);
 	ValaSwitchSection_private_offset = g_type_add_instance_private (vala_switch_section_type_id, sizeof (ValaSwitchSectionPrivate));
 	return vala_switch_section_type_id;
 }

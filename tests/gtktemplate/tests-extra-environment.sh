@@ -1,2 +1,2 @@
 PACKAGES="gtk+-3.0"
-VALAFLAGS="--gresources ${abs_srcdir}/gtktemplate/gtktemplate.gresource.xml"
+BALAFLAGS="--gresources ${abs_srcdir}/gtktemplate/gtktemplate.gresource.xml"

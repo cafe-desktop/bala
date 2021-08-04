@@ -140,7 +140,7 @@ vala_ccode_binary_expression_new (ValaCCodeBinaryOperator op,
                                   ValaCCodeExpression* l,
                                   ValaCCodeExpression* r)
 {
-	return vala_ccode_binary_expression_construct (VALA_TYPE_CCODE_BINARY_EXPRESSION, op, l, r);
+	return vala_ccode_binary_expression_construct (BALA_TYPE_CCODE_BINARY_EXPRESSION, op, l, r);
 }
 
 static void
@@ -157,92 +157,92 @@ vala_ccode_binary_expression_real_write (ValaCCodeNode* base,
 	vala_ccode_expression_write_inner (_tmp0_, writer);
 	_tmp1_ = self->priv->_operator;
 	switch (_tmp1_) {
-		case VALA_CCODE_BINARY_OPERATOR_PLUS:
+		case BALA_CCODE_BINARY_OPERATOR_PLUS:
 		{
 			vala_ccode_writer_write_string (writer, " + ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_MINUS:
+		case BALA_CCODE_BINARY_OPERATOR_MINUS:
 		{
 			vala_ccode_writer_write_string (writer, " - ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_MUL:
+		case BALA_CCODE_BINARY_OPERATOR_MUL:
 		{
 			vala_ccode_writer_write_string (writer, " * ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_DIV:
+		case BALA_CCODE_BINARY_OPERATOR_DIV:
 		{
 			vala_ccode_writer_write_string (writer, " / ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_MOD:
+		case BALA_CCODE_BINARY_OPERATOR_MOD:
 		{
 			vala_ccode_writer_write_string (writer, " % ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_SHIFT_LEFT:
+		case BALA_CCODE_BINARY_OPERATOR_SHIFT_LEFT:
 		{
 			vala_ccode_writer_write_string (writer, " << ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_SHIFT_RIGHT:
+		case BALA_CCODE_BINARY_OPERATOR_SHIFT_RIGHT:
 		{
 			vala_ccode_writer_write_string (writer, " >> ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_LESS_THAN:
+		case BALA_CCODE_BINARY_OPERATOR_LESS_THAN:
 		{
 			vala_ccode_writer_write_string (writer, " < ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_GREATER_THAN:
+		case BALA_CCODE_BINARY_OPERATOR_GREATER_THAN:
 		{
 			vala_ccode_writer_write_string (writer, " > ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_LESS_THAN_OR_EQUAL:
+		case BALA_CCODE_BINARY_OPERATOR_LESS_THAN_OR_EQUAL:
 		{
 			vala_ccode_writer_write_string (writer, " <= ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL:
+		case BALA_CCODE_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL:
 		{
 			vala_ccode_writer_write_string (writer, " >= ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_EQUALITY:
+		case BALA_CCODE_BINARY_OPERATOR_EQUALITY:
 		{
 			vala_ccode_writer_write_string (writer, " == ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_INEQUALITY:
+		case BALA_CCODE_BINARY_OPERATOR_INEQUALITY:
 		{
 			vala_ccode_writer_write_string (writer, " != ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_BITWISE_AND:
+		case BALA_CCODE_BINARY_OPERATOR_BITWISE_AND:
 		{
 			vala_ccode_writer_write_string (writer, " & ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_BITWISE_OR:
+		case BALA_CCODE_BINARY_OPERATOR_BITWISE_OR:
 		{
 			vala_ccode_writer_write_string (writer, " | ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_BITWISE_XOR:
+		case BALA_CCODE_BINARY_OPERATOR_BITWISE_XOR:
 		{
 			vala_ccode_writer_write_string (writer, " ^ ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_AND:
+		case BALA_CCODE_BINARY_OPERATOR_AND:
 		{
 			vala_ccode_writer_write_string (writer, " && ");
 			break;
 		}
-		case VALA_CCODE_BINARY_OPERATOR_OR:
+		case BALA_CCODE_BINARY_OPERATOR_OR:
 		{
 			vala_ccode_writer_write_string (writer, " || ");
 			break;
@@ -290,10 +290,10 @@ static void
 vala_ccode_binary_expression_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeBinaryExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_BINARY_EXPRESSION, ValaCCodeBinaryExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_BINARY_EXPRESSION, ValaCCodeBinaryExpression);
 	_vala_ccode_node_unref0 (self->priv->_left);
 	_vala_ccode_node_unref0 (self->priv->_right);
-	VALA_CCODE_NODE_CLASS (vala_ccode_binary_expression_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_binary_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -304,7 +304,7 @@ vala_ccode_binary_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeBinaryExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_binary_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeBinaryExpression), 0, (GInstanceInitFunc) vala_ccode_binary_expression_instance_init, NULL };
 	GType vala_ccode_binary_expression_type_id;
-	vala_ccode_binary_expression_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeBinaryExpression", &g_define_type_info, 0);
+	vala_ccode_binary_expression_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeBinaryExpression", &g_define_type_info, 0);
 	ValaCCodeBinaryExpression_private_offset = g_type_add_instance_private (vala_ccode_binary_expression_type_id, sizeof (ValaCCodeBinaryExpressionPrivate));
 	return vala_ccode_binary_expression_type_id;
 }
@@ -324,7 +324,7 @@ vala_ccode_binary_expression_get_type (void)
 static GType
 vala_ccode_binary_operator_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_CCODE_BINARY_OPERATOR_PLUS, "VALA_CCODE_BINARY_OPERATOR_PLUS", "plus"}, {VALA_CCODE_BINARY_OPERATOR_MINUS, "VALA_CCODE_BINARY_OPERATOR_MINUS", "minus"}, {VALA_CCODE_BINARY_OPERATOR_MUL, "VALA_CCODE_BINARY_OPERATOR_MUL", "mul"}, {VALA_CCODE_BINARY_OPERATOR_DIV, "VALA_CCODE_BINARY_OPERATOR_DIV", "div"}, {VALA_CCODE_BINARY_OPERATOR_MOD, "VALA_CCODE_BINARY_OPERATOR_MOD", "mod"}, {VALA_CCODE_BINARY_OPERATOR_SHIFT_LEFT, "VALA_CCODE_BINARY_OPERATOR_SHIFT_LEFT", "shift-left"}, {VALA_CCODE_BINARY_OPERATOR_SHIFT_RIGHT, "VALA_CCODE_BINARY_OPERATOR_SHIFT_RIGHT", "shift-right"}, {VALA_CCODE_BINARY_OPERATOR_LESS_THAN, "VALA_CCODE_BINARY_OPERATOR_LESS_THAN", "less-than"}, {VALA_CCODE_BINARY_OPERATOR_GREATER_THAN, "VALA_CCODE_BINARY_OPERATOR_GREATER_THAN", "greater-than"}, {VALA_CCODE_BINARY_OPERATOR_LESS_THAN_OR_EQUAL, "VALA_CCODE_BINARY_OPERATOR_LESS_THAN_OR_EQUAL", "less-than-or-equal"}, {VALA_CCODE_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL, "VALA_CCODE_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL", "greater-than-or-equal"}, {VALA_CCODE_BINARY_OPERATOR_EQUALITY, "VALA_CCODE_BINARY_OPERATOR_EQUALITY", "equality"}, {VALA_CCODE_BINARY_OPERATOR_INEQUALITY, "VALA_CCODE_BINARY_OPERATOR_INEQUALITY", "inequality"}, {VALA_CCODE_BINARY_OPERATOR_BITWISE_AND, "VALA_CCODE_BINARY_OPERATOR_BITWISE_AND", "bitwise-and"}, {VALA_CCODE_BINARY_OPERATOR_BITWISE_OR, "VALA_CCODE_BINARY_OPERATOR_BITWISE_OR", "bitwise-or"}, {VALA_CCODE_BINARY_OPERATOR_BITWISE_XOR, "VALA_CCODE_BINARY_OPERATOR_BITWISE_XOR", "bitwise-xor"}, {VALA_CCODE_BINARY_OPERATOR_AND, "VALA_CCODE_BINARY_OPERATOR_AND", "and"}, {VALA_CCODE_BINARY_OPERATOR_OR, "VALA_CCODE_BINARY_OPERATOR_OR", "or"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_CCODE_BINARY_OPERATOR_PLUS, "BALA_CCODE_BINARY_OPERATOR_PLUS", "plus"}, {BALA_CCODE_BINARY_OPERATOR_MINUS, "BALA_CCODE_BINARY_OPERATOR_MINUS", "minus"}, {BALA_CCODE_BINARY_OPERATOR_MUL, "BALA_CCODE_BINARY_OPERATOR_MUL", "mul"}, {BALA_CCODE_BINARY_OPERATOR_DIV, "BALA_CCODE_BINARY_OPERATOR_DIV", "div"}, {BALA_CCODE_BINARY_OPERATOR_MOD, "BALA_CCODE_BINARY_OPERATOR_MOD", "mod"}, {BALA_CCODE_BINARY_OPERATOR_SHIFT_LEFT, "BALA_CCODE_BINARY_OPERATOR_SHIFT_LEFT", "shift-left"}, {BALA_CCODE_BINARY_OPERATOR_SHIFT_RIGHT, "BALA_CCODE_BINARY_OPERATOR_SHIFT_RIGHT", "shift-right"}, {BALA_CCODE_BINARY_OPERATOR_LESS_THAN, "BALA_CCODE_BINARY_OPERATOR_LESS_THAN", "less-than"}, {BALA_CCODE_BINARY_OPERATOR_GREATER_THAN, "BALA_CCODE_BINARY_OPERATOR_GREATER_THAN", "greater-than"}, {BALA_CCODE_BINARY_OPERATOR_LESS_THAN_OR_EQUAL, "BALA_CCODE_BINARY_OPERATOR_LESS_THAN_OR_EQUAL", "less-than-or-equal"}, {BALA_CCODE_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL, "BALA_CCODE_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL", "greater-than-or-equal"}, {BALA_CCODE_BINARY_OPERATOR_EQUALITY, "BALA_CCODE_BINARY_OPERATOR_EQUALITY", "equality"}, {BALA_CCODE_BINARY_OPERATOR_INEQUALITY, "BALA_CCODE_BINARY_OPERATOR_INEQUALITY", "inequality"}, {BALA_CCODE_BINARY_OPERATOR_BITWISE_AND, "BALA_CCODE_BINARY_OPERATOR_BITWISE_AND", "bitwise-and"}, {BALA_CCODE_BINARY_OPERATOR_BITWISE_OR, "BALA_CCODE_BINARY_OPERATOR_BITWISE_OR", "bitwise-or"}, {BALA_CCODE_BINARY_OPERATOR_BITWISE_XOR, "BALA_CCODE_BINARY_OPERATOR_BITWISE_XOR", "bitwise-xor"}, {BALA_CCODE_BINARY_OPERATOR_AND, "BALA_CCODE_BINARY_OPERATOR_AND", "and"}, {BALA_CCODE_BINARY_OPERATOR_OR, "BALA_CCODE_BINARY_OPERATOR_OR", "or"}, {0, NULL, NULL}};
 	GType vala_ccode_binary_operator_type_id;
 	vala_ccode_binary_operator_type_id = g_enum_register_static ("ValaCCodeBinaryOperator", values);
 	return vala_ccode_binary_operator_type_id;

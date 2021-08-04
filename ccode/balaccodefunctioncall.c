@@ -91,7 +91,7 @@ vala_ccode_function_call_construct (GType object_type,
 ValaCCodeFunctionCall*
 vala_ccode_function_call_new (ValaCCodeExpression* call)
 {
-	return vala_ccode_function_call_construct (VALA_TYPE_CCODE_FUNCTION_CALL, call);
+	return vala_ccode_function_call_construct (BALA_TYPE_CCODE_FUNCTION_CALL, call);
 }
 
 /**
@@ -228,7 +228,7 @@ vala_ccode_function_call_instance_init (ValaCCodeFunctionCall * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_ccode_function_call_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
 	self->priv->arguments = (ValaList*) _tmp1_;
 }
 
@@ -236,10 +236,10 @@ static void
 vala_ccode_function_call_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeFunctionCall * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_FUNCTION_CALL, ValaCCodeFunctionCall);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_FUNCTION_CALL, ValaCCodeFunctionCall);
 	_vala_ccode_node_unref0 (self->priv->_call);
 	_vala_iterable_unref0 (self->priv->arguments);
-	VALA_CCODE_NODE_CLASS (vala_ccode_function_call_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_function_call_parent_class)->finalize (obj);
 }
 
 /**
@@ -250,7 +250,7 @@ vala_ccode_function_call_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeFunctionCallClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_function_call_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeFunctionCall), 0, (GInstanceInitFunc) vala_ccode_function_call_instance_init, NULL };
 	GType vala_ccode_function_call_type_id;
-	vala_ccode_function_call_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeFunctionCall", &g_define_type_info, 0);
+	vala_ccode_function_call_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeFunctionCall", &g_define_type_info, 0);
 	ValaCCodeFunctionCall_private_offset = g_type_add_instance_private (vala_ccode_function_call_type_id, sizeof (ValaCCodeFunctionCallPrivate));
 	return vala_ccode_function_call_type_id;
 }

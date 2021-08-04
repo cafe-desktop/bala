@@ -31,18 +31,18 @@
 #include <string.h>
 #include <gobject/gvaluecollector.h>
 
-#define VALA_SCANNER_TYPE_CONDITIONAL (vala_scanner_conditional_get_type ())
+#define BALA_SCANNER_TYPE_CONDITIONAL (vala_scanner_conditional_get_type ())
 typedef struct _ValaScannerConditional ValaScannerConditional;
 typedef enum  {
-	VALA_SCANNER_STATE_PARENS,
-	VALA_SCANNER_STATE_BRACE,
-	VALA_SCANNER_STATE_BRACKET,
-	VALA_SCANNER_STATE_TEMPLATE,
-	VALA_SCANNER_STATE_TEMPLATE_PART,
-	VALA_SCANNER_STATE_REGEX_LITERAL
+	BALA_SCANNER_STATE_PARENS,
+	BALA_SCANNER_STATE_BRACE,
+	BALA_SCANNER_STATE_BRACKET,
+	BALA_SCANNER_STATE_TEMPLATE,
+	BALA_SCANNER_STATE_TEMPLATE_PART,
+	BALA_SCANNER_STATE_REGEX_LITERAL
 } ValaScannerState;
 
-#define VALA_SCANNER_TYPE_STATE (vala_scanner_state_get_type ())
+#define BALA_SCANNER_TYPE_STATE (vala_scanner_state_get_type ())
 #define _vala_source_file_unref0(var) ((var == NULL) ? NULL : (var = (vala_source_file_unref (var), NULL)))
 #define _vala_comment_unref0(var) ((var == NULL) ? NULL : (var = (vala_comment_unref (var), NULL)))
 #define _vala_source_reference_unref0(var) ((var == NULL) ? NULL : (var = (vala_source_reference_unref (var), NULL)))
@@ -170,7 +170,7 @@ vala_scanner_get_instance_private (ValaScanner* self)
 static GType
 vala_scanner_state_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_SCANNER_STATE_PARENS, "VALA_SCANNER_STATE_PARENS", "parens"}, {VALA_SCANNER_STATE_BRACE, "VALA_SCANNER_STATE_BRACE", "brace"}, {VALA_SCANNER_STATE_BRACKET, "VALA_SCANNER_STATE_BRACKET", "bracket"}, {VALA_SCANNER_STATE_TEMPLATE, "VALA_SCANNER_STATE_TEMPLATE", "template"}, {VALA_SCANNER_STATE_TEMPLATE_PART, "VALA_SCANNER_STATE_TEMPLATE_PART", "template-part"}, {VALA_SCANNER_STATE_REGEX_LITERAL, "VALA_SCANNER_STATE_REGEX_LITERAL", "regex-literal"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_SCANNER_STATE_PARENS, "BALA_SCANNER_STATE_PARENS", "parens"}, {BALA_SCANNER_STATE_BRACE, "BALA_SCANNER_STATE_BRACE", "brace"}, {BALA_SCANNER_STATE_BRACKET, "BALA_SCANNER_STATE_BRACKET", "bracket"}, {BALA_SCANNER_STATE_TEMPLATE, "BALA_SCANNER_STATE_TEMPLATE", "template"}, {BALA_SCANNER_STATE_TEMPLATE_PART, "BALA_SCANNER_STATE_TEMPLATE_PART", "template-part"}, {BALA_SCANNER_STATE_REGEX_LITERAL, "BALA_SCANNER_STATE_REGEX_LITERAL", "regex-literal"}, {0, NULL, NULL}};
 	GType vala_scanner_state_type_id;
 	vala_scanner_state_type_id = g_enum_register_static ("ValaScannerState", values);
 	return vala_scanner_state_type_id;
@@ -238,7 +238,7 @@ vala_scanner_construct (GType object_type,
 ValaScanner*
 vala_scanner_new (ValaSourceFile* source_file)
 {
-	return vala_scanner_construct (VALA_TYPE_SCANNER, source_file);
+	return vala_scanner_construct (BALA_TYPE_SCANNER, source_file);
 }
 
 void
@@ -289,7 +289,7 @@ vala_scanner_in_template (ValaScanner* self)
 		_tmp3_ = self->priv->state_stack;
 		_tmp3__length1 = self->priv->state_stack_length1;
 		_tmp4_ = _tmp2_[_tmp3__length1 - 1];
-		_tmp0_ = _tmp4_ == VALA_SCANNER_STATE_TEMPLATE;
+		_tmp0_ = _tmp4_ == BALA_SCANNER_STATE_TEMPLATE;
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -318,7 +318,7 @@ vala_scanner_in_template_part (ValaScanner* self)
 		_tmp3_ = self->priv->state_stack;
 		_tmp3__length1 = self->priv->state_stack_length1;
 		_tmp4_ = _tmp2_[_tmp3__length1 - 1];
-		_tmp0_ = _tmp4_ == VALA_SCANNER_STATE_TEMPLATE_PART;
+		_tmp0_ = _tmp4_ == BALA_SCANNER_STATE_TEMPLATE_PART;
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -347,7 +347,7 @@ vala_scanner_in_regex_literal (ValaScanner* self)
 		_tmp3_ = self->priv->state_stack;
 		_tmp3__length1 = self->priv->state_stack_length1;
 		_tmp4_ = _tmp2_[_tmp3__length1 - 1];
-		_tmp0_ = _tmp4_ == VALA_SCANNER_STATE_REGEX_LITERAL;
+		_tmp0_ = _tmp4_ == BALA_SCANNER_STATE_REGEX_LITERAL;
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -419,7 +419,7 @@ vala_scanner_read_regex_token (ValaScanner* self,
 	_tmp2_ = self->priv->current;
 	_tmp3_ = self->priv->end;
 	if (_tmp2_ >= _tmp3_) {
-		type = VALA_TOKEN_TYPE_EOF;
+		type = BALA_TOKEN_TYPE_EOF;
 	} else {
 		gchar* _tmp4_;
 		gchar _tmp5_;
@@ -434,7 +434,7 @@ vala_scanner_read_regex_token (ValaScanner* self,
 				gboolean fl_s = FALSE;
 				gboolean fl_m = FALSE;
 				gboolean fl_x = FALSE;
-				type = VALA_TOKEN_TYPE_CLOSE_REGEX_LITERAL;
+				type = BALA_TOKEN_TYPE_CLOSE_REGEX_LITERAL;
 				_tmp6_ = self->priv->current;
 				self->priv->current = _tmp6_ + 1;
 				_tmp7_ = self->priv->state_stack_length1;
@@ -555,7 +555,7 @@ vala_scanner_read_regex_token (ValaScanner* self,
 				gboolean _tmp99_ = FALSE;
 				gchar* _tmp100_;
 				gchar* _tmp101_;
-				type = VALA_TOKEN_TYPE_REGEX_LITERAL;
+				type = BALA_TOKEN_TYPE_REGEX_LITERAL;
 				token_length_in_chars = 0;
 				while (TRUE) {
 					gboolean _tmp31_ = FALSE;
@@ -951,7 +951,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'a':
 				{
 					if (vala_scanner_matches (begin, "as")) {
-						result = VALA_TOKEN_TYPE_AS;
+						result = BALA_TOKEN_TYPE_AS;
 						return result;
 					}
 					break;
@@ -959,7 +959,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'd':
 				{
 					if (vala_scanner_matches (begin, "do")) {
-						result = VALA_TOKEN_TYPE_DO;
+						result = BALA_TOKEN_TYPE_DO;
 						return result;
 					}
 					break;
@@ -971,17 +971,17 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 					switch (_tmp1_) {
 						case 'f':
 						{
-							result = VALA_TOKEN_TYPE_IF;
+							result = BALA_TOKEN_TYPE_IF;
 							return result;
 						}
 						case 'n':
 						{
-							result = VALA_TOKEN_TYPE_IN;
+							result = BALA_TOKEN_TYPE_IN;
 							return result;
 						}
 						case 's':
 						{
-							result = VALA_TOKEN_TYPE_IS;
+							result = BALA_TOKEN_TYPE_IS;
 							return result;
 						}
 						default:
@@ -1002,7 +1002,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'f':
 				{
 					if (vala_scanner_matches (begin, "for")) {
-						result = VALA_TOKEN_TYPE_FOR;
+						result = BALA_TOKEN_TYPE_FOR;
 						return result;
 					}
 					break;
@@ -1010,7 +1010,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'g':
 				{
 					if (vala_scanner_matches (begin, "get")) {
-						result = VALA_TOKEN_TYPE_GET;
+						result = BALA_TOKEN_TYPE_GET;
 						return result;
 					}
 					break;
@@ -1018,7 +1018,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'n':
 				{
 					if (vala_scanner_matches (begin, "new")) {
-						result = VALA_TOKEN_TYPE_NEW;
+						result = BALA_TOKEN_TYPE_NEW;
 						return result;
 					}
 					break;
@@ -1026,7 +1026,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'o':
 				{
 					if (vala_scanner_matches (begin, "out")) {
-						result = VALA_TOKEN_TYPE_OUT;
+						result = BALA_TOKEN_TYPE_OUT;
 						return result;
 					}
 					break;
@@ -1034,7 +1034,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'r':
 				{
 					if (vala_scanner_matches (begin, "ref")) {
-						result = VALA_TOKEN_TYPE_REF;
+						result = BALA_TOKEN_TYPE_REF;
 						return result;
 					}
 					break;
@@ -1042,7 +1042,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 's':
 				{
 					if (vala_scanner_matches (begin, "set")) {
-						result = VALA_TOKEN_TYPE_SET;
+						result = BALA_TOKEN_TYPE_SET;
 						return result;
 					}
 					break;
@@ -1050,7 +1050,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 't':
 				{
 					if (vala_scanner_matches (begin, "try")) {
-						result = VALA_TOKEN_TYPE_TRY;
+						result = BALA_TOKEN_TYPE_TRY;
 						return result;
 					}
 					break;
@@ -1058,7 +1058,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'v':
 				{
 					if (vala_scanner_matches (begin, "var")) {
-						result = VALA_TOKEN_TYPE_VAR;
+						result = BALA_TOKEN_TYPE_VAR;
 						return result;
 					}
 					break;
@@ -1076,7 +1076,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'b':
 				{
 					if (vala_scanner_matches (begin, "base")) {
-						result = VALA_TOKEN_TYPE_BASE;
+						result = BALA_TOKEN_TYPE_BASE;
 						return result;
 					}
 					break;
@@ -1084,7 +1084,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'c':
 				{
 					if (vala_scanner_matches (begin, "case")) {
-						result = VALA_TOKEN_TYPE_CASE;
+						result = BALA_TOKEN_TYPE_CASE;
 						return result;
 					}
 					break;
@@ -1097,7 +1097,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'l':
 						{
 							if (vala_scanner_matches (begin, "else")) {
-								result = VALA_TOKEN_TYPE_ELSE;
+								result = BALA_TOKEN_TYPE_ELSE;
 								return result;
 							}
 							break;
@@ -1105,7 +1105,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'n':
 						{
 							if (vala_scanner_matches (begin, "enum")) {
-								result = VALA_TOKEN_TYPE_ENUM;
+								result = BALA_TOKEN_TYPE_ENUM;
 								return result;
 							}
 							break;
@@ -1118,7 +1118,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'l':
 				{
 					if (vala_scanner_matches (begin, "lock")) {
-						result = VALA_TOKEN_TYPE_LOCK;
+						result = BALA_TOKEN_TYPE_LOCK;
 						return result;
 					}
 					break;
@@ -1126,7 +1126,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'n':
 				{
 					if (vala_scanner_matches (begin, "null")) {
-						result = VALA_TOKEN_TYPE_NULL;
+						result = BALA_TOKEN_TYPE_NULL;
 						return result;
 					}
 					break;
@@ -1139,7 +1139,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'h':
 						{
 							if (vala_scanner_matches (begin, "this")) {
-								result = VALA_TOKEN_TYPE_THIS;
+								result = BALA_TOKEN_TYPE_THIS;
 								return result;
 							}
 							break;
@@ -1147,7 +1147,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'r':
 						{
 							if (vala_scanner_matches (begin, "true")) {
-								result = VALA_TOKEN_TYPE_TRUE;
+								result = BALA_TOKEN_TYPE_TRUE;
 								return result;
 							}
 							break;
@@ -1160,7 +1160,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'v':
 				{
 					if (vala_scanner_matches (begin, "void")) {
-						result = VALA_TOKEN_TYPE_VOID;
+						result = BALA_TOKEN_TYPE_VOID;
 						return result;
 					}
 					break;
@@ -1168,7 +1168,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'w':
 				{
 					if (vala_scanner_matches (begin, "weak")) {
-						result = VALA_TOKEN_TYPE_WEAK;
+						result = BALA_TOKEN_TYPE_WEAK;
 						return result;
 					}
 					break;
@@ -1186,7 +1186,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'a':
 				{
 					if (vala_scanner_matches (begin, "async")) {
-						result = VALA_TOKEN_TYPE_ASYNC;
+						result = BALA_TOKEN_TYPE_ASYNC;
 						return result;
 					}
 					break;
@@ -1194,7 +1194,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'b':
 				{
 					if (vala_scanner_matches (begin, "break")) {
-						result = VALA_TOKEN_TYPE_BREAK;
+						result = BALA_TOKEN_TYPE_BREAK;
 						return result;
 					}
 					break;
@@ -1207,7 +1207,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'a':
 						{
 							if (vala_scanner_matches (begin, "catch")) {
-								result = VALA_TOKEN_TYPE_CATCH;
+								result = BALA_TOKEN_TYPE_CATCH;
 								return result;
 							}
 							break;
@@ -1215,7 +1215,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'l':
 						{
 							if (vala_scanner_matches (begin, "class")) {
-								result = VALA_TOKEN_TYPE_CLASS;
+								result = BALA_TOKEN_TYPE_CLASS;
 								return result;
 							}
 							break;
@@ -1223,7 +1223,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'o':
 						{
 							if (vala_scanner_matches (begin, "const")) {
-								result = VALA_TOKEN_TYPE_CONST;
+								result = BALA_TOKEN_TYPE_CONST;
 								return result;
 							}
 							break;
@@ -1236,7 +1236,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'f':
 				{
 					if (vala_scanner_matches (begin, "false")) {
-						result = VALA_TOKEN_TYPE_FALSE;
+						result = BALA_TOKEN_TYPE_FALSE;
 						return result;
 					}
 					break;
@@ -1244,7 +1244,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'o':
 				{
 					if (vala_scanner_matches (begin, "owned")) {
-						result = VALA_TOKEN_TYPE_OWNED;
+						result = BALA_TOKEN_TYPE_OWNED;
 						return result;
 					}
 					break;
@@ -1252,7 +1252,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 't':
 				{
 					if (vala_scanner_matches (begin, "throw")) {
-						result = VALA_TOKEN_TYPE_THROW;
+						result = BALA_TOKEN_TYPE_THROW;
 						return result;
 					}
 					break;
@@ -1260,7 +1260,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'u':
 				{
 					if (vala_scanner_matches (begin, "using")) {
-						result = VALA_TOKEN_TYPE_USING;
+						result = BALA_TOKEN_TYPE_USING;
 						return result;
 					}
 					break;
@@ -1268,7 +1268,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'w':
 				{
 					if (vala_scanner_matches (begin, "while")) {
-						result = VALA_TOKEN_TYPE_WHILE;
+						result = BALA_TOKEN_TYPE_WHILE;
 						return result;
 					}
 					break;
@@ -1276,7 +1276,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'y':
 				{
 					if (vala_scanner_matches (begin, "yield")) {
-						result = VALA_TOKEN_TYPE_YIELD;
+						result = BALA_TOKEN_TYPE_YIELD;
 						return result;
 					}
 					break;
@@ -1294,7 +1294,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'd':
 				{
 					if (vala_scanner_matches (begin, "delete")) {
-						result = VALA_TOKEN_TYPE_DELETE;
+						result = BALA_TOKEN_TYPE_DELETE;
 						return result;
 					}
 					break;
@@ -1302,7 +1302,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'e':
 				{
 					if (vala_scanner_matches (begin, "extern")) {
-						result = VALA_TOKEN_TYPE_EXTERN;
+						result = BALA_TOKEN_TYPE_EXTERN;
 						return result;
 					}
 					break;
@@ -1310,7 +1310,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'i':
 				{
 					if (vala_scanner_matches (begin, "inline")) {
-						result = VALA_TOKEN_TYPE_INLINE;
+						result = BALA_TOKEN_TYPE_INLINE;
 						return result;
 					}
 					break;
@@ -1323,7 +1323,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'a':
 						{
 							if (vala_scanner_matches (begin, "params")) {
-								result = VALA_TOKEN_TYPE_PARAMS;
+								result = BALA_TOKEN_TYPE_PARAMS;
 								return result;
 							}
 							break;
@@ -1331,7 +1331,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'u':
 						{
 							if (vala_scanner_matches (begin, "public")) {
-								result = VALA_TOKEN_TYPE_PUBLIC;
+								result = BALA_TOKEN_TYPE_PUBLIC;
 								return result;
 							}
 							break;
@@ -1344,7 +1344,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'r':
 				{
 					if (vala_scanner_matches (begin, "return")) {
-						result = VALA_TOKEN_TYPE_RETURN;
+						result = BALA_TOKEN_TYPE_RETURN;
 						return result;
 					}
 					break;
@@ -1357,7 +1357,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'e':
 						{
 							if (vala_scanner_matches (begin, "sealed")) {
-								result = VALA_TOKEN_TYPE_SEALED;
+								result = BALA_TOKEN_TYPE_SEALED;
 								return result;
 							}
 							break;
@@ -1370,7 +1370,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 								case 'g':
 								{
 									if (vala_scanner_matches (begin, "signal")) {
-										result = VALA_TOKEN_TYPE_SIGNAL;
+										result = BALA_TOKEN_TYPE_SIGNAL;
 										return result;
 									}
 									break;
@@ -1378,7 +1378,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 								case 'z':
 								{
 									if (vala_scanner_matches (begin, "sizeof")) {
-										result = VALA_TOKEN_TYPE_SIZEOF;
+										result = BALA_TOKEN_TYPE_SIZEOF;
 										return result;
 									}
 									break;
@@ -1396,7 +1396,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 								case 'a':
 								{
 									if (vala_scanner_matches (begin, "static")) {
-										result = VALA_TOKEN_TYPE_STATIC;
+										result = BALA_TOKEN_TYPE_STATIC;
 										return result;
 									}
 									break;
@@ -1404,7 +1404,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 								case 'r':
 								{
 									if (vala_scanner_matches (begin, "struct")) {
-										result = VALA_TOKEN_TYPE_STRUCT;
+										result = BALA_TOKEN_TYPE_STRUCT;
 										return result;
 									}
 									break;
@@ -1417,7 +1417,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'w':
 						{
 							if (vala_scanner_matches (begin, "switch")) {
-								result = VALA_TOKEN_TYPE_SWITCH;
+								result = BALA_TOKEN_TYPE_SWITCH;
 								return result;
 							}
 							break;
@@ -1435,7 +1435,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'h':
 						{
 							if (vala_scanner_matches (begin, "throws")) {
-								result = VALA_TOKEN_TYPE_THROWS;
+								result = BALA_TOKEN_TYPE_THROWS;
 								return result;
 							}
 							break;
@@ -1443,7 +1443,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'y':
 						{
 							if (vala_scanner_matches (begin, "typeof")) {
-								result = VALA_TOKEN_TYPE_TYPEOF;
+								result = BALA_TOKEN_TYPE_TYPEOF;
 								return result;
 							}
 							break;
@@ -1456,7 +1456,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'u':
 				{
 					if (vala_scanner_matches (begin, "unlock")) {
-						result = VALA_TOKEN_TYPE_UNLOCK;
+						result = BALA_TOKEN_TYPE_UNLOCK;
 						return result;
 					}
 					break;
@@ -1479,7 +1479,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'e':
 						{
 							if (vala_scanner_matches (begin, "default")) {
-								result = VALA_TOKEN_TYPE_DEFAULT;
+								result = BALA_TOKEN_TYPE_DEFAULT;
 								return result;
 							}
 							break;
@@ -1487,7 +1487,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'y':
 						{
 							if (vala_scanner_matches (begin, "dynamic")) {
-								result = VALA_TOKEN_TYPE_DYNAMIC;
+								result = BALA_TOKEN_TYPE_DYNAMIC;
 								return result;
 							}
 							break;
@@ -1500,7 +1500,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'e':
 				{
 					if (vala_scanner_matches (begin, "ensures")) {
-						result = VALA_TOKEN_TYPE_ENSURES;
+						result = BALA_TOKEN_TYPE_ENSURES;
 						return result;
 					}
 					break;
@@ -1513,7 +1513,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'i':
 						{
 							if (vala_scanner_matches (begin, "finally")) {
-								result = VALA_TOKEN_TYPE_FINALLY;
+								result = BALA_TOKEN_TYPE_FINALLY;
 								return result;
 							}
 							break;
@@ -1521,7 +1521,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 						case 'o':
 						{
 							if (vala_scanner_matches (begin, "foreach")) {
-								result = VALA_TOKEN_TYPE_FOREACH;
+								result = BALA_TOKEN_TYPE_FOREACH;
 								return result;
 							}
 							break;
@@ -1534,7 +1534,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'p':
 				{
 					if (vala_scanner_matches (begin, "private")) {
-						result = VALA_TOKEN_TYPE_PRIVATE;
+						result = BALA_TOKEN_TYPE_PRIVATE;
 						return result;
 					}
 					break;
@@ -1542,7 +1542,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'u':
 				{
 					if (vala_scanner_matches (begin, "unowned")) {
-						result = VALA_TOKEN_TYPE_UNOWNED;
+						result = BALA_TOKEN_TYPE_UNOWNED;
 						return result;
 					}
 					break;
@@ -1550,7 +1550,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'v':
 				{
 					if (vala_scanner_matches (begin, "virtual")) {
-						result = VALA_TOKEN_TYPE_VIRTUAL;
+						result = BALA_TOKEN_TYPE_VIRTUAL;
 						return result;
 					}
 					break;
@@ -1568,7 +1568,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'a':
 				{
 					if (vala_scanner_matches (begin, "abstract")) {
-						result = VALA_TOKEN_TYPE_ABSTRACT;
+						result = BALA_TOKEN_TYPE_ABSTRACT;
 						return result;
 					}
 					break;
@@ -1576,7 +1576,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'c':
 				{
 					if (vala_scanner_matches (begin, "continue")) {
-						result = VALA_TOKEN_TYPE_CONTINUE;
+						result = BALA_TOKEN_TYPE_CONTINUE;
 						return result;
 					}
 					break;
@@ -1584,7 +1584,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'd':
 				{
 					if (vala_scanner_matches (begin, "delegate")) {
-						result = VALA_TOKEN_TYPE_DELEGATE;
+						result = BALA_TOKEN_TYPE_DELEGATE;
 						return result;
 					}
 					break;
@@ -1592,7 +1592,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'i':
 				{
 					if (vala_scanner_matches (begin, "internal")) {
-						result = VALA_TOKEN_TYPE_INTERNAL;
+						result = BALA_TOKEN_TYPE_INTERNAL;
 						return result;
 					}
 					break;
@@ -1600,7 +1600,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'o':
 				{
 					if (vala_scanner_matches (begin, "override")) {
-						result = VALA_TOKEN_TYPE_OVERRIDE;
+						result = BALA_TOKEN_TYPE_OVERRIDE;
 						return result;
 					}
 					break;
@@ -1608,7 +1608,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'r':
 				{
 					if (vala_scanner_matches (begin, "requires")) {
-						result = VALA_TOKEN_TYPE_REQUIRES;
+						result = BALA_TOKEN_TYPE_REQUIRES;
 						return result;
 					}
 					break;
@@ -1616,7 +1616,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'v':
 				{
 					if (vala_scanner_matches (begin, "volatile")) {
-						result = VALA_TOKEN_TYPE_VOLATILE;
+						result = BALA_TOKEN_TYPE_VOLATILE;
 						return result;
 					}
 					break;
@@ -1634,7 +1634,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'c':
 				{
 					if (vala_scanner_matches (begin, "construct")) {
-						result = VALA_TOKEN_TYPE_CONSTRUCT;
+						result = BALA_TOKEN_TYPE_CONSTRUCT;
 						return result;
 					}
 					break;
@@ -1642,7 +1642,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'i':
 				{
 					if (vala_scanner_matches (begin, "interface")) {
-						result = VALA_TOKEN_TYPE_INTERFACE;
+						result = BALA_TOKEN_TYPE_INTERFACE;
 						return result;
 					}
 					break;
@@ -1650,7 +1650,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'n':
 				{
 					if (vala_scanner_matches (begin, "namespace")) {
-						result = VALA_TOKEN_TYPE_NAMESPACE;
+						result = BALA_TOKEN_TYPE_NAMESPACE;
 						return result;
 					}
 					break;
@@ -1658,7 +1658,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 				case 'p':
 				{
 					if (vala_scanner_matches (begin, "protected")) {
-						result = VALA_TOKEN_TYPE_PROTECTED;
+						result = BALA_TOKEN_TYPE_PROTECTED;
 						return result;
 					}
 					break;
@@ -1671,7 +1671,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 		case 11:
 		{
 			if (vala_scanner_matches (begin, "errordomain")) {
-				result = VALA_TOKEN_TYPE_ERRORDOMAIN;
+				result = BALA_TOKEN_TYPE_ERRORDOMAIN;
 				return result;
 			}
 			break;
@@ -1679,7 +1679,7 @@ vala_scanner_get_identifier_or_keyword (gchar* begin,
 		default:
 		break;
 	}
-	result = VALA_TOKEN_TYPE_IDENTIFIER;
+	result = BALA_TOKEN_TYPE_IDENTIFIER;
 	return result;
 }
 
@@ -1703,7 +1703,7 @@ vala_scanner_read_number (ValaScanner* self)
 	gchar* _tmp61_;
 	ValaTokenType result = 0;
 	g_return_val_if_fail (self != NULL, 0);
-	type = VALA_TOKEN_TYPE_INTEGER_LITERAL;
+	type = BALA_TOKEN_TYPE_INTEGER_LITERAL;
 	_tmp3_ = self->priv->current;
 	_tmp4_ = self->priv->end;
 	if (_tmp3_ < (_tmp4_ - 2)) {
@@ -1805,7 +1805,7 @@ vala_scanner_read_number (ValaScanner* self)
 	}
 	if (_tmp24_) {
 		gchar* _tmp32_;
-		type = VALA_TOKEN_TYPE_REAL_LITERAL;
+		type = BALA_TOKEN_TYPE_REAL_LITERAL;
 		_tmp32_ = self->priv->current;
 		self->priv->current = _tmp32_ + 1;
 		while (TRUE) {
@@ -1847,7 +1847,7 @@ vala_scanner_read_number (ValaScanner* self)
 		gboolean _tmp45_ = FALSE;
 		gchar* _tmp46_;
 		gchar* _tmp47_;
-		type = VALA_TOKEN_TYPE_REAL_LITERAL;
+		type = BALA_TOKEN_TYPE_REAL_LITERAL;
 		_tmp44_ = self->priv->current;
 		self->priv->current = _tmp44_ + 1;
 		_tmp46_ = self->priv->current;
@@ -1908,7 +1908,7 @@ vala_scanner_read_number (ValaScanner* self)
 		gchar _tmp64_;
 		gboolean _tmp88_ = FALSE;
 		_tmp62_ = type;
-		real_literal = _tmp62_ == VALA_TOKEN_TYPE_REAL_LITERAL;
+		real_literal = _tmp62_ == BALA_TOKEN_TYPE_REAL_LITERAL;
 		_tmp63_ = self->priv->current;
 		_tmp64_ = _tmp63_[0];
 		switch (_tmp64_) {
@@ -1917,7 +1917,7 @@ vala_scanner_read_number (ValaScanner* self)
 			{
 				ValaTokenType _tmp65_;
 				_tmp65_ = type;
-				if (_tmp65_ == VALA_TOKEN_TYPE_INTEGER_LITERAL) {
+				if (_tmp65_ == BALA_TOKEN_TYPE_INTEGER_LITERAL) {
 					gchar* _tmp66_;
 					gboolean _tmp67_ = FALSE;
 					gchar* _tmp68_;
@@ -1948,7 +1948,7 @@ vala_scanner_read_number (ValaScanner* self)
 			{
 				ValaTokenType _tmp73_;
 				_tmp73_ = type;
-				if (_tmp73_ == VALA_TOKEN_TYPE_INTEGER_LITERAL) {
+				if (_tmp73_ == BALA_TOKEN_TYPE_INTEGER_LITERAL) {
 					gchar* _tmp74_;
 					gboolean _tmp75_ = FALSE;
 					gchar* _tmp76_;
@@ -1999,7 +1999,7 @@ vala_scanner_read_number (ValaScanner* self)
 			case 'D':
 			{
 				gchar* _tmp87_;
-				type = VALA_TOKEN_TYPE_REAL_LITERAL;
+				type = BALA_TOKEN_TYPE_REAL_LITERAL;
 				_tmp87_ = self->priv->current;
 				self->priv->current = _tmp87_ + 1;
 				break;
@@ -2039,7 +2039,7 @@ vala_scanner_read_number (ValaScanner* self)
 				_tmp96_ = self->priv->current;
 				self->priv->current = _tmp96_ + 1;
 			}
-			type = VALA_TOKEN_TYPE_IDENTIFIER;
+			type = BALA_TOKEN_TYPE_IDENTIFIER;
 		}
 	}
 	result = type;
@@ -2123,7 +2123,7 @@ vala_scanner_read_template_token (ValaScanner* self,
 	_tmp2_ = self->priv->current;
 	_tmp3_ = self->priv->end;
 	if (_tmp2_ >= _tmp3_) {
-		type = VALA_TOKEN_TYPE_EOF;
+		type = BALA_TOKEN_TYPE_EOF;
 	} else {
 		gchar* _tmp4_;
 		gchar _tmp5_;
@@ -2134,7 +2134,7 @@ vala_scanner_read_template_token (ValaScanner* self,
 			{
 				gchar* _tmp6_;
 				gint _tmp7_;
-				type = VALA_TOKEN_TYPE_CLOSE_TEMPLATE;
+				type = BALA_TOKEN_TYPE_CLOSE_TEMPLATE;
 				_tmp6_ = self->priv->current;
 				self->priv->current = _tmp6_ + 1;
 				_tmp7_ = self->priv->state_stack_length1;
@@ -2191,8 +2191,8 @@ vala_scanner_read_template_token (ValaScanner* self,
 						_tmp21_ = len;
 						len = _tmp21_ + 1;
 					}
-					type = VALA_TOKEN_TYPE_IDENTIFIER;
-					_vala_array_add13 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_SCANNER_STATE_TEMPLATE_PART);
+					type = BALA_TOKEN_TYPE_IDENTIFIER;
+					_vala_array_add13 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_SCANNER_STATE_TEMPLATE_PART);
 				} else {
 					gchar* _tmp22_;
 					gchar _tmp23_;
@@ -2206,7 +2206,7 @@ vala_scanner_read_template_token (ValaScanner* self,
 						_tmp24_ = self->priv->current;
 						self->priv->current = _tmp24_ + 1;
 						self->priv->column = self->priv->column + 2;
-						_vala_array_add14 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_SCANNER_STATE_PARENS);
+						_vala_array_add14 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_SCANNER_STATE_PARENS);
 						_tmp27_ = vala_scanner_read_token (self, &_tmp25_, &_tmp26_);
 						_vala_token_begin = _tmp25_;
 						_vala_token_end = _tmp26_;
@@ -2225,10 +2225,10 @@ vala_scanner_read_template_token (ValaScanner* self,
 						_tmp29_ = _tmp28_[0];
 						if (_tmp29_ == '$') {
 							gchar* _tmp30_;
-							type = VALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL;
+							type = BALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL;
 							_tmp30_ = self->priv->current;
 							self->priv->current = _tmp30_ + 1;
-							_vala_array_add15 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_SCANNER_STATE_TEMPLATE_PART);
+							_vala_array_add15 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_SCANNER_STATE_TEMPLATE_PART);
 						} else {
 							ValaSourceReference* _tmp31_;
 							ValaSourceReference* _tmp32_;
@@ -2259,7 +2259,7 @@ vala_scanner_read_template_token (ValaScanner* self,
 			{
 				gchar* _tmp101_;
 				gchar* _tmp102_;
-				type = VALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL;
+				type = BALA_TOKEN_TYPE_TEMPLATE_STRING_LITERAL;
 				token_length_in_chars = 0;
 				while (TRUE) {
 					gboolean _tmp36_ = FALSE;
@@ -2557,7 +2557,7 @@ vala_scanner_read_template_token (ValaScanner* self,
 					}
 					return result;
 				}
-				_vala_array_add16 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_SCANNER_STATE_TEMPLATE_PART);
+				_vala_array_add16 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_SCANNER_STATE_TEMPLATE_PART);
 				break;
 			}
 		}
@@ -2692,7 +2692,7 @@ vala_scanner_read_token (ValaScanner* self,
 			vala_source_location_init (&_vala_token_begin, _tmp4_, self->priv->line, self->priv->column);
 			_tmp5_ = self->priv->current;
 			vala_source_location_init (&_vala_token_end, _tmp5_, self->priv->line, self->priv->column - 1);
-			result = VALA_TOKEN_TYPE_COMMA;
+			result = BALA_TOKEN_TYPE_COMMA;
 			if (token_begin) {
 				*token_begin = _vala_token_begin;
 			}
@@ -2728,7 +2728,7 @@ vala_scanner_read_token (ValaScanner* self,
 	_tmp11_ = self->priv->current;
 	_tmp12_ = self->priv->end;
 	if (_tmp11_ >= _tmp12_) {
-		type = VALA_TOKEN_TYPE_EOF;
+		type = BALA_TOKEN_TYPE_EOF;
 	} else {
 		gboolean _tmp13_ = FALSE;
 		gchar* _tmp14_;
@@ -2797,10 +2797,10 @@ vala_scanner_read_token (ValaScanner* self,
 				}
 				if (_tmp28_) {
 					gchar* _tmp33_;
-					type = VALA_TOKEN_TYPE_OPEN_TEMPLATE;
+					type = BALA_TOKEN_TYPE_OPEN_TEMPLATE;
 					_tmp33_ = self->priv->current;
 					self->priv->current = _tmp33_ + 2;
-					_vala_array_add17 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_SCANNER_STATE_TEMPLATE);
+					_vala_array_add17 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_SCANNER_STATE_TEMPLATE);
 				} else {
 					gchar* _tmp34_;
 					gchar* _tmp35_;
@@ -2835,7 +2835,7 @@ vala_scanner_read_token (ValaScanner* self,
 						_tmp42_ = len;
 						len = _tmp42_ + 1;
 					}
-					type = VALA_TOKEN_TYPE_IDENTIFIER;
+					type = BALA_TOKEN_TYPE_IDENTIFIER;
 				}
 			} else {
 				gchar* _tmp43_;
@@ -2853,10 +2853,10 @@ vala_scanner_read_token (ValaScanner* self,
 						case '{':
 						{
 							gchar* _tmp47_;
-							type = VALA_TOKEN_TYPE_OPEN_BRACE;
+							type = BALA_TOKEN_TYPE_OPEN_BRACE;
 							_tmp47_ = self->priv->current;
 							self->priv->current = _tmp47_ + 1;
-							_vala_array_add18 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_SCANNER_STATE_BRACE);
+							_vala_array_add18 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_SCANNER_STATE_BRACE);
 							break;
 						}
 						case '}':
@@ -2864,7 +2864,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp48_;
 							ValaScannerState* _tmp49_;
 							gint _tmp49__length1;
-							type = VALA_TOKEN_TYPE_CLOSE_BRACE;
+							type = BALA_TOKEN_TYPE_CLOSE_BRACE;
 							_tmp48_ = self->priv->current;
 							self->priv->current = _tmp48_ + 1;
 							_tmp49_ = self->priv->state_stack;
@@ -2879,10 +2879,10 @@ vala_scanner_read_token (ValaScanner* self,
 						case '(':
 						{
 							gchar* _tmp51_;
-							type = VALA_TOKEN_TYPE_OPEN_PARENS;
+							type = BALA_TOKEN_TYPE_OPEN_PARENS;
 							_tmp51_ = self->priv->current;
 							self->priv->current = _tmp51_ + 1;
-							_vala_array_add19 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_SCANNER_STATE_PARENS);
+							_vala_array_add19 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_SCANNER_STATE_PARENS);
 							break;
 						}
 						case ')':
@@ -2890,7 +2890,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp52_;
 							ValaScannerState* _tmp53_;
 							gint _tmp53__length1;
-							type = VALA_TOKEN_TYPE_CLOSE_PARENS;
+							type = BALA_TOKEN_TYPE_CLOSE_PARENS;
 							_tmp52_ = self->priv->current;
 							self->priv->current = _tmp52_ + 1;
 							_tmp53_ = self->priv->state_stack;
@@ -2901,17 +2901,17 @@ vala_scanner_read_token (ValaScanner* self,
 								self->priv->state_stack_length1 = _tmp54_ - 1;
 							}
 							if (vala_scanner_in_template (self)) {
-								type = VALA_TOKEN_TYPE_COMMA;
+								type = BALA_TOKEN_TYPE_COMMA;
 							}
 							break;
 						}
 						case '[':
 						{
 							gchar* _tmp55_;
-							type = VALA_TOKEN_TYPE_OPEN_BRACKET;
+							type = BALA_TOKEN_TYPE_OPEN_BRACKET;
 							_tmp55_ = self->priv->current;
 							self->priv->current = _tmp55_ + 1;
-							_vala_array_add20 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_SCANNER_STATE_BRACKET);
+							_vala_array_add20 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_SCANNER_STATE_BRACKET);
 							break;
 						}
 						case ']':
@@ -2919,7 +2919,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp56_;
 							ValaScannerState* _tmp57_;
 							gint _tmp57__length1;
-							type = VALA_TOKEN_TYPE_CLOSE_BRACKET;
+							type = BALA_TOKEN_TYPE_CLOSE_BRACKET;
 							_tmp56_ = self->priv->current;
 							self->priv->current = _tmp56_ + 1;
 							_tmp57_ = self->priv->state_stack;
@@ -2936,7 +2936,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp59_;
 							gchar* _tmp60_;
 							gchar* _tmp61_;
-							type = VALA_TOKEN_TYPE_DOT;
+							type = BALA_TOKEN_TYPE_DOT;
 							_tmp59_ = self->priv->current;
 							self->priv->current = _tmp59_ + 1;
 							_tmp60_ = self->priv->current;
@@ -2958,7 +2958,7 @@ vala_scanner_read_token (ValaScanner* self,
 								}
 								if (_tmp62_) {
 									gchar* _tmp67_;
-									type = VALA_TOKEN_TYPE_ELLIPSIS;
+									type = BALA_TOKEN_TYPE_ELLIPSIS;
 									_tmp67_ = self->priv->current;
 									self->priv->current = _tmp67_ + 2;
 								}
@@ -2971,7 +2971,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gboolean _tmp69_ = FALSE;
 							gchar* _tmp70_;
 							gchar* _tmp71_;
-							type = VALA_TOKEN_TYPE_COLON;
+							type = BALA_TOKEN_TYPE_COLON;
 							_tmp68_ = self->priv->current;
 							self->priv->current = _tmp68_ + 1;
 							_tmp70_ = self->priv->current;
@@ -2987,7 +2987,7 @@ vala_scanner_read_token (ValaScanner* self,
 							}
 							if (_tmp69_) {
 								gchar* _tmp74_;
-								type = VALA_TOKEN_TYPE_DOUBLE_COLON;
+								type = BALA_TOKEN_TYPE_DOUBLE_COLON;
 								_tmp74_ = self->priv->current;
 								self->priv->current = _tmp74_ + 1;
 							}
@@ -2996,7 +2996,7 @@ vala_scanner_read_token (ValaScanner* self,
 						case ',':
 						{
 							gchar* _tmp75_;
-							type = VALA_TOKEN_TYPE_COMMA;
+							type = BALA_TOKEN_TYPE_COMMA;
 							_tmp75_ = self->priv->current;
 							self->priv->current = _tmp75_ + 1;
 							break;
@@ -3004,7 +3004,7 @@ vala_scanner_read_token (ValaScanner* self,
 						case ';':
 						{
 							gchar* _tmp76_;
-							type = VALA_TOKEN_TYPE_SEMICOLON;
+							type = BALA_TOKEN_TYPE_SEMICOLON;
 							_tmp76_ = self->priv->current;
 							self->priv->current = _tmp76_ + 1;
 							break;
@@ -3012,7 +3012,7 @@ vala_scanner_read_token (ValaScanner* self,
 						case '#':
 						{
 							gchar* _tmp77_;
-							type = VALA_TOKEN_TYPE_HASH;
+							type = BALA_TOKEN_TYPE_HASH;
 							_tmp77_ = self->priv->current;
 							self->priv->current = _tmp77_ + 1;
 							break;
@@ -3023,7 +3023,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gboolean _tmp79_ = FALSE;
 							gchar* _tmp80_;
 							gchar* _tmp81_;
-							type = VALA_TOKEN_TYPE_INTERR;
+							type = BALA_TOKEN_TYPE_INTERR;
 							_tmp78_ = self->priv->current;
 							self->priv->current = _tmp78_ + 1;
 							_tmp80_ = self->priv->current;
@@ -3039,7 +3039,7 @@ vala_scanner_read_token (ValaScanner* self,
 							}
 							if (_tmp79_) {
 								gchar* _tmp84_;
-								type = VALA_TOKEN_TYPE_OP_COALESCING;
+								type = BALA_TOKEN_TYPE_OP_COALESCING;
 								_tmp84_ = self->priv->current;
 								self->priv->current = _tmp84_ + 1;
 							}
@@ -3050,7 +3050,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp85_;
 							gchar* _tmp86_;
 							gchar* _tmp87_;
-							type = VALA_TOKEN_TYPE_BITWISE_OR;
+							type = BALA_TOKEN_TYPE_BITWISE_OR;
 							_tmp85_ = self->priv->current;
 							self->priv->current = _tmp85_ + 1;
 							_tmp86_ = self->priv->current;
@@ -3064,7 +3064,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '=':
 									{
 										gchar* _tmp90_;
-										type = VALA_TOKEN_TYPE_ASSIGN_BITWISE_OR;
+										type = BALA_TOKEN_TYPE_ASSIGN_BITWISE_OR;
 										_tmp90_ = self->priv->current;
 										self->priv->current = _tmp90_ + 1;
 										break;
@@ -3072,7 +3072,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '|':
 									{
 										gchar* _tmp91_;
-										type = VALA_TOKEN_TYPE_OP_OR;
+										type = BALA_TOKEN_TYPE_OP_OR;
 										_tmp91_ = self->priv->current;
 										self->priv->current = _tmp91_ + 1;
 										break;
@@ -3088,7 +3088,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp92_;
 							gchar* _tmp93_;
 							gchar* _tmp94_;
-							type = VALA_TOKEN_TYPE_BITWISE_AND;
+							type = BALA_TOKEN_TYPE_BITWISE_AND;
 							_tmp92_ = self->priv->current;
 							self->priv->current = _tmp92_ + 1;
 							_tmp93_ = self->priv->current;
@@ -3102,7 +3102,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '=':
 									{
 										gchar* _tmp97_;
-										type = VALA_TOKEN_TYPE_ASSIGN_BITWISE_AND;
+										type = BALA_TOKEN_TYPE_ASSIGN_BITWISE_AND;
 										_tmp97_ = self->priv->current;
 										self->priv->current = _tmp97_ + 1;
 										break;
@@ -3110,7 +3110,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '&':
 									{
 										gchar* _tmp98_;
-										type = VALA_TOKEN_TYPE_OP_AND;
+										type = BALA_TOKEN_TYPE_OP_AND;
 										_tmp98_ = self->priv->current;
 										self->priv->current = _tmp98_ + 1;
 										break;
@@ -3127,7 +3127,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gboolean _tmp100_ = FALSE;
 							gchar* _tmp101_;
 							gchar* _tmp102_;
-							type = VALA_TOKEN_TYPE_CARRET;
+							type = BALA_TOKEN_TYPE_CARRET;
 							_tmp99_ = self->priv->current;
 							self->priv->current = _tmp99_ + 1;
 							_tmp101_ = self->priv->current;
@@ -3143,7 +3143,7 @@ vala_scanner_read_token (ValaScanner* self,
 							}
 							if (_tmp100_) {
 								gchar* _tmp105_;
-								type = VALA_TOKEN_TYPE_ASSIGN_BITWISE_XOR;
+								type = BALA_TOKEN_TYPE_ASSIGN_BITWISE_XOR;
 								_tmp105_ = self->priv->current;
 								self->priv->current = _tmp105_ + 1;
 							}
@@ -3152,7 +3152,7 @@ vala_scanner_read_token (ValaScanner* self,
 						case '~':
 						{
 							gchar* _tmp106_;
-							type = VALA_TOKEN_TYPE_TILDE;
+							type = BALA_TOKEN_TYPE_TILDE;
 							_tmp106_ = self->priv->current;
 							self->priv->current = _tmp106_ + 1;
 							break;
@@ -3162,7 +3162,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp107_;
 							gchar* _tmp108_;
 							gchar* _tmp109_;
-							type = VALA_TOKEN_TYPE_ASSIGN;
+							type = BALA_TOKEN_TYPE_ASSIGN;
 							_tmp107_ = self->priv->current;
 							self->priv->current = _tmp107_ + 1;
 							_tmp108_ = self->priv->current;
@@ -3176,7 +3176,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '=':
 									{
 										gchar* _tmp112_;
-										type = VALA_TOKEN_TYPE_OP_EQ;
+										type = BALA_TOKEN_TYPE_OP_EQ;
 										_tmp112_ = self->priv->current;
 										self->priv->current = _tmp112_ + 1;
 										break;
@@ -3184,7 +3184,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '>':
 									{
 										gchar* _tmp113_;
-										type = VALA_TOKEN_TYPE_LAMBDA;
+										type = BALA_TOKEN_TYPE_LAMBDA;
 										_tmp113_ = self->priv->current;
 										self->priv->current = _tmp113_ + 1;
 										break;
@@ -3200,7 +3200,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp114_;
 							gchar* _tmp115_;
 							gchar* _tmp116_;
-							type = VALA_TOKEN_TYPE_OP_LT;
+							type = BALA_TOKEN_TYPE_OP_LT;
 							_tmp114_ = self->priv->current;
 							self->priv->current = _tmp114_ + 1;
 							_tmp115_ = self->priv->current;
@@ -3214,7 +3214,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '=':
 									{
 										gchar* _tmp119_;
-										type = VALA_TOKEN_TYPE_OP_LE;
+										type = BALA_TOKEN_TYPE_OP_LE;
 										_tmp119_ = self->priv->current;
 										self->priv->current = _tmp119_ + 1;
 										break;
@@ -3225,7 +3225,7 @@ vala_scanner_read_token (ValaScanner* self,
 										gboolean _tmp121_ = FALSE;
 										gchar* _tmp122_;
 										gchar* _tmp123_;
-										type = VALA_TOKEN_TYPE_OP_SHIFT_LEFT;
+										type = BALA_TOKEN_TYPE_OP_SHIFT_LEFT;
 										_tmp120_ = self->priv->current;
 										self->priv->current = _tmp120_ + 1;
 										_tmp122_ = self->priv->current;
@@ -3241,7 +3241,7 @@ vala_scanner_read_token (ValaScanner* self,
 										}
 										if (_tmp121_) {
 											gchar* _tmp126_;
-											type = VALA_TOKEN_TYPE_ASSIGN_SHIFT_LEFT;
+											type = BALA_TOKEN_TYPE_ASSIGN_SHIFT_LEFT;
 											_tmp126_ = self->priv->current;
 											self->priv->current = _tmp126_ + 1;
 										}
@@ -3259,7 +3259,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gboolean _tmp128_ = FALSE;
 							gchar* _tmp129_;
 							gchar* _tmp130_;
-							type = VALA_TOKEN_TYPE_OP_GT;
+							type = BALA_TOKEN_TYPE_OP_GT;
 							_tmp127_ = self->priv->current;
 							self->priv->current = _tmp127_ + 1;
 							_tmp129_ = self->priv->current;
@@ -3275,7 +3275,7 @@ vala_scanner_read_token (ValaScanner* self,
 							}
 							if (_tmp128_) {
 								gchar* _tmp133_;
-								type = VALA_TOKEN_TYPE_OP_GE;
+								type = BALA_TOKEN_TYPE_OP_GE;
 								_tmp133_ = self->priv->current;
 								self->priv->current = _tmp133_ + 1;
 							}
@@ -3287,7 +3287,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gboolean _tmp135_ = FALSE;
 							gchar* _tmp136_;
 							gchar* _tmp137_;
-							type = VALA_TOKEN_TYPE_OP_NEG;
+							type = BALA_TOKEN_TYPE_OP_NEG;
 							_tmp134_ = self->priv->current;
 							self->priv->current = _tmp134_ + 1;
 							_tmp136_ = self->priv->current;
@@ -3303,7 +3303,7 @@ vala_scanner_read_token (ValaScanner* self,
 							}
 							if (_tmp135_) {
 								gchar* _tmp140_;
-								type = VALA_TOKEN_TYPE_OP_NE;
+								type = BALA_TOKEN_TYPE_OP_NE;
 								_tmp140_ = self->priv->current;
 								self->priv->current = _tmp140_ + 1;
 							}
@@ -3314,7 +3314,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp141_;
 							gchar* _tmp142_;
 							gchar* _tmp143_;
-							type = VALA_TOKEN_TYPE_PLUS;
+							type = BALA_TOKEN_TYPE_PLUS;
 							_tmp141_ = self->priv->current;
 							self->priv->current = _tmp141_ + 1;
 							_tmp142_ = self->priv->current;
@@ -3328,7 +3328,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '=':
 									{
 										gchar* _tmp146_;
-										type = VALA_TOKEN_TYPE_ASSIGN_ADD;
+										type = BALA_TOKEN_TYPE_ASSIGN_ADD;
 										_tmp146_ = self->priv->current;
 										self->priv->current = _tmp146_ + 1;
 										break;
@@ -3336,7 +3336,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '+':
 									{
 										gchar* _tmp147_;
-										type = VALA_TOKEN_TYPE_OP_INC;
+										type = BALA_TOKEN_TYPE_OP_INC;
 										_tmp147_ = self->priv->current;
 										self->priv->current = _tmp147_ + 1;
 										break;
@@ -3352,7 +3352,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gchar* _tmp148_;
 							gchar* _tmp149_;
 							gchar* _tmp150_;
-							type = VALA_TOKEN_TYPE_MINUS;
+							type = BALA_TOKEN_TYPE_MINUS;
 							_tmp148_ = self->priv->current;
 							self->priv->current = _tmp148_ + 1;
 							_tmp149_ = self->priv->current;
@@ -3366,7 +3366,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '=':
 									{
 										gchar* _tmp153_;
-										type = VALA_TOKEN_TYPE_ASSIGN_SUB;
+										type = BALA_TOKEN_TYPE_ASSIGN_SUB;
 										_tmp153_ = self->priv->current;
 										self->priv->current = _tmp153_ + 1;
 										break;
@@ -3374,7 +3374,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '-':
 									{
 										gchar* _tmp154_;
-										type = VALA_TOKEN_TYPE_OP_DEC;
+										type = BALA_TOKEN_TYPE_OP_DEC;
 										_tmp154_ = self->priv->current;
 										self->priv->current = _tmp154_ + 1;
 										break;
@@ -3382,7 +3382,7 @@ vala_scanner_read_token (ValaScanner* self,
 									case '>':
 									{
 										gchar* _tmp155_;
-										type = VALA_TOKEN_TYPE_OP_PTR;
+										type = BALA_TOKEN_TYPE_OP_PTR;
 										_tmp155_ = self->priv->current;
 										self->priv->current = _tmp155_ + 1;
 										break;
@@ -3399,7 +3399,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gboolean _tmp157_ = FALSE;
 							gchar* _tmp158_;
 							gchar* _tmp159_;
-							type = VALA_TOKEN_TYPE_STAR;
+							type = BALA_TOKEN_TYPE_STAR;
 							_tmp156_ = self->priv->current;
 							self->priv->current = _tmp156_ + 1;
 							_tmp158_ = self->priv->current;
@@ -3415,7 +3415,7 @@ vala_scanner_read_token (ValaScanner* self,
 							}
 							if (_tmp157_) {
 								gchar* _tmp162_;
-								type = VALA_TOKEN_TYPE_ASSIGN_MUL;
+								type = BALA_TOKEN_TYPE_ASSIGN_MUL;
 								_tmp162_ = self->priv->current;
 								self->priv->current = _tmp162_ + 1;
 							}
@@ -3426,27 +3426,27 @@ vala_scanner_read_token (ValaScanner* self,
 							ValaTokenType _tmp163_;
 							_tmp163_ = self->priv->previous;
 							switch (_tmp163_) {
-								case VALA_TOKEN_TYPE_ASSIGN:
-								case VALA_TOKEN_TYPE_COMMA:
-								case VALA_TOKEN_TYPE_MINUS:
-								case VALA_TOKEN_TYPE_OP_AND:
-								case VALA_TOKEN_TYPE_OP_COALESCING:
-								case VALA_TOKEN_TYPE_OP_EQ:
-								case VALA_TOKEN_TYPE_OP_GE:
-								case VALA_TOKEN_TYPE_OP_GT:
-								case VALA_TOKEN_TYPE_OP_LE:
-								case VALA_TOKEN_TYPE_OP_LT:
-								case VALA_TOKEN_TYPE_OP_NE:
-								case VALA_TOKEN_TYPE_OP_NEG:
-								case VALA_TOKEN_TYPE_OP_OR:
-								case VALA_TOKEN_TYPE_OPEN_BRACE:
-								case VALA_TOKEN_TYPE_OPEN_PARENS:
-								case VALA_TOKEN_TYPE_PLUS:
-								case VALA_TOKEN_TYPE_RETURN:
+								case BALA_TOKEN_TYPE_ASSIGN:
+								case BALA_TOKEN_TYPE_COMMA:
+								case BALA_TOKEN_TYPE_MINUS:
+								case BALA_TOKEN_TYPE_OP_AND:
+								case BALA_TOKEN_TYPE_OP_COALESCING:
+								case BALA_TOKEN_TYPE_OP_EQ:
+								case BALA_TOKEN_TYPE_OP_GE:
+								case BALA_TOKEN_TYPE_OP_GT:
+								case BALA_TOKEN_TYPE_OP_LE:
+								case BALA_TOKEN_TYPE_OP_LT:
+								case BALA_TOKEN_TYPE_OP_NE:
+								case BALA_TOKEN_TYPE_OP_NEG:
+								case BALA_TOKEN_TYPE_OP_OR:
+								case BALA_TOKEN_TYPE_OPEN_BRACE:
+								case BALA_TOKEN_TYPE_OPEN_PARENS:
+								case BALA_TOKEN_TYPE_PLUS:
+								case BALA_TOKEN_TYPE_RETURN:
 								{
 									gchar* _tmp164_;
-									type = VALA_TOKEN_TYPE_OPEN_REGEX_LITERAL;
-									_vala_array_add21 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, VALA_SCANNER_STATE_REGEX_LITERAL);
+									type = BALA_TOKEN_TYPE_OPEN_REGEX_LITERAL;
+									_vala_array_add21 (&self->priv->state_stack, &self->priv->state_stack_length1, &self->priv->_state_stack_size_, BALA_SCANNER_STATE_REGEX_LITERAL);
 									_tmp164_ = self->priv->current;
 									self->priv->current = _tmp164_ + 1;
 									break;
@@ -3457,7 +3457,7 @@ vala_scanner_read_token (ValaScanner* self,
 									gboolean _tmp166_ = FALSE;
 									gchar* _tmp167_;
 									gchar* _tmp168_;
-									type = VALA_TOKEN_TYPE_DIV;
+									type = BALA_TOKEN_TYPE_DIV;
 									_tmp165_ = self->priv->current;
 									self->priv->current = _tmp165_ + 1;
 									_tmp167_ = self->priv->current;
@@ -3473,7 +3473,7 @@ vala_scanner_read_token (ValaScanner* self,
 									}
 									if (_tmp166_) {
 										gchar* _tmp171_;
-										type = VALA_TOKEN_TYPE_ASSIGN_DIV;
+										type = BALA_TOKEN_TYPE_ASSIGN_DIV;
 										_tmp171_ = self->priv->current;
 										self->priv->current = _tmp171_ + 1;
 									}
@@ -3488,7 +3488,7 @@ vala_scanner_read_token (ValaScanner* self,
 							gboolean _tmp173_ = FALSE;
 							gchar* _tmp174_;
 							gchar* _tmp175_;
-							type = VALA_TOKEN_TYPE_PERCENT;
+							type = BALA_TOKEN_TYPE_PERCENT;
 							_tmp172_ = self->priv->current;
 							self->priv->current = _tmp172_ + 1;
 							_tmp174_ = self->priv->current;
@@ -3504,7 +3504,7 @@ vala_scanner_read_token (ValaScanner* self,
 							}
 							if (_tmp173_) {
 								gchar* _tmp178_;
-								type = VALA_TOKEN_TYPE_ASSIGN_PERCENT;
+								type = BALA_TOKEN_TYPE_ASSIGN_PERCENT;
 								_tmp178_ = self->priv->current;
 								self->priv->current = _tmp178_ + 1;
 							}
@@ -3521,7 +3521,7 @@ vala_scanner_read_token (ValaScanner* self,
 							_tmp179_ = begin;
 							_tmp180_ = _tmp179_[0];
 							if (_tmp180_ == '\'') {
-								type = VALA_TOKEN_TYPE_CHARACTER_LITERAL;
+								type = BALA_TOKEN_TYPE_CHARACTER_LITERAL;
 							} else {
 								gboolean _tmp181_ = FALSE;
 								gboolean _tmp182_ = FALSE;
@@ -3553,7 +3553,7 @@ vala_scanner_read_token (ValaScanner* self,
 									gboolean _tmp215_ = FALSE;
 									gchar* _tmp216_;
 									gchar _tmp217_;
-									type = VALA_TOKEN_TYPE_VERBATIM_STRING_LITERAL;
+									type = BALA_TOKEN_TYPE_VERBATIM_STRING_LITERAL;
 									token_length_in_chars = 6;
 									_tmp189_ = self->priv->current;
 									self->priv->current = _tmp189_ + 3;
@@ -3676,7 +3676,7 @@ vala_scanner_read_token (ValaScanner* self,
 									}
 									break;
 								} else {
-									type = VALA_TOKEN_TYPE_STRING_LITERAL;
+									type = BALA_TOKEN_TYPE_STRING_LITERAL;
 								}
 							}
 							token_length_in_chars = 2;
@@ -5770,7 +5770,7 @@ vala_param_spec_scanner (const gchar* name,
                          GParamFlags flags)
 {
 	ValaParamSpecScanner* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_SCANNER), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_SCANNER), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -5779,7 +5779,7 @@ vala_param_spec_scanner (const gchar* name,
 gpointer
 vala_value_get_scanner (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SCANNER), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SCANNER), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -5788,10 +5788,10 @@ vala_value_set_scanner (GValue* value,
                         gpointer v_object)
 {
 	ValaScanner * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SCANNER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SCANNER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_SCANNER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_SCANNER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_scanner_ref (value->data[0].v_pointer);
@@ -5808,10 +5808,10 @@ vala_value_take_scanner (GValue* value,
                          gpointer v_object)
 {
 	ValaScanner * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SCANNER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SCANNER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_SCANNER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_SCANNER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -5843,7 +5843,7 @@ static void
 vala_scanner_finalize (ValaScanner * obj)
 {
 	ValaScanner * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SCANNER, ValaScanner);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SCANNER, ValaScanner);
 	g_signal_handlers_destroy (self);
 	_vala_source_file_unref0 (self->priv->_source_file);
 	_vala_comment_unref0 (self->priv->_comment);
@@ -5893,7 +5893,7 @@ vala_scanner_unref (gpointer instance)
 	ValaScanner * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_SCANNER_GET_CLASS (self)->finalize (self);
+		BALA_SCANNER_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

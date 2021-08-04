@@ -111,7 +111,7 @@ ValaCType*
 vala_ctype_new (const gchar* ctype_name,
                 const gchar* cdefault_value)
 {
-	return vala_ctype_construct (VALA_TYPE_CTYPE, ctype_name, cdefault_value);
+	return vala_ctype_construct (BALA_TYPE_CTYPE, ctype_name, cdefault_value);
 }
 
 static ValaDataType*
@@ -151,10 +151,10 @@ static void
 vala_ctype_finalize (ValaCodeNode * obj)
 {
 	ValaCType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CTYPE, ValaCType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CTYPE, ValaCType);
 	_g_free0 (self->priv->_ctype_name);
 	_g_free0 (self->priv->_cdefault_value);
-	VALA_CODE_NODE_CLASS (vala_ctype_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_ctype_parent_class)->finalize (obj);
 }
 
 /**
@@ -165,7 +165,7 @@ vala_ctype_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ctype_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCType), 0, (GInstanceInitFunc) vala_ctype_instance_init, NULL };
 	GType vala_ctype_type_id;
-	vala_ctype_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaCType", &g_define_type_info, 0);
+	vala_ctype_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaCType", &g_define_type_info, 0);
 	ValaCType_private_offset = g_type_add_instance_private (vala_ctype_type_id, sizeof (ValaCTypePrivate));
 	return vala_ctype_type_id;
 }

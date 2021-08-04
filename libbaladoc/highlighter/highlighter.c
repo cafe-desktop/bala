@@ -31,10 +31,10 @@
 #include <glib.h>
 
 enum  {
-	VALADOC_HIGHLIGHTER_HIGHLIGHTER_0_PROPERTY,
-	VALADOC_HIGHLIGHTER_HIGHLIGHTER_NUM_PROPERTIES
+	BALADOC_HIGHLIGHTER_HIGHLIGHTER_0_PROPERTY,
+	BALADOC_HIGHLIGHTER_HIGHLIGHTER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_highlighter_highlighter_properties[VALADOC_HIGHLIGHTER_HIGHLIGHTER_NUM_PROPERTIES];
+static GParamSpec* valadoc_highlighter_highlighter_properties[BALADOC_HIGHLIGHTER_HIGHLIGHTER_NUM_PROPERTIES];
 #define _vala_map_unref0(var) ((var == NULL) ? NULL : (var = (vala_map_unref (var), NULL)))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _valadoc_highlighter_code_token_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_highlighter_code_token_unref (var), NULL)))
@@ -293,293 +293,293 @@ valadoc_highlighter_highlighter_highlight_vala (ValadocHighlighterHighlighter* s
 		_tmp1_ = g_str_hash;
 		_tmp2_ = g_str_equal;
 		_tmp3_ = g_direct_equal;
-		_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN_TYPE, (GBoxedCopyFunc) _valadoc_highlighter_code_token_type_dup, (GDestroyNotify) g_free, _tmp1_, _tmp2_, _tmp3_);
+		_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN_TYPE, (GBoxedCopyFunc) _valadoc_highlighter_code_token_type_dup, (GDestroyNotify) g_free, _tmp1_, _tmp2_, _tmp3_);
 		_vala_map_unref0 (self->priv->vala_keywords);
 		self->priv->vala_keywords = _tmp4_;
 		_tmp5_ = self->priv->vala_keywords;
-		_tmp6_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp6_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp5_, "string", (gpointer) ((gintptr) (&_tmp6_)));
 		_tmp7_ = self->priv->vala_keywords;
-		_tmp8_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp8_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp7_, "bool", (gpointer) ((gintptr) (&_tmp8_)));
 		_tmp9_ = self->priv->vala_keywords;
-		_tmp10_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp10_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp9_, "void", (gpointer) ((gintptr) (&_tmp10_)));
 		_tmp11_ = self->priv->vala_keywords;
-		_tmp12_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp12_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp11_, "double", (gpointer) ((gintptr) (&_tmp12_)));
 		_tmp13_ = self->priv->vala_keywords;
-		_tmp14_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp14_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp13_, "float", (gpointer) ((gintptr) (&_tmp14_)));
 		_tmp15_ = self->priv->vala_keywords;
-		_tmp16_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp16_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp15_, "char", (gpointer) ((gintptr) (&_tmp16_)));
 		_tmp17_ = self->priv->vala_keywords;
-		_tmp18_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp18_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp17_, "uchar", (gpointer) ((gintptr) (&_tmp18_)));
 		_tmp19_ = self->priv->vala_keywords;
-		_tmp20_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp20_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp19_, "unichar", (gpointer) ((gintptr) (&_tmp20_)));
 		_tmp21_ = self->priv->vala_keywords;
-		_tmp22_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp22_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp21_, "short", (gpointer) ((gintptr) (&_tmp22_)));
 		_tmp23_ = self->priv->vala_keywords;
-		_tmp24_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp24_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp23_, "ushort", (gpointer) ((gintptr) (&_tmp24_)));
 		_tmp25_ = self->priv->vala_keywords;
-		_tmp26_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp26_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp25_, "long", (gpointer) ((gintptr) (&_tmp26_)));
 		_tmp27_ = self->priv->vala_keywords;
-		_tmp28_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp28_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp27_, "ulong", (gpointer) ((gintptr) (&_tmp28_)));
 		_tmp29_ = self->priv->vala_keywords;
-		_tmp30_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp30_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp29_, "size_t", (gpointer) ((gintptr) (&_tmp30_)));
 		_tmp31_ = self->priv->vala_keywords;
-		_tmp32_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp32_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp31_, "ssize_t", (gpointer) ((gintptr) (&_tmp32_)));
 		_tmp33_ = self->priv->vala_keywords;
-		_tmp34_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp34_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp33_, "int", (gpointer) ((gintptr) (&_tmp34_)));
 		_tmp35_ = self->priv->vala_keywords;
-		_tmp36_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp36_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp35_, "int8", (gpointer) ((gintptr) (&_tmp36_)));
 		_tmp37_ = self->priv->vala_keywords;
-		_tmp38_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp38_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp37_, "int16", (gpointer) ((gintptr) (&_tmp38_)));
 		_tmp39_ = self->priv->vala_keywords;
-		_tmp40_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp40_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp39_, "int32", (gpointer) ((gintptr) (&_tmp40_)));
 		_tmp41_ = self->priv->vala_keywords;
-		_tmp42_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp42_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp41_, "int64", (gpointer) ((gintptr) (&_tmp42_)));
 		_tmp43_ = self->priv->vala_keywords;
-		_tmp44_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp44_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp43_, "uint", (gpointer) ((gintptr) (&_tmp44_)));
 		_tmp45_ = self->priv->vala_keywords;
-		_tmp46_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp46_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp45_, "uint8", (gpointer) ((gintptr) (&_tmp46_)));
 		_tmp47_ = self->priv->vala_keywords;
-		_tmp48_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp48_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp47_, "uint16", (gpointer) ((gintptr) (&_tmp48_)));
 		_tmp49_ = self->priv->vala_keywords;
-		_tmp50_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp50_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp49_, "uint32", (gpointer) ((gintptr) (&_tmp50_)));
 		_tmp51_ = self->priv->vala_keywords;
-		_tmp52_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp52_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp51_, "uint64", (gpointer) ((gintptr) (&_tmp52_)));
 		_tmp53_ = self->priv->vala_keywords;
-		_tmp54_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
+		_tmp54_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
 		vala_map_set ((ValaMap*) _tmp53_, "null", (gpointer) ((gintptr) (&_tmp54_)));
 		_tmp55_ = self->priv->vala_keywords;
-		_tmp56_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
+		_tmp56_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
 		vala_map_set ((ValaMap*) _tmp55_, "true", (gpointer) ((gintptr) (&_tmp56_)));
 		_tmp57_ = self->priv->vala_keywords;
-		_tmp58_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
+		_tmp58_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
 		vala_map_set ((ValaMap*) _tmp57_, "false", (gpointer) ((gintptr) (&_tmp58_)));
 		_tmp59_ = self->priv->vala_keywords;
-		_tmp60_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp60_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp59_, "return", (gpointer) ((gintptr) (&_tmp60_)));
 		_tmp61_ = self->priv->vala_keywords;
-		_tmp62_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp62_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp61_, "lock", (gpointer) ((gintptr) (&_tmp62_)));
 		_tmp63_ = self->priv->vala_keywords;
-		_tmp64_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp64_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp63_, "unlock", (gpointer) ((gintptr) (&_tmp64_)));
 		_tmp65_ = self->priv->vala_keywords;
-		_tmp66_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp66_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp65_, "var", (gpointer) ((gintptr) (&_tmp66_)));
 		_tmp67_ = self->priv->vala_keywords;
-		_tmp68_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp68_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp67_, "yield", (gpointer) ((gintptr) (&_tmp68_)));
 		_tmp69_ = self->priv->vala_keywords;
-		_tmp70_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp70_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp69_, "global", (gpointer) ((gintptr) (&_tmp70_)));
 		_tmp71_ = self->priv->vala_keywords;
-		_tmp72_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp72_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp71_, "construct", (gpointer) ((gintptr) (&_tmp72_)));
 		_tmp73_ = self->priv->vala_keywords;
-		_tmp74_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp74_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp73_, "value", (gpointer) ((gintptr) (&_tmp74_)));
 		_tmp75_ = self->priv->vala_keywords;
-		_tmp76_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp76_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp75_, "get", (gpointer) ((gintptr) (&_tmp76_)));
 		_tmp77_ = self->priv->vala_keywords;
-		_tmp78_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp78_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp77_, "set", (gpointer) ((gintptr) (&_tmp78_)));
 		_tmp79_ = self->priv->vala_keywords;
-		_tmp80_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp80_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp79_, "owned", (gpointer) ((gintptr) (&_tmp80_)));
 		_tmp81_ = self->priv->vala_keywords;
-		_tmp82_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp82_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp81_, "unowned", (gpointer) ((gintptr) (&_tmp82_)));
 		_tmp83_ = self->priv->vala_keywords;
-		_tmp84_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp84_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp83_, "const", (gpointer) ((gintptr) (&_tmp84_)));
 		_tmp85_ = self->priv->vala_keywords;
-		_tmp86_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp86_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp85_, "weak", (gpointer) ((gintptr) (&_tmp86_)));
 		_tmp87_ = self->priv->vala_keywords;
-		_tmp88_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp88_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp87_, "dynamic", (gpointer) ((gintptr) (&_tmp88_)));
 		_tmp89_ = self->priv->vala_keywords;
-		_tmp90_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp90_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp89_, "out", (gpointer) ((gintptr) (&_tmp90_)));
 		_tmp91_ = self->priv->vala_keywords;
-		_tmp92_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp92_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp91_, "ref", (gpointer) ((gintptr) (&_tmp92_)));
 		_tmp93_ = self->priv->vala_keywords;
-		_tmp94_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp94_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp93_, "break", (gpointer) ((gintptr) (&_tmp94_)));
 		_tmp95_ = self->priv->vala_keywords;
-		_tmp96_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp96_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp95_, "continue", (gpointer) ((gintptr) (&_tmp96_)));
 		_tmp97_ = self->priv->vala_keywords;
-		_tmp98_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp98_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp97_, "return", (gpointer) ((gintptr) (&_tmp98_)));
 		_tmp99_ = self->priv->vala_keywords;
-		_tmp100_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp100_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp99_, "if", (gpointer) ((gintptr) (&_tmp100_)));
 		_tmp101_ = self->priv->vala_keywords;
-		_tmp102_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp102_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp101_, "else", (gpointer) ((gintptr) (&_tmp102_)));
 		_tmp103_ = self->priv->vala_keywords;
-		_tmp104_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp104_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp103_, "switch", (gpointer) ((gintptr) (&_tmp104_)));
 		_tmp105_ = self->priv->vala_keywords;
-		_tmp106_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp106_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp105_, "case", (gpointer) ((gintptr) (&_tmp106_)));
 		_tmp107_ = self->priv->vala_keywords;
-		_tmp108_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp108_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp107_, "default", (gpointer) ((gintptr) (&_tmp108_)));
 		_tmp109_ = self->priv->vala_keywords;
-		_tmp110_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp110_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp109_, "do", (gpointer) ((gintptr) (&_tmp110_)));
 		_tmp111_ = self->priv->vala_keywords;
-		_tmp112_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp112_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp111_, "while", (gpointer) ((gintptr) (&_tmp112_)));
 		_tmp113_ = self->priv->vala_keywords;
-		_tmp114_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp114_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp113_, "for", (gpointer) ((gintptr) (&_tmp114_)));
 		_tmp115_ = self->priv->vala_keywords;
-		_tmp116_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp116_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp115_, "foreach", (gpointer) ((gintptr) (&_tmp116_)));
 		_tmp117_ = self->priv->vala_keywords;
-		_tmp118_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp118_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp117_, "in", (gpointer) ((gintptr) (&_tmp118_)));
 		_tmp119_ = self->priv->vala_keywords;
-		_tmp120_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp120_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp119_, "try", (gpointer) ((gintptr) (&_tmp120_)));
 		_tmp121_ = self->priv->vala_keywords;
-		_tmp122_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp122_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp121_, "catch", (gpointer) ((gintptr) (&_tmp122_)));
 		_tmp123_ = self->priv->vala_keywords;
-		_tmp124_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp124_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp123_, "finally", (gpointer) ((gintptr) (&_tmp124_)));
 		_tmp125_ = self->priv->vala_keywords;
-		_tmp126_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp126_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp125_, "throw", (gpointer) ((gintptr) (&_tmp126_)));
 		_tmp127_ = self->priv->vala_keywords;
-		_tmp128_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp128_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp127_, "class", (gpointer) ((gintptr) (&_tmp128_)));
 		_tmp129_ = self->priv->vala_keywords;
-		_tmp130_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp130_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp129_, "interface", (gpointer) ((gintptr) (&_tmp130_)));
 		_tmp131_ = self->priv->vala_keywords;
-		_tmp132_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp132_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp131_, "struct", (gpointer) ((gintptr) (&_tmp132_)));
 		_tmp133_ = self->priv->vala_keywords;
-		_tmp134_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp134_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp133_, "enum", (gpointer) ((gintptr) (&_tmp134_)));
 		_tmp135_ = self->priv->vala_keywords;
-		_tmp136_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp136_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp135_, "delegate", (gpointer) ((gintptr) (&_tmp136_)));
 		_tmp137_ = self->priv->vala_keywords;
-		_tmp138_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp138_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp137_, "errordomain", (gpointer) ((gintptr) (&_tmp138_)));
 		_tmp139_ = self->priv->vala_keywords;
-		_tmp140_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp140_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp139_, "abstract", (gpointer) ((gintptr) (&_tmp140_)));
 		_tmp141_ = self->priv->vala_keywords;
-		_tmp142_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp142_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp141_, "virtual", (gpointer) ((gintptr) (&_tmp142_)));
 		_tmp143_ = self->priv->vala_keywords;
-		_tmp144_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp144_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp143_, "override", (gpointer) ((gintptr) (&_tmp144_)));
 		_tmp145_ = self->priv->vala_keywords;
-		_tmp146_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp146_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp145_, "signal", (gpointer) ((gintptr) (&_tmp146_)));
 		_tmp147_ = self->priv->vala_keywords;
-		_tmp148_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp148_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp147_, "extern", (gpointer) ((gintptr) (&_tmp148_)));
 		_tmp149_ = self->priv->vala_keywords;
-		_tmp150_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp150_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp149_, "static", (gpointer) ((gintptr) (&_tmp150_)));
 		_tmp151_ = self->priv->vala_keywords;
-		_tmp152_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp152_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp151_, "async", (gpointer) ((gintptr) (&_tmp152_)));
 		_tmp153_ = self->priv->vala_keywords;
-		_tmp154_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp154_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp153_, "inline", (gpointer) ((gintptr) (&_tmp154_)));
 		_tmp155_ = self->priv->vala_keywords;
-		_tmp156_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp156_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp155_, "new", (gpointer) ((gintptr) (&_tmp156_)));
 		_tmp157_ = self->priv->vala_keywords;
-		_tmp158_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp158_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp157_, "public", (gpointer) ((gintptr) (&_tmp158_)));
 		_tmp159_ = self->priv->vala_keywords;
-		_tmp160_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp160_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp159_, "private", (gpointer) ((gintptr) (&_tmp160_)));
 		_tmp161_ = self->priv->vala_keywords;
-		_tmp162_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp162_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp161_, "protected", (gpointer) ((gintptr) (&_tmp162_)));
 		_tmp163_ = self->priv->vala_keywords;
-		_tmp164_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp164_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp163_, "internal", (gpointer) ((gintptr) (&_tmp164_)));
 		_tmp165_ = self->priv->vala_keywords;
-		_tmp166_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp166_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp165_, "throws", (gpointer) ((gintptr) (&_tmp166_)));
 		_tmp167_ = self->priv->vala_keywords;
-		_tmp168_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp168_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp167_, "requires", (gpointer) ((gintptr) (&_tmp168_)));
 		_tmp169_ = self->priv->vala_keywords;
-		_tmp170_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp170_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp169_, "ensures", (gpointer) ((gintptr) (&_tmp170_)));
 		_tmp171_ = self->priv->vala_keywords;
-		_tmp172_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp172_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp171_, "assert", (gpointer) ((gintptr) (&_tmp172_)));
 		_tmp173_ = self->priv->vala_keywords;
-		_tmp174_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp174_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp173_, "namespace", (gpointer) ((gintptr) (&_tmp174_)));
 		_tmp175_ = self->priv->vala_keywords;
-		_tmp176_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp176_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp175_, "using", (gpointer) ((gintptr) (&_tmp176_)));
 		_tmp177_ = self->priv->vala_keywords;
-		_tmp178_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp178_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp177_, "as", (gpointer) ((gintptr) (&_tmp178_)));
 		_tmp179_ = self->priv->vala_keywords;
-		_tmp180_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp180_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp179_, "is", (gpointer) ((gintptr) (&_tmp180_)));
 		_tmp181_ = self->priv->vala_keywords;
-		_tmp182_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp182_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp181_, "in", (gpointer) ((gintptr) (&_tmp182_)));
 		_tmp183_ = self->priv->vala_keywords;
-		_tmp184_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp184_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp183_, "new", (gpointer) ((gintptr) (&_tmp184_)));
 		_tmp185_ = self->priv->vala_keywords;
-		_tmp186_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp186_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp185_, "delete", (gpointer) ((gintptr) (&_tmp186_)));
 		_tmp187_ = self->priv->vala_keywords;
-		_tmp188_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp188_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp187_, "sizeof", (gpointer) ((gintptr) (&_tmp188_)));
 		_tmp189_ = self->priv->vala_keywords;
-		_tmp190_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp190_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp189_, "typeof", (gpointer) ((gintptr) (&_tmp190_)));
 		_tmp191_ = self->priv->vala_keywords;
-		_tmp192_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp192_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp191_, "this", (gpointer) ((gintptr) (&_tmp192_)));
 		_tmp193_ = self->priv->vala_keywords;
-		_tmp194_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp194_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp193_, "base", (gpointer) ((gintptr) (&_tmp194_)));
 	}
 	enable_string_templates = TRUE;
@@ -749,194 +749,194 @@ valadoc_highlighter_highlighter_highlight_c (ValadocHighlighterHighlighter* self
 		_tmp1_ = g_str_hash;
 		_tmp2_ = g_str_equal;
 		_tmp3_ = g_direct_equal;
-		_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN_TYPE, (GBoxedCopyFunc) _valadoc_highlighter_code_token_type_dup, (GDestroyNotify) g_free, _tmp1_, _tmp2_, _tmp3_);
+		_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALADOC_HIGHLIGHTER_TYPE_CODE_TOKEN_TYPE, (GBoxedCopyFunc) _valadoc_highlighter_code_token_type_dup, (GDestroyNotify) g_free, _tmp1_, _tmp2_, _tmp3_);
 		_vala_map_unref0 (self->priv->c_keywords);
 		self->priv->c_keywords = _tmp4_;
 		_tmp5_ = self->priv->c_keywords;
-		_tmp6_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp6_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp5_, "auto", (gpointer) ((gintptr) (&_tmp6_)));
 		_tmp7_ = self->priv->c_keywords;
-		_tmp8_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp8_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp7_, "char", (gpointer) ((gintptr) (&_tmp8_)));
 		_tmp9_ = self->priv->c_keywords;
-		_tmp10_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp10_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp9_, "const", (gpointer) ((gintptr) (&_tmp10_)));
 		_tmp11_ = self->priv->c_keywords;
-		_tmp12_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp12_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp11_, "double", (gpointer) ((gintptr) (&_tmp12_)));
 		_tmp13_ = self->priv->c_keywords;
-		_tmp14_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp14_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp13_, "extern", (gpointer) ((gintptr) (&_tmp14_)));
 		_tmp15_ = self->priv->c_keywords;
-		_tmp16_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp16_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp15_, "int", (gpointer) ((gintptr) (&_tmp16_)));
 		_tmp17_ = self->priv->c_keywords;
-		_tmp18_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp18_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp17_, "float", (gpointer) ((gintptr) (&_tmp18_)));
 		_tmp19_ = self->priv->c_keywords;
-		_tmp20_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp20_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp19_, "long", (gpointer) ((gintptr) (&_tmp20_)));
 		_tmp21_ = self->priv->c_keywords;
-		_tmp22_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp22_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp21_, "register", (gpointer) ((gintptr) (&_tmp22_)));
 		_tmp23_ = self->priv->c_keywords;
-		_tmp24_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp24_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp23_, "short", (gpointer) ((gintptr) (&_tmp24_)));
 		_tmp25_ = self->priv->c_keywords;
-		_tmp26_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp26_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp25_, "signed", (gpointer) ((gintptr) (&_tmp26_)));
 		_tmp27_ = self->priv->c_keywords;
-		_tmp28_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp28_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp27_, "static", (gpointer) ((gintptr) (&_tmp28_)));
 		_tmp29_ = self->priv->c_keywords;
-		_tmp30_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp30_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp29_, "unsigned", (gpointer) ((gintptr) (&_tmp30_)));
 		_tmp31_ = self->priv->c_keywords;
-		_tmp32_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp32_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp31_, "void", (gpointer) ((gintptr) (&_tmp32_)));
 		_tmp33_ = self->priv->c_keywords;
-		_tmp34_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp34_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp33_, "volatile", (gpointer) ((gintptr) (&_tmp34_)));
 		_tmp35_ = self->priv->c_keywords;
-		_tmp36_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp36_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp35_, "gboolean", (gpointer) ((gintptr) (&_tmp36_)));
 		_tmp37_ = self->priv->c_keywords;
-		_tmp38_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp38_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp37_, "gpointer", (gpointer) ((gintptr) (&_tmp38_)));
 		_tmp39_ = self->priv->c_keywords;
-		_tmp40_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp40_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp39_, "gconstpointer", (gpointer) ((gintptr) (&_tmp40_)));
 		_tmp41_ = self->priv->c_keywords;
-		_tmp42_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp42_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp41_, "gchar", (gpointer) ((gintptr) (&_tmp42_)));
 		_tmp43_ = self->priv->c_keywords;
-		_tmp44_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp44_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp43_, "guchar", (gpointer) ((gintptr) (&_tmp44_)));
 		_tmp45_ = self->priv->c_keywords;
-		_tmp46_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp46_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp45_, "gint", (gpointer) ((gintptr) (&_tmp46_)));
 		_tmp47_ = self->priv->c_keywords;
-		_tmp48_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp48_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp47_, "guint", (gpointer) ((gintptr) (&_tmp48_)));
 		_tmp49_ = self->priv->c_keywords;
-		_tmp50_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp50_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp49_, "gshort", (gpointer) ((gintptr) (&_tmp50_)));
 		_tmp51_ = self->priv->c_keywords;
-		_tmp52_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp52_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp51_, "gushort", (gpointer) ((gintptr) (&_tmp52_)));
 		_tmp53_ = self->priv->c_keywords;
-		_tmp54_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp54_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp53_, "glong", (gpointer) ((gintptr) (&_tmp54_)));
 		_tmp55_ = self->priv->c_keywords;
-		_tmp56_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp56_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp55_, "gulong", (gpointer) ((gintptr) (&_tmp56_)));
 		_tmp57_ = self->priv->c_keywords;
-		_tmp58_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp58_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp57_, "gint8", (gpointer) ((gintptr) (&_tmp58_)));
 		_tmp59_ = self->priv->c_keywords;
-		_tmp60_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp60_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp59_, "guint8", (gpointer) ((gintptr) (&_tmp60_)));
 		_tmp61_ = self->priv->c_keywords;
-		_tmp62_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp62_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp61_, "gint16", (gpointer) ((gintptr) (&_tmp62_)));
 		_tmp63_ = self->priv->c_keywords;
-		_tmp64_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp64_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp63_, "guint16", (gpointer) ((gintptr) (&_tmp64_)));
 		_tmp65_ = self->priv->c_keywords;
-		_tmp66_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp66_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp65_, "gint32", (gpointer) ((gintptr) (&_tmp66_)));
 		_tmp67_ = self->priv->c_keywords;
-		_tmp68_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp68_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp67_, "guint32", (gpointer) ((gintptr) (&_tmp68_)));
 		_tmp69_ = self->priv->c_keywords;
-		_tmp70_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp70_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp69_, "gint64", (gpointer) ((gintptr) (&_tmp70_)));
 		_tmp71_ = self->priv->c_keywords;
-		_tmp72_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp72_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp71_, "guint64", (gpointer) ((gintptr) (&_tmp72_)));
 		_tmp73_ = self->priv->c_keywords;
-		_tmp74_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp74_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp73_, "gfloat", (gpointer) ((gintptr) (&_tmp74_)));
 		_tmp75_ = self->priv->c_keywords;
-		_tmp76_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp76_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp75_, "gdouble", (gpointer) ((gintptr) (&_tmp76_)));
 		_tmp77_ = self->priv->c_keywords;
-		_tmp78_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp78_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp77_, "gsize", (gpointer) ((gintptr) (&_tmp78_)));
 		_tmp79_ = self->priv->c_keywords;
-		_tmp80_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp80_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp79_, "gssize", (gpointer) ((gintptr) (&_tmp80_)));
 		_tmp81_ = self->priv->c_keywords;
-		_tmp82_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp82_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp81_, "goffset", (gpointer) ((gintptr) (&_tmp82_)));
 		_tmp83_ = self->priv->c_keywords;
-		_tmp84_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp84_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp83_, "gintptr", (gpointer) ((gintptr) (&_tmp84_)));
 		_tmp85_ = self->priv->c_keywords;
-		_tmp86_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
+		_tmp86_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE;
 		vala_map_set ((ValaMap*) _tmp85_, "guintptr", (gpointer) ((gintptr) (&_tmp86_)));
 		_tmp87_ = self->priv->c_keywords;
-		_tmp88_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
+		_tmp88_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
 		vala_map_set ((ValaMap*) _tmp87_, "NULL", (gpointer) ((gintptr) (&_tmp88_)));
 		_tmp89_ = self->priv->c_keywords;
-		_tmp90_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
+		_tmp90_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
 		vala_map_set ((ValaMap*) _tmp89_, "TRUE", (gpointer) ((gintptr) (&_tmp90_)));
 		_tmp91_ = self->priv->c_keywords;
-		_tmp92_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
+		_tmp92_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL;
 		vala_map_set ((ValaMap*) _tmp91_, "FALSE", (gpointer) ((gintptr) (&_tmp92_)));
 		_tmp93_ = self->priv->c_keywords;
-		_tmp94_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp94_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp93_, "break", (gpointer) ((gintptr) (&_tmp94_)));
 		_tmp95_ = self->priv->c_keywords;
-		_tmp96_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp96_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp95_, "case", (gpointer) ((gintptr) (&_tmp96_)));
 		_tmp97_ = self->priv->c_keywords;
-		_tmp98_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp98_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp97_, "continue", (gpointer) ((gintptr) (&_tmp98_)));
 		_tmp99_ = self->priv->c_keywords;
-		_tmp100_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp100_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp99_, "default", (gpointer) ((gintptr) (&_tmp100_)));
 		_tmp101_ = self->priv->c_keywords;
-		_tmp102_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp102_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp101_, "do", (gpointer) ((gintptr) (&_tmp102_)));
 		_tmp103_ = self->priv->c_keywords;
-		_tmp104_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp104_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp103_, "else", (gpointer) ((gintptr) (&_tmp104_)));
 		_tmp105_ = self->priv->c_keywords;
-		_tmp106_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp106_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp105_, "enum", (gpointer) ((gintptr) (&_tmp106_)));
 		_tmp107_ = self->priv->c_keywords;
-		_tmp108_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp108_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp107_, "for", (gpointer) ((gintptr) (&_tmp108_)));
 		_tmp109_ = self->priv->c_keywords;
-		_tmp110_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp110_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp109_, "goto", (gpointer) ((gintptr) (&_tmp110_)));
 		_tmp111_ = self->priv->c_keywords;
-		_tmp112_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp112_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp111_, "if", (gpointer) ((gintptr) (&_tmp112_)));
 		_tmp113_ = self->priv->c_keywords;
-		_tmp114_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp114_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp113_, "return", (gpointer) ((gintptr) (&_tmp114_)));
 		_tmp115_ = self->priv->c_keywords;
-		_tmp116_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp116_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp115_, "sizeof", (gpointer) ((gintptr) (&_tmp116_)));
 		_tmp117_ = self->priv->c_keywords;
-		_tmp118_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp118_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp117_, "struct", (gpointer) ((gintptr) (&_tmp118_)));
 		_tmp119_ = self->priv->c_keywords;
-		_tmp120_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp120_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp119_, "switch", (gpointer) ((gintptr) (&_tmp120_)));
 		_tmp121_ = self->priv->c_keywords;
-		_tmp122_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp122_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp121_, "typedef", (gpointer) ((gintptr) (&_tmp122_)));
 		_tmp123_ = self->priv->c_keywords;
-		_tmp124_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp124_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp123_, "union", (gpointer) ((gintptr) (&_tmp124_)));
 		_tmp125_ = self->priv->c_keywords;
-		_tmp126_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp126_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp125_, "while", (gpointer) ((gintptr) (&_tmp126_)));
 		_tmp127_ = self->priv->c_keywords;
-		_tmp128_ = VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
+		_tmp128_ = BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD;
 		vala_map_set ((ValaMap*) _tmp127_, "assert", (gpointer) ((gintptr) (&_tmp128_)));
 	}
 	enable_string_templates = FALSE;
@@ -986,7 +986,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 	ValadocContentRun* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (scanner != NULL, NULL);
-	_tmp0_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+	_tmp0_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 	code = _tmp0_;
 	{
 		ValadocHighlighterCodeToken* token = NULL;
@@ -1013,14 +1013,14 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 				_tmp4_ = token;
 				_tmp5_ = valadoc_highlighter_code_token_get_token_type (_tmp4_);
 				_tmp6_ = _tmp5_;
-				if (!(_tmp6_ != VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_EOF)) {
+				if (!(_tmp6_ != BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_EOF)) {
 					break;
 				}
 				_tmp7_ = token;
 				_tmp8_ = valadoc_highlighter_code_token_get_token_type (_tmp7_);
 				_tmp9_ = _tmp8_;
 				switch (_tmp9_) {
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PREPROCESSOR:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_PREPROCESSOR:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp10_;
@@ -1036,7 +1036,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp20_;
 						ValaList* _tmp21_;
 						ValadocContentRun* _tmp22_;
-						_tmp10_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR);
+						_tmp10_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_PREPROCESSOR);
 						run = _tmp10_;
 						_tmp11_ = run;
 						_tmp12_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp11_);
@@ -1056,7 +1056,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_COMMENT:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_COMMENT:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp23_;
@@ -1072,7 +1072,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp33_;
 						ValaList* _tmp34_;
 						ValadocContentRun* _tmp35_;
-						_tmp23_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_COMMENT);
+						_tmp23_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_COMMENT);
 						run = _tmp23_;
 						_tmp24_ = run;
 						_tmp25_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp24_);
@@ -1092,7 +1092,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_KEYWORD:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp36_;
@@ -1108,7 +1108,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp46_;
 						ValaList* _tmp47_;
 						ValadocContentRun* _tmp48_;
-						_tmp36_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
+						_tmp36_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
 						run = _tmp36_;
 						_tmp37_ = run;
 						_tmp38_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp37_);
@@ -1128,7 +1128,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_LITERAL:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp49_;
@@ -1144,7 +1144,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp59_;
 						ValaList* _tmp60_;
 						ValadocContentRun* _tmp61_;
-						_tmp49_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_LITERAL);
+						_tmp49_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_LITERAL);
 						run = _tmp49_;
 						_tmp50_ = run;
 						_tmp51_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp50_);
@@ -1164,7 +1164,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_TYPE:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp62_;
@@ -1180,7 +1180,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp72_;
 						ValaList* _tmp73_;
 						ValadocContentRun* _tmp74_;
-						_tmp62_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE);
+						_tmp62_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_BASIC_TYPE);
 						run = _tmp62_;
 						_tmp63_ = run;
 						_tmp64_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp63_);
@@ -1200,7 +1200,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_ESCAPE:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_ESCAPE:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp75_;
@@ -1216,7 +1216,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp85_;
 						ValaList* _tmp86_;
 						ValadocContentRun* _tmp87_;
-						_tmp75_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE);
+						_tmp75_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_ESCAPE);
 						run = _tmp75_;
 						_tmp76_ = run;
 						_tmp77_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp76_);
@@ -1236,7 +1236,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ESCAPE:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ESCAPE:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp88_;
@@ -1252,7 +1252,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp98_;
 						ValaList* _tmp99_;
 						ValadocContentRun* _tmp100_;
-						_tmp88_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_XML_ESCAPE);
+						_tmp88_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_XML_ESCAPE);
 						run = _tmp88_;
 						_tmp89_ = run;
 						_tmp90_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp89_);
@@ -1272,7 +1272,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ELEMENT:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ELEMENT:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp101_;
@@ -1288,7 +1288,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp111_;
 						ValaList* _tmp112_;
 						ValadocContentRun* _tmp113_;
-						_tmp101_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_XML_ELEMENT);
+						_tmp101_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_XML_ELEMENT);
 						run = _tmp101_;
 						_tmp102_ = run;
 						_tmp103_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp102_);
@@ -1308,7 +1308,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp114_;
@@ -1324,7 +1324,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp124_;
 						ValaList* _tmp125_;
 						ValadocContentRun* _tmp126_;
-						_tmp114_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE);
+						_tmp114_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE);
 						run = _tmp114_;
 						_tmp115_ = run;
 						_tmp116_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp115_);
@@ -1344,7 +1344,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE_VALUE:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_ATTRIBUTE_VALUE:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp127_;
@@ -1360,7 +1360,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp137_;
 						ValaList* _tmp138_;
 						ValadocContentRun* _tmp139_;
-						_tmp127_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE);
+						_tmp127_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_XML_ATTRIBUTE_VALUE);
 						run = _tmp127_;
 						_tmp128_ = run;
 						_tmp129_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp128_);
@@ -1380,7 +1380,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_COMMENT:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_COMMENT:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp140_;
@@ -1396,7 +1396,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp150_;
 						ValaList* _tmp151_;
 						ValadocContentRun* _tmp152_;
-						_tmp140_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_XML_COMMENT);
+						_tmp140_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_XML_COMMENT);
 						run = _tmp140_;
 						_tmp141_ = run;
 						_tmp142_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp141_);
@@ -1416,7 +1416,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						_g_object_unref0 (run);
 						break;
 					}
-					case VALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_CDATA:
+					case BALADOC_HIGHLIGHTER_CODE_TOKEN_TYPE_XML_CDATA:
 					{
 						ValadocContentRun* run = NULL;
 						ValadocContentRun* _tmp153_;
@@ -1432,7 +1432,7 @@ valadoc_highlighter_highlighter_highlight_code (ValadocHighlighterHighlighter* s
 						ValaList* _tmp163_;
 						ValaList* _tmp164_;
 						ValadocContentRun* _tmp165_;
-						_tmp153_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_XML_CDATA);
+						_tmp153_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_XML_CDATA);
 						run = _tmp153_;
 						_tmp154_ = run;
 						_tmp155_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp154_);
@@ -1494,7 +1494,7 @@ valadoc_highlighter_highlighter_construct (GType object_type)
 ValadocHighlighterHighlighter*
 valadoc_highlighter_highlighter_new (void)
 {
-	return valadoc_highlighter_highlighter_construct (VALADOC_HIGHLIGHTER_TYPE_HIGHLIGHTER);
+	return valadoc_highlighter_highlighter_construct (BALADOC_HIGHLIGHTER_TYPE_HIGHLIGHTER);
 }
 
 static void
@@ -1517,7 +1517,7 @@ static void
 valadoc_highlighter_highlighter_finalize (GObject * obj)
 {
 	ValadocHighlighterHighlighter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_HIGHLIGHTER_TYPE_HIGHLIGHTER, ValadocHighlighterHighlighter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_HIGHLIGHTER_TYPE_HIGHLIGHTER, ValadocHighlighterHighlighter);
 	_vala_map_unref0 (self->priv->vala_keywords);
 	_vala_map_unref0 (self->priv->c_keywords);
 	G_OBJECT_CLASS (valadoc_highlighter_highlighter_parent_class)->finalize (obj);

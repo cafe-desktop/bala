@@ -31,10 +31,10 @@
 #include <string.h>
 
 enum  {
-	VALADOC_CONTENT_CONTENT_FACTORY_0_PROPERTY,
-	VALADOC_CONTENT_CONTENT_FACTORY_NUM_PROPERTIES
+	BALADOC_CONTENT_CONTENT_FACTORY_0_PROPERTY,
+	BALADOC_CONTENT_CONTENT_FACTORY_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_content_factory_properties[VALADOC_CONTENT_CONTENT_FACTORY_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_content_factory_properties[BALADOC_CONTENT_CONTENT_FACTORY_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 
 struct _ValadocContentContentFactoryPrivate {
@@ -130,7 +130,7 @@ valadoc_content_content_factory_new (ValadocSettings* settings,
                                      ValadocResourceLocator* locator,
                                      ValadocModuleLoader* modules)
 {
-	return valadoc_content_content_factory_construct (VALADOC_CONTENT_TYPE_CONTENT_FACTORY, settings, locator, modules);
+	return valadoc_content_content_factory_construct (BALADOC_CONTENT_TYPE_CONTENT_FACTORY, settings, locator, modules);
 }
 
 static inline ValadocContentContentElement*
@@ -163,7 +163,7 @@ valadoc_content_content_factory_create_comment (ValadocContentContentFactory* se
 	_tmp0_ = valadoc_content_comment_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_COMMENT, ValadocContentComment);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -181,7 +181,7 @@ valadoc_content_content_factory_create_embedded (ValadocContentContentFactory* s
 	_tmp0_ = valadoc_content_embedded_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_EMBEDDED, ValadocContentEmbedded);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_EMBEDDED, ValadocContentEmbedded);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -199,7 +199,7 @@ valadoc_content_content_factory_create_headline (ValadocContentContentFactory* s
 	_tmp0_ = valadoc_content_headline_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -217,7 +217,7 @@ valadoc_content_content_factory_create_link (ValadocContentContentFactory* self)
 	_tmp0_ = valadoc_content_link_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_LINK, ValadocContentLink);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_LINK, ValadocContentLink);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -235,7 +235,7 @@ valadoc_content_content_factory_create_wiki_link (ValadocContentContentFactory* 
 	_tmp0_ = valadoc_content_wiki_link_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_WIKI_LINK, ValadocContentWikiLink);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_WIKI_LINK, ValadocContentWikiLink);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -253,7 +253,7 @@ valadoc_content_content_factory_create_list (ValadocContentContentFactory* self)
 	_tmp0_ = valadoc_content_list_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_LIST, ValadocContentList);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_LIST, ValadocContentList);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -271,7 +271,7 @@ valadoc_content_content_factory_create_list_item (ValadocContentContentFactory* 
 	_tmp0_ = valadoc_content_list_item_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_LIST_ITEM, ValadocContentListItem);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_LIST_ITEM, ValadocContentListItem);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -289,7 +289,7 @@ valadoc_content_content_factory_create_page (ValadocContentContentFactory* self)
 	_tmp0_ = valadoc_content_page_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_PAGE, ValadocContentPage);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_PAGE, ValadocContentPage);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -307,7 +307,7 @@ valadoc_content_content_factory_create_paragraph (ValadocContentContentFactory* 
 	_tmp0_ = valadoc_content_paragraph_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -325,7 +325,7 @@ valadoc_content_content_factory_create_warning (ValadocContentContentFactory* se
 	_tmp0_ = valadoc_content_warning_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_WARNING, ValadocContentWarning);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_WARNING, ValadocContentWarning);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -343,7 +343,7 @@ valadoc_content_content_factory_create_note (ValadocContentContentFactory* self)
 	_tmp0_ = valadoc_content_note_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_NOTE, ValadocContentNote);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_NOTE, ValadocContentNote);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -362,7 +362,7 @@ valadoc_content_content_factory_create_run (ValadocContentContentFactory* self,
 	_tmp0_ = valadoc_content_run_new (style);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_RUN, ValadocContentRun);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_RUN, ValadocContentRun);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -380,7 +380,7 @@ valadoc_content_content_factory_create_source_code (ValadocContentContentFactory
 	_tmp0_ = valadoc_content_source_code_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_SOURCE_CODE, ValadocContentSourceCode);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -398,7 +398,7 @@ valadoc_content_content_factory_create_table (ValadocContentContentFactory* self
 	_tmp0_ = valadoc_content_table_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_TABLE, ValadocContentTable);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_TABLE, ValadocContentTable);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -416,7 +416,7 @@ valadoc_content_content_factory_create_table_cell (ValadocContentContentFactory*
 	_tmp0_ = valadoc_content_table_cell_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_TABLE_CELL, ValadocContentTableCell);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -434,7 +434,7 @@ valadoc_content_content_factory_create_table_row (ValadocContentContentFactory* 
 	_tmp0_ = valadoc_content_table_row_new ();
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_TABLE_ROW, ValadocContentTableRow);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_TABLE_ROW, ValadocContentTableRow);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -468,7 +468,7 @@ valadoc_content_content_factory_create_text (ValadocContentContentFactory* self,
 	_tmp0_ = valadoc_content_text_new (text);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_content_content_factory_configure (self, (ValadocContentContentElement*) _tmp1_);
-	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALADOC_CONTENT_TYPE_TEXT, ValadocContentText);
+	_tmp3_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALADOC_CONTENT_TYPE_TEXT, ValadocContentText);
 	_g_object_unref0 (_tmp1_);
 	result = _tmp3_;
 	return result;
@@ -513,7 +513,7 @@ static void
 valadoc_content_content_factory_finalize (GObject * obj)
 {
 	ValadocContentContentFactory * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_CONTENT_FACTORY, ValadocContentContentFactory);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_CONTENT_FACTORY, ValadocContentContentFactory);
 	_g_object_unref0 (self->priv->_settings);
 	_g_object_unref0 (self->priv->_locator);
 	_g_object_unref0 (self->priv->_modules);

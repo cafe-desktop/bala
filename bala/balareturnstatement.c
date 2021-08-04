@@ -126,7 +126,7 @@ ValaReturnStatement*
 vala_return_statement_new (ValaExpression* return_expression,
                            ValaSourceReference* source_reference)
 {
-	return vala_return_statement_construct (VALA_TYPE_RETURN_STATEMENT, return_expression, source_reference);
+	return vala_return_statement_construct (BALA_TYPE_RETURN_STATEMENT, return_expression, source_reference);
 }
 
 static void
@@ -301,7 +301,7 @@ vala_return_statement_real_check (ValaCodeNode* base,
 		_tmp13_ = _tmp12_;
 		_tmp14_ = vala_semantic_analyzer_get_current_return_type (_tmp13_);
 		_tmp15_ = _tmp14_;
-		if (!VALA_IS_VOID_TYPE (_tmp15_)) {
+		if (!BALA_IS_VOID_TYPE (_tmp15_)) {
 			ValaSourceReference* _tmp16_;
 			ValaSourceReference* _tmp17_;
 			vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -318,7 +318,7 @@ vala_return_statement_real_check (ValaCodeNode* base,
 	_tmp21_ = _tmp20_;
 	_tmp22_ = vala_semantic_analyzer_get_current_return_type (_tmp21_);
 	_tmp23_ = _tmp22_;
-	if (VALA_IS_VOID_TYPE (_tmp23_)) {
+	if (BALA_IS_VOID_TYPE (_tmp23_)) {
 		ValaSourceReference* _tmp24_;
 		ValaSourceReference* _tmp25_;
 		vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -444,7 +444,7 @@ vala_return_statement_real_check (ValaCodeNode* base,
 	_tmp80_ = _tmp79_;
 	_tmp81_ = vala_expression_get_symbol_reference (_tmp80_);
 	_tmp82_ = _tmp81_;
-	local = VALA_IS_LOCAL_VARIABLE (_tmp82_) ? ((ValaLocalVariable*) _tmp82_) : NULL;
+	local = BALA_IS_LOCAL_VARIABLE (_tmp82_) ? ((ValaLocalVariable*) _tmp82_) : NULL;
 	_tmp85_ = local;
 	if (_tmp85_ != NULL) {
 		ValaLocalVariable* _tmp86_;
@@ -487,7 +487,7 @@ vala_return_statement_real_check (ValaCodeNode* base,
 	}
 	_tmp98_ = vala_return_statement_get_return_expression (self);
 	_tmp99_ = _tmp98_;
-	if (VALA_IS_NULL_LITERAL (_tmp99_)) {
+	if (BALA_IS_NULL_LITERAL (_tmp99_)) {
 		ValaSemanticAnalyzer* _tmp100_;
 		ValaSemanticAnalyzer* _tmp101_;
 		ValaDataType* _tmp102_;
@@ -636,9 +636,9 @@ static void
 vala_return_statement_finalize (ValaCodeNode * obj)
 {
 	ValaReturnStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_RETURN_STATEMENT, ValaReturnStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_RETURN_STATEMENT, ValaReturnStatement);
 	_vala_code_node_unref0 (self->priv->_return_expression);
-	VALA_CODE_NODE_CLASS (vala_return_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_return_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -650,8 +650,8 @@ vala_return_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaReturnStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_return_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaReturnStatement), 0, (GInstanceInitFunc) vala_return_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_return_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_return_statement_type_id;
-	vala_return_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaReturnStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_return_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_return_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaReturnStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_return_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaReturnStatement_private_offset = g_type_add_instance_private (vala_return_statement_type_id, sizeof (ValaReturnStatementPrivate));
 	return vala_return_statement_type_id;
 }

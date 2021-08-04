@@ -33,7 +33,7 @@ gboolean
 vala_lockable_get_lock_used (ValaLockable* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_LOCKABLE_GET_INTERFACE (self)->get_lock_used (self);
+	return BALA_LOCKABLE_GET_INTERFACE (self)->get_lock_used (self);
 }
 
 void
@@ -41,7 +41,7 @@ vala_lockable_set_lock_used (ValaLockable* self,
                              gboolean value)
 {
 	g_return_if_fail (self != NULL);
-	VALA_LOCKABLE_GET_INTERFACE (self)->set_lock_used (self, value);
+	BALA_LOCKABLE_GET_INTERFACE (self)->set_lock_used (self, value);
 }
 
 static void

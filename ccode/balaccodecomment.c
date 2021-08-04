@@ -84,7 +84,7 @@ vala_ccode_comment_construct (GType object_type,
 ValaCCodeComment*
 vala_ccode_comment_new (const gchar* _text)
 {
-	return vala_ccode_comment_construct (VALA_TYPE_CCODE_COMMENT, _text);
+	return vala_ccode_comment_construct (BALA_TYPE_CCODE_COMMENT, _text);
 }
 
 static void
@@ -120,9 +120,9 @@ static void
 vala_ccode_comment_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeComment * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_COMMENT, ValaCCodeComment);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_COMMENT, ValaCCodeComment);
 	_g_free0 (self->priv->_text);
-	VALA_CCODE_NODE_CLASS (vala_ccode_comment_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_comment_parent_class)->finalize (obj);
 }
 
 /**
@@ -133,7 +133,7 @@ vala_ccode_comment_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeCommentClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_comment_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeComment), 0, (GInstanceInitFunc) vala_ccode_comment_instance_init, NULL };
 	GType vala_ccode_comment_type_id;
-	vala_ccode_comment_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeComment", &g_define_type_info, 0);
+	vala_ccode_comment_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeComment", &g_define_type_info, 0);
 	ValaCCodeComment_private_offset = g_type_add_instance_private (vala_ccode_comment_type_id, sizeof (ValaCCodeCommentPrivate));
 	return vala_ccode_comment_type_id;
 }

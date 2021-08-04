@@ -32,11 +32,11 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_API_ATTRIBUTE_0_PROPERTY,
-	VALADOC_API_ATTRIBUTE_NAME_PROPERTY,
-	VALADOC_API_ATTRIBUTE_NUM_PROPERTIES
+	BALADOC_API_ATTRIBUTE_0_PROPERTY,
+	BALADOC_API_ATTRIBUTE_NAME_PROPERTY,
+	BALADOC_API_ATTRIBUTE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_attribute_properties[VALADOC_API_ATTRIBUTE_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_attribute_properties[BALADOC_API_ATTRIBUTE_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
@@ -96,7 +96,7 @@ valadoc_api_attribute_set_name (ValadocApiAttribute* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_name);
 		self->priv->_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_attribute_properties[VALADOC_API_ATTRIBUTE_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_attribute_properties[BALADOC_API_ATTRIBUTE_NAME_PROPERTY]);
 	}
 }
 
@@ -134,7 +134,7 @@ valadoc_api_attribute_new (ValadocApiNode* parent,
                            const gchar* name,
                            ValaAttribute* data)
 {
-	return valadoc_api_attribute_construct (VALADOC_API_TYPE_ATTRIBUTE, parent, file, name, data);
+	return valadoc_api_attribute_construct (BALADOC_API_TYPE_ATTRIBUTE, parent, file, name, data);
 }
 
 ValadocApiSourceFile*
@@ -186,7 +186,7 @@ valadoc_api_attribute_real_build_signature (ValadocApiItem* base)
 	builder = _tmp0_;
 	_tmp1_ = valadoc_api_item_get_data ((ValadocApiItem*) self);
 	_tmp2_ = _tmp1_;
-	attr = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALA_TYPE_ATTRIBUTE, ValaAttribute);
+	attr = G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALA_TYPE_ATTRIBUTE, ValaAttribute);
 	_tmp3_ = g_sequence_new (_g_free0_);
 	keys = _tmp3_;
 	{
@@ -357,7 +357,7 @@ valadoc_api_attribute_class_init (ValadocApiAttributeClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_attribute_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_attribute_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_attribute_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_ATTRIBUTE_NAME_PROPERTY, valadoc_api_attribute_properties[VALADOC_API_ATTRIBUTE_NAME_PROPERTY] = g_param_spec_string ("name", "name", "name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_ATTRIBUTE_NAME_PROPERTY, valadoc_api_attribute_properties[BALADOC_API_ATTRIBUTE_NAME_PROPERTY] = g_param_spec_string ("name", "name", "name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -371,7 +371,7 @@ static void
 valadoc_api_attribute_finalize (GObject * obj)
 {
 	ValadocApiAttribute * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_ATTRIBUTE, ValadocApiAttribute);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_ATTRIBUTE, ValadocApiAttribute);
 	_g_object_unref0 (self->priv->file);
 	_g_free0 (self->priv->_name);
 	G_OBJECT_CLASS (valadoc_api_attribute_parent_class)->finalize (obj);
@@ -382,7 +382,7 @@ valadoc_api_attribute_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiAttributeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_attribute_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiAttribute), 0, (GInstanceInitFunc) valadoc_api_attribute_instance_init, NULL };
 	GType valadoc_api_attribute_type_id;
-	valadoc_api_attribute_type_id = g_type_register_static (VALADOC_API_TYPE_ITEM, "ValadocApiAttribute", &g_define_type_info, 0);
+	valadoc_api_attribute_type_id = g_type_register_static (BALADOC_API_TYPE_ITEM, "ValadocApiAttribute", &g_define_type_info, 0);
 	ValadocApiAttribute_private_offset = g_type_add_instance_private (valadoc_api_attribute_type_id, sizeof (ValadocApiAttributePrivate));
 	return valadoc_api_attribute_type_id;
 }
@@ -406,9 +406,9 @@ _vala_valadoc_api_attribute_get_property (GObject * object,
                                           GParamSpec * pspec)
 {
 	ValadocApiAttribute * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_ATTRIBUTE, ValadocApiAttribute);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_ATTRIBUTE, ValadocApiAttribute);
 	switch (property_id) {
-		case VALADOC_API_ATTRIBUTE_NAME_PROPERTY:
+		case BALADOC_API_ATTRIBUTE_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_api_attribute_get_name (self));
 		break;
 		default:
@@ -424,9 +424,9 @@ _vala_valadoc_api_attribute_set_property (GObject * object,
                                           GParamSpec * pspec)
 {
 	ValadocApiAttribute * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_ATTRIBUTE, ValadocApiAttribute);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_ATTRIBUTE, ValadocApiAttribute);
 	switch (property_id) {
-		case VALADOC_API_ATTRIBUTE_NAME_PROPERTY:
+		case BALADOC_API_ATTRIBUTE_NAME_PROPERTY:
 		valadoc_api_attribute_set_name (self, g_value_get_string (value));
 		break;
 		default:

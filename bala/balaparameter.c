@@ -193,7 +193,7 @@ vala_parameter_construct (GType object_type,
 	ValaParameter* self = NULL;
 	g_return_val_if_fail (name != NULL, NULL);
 	self = (ValaParameter*) vala_variable_construct (object_type, variable_type, name, NULL, source_reference, NULL);
-	vala_symbol_set_access ((ValaSymbol*) self, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+	vala_symbol_set_access ((ValaSymbol*) self, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	return self;
 }
 
@@ -202,7 +202,7 @@ vala_parameter_new (const gchar* name,
                     ValaDataType* variable_type,
                     ValaSourceReference* source_reference)
 {
-	return vala_parameter_construct (VALA_TYPE_PARAMETER, name, variable_type, source_reference);
+	return vala_parameter_construct (BALA_TYPE_PARAMETER, name, variable_type, source_reference);
 }
 
 /**
@@ -216,14 +216,14 @@ vala_parameter_construct_with_ellipsis (GType object_type,
 	ValaParameter* self = NULL;
 	self = (ValaParameter*) vala_variable_construct (object_type, NULL, NULL, NULL, source_reference, NULL);
 	vala_parameter_set_ellipsis (self, TRUE);
-	vala_symbol_set_access ((ValaSymbol*) self, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+	vala_symbol_set_access ((ValaSymbol*) self, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	return self;
 }
 
 ValaParameter*
 vala_parameter_new_with_ellipsis (ValaSourceReference* source_reference)
 {
-	return vala_parameter_construct_with_ellipsis (VALA_TYPE_PARAMETER, source_reference);
+	return vala_parameter_construct_with_ellipsis (BALA_TYPE_PARAMETER, source_reference);
 }
 
 static void
@@ -489,7 +489,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 		ValaDataType* _tmp33_;
 		_tmp28_ = vala_variable_get_variable_type ((ValaVariable*) self);
 		_tmp29_ = _tmp28_;
-		if (VALA_IS_VOID_TYPE (_tmp29_)) {
+		if (BALA_IS_VOID_TYPE (_tmp29_)) {
 			ValaSourceReference* _tmp30_;
 			ValaSourceReference* _tmp31_;
 			vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -529,7 +529,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 			ValaDataType* _tmp40_;
 			_tmp39_ = vala_variable_get_variable_type ((ValaVariable*) self);
 			_tmp40_ = _tmp39_;
-			_tmp37_ = !VALA_IS_ARRAY_TYPE (_tmp40_);
+			_tmp37_ = !BALA_IS_ARRAY_TYPE (_tmp40_);
 		} else {
 			_tmp37_ = FALSE;
 		}
@@ -550,7 +550,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 			ValaDataType* _tmp45_;
 			_tmp44_ = vala_variable_get_variable_type ((ValaVariable*) self);
 			_tmp45_ = _tmp44_;
-			_tmp43_ = VALA_IS_DELEGATE_TYPE (_tmp45_);
+			_tmp43_ = BALA_IS_DELEGATE_TYPE (_tmp45_);
 		} else {
 			_tmp43_ = FALSE;
 		}
@@ -564,7 +564,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 			gchar* _tmp51_;
 			_tmp46_ = vala_variable_get_variable_type ((ValaVariable*) self);
 			_tmp47_ = _tmp46_;
-			_tmp48_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp47_, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
+			_tmp48_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp47_, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
 			delegate_type = _tmp48_;
 			_tmp49_ = delegate_type;
 			_tmp50_ = vala_code_node_get_attribute_string ((ValaCodeNode*) self, "CCode", "scope", NULL);
@@ -618,7 +618,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 		}
 		_tmp70_ = vala_variable_get_variable_type ((ValaVariable*) self);
 		_tmp71_ = _tmp70_;
-		variable_array_type = VALA_IS_ARRAY_TYPE (_tmp71_) ? ((ValaArrayType*) _tmp71_) : NULL;
+		variable_array_type = BALA_IS_ARRAY_TYPE (_tmp71_) ? ((ValaArrayType*) _tmp71_) : NULL;
 		_tmp74_ = variable_array_type;
 		if (_tmp74_ != NULL) {
 			ValaArrayType* _tmp75_;
@@ -673,7 +673,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 		ValaExpression* _tmp93_;
 		_tmp92_ = vala_variable_get_initializer ((ValaVariable*) self);
 		_tmp93_ = _tmp92_;
-		if (VALA_IS_NULL_LITERAL (_tmp93_)) {
+		if (BALA_IS_NULL_LITERAL (_tmp93_)) {
 			ValaDataType* _tmp94_;
 			ValaDataType* _tmp95_;
 			gboolean _tmp96_;
@@ -689,7 +689,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 		if (_tmp91_) {
 			ValaParameterDirection _tmp98_;
 			_tmp98_ = self->priv->_direction;
-			_tmp90_ = _tmp98_ != VALA_PARAMETER_DIRECTION_OUT;
+			_tmp90_ = _tmp98_ != BALA_PARAMETER_DIRECTION_OUT;
 		} else {
 			_tmp90_ = FALSE;
 		}
@@ -719,10 +719,10 @@ vala_parameter_real_check (ValaCodeNode* base,
 			ValaExpression* _tmp109_;
 			_tmp108_ = vala_variable_get_initializer ((ValaVariable*) self);
 			_tmp109_ = _tmp108_;
-			if (!VALA_IS_NULL_LITERAL (_tmp109_)) {
+			if (!BALA_IS_NULL_LITERAL (_tmp109_)) {
 				ValaParameterDirection _tmp110_;
 				_tmp110_ = self->priv->_direction;
-				_tmp107_ = _tmp110_ == VALA_PARAMETER_DIRECTION_OUT;
+				_tmp107_ = _tmp110_ == BALA_PARAMETER_DIRECTION_OUT;
 			} else {
 				_tmp107_ = FALSE;
 			}
@@ -737,7 +737,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 				gboolean _tmp113_ = FALSE;
 				ValaParameterDirection _tmp114_;
 				_tmp114_ = self->priv->_direction;
-				if (_tmp114_ == VALA_PARAMETER_DIRECTION_IN) {
+				if (_tmp114_ == BALA_PARAMETER_DIRECTION_IN) {
 					ValaExpression* _tmp115_;
 					ValaExpression* _tmp116_;
 					ValaDataType* _tmp117_;
@@ -795,7 +795,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 				} else {
 					ValaParameterDirection _tmp137_;
 					_tmp137_ = self->priv->_direction;
-					if (_tmp137_ == VALA_PARAMETER_DIRECTION_REF) {
+					if (_tmp137_ == BALA_PARAMETER_DIRECTION_REF) {
 						ValaSourceReference* _tmp138_;
 						ValaSourceReference* _tmp139_;
 						vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -948,7 +948,7 @@ vala_parameter_real_check (ValaCodeNode* base,
 	}
 	_tmp195_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 	_tmp196_ = _tmp195_;
-	m = VALA_IS_METHOD (_tmp196_) ? ((ValaMethod*) _tmp196_) : NULL;
+	m = BALA_IS_METHOD (_tmp196_) ? ((ValaMethod*) _tmp196_) : NULL;
 	_tmp197_ = m;
 	if (_tmp197_ != NULL) {
 		ValaMethod* base_method = NULL;
@@ -1070,16 +1070,16 @@ vala_parameter_instance_init (ValaParameter * self,
                               gpointer klass)
 {
 	self->priv = vala_parameter_get_instance_private (self);
-	self->priv->_direction = VALA_PARAMETER_DIRECTION_IN;
+	self->priv->_direction = BALA_PARAMETER_DIRECTION_IN;
 }
 
 static void
 vala_parameter_finalize (ValaCodeNode * obj)
 {
 	ValaParameter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_PARAMETER, ValaParameter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_PARAMETER, ValaParameter);
 	_vala_code_node_unref0 (self->priv->_base_parameter);
-	VALA_CODE_NODE_CLASS (vala_parameter_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_parameter_parent_class)->finalize (obj);
 }
 
 /**
@@ -1090,7 +1090,7 @@ vala_parameter_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaParameterClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_parameter_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaParameter), 0, (GInstanceInitFunc) vala_parameter_instance_init, NULL };
 	GType vala_parameter_type_id;
-	vala_parameter_type_id = g_type_register_static (VALA_TYPE_VARIABLE, "ValaParameter", &g_define_type_info, 0);
+	vala_parameter_type_id = g_type_register_static (BALA_TYPE_VARIABLE, "ValaParameter", &g_define_type_info, 0);
 	ValaParameter_private_offset = g_type_add_instance_private (vala_parameter_type_id, sizeof (ValaParameterPrivate));
 	return vala_parameter_type_id;
 }
@@ -1110,7 +1110,7 @@ vala_parameter_get_type (void)
 static GType
 vala_parameter_direction_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_PARAMETER_DIRECTION_IN, "VALA_PARAMETER_DIRECTION_IN", "in"}, {VALA_PARAMETER_DIRECTION_OUT, "VALA_PARAMETER_DIRECTION_OUT", "out"}, {VALA_PARAMETER_DIRECTION_REF, "VALA_PARAMETER_DIRECTION_REF", "ref"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_PARAMETER_DIRECTION_IN, "BALA_PARAMETER_DIRECTION_IN", "in"}, {BALA_PARAMETER_DIRECTION_OUT, "BALA_PARAMETER_DIRECTION_OUT", "out"}, {BALA_PARAMETER_DIRECTION_REF, "BALA_PARAMETER_DIRECTION_REF", "ref"}, {0, NULL, NULL}};
 	GType vala_parameter_direction_type_id;
 	vala_parameter_direction_type_id = g_enum_register_static ("ValaParameterDirection", values);
 	return vala_parameter_direction_type_id;

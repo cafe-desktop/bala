@@ -61,7 +61,7 @@ vala_delegate_destroy_field_construct (GType object_type,
 ValaDelegateDestroyField*
 vala_delegate_destroy_field_new (ValaSourceReference* source_reference)
 {
-	return vala_delegate_destroy_field_construct (VALA_TYPE_DELEGATE_DESTROY_FIELD, source_reference);
+	return vala_delegate_destroy_field_construct (BALA_TYPE_DELEGATE_DESTROY_FIELD, source_reference);
 }
 
 static void
@@ -85,7 +85,7 @@ vala_delegate_destroy_field_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaDelegateDestroyFieldClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_delegate_destroy_field_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaDelegateDestroyField), 0, (GInstanceInitFunc) vala_delegate_destroy_field_instance_init, NULL };
 	GType vala_delegate_destroy_field_type_id;
-	vala_delegate_destroy_field_type_id = g_type_register_static (VALA_TYPE_FIELD, "ValaDelegateDestroyField", &g_define_type_info, 0);
+	vala_delegate_destroy_field_type_id = g_type_register_static (BALA_TYPE_FIELD, "ValaDelegateDestroyField", &g_define_type_info, 0);
 	return vala_delegate_destroy_field_type_id;
 }
 

@@ -19,19 +19,19 @@ bin_PROGRAMS = \
 	valac \
 	$(NULL)
 
-valac_VALASOURCES = \
+valac_BALASOURCES = \
 	valacompiler.vala \
 	$(NULL)
 
 valac_SOURCES = \
 	valac.vala.stamp \
-	$(valac_VALASOURCES:.vala=.c) \
+	$(valac_BALASOURCES:.vala=.c) \
 	$(NULL)
 
-valac.vala.stamp: $(valac_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+valac.vala.stamp: $(valac_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
@@ -50,7 +50,7 @@ valac_LDADD = \
 	$(top_builddir)/codegen/libvalaccodegen.la \
 	$(NULL)
 
-EXTRA_DIST = $(valac_VALASOURCES) valac.vala.stamp
+EXTRA_DIST = $(valac_BALASOURCES) valac.vala.stamp
 
 install-exec-hook:
 	cd $(DESTDIR)$(bindir) && $(LN_S) -f valac@PACKAGE_SUFFIX@$(EXEEXT) vala@PACKAGE_SUFFIX@$(EXEEXT)
@@ -60,5 +60,5 @@ if ENABLE_UNVERSIONED
 endif
 
 MAINTAINERCLEANFILES = \
-	$(valac_VALASOURCES:.vala=.c) \
+	$(valac_BALASOURCES:.vala=.c) \
 	$(NULL)

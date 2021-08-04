@@ -32,18 +32,18 @@
 #include <valagee.h>
 
 enum  {
-	VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_0_PROPERTY,
-	VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY,
-	VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_NUM_PROPERTIES
+	BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_0_PROPERTY,
+	BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY,
+	BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_importer_valadoc_documentation_importer_properties[VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_NUM_PROPERTIES];
+static GParamSpec* valadoc_importer_valadoc_documentation_importer_properties[BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_NUM_PROPERTIES];
 typedef enum  {
-	VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND,
-	VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND,
-	VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE
+	BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND,
+	BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND,
+	BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE
 } ValadocImporterValadocDocumentationImporterInsertionMode;
 
-#define VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_TYPE_INSERTION_MODE (valadoc_importer_valadoc_documentation_importer_insertion_mode_get_type ())
+#define BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_TYPE_INSERTION_MODE (valadoc_importer_valadoc_documentation_importer_insertion_mode_get_type ())
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _valadoc_parser_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_parser_unref (var), NULL)))
 #define _g_mapped_file_unref0(var) ((var == NULL) ? NULL : (var = (g_mapped_file_unref (var), NULL)))
@@ -131,7 +131,7 @@ valadoc_importer_valadoc_documentation_importer_get_instance_private (ValadocImp
 static GType
 valadoc_importer_valadoc_documentation_importer_insertion_mode_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND, "VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND", "append"}, {VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND, "VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND", "prepend"}, {VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE, "VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE", "replace"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND, "BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND", "append"}, {BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND, "BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND", "prepend"}, {BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE, "BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE", "replace"}, {0, NULL, NULL}};
 	GType valadoc_importer_valadoc_documentation_importer_insertion_mode_type_id;
 	valadoc_importer_valadoc_documentation_importer_insertion_mode_type_id = g_enum_register_static ("ValadocImporterValadocDocumentationImporterInsertionMode", values);
 	return valadoc_importer_valadoc_documentation_importer_insertion_mode_type_id;
@@ -408,9 +408,9 @@ valadoc_importer_valadoc_documentation_importer_construct (GType object_type,
 	_tmp9_ = g_string_new ("");
 	_g_string_free0 (self->priv->_comment);
 	self->priv->_comment = _tmp9_;
-	_tmp10_ = valadoc_token_type_VALADOC_SPACE;
+	_tmp10_ = valadoc_token_type_BALADOC_SPACE;
 	_tmp11_ = _g_object_ref0 ((GObject*) _tmp10_);
-	_tmp12_ = valadoc_token_type_VALADOC_TAB;
+	_tmp12_ = valadoc_token_type_BALADOC_TAB;
 	_tmp13_ = _g_object_ref0 ((GObject*) _tmp12_);
 	_tmp14_ = g_new0 (GObject*, 2 + 1);
 	_tmp14_[0] = _tmp11_;
@@ -428,7 +428,7 @@ valadoc_importer_valadoc_documentation_importer_construct (GType object_type,
 	_tmp15_ = (_vala_array_free (_tmp15_, _tmp15__length1, (GDestroyNotify) g_object_unref), NULL);
 	unprinted_spaces = _tmp20_;
 	_tmp21_ = _g_object_ref0 ((GObject*) unprinted_spaces);
-	_tmp22_ = valadoc_token_type_VALADOC_EOL;
+	_tmp22_ = valadoc_token_type_BALADOC_EOL;
 	_tmp23_ = _g_object_ref0 ((GObject*) _tmp22_);
 	_tmp24_ = g_new0 (GObject*, 2 + 1);
 	_tmp24_[0] = _tmp21_;
@@ -457,17 +457,17 @@ valadoc_importer_valadoc_documentation_importer_construct (GType object_type,
 	_tmp37_ = _tmp36_;
 	_tmp35_ = (_vala_array_free (_tmp35_, _tmp35__length1, (GDestroyNotify) g_object_unref), NULL);
 	optional_empty_lines = _tmp37_;
-	_tmp38_ = valadoc_token_type_VALADOC_COMMENT_START;
+	_tmp38_ = valadoc_token_type_BALADOC_COMMENT_START;
 	_tmp39_ = valadoc_token_type_action (_tmp38_, ___lambda133__valadoc_token_type_action, self);
 	_tmp40_ = valadoc_token_type_ANY_WORD;
 	_tmp41_ = valadoc_token_type_action (_tmp40_, _valadoc_importer_valadoc_documentation_importer_add_comment_valadoc_token_type_action, self);
-	_tmp42_ = valadoc_token_type_VALADOC_COMMENT_START;
+	_tmp42_ = valadoc_token_type_BALADOC_COMMENT_START;
 	_tmp43_ = valadoc_token_type_action (_tmp42_, _valadoc_importer_valadoc_documentation_importer_add_comment_valadoc_token_type_action, self);
-	_tmp44_ = valadoc_token_type_VALADOC_SPACE;
+	_tmp44_ = valadoc_token_type_BALADOC_SPACE;
 	_tmp45_ = valadoc_token_type_action (_tmp44_, _valadoc_importer_valadoc_documentation_importer_add_comment_valadoc_token_type_action, self);
-	_tmp46_ = valadoc_token_type_VALADOC_TAB;
+	_tmp46_ = valadoc_token_type_BALADOC_TAB;
 	_tmp47_ = valadoc_token_type_action (_tmp46_, _valadoc_importer_valadoc_documentation_importer_add_comment_valadoc_token_type_action, self);
-	_tmp48_ = valadoc_token_type_VALADOC_EOL;
+	_tmp48_ = valadoc_token_type_BALADOC_EOL;
 	_tmp49_ = valadoc_token_type_action (_tmp48_, _valadoc_importer_valadoc_documentation_importer_add_comment_valadoc_token_type_action, self);
 	_tmp50_ = g_new0 (GObject*, 5 + 1);
 	_tmp50_[0] = (GObject*) _tmp41_;
@@ -483,7 +483,7 @@ valadoc_importer_valadoc_documentation_importer_construct (GType object_type,
 	_tmp54_ = _tmp53_;
 	_tmp54__length1 = 1;
 	_tmp55_ = valadoc_rule_many (_tmp54_, (gint) 1);
-	_tmp56_ = valadoc_token_type_VALADOC_COMMENT_END;
+	_tmp56_ = valadoc_token_type_BALADOC_COMMENT_END;
 	_tmp57_ = _g_object_ref0 ((GObject*) _tmp56_);
 	_tmp58_ = _g_object_ref0 ((GObject*) optional_empty_lines);
 	_tmp59_ = valadoc_token_type_ANY_WORD;
@@ -554,7 +554,7 @@ valadoc_importer_valadoc_documentation_importer_new (ValadocApiTree* tree,
                                                      ValadocSettings* settings,
                                                      ValadocErrorReporter* reporter)
 {
-	return valadoc_importer_valadoc_documentation_importer_construct (VALADOC_IMPORTER_TYPE_VALADOC_DOCUMENTATION_IMPORTER, tree, parser, modules, settings, reporter);
+	return valadoc_importer_valadoc_documentation_importer_construct (BALADOC_IMPORTER_TYPE_BALADOC_DOCUMENTATION_IMPORTER, tree, parser, modules, settings, reporter);
 }
 
 static void
@@ -658,7 +658,7 @@ valadoc_importer_valadoc_documentation_importer_add_documentation (ValadocImport
 		_tmp2_ = string_substring (_symbol_name, (glong) 0, (glong) (_tmp1_ - 8));
 		_g_free0 (symbol_name);
 		symbol_name = _tmp2_;
-		insertion_mode = VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND;
+		insertion_mode = BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND;
 	} else {
 		if (g_str_has_suffix (_symbol_name, "::prepend")) {
 			gint _tmp3_;
@@ -669,13 +669,13 @@ valadoc_importer_valadoc_documentation_importer_add_documentation (ValadocImport
 			_tmp5_ = string_substring (_symbol_name, (glong) 0, (glong) (_tmp4_ - 9));
 			_g_free0 (symbol_name);
 			symbol_name = _tmp5_;
-			insertion_mode = VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND;
+			insertion_mode = BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND;
 		} else {
 			gchar* _tmp6_;
 			_tmp6_ = g_strdup (_symbol_name);
 			_g_free0 (symbol_name);
 			symbol_name = _tmp6_;
-			insertion_mode = VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE;
+			insertion_mode = BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE;
 		}
 	}
 	_tmp7_ = symbol_name;
@@ -759,14 +759,14 @@ valadoc_importer_valadoc_documentation_importer_add_documentation (ValadocImport
 			} else {
 				ValadocImporterValadocDocumentationImporterInsertionMode _tmp36_;
 				_tmp36_ = insertion_mode;
-				_tmp32_ = _tmp36_ == VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE;
+				_tmp32_ = _tmp36_ == BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_REPLACE;
 			}
 			if (_tmp32_) {
 				ValadocImporterValadocDocumentationImporterInsertionMode _tmp37_;
 				ValadocApiNode* _tmp44_;
 				ValadocContentComment* _tmp45_;
 				_tmp37_ = insertion_mode;
-				if (_tmp37_ == VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND) {
+				if (_tmp37_ == BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND) {
 					ValadocContentComment* _tmp38_;
 					ValaList* _tmp39_;
 					ValaList* _tmp40_;
@@ -788,7 +788,7 @@ valadoc_importer_valadoc_documentation_importer_add_documentation (ValadocImport
 			} else {
 				ValadocImporterValadocDocumentationImporterInsertionMode _tmp46_;
 				_tmp46_ = insertion_mode;
-				if (_tmp46_ == VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND) {
+				if (_tmp46_ == BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_APPEND) {
 					ValadocApiNode* _tmp47_;
 					ValadocContentComment* _tmp48_;
 					ValadocContentComment* _tmp49_;
@@ -818,7 +818,7 @@ valadoc_importer_valadoc_documentation_importer_add_documentation (ValadocImport
 				} else {
 					ValadocImporterValadocDocumentationImporterInsertionMode _tmp59_;
 					_tmp59_ = insertion_mode;
-					if (_tmp59_ == VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND) {
+					if (_tmp59_ == BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_INSERTION_MODE_PREPEND) {
 						ValadocApiNode* _tmp60_;
 						ValadocContentComment* _tmp61_;
 						ValadocContentComment* _tmp62_;
@@ -942,7 +942,7 @@ valadoc_importer_valadoc_documentation_importer_real_process (ValadocImporterDoc
 			if (_inner_error0_->domain == G_FILE_ERROR) {
 				goto __catch0_g_file_error;
 			}
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				goto __catch0_valadoc_parser_error;
 			}
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
@@ -968,7 +968,7 @@ valadoc_importer_valadoc_documentation_importer_real_process (ValadocImporterDoc
 				if (_inner_error0_->domain == G_FILE_ERROR) {
 					goto __catch0_g_file_error;
 				}
-				if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+				if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 					goto __catch0_valadoc_parser_error;
 				}
 				g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
@@ -1013,10 +1013,10 @@ valadoc_importer_valadoc_documentation_importer_class_init (ValadocImporterValad
 	valadoc_importer_valadoc_documentation_importer_parent_class = g_type_class_peek_parent (klass);
 	g_type_class_adjust_private_offset (klass, &ValadocImporterValadocDocumentationImporter_private_offset);
 	((ValadocImporterDocumentationImporterClass *) klass)->process = (void (*) (ValadocImporterDocumentationImporter*, const gchar*)) valadoc_importer_valadoc_documentation_importer_real_process;
-	VALADOC_IMPORTER_DOCUMENTATION_IMPORTER_CLASS (klass)->get_file_extension = valadoc_importer_valadoc_documentation_importer_real_get_file_extension;
+	BALADOC_IMPORTER_DOCUMENTATION_IMPORTER_CLASS (klass)->get_file_extension = valadoc_importer_valadoc_documentation_importer_real_get_file_extension;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_importer_valadoc_documentation_importer_get_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_importer_valadoc_documentation_importer_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY, valadoc_importer_valadoc_documentation_importer_properties[VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY] = g_param_spec_string ("file-extension", "file-extension", "file-extension", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY, valadoc_importer_valadoc_documentation_importer_properties[BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY] = g_param_spec_string ("file-extension", "file-extension", "file-extension", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -1037,7 +1037,7 @@ static void
 valadoc_importer_valadoc_documentation_importer_finalize (GObject * obj)
 {
 	ValadocImporterValadocDocumentationImporter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_IMPORTER_TYPE_VALADOC_DOCUMENTATION_IMPORTER, ValadocImporterValadocDocumentationImporter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_IMPORTER_TYPE_BALADOC_DOCUMENTATION_IMPORTER, ValadocImporterValadocDocumentationImporter);
 	_g_object_unref0 (self->priv->_scanner);
 	_g_object_unref0 (self->priv->_doc_parser);
 	_valadoc_parser_unref0 (self->priv->_parser);
@@ -1056,8 +1056,8 @@ valadoc_importer_valadoc_documentation_importer_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocImporterValadocDocumentationImporterClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_importer_valadoc_documentation_importer_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocImporterValadocDocumentationImporter), 0, (GInstanceInitFunc) valadoc_importer_valadoc_documentation_importer_instance_init, NULL };
 	static const GInterfaceInfo valadoc_resource_locator_info = { (GInterfaceInitFunc) valadoc_importer_valadoc_documentation_importer_valadoc_resource_locator_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_importer_valadoc_documentation_importer_type_id;
-	valadoc_importer_valadoc_documentation_importer_type_id = g_type_register_static (VALADOC_IMPORTER_TYPE_DOCUMENTATION_IMPORTER, "ValadocImporterValadocDocumentationImporter", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_importer_valadoc_documentation_importer_type_id, VALADOC_TYPE_RESOURCE_LOCATOR, &valadoc_resource_locator_info);
+	valadoc_importer_valadoc_documentation_importer_type_id = g_type_register_static (BALADOC_IMPORTER_TYPE_DOCUMENTATION_IMPORTER, "ValadocImporterValadocDocumentationImporter", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_importer_valadoc_documentation_importer_type_id, BALADOC_TYPE_RESOURCE_LOCATOR, &valadoc_resource_locator_info);
 	ValadocImporterValadocDocumentationImporter_private_offset = g_type_add_instance_private (valadoc_importer_valadoc_documentation_importer_type_id, sizeof (ValadocImporterValadocDocumentationImporterPrivate));
 	return valadoc_importer_valadoc_documentation_importer_type_id;
 }
@@ -1081,9 +1081,9 @@ _vala_valadoc_importer_valadoc_documentation_importer_get_property (GObject * ob
                                                                     GParamSpec * pspec)
 {
 	ValadocImporterValadocDocumentationImporter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_IMPORTER_TYPE_VALADOC_DOCUMENTATION_IMPORTER, ValadocImporterValadocDocumentationImporter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_IMPORTER_TYPE_BALADOC_DOCUMENTATION_IMPORTER, ValadocImporterValadocDocumentationImporter);
 	switch (property_id) {
-		case VALADOC_IMPORTER_VALADOC_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY:
+		case BALADOC_IMPORTER_BALADOC_DOCUMENTATION_IMPORTER_FILE_EXTENSION_PROPERTY:
 		g_value_set_string (value, valadoc_importer_documentation_importer_get_file_extension ((ValadocImporterDocumentationImporter*) self));
 		break;
 		default:

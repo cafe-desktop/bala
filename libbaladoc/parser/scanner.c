@@ -35,14 +35,14 @@ valadoc_scanner_set_parser (ValadocScanner* self,
                             ValadocParser* parser)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_SCANNER_GET_INTERFACE (self)->set_parser (self, parser);
+	BALADOC_SCANNER_GET_INTERFACE (self)->set_parser (self, parser);
 }
 
 void
 valadoc_scanner_reset (ValadocScanner* self)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_SCANNER_GET_INTERFACE (self)->reset (self);
+	BALADOC_SCANNER_GET_INTERFACE (self)->reset (self);
 }
 
 void
@@ -51,7 +51,7 @@ valadoc_scanner_scan (ValadocScanner* self,
                       GError** error)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_SCANNER_GET_INTERFACE (self)->scan (self, content, error);
+	BALADOC_SCANNER_GET_INTERFACE (self)->scan (self, content, error);
 }
 
 void
@@ -59,21 +59,21 @@ valadoc_scanner_end (ValadocScanner* self,
                      GError** error)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_SCANNER_GET_INTERFACE (self)->end (self, error);
+	BALADOC_SCANNER_GET_INTERFACE (self)->end (self, error);
 }
 
 void
 valadoc_scanner_stop (ValadocScanner* self)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_SCANNER_GET_INTERFACE (self)->stop (self);
+	BALADOC_SCANNER_GET_INTERFACE (self)->stop (self);
 }
 
 gchar*
 valadoc_scanner_get_line_content (ValadocScanner* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_SCANNER_GET_INTERFACE (self)->get_line_content (self);
+	return BALADOC_SCANNER_GET_INTERFACE (self)->get_line_content (self);
 }
 
 static void

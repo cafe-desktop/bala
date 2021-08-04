@@ -121,7 +121,7 @@ ValaSwitchStatement*
 vala_switch_statement_new (ValaExpression* expression,
                            ValaSourceReference* source_reference)
 {
-	return vala_switch_statement_construct (VALA_TYPE_SWITCH_STATEMENT, expression, source_reference);
+	return vala_switch_statement_construct (BALA_TYPE_SWITCH_STATEMENT, expression, source_reference);
 }
 
 /**
@@ -368,7 +368,7 @@ vala_switch_statement_real_check (ValaCodeNode* base,
 		_tmp14_ = _tmp13_;
 		_tmp15_ = vala_expression_get_value_type (_tmp14_);
 		_tmp16_ = _tmp15_;
-		if (!VALA_IS_INTEGER_TYPE (_tmp16_)) {
+		if (!BALA_IS_INTEGER_TYPE (_tmp16_)) {
 			ValaExpression* _tmp17_;
 			ValaExpression* _tmp18_;
 			ValaDataType* _tmp19_;
@@ -377,7 +377,7 @@ vala_switch_statement_real_check (ValaCodeNode* base,
 			_tmp18_ = _tmp17_;
 			_tmp19_ = vala_expression_get_value_type (_tmp18_);
 			_tmp20_ = _tmp19_;
-			_tmp12_ = !VALA_IS_ENUM_VALUE_TYPE (_tmp20_);
+			_tmp12_ = !BALA_IS_ENUM_VALUE_TYPE (_tmp20_);
 		} else {
 			_tmp12_ = FALSE;
 		}
@@ -521,7 +521,7 @@ vala_switch_statement_real_check (ValaCodeNode* base,
 						_tmp70_ = label;
 						_tmp71_ = vala_switch_label_get_expression (_tmp70_);
 						_tmp72_ = _tmp71_;
-						if (VALA_IS_STRING_LITERAL (_tmp72_)) {
+						if (BALA_IS_STRING_LITERAL (_tmp72_)) {
 							ValaSwitchLabel* _tmp73_;
 							ValaExpression* _tmp74_;
 							ValaExpression* _tmp75_;
@@ -529,7 +529,7 @@ vala_switch_statement_real_check (ValaCodeNode* base,
 							_tmp73_ = label;
 							_tmp74_ = vala_switch_label_get_expression (_tmp73_);
 							_tmp75_ = _tmp74_;
-							_tmp76_ = vala_string_literal_eval (G_TYPE_CHECK_INSTANCE_CAST (_tmp75_, VALA_TYPE_STRING_LITERAL, ValaStringLiteral));
+							_tmp76_ = vala_string_literal_eval (G_TYPE_CHECK_INSTANCE_CAST (_tmp75_, BALA_TYPE_STRING_LITERAL, ValaStringLiteral));
 							_g_free0 (value);
 							value = _tmp76_;
 						} else {
@@ -539,7 +539,7 @@ vala_switch_statement_real_check (ValaCodeNode* base,
 							_tmp77_ = label;
 							_tmp78_ = vala_switch_label_get_expression (_tmp77_);
 							_tmp79_ = _tmp78_;
-							if (VALA_IS_LITERAL (_tmp79_)) {
+							if (BALA_IS_LITERAL (_tmp79_)) {
 								ValaSwitchLabel* _tmp80_;
 								ValaExpression* _tmp81_;
 								ValaExpression* _tmp82_;
@@ -547,7 +547,7 @@ vala_switch_statement_real_check (ValaCodeNode* base,
 								_tmp80_ = label;
 								_tmp81_ = vala_switch_label_get_expression (_tmp80_);
 								_tmp82_ = _tmp81_;
-								_tmp83_ = vala_code_node_to_string ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp82_, VALA_TYPE_LITERAL, ValaLiteral));
+								_tmp83_ = vala_code_node_to_string ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp82_, BALA_TYPE_LITERAL, ValaLiteral));
 								_g_free0 (value);
 								value = _tmp83_;
 							} else {
@@ -662,7 +662,7 @@ vala_switch_statement_instance_init (ValaSwitchStatement * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_switch_statement_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_SWITCH_SECTION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_SWITCH_SECTION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->sections = (ValaList*) _tmp1_;
 }
 
@@ -670,10 +670,10 @@ static void
 vala_switch_statement_finalize (ValaCodeNode * obj)
 {
 	ValaSwitchStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SWITCH_STATEMENT, ValaSwitchStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SWITCH_STATEMENT, ValaSwitchStatement);
 	_vala_code_node_unref0 (self->priv->_expression);
 	_vala_iterable_unref0 (self->priv->sections);
-	VALA_CODE_NODE_CLASS (vala_switch_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_switch_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -685,8 +685,8 @@ vala_switch_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaSwitchStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_switch_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaSwitchStatement), 0, (GInstanceInitFunc) vala_switch_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_switch_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_switch_statement_type_id;
-	vala_switch_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaSwitchStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_switch_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_switch_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaSwitchStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_switch_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaSwitchStatement_private_offset = g_type_add_instance_private (vala_switch_statement_type_id, sizeof (ValaSwitchStatementPrivate));
 	return vala_switch_statement_type_id;
 }

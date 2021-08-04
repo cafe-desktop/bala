@@ -32,12 +32,12 @@
 #include <glib.h>
 
 enum  {
-	VALADOC_CONTENT_LIST_0_PROPERTY,
-	VALADOC_CONTENT_LIST_BULLET_PROPERTY,
-	VALADOC_CONTENT_LIST_ITEMS_PROPERTY,
-	VALADOC_CONTENT_LIST_NUM_PROPERTIES
+	BALADOC_CONTENT_LIST_0_PROPERTY,
+	BALADOC_CONTENT_LIST_BULLET_PROPERTY,
+	BALADOC_CONTENT_LIST_ITEMS_PROPERTY,
+	BALADOC_CONTENT_LIST_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_list_properties[VALADOC_CONTENT_LIST_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_list_properties[BALADOC_CONTENT_LIST_NUM_PROPERTIES];
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_assert(expr, msg) if G_LIKELY (expr) ; else g_assertion_message_expr (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);
@@ -126,7 +126,7 @@ valadoc_content_list_bullet_from_string (const gchar* str)
 			{
 				ValadocContentListBullet _tmp3_;
 				ValadocContentListBullet* _tmp4_;
-				_tmp3_ = VALADOC_CONTENT_LIST_BULLET_NONE;
+				_tmp3_ = BALADOC_CONTENT_LIST_BULLET_NONE;
 				_tmp4_ = __valadoc_content_list_bullet_dup0 (&_tmp3_);
 				result = _tmp4_;
 				return result;
@@ -138,7 +138,7 @@ valadoc_content_list_bullet_from_string (const gchar* str)
 			{
 				ValadocContentListBullet _tmp5_;
 				ValadocContentListBullet* _tmp6_;
-				_tmp5_ = VALADOC_CONTENT_LIST_BULLET_UNORDERED;
+				_tmp5_ = BALADOC_CONTENT_LIST_BULLET_UNORDERED;
 				_tmp6_ = __valadoc_content_list_bullet_dup0 (&_tmp5_);
 				result = _tmp6_;
 				return result;
@@ -150,7 +150,7 @@ valadoc_content_list_bullet_from_string (const gchar* str)
 			{
 				ValadocContentListBullet _tmp7_;
 				ValadocContentListBullet* _tmp8_;
-				_tmp7_ = VALADOC_CONTENT_LIST_BULLET_ORDERED;
+				_tmp7_ = BALADOC_CONTENT_LIST_BULLET_ORDERED;
 				_tmp8_ = __valadoc_content_list_bullet_dup0 (&_tmp7_);
 				result = _tmp8_;
 				return result;
@@ -162,7 +162,7 @@ valadoc_content_list_bullet_from_string (const gchar* str)
 			{
 				ValadocContentListBullet _tmp9_;
 				ValadocContentListBullet* _tmp10_;
-				_tmp9_ = VALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER;
+				_tmp9_ = BALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER;
 				_tmp10_ = __valadoc_content_list_bullet_dup0 (&_tmp9_);
 				result = _tmp10_;
 				return result;
@@ -174,7 +174,7 @@ valadoc_content_list_bullet_from_string (const gchar* str)
 			{
 				ValadocContentListBullet _tmp11_;
 				ValadocContentListBullet* _tmp12_;
-				_tmp11_ = VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA;
+				_tmp11_ = BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA;
 				_tmp12_ = __valadoc_content_list_bullet_dup0 (&_tmp11_);
 				result = _tmp12_;
 				return result;
@@ -186,7 +186,7 @@ valadoc_content_list_bullet_from_string (const gchar* str)
 			{
 				ValadocContentListBullet _tmp13_;
 				ValadocContentListBullet* _tmp14_;
-				_tmp13_ = VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA;
+				_tmp13_ = BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA;
 				_tmp14_ = __valadoc_content_list_bullet_dup0 (&_tmp13_);
 				result = _tmp14_;
 				return result;
@@ -198,7 +198,7 @@ valadoc_content_list_bullet_from_string (const gchar* str)
 			{
 				ValadocContentListBullet _tmp15_;
 				ValadocContentListBullet* _tmp16_;
-				_tmp15_ = VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN;
+				_tmp15_ = BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN;
 				_tmp16_ = __valadoc_content_list_bullet_dup0 (&_tmp15_);
 				result = _tmp16_;
 				return result;
@@ -210,7 +210,7 @@ valadoc_content_list_bullet_from_string (const gchar* str)
 			{
 				ValadocContentListBullet _tmp17_;
 				ValadocContentListBullet* _tmp18_;
-				_tmp17_ = VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN;
+				_tmp17_ = BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN;
 				_tmp18_ = __valadoc_content_list_bullet_dup0 (&_tmp17_);
 				result = _tmp18_;
 				return result;
@@ -226,42 +226,42 @@ valadoc_content_list_bullet_to_string (ValadocContentListBullet self)
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALADOC_CONTENT_LIST_BULLET_NONE:
+		case BALADOC_CONTENT_LIST_BULLET_NONE:
 		{
 			result = "none";
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_UNORDERED:
+		case BALADOC_CONTENT_LIST_BULLET_UNORDERED:
 		{
 			result = "unordered";
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED:
 		{
 			result = "ordered";
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER:
 		{
 			result = "ordered-number";
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA:
 		{
 			result = "ordered-lower-case-alpa";
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA:
 		{
 			result = "ordered-upper-case-alpha";
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN:
 		{
 			result = "ordered-lower-case-roman";
 			return result;
 		}
-		case VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN:
+		case BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN:
 		{
 			result = "ordered-upper-case-roman";
 			return result;
@@ -277,7 +277,7 @@ valadoc_content_list_bullet_to_string (ValadocContentListBullet self)
 static GType
 valadoc_content_list_bullet_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALADOC_CONTENT_LIST_BULLET_NONE, "VALADOC_CONTENT_LIST_BULLET_NONE", "none"}, {VALADOC_CONTENT_LIST_BULLET_UNORDERED, "VALADOC_CONTENT_LIST_BULLET_UNORDERED", "unordered"}, {VALADOC_CONTENT_LIST_BULLET_ORDERED, "VALADOC_CONTENT_LIST_BULLET_ORDERED", "ordered"}, {VALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER, "VALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER", "ordered-number"}, {VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA, "VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA", "ordered-lower-case-alpha"}, {VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA, "VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA", "ordered-upper-case-alpha"}, {VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN, "VALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN", "ordered-lower-case-roman"}, {VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN, "VALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN", "ordered-upper-case-roman"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALADOC_CONTENT_LIST_BULLET_NONE, "BALADOC_CONTENT_LIST_BULLET_NONE", "none"}, {BALADOC_CONTENT_LIST_BULLET_UNORDERED, "BALADOC_CONTENT_LIST_BULLET_UNORDERED", "unordered"}, {BALADOC_CONTENT_LIST_BULLET_ORDERED, "BALADOC_CONTENT_LIST_BULLET_ORDERED", "ordered"}, {BALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER, "BALADOC_CONTENT_LIST_BULLET_ORDERED_NUMBER", "ordered-number"}, {BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA, "BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ALPHA", "ordered-lower-case-alpha"}, {BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA, "BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ALPHA", "ordered-upper-case-alpha"}, {BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN, "BALADOC_CONTENT_LIST_BULLET_ORDERED_LOWER_CASE_ROMAN", "ordered-lower-case-roman"}, {BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN, "BALADOC_CONTENT_LIST_BULLET_ORDERED_UPPER_CASE_ROMAN", "ordered-upper-case-roman"}, {0, NULL, NULL}};
 	GType valadoc_content_list_bullet_type_id;
 	valadoc_content_list_bullet_type_id = g_enum_register_static ("ValadocContentListBullet", values);
 	return valadoc_content_list_bullet_type_id;
@@ -315,7 +315,7 @@ valadoc_content_list_set_bullet (ValadocContentList* self,
 	old_value = valadoc_content_list_get_bullet (self);
 	if (old_value != value) {
 		self->priv->_bullet = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_list_properties[VALADOC_CONTENT_LIST_BULLET_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_list_properties[BALADOC_CONTENT_LIST_BULLET_PROPERTY]);
 	}
 }
 
@@ -337,9 +337,9 @@ valadoc_content_list_construct (GType object_type)
 	GEqualFunc _tmp0_;
 	ValaArrayList* _tmp1_;
 	self = (ValadocContentList*) valadoc_content_content_element_construct (object_type);
-	self->priv->_bullet = VALADOC_CONTENT_LIST_BULLET_NONE;
+	self->priv->_bullet = BALADOC_CONTENT_LIST_BULLET_NONE;
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_CONTENT_TYPE_LIST_ITEM, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_CONTENT_TYPE_LIST_ITEM, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	_vala_iterable_unref0 (self->priv->_items);
 	self->priv->_items = (ValaList*) _tmp1_;
 	return self;
@@ -348,7 +348,7 @@ valadoc_content_list_construct (GType object_type)
 G_GNUC_INTERNAL ValadocContentList*
 valadoc_content_list_new (void)
 {
-	return valadoc_content_list_construct (VALADOC_CONTENT_TYPE_LIST);
+	return valadoc_content_list_construct (BALADOC_CONTENT_TYPE_LIST);
 }
 
 static gpointer
@@ -555,7 +555,7 @@ valadoc_content_list_real_copy (ValadocContentContentElement* base,
 			_tmp14_ = item;
 			_tmp15_ = list;
 			_tmp16_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp14_, (ValadocContentContentElement*) _tmp15_);
-			_tmp17_ = VALADOC_CONTENT_IS_LIST_ITEM (_tmp16_) ? ((ValadocContentListItem*) _tmp16_) : NULL;
+			_tmp17_ = BALADOC_CONTENT_IS_LIST_ITEM (_tmp16_) ? ((ValadocContentListItem*) _tmp16_) : NULL;
 			if (_tmp17_ == NULL) {
 				_g_object_unref0 (_tmp16_);
 			}
@@ -588,8 +588,8 @@ valadoc_content_list_class_init (ValadocContentListClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_content_list_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_content_list_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_content_list_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_LIST_BULLET_PROPERTY, valadoc_content_list_properties[VALADOC_CONTENT_LIST_BULLET_PROPERTY] = g_param_spec_enum ("bullet", "bullet", "bullet", VALADOC_CONTENT_LIST_TYPE_BULLET, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_LIST_ITEMS_PROPERTY, valadoc_content_list_properties[VALADOC_CONTENT_LIST_ITEMS_PROPERTY] = vala_param_spec_iterable ("items", "items", "items", VALA_TYPE_LIST, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_LIST_BULLET_PROPERTY, valadoc_content_list_properties[BALADOC_CONTENT_LIST_BULLET_PROPERTY] = g_param_spec_enum ("bullet", "bullet", "bullet", BALADOC_CONTENT_LIST_TYPE_BULLET, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_LIST_ITEMS_PROPERTY, valadoc_content_list_properties[BALADOC_CONTENT_LIST_ITEMS_PROPERTY] = vala_param_spec_iterable ("items", "items", "items", BALA_TYPE_LIST, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -610,7 +610,7 @@ static void
 valadoc_content_list_finalize (GObject * obj)
 {
 	ValadocContentList * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_LIST, ValadocContentList);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_LIST, ValadocContentList);
 	_vala_iterable_unref0 (self->priv->_items);
 	G_OBJECT_CLASS (valadoc_content_list_parent_class)->finalize (obj);
 }
@@ -621,8 +621,8 @@ valadoc_content_list_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentListClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_list_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentList), 0, (GInstanceInitFunc) valadoc_content_list_instance_init, NULL };
 	static const GInterfaceInfo valadoc_content_block_info = { (GInterfaceInitFunc) valadoc_content_list_valadoc_content_block_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_content_list_type_id;
-	valadoc_content_list_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocContentList", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_content_list_type_id, VALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
+	valadoc_content_list_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocContentList", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_content_list_type_id, BALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
 	ValadocContentList_private_offset = g_type_add_instance_private (valadoc_content_list_type_id, sizeof (ValadocContentListPrivate));
 	return valadoc_content_list_type_id;
 }
@@ -646,12 +646,12 @@ _vala_valadoc_content_list_get_property (GObject * object,
                                          GParamSpec * pspec)
 {
 	ValadocContentList * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_LIST, ValadocContentList);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_LIST, ValadocContentList);
 	switch (property_id) {
-		case VALADOC_CONTENT_LIST_BULLET_PROPERTY:
+		case BALADOC_CONTENT_LIST_BULLET_PROPERTY:
 		g_value_set_enum (value, valadoc_content_list_get_bullet (self));
 		break;
-		case VALADOC_CONTENT_LIST_ITEMS_PROPERTY:
+		case BALADOC_CONTENT_LIST_ITEMS_PROPERTY:
 		vala_value_set_iterable (value, valadoc_content_list_get_items (self));
 		break;
 		default:
@@ -667,9 +667,9 @@ _vala_valadoc_content_list_set_property (GObject * object,
                                          GParamSpec * pspec)
 {
 	ValadocContentList * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_LIST, ValadocContentList);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_LIST, ValadocContentList);
 	switch (property_id) {
-		case VALADOC_CONTENT_LIST_BULLET_PROPERTY:
+		case BALADOC_CONTENT_LIST_BULLET_PROPERTY:
 		valadoc_content_list_set_bullet (self, g_value_get_enum (value));
 		break;
 		default:

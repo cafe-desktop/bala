@@ -31,13 +31,13 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_GIR_META_DATA_0_PROPERTY,
-	VALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY,
-	VALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY,
-	VALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY,
-	VALADOC_GIR_META_DATA_NUM_PROPERTIES
+	BALADOC_GIR_META_DATA_0_PROPERTY,
+	BALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY,
+	BALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY,
+	BALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY,
+	BALADOC_GIR_META_DATA_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_gir_meta_data_properties[VALADOC_GIR_META_DATA_NUM_PROPERTIES];
+static GParamSpec* valadoc_gir_meta_data_properties[BALADOC_GIR_META_DATA_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_key_file_unref0(var) ((var == NULL) ? NULL : (var = (g_key_file_unref (var), NULL)))
 #define _g_error_free0(var) ((var == NULL) ? NULL : (var = (g_error_free (var), NULL)))
@@ -110,7 +110,7 @@ valadoc_gir_meta_data_set_is_docbook (ValadocGirMetaData* self,
 	old_value = valadoc_gir_meta_data_get_is_docbook (self);
 	if (old_value != value) {
 		self->priv->_is_docbook = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_gir_meta_data_properties[VALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_gir_meta_data_properties[BALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY]);
 	}
 }
 
@@ -137,7 +137,7 @@ valadoc_gir_meta_data_set_index_sgml (ValadocGirMetaData* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_index_sgml);
 		self->priv->_index_sgml = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_gir_meta_data_properties[VALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_gir_meta_data_properties[BALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY]);
 	}
 }
 
@@ -164,7 +164,7 @@ valadoc_gir_meta_data_set_index_sgml_online (ValadocGirMetaData* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_index_sgml_online);
 		self->priv->_index_sgml_online = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_gir_meta_data_properties[VALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_gir_meta_data_properties[BALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY]);
 	}
 }
 
@@ -803,7 +803,7 @@ valadoc_gir_meta_data_new (const gchar* gir_file_path,
                            gint metadata_dirs_length1,
                            ValadocErrorReporter* reporter)
 {
-	return valadoc_gir_meta_data_construct (VALADOC_TYPE_GIR_META_DATA, gir_file_path, metadata_dirs, metadata_dirs_length1, reporter);
+	return valadoc_gir_meta_data_construct (BALADOC_TYPE_GIR_META_DATA, gir_file_path, metadata_dirs, metadata_dirs_length1, reporter);
 }
 
 static void
@@ -815,9 +815,9 @@ valadoc_gir_meta_data_class_init (ValadocGirMetaDataClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_gir_meta_data_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_gir_meta_data_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_gir_meta_data_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY, valadoc_gir_meta_data_properties[VALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY] = g_param_spec_boolean ("is-docbook", "is-docbook", "is-docbook", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY, valadoc_gir_meta_data_properties[VALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY] = g_param_spec_string ("index-sgml", "index-sgml", "index-sgml", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY, valadoc_gir_meta_data_properties[VALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY] = g_param_spec_string ("index-sgml-online", "index-sgml-online", "index-sgml-online", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY, valadoc_gir_meta_data_properties[BALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY] = g_param_spec_boolean ("is-docbook", "is-docbook", "is-docbook", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY, valadoc_gir_meta_data_properties[BALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY] = g_param_spec_string ("index-sgml", "index-sgml", "index-sgml", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY, valadoc_gir_meta_data_properties[BALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY] = g_param_spec_string ("index-sgml-online", "index-sgml-online", "index-sgml-online", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -836,7 +836,7 @@ static void
 valadoc_gir_meta_data_finalize (GObject * obj)
 {
 	ValadocGirMetaData * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_GIR_META_DATA, ValadocGirMetaData);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_GIR_META_DATA, ValadocGirMetaData);
 	_g_free0 (self->priv->metadata_path);
 	_g_free0 (self->priv->resource_dir);
 	_g_free0 (self->priv->_index_sgml);
@@ -876,15 +876,15 @@ _vala_valadoc_gir_meta_data_get_property (GObject * object,
                                           GParamSpec * pspec)
 {
 	ValadocGirMetaData * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TYPE_GIR_META_DATA, ValadocGirMetaData);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TYPE_GIR_META_DATA, ValadocGirMetaData);
 	switch (property_id) {
-		case VALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY:
+		case BALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY:
 		g_value_set_boolean (value, valadoc_gir_meta_data_get_is_docbook (self));
 		break;
-		case VALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY:
+		case BALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY:
 		g_value_set_string (value, valadoc_gir_meta_data_get_index_sgml (self));
 		break;
-		case VALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY:
+		case BALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY:
 		g_value_set_string (value, valadoc_gir_meta_data_get_index_sgml_online (self));
 		break;
 		default:
@@ -900,15 +900,15 @@ _vala_valadoc_gir_meta_data_set_property (GObject * object,
                                           GParamSpec * pspec)
 {
 	ValadocGirMetaData * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TYPE_GIR_META_DATA, ValadocGirMetaData);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TYPE_GIR_META_DATA, ValadocGirMetaData);
 	switch (property_id) {
-		case VALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY:
+		case BALADOC_GIR_META_DATA_IS_DOCBOOK_PROPERTY:
 		valadoc_gir_meta_data_set_is_docbook (self, g_value_get_boolean (value));
 		break;
-		case VALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY:
+		case BALADOC_GIR_META_DATA_INDEX_SGML_PROPERTY:
 		valadoc_gir_meta_data_set_index_sgml (self, g_value_get_string (value));
 		break;
-		case VALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY:
+		case BALADOC_GIR_META_DATA_INDEX_SGML_ONLINE_PROPERTY:
 		valadoc_gir_meta_data_set_index_sgml_online (self, g_value_get_string (value));
 		break;
 		default:

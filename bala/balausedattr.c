@@ -71,7 +71,7 @@ static void vala_used_attr_real_visit_signal (ValaCodeVisitor* base,
 static void vala_used_attr_finalize (ValaCodeVisitor * obj);
 static GType vala_used_attr_get_type_once (void);
 
-static const gchar* VALA_USED_ATTR_valac_default_attrs[188] = {"CCode", "type_signature", "default_value", "set_value_function", "type_id", "cprefix", "cheader_filename", "marshaller_type_name", "get_value_function", "cname", "destroy_function", "lvalue_access", "has_type_id", "instance_pos", "const_cname", "take_value_function", "copy_function", "free_function", "param_spec_function", "has_target", "has_typedef", "type_cname", "ref_function", "ref_function_void", "unref_function", "type", "has_construct_function", "returns_floating_reference", "gir_namespace", "gir_version", "construct_function", "lower_case_cprefix", "simple_generics", "sentinel", "scope", "has_destroy_function", "ordering", "type_check_function", "type_get_function", "has_copy_function", "lower_case_csuffix", "ref_sink_function", "dup_function", "finish_function", "generic_type_pos", "array_length_type", "array_length", "array_length_cname", "array_length_cexpr", "array_null_terminated", "vfunc_name", "finish_vfunc_name", "finish_name", "free_function_address_of", "pos", "delegate_target", "delegate_target_cname", "array_length_pos", "delegate_target_pos", "destroy_notify_pos", "ctype", "has_new_function", "notify", "finish_instance", "use_inplace", "feature_test_macro", "default_value_on_error", "async_result_pos", "error_pos", "destroy_notify_cname", "", "Immutable", "", "SingleInstance", "", "Compact", "", "NoWrapper", "", "NoThrow", "", "DestroysInstance", "", "Flags", "", "Experimental", "", "NoReturn", "", "NoArrayLength", "", "Assert", "", "ErrorBase", "", "GenericAccessors", "", "Diagnostics", "", "NoAccessorMethod", "", "ConcreteAccessor", "", "HasEmitter", "", "ReturnsModifiedPointer", "", "Deprecated", "since", "replacement", "", "Version", "since", "replacement", "deprecated", "deprecated_since", "experimental", "experimental_until", "", "Signal", "detailed", "run", "no_recurse", "action", "no_hooks", "", "Description", "nick", "blurb", "", "IntegerType", "rank", "min", "max", "signed", "width", "", "FloatingType", "rank", "decimal", "width", "", "BooleanType", "", "SimpleType", "", "PointerType", "", "Print", "", "PrintfFormat", "", "ScanfFormat", "", "FormatArg", "", "Source", "filename", "line", "column", "", "GtkChild", "name", "internal", "", "GtkTemplate", "ui", "", "GtkCallback", "name", "", "ModuleInit", "", "DBus", "name", "no_reply", "result", "use_string_marshalling", "value", "signature", "visible", "timeout", "", "GIR", "fullname", "name", "visible", ""};
+static const gchar* BALA_USED_ATTR_valac_default_attrs[188] = {"CCode", "type_signature", "default_value", "set_value_function", "type_id", "cprefix", "cheader_filename", "marshaller_type_name", "get_value_function", "cname", "destroy_function", "lvalue_access", "has_type_id", "instance_pos", "const_cname", "take_value_function", "copy_function", "free_function", "param_spec_function", "has_target", "has_typedef", "type_cname", "ref_function", "ref_function_void", "unref_function", "type", "has_construct_function", "returns_floating_reference", "gir_namespace", "gir_version", "construct_function", "lower_case_cprefix", "simple_generics", "sentinel", "scope", "has_destroy_function", "ordering", "type_check_function", "type_get_function", "has_copy_function", "lower_case_csuffix", "ref_sink_function", "dup_function", "finish_function", "generic_type_pos", "array_length_type", "array_length", "array_length_cname", "array_length_cexpr", "array_null_terminated", "vfunc_name", "finish_vfunc_name", "finish_name", "free_function_address_of", "pos", "delegate_target", "delegate_target_cname", "array_length_pos", "delegate_target_pos", "destroy_notify_pos", "ctype", "has_new_function", "notify", "finish_instance", "use_inplace", "feature_test_macro", "default_value_on_error", "async_result_pos", "error_pos", "destroy_notify_cname", "", "Immutable", "", "SingleInstance", "", "Compact", "", "NoWrapper", "", "NoThrow", "", "DestroysInstance", "", "Flags", "", "Experimental", "", "NoReturn", "", "NoArrayLength", "", "Assert", "", "ErrorBase", "", "GenericAccessors", "", "Diagnostics", "", "NoAccessorMethod", "", "ConcreteAccessor", "", "HasEmitter", "", "ReturnsModifiedPointer", "", "Deprecated", "since", "replacement", "", "Version", "since", "replacement", "deprecated", "deprecated_since", "experimental", "experimental_until", "", "Signal", "detailed", "run", "no_recurse", "action", "no_hooks", "", "Description", "nick", "blurb", "", "IntegerType", "rank", "min", "max", "signed", "width", "", "FloatingType", "rank", "decimal", "width", "", "BooleanType", "", "SimpleType", "", "PointerType", "", "Print", "", "PrintfFormat", "", "ScanfFormat", "", "FormatArg", "", "Source", "filename", "line", "column", "", "GtkChild", "name", "internal", "", "GtkTemplate", "ui", "", "GtkCallback", "name", "", "ModuleInit", "", "DBus", "name", "no_reply", "result", "use_string_marshalling", "value", "signature", "visible", "timeout", "", "GIR", "fullname", "name", "visible", ""};
 
 ValaUsedAttr*
 vala_used_attr_construct (GType object_type)
@@ -87,8 +87,8 @@ vala_used_attr_construct (GType object_type)
 		gint val_collection_length1 = 0;
 		gint _val_collection_size_ = 0;
 		gint val_it = 0;
-		val_collection = VALA_USED_ATTR_valac_default_attrs;
-		val_collection_length1 = G_N_ELEMENTS (VALA_USED_ATTR_valac_default_attrs);
+		val_collection = BALA_USED_ATTR_valac_default_attrs;
+		val_collection_length1 = G_N_ELEMENTS (BALA_USED_ATTR_valac_default_attrs);
 		for (val_it = 0; val_it < val_collection_length1; val_it = val_it + 1) {
 			const gchar* val = NULL;
 			val = val_collection[val_it];
@@ -131,7 +131,7 @@ vala_used_attr_construct (GType object_type)
 ValaUsedAttr*
 vala_used_attr_new (void)
 {
-	return vala_used_attr_construct (VALA_TYPE_USED_ATTR);
+	return vala_used_attr_construct (BALA_TYPE_USED_ATTR);
 }
 
 /**
@@ -493,7 +493,7 @@ vala_used_attr_instance_init (ValaUsedAttr * self,
 	_tmp0_ = g_str_hash;
 	_tmp1_ = g_str_equal;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_SET, (GBoxedCopyFunc) vala_iterable_ref, (GDestroyNotify) vala_iterable_unref, _tmp0_, _tmp1_, _tmp2_);
+	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_SET, (GBoxedCopyFunc) vala_iterable_ref, (GDestroyNotify) vala_iterable_unref, _tmp0_, _tmp1_, _tmp2_);
 	self->marked = (ValaMap*) _tmp3_;
 }
 
@@ -501,9 +501,9 @@ static void
 vala_used_attr_finalize (ValaCodeVisitor * obj)
 {
 	ValaUsedAttr * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_USED_ATTR, ValaUsedAttr);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_USED_ATTR, ValaUsedAttr);
 	_vala_map_unref0 (self->marked);
-	VALA_CODE_VISITOR_CLASS (vala_used_attr_parent_class)->finalize (obj);
+	BALA_CODE_VISITOR_CLASS (vala_used_attr_parent_class)->finalize (obj);
 }
 
 /**
@@ -514,7 +514,7 @@ vala_used_attr_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaUsedAttrClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_used_attr_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaUsedAttr), 0, (GInstanceInitFunc) vala_used_attr_instance_init, NULL };
 	GType vala_used_attr_type_id;
-	vala_used_attr_type_id = g_type_register_static (VALA_TYPE_CODE_VISITOR, "ValaUsedAttr", &g_define_type_info, 0);
+	vala_used_attr_type_id = g_type_register_static (BALA_TYPE_CODE_VISITOR, "ValaUsedAttr", &g_define_type_info, 0);
 	return vala_used_attr_type_id;
 }
 

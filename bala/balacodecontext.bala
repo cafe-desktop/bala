@@ -552,8 +552,8 @@ public class Vala.CodeContext {
 	public void add_define (string define) {
 		if (is_defined (define)) {
 			Report.warning (null, "`%s' is already defined".printf (define));
-			if (/VALA_0_\d+/.match_all (define)) {
-				Report.warning (null, "`VALA_0_XX' defines are automatically added up to current compiler version in use");
+			if (/BALA_0_\d+/.match_all (define)) {
+				Report.warning (null, "`BALA_0_XX' defines are automatically added up to current compiler version in use");
 			} else if (/GLIB_2_\d+/.match_all (define)) {
 				Report.warning (null, "`GLIB_2_XX' defines are automatically added up to targeted glib version");
 			}
@@ -577,7 +577,7 @@ public class Vala.CodeContext {
 		}
 
 		for (int i = 2; i <= api_minor; i += 2) {
-			defines.add ("VALA_0_%d".printf (i));
+			defines.add ("BALA_0_%d".printf (i));
 		}
 
 		target_glib_major = 2;

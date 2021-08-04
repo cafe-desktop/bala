@@ -127,7 +127,7 @@ ValaThrowStatement*
 vala_throw_statement_new (ValaExpression* error_expression,
                           ValaSourceReference* source_reference)
 {
-	return vala_throw_statement_construct (VALA_TYPE_THROW_STATEMENT, error_expression, source_reference);
+	return vala_throw_statement_construct (BALA_TYPE_THROW_STATEMENT, error_expression, source_reference);
 }
 
 static void
@@ -265,7 +265,7 @@ vala_throw_statement_real_check (ValaCodeNode* base,
 	vala_code_node_set_checked ((ValaCodeNode*) self, TRUE);
 	_tmp4_ = vala_code_context_get_profile (context);
 	_tmp5_ = _tmp4_;
-	if (_tmp5_ == VALA_PROFILE_POSIX) {
+	if (_tmp5_ == BALA_PROFILE_POSIX) {
 		ValaSourceReference* _tmp6_;
 		ValaSourceReference* _tmp7_;
 		_tmp6_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
@@ -327,7 +327,7 @@ vala_throw_statement_real_check (ValaCodeNode* base,
 		}
 		_tmp31_ = vala_code_context_get_profile (context);
 		_tmp32_ = _tmp31_;
-		if (_tmp32_ == VALA_PROFILE_GOBJECT) {
+		if (_tmp32_ == BALA_PROFILE_GOBJECT) {
 			ValaExpression* _tmp33_;
 			ValaExpression* _tmp34_;
 			ValaDataType* _tmp35_;
@@ -336,7 +336,7 @@ vala_throw_statement_real_check (ValaCodeNode* base,
 			_tmp34_ = _tmp33_;
 			_tmp35_ = vala_expression_get_value_type (_tmp34_);
 			_tmp36_ = _tmp35_;
-			_tmp30_ = !VALA_IS_ERROR_TYPE (_tmp36_);
+			_tmp30_ = !BALA_IS_ERROR_TYPE (_tmp36_);
 		} else {
 			_tmp30_ = FALSE;
 		}
@@ -468,9 +468,9 @@ static void
 vala_throw_statement_finalize (ValaCodeNode * obj)
 {
 	ValaThrowStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_THROW_STATEMENT, ValaThrowStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_THROW_STATEMENT, ValaThrowStatement);
 	_vala_code_node_unref0 (self->priv->_error_expression);
-	VALA_CODE_NODE_CLASS (vala_throw_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_throw_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -482,8 +482,8 @@ vala_throw_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaThrowStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_throw_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaThrowStatement), 0, (GInstanceInitFunc) vala_throw_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_throw_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_throw_statement_type_id;
-	vala_throw_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaThrowStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_throw_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_throw_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaThrowStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_throw_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaThrowStatement_private_offset = g_type_add_instance_private (vala_throw_statement_type_id, sizeof (ValaThrowStatementPrivate));
 	return vala_throw_statement_type_id;
 }

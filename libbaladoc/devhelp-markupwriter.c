@@ -117,7 +117,7 @@ ValadocDevhelpMarkupWriter*
 valadoc_devhelp_markup_writer_new (FILE* stream,
                                    gboolean xml_declaration)
 {
-	return valadoc_devhelp_markup_writer_construct (VALADOC_DEVHELP_TYPE_MARKUP_WRITER, stream, xml_declaration);
+	return valadoc_devhelp_markup_writer_construct (BALADOC_DEVHELP_TYPE_MARKUP_WRITER, stream, xml_declaration);
 }
 
 static gboolean
@@ -376,7 +376,7 @@ valadoc_devhelp_markup_writer_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocDevhelpMarkupWriterClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_devhelp_markup_writer_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocDevhelpMarkupWriter), 0, (GInstanceInitFunc) valadoc_devhelp_markup_writer_instance_init, NULL };
 	GType valadoc_devhelp_markup_writer_type_id;
-	valadoc_devhelp_markup_writer_type_id = g_type_register_static (VALADOC_TYPE_MARKUP_WRITER, "ValadocDevhelpMarkupWriter", &g_define_type_info, 0);
+	valadoc_devhelp_markup_writer_type_id = g_type_register_static (BALADOC_TYPE_MARKUP_WRITER, "ValadocDevhelpMarkupWriter", &g_define_type_info, 0);
 	return valadoc_devhelp_markup_writer_type_id;
 }
 

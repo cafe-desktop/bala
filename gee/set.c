@@ -79,7 +79,7 @@ vala_set_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaSetClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_set_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaSet), 0, (GInstanceInitFunc) vala_set_instance_init, NULL };
 	GType vala_set_type_id;
-	vala_set_type_id = g_type_register_static (VALA_TYPE_COLLECTION, "ValaSet", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_set_type_id = g_type_register_static (BALA_TYPE_COLLECTION, "ValaSet", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	ValaSet_private_offset = g_type_add_instance_private (vala_set_type_id, sizeof (ValaSetPrivate));
 	return vala_set_type_id;
 }

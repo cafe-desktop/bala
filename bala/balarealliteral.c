@@ -101,7 +101,7 @@ ValaRealLiteral*
 vala_real_literal_new (const gchar* r,
                        ValaSourceReference* source)
 {
-	return vala_real_literal_construct (VALA_TYPE_REAL_LITERAL, r, source);
+	return vala_real_literal_construct (BALA_TYPE_REAL_LITERAL, r, source);
 }
 
 static void
@@ -214,7 +214,7 @@ vala_real_literal_real_check (ValaCodeNode* base,
 	_tmp8_ = vala_real_literal_get_type_name (self);
 	_tmp9_ = _tmp8_;
 	_tmp10_ = vala_scope_lookup (_tmp7_, _tmp9_);
-	_tmp11_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp10_, VALA_TYPE_STRUCT, ValaStruct);
+	_tmp11_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp10_, BALA_TYPE_STRUCT, ValaStruct);
 	_g_free0 (_tmp9_);
 	st = _tmp11_;
 	_tmp12_ = st;
@@ -267,9 +267,9 @@ static void
 vala_real_literal_finalize (ValaCodeNode * obj)
 {
 	ValaRealLiteral * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_REAL_LITERAL, ValaRealLiteral);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_REAL_LITERAL, ValaRealLiteral);
 	_g_free0 (self->priv->_value);
-	VALA_CODE_NODE_CLASS (vala_real_literal_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_real_literal_parent_class)->finalize (obj);
 }
 
 /**
@@ -280,7 +280,7 @@ vala_real_literal_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaRealLiteralClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_real_literal_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaRealLiteral), 0, (GInstanceInitFunc) vala_real_literal_instance_init, NULL };
 	GType vala_real_literal_type_id;
-	vala_real_literal_type_id = g_type_register_static (VALA_TYPE_LITERAL, "ValaRealLiteral", &g_define_type_info, 0);
+	vala_real_literal_type_id = g_type_register_static (BALA_TYPE_LITERAL, "ValaRealLiteral", &g_define_type_info, 0);
 	ValaRealLiteral_private_offset = g_type_add_instance_private (vala_real_literal_type_id, sizeof (ValaRealLiteralPrivate));
 	return vala_real_literal_type_id;
 }

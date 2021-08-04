@@ -218,7 +218,7 @@ valadoc_api_source_comment_new (const gchar* content,
                                 gint last_line,
                                 gint last_column)
 {
-	return valadoc_api_source_comment_construct (VALADOC_API_TYPE_SOURCE_COMMENT, content, file, first_line, first_column, last_line, last_column);
+	return valadoc_api_source_comment_construct (BALADOC_API_TYPE_SOURCE_COMMENT, content, file, first_line, first_column, last_line, last_column);
 }
 
 static void
@@ -302,7 +302,7 @@ valadoc_api_param_spec_source_comment (const gchar* name,
                                        GParamFlags flags)
 {
 	ValadocApiParamSpecSourceComment* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALADOC_API_TYPE_SOURCE_COMMENT), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALADOC_API_TYPE_SOURCE_COMMENT), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -311,7 +311,7 @@ valadoc_api_param_spec_source_comment (const gchar* name,
 gpointer
 valadoc_api_value_get_source_comment (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TYPE_SOURCE_COMMENT), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TYPE_SOURCE_COMMENT), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -320,10 +320,10 @@ valadoc_api_value_set_source_comment (GValue* value,
                                       gpointer v_object)
 {
 	ValadocApiSourceComment * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TYPE_SOURCE_COMMENT));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TYPE_SOURCE_COMMENT));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_API_TYPE_SOURCE_COMMENT));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_API_TYPE_SOURCE_COMMENT));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		valadoc_api_source_comment_ref (value->data[0].v_pointer);
@@ -340,10 +340,10 @@ valadoc_api_value_take_source_comment (GValue* value,
                                        gpointer v_object)
 {
 	ValadocApiSourceComment * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_API_TYPE_SOURCE_COMMENT));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_API_TYPE_SOURCE_COMMENT));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_API_TYPE_SOURCE_COMMENT));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_API_TYPE_SOURCE_COMMENT));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -375,7 +375,7 @@ static void
 valadoc_api_source_comment_finalize (ValadocApiSourceComment * obj)
 {
 	ValadocApiSourceComment * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_SOURCE_COMMENT, ValadocApiSourceComment);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_SOURCE_COMMENT, ValadocApiSourceComment);
 	g_signal_handlers_destroy (self);
 	_g_object_unref0 (self->priv->_file);
 	_g_free0 (self->priv->_content);
@@ -423,7 +423,7 @@ valadoc_api_source_comment_unref (gpointer instance)
 	ValadocApiSourceComment * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALADOC_API_SOURCE_COMMENT_GET_CLASS (self)->finalize (self);
+		BALADOC_API_SOURCE_COMMENT_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

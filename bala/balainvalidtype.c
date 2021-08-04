@@ -42,7 +42,7 @@ vala_invalid_type_construct (GType object_type)
 ValaInvalidType*
 vala_invalid_type_new (void)
 {
-	return vala_invalid_type_construct (VALA_TYPE_INVALID_TYPE);
+	return vala_invalid_type_construct (BALA_TYPE_INVALID_TYPE);
 }
 
 static ValaDataType*
@@ -79,7 +79,7 @@ vala_invalid_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaInvalidTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_invalid_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaInvalidType), 0, (GInstanceInitFunc) vala_invalid_type_instance_init, NULL };
 	GType vala_invalid_type_type_id;
-	vala_invalid_type_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaInvalidType", &g_define_type_info, 0);
+	vala_invalid_type_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaInvalidType", &g_define_type_info, 0);
 	return vala_invalid_type_type_id;
 }
 

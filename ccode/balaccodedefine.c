@@ -141,7 +141,7 @@ ValaCCodeDefine*
 vala_ccode_define_new (const gchar* name,
                        const gchar* value)
 {
-	return vala_ccode_define_construct (VALA_TYPE_CCODE_DEFINE, name, value);
+	return vala_ccode_define_construct (BALA_TYPE_CCODE_DEFINE, name, value);
 }
 
 ValaCCodeDefine*
@@ -162,7 +162,7 @@ ValaCCodeDefine*
 vala_ccode_define_new_with_expression (const gchar* name,
                                        ValaCCodeExpression* expression)
 {
-	return vala_ccode_define_construct_with_expression (VALA_TYPE_CCODE_DEFINE, name, expression);
+	return vala_ccode_define_construct_with_expression (BALA_TYPE_CCODE_DEFINE, name, expression);
 }
 
 static void
@@ -218,11 +218,11 @@ static void
 vala_ccode_define_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeDefine * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_DEFINE, ValaCCodeDefine);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_DEFINE, ValaCCodeDefine);
 	_g_free0 (self->priv->_name);
 	_g_free0 (self->priv->_value);
 	_vala_ccode_node_unref0 (self->priv->_value_expression);
-	VALA_CCODE_NODE_CLASS (vala_ccode_define_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_define_parent_class)->finalize (obj);
 }
 
 /**
@@ -233,7 +233,7 @@ vala_ccode_define_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeDefineClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_define_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeDefine), 0, (GInstanceInitFunc) vala_ccode_define_instance_init, NULL };
 	GType vala_ccode_define_type_id;
-	vala_ccode_define_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeDefine", &g_define_type_info, 0);
+	vala_ccode_define_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeDefine", &g_define_type_info, 0);
 	ValaCCodeDefine_private_offset = g_type_add_instance_private (vala_ccode_define_type_id, sizeof (ValaCCodeDefinePrivate));
 	return vala_ccode_define_type_id;
 }

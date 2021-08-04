@@ -31,32 +31,32 @@
 
 typedef struct _ValaHashMapNode ValaHashMapNode;
 
-#define VALA_HASH_MAP_TYPE_KEY_SET (vala_hash_map_key_set_get_type ())
-#define VALA_HASH_MAP_KEY_SET(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_HASH_MAP_TYPE_KEY_SET, ValaHashMapKeySet))
-#define VALA_HASH_MAP_KEY_SET_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_HASH_MAP_TYPE_KEY_SET, ValaHashMapKeySetClass))
-#define VALA_HASH_MAP_IS_KEY_SET(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_HASH_MAP_TYPE_KEY_SET))
-#define VALA_HASH_MAP_IS_KEY_SET_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_HASH_MAP_TYPE_KEY_SET))
-#define VALA_HASH_MAP_KEY_SET_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_HASH_MAP_TYPE_KEY_SET, ValaHashMapKeySetClass))
+#define BALA_HASH_MAP_TYPE_KEY_SET (vala_hash_map_key_set_get_type ())
+#define BALA_HASH_MAP_KEY_SET(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_HASH_MAP_TYPE_KEY_SET, ValaHashMapKeySet))
+#define BALA_HASH_MAP_KEY_SET_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_HASH_MAP_TYPE_KEY_SET, ValaHashMapKeySetClass))
+#define BALA_HASH_MAP_IS_KEY_SET(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_HASH_MAP_TYPE_KEY_SET))
+#define BALA_HASH_MAP_IS_KEY_SET_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_HASH_MAP_TYPE_KEY_SET))
+#define BALA_HASH_MAP_KEY_SET_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_HASH_MAP_TYPE_KEY_SET, ValaHashMapKeySetClass))
 
 typedef struct _ValaHashMapKeySet ValaHashMapKeySet;
 typedef struct _ValaHashMapKeySetClass ValaHashMapKeySetClass;
 
-#define VALA_HASH_MAP_TYPE_VALUE_COLLECTION (vala_hash_map_value_collection_get_type ())
-#define VALA_HASH_MAP_VALUE_COLLECTION(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_HASH_MAP_TYPE_VALUE_COLLECTION, ValaHashMapValueCollection))
-#define VALA_HASH_MAP_VALUE_COLLECTION_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_HASH_MAP_TYPE_VALUE_COLLECTION, ValaHashMapValueCollectionClass))
-#define VALA_HASH_MAP_IS_VALUE_COLLECTION(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_HASH_MAP_TYPE_VALUE_COLLECTION))
-#define VALA_HASH_MAP_IS_VALUE_COLLECTION_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_HASH_MAP_TYPE_VALUE_COLLECTION))
-#define VALA_HASH_MAP_VALUE_COLLECTION_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_HASH_MAP_TYPE_VALUE_COLLECTION, ValaHashMapValueCollectionClass))
+#define BALA_HASH_MAP_TYPE_VALUE_COLLECTION (vala_hash_map_value_collection_get_type ())
+#define BALA_HASH_MAP_VALUE_COLLECTION(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_HASH_MAP_TYPE_VALUE_COLLECTION, ValaHashMapValueCollection))
+#define BALA_HASH_MAP_VALUE_COLLECTION_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_HASH_MAP_TYPE_VALUE_COLLECTION, ValaHashMapValueCollectionClass))
+#define BALA_HASH_MAP_IS_VALUE_COLLECTION(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_HASH_MAP_TYPE_VALUE_COLLECTION))
+#define BALA_HASH_MAP_IS_VALUE_COLLECTION_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_HASH_MAP_TYPE_VALUE_COLLECTION))
+#define BALA_HASH_MAP_VALUE_COLLECTION_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_HASH_MAP_TYPE_VALUE_COLLECTION, ValaHashMapValueCollectionClass))
 
 typedef struct _ValaHashMapValueCollection ValaHashMapValueCollection;
 typedef struct _ValaHashMapValueCollectionClass ValaHashMapValueCollectionClass;
 
-#define VALA_HASH_MAP_TYPE_MAP_ITERATOR (vala_hash_map_map_iterator_get_type ())
-#define VALA_HASH_MAP_MAP_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_HASH_MAP_TYPE_MAP_ITERATOR, ValaHashMapMapIterator))
-#define VALA_HASH_MAP_MAP_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_HASH_MAP_TYPE_MAP_ITERATOR, ValaHashMapMapIteratorClass))
-#define VALA_HASH_MAP_IS_MAP_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_HASH_MAP_TYPE_MAP_ITERATOR))
-#define VALA_HASH_MAP_IS_MAP_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_HASH_MAP_TYPE_MAP_ITERATOR))
-#define VALA_HASH_MAP_MAP_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_HASH_MAP_TYPE_MAP_ITERATOR, ValaHashMapMapIteratorClass))
+#define BALA_HASH_MAP_TYPE_MAP_ITERATOR (vala_hash_map_map_iterator_get_type ())
+#define BALA_HASH_MAP_MAP_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_HASH_MAP_TYPE_MAP_ITERATOR, ValaHashMapMapIterator))
+#define BALA_HASH_MAP_MAP_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_HASH_MAP_TYPE_MAP_ITERATOR, ValaHashMapMapIteratorClass))
+#define BALA_HASH_MAP_IS_MAP_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_HASH_MAP_TYPE_MAP_ITERATOR))
+#define BALA_HASH_MAP_IS_MAP_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_HASH_MAP_TYPE_MAP_ITERATOR))
+#define BALA_HASH_MAP_MAP_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_HASH_MAP_TYPE_MAP_ITERATOR, ValaHashMapMapIteratorClass))
 
 typedef struct _ValaHashMapMapIterator ValaHashMapMapIterator;
 typedef struct _ValaHashMapMapIteratorClass ValaHashMapMapIteratorClass;
@@ -64,12 +64,12 @@ typedef struct _ValaHashMapMapIteratorClass ValaHashMapMapIteratorClass;
 typedef struct _ValaHashMapKeySetPrivate ValaHashMapKeySetPrivate;
 #define _vala_map_unref0(var) ((var == NULL) ? NULL : (var = (vala_map_unref (var), NULL)))
 
-#define VALA_HASH_MAP_TYPE_KEY_ITERATOR (vala_hash_map_key_iterator_get_type ())
-#define VALA_HASH_MAP_KEY_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_HASH_MAP_TYPE_KEY_ITERATOR, ValaHashMapKeyIterator))
-#define VALA_HASH_MAP_KEY_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_HASH_MAP_TYPE_KEY_ITERATOR, ValaHashMapKeyIteratorClass))
-#define VALA_HASH_MAP_IS_KEY_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_HASH_MAP_TYPE_KEY_ITERATOR))
-#define VALA_HASH_MAP_IS_KEY_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_HASH_MAP_TYPE_KEY_ITERATOR))
-#define VALA_HASH_MAP_KEY_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_HASH_MAP_TYPE_KEY_ITERATOR, ValaHashMapKeyIteratorClass))
+#define BALA_HASH_MAP_TYPE_KEY_ITERATOR (vala_hash_map_key_iterator_get_type ())
+#define BALA_HASH_MAP_KEY_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_HASH_MAP_TYPE_KEY_ITERATOR, ValaHashMapKeyIterator))
+#define BALA_HASH_MAP_KEY_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_HASH_MAP_TYPE_KEY_ITERATOR, ValaHashMapKeyIteratorClass))
+#define BALA_HASH_MAP_IS_KEY_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_HASH_MAP_TYPE_KEY_ITERATOR))
+#define BALA_HASH_MAP_IS_KEY_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_HASH_MAP_TYPE_KEY_ITERATOR))
+#define BALA_HASH_MAP_KEY_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_HASH_MAP_TYPE_KEY_ITERATOR, ValaHashMapKeyIteratorClass))
 
 typedef struct _ValaHashMapKeyIterator ValaHashMapKeyIterator;
 typedef struct _ValaHashMapKeyIteratorClass ValaHashMapKeyIteratorClass;
@@ -77,12 +77,12 @@ typedef struct _ValaHashMapMapIteratorPrivate ValaHashMapMapIteratorPrivate;
 typedef struct _ValaHashMapKeyIteratorPrivate ValaHashMapKeyIteratorPrivate;
 typedef struct _ValaHashMapValueCollectionPrivate ValaHashMapValueCollectionPrivate;
 
-#define VALA_HASH_MAP_TYPE_VALUE_ITERATOR (vala_hash_map_value_iterator_get_type ())
-#define VALA_HASH_MAP_VALUE_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_HASH_MAP_TYPE_VALUE_ITERATOR, ValaHashMapValueIterator))
-#define VALA_HASH_MAP_VALUE_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_HASH_MAP_TYPE_VALUE_ITERATOR, ValaHashMapValueIteratorClass))
-#define VALA_HASH_MAP_IS_VALUE_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_HASH_MAP_TYPE_VALUE_ITERATOR))
-#define VALA_HASH_MAP_IS_VALUE_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_HASH_MAP_TYPE_VALUE_ITERATOR))
-#define VALA_HASH_MAP_VALUE_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_HASH_MAP_TYPE_VALUE_ITERATOR, ValaHashMapValueIteratorClass))
+#define BALA_HASH_MAP_TYPE_VALUE_ITERATOR (vala_hash_map_value_iterator_get_type ())
+#define BALA_HASH_MAP_VALUE_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_HASH_MAP_TYPE_VALUE_ITERATOR, ValaHashMapValueIterator))
+#define BALA_HASH_MAP_VALUE_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_HASH_MAP_TYPE_VALUE_ITERATOR, ValaHashMapValueIteratorClass))
+#define BALA_HASH_MAP_IS_VALUE_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_HASH_MAP_TYPE_VALUE_ITERATOR))
+#define BALA_HASH_MAP_IS_VALUE_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_HASH_MAP_TYPE_VALUE_ITERATOR))
+#define BALA_HASH_MAP_VALUE_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_HASH_MAP_TYPE_VALUE_ITERATOR, ValaHashMapValueIteratorClass))
 
 typedef struct _ValaHashMapValueIterator ValaHashMapValueIterator;
 typedef struct _ValaHashMapValueIteratorClass ValaHashMapValueIteratorClass;
@@ -238,8 +238,8 @@ static gint ValaHashMapValueIterator_private_offset;
 static gpointer vala_hash_map_value_iterator_parent_class = NULL;
 
 static void vala_hash_map_node_free (ValaHashMapNode * self);
-#define VALA_HASH_MAP_MIN_SIZE 11
-#define VALA_HASH_MAP_MAX_SIZE 13845163
+#define BALA_HASH_MAP_MIN_SIZE 11
+#define BALA_HASH_MAP_MAX_SIZE 13845163
 static ValaSet* vala_hash_map_real_get_keys (ValaMap* base);
 static ValaHashMapKeySet* vala_hash_map_key_set_new (GType k_type,
                                               GBoxedCopyFunc k_dup_func,
@@ -462,7 +462,7 @@ vala_hash_map_construct (GType object_type,
 	vala_hash_map_set_key_hash_func (self, key_hash_func);
 	vala_hash_map_set_key_equal_func (self, key_equal_func);
 	vala_hash_map_set_value_equal_func (self, value_equal_func);
-	self->priv->_array_size = VALA_HASH_MAP_MIN_SIZE;
+	self->priv->_array_size = BALA_HASH_MAP_MIN_SIZE;
 	_tmp0_ = g_new0 (ValaHashMapNode*, self->priv->_array_size + 1);
 	self->priv->_nodes = (_vala_array_free (self->priv->_nodes, self->priv->_nodes_length1, (GDestroyNotify) vala_hash_map_node_free), NULL);
 	self->priv->_nodes = _tmp0_;
@@ -482,7 +482,7 @@ vala_hash_map_new (GType k_type,
                    GEqualFunc key_equal_func,
                    GEqualFunc value_equal_func)
 {
-	return vala_hash_map_construct (VALA_TYPE_HASH_MAP, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, key_hash_func, key_equal_func, value_equal_func);
+	return vala_hash_map_construct (BALA_TYPE_HASH_MAP, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, key_hash_func, key_equal_func, value_equal_func);
 }
 
 static ValaSet*
@@ -786,7 +786,7 @@ vala_hash_map_resize (ValaHashMap* self)
 	gboolean _tmp1_ = FALSE;
 	g_return_if_fail (self != NULL);
 	if (self->priv->_array_size >= (3 * self->priv->_nnodes)) {
-		_tmp1_ = self->priv->_array_size >= VALA_HASH_MAP_MIN_SIZE;
+		_tmp1_ = self->priv->_array_size >= BALA_HASH_MAP_MIN_SIZE;
 	} else {
 		_tmp1_ = FALSE;
 	}
@@ -795,7 +795,7 @@ vala_hash_map_resize (ValaHashMap* self)
 	} else {
 		gboolean _tmp2_ = FALSE;
 		if ((3 * self->priv->_array_size) <= self->priv->_nnodes) {
-			_tmp2_ = self->priv->_array_size < VALA_HASH_MAP_MAX_SIZE;
+			_tmp2_ = self->priv->_array_size < BALA_HASH_MAP_MAX_SIZE;
 		} else {
 			_tmp2_ = FALSE;
 		}
@@ -810,7 +810,7 @@ vala_hash_map_resize (ValaHashMap* self)
 		ValaHashMapNode** _tmp19_;
 		gint _tmp19__length1;
 		new_array_size = (gint) g_spaced_primes_closest ((guint) self->priv->_nnodes);
-		new_array_size = CLAMP (new_array_size, VALA_HASH_MAP_MIN_SIZE, VALA_HASH_MAP_MAX_SIZE);
+		new_array_size = CLAMP (new_array_size, BALA_HASH_MAP_MIN_SIZE, BALA_HASH_MAP_MAX_SIZE);
 		_tmp3_ = g_new0 (ValaHashMapNode*, new_array_size + 1);
 		new_nodes = _tmp3_;
 		new_nodes_length1 = new_array_size;
@@ -998,7 +998,7 @@ vala_hash_map_key_set_new (GType k_type,
                            GDestroyNotify v_destroy_func,
                            ValaHashMap* map)
 {
-	return vala_hash_map_key_set_construct (VALA_HASH_MAP_TYPE_KEY_SET, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
+	return vala_hash_map_key_set_construct (BALA_HASH_MAP_TYPE_KEY_SET, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
 }
 
 static GType
@@ -1093,7 +1093,7 @@ vala_hash_map_key_set_class_init (ValaHashMapKeySetClass * klass,
 	((ValaCollectionClass *) klass)->clear = (void (*) (ValaCollection*)) vala_hash_map_key_set_real_clear;
 	((ValaCollectionClass *) klass)->remove = (gboolean (*) (ValaCollection*, gconstpointer)) vala_hash_map_key_set_real_remove;
 	((ValaCollectionClass *) klass)->contains = (gboolean (*) (ValaCollection*, gconstpointer)) vala_hash_map_key_set_real_contains;
-	VALA_COLLECTION_CLASS (klass)->get_size = vala_hash_map_key_set_real_get_size;
+	BALA_COLLECTION_CLASS (klass)->get_size = vala_hash_map_key_set_real_get_size;
 }
 
 static void
@@ -1107,9 +1107,9 @@ static void
 vala_hash_map_key_set_finalize (ValaIterable * obj)
 {
 	ValaHashMapKeySet * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_HASH_MAP_TYPE_KEY_SET, ValaHashMapKeySet);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_HASH_MAP_TYPE_KEY_SET, ValaHashMapKeySet);
 	_vala_map_unref0 (self->priv->_map);
-	VALA_ITERABLE_CLASS (vala_hash_map_key_set_parent_class)->finalize (obj);
+	BALA_ITERABLE_CLASS (vala_hash_map_key_set_parent_class)->finalize (obj);
 }
 
 static GType
@@ -1117,7 +1117,7 @@ vala_hash_map_key_set_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaHashMapKeySetClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_hash_map_key_set_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaHashMapKeySet), 0, (GInstanceInitFunc) vala_hash_map_key_set_instance_init, NULL };
 	GType vala_hash_map_key_set_type_id;
-	vala_hash_map_key_set_type_id = g_type_register_static (VALA_TYPE_SET, "ValaHashMapKeySet", &g_define_type_info, 0);
+	vala_hash_map_key_set_type_id = g_type_register_static (BALA_TYPE_SET, "ValaHashMapKeySet", &g_define_type_info, 0);
 	ValaHashMapKeySet_private_offset = g_type_add_instance_private (vala_hash_map_key_set_type_id, sizeof (ValaHashMapKeySetPrivate));
 	return vala_hash_map_key_set_type_id;
 }
@@ -1186,7 +1186,7 @@ vala_hash_map_map_iterator_new (GType k_type,
                                 GDestroyNotify v_destroy_func,
                                 ValaHashMap* map)
 {
-	return vala_hash_map_map_iterator_construct (VALA_HASH_MAP_TYPE_MAP_ITERATOR, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
+	return vala_hash_map_map_iterator_construct (BALA_HASH_MAP_TYPE_MAP_ITERATOR, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
 }
 
 static gboolean
@@ -1305,9 +1305,9 @@ static void
 vala_hash_map_map_iterator_finalize (ValaMapIterator * obj)
 {
 	ValaHashMapMapIterator * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_HASH_MAP_TYPE_MAP_ITERATOR, ValaHashMapMapIterator);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_HASH_MAP_TYPE_MAP_ITERATOR, ValaHashMapMapIterator);
 	_vala_map_unref0 (self->priv->_map);
-	VALA_MAP_ITERATOR_CLASS (vala_hash_map_map_iterator_parent_class)->finalize (obj);
+	BALA_MAP_ITERATOR_CLASS (vala_hash_map_map_iterator_parent_class)->finalize (obj);
 }
 
 static GType
@@ -1315,7 +1315,7 @@ vala_hash_map_map_iterator_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaHashMapMapIteratorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_hash_map_map_iterator_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaHashMapMapIterator), 0, (GInstanceInitFunc) vala_hash_map_map_iterator_instance_init, NULL };
 	GType vala_hash_map_map_iterator_type_id;
-	vala_hash_map_map_iterator_type_id = g_type_register_static (VALA_TYPE_MAP_ITERATOR, "ValaHashMapMapIterator", &g_define_type_info, 0);
+	vala_hash_map_map_iterator_type_id = g_type_register_static (BALA_TYPE_MAP_ITERATOR, "ValaHashMapMapIterator", &g_define_type_info, 0);
 	ValaHashMapMapIterator_private_offset = g_type_add_instance_private (vala_hash_map_map_iterator_type_id, sizeof (ValaHashMapMapIteratorPrivate));
 	return vala_hash_map_map_iterator_type_id;
 }
@@ -1384,7 +1384,7 @@ vala_hash_map_key_iterator_new (GType k_type,
                                 GDestroyNotify v_destroy_func,
                                 ValaHashMap* map)
 {
-	return vala_hash_map_key_iterator_construct (VALA_HASH_MAP_TYPE_KEY_ITERATOR, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
+	return vala_hash_map_key_iterator_construct (BALA_HASH_MAP_TYPE_KEY_ITERATOR, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
 }
 
 static gboolean
@@ -1521,7 +1521,7 @@ vala_hash_map_key_iterator_class_init (ValaHashMapKeyIteratorClass * klass,
 	((ValaIteratorClass *) klass)->has_next = (gboolean (*) (ValaIterator*)) vala_hash_map_key_iterator_real_has_next;
 	((ValaIteratorClass *) klass)->get = (gpointer (*) (ValaIterator*)) vala_hash_map_key_iterator_real_get;
 	((ValaIteratorClass *) klass)->remove = (void (*) (ValaIterator*)) vala_hash_map_key_iterator_real_remove;
-	VALA_ITERATOR_CLASS (klass)->get_valid = vala_hash_map_key_iterator_real_get_valid;
+	BALA_ITERATOR_CLASS (klass)->get_valid = vala_hash_map_key_iterator_real_get_valid;
 }
 
 static void
@@ -1536,9 +1536,9 @@ static void
 vala_hash_map_key_iterator_finalize (ValaIterator * obj)
 {
 	ValaHashMapKeyIterator * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_HASH_MAP_TYPE_KEY_ITERATOR, ValaHashMapKeyIterator);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_HASH_MAP_TYPE_KEY_ITERATOR, ValaHashMapKeyIterator);
 	_vala_map_unref0 (self->priv->_map);
-	VALA_ITERATOR_CLASS (vala_hash_map_key_iterator_parent_class)->finalize (obj);
+	BALA_ITERATOR_CLASS (vala_hash_map_key_iterator_parent_class)->finalize (obj);
 }
 
 static GType
@@ -1546,7 +1546,7 @@ vala_hash_map_key_iterator_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaHashMapKeyIteratorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_hash_map_key_iterator_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaHashMapKeyIterator), 0, (GInstanceInitFunc) vala_hash_map_key_iterator_instance_init, NULL };
 	GType vala_hash_map_key_iterator_type_id;
-	vala_hash_map_key_iterator_type_id = g_type_register_static (VALA_TYPE_ITERATOR, "ValaHashMapKeyIterator", &g_define_type_info, 0);
+	vala_hash_map_key_iterator_type_id = g_type_register_static (BALA_TYPE_ITERATOR, "ValaHashMapKeyIterator", &g_define_type_info, 0);
 	ValaHashMapKeyIterator_private_offset = g_type_add_instance_private (vala_hash_map_key_iterator_type_id, sizeof (ValaHashMapKeyIteratorPrivate));
 	return vala_hash_map_key_iterator_type_id;
 }
@@ -1612,7 +1612,7 @@ vala_hash_map_value_collection_new (GType k_type,
                                     GDestroyNotify v_destroy_func,
                                     ValaHashMap* map)
 {
-	return vala_hash_map_value_collection_construct (VALA_HASH_MAP_TYPE_VALUE_COLLECTION, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
+	return vala_hash_map_value_collection_construct (BALA_HASH_MAP_TYPE_VALUE_COLLECTION, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
 }
 
 static GType
@@ -1735,7 +1735,7 @@ vala_hash_map_value_collection_class_init (ValaHashMapValueCollectionClass * kla
 	((ValaCollectionClass *) klass)->clear = (void (*) (ValaCollection*)) vala_hash_map_value_collection_real_clear;
 	((ValaCollectionClass *) klass)->remove = (gboolean (*) (ValaCollection*, gconstpointer)) vala_hash_map_value_collection_real_remove;
 	((ValaCollectionClass *) klass)->contains = (gboolean (*) (ValaCollection*, gconstpointer)) vala_hash_map_value_collection_real_contains;
-	VALA_COLLECTION_CLASS (klass)->get_size = vala_hash_map_value_collection_real_get_size;
+	BALA_COLLECTION_CLASS (klass)->get_size = vala_hash_map_value_collection_real_get_size;
 }
 
 static void
@@ -1749,9 +1749,9 @@ static void
 vala_hash_map_value_collection_finalize (ValaIterable * obj)
 {
 	ValaHashMapValueCollection * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_HASH_MAP_TYPE_VALUE_COLLECTION, ValaHashMapValueCollection);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_HASH_MAP_TYPE_VALUE_COLLECTION, ValaHashMapValueCollection);
 	_vala_map_unref0 (self->priv->_map);
-	VALA_ITERABLE_CLASS (vala_hash_map_value_collection_parent_class)->finalize (obj);
+	BALA_ITERABLE_CLASS (vala_hash_map_value_collection_parent_class)->finalize (obj);
 }
 
 static GType
@@ -1759,7 +1759,7 @@ vala_hash_map_value_collection_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaHashMapValueCollectionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_hash_map_value_collection_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaHashMapValueCollection), 0, (GInstanceInitFunc) vala_hash_map_value_collection_instance_init, NULL };
 	GType vala_hash_map_value_collection_type_id;
-	vala_hash_map_value_collection_type_id = g_type_register_static (VALA_TYPE_COLLECTION, "ValaHashMapValueCollection", &g_define_type_info, 0);
+	vala_hash_map_value_collection_type_id = g_type_register_static (BALA_TYPE_COLLECTION, "ValaHashMapValueCollection", &g_define_type_info, 0);
 	ValaHashMapValueCollection_private_offset = g_type_add_instance_private (vala_hash_map_value_collection_type_id, sizeof (ValaHashMapValueCollectionPrivate));
 	return vala_hash_map_value_collection_type_id;
 }
@@ -1828,7 +1828,7 @@ vala_hash_map_value_iterator_new (GType k_type,
                                   GDestroyNotify v_destroy_func,
                                   ValaHashMap* map)
 {
-	return vala_hash_map_value_iterator_construct (VALA_HASH_MAP_TYPE_VALUE_ITERATOR, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
+	return vala_hash_map_value_iterator_construct (BALA_HASH_MAP_TYPE_VALUE_ITERATOR, k_type, k_dup_func, k_destroy_func, v_type, v_dup_func, v_destroy_func, map);
 }
 
 static gboolean
@@ -1965,7 +1965,7 @@ vala_hash_map_value_iterator_class_init (ValaHashMapValueIteratorClass * klass,
 	((ValaIteratorClass *) klass)->has_next = (gboolean (*) (ValaIterator*)) vala_hash_map_value_iterator_real_has_next;
 	((ValaIteratorClass *) klass)->get = (gpointer (*) (ValaIterator*)) vala_hash_map_value_iterator_real_get;
 	((ValaIteratorClass *) klass)->remove = (void (*) (ValaIterator*)) vala_hash_map_value_iterator_real_remove;
-	VALA_ITERATOR_CLASS (klass)->get_valid = vala_hash_map_value_iterator_real_get_valid;
+	BALA_ITERATOR_CLASS (klass)->get_valid = vala_hash_map_value_iterator_real_get_valid;
 }
 
 static void
@@ -1980,9 +1980,9 @@ static void
 vala_hash_map_value_iterator_finalize (ValaIterator * obj)
 {
 	ValaHashMapValueIterator * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_HASH_MAP_TYPE_VALUE_ITERATOR, ValaHashMapValueIterator);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_HASH_MAP_TYPE_VALUE_ITERATOR, ValaHashMapValueIterator);
 	_vala_map_unref0 (self->priv->_map);
-	VALA_ITERATOR_CLASS (vala_hash_map_value_iterator_parent_class)->finalize (obj);
+	BALA_ITERATOR_CLASS (vala_hash_map_value_iterator_parent_class)->finalize (obj);
 }
 
 static GType
@@ -1990,7 +1990,7 @@ vala_hash_map_value_iterator_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaHashMapValueIteratorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_hash_map_value_iterator_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaHashMapValueIterator), 0, (GInstanceInitFunc) vala_hash_map_value_iterator_instance_init, NULL };
 	GType vala_hash_map_value_iterator_type_id;
-	vala_hash_map_value_iterator_type_id = g_type_register_static (VALA_TYPE_ITERATOR, "ValaHashMapValueIterator", &g_define_type_info, 0);
+	vala_hash_map_value_iterator_type_id = g_type_register_static (BALA_TYPE_ITERATOR, "ValaHashMapValueIterator", &g_define_type_info, 0);
 	ValaHashMapValueIterator_private_offset = g_type_add_instance_private (vala_hash_map_value_iterator_type_id, sizeof (ValaHashMapValueIteratorPrivate));
 	return vala_hash_map_value_iterator_type_id;
 }
@@ -2022,7 +2022,7 @@ vala_hash_map_class_init (ValaHashMapClass * klass,
 	((ValaMapClass *) klass)->set = (void (*) (ValaMap*, gconstpointer, gconstpointer)) vala_hash_map_real_set;
 	((ValaMapClass *) klass)->remove = (gboolean (*) (ValaMap*, gconstpointer)) vala_hash_map_real_remove;
 	((ValaMapClass *) klass)->clear = (void (*) (ValaMap*)) vala_hash_map_real_clear;
-	VALA_MAP_CLASS (klass)->get_size = vala_hash_map_real_get_size;
+	BALA_MAP_CLASS (klass)->get_size = vala_hash_map_real_get_size;
 }
 
 static void
@@ -2037,10 +2037,10 @@ static void
 vala_hash_map_finalize (ValaMap * obj)
 {
 	ValaHashMap * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_HASH_MAP, ValaHashMap);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_HASH_MAP, ValaHashMap);
 	vala_map_clear ((ValaMap*) self);
 	self->priv->_nodes = (_vala_array_free (self->priv->_nodes, self->priv->_nodes_length1, (GDestroyNotify) vala_hash_map_node_free), NULL);
-	VALA_MAP_CLASS (vala_hash_map_parent_class)->finalize (obj);
+	BALA_MAP_CLASS (vala_hash_map_parent_class)->finalize (obj);
 }
 
 /**
@@ -2051,7 +2051,7 @@ vala_hash_map_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaHashMapClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_hash_map_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaHashMap), 0, (GInstanceInitFunc) vala_hash_map_instance_init, NULL };
 	GType vala_hash_map_type_id;
-	vala_hash_map_type_id = g_type_register_static (VALA_TYPE_MAP, "ValaHashMap", &g_define_type_info, 0);
+	vala_hash_map_type_id = g_type_register_static (BALA_TYPE_MAP, "ValaHashMap", &g_define_type_info, 0);
 	ValaHashMap_private_offset = g_type_add_instance_private (vala_hash_map_type_id, sizeof (ValaHashMapPrivate));
 	return vala_hash_map_type_id;
 }

@@ -30,10 +30,10 @@
 #include "valadoc.h"
 
 enum  {
-	VALADOC_CHARTS_SIMPLE_FACTORY_0_PROPERTY,
-	VALADOC_CHARTS_SIMPLE_FACTORY_NUM_PROPERTIES
+	BALADOC_CHARTS_SIMPLE_FACTORY_0_PROPERTY,
+	BALADOC_CHARTS_SIMPLE_FACTORY_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_charts_simple_factory_properties[VALADOC_CHARTS_SIMPLE_FACTORY_NUM_PROPERTIES];
+static GParamSpec* valadoc_charts_simple_factory_properties[BALADOC_CHARTS_SIMPLE_FACTORY_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 
 static gpointer valadoc_charts_simple_factory_parent_class = NULL;
@@ -102,7 +102,7 @@ valadoc_charts_simple_factory_configure_type (ValadocChartsSimpleFactory* self,
                                               ValadocApiNode* item)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_SIMPLE_FACTORY_GET_CLASS (self)->configure_type (self, node, item);
+	return BALADOC_CHARTS_SIMPLE_FACTORY_GET_CLASS (self)->configure_type (self, node, item);
 }
 
 static Agraph_t*
@@ -308,7 +308,7 @@ valadoc_charts_simple_factory_construct (GType object_type)
 ValadocChartsSimpleFactory*
 valadoc_charts_simple_factory_new (void)
 {
-	return valadoc_charts_simple_factory_construct (VALADOC_CHARTS_TYPE_SIMPLE_FACTORY);
+	return valadoc_charts_simple_factory_construct (BALADOC_CHARTS_TYPE_SIMPLE_FACTORY);
 }
 
 static void
@@ -340,7 +340,7 @@ valadoc_charts_simple_factory_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocChartsSimpleFactoryClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_charts_simple_factory_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocChartsSimpleFactory), 0, (GInstanceInitFunc) valadoc_charts_simple_factory_instance_init, NULL };
 	GType valadoc_charts_simple_factory_type_id;
-	valadoc_charts_simple_factory_type_id = g_type_register_static (VALADOC_CHARTS_TYPE_FACTORY, "ValadocChartsSimpleFactory", &g_define_type_info, 0);
+	valadoc_charts_simple_factory_type_id = g_type_register_static (BALADOC_CHARTS_TYPE_FACTORY, "ValadocChartsSimpleFactory", &g_define_type_info, 0);
 	return valadoc_charts_simple_factory_type_id;
 }
 

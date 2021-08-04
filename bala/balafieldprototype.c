@@ -44,7 +44,7 @@ vala_field_prototype_get_field_symbol (ValaFieldPrototype* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_FIELD, ValaField);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_FIELD, ValaField);
 	return result;
 }
 
@@ -61,7 +61,7 @@ vala_field_prototype_construct (GType object_type,
 ValaFieldPrototype*
 vala_field_prototype_new (ValaField* field_symbol)
 {
-	return vala_field_prototype_construct (VALA_TYPE_FIELD_PROTOTYPE, field_symbol);
+	return vala_field_prototype_construct (BALA_TYPE_FIELD_PROTOTYPE, field_symbol);
 }
 
 static ValaDataType*
@@ -122,7 +122,7 @@ vala_field_prototype_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaFieldPrototypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_field_prototype_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaFieldPrototype), 0, (GInstanceInitFunc) vala_field_prototype_instance_init, NULL };
 	GType vala_field_prototype_type_id;
-	vala_field_prototype_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaFieldPrototype", &g_define_type_info, 0);
+	vala_field_prototype_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaFieldPrototype", &g_define_type_info, 0);
 	return vala_field_prototype_type_id;
 }
 

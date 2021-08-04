@@ -71,7 +71,7 @@ vala_error_type_get_error_domain (ValaErrorType* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = VALA_IS_ERROR_DOMAIN (_tmp1_) ? ((ValaErrorDomain*) _tmp1_) : NULL;
+	result = BALA_IS_ERROR_DOMAIN (_tmp1_) ? ((ValaErrorDomain*) _tmp1_) : NULL;
 	return result;
 }
 
@@ -126,7 +126,7 @@ vala_error_type_construct (GType object_type,
 	ValaErrorType* self = NULL;
 	ValaSymbol* _tmp0_ = NULL;
 	ValaSymbol* _tmp1_;
-	_tmp1_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (error_domain, VALA_TYPE_SYMBOL, ValaSymbol));
+	_tmp1_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (error_domain, BALA_TYPE_SYMBOL, ValaSymbol));
 	_tmp0_ = _tmp1_;
 	if (_tmp0_ == NULL) {
 		ValaCodeContext* _tmp2_;
@@ -168,7 +168,7 @@ vala_error_type_new (ValaErrorDomain* error_domain,
                      ValaErrorCode* error_code,
                      ValaSourceReference* source_reference)
 {
-	return vala_error_type_construct (VALA_TYPE_ERROR_TYPE, error_domain, error_code, source_reference);
+	return vala_error_type_construct (BALA_TYPE_ERROR_TYPE, error_domain, error_code, source_reference);
 }
 
 static gboolean
@@ -194,11 +194,11 @@ vala_error_type_real_compatible (ValaDataType* base,
 	gboolean result = FALSE;
 	self = (ValaErrorType*) base;
 	g_return_val_if_fail (target_type != NULL, FALSE);
-	if (VALA_IS_GENERIC_TYPE (target_type)) {
+	if (BALA_IS_GENERIC_TYPE (target_type)) {
 		result = TRUE;
 		return result;
 	}
-	et = VALA_IS_ERROR_TYPE (target_type) ? ((ValaErrorType*) target_type) : NULL;
+	et = BALA_IS_ERROR_TYPE (target_type) ? ((ValaErrorType*) target_type) : NULL;
 	_tmp0_ = et;
 	if (_tmp0_ == NULL) {
 		result = FALSE;
@@ -328,7 +328,7 @@ vala_error_type_real_equals (ValaDataType* base,
 	gboolean result = FALSE;
 	self = (ValaErrorType*) base;
 	g_return_val_if_fail (type2 != NULL, FALSE);
-	et = VALA_IS_ERROR_TYPE (type2) ? ((ValaErrorType*) type2) : NULL;
+	et = BALA_IS_ERROR_TYPE (type2) ? ((ValaErrorType*) type2) : NULL;
 	_tmp0_ = et;
 	if (_tmp0_ == NULL) {
 		result = FALSE;
@@ -451,8 +451,8 @@ static void
 vala_error_type_finalize (ValaCodeNode * obj)
 {
 	ValaErrorType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ERROR_TYPE, ValaErrorType);
-	VALA_CODE_NODE_CLASS (vala_error_type_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ERROR_TYPE, ValaErrorType);
+	BALA_CODE_NODE_CLASS (vala_error_type_parent_class)->finalize (obj);
 }
 
 /**
@@ -463,7 +463,7 @@ vala_error_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaErrorTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_error_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaErrorType), 0, (GInstanceInitFunc) vala_error_type_instance_init, NULL };
 	GType vala_error_type_type_id;
-	vala_error_type_type_id = g_type_register_static (VALA_TYPE_REFERENCE_TYPE, "ValaErrorType", &g_define_type_info, 0);
+	vala_error_type_type_id = g_type_register_static (BALA_TYPE_REFERENCE_TYPE, "ValaErrorType", &g_define_type_info, 0);
 	ValaErrorType_private_offset = g_type_add_instance_private (vala_error_type_type_id, sizeof (ValaErrorTypePrivate));
 	return vala_error_type_type_id;
 }

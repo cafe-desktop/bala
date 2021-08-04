@@ -248,7 +248,7 @@ vala_ccode_fragment_construct (GType object_type)
 ValaCCodeFragment*
 vala_ccode_fragment_new (void)
 {
-	return vala_ccode_fragment_construct (VALA_TYPE_CCODE_FRAGMENT);
+	return vala_ccode_fragment_construct (BALA_TYPE_CCODE_FRAGMENT);
 }
 
 static void
@@ -271,7 +271,7 @@ vala_ccode_fragment_instance_init (ValaCCodeFragment * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_ccode_fragment_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CCODE_NODE, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CCODE_NODE, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
 	self->priv->children = (ValaList*) _tmp1_;
 }
 
@@ -279,9 +279,9 @@ static void
 vala_ccode_fragment_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeFragment * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_FRAGMENT, ValaCCodeFragment);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_FRAGMENT, ValaCCodeFragment);
 	_vala_iterable_unref0 (self->priv->children);
-	VALA_CCODE_NODE_CLASS (vala_ccode_fragment_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_fragment_parent_class)->finalize (obj);
 }
 
 /**
@@ -292,7 +292,7 @@ vala_ccode_fragment_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeFragmentClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_fragment_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeFragment), 0, (GInstanceInitFunc) vala_ccode_fragment_instance_init, NULL };
 	GType vala_ccode_fragment_type_id;
-	vala_ccode_fragment_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeFragment", &g_define_type_info, 0);
+	vala_ccode_fragment_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeFragment", &g_define_type_info, 0);
 	ValaCCodeFragment_private_offset = g_type_add_instance_private (vala_ccode_fragment_type_id, sizeof (ValaCCodeFragmentPrivate));
 	return vala_ccode_fragment_type_id;
 }

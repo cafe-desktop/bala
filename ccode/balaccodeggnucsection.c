@@ -85,7 +85,7 @@ vala_ccode_ggnuc_section_construct (GType object_type,
 ValaCCodeGGnucSection*
 vala_ccode_ggnuc_section_new (ValaGGnucSectionType t)
 {
-	return vala_ccode_ggnuc_section_construct (VALA_TYPE_CCODE_GGNUC_SECTION, t);
+	return vala_ccode_ggnuc_section_construct (BALA_TYPE_CCODE_GGNUC_SECTION, t);
 }
 
 static void
@@ -179,8 +179,8 @@ static void
 vala_ccode_ggnuc_section_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeGGnucSection * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_GGNUC_SECTION, ValaCCodeGGnucSection);
-	VALA_CCODE_NODE_CLASS (vala_ccode_ggnuc_section_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_GGNUC_SECTION, ValaCCodeGGnucSection);
+	BALA_CCODE_NODE_CLASS (vala_ccode_ggnuc_section_parent_class)->finalize (obj);
 }
 
 /**
@@ -191,7 +191,7 @@ vala_ccode_ggnuc_section_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeGGnucSectionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_ggnuc_section_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeGGnucSection), 0, (GInstanceInitFunc) vala_ccode_ggnuc_section_instance_init, NULL };
 	GType vala_ccode_ggnuc_section_type_id;
-	vala_ccode_ggnuc_section_type_id = g_type_register_static (VALA_TYPE_CCODE_FRAGMENT, "ValaCCodeGGnucSection", &g_define_type_info, 0);
+	vala_ccode_ggnuc_section_type_id = g_type_register_static (BALA_TYPE_CCODE_FRAGMENT, "ValaCCodeGGnucSection", &g_define_type_info, 0);
 	ValaCCodeGGnucSection_private_offset = g_type_add_instance_private (vala_ccode_ggnuc_section_type_id, sizeof (ValaCCodeGGnucSectionPrivate));
 	return vala_ccode_ggnuc_section_type_id;
 }
@@ -213,7 +213,7 @@ vala_ggnuc_section_type_to_string (ValaGGnucSectionType self)
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALA_GGNUC_SECTION_TYPE_IGNORE_DEPRECATIONS:
+		case BALA_GGNUC_SECTION_TYPE_IGNORE_DEPRECATIONS:
 		{
 			result = "IGNORE_DEPRECATIONS";
 			return result;
@@ -228,7 +228,7 @@ vala_ggnuc_section_type_to_string (ValaGGnucSectionType self)
 static GType
 vala_ggnuc_section_type_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_GGNUC_SECTION_TYPE_IGNORE_DEPRECATIONS, "VALA_GGNUC_SECTION_TYPE_IGNORE_DEPRECATIONS", "ignore-deprecations"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_GGNUC_SECTION_TYPE_IGNORE_DEPRECATIONS, "BALA_GGNUC_SECTION_TYPE_IGNORE_DEPRECATIONS", "ignore-deprecations"}, {0, NULL, NULL}};
 	GType vala_ggnuc_section_type_type_id;
 	vala_ggnuc_section_type_type_id = g_enum_register_static ("ValaGGnucSectionType", values);
 	return vala_ggnuc_section_type_type_id;

@@ -40,7 +40,7 @@ guint
 vala_get_major_version (void)
 {
 	guint result = 0U;
-	result = (guint) VALA_MAJOR_VERSION;
+	result = (guint) BALA_MAJOR_VERSION;
 	return result;
 }
 
@@ -56,7 +56,7 @@ guint
 vala_get_minor_version (void)
 {
 	guint result = 0U;
-	result = (guint) VALA_MINOR_VERSION;
+	result = (guint) BALA_MINOR_VERSION;
 	return result;
 }
 
@@ -72,7 +72,7 @@ guint
 vala_get_micro_version (void)
 {
 	guint result = 0U;
-	result = (guint) VALA_MICRO_VERSION;
+	result = (guint) BALA_MICRO_VERSION;
 	return result;
 }
 
@@ -88,7 +88,7 @@ const gchar*
 vala_get_build_version (void)
 {
 	const gchar* result = NULL;
-	result = VALA_BUILD_VERSION;
+	result = BALA_BUILD_VERSION;
 	return result;
 }
 
@@ -112,9 +112,9 @@ vala_check_version (guint required_major,
 	guint effective_micro = 0U;
 	guint required_effective_micro = 0U;
 	const gchar* result = NULL;
-	effective_micro = (guint) ((100 * VALA_MINOR_VERSION) + VALA_MICRO_VERSION);
+	effective_micro = (guint) ((100 * BALA_MINOR_VERSION) + BALA_MICRO_VERSION);
 	required_effective_micro = (100 * required_minor) + required_micro;
-	if (required_major > ((guint) VALA_MAJOR_VERSION)) {
+	if (required_major > ((guint) BALA_MAJOR_VERSION)) {
 		result = "vala version too old (major mismatch)";
 		return result;
 	}

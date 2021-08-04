@@ -30,10 +30,10 @@
 #include <glib.h>
 
 enum  {
-	VALADOC_CONTENT_INLINE_TAGLET_0_PROPERTY,
-	VALADOC_CONTENT_INLINE_TAGLET_NUM_PROPERTIES
+	BALADOC_CONTENT_INLINE_TAGLET_0_PROPERTY,
+	BALADOC_CONTENT_INLINE_TAGLET_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_inline_taglet_properties[VALADOC_CONTENT_INLINE_TAGLET_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_inline_taglet_properties[BALADOC_CONTENT_INLINE_TAGLET_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 
 struct _ValadocContentInlineTagletPrivate {
@@ -93,7 +93,7 @@ valadoc_content_inline_taglet_get_parser_rule (ValadocContentInlineTaglet* self,
                                                ValadocRule* run_rule)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CONTENT_INLINE_TAGLET_GET_CLASS (self)->get_parser_rule (self, run_rule);
+	return BALADOC_CONTENT_INLINE_TAGLET_GET_CLASS (self)->get_parser_rule (self, run_rule);
 }
 
 static ValadocContentContentElement*
@@ -107,7 +107,7 @@ ValadocContentContentElement*
 valadoc_content_inline_taglet_produce_content (ValadocContentInlineTaglet* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CONTENT_INLINE_TAGLET_GET_CLASS (self)->produce_content (self);
+	return BALADOC_CONTENT_INLINE_TAGLET_GET_CLASS (self)->produce_content (self);
 }
 
 static gpointer
@@ -246,7 +246,7 @@ static void
 valadoc_content_inline_taglet_finalize (GObject * obj)
 {
 	ValadocContentInlineTaglet * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_INLINE_TAGLET, ValadocContentInlineTaglet);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_INLINE_TAGLET, ValadocContentInlineTaglet);
 	_g_object_unref0 (self->settings);
 	_g_object_unref0 (self->locator);
 	_g_object_unref0 (self->priv->_content);
@@ -260,9 +260,9 @@ valadoc_content_inline_taglet_get_type_once (void)
 	static const GInterfaceInfo valadoc_content_taglet_info = { (GInterfaceInitFunc) valadoc_content_inline_taglet_valadoc_content_taglet_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	static const GInterfaceInfo valadoc_content_inline_info = { (GInterfaceInitFunc) valadoc_content_inline_taglet_valadoc_content_inline_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_content_inline_taglet_type_id;
-	valadoc_content_inline_taglet_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocContentInlineTaglet", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
-	g_type_add_interface_static (valadoc_content_inline_taglet_type_id, VALADOC_CONTENT_TYPE_TAGLET, &valadoc_content_taglet_info);
-	g_type_add_interface_static (valadoc_content_inline_taglet_type_id, VALADOC_CONTENT_TYPE_INLINE, &valadoc_content_inline_info);
+	valadoc_content_inline_taglet_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocContentInlineTaglet", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	g_type_add_interface_static (valadoc_content_inline_taglet_type_id, BALADOC_CONTENT_TYPE_TAGLET, &valadoc_content_taglet_info);
+	g_type_add_interface_static (valadoc_content_inline_taglet_type_id, BALADOC_CONTENT_TYPE_INLINE, &valadoc_content_inline_info);
 	ValadocContentInlineTaglet_private_offset = g_type_add_instance_private (valadoc_content_inline_taglet_type_id, sizeof (ValadocContentInlineTagletPrivate));
 	return valadoc_content_inline_taglet_type_id;
 }

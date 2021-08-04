@@ -204,7 +204,7 @@ vala_binary_expression_new (ValaBinaryOperator op,
                             ValaExpression* _right,
                             ValaSourceReference* source)
 {
-	return vala_binary_expression_construct (VALA_TYPE_BINARY_EXPRESSION, op, _left, _right, source);
+	return vala_binary_expression_construct (BALA_TYPE_BINARY_EXPRESSION, op, _left, _right, source);
 }
 
 ValaBinaryExpression*
@@ -232,7 +232,7 @@ vala_binary_expression_new_chained (ValaBinaryOperator op,
                                     ValaExpression* _right,
                                     ValaSourceReference* source)
 {
-	return vala_binary_expression_construct_chained (VALA_TYPE_BINARY_EXPRESSION, op, _left, _right, source);
+	return vala_binary_expression_construct_chained (BALA_TYPE_BINARY_EXPRESSION, op, _left, _right, source);
 }
 
 static void
@@ -542,16 +542,16 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 	_tmp6_ = _tmp5_;
 	_tmp7_ = vala_semantic_analyzer_get_current_symbol (_tmp6_);
 	_tmp8_ = _tmp7_;
-	if (VALA_IS_BLOCK (_tmp8_)) {
+	if (BALA_IS_BLOCK (_tmp8_)) {
 		gboolean _tmp9_ = FALSE;
 		ValaBinaryOperator _tmp10_;
 		_tmp10_ = self->priv->_operator;
-		if (_tmp10_ == VALA_BINARY_OPERATOR_AND) {
+		if (_tmp10_ == BALA_BINARY_OPERATOR_AND) {
 			_tmp9_ = TRUE;
 		} else {
 			ValaBinaryOperator _tmp11_;
 			_tmp11_ = self->priv->_operator;
-			_tmp9_ = _tmp11_ == VALA_BINARY_OPERATOR_OR;
+			_tmp9_ = _tmp11_ == BALA_BINARY_OPERATOR_OR;
 		}
 		_tmp4_ = _tmp9_;
 	} else {
@@ -706,7 +706,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp39_ = _tmp38_;
 		_tmp40_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp39_);
 		_tmp41_ = _tmp40_;
-		_tmp42_ = vala_assignment_new ((ValaExpression*) _tmp35_, _tmp37_, VALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp41_);
+		_tmp42_ = vala_assignment_new ((ValaExpression*) _tmp35_, _tmp37_, BALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp41_);
 		_tmp43_ = _tmp42_;
 		_tmp44_ = vala_binary_expression_get_right (self);
 		_tmp45_ = _tmp44_;
@@ -731,13 +731,13 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp61_ = _tmp60_;
 		_tmp62_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp61_);
 		_tmp63_ = _tmp62_;
-		_tmp64_ = vala_boolean_literal_new (_tmp59_ == VALA_BINARY_OPERATOR_OR, _tmp63_);
+		_tmp64_ = vala_boolean_literal_new (_tmp59_ == BALA_BINARY_OPERATOR_OR, _tmp63_);
 		_tmp65_ = _tmp64_;
 		_tmp66_ = vala_binary_expression_get_left (self);
 		_tmp67_ = _tmp66_;
 		_tmp68_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp67_);
 		_tmp69_ = _tmp68_;
-		_tmp70_ = vala_assignment_new ((ValaExpression*) _tmp58_, (ValaExpression*) _tmp65_, VALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp69_);
+		_tmp70_ = vala_assignment_new ((ValaExpression*) _tmp58_, (ValaExpression*) _tmp65_, BALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp69_);
 		_tmp71_ = _tmp70_;
 		_tmp72_ = vala_binary_expression_get_left (self);
 		_tmp73_ = _tmp72_;
@@ -758,7 +758,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp83_ = vala_block_new (_tmp82_);
 		false_block = _tmp83_;
 		_tmp84_ = self->priv->_operator;
-		if (_tmp84_ == VALA_BINARY_OPERATOR_AND) {
+		if (_tmp84_ == BALA_BINARY_OPERATOR_AND) {
 			ValaBlock* _tmp85_;
 			ValaExpressionStatement* _tmp86_;
 			ValaBlock* _tmp87_;
@@ -847,7 +847,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		return result;
 	}
 	_tmp126_ = self->priv->_operator;
-	if (_tmp126_ == VALA_BINARY_OPERATOR_COALESCE) {
+	if (_tmp126_ == BALA_BINARY_OPERATOR_COALESCE) {
 		ValaDataType* _tmp127_;
 		ValaDataType* _tmp128_;
 		ValaExpression* _tmp141_;
@@ -1061,7 +1061,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp169_ = _tmp168_;
 		_tmp170_ = vala_expression_get_value_type (_tmp169_);
 		_tmp171_ = _tmp170_;
-		if (VALA_IS_NULL_TYPE (_tmp171_)) {
+		if (BALA_IS_NULL_TYPE (_tmp171_)) {
 			ValaExpression* _tmp172_;
 			ValaExpression* _tmp173_;
 			ValaDataType* _tmp174_;
@@ -1287,7 +1287,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			_tmp258_ = _tmp257_;
 			_tmp259_ = vala_expression_get_value_type (_tmp258_);
 			_tmp260_ = _tmp259_;
-			_tmp255_ = VALA_IS_VALUE_TYPE (_tmp260_);
+			_tmp255_ = BALA_IS_VALUE_TYPE (_tmp260_);
 		} else {
 			_tmp255_ = FALSE;
 		}
@@ -1359,7 +1359,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp296_ = _tmp295_;
 		_tmp297_ = vala_code_node_get_source_reference ((ValaCodeNode*) _tmp296_);
 		_tmp298_ = _tmp297_;
-		_tmp299_ = vala_assignment_new ((ValaExpression*) _tmp292_, _tmp294_, VALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp298_);
+		_tmp299_ = vala_assignment_new ((ValaExpression*) _tmp292_, _tmp294_, BALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp298_);
 		_tmp300_ = _tmp299_;
 		_tmp301_ = vala_binary_expression_get_right (self);
 		_tmp302_ = _tmp301_;
@@ -1406,7 +1406,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp325_ = _tmp324_;
 		_tmp326_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 		_tmp327_ = _tmp326_;
-		_tmp328_ = vala_binary_expression_new (VALA_BINARY_OPERATOR_EQUALITY, (ValaExpression*) _tmp321_, (ValaExpression*) _tmp325_, _tmp327_);
+		_tmp328_ = vala_binary_expression_new (BALA_BINARY_OPERATOR_EQUALITY, (ValaExpression*) _tmp321_, (ValaExpression*) _tmp325_, _tmp327_);
 		_tmp329_ = _tmp328_;
 		_vala_code_node_unref0 (_tmp325_);
 		_vala_code_node_unref0 (_tmp321_);
@@ -1525,7 +1525,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp372_ = _tmp371_;
 		_tmp373_ = vala_data_type_get_type_symbol (_tmp372_);
 		_tmp374_ = _tmp373_;
-		_tmp368_ = VALA_IS_ENUM (_tmp374_);
+		_tmp368_ = BALA_IS_ENUM (_tmp374_);
 	} else {
 		_tmp368_ = FALSE;
 	}
@@ -1533,12 +1533,12 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		gboolean _tmp375_ = FALSE;
 		ValaBinaryOperator _tmp376_;
 		_tmp376_ = self->priv->_operator;
-		if (_tmp376_ == VALA_BINARY_OPERATOR_BITWISE_AND) {
+		if (_tmp376_ == BALA_BINARY_OPERATOR_BITWISE_AND) {
 			_tmp375_ = TRUE;
 		} else {
 			ValaBinaryOperator _tmp377_;
 			_tmp377_ = self->priv->_operator;
-			_tmp375_ = _tmp377_ == VALA_BINARY_OPERATOR_BITWISE_OR;
+			_tmp375_ = _tmp377_ == BALA_BINARY_OPERATOR_BITWISE_OR;
 		}
 		_tmp367_ = _tmp375_;
 	} else {
@@ -1576,7 +1576,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 	} else {
 		ValaBinaryOperator _tmp390_;
 		_tmp390_ = self->priv->_operator;
-		if (_tmp390_ == VALA_BINARY_OPERATOR_IN) {
+		if (_tmp390_ == BALA_BINARY_OPERATOR_IN) {
 			ValaExpression* _tmp391_;
 			ValaExpression* _tmp392_;
 			ValaExpression* _tmp393_;
@@ -1594,7 +1594,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			_tmp396_ = _tmp395_;
 			_tmp397_ = vala_data_type_get_type_symbol (_tmp396_);
 			_tmp398_ = _tmp397_;
-			if (VALA_IS_ENUM (_tmp398_)) {
+			if (BALA_IS_ENUM (_tmp398_)) {
 				ValaExpression* _tmp399_;
 				ValaExpression* _tmp400_;
 				ValaExpression* _tmp401_;
@@ -1636,7 +1636,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp418_ = _tmp417_;
 		_tmp419_ = vala_data_type_get_type_symbol (_tmp418_);
 		_tmp420_ = _tmp419_;
-		_tmp410_ = VALA_IS_ENUM (_tmp420_);
+		_tmp410_ = BALA_IS_ENUM (_tmp420_);
 	} else {
 		_tmp410_ = FALSE;
 	}
@@ -1644,12 +1644,12 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		gboolean _tmp421_ = FALSE;
 		ValaBinaryOperator _tmp422_;
 		_tmp422_ = self->priv->_operator;
-		if (_tmp422_ == VALA_BINARY_OPERATOR_EQUALITY) {
+		if (_tmp422_ == BALA_BINARY_OPERATOR_EQUALITY) {
 			_tmp421_ = TRUE;
 		} else {
 			ValaBinaryOperator _tmp423_;
 			_tmp423_ = self->priv->_operator;
-			_tmp421_ = _tmp423_ == VALA_BINARY_OPERATOR_INEQUALITY;
+			_tmp421_ = _tmp423_ == BALA_BINARY_OPERATOR_INEQUALITY;
 		}
 		_tmp409_ = _tmp421_;
 	} else {
@@ -1695,7 +1695,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp443_ = _tmp442_;
 		_tmp444_ = vala_data_type_get_type_symbol (_tmp443_);
 		_tmp445_ = _tmp444_;
-		_tmp435_ = VALA_IS_ENUM (_tmp445_);
+		_tmp435_ = BALA_IS_ENUM (_tmp445_);
 	} else {
 		_tmp435_ = FALSE;
 	}
@@ -1703,12 +1703,12 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		gboolean _tmp446_ = FALSE;
 		ValaBinaryOperator _tmp447_;
 		_tmp447_ = self->priv->_operator;
-		if (_tmp447_ == VALA_BINARY_OPERATOR_EQUALITY) {
+		if (_tmp447_ == BALA_BINARY_OPERATOR_EQUALITY) {
 			_tmp446_ = TRUE;
 		} else {
 			ValaBinaryOperator _tmp448_;
 			_tmp448_ = self->priv->_operator;
-			_tmp446_ = _tmp448_ == VALA_BINARY_OPERATOR_INEQUALITY;
+			_tmp446_ = _tmp448_ == BALA_BINARY_OPERATOR_INEQUALITY;
 		}
 		_tmp434_ = _tmp446_;
 	} else {
@@ -1769,7 +1769,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		return result;
 	}
 	_tmp471_ = self->priv->_operator;
-	if (_tmp471_ != VALA_BINARY_OPERATOR_IN) {
+	if (_tmp471_ != BALA_BINARY_OPERATOR_IN) {
 		ValaExpression* _tmp472_;
 		ValaExpression* _tmp473_;
 		ValaDataType* _tmp474_;
@@ -1800,7 +1800,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 	_tmp482_ = _tmp481_;
 	_tmp483_ = vala_expression_get_value_type (_tmp482_);
 	_tmp484_ = _tmp483_;
-	if (VALA_IS_FIELD_PROTOTYPE (_tmp484_)) {
+	if (BALA_IS_FIELD_PROTOTYPE (_tmp484_)) {
 		_tmp480_ = TRUE;
 	} else {
 		ValaExpression* _tmp485_;
@@ -1811,7 +1811,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp486_ = _tmp485_;
 		_tmp487_ = vala_expression_get_value_type (_tmp486_);
 		_tmp488_ = _tmp487_;
-		_tmp480_ = VALA_IS_PROPERTY_PROTOTYPE (_tmp488_);
+		_tmp480_ = BALA_IS_PROPERTY_PROTOTYPE (_tmp488_);
 	}
 	if (_tmp480_) {
 		ValaExpression* _tmp489_;
@@ -1849,7 +1849,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 	_tmp503_ = _tmp502_;
 	_tmp504_ = vala_expression_get_value_type (_tmp503_);
 	_tmp505_ = _tmp504_;
-	if (VALA_IS_FIELD_PROTOTYPE (_tmp505_)) {
+	if (BALA_IS_FIELD_PROTOTYPE (_tmp505_)) {
 		_tmp501_ = TRUE;
 	} else {
 		ValaExpression* _tmp506_;
@@ -1860,7 +1860,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp507_ = _tmp506_;
 		_tmp508_ = vala_expression_get_value_type (_tmp507_);
 		_tmp509_ = _tmp508_;
-		_tmp501_ = VALA_IS_PROPERTY_PROTOTYPE (_tmp509_);
+		_tmp501_ = BALA_IS_PROPERTY_PROTOTYPE (_tmp509_);
 	}
 	if (_tmp501_) {
 		ValaExpression* _tmp510_;
@@ -1925,7 +1925,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 	_tmp545_ = _tmp544_;
 	vala_data_type_set_value_owned (_tmp545_, FALSE);
 	_tmp548_ = self->priv->_operator;
-	if (_tmp548_ == VALA_BINARY_OPERATOR_PLUS) {
+	if (_tmp548_ == BALA_BINARY_OPERATOR_PLUS) {
 		ValaExpression* _tmp549_;
 		ValaExpression* _tmp550_;
 		ValaDataType* _tmp551_;
@@ -1934,7 +1934,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		_tmp550_ = _tmp549_;
 		_tmp551_ = vala_expression_get_value_type (_tmp550_);
 		_tmp552_ = _tmp551_;
-		_tmp547_ = !VALA_IS_POINTER_TYPE (_tmp552_);
+		_tmp547_ = !BALA_IS_POINTER_TYPE (_tmp552_);
 	} else {
 		_tmp547_ = FALSE;
 	}
@@ -2050,7 +2050,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 		gboolean _tmp592_ = FALSE;
 		ValaBinaryOperator _tmp593_;
 		_tmp593_ = self->priv->_operator;
-		if (_tmp593_ == VALA_BINARY_OPERATOR_PLUS) {
+		if (_tmp593_ == BALA_BINARY_OPERATOR_PLUS) {
 			ValaExpression* _tmp594_;
 			ValaExpression* _tmp595_;
 			ValaDataType* _tmp596_;
@@ -2059,7 +2059,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			_tmp595_ = _tmp594_;
 			_tmp596_ = vala_expression_get_value_type (_tmp595_);
 			_tmp597_ = _tmp596_;
-			_tmp592_ = VALA_IS_ARRAY_TYPE (_tmp597_);
+			_tmp592_ = BALA_IS_ARRAY_TYPE (_tmp597_);
 		} else {
 			_tmp592_ = FALSE;
 		}
@@ -2097,7 +2097,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			_tmp599_ = _tmp598_;
 			_tmp600_ = vala_expression_get_value_type (_tmp599_);
 			_tmp601_ = _tmp600_;
-			array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp601_, VALA_TYPE_ARRAY_TYPE, ValaArrayType);
+			array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp601_, BALA_TYPE_ARRAY_TYPE, ValaArrayType);
 			_tmp602_ = array_type;
 			_tmp603_ = vala_array_type_get_inline_allocated (_tmp602_);
 			_tmp604_ = _tmp603_;
@@ -2170,10 +2170,10 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 	}
 	_tmp637_ = self->priv->_operator;
 	switch (_tmp637_) {
-		case VALA_BINARY_OPERATOR_PLUS:
-		case VALA_BINARY_OPERATOR_MINUS:
-		case VALA_BINARY_OPERATOR_MUL:
-		case VALA_BINARY_OPERATOR_DIV:
+		case BALA_BINARY_OPERATOR_PLUS:
+		case BALA_BINARY_OPERATOR_MINUS:
+		case BALA_BINARY_OPERATOR_MUL:
+		case BALA_BINARY_OPERATOR_DIV:
 		{
 			ValaExpression* _tmp638_;
 			ValaExpression* _tmp639_;
@@ -2187,7 +2187,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			_tmp639_ = _tmp638_;
 			_tmp640_ = vala_expression_get_value_type (_tmp639_);
 			_tmp641_ = _tmp640_;
-			if (VALA_IS_POINTER_TYPE (_tmp641_)) {
+			if (BALA_IS_POINTER_TYPE (_tmp641_)) {
 				ValaPointerType* pointer_type = NULL;
 				ValaExpression* _tmp642_;
 				ValaExpression* _tmp643_;
@@ -2209,11 +2209,11 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 				_tmp643_ = _tmp642_;
 				_tmp644_ = vala_expression_get_value_type (_tmp643_);
 				_tmp645_ = _tmp644_;
-				pointer_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp645_, VALA_TYPE_POINTER_TYPE, ValaPointerType);
+				pointer_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp645_, BALA_TYPE_POINTER_TYPE, ValaPointerType);
 				_tmp646_ = pointer_type;
 				_tmp647_ = vala_pointer_type_get_base_type (_tmp646_);
 				_tmp648_ = _tmp647_;
-				if (VALA_IS_VOID_TYPE (_tmp648_)) {
+				if (BALA_IS_VOID_TYPE (_tmp648_)) {
 					ValaSourceReference* _tmp649_;
 					ValaSourceReference* _tmp650_;
 					vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -2229,7 +2229,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 				_tmp654_ = _tmp653_;
 				_tmp655_ = vala_data_type_get_type_symbol (_tmp654_);
 				_tmp656_ = _tmp655_;
-				offset_type = VALA_IS_STRUCT (_tmp656_) ? ((ValaStruct*) _tmp656_) : NULL;
+				offset_type = BALA_IS_STRUCT (_tmp656_) ? ((ValaStruct*) _tmp656_) : NULL;
 				_tmp658_ = offset_type;
 				if (_tmp658_ != NULL) {
 					ValaStruct* _tmp659_;
@@ -2242,12 +2242,12 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 					gboolean _tmp660_ = FALSE;
 					ValaBinaryOperator _tmp661_;
 					_tmp661_ = self->priv->_operator;
-					if (_tmp661_ == VALA_BINARY_OPERATOR_PLUS) {
+					if (_tmp661_ == BALA_BINARY_OPERATOR_PLUS) {
 						_tmp660_ = TRUE;
 					} else {
 						ValaBinaryOperator _tmp662_;
 						_tmp662_ = self->priv->_operator;
-						_tmp660_ = _tmp662_ == VALA_BINARY_OPERATOR_MINUS;
+						_tmp660_ = _tmp662_ == BALA_BINARY_OPERATOR_MINUS;
 					}
 					if (_tmp660_) {
 						ValaExpression* _tmp663_;
@@ -2274,7 +2274,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 					_tmp670_ = _tmp669_;
 					_tmp671_ = vala_expression_get_value_type (_tmp670_);
 					_tmp672_ = _tmp671_;
-					if (VALA_IS_POINTER_TYPE (_tmp672_)) {
+					if (BALA_IS_POINTER_TYPE (_tmp672_)) {
 						ValaSemanticAnalyzer* _tmp673_;
 						ValaSemanticAnalyzer* _tmp674_;
 						ValaDataType* _tmp675_;
@@ -2376,9 +2376,9 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			}
 			break;
 		}
-		case VALA_BINARY_OPERATOR_MOD:
-		case VALA_BINARY_OPERATOR_SHIFT_LEFT:
-		case VALA_BINARY_OPERATOR_SHIFT_RIGHT:
+		case BALA_BINARY_OPERATOR_MOD:
+		case BALA_BINARY_OPERATOR_SHIFT_LEFT:
+		case BALA_BINARY_OPERATOR_SHIFT_RIGHT:
 		{
 			ValaExpression* _tmp715_;
 			ValaExpression* _tmp716_;
@@ -2468,10 +2468,10 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			}
 			break;
 		}
-		case VALA_BINARY_OPERATOR_LESS_THAN:
-		case VALA_BINARY_OPERATOR_GREATER_THAN:
-		case VALA_BINARY_OPERATOR_LESS_THAN_OR_EQUAL:
-		case VALA_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL:
+		case BALA_BINARY_OPERATOR_LESS_THAN:
+		case BALA_BINARY_OPERATOR_GREATER_THAN:
+		case BALA_BINARY_OPERATOR_LESS_THAN_OR_EQUAL:
+		case BALA_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL:
 		{
 			gboolean _tmp752_ = FALSE;
 			ValaExpression* _tmp753_;
@@ -2521,7 +2521,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 				_tmp769_ = _tmp768_;
 				_tmp770_ = vala_expression_get_value_type (_tmp769_);
 				_tmp771_ = _tmp770_;
-				if (VALA_IS_POINTER_TYPE (_tmp771_)) {
+				if (BALA_IS_POINTER_TYPE (_tmp771_)) {
 					ValaExpression* _tmp772_;
 					ValaExpression* _tmp773_;
 					ValaDataType* _tmp774_;
@@ -2530,7 +2530,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 					_tmp773_ = _tmp772_;
 					_tmp774_ = vala_expression_get_value_type (_tmp773_);
 					_tmp775_ = _tmp774_;
-					_tmp767_ = VALA_IS_POINTER_TYPE (_tmp775_);
+					_tmp767_ = BALA_IS_POINTER_TYPE (_tmp775_);
 				} else {
 					_tmp767_ = FALSE;
 				}
@@ -2574,7 +2574,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 						ValaDataType* _tmp792_;
 						_tmp777_ = vala_binary_expression_get_left (self);
 						_tmp778_ = _tmp777_;
-						_tmp779_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp778_, VALA_TYPE_BINARY_EXPRESSION, ValaBinaryExpression));
+						_tmp779_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp778_, BALA_TYPE_BINARY_EXPRESSION, ValaBinaryExpression));
 						lbe = _tmp779_;
 						_tmp780_ = vala_code_context_get_analyzer (context);
 						_tmp781_ = _tmp780_;
@@ -2704,8 +2704,8 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			vala_expression_set_value_type ((ValaExpression*) self, _tmp843_);
 			break;
 		}
-		case VALA_BINARY_OPERATOR_EQUALITY:
-		case VALA_BINARY_OPERATOR_INEQUALITY:
+		case BALA_BINARY_OPERATOR_EQUALITY:
+		case BALA_BINARY_OPERATOR_INEQUALITY:
 		{
 			ValaProfile _tmp844_;
 			ValaProfile _tmp845_;
@@ -2757,7 +2757,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			ValaDataType* _tmp1000_;
 			_tmp844_ = vala_code_context_get_profile (context);
 			_tmp845_ = _tmp844_;
-			if (_tmp845_ == VALA_PROFILE_GOBJECT) {
+			if (_tmp845_ == BALA_PROFILE_GOBJECT) {
 				ValaTypeSymbol* gvalue_type = NULL;
 				ValaSemanticAnalyzer* _tmp846_;
 				ValaSemanticAnalyzer* _tmp847_;
@@ -3094,9 +3094,9 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			_vala_code_node_unref0 (resulting_type);
 			break;
 		}
-		case VALA_BINARY_OPERATOR_BITWISE_AND:
-		case VALA_BINARY_OPERATOR_BITWISE_OR:
-		case VALA_BINARY_OPERATOR_BITWISE_XOR:
+		case BALA_BINARY_OPERATOR_BITWISE_AND:
+		case BALA_BINARY_OPERATOR_BITWISE_OR:
+		case BALA_BINARY_OPERATOR_BITWISE_XOR:
 		{
 			ValaExpression* _tmp1001_;
 			ValaExpression* _tmp1002_;
@@ -3183,8 +3183,8 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			}
 			break;
 		}
-		case VALA_BINARY_OPERATOR_AND:
-		case VALA_BINARY_OPERATOR_OR:
+		case BALA_BINARY_OPERATOR_AND:
+		case BALA_BINARY_OPERATOR_OR:
 		{
 			gboolean _tmp1036_ = FALSE;
 			ValaExpression* _tmp1037_;
@@ -3255,7 +3255,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 			vala_expression_set_value_type ((ValaExpression*) self, _tmp1063_);
 			break;
 		}
-		case VALA_BINARY_OPERATOR_IN:
+		case BALA_BINARY_OPERATOR_IN:
 		{
 			gboolean _tmp1064_ = FALSE;
 			ValaExpression* _tmp1065_;
@@ -3322,7 +3322,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 				_tmp1088_ = _tmp1087_;
 				_tmp1089_ = vala_expression_get_value_type (_tmp1088_);
 				_tmp1090_ = _tmp1089_;
-				if (VALA_IS_ARRAY_TYPE (_tmp1090_)) {
+				if (BALA_IS_ARRAY_TYPE (_tmp1090_)) {
 					ValaExpression* _tmp1091_;
 					ValaExpression* _tmp1092_;
 					ValaDataType* _tmp1093_;
@@ -3341,7 +3341,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 					_tmp1096_ = _tmp1095_;
 					_tmp1097_ = vala_expression_get_value_type (_tmp1096_);
 					_tmp1098_ = _tmp1097_;
-					_tmp1099_ = vala_array_type_get_element_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1098_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+					_tmp1099_ = vala_array_type_get_element_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1098_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 					_tmp1100_ = _tmp1099_;
 					if (!vala_data_type_compatible (_tmp1094_, _tmp1100_)) {
 						ValaSourceReference* _tmp1101_;
@@ -3424,7 +3424,7 @@ vala_binary_expression_real_check (ValaCodeNode* base,
 					_tmp1119_ = vala_expression_get_value_type (_tmp1118_);
 					_tmp1120_ = _tmp1119_;
 					_tmp1121_ = vala_data_type_get_member (_tmp1120_, "contains");
-					_tmp1122_ = VALA_IS_METHOD (_tmp1121_) ? ((ValaMethod*) _tmp1121_) : NULL;
+					_tmp1122_ = BALA_IS_METHOD (_tmp1121_) ? ((ValaMethod*) _tmp1121_) : NULL;
 					if (_tmp1122_ == NULL) {
 						_vala_code_node_unref0 (_tmp1121_);
 					}
@@ -3661,10 +3661,10 @@ static void
 vala_binary_expression_finalize (ValaCodeNode * obj)
 {
 	ValaBinaryExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_BINARY_EXPRESSION, ValaBinaryExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_BINARY_EXPRESSION, ValaBinaryExpression);
 	_vala_code_node_unref0 (self->priv->_left);
 	_vala_code_node_unref0 (self->priv->_right);
-	VALA_CODE_NODE_CLASS (vala_binary_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_binary_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -3677,7 +3677,7 @@ vala_binary_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaBinaryExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_binary_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaBinaryExpression), 0, (GInstanceInitFunc) vala_binary_expression_instance_init, NULL };
 	GType vala_binary_expression_type_id;
-	vala_binary_expression_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaBinaryExpression", &g_define_type_info, 0);
+	vala_binary_expression_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaBinaryExpression", &g_define_type_info, 0);
 	ValaBinaryExpression_private_offset = g_type_add_instance_private (vala_binary_expression_type_id, sizeof (ValaBinaryExpressionPrivate));
 	return vala_binary_expression_type_id;
 }
@@ -3699,102 +3699,102 @@ vala_binary_operator_to_string (ValaBinaryOperator self)
 {
 	const gchar* result = NULL;
 	switch (self) {
-		case VALA_BINARY_OPERATOR_PLUS:
+		case BALA_BINARY_OPERATOR_PLUS:
 		{
 			result = "+";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_MINUS:
+		case BALA_BINARY_OPERATOR_MINUS:
 		{
 			result = "-";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_MUL:
+		case BALA_BINARY_OPERATOR_MUL:
 		{
 			result = "*";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_DIV:
+		case BALA_BINARY_OPERATOR_DIV:
 		{
 			result = "/";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_MOD:
+		case BALA_BINARY_OPERATOR_MOD:
 		{
 			result = "%";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_SHIFT_LEFT:
+		case BALA_BINARY_OPERATOR_SHIFT_LEFT:
 		{
 			result = "<<";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_SHIFT_RIGHT:
+		case BALA_BINARY_OPERATOR_SHIFT_RIGHT:
 		{
 			result = ">>";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_LESS_THAN:
+		case BALA_BINARY_OPERATOR_LESS_THAN:
 		{
 			result = "<";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_GREATER_THAN:
+		case BALA_BINARY_OPERATOR_GREATER_THAN:
 		{
 			result = ">";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_LESS_THAN_OR_EQUAL:
+		case BALA_BINARY_OPERATOR_LESS_THAN_OR_EQUAL:
 		{
 			result = "<=";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL:
+		case BALA_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL:
 		{
 			result = ">=";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_EQUALITY:
+		case BALA_BINARY_OPERATOR_EQUALITY:
 		{
 			result = "==";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_INEQUALITY:
+		case BALA_BINARY_OPERATOR_INEQUALITY:
 		{
 			result = "!=";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_BITWISE_AND:
+		case BALA_BINARY_OPERATOR_BITWISE_AND:
 		{
 			result = "&";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_BITWISE_OR:
+		case BALA_BINARY_OPERATOR_BITWISE_OR:
 		{
 			result = "|";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_BITWISE_XOR:
+		case BALA_BINARY_OPERATOR_BITWISE_XOR:
 		{
 			result = "^";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_AND:
+		case BALA_BINARY_OPERATOR_AND:
 		{
 			result = "&&";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_OR:
+		case BALA_BINARY_OPERATOR_OR:
 		{
 			result = "||";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_IN:
+		case BALA_BINARY_OPERATOR_IN:
 		{
 			result = "in";
 			return result;
 		}
-		case VALA_BINARY_OPERATOR_COALESCE:
+		case BALA_BINARY_OPERATOR_COALESCE:
 		{
 			result = "??";
 			return result;
@@ -3809,7 +3809,7 @@ vala_binary_operator_to_string (ValaBinaryOperator self)
 static GType
 vala_binary_operator_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_BINARY_OPERATOR_NONE, "VALA_BINARY_OPERATOR_NONE", "none"}, {VALA_BINARY_OPERATOR_PLUS, "VALA_BINARY_OPERATOR_PLUS", "plus"}, {VALA_BINARY_OPERATOR_MINUS, "VALA_BINARY_OPERATOR_MINUS", "minus"}, {VALA_BINARY_OPERATOR_MUL, "VALA_BINARY_OPERATOR_MUL", "mul"}, {VALA_BINARY_OPERATOR_DIV, "VALA_BINARY_OPERATOR_DIV", "div"}, {VALA_BINARY_OPERATOR_MOD, "VALA_BINARY_OPERATOR_MOD", "mod"}, {VALA_BINARY_OPERATOR_SHIFT_LEFT, "VALA_BINARY_OPERATOR_SHIFT_LEFT", "shift-left"}, {VALA_BINARY_OPERATOR_SHIFT_RIGHT, "VALA_BINARY_OPERATOR_SHIFT_RIGHT", "shift-right"}, {VALA_BINARY_OPERATOR_LESS_THAN, "VALA_BINARY_OPERATOR_LESS_THAN", "less-than"}, {VALA_BINARY_OPERATOR_GREATER_THAN, "VALA_BINARY_OPERATOR_GREATER_THAN", "greater-than"}, {VALA_BINARY_OPERATOR_LESS_THAN_OR_EQUAL, "VALA_BINARY_OPERATOR_LESS_THAN_OR_EQUAL", "less-than-or-equal"}, {VALA_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL, "VALA_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL", "greater-than-or-equal"}, {VALA_BINARY_OPERATOR_EQUALITY, "VALA_BINARY_OPERATOR_EQUALITY", "equality"}, {VALA_BINARY_OPERATOR_INEQUALITY, "VALA_BINARY_OPERATOR_INEQUALITY", "inequality"}, {VALA_BINARY_OPERATOR_BITWISE_AND, "VALA_BINARY_OPERATOR_BITWISE_AND", "bitwise-and"}, {VALA_BINARY_OPERATOR_BITWISE_OR, "VALA_BINARY_OPERATOR_BITWISE_OR", "bitwise-or"}, {VALA_BINARY_OPERATOR_BITWISE_XOR, "VALA_BINARY_OPERATOR_BITWISE_XOR", "bitwise-xor"}, {VALA_BINARY_OPERATOR_AND, "VALA_BINARY_OPERATOR_AND", "and"}, {VALA_BINARY_OPERATOR_OR, "VALA_BINARY_OPERATOR_OR", "or"}, {VALA_BINARY_OPERATOR_IN, "VALA_BINARY_OPERATOR_IN", "in"}, {VALA_BINARY_OPERATOR_COALESCE, "VALA_BINARY_OPERATOR_COALESCE", "coalesce"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_BINARY_OPERATOR_NONE, "BALA_BINARY_OPERATOR_NONE", "none"}, {BALA_BINARY_OPERATOR_PLUS, "BALA_BINARY_OPERATOR_PLUS", "plus"}, {BALA_BINARY_OPERATOR_MINUS, "BALA_BINARY_OPERATOR_MINUS", "minus"}, {BALA_BINARY_OPERATOR_MUL, "BALA_BINARY_OPERATOR_MUL", "mul"}, {BALA_BINARY_OPERATOR_DIV, "BALA_BINARY_OPERATOR_DIV", "div"}, {BALA_BINARY_OPERATOR_MOD, "BALA_BINARY_OPERATOR_MOD", "mod"}, {BALA_BINARY_OPERATOR_SHIFT_LEFT, "BALA_BINARY_OPERATOR_SHIFT_LEFT", "shift-left"}, {BALA_BINARY_OPERATOR_SHIFT_RIGHT, "BALA_BINARY_OPERATOR_SHIFT_RIGHT", "shift-right"}, {BALA_BINARY_OPERATOR_LESS_THAN, "BALA_BINARY_OPERATOR_LESS_THAN", "less-than"}, {BALA_BINARY_OPERATOR_GREATER_THAN, "BALA_BINARY_OPERATOR_GREATER_THAN", "greater-than"}, {BALA_BINARY_OPERATOR_LESS_THAN_OR_EQUAL, "BALA_BINARY_OPERATOR_LESS_THAN_OR_EQUAL", "less-than-or-equal"}, {BALA_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL, "BALA_BINARY_OPERATOR_GREATER_THAN_OR_EQUAL", "greater-than-or-equal"}, {BALA_BINARY_OPERATOR_EQUALITY, "BALA_BINARY_OPERATOR_EQUALITY", "equality"}, {BALA_BINARY_OPERATOR_INEQUALITY, "BALA_BINARY_OPERATOR_INEQUALITY", "inequality"}, {BALA_BINARY_OPERATOR_BITWISE_AND, "BALA_BINARY_OPERATOR_BITWISE_AND", "bitwise-and"}, {BALA_BINARY_OPERATOR_BITWISE_OR, "BALA_BINARY_OPERATOR_BITWISE_OR", "bitwise-or"}, {BALA_BINARY_OPERATOR_BITWISE_XOR, "BALA_BINARY_OPERATOR_BITWISE_XOR", "bitwise-xor"}, {BALA_BINARY_OPERATOR_AND, "BALA_BINARY_OPERATOR_AND", "and"}, {BALA_BINARY_OPERATOR_OR, "BALA_BINARY_OPERATOR_OR", "or"}, {BALA_BINARY_OPERATOR_IN, "BALA_BINARY_OPERATOR_IN", "in"}, {BALA_BINARY_OPERATOR_COALESCE, "BALA_BINARY_OPERATOR_COALESCE", "coalesce"}, {0, NULL, NULL}};
 	GType vala_binary_operator_type_id;
 	vala_binary_operator_type_id = g_enum_register_static ("ValaBinaryOperator", values);
 	return vala_binary_operator_type_id;

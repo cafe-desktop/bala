@@ -30,12 +30,12 @@
 #include <glib-object.h>
 #include <string.h>
 
-#define VALA_ARRAY_LIST_TYPE_ITERATOR (vala_array_list_iterator_get_type ())
-#define VALA_ARRAY_LIST_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_ARRAY_LIST_TYPE_ITERATOR, ValaArrayListIterator))
-#define VALA_ARRAY_LIST_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_ARRAY_LIST_TYPE_ITERATOR, ValaArrayListIteratorClass))
-#define VALA_ARRAY_LIST_IS_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_ARRAY_LIST_TYPE_ITERATOR))
-#define VALA_ARRAY_LIST_IS_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_ARRAY_LIST_TYPE_ITERATOR))
-#define VALA_ARRAY_LIST_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_ARRAY_LIST_TYPE_ITERATOR, ValaArrayListIteratorClass))
+#define BALA_ARRAY_LIST_TYPE_ITERATOR (vala_array_list_iterator_get_type ())
+#define BALA_ARRAY_LIST_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_ARRAY_LIST_TYPE_ITERATOR, ValaArrayListIterator))
+#define BALA_ARRAY_LIST_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_ARRAY_LIST_TYPE_ITERATOR, ValaArrayListIteratorClass))
+#define BALA_ARRAY_LIST_IS_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_ARRAY_LIST_TYPE_ITERATOR))
+#define BALA_ARRAY_LIST_IS_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_ARRAY_LIST_TYPE_ITERATOR))
+#define BALA_ARRAY_LIST_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_ARRAY_LIST_TYPE_ITERATOR, ValaArrayListIteratorClass))
 
 typedef struct _ValaArrayListIterator ValaArrayListIterator;
 typedef struct _ValaArrayListIteratorClass ValaArrayListIteratorClass;
@@ -184,7 +184,7 @@ vala_array_list_new (GType g_type,
                      GDestroyNotify g_destroy_func,
                      GEqualFunc equal_func)
 {
-	return vala_array_list_construct (VALA_TYPE_ARRAY_LIST, g_type, g_dup_func, g_destroy_func, equal_func);
+	return vala_array_list_construct (BALA_TYPE_ARRAY_LIST, g_type, g_dup_func, g_destroy_func, equal_func);
 }
 
 static GType
@@ -619,7 +619,7 @@ vala_array_list_iterator_new (GType g_type,
                               GDestroyNotify g_destroy_func,
                               ValaArrayList* list)
 {
-	return vala_array_list_iterator_construct (VALA_ARRAY_LIST_TYPE_ITERATOR, g_type, g_dup_func, g_destroy_func, list);
+	return vala_array_list_iterator_construct (BALA_ARRAY_LIST_TYPE_ITERATOR, g_type, g_dup_func, g_destroy_func, list);
 }
 
 static gboolean
@@ -759,7 +759,7 @@ vala_array_list_iterator_class_init (ValaArrayListIteratorClass * klass,
 	((ValaIteratorClass *) klass)->has_next = (gboolean (*) (ValaIterator*)) vala_array_list_iterator_real_has_next;
 	((ValaIteratorClass *) klass)->get = (gpointer (*) (ValaIterator*)) vala_array_list_iterator_real_get;
 	((ValaIteratorClass *) klass)->remove = (void (*) (ValaIterator*)) vala_array_list_iterator_real_remove;
-	VALA_ITERATOR_CLASS (klass)->get_valid = vala_array_list_iterator_real_get_valid;
+	BALA_ITERATOR_CLASS (klass)->get_valid = vala_array_list_iterator_real_get_valid;
 }
 
 static void
@@ -776,9 +776,9 @@ static void
 vala_array_list_iterator_finalize (ValaIterator * obj)
 {
 	ValaArrayListIterator * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_ARRAY_LIST_TYPE_ITERATOR, ValaArrayListIterator);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_ARRAY_LIST_TYPE_ITERATOR, ValaArrayListIterator);
 	_vala_iterable_unref0 (self->priv->_list);
-	VALA_ITERATOR_CLASS (vala_array_list_iterator_parent_class)->finalize (obj);
+	BALA_ITERATOR_CLASS (vala_array_list_iterator_parent_class)->finalize (obj);
 }
 
 static GType
@@ -786,7 +786,7 @@ vala_array_list_iterator_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaArrayListIteratorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_array_list_iterator_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaArrayListIterator), 0, (GInstanceInitFunc) vala_array_list_iterator_instance_init, NULL };
 	GType vala_array_list_iterator_type_id;
-	vala_array_list_iterator_type_id = g_type_register_static (VALA_TYPE_ITERATOR, "ValaArrayListIterator", &g_define_type_info, 0);
+	vala_array_list_iterator_type_id = g_type_register_static (BALA_TYPE_ITERATOR, "ValaArrayListIterator", &g_define_type_info, 0);
 	ValaArrayListIterator_private_offset = g_type_add_instance_private (vala_array_list_iterator_type_id, sizeof (ValaArrayListIteratorPrivate));
 	return vala_array_list_iterator_type_id;
 }
@@ -821,7 +821,7 @@ vala_array_list_class_init (ValaArrayListClass * klass,
 	((ValaCollectionClass *) klass)->remove = (gboolean (*) (ValaCollection*, gconstpointer)) vala_array_list_real_remove;
 	((ValaListClass *) klass)->remove_at = (gpointer (*) (ValaList*, gint)) vala_array_list_real_remove_at;
 	((ValaCollectionClass *) klass)->clear = (void (*) (ValaCollection*)) vala_array_list_real_clear;
-	VALA_COLLECTION_CLASS (klass)->get_size = vala_array_list_real_get_size;
+	BALA_COLLECTION_CLASS (klass)->get_size = vala_array_list_real_get_size;
 }
 
 static void
@@ -841,9 +841,9 @@ static void
 vala_array_list_finalize (ValaIterable * obj)
 {
 	ValaArrayList * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ARRAY_LIST, ValaArrayList);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ARRAY_LIST, ValaArrayList);
 	self->_items = (_vala_array_free (self->_items, self->_items_length1, (GDestroyNotify) self->priv->g_destroy_func), NULL);
-	VALA_ITERABLE_CLASS (vala_array_list_parent_class)->finalize (obj);
+	BALA_ITERABLE_CLASS (vala_array_list_parent_class)->finalize (obj);
 }
 
 /**
@@ -854,7 +854,7 @@ vala_array_list_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaArrayListClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_array_list_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaArrayList), 0, (GInstanceInitFunc) vala_array_list_instance_init, NULL };
 	GType vala_array_list_type_id;
-	vala_array_list_type_id = g_type_register_static (VALA_TYPE_LIST, "ValaArrayList", &g_define_type_info, 0);
+	vala_array_list_type_id = g_type_register_static (BALA_TYPE_LIST, "ValaArrayList", &g_define_type_info, 0);
 	ValaArrayList_private_offset = g_type_add_instance_private (vala_array_list_type_id, sizeof (ValaArrayListPrivate));
 	return vala_array_list_type_id;
 }

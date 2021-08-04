@@ -123,7 +123,7 @@ vala_ccode_node_write (ValaCCodeNode* self,
                        ValaCCodeWriter* writer)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CCODE_NODE_GET_CLASS (self)->write (self, writer);
+	BALA_CCODE_NODE_GET_CLASS (self)->write (self, writer);
 }
 
 /**
@@ -144,7 +144,7 @@ vala_ccode_node_write_declaration (ValaCCodeNode* self,
                                    ValaCCodeWriter* writer)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CCODE_NODE_GET_CLASS (self)->write_declaration (self, writer);
+	BALA_CCODE_NODE_GET_CLASS (self)->write_declaration (self, writer);
 }
 
 /**
@@ -167,7 +167,7 @@ vala_ccode_node_write_combined (ValaCCodeNode* self,
                                 ValaCCodeWriter* writer)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CCODE_NODE_GET_CLASS (self)->write_combined (self, writer);
+	BALA_CCODE_NODE_GET_CLASS (self)->write_combined (self, writer);
 }
 
 ValaCCodeNode*
@@ -259,7 +259,7 @@ vala_param_spec_ccode_node (const gchar* name,
                             GParamFlags flags)
 {
 	ValaParamSpecCCodeNode* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_CCODE_NODE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_CCODE_NODE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -268,7 +268,7 @@ vala_param_spec_ccode_node (const gchar* name,
 gpointer
 vala_value_get_ccode_node (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CCODE_NODE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CCODE_NODE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -277,10 +277,10 @@ vala_value_set_ccode_node (GValue* value,
                            gpointer v_object)
 {
 	ValaCCodeNode * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CCODE_NODE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CCODE_NODE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CCODE_NODE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CCODE_NODE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_ccode_node_ref (value->data[0].v_pointer);
@@ -297,10 +297,10 @@ vala_value_take_ccode_node (GValue* value,
                             gpointer v_object)
 {
 	ValaCCodeNode * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CCODE_NODE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CCODE_NODE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CCODE_NODE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CCODE_NODE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -335,7 +335,7 @@ static void
 vala_ccode_node_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeNode * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_NODE, ValaCCodeNode);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_NODE, ValaCCodeNode);
 	g_signal_handlers_destroy (self);
 	_vala_ccode_node_unref0 (self->priv->_line);
 }
@@ -382,7 +382,7 @@ vala_ccode_node_unref (gpointer instance)
 	ValaCCodeNode * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_CCODE_NODE_GET_CLASS (self)->finalize (self);
+		BALA_CCODE_NODE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

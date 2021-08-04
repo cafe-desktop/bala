@@ -85,7 +85,7 @@ vala_statement_list_construct (GType object_type,
 ValaStatementList*
 vala_statement_list_new (ValaSourceReference* source_reference)
 {
-	return vala_statement_list_construct (VALA_TYPE_STATEMENT_LIST, source_reference);
+	return vala_statement_list_construct (BALA_TYPE_STATEMENT_LIST, source_reference);
 }
 
 ValaStatement*
@@ -372,7 +372,7 @@ vala_statement_list_instance_init (ValaStatementList * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_statement_list_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_STATEMENT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_STATEMENT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->list = (ValaList*) _tmp1_;
 }
 
@@ -380,9 +380,9 @@ static void
 vala_statement_list_finalize (ValaCodeNode * obj)
 {
 	ValaStatementList * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_STATEMENT_LIST, ValaStatementList);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_STATEMENT_LIST, ValaStatementList);
 	_vala_iterable_unref0 (self->priv->list);
-	VALA_CODE_NODE_CLASS (vala_statement_list_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_statement_list_parent_class)->finalize (obj);
 }
 
 static GType
@@ -391,8 +391,8 @@ vala_statement_list_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaStatementListClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_statement_list_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaStatementList), 0, (GInstanceInitFunc) vala_statement_list_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_statement_list_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_statement_list_type_id;
-	vala_statement_list_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaStatementList", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_statement_list_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_statement_list_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaStatementList", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_statement_list_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaStatementList_private_offset = g_type_add_instance_private (vala_statement_list_type_id, sizeof (ValaStatementListPrivate));
 	return vala_statement_list_type_id;
 }

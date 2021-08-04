@@ -114,7 +114,7 @@ ValaGirComment*
 vala_gir_comment_new (const gchar* comment,
                       ValaSourceReference* _source_reference)
 {
-	return vala_gir_comment_construct (VALA_TYPE_GIR_COMMENT, comment, _source_reference);
+	return vala_gir_comment_construct (BALA_TYPE_GIR_COMMENT, comment, _source_reference);
 }
 
 G_GNUC_INTERNAL void
@@ -166,7 +166,7 @@ vala_gir_comment_instance_init (ValaGirComment * self,
 	_tmp0_ = g_direct_hash;
 	_tmp1_ = g_direct_equal;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_COMMENT, (GBoxedCopyFunc) vala_comment_ref, (GDestroyNotify) vala_comment_unref, _tmp0_, _tmp1_, _tmp2_);
+	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_COMMENT, (GBoxedCopyFunc) vala_comment_ref, (GDestroyNotify) vala_comment_unref, _tmp0_, _tmp1_, _tmp2_);
 	self->priv->parameter_content = _tmp3_;
 }
 
@@ -174,10 +174,10 @@ static void
 vala_gir_comment_finalize (ValaComment * obj)
 {
 	ValaGirComment * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_GIR_COMMENT, ValaGirComment);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_GIR_COMMENT, ValaGirComment);
 	_vala_map_unref0 (self->priv->parameter_content);
 	_vala_comment_unref0 (self->priv->_return_content);
-	VALA_COMMENT_CLASS (vala_gir_comment_parent_class)->finalize (obj);
+	BALA_COMMENT_CLASS (vala_gir_comment_parent_class)->finalize (obj);
 }
 
 /**
@@ -188,7 +188,7 @@ vala_gir_comment_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaGirCommentClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_gir_comment_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaGirComment), 0, (GInstanceInitFunc) vala_gir_comment_instance_init, NULL };
 	GType vala_gir_comment_type_id;
-	vala_gir_comment_type_id = g_type_register_static (VALA_TYPE_COMMENT, "ValaGirComment", &g_define_type_info, 0);
+	vala_gir_comment_type_id = g_type_register_static (BALA_TYPE_COMMENT, "ValaGirComment", &g_define_type_info, 0);
 	ValaGirComment_private_offset = g_type_add_instance_private (vala_gir_comment_type_id, sizeof (ValaGirCommentPrivate));
 	return vala_gir_comment_type_id;
 }

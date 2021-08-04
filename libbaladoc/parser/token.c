@@ -31,17 +31,17 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_TOKEN_0_PROPERTY,
-	VALADOC_TOKEN_IS_WORD_PROPERTY,
-	VALADOC_TOKEN_IS_NUMBER_PROPERTY,
-	VALADOC_TOKEN_WORD_PROPERTY,
-	VALADOC_TOKEN_VALUE_PROPERTY,
-	VALADOC_TOKEN_TOKEN_TYPE_PROPERTY,
-	VALADOC_TOKEN_BEGIN_PROPERTY,
-	VALADOC_TOKEN_END_PROPERTY,
-	VALADOC_TOKEN_NUM_PROPERTIES
+	BALADOC_TOKEN_0_PROPERTY,
+	BALADOC_TOKEN_IS_WORD_PROPERTY,
+	BALADOC_TOKEN_IS_NUMBER_PROPERTY,
+	BALADOC_TOKEN_WORD_PROPERTY,
+	BALADOC_TOKEN_VALUE_PROPERTY,
+	BALADOC_TOKEN_TOKEN_TYPE_PROPERTY,
+	BALADOC_TOKEN_BEGIN_PROPERTY,
+	BALADOC_TOKEN_END_PROPERTY,
+	BALADOC_TOKEN_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_token_properties[VALADOC_TOKEN_NUM_PROPERTIES];
+static GParamSpec* valadoc_token_properties[BALADOC_TOKEN_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _vala_assert(expr, msg) if G_LIKELY (expr) ; else g_assertion_message_expr (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);
@@ -114,7 +114,7 @@ valadoc_token_new_from_type (ValadocTokenType* type,
                              ValaSourceLocation* end,
                              const gchar* val)
 {
-	return valadoc_token_construct_from_type (VALADOC_TYPE_TOKEN, type, begin, end, val);
+	return valadoc_token_construct_from_type (BALADOC_TYPE_TOKEN, type, begin, end, val);
 }
 
 ValadocToken*
@@ -146,7 +146,7 @@ valadoc_token_new_from_word (const gchar* word,
                              ValaSourceLocation* begin,
                              ValaSourceLocation* end)
 {
-	return valadoc_token_construct_from_word (VALADOC_TYPE_TOKEN, word, begin, end);
+	return valadoc_token_construct_from_word (BALADOC_TYPE_TOKEN, word, begin, end);
 }
 
 gboolean
@@ -385,7 +385,7 @@ valadoc_token_construct (GType object_type)
 ValadocToken*
 valadoc_token_new (void)
 {
-	return valadoc_token_construct (VALADOC_TYPE_TOKEN);
+	return valadoc_token_construct (BALADOC_TYPE_TOKEN);
 }
 
 static void
@@ -396,13 +396,13 @@ valadoc_token_class_init (ValadocTokenClass * klass,
 	g_type_class_adjust_private_offset (klass, &ValadocToken_private_offset);
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_token_get_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_token_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TOKEN_IS_WORD_PROPERTY, valadoc_token_properties[VALADOC_TOKEN_IS_WORD_PROPERTY] = g_param_spec_boolean ("is-word", "is-word", "is-word", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TOKEN_IS_NUMBER_PROPERTY, valadoc_token_properties[VALADOC_TOKEN_IS_NUMBER_PROPERTY] = g_param_spec_boolean ("is-number", "is-number", "is-number", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TOKEN_WORD_PROPERTY, valadoc_token_properties[VALADOC_TOKEN_WORD_PROPERTY] = g_param_spec_string ("word", "word", "word", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TOKEN_VALUE_PROPERTY, valadoc_token_properties[VALADOC_TOKEN_VALUE_PROPERTY] = g_param_spec_string ("value", "value", "value", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TOKEN_TOKEN_TYPE_PROPERTY, valadoc_token_properties[VALADOC_TOKEN_TOKEN_TYPE_PROPERTY] = g_param_spec_object ("token-type", "token-type", "token-type", VALADOC_TYPE_TOKEN_TYPE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TOKEN_BEGIN_PROPERTY, valadoc_token_properties[VALADOC_TOKEN_BEGIN_PROPERTY] = g_param_spec_boxed ("begin", "begin", "begin", VALA_TYPE_SOURCE_LOCATION, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TOKEN_END_PROPERTY, valadoc_token_properties[VALADOC_TOKEN_END_PROPERTY] = g_param_spec_boxed ("end", "end", "end", VALA_TYPE_SOURCE_LOCATION, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TOKEN_IS_WORD_PROPERTY, valadoc_token_properties[BALADOC_TOKEN_IS_WORD_PROPERTY] = g_param_spec_boolean ("is-word", "is-word", "is-word", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TOKEN_IS_NUMBER_PROPERTY, valadoc_token_properties[BALADOC_TOKEN_IS_NUMBER_PROPERTY] = g_param_spec_boolean ("is-number", "is-number", "is-number", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TOKEN_WORD_PROPERTY, valadoc_token_properties[BALADOC_TOKEN_WORD_PROPERTY] = g_param_spec_string ("word", "word", "word", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TOKEN_VALUE_PROPERTY, valadoc_token_properties[BALADOC_TOKEN_VALUE_PROPERTY] = g_param_spec_string ("value", "value", "value", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TOKEN_TOKEN_TYPE_PROPERTY, valadoc_token_properties[BALADOC_TOKEN_TOKEN_TYPE_PROPERTY] = g_param_spec_object ("token-type", "token-type", "token-type", BALADOC_TYPE_TOKEN_TYPE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TOKEN_BEGIN_PROPERTY, valadoc_token_properties[BALADOC_TOKEN_BEGIN_PROPERTY] = g_param_spec_boxed ("begin", "begin", "begin", BALA_TYPE_SOURCE_LOCATION, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TOKEN_END_PROPERTY, valadoc_token_properties[BALADOC_TOKEN_END_PROPERTY] = g_param_spec_boxed ("end", "end", "end", BALA_TYPE_SOURCE_LOCATION, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -418,7 +418,7 @@ static void
 valadoc_token_finalize (GObject * obj)
 {
 	ValadocToken * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_TOKEN, ValadocToken);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_TOKEN, ValadocToken);
 	_g_object_unref0 (self->priv->_type);
 	_g_free0 (self->priv->_word);
 	_g_free0 (self->priv->_value);
@@ -454,31 +454,31 @@ _vala_valadoc_token_get_property (GObject * object,
                                   GParamSpec * pspec)
 {
 	ValadocToken * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TYPE_TOKEN, ValadocToken);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TYPE_TOKEN, ValadocToken);
 	switch (property_id) {
-		case VALADOC_TOKEN_IS_WORD_PROPERTY:
+		case BALADOC_TOKEN_IS_WORD_PROPERTY:
 		g_value_set_boolean (value, valadoc_token_get_is_word (self));
 		break;
-		case VALADOC_TOKEN_IS_NUMBER_PROPERTY:
+		case BALADOC_TOKEN_IS_NUMBER_PROPERTY:
 		g_value_set_boolean (value, valadoc_token_get_is_number (self));
 		break;
-		case VALADOC_TOKEN_WORD_PROPERTY:
+		case BALADOC_TOKEN_WORD_PROPERTY:
 		g_value_set_string (value, valadoc_token_get_word (self));
 		break;
-		case VALADOC_TOKEN_VALUE_PROPERTY:
+		case BALADOC_TOKEN_VALUE_PROPERTY:
 		g_value_set_string (value, valadoc_token_get_value (self));
 		break;
-		case VALADOC_TOKEN_TOKEN_TYPE_PROPERTY:
+		case BALADOC_TOKEN_TOKEN_TYPE_PROPERTY:
 		g_value_set_object (value, valadoc_token_get_token_type (self));
 		break;
-		case VALADOC_TOKEN_BEGIN_PROPERTY:
+		case BALADOC_TOKEN_BEGIN_PROPERTY:
 		{
 			ValaSourceLocation boxed;
 			valadoc_token_get_begin (self, &boxed);
 			g_value_set_boxed (value, &boxed);
 		}
 		break;
-		case VALADOC_TOKEN_END_PROPERTY:
+		case BALADOC_TOKEN_END_PROPERTY:
 		{
 			ValaSourceLocation boxed;
 			valadoc_token_get_end (self, &boxed);

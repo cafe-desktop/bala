@@ -28,11 +28,11 @@
 #include <vala.h>
 
 enum  {
-	VALADOC_API_ARRAY_0_PROPERTY,
-	VALADOC_API_ARRAY_DATA_TYPE_PROPERTY,
-	VALADOC_API_ARRAY_NUM_PROPERTIES
+	BALADOC_API_ARRAY_0_PROPERTY,
+	BALADOC_API_ARRAY_DATA_TYPE_PROPERTY,
+	BALADOC_API_ARRAY_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_array_properties[VALADOC_API_ARRAY_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_array_properties[BALADOC_API_ARRAY_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _valadoc_api_signature_builder_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_api_signature_builder_unref (var), NULL)))
 
@@ -91,7 +91,7 @@ valadoc_api_array_set_data_type (ValadocApiArray* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_data_type);
 		self->priv->_data_type = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_array_properties[VALADOC_API_ARRAY_DATA_TYPE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_array_properties[BALADOC_API_ARRAY_DATA_TYPE_PROPERTY]);
 	}
 }
 
@@ -112,7 +112,7 @@ ValadocApiArray*
 valadoc_api_array_new (ValadocApiItem* parent,
                        ValaArrayType* data)
 {
-	return valadoc_api_array_construct (VALADOC_API_TYPE_ARRAY, parent, data);
+	return valadoc_api_array_construct (BALADOC_API_TYPE_ARRAY, parent, data);
 }
 
 static inline gboolean
@@ -129,7 +129,7 @@ valadoc_api_array_element_is_owned (ValadocApiArray* self)
 	gboolean result = FALSE;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->_data_type;
-	_tmp1_ = _g_object_ref0 (VALADOC_API_IS_TYPEREFERENCE (_tmp0_) ? ((ValadocApiTypeReference*) _tmp0_) : NULL);
+	_tmp1_ = _g_object_ref0 (BALADOC_API_IS_TYPEREFERENCE (_tmp0_) ? ((ValadocApiTypeReference*) _tmp0_) : NULL);
 	reference = _tmp1_;
 	_tmp2_ = reference;
 	if (_tmp2_ == NULL) {
@@ -221,7 +221,7 @@ valadoc_api_array_class_init (ValadocApiArrayClass * klass,
 	/**
 	 * The element type.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_ARRAY_DATA_TYPE_PROPERTY, valadoc_api_array_properties[VALADOC_API_ARRAY_DATA_TYPE_PROPERTY] = g_param_spec_object ("data-type", "data-type", "data-type", VALADOC_API_TYPE_ITEM, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_ARRAY_DATA_TYPE_PROPERTY, valadoc_api_array_properties[BALADOC_API_ARRAY_DATA_TYPE_PROPERTY] = g_param_spec_object ("data-type", "data-type", "data-type", BALADOC_API_TYPE_ITEM, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 }
 
 static void
@@ -235,7 +235,7 @@ static void
 valadoc_api_array_finalize (GObject * obj)
 {
 	ValadocApiArray * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_ARRAY, ValadocApiArray);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_ARRAY, ValadocApiArray);
 	_g_object_unref0 (self->priv->_data_type);
 	G_OBJECT_CLASS (valadoc_api_array_parent_class)->finalize (obj);
 }
@@ -248,7 +248,7 @@ valadoc_api_array_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiArrayClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_array_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiArray), 0, (GInstanceInitFunc) valadoc_api_array_instance_init, NULL };
 	GType valadoc_api_array_type_id;
-	valadoc_api_array_type_id = g_type_register_static (VALADOC_API_TYPE_ITEM, "ValadocApiArray", &g_define_type_info, 0);
+	valadoc_api_array_type_id = g_type_register_static (BALADOC_API_TYPE_ITEM, "ValadocApiArray", &g_define_type_info, 0);
 	ValadocApiArray_private_offset = g_type_add_instance_private (valadoc_api_array_type_id, sizeof (ValadocApiArrayPrivate));
 	return valadoc_api_array_type_id;
 }
@@ -272,9 +272,9 @@ _vala_valadoc_api_array_get_property (GObject * object,
                                       GParamSpec * pspec)
 {
 	ValadocApiArray * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_ARRAY, ValadocApiArray);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_ARRAY, ValadocApiArray);
 	switch (property_id) {
-		case VALADOC_API_ARRAY_DATA_TYPE_PROPERTY:
+		case BALADOC_API_ARRAY_DATA_TYPE_PROPERTY:
 		g_value_set_object (value, valadoc_api_array_get_data_type (self));
 		break;
 		default:
@@ -290,9 +290,9 @@ _vala_valadoc_api_array_set_property (GObject * object,
                                       GParamSpec * pspec)
 {
 	ValadocApiArray * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_ARRAY, ValadocApiArray);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_ARRAY, ValadocApiArray);
 	switch (property_id) {
-		case VALADOC_API_ARRAY_DATA_TYPE_PROPERTY:
+		case BALADOC_API_ARRAY_DATA_TYPE_PROPERTY:
 		valadoc_api_array_set_data_type (self, g_value_get_object (value));
 		break;
 		default:

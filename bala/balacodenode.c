@@ -244,7 +244,7 @@ vala_code_node_get_tree_can_fail (ValaCodeNode* self)
 	gint _tmp3_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	error_types = _tmp1_;
 	vala_code_node_get_error_types (self, (ValaCollection*) error_types, NULL);
 	_tmp2_ = vala_collection_get_size ((ValaCollection*) error_types);
@@ -271,7 +271,7 @@ vala_code_node_accept (ValaCodeNode* self,
                        ValaCodeVisitor* visitor)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_NODE_GET_CLASS (self)->accept (self, visitor);
+	BALA_CODE_NODE_GET_CLASS (self)->accept (self, visitor);
 }
 
 /**
@@ -291,7 +291,7 @@ vala_code_node_accept_children (ValaCodeNode* self,
                                 ValaCodeVisitor* visitor)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_NODE_GET_CLASS (self)->accept_children (self, visitor);
+	BALA_CODE_NODE_GET_CLASS (self)->accept_children (self, visitor);
 }
 
 static gboolean
@@ -309,7 +309,7 @@ vala_code_node_check (ValaCodeNode* self,
                       ValaCodeContext* context)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_CODE_NODE_GET_CLASS (self)->check (self, context);
+	return BALA_CODE_NODE_GET_CLASS (self)->check (self, context);
 }
 
 static void
@@ -324,7 +324,7 @@ vala_code_node_emit (ValaCodeNode* self,
                      ValaCodeGenerator* codegen)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_NODE_GET_CLASS (self)->emit (self, codegen);
+	BALA_CODE_NODE_GET_CLASS (self)->emit (self, codegen);
 }
 
 static void
@@ -342,7 +342,7 @@ vala_code_node_replace_type (ValaCodeNode* self,
                              ValaDataType* new_type)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_NODE_GET_CLASS (self)->replace_type (self, old_type, new_type);
+	BALA_CODE_NODE_GET_CLASS (self)->replace_type (self, old_type, new_type);
 }
 
 static void
@@ -360,7 +360,7 @@ vala_code_node_replace_expression (ValaCodeNode* self,
                                    ValaExpression* new_node)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_NODE_GET_CLASS (self)->replace_expression (self, old_node, new_node);
+	BALA_CODE_NODE_GET_CLASS (self)->replace_expression (self, old_node, new_node);
 }
 
 /**
@@ -443,7 +443,7 @@ vala_code_node_get_or_create_attribute (ValaCodeNode* self,
 		_vala_code_node_unref0 (new_a);
 	}
 	_tmp7_ = a;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, VALA_TYPE_ATTRIBUTE, ValaAttribute);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, BALA_TYPE_ATTRIBUTE, ValaAttribute);
 	return result;
 }
 
@@ -1107,7 +1107,7 @@ gchar*
 vala_code_node_to_string (ValaCodeNode* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_CODE_NODE_GET_CLASS (self)->to_string (self);
+	return BALA_CODE_NODE_GET_CLASS (self)->to_string (self);
 }
 
 static void
@@ -1122,7 +1122,7 @@ vala_code_node_get_defined_variables (ValaCodeNode* self,
                                       ValaCollection* collection)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_NODE_GET_CLASS (self)->get_defined_variables (self, collection);
+	BALA_CODE_NODE_GET_CLASS (self)->get_defined_variables (self, collection);
 }
 
 static void
@@ -1137,7 +1137,7 @@ vala_code_node_get_used_variables (ValaCodeNode* self,
                                    ValaCollection* collection)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_NODE_GET_CLASS (self)->get_used_variables (self, collection);
+	BALA_CODE_NODE_GET_CLASS (self)->get_used_variables (self, collection);
 }
 
 static void
@@ -1154,7 +1154,7 @@ vala_code_node_get_error_types (ValaCodeNode* self,
                                 ValaSourceReference* source_reference)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_NODE_GET_CLASS (self)->get_error_types (self, collection, source_reference);
+	BALA_CODE_NODE_GET_CLASS (self)->get_error_types (self, collection, source_reference);
 }
 
 gchar*
@@ -1282,7 +1282,7 @@ vala_param_spec_code_node (const gchar* name,
                            GParamFlags flags)
 {
 	ValaParamSpecCodeNode* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_CODE_NODE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_CODE_NODE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1291,7 +1291,7 @@ vala_param_spec_code_node (const gchar* name,
 gpointer
 vala_value_get_code_node (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CODE_NODE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CODE_NODE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1300,10 +1300,10 @@ vala_value_set_code_node (GValue* value,
                           gpointer v_object)
 {
 	ValaCodeNode * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CODE_NODE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CODE_NODE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CODE_NODE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CODE_NODE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_code_node_ref (value->data[0].v_pointer);
@@ -1320,10 +1320,10 @@ vala_value_take_code_node (GValue* value,
                            gpointer v_object)
 {
 	ValaCodeNode * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CODE_NODE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CODE_NODE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CODE_NODE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CODE_NODE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1365,7 +1365,7 @@ static void
 vala_code_node_finalize (ValaCodeNode * obj)
 {
 	ValaCodeNode * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CODE_NODE, ValaCodeNode);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CODE_NODE, ValaCodeNode);
 	g_signal_handlers_destroy (self);
 	_vala_source_reference_unref0 (self->priv->_source_reference);
 	(self->attributes == NULL) ? NULL : (self->attributes = (_g_list_free__vala_code_node_unref0_ (self->attributes), NULL));
@@ -1417,7 +1417,7 @@ vala_code_node_unref (gpointer instance)
 	ValaCodeNode * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_CODE_NODE_GET_CLASS (self)->finalize (self);
+		BALA_CODE_NODE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }
@@ -1433,7 +1433,7 @@ vala_attribute_cache_construct (GType object_type)
 ValaAttributeCache*
 vala_attribute_cache_new (void)
 {
-	return vala_attribute_cache_construct (VALA_TYPE_ATTRIBUTE_CACHE);
+	return vala_attribute_cache_construct (BALA_TYPE_ATTRIBUTE_CACHE);
 }
 
 static void
@@ -1517,7 +1517,7 @@ vala_param_spec_attribute_cache (const gchar* name,
                                  GParamFlags flags)
 {
 	ValaParamSpecAttributeCache* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_ATTRIBUTE_CACHE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_ATTRIBUTE_CACHE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1526,7 +1526,7 @@ vala_param_spec_attribute_cache (const gchar* name,
 gpointer
 vala_value_get_attribute_cache (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_ATTRIBUTE_CACHE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_ATTRIBUTE_CACHE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1535,10 +1535,10 @@ vala_value_set_attribute_cache (GValue* value,
                                 gpointer v_object)
 {
 	ValaAttributeCache * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_ATTRIBUTE_CACHE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_ATTRIBUTE_CACHE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_ATTRIBUTE_CACHE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_ATTRIBUTE_CACHE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_attribute_cache_ref (value->data[0].v_pointer);
@@ -1555,10 +1555,10 @@ vala_value_take_attribute_cache (GValue* value,
                                  gpointer v_object)
 {
 	ValaAttributeCache * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_ATTRIBUTE_CACHE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_ATTRIBUTE_CACHE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_ATTRIBUTE_CACHE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_ATTRIBUTE_CACHE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1588,7 +1588,7 @@ static void
 vala_attribute_cache_finalize (ValaAttributeCache * obj)
 {
 	ValaAttributeCache * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ATTRIBUTE_CACHE, ValaAttributeCache);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ATTRIBUTE_CACHE, ValaAttributeCache);
 	g_signal_handlers_destroy (self);
 }
 
@@ -1630,7 +1630,7 @@ vala_attribute_cache_unref (gpointer instance)
 	ValaAttributeCache * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_ATTRIBUTE_CACHE_GET_CLASS (self)->finalize (self);
+		BALA_ATTRIBUTE_CACHE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

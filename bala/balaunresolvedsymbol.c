@@ -112,7 +112,7 @@ vala_unresolved_symbol_new (ValaUnresolvedSymbol* inner,
                             const gchar* name,
                             ValaSourceReference* source_reference)
 {
-	return vala_unresolved_symbol_construct (VALA_TYPE_UNRESOLVED_SYMBOL, inner, name, source_reference);
+	return vala_unresolved_symbol_construct (BALA_TYPE_UNRESOLVED_SYMBOL, inner, name, source_reference);
 }
 
 ValaUnresolvedSymbol*
@@ -124,7 +124,7 @@ vala_unresolved_symbol_new_from_expression (ValaExpression* expr)
 	ValaSourceReference* _tmp25_;
 	ValaUnresolvedSymbol* result = NULL;
 	g_return_val_if_fail (expr != NULL, NULL);
-	ma = VALA_IS_MEMBER_ACCESS (expr) ? ((ValaMemberAccess*) expr) : NULL;
+	ma = BALA_IS_MEMBER_ACCESS (expr) ? ((ValaMemberAccess*) expr) : NULL;
 	_tmp0_ = ma;
 	if (_tmp0_ != NULL) {
 		ValaMemberAccess* _tmp1_;
@@ -269,9 +269,9 @@ static void
 vala_unresolved_symbol_finalize (ValaCodeNode * obj)
 {
 	ValaUnresolvedSymbol * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_UNRESOLVED_SYMBOL, ValaUnresolvedSymbol);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_UNRESOLVED_SYMBOL, ValaUnresolvedSymbol);
 	_vala_code_node_unref0 (self->priv->_inner);
-	VALA_CODE_NODE_CLASS (vala_unresolved_symbol_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_unresolved_symbol_parent_class)->finalize (obj);
 }
 
 /**
@@ -282,7 +282,7 @@ vala_unresolved_symbol_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaUnresolvedSymbolClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_unresolved_symbol_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaUnresolvedSymbol), 0, (GInstanceInitFunc) vala_unresolved_symbol_instance_init, NULL };
 	GType vala_unresolved_symbol_type_id;
-	vala_unresolved_symbol_type_id = g_type_register_static (VALA_TYPE_SYMBOL, "ValaUnresolvedSymbol", &g_define_type_info, 0);
+	vala_unresolved_symbol_type_id = g_type_register_static (BALA_TYPE_SYMBOL, "ValaUnresolvedSymbol", &g_define_type_info, 0);
 	ValaUnresolvedSymbol_private_offset = g_type_add_instance_private (vala_unresolved_symbol_type_id, sizeof (ValaUnresolvedSymbolPrivate));
 	return vala_unresolved_symbol_type_id;
 }

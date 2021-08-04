@@ -118,7 +118,7 @@ vala_ccode_assignment_module_emit_simple_assignment (ValaCCodeAssignmentModule* 
 	}
 	_tmp12_ = vala_assignment_get_operator (assignment);
 	_tmp13_ = _tmp12_;
-	if (_tmp13_ == VALA_ASSIGNMENT_OPERATOR_SIMPLE) {
+	if (_tmp13_ == BALA_ASSIGNMENT_OPERATOR_SIMPLE) {
 		ValaExpression* _tmp14_;
 		ValaExpression* _tmp15_;
 		ValaTargetValue* _tmp16_;
@@ -159,42 +159,42 @@ vala_ccode_assignment_module_emit_simple_assignment (ValaCCodeAssignmentModule* 
 		_tmp24_ = vala_assignment_get_operator (assignment);
 		_tmp25_ = _tmp24_;
 		switch (_tmp25_) {
-			case VALA_ASSIGNMENT_OPERATOR_BITWISE_OR:
+			case BALA_ASSIGNMENT_OPERATOR_BITWISE_OR:
 			{
-				cop = VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_OR;
+				cop = BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_OR;
 				break;
 			}
-			case VALA_ASSIGNMENT_OPERATOR_BITWISE_AND:
+			case BALA_ASSIGNMENT_OPERATOR_BITWISE_AND:
 			{
-				cop = VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_AND;
+				cop = BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_AND;
 				break;
 			}
-			case VALA_ASSIGNMENT_OPERATOR_BITWISE_XOR:
+			case BALA_ASSIGNMENT_OPERATOR_BITWISE_XOR:
 			{
-				cop = VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_XOR;
+				cop = BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_XOR;
 				break;
 			}
-			case VALA_ASSIGNMENT_OPERATOR_ADD:
+			case BALA_ASSIGNMENT_OPERATOR_ADD:
 			{
-				cop = VALA_CCODE_ASSIGNMENT_OPERATOR_ADD;
+				cop = BALA_CCODE_ASSIGNMENT_OPERATOR_ADD;
 				break;
 			}
-			case VALA_ASSIGNMENT_OPERATOR_SUB:
+			case BALA_ASSIGNMENT_OPERATOR_SUB:
 			{
-				cop = VALA_CCODE_ASSIGNMENT_OPERATOR_SUB;
+				cop = BALA_CCODE_ASSIGNMENT_OPERATOR_SUB;
 				break;
 			}
-			case VALA_ASSIGNMENT_OPERATOR_MUL:
+			case BALA_ASSIGNMENT_OPERATOR_MUL:
 			{
-				cop = VALA_CCODE_ASSIGNMENT_OPERATOR_MUL;
+				cop = BALA_CCODE_ASSIGNMENT_OPERATOR_MUL;
 				break;
 			}
-			case VALA_ASSIGNMENT_OPERATOR_DIV:
+			case BALA_ASSIGNMENT_OPERATOR_DIV:
 			{
-				cop = VALA_CCODE_ASSIGNMENT_OPERATOR_DIV;
+				cop = BALA_CCODE_ASSIGNMENT_OPERATOR_DIV;
 				break;
 			}
-			case VALA_ASSIGNMENT_OPERATOR_PERCENT:
+			case BALA_ASSIGNMENT_OPERATOR_PERCENT:
 			{
 				ValaCCodeExpression* cleft = NULL;
 				ValaExpression* _tmp26_;
@@ -254,7 +254,7 @@ vala_ccode_assignment_module_emit_simple_assignment (ValaCCodeAssignmentModule* 
 					_tmp47_ = _tmp46_;
 					_tmp48_ = ccall;
 					vala_set_cvalue (_tmp47_, (ValaCCodeExpression*) _tmp48_);
-					cop = VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE;
+					cop = BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE;
 					_vala_ccode_node_unref0 (ccall);
 				} else {
 					ValaDataType* _tmp49_;
@@ -295,24 +295,24 @@ vala_ccode_assignment_module_emit_simple_assignment (ValaCCodeAssignmentModule* 
 						_tmp62_ = _tmp61_;
 						_tmp63_ = ccall;
 						vala_set_cvalue (_tmp62_, (ValaCCodeExpression*) _tmp63_);
-						cop = VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE;
+						cop = BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE;
 						_vala_ccode_node_unref0 (ccall);
 					} else {
-						cop = VALA_CCODE_ASSIGNMENT_OPERATOR_PERCENT;
+						cop = BALA_CCODE_ASSIGNMENT_OPERATOR_PERCENT;
 					}
 				}
 				_vala_ccode_node_unref0 (cright);
 				_vala_ccode_node_unref0 (cleft);
 				break;
 			}
-			case VALA_ASSIGNMENT_OPERATOR_SHIFT_LEFT:
+			case BALA_ASSIGNMENT_OPERATOR_SHIFT_LEFT:
 			{
-				cop = VALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_LEFT;
+				cop = BALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_LEFT;
 				break;
 			}
-			case VALA_ASSIGNMENT_OPERATOR_SHIFT_RIGHT:
+			case BALA_ASSIGNMENT_OPERATOR_SHIFT_RIGHT:
 			{
-				cop = VALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_RIGHT;
+				cop = BALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_RIGHT;
 				break;
 			}
 			default:
@@ -339,7 +339,7 @@ vala_ccode_assignment_module_emit_simple_assignment (ValaCCodeAssignmentModule* 
 	_tmp77_ = _tmp76_;
 	_tmp78_ = vala_expression_get_value_type (_tmp77_);
 	_tmp79_ = _tmp78_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp79_, VALA_TYPE_ARRAY_TYPE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp79_, BALA_TYPE_ARRAY_TYPE)) {
 		ValaExpression* _tmp80_;
 		ValaExpression* _tmp81_;
 		ValaDataType* _tmp82_;
@@ -350,7 +350,7 @@ vala_ccode_assignment_module_emit_simple_assignment (ValaCCodeAssignmentModule* 
 		_tmp81_ = _tmp80_;
 		_tmp82_ = vala_expression_get_value_type (_tmp81_);
 		_tmp83_ = _tmp82_;
-		_tmp84_ = vala_array_type_get_inline_allocated (G_TYPE_CHECK_INSTANCE_CAST (_tmp83_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+		_tmp84_ = vala_array_type_get_inline_allocated (G_TYPE_CHECK_INSTANCE_CAST (_tmp83_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 		_tmp85_ = _tmp84_;
 		_tmp75_ = _tmp85_;
 	} else {
@@ -372,7 +372,7 @@ vala_ccode_assignment_module_emit_simple_assignment (ValaCCodeAssignmentModule* 
 		_tmp87_ = _tmp86_;
 		_tmp88_ = vala_expression_get_symbol_reference (_tmp87_);
 		_tmp89_ = _tmp88_;
-		variable = G_TYPE_CHECK_INSTANCE_CAST (_tmp89_, VALA_TYPE_VARIABLE, ValaVariable);
+		variable = G_TYPE_CHECK_INSTANCE_CAST (_tmp89_, BALA_TYPE_VARIABLE, ValaVariable);
 		_tmp90_ = variable;
 		_tmp91_ = vala_assignment_get_left (assignment);
 		_tmp92_ = _tmp91_;
@@ -438,7 +438,7 @@ vala_ccode_assignment_module_real_visit_assignment (ValaCodeVisitor* base,
 	_tmp10_ = _tmp9_;
 	_tmp11_ = vala_expression_get_symbol_reference (_tmp10_);
 	_tmp12_ = _tmp11_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp12_, VALA_TYPE_PROPERTY)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp12_, BALA_TYPE_PROPERTY)) {
 		ValaMemberAccess* ma = NULL;
 		ValaExpression* _tmp13_;
 		ValaExpression* _tmp14_;
@@ -461,12 +461,12 @@ vala_ccode_assignment_module_real_visit_assignment (ValaCodeVisitor* base,
 		ValaTargetValue* _tmp30_;
 		_tmp13_ = vala_assignment_get_left (assignment);
 		_tmp14_ = _tmp13_;
-		ma = G_TYPE_CHECK_INSTANCE_CAST (_tmp14_, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess);
+		ma = G_TYPE_CHECK_INSTANCE_CAST (_tmp14_, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess);
 		_tmp15_ = vala_assignment_get_left (assignment);
 		_tmp16_ = _tmp15_;
 		_tmp17_ = vala_expression_get_symbol_reference (_tmp16_);
 		_tmp18_ = _tmp17_;
-		prop = G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, VALA_TYPE_PROPERTY, ValaProperty);
+		prop = G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, BALA_TYPE_PROPERTY, ValaProperty);
 		_tmp19_ = prop;
 		_tmp20_ = ma;
 		_tmp21_ = vala_member_access_get_inner (_tmp20_);
@@ -491,7 +491,7 @@ vala_ccode_assignment_module_real_visit_assignment (ValaCodeVisitor* base,
 		_tmp33_ = _tmp32_;
 		_tmp34_ = vala_expression_get_symbol_reference (_tmp33_);
 		_tmp35_ = _tmp34_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp35_, VALA_TYPE_VARIABLE)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp35_, BALA_TYPE_VARIABLE)) {
 			ValaExpression* _tmp36_;
 			ValaExpression* _tmp37_;
 			ValaSymbol* _tmp38_;
@@ -504,7 +504,7 @@ vala_ccode_assignment_module_real_visit_assignment (ValaCodeVisitor* base,
 			_tmp39_ = _tmp38_;
 			_tmp40_ = vala_assignment_get_right (assignment);
 			_tmp41_ = _tmp40_;
-			_tmp31_ = vala_ccode_base_module_is_simple_struct_creation ((ValaCCodeBaseModule*) self, G_TYPE_CHECK_INSTANCE_CAST (_tmp39_, VALA_TYPE_VARIABLE, ValaVariable), _tmp41_);
+			_tmp31_ = vala_ccode_base_module_is_simple_struct_creation ((ValaCCodeBaseModule*) self, G_TYPE_CHECK_INSTANCE_CAST (_tmp39_, BALA_TYPE_VARIABLE, ValaVariable), _tmp41_);
 		} else {
 			_tmp31_ = FALSE;
 		}
@@ -560,7 +560,7 @@ vala_ccode_assignment_module_real_store_value (ValaCCodeBaseModule* base,
 	g_return_if_fail (value != NULL);
 	_tmp0_ = vala_target_value_get_value_type (lvalue);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp1_) : NULL);
+	_tmp2_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp1_) : NULL);
 	array_type = _tmp2_;
 	_tmp4_ = array_type;
 	if (_tmp4_ != NULL) {
@@ -637,7 +637,7 @@ vala_ccode_assignment_module_real_store_value (ValaCCodeBaseModule* base,
 		_tmp24_ = vala_ccode_base_module_get_ccodenode ((ValaCCodeBaseModule*) self, _tmp23_);
 		_tmp25_ = _tmp24_;
 		_tmp26_ = sizeof_call;
-		_tmp27_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_MUL, _tmp25_, (ValaCCodeExpression*) _tmp26_);
+		_tmp27_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_MUL, _tmp25_, (ValaCCodeExpression*) _tmp26_);
 		_tmp28_ = _tmp27_;
 		_vala_ccode_node_unref0 (_tmp25_);
 		size = _tmp28_;
@@ -688,7 +688,7 @@ vala_ccode_assignment_module_real_store_value (ValaCCodeBaseModule* base,
 	_tmp53_ = array_type;
 	if (_tmp53_ != NULL) {
 		ValaList* _tmp54_;
-		_tmp54_ = G_TYPE_CHECK_INSTANCE_CAST (lvalue, VALA_TYPE_GLIB_VALUE, ValaGLibValue)->array_length_cvalues;
+		_tmp54_ = G_TYPE_CHECK_INSTANCE_CAST (lvalue, BALA_TYPE_GLIB_VALUE, ValaGLibValue)->array_length_cvalues;
 		_tmp52_ = _tmp54_ != NULL;
 	} else {
 		_tmp52_ = FALSE;
@@ -702,7 +702,7 @@ vala_ccode_assignment_module_real_store_value (ValaCCodeBaseModule* base,
 		ValaArrayType* _tmp93_;
 		gint _tmp94_;
 		gint _tmp95_;
-		_tmp55_ = _vala_target_value_ref0 (G_TYPE_CHECK_INSTANCE_CAST (value, VALA_TYPE_GLIB_VALUE, ValaGLibValue));
+		_tmp55_ = _vala_target_value_ref0 (G_TYPE_CHECK_INSTANCE_CAST (value, BALA_TYPE_GLIB_VALUE, ValaGLibValue));
 		glib_value = _tmp55_;
 		_tmp56_ = glib_value;
 		_tmp57_ = _tmp56_->array_length_cvalues;
@@ -852,7 +852,7 @@ vala_ccode_assignment_module_real_store_value (ValaCCodeBaseModule* base,
 	}
 	_tmp102_ = vala_target_value_get_value_type (lvalue);
 	_tmp103_ = _tmp102_;
-	_tmp104_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp103_, VALA_TYPE_DELEGATE_TYPE) ? ((ValaDelegateType*) _tmp103_) : NULL);
+	_tmp104_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp103_, BALA_TYPE_DELEGATE_TYPE) ? ((ValaDelegateType*) _tmp103_) : NULL);
 	delegate_type = _tmp104_;
 	_tmp106_ = delegate_type;
 	if (_tmp106_ != NULL) {
@@ -1169,7 +1169,7 @@ vala_ccode_assignment_module_real_store_field (ValaCodeGenerator* base,
 	}
 	_tmp14_ = vala_variable_get_variable_type ((ValaVariable*) field);
 	_tmp15_ = _tmp14_;
-	if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp15_, VALA_TYPE_DELEGATE_TYPE)) {
+	if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp15_, BALA_TYPE_DELEGATE_TYPE)) {
 		_tmp13_ = TRUE;
 	} else {
 		_tmp13_ = vala_get_ccode_delegate_target ((ValaCodeNode*) field);
@@ -1210,7 +1210,7 @@ vala_ccode_assignment_module_construct (GType object_type)
 ValaCCodeAssignmentModule*
 vala_ccode_assignment_module_new (void)
 {
-	return vala_ccode_assignment_module_construct (VALA_TYPE_CCODE_ASSIGNMENT_MODULE);
+	return vala_ccode_assignment_module_construct (BALA_TYPE_CCODE_ASSIGNMENT_MODULE);
 }
 
 static void
@@ -1239,7 +1239,7 @@ vala_ccode_assignment_module_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeAssignmentModuleClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_assignment_module_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeAssignmentModule), 0, (GInstanceInitFunc) vala_ccode_assignment_module_instance_init, NULL };
 	GType vala_ccode_assignment_module_type_id;
-	vala_ccode_assignment_module_type_id = g_type_register_static (VALA_TYPE_CCODE_MEMBER_ACCESS_MODULE, "ValaCCodeAssignmentModule", &g_define_type_info, 0);
+	vala_ccode_assignment_module_type_id = g_type_register_static (BALA_TYPE_CCODE_MEMBER_ACCESS_MODULE, "ValaCCodeAssignmentModule", &g_define_type_info, 0);
 	return vala_ccode_assignment_module_type_id;
 }
 

@@ -114,7 +114,7 @@ vala_class_register_function_construct (GType object_type,
 ValaClassRegisterFunction*
 vala_class_register_function_new (ValaClass* cl)
 {
-	return vala_class_register_function_construct (VALA_TYPE_CLASS_REGISTER_FUNCTION, cl);
+	return vala_class_register_function_construct (BALA_TYPE_CLASS_REGISTER_FUNCTION, cl);
 }
 
 static gpointer
@@ -730,14 +730,14 @@ vala_class_register_function_real_get_type_interface_init_declaration (ValaTypeR
 			_tmp11_ = base_type;
 			_tmp12_ = vala_data_type_get_type_symbol (_tmp11_);
 			_tmp13_ = _tmp12_;
-			if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp13_, VALA_TYPE_INTERFACE)) {
+			if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp13_, BALA_TYPE_INTERFACE)) {
 				_vala_code_node_unref0 (base_type);
 				continue;
 			}
 			_tmp14_ = base_type;
 			_tmp15_ = vala_data_type_get_type_symbol (_tmp14_);
 			_tmp16_ = _tmp15_;
-			iface = G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, VALA_TYPE_INTERFACE, ValaInterface);
+			iface = G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, BALA_TYPE_INTERFACE, ValaInterface);
 			_tmp17_ = iface;
 			_tmp18_ = vala_get_ccode_lower_case_name ((ValaCodeNode*) _tmp17_, NULL);
 			_tmp19_ = _tmp18_;
@@ -748,7 +748,7 @@ vala_class_register_function_real_get_type_interface_init_declaration (ValaTypeR
 			_tmp22_ = vala_ccode_declaration_new ("const GInterfaceInfo");
 			ctypedecl = _tmp22_;
 			_tmp23_ = ctypedecl;
-			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp23_, VALA_CCODE_MODIFIERS_STATIC);
+			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp23_, BALA_CCODE_MODIFIERS_STATIC);
 			_tmp24_ = ctypedecl;
 			_tmp25_ = iface_info_name;
 			_tmp26_ = self->priv->_class_reference;
@@ -846,14 +846,14 @@ vala_class_register_function_real_get_type_interface_init_statements (ValaTypeRe
 			_tmp10_ = base_type;
 			_tmp11_ = vala_data_type_get_type_symbol (_tmp10_);
 			_tmp12_ = _tmp11_;
-			if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp12_, VALA_TYPE_INTERFACE)) {
+			if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp12_, BALA_TYPE_INTERFACE)) {
 				_vala_code_node_unref0 (base_type);
 				continue;
 			}
 			_tmp13_ = base_type;
 			_tmp14_ = vala_data_type_get_type_symbol (_tmp13_);
 			_tmp15_ = _tmp14_;
-			iface = G_TYPE_CHECK_INSTANCE_CAST (_tmp15_, VALA_TYPE_INTERFACE, ValaInterface);
+			iface = G_TYPE_CHECK_INSTANCE_CAST (_tmp15_, BALA_TYPE_INTERFACE, ValaInterface);
 			_tmp16_ = iface;
 			_tmp17_ = vala_get_ccode_lower_case_name ((ValaCodeNode*) _tmp16_, NULL);
 			_tmp18_ = _tmp17_;
@@ -1020,7 +1020,7 @@ vala_class_register_function_real_get_type_interface_init_statements (ValaTypeRe
 	_tmp78_ = vala_code_context_get_codegen (context);
 	_tmp79_ = _tmp78_;
 	_tmp80_ = self->priv->_class_reference;
-	vala_ccode_base_module_register_dbus_info (G_TYPE_CHECK_INSTANCE_CAST (_tmp79_, VALA_TYPE_CCODE_BASE_MODULE, ValaCCodeBaseModule), block, (ValaObjectTypeSymbol*) _tmp80_);
+	vala_ccode_base_module_register_dbus_info (G_TYPE_CHECK_INSTANCE_CAST (_tmp79_, BALA_TYPE_CCODE_BASE_MODULE, ValaCCodeBaseModule), block, (ValaObjectTypeSymbol*) _tmp80_);
 }
 
 static void
@@ -1062,8 +1062,8 @@ static void
 vala_class_register_function_finalize (ValaTypeRegisterFunction * obj)
 {
 	ValaClassRegisterFunction * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CLASS_REGISTER_FUNCTION, ValaClassRegisterFunction);
-	VALA_TYPEREGISTER_FUNCTION_CLASS (vala_class_register_function_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CLASS_REGISTER_FUNCTION, ValaClassRegisterFunction);
+	BALA_TYPEREGISTER_FUNCTION_CLASS (vala_class_register_function_parent_class)->finalize (obj);
 }
 
 /**
@@ -1074,7 +1074,7 @@ vala_class_register_function_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaClassRegisterFunctionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_class_register_function_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaClassRegisterFunction), 0, (GInstanceInitFunc) vala_class_register_function_instance_init, NULL };
 	GType vala_class_register_function_type_id;
-	vala_class_register_function_type_id = g_type_register_static (VALA_TYPE_TYPEREGISTER_FUNCTION, "ValaClassRegisterFunction", &g_define_type_info, 0);
+	vala_class_register_function_type_id = g_type_register_static (BALA_TYPE_TYPEREGISTER_FUNCTION, "ValaClassRegisterFunction", &g_define_type_info, 0);
 	ValaClassRegisterFunction_private_offset = g_type_add_instance_private (vala_class_register_function_type_id, sizeof (ValaClassRegisterFunctionPrivate));
 	return vala_class_register_function_type_id;
 }

@@ -106,7 +106,7 @@ ValaCharacterLiteral*
 vala_character_literal_new (const gchar* c,
                             ValaSourceReference* source)
 {
-	return vala_character_literal_construct (VALA_TYPE_CHARACTER_LITERAL, c, source);
+	return vala_character_literal_construct (BALA_TYPE_CHARACTER_LITERAL, c, source);
 }
 
 static void
@@ -214,7 +214,7 @@ vala_character_literal_real_check (ValaCodeNode* base,
 		_tmp6_ = vala_symbol_get_scope ((ValaSymbol*) _tmp5_);
 		_tmp7_ = _tmp6_;
 		_tmp8_ = vala_scope_lookup (_tmp7_, "char");
-		_tmp9_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, VALA_TYPE_STRUCT, ValaStruct);
+		_tmp9_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, BALA_TYPE_STRUCT, ValaStruct);
 		_tmp10_ = vala_integer_type_new (_tmp9_, NULL, NULL);
 		_tmp11_ = _tmp10_;
 		vala_expression_set_value_type ((ValaExpression*) self, (ValaDataType*) _tmp11_);
@@ -234,7 +234,7 @@ vala_character_literal_real_check (ValaCodeNode* base,
 		_tmp14_ = vala_symbol_get_scope ((ValaSymbol*) _tmp13_);
 		_tmp15_ = _tmp14_;
 		_tmp16_ = vala_scope_lookup (_tmp15_, "unichar");
-		_tmp17_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, VALA_TYPE_STRUCT, ValaStruct);
+		_tmp17_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, BALA_TYPE_STRUCT, ValaStruct);
 		_tmp18_ = vala_integer_type_new (_tmp17_, NULL, NULL);
 		_tmp19_ = _tmp18_;
 		vala_expression_set_value_type ((ValaExpression*) self, (ValaDataType*) _tmp19_);
@@ -283,9 +283,9 @@ static void
 vala_character_literal_finalize (ValaCodeNode * obj)
 {
 	ValaCharacterLiteral * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CHARACTER_LITERAL, ValaCharacterLiteral);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CHARACTER_LITERAL, ValaCharacterLiteral);
 	_g_free0 (self->priv->_value);
-	VALA_CODE_NODE_CLASS (vala_character_literal_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_character_literal_parent_class)->finalize (obj);
 }
 
 /**
@@ -296,7 +296,7 @@ vala_character_literal_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCharacterLiteralClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_character_literal_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCharacterLiteral), 0, (GInstanceInitFunc) vala_character_literal_instance_init, NULL };
 	GType vala_character_literal_type_id;
-	vala_character_literal_type_id = g_type_register_static (VALA_TYPE_LITERAL, "ValaCharacterLiteral", &g_define_type_info, 0);
+	vala_character_literal_type_id = g_type_register_static (BALA_TYPE_LITERAL, "ValaCharacterLiteral", &g_define_type_info, 0);
 	ValaCharacterLiteral_private_offset = g_type_add_instance_private (vala_character_literal_type_id, sizeof (ValaCharacterLiteralPrivate));
 	return vala_character_literal_type_id;
 }

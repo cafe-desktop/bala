@@ -36,22 +36,22 @@
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _vala_code_node_unref0(var) ((var == NULL) ? NULL : (var = (vala_code_node_unref (var), NULL)))
 
-#define VALADOC_TYPE_TREE_BUILDER (valadoc_tree_builder_get_type ())
-#define VALADOC_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilder))
-#define VALADOC_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
-#define VALADOC_IS_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TYPE_TREE_BUILDER))
-#define VALADOC_IS_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TYPE_TREE_BUILDER))
-#define VALADOC_TREE_BUILDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
+#define BALADOC_TYPE_TREE_BUILDER (valadoc_tree_builder_get_type ())
+#define BALADOC_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilder))
+#define BALADOC_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
+#define BALADOC_IS_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TYPE_TREE_BUILDER))
+#define BALADOC_IS_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TYPE_TREE_BUILDER))
+#define BALADOC_TREE_BUILDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
 
 typedef struct _ValadocTreeBuilder ValadocTreeBuilder;
 typedef struct _ValadocTreeBuilderClass ValadocTreeBuilderClass;
 
-#define VALADOC_TYPE_SYMBOL_RESOLVER (valadoc_symbol_resolver_get_type ())
-#define VALADOC_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolver))
-#define VALADOC_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
-#define VALADOC_IS_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TYPE_SYMBOL_RESOLVER))
-#define VALADOC_IS_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TYPE_SYMBOL_RESOLVER))
-#define VALADOC_SYMBOL_RESOLVER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
+#define BALADOC_TYPE_SYMBOL_RESOLVER (valadoc_symbol_resolver_get_type ())
+#define BALADOC_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolver))
+#define BALADOC_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
+#define BALADOC_IS_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TYPE_SYMBOL_RESOLVER))
+#define BALADOC_IS_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TYPE_SYMBOL_RESOLVER))
+#define BALADOC_SYMBOL_RESOLVER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
 
 typedef struct _ValadocSymbolResolver ValadocSymbolResolver;
 typedef struct _ValadocSymbolResolverClass ValadocSymbolResolverClass;
@@ -289,7 +289,7 @@ test_enum_global (ValadocApiEnum* en,
 	_vala_assert (_tmp5_ == FALSE, "en.is_deprecated == false");
 	_tmp6_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) en);
 	_tmp7_ = _tmp6_;
-	_vala_assert (_tmp7_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "en.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp7_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "en.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp8_ = valadoc_api_node_get_full_name ((ValadocApiNode*) en);
 	_tmp9_ = _tmp8_;
 	_vala_assert (g_strcmp0 (_tmp9_, "TestEnumGlobal") == 0, "en.get_full_name () == \"TestEnumGlobal\"");
@@ -307,7 +307,7 @@ test_enum_global (ValadocApiEnum* en,
 	_tmp16_ = valadoc_documentation_get_package ((ValadocDocumentation*) en);
 	_tmp17_ = _tmp16_;
 	_vala_assert (_tmp17_ == pkg, "en.package == pkg");
-	_tmp18_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) en, VALADOC_API_NODE_TYPE_ENUM_VALUE, FALSE);
+	_tmp18_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) en, BALADOC_API_NODE_TYPE_ENUM_VALUE, FALSE);
 	enumvalues = _tmp18_;
 	_tmp19_ = enumvalues;
 	_tmp20_ = vala_collection_get_size ((ValaCollection*) _tmp19_);
@@ -359,7 +359,7 @@ test_enum_global (ValadocApiEnum* en,
 			_tmp30_ = vala_list_get (_tmp29_, _node_index);
 			node = (ValadocApiNode*) _tmp30_;
 			_tmp31_ = node;
-			_tmp32_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp31_, VALADOC_API_TYPE_ENUM_VALUE) ? ((ValadocApiEnumValue*) _tmp31_) : NULL);
+			_tmp32_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp31_, BALADOC_API_TYPE_ENUM_VALUE) ? ((ValadocApiEnumValue*) _tmp31_) : NULL);
 			enval = _tmp32_;
 			_tmp33_ = enval;
 			_vala_assert (_tmp33_ != NULL, "enval != null");
@@ -419,7 +419,7 @@ test_enum_global (ValadocApiEnum* en,
 						_tmp52_ = enval;
 						_tmp53_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp52_);
 						_tmp54_ = _tmp53_;
-						_vala_assert (_tmp54_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "enval.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp54_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "enval.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp55_ = enval;
 						_tmp56_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp55_);
 						_tmp57_ = _tmp56_;
@@ -493,7 +493,7 @@ test_enum_global (ValadocApiEnum* en,
 						_tmp79_ = enval;
 						_tmp80_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp79_);
 						_tmp81_ = _tmp80_;
-						_vala_assert (_tmp81_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "enval.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp81_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "enval.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp82_ = enval;
 						_tmp83_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp82_);
 						_tmp84_ = _tmp83_;
@@ -531,7 +531,7 @@ test_enum_global (ValadocApiEnum* en,
 	}
 	_vala_assert (enval1 == TRUE, "enval1 == true");
 	_vala_assert (enval2 == TRUE, "enval2 == true");
-	_tmp94_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) en, VALADOC_API_NODE_TYPE_METHOD, FALSE);
+	_tmp94_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) en, BALADOC_API_NODE_TYPE_METHOD, FALSE);
 	methods = _tmp94_;
 	_tmp95_ = methods;
 	_tmp96_ = vala_collection_get_size ((ValaCollection*) _tmp95_);
@@ -540,7 +540,7 @@ test_enum_global (ValadocApiEnum* en,
 	_tmp98_ = methods;
 	_tmp99_ = vala_list_get (_tmp98_, 0);
 	_tmp100_ = (ValadocApiNode*) _tmp99_;
-	_tmp101_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp100_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp100_) : NULL;
+	_tmp101_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp100_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp100_) : NULL;
 	if (_tmp101_ == NULL) {
 		_g_object_unref0 (_tmp100_);
 	}
@@ -591,7 +591,7 @@ test_enum_global (ValadocApiEnum* en,
 	_tmp133_ = method;
 	_tmp134_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp133_);
 	_tmp135_ = _tmp134_;
-	_vala_assert (_tmp135_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp135_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp136_ = method;
 	_tmp137_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp136_);
 	_tmp138_ = _tmp137_;
@@ -614,7 +614,7 @@ test_enum_global (ValadocApiEnum* en,
 	_tmp149_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp148_);
 	_tmp150_ = _tmp149_;
 	_vala_assert (_tmp150_ == pkg, "method.package == pkg");
-	_tmp151_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) en, VALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
+	_tmp151_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) en, BALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
 	_vala_iterable_unref0 (methods);
 	methods = _tmp151_;
 	_tmp152_ = methods;
@@ -624,7 +624,7 @@ test_enum_global (ValadocApiEnum* en,
 	_tmp155_ = methods;
 	_tmp156_ = vala_list_get (_tmp155_, 0);
 	_tmp157_ = (ValadocApiNode*) _tmp156_;
-	_tmp158_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp157_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp157_) : NULL;
+	_tmp158_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp157_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp157_) : NULL;
 	if (_tmp158_ == NULL) {
 		_g_object_unref0 (_tmp157_);
 	}
@@ -676,7 +676,7 @@ test_enum_global (ValadocApiEnum* en,
 	_tmp190_ = method;
 	_tmp191_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp190_);
 	_tmp192_ = _tmp191_;
-	_vala_assert (_tmp192_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp192_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp193_ = method;
 	_tmp194_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp193_);
 	_tmp195_ = _tmp194_;
@@ -700,23 +700,23 @@ test_enum_global (ValadocApiEnum* en,
 	_tmp207_ = _tmp206_;
 	_vala_assert (_tmp207_ == pkg, "method.package == pkg");
 	_tmp208_ = g_new0 (ValadocApiNodeType, 17);
-	_tmp208_[0] = VALADOC_API_NODE_TYPE_CLASS;
-	_tmp208_[1] = VALADOC_API_NODE_TYPE_CONSTANT;
-	_tmp208_[2] = VALADOC_API_NODE_TYPE_CREATION_METHOD;
-	_tmp208_[3] = VALADOC_API_NODE_TYPE_DELEGATE;
-	_tmp208_[4] = VALADOC_API_NODE_TYPE_ENUM;
-	_tmp208_[5] = VALADOC_API_NODE_TYPE_ERROR_CODE;
-	_tmp208_[6] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-	_tmp208_[7] = VALADOC_API_NODE_TYPE_FIELD;
-	_tmp208_[8] = VALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
-	_tmp208_[9] = VALADOC_API_NODE_TYPE_INTERFACE;
-	_tmp208_[10] = VALADOC_API_NODE_TYPE_NAMESPACE;
-	_tmp208_[11] = VALADOC_API_NODE_TYPE_PACKAGE;
-	_tmp208_[12] = VALADOC_API_NODE_TYPE_PROPERTY;
-	_tmp208_[13] = VALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
-	_tmp208_[14] = VALADOC_API_NODE_TYPE_SIGNAL;
-	_tmp208_[15] = VALADOC_API_NODE_TYPE_STRUCT;
-	_tmp208_[16] = VALADOC_API_NODE_TYPE_TYPE_PARAMETER;
+	_tmp208_[0] = BALADOC_API_NODE_TYPE_CLASS;
+	_tmp208_[1] = BALADOC_API_NODE_TYPE_CONSTANT;
+	_tmp208_[2] = BALADOC_API_NODE_TYPE_CREATION_METHOD;
+	_tmp208_[3] = BALADOC_API_NODE_TYPE_DELEGATE;
+	_tmp208_[4] = BALADOC_API_NODE_TYPE_ENUM;
+	_tmp208_[5] = BALADOC_API_NODE_TYPE_ERROR_CODE;
+	_tmp208_[6] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+	_tmp208_[7] = BALADOC_API_NODE_TYPE_FIELD;
+	_tmp208_[8] = BALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
+	_tmp208_[9] = BALADOC_API_NODE_TYPE_INTERFACE;
+	_tmp208_[10] = BALADOC_API_NODE_TYPE_NAMESPACE;
+	_tmp208_[11] = BALADOC_API_NODE_TYPE_PACKAGE;
+	_tmp208_[12] = BALADOC_API_NODE_TYPE_PROPERTY;
+	_tmp208_[13] = BALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
+	_tmp208_[14] = BALADOC_API_NODE_TYPE_SIGNAL;
+	_tmp208_[15] = BALADOC_API_NODE_TYPE_STRUCT;
+	_tmp208_[16] = BALADOC_API_NODE_TYPE_TYPE_PARAMETER;
 	forbidden = _tmp208_;
 	forbidden_length1 = 17;
 	_forbidden_size_ = forbidden_length1;
@@ -825,7 +825,7 @@ test_erroromain_global (ValadocApiErrorDomain* err,
 	_vala_assert (_tmp5_ == FALSE, "err.is_deprecated == false");
 	_tmp6_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) err);
 	_tmp7_ = _tmp6_;
-	_vala_assert (_tmp7_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "err.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp7_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "err.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp8_ = valadoc_api_node_get_full_name ((ValadocApiNode*) err);
 	_tmp9_ = _tmp8_;
 	_vala_assert (g_strcmp0 (_tmp9_, "TestErrDomGlobal") == 0, "err.get_full_name () == \"TestErrDomGlobal\"");
@@ -843,7 +843,7 @@ test_erroromain_global (ValadocApiErrorDomain* err,
 	_tmp16_ = valadoc_documentation_get_package ((ValadocDocumentation*) err);
 	_tmp17_ = _tmp16_;
 	_vala_assert (_tmp17_ == pkg, "err.package == pkg");
-	_tmp18_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) err, VALADOC_API_NODE_TYPE_ERROR_CODE, FALSE);
+	_tmp18_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) err, BALADOC_API_NODE_TYPE_ERROR_CODE, FALSE);
 	errcodes = _tmp18_;
 	_tmp19_ = errcodes;
 	_tmp20_ = vala_collection_get_size ((ValaCollection*) _tmp19_);
@@ -895,7 +895,7 @@ test_erroromain_global (ValadocApiErrorDomain* err,
 			_tmp30_ = vala_list_get (_tmp29_, _node_index);
 			node = (ValadocApiNode*) _tmp30_;
 			_tmp31_ = node;
-			_tmp32_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp31_, VALADOC_API_TYPE_ERROR_CODE) ? ((ValadocApiErrorCode*) _tmp31_) : NULL);
+			_tmp32_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp31_, BALADOC_API_TYPE_ERROR_CODE) ? ((ValadocApiErrorCode*) _tmp31_) : NULL);
 			errc = _tmp32_;
 			_tmp33_ = errc;
 			_vala_assert (_tmp33_ != NULL, "errc != null");
@@ -941,7 +941,7 @@ test_erroromain_global (ValadocApiErrorDomain* err,
 						_tmp46_ = errc;
 						_tmp47_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp46_);
 						_tmp48_ = _tmp47_;
-						_vala_assert (_tmp48_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "errc.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp48_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "errc.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp49_ = errc;
 						_tmp50_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp49_);
 						_tmp51_ = _tmp50_;
@@ -1001,7 +1001,7 @@ test_erroromain_global (ValadocApiErrorDomain* err,
 						_tmp67_ = errc;
 						_tmp68_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp67_);
 						_tmp69_ = _tmp68_;
-						_vala_assert (_tmp69_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "errc.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp69_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "errc.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp70_ = errc;
 						_tmp71_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp70_);
 						_tmp72_ = _tmp71_;
@@ -1039,14 +1039,14 @@ test_erroromain_global (ValadocApiErrorDomain* err,
 	}
 	_vala_assert (errc1 == TRUE, "errc1 == true");
 	_vala_assert (errc2 == TRUE, "errc2 == true");
-	_tmp82_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) err, VALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
+	_tmp82_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) err, BALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
 	methods = _tmp82_;
 	_tmp83_ = vala_collection_get_size ((ValaCollection*) methods);
 	_tmp84_ = _tmp83_;
 	_vala_assert (_tmp84_ == 2, "methods.size == 2");
 	_tmp85_ = vala_list_get (methods, 0);
 	_tmp86_ = (ValadocApiNode*) _tmp85_;
-	_tmp87_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp86_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp86_) : NULL;
+	_tmp87_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp86_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp86_) : NULL;
 	if (_tmp87_ == NULL) {
 		_g_object_unref0 (_tmp86_);
 	}
@@ -1085,7 +1085,7 @@ test_erroromain_global (ValadocApiErrorDomain* err,
 	_vala_assert (_tmp107_ == FALSE, "method.is_deprecated == false");
 	_tmp108_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) method);
 	_tmp109_ = _tmp108_;
-	_vala_assert (_tmp109_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp109_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp110_ = valadoc_api_node_get_full_name ((ValadocApiNode*) method);
 	_tmp111_ = _tmp110_;
 	_vala_assert (g_strcmp0 (_tmp111_, "TestErrDomGlobal.static_method") == 0, "method.get_full_name () == \"TestErrDomGlobal.static_method\"");
@@ -1104,23 +1104,23 @@ test_erroromain_global (ValadocApiErrorDomain* err,
 	_tmp119_ = _tmp118_;
 	_vala_assert (_tmp119_ == pkg, "method.package == pkg");
 	_tmp120_ = g_new0 (ValadocApiNodeType, 17);
-	_tmp120_[0] = VALADOC_API_NODE_TYPE_CLASS;
-	_tmp120_[1] = VALADOC_API_NODE_TYPE_CONSTANT;
-	_tmp120_[2] = VALADOC_API_NODE_TYPE_CREATION_METHOD;
-	_tmp120_[3] = VALADOC_API_NODE_TYPE_DELEGATE;
-	_tmp120_[4] = VALADOC_API_NODE_TYPE_ENUM;
-	_tmp120_[5] = VALADOC_API_NODE_TYPE_ENUM_VALUE;
-	_tmp120_[6] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-	_tmp120_[7] = VALADOC_API_NODE_TYPE_FIELD;
-	_tmp120_[8] = VALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
-	_tmp120_[9] = VALADOC_API_NODE_TYPE_INTERFACE;
-	_tmp120_[10] = VALADOC_API_NODE_TYPE_NAMESPACE;
-	_tmp120_[11] = VALADOC_API_NODE_TYPE_PACKAGE;
-	_tmp120_[12] = VALADOC_API_NODE_TYPE_PROPERTY;
-	_tmp120_[13] = VALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
-	_tmp120_[14] = VALADOC_API_NODE_TYPE_SIGNAL;
-	_tmp120_[15] = VALADOC_API_NODE_TYPE_STRUCT;
-	_tmp120_[16] = VALADOC_API_NODE_TYPE_TYPE_PARAMETER;
+	_tmp120_[0] = BALADOC_API_NODE_TYPE_CLASS;
+	_tmp120_[1] = BALADOC_API_NODE_TYPE_CONSTANT;
+	_tmp120_[2] = BALADOC_API_NODE_TYPE_CREATION_METHOD;
+	_tmp120_[3] = BALADOC_API_NODE_TYPE_DELEGATE;
+	_tmp120_[4] = BALADOC_API_NODE_TYPE_ENUM;
+	_tmp120_[5] = BALADOC_API_NODE_TYPE_ENUM_VALUE;
+	_tmp120_[6] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+	_tmp120_[7] = BALADOC_API_NODE_TYPE_FIELD;
+	_tmp120_[8] = BALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
+	_tmp120_[9] = BALADOC_API_NODE_TYPE_INTERFACE;
+	_tmp120_[10] = BALADOC_API_NODE_TYPE_NAMESPACE;
+	_tmp120_[11] = BALADOC_API_NODE_TYPE_PACKAGE;
+	_tmp120_[12] = BALADOC_API_NODE_TYPE_PROPERTY;
+	_tmp120_[13] = BALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
+	_tmp120_[14] = BALADOC_API_NODE_TYPE_SIGNAL;
+	_tmp120_[15] = BALADOC_API_NODE_TYPE_STRUCT;
+	_tmp120_[16] = BALADOC_API_NODE_TYPE_TYPE_PARAMETER;
 	forbidden = _tmp120_;
 	forbidden_length1 = 17;
 	_forbidden_size_ = forbidden_length1;
@@ -1547,7 +1547,7 @@ test_class_global (ValadocApiClass* cl,
 	_vala_assert (_tmp33_ == FALSE, "cl.is_deprecated == false");
 	_tmp34_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) cl);
 	_tmp35_ = _tmp34_;
-	_vala_assert (_tmp35_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "cl.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp35_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "cl.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp36_ = valadoc_api_node_get_full_name ((ValadocApiNode*) cl);
 	_tmp37_ = _tmp36_;
 	_vala_assert (g_strcmp0 (_tmp37_, "TestClassGlobal") == 0, "cl.get_full_name () == \"TestClassGlobal\"");
@@ -1565,7 +1565,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp44_ = valadoc_documentation_get_package ((ValadocDocumentation*) cl);
 	_tmp45_ = _tmp44_;
 	_vala_assert (_tmp45_ == pkg, "cl.package == pkg");
-	_tmp46_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_METHOD, FALSE);
+	_tmp46_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_METHOD, FALSE);
 	methods = _tmp46_;
 	_tmp47_ = methods;
 	_tmp48_ = vala_collection_get_size ((ValaCollection*) _tmp47_);
@@ -1574,7 +1574,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp50_ = methods;
 	_tmp51_ = vala_list_get (_tmp50_, 0);
 	_tmp52_ = (ValadocApiNode*) _tmp51_;
-	_tmp53_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp52_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp52_) : NULL;
+	_tmp53_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp52_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp52_) : NULL;
 	if (_tmp53_ == NULL) {
 		_g_object_unref0 (_tmp52_);
 	}
@@ -1625,7 +1625,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp85_ = method;
 	_tmp86_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp85_);
 	_tmp87_ = _tmp86_;
-	_vala_assert (_tmp87_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp87_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp88_ = method;
 	_tmp89_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp88_);
 	_tmp90_ = _tmp89_;
@@ -1648,7 +1648,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp101_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp100_);
 	_tmp102_ = _tmp101_;
 	_vala_assert (_tmp102_ == pkg, "method.package == pkg");
-	_tmp103_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
+	_tmp103_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
 	_vala_iterable_unref0 (methods);
 	methods = _tmp103_;
 	_tmp104_ = methods;
@@ -1658,7 +1658,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp107_ = methods;
 	_tmp108_ = vala_list_get (_tmp107_, 0);
 	_tmp109_ = (ValadocApiNode*) _tmp108_;
-	_tmp110_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp109_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp109_) : NULL;
+	_tmp110_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp109_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp109_) : NULL;
 	if (_tmp110_ == NULL) {
 		_g_object_unref0 (_tmp109_);
 	}
@@ -1710,7 +1710,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp142_ = method;
 	_tmp143_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp142_);
 	_tmp144_ = _tmp143_;
-	_vala_assert (_tmp144_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp144_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp145_ = method;
 	_tmp146_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp145_);
 	_tmp147_ = _tmp146_;
@@ -1733,7 +1733,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp158_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp157_);
 	_tmp159_ = _tmp158_;
 	_vala_assert (_tmp159_ == pkg, "method.package == pkg");
-	_tmp160_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_CREATION_METHOD, FALSE);
+	_tmp160_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_CREATION_METHOD, FALSE);
 	_vala_iterable_unref0 (methods);
 	methods = _tmp160_;
 	default_constr = FALSE;
@@ -1781,7 +1781,7 @@ test_class_global (ValadocApiClass* cl,
 			_tmp169_ = vala_list_get (_tmp168_, _node_index);
 			node = (ValadocApiNode*) _tmp169_;
 			_tmp170_ = node;
-			_tmp171_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp170_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp170_) : NULL);
+			_tmp171_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp170_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp170_) : NULL);
 			_g_object_unref0 (method);
 			method = _tmp171_;
 			_tmp172_ = method;
@@ -1884,7 +1884,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp209_ = method;
 						_tmp210_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp209_);
 						_tmp211_ = _tmp210_;
-						_vala_assert (_tmp211_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp211_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp212_ = method;
 						_tmp213_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp212_);
 						_tmp214_ = _tmp213_;
@@ -2000,7 +2000,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp254_ = method;
 						_tmp255_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp254_);
 						_tmp256_ = _tmp255_;
-						_vala_assert (_tmp256_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp256_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp257_ = method;
 						_tmp258_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp257_);
 						_tmp259_ = _tmp258_;
@@ -2037,7 +2037,7 @@ test_class_global (ValadocApiClass* cl,
 	}
 	_vala_assert (default_constr == TRUE, "default_constr == true");
 	_vala_assert (named_constr == TRUE, "named_constr == true");
-	_tmp269_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_PROPERTY, FALSE);
+	_tmp269_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_PROPERTY, FALSE);
 	properties = _tmp269_;
 	prop1 = FALSE;
 	prop2 = FALSE;
@@ -2087,7 +2087,7 @@ test_class_global (ValadocApiClass* cl,
 			_tmp278_ = vala_list_get (_tmp277_, _node_index);
 			node = (ValadocApiNode*) _tmp278_;
 			_tmp279_ = node;
-			_tmp280_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp279_, VALADOC_API_TYPE_PROPERTY) ? ((ValadocApiProperty*) _tmp279_) : NULL);
+			_tmp280_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp279_, BALADOC_API_TYPE_PROPERTY) ? ((ValadocApiProperty*) _tmp279_) : NULL);
 			property = _tmp280_;
 			_tmp281_ = property;
 			_vala_assert (_tmp281_ != NULL, "property != null");
@@ -2289,7 +2289,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp318_ = property;
 						_tmp319_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp318_);
 						_tmp320_ = _tmp319_;
-						_vala_assert (_tmp320_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp320_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp321_ = property;
 						_tmp322_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp321_);
 						_tmp323_ = _tmp322_;
@@ -2350,7 +2350,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp365_ = _tmp364_;
 						_tmp366_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp365_);
 						_tmp367_ = _tmp366_;
-						_vala_assert (_tmp367_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp367_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp368_ = property;
 						_tmp369_ = valadoc_api_property_get_getter (_tmp368_);
 						_tmp370_ = _tmp369_;
@@ -2412,7 +2412,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp415_ = _tmp414_;
 						_tmp416_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp415_);
 						_tmp417_ = _tmp416_;
-						_vala_assert (_tmp417_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp417_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp418_ = property;
 						_tmp419_ = valadoc_api_property_get_setter (_tmp418_);
 						_tmp420_ = _tmp419_;
@@ -2579,7 +2579,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp463_ = property;
 						_tmp464_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp463_);
 						_tmp465_ = _tmp464_;
-						_vala_assert (_tmp465_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp465_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp466_ = property;
 						_tmp467_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp466_);
 						_tmp468_ = _tmp467_;
@@ -2640,7 +2640,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp510_ = _tmp509_;
 						_tmp511_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp510_);
 						_tmp512_ = _tmp511_;
-						_vala_assert (_tmp512_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp512_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp513_ = property;
 						_tmp514_ = valadoc_api_property_get_getter (_tmp513_);
 						_tmp515_ = _tmp514_;
@@ -2857,7 +2857,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp558_ = property;
 						_tmp559_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp558_);
 						_tmp560_ = _tmp559_;
-						_vala_assert (_tmp560_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp560_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp561_ = property;
 						_tmp562_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp561_);
 						_tmp563_ = _tmp562_;
@@ -2918,7 +2918,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp605_ = _tmp604_;
 						_tmp606_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp605_);
 						_tmp607_ = _tmp606_;
-						_vala_assert (_tmp607_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp607_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp608_ = property;
 						_tmp609_ = valadoc_api_property_get_getter (_tmp608_);
 						_tmp610_ = _tmp609_;
@@ -2980,7 +2980,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp655_ = _tmp654_;
 						_tmp656_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp655_);
 						_tmp657_ = _tmp656_;
-						_vala_assert (_tmp657_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp657_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp658_ = property;
 						_tmp659_ = valadoc_api_property_get_setter (_tmp658_);
 						_tmp660_ = _tmp659_;
@@ -3020,7 +3020,7 @@ test_class_global (ValadocApiClass* cl,
 	_vala_assert (prop1, "prop1");
 	_vala_assert (prop2, "prop2");
 	_vala_assert (prop3, "prop3");
-	_tmp673_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_DELEGATE, FALSE);
+	_tmp673_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_DELEGATE, FALSE);
 	delegates = _tmp673_;
 	_tmp674_ = delegates;
 	_tmp675_ = vala_collection_get_size ((ValaCollection*) _tmp674_);
@@ -3029,7 +3029,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp677_ = delegates;
 	_tmp678_ = vala_list_get (_tmp677_, 0);
 	_tmp679_ = (ValadocApiNode*) _tmp678_;
-	_tmp680_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp679_, VALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp679_) : NULL;
+	_tmp680_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp679_, BALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp679_) : NULL;
 	if (_tmp680_ == NULL) {
 		_g_object_unref0 (_tmp679_);
 	}
@@ -3056,7 +3056,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp694_ = del;
 	_tmp695_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp694_);
 	_tmp696_ = _tmp695_;
-	_vala_assert (_tmp696_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "del.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp696_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "del.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp697_ = del;
 	_tmp698_ = valadoc_documentation_get_filename ((ValadocDocumentation*) _tmp697_);
 	_tmp699_ = _tmp698_;
@@ -3070,7 +3070,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp704_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp703_);
 	_tmp705_ = _tmp704_;
 	_vala_assert (_tmp705_ == pkg, "del.package == pkg");
-	_tmp706_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_SIGNAL, FALSE);
+	_tmp706_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_SIGNAL, FALSE);
 	signals = _tmp706_;
 	_tmp707_ = signals;
 	_tmp708_ = vala_collection_get_size ((ValaCollection*) _tmp707_);
@@ -3079,7 +3079,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp710_ = signals;
 	_tmp711_ = vala_list_get (_tmp710_, 0);
 	_tmp712_ = (ValadocApiNode*) _tmp711_;
-	_tmp713_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp712_, VALADOC_API_TYPE_SIGNAL) ? ((ValadocApiSignal*) _tmp712_) : NULL;
+	_tmp713_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp712_, BALADOC_API_TYPE_SIGNAL) ? ((ValadocApiSignal*) _tmp712_) : NULL;
 	if (_tmp713_ == NULL) {
 		_g_object_unref0 (_tmp712_);
 	}
@@ -3106,7 +3106,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp727_ = sig;
 	_tmp728_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp727_);
 	_tmp729_ = _tmp728_;
-	_vala_assert (_tmp729_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "sig.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp729_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "sig.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp730_ = sig;
 	_tmp731_ = valadoc_documentation_get_filename ((ValadocDocumentation*) _tmp730_);
 	_tmp732_ = _tmp731_;
@@ -3120,7 +3120,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp737_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp736_);
 	_tmp738_ = _tmp737_;
 	_vala_assert (_tmp738_ == pkg, "sig.package == pkg");
-	_tmp739_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_CONSTANT, FALSE);
+	_tmp739_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_CONSTANT, FALSE);
 	constants = _tmp739_;
 	_tmp740_ = constants;
 	_tmp741_ = vala_collection_get_size ((ValaCollection*) _tmp740_);
@@ -3129,7 +3129,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp743_ = constants;
 	_tmp744_ = vala_list_get (_tmp743_, 0);
 	_tmp745_ = (ValadocApiNode*) _tmp744_;
-	_tmp746_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp745_, VALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp745_) : NULL;
+	_tmp746_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp745_, BALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp745_) : NULL;
 	if (_tmp746_ == NULL) {
 		_g_object_unref0 (_tmp745_);
 	}
@@ -3148,7 +3148,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp754_ = constant;
 	_tmp755_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp754_);
 	_tmp756_ = _tmp755_;
-	_vala_assert (_tmp756_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "constant.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp756_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "constant.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp757_ = constant;
 	_tmp758_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp757_);
 	_tmp759_ = _tmp758_;
@@ -3171,7 +3171,7 @@ test_class_global (ValadocApiClass* cl,
 	_tmp770_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp769_);
 	_tmp771_ = _tmp770_;
 	_vala_assert (_tmp771_ == pkg, "constant.package == pkg");
-	_tmp772_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_FIELD, FALSE);
+	_tmp772_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_FIELD, FALSE);
 	fields = _tmp772_;
 	field1 = FALSE;
 	field2 = FALSE;
@@ -3219,7 +3219,7 @@ test_class_global (ValadocApiClass* cl,
 			_tmp781_ = vala_list_get (_tmp780_, _node_index);
 			node = (ValadocApiNode*) _tmp781_;
 			_tmp782_ = node;
-			_tmp783_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp782_, VALADOC_API_TYPE_FIELD) ? ((ValadocApiField*) _tmp782_) : NULL);
+			_tmp783_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp782_, BALADOC_API_TYPE_FIELD) ? ((ValadocApiField*) _tmp782_) : NULL);
 			field = _tmp783_;
 			_tmp784_ = field;
 			_vala_assert (_tmp784_ != NULL, "field != null");
@@ -3279,7 +3279,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp803_ = field;
 						_tmp804_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp803_);
 						_tmp805_ = _tmp804_;
-						_vala_assert (_tmp805_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp805_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp806_ = field;
 						_tmp807_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp806_);
 						_tmp808_ = _tmp807_;
@@ -3353,7 +3353,7 @@ test_class_global (ValadocApiClass* cl,
 						_tmp830_ = field;
 						_tmp831_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp830_);
 						_tmp832_ = _tmp831_;
-						_vala_assert (_tmp832_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp832_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp833_ = field;
 						_tmp834_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp833_);
 						_tmp835_ = _tmp834_;
@@ -3391,14 +3391,14 @@ test_class_global (ValadocApiClass* cl,
 	}
 	_vala_assert (field1 == TRUE, "field1 == true");
 	_vala_assert (field2 == TRUE, "field2 == true");
-	_tmp845_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_CLASS, FALSE);
+	_tmp845_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_CLASS, FALSE);
 	classes = _tmp845_;
 	_tmp846_ = vala_collection_get_size ((ValaCollection*) classes);
 	_tmp847_ = _tmp846_;
 	_vala_assert (_tmp847_ == 1, "classes.size == 1");
 	_tmp848_ = vala_list_get (classes, 0);
 	_tmp849_ = (ValadocApiNode*) _tmp848_;
-	_tmp850_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp849_, VALADOC_API_TYPE_CLASS) ? ((ValadocApiClass*) _tmp849_) : NULL;
+	_tmp850_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp849_, BALADOC_API_TYPE_CLASS) ? ((ValadocApiClass*) _tmp849_) : NULL;
 	if (_tmp850_ == NULL) {
 		_g_object_unref0 (_tmp849_);
 	}
@@ -3412,7 +3412,7 @@ test_class_global (ValadocApiClass* cl,
 	_vala_assert (_tmp854_ == FALSE, "subcl.is_deprecated == false");
 	_tmp855_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) subcl);
 	_tmp856_ = _tmp855_;
-	_vala_assert (_tmp856_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "subcl.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp856_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "subcl.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp857_ = valadoc_api_node_get_full_name ((ValadocApiNode*) subcl);
 	_tmp858_ = _tmp857_;
 	_vala_assert (g_strcmp0 (_tmp858_, "TestClassGlobal.InnerClass") == 0, "subcl.get_full_name () == \"TestClassGlobal.InnerClass\"");
@@ -3427,14 +3427,14 @@ test_class_global (ValadocApiClass* cl,
 	_tmp863_ = valadoc_documentation_get_package ((ValadocDocumentation*) subcl);
 	_tmp864_ = _tmp863_;
 	_vala_assert (_tmp864_ == pkg, "subcl.package == pkg");
-	_tmp865_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, VALADOC_API_NODE_TYPE_STRUCT, FALSE);
+	_tmp865_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) cl, BALADOC_API_NODE_TYPE_STRUCT, FALSE);
 	structs = _tmp865_;
 	_tmp866_ = vala_collection_get_size ((ValaCollection*) structs);
 	_tmp867_ = _tmp866_;
 	_vala_assert (_tmp867_ == 1, "structs.size == 1");
 	_tmp868_ = vala_list_get (structs, 0);
 	_tmp869_ = (ValadocApiNode*) _tmp868_;
-	_tmp870_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp869_, VALADOC_API_TYPE_STRUCT) ? ((ValadocApiStruct*) _tmp869_) : NULL;
+	_tmp870_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp869_, BALADOC_API_TYPE_STRUCT) ? ((ValadocApiStruct*) _tmp869_) : NULL;
 	if (_tmp870_ == NULL) {
 		_g_object_unref0 (_tmp869_);
 	}
@@ -3464,7 +3464,7 @@ test_class_global (ValadocApiClass* cl,
 	_vala_assert (_tmp882_ == FALSE, "substru.is_deprecated == false");
 	_tmp883_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) substru);
 	_tmp884_ = _tmp883_;
-	_vala_assert (_tmp884_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "substru.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp884_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "substru.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp885_ = valadoc_api_node_get_full_name ((ValadocApiNode*) substru);
 	_tmp886_ = _tmp885_;
 	_vala_assert (g_strcmp0 (_tmp886_, "TestClassGlobal.InnerStruct") == 0, "substru.get_full_name () == \"TestClassGlobal.InnerStruct\"");
@@ -3483,16 +3483,16 @@ test_class_global (ValadocApiClass* cl,
 	_tmp894_ = _tmp893_;
 	_vala_assert (_tmp894_ == pkg, "substru.package == pkg");
 	_tmp895_ = g_new0 (ValadocApiNodeType, 10);
-	_tmp895_[0] = VALADOC_API_NODE_TYPE_ENUM;
-	_tmp895_[1] = VALADOC_API_NODE_TYPE_ENUM_VALUE;
-	_tmp895_[2] = VALADOC_API_NODE_TYPE_ERROR_CODE;
-	_tmp895_[3] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-	_tmp895_[4] = VALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
-	_tmp895_[5] = VALADOC_API_NODE_TYPE_INTERFACE;
-	_tmp895_[6] = VALADOC_API_NODE_TYPE_NAMESPACE;
-	_tmp895_[7] = VALADOC_API_NODE_TYPE_PACKAGE;
-	_tmp895_[8] = VALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
-	_tmp895_[9] = VALADOC_API_NODE_TYPE_TYPE_PARAMETER;
+	_tmp895_[0] = BALADOC_API_NODE_TYPE_ENUM;
+	_tmp895_[1] = BALADOC_API_NODE_TYPE_ENUM_VALUE;
+	_tmp895_[2] = BALADOC_API_NODE_TYPE_ERROR_CODE;
+	_tmp895_[3] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+	_tmp895_[4] = BALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
+	_tmp895_[5] = BALADOC_API_NODE_TYPE_INTERFACE;
+	_tmp895_[6] = BALADOC_API_NODE_TYPE_NAMESPACE;
+	_tmp895_[7] = BALADOC_API_NODE_TYPE_PACKAGE;
+	_tmp895_[8] = BALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
+	_tmp895_[9] = BALADOC_API_NODE_TYPE_TYPE_PARAMETER;
 	forbidden = _tmp895_;
 	forbidden_length1 = 10;
 	_forbidden_size_ = forbidden_length1;
@@ -3784,7 +3784,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_vala_assert (_tmp15_ == FALSE, "iface.is_deprecated == false");
 	_tmp16_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) iface);
 	_tmp17_ = _tmp16_;
-	_vala_assert (_tmp17_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "iface.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp17_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "iface.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp18_ = valadoc_api_node_get_full_name ((ValadocApiNode*) iface);
 	_tmp19_ = _tmp18_;
 	_vala_assert (g_strcmp0 (_tmp19_, "TestInterfaceGlobal") == 0, "iface.get_full_name () == \"TestInterfaceGlobal\"");
@@ -3802,7 +3802,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp26_ = valadoc_documentation_get_package ((ValadocDocumentation*) iface);
 	_tmp27_ = _tmp26_;
 	_vala_assert (_tmp27_ == pkg, "iface.package == pkg");
-	_tmp28_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, VALADOC_API_NODE_TYPE_METHOD, FALSE);
+	_tmp28_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, BALADOC_API_NODE_TYPE_METHOD, FALSE);
 	methods = _tmp28_;
 	_tmp29_ = methods;
 	_tmp30_ = vala_collection_get_size ((ValaCollection*) _tmp29_);
@@ -3811,7 +3811,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp32_ = methods;
 	_tmp33_ = vala_list_get (_tmp32_, 0);
 	_tmp34_ = (ValadocApiNode*) _tmp33_;
-	_tmp35_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp34_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp34_) : NULL;
+	_tmp35_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp34_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp34_) : NULL;
 	if (_tmp35_ == NULL) {
 		_g_object_unref0 (_tmp34_);
 	}
@@ -3862,7 +3862,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp67_ = method;
 	_tmp68_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp67_);
 	_tmp69_ = _tmp68_;
-	_vala_assert (_tmp69_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp69_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp70_ = method;
 	_tmp71_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp70_);
 	_tmp72_ = _tmp71_;
@@ -3885,7 +3885,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp83_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp82_);
 	_tmp84_ = _tmp83_;
 	_vala_assert (_tmp84_ == pkg, "method.package == pkg");
-	_tmp85_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, VALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
+	_tmp85_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, BALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
 	_vala_iterable_unref0 (methods);
 	methods = _tmp85_;
 	_tmp86_ = methods;
@@ -3895,7 +3895,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp89_ = methods;
 	_tmp90_ = vala_list_get (_tmp89_, 0);
 	_tmp91_ = (ValadocApiNode*) _tmp90_;
-	_tmp92_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp91_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp91_) : NULL;
+	_tmp92_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp91_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp91_) : NULL;
 	if (_tmp92_ == NULL) {
 		_g_object_unref0 (_tmp91_);
 	}
@@ -3947,7 +3947,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp124_ = method;
 	_tmp125_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp124_);
 	_tmp126_ = _tmp125_;
-	_vala_assert (_tmp126_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp126_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp127_ = method;
 	_tmp128_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp127_);
 	_tmp129_ = _tmp128_;
@@ -3970,7 +3970,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp140_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp139_);
 	_tmp141_ = _tmp140_;
 	_vala_assert (_tmp141_ == pkg, "method.package == pkg");
-	_tmp142_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, VALADOC_API_NODE_TYPE_PROPERTY, FALSE);
+	_tmp142_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, BALADOC_API_NODE_TYPE_PROPERTY, FALSE);
 	properties = _tmp142_;
 	prop1 = FALSE;
 	prop2 = FALSE;
@@ -4020,7 +4020,7 @@ test_interface_global (ValadocApiInterface* iface,
 			_tmp151_ = vala_list_get (_tmp150_, _node_index);
 			node = (ValadocApiNode*) _tmp151_;
 			_tmp152_ = node;
-			_tmp153_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp152_, VALADOC_API_TYPE_PROPERTY) ? ((ValadocApiProperty*) _tmp152_) : NULL);
+			_tmp153_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp152_, BALADOC_API_TYPE_PROPERTY) ? ((ValadocApiProperty*) _tmp152_) : NULL);
 			property = _tmp153_;
 			_tmp154_ = property;
 			_vala_assert (_tmp154_ != NULL, "property != null");
@@ -4222,7 +4222,7 @@ test_interface_global (ValadocApiInterface* iface,
 						_tmp191_ = property;
 						_tmp192_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp191_);
 						_tmp193_ = _tmp192_;
-						_vala_assert (_tmp193_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp193_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp194_ = property;
 						_tmp195_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp194_);
 						_tmp196_ = _tmp195_;
@@ -4283,7 +4283,7 @@ test_interface_global (ValadocApiInterface* iface,
 						_tmp238_ = _tmp237_;
 						_tmp239_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp238_);
 						_tmp240_ = _tmp239_;
-						_vala_assert (_tmp240_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp240_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp241_ = property;
 						_tmp242_ = valadoc_api_property_get_getter (_tmp241_);
 						_tmp243_ = _tmp242_;
@@ -4345,7 +4345,7 @@ test_interface_global (ValadocApiInterface* iface,
 						_tmp288_ = _tmp287_;
 						_tmp289_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp288_);
 						_tmp290_ = _tmp289_;
-						_vala_assert (_tmp290_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp290_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp291_ = property;
 						_tmp292_ = valadoc_api_property_get_setter (_tmp291_);
 						_tmp293_ = _tmp292_;
@@ -4512,7 +4512,7 @@ test_interface_global (ValadocApiInterface* iface,
 						_tmp336_ = property;
 						_tmp337_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp336_);
 						_tmp338_ = _tmp337_;
-						_vala_assert (_tmp338_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp338_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp339_ = property;
 						_tmp340_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp339_);
 						_tmp341_ = _tmp340_;
@@ -4573,7 +4573,7 @@ test_interface_global (ValadocApiInterface* iface,
 						_tmp383_ = _tmp382_;
 						_tmp384_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp383_);
 						_tmp385_ = _tmp384_;
-						_vala_assert (_tmp385_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp385_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp386_ = property;
 						_tmp387_ = valadoc_api_property_get_getter (_tmp386_);
 						_tmp388_ = _tmp387_;
@@ -4790,7 +4790,7 @@ test_interface_global (ValadocApiInterface* iface,
 						_tmp431_ = property;
 						_tmp432_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp431_);
 						_tmp433_ = _tmp432_;
-						_vala_assert (_tmp433_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp433_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp434_ = property;
 						_tmp435_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp434_);
 						_tmp436_ = _tmp435_;
@@ -4851,7 +4851,7 @@ test_interface_global (ValadocApiInterface* iface,
 						_tmp478_ = _tmp477_;
 						_tmp479_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp478_);
 						_tmp480_ = _tmp479_;
-						_vala_assert (_tmp480_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp480_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp481_ = property;
 						_tmp482_ = valadoc_api_property_get_getter (_tmp481_);
 						_tmp483_ = _tmp482_;
@@ -4913,7 +4913,7 @@ test_interface_global (ValadocApiInterface* iface,
 						_tmp528_ = _tmp527_;
 						_tmp529_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp528_);
 						_tmp530_ = _tmp529_;
-						_vala_assert (_tmp530_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp530_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp531_ = property;
 						_tmp532_ = valadoc_api_property_get_setter (_tmp531_);
 						_tmp533_ = _tmp532_;
@@ -4953,14 +4953,14 @@ test_interface_global (ValadocApiInterface* iface,
 	_vala_assert (prop1, "prop1");
 	_vala_assert (prop2, "prop2");
 	_vala_assert (prop3, "prop3");
-	_tmp546_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, VALADOC_API_NODE_TYPE_DELEGATE, FALSE);
+	_tmp546_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, BALADOC_API_NODE_TYPE_DELEGATE, FALSE);
 	delegates = _tmp546_;
 	_tmp547_ = vala_collection_get_size ((ValaCollection*) delegates);
 	_tmp548_ = _tmp547_;
 	_vala_assert (_tmp548_ == 1, "delegates.size == 1");
 	_tmp549_ = vala_list_get (delegates, 0);
 	_tmp550_ = (ValadocApiNode*) _tmp549_;
-	_tmp551_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp550_, VALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp550_) : NULL;
+	_tmp551_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp550_, BALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp550_) : NULL;
 	if (_tmp551_ == NULL) {
 		_g_object_unref0 (_tmp550_);
 	}
@@ -4981,7 +4981,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_vala_assert (_tmp559_ == FALSE, "del.is_deprecated == false");
 	_tmp560_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) del);
 	_tmp561_ = _tmp560_;
-	_vala_assert (_tmp561_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "del.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp561_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "del.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp562_ = valadoc_documentation_get_filename ((ValadocDocumentation*) del);
 	_tmp563_ = _tmp562_;
 	_vala_assert (g_strcmp0 (_tmp563_, "api-test.data.vapi") == 0, "del.get_filename () == \"api-test.data.vapi\"");
@@ -4992,14 +4992,14 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp566_ = valadoc_documentation_get_package ((ValadocDocumentation*) del);
 	_tmp567_ = _tmp566_;
 	_vala_assert (_tmp567_ == pkg, "del.package == pkg");
-	_tmp568_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, VALADOC_API_NODE_TYPE_SIGNAL, FALSE);
+	_tmp568_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, BALADOC_API_NODE_TYPE_SIGNAL, FALSE);
 	signals = _tmp568_;
 	_tmp569_ = vala_collection_get_size ((ValaCollection*) signals);
 	_tmp570_ = _tmp569_;
 	_vala_assert (_tmp570_ == 1, "signals.size == 1");
 	_tmp571_ = vala_list_get (signals, 0);
 	_tmp572_ = (ValadocApiNode*) _tmp571_;
-	_tmp573_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp572_, VALADOC_API_TYPE_SIGNAL) ? ((ValadocApiSignal*) _tmp572_) : NULL;
+	_tmp573_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp572_, BALADOC_API_TYPE_SIGNAL) ? ((ValadocApiSignal*) _tmp572_) : NULL;
 	if (_tmp573_ == NULL) {
 		_g_object_unref0 (_tmp572_);
 	}
@@ -5020,7 +5020,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_vala_assert (_tmp581_ == FALSE, "sig.is_deprecated == false");
 	_tmp582_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) sig);
 	_tmp583_ = _tmp582_;
-	_vala_assert (_tmp583_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "sig.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp583_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "sig.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp584_ = valadoc_documentation_get_filename ((ValadocDocumentation*) sig);
 	_tmp585_ = _tmp584_;
 	_vala_assert (g_strcmp0 (_tmp585_, "api-test.data.vapi") == 0, "sig.get_filename () == \"api-test.data.vapi\"");
@@ -5031,14 +5031,14 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp588_ = valadoc_documentation_get_package ((ValadocDocumentation*) sig);
 	_tmp589_ = _tmp588_;
 	_vala_assert (_tmp589_ == pkg, "sig.package == pkg");
-	_tmp590_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, VALADOC_API_NODE_TYPE_CONSTANT, FALSE);
+	_tmp590_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) iface, BALADOC_API_NODE_TYPE_CONSTANT, FALSE);
 	constants = _tmp590_;
 	_tmp591_ = vala_collection_get_size ((ValaCollection*) constants);
 	_tmp592_ = _tmp591_;
 	_vala_assert (_tmp592_ == 1, "constants.size == 1");
 	_tmp593_ = vala_list_get (constants, 0);
 	_tmp594_ = (ValadocApiNode*) _tmp593_;
-	_tmp595_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp594_, VALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp594_) : NULL;
+	_tmp595_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp594_, BALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp594_) : NULL;
 	if (_tmp595_ == NULL) {
 		_g_object_unref0 (_tmp594_);
 	}
@@ -5053,7 +5053,7 @@ test_interface_global (ValadocApiInterface* iface,
 	_vala_assert (_tmp599_ == FALSE, "constant.is_deprecated == false");
 	_tmp600_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) constant);
 	_tmp601_ = _tmp600_;
-	_vala_assert (_tmp601_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "constant.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp601_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "constant.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp602_ = valadoc_api_node_get_full_name ((ValadocApiNode*) constant);
 	_tmp603_ = _tmp602_;
 	_vala_assert (g_strcmp0 (_tmp603_, "TestInterfaceGlobal.constant") == 0, "constant.get_full_name () == \"TestInterfaceGlobal.constant\"");
@@ -5072,19 +5072,19 @@ test_interface_global (ValadocApiInterface* iface,
 	_tmp611_ = _tmp610_;
 	_vala_assert (_tmp611_ == pkg, "constant.package == pkg");
 	_tmp612_ = g_new0 (ValadocApiNodeType, 13);
-	_tmp612_[0] = VALADOC_API_NODE_TYPE_CREATION_METHOD;
-	_tmp612_[1] = VALADOC_API_NODE_TYPE_ENUM;
-	_tmp612_[2] = VALADOC_API_NODE_TYPE_ENUM_VALUE;
-	_tmp612_[3] = VALADOC_API_NODE_TYPE_ERROR_CODE;
-	_tmp612_[4] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-	_tmp612_[5] = VALADOC_API_NODE_TYPE_FIELD;
-	_tmp612_[6] = VALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
-	_tmp612_[7] = VALADOC_API_NODE_TYPE_INTERFACE;
-	_tmp612_[8] = VALADOC_API_NODE_TYPE_NAMESPACE;
-	_tmp612_[9] = VALADOC_API_NODE_TYPE_PACKAGE;
-	_tmp612_[10] = VALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
-	_tmp612_[11] = VALADOC_API_NODE_TYPE_STRUCT;
-	_tmp612_[12] = VALADOC_API_NODE_TYPE_TYPE_PARAMETER;
+	_tmp612_[0] = BALADOC_API_NODE_TYPE_CREATION_METHOD;
+	_tmp612_[1] = BALADOC_API_NODE_TYPE_ENUM;
+	_tmp612_[2] = BALADOC_API_NODE_TYPE_ENUM_VALUE;
+	_tmp612_[3] = BALADOC_API_NODE_TYPE_ERROR_CODE;
+	_tmp612_[4] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+	_tmp612_[5] = BALADOC_API_NODE_TYPE_FIELD;
+	_tmp612_[6] = BALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
+	_tmp612_[7] = BALADOC_API_NODE_TYPE_INTERFACE;
+	_tmp612_[8] = BALADOC_API_NODE_TYPE_NAMESPACE;
+	_tmp612_[9] = BALADOC_API_NODE_TYPE_PACKAGE;
+	_tmp612_[10] = BALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
+	_tmp612_[11] = BALADOC_API_NODE_TYPE_STRUCT;
+	_tmp612_[12] = BALADOC_API_NODE_TYPE_TYPE_PARAMETER;
 	forbidden = _tmp612_;
 	forbidden_length1 = 13;
 	_forbidden_size_ = forbidden_length1;
@@ -5333,7 +5333,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_vala_assert (_tmp11_ == FALSE, "stru.is_deprecated == false");
 	_tmp12_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) stru);
 	_tmp13_ = _tmp12_;
-	_vala_assert (_tmp13_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "stru.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp13_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "stru.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp14_ = valadoc_api_node_get_full_name ((ValadocApiNode*) stru);
 	_tmp15_ = _tmp14_;
 	_vala_assert (g_strcmp0 (_tmp15_, "TestStructGlobal") == 0, "stru.get_full_name () == \"TestStructGlobal\"");
@@ -5351,7 +5351,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp22_ = valadoc_documentation_get_package ((ValadocDocumentation*) stru);
 	_tmp23_ = _tmp22_;
 	_vala_assert (_tmp23_ == pkg, "stru.package == pkg");
-	_tmp24_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, VALADOC_API_NODE_TYPE_METHOD, FALSE);
+	_tmp24_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, BALADOC_API_NODE_TYPE_METHOD, FALSE);
 	methods = _tmp24_;
 	_tmp25_ = methods;
 	_tmp26_ = vala_collection_get_size ((ValaCollection*) _tmp25_);
@@ -5360,7 +5360,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp28_ = methods;
 	_tmp29_ = vala_list_get (_tmp28_, 0);
 	_tmp30_ = (ValadocApiNode*) _tmp29_;
-	_tmp31_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp30_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp30_) : NULL;
+	_tmp31_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp30_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp30_) : NULL;
 	if (_tmp31_ == NULL) {
 		_g_object_unref0 (_tmp30_);
 	}
@@ -5411,7 +5411,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp63_ = method;
 	_tmp64_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp63_);
 	_tmp65_ = _tmp64_;
-	_vala_assert (_tmp65_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp65_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp66_ = method;
 	_tmp67_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp66_);
 	_tmp68_ = _tmp67_;
@@ -5434,7 +5434,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp79_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp78_);
 	_tmp80_ = _tmp79_;
 	_vala_assert (_tmp80_ == pkg, "method.package == pkg");
-	_tmp81_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, VALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
+	_tmp81_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, BALADOC_API_NODE_TYPE_STATIC_METHOD, FALSE);
 	_vala_iterable_unref0 (methods);
 	methods = _tmp81_;
 	_tmp82_ = methods;
@@ -5444,7 +5444,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp85_ = methods;
 	_tmp86_ = vala_list_get (_tmp85_, 0);
 	_tmp87_ = (ValadocApiNode*) _tmp86_;
-	_tmp88_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp87_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp87_) : NULL;
+	_tmp88_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp87_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp87_) : NULL;
 	if (_tmp88_ == NULL) {
 		_g_object_unref0 (_tmp87_);
 	}
@@ -5496,7 +5496,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp120_ = method;
 	_tmp121_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp120_);
 	_tmp122_ = _tmp121_;
-	_vala_assert (_tmp122_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp122_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp123_ = method;
 	_tmp124_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp123_);
 	_tmp125_ = _tmp124_;
@@ -5519,7 +5519,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp136_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp135_);
 	_tmp137_ = _tmp136_;
 	_vala_assert (_tmp137_ == pkg, "method.package == pkg");
-	_tmp138_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, VALADOC_API_NODE_TYPE_CREATION_METHOD, FALSE);
+	_tmp138_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, BALADOC_API_NODE_TYPE_CREATION_METHOD, FALSE);
 	_vala_iterable_unref0 (methods);
 	methods = _tmp138_;
 	default_constr = FALSE;
@@ -5567,7 +5567,7 @@ test_struct_global (ValadocApiStruct* stru,
 			_tmp147_ = vala_list_get (_tmp146_, _node_index);
 			node = (ValadocApiNode*) _tmp147_;
 			_tmp148_ = node;
-			_tmp149_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp148_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp148_) : NULL);
+			_tmp149_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp148_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp148_) : NULL);
 			_g_object_unref0 (method);
 			method = _tmp149_;
 			_tmp150_ = method;
@@ -5670,7 +5670,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp187_ = method;
 						_tmp188_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp187_);
 						_tmp189_ = _tmp188_;
-						_vala_assert (_tmp189_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp189_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp190_ = method;
 						_tmp191_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp190_);
 						_tmp192_ = _tmp191_;
@@ -5786,7 +5786,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp232_ = method;
 						_tmp233_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp232_);
 						_tmp234_ = _tmp233_;
-						_vala_assert (_tmp234_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp234_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp235_ = method;
 						_tmp236_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp235_);
 						_tmp237_ = _tmp236_;
@@ -5823,7 +5823,7 @@ test_struct_global (ValadocApiStruct* stru,
 	}
 	_vala_assert (default_constr == TRUE, "default_constr == true");
 	_vala_assert (named_constr == TRUE, "named_constr == true");
-	_tmp247_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, VALADOC_API_NODE_TYPE_CONSTANT, FALSE);
+	_tmp247_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, BALADOC_API_NODE_TYPE_CONSTANT, FALSE);
 	constants = _tmp247_;
 	_tmp248_ = constants;
 	_tmp249_ = vala_collection_get_size ((ValaCollection*) _tmp248_);
@@ -5832,7 +5832,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp251_ = constants;
 	_tmp252_ = vala_list_get (_tmp251_, 0);
 	_tmp253_ = (ValadocApiNode*) _tmp252_;
-	_tmp254_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp253_, VALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp253_) : NULL;
+	_tmp254_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp253_, BALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp253_) : NULL;
 	if (_tmp254_ == NULL) {
 		_g_object_unref0 (_tmp253_);
 	}
@@ -5851,7 +5851,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp262_ = constant;
 	_tmp263_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp262_);
 	_tmp264_ = _tmp263_;
-	_vala_assert (_tmp264_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "constant.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp264_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "constant.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp265_ = constant;
 	_tmp266_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp265_);
 	_tmp267_ = _tmp266_;
@@ -5874,7 +5874,7 @@ test_struct_global (ValadocApiStruct* stru,
 	_tmp278_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp277_);
 	_tmp279_ = _tmp278_;
 	_vala_assert (_tmp279_ == pkg, "constant.package == pkg");
-	_tmp280_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, VALADOC_API_NODE_TYPE_FIELD, FALSE);
+	_tmp280_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, BALADOC_API_NODE_TYPE_FIELD, FALSE);
 	fields = _tmp280_;
 	field1 = FALSE;
 	field2 = FALSE;
@@ -5922,7 +5922,7 @@ test_struct_global (ValadocApiStruct* stru,
 			_tmp289_ = vala_list_get (_tmp288_, _node_index);
 			node = (ValadocApiNode*) _tmp289_;
 			_tmp290_ = node;
-			_tmp291_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp290_, VALADOC_API_TYPE_FIELD) ? ((ValadocApiField*) _tmp290_) : NULL);
+			_tmp291_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp290_, BALADOC_API_TYPE_FIELD) ? ((ValadocApiField*) _tmp290_) : NULL);
 			field = _tmp291_;
 			_tmp292_ = field;
 			_vala_assert (_tmp292_ != NULL, "field != null");
@@ -5982,7 +5982,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp311_ = field;
 						_tmp312_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp311_);
 						_tmp313_ = _tmp312_;
-						_vala_assert (_tmp313_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp313_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp314_ = field;
 						_tmp315_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp314_);
 						_tmp316_ = _tmp315_;
@@ -6056,7 +6056,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp338_ = field;
 						_tmp339_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp338_);
 						_tmp340_ = _tmp339_;
-						_vala_assert (_tmp340_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp340_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp341_ = field;
 						_tmp342_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp341_);
 						_tmp343_ = _tmp342_;
@@ -6094,7 +6094,7 @@ test_struct_global (ValadocApiStruct* stru,
 	}
 	_vala_assert (field1 == TRUE, "field1 == true");
 	_vala_assert (field2 == TRUE, "field2 == true");
-	_tmp353_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, VALADOC_API_NODE_TYPE_PROPERTY, FALSE);
+	_tmp353_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) stru, BALADOC_API_NODE_TYPE_PROPERTY, FALSE);
 	properties = _tmp353_;
 	prop1 = FALSE;
 	prop2 = FALSE;
@@ -6144,7 +6144,7 @@ test_struct_global (ValadocApiStruct* stru,
 			_tmp362_ = vala_list_get (_tmp361_, _node_index);
 			node = (ValadocApiNode*) _tmp362_;
 			_tmp363_ = node;
-			_tmp364_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp363_, VALADOC_API_TYPE_PROPERTY) ? ((ValadocApiProperty*) _tmp363_) : NULL);
+			_tmp364_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp363_, BALADOC_API_TYPE_PROPERTY) ? ((ValadocApiProperty*) _tmp363_) : NULL);
 			property = _tmp364_;
 			_tmp365_ = property;
 			_vala_assert (_tmp365_ != NULL, "property != null");
@@ -6346,7 +6346,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp402_ = property;
 						_tmp403_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp402_);
 						_tmp404_ = _tmp403_;
-						_vala_assert (_tmp404_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp404_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp405_ = property;
 						_tmp406_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp405_);
 						_tmp407_ = _tmp406_;
@@ -6407,7 +6407,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp449_ = _tmp448_;
 						_tmp450_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp449_);
 						_tmp451_ = _tmp450_;
-						_vala_assert (_tmp451_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp451_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp452_ = property;
 						_tmp453_ = valadoc_api_property_get_getter (_tmp452_);
 						_tmp454_ = _tmp453_;
@@ -6469,7 +6469,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp499_ = _tmp498_;
 						_tmp500_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp499_);
 						_tmp501_ = _tmp500_;
-						_vala_assert (_tmp501_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp501_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp502_ = property;
 						_tmp503_ = valadoc_api_property_get_setter (_tmp502_);
 						_tmp504_ = _tmp503_;
@@ -6636,7 +6636,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp547_ = property;
 						_tmp548_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp547_);
 						_tmp549_ = _tmp548_;
-						_vala_assert (_tmp549_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp549_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp550_ = property;
 						_tmp551_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp550_);
 						_tmp552_ = _tmp551_;
@@ -6697,7 +6697,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp594_ = _tmp593_;
 						_tmp595_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp594_);
 						_tmp596_ = _tmp595_;
-						_vala_assert (_tmp596_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp596_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp597_ = property;
 						_tmp598_ = valadoc_api_property_get_getter (_tmp597_);
 						_tmp599_ = _tmp598_;
@@ -6914,7 +6914,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp642_ = property;
 						_tmp643_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp642_);
 						_tmp644_ = _tmp643_;
-						_vala_assert (_tmp644_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp644_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp645_ = property;
 						_tmp646_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp645_);
 						_tmp647_ = _tmp646_;
@@ -6975,7 +6975,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp689_ = _tmp688_;
 						_tmp690_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp689_);
 						_tmp691_ = _tmp690_;
-						_vala_assert (_tmp691_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp691_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.getter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp692_ = property;
 						_tmp693_ = valadoc_api_property_get_getter (_tmp692_);
 						_tmp694_ = _tmp693_;
@@ -7037,7 +7037,7 @@ test_struct_global (ValadocApiStruct* stru,
 						_tmp739_ = _tmp738_;
 						_tmp740_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp739_);
 						_tmp741_ = _tmp740_;
-						_vala_assert (_tmp741_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp741_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "property.setter.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp742_ = property;
 						_tmp743_ = valadoc_api_property_get_setter (_tmp742_);
 						_tmp744_ = _tmp743_;
@@ -7078,20 +7078,20 @@ test_struct_global (ValadocApiStruct* stru,
 	_vala_assert (prop2, "prop2");
 	_vala_assert (prop3, "prop3");
 	_tmp757_ = g_new0 (ValadocApiNodeType, 14);
-	_tmp757_[0] = VALADOC_API_NODE_TYPE_CLASS;
-	_tmp757_[1] = VALADOC_API_NODE_TYPE_DELEGATE;
-	_tmp757_[2] = VALADOC_API_NODE_TYPE_ENUM;
-	_tmp757_[3] = VALADOC_API_NODE_TYPE_ENUM_VALUE;
-	_tmp757_[4] = VALADOC_API_NODE_TYPE_ERROR_CODE;
-	_tmp757_[5] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-	_tmp757_[6] = VALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
-	_tmp757_[7] = VALADOC_API_NODE_TYPE_INTERFACE;
-	_tmp757_[8] = VALADOC_API_NODE_TYPE_NAMESPACE;
-	_tmp757_[9] = VALADOC_API_NODE_TYPE_PACKAGE;
-	_tmp757_[10] = VALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
-	_tmp757_[11] = VALADOC_API_NODE_TYPE_SIGNAL;
-	_tmp757_[12] = VALADOC_API_NODE_TYPE_STRUCT;
-	_tmp757_[13] = VALADOC_API_NODE_TYPE_TYPE_PARAMETER;
+	_tmp757_[0] = BALADOC_API_NODE_TYPE_CLASS;
+	_tmp757_[1] = BALADOC_API_NODE_TYPE_DELEGATE;
+	_tmp757_[2] = BALADOC_API_NODE_TYPE_ENUM;
+	_tmp757_[3] = BALADOC_API_NODE_TYPE_ENUM_VALUE;
+	_tmp757_[4] = BALADOC_API_NODE_TYPE_ERROR_CODE;
+	_tmp757_[5] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+	_tmp757_[6] = BALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
+	_tmp757_[7] = BALADOC_API_NODE_TYPE_INTERFACE;
+	_tmp757_[8] = BALADOC_API_NODE_TYPE_NAMESPACE;
+	_tmp757_[9] = BALADOC_API_NODE_TYPE_PACKAGE;
+	_tmp757_[10] = BALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
+	_tmp757_[11] = BALADOC_API_NODE_TYPE_SIGNAL;
+	_tmp757_[12] = BALADOC_API_NODE_TYPE_STRUCT;
+	_tmp757_[13] = BALADOC_API_NODE_TYPE_TYPE_PARAMETER;
 	forbidden = _tmp757_;
 	forbidden_length1 = 14;
 	_forbidden_size_ = forbidden_length1;
@@ -7142,7 +7142,7 @@ param_test (ValadocApiNamespace* ns,
 	gint _tmp2070_;
 	g_return_if_fail (ns != NULL);
 	g_return_if_fail (pkg != NULL);
-	_tmp0_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) ns, VALADOC_API_NODE_TYPE_METHOD, FALSE);
+	_tmp0_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) ns, BALADOC_API_NODE_TYPE_METHOD, FALSE);
 	methods = _tmp0_;
 	func1 = FALSE;
 	func2 = FALSE;
@@ -7233,30 +7233,30 @@ param_test (ValadocApiNamespace* ns,
 			_tmp9_ = vala_list_get (_tmp8_, _node_index);
 			node = (ValadocApiNode*) _tmp9_;
 			_tmp10_ = node;
-			_tmp11_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp10_) : NULL);
+			_tmp11_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp10_) : NULL);
 			m = _tmp11_;
 			_tmp12_ = m;
 			_vala_assert (_tmp12_ != NULL, "m != null");
 			_tmp13_ = g_new0 (ValadocApiNodeType, 19);
-			_tmp13_[0] = VALADOC_API_NODE_TYPE_CLASS;
-			_tmp13_[1] = VALADOC_API_NODE_TYPE_CONSTANT;
-			_tmp13_[2] = VALADOC_API_NODE_TYPE_CREATION_METHOD;
-			_tmp13_[3] = VALADOC_API_NODE_TYPE_DELEGATE;
-			_tmp13_[4] = VALADOC_API_NODE_TYPE_ENUM;
-			_tmp13_[5] = VALADOC_API_NODE_TYPE_ENUM_VALUE;
-			_tmp13_[6] = VALADOC_API_NODE_TYPE_ERROR_CODE;
-			_tmp13_[7] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-			_tmp13_[8] = VALADOC_API_NODE_TYPE_FIELD;
-			_tmp13_[9] = VALADOC_API_NODE_TYPE_INTERFACE;
-			_tmp13_[10] = VALADOC_API_NODE_TYPE_METHOD;
-			_tmp13_[11] = VALADOC_API_NODE_TYPE_NAMESPACE;
-			_tmp13_[12] = VALADOC_API_NODE_TYPE_PACKAGE;
-			_tmp13_[13] = VALADOC_API_NODE_TYPE_PROPERTY;
-			_tmp13_[14] = VALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
-			_tmp13_[15] = VALADOC_API_NODE_TYPE_SIGNAL;
-			_tmp13_[16] = VALADOC_API_NODE_TYPE_STATIC_METHOD;
-			_tmp13_[17] = VALADOC_API_NODE_TYPE_STRUCT;
-			_tmp13_[18] = VALADOC_API_NODE_TYPE_TYPE_PARAMETER;
+			_tmp13_[0] = BALADOC_API_NODE_TYPE_CLASS;
+			_tmp13_[1] = BALADOC_API_NODE_TYPE_CONSTANT;
+			_tmp13_[2] = BALADOC_API_NODE_TYPE_CREATION_METHOD;
+			_tmp13_[3] = BALADOC_API_NODE_TYPE_DELEGATE;
+			_tmp13_[4] = BALADOC_API_NODE_TYPE_ENUM;
+			_tmp13_[5] = BALADOC_API_NODE_TYPE_ENUM_VALUE;
+			_tmp13_[6] = BALADOC_API_NODE_TYPE_ERROR_CODE;
+			_tmp13_[7] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+			_tmp13_[8] = BALADOC_API_NODE_TYPE_FIELD;
+			_tmp13_[9] = BALADOC_API_NODE_TYPE_INTERFACE;
+			_tmp13_[10] = BALADOC_API_NODE_TYPE_METHOD;
+			_tmp13_[11] = BALADOC_API_NODE_TYPE_NAMESPACE;
+			_tmp13_[12] = BALADOC_API_NODE_TYPE_PACKAGE;
+			_tmp13_[13] = BALADOC_API_NODE_TYPE_PROPERTY;
+			_tmp13_[14] = BALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
+			_tmp13_[15] = BALADOC_API_NODE_TYPE_SIGNAL;
+			_tmp13_[16] = BALADOC_API_NODE_TYPE_STATIC_METHOD;
+			_tmp13_[17] = BALADOC_API_NODE_TYPE_STRUCT;
+			_tmp13_[18] = BALADOC_API_NODE_TYPE_TYPE_PARAMETER;
 			forbidden = _tmp13_;
 			forbidden_length1 = 19;
 			_forbidden_size_ = forbidden_length1;
@@ -7270,7 +7270,7 @@ param_test (ValadocApiNamespace* ns,
 			_tmp19_ = _tmp18_;
 			_vala_assert (_tmp19_ == 0, "nodes.size == 0");
 			_tmp20_ = m;
-			_tmp21_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) _tmp20_, VALADOC_API_NODE_TYPE_FORMAL_PARAMETER, FALSE);
+			_tmp21_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) _tmp20_, BALADOC_API_NODE_TYPE_FORMAL_PARAMETER, FALSE);
 			params = _tmp21_;
 			_tmp22_ = m;
 			_tmp23_ = valadoc_api_node_get_name ((ValadocApiNode*) _tmp22_);
@@ -7400,7 +7400,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp34_ = params;
 						_tmp35_ = vala_list_get (_tmp34_, 0);
 						_tmp36_ = (ValadocApiNode*) _tmp35_;
-						_tmp37_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp36_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp36_) : NULL;
+						_tmp37_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp36_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp36_) : NULL;
 						if (_tmp37_ == NULL) {
 							_g_object_unref0 (_tmp36_);
 						}
@@ -7438,7 +7438,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp60_ = param;
 						_tmp61_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp60_);
 						_tmp62_ = _tmp61_;
-						_vala_assert (_tmp62_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp62_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp63_ = param;
 						_tmp64_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp63_);
 						_tmp65_ = _tmp64_;
@@ -7472,13 +7472,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp85_ = _tmp84_;
 						_tmp86_ = valadoc_api_typereference_get_data_type (_tmp85_);
 						_tmp87_ = _tmp86_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp87_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp87_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp88_ = param;
 						_tmp89_ = valadoc_api_parameter_get_parameter_type (_tmp88_);
 						_tmp90_ = _tmp89_;
 						_tmp91_ = valadoc_api_typereference_get_data_type (_tmp90_);
 						_tmp92_ = _tmp91_;
-						_tmp93_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp92_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp93_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp92_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp94_ = _tmp93_;
 						_vala_assert (g_strcmp0 (_tmp94_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp94_);
@@ -7634,7 +7634,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp130_ = params;
 						_tmp131_ = vala_list_get (_tmp130_, 0);
 						_tmp132_ = (ValadocApiNode*) _tmp131_;
-						_tmp133_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp132_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp132_) : NULL;
+						_tmp133_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp132_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp132_) : NULL;
 						if (_tmp133_ == NULL) {
 							_g_object_unref0 (_tmp132_);
 						}
@@ -7672,7 +7672,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp156_ = param;
 						_tmp157_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp156_);
 						_tmp158_ = _tmp157_;
-						_vala_assert (_tmp158_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp158_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp159_ = param;
 						_tmp160_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp159_);
 						_tmp161_ = _tmp160_;
@@ -7706,13 +7706,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp181_ = _tmp180_;
 						_tmp182_ = valadoc_api_typereference_get_data_type (_tmp181_);
 						_tmp183_ = _tmp182_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp183_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp183_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp184_ = param;
 						_tmp185_ = valadoc_api_parameter_get_parameter_type (_tmp184_);
 						_tmp186_ = _tmp185_;
 						_tmp187_ = valadoc_api_typereference_get_data_type (_tmp186_);
 						_tmp188_ = _tmp187_;
-						_tmp189_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp188_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp189_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp188_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp190_ = _tmp189_;
 						_vala_assert (g_strcmp0 (_tmp190_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp190_);
@@ -7868,7 +7868,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp226_ = params;
 						_tmp227_ = vala_list_get (_tmp226_, 0);
 						_tmp228_ = (ValadocApiNode*) _tmp227_;
-						_tmp229_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp228_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp228_) : NULL;
+						_tmp229_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp228_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp228_) : NULL;
 						if (_tmp229_ == NULL) {
 							_g_object_unref0 (_tmp228_);
 						}
@@ -7906,7 +7906,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp252_ = param;
 						_tmp253_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp252_);
 						_tmp254_ = _tmp253_;
-						_vala_assert (_tmp254_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp254_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp255_ = param;
 						_tmp256_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp255_);
 						_tmp257_ = _tmp256_;
@@ -7940,13 +7940,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp277_ = _tmp276_;
 						_tmp278_ = valadoc_api_typereference_get_data_type (_tmp277_);
 						_tmp279_ = _tmp278_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp279_, VALADOC_API_TYPE_CLASS), "param.parameter_type.data_type is Api.Class");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp279_, BALADOC_API_TYPE_CLASS), "param.parameter_type.data_type is Api.Class");
 						_tmp280_ = param;
 						_tmp281_ = valadoc_api_parameter_get_parameter_type (_tmp280_);
 						_tmp282_ = _tmp281_;
 						_tmp283_ = valadoc_api_typereference_get_data_type (_tmp282_);
 						_tmp284_ = _tmp283_;
-						_tmp285_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp284_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp285_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp284_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp286_ = _tmp285_;
 						_vala_assert (g_strcmp0 (_tmp286_, "string") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"string\"");
 						_g_free0 (_tmp286_);
@@ -8102,7 +8102,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp322_ = params;
 						_tmp323_ = vala_list_get (_tmp322_, 0);
 						_tmp324_ = (ValadocApiNode*) _tmp323_;
-						_tmp325_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp324_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp324_) : NULL;
+						_tmp325_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp324_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp324_) : NULL;
 						if (_tmp325_ == NULL) {
 							_g_object_unref0 (_tmp324_);
 						}
@@ -8140,7 +8140,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp348_ = param;
 						_tmp349_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp348_);
 						_tmp350_ = _tmp349_;
-						_vala_assert (_tmp350_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp350_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp351_ = param;
 						_tmp352_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp351_);
 						_tmp353_ = _tmp352_;
@@ -8174,13 +8174,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp373_ = _tmp372_;
 						_tmp374_ = valadoc_api_typereference_get_data_type (_tmp373_);
 						_tmp375_ = _tmp374_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp375_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp375_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp376_ = param;
 						_tmp377_ = valadoc_api_parameter_get_parameter_type (_tmp376_);
 						_tmp378_ = _tmp377_;
 						_tmp379_ = valadoc_api_typereference_get_data_type (_tmp378_);
 						_tmp380_ = _tmp379_;
-						_tmp381_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp380_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp381_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp380_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp382_ = _tmp381_;
 						_vala_assert (g_strcmp0 (_tmp382_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp382_);
@@ -8336,7 +8336,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp418_ = params;
 						_tmp419_ = vala_list_get (_tmp418_, 0);
 						_tmp420_ = (ValadocApiNode*) _tmp419_;
-						_tmp421_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp420_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp420_) : NULL;
+						_tmp421_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp420_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp420_) : NULL;
 						if (_tmp421_ == NULL) {
 							_g_object_unref0 (_tmp420_);
 						}
@@ -8374,7 +8374,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp444_ = param;
 						_tmp445_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp444_);
 						_tmp446_ = _tmp445_;
-						_vala_assert (_tmp446_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp446_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp447_ = param;
 						_tmp448_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp447_);
 						_tmp449_ = _tmp448_;
@@ -8408,13 +8408,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp469_ = _tmp468_;
 						_tmp470_ = valadoc_api_typereference_get_data_type (_tmp469_);
 						_tmp471_ = _tmp470_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp471_, VALADOC_API_TYPE_CLASS), "param.parameter_type.data_type is Api.Class");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp471_, BALADOC_API_TYPE_CLASS), "param.parameter_type.data_type is Api.Class");
 						_tmp472_ = param;
 						_tmp473_ = valadoc_api_parameter_get_parameter_type (_tmp472_);
 						_tmp474_ = _tmp473_;
 						_tmp475_ = valadoc_api_typereference_get_data_type (_tmp474_);
 						_tmp476_ = _tmp475_;
-						_tmp477_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp476_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp477_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp476_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp478_ = _tmp477_;
 						_vala_assert (g_strcmp0 (_tmp478_, "string") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"string\"");
 						_g_free0 (_tmp478_);
@@ -8570,7 +8570,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp514_ = params;
 						_tmp515_ = vala_list_get (_tmp514_, 0);
 						_tmp516_ = (ValadocApiNode*) _tmp515_;
-						_tmp517_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp516_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp516_) : NULL;
+						_tmp517_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp516_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp516_) : NULL;
 						if (_tmp517_ == NULL) {
 							_g_object_unref0 (_tmp516_);
 						}
@@ -8608,7 +8608,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp540_ = param;
 						_tmp541_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp540_);
 						_tmp542_ = _tmp541_;
-						_vala_assert (_tmp542_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp542_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp543_ = param;
 						_tmp544_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp543_);
 						_tmp545_ = _tmp544_;
@@ -8642,13 +8642,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp565_ = _tmp564_;
 						_tmp566_ = valadoc_api_typereference_get_data_type (_tmp565_);
 						_tmp567_ = _tmp566_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp567_, VALADOC_API_TYPE_CLASS), "param.parameter_type.data_type is Api.Class");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp567_, BALADOC_API_TYPE_CLASS), "param.parameter_type.data_type is Api.Class");
 						_tmp568_ = param;
 						_tmp569_ = valadoc_api_parameter_get_parameter_type (_tmp568_);
 						_tmp570_ = _tmp569_;
 						_tmp571_ = valadoc_api_typereference_get_data_type (_tmp570_);
 						_tmp572_ = _tmp571_;
-						_tmp573_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp572_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp573_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp572_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp574_ = _tmp573_;
 						_vala_assert (g_strcmp0 (_tmp574_, "GLib.Object") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"GLib.Object\"");
 						_g_free0 (_tmp574_);
@@ -8804,7 +8804,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp610_ = params;
 						_tmp611_ = vala_list_get (_tmp610_, 0);
 						_tmp612_ = (ValadocApiNode*) _tmp611_;
-						_tmp613_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp612_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp612_) : NULL;
+						_tmp613_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp612_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp612_) : NULL;
 						if (_tmp613_ == NULL) {
 							_g_object_unref0 (_tmp612_);
 						}
@@ -8842,7 +8842,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp636_ = param;
 						_tmp637_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp636_);
 						_tmp638_ = _tmp637_;
-						_vala_assert (_tmp638_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp638_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp639_ = param;
 						_tmp640_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp639_);
 						_tmp641_ = _tmp640_;
@@ -8876,13 +8876,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp661_ = _tmp660_;
 						_tmp662_ = valadoc_api_typereference_get_data_type (_tmp661_);
 						_tmp663_ = _tmp662_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp663_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp663_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp664_ = param;
 						_tmp665_ = valadoc_api_parameter_get_parameter_type (_tmp664_);
 						_tmp666_ = _tmp665_;
 						_tmp667_ = valadoc_api_typereference_get_data_type (_tmp666_);
 						_tmp668_ = _tmp667_;
-						_tmp669_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp668_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp669_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp668_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp670_ = _tmp669_;
 						_vala_assert (g_strcmp0 (_tmp670_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp670_);
@@ -8994,7 +8994,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp706_ = params;
 						_tmp707_ = vala_list_get (_tmp706_, 0);
 						_tmp708_ = (ValadocApiNode*) _tmp707_;
-						_tmp709_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp708_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp708_) : NULL;
+						_tmp709_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp708_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp708_) : NULL;
 						if (_tmp709_ == NULL) {
 							_g_object_unref0 (_tmp708_);
 						}
@@ -9032,7 +9032,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp732_ = param;
 						_tmp733_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp732_);
 						_tmp734_ = _tmp733_;
-						_vala_assert (_tmp734_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp734_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp735_ = param;
 						_tmp736_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp735_);
 						_tmp737_ = _tmp736_;
@@ -9174,7 +9174,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp758_ = params;
 						_tmp759_ = vala_list_get (_tmp758_, 0);
 						_tmp760_ = (ValadocApiNode*) _tmp759_;
-						_tmp761_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp760_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp760_) : NULL;
+						_tmp761_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp760_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp760_) : NULL;
 						if (_tmp761_ == NULL) {
 							_g_object_unref0 (_tmp760_);
 						}
@@ -9212,7 +9212,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp784_ = param;
 						_tmp785_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp784_);
 						_tmp786_ = _tmp785_;
-						_vala_assert (_tmp786_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp786_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp787_ = param;
 						_tmp788_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp787_);
 						_tmp789_ = _tmp788_;
@@ -9246,13 +9246,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp809_ = _tmp808_;
 						_tmp810_ = valadoc_api_typereference_get_data_type (_tmp809_);
 						_tmp811_ = _tmp810_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp811_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp811_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp812_ = param;
 						_tmp813_ = valadoc_api_parameter_get_parameter_type (_tmp812_);
 						_tmp814_ = _tmp813_;
 						_tmp815_ = valadoc_api_typereference_get_data_type (_tmp814_);
 						_tmp816_ = _tmp815_;
-						_tmp817_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp816_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp817_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp816_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp818_ = _tmp817_;
 						_vala_assert (g_strcmp0 (_tmp818_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp818_);
@@ -9922,7 +9922,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp854_ = params;
 						_tmp855_ = vala_list_get (_tmp854_, 0);
 						_tmp856_ = (ValadocApiNode*) _tmp855_;
-						_tmp857_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp856_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp856_) : NULL;
+						_tmp857_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp856_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp856_) : NULL;
 						if (_tmp857_ == NULL) {
 							_g_object_unref0 (_tmp856_);
 						}
@@ -9960,7 +9960,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp880_ = param;
 						_tmp881_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp880_);
 						_tmp882_ = _tmp881_;
-						_vala_assert (_tmp882_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp882_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp883_ = param;
 						_tmp884_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp883_);
 						_tmp885_ = _tmp884_;
@@ -9994,13 +9994,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp905_ = _tmp904_;
 						_tmp906_ = valadoc_api_typereference_get_data_type (_tmp905_);
 						_tmp907_ = _tmp906_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp907_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp907_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp908_ = param;
 						_tmp909_ = valadoc_api_parameter_get_parameter_type (_tmp908_);
 						_tmp910_ = _tmp909_;
 						_tmp911_ = valadoc_api_typereference_get_data_type (_tmp910_);
 						_tmp912_ = _tmp911_;
-						_tmp913_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp912_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp913_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp912_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp914_ = _tmp913_;
 						_vala_assert (g_strcmp0 (_tmp914_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp914_);
@@ -10046,7 +10046,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp947_ = params;
 						_tmp948_ = vala_list_get (_tmp947_, 1);
 						_tmp949_ = (ValadocApiNode*) _tmp948_;
-						_tmp950_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp949_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp949_) : NULL;
+						_tmp950_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp949_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp949_) : NULL;
 						if (_tmp950_ == NULL) {
 							_g_object_unref0 (_tmp949_);
 						}
@@ -10085,7 +10085,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp973_ = param;
 						_tmp974_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp973_);
 						_tmp975_ = _tmp974_;
-						_vala_assert (_tmp975_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp975_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp976_ = param;
 						_tmp977_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp976_);
 						_tmp978_ = _tmp977_;
@@ -10119,13 +10119,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp998_ = _tmp997_;
 						_tmp999_ = valadoc_api_typereference_get_data_type (_tmp998_);
 						_tmp1000_ = _tmp999_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1000_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1000_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp1001_ = param;
 						_tmp1002_ = valadoc_api_parameter_get_parameter_type (_tmp1001_);
 						_tmp1003_ = _tmp1002_;
 						_tmp1004_ = valadoc_api_typereference_get_data_type (_tmp1003_);
 						_tmp1005_ = _tmp1004_;
-						_tmp1006_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1005_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp1006_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1005_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp1007_ = _tmp1006_;
 						_vala_assert (g_strcmp0 (_tmp1007_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp1007_);
@@ -10171,7 +10171,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1040_ = params;
 						_tmp1041_ = vala_list_get (_tmp1040_, 2);
 						_tmp1042_ = (ValadocApiNode*) _tmp1041_;
-						_tmp1043_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1042_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1042_) : NULL;
+						_tmp1043_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1042_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1042_) : NULL;
 						if (_tmp1043_ == NULL) {
 							_g_object_unref0 (_tmp1042_);
 						}
@@ -10210,7 +10210,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1066_ = param;
 						_tmp1067_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1066_);
 						_tmp1068_ = _tmp1067_;
-						_vala_assert (_tmp1068_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1068_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1069_ = param;
 						_tmp1070_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1069_);
 						_tmp1071_ = _tmp1070_;
@@ -10244,13 +10244,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1091_ = _tmp1090_;
 						_tmp1092_ = valadoc_api_typereference_get_data_type (_tmp1091_);
 						_tmp1093_ = _tmp1092_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1093_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1093_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp1094_ = param;
 						_tmp1095_ = valadoc_api_parameter_get_parameter_type (_tmp1094_);
 						_tmp1096_ = _tmp1095_;
 						_tmp1097_ = valadoc_api_typereference_get_data_type (_tmp1096_);
 						_tmp1098_ = _tmp1097_;
-						_tmp1099_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1098_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp1099_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1098_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp1100_ = _tmp1099_;
 						_vala_assert (g_strcmp0 (_tmp1100_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp1100_);
@@ -10296,7 +10296,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1133_ = params;
 						_tmp1134_ = vala_list_get (_tmp1133_, 3);
 						_tmp1135_ = (ValadocApiNode*) _tmp1134_;
-						_tmp1136_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1135_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1135_) : NULL;
+						_tmp1136_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1135_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1135_) : NULL;
 						if (_tmp1136_ == NULL) {
 							_g_object_unref0 (_tmp1135_);
 						}
@@ -10335,7 +10335,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1159_ = param;
 						_tmp1160_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1159_);
 						_tmp1161_ = _tmp1160_;
-						_vala_assert (_tmp1161_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1161_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1162_ = param;
 						_tmp1163_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1162_);
 						_tmp1164_ = _tmp1163_;
@@ -10369,13 +10369,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1184_ = _tmp1183_;
 						_tmp1185_ = valadoc_api_typereference_get_data_type (_tmp1184_);
 						_tmp1186_ = _tmp1185_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1186_, VALADOC_API_TYPE_CLASS), "param.parameter_type.data_type is Api.Class");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1186_, BALADOC_API_TYPE_CLASS), "param.parameter_type.data_type is Api.Class");
 						_tmp1187_ = param;
 						_tmp1188_ = valadoc_api_parameter_get_parameter_type (_tmp1187_);
 						_tmp1189_ = _tmp1188_;
 						_tmp1190_ = valadoc_api_typereference_get_data_type (_tmp1189_);
 						_tmp1191_ = _tmp1190_;
-						_tmp1192_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1191_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp1192_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1191_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp1193_ = _tmp1192_;
 						_vala_assert (g_strcmp0 (_tmp1193_, "GLib.Object") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"GLib.Object\"");
 						_g_free0 (_tmp1193_);
@@ -10421,7 +10421,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1226_ = params;
 						_tmp1227_ = vala_list_get (_tmp1226_, 4);
 						_tmp1228_ = (ValadocApiNode*) _tmp1227_;
-						_tmp1229_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1228_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1228_) : NULL;
+						_tmp1229_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1228_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1228_) : NULL;
 						if (_tmp1229_ == NULL) {
 							_g_object_unref0 (_tmp1228_);
 						}
@@ -10460,7 +10460,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1252_ = param;
 						_tmp1253_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1252_);
 						_tmp1254_ = _tmp1253_;
-						_vala_assert (_tmp1254_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1254_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1255_ = param;
 						_tmp1256_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1255_);
 						_tmp1257_ = _tmp1256_;
@@ -10494,13 +10494,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1277_ = _tmp1276_;
 						_tmp1278_ = valadoc_api_typereference_get_data_type (_tmp1277_);
 						_tmp1279_ = _tmp1278_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1279_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1279_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp1280_ = param;
 						_tmp1281_ = valadoc_api_parameter_get_parameter_type (_tmp1280_);
 						_tmp1282_ = _tmp1281_;
 						_tmp1283_ = valadoc_api_typereference_get_data_type (_tmp1282_);
 						_tmp1284_ = _tmp1283_;
-						_tmp1285_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1284_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp1285_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1284_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp1286_ = _tmp1285_;
 						_vala_assert (g_strcmp0 (_tmp1286_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp1286_);
@@ -10546,7 +10546,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1319_ = params;
 						_tmp1320_ = vala_list_get (_tmp1319_, 5);
 						_tmp1321_ = (ValadocApiNode*) _tmp1320_;
-						_tmp1322_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1321_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1321_) : NULL;
+						_tmp1322_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1321_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1321_) : NULL;
 						if (_tmp1322_ == NULL) {
 							_g_object_unref0 (_tmp1321_);
 						}
@@ -10585,7 +10585,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1345_ = param;
 						_tmp1346_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1345_);
 						_tmp1347_ = _tmp1346_;
-						_vala_assert (_tmp1347_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1347_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1348_ = param;
 						_tmp1349_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1348_);
 						_tmp1350_ = _tmp1349_;
@@ -10619,13 +10619,13 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1370_ = _tmp1369_;
 						_tmp1371_ = valadoc_api_typereference_get_data_type (_tmp1370_);
 						_tmp1372_ = _tmp1371_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1372_, VALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1372_, BALADOC_API_TYPE_STRUCT), "param.parameter_type.data_type is Api.Struct");
 						_tmp1373_ = param;
 						_tmp1374_ = valadoc_api_parameter_get_parameter_type (_tmp1373_);
 						_tmp1375_ = _tmp1374_;
 						_tmp1376_ = valadoc_api_typereference_get_data_type (_tmp1375_);
 						_tmp1377_ = _tmp1376_;
-						_tmp1378_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1377_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp1378_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1377_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp1379_ = _tmp1378_;
 						_vala_assert (g_strcmp0 (_tmp1379_, "int") == 0, "((Api.Symbol) param.parameter_type.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp1379_);
@@ -10671,7 +10671,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1412_ = params;
 						_tmp1413_ = vala_list_get (_tmp1412_, 6);
 						_tmp1414_ = (ValadocApiNode*) _tmp1413_;
-						_tmp1415_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1414_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1414_) : NULL;
+						_tmp1415_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1414_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1414_) : NULL;
 						if (_tmp1415_ == NULL) {
 							_g_object_unref0 (_tmp1414_);
 						}
@@ -10710,7 +10710,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1438_ = param;
 						_tmp1439_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1438_);
 						_tmp1440_ = _tmp1439_;
-						_vala_assert (_tmp1440_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1440_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1441_ = param;
 						_tmp1442_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1441_);
 						_tmp1443_ = _tmp1442_;
@@ -10872,7 +10872,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1464_ = params;
 						_tmp1465_ = vala_list_get (_tmp1464_, 0);
 						_tmp1466_ = (ValadocApiNode*) _tmp1465_;
-						_tmp1467_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1466_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1466_) : NULL;
+						_tmp1467_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1466_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1466_) : NULL;
 						if (_tmp1467_ == NULL) {
 							_g_object_unref0 (_tmp1466_);
 						}
@@ -10910,7 +10910,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1490_ = param;
 						_tmp1491_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1490_);
 						_tmp1492_ = _tmp1491_;
-						_vala_assert (_tmp1492_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1492_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1493_ = param;
 						_tmp1494_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1493_);
 						_tmp1495_ = _tmp1494_;
@@ -10944,35 +10944,35 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1515_ = _tmp1514_;
 						_tmp1516_ = valadoc_api_typereference_get_data_type (_tmp1515_);
 						_tmp1517_ = _tmp1516_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1517_, VALADOC_API_TYPE_POINTER), "param.parameter_type.data_type is Api.Pointer");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1517_, BALADOC_API_TYPE_POINTER), "param.parameter_type.data_type is Api.Pointer");
 						_tmp1518_ = param;
 						_tmp1519_ = valadoc_api_parameter_get_parameter_type (_tmp1518_);
 						_tmp1520_ = _tmp1519_;
 						_tmp1521_ = valadoc_api_typereference_get_data_type (_tmp1520_);
 						_tmp1522_ = _tmp1521_;
-						_tmp1523_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1522_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1523_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1522_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1524_ = _tmp1523_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1524_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Pointer) param.parameter_type.data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1524_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Pointer) param.parameter_type.data_type).data_type is Api.TypeReference");
 						_tmp1525_ = param;
 						_tmp1526_ = valadoc_api_parameter_get_parameter_type (_tmp1525_);
 						_tmp1527_ = _tmp1526_;
 						_tmp1528_ = valadoc_api_typereference_get_data_type (_tmp1527_);
 						_tmp1529_ = _tmp1528_;
-						_tmp1530_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1529_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1530_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1529_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1531_ = _tmp1530_;
-						_tmp1532_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1531_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp1532_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1531_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp1533_ = _tmp1532_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1533_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Pointer) param.parameter_type.data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1533_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Pointer) param.parameter_type.data_type).data_type).data_type is Api.Struct");
 						_tmp1534_ = param;
 						_tmp1535_ = valadoc_api_parameter_get_parameter_type (_tmp1534_);
 						_tmp1536_ = _tmp1535_;
 						_tmp1537_ = valadoc_api_typereference_get_data_type (_tmp1536_);
 						_tmp1538_ = _tmp1537_;
-						_tmp1539_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1538_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1539_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1538_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1540_ = _tmp1539_;
-						_tmp1541_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1540_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp1541_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1540_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp1542_ = _tmp1541_;
-						_tmp1543_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1542_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp1543_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1542_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp1544_ = _tmp1543_;
 						_vala_assert (g_strcmp0 (_tmp1544_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Pointer) param.parameter_type.data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp1544_);
@@ -11161,7 +11161,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1580_ = params;
 						_tmp1581_ = vala_list_get (_tmp1580_, 0);
 						_tmp1582_ = (ValadocApiNode*) _tmp1581_;
-						_tmp1583_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1582_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1582_) : NULL;
+						_tmp1583_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1582_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1582_) : NULL;
 						if (_tmp1583_ == NULL) {
 							_g_object_unref0 (_tmp1582_);
 						}
@@ -11199,7 +11199,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1606_ = param;
 						_tmp1607_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1606_);
 						_tmp1608_ = _tmp1607_;
-						_vala_assert (_tmp1608_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1608_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1609_ = param;
 						_tmp1610_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1609_);
 						_tmp1611_ = _tmp1610_;
@@ -11233,49 +11233,49 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1631_ = _tmp1630_;
 						_tmp1632_ = valadoc_api_typereference_get_data_type (_tmp1631_);
 						_tmp1633_ = _tmp1632_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1633_, VALADOC_API_TYPE_POINTER), "param.parameter_type.data_type is Api.Pointer");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1633_, BALADOC_API_TYPE_POINTER), "param.parameter_type.data_type is Api.Pointer");
 						_tmp1634_ = param;
 						_tmp1635_ = valadoc_api_parameter_get_parameter_type (_tmp1634_);
 						_tmp1636_ = _tmp1635_;
 						_tmp1637_ = valadoc_api_typereference_get_data_type (_tmp1636_);
 						_tmp1638_ = _tmp1637_;
-						_tmp1639_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1638_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1639_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1638_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1640_ = _tmp1639_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1640_, VALADOC_API_TYPE_POINTER), "((Api.Pointer) param.parameter_type.data_type).data_type is Api.Pointer");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1640_, BALADOC_API_TYPE_POINTER), "((Api.Pointer) param.parameter_type.data_type).data_type is Api.Pointer");
 						_tmp1641_ = param;
 						_tmp1642_ = valadoc_api_parameter_get_parameter_type (_tmp1641_);
 						_tmp1643_ = _tmp1642_;
 						_tmp1644_ = valadoc_api_typereference_get_data_type (_tmp1643_);
 						_tmp1645_ = _tmp1644_;
-						_tmp1646_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1645_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1646_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1645_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1647_ = _tmp1646_;
-						_tmp1648_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1647_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1648_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1647_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1649_ = _tmp1648_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1649_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Pointer) ((Api.Pointer) param.parameter_type.data_type).data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1649_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Pointer) ((Api.Pointer) param.parameter_type.data_type).data_type).data_type is Api.TypeReference");
 						_tmp1650_ = param;
 						_tmp1651_ = valadoc_api_parameter_get_parameter_type (_tmp1650_);
 						_tmp1652_ = _tmp1651_;
 						_tmp1653_ = valadoc_api_typereference_get_data_type (_tmp1652_);
 						_tmp1654_ = _tmp1653_;
-						_tmp1655_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1654_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1655_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1654_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1656_ = _tmp1655_;
-						_tmp1657_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1656_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1657_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1656_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1658_ = _tmp1657_;
-						_tmp1659_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1658_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp1659_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1658_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp1660_ = _tmp1659_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1660_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Pointer) ((Api.Pointer) param.parameter_type.data_type).data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1660_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Pointer) ((Api.Pointer) param.parameter_type.data_type).data_type).data_type).data_type is Api.Struct");
 						_tmp1661_ = param;
 						_tmp1662_ = valadoc_api_parameter_get_parameter_type (_tmp1661_);
 						_tmp1663_ = _tmp1662_;
 						_tmp1664_ = valadoc_api_typereference_get_data_type (_tmp1663_);
 						_tmp1665_ = _tmp1664_;
-						_tmp1666_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1665_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1666_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1665_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1667_ = _tmp1666_;
-						_tmp1668_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1667_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp1668_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1667_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp1669_ = _tmp1668_;
-						_tmp1670_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1669_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp1670_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1669_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp1671_ = _tmp1670_;
-						_tmp1672_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1671_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp1672_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1671_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp1673_ = _tmp1672_;
 						_vala_assert (g_strcmp0 (_tmp1673_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Pointer) ((Api.Pointer) param.parameter_type.data_type).data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp1673_);
@@ -11451,7 +11451,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1709_ = params;
 						_tmp1710_ = vala_list_get (_tmp1709_, 0);
 						_tmp1711_ = (ValadocApiNode*) _tmp1710_;
-						_tmp1712_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1711_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1711_) : NULL;
+						_tmp1712_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1711_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1711_) : NULL;
 						if (_tmp1712_ == NULL) {
 							_g_object_unref0 (_tmp1711_);
 						}
@@ -11489,7 +11489,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1735_ = param;
 						_tmp1736_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1735_);
 						_tmp1737_ = _tmp1736_;
-						_vala_assert (_tmp1737_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1737_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1738_ = param;
 						_tmp1739_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1738_);
 						_tmp1740_ = _tmp1739_;
@@ -11523,35 +11523,35 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1760_ = _tmp1759_;
 						_tmp1761_ = valadoc_api_typereference_get_data_type (_tmp1760_);
 						_tmp1762_ = _tmp1761_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1762_, VALADOC_API_TYPE_ARRAY), "param.parameter_type.data_type is Api.Array");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1762_, BALADOC_API_TYPE_ARRAY), "param.parameter_type.data_type is Api.Array");
 						_tmp1763_ = param;
 						_tmp1764_ = valadoc_api_parameter_get_parameter_type (_tmp1763_);
 						_tmp1765_ = _tmp1764_;
 						_tmp1766_ = valadoc_api_typereference_get_data_type (_tmp1765_);
 						_tmp1767_ = _tmp1766_;
-						_tmp1768_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1767_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp1768_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1767_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp1769_ = _tmp1768_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1769_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) param.parameter_type.data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1769_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) param.parameter_type.data_type).data_type is Api.TypeReference");
 						_tmp1770_ = param;
 						_tmp1771_ = valadoc_api_parameter_get_parameter_type (_tmp1770_);
 						_tmp1772_ = _tmp1771_;
 						_tmp1773_ = valadoc_api_typereference_get_data_type (_tmp1772_);
 						_tmp1774_ = _tmp1773_;
-						_tmp1775_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1774_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp1775_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1774_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp1776_ = _tmp1775_;
-						_tmp1777_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1776_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp1777_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1776_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp1778_ = _tmp1777_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1778_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) param.parameter_type.data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1778_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) param.parameter_type.data_type).data_type).data_type is Api.Struct");
 						_tmp1779_ = param;
 						_tmp1780_ = valadoc_api_parameter_get_parameter_type (_tmp1779_);
 						_tmp1781_ = _tmp1780_;
 						_tmp1782_ = valadoc_api_typereference_get_data_type (_tmp1781_);
 						_tmp1783_ = _tmp1782_;
-						_tmp1784_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1783_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp1784_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1783_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp1785_ = _tmp1784_;
-						_tmp1786_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1785_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp1786_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1785_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp1787_ = _tmp1786_;
-						_tmp1788_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1787_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp1788_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1787_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp1789_ = _tmp1788_;
 						_vala_assert (g_strcmp0 (_tmp1789_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Array) param.parameter_type.data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp1789_);
@@ -11727,7 +11727,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1825_ = params;
 						_tmp1826_ = vala_list_get (_tmp1825_, 0);
 						_tmp1827_ = (ValadocApiNode*) _tmp1826_;
-						_tmp1828_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1827_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1827_) : NULL;
+						_tmp1828_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1827_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1827_) : NULL;
 						if (_tmp1828_ == NULL) {
 							_g_object_unref0 (_tmp1827_);
 						}
@@ -11765,7 +11765,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1851_ = param;
 						_tmp1852_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1851_);
 						_tmp1853_ = _tmp1852_;
-						_vala_assert (_tmp1853_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1853_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1854_ = param;
 						_tmp1855_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1854_);
 						_tmp1856_ = _tmp1855_;
@@ -11799,35 +11799,35 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1876_ = _tmp1875_;
 						_tmp1877_ = valadoc_api_typereference_get_data_type (_tmp1876_);
 						_tmp1878_ = _tmp1877_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1878_, VALADOC_API_TYPE_ARRAY), "param.parameter_type.data_type is Api.Array");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1878_, BALADOC_API_TYPE_ARRAY), "param.parameter_type.data_type is Api.Array");
 						_tmp1879_ = param;
 						_tmp1880_ = valadoc_api_parameter_get_parameter_type (_tmp1879_);
 						_tmp1881_ = _tmp1880_;
 						_tmp1882_ = valadoc_api_typereference_get_data_type (_tmp1881_);
 						_tmp1883_ = _tmp1882_;
-						_tmp1884_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1883_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp1884_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1883_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp1885_ = _tmp1884_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1885_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) param.parameter_type.data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1885_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) param.parameter_type.data_type).data_type is Api.TypeReference");
 						_tmp1886_ = param;
 						_tmp1887_ = valadoc_api_parameter_get_parameter_type (_tmp1886_);
 						_tmp1888_ = _tmp1887_;
 						_tmp1889_ = valadoc_api_typereference_get_data_type (_tmp1888_);
 						_tmp1890_ = _tmp1889_;
-						_tmp1891_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1890_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp1891_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1890_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp1892_ = _tmp1891_;
-						_tmp1893_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1892_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp1893_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1892_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp1894_ = _tmp1893_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1894_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) param.parameter_type.data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1894_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) param.parameter_type.data_type).data_type).data_type is Api.Struct");
 						_tmp1895_ = param;
 						_tmp1896_ = valadoc_api_parameter_get_parameter_type (_tmp1895_);
 						_tmp1897_ = _tmp1896_;
 						_tmp1898_ = valadoc_api_typereference_get_data_type (_tmp1897_);
 						_tmp1899_ = _tmp1898_;
-						_tmp1900_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1899_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp1900_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1899_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp1901_ = _tmp1900_;
-						_tmp1902_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1901_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp1902_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1901_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp1903_ = _tmp1902_;
-						_tmp1904_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1903_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp1904_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp1903_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp1905_ = _tmp1904_;
 						_vala_assert (g_strcmp0 (_tmp1905_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Array) param.parameter_type.data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp1905_);
@@ -12016,7 +12016,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1941_ = params;
 						_tmp1942_ = vala_list_get (_tmp1941_, 0);
 						_tmp1943_ = (ValadocApiNode*) _tmp1942_;
-						_tmp1944_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1943_, VALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1943_) : NULL;
+						_tmp1944_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1943_, BALADOC_API_TYPE_PARAMETER) ? ((ValadocApiParameter*) _tmp1943_) : NULL;
 						if (_tmp1944_ == NULL) {
 							_g_object_unref0 (_tmp1943_);
 						}
@@ -12054,7 +12054,7 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1967_ = param;
 						_tmp1968_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp1967_);
 						_tmp1969_ = _tmp1968_;
-						_vala_assert (_tmp1969_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
+						_vala_assert (_tmp1969_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "param.accessibility == Vala.SymbolAccessibility.PUBLIC");
 						_tmp1970_ = param;
 						_tmp1971_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp1970_);
 						_tmp1972_ = _tmp1971_;
@@ -12088,49 +12088,49 @@ param_test (ValadocApiNamespace* ns,
 						_tmp1992_ = _tmp1991_;
 						_tmp1993_ = valadoc_api_typereference_get_data_type (_tmp1992_);
 						_tmp1994_ = _tmp1993_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1994_, VALADOC_API_TYPE_ARRAY), "param.parameter_type.data_type is Api.Array");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp1994_, BALADOC_API_TYPE_ARRAY), "param.parameter_type.data_type is Api.Array");
 						_tmp1995_ = param;
 						_tmp1996_ = valadoc_api_parameter_get_parameter_type (_tmp1995_);
 						_tmp1997_ = _tmp1996_;
 						_tmp1998_ = valadoc_api_typereference_get_data_type (_tmp1997_);
 						_tmp1999_ = _tmp1998_;
-						_tmp2000_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1999_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp2000_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp1999_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp2001_ = _tmp2000_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp2001_, VALADOC_API_TYPE_ARRAY), "((Api.Array) param.parameter_type.data_type).data_type is Api.Array");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp2001_, BALADOC_API_TYPE_ARRAY), "((Api.Array) param.parameter_type.data_type).data_type is Api.Array");
 						_tmp2002_ = param;
 						_tmp2003_ = valadoc_api_parameter_get_parameter_type (_tmp2002_);
 						_tmp2004_ = _tmp2003_;
 						_tmp2005_ = valadoc_api_typereference_get_data_type (_tmp2004_);
 						_tmp2006_ = _tmp2005_;
-						_tmp2007_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2006_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp2007_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2006_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp2008_ = _tmp2007_;
-						_tmp2009_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2008_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp2009_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2008_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp2010_ = _tmp2009_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp2010_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) ((Api.Array) param.parameter_type.data_type).data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp2010_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) ((Api.Array) param.parameter_type.data_type).data_type).data_type is Api.TypeReference");
 						_tmp2011_ = param;
 						_tmp2012_ = valadoc_api_parameter_get_parameter_type (_tmp2011_);
 						_tmp2013_ = _tmp2012_;
 						_tmp2014_ = valadoc_api_typereference_get_data_type (_tmp2013_);
 						_tmp2015_ = _tmp2014_;
-						_tmp2016_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2015_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp2016_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2015_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp2017_ = _tmp2016_;
-						_tmp2018_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2017_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp2018_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2017_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp2019_ = _tmp2018_;
-						_tmp2020_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2019_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp2020_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2019_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp2021_ = _tmp2020_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp2021_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) ((Api.Array) param.parameter_type.data_type).data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp2021_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) ((Api.Array) param.parameter_type.data_type).data_type).data_type).data_type is Api.Struct");
 						_tmp2022_ = param;
 						_tmp2023_ = valadoc_api_parameter_get_parameter_type (_tmp2022_);
 						_tmp2024_ = _tmp2023_;
 						_tmp2025_ = valadoc_api_typereference_get_data_type (_tmp2024_);
 						_tmp2026_ = _tmp2025_;
-						_tmp2027_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2026_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp2027_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2026_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp2028_ = _tmp2027_;
-						_tmp2029_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2028_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp2029_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2028_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp2030_ = _tmp2029_;
-						_tmp2031_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2030_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp2031_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp2030_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp2032_ = _tmp2031_;
-						_tmp2033_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp2032_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp2033_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp2032_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp2034_ = _tmp2033_;
 						_vala_assert (g_strcmp0 (_tmp2034_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Array) ((Api.Array) param.parameter_type.data_type).data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp2034_);
@@ -12210,25 +12210,25 @@ param_test (ValadocApiNamespace* ns,
 	_vala_assert (func12 == TRUE, "func12 == true");
 	_vala_assert (func13 == TRUE, "func13 == true");
 	_tmp2067_ = g_new0 (ValadocApiNodeType, 19);
-	_tmp2067_[0] = VALADOC_API_NODE_TYPE_CLASS;
-	_tmp2067_[1] = VALADOC_API_NODE_TYPE_CONSTANT;
-	_tmp2067_[2] = VALADOC_API_NODE_TYPE_CREATION_METHOD;
-	_tmp2067_[3] = VALADOC_API_NODE_TYPE_DELEGATE;
-	_tmp2067_[4] = VALADOC_API_NODE_TYPE_ENUM;
-	_tmp2067_[5] = VALADOC_API_NODE_TYPE_ENUM_VALUE;
-	_tmp2067_[6] = VALADOC_API_NODE_TYPE_ERROR_CODE;
-	_tmp2067_[7] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-	_tmp2067_[8] = VALADOC_API_NODE_TYPE_FIELD;
-	_tmp2067_[9] = VALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
-	_tmp2067_[10] = VALADOC_API_NODE_TYPE_INTERFACE;
-	_tmp2067_[11] = VALADOC_API_NODE_TYPE_NAMESPACE;
-	_tmp2067_[12] = VALADOC_API_NODE_TYPE_PACKAGE;
-	_tmp2067_[13] = VALADOC_API_NODE_TYPE_PROPERTY;
-	_tmp2067_[14] = VALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
-	_tmp2067_[15] = VALADOC_API_NODE_TYPE_SIGNAL;
-	_tmp2067_[16] = VALADOC_API_NODE_TYPE_STATIC_METHOD;
-	_tmp2067_[17] = VALADOC_API_NODE_TYPE_STRUCT;
-	_tmp2067_[18] = VALADOC_API_NODE_TYPE_TYPE_PARAMETER;
+	_tmp2067_[0] = BALADOC_API_NODE_TYPE_CLASS;
+	_tmp2067_[1] = BALADOC_API_NODE_TYPE_CONSTANT;
+	_tmp2067_[2] = BALADOC_API_NODE_TYPE_CREATION_METHOD;
+	_tmp2067_[3] = BALADOC_API_NODE_TYPE_DELEGATE;
+	_tmp2067_[4] = BALADOC_API_NODE_TYPE_ENUM;
+	_tmp2067_[5] = BALADOC_API_NODE_TYPE_ENUM_VALUE;
+	_tmp2067_[6] = BALADOC_API_NODE_TYPE_ERROR_CODE;
+	_tmp2067_[7] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+	_tmp2067_[8] = BALADOC_API_NODE_TYPE_FIELD;
+	_tmp2067_[9] = BALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
+	_tmp2067_[10] = BALADOC_API_NODE_TYPE_INTERFACE;
+	_tmp2067_[11] = BALADOC_API_NODE_TYPE_NAMESPACE;
+	_tmp2067_[12] = BALADOC_API_NODE_TYPE_PACKAGE;
+	_tmp2067_[13] = BALADOC_API_NODE_TYPE_PROPERTY;
+	_tmp2067_[14] = BALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
+	_tmp2067_[15] = BALADOC_API_NODE_TYPE_SIGNAL;
+	_tmp2067_[16] = BALADOC_API_NODE_TYPE_STATIC_METHOD;
+	_tmp2067_[17] = BALADOC_API_NODE_TYPE_STRUCT;
+	_tmp2067_[18] = BALADOC_API_NODE_TYPE_TYPE_PARAMETER;
 	forbidden = _tmp2067_;
 	forbidden_length1 = 19;
 	_forbidden_size_ = forbidden_length1;
@@ -12259,7 +12259,7 @@ return_test (ValadocApiNamespace* ns,
 	gboolean func9 = FALSE;
 	g_return_if_fail (ns != NULL);
 	g_return_if_fail (pkg != NULL);
-	_tmp0_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) ns, VALADOC_API_NODE_TYPE_METHOD, FALSE);
+	_tmp0_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) ns, BALADOC_API_NODE_TYPE_METHOD, FALSE);
 	methods = _tmp0_;
 	func1 = FALSE;
 	func2 = FALSE;
@@ -12339,31 +12339,31 @@ return_test (ValadocApiNamespace* ns,
 			_tmp9_ = vala_list_get (_tmp8_, _node_index);
 			node = (ValadocApiNode*) _tmp9_;
 			_tmp10_ = node;
-			_tmp11_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp10_) : NULL);
+			_tmp11_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp10_) : NULL);
 			m = _tmp11_;
 			_tmp12_ = m;
 			_vala_assert (_tmp12_ != NULL, "m != null");
 			_tmp13_ = g_new0 (ValadocApiNodeType, 20);
-			_tmp13_[0] = VALADOC_API_NODE_TYPE_CLASS;
-			_tmp13_[1] = VALADOC_API_NODE_TYPE_CONSTANT;
-			_tmp13_[2] = VALADOC_API_NODE_TYPE_CREATION_METHOD;
-			_tmp13_[3] = VALADOC_API_NODE_TYPE_DELEGATE;
-			_tmp13_[4] = VALADOC_API_NODE_TYPE_ENUM;
-			_tmp13_[5] = VALADOC_API_NODE_TYPE_ENUM_VALUE;
-			_tmp13_[6] = VALADOC_API_NODE_TYPE_ERROR_CODE;
-			_tmp13_[7] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-			_tmp13_[8] = VALADOC_API_NODE_TYPE_FIELD;
-			_tmp13_[9] = VALADOC_API_NODE_TYPE_INTERFACE;
-			_tmp13_[10] = VALADOC_API_NODE_TYPE_METHOD;
-			_tmp13_[11] = VALADOC_API_NODE_TYPE_NAMESPACE;
-			_tmp13_[12] = VALADOC_API_NODE_TYPE_PACKAGE;
-			_tmp13_[13] = VALADOC_API_NODE_TYPE_PROPERTY;
-			_tmp13_[14] = VALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
-			_tmp13_[15] = VALADOC_API_NODE_TYPE_SIGNAL;
-			_tmp13_[16] = VALADOC_API_NODE_TYPE_STATIC_METHOD;
-			_tmp13_[17] = VALADOC_API_NODE_TYPE_STRUCT;
-			_tmp13_[18] = VALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
-			_tmp13_[19] = VALADOC_API_NODE_TYPE_TYPE_PARAMETER;
+			_tmp13_[0] = BALADOC_API_NODE_TYPE_CLASS;
+			_tmp13_[1] = BALADOC_API_NODE_TYPE_CONSTANT;
+			_tmp13_[2] = BALADOC_API_NODE_TYPE_CREATION_METHOD;
+			_tmp13_[3] = BALADOC_API_NODE_TYPE_DELEGATE;
+			_tmp13_[4] = BALADOC_API_NODE_TYPE_ENUM;
+			_tmp13_[5] = BALADOC_API_NODE_TYPE_ENUM_VALUE;
+			_tmp13_[6] = BALADOC_API_NODE_TYPE_ERROR_CODE;
+			_tmp13_[7] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+			_tmp13_[8] = BALADOC_API_NODE_TYPE_FIELD;
+			_tmp13_[9] = BALADOC_API_NODE_TYPE_INTERFACE;
+			_tmp13_[10] = BALADOC_API_NODE_TYPE_METHOD;
+			_tmp13_[11] = BALADOC_API_NODE_TYPE_NAMESPACE;
+			_tmp13_[12] = BALADOC_API_NODE_TYPE_PACKAGE;
+			_tmp13_[13] = BALADOC_API_NODE_TYPE_PROPERTY;
+			_tmp13_[14] = BALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
+			_tmp13_[15] = BALADOC_API_NODE_TYPE_SIGNAL;
+			_tmp13_[16] = BALADOC_API_NODE_TYPE_STATIC_METHOD;
+			_tmp13_[17] = BALADOC_API_NODE_TYPE_STRUCT;
+			_tmp13_[18] = BALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
+			_tmp13_[19] = BALADOC_API_NODE_TYPE_TYPE_PARAMETER;
 			forbidden = _tmp13_;
 			forbidden_length1 = 20;
 			_forbidden_size_ = forbidden_length1;
@@ -12485,11 +12485,11 @@ return_test (ValadocApiNamespace* ns,
 						_tmp54_ = ret;
 						_tmp55_ = valadoc_api_typereference_get_data_type (_tmp54_);
 						_tmp56_ = _tmp55_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp56_, VALADOC_API_TYPE_STRUCT), "ret.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp56_, BALADOC_API_TYPE_STRUCT), "ret.data_type is Api.Struct");
 						_tmp57_ = ret;
 						_tmp58_ = valadoc_api_typereference_get_data_type (_tmp57_);
 						_tmp59_ = _tmp58_;
-						_tmp60_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp59_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp60_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp59_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp61_ = _tmp60_;
 						_vala_assert (g_strcmp0 (_tmp61_, "int") == 0, "((Api.Struct) ret.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp61_);
@@ -12559,11 +12559,11 @@ return_test (ValadocApiNamespace* ns,
 						_tmp82_ = ret;
 						_tmp83_ = valadoc_api_typereference_get_data_type (_tmp82_);
 						_tmp84_ = _tmp83_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp84_, VALADOC_API_TYPE_STRUCT), "ret.data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp84_, BALADOC_API_TYPE_STRUCT), "ret.data_type is Api.Struct");
 						_tmp85_ = ret;
 						_tmp86_ = valadoc_api_typereference_get_data_type (_tmp85_);
 						_tmp87_ = _tmp86_;
-						_tmp88_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp87_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp88_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp87_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp89_ = _tmp88_;
 						_vala_assert (g_strcmp0 (_tmp89_, "int") == 0, "((Api.Struct) ret.data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp89_);
@@ -12633,11 +12633,11 @@ return_test (ValadocApiNamespace* ns,
 						_tmp110_ = ret;
 						_tmp111_ = valadoc_api_typereference_get_data_type (_tmp110_);
 						_tmp112_ = _tmp111_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp112_, VALADOC_API_TYPE_CLASS), "ret.data_type is Api.Class");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp112_, BALADOC_API_TYPE_CLASS), "ret.data_type is Api.Class");
 						_tmp113_ = ret;
 						_tmp114_ = valadoc_api_typereference_get_data_type (_tmp113_);
 						_tmp115_ = _tmp114_;
-						_tmp116_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp115_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+						_tmp116_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp115_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 						_tmp117_ = _tmp116_;
 						_vala_assert (g_strcmp0 (_tmp117_, "string") == 0, "((Api.Class) ret.data_type).get_full_name () == \"string\"");
 						_g_free0 (_tmp117_);
@@ -12723,29 +12723,29 @@ return_test (ValadocApiNamespace* ns,
 						_tmp138_ = ret;
 						_tmp139_ = valadoc_api_typereference_get_data_type (_tmp138_);
 						_tmp140_ = _tmp139_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp140_, VALADOC_API_TYPE_POINTER), "ret.data_type is Api.Pointer");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp140_, BALADOC_API_TYPE_POINTER), "ret.data_type is Api.Pointer");
 						_tmp141_ = ret;
 						_tmp142_ = valadoc_api_typereference_get_data_type (_tmp141_);
 						_tmp143_ = _tmp142_;
-						_tmp144_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp143_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp144_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp143_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp145_ = _tmp144_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp145_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Pointer) ret.data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp145_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Pointer) ret.data_type).data_type is Api.TypeReference");
 						_tmp146_ = ret;
 						_tmp147_ = valadoc_api_typereference_get_data_type (_tmp146_);
 						_tmp148_ = _tmp147_;
-						_tmp149_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp148_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp149_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp148_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp150_ = _tmp149_;
-						_tmp151_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp150_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp151_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp150_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp152_ = _tmp151_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp152_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Pointer) ret.data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp152_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Pointer) ret.data_type).data_type).data_type is Api.Struct");
 						_tmp153_ = ret;
 						_tmp154_ = valadoc_api_typereference_get_data_type (_tmp153_);
 						_tmp155_ = _tmp154_;
-						_tmp156_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp155_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp156_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp155_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp157_ = _tmp156_;
-						_tmp158_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp157_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp158_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp157_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp159_ = _tmp158_;
-						_tmp160_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp159_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp160_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp159_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp161_ = _tmp160_;
 						_vala_assert (g_strcmp0 (_tmp161_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Pointer) ret.data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp161_);
@@ -12842,41 +12842,41 @@ return_test (ValadocApiNamespace* ns,
 						_tmp182_ = ret;
 						_tmp183_ = valadoc_api_typereference_get_data_type (_tmp182_);
 						_tmp184_ = _tmp183_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp184_, VALADOC_API_TYPE_POINTER), "ret.data_type is Api.Pointer");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp184_, BALADOC_API_TYPE_POINTER), "ret.data_type is Api.Pointer");
 						_tmp185_ = ret;
 						_tmp186_ = valadoc_api_typereference_get_data_type (_tmp185_);
 						_tmp187_ = _tmp186_;
-						_tmp188_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp187_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp188_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp187_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp189_ = _tmp188_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp189_, VALADOC_API_TYPE_POINTER), "((Api.Pointer) ret.data_type).data_type is Api.Pointer");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp189_, BALADOC_API_TYPE_POINTER), "((Api.Pointer) ret.data_type).data_type is Api.Pointer");
 						_tmp190_ = ret;
 						_tmp191_ = valadoc_api_typereference_get_data_type (_tmp190_);
 						_tmp192_ = _tmp191_;
-						_tmp193_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp192_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp193_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp192_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp194_ = _tmp193_;
-						_tmp195_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp194_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp195_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp194_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp196_ = _tmp195_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp196_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Pointer) ((Api.Pointer) ret.data_type).data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp196_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Pointer) ((Api.Pointer) ret.data_type).data_type).data_type is Api.TypeReference");
 						_tmp197_ = ret;
 						_tmp198_ = valadoc_api_typereference_get_data_type (_tmp197_);
 						_tmp199_ = _tmp198_;
-						_tmp200_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp199_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp200_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp199_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp201_ = _tmp200_;
-						_tmp202_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp201_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp202_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp201_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp203_ = _tmp202_;
-						_tmp204_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp203_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp204_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp203_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp205_ = _tmp204_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp205_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Pointer) ((Api.Pointer) ret.data_type).data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp205_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Pointer) ((Api.Pointer) ret.data_type).data_type).data_type).data_type is Api.Struct");
 						_tmp206_ = ret;
 						_tmp207_ = valadoc_api_typereference_get_data_type (_tmp206_);
 						_tmp208_ = _tmp207_;
-						_tmp209_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp208_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp209_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp208_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp210_ = _tmp209_;
-						_tmp211_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp210_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+						_tmp211_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp210_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 						_tmp212_ = _tmp211_;
-						_tmp213_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp212_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp213_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp212_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp214_ = _tmp213_;
-						_tmp215_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp214_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp215_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp214_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp216_ = _tmp215_;
 						_vala_assert (g_strcmp0 (_tmp216_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Pointer) ((Api.Pointer) ret.data_type).data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp216_);
@@ -12962,29 +12962,29 @@ return_test (ValadocApiNamespace* ns,
 						_tmp237_ = ret;
 						_tmp238_ = valadoc_api_typereference_get_data_type (_tmp237_);
 						_tmp239_ = _tmp238_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp239_, VALADOC_API_TYPE_ARRAY), "ret.data_type is Api.Array");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp239_, BALADOC_API_TYPE_ARRAY), "ret.data_type is Api.Array");
 						_tmp240_ = ret;
 						_tmp241_ = valadoc_api_typereference_get_data_type (_tmp240_);
 						_tmp242_ = _tmp241_;
-						_tmp243_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp242_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp243_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp242_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp244_ = _tmp243_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp244_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) ret.data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp244_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) ret.data_type).data_type is Api.TypeReference");
 						_tmp245_ = ret;
 						_tmp246_ = valadoc_api_typereference_get_data_type (_tmp245_);
 						_tmp247_ = _tmp246_;
-						_tmp248_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp247_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp248_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp247_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp249_ = _tmp248_;
-						_tmp250_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp249_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp250_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp249_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp251_ = _tmp250_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp251_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) ret.data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp251_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) ret.data_type).data_type).data_type is Api.Struct");
 						_tmp252_ = ret;
 						_tmp253_ = valadoc_api_typereference_get_data_type (_tmp252_);
 						_tmp254_ = _tmp253_;
-						_tmp255_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp254_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp255_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp254_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp256_ = _tmp255_;
-						_tmp257_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp256_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp257_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp256_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp258_ = _tmp257_;
-						_tmp259_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp258_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp259_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp258_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp260_ = _tmp259_;
 						_vala_assert (g_strcmp0 (_tmp260_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Array) ret.data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp260_);
@@ -13070,29 +13070,29 @@ return_test (ValadocApiNamespace* ns,
 						_tmp281_ = ret;
 						_tmp282_ = valadoc_api_typereference_get_data_type (_tmp281_);
 						_tmp283_ = _tmp282_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp283_, VALADOC_API_TYPE_ARRAY), "ret.data_type is Api.Array");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp283_, BALADOC_API_TYPE_ARRAY), "ret.data_type is Api.Array");
 						_tmp284_ = ret;
 						_tmp285_ = valadoc_api_typereference_get_data_type (_tmp284_);
 						_tmp286_ = _tmp285_;
-						_tmp287_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp286_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp287_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp286_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp288_ = _tmp287_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp288_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) ret.data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp288_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) ret.data_type).data_type is Api.TypeReference");
 						_tmp289_ = ret;
 						_tmp290_ = valadoc_api_typereference_get_data_type (_tmp289_);
 						_tmp291_ = _tmp290_;
-						_tmp292_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp291_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp292_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp291_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp293_ = _tmp292_;
-						_tmp294_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp293_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp294_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp293_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp295_ = _tmp294_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp295_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) ret.data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp295_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) ret.data_type).data_type).data_type is Api.Struct");
 						_tmp296_ = ret;
 						_tmp297_ = valadoc_api_typereference_get_data_type (_tmp296_);
 						_tmp298_ = _tmp297_;
-						_tmp299_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp298_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp299_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp298_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp300_ = _tmp299_;
-						_tmp301_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp300_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp301_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp300_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp302_ = _tmp301_;
-						_tmp303_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp302_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp303_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp302_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp304_ = _tmp303_;
 						_vala_assert (g_strcmp0 (_tmp304_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Array) ret.data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp304_);
@@ -13189,41 +13189,41 @@ return_test (ValadocApiNamespace* ns,
 						_tmp325_ = ret;
 						_tmp326_ = valadoc_api_typereference_get_data_type (_tmp325_);
 						_tmp327_ = _tmp326_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp327_, VALADOC_API_TYPE_ARRAY), "ret.data_type is Api.Array");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp327_, BALADOC_API_TYPE_ARRAY), "ret.data_type is Api.Array");
 						_tmp328_ = ret;
 						_tmp329_ = valadoc_api_typereference_get_data_type (_tmp328_);
 						_tmp330_ = _tmp329_;
-						_tmp331_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp330_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp331_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp330_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp332_ = _tmp331_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp332_, VALADOC_API_TYPE_ARRAY), "((Api.Array) ret.data_type).data_type is Api.Array");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp332_, BALADOC_API_TYPE_ARRAY), "((Api.Array) ret.data_type).data_type is Api.Array");
 						_tmp333_ = ret;
 						_tmp334_ = valadoc_api_typereference_get_data_type (_tmp333_);
 						_tmp335_ = _tmp334_;
-						_tmp336_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp335_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp336_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp335_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp337_ = _tmp336_;
-						_tmp338_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp337_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp338_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp337_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp339_ = _tmp338_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp339_, VALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) ((Api.Array) ret.data_type).data_type).data_type is Api.TypeReference");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp339_, BALADOC_API_TYPE_TYPEREFERENCE), "((Api.Array) ((Api.Array) ret.data_type).data_type).data_type is Api.TypeReference");
 						_tmp340_ = ret;
 						_tmp341_ = valadoc_api_typereference_get_data_type (_tmp340_);
 						_tmp342_ = _tmp341_;
-						_tmp343_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp342_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp343_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp342_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp344_ = _tmp343_;
-						_tmp345_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp344_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp345_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp344_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp346_ = _tmp345_;
-						_tmp347_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp346_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp347_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp346_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp348_ = _tmp347_;
-						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp348_, VALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) ((Api.Array) ret.data_type).data_type).data_type).data_type is Api.Struct");
+						_vala_assert (G_TYPE_CHECK_INSTANCE_TYPE (_tmp348_, BALADOC_API_TYPE_STRUCT), "((Api.TypeReference) ((Api.Array) ((Api.Array) ret.data_type).data_type).data_type).data_type is Api.Struct");
 						_tmp349_ = ret;
 						_tmp350_ = valadoc_api_typereference_get_data_type (_tmp349_);
 						_tmp351_ = _tmp350_;
-						_tmp352_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp351_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp352_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp351_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp353_ = _tmp352_;
-						_tmp354_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp353_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+						_tmp354_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp353_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 						_tmp355_ = _tmp354_;
-						_tmp356_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp355_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+						_tmp356_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp355_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 						_tmp357_ = _tmp356_;
-						_tmp358_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp357_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+						_tmp358_ = valadoc_api_node_get_full_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp357_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 						_tmp359_ = _tmp358_;
 						_vala_assert (g_strcmp0 (_tmp359_, "int") == 0, "((Api.Struct) ((Api.TypeReference) ((Api.Array) ((Api.Array) ret.data_type).data_type).data_type).data_type).get_full_name () == \"int\"");
 						_g_free0 (_tmp359_);
@@ -13308,7 +13308,7 @@ version_test (ValadocApiNamespace* ns,
 	gboolean func9 = FALSE;
 	g_return_if_fail (ns != NULL);
 	g_return_if_fail (pkg != NULL);
-	_tmp0_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) ns, VALADOC_API_NODE_TYPE_METHOD, FALSE);
+	_tmp0_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) ns, BALADOC_API_NODE_TYPE_METHOD, FALSE);
 	methods = _tmp0_;
 	func1 = FALSE;
 	func2 = FALSE;
@@ -13402,31 +13402,31 @@ version_test (ValadocApiNamespace* ns,
 			_tmp9_ = vala_list_get (_tmp8_, _node_index);
 			node = (ValadocApiNode*) _tmp9_;
 			_tmp10_ = node;
-			_tmp11_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp10_) : NULL);
+			_tmp11_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp10_) : NULL);
 			m = _tmp11_;
 			_tmp12_ = m;
 			_vala_assert (_tmp12_ != NULL, "m != null");
 			_tmp13_ = g_new0 (ValadocApiNodeType, 20);
-			_tmp13_[0] = VALADOC_API_NODE_TYPE_CLASS;
-			_tmp13_[1] = VALADOC_API_NODE_TYPE_CONSTANT;
-			_tmp13_[2] = VALADOC_API_NODE_TYPE_CREATION_METHOD;
-			_tmp13_[3] = VALADOC_API_NODE_TYPE_DELEGATE;
-			_tmp13_[4] = VALADOC_API_NODE_TYPE_ENUM;
-			_tmp13_[5] = VALADOC_API_NODE_TYPE_ENUM_VALUE;
-			_tmp13_[6] = VALADOC_API_NODE_TYPE_ERROR_CODE;
-			_tmp13_[7] = VALADOC_API_NODE_TYPE_ERROR_DOMAIN;
-			_tmp13_[8] = VALADOC_API_NODE_TYPE_FIELD;
-			_tmp13_[9] = VALADOC_API_NODE_TYPE_INTERFACE;
-			_tmp13_[10] = VALADOC_API_NODE_TYPE_METHOD;
-			_tmp13_[11] = VALADOC_API_NODE_TYPE_NAMESPACE;
-			_tmp13_[12] = VALADOC_API_NODE_TYPE_PACKAGE;
-			_tmp13_[13] = VALADOC_API_NODE_TYPE_PROPERTY;
-			_tmp13_[14] = VALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
-			_tmp13_[15] = VALADOC_API_NODE_TYPE_SIGNAL;
-			_tmp13_[16] = VALADOC_API_NODE_TYPE_STATIC_METHOD;
-			_tmp13_[17] = VALADOC_API_NODE_TYPE_STRUCT;
-			_tmp13_[18] = VALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
-			_tmp13_[19] = VALADOC_API_NODE_TYPE_TYPE_PARAMETER;
+			_tmp13_[0] = BALADOC_API_NODE_TYPE_CLASS;
+			_tmp13_[1] = BALADOC_API_NODE_TYPE_CONSTANT;
+			_tmp13_[2] = BALADOC_API_NODE_TYPE_CREATION_METHOD;
+			_tmp13_[3] = BALADOC_API_NODE_TYPE_DELEGATE;
+			_tmp13_[4] = BALADOC_API_NODE_TYPE_ENUM;
+			_tmp13_[5] = BALADOC_API_NODE_TYPE_ENUM_VALUE;
+			_tmp13_[6] = BALADOC_API_NODE_TYPE_ERROR_CODE;
+			_tmp13_[7] = BALADOC_API_NODE_TYPE_ERROR_DOMAIN;
+			_tmp13_[8] = BALADOC_API_NODE_TYPE_FIELD;
+			_tmp13_[9] = BALADOC_API_NODE_TYPE_INTERFACE;
+			_tmp13_[10] = BALADOC_API_NODE_TYPE_METHOD;
+			_tmp13_[11] = BALADOC_API_NODE_TYPE_NAMESPACE;
+			_tmp13_[12] = BALADOC_API_NODE_TYPE_PACKAGE;
+			_tmp13_[13] = BALADOC_API_NODE_TYPE_PROPERTY;
+			_tmp13_[14] = BALADOC_API_NODE_TYPE_PROPERTY_ACCESSOR;
+			_tmp13_[15] = BALADOC_API_NODE_TYPE_SIGNAL;
+			_tmp13_[16] = BALADOC_API_NODE_TYPE_STATIC_METHOD;
+			_tmp13_[17] = BALADOC_API_NODE_TYPE_STRUCT;
+			_tmp13_[18] = BALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
+			_tmp13_[19] = BALADOC_API_NODE_TYPE_TYPE_PARAMETER;
 			forbidden = _tmp13_;
 			forbidden_length1 = 20;
 			_forbidden_size_ = forbidden_length1;
@@ -13460,7 +13460,7 @@ version_test (ValadocApiNamespace* ns,
 				_tmp31_ = dattr;
 				_tmp32_ = valadoc_api_item_get_data ((ValadocApiItem*) _tmp31_);
 				_tmp33_ = _tmp32_;
-				_tmp29_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp33_, VALA_TYPE_ATTRIBUTE) ? ((ValaAttribute*) _tmp33_) : NULL;
+				_tmp29_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp33_, BALA_TYPE_ATTRIBUTE) ? ((ValaAttribute*) _tmp33_) : NULL;
 			} else {
 				_tmp29_ = NULL;
 			}
@@ -13474,7 +13474,7 @@ version_test (ValadocApiNamespace* ns,
 				_tmp37_ = vattr;
 				_tmp38_ = valadoc_api_item_get_data ((ValadocApiItem*) _tmp37_);
 				_tmp39_ = _tmp38_;
-				_tmp35_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp39_, VALA_TYPE_ATTRIBUTE) ? ((ValaAttribute*) _tmp39_) : NULL;
+				_tmp35_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp39_, BALA_TYPE_ATTRIBUTE) ? ((ValaAttribute*) _tmp39_) : NULL;
 			} else {
 				_tmp35_ = NULL;
 			}
@@ -13953,7 +13953,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	gboolean versiontest = FALSE;
 	g_return_if_fail (global_ns != NULL);
 	g_return_if_fail (pkg != NULL);
-	_tmp0_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_METHOD, FALSE);
+	_tmp0_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_METHOD, FALSE);
 	methods = _tmp0_;
 	_tmp1_ = methods;
 	_tmp2_ = vala_collection_get_size ((ValaCollection*) _tmp1_);
@@ -13962,7 +13962,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp4_ = methods;
 	_tmp5_ = vala_list_get (_tmp4_, 0);
 	_tmp6_ = (ValadocApiNode*) _tmp5_;
-	_tmp7_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp6_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp6_) : NULL;
+	_tmp7_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp6_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp6_) : NULL;
 	if (_tmp7_ == NULL) {
 		_g_object_unref0 (_tmp6_);
 	}
@@ -14013,7 +14013,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp39_ = method;
 	_tmp40_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp39_);
 	_tmp41_ = _tmp40_;
-	_vala_assert (_tmp41_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp41_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "method.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp42_ = method;
 	_tmp43_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp42_);
 	_tmp44_ = _tmp43_;
@@ -14036,7 +14036,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp55_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp54_);
 	_tmp56_ = _tmp55_;
 	_vala_assert (_tmp56_ == pkg, "method.package == pkg");
-	_tmp57_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_DELEGATE, FALSE);
+	_tmp57_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_DELEGATE, FALSE);
 	delegates = _tmp57_;
 	_tmp58_ = delegates;
 	_tmp59_ = vala_collection_get_size ((ValaCollection*) _tmp58_);
@@ -14045,7 +14045,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp61_ = delegates;
 	_tmp62_ = vala_list_get (_tmp61_, 0);
 	_tmp63_ = (ValadocApiNode*) _tmp62_;
-	_tmp64_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp63_, VALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp63_) : NULL;
+	_tmp64_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp63_, BALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp63_) : NULL;
 	if (_tmp64_ == NULL) {
 		_g_object_unref0 (_tmp63_);
 	}
@@ -14072,7 +14072,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp78_ = del;
 	_tmp79_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp78_);
 	_tmp80_ = _tmp79_;
-	_vala_assert (_tmp80_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "del.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp80_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "del.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp81_ = del;
 	_tmp82_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp81_);
 	_tmp83_ = _tmp82_;
@@ -14095,7 +14095,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp94_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp93_);
 	_tmp95_ = _tmp94_;
 	_vala_assert (_tmp95_ == pkg, "del.package == pkg");
-	_tmp96_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_FIELD, FALSE);
+	_tmp96_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_FIELD, FALSE);
 	fields = _tmp96_;
 	_tmp97_ = fields;
 	_tmp98_ = vala_collection_get_size ((ValaCollection*) _tmp97_);
@@ -14104,7 +14104,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp100_ = fields;
 	_tmp101_ = vala_list_get (_tmp100_, 0);
 	_tmp102_ = (ValadocApiNode*) _tmp101_;
-	_tmp103_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp102_, VALADOC_API_TYPE_FIELD) ? ((ValadocApiField*) _tmp102_) : NULL;
+	_tmp103_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp102_, BALADOC_API_TYPE_FIELD) ? ((ValadocApiField*) _tmp102_) : NULL;
 	if (_tmp103_ == NULL) {
 		_g_object_unref0 (_tmp102_);
 	}
@@ -14131,7 +14131,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp117_ = field;
 	_tmp118_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp117_);
 	_tmp119_ = _tmp118_;
-	_vala_assert (_tmp119_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp119_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "field.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp120_ = field;
 	_tmp121_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp120_);
 	_tmp122_ = _tmp121_;
@@ -14154,7 +14154,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp133_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp132_);
 	_tmp134_ = _tmp133_;
 	_vala_assert (_tmp134_ == pkg, "field.package == pkg");
-	_tmp135_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_CONSTANT, FALSE);
+	_tmp135_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_CONSTANT, FALSE);
 	constants = _tmp135_;
 	_tmp136_ = constants;
 	_tmp137_ = vala_collection_get_size ((ValaCollection*) _tmp136_);
@@ -14163,7 +14163,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp139_ = constants;
 	_tmp140_ = vala_list_get (_tmp139_, 0);
 	_tmp141_ = (ValadocApiNode*) _tmp140_;
-	_tmp142_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp141_, VALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp141_) : NULL;
+	_tmp142_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp141_, BALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp141_) : NULL;
 	if (_tmp142_ == NULL) {
 		_g_object_unref0 (_tmp141_);
 	}
@@ -14182,7 +14182,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp150_ = constant;
 	_tmp151_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) _tmp150_);
 	_tmp152_ = _tmp151_;
-	_vala_assert (_tmp152_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "constant.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp152_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "constant.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp153_ = constant;
 	_tmp154_ = valadoc_api_node_get_full_name ((ValadocApiNode*) _tmp153_);
 	_tmp155_ = _tmp154_;
@@ -14205,7 +14205,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp166_ = valadoc_documentation_get_package ((ValadocDocumentation*) _tmp165_);
 	_tmp167_ = _tmp166_;
 	_vala_assert (_tmp167_ == pkg, "constant.package == pkg");
-	_tmp168_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_ENUM, FALSE);
+	_tmp168_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_ENUM, FALSE);
 	enums = _tmp168_;
 	_tmp169_ = enums;
 	_tmp170_ = vala_collection_get_size ((ValaCollection*) _tmp169_);
@@ -14214,14 +14214,14 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp172_ = enums;
 	_tmp173_ = vala_list_get (_tmp172_, 0);
 	_tmp174_ = (ValadocApiNode*) _tmp173_;
-	_tmp175_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp174_, VALADOC_API_TYPE_ENUM) ? ((ValadocApiEnum*) _tmp174_) : NULL;
+	_tmp175_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp174_, BALADOC_API_TYPE_ENUM) ? ((ValadocApiEnum*) _tmp174_) : NULL;
 	if (_tmp175_ == NULL) {
 		_g_object_unref0 (_tmp174_);
 	}
 	en = _tmp175_;
 	_tmp176_ = en;
 	test_enum_global (_tmp176_, pkg, global_ns);
-	_tmp177_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_ERROR_DOMAIN, FALSE);
+	_tmp177_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_ERROR_DOMAIN, FALSE);
 	errordomains = _tmp177_;
 	_tmp178_ = errordomains;
 	_tmp179_ = vala_collection_get_size ((ValaCollection*) _tmp178_);
@@ -14230,14 +14230,14 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp181_ = errordomains;
 	_tmp182_ = vala_list_get (_tmp181_, 0);
 	_tmp183_ = (ValadocApiNode*) _tmp182_;
-	_tmp184_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp183_, VALADOC_API_TYPE_ERROR_DOMAIN) ? ((ValadocApiErrorDomain*) _tmp183_) : NULL;
+	_tmp184_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp183_, BALADOC_API_TYPE_ERROR_DOMAIN) ? ((ValadocApiErrorDomain*) _tmp183_) : NULL;
 	if (_tmp184_ == NULL) {
 		_g_object_unref0 (_tmp183_);
 	}
 	err = _tmp184_;
 	_tmp185_ = err;
 	test_erroromain_global (_tmp185_, pkg, global_ns);
-	_tmp186_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_CLASS, FALSE);
+	_tmp186_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_CLASS, FALSE);
 	classes = _tmp186_;
 	_tmp187_ = classes;
 	_tmp188_ = vala_collection_get_size ((ValaCollection*) _tmp187_);
@@ -14246,14 +14246,14 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp190_ = classes;
 	_tmp191_ = vala_list_get (_tmp190_, 0);
 	_tmp192_ = (ValadocApiNode*) _tmp191_;
-	_tmp193_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp192_, VALADOC_API_TYPE_CLASS) ? ((ValadocApiClass*) _tmp192_) : NULL;
+	_tmp193_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp192_, BALADOC_API_TYPE_CLASS) ? ((ValadocApiClass*) _tmp192_) : NULL;
 	if (_tmp193_ == NULL) {
 		_g_object_unref0 (_tmp192_);
 	}
 	cl = _tmp193_;
 	_tmp194_ = cl;
 	test_class_global (_tmp194_, pkg, global_ns);
-	_tmp195_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_INTERFACE, FALSE);
+	_tmp195_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_INTERFACE, FALSE);
 	interfaces = _tmp195_;
 	_tmp196_ = interfaces;
 	_tmp197_ = vala_collection_get_size ((ValaCollection*) _tmp196_);
@@ -14262,14 +14262,14 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp199_ = interfaces;
 	_tmp200_ = vala_list_get (_tmp199_, 0);
 	_tmp201_ = (ValadocApiNode*) _tmp200_;
-	_tmp202_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp201_, VALADOC_API_TYPE_INTERFACE) ? ((ValadocApiInterface*) _tmp201_) : NULL;
+	_tmp202_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp201_, BALADOC_API_TYPE_INTERFACE) ? ((ValadocApiInterface*) _tmp201_) : NULL;
 	if (_tmp202_ == NULL) {
 		_g_object_unref0 (_tmp201_);
 	}
 	iface = _tmp202_;
 	_tmp203_ = iface;
 	test_interface_global (_tmp203_, pkg, global_ns);
-	_tmp204_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_STRUCT, FALSE);
+	_tmp204_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_STRUCT, FALSE);
 	structs = _tmp204_;
 	_tmp205_ = structs;
 	_tmp206_ = vala_collection_get_size ((ValaCollection*) _tmp205_);
@@ -14278,14 +14278,14 @@ test_global_ns (ValadocApiNamespace* global_ns,
 	_tmp208_ = structs;
 	_tmp209_ = vala_list_get (_tmp208_, 0);
 	_tmp210_ = (ValadocApiNode*) _tmp209_;
-	_tmp211_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp210_, VALADOC_API_TYPE_STRUCT) ? ((ValadocApiStruct*) _tmp210_) : NULL;
+	_tmp211_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp210_, BALADOC_API_TYPE_STRUCT) ? ((ValadocApiStruct*) _tmp210_) : NULL;
 	if (_tmp211_ == NULL) {
 		_g_object_unref0 (_tmp210_);
 	}
 	stru = _tmp211_;
 	_tmp212_ = stru;
 	test_struct_global (_tmp212_, pkg, global_ns);
-	_tmp213_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, VALADOC_API_NODE_TYPE_NAMESPACE, FALSE);
+	_tmp213_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) global_ns, BALADOC_API_NODE_TYPE_NAMESPACE, FALSE);
 	namespaces = _tmp213_;
 	returntest = FALSE;
 	paramtest = FALSE;
@@ -14335,7 +14335,7 @@ test_global_ns (ValadocApiNamespace* global_ns,
 			_tmp222_ = vala_list_get (_tmp221_, _node_index);
 			node = (ValadocApiNode*) _tmp222_;
 			_tmp223_ = node;
-			_tmp224_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp223_, VALADOC_API_TYPE_NAMESPACE) ? ((ValadocApiNamespace*) _tmp223_) : NULL);
+			_tmp224_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp223_, BALADOC_API_TYPE_NAMESPACE) ? ((ValadocApiNamespace*) _tmp223_) : NULL);
 			ns = _tmp224_;
 			_tmp225_ = ns;
 			_vala_assert (_tmp225_ != NULL, "ns != null");
@@ -14455,7 +14455,7 @@ test_package_out (ValadocApiPackage* pkg)
 	_tmp4_ = valadoc_documentation_get_package ((ValadocDocumentation*) pkg);
 	_tmp5_ = _tmp4_;
 	_vala_assert (_tmp5_ == pkg, "pkg.package == pkg");
-	_tmp6_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) pkg, VALADOC_API_NODE_TYPE_NAMESPACE, FALSE);
+	_tmp6_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) pkg, BALADOC_API_NODE_TYPE_NAMESPACE, FALSE);
 	namespaces = _tmp6_;
 	_vala_assert (namespaces != NULL, "namespaces != null");
 	_tmp7_ = vala_collection_get_size ((ValaCollection*) namespaces);
@@ -14463,7 +14463,7 @@ test_package_out (ValadocApiPackage* pkg)
 	_vala_assert (_tmp8_ == 1, "namespaces.size == 1");
 	_tmp9_ = vala_list_get (namespaces, 0);
 	_tmp10_ = (ValadocApiNode*) _tmp9_;
-	_tmp11_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, VALADOC_API_TYPE_NAMESPACE) ? ((ValadocApiNamespace*) _tmp10_) : NULL;
+	_tmp11_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, BALADOC_API_TYPE_NAMESPACE) ? ((ValadocApiNamespace*) _tmp10_) : NULL;
 	if (_tmp11_ == NULL) {
 		_g_object_unref0 (_tmp10_);
 	}
@@ -14487,7 +14487,7 @@ test_package_out (ValadocApiPackage* pkg)
 	_vala_iterable_unref0 (_tmp19_);
 	_tmp22_ = valadoc_api_symbol_get_accessibility ((ValadocApiSymbol*) global_ns);
 	_tmp23_ = _tmp22_;
-	_vala_assert (_tmp23_ == VALA_SYMBOL_ACCESSIBILITY_PUBLIC, "global_ns.accessibility == Vala.SymbolAccessibility.PUBLIC");
+	_vala_assert (_tmp23_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "global_ns.accessibility == Vala.SymbolAccessibility.PUBLIC");
 	_tmp24_ = valadoc_documentation_get_package ((ValadocDocumentation*) global_ns);
 	_tmp25_ = _tmp24_;
 	_vala_assert (_tmp25_ == pkg, "global_ns.package == pkg");

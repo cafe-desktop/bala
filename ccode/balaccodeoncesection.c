@@ -90,7 +90,7 @@ vala_ccode_once_section_construct (GType object_type,
 ValaCCodeOnceSection*
 vala_ccode_once_section_new (const gchar* def)
 {
-	return vala_ccode_once_section_construct (VALA_TYPE_CCODE_ONCE_SECTION, def);
+	return vala_ccode_once_section_construct (BALA_TYPE_CCODE_ONCE_SECTION, def);
 }
 
 static void
@@ -184,9 +184,9 @@ static void
 vala_ccode_once_section_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeOnceSection * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_ONCE_SECTION, ValaCCodeOnceSection);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_ONCE_SECTION, ValaCCodeOnceSection);
 	_g_free0 (self->priv->_define);
-	VALA_CCODE_NODE_CLASS (vala_ccode_once_section_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_once_section_parent_class)->finalize (obj);
 }
 
 /**
@@ -197,7 +197,7 @@ vala_ccode_once_section_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeOnceSectionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_once_section_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeOnceSection), 0, (GInstanceInitFunc) vala_ccode_once_section_instance_init, NULL };
 	GType vala_ccode_once_section_type_id;
-	vala_ccode_once_section_type_id = g_type_register_static (VALA_TYPE_CCODE_FRAGMENT, "ValaCCodeOnceSection", &g_define_type_info, 0);
+	vala_ccode_once_section_type_id = g_type_register_static (BALA_TYPE_CCODE_FRAGMENT, "ValaCCodeOnceSection", &g_define_type_info, 0);
 	ValaCCodeOnceSection_private_offset = g_type_add_instance_private (vala_ccode_once_section_type_id, sizeof (ValaCCodeOnceSectionPrivate));
 	return vala_ccode_once_section_type_id;
 }

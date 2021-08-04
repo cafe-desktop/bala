@@ -84,7 +84,7 @@ vala_version_attribute_construct (GType object_type,
 ValaVersionAttribute*
 vala_version_attribute_new (ValaSymbol* symbol)
 {
-	return vala_version_attribute_construct (VALA_TYPE_VERSION_ATTRIBUTE, symbol);
+	return vala_version_attribute_construct (BALA_TYPE_VERSION_ATTRIBUTE, symbol);
 }
 
 static gboolean*
@@ -1072,7 +1072,7 @@ vala_param_spec_version_attribute (const gchar* name,
                                    GParamFlags flags)
 {
 	ValaParamSpecVersionAttribute* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_VERSION_ATTRIBUTE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_VERSION_ATTRIBUTE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1081,7 +1081,7 @@ vala_param_spec_version_attribute (const gchar* name,
 gpointer
 vala_value_get_version_attribute (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_VERSION_ATTRIBUTE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VERSION_ATTRIBUTE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1090,10 +1090,10 @@ vala_value_set_version_attribute (GValue* value,
                                   gpointer v_object)
 {
 	ValaVersionAttribute * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_VERSION_ATTRIBUTE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VERSION_ATTRIBUTE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_VERSION_ATTRIBUTE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VERSION_ATTRIBUTE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_version_attribute_ref (value->data[0].v_pointer);
@@ -1110,10 +1110,10 @@ vala_value_take_version_attribute (GValue* value,
                                    gpointer v_object)
 {
 	ValaVersionAttribute * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_VERSION_ATTRIBUTE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VERSION_ATTRIBUTE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_VERSION_ATTRIBUTE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VERSION_ATTRIBUTE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1145,7 +1145,7 @@ static void
 vala_version_attribute_finalize (ValaVersionAttribute * obj)
 {
 	ValaVersionAttribute * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_VERSION_ATTRIBUTE, ValaVersionAttribute);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_VERSION_ATTRIBUTE, ValaVersionAttribute);
 	g_signal_handlers_destroy (self);
 	_g_free0 (self->priv->_deprecated);
 	_g_free0 (self->priv->_experimental);
@@ -1193,7 +1193,7 @@ vala_version_attribute_unref (gpointer instance)
 	ValaVersionAttribute * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_VERSION_ATTRIBUTE_GET_CLASS (self)->finalize (self);
+		BALA_VERSION_ATTRIBUTE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

@@ -147,14 +147,14 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 	vala_ccode_struct_add_field (_tmp13_, "GAsyncResult*", "_res_", 0, NULL);
 	_tmp14_ = data;
 	vala_ccode_struct_add_field (_tmp14_, "GTask*", "_async_result", 0, NULL);
-	if (G_TYPE_CHECK_INSTANCE_TYPE (m, VALA_TYPE_CREATION_METHOD)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (m, BALA_TYPE_CREATION_METHOD)) {
 		ValaCCodeStruct* _tmp15_;
 		_tmp15_ = data;
 		vala_ccode_struct_add_field (_tmp15_, "GType", "object_type", 0, NULL);
 	}
 	_tmp16_ = vala_method_get_binding (m);
 	_tmp17_ = _tmp16_;
-	if (_tmp17_ == VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp17_ == BALA_MEMBER_BINDING_INSTANCE) {
 		ValaTypeSymbol* type_sym = NULL;
 		ValaSymbol* _tmp18_;
 		ValaSymbol* _tmp19_;
@@ -162,10 +162,10 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 		ValaTypeSymbol* _tmp21_;
 		_tmp18_ = vala_symbol_get_parent_symbol ((ValaSymbol*) m);
 		_tmp19_ = _tmp18_;
-		_tmp20_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp19_, VALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
+		_tmp20_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp19_, BALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
 		type_sym = _tmp20_;
 		_tmp21_ = type_sym;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp21_, VALA_TYPE_OBJECT_TYPE_SYMBOL)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp21_, BALA_TYPE_OBJECT_TYPE_SYMBOL)) {
 			ValaCCodeStruct* _tmp22_;
 			ValaTypeSymbol* _tmp23_;
 			gchar* _tmp24_;
@@ -270,7 +270,7 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 			_tmp56_ = param;
 			_tmp57_ = vala_variable_get_variable_type ((ValaVariable*) _tmp56_);
 			_tmp58_ = _tmp57_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp58_, VALA_TYPE_ARRAY_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp58_, BALA_TYPE_ARRAY_TYPE)) {
 				ValaArrayType* array_type = NULL;
 				ValaParameter* _tmp59_;
 				ValaDataType* _tmp60_;
@@ -281,7 +281,7 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 				_tmp59_ = param;
 				_tmp60_ = vala_variable_get_variable_type ((ValaVariable*) _tmp59_);
 				_tmp61_ = _tmp60_;
-				_tmp62_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp61_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+				_tmp62_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp61_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 				array_type = _tmp62_;
 				_tmp64_ = param;
 				if (vala_get_ccode_array_length ((ValaCodeNode*) _tmp64_)) {
@@ -289,7 +289,7 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 					gboolean _tmp66_;
 					gboolean _tmp67_;
 					_tmp65_ = array_type;
-					_tmp66_ = vala_array_type_get_fixed_length (G_TYPE_CHECK_INSTANCE_CAST (_tmp65_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+					_tmp66_ = vala_array_type_get_fixed_length (G_TYPE_CHECK_INSTANCE_CAST (_tmp65_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 					_tmp67_ = _tmp66_;
 					_tmp63_ = !_tmp67_;
 				} else {
@@ -349,7 +349,7 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 				_tmp80_ = param;
 				_tmp81_ = vala_variable_get_variable_type ((ValaVariable*) _tmp80_);
 				_tmp82_ = _tmp81_;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp82_, VALA_TYPE_DELEGATE_TYPE)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp82_, BALA_TYPE_DELEGATE_TYPE)) {
 					ValaDelegateType* deleg_type = NULL;
 					ValaParameter* _tmp83_;
 					ValaDataType* _tmp84_;
@@ -363,7 +363,7 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 					_tmp83_ = param;
 					_tmp84_ = vala_variable_get_variable_type ((ValaVariable*) _tmp83_);
 					_tmp85_ = _tmp84_;
-					_tmp86_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp85_, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
+					_tmp86_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp85_, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
 					deleg_type = _tmp86_;
 					_tmp87_ = deleg_type;
 					_tmp88_ = vala_delegate_type_get_delegate_symbol (_tmp87_);
@@ -513,7 +513,7 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 	}
 	_tmp140_ = vala_callable_get_return_type ((ValaCallable*) m);
 	_tmp141_ = _tmp140_;
-	if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp141_, VALA_TYPE_VOID_TYPE)) {
+	if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp141_, BALA_TYPE_VOID_TYPE)) {
 		ValaCCodeStruct* _tmp142_;
 		ValaDataType* _tmp143_;
 		ValaDataType* _tmp144_;
@@ -530,14 +530,14 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 		_g_free0 (_tmp146_);
 		_tmp147_ = vala_callable_get_return_type ((ValaCallable*) m);
 		_tmp148_ = _tmp147_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp148_, VALA_TYPE_ARRAY_TYPE)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp148_, BALA_TYPE_ARRAY_TYPE)) {
 			ValaArrayType* array_type = NULL;
 			ValaDataType* _tmp149_;
 			ValaDataType* _tmp150_;
 			ValaArrayType* _tmp151_;
 			_tmp149_ = vala_callable_get_return_type ((ValaCallable*) m);
 			_tmp150_ = _tmp149_;
-			_tmp151_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp150_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+			_tmp151_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp150_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 			array_type = _tmp151_;
 			if (vala_get_ccode_array_length ((ValaCodeNode*) m)) {
 				gchar* length_ctype = NULL;
@@ -587,7 +587,7 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 			ValaDataType* _tmp163_;
 			_tmp162_ = vala_callable_get_return_type ((ValaCallable*) m);
 			_tmp163_ = _tmp162_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp163_, VALA_TYPE_DELEGATE_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp163_, BALA_TYPE_DELEGATE_TYPE)) {
 				ValaDelegateType* deleg_type = NULL;
 				ValaDataType* _tmp164_;
 				ValaDataType* _tmp165_;
@@ -599,7 +599,7 @@ vala_gasync_module_generate_data_struct (ValaGAsyncModule* self,
 				gboolean _tmp171_;
 				_tmp164_ = vala_callable_get_return_type ((ValaCallable*) m);
 				_tmp165_ = _tmp164_;
-				_tmp166_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp165_, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
+				_tmp166_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp165_, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
 				deleg_type = _tmp166_;
 				_tmp167_ = deleg_type;
 				_tmp168_ = vala_delegate_type_get_delegate_symbol (_tmp167_);
@@ -723,7 +723,7 @@ vala_gasync_module_generate_free_function (ValaGAsyncModule* self,
 	_g_free0 (_tmp7_);
 	freefunc = _tmp11_;
 	_tmp12_ = freefunc;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp12_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp12_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp13_ = freefunc;
 	_tmp14_ = vala_ccode_parameter_new ("_data", "gpointer");
 	_tmp15_ = _tmp14_;
@@ -794,7 +794,7 @@ vala_gasync_module_generate_free_function (ValaGAsyncModule* self,
 				_tmp41_ = param;
 				_tmp42_ = vala_parameter_get_direction (_tmp41_);
 				_tmp43_ = _tmp42_;
-				_tmp37_ = _tmp43_ != VALA_PARAMETER_DIRECTION_OUT;
+				_tmp37_ = _tmp43_ != BALA_PARAMETER_DIRECTION_OUT;
 			} else {
 				_tmp37_ = FALSE;
 			}
@@ -855,7 +855,7 @@ vala_gasync_module_generate_free_function (ValaGAsyncModule* self,
 			ValaDataType* _tmp63_;
 			_tmp62_ = vala_callable_get_return_type ((ValaCallable*) m);
 			_tmp63_ = _tmp62_;
-			_tmp61_ = !G_TYPE_CHECK_INSTANCE_TYPE (_tmp63_, VALA_TYPE_ARRAY_TYPE);
+			_tmp61_ = !G_TYPE_CHECK_INSTANCE_TYPE (_tmp63_, BALA_TYPE_ARRAY_TYPE);
 		}
 		if (_tmp61_) {
 			ValaLocalVariable* v = NULL;
@@ -915,7 +915,7 @@ vala_gasync_module_generate_free_function (ValaGAsyncModule* self,
 	}
 	_tmp84_ = vala_method_get_binding (m);
 	_tmp85_ = _tmp84_;
-	if (_tmp85_ == VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp85_ == BALA_MEMBER_BINDING_INSTANCE) {
 		ValaDataType* this_type = NULL;
 		ValaParameter* _tmp86_;
 		ValaParameter* _tmp87_;
@@ -1136,7 +1136,7 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 	_tmp12_ = g_direct_hash;
 	_tmp13_ = g_direct_equal;
 	_tmp14_ = g_direct_equal;
-	_tmp15_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp12_, _tmp13_, _tmp14_);
+	_tmp15_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp12_, _tmp13_, _tmp14_);
 	cparam_map = _tmp15_;
 	_tmp16_ = cparam_map;
 	_tmp17_ = vala_ccode_parameter_new ("_callback_", "GAsyncReadyCallback");
@@ -1174,7 +1174,7 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 		_tmp31_ = asyncfunc;
 		_tmp32_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp31_);
 		_tmp33_ = _tmp32_;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp31_, _tmp33_ | VALA_CCODE_MODIFIERS_STATIC);
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp31_, _tmp33_ | BALA_CCODE_MODIFIERS_STATIC);
 		_tmp34_ = ((ValaCCodeBaseModule*) self)->cfile;
 		_tmp35_ = asyncfunc;
 		vala_ccode_file_add_function_declaration (_tmp34_, _tmp35_);
@@ -1188,7 +1188,7 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 			_tmp37_ = asyncfunc;
 			_tmp38_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp37_);
 			_tmp39_ = _tmp38_;
-			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp37_, _tmp39_ | VALA_CCODE_MODIFIERS_STATIC);
+			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp37_, _tmp39_ | BALA_CCODE_MODIFIERS_STATIC);
 		} else {
 			gboolean _tmp40_ = FALSE;
 			ValaCodeContext* _tmp41_;
@@ -1213,7 +1213,7 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 				_tmp46_ = asyncfunc;
 				_tmp47_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp46_);
 				_tmp48_ = _tmp47_;
-				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp46_, _tmp48_ | VALA_CCODE_MODIFIERS_INTERNAL);
+				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp46_, _tmp48_ | BALA_CCODE_MODIFIERS_INTERNAL);
 			}
 		}
 	}
@@ -1316,11 +1316,11 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 		_tmp69_ = base_method;
 		_tmp70_ = vala_symbol_get_parent_symbol ((ValaSymbol*) _tmp69_);
 		_tmp71_ = _tmp70_;
-		_tmp72_ = vala_object_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp71_, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol));
+		_tmp72_ = vala_object_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp71_, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol));
 		base_expression_type = _tmp72_;
 		_tmp73_ = vala_symbol_get_parent_symbol ((ValaSymbol*) m);
 		_tmp74_ = _tmp73_;
-		_tmp75_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp74_, VALA_TYPE_OBJECT_TYPE_SYMBOL) ? ((ValaObjectTypeSymbol*) _tmp74_) : NULL);
+		_tmp75_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp74_, BALA_TYPE_OBJECT_TYPE_SYMBOL) ? ((ValaObjectTypeSymbol*) _tmp74_) : NULL);
 		type_symbol = _tmp75_;
 		_tmp76_ = type_symbol;
 		_tmp77_ = vala_object_type_new (_tmp76_);
@@ -1403,14 +1403,14 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 	create_result = _tmp126_;
 	_tmp127_ = vala_symbol_get_parent_symbol ((ValaSymbol*) m);
 	_tmp128_ = _tmp127_;
-	_tmp129_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp128_, VALA_TYPE_TYPESYMBOL) ? ((ValaTypeSymbol*) _tmp128_) : NULL);
+	_tmp129_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp128_, BALA_TYPE_TYPESYMBOL) ? ((ValaTypeSymbol*) _tmp128_) : NULL);
 	t = _tmp129_;
-	if (!G_TYPE_CHECK_INSTANCE_TYPE (m, VALA_TYPE_CREATION_METHOD)) {
+	if (!G_TYPE_CHECK_INSTANCE_TYPE (m, BALA_TYPE_CREATION_METHOD)) {
 		ValaMemberBinding _tmp133_;
 		ValaMemberBinding _tmp134_;
 		_tmp133_ = vala_method_get_binding (m);
 		_tmp134_ = _tmp133_;
-		_tmp132_ = _tmp134_ == VALA_MEMBER_BINDING_INSTANCE;
+		_tmp132_ = _tmp134_ == BALA_MEMBER_BINDING_INSTANCE;
 	} else {
 		_tmp132_ = FALSE;
 	}
@@ -1506,7 +1506,7 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 			_tmp160_ = param;
 			_tmp161_ = vala_variable_get_variable_type ((ValaVariable*) _tmp160_);
 			_tmp162_ = _tmp161_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp162_, VALA_TYPE_OBJECT_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp162_, BALA_TYPE_OBJECT_TYPE)) {
 				ValaParameter* _tmp163_;
 				ValaDataType* _tmp164_;
 				ValaDataType* _tmp165_;
@@ -1615,7 +1615,7 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 	_tmp212_ = _tmp211_;
 	_tmp213_ = attach_data_call;
 	vala_ccode_function_add_expression (_tmp212_, (ValaCCodeExpression*) _tmp213_);
-	if (G_TYPE_CHECK_INSTANCE_TYPE (m, VALA_TYPE_CREATION_METHOD)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (m, BALA_TYPE_CREATION_METHOD)) {
 		ValaCCodeFunction* _tmp214_;
 		ValaCCodeFunction* _tmp215_;
 		ValaCCodeIdentifier* _tmp216_;
@@ -1638,7 +1638,7 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 		ValaMemberBinding _tmp222_;
 		_tmp221_ = vala_method_get_binding (m);
 		_tmp222_ = _tmp221_;
-		if (_tmp222_ == VALA_MEMBER_BINDING_INSTANCE) {
+		if (_tmp222_ == BALA_MEMBER_BINDING_INSTANCE) {
 			ValaDataType* this_type = NULL;
 			ValaParameter* _tmp223_;
 			ValaParameter* _tmp224_;
@@ -1671,7 +1671,7 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 				ValaCCodeExpression* _tmp231_;
 				ValaCCodeUnaryExpression* _tmp232_;
 				_tmp231_ = cself;
-				_tmp232_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, _tmp231_);
+				_tmp232_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, _tmp231_);
 				_vala_ccode_node_unref0 (cself);
 				cself = (ValaCCodeExpression*) _tmp232_;
 			}
@@ -1760,7 +1760,7 @@ vala_gasync_module_generate_async_function (ValaGAsyncModule* self,
 			_tmp263_ = param;
 			_tmp264_ = vala_parameter_get_direction (_tmp263_);
 			_tmp265_ = _tmp264_;
-			if (_tmp265_ != VALA_PARAMETER_DIRECTION_OUT) {
+			if (_tmp265_ != BALA_PARAMETER_DIRECTION_OUT) {
 				gboolean old_captured = FALSE;
 				ValaParameter* _tmp266_;
 				gboolean _tmp267_;
@@ -2212,7 +2212,7 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 		_vala_code_node_unref0 (_tmp12_);
 		_tmp13_ = vala_symbol_get_parent_symbol ((ValaSymbol*) m);
 		_tmp14_ = _tmp13_;
-		_tmp15_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp14_, VALA_TYPE_CLASS) ? ((ValaClass*) _tmp14_) : NULL);
+		_tmp15_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp14_, BALA_TYPE_CLASS) ? ((ValaClass*) _tmp14_) : NULL);
 		cl = _tmp15_;
 		_tmp16_ = vala_get_ccode_name ((ValaCodeNode*) m);
 		_tmp17_ = _tmp16_;
@@ -2223,12 +2223,12 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 		_tmp20_ = g_direct_hash;
 		_tmp21_ = g_direct_equal;
 		_tmp22_ = g_direct_equal;
-		_tmp23_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp20_, _tmp21_, _tmp22_);
+		_tmp23_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp20_, _tmp21_, _tmp22_);
 		cparam_map = _tmp23_;
 		_tmp24_ = g_direct_hash;
 		_tmp25_ = g_direct_equal;
 		_tmp26_ = g_direct_equal;
-		_tmp27_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp24_, _tmp25_, _tmp26_);
+		_tmp27_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp24_, _tmp25_, _tmp26_);
 		carg_map = _tmp27_;
 		if (vala_symbol_is_private_symbol ((ValaSymbol*) m)) {
 			ValaCCodeFunction* _tmp28_;
@@ -2239,7 +2239,7 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 			_tmp29_ = asyncfunc;
 			_tmp30_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp29_);
 			_tmp31_ = _tmp30_;
-			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp29_, _tmp31_ | VALA_CCODE_MODIFIERS_STATIC);
+			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp29_, _tmp31_ | BALA_CCODE_MODIFIERS_STATIC);
 		} else {
 			gboolean _tmp32_ = FALSE;
 			ValaCodeContext* _tmp33_;
@@ -2264,10 +2264,10 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 				_tmp38_ = asyncfunc;
 				_tmp39_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp38_);
 				_tmp40_ = _tmp39_;
-				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp38_, _tmp40_ | VALA_CCODE_MODIFIERS_INTERNAL);
+				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp38_, _tmp40_ | BALA_CCODE_MODIFIERS_INTERNAL);
 			}
 		}
-		if (G_TYPE_CHECK_INSTANCE_TYPE (m, VALA_TYPE_CREATION_METHOD)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (m, BALA_TYPE_CREATION_METHOD)) {
 			ValaClass* _tmp43_;
 			_tmp43_ = cl;
 			_tmp42_ = _tmp43_ != NULL;
@@ -2316,13 +2316,13 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 		_tmp59_ = g_direct_hash;
 		_tmp60_ = g_direct_equal;
 		_tmp61_ = g_direct_equal;
-		_tmp62_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp59_, _tmp60_, _tmp61_);
+		_tmp62_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp59_, _tmp60_, _tmp61_);
 		_vala_map_unref0 (cparam_map);
 		cparam_map = _tmp62_;
 		_tmp63_ = g_direct_hash;
 		_tmp64_ = g_direct_equal;
 		_tmp65_ = g_direct_equal;
-		_tmp66_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp63_, _tmp64_, _tmp65_);
+		_tmp66_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp63_, _tmp64_, _tmp65_);
 		_vala_map_unref0 (carg_map);
 		carg_map = _tmp66_;
 		if (vala_symbol_is_private_symbol ((ValaSymbol*) m)) {
@@ -2334,7 +2334,7 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 			_tmp68_ = finishfunc;
 			_tmp69_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp68_);
 			_tmp70_ = _tmp69_;
-			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp68_, _tmp70_ | VALA_CCODE_MODIFIERS_STATIC);
+			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp68_, _tmp70_ | BALA_CCODE_MODIFIERS_STATIC);
 		} else {
 			gboolean _tmp71_ = FALSE;
 			ValaCodeContext* _tmp72_;
@@ -2359,10 +2359,10 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 				_tmp77_ = finishfunc;
 				_tmp78_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp77_);
 				_tmp79_ = _tmp78_;
-				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp77_, _tmp79_ | VALA_CCODE_MODIFIERS_INTERNAL);
+				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp77_, _tmp79_ | BALA_CCODE_MODIFIERS_INTERNAL);
 			}
 		}
-		if (G_TYPE_CHECK_INSTANCE_TYPE (m, VALA_TYPE_CREATION_METHOD)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (m, BALA_TYPE_CREATION_METHOD)) {
 			ValaClass* _tmp82_;
 			_tmp82_ = cl;
 			_tmp81_ = _tmp82_ != NULL;
@@ -2402,7 +2402,7 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 			_tmp93_ = finishfunc;
 			vala_ccode_file_add_function_declaration (decl_space, _tmp93_);
 		}
-		if (G_TYPE_CHECK_INSTANCE_TYPE (m, VALA_TYPE_CREATION_METHOD)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (m, BALA_TYPE_CREATION_METHOD)) {
 			ValaClass* _tmp95_;
 			_tmp95_ = cl;
 			_tmp94_ = _tmp95_ != NULL;
@@ -2447,7 +2447,7 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 				_tmp101_ = function;
 				_tmp102_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp101_);
 				_tmp103_ = _tmp102_;
-				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp101_, _tmp103_ | VALA_CCODE_MODIFIERS_STATIC);
+				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp101_, _tmp103_ | BALA_CCODE_MODIFIERS_STATIC);
 			} else {
 				gboolean _tmp104_ = FALSE;
 				ValaCodeContext* _tmp105_;
@@ -2472,13 +2472,13 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 					_tmp110_ = function;
 					_tmp111_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp110_);
 					_tmp112_ = _tmp111_;
-					vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp110_, _tmp112_ | VALA_CCODE_MODIFIERS_INTERNAL);
+					vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp110_, _tmp112_ | BALA_CCODE_MODIFIERS_INTERNAL);
 				}
 			}
 			_tmp113_ = g_direct_hash;
 			_tmp114_ = g_direct_equal;
 			_tmp115_ = g_direct_equal;
-			_tmp116_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp113_, _tmp114_, _tmp115_);
+			_tmp116_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp113_, _tmp114_, _tmp115_);
 			_vala_map_unref0 (cparam_map);
 			cparam_map = _tmp116_;
 			_tmp117_ = cparam_map;
@@ -2501,7 +2501,7 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 				_tmp124_ = function;
 				_tmp125_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp124_);
 				_tmp126_ = _tmp125_;
-				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp124_, _tmp126_ | VALA_CCODE_MODIFIERS_STATIC);
+				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp124_, _tmp126_ | BALA_CCODE_MODIFIERS_STATIC);
 			} else {
 				gboolean _tmp127_ = FALSE;
 				ValaCodeContext* _tmp128_;
@@ -2526,13 +2526,13 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 					_tmp133_ = function;
 					_tmp134_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp133_);
 					_tmp135_ = _tmp134_;
-					vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp133_, _tmp135_ | VALA_CCODE_MODIFIERS_INTERNAL);
+					vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp133_, _tmp135_ | BALA_CCODE_MODIFIERS_INTERNAL);
 				}
 			}
 			_tmp136_ = g_direct_hash;
 			_tmp137_ = g_direct_equal;
 			_tmp138_ = g_direct_equal;
-			_tmp139_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp136_, _tmp137_, _tmp138_);
+			_tmp139_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp136_, _tmp137_, _tmp138_);
 			_vala_map_unref0 (cparam_map);
 			cparam_map = _tmp139_;
 			_tmp140_ = cparam_map;
@@ -2550,7 +2550,7 @@ vala_gasync_module_real_generate_method_declaration (ValaCCodeBaseModule* base,
 		_vala_code_node_unref0 (cl);
 		return result;
 	} else {
-		result = VALA_CCODE_BASE_MODULE_CLASS (vala_gasync_module_parent_class)->generate_method_declaration ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GTK_MODULE, ValaGtkModule), m, decl_space);
+		result = BALA_CCODE_BASE_MODULE_CLASS (vala_gasync_module_parent_class)->generate_method_declaration ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GTK_MODULE, ValaGtkModule), m, decl_space);
 		return result;
 	}
 }
@@ -2612,7 +2612,7 @@ vala_gasync_module_real_visit_method (ValaCodeVisitor* base,
 			_vala_ccode_node_unref0 (_tmp13_);
 			vala_gasync_module_generate_async_function (self, m);
 			vala_gasync_module_generate_finish_function (self, m);
-			VALA_CODE_VISITOR_CLASS (vala_gasync_module_parent_class)->visit_method ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GTK_MODULE, ValaGtkModule), m);
+			BALA_CODE_VISITOR_CLASS (vala_gasync_module_parent_class)->visit_method ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GTK_MODULE, ValaGtkModule), m);
 			_vala_ccode_node_unref0 (((ValaCCodeBaseModule*) self)->closure_struct);
 			((ValaCCodeBaseModule*) self)->closure_struct = NULL;
 			_tmp14_ = data;
@@ -2679,12 +2679,12 @@ vala_gasync_module_real_visit_method (ValaCodeVisitor* base,
 			_tmp24_ = g_direct_hash;
 			_tmp25_ = g_direct_equal;
 			_tmp26_ = g_direct_equal;
-			_tmp27_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp24_, _tmp25_, _tmp26_);
+			_tmp27_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp24_, _tmp25_, _tmp26_);
 			cparam_map = _tmp27_;
 			_tmp28_ = g_direct_hash;
 			_tmp29_ = g_direct_equal;
 			_tmp30_ = g_direct_equal;
-			_tmp31_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp28_, _tmp29_, _tmp30_);
+			_tmp31_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp28_, _tmp29_, _tmp30_);
 			carg_map = _tmp31_;
 			_tmp32_ = vala_void_type_new (NULL);
 			_tmp33_ = _tmp32_;
@@ -2695,13 +2695,13 @@ vala_gasync_module_real_visit_method (ValaCodeVisitor* base,
 			_tmp36_ = g_direct_hash;
 			_tmp37_ = g_direct_equal;
 			_tmp38_ = g_direct_equal;
-			_tmp39_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp36_, _tmp37_, _tmp38_);
+			_tmp39_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp36_, _tmp37_, _tmp38_);
 			_vala_map_unref0 (cparam_map);
 			cparam_map = _tmp39_;
 			_tmp40_ = g_direct_hash;
 			_tmp41_ = g_direct_equal;
 			_tmp42_ = g_direct_equal;
-			_tmp43_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp40_, _tmp41_, _tmp42_);
+			_tmp43_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp40_, _tmp41_, _tmp42_);
 			_vala_map_unref0 (carg_map);
 			carg_map = _tmp43_;
 			_tmp44_ = vala_callable_get_return_type ((ValaCallable*) m);
@@ -2713,7 +2713,7 @@ vala_gasync_module_real_visit_method (ValaCodeVisitor* base,
 			_vala_map_unref0 (cparam_map);
 		}
 	} else {
-		VALA_CODE_VISITOR_CLASS (vala_gasync_module_parent_class)->visit_method ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GTK_MODULE, ValaGtkModule), m);
+		BALA_CODE_VISITOR_CLASS (vala_gasync_module_parent_class)->visit_method ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GTK_MODULE, ValaGtkModule), m);
 	}
 }
 
@@ -2729,7 +2729,7 @@ vala_gasync_module_real_visit_creation_method (ValaCodeVisitor* base,
 	_tmp0_ = vala_method_get_coroutine ((ValaMethod*) m);
 	_tmp1_ = _tmp0_;
 	if (!_tmp1_) {
-		VALA_CODE_VISITOR_CLASS (vala_gasync_module_parent_class)->visit_creation_method ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GTK_MODULE, ValaGtkModule), m);
+		BALA_CODE_VISITOR_CLASS (vala_gasync_module_parent_class)->visit_creation_method ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GTK_MODULE, ValaGtkModule), m);
 	} else {
 		ValaSourceReference* _tmp2_;
 		ValaSourceReference* _tmp3_;
@@ -2747,12 +2747,12 @@ vala_gasync_module_real_visit_creation_method (ValaCodeVisitor* base,
 		vala_code_visitor_visit_method ((ValaCodeVisitor*) self, (ValaMethod*) m);
 		_tmp4_ = vala_symbol_get_source_type ((ValaSymbol*) m);
 		_tmp5_ = _tmp4_;
-		if (_tmp5_ == VALA_SOURCE_FILE_TYPE_FAST) {
+		if (_tmp5_ == BALA_SOURCE_FILE_TYPE_FAST) {
 			return;
 		}
 		_tmp8_ = vala_ccode_base_module_get_current_type_symbol ((ValaCCodeBaseModule*) self);
 		_tmp9_ = _tmp8_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp9_, VALA_TYPE_CLASS)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp9_, BALA_TYPE_CLASS)) {
 			ValaClass* _tmp10_;
 			ValaClass* _tmp11_;
 			gboolean _tmp12_;
@@ -2855,12 +2855,12 @@ vala_gasync_module_real_visit_creation_method (ValaCodeVisitor* base,
 			_tmp22_ = g_direct_hash;
 			_tmp23_ = g_direct_equal;
 			_tmp24_ = g_direct_equal;
-			_tmp25_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp22_, _tmp23_, _tmp24_);
+			_tmp25_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp22_, _tmp23_, _tmp24_);
 			cparam_map = _tmp25_;
 			_tmp26_ = g_direct_hash;
 			_tmp27_ = g_direct_equal;
 			_tmp28_ = g_direct_equal;
-			_tmp29_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp26_, _tmp27_, _tmp28_);
+			_tmp29_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp26_, _tmp27_, _tmp28_);
 			carg_map = _tmp29_;
 			_tmp30_ = vfunc;
 			vala_ccode_base_module_push_function ((ValaCCodeBaseModule*) self, _tmp30_);
@@ -2902,7 +2902,7 @@ vala_gasync_module_real_visit_creation_method (ValaCodeVisitor* base,
 				_tmp53_ = vfunc;
 				_tmp54_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp53_);
 				_tmp55_ = _tmp54_;
-				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp53_, _tmp55_ | VALA_CCODE_MODIFIERS_STATIC);
+				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp53_, _tmp55_ | BALA_CCODE_MODIFIERS_STATIC);
 			}
 			vala_ccode_base_module_pop_function ((ValaCCodeBaseModule*) self);
 			_tmp56_ = ((ValaCCodeBaseModule*) self)->cfile;
@@ -2917,13 +2917,13 @@ vala_gasync_module_real_visit_creation_method (ValaCodeVisitor* base,
 			_tmp61_ = g_direct_hash;
 			_tmp62_ = g_direct_equal;
 			_tmp63_ = g_direct_equal;
-			_tmp64_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp61_, _tmp62_, _tmp63_);
+			_tmp64_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp61_, _tmp62_, _tmp63_);
 			_vala_map_unref0 (cparam_map);
 			cparam_map = _tmp64_;
 			_tmp65_ = g_direct_hash;
 			_tmp66_ = g_direct_equal;
 			_tmp67_ = g_direct_equal;
-			_tmp68_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp65_, _tmp66_, _tmp67_);
+			_tmp68_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp65_, _tmp66_, _tmp67_);
 			_vala_map_unref0 (carg_map);
 			carg_map = _tmp68_;
 			_tmp69_ = vfunc;
@@ -2956,7 +2956,7 @@ vala_gasync_module_real_visit_creation_method (ValaCodeVisitor* base,
 				_tmp84_ = vfunc;
 				_tmp85_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp84_);
 				_tmp86_ = _tmp85_;
-				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp84_, _tmp86_ | VALA_CCODE_MODIFIERS_STATIC);
+				vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp84_, _tmp86_ | BALA_CCODE_MODIFIERS_STATIC);
 			}
 			vala_ccode_base_module_pop_function ((ValaCCodeBaseModule*) self);
 			_tmp87_ = ((ValaCCodeBaseModule*) self)->cfile;
@@ -3069,7 +3069,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 	_tmp12_ = g_direct_hash;
 	_tmp13_ = g_direct_equal;
 	_tmp14_ = g_direct_equal;
-	_tmp15_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp12_, _tmp13_, _tmp14_);
+	_tmp15_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp12_, _tmp13_, _tmp14_);
 	cparam_map = _tmp15_;
 	_tmp16_ = cparam_map;
 	_tmp17_ = vala_ccode_parameter_new ("_res_", "GAsyncResult*");
@@ -3107,7 +3107,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 		_tmp29_ = finishfunc;
 		_tmp30_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp29_);
 		_tmp31_ = _tmp30_;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp29_, _tmp31_ | VALA_CCODE_MODIFIERS_STATIC);
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp29_, _tmp31_ | BALA_CCODE_MODIFIERS_STATIC);
 	} else {
 		gboolean _tmp32_ = FALSE;
 		ValaCodeContext* _tmp33_;
@@ -3132,7 +3132,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 			_tmp38_ = finishfunc;
 			_tmp39_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp38_);
 			_tmp40_ = _tmp39_;
-			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp38_, _tmp40_ | VALA_CCODE_MODIFIERS_INTERNAL);
+			vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp38_, _tmp40_ | BALA_CCODE_MODIFIERS_INTERNAL);
 		}
 	}
 	_tmp41_ = finishfunc;
@@ -3141,7 +3141,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 	_tmp43_ = _tmp42_;
 	_tmp44_ = _vala_code_node_ref0 (_tmp43_);
 	return_type = _tmp44_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (m, VALA_TYPE_CREATION_METHOD)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (m, BALA_TYPE_CREATION_METHOD)) {
 		ValaTypeSymbol* type_sym = NULL;
 		ValaSymbol* _tmp45_;
 		ValaSymbol* _tmp46_;
@@ -3149,10 +3149,10 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 		ValaTypeSymbol* _tmp48_;
 		_tmp45_ = vala_symbol_get_parent_symbol ((ValaSymbol*) m);
 		_tmp46_ = _tmp45_;
-		_tmp47_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp46_, VALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
+		_tmp47_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp46_, BALA_TYPE_TYPESYMBOL, ValaTypeSymbol));
 		type_sym = _tmp47_;
 		_tmp48_ = type_sym;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp48_, VALA_TYPE_OBJECT_TYPE_SYMBOL)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp48_, BALA_TYPE_OBJECT_TYPE_SYMBOL)) {
 			ValaCCodeFunction* _tmp49_;
 			ValaCCodeFunction* _tmp50_;
 			ValaTypeSymbol* _tmp51_;
@@ -3187,7 +3187,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 		gboolean _tmp60_ = FALSE;
 		ValaDataType* _tmp61_;
 		_tmp61_ = return_type;
-		if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp61_, VALA_TYPE_VOID_TYPE)) {
+		if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp61_, BALA_TYPE_VOID_TYPE)) {
 			ValaDataType* _tmp62_;
 			_tmp62_ = return_type;
 			_tmp60_ = !vala_data_type_is_real_non_null_struct_type (_tmp62_);
@@ -3314,7 +3314,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 			_tmp114_ = param;
 			_tmp115_ = vala_variable_get_variable_type ((ValaVariable*) _tmp114_);
 			_tmp116_ = _tmp115_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp116_, VALA_TYPE_OBJECT_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp116_, BALA_TYPE_OBJECT_TYPE)) {
 				ValaParameter* _tmp117_;
 				ValaDataType* _tmp118_;
 				ValaDataType* _tmp119_;
@@ -3366,7 +3366,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 		_tmp127_ = vala_ccode_constant_new ("NULL");
 		_tmp128_ = _tmp127_;
 		_tmp129_ = data_var;
-		_tmp130_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_EQUALITY, (ValaCCodeExpression*) _tmp128_, (ValaCCodeExpression*) _tmp129_);
+		_tmp130_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_EQUALITY, (ValaCCodeExpression*) _tmp128_, (ValaCCodeExpression*) _tmp129_);
 		_tmp131_ = _tmp130_;
 		_vala_ccode_node_unref0 (_tmp128_);
 		is_null = _tmp131_;
@@ -3421,7 +3421,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 			_tmp148_ = param;
 			_tmp149_ = vala_parameter_get_direction (_tmp148_);
 			_tmp150_ = _tmp149_;
-			if (_tmp150_ != VALA_PARAMETER_DIRECTION_IN) {
+			if (_tmp150_ != BALA_PARAMETER_DIRECTION_IN) {
 				ValaParameter* _tmp151_;
 				gboolean _tmp152_ = FALSE;
 				ValaParameter* _tmp153_;
@@ -3432,7 +3432,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 				_tmp153_ = param;
 				_tmp154_ = vala_variable_get_variable_type ((ValaVariable*) _tmp153_);
 				_tmp155_ = _tmp154_;
-				if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp155_, VALA_TYPE_VALUE_TYPE)) {
+				if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp155_, BALA_TYPE_VALUE_TYPE)) {
 					_tmp152_ = TRUE;
 				} else {
 					ValaParameter* _tmp156_;
@@ -3480,7 +3480,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 	}
 	_tmp171_ = ((ValaCCodeBaseModule*) self)->emit_context;
 	vala_ccode_base_module_emit_context_pop_symbol (_tmp171_);
-	if (G_TYPE_CHECK_INSTANCE_TYPE (m, VALA_TYPE_CREATION_METHOD)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (m, BALA_TYPE_CREATION_METHOD)) {
 		ValaCCodeFunction* _tmp172_;
 		ValaCCodeFunction* _tmp173_;
 		ValaCCodeIdentifier* _tmp174_;
@@ -3572,7 +3572,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 			_tmp204_ = _tmp203_;
 			_tmp205_ = vala_ccode_identifier_new ("result");
 			_tmp206_ = _tmp205_;
-			_tmp207_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp206_);
+			_tmp207_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp206_);
 			_tmp208_ = _tmp207_;
 			_tmp209_ = cexpr;
 			vala_ccode_function_add_assignment (_tmp204_, (ValaCCodeExpression*) _tmp208_, _tmp209_);
@@ -3582,7 +3582,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 		} else {
 			ValaDataType* _tmp210_;
 			_tmp210_ = return_type;
-			if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp210_, VALA_TYPE_VOID_TYPE)) {
+			if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp210_, BALA_TYPE_VOID_TYPE)) {
 				ValaCCodeFunction* _tmp211_;
 				ValaCCodeFunction* _tmp212_;
 				ValaCCodeIdentifier* _tmp213_;
@@ -3608,12 +3608,12 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 				_vala_ccode_node_unref0 (_tmp217_);
 				_vala_ccode_node_unref0 (_tmp214_);
 				_tmp218_ = return_type;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp218_, VALA_TYPE_ARRAY_TYPE)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp218_, BALA_TYPE_ARRAY_TYPE)) {
 					ValaArrayType* array_type = NULL;
 					ValaDataType* _tmp219_;
 					ValaArrayType* _tmp220_;
 					_tmp219_ = return_type;
-					_tmp220_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp219_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+					_tmp220_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp219_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 					array_type = _tmp220_;
 					if (vala_get_ccode_array_length ((ValaCodeNode*) m)) {
 						{
@@ -3657,7 +3657,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 									_tmp229_ = _tmp228_;
 									_tmp230_ = vala_ccode_identifier_new (_tmp229_);
 									_tmp231_ = _tmp230_;
-									_tmp232_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp231_);
+									_tmp232_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp231_);
 									_tmp233_ = _tmp232_;
 									_tmp234_ = data_var;
 									_tmp235_ = vala_ccode_base_module_get_array_length_cname ((ValaCCodeBaseModule*) self, "result", dim);
@@ -3679,14 +3679,14 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 					gboolean _tmp239_ = FALSE;
 					ValaDataType* _tmp240_;
 					_tmp240_ = return_type;
-					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp240_, VALA_TYPE_DELEGATE_TYPE)) {
+					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp240_, BALA_TYPE_DELEGATE_TYPE)) {
 						ValaDataType* _tmp241_;
 						ValaDelegate* _tmp242_;
 						ValaDelegate* _tmp243_;
 						gboolean _tmp244_;
 						gboolean _tmp245_;
 						_tmp241_ = return_type;
-						_tmp242_ = vala_delegate_type_get_delegate_symbol (G_TYPE_CHECK_INSTANCE_CAST (_tmp241_, VALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
+						_tmp242_ = vala_delegate_type_get_delegate_symbol (G_TYPE_CHECK_INSTANCE_CAST (_tmp241_, BALA_TYPE_DELEGATE_TYPE, ValaDelegateType));
 						_tmp243_ = _tmp242_;
 						_tmp244_ = vala_delegate_get_has_target (_tmp243_);
 						_tmp245_ = _tmp244_;
@@ -3714,7 +3714,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 						_tmp249_ = _tmp248_;
 						_tmp250_ = vala_ccode_identifier_new (_tmp249_);
 						_tmp251_ = _tmp250_;
-						_tmp252_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp251_);
+						_tmp252_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp251_);
 						_tmp253_ = _tmp252_;
 						_tmp254_ = data_var;
 						_tmp255_ = vala_ccode_base_module_get_delegate_target_cname ((ValaCCodeBaseModule*) self, "result");
@@ -3730,7 +3730,7 @@ vala_gasync_module_generate_finish_function (ValaGAsyncModule* self,
 					}
 				}
 				_tmp260_ = return_type;
-				if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp260_, VALA_TYPE_VALUE_TYPE)) {
+				if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp260_, BALA_TYPE_VALUE_TYPE)) {
 					_tmp259_ = TRUE;
 				} else {
 					ValaDataType* _tmp261_;
@@ -3986,7 +3986,7 @@ vala_gasync_module_real_generate_ready_function (ValaCCodeBaseModule* base,
 	_tmp70_ = readyfunc;
 	_tmp71_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp70_);
 	_tmp72_ = _tmp71_;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp70_, _tmp72_ | VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp70_, _tmp72_ | BALA_CCODE_MODIFIERS_STATIC);
 	vala_ccode_base_module_pop_function ((ValaCCodeBaseModule*) self);
 	_tmp73_ = ((ValaCCodeBaseModule*) self)->cfile;
 	_tmp74_ = readyfunc;
@@ -4064,7 +4064,7 @@ vala_gasync_module_real_generate_virtual_method_declaration (ValaGTypeModule* ba
 	_tmp0_ = vala_method_get_coroutine (m);
 	_tmp1_ = _tmp0_;
 	if (!_tmp1_) {
-		VALA_GTYPE_MODULE_CLASS (vala_gasync_module_parent_class)->generate_virtual_method_declaration ((ValaGTypeModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GTK_MODULE, ValaGtkModule), m, decl_space, type_struct);
+		BALA_GTYPE_MODULE_CLASS (vala_gasync_module_parent_class)->generate_virtual_method_declaration ((ValaGTypeModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GTK_MODULE, ValaGtkModule), m, decl_space, type_struct);
 		return;
 	}
 	_tmp3_ = vala_method_get_is_abstract (m);
@@ -4092,7 +4092,7 @@ vala_gasync_module_real_generate_virtual_method_declaration (ValaGTypeModule* ba
 	_tmp12_ = g_direct_hash;
 	_tmp13_ = g_direct_equal;
 	_tmp14_ = g_direct_equal;
-	_tmp15_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp12_, _tmp13_, _tmp14_);
+	_tmp15_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp12_, _tmp13_, _tmp14_);
 	cparam_map = _tmp15_;
 	_tmp16_ = cparam_map;
 	_tmp17_ = vala_ccode_function_new ("fake", "void");
@@ -4116,7 +4116,7 @@ vala_gasync_module_real_generate_virtual_method_declaration (ValaGTypeModule* ba
 	_tmp27_ = g_direct_hash;
 	_tmp28_ = g_direct_equal;
 	_tmp29_ = g_direct_equal;
-	_tmp30_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp27_, _tmp28_, _tmp29_);
+	_tmp30_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp27_, _tmp28_, _tmp29_);
 	_vala_map_unref0 (cparam_map);
 	cparam_map = _tmp30_;
 	_tmp31_ = cparam_map;
@@ -4258,7 +4258,7 @@ vala_gasync_module_real_return_with_exception (ValaGErrorModule* base,
 	self = (ValaGAsyncModule*) base;
 	g_return_if_fail (error_expr != NULL);
 	if (!vala_ccode_base_module_is_in_coroutine ((ValaCCodeBaseModule*) self)) {
-		VALA_GERROR_MODULE_CLASS (vala_gasync_module_parent_class)->return_with_exception ((ValaGErrorModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GTK_MODULE, ValaGtkModule), error_expr);
+		BALA_GERROR_MODULE_CLASS (vala_gasync_module_parent_class)->return_with_exception ((ValaGErrorModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GTK_MODULE, ValaGtkModule), error_expr);
 		return;
 	}
 	_tmp0_ = vala_ccode_identifier_new ("_data_");
@@ -4320,7 +4320,7 @@ vala_gasync_module_real_visit_return_statement (ValaCodeVisitor* base,
 	ValaGAsyncModule * self;
 	self = (ValaGAsyncModule*) base;
 	g_return_if_fail (stmt != NULL);
-	VALA_CODE_VISITOR_CLASS (vala_gasync_module_parent_class)->visit_return_statement ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GTK_MODULE, ValaGtkModule), stmt);
+	BALA_CODE_VISITOR_CLASS (vala_gasync_module_parent_class)->visit_return_statement ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GTK_MODULE, ValaGtkModule), stmt);
 	if (!vala_ccode_base_module_is_in_coroutine ((ValaCCodeBaseModule*) self)) {
 		return;
 	}
@@ -4396,7 +4396,7 @@ vala_gasync_module_real_generate_cparameters (ValaCCodeBaseModule* base,
 			}
 		}
 	}
-	VALA_CCODE_BASE_MODULE_CLASS (vala_gasync_module_parent_class)->generate_cparameters ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GTK_MODULE, ValaGtkModule), m, decl_space, cparam_map, func, vdeclarator, carg_map, vcall, direction);
+	BALA_CCODE_BASE_MODULE_CLASS (vala_gasync_module_parent_class)->generate_cparameters ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GTK_MODULE, ValaGtkModule), m, decl_space, cparam_map, func, vdeclarator, carg_map, vcall, direction);
 }
 
 gchar*
@@ -4468,7 +4468,7 @@ vala_gasync_module_generate_async_callback_wrapper (ValaGAsyncModule* self)
 	_tmp3_ = vala_ccode_function_new (_tmp2_, "void");
 	function = _tmp3_;
 	_tmp4_ = function;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp4_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp4_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp5_ = function;
 	_tmp6_ = vala_ccode_parameter_new ("*source_object", "GObject");
 	_tmp7_ = _tmp6_;
@@ -4561,7 +4561,7 @@ vala_gasync_module_construct (GType object_type)
 ValaGAsyncModule*
 vala_gasync_module_new (void)
 {
-	return vala_gasync_module_construct (VALA_TYPE_GASYNC_MODULE);
+	return vala_gasync_module_construct (BALA_TYPE_GASYNC_MODULE);
 }
 
 static void
@@ -4591,7 +4591,7 @@ vala_gasync_module_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaGAsyncModuleClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_gasync_module_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaGAsyncModule), 0, (GInstanceInitFunc) vala_gasync_module_instance_init, NULL };
 	GType vala_gasync_module_type_id;
-	vala_gasync_module_type_id = g_type_register_static (VALA_TYPE_GTK_MODULE, "ValaGAsyncModule", &g_define_type_info, 0);
+	vala_gasync_module_type_id = g_type_register_static (BALA_TYPE_GTK_MODULE, "ValaGAsyncModule", &g_define_type_info, 0);
 	return vala_gasync_module_type_id;
 }
 

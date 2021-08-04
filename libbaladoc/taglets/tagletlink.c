@@ -32,20 +32,20 @@
 #include <valagee.h>
 
 typedef enum  {
-	VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL,
-	VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH,
-	VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE
+	BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL,
+	BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH,
+	BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE
 } ValadocTagletsLinkSymbolContext;
 
-#define VALADOC_TAGLETS_LINK_TYPE_SYMBOL_CONTEXT (valadoc_taglets_link_symbol_context_get_type ())
+#define BALADOC_TAGLETS_LINK_TYPE_SYMBOL_CONTEXT (valadoc_taglets_link_symbol_context_get_type ())
 enum  {
-	VALADOC_TAGLETS_LINK_0_PROPERTY,
-	VALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY,
-	VALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY,
-	VALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY,
-	VALADOC_TAGLETS_LINK_NUM_PROPERTIES
+	BALADOC_TAGLETS_LINK_0_PROPERTY,
+	BALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY,
+	BALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY,
+	BALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY,
+	BALADOC_TAGLETS_LINK_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_taglets_link_properties[VALADOC_TAGLETS_LINK_NUM_PROPERTIES];
+static GParamSpec* valadoc_taglets_link_properties[BALADOC_TAGLETS_LINK_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 
@@ -136,7 +136,7 @@ valadoc_taglets_link_get_instance_private (ValadocTagletsLink* self)
 static GType
 valadoc_taglets_link_symbol_context_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL, "VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL", "normal"}, {VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH, "VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH", "finish"}, {VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE, "VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE", "type"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL, "BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL", "normal"}, {BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH, "BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH", "finish"}, {BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE, "BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE", "type"}, {0, NULL, NULL}};
 	GType valadoc_taglets_link_symbol_context_type_id;
 	valadoc_taglets_link_symbol_context_type_id = g_enum_register_static ("ValadocTagletsLinkSymbolContext", values);
 	return valadoc_taglets_link_symbol_context_type_id;
@@ -177,7 +177,7 @@ valadoc_taglets_link_set_symbol_name (ValadocTagletsLink* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_symbol_name);
 		self->priv->_symbol_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_link_properties[VALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_link_properties[BALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY]);
 	}
 }
 
@@ -199,7 +199,7 @@ valadoc_taglets_link_set_c_accept_plural (ValadocTagletsLink* self,
 	old_value = valadoc_taglets_link_get_c_accept_plural (self);
 	if (old_value != value) {
 		self->priv->_c_accept_plural = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_link_properties[VALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_link_properties[BALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY]);
 	}
 }
 
@@ -221,7 +221,7 @@ valadoc_taglets_link_set_c_is_plural (ValadocTagletsLink* self,
 	old_value = valadoc_taglets_link_get_c_is_plural (self);
 	if (old_value != value) {
 		self->priv->_c_is_plural = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_link_properties[VALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_link_properties[BALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY]);
 	}
 }
 
@@ -564,7 +564,7 @@ valadoc_taglets_link_real_check (ValadocContentContentElement* base,
 			self->priv->_symbol = _tmp19_;
 			valadoc_taglets_link_set_c_is_plural (self, TRUE);
 		}
-		self->priv->_context = VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL;
+		self->priv->_context = BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL;
 		_tmp21_ = self->priv->_symbol;
 		if (_tmp21_ == NULL) {
 			const gchar* _tmp22_;
@@ -597,7 +597,7 @@ valadoc_taglets_link_real_check (ValadocContentContentElement* base,
 			_tmp29_ = g_strconcat (_tmp28_, "_async", NULL);
 			_tmp30_ = _tmp29_;
 			_tmp31_ = valadoc_api_tree_search_symbol_cstr (api_root, container, _tmp30_);
-			_tmp32_ = VALADOC_API_IS_METHOD (_tmp31_) ? ((ValadocApiMethod*) _tmp31_) : NULL;
+			_tmp32_ = BALADOC_API_IS_METHOD (_tmp31_) ? ((ValadocApiMethod*) _tmp31_) : NULL;
 			if (_tmp32_ == NULL) {
 				_g_object_unref0 (_tmp31_);
 			}
@@ -610,14 +610,14 @@ valadoc_taglets_link_real_check (ValadocContentContentElement* base,
 				gboolean _tmp36_;
 				gboolean _tmp37_;
 				_tmp35_ = self->priv->_symbol;
-				_tmp36_ = valadoc_api_method_get_is_yields (G_TYPE_CHECK_INSTANCE_CAST (_tmp35_, VALADOC_API_TYPE_METHOD, ValadocApiMethod));
+				_tmp36_ = valadoc_api_method_get_is_yields (G_TYPE_CHECK_INSTANCE_CAST (_tmp35_, BALADOC_API_TYPE_METHOD, ValadocApiMethod));
 				_tmp37_ = _tmp36_;
 				_tmp33_ = _tmp37_;
 			} else {
 				_tmp33_ = FALSE;
 			}
 			if (_tmp33_) {
-				self->priv->_context = VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH;
+				self->priv->_context = BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH;
 			} else {
 				const gchar* _tmp38_;
 				ValadocApiNode* _tmp39_;
@@ -626,7 +626,7 @@ valadoc_taglets_link_real_check (ValadocContentContentElement* base,
 				ValadocApiNode* _tmp42_;
 				_tmp38_ = tmp;
 				_tmp39_ = valadoc_api_tree_search_symbol_cstr (api_root, container, _tmp38_);
-				_tmp40_ = VALADOC_API_IS_METHOD (_tmp39_) ? ((ValadocApiMethod*) _tmp39_) : NULL;
+				_tmp40_ = BALADOC_API_IS_METHOD (_tmp39_) ? ((ValadocApiMethod*) _tmp39_) : NULL;
 				if (_tmp40_ == NULL) {
 					_g_object_unref0 (_tmp39_);
 				}
@@ -638,14 +638,14 @@ valadoc_taglets_link_real_check (ValadocContentContentElement* base,
 					gboolean _tmp44_;
 					gboolean _tmp45_;
 					_tmp43_ = self->priv->_symbol;
-					_tmp44_ = valadoc_api_method_get_is_yields (G_TYPE_CHECK_INSTANCE_CAST (_tmp43_, VALADOC_API_TYPE_METHOD, ValadocApiMethod));
+					_tmp44_ = valadoc_api_method_get_is_yields (G_TYPE_CHECK_INSTANCE_CAST (_tmp43_, BALADOC_API_TYPE_METHOD, ValadocApiMethod));
 					_tmp45_ = _tmp44_;
 					_tmp41_ = _tmp45_;
 				} else {
 					_tmp41_ = FALSE;
 				}
 				if (_tmp41_) {
-					self->priv->_context = VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH;
+					self->priv->_context = BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH;
 				} else {
 					_g_object_unref0 (self->priv->_symbol);
 					self->priv->_symbol = NULL;
@@ -683,7 +683,7 @@ valadoc_taglets_link_real_check (ValadocContentContentElement* base,
 			}
 			_tmp54_ = self->priv->_symbol;
 			if (_tmp54_ != NULL) {
-				self->priv->_context = VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE;
+				self->priv->_context = BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE;
 			}
 		}
 		_tmp55_ = self->priv->_symbol;
@@ -722,7 +722,7 @@ valadoc_taglets_link_real_check (ValadocContentContentElement* base,
 		gchar* _tmp71_;
 		gchar* _tmp72_;
 		const gchar* _tmp73_;
-		if (VALADOC_API_IS_PACKAGE (container)) {
+		if (BALADOC_API_IS_PACKAGE (container)) {
 			gchar* _tmp65_;
 			_tmp65_ = g_strdup ("");
 			_g_free0 (_tmp64_);
@@ -749,7 +749,7 @@ valadoc_taglets_link_real_check (ValadocContentContentElement* base,
 		_g_free0 (node_segment);
 		_g_free0 (_tmp64_);
 	}
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_taglets_link_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_INLINE_TAGLET, ValadocContentInlineTaglet), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_taglets_link_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_INLINE_TAGLET, ValadocContentInlineTaglet), api_root, container, file_path, reporter, settings);
 }
 
 static ValadocContentContentElement*
@@ -777,7 +777,7 @@ valadoc_taglets_link_real_produce_content (ValadocContentInlineTaglet* base)
 	valadoc_content_symbol_link_set_given_symbol_name (_tmp3_, _tmp4_);
 	_tmp5_ = self->priv->_context;
 	switch (_tmp5_) {
-		case VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH:
+		case BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_FINISH:
 		{
 			ValadocContentSymbolLink* _tmp6_;
 			ValadocContentSymbolLink* _tmp7_;
@@ -801,7 +801,7 @@ valadoc_taglets_link_real_produce_content (ValadocContentInlineTaglet* base)
 			content = _tmp13_;
 			break;
 		}
-		case VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE:
+		case BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_TYPE:
 		{
 			ValadocContentRun* run = NULL;
 			ValadocContentRun* _tmp14_;
@@ -832,13 +832,13 @@ valadoc_taglets_link_real_produce_content (ValadocContentInlineTaglet* base)
 			ValaList* _tmp38_;
 			ValadocContentText* _tmp39_;
 			ValadocContentText* _tmp40_;
-			_tmp14_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_MONOSPACED);
+			_tmp14_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_MONOSPACED);
 			run = _tmp14_;
 			_tmp15_ = run;
 			_tmp16_ = _g_object_ref0 ((ValadocContentInline*) _tmp15_);
 			_g_object_unref0 (content);
 			content = _tmp16_;
-			_tmp17_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
+			_tmp17_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_LANG_KEYWORD);
 			keyword = _tmp17_;
 			_tmp18_ = keyword;
 			_tmp19_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp18_);
@@ -899,7 +899,7 @@ valadoc_taglets_link_real_produce_content (ValadocContentInlineTaglet* base)
 		ValaList* _tmp51_;
 		ValadocContentText* _tmp52_;
 		ValadocContentText* _tmp53_;
-		_tmp44_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_NONE);
+		_tmp44_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_NONE);
 		run = _tmp44_;
 		_tmp45_ = run;
 		_tmp46_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp45_);
@@ -990,7 +990,7 @@ valadoc_taglets_link_construct (GType object_type)
 ValadocTagletsLink*
 valadoc_taglets_link_new (void)
 {
-	return valadoc_taglets_link_construct (VALADOC_TAGLETS_TYPE_LINK);
+	return valadoc_taglets_link_construct (BALADOC_TAGLETS_TYPE_LINK);
 }
 
 static void
@@ -1007,17 +1007,17 @@ valadoc_taglets_link_class_init (ValadocTagletsLinkClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_taglets_link_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_taglets_link_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_taglets_link_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY, valadoc_taglets_link_properties[VALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY] = g_param_spec_string ("symbol-name", "symbol-name", "symbol-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY, valadoc_taglets_link_properties[BALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY] = g_param_spec_string ("symbol-name", "symbol-name", "symbol-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Accept leading 's', e.g. #Widgets
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY, valadoc_taglets_link_properties[VALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY] = g_param_spec_boolean ("c-accept-plural", "c-accept-plural", "c-accept-plural", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY, valadoc_taglets_link_properties[BALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY] = g_param_spec_boolean ("c-accept-plural", "c-accept-plural", "c-accept-plural", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * True if symbol_name could only be resolved after removing 's'
 	 *
 	 * E.g. true or #Widgets, false for #Widget
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY, valadoc_taglets_link_properties[VALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY] = g_param_spec_boolean ("c-is-plural", "c-is-plural", "c-is-plural", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY, valadoc_taglets_link_properties[BALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY] = g_param_spec_boolean ("c-is-plural", "c-is-plural", "c-is-plural", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -1025,14 +1025,14 @@ valadoc_taglets_link_instance_init (ValadocTagletsLink * self,
                                     gpointer klass)
 {
 	self->priv = valadoc_taglets_link_get_instance_private (self);
-	self->priv->_context = VALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL;
+	self->priv->_context = BALADOC_TAGLETS_LINK_SYMBOL_CONTEXT_NORMAL;
 }
 
 static void
 valadoc_taglets_link_finalize (GObject * obj)
 {
 	ValadocTagletsLink * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TAGLETS_TYPE_LINK, ValadocTagletsLink);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TAGLETS_TYPE_LINK, ValadocTagletsLink);
 	_g_free0 (self->priv->_symbol_name);
 	_g_object_unref0 (self->priv->_symbol);
 	G_OBJECT_CLASS (valadoc_taglets_link_parent_class)->finalize (obj);
@@ -1043,7 +1043,7 @@ valadoc_taglets_link_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocTagletsLinkClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_taglets_link_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocTagletsLink), 0, (GInstanceInitFunc) valadoc_taglets_link_instance_init, NULL };
 	GType valadoc_taglets_link_type_id;
-	valadoc_taglets_link_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_INLINE_TAGLET, "ValadocTagletsLink", &g_define_type_info, 0);
+	valadoc_taglets_link_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_INLINE_TAGLET, "ValadocTagletsLink", &g_define_type_info, 0);
 	ValadocTagletsLink_private_offset = g_type_add_instance_private (valadoc_taglets_link_type_id, sizeof (ValadocTagletsLinkPrivate));
 	return valadoc_taglets_link_type_id;
 }
@@ -1067,15 +1067,15 @@ _vala_valadoc_taglets_link_get_property (GObject * object,
                                          GParamSpec * pspec)
 {
 	ValadocTagletsLink * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TAGLETS_TYPE_LINK, ValadocTagletsLink);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TAGLETS_TYPE_LINK, ValadocTagletsLink);
 	switch (property_id) {
-		case VALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY:
+		case BALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_taglets_link_get_symbol_name (self));
 		break;
-		case VALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY:
+		case BALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY:
 		g_value_set_boolean (value, valadoc_taglets_link_get_c_accept_plural (self));
 		break;
-		case VALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY:
+		case BALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY:
 		g_value_set_boolean (value, valadoc_taglets_link_get_c_is_plural (self));
 		break;
 		default:
@@ -1091,15 +1091,15 @@ _vala_valadoc_taglets_link_set_property (GObject * object,
                                          GParamSpec * pspec)
 {
 	ValadocTagletsLink * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TAGLETS_TYPE_LINK, ValadocTagletsLink);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TAGLETS_TYPE_LINK, ValadocTagletsLink);
 	switch (property_id) {
-		case VALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY:
+		case BALADOC_TAGLETS_LINK_SYMBOL_NAME_PROPERTY:
 		valadoc_taglets_link_set_symbol_name (self, g_value_get_string (value));
 		break;
-		case VALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY:
+		case BALADOC_TAGLETS_LINK_C_ACCEPT_PLURAL_PROPERTY:
 		valadoc_taglets_link_set_c_accept_plural (self, g_value_get_boolean (value));
 		break;
-		case VALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY:
+		case BALADOC_TAGLETS_LINK_C_IS_PLURAL_PROPERTY:
 		valadoc_taglets_link_set_c_is_plural (self, g_value_get_boolean (value));
 		break;
 		default:

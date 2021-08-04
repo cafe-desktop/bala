@@ -180,7 +180,7 @@ vala_if_statement_new (ValaExpression* cond,
                        ValaBlock* false_stmt,
                        ValaSourceReference* source)
 {
-	return vala_if_statement_construct (VALA_TYPE_IF_STATEMENT, cond, true_stmt, false_stmt, source);
+	return vala_if_statement_construct (BALA_TYPE_IF_STATEMENT, cond, true_stmt, false_stmt, source);
 }
 
 static void
@@ -451,11 +451,11 @@ static void
 vala_if_statement_finalize (ValaCodeNode * obj)
 {
 	ValaIfStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_IF_STATEMENT, ValaIfStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_IF_STATEMENT, ValaIfStatement);
 	_vala_code_node_unref0 (self->priv->_condition);
 	_vala_code_node_unref0 (self->priv->_true_statement);
 	_vala_code_node_unref0 (self->priv->_false_statement);
-	VALA_CODE_NODE_CLASS (vala_if_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_if_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -467,8 +467,8 @@ vala_if_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaIfStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_if_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaIfStatement), 0, (GInstanceInitFunc) vala_if_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_if_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_if_statement_type_id;
-	vala_if_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaIfStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_if_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_if_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaIfStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_if_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaIfStatement_private_offset = g_type_add_instance_private (vala_if_statement_type_id, sizeof (ValaIfStatementPrivate));
 	return vala_if_statement_type_id;
 }

@@ -30,10 +30,10 @@
 #include <string.h>
 
 enum  {
-	VALADOC_HTML_SIMPLE_CHART_FACTORY_0_PROPERTY,
-	VALADOC_HTML_SIMPLE_CHART_FACTORY_NUM_PROPERTIES
+	BALADOC_HTML_SIMPLE_CHART_FACTORY_0_PROPERTY,
+	BALADOC_HTML_SIMPLE_CHART_FACTORY_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_html_simple_chart_factory_properties[VALADOC_HTML_SIMPLE_CHART_FACTORY_NUM_PROPERTIES];
+static GParamSpec* valadoc_html_simple_chart_factory_properties[BALADOC_HTML_SIMPLE_CHART_FACTORY_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 
@@ -90,7 +90,7 @@ ValadocHtmlSimpleChartFactory*
 valadoc_html_simple_chart_factory_new (ValadocSettings* settings,
                                        ValadocHtmlLinkHelper* linker)
 {
-	return valadoc_html_simple_chart_factory_construct (VALADOC_HTML_TYPE_SIMPLE_CHART_FACTORY, settings, linker);
+	return valadoc_html_simple_chart_factory_construct (BALADOC_HTML_TYPE_SIMPLE_CHART_FACTORY, settings, linker);
 }
 
 static Agraph_t*
@@ -104,7 +104,7 @@ valadoc_html_simple_chart_factory_real_create_graph (ValadocChartsFactory* base,
 	Agraph_t* result = NULL;
 	self = (ValadocHtmlSimpleChartFactory*) base;
 	g_return_val_if_fail (item != NULL, NULL);
-	_tmp0_ = VALADOC_CHARTS_FACTORY_CLASS (valadoc_html_simple_chart_factory_parent_class)->create_graph ((ValadocChartsFactory*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CHARTS_TYPE_SIMPLE_FACTORY, ValadocChartsSimpleFactory), item);
+	_tmp0_ = BALADOC_CHARTS_FACTORY_CLASS (valadoc_html_simple_chart_factory_parent_class)->create_graph ((ValadocChartsFactory*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CHARTS_TYPE_SIMPLE_FACTORY, ValadocChartsSimpleFactory), item);
 	graph = _tmp0_;
 	_tmp1_ = _g_object_ref0 (item);
 	_g_object_unref0 (self->priv->_container);
@@ -125,7 +125,7 @@ valadoc_html_simple_chart_factory_real_configure_type (ValadocChartsSimpleFactor
 	self = (ValadocHtmlSimpleChartFactory*) base;
 	g_return_val_if_fail (node != NULL, NULL);
 	g_return_val_if_fail (item != NULL, NULL);
-	_tmp0_ = VALADOC_CHARTS_SIMPLE_FACTORY_CLASS (valadoc_html_simple_chart_factory_parent_class)->configure_type (G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CHARTS_TYPE_SIMPLE_FACTORY, ValadocChartsSimpleFactory), node, item);
+	_tmp0_ = BALADOC_CHARTS_SIMPLE_FACTORY_CLASS (valadoc_html_simple_chart_factory_parent_class)->configure_type (G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CHARTS_TYPE_SIMPLE_FACTORY, ValadocChartsSimpleFactory), node, item);
 	_tmp1_ = self->priv->_container;
 	if (_tmp1_ != NULL) {
 		gchar* link = NULL;
@@ -173,7 +173,7 @@ static void
 valadoc_html_simple_chart_factory_finalize (GObject * obj)
 {
 	ValadocHtmlSimpleChartFactory * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_HTML_TYPE_SIMPLE_CHART_FACTORY, ValadocHtmlSimpleChartFactory);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_HTML_TYPE_SIMPLE_CHART_FACTORY, ValadocHtmlSimpleChartFactory);
 	_g_object_unref0 (self->priv->_settings);
 	_g_object_unref0 (self->priv->_container);
 	_g_object_unref0 (self->priv->_linker);
@@ -185,7 +185,7 @@ valadoc_html_simple_chart_factory_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocHtmlSimpleChartFactoryClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_html_simple_chart_factory_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocHtmlSimpleChartFactory), 0, (GInstanceInitFunc) valadoc_html_simple_chart_factory_instance_init, NULL };
 	GType valadoc_html_simple_chart_factory_type_id;
-	valadoc_html_simple_chart_factory_type_id = g_type_register_static (VALADOC_CHARTS_TYPE_SIMPLE_FACTORY, "ValadocHtmlSimpleChartFactory", &g_define_type_info, 0);
+	valadoc_html_simple_chart_factory_type_id = g_type_register_static (BALADOC_CHARTS_TYPE_SIMPLE_FACTORY, "ValadocHtmlSimpleChartFactory", &g_define_type_info, 0);
 	ValadocHtmlSimpleChartFactory_private_offset = g_type_add_instance_private (valadoc_html_simple_chart_factory_type_id, sizeof (ValadocHtmlSimpleChartFactoryPrivate));
 	return valadoc_html_simple_chart_factory_type_id;
 }

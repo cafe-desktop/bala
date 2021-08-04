@@ -24,7 +24,7 @@ libvalaccodegen_la_LDFLAGS = \
 	-avoid-version \
 	$(NULL)
 
-libvalaccodegen_la_VALASOURCES = \
+libvalaccodegen_la_BALASOURCES = \
 	valaccode.vala \
 	valaccodearraymodule.vala \
 	valaccodeassignmentmodule.vala \
@@ -60,13 +60,13 @@ libvalaccodegen_la_VALASOURCES = \
 
 libvalaccodegen_la_SOURCES = \
 	codegen.vala.stamp \
-	$(libvalaccodegen_la_VALASOURCES:.vala=.c) \
+	$(libvalaccodegen_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 
-codegen.vapi codegen.vala.stamp: $(libvalaccodegen_la_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+codegen.vapi codegen.vala.stamp: $(libvalaccodegen_la_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
@@ -85,10 +85,10 @@ libvalaccodegen_la_LIBADD = \
 	$(top_builddir)/ccode/libvalaccode.la \
 	$(NULL)
 
-EXTRA_DIST = $(libvalaccodegen_la_VALASOURCES) codegen.vapi codegen.vala.stamp valacodegen.h
+EXTRA_DIST = $(libvalaccodegen_la_BALASOURCES) codegen.vapi codegen.vala.stamp valacodegen.h
 
 MAINTAINERCLEANFILES = \
 	codegen.vapi \
 	valacodegen.h \
-	$(libvalaccodegen_la_VALASOURCES:.vala=.c) \
+	$(libvalaccodegen_la_BALASOURCES:.vala=.c) \
 	$(NULL)

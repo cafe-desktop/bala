@@ -59,7 +59,7 @@ vala_ccode_break_statement_construct (GType object_type)
 ValaCCodeBreakStatement*
 vala_ccode_break_statement_new (void)
 {
-	return vala_ccode_break_statement_construct (VALA_TYPE_CCODE_BREAK_STATEMENT);
+	return vala_ccode_break_statement_construct (BALA_TYPE_CCODE_BREAK_STATEMENT);
 }
 
 static void
@@ -84,7 +84,7 @@ vala_ccode_break_statement_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeBreakStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_break_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeBreakStatement), 0, (GInstanceInitFunc) vala_ccode_break_statement_instance_init, NULL };
 	GType vala_ccode_break_statement_type_id;
-	vala_ccode_break_statement_type_id = g_type_register_static (VALA_TYPE_CCODE_STATEMENT, "ValaCCodeBreakStatement", &g_define_type_info, 0);
+	vala_ccode_break_statement_type_id = g_type_register_static (BALA_TYPE_CCODE_STATEMENT, "ValaCCodeBreakStatement", &g_define_type_info, 0);
 	return vala_ccode_break_statement_type_id;
 }
 

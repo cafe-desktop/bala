@@ -1175,9 +1175,9 @@ TEST_SUITE_LOG = test-suite.log
 am__test_logs1 = $(TESTS:=.log)
 am__test_logs2 = $(am__test_logs1:@EXEEXT@.log=.log)
 am__test_logs3 = $(am__test_logs2:.vala.log=.log)
-VALA_LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
-VALA_LOG_COMPILE = $(VALA_LOG_COMPILER) $(AM_VALA_LOG_FLAGS) \
-	$(VALA_LOG_FLAGS)
+BALA_LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
+BALA_LOG_COMPILE = $(BALA_LOG_COMPILER) $(AM_BALA_LOG_FLAGS) \
+	$(BALA_LOG_FLAGS)
 am__set_b = \
   case '$@' in \
     */*) \
@@ -1240,7 +1240,7 @@ CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 COVERAGE_CFLAGS = @COVERAGE_CFLAGS@
 COVERAGE_LIBS = @COVERAGE_LIBS@
-COVERAGE_VALAFLAGS = @COVERAGE_VALAFLAGS@
+COVERAGE_BALAFLAGS = @COVERAGE_BALAFLAGS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -1309,11 +1309,11 @@ SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
 TEST_CFLAGS = @TEST_CFLAGS@
-VALAC = @VALAC@
-VALAFLAGS = @VALAFLAGS@
-VALA_MAJOR_VERSION = @VALA_MAJOR_VERSION@
-VALA_MICRO_VERSION = @VALA_MICRO_VERSION@
-VALA_MINOR_VERSION = @VALA_MINOR_VERSION@
+BALAC = @BALAC@
+BALAFLAGS = @BALAFLAGS@
+BALA_MAJOR_VERSION = @BALA_MAJOR_VERSION@
+BALA_MICRO_VERSION = @BALA_MICRO_VERSION@
+BALA_MINOR_VERSION = @BALA_MINOR_VERSION@
 VERSION = @VERSION@
 WEASYPRINT = @WEASYPRINT@
 XSLTPROC = @XSLTPROC@
@@ -1393,7 +1393,7 @@ BUILT_SOURCES = \
 
 TEST_EXTENSIONS = .vala .gs .test
 TEST_RUNNER = $(abs_top_srcdir)/build-aux/testrunner.sh
-VALA_LOG_COMPILER = $(TEST_RUNNER)
+BALA_LOG_COMPILER = $(TEST_RUNNER)
 GS_LOG_COMPILER = $(TEST_RUNNER)
 TEST_LOG_COMPILER = $(TEST_RUNNER)
 AM_TESTS_ENVIRONMENT = \
@@ -1713,16 +1713,16 @@ recheck: all
 .vala.log:
 	@p='$<'; \
 	$(am__set_b); \
-	$(am__check_pre) $(VALA_LOG_DRIVER) --test-name "$$f" \
+	$(am__check_pre) $(BALA_LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_VALA_LOG_DRIVER_FLAGS) $(VALA_LOG_DRIVER_FLAGS) -- $(VALA_LOG_COMPILE) \
+	$(am__common_driver_flags) $(AM_BALA_LOG_DRIVER_FLAGS) $(BALA_LOG_DRIVER_FLAGS) -- $(BALA_LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
 @am__EXEEXT_TRUE@.vala$(EXEEXT).log:
 @am__EXEEXT_TRUE@	@p='$<'; \
 @am__EXEEXT_TRUE@	$(am__set_b); \
-@am__EXEEXT_TRUE@	$(am__check_pre) $(VALA_LOG_DRIVER) --test-name "$$f" \
+@am__EXEEXT_TRUE@	$(am__check_pre) $(BALA_LOG_DRIVER) --test-name "$$f" \
 @am__EXEEXT_TRUE@	--log-file $$b.log --trs-file $$b.trs \
-@am__EXEEXT_TRUE@	$(am__common_driver_flags) $(AM_VALA_LOG_DRIVER_FLAGS) $(VALA_LOG_DRIVER_FLAGS) -- $(VALA_LOG_COMPILE) \
+@am__EXEEXT_TRUE@	$(am__common_driver_flags) $(AM_BALA_LOG_DRIVER_FLAGS) $(BALA_LOG_DRIVER_FLAGS) -- $(BALA_LOG_COMPILE) \
 @am__EXEEXT_TRUE@	"$$tst" $(AM_TESTS_FD_REDIRECT)
 .gs.log:
 	@p='$<'; \

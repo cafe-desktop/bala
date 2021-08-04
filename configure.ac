@@ -13,12 +13,12 @@ AM_MAINTAINER_MODE([enable])
 API_VERSION=0.48
 PACKAGE_SUFFIX="-$API_VERSION"
 
-VALA_MAJOR_VERSION=`echo $PACKAGE_VERSION | cut -d. -f1 | sed s/[[a-zA-Z\-]].*//g`
-VALA_MINOR_VERSION=`echo $PACKAGE_VERSION | cut -d. -f2 | sed s/[[a-zA-Z\-]].*//g`
-VALA_MICRO_VERSION=`echo $PACKAGE_VERSION | cut -d. -f3 | sed s/[[a-zA-Z\-]].*//g`
-AC_SUBST(VALA_MAJOR_VERSION)
-AC_SUBST(VALA_MINOR_VERSION)
-AC_SUBST(VALA_MICRO_VERSION)
+BALA_MAJOR_VERSION=`echo $PACKAGE_VERSION | cut -d. -f1 | sed s/[[a-zA-Z\-]].*//g`
+BALA_MINOR_VERSION=`echo $PACKAGE_VERSION | cut -d. -f2 | sed s/[[a-zA-Z\-]].*//g`
+BALA_MICRO_VERSION=`echo $PACKAGE_VERSION | cut -d. -f3 | sed s/[[a-zA-Z\-]].*//g`
+AC_SUBST(BALA_MAJOR_VERSION)
+AC_SUBST(BALA_MINOR_VERSION)
+AC_SUBST(BALA_MICRO_VERSION)
 
 dnl http://people.gnome.org/~walters/docs/build-api.txt
 dnl We don't support separate builddir when building from git
@@ -70,27 +70,27 @@ if test "$YACC" = :; then
 	AC_MSG_ERROR([bison not found but required])
 fi
 
-AC_PATH_PROG(VALAC, valac, valac)
-AC_SUBST(VALAC)
+AC_PATH_PROG(BALAC, valac, valac)
+AC_SUBST(BALAC)
 
-VALAC_BOOTSTRAP_REQUIRED=0.39.5.8
+BALAC_BOOTSTRAP_REQUIRED=0.39.5.8
 
-AS_IF([test "$VALAC" != valac], [FOUND_VALAC_VERION=`$VALAC --version | sed 's/Vala  *//'`
-	AS_VERSION_COMPARE(["$VALAC_BOOTSTRAP_REQUIRED"], ["$FOUND_VALAC_VERION"],
+AS_IF([test "$BALAC" != valac], [FOUND_BALAC_VERION=`$BALAC --version | sed 's/Vala  *//'`
+	AS_VERSION_COMPARE(["$BALAC_BOOTSTRAP_REQUIRED"], ["$FOUND_BALAC_VERION"],
 		[enable_boostrap=yes], [enable_boostrap=yes], [enable_boostrap=no])])
 
-VALAFLAGS="$VALAFLAGS --disable-version-header"
+BALAFLAGS="$BALAFLAGS --disable-version-header"
 if test x$enable_boostrap = xyes; then
-	VALAFLAGS="$VALAFLAGS --hide-internal --abi-stability"
+	BALAFLAGS="$BALAFLAGS --hide-internal --abi-stability"
 fi
 
 AC_ARG_ENABLE(debug, AS_HELP_STRING([--enable-debug], [Enable debug build]), enable_debug=$enableval, enable_debug=no)
 if test "$enable_debug" = "yes"; then
-	VALAFLAGS="$VALAFLAGS -g"
+	BALAFLAGS="$BALAFLAGS -g"
 	CFLAGS="$CFLAGS -g -O0"
 fi
 
-AC_SUBST(VALAFLAGS)
+AC_SUBST(BALAFLAGS)
 AC_SUBST(CFLAGS)
 AC_SUBST(CPPFLAGS)
 AC_SUBST(LDFLAGS)
@@ -102,15 +102,15 @@ AC_ARG_ENABLE(coverage, AS_HELP_STRING([--enable-coverage], [Enable coverage ana
 AM_CONDITIONAL(ENABLE_COVERAGE, test x$enable_coverage = xyes)
 
 if test "$enable_coverage" = "yes"; then
-	COVERAGE_VALAFLAGS="-g"
+	COVERAGE_BALAFLAGS="-g"
 	COVERAGE_CFLAGS="-fprofile-arcs -ftest-coverage"
 	COVERAGE_LIBS="-lgcov"
 else
-	COVERAGE_VALAFLAGS=
+	COVERAGE_BALAFLAGS=
 	COVERAGE_CFLAGS=
 	COVERAGE_LIBS=
 fi
-AC_SUBST(COVERAGE_VALAFLAGS)
+AC_SUBST(COVERAGE_BALAFLAGS)
 AC_SUBST(COVERAGE_CFLAGS)
 AC_SUBST(COVERAGE_LIBS)
 
@@ -183,7 +183,7 @@ if test x$enable_valadoc = xyes; then
 			}
 		])], [
 			AC_MSG_RESULT([yes])
-			VALAFLAGS="$VALAFLAGS -D WITH_CGRAPH"
+			BALAFLAGS="$BALAFLAGS -D WITH_CGRAPH"
 			have_cgraph=yes
 		], [
 			AC_MSG_RESULT([no])
@@ -193,7 +193,7 @@ if test x$enable_valadoc = xyes; then
 				AC_MSG_ERROR([--with-cgraph=yes/no is required for cross-compilation])
 			elif test x$with_cgraph = xyes; then
 				AC_MSG_RESULT([yes])
-				VALAFLAGS="$VALAFLAGS -D WITH_CGRAPH"
+				BALAFLAGS="$BALAFLAGS -D WITH_CGRAPH"
 				have_cgraph=yes
 			else
 				AC_MSG_RESULT([no])
@@ -205,7 +205,7 @@ if test x$enable_valadoc = xyes; then
 	CFLAGS="$cgraph_tmp_CFLAGS"
 fi
 AM_CONDITIONAL(HAVE_CGRAPH, test "$have_cgraph" = "yes")
-AM_CONDITIONAL(ENABLE_VALADOC, test x$enable_valadoc = xyes)
+AM_CONDITIONAL(ENABLE_BALADOC, test x$enable_valadoc = xyes)
 
 AC_PATH_PROG([G_IR_COMPILER], [g-ir-compiler], :)
 AM_CONDITIONAL(HAVE_G_IR_COMPILER, test "$G_IR_COMPILER" != :)

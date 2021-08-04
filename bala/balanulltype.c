@@ -54,7 +54,7 @@ vala_null_type_construct (GType object_type,
 ValaNullType*
 vala_null_type_new (ValaSourceReference* source_reference)
 {
-	return vala_null_type_construct (VALA_TYPE_NULL_TYPE, source_reference);
+	return vala_null_type_construct (BALA_TYPE_NULL_TYPE, source_reference);
 }
 
 static gboolean
@@ -92,9 +92,9 @@ vala_null_type_real_compatible (ValaDataType* base,
 		result = _tmp6_;
 		return result;
 	}
-	if (!VALA_IS_POINTER_TYPE (target_type)) {
+	if (!BALA_IS_POINTER_TYPE (target_type)) {
 		gboolean _tmp8_ = FALSE;
-		if (VALA_IS_NULL_TYPE (target_type)) {
+		if (BALA_IS_NULL_TYPE (target_type)) {
 			_tmp8_ = TRUE;
 		} else {
 			gboolean _tmp9_ = FALSE;
@@ -103,7 +103,7 @@ vala_null_type_real_compatible (ValaDataType* base,
 			_tmp10_ = vala_data_type_get_type_symbol (target_type);
 			_tmp11_ = _tmp10_;
 			if (_tmp11_ == NULL) {
-				_tmp9_ = !VALA_IS_GENERIC_TYPE (target_type);
+				_tmp9_ = !BALA_IS_GENERIC_TYPE (target_type);
 			} else {
 				_tmp9_ = FALSE;
 			}
@@ -117,10 +117,10 @@ vala_null_type_real_compatible (ValaDataType* base,
 		result = TRUE;
 		return result;
 	}
-	if (VALA_IS_GENERIC_TYPE (target_type)) {
+	if (BALA_IS_GENERIC_TYPE (target_type)) {
 		_tmp14_ = TRUE;
 	} else {
-		_tmp14_ = VALA_IS_POINTER_TYPE (target_type);
+		_tmp14_ = BALA_IS_POINTER_TYPE (target_type);
 	}
 	if (_tmp14_) {
 		_tmp13_ = TRUE;
@@ -151,12 +151,12 @@ vala_null_type_real_compatible (ValaDataType* base,
 	if (vala_typesymbol_is_reference_type (_tmp23_)) {
 		_tmp21_ = TRUE;
 	} else {
-		_tmp21_ = VALA_IS_ARRAY_TYPE (target_type);
+		_tmp21_ = BALA_IS_ARRAY_TYPE (target_type);
 	}
 	if (_tmp21_) {
 		_tmp20_ = TRUE;
 	} else {
-		_tmp20_ = VALA_IS_DELEGATE_TYPE (target_type);
+		_tmp20_ = BALA_IS_DELEGATE_TYPE (target_type);
 	}
 	if (_tmp20_) {
 		result = TRUE;
@@ -230,7 +230,7 @@ vala_null_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaNullTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_null_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaNullType), 0, (GInstanceInitFunc) vala_null_type_instance_init, NULL };
 	GType vala_null_type_type_id;
-	vala_null_type_type_id = g_type_register_static (VALA_TYPE_REFERENCE_TYPE, "ValaNullType", &g_define_type_info, 0);
+	vala_null_type_type_id = g_type_register_static (BALA_TYPE_REFERENCE_TYPE, "ValaNullType", &g_define_type_info, 0);
 	return vala_null_type_type_id;
 }
 

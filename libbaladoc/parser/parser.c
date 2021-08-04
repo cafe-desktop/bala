@@ -145,7 +145,7 @@ valadoc_parser_new (ValadocSettings* settings,
                     ValadocScanner* scanner,
                     ValadocErrorReporter* reporter)
 {
-	return valadoc_parser_construct (VALADOC_TYPE_PARSER, settings, scanner, reporter);
+	return valadoc_parser_construct (BALADOC_TYPE_PARSER, settings, scanner, reporter);
 }
 
 void
@@ -205,7 +205,7 @@ valadoc_parser_parse (ValadocParser* self,
 		_tmp5_ = self->priv->_scanner;
 		valadoc_scanner_scan (_tmp5_, content, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				goto __catch0_valadoc_parser_error;
 			}
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
@@ -215,7 +215,7 @@ valadoc_parser_parse (ValadocParser* self,
 		_tmp6_ = self->priv->_scanner;
 		valadoc_scanner_end (_tmp6_, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				goto __catch0_valadoc_parser_error;
 			}
 			g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
@@ -228,7 +228,7 @@ valadoc_parser_parse (ValadocParser* self,
 		if (_tmp9_ != 0) {
 			valadoc_parser_callback_error ((ValadocParserCallback*) self, NULL, "Rule stack is not empty!", &_inner_error0_);
 			if (G_UNLIKELY (_inner_error0_ != NULL)) {
-				if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+				if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 					goto __catch0_valadoc_parser_error;
 				}
 				g_critical ("file %s: line %d: unexpected error: %s (%s, %d)", __FILE__, __LINE__, _inner_error0_->message, g_quark_to_string (_inner_error0_->domain), _inner_error0_->code);
@@ -253,7 +253,7 @@ valadoc_parser_parse (ValadocParser* self,
 	}
 	__finally0:
 	if (G_UNLIKELY (_inner_error0_ != NULL)) {
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			return;
 		} else {
@@ -288,15 +288,15 @@ valadoc_parser_accept_token (ValadocParser* self,
 	_tmp2_ = vala_collection_get_size ((ValaCollection*) _tmp1_);
 	_tmp3_ = _tmp2_;
 	rule_depth = _tmp3_;
-	forward = VALADOC_RULE_FORWARD_NONE;
+	forward = BALADOC_RULE_FORWARD_NONE;
 	_tmp4_ = valadoc_parser_peek_rule (self, -1);
 	rule = _tmp4_;
 	_tmp5_ = rule;
 	if (_tmp5_ == NULL) {
 		GError* _tmp6_;
-		_tmp6_ = g_error_new_literal (VALADOC_PARSER_ERROR, VALADOC_PARSER_ERROR_INTERNAL_ERROR, "Rule stack is empty!");
+		_tmp6_ = g_error_new_literal (BALADOC_PARSER_ERROR, BALADOC_PARSER_ERROR_INTERNAL_ERROR, "Rule stack is empty!");
 		_inner_error0_ = _tmp6_;
-		if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+		if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 			g_propagate_error (error, _inner_error0_);
 			_g_object_unref0 (rule);
 			return;
@@ -332,7 +332,7 @@ valadoc_parser_accept_token (ValadocParser* self,
 		_tmp10_ = forward;
 		_tmp8_ = valadoc_rule_accept_token (_tmp9_, token, (ValadocParserCallback*) self, _tmp10_, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
-			if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+			if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 				g_propagate_error (error, _inner_error0_);
 				_g_object_unref0 (rule);
 				return;
@@ -364,7 +364,7 @@ valadoc_parser_accept_token (ValadocParser* self,
 		if (_tmp11_) {
 			valadoc_parser_callback_error ((ValadocParserCallback*) self, NULL, "Parser state error", &_inner_error0_);
 			if (G_UNLIKELY (_inner_error0_ != NULL)) {
-				if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+				if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 					g_propagate_error (error, _inner_error0_);
 					_g_object_unref0 (rule);
 					return;
@@ -384,9 +384,9 @@ valadoc_parser_accept_token (ValadocParser* self,
 		_tmp21_ = vala_collection_get_size ((ValaCollection*) _tmp20_);
 		_tmp22_ = _tmp21_;
 		if (rule_depth > _tmp22_) {
-			_tmp19_ = VALADOC_RULE_FORWARD_CHILD;
+			_tmp19_ = BALADOC_RULE_FORWARD_CHILD;
 		} else {
-			_tmp19_ = VALADOC_RULE_FORWARD_PARENT;
+			_tmp19_ = BALADOC_RULE_FORWARD_PARENT;
 		}
 		forward = _tmp19_;
 		_tmp23_ = self->priv->rule_stack;
@@ -792,9 +792,9 @@ valadoc_parser_real_error (ValadocParserCallback* base,
 	valadoc_error_reporter_error (_tmp5_, _tmp6_, (glong) valadoc_parser_get_line (self, token), (glong) valadoc_parser_get_start_column (self, token), (glong) valadoc_parser_get_end_column (self, token), _tmp9_, "%s", _tmp10_);
 	_g_free0 (_tmp9_);
 	_tmp11_ = error_message;
-	_tmp12_ = g_error_new_literal (VALADOC_PARSER_ERROR, VALADOC_PARSER_ERROR_UNEXPECTED_TOKEN, _tmp11_);
+	_tmp12_ = g_error_new_literal (BALADOC_PARSER_ERROR, BALADOC_PARSER_ERROR_UNEXPECTED_TOKEN, _tmp11_);
 	_inner_error0_ = _tmp12_;
-	if (_inner_error0_->domain == VALADOC_PARSER_ERROR) {
+	if (_inner_error0_->domain == BALADOC_PARSER_ERROR) {
 		g_propagate_error (error, _inner_error0_);
 		_g_free0 (error_message);
 		return;
@@ -971,7 +971,7 @@ valadoc_param_spec_parser (const gchar* name,
                            GParamFlags flags)
 {
 	ValadocParamSpecParser* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALADOC_TYPE_PARSER), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALADOC_TYPE_PARSER), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -980,7 +980,7 @@ valadoc_param_spec_parser (const gchar* name,
 gpointer
 valadoc_value_get_parser (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_TYPE_PARSER), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_TYPE_PARSER), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -989,10 +989,10 @@ valadoc_value_set_parser (GValue* value,
                           gpointer v_object)
 {
 	ValadocParser * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_TYPE_PARSER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_TYPE_PARSER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_TYPE_PARSER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_TYPE_PARSER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		valadoc_parser_ref (value->data[0].v_pointer);
@@ -1009,10 +1009,10 @@ valadoc_value_take_parser (GValue* value,
                            gpointer v_object)
 {
 	ValadocParser * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_TYPE_PARSER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_TYPE_PARSER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_TYPE_PARSER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_TYPE_PARSER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1057,7 +1057,7 @@ valadoc_parser_instance_init (ValadocParser * self,
 	ValaArrayList* _tmp3_;
 	self->priv = valadoc_parser_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_TYPE_RULE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_TYPE_RULE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	self->priv->rule_stack = _tmp1_;
 	_tmp2_ = g_direct_equal;
 	_tmp3_ = vala_array_list_new (G_TYPE_OBJECT, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp2_);
@@ -1069,7 +1069,7 @@ static void
 valadoc_parser_finalize (ValadocParser * obj)
 {
 	ValadocParser * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_PARSER, ValadocParser);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_PARSER, ValadocParser);
 	g_signal_handlers_destroy (self);
 	_g_object_unref0 (self->priv->_settings);
 	_g_object_unref0 (self->priv->_scanner);
@@ -1090,7 +1090,7 @@ valadoc_parser_get_type_once (void)
 	static const GInterfaceInfo valadoc_parser_callback_info = { (GInterfaceInitFunc) valadoc_parser_valadoc_parser_callback_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_parser_type_id;
 	valadoc_parser_type_id = g_type_register_fundamental (g_type_fundamental_next (), "ValadocParser", &g_define_type_info, &g_define_type_fundamental_info, 0);
-	g_type_add_interface_static (valadoc_parser_type_id, VALADOC_TYPE_PARSER_CALLBACK, &valadoc_parser_callback_info);
+	g_type_add_interface_static (valadoc_parser_type_id, BALADOC_TYPE_PARSER_CALLBACK, &valadoc_parser_callback_info);
 	ValadocParser_private_offset = g_type_add_instance_private (valadoc_parser_type_id, sizeof (ValadocParserPrivate));
 	return valadoc_parser_type_id;
 }
@@ -1122,7 +1122,7 @@ valadoc_parser_unref (gpointer instance)
 	ValadocParser * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALADOC_PARSER_GET_CLASS (self)->finalize (self);
+		BALADOC_PARSER_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

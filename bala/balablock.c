@@ -117,7 +117,7 @@ vala_block_construct (GType object_type,
 ValaBlock*
 vala_block_new (ValaSourceReference* source_reference)
 {
-	return vala_block_construct (VALA_TYPE_BLOCK, source_reference);
+	return vala_block_construct (BALA_TYPE_BLOCK, source_reference);
 }
 
 /**
@@ -170,7 +170,7 @@ vala_block_get_statements (ValaBlock* self)
 	ValaList* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_STATEMENT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_STATEMENT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	list = _tmp1_;
 	{
 		ValaList* _stmt_list = NULL;
@@ -208,7 +208,7 @@ vala_block_get_statements (ValaBlock* self)
 			_tmp10_ = vala_list_get (_tmp9_, _stmt_index);
 			stmt = (ValaStatement*) _tmp10_;
 			_tmp11_ = stmt;
-			stmt_list = VALA_IS_STATEMENT_LIST (_tmp11_) ? ((ValaStatementList*) _tmp11_) : NULL;
+			stmt_list = BALA_IS_STATEMENT_LIST (_tmp11_) ? ((ValaStatementList*) _tmp11_) : NULL;
 			_tmp12_ = stmt_list;
 			if (_tmp12_ != NULL) {
 				{
@@ -295,19 +295,19 @@ vala_block_add_local_variable (ValaBlock* self,
 		ValaSymbol* _tmp22_;
 		ValaSymbol* _tmp23_;
 		_tmp4_ = parent_block;
-		if (VALA_IS_BLOCK (_tmp4_)) {
+		if (BALA_IS_BLOCK (_tmp4_)) {
 			_tmp3_ = TRUE;
 		} else {
 			ValaSymbol* _tmp5_;
 			_tmp5_ = parent_block;
-			_tmp3_ = VALA_IS_METHOD (_tmp5_);
+			_tmp3_ = BALA_IS_METHOD (_tmp5_);
 		}
 		if (_tmp3_) {
 			_tmp2_ = TRUE;
 		} else {
 			ValaSymbol* _tmp6_;
 			_tmp6_ = parent_block;
-			_tmp2_ = VALA_IS_PROPERTY_ACCESSOR (_tmp6_);
+			_tmp2_ = BALA_IS_PROPERTY_ACCESSOR (_tmp6_);
 		}
 		if (!_tmp2_) {
 			break;
@@ -408,19 +408,19 @@ vala_block_add_local_constant (ValaBlock* self,
 		ValaSymbol* _tmp22_;
 		ValaSymbol* _tmp23_;
 		_tmp4_ = parent_block;
-		if (VALA_IS_BLOCK (_tmp4_)) {
+		if (BALA_IS_BLOCK (_tmp4_)) {
 			_tmp3_ = TRUE;
 		} else {
 			ValaSymbol* _tmp5_;
 			_tmp5_ = parent_block;
-			_tmp3_ = VALA_IS_METHOD (_tmp5_);
+			_tmp3_ = BALA_IS_METHOD (_tmp5_);
 		}
 		if (_tmp3_) {
 			_tmp2_ = TRUE;
 		} else {
 			ValaSymbol* _tmp6_;
 			_tmp6_ = parent_block;
-			_tmp2_ = VALA_IS_PROPERTY_ACCESSOR (_tmp6_);
+			_tmp2_ = BALA_IS_PROPERTY_ACCESSOR (_tmp6_);
 		}
 		if (!_tmp2_) {
 			break;
@@ -853,7 +853,7 @@ vala_block_insert_before (ValaBlock* self,
 				_tmp5_ = self->priv->statement_list;
 				_tmp6_ = vala_list_get (_tmp5_, i);
 				_tmp7_ = (ValaStatement*) _tmp6_;
-				_tmp8_ = VALA_IS_STATEMENT_LIST (_tmp7_) ? ((ValaStatementList*) _tmp7_) : NULL;
+				_tmp8_ = BALA_IS_STATEMENT_LIST (_tmp7_) ? ((ValaStatementList*) _tmp7_) : NULL;
 				if (_tmp8_ == NULL) {
 					_vala_code_node_unref0 (_tmp7_);
 				}
@@ -979,7 +979,7 @@ vala_block_replace_statement (ValaBlock* self,
 				_tmp5_ = self->priv->statement_list;
 				_tmp6_ = vala_list_get (_tmp5_, i);
 				_tmp7_ = (ValaStatement*) _tmp6_;
-				_tmp8_ = VALA_IS_STATEMENT_LIST (_tmp7_) ? ((ValaStatementList*) _tmp7_) : NULL;
+				_tmp8_ = BALA_IS_STATEMENT_LIST (_tmp7_) ? ((ValaStatementList*) _tmp7_) : NULL;
 				if (_tmp8_ == NULL) {
 					_vala_code_node_unref0 (_tmp7_);
 				}
@@ -1085,13 +1085,13 @@ vala_block_instance_init (ValaBlock * self,
 	ValaArrayList* _tmp5_;
 	self->priv = vala_block_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_STATEMENT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_STATEMENT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->statement_list = (ValaList*) _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_LOCAL_VARIABLE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_LOCAL_VARIABLE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	self->priv->local_variables = (ValaList*) _tmp3_;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_array_list_new (VALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
+	_tmp5_ = vala_array_list_new (BALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
 	self->priv->local_constants = (ValaList*) _tmp5_;
 }
 
@@ -1099,11 +1099,11 @@ static void
 vala_block_finalize (ValaCodeNode * obj)
 {
 	ValaBlock * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_BLOCK, ValaBlock);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_BLOCK, ValaBlock);
 	_vala_iterable_unref0 (self->priv->statement_list);
 	_vala_iterable_unref0 (self->priv->local_variables);
 	_vala_iterable_unref0 (self->priv->local_constants);
-	VALA_CODE_NODE_CLASS (vala_block_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_block_parent_class)->finalize (obj);
 }
 
 /**
@@ -1115,8 +1115,8 @@ vala_block_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaBlockClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_block_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaBlock), 0, (GInstanceInitFunc) vala_block_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_block_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_block_type_id;
-	vala_block_type_id = g_type_register_static (VALA_TYPE_SYMBOL, "ValaBlock", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_block_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_block_type_id = g_type_register_static (BALA_TYPE_SYMBOL, "ValaBlock", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_block_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaBlock_private_offset = g_type_add_instance_private (vala_block_type_id, sizeof (ValaBlockPrivate));
 	return vala_block_type_id;
 }

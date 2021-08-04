@@ -32,10 +32,10 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_NOTE_0_PROPERTY,
-	VALADOC_CONTENT_NOTE_NUM_PROPERTIES
+	BALADOC_CONTENT_NOTE_0_PROPERTY,
+	BALADOC_CONTENT_NOTE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_note_properties[VALADOC_CONTENT_NOTE_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_note_properties[BALADOC_CONTENT_NOTE_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 
@@ -70,7 +70,7 @@ valadoc_content_note_construct (GType object_type)
 G_GNUC_INTERNAL ValadocContentNote*
 valadoc_content_note_new (void)
 {
-	return valadoc_content_note_construct (VALADOC_CONTENT_TYPE_NOTE);
+	return valadoc_content_note_construct (BALADOC_CONTENT_TYPE_NOTE);
 }
 
 static void
@@ -88,7 +88,7 @@ valadoc_content_note_real_check (ValadocContentContentElement* base,
 	g_return_if_fail (file_path != NULL);
 	g_return_if_fail (reporter != NULL);
 	g_return_if_fail (settings != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_note_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_note_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_BLOCK_CONTENT, ValadocContentBlockContent), api_root, container, file_path, reporter, settings);
 }
 
 static void
@@ -167,7 +167,7 @@ valadoc_content_note_real_copy (ValadocContentContentElement* base,
 			_tmp12_ = block;
 			_tmp13_ = note;
 			_tmp14_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp12_, (ValadocContentContentElement*) _tmp13_);
-			_tmp15_ = VALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
+			_tmp15_ = BALADOC_CONTENT_IS_BLOCK (_tmp14_) ? ((ValadocContentBlock*) _tmp14_) : NULL;
 			if (_tmp15_ == NULL) {
 				_g_object_unref0 (_tmp14_);
 			}
@@ -215,8 +215,8 @@ valadoc_content_note_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentNoteClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_note_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentNote), 0, (GInstanceInitFunc) valadoc_content_note_instance_init, NULL };
 	static const GInterfaceInfo valadoc_content_block_info = { (GInterfaceInitFunc) valadoc_content_note_valadoc_content_block_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_content_note_type_id;
-	valadoc_content_note_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocContentNote", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_content_note_type_id, VALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
+	valadoc_content_note_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_BLOCK_CONTENT, "ValadocContentNote", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_content_note_type_id, BALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
 	return valadoc_content_note_type_id;
 }
 

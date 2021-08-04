@@ -143,7 +143,7 @@ vala_ccode_initializer_list_construct (GType object_type)
 ValaCCodeInitializerList*
 vala_ccode_initializer_list_new (void)
 {
-	return vala_ccode_initializer_list_construct (VALA_TYPE_CCODE_INITIALIZER_LIST);
+	return vala_ccode_initializer_list_construct (BALA_TYPE_CCODE_INITIALIZER_LIST);
 }
 
 static void
@@ -164,7 +164,7 @@ vala_ccode_initializer_list_instance_init (ValaCCodeInitializerList * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_ccode_initializer_list_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
 	self->priv->initializers = (ValaList*) _tmp1_;
 }
 
@@ -172,9 +172,9 @@ static void
 vala_ccode_initializer_list_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeInitializerList * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_INITIALIZER_LIST, ValaCCodeInitializerList);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_INITIALIZER_LIST, ValaCCodeInitializerList);
 	_vala_iterable_unref0 (self->priv->initializers);
-	VALA_CCODE_NODE_CLASS (vala_ccode_initializer_list_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_initializer_list_parent_class)->finalize (obj);
 }
 
 /**
@@ -185,7 +185,7 @@ vala_ccode_initializer_list_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeInitializerListClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_initializer_list_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeInitializerList), 0, (GInstanceInitFunc) vala_ccode_initializer_list_instance_init, NULL };
 	GType vala_ccode_initializer_list_type_id;
-	vala_ccode_initializer_list_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeInitializerList", &g_define_type_info, 0);
+	vala_ccode_initializer_list_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeInitializerList", &g_define_type_info, 0);
 	ValaCCodeInitializerList_private_offset = g_type_add_instance_private (vala_ccode_initializer_list_type_id, sizeof (ValaCCodeInitializerListPrivate));
 	return vala_ccode_initializer_list_type_id;
 }

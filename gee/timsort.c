@@ -29,12 +29,12 @@
 #include <string.h>
 #include <gobject/gvaluecollector.h>
 
-#define VALA_TYPE_TIM_SORT (vala_tim_sort_get_type ())
-#define VALA_TIM_SORT(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_TYPE_TIM_SORT, ValaTimSort))
-#define VALA_TIM_SORT_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_TYPE_TIM_SORT, ValaTimSortClass))
-#define VALA_IS_TIM_SORT(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_TYPE_TIM_SORT))
-#define VALA_IS_TIM_SORT_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_TYPE_TIM_SORT))
-#define VALA_TIM_SORT_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_TYPE_TIM_SORT, ValaTimSortClass))
+#define BALA_TYPE_TIM_SORT (vala_tim_sort_get_type ())
+#define BALA_TIM_SORT(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_TYPE_TIM_SORT, ValaTimSort))
+#define BALA_TIM_SORT_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_TYPE_TIM_SORT, ValaTimSortClass))
+#define BALA_IS_TIM_SORT(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_TYPE_TIM_SORT))
+#define BALA_IS_TIM_SORT_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_TYPE_TIM_SORT))
+#define BALA_TIM_SORT_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_TYPE_TIM_SORT, ValaTimSortClass))
 
 typedef struct _ValaTimSort ValaTimSort;
 typedef struct _ValaTimSortClass ValaTimSortClass;
@@ -108,7 +108,7 @@ G_GNUC_INTERNAL void vala_value_take_tim_sort (GValue* value,
 G_GNUC_INTERNAL gpointer vala_value_get_tim_sort (const GValue* value) G_GNUC_UNUSED;
 G_GNUC_INTERNAL GType vala_tim_sort_get_type (void) G_GNUC_CONST G_GNUC_UNUSED;
 static void vala_tim_sort_slice_free (ValaTimSortSlice * self);
-#define VALA_TIM_SORT_MINIMUM_GALLOP 7
+#define BALA_TIM_SORT_MINIMUM_GALLOP 7
 G_GNUC_INTERNAL void vala_tim_sort_sort (GType g_type,
                          GBoxedCopyFunc g_dup_func,
                          GDestroyNotify g_destroy_func,
@@ -227,8 +227,8 @@ vala_tim_sort_sort (GType g_type,
                     gpointer compare_target)
 {
 	g_return_if_fail (list != NULL);
-	if (VALA_IS_ARRAY_LIST (list)) {
-		vala_tim_sort_sort_arraylist (g_type, (GBoxedCopyFunc) g_dup_func, (GDestroyNotify) g_destroy_func, G_TYPE_CHECK_INSTANCE_CAST (list, VALA_TYPE_ARRAY_LIST, ValaArrayList), compare, compare_target);
+	if (BALA_IS_ARRAY_LIST (list)) {
+		vala_tim_sort_sort_arraylist (g_type, (GBoxedCopyFunc) g_dup_func, (GDestroyNotify) g_destroy_func, G_TYPE_CHECK_INSTANCE_CAST (list, BALA_TYPE_ARRAY_LIST, ValaArrayList), compare, compare_target);
 	} else {
 		vala_tim_sort_sort_list (g_type, (GBoxedCopyFunc) g_dup_func, (GDestroyNotify) g_destroy_func, list, compare, compare_target);
 	}
@@ -395,7 +395,7 @@ vala_tim_sort_do_sort (ValaTimSort* self)
 	self->priv->pending = _tmp0_;
 	self->priv->pending_length1 = 0;
 	self->priv->_pending_size_ = self->priv->pending_length1;
-	self->priv->minimum_gallop = VALA_TIM_SORT_MINIMUM_GALLOP;
+	self->priv->minimum_gallop = BALA_TIM_SORT_MINIMUM_GALLOP;
 	_tmp1_ = self->priv->list;
 	_tmp2_ = vala_tim_sort_slice_new (_tmp1_, self->priv->index, self->priv->size);
 	remaining = _tmp2_;
@@ -1370,8 +1370,8 @@ vala_tim_sort_merge_low (ValaTimSort* self,
 					_vala_tim_sort_slice_free0 (b);
 					return;
 				}
-				if (a_count < VALA_TIM_SORT_MINIMUM_GALLOP) {
-					_tmp40_ = b_count < VALA_TIM_SORT_MINIMUM_GALLOP;
+				if (a_count < BALA_TIM_SORT_MINIMUM_GALLOP) {
+					_tmp40_ = b_count < BALA_TIM_SORT_MINIMUM_GALLOP;
 				} else {
 					_tmp40_ = FALSE;
 				}
@@ -1632,8 +1632,8 @@ vala_tim_sort_merge_high (ValaTimSort* self,
 					_vala_tim_sort_slice_free0 (b);
 					return;
 				}
-				if (a_count < VALA_TIM_SORT_MINIMUM_GALLOP) {
-					_tmp40_ = b_count < VALA_TIM_SORT_MINIMUM_GALLOP;
+				if (a_count < BALA_TIM_SORT_MINIMUM_GALLOP) {
+					_tmp40_ = b_count < BALA_TIM_SORT_MINIMUM_GALLOP;
 				} else {
 					_tmp40_ = FALSE;
 				}
@@ -1683,7 +1683,7 @@ vala_tim_sort_new (GType g_type,
                    GBoxedCopyFunc g_dup_func,
                    GDestroyNotify g_destroy_func)
 {
-	return vala_tim_sort_construct (VALA_TYPE_TIM_SORT, g_type, g_dup_func, g_destroy_func);
+	return vala_tim_sort_construct (BALA_TYPE_TIM_SORT, g_type, g_dup_func, g_destroy_func);
 }
 
 static ValaTimSortSlice*
@@ -1969,7 +1969,7 @@ vala_param_spec_tim_sort (const gchar* name,
                           GParamFlags flags)
 {
 	ValaParamSpecTimSort* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_TIM_SORT), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_TIM_SORT), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1978,7 +1978,7 @@ vala_param_spec_tim_sort (const gchar* name,
 G_GNUC_INTERNAL gpointer
 vala_value_get_tim_sort (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_TIM_SORT), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_TIM_SORT), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1987,10 +1987,10 @@ vala_value_set_tim_sort (GValue* value,
                          gpointer v_object)
 {
 	ValaTimSort * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_TIM_SORT));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_TIM_SORT));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_TIM_SORT));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_TIM_SORT));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_tim_sort_ref (value->data[0].v_pointer);
@@ -2007,10 +2007,10 @@ vala_value_take_tim_sort (GValue* value,
                           gpointer v_object)
 {
 	ValaTimSort * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_TIM_SORT));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_TIM_SORT));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_TIM_SORT));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_TIM_SORT));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -2042,7 +2042,7 @@ static void
 vala_tim_sort_finalize (ValaTimSort * obj)
 {
 	ValaTimSort * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_TIM_SORT, ValaTimSort);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_TIM_SORT, ValaTimSort);
 	g_signal_handlers_destroy (self);
 	_vala_iterable_unref0 (self->priv->list_collection);
 	self->priv->array = (_vala_array_free (self->priv->array, self->priv->array_length1, (GDestroyNotify) self->priv->g_destroy_func), NULL);
@@ -2112,7 +2112,7 @@ vala_tim_sort_unref (gpointer instance)
 	ValaTimSort * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_TIM_SORT_GET_CLASS (self)->finalize (self);
+		BALA_TIM_SORT_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

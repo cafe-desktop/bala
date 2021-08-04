@@ -33,12 +33,12 @@
 #include <valacodegen.h>
 
 enum  {
-	VALADOC_API_INTERFACE_0_PROPERTY,
-	VALADOC_API_INTERFACE_BASE_TYPE_PROPERTY,
-	VALADOC_API_INTERFACE_NODE_TYPE_PROPERTY,
-	VALADOC_API_INTERFACE_NUM_PROPERTIES
+	BALADOC_API_INTERFACE_0_PROPERTY,
+	BALADOC_API_INTERFACE_BASE_TYPE_PROPERTY,
+	BALADOC_API_INTERFACE_NODE_TYPE_PROPERTY,
+	BALADOC_API_INTERFACE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_interface_properties[VALADOC_API_INTERFACE_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_interface_properties[BALADOC_API_INTERFACE_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
@@ -121,7 +121,7 @@ valadoc_api_interface_new (ValadocApiNode* parent,
                            ValadocApiSourceComment* comment,
                            ValaInterface* data)
 {
-	return valadoc_api_interface_construct (VALADOC_API_TYPE_INTERFACE, parent, file, name, accessibility, comment, data);
+	return valadoc_api_interface_construct (BALADOC_API_TYPE_INTERFACE, parent, file, name, accessibility, comment, data);
 }
 
 /**
@@ -179,7 +179,7 @@ valadoc_api_interface_get_full_implemented_interface_list (ValadocApiInterface* 
 		ValaArrayList* _tmp4_;
 		ValadocApiTypeReference* _tmp5_;
 		_tmp1_ = g_direct_equal;
-		_tmp2_ = vala_array_list_new (VALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
+		_tmp2_ = vala_array_list_new (BALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
 		_vala_iterable_unref0 (self->priv->_full_implemented_interfaces);
 		self->priv->_full_implemented_interfaces = (ValaCollection*) _tmp2_;
 		_tmp3_ = self->priv->_full_implemented_interfaces;
@@ -197,7 +197,7 @@ valadoc_api_interface_get_full_implemented_interface_list (ValadocApiInterface* 
 			_tmp7_ = self->priv->_base_type;
 			_tmp8_ = valadoc_api_typereference_get_data_type (_tmp7_);
 			_tmp9_ = _tmp8_;
-			_tmp10_ = valadoc_api_class_get_full_implemented_interface_list (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp10_ = valadoc_api_class_get_full_implemented_interface_list (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_tmp11_ = _tmp10_;
 			vala_collection_add_all (_tmp6_, _tmp11_);
 			_vala_iterable_unref0 (_tmp11_);
@@ -302,7 +302,7 @@ valadoc_api_interface_set_base_type (ValadocApiInterface* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_base_type);
 		self->priv->_base_type = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_interface_properties[VALADOC_API_INTERFACE_BASE_TYPE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_interface_properties[BALADOC_API_INTERFACE_BASE_TYPE_PROPERTY]);
 	}
 }
 
@@ -312,7 +312,7 @@ valadoc_api_interface_real_get_node_type (ValadocApiNode* base)
 	ValadocApiNodeType result;
 	ValadocApiInterface* self;
 	self = (ValadocApiInterface*) base;
-	result = VALADOC_API_NODE_TYPE_INTERFACE;
+	result = BALADOC_API_NODE_TYPE_INTERFACE;
 	return result;
 }
 
@@ -423,7 +423,7 @@ valadoc_api_interface_real_build_signature (ValadocApiItem* base)
 	valadoc_api_signature_builder_append_keyword (_tmp5_, "interface", TRUE);
 	_tmp6_ = signature;
 	valadoc_api_signature_builder_append_symbol (_tmp6_, (ValadocApiNode*) self, TRUE);
-	_tmp7_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, VALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
+	_tmp7_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, BALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
 	type_parameters = _tmp7_;
 	_tmp8_ = type_parameters;
 	_tmp9_ = vala_collection_get_size ((ValaCollection*) _tmp8_);
@@ -583,18 +583,18 @@ valadoc_api_interface_class_init (ValadocApiInterfaceClass * klass,
 	g_type_class_adjust_private_offset (klass, &ValadocApiInterface_private_offset);
 	((ValadocApiNodeClass *) klass)->accept = (void (*) (ValadocApiNode*, ValadocApiVisitor*)) valadoc_api_interface_real_accept;
 	((ValadocApiItemClass *) klass)->build_signature = (ValadocContentInline* (*) (ValadocApiItem*)) valadoc_api_interface_real_build_signature;
-	VALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_interface_real_get_node_type;
+	BALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_interface_real_get_node_type;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_interface_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_interface_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_interface_finalize;
 	/**
 	 * A preconditioned class or null
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_INTERFACE_BASE_TYPE_PROPERTY, valadoc_api_interface_properties[VALADOC_API_INTERFACE_BASE_TYPE_PROPERTY] = g_param_spec_object ("base-type", "base-type", "base-type", VALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_INTERFACE_BASE_TYPE_PROPERTY, valadoc_api_interface_properties[BALADOC_API_INTERFACE_BASE_TYPE_PROPERTY] = g_param_spec_object ("base-type", "base-type", "base-type", BALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_INTERFACE_NODE_TYPE_PROPERTY, valadoc_api_interface_properties[VALADOC_API_INTERFACE_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", VALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_INTERFACE_NODE_TYPE_PROPERTY, valadoc_api_interface_properties[BALADOC_API_INTERFACE_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", BALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -611,16 +611,16 @@ valadoc_api_interface_instance_init (ValadocApiInterface * self,
 	ValaHashSet* _tmp7_;
 	self->priv = valadoc_api_interface_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	self->priv->interfaces = _tmp1_;
 	self->priv->_full_implemented_interfaces = NULL;
 	_tmp2_ = g_direct_hash;
 	_tmp3_ = g_direct_equal;
-	_tmp4_ = vala_hash_set_new (VALADOC_API_TYPE_INTERFACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp2_, _tmp3_);
+	_tmp4_ = vala_hash_set_new (BALADOC_API_TYPE_INTERFACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp2_, _tmp3_);
 	self->priv->_known_related_interfaces = (ValaSet*) _tmp4_;
 	_tmp5_ = g_direct_hash;
 	_tmp6_ = g_direct_equal;
-	_tmp7_ = vala_hash_set_new (VALADOC_API_TYPE_CLASS, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp5_, _tmp6_);
+	_tmp7_ = vala_hash_set_new (BALADOC_API_TYPE_CLASS, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp5_, _tmp6_);
 	self->priv->_known_implementations = (ValaSet*) _tmp7_;
 }
 
@@ -628,7 +628,7 @@ static void
 valadoc_api_interface_finalize (GObject * obj)
 {
 	ValadocApiInterface * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
 	_g_free0 (self->priv->interface_macro_name);
 	_g_free0 (self->priv->dbus_name);
 	_g_free0 (self->priv->cname);
@@ -649,7 +649,7 @@ valadoc_api_interface_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiInterfaceClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_interface_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiInterface), 0, (GInstanceInitFunc) valadoc_api_interface_instance_init, NULL };
 	GType valadoc_api_interface_type_id;
-	valadoc_api_interface_type_id = g_type_register_static (VALADOC_API_TYPE_TYPESYMBOL, "ValadocApiInterface", &g_define_type_info, 0);
+	valadoc_api_interface_type_id = g_type_register_static (BALADOC_API_TYPE_TYPESYMBOL, "ValadocApiInterface", &g_define_type_info, 0);
 	ValadocApiInterface_private_offset = g_type_add_instance_private (valadoc_api_interface_type_id, sizeof (ValadocApiInterfacePrivate));
 	return valadoc_api_interface_type_id;
 }
@@ -673,12 +673,12 @@ _vala_valadoc_api_interface_get_property (GObject * object,
                                           GParamSpec * pspec)
 {
 	ValadocApiInterface * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
 	switch (property_id) {
-		case VALADOC_API_INTERFACE_BASE_TYPE_PROPERTY:
+		case BALADOC_API_INTERFACE_BASE_TYPE_PROPERTY:
 		g_value_set_object (value, valadoc_api_interface_get_base_type (self));
 		break;
-		case VALADOC_API_INTERFACE_NODE_TYPE_PROPERTY:
+		case BALADOC_API_INTERFACE_NODE_TYPE_PROPERTY:
 		g_value_set_enum (value, valadoc_api_node_get_node_type ((ValadocApiNode*) self));
 		break;
 		default:
@@ -694,9 +694,9 @@ _vala_valadoc_api_interface_set_property (GObject * object,
                                           GParamSpec * pspec)
 {
 	ValadocApiInterface * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
 	switch (property_id) {
-		case VALADOC_API_INTERFACE_BASE_TYPE_PROPERTY:
+		case BALADOC_API_INTERFACE_BASE_TYPE_PROPERTY:
 		valadoc_api_interface_set_base_type (self, g_value_get_object (value));
 		break;
 		default:

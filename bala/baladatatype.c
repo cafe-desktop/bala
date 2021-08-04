@@ -167,7 +167,7 @@ vala_data_type_get_type_symbol (ValaDataType* self)
 	ValaSymbol* _tmp0_;
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = self->priv->_symbol;
-	result = VALA_IS_TYPESYMBOL (_tmp0_) ? ((ValaTypeSymbol*) _tmp0_) : NULL;
+	result = BALA_IS_TYPESYMBOL (_tmp0_) ? ((ValaTypeSymbol*) _tmp0_) : NULL;
 	return result;
 }
 
@@ -233,7 +233,7 @@ vala_data_type_add_type_argument (ValaDataType* self,
 		GEqualFunc _tmp1_;
 		ValaArrayList* _tmp2_;
 		_tmp1_ = g_direct_equal;
-		_tmp2_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp1_);
+		_tmp2_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp1_);
 		_vala_iterable_unref0 (self->priv->type_argument_list);
 		self->priv->type_argument_list = (ValaList*) _tmp2_;
 	}
@@ -267,7 +267,7 @@ vala_data_type_get_type_arguments (ValaDataType* self)
 		GEqualFunc _tmp3_;
 		ValaArrayList* _tmp4_;
 		_tmp3_ = g_direct_equal;
-		_tmp4_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp3_);
+		_tmp4_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp3_);
 		_vala_iterable_unref0 (vala_data_type__empty_type_list);
 		vala_data_type__empty_type_list = (ValaList*) _tmp4_;
 	}
@@ -673,7 +673,7 @@ vala_data_type_to_qualified_string (ValaDataType* self,
                                     ValaScope* scope)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_DATA_TYPE_GET_CLASS (self)->to_qualified_string (self, scope);
+	return BALA_DATA_TYPE_GET_CLASS (self)->to_qualified_string (self, scope);
 }
 
 /**
@@ -692,7 +692,7 @@ ValaDataType*
 vala_data_type_copy (ValaDataType* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_DATA_TYPE_GET_CLASS (self)->copy (self);
+	return BALA_DATA_TYPE_GET_CLASS (self)->copy (self);
 }
 
 /**
@@ -748,10 +748,10 @@ vala_data_type_real_equals (ValaDataType* self,
 		result = FALSE;
 		return result;
 	}
-	if (VALA_IS_GENERIC_TYPE (type2)) {
+	if (BALA_IS_GENERIC_TYPE (type2)) {
 		_tmp6_ = TRUE;
 	} else {
-		_tmp6_ = VALA_IS_GENERIC_TYPE (self);
+		_tmp6_ = BALA_IS_GENERIC_TYPE (self);
 	}
 	if (_tmp6_) {
 		gboolean _tmp7_ = FALSE;
@@ -759,18 +759,18 @@ vala_data_type_real_equals (ValaDataType* self,
 		ValaTypeParameter* _tmp9_;
 		ValaTypeParameter* _tmp10_;
 		ValaTypeParameter* _tmp11_;
-		if (!VALA_IS_GENERIC_TYPE (type2)) {
+		if (!BALA_IS_GENERIC_TYPE (type2)) {
 			_tmp7_ = TRUE;
 		} else {
-			_tmp7_ = !VALA_IS_GENERIC_TYPE (self);
+			_tmp7_ = !BALA_IS_GENERIC_TYPE (self);
 		}
 		if (_tmp7_) {
 			result = FALSE;
 			return result;
 		}
-		_tmp8_ = vala_generic_type_get_type_parameter (G_TYPE_CHECK_INSTANCE_CAST (type2, VALA_TYPE_GENERIC_TYPE, ValaGenericType));
+		_tmp8_ = vala_generic_type_get_type_parameter (G_TYPE_CHECK_INSTANCE_CAST (type2, BALA_TYPE_GENERIC_TYPE, ValaGenericType));
 		_tmp9_ = _tmp8_;
-		_tmp10_ = vala_generic_type_get_type_parameter (G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GENERIC_TYPE, ValaGenericType));
+		_tmp10_ = vala_generic_type_get_type_parameter (G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GENERIC_TYPE, ValaGenericType));
 		_tmp11_ = _tmp10_;
 		if (!vala_typeparameter_equals (_tmp9_, _tmp11_)) {
 			result = FALSE;
@@ -859,7 +859,7 @@ vala_data_type_equals (ValaDataType* self,
                        ValaDataType* type2)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_DATA_TYPE_GET_CLASS (self)->equals (self, type2);
+	return BALA_DATA_TYPE_GET_CLASS (self)->equals (self, type2);
 }
 
 /**
@@ -900,10 +900,10 @@ vala_data_type_real_stricter (ValaDataType* self,
 		result = FALSE;
 		return result;
 	}
-	if (VALA_IS_GENERIC_TYPE (self)) {
+	if (BALA_IS_GENERIC_TYPE (self)) {
 		_tmp3_ = TRUE;
 	} else {
-		_tmp3_ = VALA_IS_GENERIC_TYPE (type2);
+		_tmp3_ = BALA_IS_GENERIC_TYPE (type2);
 	}
 	if (_tmp3_) {
 		result = TRUE;
@@ -932,7 +932,7 @@ vala_data_type_stricter (ValaDataType* self,
                          ValaDataType* type2)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_DATA_TYPE_GET_CLASS (self)->stricter (self, type2);
+	return BALA_DATA_TYPE_GET_CLASS (self)->stricter (self, type2);
 }
 
 static void
@@ -1057,7 +1057,7 @@ vala_data_type_real_compatible (ValaDataType* self,
 	_tmp9_ = context;
 	_tmp10_ = vala_code_context_get_profile (_tmp9_);
 	_tmp11_ = _tmp10_;
-	if (_tmp11_ == VALA_PROFILE_GOBJECT) {
+	if (_tmp11_ == BALA_PROFILE_GOBJECT) {
 		ValaTypeSymbol* _tmp12_;
 		ValaTypeSymbol* _tmp13_;
 		_tmp12_ = vala_data_type_get_type_symbol (target_type);
@@ -1134,9 +1134,9 @@ vala_data_type_real_compatible (ValaDataType* self,
 			return result;
 		}
 	}
-	if (VALA_IS_POINTER_TYPE (target_type)) {
+	if (BALA_IS_POINTER_TYPE (target_type)) {
 		gboolean _tmp36_ = FALSE;
-		if (VALA_IS_GENERIC_TYPE (self)) {
+		if (BALA_IS_GENERIC_TYPE (self)) {
 			_tmp36_ = TRUE;
 		} else {
 			gboolean _tmp37_ = FALSE;
@@ -1153,7 +1153,7 @@ vala_data_type_real_compatible (ValaDataType* self,
 				if (vala_typesymbol_is_reference_type (_tmp42_)) {
 					_tmp40_ = TRUE;
 				} else {
-					_tmp40_ = VALA_IS_DELEGATE_TYPE (self);
+					_tmp40_ = BALA_IS_DELEGATE_TYPE (self);
 				}
 				_tmp37_ = _tmp40_;
 			} else {
@@ -1170,24 +1170,24 @@ vala_data_type_real_compatible (ValaDataType* self,
 		_vala_code_context_unref0 (context);
 		return result;
 	}
-	if (VALA_IS_GENERIC_TYPE (target_type)) {
+	if (BALA_IS_GENERIC_TYPE (target_type)) {
 		result = TRUE;
 		_vala_code_context_unref0 (context);
 		return result;
 	}
-	if (VALA_IS_ARRAY_TYPE (self) != VALA_IS_ARRAY_TYPE (target_type)) {
+	if (BALA_IS_ARRAY_TYPE (self) != BALA_IS_ARRAY_TYPE (target_type)) {
 		result = FALSE;
 		_vala_code_context_unref0 (context);
 		return result;
 	}
 	_tmp45_ = vala_data_type_get_type_symbol (self);
 	_tmp46_ = _tmp45_;
-	if (VALA_IS_ENUM (_tmp46_)) {
+	if (BALA_IS_ENUM (_tmp46_)) {
 		ValaTypeSymbol* _tmp47_;
 		ValaTypeSymbol* _tmp48_;
 		_tmp47_ = vala_data_type_get_type_symbol (target_type);
 		_tmp48_ = _tmp47_;
-		_tmp44_ = VALA_IS_STRUCT (_tmp48_);
+		_tmp44_ = BALA_IS_STRUCT (_tmp48_);
 	} else {
 		_tmp44_ = FALSE;
 	}
@@ -1196,7 +1196,7 @@ vala_data_type_real_compatible (ValaDataType* self,
 		ValaTypeSymbol* _tmp50_;
 		_tmp49_ = vala_data_type_get_type_symbol (target_type);
 		_tmp50_ = _tmp49_;
-		_tmp43_ = vala_struct_is_integer_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp50_, VALA_TYPE_STRUCT, ValaStruct));
+		_tmp43_ = vala_struct_is_integer_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp50_, BALA_TYPE_STRUCT, ValaStruct));
 	} else {
 		_tmp43_ = FALSE;
 	}
@@ -1394,12 +1394,12 @@ vala_data_type_real_compatible (ValaDataType* self,
 	}
 	_tmp109_ = vala_data_type_get_type_symbol (self);
 	_tmp110_ = _tmp109_;
-	if (VALA_IS_STRUCT (_tmp110_)) {
+	if (BALA_IS_STRUCT (_tmp110_)) {
 		ValaTypeSymbol* _tmp111_;
 		ValaTypeSymbol* _tmp112_;
 		_tmp111_ = vala_data_type_get_type_symbol (target_type);
 		_tmp112_ = _tmp111_;
-		_tmp108_ = VALA_IS_STRUCT (_tmp112_);
+		_tmp108_ = BALA_IS_STRUCT (_tmp112_);
 	} else {
 		_tmp108_ = FALSE;
 	}
@@ -1421,10 +1421,10 @@ vala_data_type_real_compatible (ValaDataType* self,
 		ValaStruct* _tmp137_;
 		_tmp113_ = vala_data_type_get_type_symbol (self);
 		_tmp114_ = _tmp113_;
-		expr_struct = G_TYPE_CHECK_INSTANCE_CAST (_tmp114_, VALA_TYPE_STRUCT, ValaStruct);
+		expr_struct = G_TYPE_CHECK_INSTANCE_CAST (_tmp114_, BALA_TYPE_STRUCT, ValaStruct);
 		_tmp115_ = vala_data_type_get_type_symbol (target_type);
 		_tmp116_ = _tmp115_;
-		expect_struct = G_TYPE_CHECK_INSTANCE_CAST (_tmp116_, VALA_TYPE_STRUCT, ValaStruct);
+		expect_struct = G_TYPE_CHECK_INSTANCE_CAST (_tmp116_, BALA_TYPE_STRUCT, ValaStruct);
 		_tmp118_ = expr_struct;
 		if (vala_struct_is_integer_type (_tmp118_)) {
 			ValaStruct* _tmp119_;
@@ -1521,7 +1521,7 @@ vala_data_type_compatible (ValaDataType* self,
                            ValaDataType* target_type)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_DATA_TYPE_GET_CLASS (self)->compatible (self, target_type);
+	return BALA_DATA_TYPE_GET_CLASS (self)->compatible (self, target_type);
 }
 
 /**
@@ -1541,7 +1541,7 @@ gboolean
 vala_data_type_is_invokable (ValaDataType* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_DATA_TYPE_GET_CLASS (self)->is_invokable (self);
+	return BALA_DATA_TYPE_GET_CLASS (self)->is_invokable (self);
 }
 
 /**
@@ -1561,7 +1561,7 @@ ValaDataType*
 vala_data_type_get_return_type (ValaDataType* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_DATA_TYPE_GET_CLASS (self)->get_return_type (self);
+	return BALA_DATA_TYPE_GET_CLASS (self)->get_return_type (self);
 }
 
 /**
@@ -1581,7 +1581,7 @@ ValaList*
 vala_data_type_get_parameters (ValaDataType* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_DATA_TYPE_GET_CLASS (self)->get_parameters (self);
+	return BALA_DATA_TYPE_GET_CLASS (self)->get_parameters (self);
 }
 
 static gboolean
@@ -1606,7 +1606,7 @@ vala_data_type_real_is_reference_type_or_type_parameter (ValaDataType* self)
 	if (_tmp1_) {
 		_tmp0_ = TRUE;
 	} else {
-		_tmp0_ = VALA_IS_GENERIC_TYPE (self);
+		_tmp0_ = BALA_IS_GENERIC_TYPE (self);
 	}
 	result = _tmp0_;
 	return result;
@@ -1616,7 +1616,7 @@ gboolean
 vala_data_type_is_reference_type_or_type_parameter (ValaDataType* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_DATA_TYPE_GET_CLASS (self)->is_reference_type_or_type_parameter (self);
+	return BALA_DATA_TYPE_GET_CLASS (self)->is_reference_type_or_type_parameter (self);
 }
 
 static gboolean
@@ -1690,7 +1690,7 @@ vala_data_type_is_accessible (ValaDataType* self,
                               ValaSymbol* sym)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_DATA_TYPE_GET_CLASS (self)->is_accessible (self, sym);
+	return BALA_DATA_TYPE_GET_CLASS (self)->is_accessible (self, sym);
 }
 
 static ValaSymbol*
@@ -1722,7 +1722,7 @@ vala_data_type_get_member (ValaDataType* self,
                            const gchar* member_name)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_DATA_TYPE_GET_CLASS (self)->get_member (self, member_name);
+	return BALA_DATA_TYPE_GET_CLASS (self)->get_member (self, member_name);
 }
 
 static ValaSymbol*
@@ -1740,7 +1740,7 @@ vala_data_type_get_pointer_member (ValaDataType* self,
                                    const gchar* member_name)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_DATA_TYPE_GET_CLASS (self)->get_pointer_member (self, member_name);
+	return BALA_DATA_TYPE_GET_CLASS (self)->get_pointer_member (self, member_name);
 }
 
 /**
@@ -1758,7 +1758,7 @@ vala_data_type_real_is_real_struct_type (ValaDataType* self)
 	gboolean result = FALSE;
 	_tmp0_ = vala_data_type_get_type_symbol (self);
 	_tmp1_ = _tmp0_;
-	s = VALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
+	s = BALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
 	_tmp3_ = s;
 	if (_tmp3_ != NULL) {
 		ValaStruct* _tmp4_;
@@ -1779,7 +1779,7 @@ gboolean
 vala_data_type_is_real_struct_type (ValaDataType* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_DATA_TYPE_GET_CLASS (self)->is_real_struct_type (self);
+	return BALA_DATA_TYPE_GET_CLASS (self)->is_real_struct_type (self);
 }
 
 gboolean
@@ -1811,7 +1811,7 @@ vala_data_type_is_non_null_simple_type (ValaDataType* self)
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = vala_data_type_get_type_symbol (self);
 	_tmp1_ = _tmp0_;
-	s = VALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
+	s = BALA_IS_STRUCT (_tmp1_) ? ((ValaStruct*) _tmp1_) : NULL;
 	_tmp3_ = s;
 	if (_tmp3_ != NULL) {
 		ValaStruct* _tmp4_;
@@ -1857,7 +1857,7 @@ gboolean
 vala_data_type_is_disposable (ValaDataType* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_DATA_TYPE_GET_CLASS (self)->is_disposable (self);
+	return BALA_DATA_TYPE_GET_CLASS (self)->is_disposable (self);
 }
 
 static ValaDataType*
@@ -1944,7 +1944,7 @@ vala_data_type_get_actual_type (ValaDataType* self,
                                 ValaCodeNode* node_reference)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_DATA_TYPE_GET_CLASS (self)->get_actual_type (self, derived_instance_type, method_type_arguments, node_reference);
+	return BALA_DATA_TYPE_GET_CLASS (self)->get_actual_type (self, derived_instance_type, method_type_arguments, node_reference);
 }
 
 gboolean
@@ -1952,7 +1952,7 @@ vala_data_type_is_generic (ValaDataType* self)
 {
 	gboolean result = FALSE;
 	g_return_val_if_fail (self != NULL, FALSE);
-	if (VALA_IS_GENERIC_TYPE (self)) {
+	if (BALA_IS_GENERIC_TYPE (self)) {
 		result = TRUE;
 		return result;
 	}
@@ -2016,12 +2016,12 @@ vala_data_type_replace_type_parameter (ValaDataType* self,
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (old_type_param != NULL);
 	g_return_if_fail (new_type_param != NULL);
-	if (VALA_IS_GENERIC_TYPE (self)) {
+	if (BALA_IS_GENERIC_TYPE (self)) {
 		ValaGenericType* generic_type = NULL;
 		ValaGenericType* _tmp0_;
 		ValaTypeParameter* _tmp1_;
 		ValaTypeParameter* _tmp2_;
-		generic_type = G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GENERIC_TYPE, ValaGenericType);
+		generic_type = G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GENERIC_TYPE, ValaGenericType);
 		_tmp0_ = generic_type;
 		_tmp1_ = vala_generic_type_get_type_parameter (_tmp0_);
 		_tmp2_ = _tmp1_;
@@ -2170,7 +2170,7 @@ vala_data_type_infer_type_argument (ValaDataType* self,
                                     ValaDataType* value_type)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_DATA_TYPE_GET_CLASS (self)->infer_type_argument (self, type_param, value_type);
+	return BALA_DATA_TYPE_GET_CLASS (self)->infer_type_argument (self, type_param, value_type);
 }
 
 /**
@@ -2208,7 +2208,7 @@ vala_data_type_to_prototype_string (ValaDataType* self,
                                     const gchar* override_name)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_DATA_TYPE_GET_CLASS (self)->to_prototype_string (self, override_name);
+	return BALA_DATA_TYPE_GET_CLASS (self)->to_prototype_string (self, override_name);
 }
 
 gboolean
@@ -2223,16 +2223,16 @@ vala_data_type_is_weak (ValaDataType* self)
 		return result;
 	} else {
 		gboolean _tmp1_ = FALSE;
-		if (VALA_IS_VOID_TYPE (self)) {
+		if (BALA_IS_VOID_TYPE (self)) {
 			_tmp1_ = TRUE;
 		} else {
-			_tmp1_ = VALA_IS_POINTER_TYPE (self);
+			_tmp1_ = BALA_IS_POINTER_TYPE (self);
 		}
 		if (_tmp1_) {
 			result = FALSE;
 			return result;
 		} else {
-			if (VALA_IS_VALUE_TYPE (self)) {
+			if (BALA_IS_VALUE_TYPE (self)) {
 				gboolean _tmp2_;
 				_tmp2_ = self->priv->_nullable;
 				if (_tmp2_) {
@@ -2365,7 +2365,7 @@ vala_data_type_get_type_signature (ValaDataType* self,
 		}
 		_g_free0 (sig);
 	}
-	array_type = VALA_IS_ARRAY_TYPE (self) ? ((ValaArrayType*) self) : NULL;
+	array_type = BALA_IS_ARRAY_TYPE (self) ? ((ValaArrayType*) self) : NULL;
 	_tmp2_ = array_type;
 	if (_tmp2_ != NULL) {
 		gchar* element_type_signature = NULL;
@@ -2411,7 +2411,7 @@ vala_data_type_get_type_signature (ValaDataType* self,
 		ValaTypeSymbol* _tmp18_;
 		_tmp17_ = vala_data_type_get_type_symbol (self);
 		_tmp18_ = _tmp17_;
-		if (VALA_IS_ENUM (_tmp18_)) {
+		if (BALA_IS_ENUM (_tmp18_)) {
 			ValaTypeSymbol* _tmp19_;
 			ValaTypeSymbol* _tmp20_;
 			_tmp19_ = vala_data_type_get_type_symbol (self);
@@ -2457,10 +2457,10 @@ vala_data_type_get_type_signature (ValaDataType* self,
 				sig = _tmp26_;
 				_tmp27_ = vala_data_type_get_type_symbol (self);
 				_tmp28_ = _tmp27_;
-				st = VALA_IS_STRUCT (_tmp28_) ? ((ValaStruct*) _tmp28_) : NULL;
+				st = BALA_IS_STRUCT (_tmp28_) ? ((ValaStruct*) _tmp28_) : NULL;
 				_tmp29_ = vala_data_type_get_type_symbol (self);
 				_tmp30_ = _tmp29_;
-				en = VALA_IS_ENUM (_tmp30_) ? ((ValaEnum*) _tmp30_) : NULL;
+				en = BALA_IS_ENUM (_tmp30_) ? ((ValaEnum*) _tmp30_) : NULL;
 				_tmp32_ = sig;
 				if (_tmp32_ == NULL) {
 					ValaStruct* _tmp33_;
@@ -2521,7 +2521,7 @@ vala_data_type_get_type_signature (ValaDataType* self,
 							_tmp46_ = f;
 							_tmp47_ = vala_field_get_binding (_tmp46_);
 							_tmp48_ = _tmp47_;
-							if (_tmp48_ == VALA_MEMBER_BINDING_INSTANCE) {
+							if (_tmp48_ == BALA_MEMBER_BINDING_INSTANCE) {
 								gchar* s = NULL;
 								ValaField* _tmp49_;
 								ValaDataType* _tmp50_;
@@ -2787,7 +2787,7 @@ vala_data_type_check_type_arguments (ValaDataType* self,
 	expected_n_type_args = 0;
 	_tmp3_ = vala_data_type_get_type_symbol (self);
 	_tmp4_ = _tmp3_;
-	if (VALA_IS_OBJECT_TYPE_SYMBOL (_tmp4_)) {
+	if (BALA_IS_OBJECT_TYPE_SYMBOL (_tmp4_)) {
 		ValaTypeSymbol* _tmp5_;
 		ValaTypeSymbol* _tmp6_;
 		ValaList* _tmp7_;
@@ -2795,7 +2795,7 @@ vala_data_type_check_type_arguments (ValaDataType* self,
 		gint _tmp9_;
 		_tmp5_ = vala_data_type_get_type_symbol (self);
 		_tmp6_ = _tmp5_;
-		_tmp7_ = vala_object_type_symbol_get_type_parameters (G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol));
+		_tmp7_ = vala_object_type_symbol_get_type_parameters (G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol));
 		_tmp8_ = vala_collection_get_size ((ValaCollection*) _tmp7_);
 		_tmp9_ = _tmp8_;
 		expected_n_type_args = _tmp9_;
@@ -2804,7 +2804,7 @@ vala_data_type_check_type_arguments (ValaDataType* self,
 		ValaTypeSymbol* _tmp11_;
 		_tmp10_ = vala_data_type_get_type_symbol (self);
 		_tmp11_ = _tmp10_;
-		if (VALA_IS_STRUCT (_tmp11_)) {
+		if (BALA_IS_STRUCT (_tmp11_)) {
 			ValaTypeSymbol* _tmp12_;
 			ValaTypeSymbol* _tmp13_;
 			ValaList* _tmp14_;
@@ -2812,7 +2812,7 @@ vala_data_type_check_type_arguments (ValaDataType* self,
 			gint _tmp16_;
 			_tmp12_ = vala_data_type_get_type_symbol (self);
 			_tmp13_ = _tmp12_;
-			_tmp14_ = vala_struct_get_type_parameters (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, VALA_TYPE_STRUCT, ValaStruct));
+			_tmp14_ = vala_struct_get_type_parameters (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, BALA_TYPE_STRUCT, ValaStruct));
 			_tmp15_ = vala_collection_get_size ((ValaCollection*) _tmp14_);
 			_tmp16_ = _tmp15_;
 			expected_n_type_args = _tmp16_;
@@ -2821,7 +2821,7 @@ vala_data_type_check_type_arguments (ValaDataType* self,
 			ValaTypeSymbol* _tmp18_;
 			_tmp17_ = vala_data_type_get_type_symbol (self);
 			_tmp18_ = _tmp17_;
-			if (VALA_IS_DELEGATE (_tmp18_)) {
+			if (BALA_IS_DELEGATE (_tmp18_)) {
 				ValaTypeSymbol* _tmp19_;
 				ValaTypeSymbol* _tmp20_;
 				ValaList* _tmp21_;
@@ -2829,7 +2829,7 @@ vala_data_type_check_type_arguments (ValaDataType* self,
 				gint _tmp23_;
 				_tmp19_ = vala_data_type_get_type_symbol (self);
 				_tmp20_ = _tmp19_;
-				_tmp21_ = vala_delegate_get_type_parameters (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, VALA_TYPE_DELEGATE, ValaDelegate));
+				_tmp21_ = vala_delegate_get_type_parameters (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, BALA_TYPE_DELEGATE, ValaDelegate));
 				_tmp22_ = vala_collection_get_size ((ValaCollection*) _tmp21_);
 				_tmp23_ = _tmp22_;
 				expected_n_type_args = _tmp23_;
@@ -3032,9 +3032,9 @@ static void
 vala_data_type_finalize (ValaCodeNode * obj)
 {
 	ValaDataType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_DATA_TYPE, ValaDataType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_DATA_TYPE, ValaDataType);
 	_vala_iterable_unref0 (self->priv->type_argument_list);
-	VALA_CODE_NODE_CLASS (vala_data_type_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_data_type_parent_class)->finalize (obj);
 }
 
 /**
@@ -3046,7 +3046,7 @@ vala_data_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaDataTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_data_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaDataType), 0, (GInstanceInitFunc) vala_data_type_instance_init, NULL };
 	GType vala_data_type_type_id;
-	vala_data_type_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaDataType", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_data_type_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaDataType", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	ValaDataType_private_offset = g_type_add_instance_private (vala_data_type_type_id, sizeof (ValaDataTypePrivate));
 	return vala_data_type_type_id;
 }

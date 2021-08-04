@@ -126,7 +126,7 @@ vala_basic_block_construct (GType object_type)
 ValaBasicBlock*
 vala_basic_block_new (void)
 {
-	return vala_basic_block_construct (VALA_TYPE_BASIC_BLOCK);
+	return vala_basic_block_construct (BALA_TYPE_BASIC_BLOCK);
 }
 
 ValaBasicBlock*
@@ -140,7 +140,7 @@ vala_basic_block_construct_entry (GType object_type)
 ValaBasicBlock*
 vala_basic_block_new_entry (void)
 {
-	return vala_basic_block_construct_entry (VALA_TYPE_BASIC_BLOCK);
+	return vala_basic_block_construct_entry (BALA_TYPE_BASIC_BLOCK);
 }
 
 ValaBasicBlock*
@@ -154,7 +154,7 @@ vala_basic_block_construct_exit (GType object_type)
 ValaBasicBlock*
 vala_basic_block_new_exit (void)
 {
-	return vala_basic_block_construct_exit (VALA_TYPE_BASIC_BLOCK);
+	return vala_basic_block_construct_exit (BALA_TYPE_BASIC_BLOCK);
 }
 
 void
@@ -371,7 +371,7 @@ vala_param_spec_basic_block (const gchar* name,
                              GParamFlags flags)
 {
 	ValaParamSpecBasicBlock* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_BASIC_BLOCK), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_BASIC_BLOCK), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -380,7 +380,7 @@ vala_param_spec_basic_block (const gchar* name,
 gpointer
 vala_value_get_basic_block (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_BASIC_BLOCK), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_BASIC_BLOCK), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -389,10 +389,10 @@ vala_value_set_basic_block (GValue* value,
                             gpointer v_object)
 {
 	ValaBasicBlock * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_BASIC_BLOCK));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_BASIC_BLOCK));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_BASIC_BLOCK));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_BASIC_BLOCK));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_basic_block_ref (value->data[0].v_pointer);
@@ -409,10 +409,10 @@ vala_value_take_basic_block (GValue* value,
                              gpointer v_object)
 {
 	ValaBasicBlock * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_BASIC_BLOCK));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_BASIC_BLOCK));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_BASIC_BLOCK));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_BASIC_BLOCK));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -452,24 +452,24 @@ vala_basic_block_instance_init (ValaBasicBlock * self,
 	ValaHashSet* _tmp13_;
 	self->priv = vala_basic_block_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CODE_NODE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CODE_NODE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->nodes = (ValaList*) _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_BASIC_BLOCK, NULL, NULL, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_BASIC_BLOCK, NULL, NULL, _tmp2_);
 	self->priv->predecessors = (ValaList*) _tmp3_;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_array_list_new (VALA_TYPE_BASIC_BLOCK, NULL, NULL, _tmp4_);
+	_tmp5_ = vala_array_list_new (BALA_TYPE_BASIC_BLOCK, NULL, NULL, _tmp4_);
 	self->priv->successors = (ValaList*) _tmp5_;
 	_tmp6_ = g_direct_equal;
-	_tmp7_ = vala_array_list_new (VALA_TYPE_BASIC_BLOCK, NULL, NULL, _tmp6_);
+	_tmp7_ = vala_array_list_new (BALA_TYPE_BASIC_BLOCK, NULL, NULL, _tmp6_);
 	self->priv->children = (ValaList*) _tmp7_;
 	_tmp8_ = g_direct_hash;
 	_tmp9_ = g_direct_equal;
-	_tmp10_ = vala_hash_set_new (VALA_TYPE_BASIC_BLOCK, NULL, NULL, _tmp8_, _tmp9_);
+	_tmp10_ = vala_hash_set_new (BALA_TYPE_BASIC_BLOCK, NULL, NULL, _tmp8_, _tmp9_);
 	self->priv->df = (ValaSet*) _tmp10_;
 	_tmp11_ = g_direct_hash;
 	_tmp12_ = g_direct_equal;
-	_tmp13_ = vala_hash_set_new (VALA_TYPE_PHI_FUNCTION, (GBoxedCopyFunc) vala_phi_function_ref, (GDestroyNotify) vala_phi_function_unref, _tmp11_, _tmp12_);
+	_tmp13_ = vala_hash_set_new (BALA_TYPE_PHI_FUNCTION, (GBoxedCopyFunc) vala_phi_function_ref, (GDestroyNotify) vala_phi_function_unref, _tmp11_, _tmp12_);
 	self->priv->phi_functions = (ValaSet*) _tmp13_;
 	self->ref_count = 1;
 }
@@ -478,7 +478,7 @@ static void
 vala_basic_block_finalize (ValaBasicBlock * obj)
 {
 	ValaBasicBlock * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_BASIC_BLOCK, ValaBasicBlock);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_BASIC_BLOCK, ValaBasicBlock);
 	g_signal_handlers_destroy (self);
 	_vala_iterable_unref0 (self->priv->nodes);
 	_vala_iterable_unref0 (self->priv->predecessors);
@@ -531,7 +531,7 @@ vala_basic_block_unref (gpointer instance)
 	ValaBasicBlock * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_BASIC_BLOCK_GET_CLASS (self)->finalize (self);
+		BALA_BASIC_BLOCK_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

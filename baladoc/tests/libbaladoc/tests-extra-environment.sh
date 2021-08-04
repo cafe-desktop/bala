@@ -1,4 +1,4 @@
-VALAFLAGS="\
+BALAFLAGS="\
 	-X -D -X TOP_SRC_DIR=\"$abs_top_srcdir\" \
 	--pkg libgvc \
 	--vapidir $abs_top_srcdir/vala \

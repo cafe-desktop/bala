@@ -64,7 +64,7 @@ static gpointer vala_report_parent_class = NULL;
 static GRegex* vala_report_val_regex;
 static GRegex* vala_report_val_regex = NULL;
 
-#define VALA_REPORT_ANSI_COLOR_END "\x1b[0m"
+#define BALA_REPORT_ANSI_COLOR_END "\x1b[0m"
 static gboolean vala_report_is_atty (ValaReport* self,
                               gint fd);
 static void vala_report_report_source (ValaReport* self,
@@ -109,7 +109,7 @@ vala_report_get_instance_private (ValaReport* self)
 static GType
 vala_report_colored_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_REPORT_COLORED_AUTO, "VALA_REPORT_COLORED_AUTO", "auto"}, {VALA_REPORT_COLORED_NEVER, "VALA_REPORT_COLORED_NEVER", "never"}, {VALA_REPORT_COLORED_ALWAYS, "VALA_REPORT_COLORED_ALWAYS", "always"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_REPORT_COLORED_AUTO, "BALA_REPORT_COLORED_AUTO", "auto"}, {BALA_REPORT_COLORED_NEVER, "BALA_REPORT_COLORED_NEVER", "never"}, {BALA_REPORT_COLORED_ALWAYS, "BALA_REPORT_COLORED_ALWAYS", "always"}, {0, NULL, NULL}};
 	GType vala_report_colored_type_id;
 	vala_report_colored_type_id = g_enum_register_static ("ValaReportColored", values);
 	return vala_report_colored_type_id;
@@ -409,11 +409,11 @@ vala_report_set_colors (ValaReport* self,
 			}
 		}
 	}
-	if (colored_output == VALA_REPORT_COLORED_ALWAYS) {
+	if (colored_output == BALA_REPORT_COLORED_ALWAYS) {
 		_tmp37_ = TRUE;
 	} else {
 		gboolean _tmp38_ = FALSE;
-		if (colored_output == VALA_REPORT_COLORED_AUTO) {
+		if (colored_output == BALA_REPORT_COLORED_AUTO) {
 			FILE* _tmp39_;
 			_tmp39_ = stderr;
 			_tmp38_ = vala_report_is_atty (self, fileno (_tmp39_));
@@ -442,7 +442,7 @@ vala_report_set_colors (ValaReport* self,
 			_g_free0 (self->priv->error_color_start);
 			self->priv->error_color_start = _tmp44_;
 			_g_free0 (_tmp43_);
-			self->priv->error_color_end = VALA_REPORT_ANSI_COLOR_END;
+			self->priv->error_color_end = BALA_REPORT_ANSI_COLOR_END;
 		}
 		_tmp45_ = warning_color;
 		if (_tmp45_ != NULL) {
@@ -457,7 +457,7 @@ vala_report_set_colors (ValaReport* self,
 			_g_free0 (self->priv->warning_color_start);
 			self->priv->warning_color_start = _tmp49_;
 			_g_free0 (_tmp48_);
-			self->priv->warning_color_end = VALA_REPORT_ANSI_COLOR_END;
+			self->priv->warning_color_end = BALA_REPORT_ANSI_COLOR_END;
 		}
 		_tmp50_ = note_color;
 		if (_tmp50_ != NULL) {
@@ -472,7 +472,7 @@ vala_report_set_colors (ValaReport* self,
 			_g_free0 (self->priv->note_color_start);
 			self->priv->note_color_start = _tmp54_;
 			_g_free0 (_tmp53_);
-			self->priv->note_color_end = VALA_REPORT_ANSI_COLOR_END;
+			self->priv->note_color_end = BALA_REPORT_ANSI_COLOR_END;
 		}
 		_tmp55_ = caret_color;
 		if (_tmp55_ != NULL) {
@@ -487,7 +487,7 @@ vala_report_set_colors (ValaReport* self,
 			_g_free0 (self->priv->caret_color_start);
 			self->priv->caret_color_start = _tmp59_;
 			_g_free0 (_tmp58_);
-			self->priv->caret_color_end = VALA_REPORT_ANSI_COLOR_END;
+			self->priv->caret_color_end = BALA_REPORT_ANSI_COLOR_END;
 		}
 		_tmp60_ = locus_color;
 		if (_tmp60_ != NULL) {
@@ -502,7 +502,7 @@ vala_report_set_colors (ValaReport* self,
 			_g_free0 (self->priv->locus_color_start);
 			self->priv->locus_color_start = _tmp64_;
 			_g_free0 (_tmp63_);
-			self->priv->locus_color_end = VALA_REPORT_ANSI_COLOR_END;
+			self->priv->locus_color_end = BALA_REPORT_ANSI_COLOR_END;
 		}
 		_tmp65_ = quote_color;
 		if (_tmp65_ != NULL) {
@@ -517,7 +517,7 @@ vala_report_set_colors (ValaReport* self,
 			_g_free0 (self->priv->quote_color_start);
 			self->priv->quote_color_start = _tmp69_;
 			_g_free0 (_tmp68_);
-			self->priv->quote_color_end = VALA_REPORT_ANSI_COLOR_END;
+			self->priv->quote_color_end = BALA_REPORT_ANSI_COLOR_END;
 		}
 	}
 	result = TRUE;
@@ -971,7 +971,7 @@ vala_report_note (ValaReport* self,
                   const gchar* message)
 {
 	g_return_if_fail (self != NULL);
-	VALA_REPORT_GET_CLASS (self)->note (self, source, message);
+	BALA_REPORT_GET_CLASS (self)->note (self, source, message);
 }
 
 /**
@@ -1007,7 +1007,7 @@ vala_report_depr (ValaReport* self,
                   const gchar* message)
 {
 	g_return_if_fail (self != NULL);
-	VALA_REPORT_GET_CLASS (self)->depr (self, source, message);
+	BALA_REPORT_GET_CLASS (self)->depr (self, source, message);
 }
 
 /**
@@ -1043,7 +1043,7 @@ vala_report_warn (ValaReport* self,
                   const gchar* message)
 {
 	g_return_if_fail (self != NULL);
-	VALA_REPORT_GET_CLASS (self)->warn (self, source, message);
+	BALA_REPORT_GET_CLASS (self)->warn (self, source, message);
 }
 
 /**
@@ -1074,7 +1074,7 @@ vala_report_err (ValaReport* self,
                  const gchar* message)
 {
 	g_return_if_fail (self != NULL);
-	VALA_REPORT_GET_CLASS (self)->err (self, source, message);
+	BALA_REPORT_GET_CLASS (self)->err (self, source, message);
 }
 
 void
@@ -1214,7 +1214,7 @@ vala_report_construct (GType object_type)
 ValaReport*
 vala_report_new (void)
 {
-	return vala_report_construct (VALA_TYPE_REPORT);
+	return vala_report_construct (BALA_TYPE_REPORT);
 }
 
 static void
@@ -1298,7 +1298,7 @@ vala_param_spec_report (const gchar* name,
                         GParamFlags flags)
 {
 	ValaParamSpecReport* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_REPORT), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_REPORT), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1307,7 +1307,7 @@ vala_param_spec_report (const gchar* name,
 gpointer
 vala_value_get_report (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_REPORT), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_REPORT), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1316,10 +1316,10 @@ vala_value_set_report (GValue* value,
                        gpointer v_object)
 {
 	ValaReport * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_REPORT));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_REPORT));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_REPORT));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_REPORT));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_report_ref (value->data[0].v_pointer);
@@ -1336,10 +1336,10 @@ vala_value_take_report (GValue* value,
                         gpointer v_object)
 {
 	ValaReport * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_REPORT));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_REPORT));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_REPORT));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_REPORT));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1400,7 +1400,7 @@ static void
 vala_report_finalize (ValaReport * obj)
 {
 	ValaReport * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_REPORT, ValaReport);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_REPORT, ValaReport);
 	g_signal_handlers_destroy (self);
 	_g_free0 (self->priv->locus_color_start);
 	_g_free0 (self->priv->warning_color_start);
@@ -1452,7 +1452,7 @@ vala_report_unref (gpointer instance)
 	ValaReport * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_REPORT_GET_CLASS (self)->finalize (self);
+		BALA_REPORT_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

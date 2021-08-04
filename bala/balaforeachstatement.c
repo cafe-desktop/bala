@@ -317,7 +317,7 @@ vala_foreach_statement_new (ValaDataType* type_reference,
                             ValaBlock* body,
                             ValaSourceReference* source_reference)
 {
-	return vala_foreach_statement_construct (VALA_TYPE_FOREACH_STATEMENT, type_reference, variable_name, collection, body, source_reference);
+	return vala_foreach_statement_construct (BALA_TYPE_FOREACH_STATEMENT, type_reference, variable_name, collection, body, source_reference);
 }
 
 static void
@@ -330,7 +330,7 @@ vala_foreach_statement_real_accept (ValaCodeNode* base,
 	g_return_if_fail (visitor != NULL);
 	_tmp0_ = self->priv->_use_iterator;
 	if (_tmp0_) {
-		VALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->accept ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_BLOCK, ValaBlock), visitor);
+		BALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->accept ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_BLOCK, ValaBlock), visitor);
 		return;
 	}
 	vala_code_visitor_visit_foreach_statement (visitor, self);
@@ -354,7 +354,7 @@ vala_foreach_statement_real_accept_children (ValaCodeNode* base,
 	g_return_if_fail (visitor != NULL);
 	_tmp0_ = self->priv->_use_iterator;
 	if (_tmp0_) {
-		VALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->accept_children ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_BLOCK, ValaBlock), visitor);
+		BALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->accept_children ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_BLOCK, ValaBlock), visitor);
 		return;
 	}
 	_tmp1_ = vala_foreach_statement_get_collection (self);
@@ -504,7 +504,7 @@ vala_foreach_statement_real_check (ValaCodeNode* base,
 	vala_expression_set_target_type (_tmp24_, _tmp27_);
 	_vala_code_node_unref0 (_tmp27_);
 	_tmp28_ = collection_type;
-	if (VALA_IS_ARRAY_TYPE (_tmp28_)) {
+	if (BALA_IS_ARRAY_TYPE (_tmp28_)) {
 		ValaArrayType* array_type = NULL;
 		ValaDataType* _tmp29_;
 		ValaArrayType* _tmp30_;
@@ -514,7 +514,7 @@ vala_foreach_statement_real_check (ValaCodeNode* base,
 		ValaDataType* _tmp34_;
 		ValaDataType* _tmp35_;
 		_tmp29_ = collection_type;
-		_tmp30_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp29_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+		_tmp30_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp29_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 		array_type = _tmp30_;
 		_tmp31_ = array_type;
 		vala_array_type_set_inline_allocated (_tmp31_, FALSE);
@@ -532,7 +532,7 @@ vala_foreach_statement_real_check (ValaCodeNode* base,
 		ValaProfile _tmp38_;
 		_tmp37_ = vala_code_context_get_profile (context);
 		_tmp38_ = _tmp37_;
-		if (_tmp38_ == VALA_PROFILE_GOBJECT) {
+		if (_tmp38_ == BALA_PROFILE_GOBJECT) {
 			gboolean _tmp39_ = FALSE;
 			ValaDataType* _tmp40_;
 			ValaSemanticAnalyzer* _tmp41_;
@@ -605,7 +605,7 @@ vala_foreach_statement_real_check (ValaCodeNode* base,
 			ValaProfile _tmp64_;
 			_tmp63_ = vala_code_context_get_profile (context);
 			_tmp64_ = _tmp63_;
-			if (_tmp64_ == VALA_PROFILE_GOBJECT) {
+			if (_tmp64_ == BALA_PROFILE_GOBJECT) {
 				ValaDataType* _tmp65_;
 				ValaSemanticAnalyzer* _tmp66_;
 				ValaSemanticAnalyzer* _tmp67_;
@@ -792,7 +792,7 @@ vala_foreach_statement_check_with_index (ValaForeachStatement* self,
 	g_return_val_if_fail (context != NULL, FALSE);
 	g_return_val_if_fail (collection_type != NULL, FALSE);
 	_tmp0_ = vala_data_type_get_member (collection_type, "get");
-	_tmp1_ = VALA_IS_METHOD (_tmp0_) ? ((ValaMethod*) _tmp0_) : NULL;
+	_tmp1_ = BALA_IS_METHOD (_tmp0_) ? ((ValaMethod*) _tmp0_) : NULL;
 	if (_tmp1_ == NULL) {
 		_vala_code_node_unref0 (_tmp0_);
 	}
@@ -822,7 +822,7 @@ vala_foreach_statement_check_with_index (ValaForeachStatement* self,
 		_tmp11_ = (ValaParameter*) _tmp10_;
 		_tmp12_ = vala_variable_get_variable_type ((ValaVariable*) _tmp11_);
 		_tmp13_ = _tmp12_;
-		_tmp5_ = !VALA_IS_INTEGER_TYPE (_tmp13_);
+		_tmp5_ = !BALA_IS_INTEGER_TYPE (_tmp13_);
 		_vala_code_node_unref0 (_tmp11_);
 	}
 	if (_tmp5_) {
@@ -831,7 +831,7 @@ vala_foreach_statement_check_with_index (ValaForeachStatement* self,
 		return result;
 	}
 	_tmp14_ = vala_data_type_get_member (collection_type, "size");
-	_tmp15_ = VALA_IS_PROPERTY (_tmp14_) ? ((ValaProperty*) _tmp14_) : NULL;
+	_tmp15_ = BALA_IS_PROPERTY (_tmp14_) ? ((ValaProperty*) _tmp14_) : NULL;
 	if (_tmp15_ == NULL) {
 		_vala_code_node_unref0 (_tmp14_);
 	}
@@ -898,7 +898,7 @@ vala_foreach_statement_check_with_index (ValaForeachStatement* self,
 	_tmp58_ = _tmp57_;
 	_tmp59_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp60_ = _tmp59_;
-	_tmp61_ = vala_unary_expression_new (VALA_UNARY_OPERATOR_MINUS, (ValaExpression*) _tmp58_, _tmp60_);
+	_tmp61_ = vala_unary_expression_new (BALA_UNARY_OPERATOR_MINUS, (ValaExpression*) _tmp58_, _tmp60_);
 	_tmp62_ = _tmp61_;
 	_tmp63_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp64_ = _tmp63_;
@@ -923,7 +923,7 @@ vala_foreach_statement_check_with_index (ValaForeachStatement* self,
 	_tmp77_ = _tmp76_;
 	_tmp78_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp79_ = _tmp78_;
-	_tmp80_ = vala_unary_expression_new (VALA_UNARY_OPERATOR_INCREMENT, (ValaExpression*) _tmp77_, _tmp79_);
+	_tmp80_ = vala_unary_expression_new (BALA_UNARY_OPERATOR_INCREMENT, (ValaExpression*) _tmp77_, _tmp79_);
 	_tmp81_ = _tmp80_;
 	_vala_code_node_unref0 (_tmp77_);
 	_g_free0 (_tmp73_);
@@ -938,7 +938,7 @@ vala_foreach_statement_check_with_index (ValaForeachStatement* self,
 	_tmp89_ = _tmp88_;
 	_tmp90_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp91_ = _tmp90_;
-	_tmp92_ = vala_binary_expression_new (VALA_BINARY_OPERATOR_LESS_THAN, (ValaExpression*) _tmp82_, (ValaExpression*) _tmp89_, _tmp91_);
+	_tmp92_ = vala_binary_expression_new (BALA_BINARY_OPERATOR_LESS_THAN, (ValaExpression*) _tmp82_, (ValaExpression*) _tmp89_, _tmp91_);
 	_tmp93_ = _tmp92_;
 	_vala_code_node_unref0 (_tmp89_);
 	_g_free0 (_tmp85_);
@@ -1000,7 +1000,7 @@ vala_foreach_statement_check_with_index (ValaForeachStatement* self,
 	_vala_code_node_unref0 (_tmp137_);
 	_vala_code_node_unref0 (_tmp133_);
 	vala_code_node_set_checked ((ValaCodeNode*) self, FALSE);
-	result = VALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->check ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_BLOCK, ValaBlock), context);
+	result = BALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->check ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_BLOCK, ValaBlock), context);
 	_vala_code_node_unref0 (get_call);
 	_vala_code_node_unref0 (loop);
 	_vala_code_node_unref0 (conditional);
@@ -1072,7 +1072,7 @@ vala_foreach_statement_check_with_iterator (ValaForeachStatement* self,
 		return result;
 	}
 	_tmp0_ = vala_data_type_get_member (collection_type, "iterator");
-	_tmp1_ = VALA_IS_METHOD (_tmp0_) ? ((ValaMethod*) _tmp0_) : NULL;
+	_tmp1_ = BALA_IS_METHOD (_tmp0_) ? ((ValaMethod*) _tmp0_) : NULL;
 	if (_tmp1_ == NULL) {
 		_vala_code_node_unref0 (_tmp0_);
 	}
@@ -1140,7 +1140,7 @@ vala_foreach_statement_check_with_iterator (ValaForeachStatement* self,
 	_tmp27_ = vala_data_type_get_actual_type (_tmp26_, collection_type, NULL, (ValaCodeNode*) self);
 	iterator_type = _tmp27_;
 	_tmp28_ = iterator_type;
-	if (VALA_IS_VOID_TYPE (_tmp28_)) {
+	if (BALA_IS_VOID_TYPE (_tmp28_)) {
 		ValaExpression* _tmp29_;
 		ValaExpression* _tmp30_;
 		ValaSourceReference* _tmp31_;
@@ -1199,14 +1199,14 @@ vala_foreach_statement_check_with_iterator (ValaForeachStatement* self,
 	_g_free0 (_tmp51_);
 	_tmp61_ = iterator_type;
 	_tmp62_ = vala_data_type_get_member (_tmp61_, "next_value");
-	_tmp63_ = VALA_IS_METHOD (_tmp62_) ? ((ValaMethod*) _tmp62_) : NULL;
+	_tmp63_ = BALA_IS_METHOD (_tmp62_) ? ((ValaMethod*) _tmp62_) : NULL;
 	if (_tmp63_ == NULL) {
 		_vala_code_node_unref0 (_tmp62_);
 	}
 	next_value_method = _tmp63_;
 	_tmp64_ = iterator_type;
 	_tmp65_ = vala_data_type_get_member (_tmp64_, "next");
-	_tmp66_ = VALA_IS_METHOD (_tmp65_) ? ((ValaMethod*) _tmp65_) : NULL;
+	_tmp66_ = BALA_IS_METHOD (_tmp65_) ? ((ValaMethod*) _tmp65_) : NULL;
 	if (_tmp66_ == NULL) {
 		_vala_code_node_unref0 (_tmp65_);
 	}
@@ -1411,7 +1411,7 @@ vala_foreach_statement_check_with_iterator (ValaForeachStatement* self,
 		_tmp130_ = next_value_call;
 		_tmp131_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 		_tmp132_ = _tmp131_;
-		_tmp133_ = vala_assignment_new ((ValaExpression*) _tmp129_, (ValaExpression*) _tmp130_, VALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp132_);
+		_tmp133_ = vala_assignment_new ((ValaExpression*) _tmp129_, (ValaExpression*) _tmp130_, BALA_ASSIGNMENT_OPERATOR_SIMPLE, _tmp132_);
 		_tmp134_ = _tmp133_;
 		_vala_code_node_unref0 (_tmp129_);
 		assignment = _tmp134_;
@@ -1422,7 +1422,7 @@ vala_foreach_statement_check_with_iterator (ValaForeachStatement* self,
 		_tmp139_ = _tmp138_;
 		_tmp140_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 		_tmp141_ = _tmp140_;
-		_tmp142_ = vala_binary_expression_new (VALA_BINARY_OPERATOR_INEQUALITY, (ValaExpression*) _tmp135_, (ValaExpression*) _tmp139_, _tmp141_);
+		_tmp142_ = vala_binary_expression_new (BALA_BINARY_OPERATOR_INEQUALITY, (ValaExpression*) _tmp135_, (ValaExpression*) _tmp139_, _tmp141_);
 		_tmp143_ = _tmp142_;
 		_vala_code_node_unref0 (_tmp139_);
 		conditional = _tmp143_;
@@ -1599,7 +1599,7 @@ vala_foreach_statement_check_with_iterator (ValaForeachStatement* self,
 			}
 			_tmp180_ = iterator_type;
 			_tmp181_ = vala_data_type_get_member (_tmp180_, "get");
-			_tmp182_ = VALA_IS_METHOD (_tmp181_) ? ((ValaMethod*) _tmp181_) : NULL;
+			_tmp182_ = BALA_IS_METHOD (_tmp181_) ? ((ValaMethod*) _tmp181_) : NULL;
 			if (_tmp182_ == NULL) {
 				_vala_code_node_unref0 (_tmp181_);
 			}
@@ -1680,7 +1680,7 @@ vala_foreach_statement_check_with_iterator (ValaForeachStatement* self,
 			_tmp210_ = vala_data_type_get_actual_type (_tmp208_, _tmp209_, NULL, (ValaCodeNode*) self);
 			element_type = _tmp210_;
 			_tmp211_ = element_type;
-			if (VALA_IS_VOID_TYPE (_tmp211_)) {
+			if (BALA_IS_VOID_TYPE (_tmp211_)) {
 				ValaExpression* _tmp212_;
 				ValaExpression* _tmp213_;
 				ValaSourceReference* _tmp214_;
@@ -1827,7 +1827,7 @@ vala_foreach_statement_check_with_iterator (ValaForeachStatement* self,
 		}
 	}
 	vala_code_node_set_checked ((ValaCodeNode*) self, FALSE);
-	result = VALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->check ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_BLOCK, ValaBlock), context);
+	result = BALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->check ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_BLOCK, ValaBlock), context);
 	_vala_code_node_unref0 (next_method);
 	_vala_code_node_unref0 (next_value_method);
 	_vala_code_node_unref0 (iterator_call);
@@ -1847,7 +1847,7 @@ vala_foreach_statement_analyze_element_type (ValaForeachStatement* self,
 	g_return_val_if_fail (element_type != NULL, FALSE);
 	_tmp0_ = vala_foreach_statement_get_type_reference (self);
 	_tmp1_ = _tmp0_;
-	if (VALA_IS_VAR_TYPE (_tmp1_)) {
+	if (BALA_IS_VAR_TYPE (_tmp1_)) {
 		gboolean value_owned = FALSE;
 		ValaDataType* _tmp2_;
 		ValaDataType* _tmp3_;
@@ -2015,7 +2015,7 @@ vala_foreach_statement_check_without_iterator (ValaForeachStatement* self,
 	g_return_val_if_fail (element_type != NULL, FALSE);
 	_tmp0_ = vala_foreach_statement_get_type_reference (self);
 	_tmp1_ = _tmp0_;
-	if (VALA_IS_VAR_TYPE (_tmp1_)) {
+	if (BALA_IS_VAR_TYPE (_tmp1_)) {
 		gboolean value_owned = FALSE;
 		ValaDataType* _tmp2_;
 		ValaDataType* _tmp3_;
@@ -2228,7 +2228,7 @@ vala_foreach_statement_real_emit (ValaCodeNode* base,
 	g_return_if_fail (codegen != NULL);
 	_tmp0_ = self->priv->_use_iterator;
 	if (_tmp0_) {
-		VALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->emit ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_BLOCK, ValaBlock), codegen);
+		BALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->emit ((ValaCodeNode*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_BLOCK, ValaBlock), codegen);
 		return;
 	}
 	_tmp1_ = vala_foreach_statement_get_collection (self);
@@ -2294,7 +2294,7 @@ static void
 vala_foreach_statement_finalize (ValaCodeNode * obj)
 {
 	ValaForeachStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_FOREACH_STATEMENT, ValaForeachStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_FOREACH_STATEMENT, ValaForeachStatement);
 	_g_free0 (self->priv->_variable_name);
 	_vala_code_node_unref0 (self->priv->_element_variable);
 	_vala_code_node_unref0 (self->priv->_collection_variable);
@@ -2302,7 +2302,7 @@ vala_foreach_statement_finalize (ValaCodeNode * obj)
 	_vala_code_node_unref0 (self->priv->_collection);
 	_vala_code_node_unref0 (self->priv->_body);
 	_vala_code_node_unref0 (self->priv->_data_type);
-	VALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_foreach_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -2315,7 +2315,7 @@ vala_foreach_statement_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaForeachStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_foreach_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaForeachStatement), 0, (GInstanceInitFunc) vala_foreach_statement_instance_init, NULL };
 	GType vala_foreach_statement_type_id;
-	vala_foreach_statement_type_id = g_type_register_static (VALA_TYPE_BLOCK, "ValaForeachStatement", &g_define_type_info, 0);
+	vala_foreach_statement_type_id = g_type_register_static (BALA_TYPE_BLOCK, "ValaForeachStatement", &g_define_type_info, 0);
 	ValaForeachStatement_private_offset = g_type_add_instance_private (vala_foreach_statement_type_id, sizeof (ValaForeachStatementPrivate));
 	return vala_foreach_statement_type_id;
 }

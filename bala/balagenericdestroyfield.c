@@ -61,7 +61,7 @@ vala_generic_destroy_field_construct (GType object_type,
 ValaGenericDestroyField*
 vala_generic_destroy_field_new (ValaSourceReference* source_reference)
 {
-	return vala_generic_destroy_field_construct (VALA_TYPE_GENERIC_DESTROY_FIELD, source_reference);
+	return vala_generic_destroy_field_construct (BALA_TYPE_GENERIC_DESTROY_FIELD, source_reference);
 }
 
 static void
@@ -85,7 +85,7 @@ vala_generic_destroy_field_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaGenericDestroyFieldClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_generic_destroy_field_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaGenericDestroyField), 0, (GInstanceInitFunc) vala_generic_destroy_field_instance_init, NULL };
 	GType vala_generic_destroy_field_type_id;
-	vala_generic_destroy_field_type_id = g_type_register_static (VALA_TYPE_FIELD, "ValaGenericDestroyField", &g_define_type_info, 0);
+	vala_generic_destroy_field_type_id = g_type_register_static (BALA_TYPE_FIELD, "ValaGenericDestroyField", &g_define_type_info, 0);
 	return vala_generic_destroy_field_type_id;
 }
 

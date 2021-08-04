@@ -159,7 +159,7 @@ vala_constant_new (const gchar* name,
                    ValaSourceReference* source_reference,
                    ValaComment* comment)
 {
-	return vala_constant_construct (VALA_TYPE_CONSTANT, name, type_reference, value, source_reference, comment);
+	return vala_constant_construct (BALA_TYPE_CONSTANT, name, type_reference, value, source_reference, comment);
 }
 
 static void
@@ -325,7 +325,7 @@ vala_constant_real_check (ValaCodeNode* base,
 	}
 	_tmp22_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 	_tmp23_ = _tmp22_;
-	if (!VALA_IS_BLOCK (_tmp23_)) {
+	if (!BALA_IS_BLOCK (_tmp23_)) {
 		ValaSemanticAnalyzer* _tmp24_;
 		ValaSemanticAnalyzer* _tmp25_;
 		_tmp24_ = vala_code_context_get_analyzer (context);
@@ -375,7 +375,7 @@ vala_constant_real_check (ValaCodeNode* base,
 			ValaSourceFileType _tmp43_;
 			_tmp42_ = vala_symbol_get_source_type ((ValaSymbol*) self);
 			_tmp43_ = _tmp42_;
-			if (_tmp43_ != VALA_SOURCE_FILE_TYPE_FAST) {
+			if (_tmp43_ != BALA_SOURCE_FILE_TYPE_FAST) {
 				ValaSourceReference* _tmp44_;
 				ValaSourceReference* _tmp45_;
 				vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -477,7 +477,7 @@ vala_constant_real_check (ValaCodeNode* base,
 			}
 			_tmp77_ = vala_constant_get_value (self);
 			_tmp78_ = _tmp77_;
-			call = VALA_IS_METHOD_CALL (_tmp78_) ? ((ValaMethodCall*) _tmp78_) : NULL;
+			call = BALA_IS_METHOD_CALL (_tmp78_) ? ((ValaMethodCall*) _tmp78_) : NULL;
 			_tmp79_ = call;
 			if (_tmp79_ != NULL) {
 				ValaMethodType* method_type = NULL;
@@ -493,7 +493,7 @@ vala_constant_real_check (ValaCodeNode* base,
 				_tmp82_ = _tmp81_;
 				_tmp83_ = vala_expression_get_value_type (_tmp82_);
 				_tmp84_ = _tmp83_;
-				method_type = VALA_IS_METHOD_TYPE (_tmp84_) ? ((ValaMethodType*) _tmp84_) : NULL;
+				method_type = BALA_IS_METHOD_TYPE (_tmp84_) ? ((ValaMethodType*) _tmp84_) : NULL;
 				_tmp86_ = method_type;
 				if (_tmp86_ != NULL) {
 					ValaMethodType* _tmp87_;
@@ -523,7 +523,7 @@ vala_constant_real_check (ValaCodeNode* base,
 					_tmp93_ = vala_method_call_get_argument_list (_tmp92_);
 					_tmp94_ = vala_list_get (_tmp93_, 0);
 					_tmp95_ = (ValaExpression*) _tmp94_;
-					_tmp96_ = VALA_IS_STRING_LITERAL (_tmp95_) ? ((ValaStringLiteral*) _tmp95_) : NULL;
+					_tmp96_ = BALA_IS_STRING_LITERAL (_tmp95_) ? ((ValaStringLiteral*) _tmp95_) : NULL;
 					if (_tmp96_ == NULL) {
 						_vala_code_node_unref0 (_tmp95_);
 					}
@@ -648,26 +648,26 @@ vala_constant_check_const_type (ValaConstant* self,
 	g_return_val_if_fail (self != NULL, FALSE);
 	g_return_val_if_fail (type != NULL, FALSE);
 	g_return_val_if_fail (context != NULL, FALSE);
-	if (VALA_IS_VALUE_TYPE (type)) {
+	if (BALA_IS_VALUE_TYPE (type)) {
 		result = TRUE;
 		return result;
 	} else {
 		gboolean _tmp0_ = FALSE;
-		if (VALA_IS_VOID_TYPE (type)) {
+		if (BALA_IS_VOID_TYPE (type)) {
 			_tmp0_ = TRUE;
 		} else {
-			_tmp0_ = VALA_IS_POINTER_TYPE (type);
+			_tmp0_ = BALA_IS_POINTER_TYPE (type);
 		}
 		if (_tmp0_) {
 			result = FALSE;
 			return result;
 		} else {
-			if (VALA_IS_ARRAY_TYPE (type)) {
+			if (BALA_IS_ARRAY_TYPE (type)) {
 				ValaArrayType* array_type = NULL;
 				ValaArrayType* _tmp1_;
 				ValaDataType* _tmp2_;
 				ValaDataType* _tmp3_;
-				array_type = G_TYPE_CHECK_INSTANCE_CAST (type, VALA_TYPE_ARRAY_TYPE, ValaArrayType);
+				array_type = G_TYPE_CHECK_INSTANCE_CAST (type, BALA_TYPE_ARRAY_TYPE, ValaArrayType);
 				_tmp1_ = array_type;
 				_tmp2_ = vala_array_type_get_element_type (_tmp1_);
 				_tmp3_ = _tmp2_;
@@ -729,10 +729,10 @@ static void
 vala_constant_finalize (ValaCodeNode * obj)
 {
 	ValaConstant * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CONSTANT, ValaConstant);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CONSTANT, ValaConstant);
 	_vala_code_node_unref0 (self->priv->_data_type);
 	_vala_code_node_unref0 (self->priv->_value);
-	VALA_CODE_NODE_CLASS (vala_constant_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_constant_parent_class)->finalize (obj);
 }
 
 /**
@@ -743,7 +743,7 @@ vala_constant_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaConstantClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_constant_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaConstant), 0, (GInstanceInitFunc) vala_constant_instance_init, NULL };
 	GType vala_constant_type_id;
-	vala_constant_type_id = g_type_register_static (VALA_TYPE_SYMBOL, "ValaConstant", &g_define_type_info, 0);
+	vala_constant_type_id = g_type_register_static (BALA_TYPE_SYMBOL, "ValaConstant", &g_define_type_info, 0);
 	ValaConstant_private_offset = g_type_add_instance_private (vala_constant_type_id, sizeof (ValaConstantPrivate));
 	return vala_constant_type_id;
 }

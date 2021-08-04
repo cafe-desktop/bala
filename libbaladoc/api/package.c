@@ -32,12 +32,12 @@
 #include <vala.h>
 
 enum  {
-	VALADOC_API_PACKAGE_0_PROPERTY,
-	VALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY,
-	VALADOC_API_PACKAGE_NODE_TYPE_PROPERTY,
-	VALADOC_API_PACKAGE_NUM_PROPERTIES
+	BALADOC_API_PACKAGE_0_PROPERTY,
+	BALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY,
+	BALADOC_API_PACKAGE_NODE_TYPE_PROPERTY,
+	BALADOC_API_PACKAGE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_package_properties[VALADOC_API_PACKAGE_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_package_properties[BALADOC_API_PACKAGE_NUM_PROPERTIES];
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterator_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterator_unref (var), NULL)))
@@ -100,7 +100,7 @@ valadoc_api_package_set_is_package (ValadocApiPackage* self,
 	old_value = valadoc_api_package_get_is_package (self);
 	if (old_value != value) {
 		self->priv->_is_package = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_package_properties[VALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_package_properties[BALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY]);
 	}
 }
 
@@ -135,7 +135,7 @@ valadoc_api_package_get_full_dependency_list (ValadocApiPackage* self)
 	ValaCollection* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_API_TYPE_PACKAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_API_TYPE_PACKAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	list = _tmp1_;
 	_tmp2_ = self->priv->_dependencies;
 	if (_tmp2_ == NULL) {
@@ -247,7 +247,7 @@ valadoc_api_package_get_dependency_list (ValadocApiPackage* self)
 		GEqualFunc _tmp1_;
 		ValaArrayList* _tmp2_;
 		_tmp1_ = g_direct_equal;
-		_tmp2_ = vala_array_list_new (VALADOC_API_TYPE_PACKAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
+		_tmp2_ = vala_array_list_new (BALADOC_API_TYPE_PACKAGE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
 		result = (ValaCollection*) _tmp2_;
 		return result;
 	}
@@ -276,7 +276,7 @@ valadoc_api_package_new (const gchar* name,
                          gboolean is_package,
                          ValaCodeNode* data)
 {
-	return valadoc_api_package_construct (VALADOC_API_TYPE_PACKAGE, name, is_package, data);
+	return valadoc_api_package_construct (BALADOC_API_TYPE_PACKAGE, name, is_package, data);
 }
 
 G_GNUC_INTERNAL void
@@ -301,7 +301,7 @@ valadoc_api_package_register_deprecated_symbol (ValadocApiPackage* self,
 		_tmp1_ = g_str_hash;
 		_tmp2_ = g_str_equal;
 		_tmp3_ = g_direct_equal;
-		_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_ARRAY_LIST, (GBoxedCopyFunc) vala_iterable_ref, (GDestroyNotify) vala_iterable_unref, _tmp1_, _tmp2_, _tmp3_);
+		_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_ARRAY_LIST, (GBoxedCopyFunc) vala_iterable_ref, (GDestroyNotify) vala_iterable_unref, _tmp1_, _tmp2_, _tmp3_);
 		_vala_map_unref0 (self->priv->deprecated);
 		self->priv->deprecated = _tmp4_;
 	}
@@ -318,7 +318,7 @@ valadoc_api_package_register_deprecated_symbol (ValadocApiPackage* self,
 		ValaHashMap* _tmp10_;
 		ValaArrayList* _tmp11_;
 		_tmp8_ = g_direct_equal;
-		_tmp9_ = vala_array_list_new (VALADOC_API_TYPE_SYMBOL, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp8_);
+		_tmp9_ = vala_array_list_new (BALADOC_API_TYPE_SYMBOL, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp8_);
 		_vala_iterable_unref0 (list);
 		list = _tmp9_;
 		_tmp10_ = self->priv->deprecated;
@@ -353,7 +353,7 @@ valadoc_api_package_get_deprecated_symbols (ValadocApiPackage* self)
 		_tmp1_ = g_str_hash;
 		_tmp2_ = g_str_equal;
 		_tmp3_ = g_direct_equal;
-		_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_COLLECTION, (GBoxedCopyFunc) vala_iterable_ref, (GDestroyNotify) vala_iterable_unref, _tmp1_, _tmp2_, _tmp3_);
+		_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_COLLECTION, (GBoxedCopyFunc) vala_iterable_ref, (GDestroyNotify) vala_iterable_unref, _tmp1_, _tmp2_, _tmp3_);
 		result = (ValaMap*) _tmp4_;
 		return result;
 	}
@@ -392,7 +392,7 @@ valadoc_api_package_real_get_node_type (ValadocApiNode* base)
 	ValadocApiNodeType result;
 	ValadocApiPackage* self;
 	self = (ValadocApiPackage*) base;
-	result = VALADOC_API_NODE_TYPE_PACKAGE;
+	result = BALADOC_API_NODE_TYPE_PACKAGE;
 	return result;
 }
 
@@ -448,18 +448,18 @@ valadoc_api_package_class_init (ValadocApiPackageClass * klass,
 	((ValadocApiNodeClass *) klass)->is_browsable = (gboolean (*) (ValadocApiNode*, ValadocSettings*)) valadoc_api_package_real_is_browsable;
 	((ValadocApiNodeClass *) klass)->accept = (void (*) (ValadocApiNode*, ValadocApiVisitor*)) valadoc_api_package_real_accept;
 	((ValadocApiItemClass *) klass)->build_signature = (ValadocContentInline* (*) (ValadocApiItem*)) valadoc_api_package_real_build_signature;
-	VALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_package_real_get_node_type;
+	BALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_package_real_get_node_type;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_package_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_package_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_package_finalize;
 	/**
 	 * Specifies whether this package is a dependency
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY, valadoc_api_package_properties[VALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY] = g_param_spec_boolean ("is-package", "is-package", "is-package", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY, valadoc_api_package_properties[BALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY] = g_param_spec_boolean ("is-package", "is-package", "is-package", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PACKAGE_NODE_TYPE_PROPERTY, valadoc_api_package_properties[VALADOC_API_PACKAGE_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", VALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PACKAGE_NODE_TYPE_PROPERTY, valadoc_api_package_properties[BALADOC_API_PACKAGE_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", BALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -473,7 +473,7 @@ static void
 valadoc_api_package_finalize (GObject * obj)
 {
 	ValadocApiPackage * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage);
 	_vala_iterable_unref0 (self->priv->_dependencies);
 	_vala_map_unref0 (self->priv->deprecated);
 	G_OBJECT_CLASS (valadoc_api_package_parent_class)->finalize (obj);
@@ -484,7 +484,7 @@ valadoc_api_package_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiPackageClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_package_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiPackage), 0, (GInstanceInitFunc) valadoc_api_package_instance_init, NULL };
 	GType valadoc_api_package_type_id;
-	valadoc_api_package_type_id = g_type_register_static (VALADOC_API_TYPE_NODE, "ValadocApiPackage", &g_define_type_info, 0);
+	valadoc_api_package_type_id = g_type_register_static (BALADOC_API_TYPE_NODE, "ValadocApiPackage", &g_define_type_info, 0);
 	ValadocApiPackage_private_offset = g_type_add_instance_private (valadoc_api_package_type_id, sizeof (ValadocApiPackagePrivate));
 	return valadoc_api_package_type_id;
 }
@@ -508,12 +508,12 @@ _vala_valadoc_api_package_get_property (GObject * object,
                                         GParamSpec * pspec)
 {
 	ValadocApiPackage * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage);
 	switch (property_id) {
-		case VALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY:
+		case BALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_package_get_is_package (self));
 		break;
-		case VALADOC_API_PACKAGE_NODE_TYPE_PROPERTY:
+		case BALADOC_API_PACKAGE_NODE_TYPE_PROPERTY:
 		g_value_set_enum (value, valadoc_api_node_get_node_type ((ValadocApiNode*) self));
 		break;
 		default:
@@ -529,9 +529,9 @@ _vala_valadoc_api_package_set_property (GObject * object,
                                         GParamSpec * pspec)
 {
 	ValadocApiPackage * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage);
 	switch (property_id) {
-		case VALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY:
+		case BALADOC_API_PACKAGE_IS_PACKAGE_PROPERTY:
 		valadoc_api_package_set_is_package (self, g_value_get_boolean (value));
 		break;
 		default:

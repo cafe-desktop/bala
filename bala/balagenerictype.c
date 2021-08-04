@@ -98,7 +98,7 @@ vala_generic_type_construct (GType object_type,
 ValaGenericType*
 vala_generic_type_new (ValaTypeParameter* type_parameter)
 {
-	return vala_generic_type_construct (VALA_TYPE_GENERIC_TYPE, type_parameter);
+	return vala_generic_type_construct (BALA_TYPE_GENERIC_TYPE, type_parameter);
 }
 
 static ValaDataType*
@@ -163,7 +163,7 @@ vala_generic_type_real_get_actual_type (ValaDataType* base,
 		return result;
 	}
 	_tmp2_ = _result_;
-	_tmp3_ = vala_semantic_analyzer_get_actual_type (derived_instance_type, method_type_arguments, G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALA_TYPE_GENERIC_TYPE, ValaGenericType), node_reference);
+	_tmp3_ = vala_semantic_analyzer_get_actual_type (derived_instance_type, method_type_arguments, G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALA_TYPE_GENERIC_TYPE, ValaGenericType), node_reference);
 	_vala_code_node_unref0 (_result_);
 	_result_ = _tmp3_;
 	result = _result_;
@@ -270,7 +270,7 @@ vala_generic_type_get_dup_field (ValaGenericType* self)
 		_vala_code_node_unref0 (self->priv->dup_field);
 		self->priv->dup_field = _tmp3_;
 		_tmp4_ = self->priv->dup_field;
-		vala_symbol_set_access ((ValaSymbol*) _tmp4_, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+		vala_symbol_set_access ((ValaSymbol*) _tmp4_, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	}
 	_tmp5_ = self->priv->dup_field;
 	result = _tmp5_;
@@ -296,7 +296,7 @@ vala_generic_type_get_destroy_field (ValaGenericType* self)
 		_vala_code_node_unref0 (self->priv->destroy_field);
 		self->priv->destroy_field = _tmp3_;
 		_tmp4_ = self->priv->destroy_field;
-		vala_symbol_set_access ((ValaSymbol*) _tmp4_, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+		vala_symbol_set_access ((ValaSymbol*) _tmp4_, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	}
 	_tmp5_ = self->priv->destroy_field;
 	result = _tmp5_;
@@ -328,10 +328,10 @@ static void
 vala_generic_type_finalize (ValaCodeNode * obj)
 {
 	ValaGenericType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_GENERIC_TYPE, ValaGenericType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_GENERIC_TYPE, ValaGenericType);
 	_vala_code_node_unref0 (self->priv->dup_field);
 	_vala_code_node_unref0 (self->priv->destroy_field);
-	VALA_CODE_NODE_CLASS (vala_generic_type_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_generic_type_parent_class)->finalize (obj);
 }
 
 /**
@@ -342,7 +342,7 @@ vala_generic_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaGenericTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_generic_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaGenericType), 0, (GInstanceInitFunc) vala_generic_type_instance_init, NULL };
 	GType vala_generic_type_type_id;
-	vala_generic_type_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaGenericType", &g_define_type_info, 0);
+	vala_generic_type_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaGenericType", &g_define_type_info, 0);
 	ValaGenericType_private_offset = g_type_add_instance_private (vala_generic_type_type_id, sizeof (ValaGenericTypePrivate));
 	return vala_generic_type_type_id;
 }

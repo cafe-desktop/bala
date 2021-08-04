@@ -74,7 +74,7 @@ vala_code_generator_emit (ValaCodeGenerator* self,
                           ValaCodeContext* context)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_GENERATOR_GET_CLASS (self)->emit (self, context);
+	BALA_CODE_GENERATOR_GET_CLASS (self)->emit (self, context);
 }
 
 static ValaTargetValue*
@@ -92,7 +92,7 @@ vala_code_generator_load_local (ValaCodeGenerator* self,
                                 ValaExpression* expr)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_CODE_GENERATOR_GET_CLASS (self)->load_local (self, local, expr);
+	return BALA_CODE_GENERATOR_GET_CLASS (self)->load_local (self, local, expr);
 }
 
 static void
@@ -114,7 +114,7 @@ vala_code_generator_store_local (ValaCodeGenerator* self,
                                  ValaSourceReference* source_reference)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_GENERATOR_GET_CLASS (self)->store_local (self, local, value, initializer, source_reference);
+	BALA_CODE_GENERATOR_GET_CLASS (self)->store_local (self, local, value, initializer, source_reference);
 }
 
 static ValaTargetValue*
@@ -132,7 +132,7 @@ vala_code_generator_load_parameter (ValaCodeGenerator* self,
                                     ValaExpression* expr)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_CODE_GENERATOR_GET_CLASS (self)->load_parameter (self, param, expr);
+	return BALA_CODE_GENERATOR_GET_CLASS (self)->load_parameter (self, param, expr);
 }
 
 static void
@@ -154,7 +154,7 @@ vala_code_generator_store_parameter (ValaCodeGenerator* self,
                                      ValaSourceReference* source_reference)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_GENERATOR_GET_CLASS (self)->store_parameter (self, param, value, capturing_parameter, source_reference);
+	BALA_CODE_GENERATOR_GET_CLASS (self)->store_parameter (self, param, value, capturing_parameter, source_reference);
 }
 
 static ValaTargetValue*
@@ -174,7 +174,7 @@ vala_code_generator_load_field (ValaCodeGenerator* self,
                                 ValaExpression* expr)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_CODE_GENERATOR_GET_CLASS (self)->load_field (self, field, instance, expr);
+	return BALA_CODE_GENERATOR_GET_CLASS (self)->load_field (self, field, instance, expr);
 }
 
 static void
@@ -196,7 +196,7 @@ vala_code_generator_store_field (ValaCodeGenerator* self,
                                  ValaSourceReference* source_reference)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_GENERATOR_GET_CLASS (self)->store_field (self, field, instance, value, source_reference);
+	BALA_CODE_GENERATOR_GET_CLASS (self)->store_field (self, field, instance, value, source_reference);
 }
 
 ValaCodeGenerator*
@@ -235,7 +235,7 @@ vala_code_generator_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCodeGeneratorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_code_generator_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCodeGenerator), 0, (GInstanceInitFunc) vala_code_generator_instance_init, NULL };
 	GType vala_code_generator_type_id;
-	vala_code_generator_type_id = g_type_register_static (VALA_TYPE_CODE_VISITOR, "ValaCodeGenerator", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_code_generator_type_id = g_type_register_static (BALA_TYPE_CODE_VISITOR, "ValaCodeGenerator", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	return vala_code_generator_type_id;
 }
 

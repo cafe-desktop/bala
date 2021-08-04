@@ -88,7 +88,7 @@ vala_ccode_parenthesized_expression_construct (GType object_type,
 ValaCCodeParenthesizedExpression*
 vala_ccode_parenthesized_expression_new (ValaCCodeExpression* expr)
 {
-	return vala_ccode_parenthesized_expression_construct (VALA_TYPE_CCODE_PARENTHESIZED_EXPRESSION, expr);
+	return vala_ccode_parenthesized_expression_construct (BALA_TYPE_CCODE_PARENTHESIZED_EXPRESSION, expr);
 }
 
 static void
@@ -126,9 +126,9 @@ static void
 vala_ccode_parenthesized_expression_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeParenthesizedExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_PARENTHESIZED_EXPRESSION, ValaCCodeParenthesizedExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_PARENTHESIZED_EXPRESSION, ValaCCodeParenthesizedExpression);
 	_vala_ccode_node_unref0 (self->priv->_inner);
-	VALA_CCODE_NODE_CLASS (vala_ccode_parenthesized_expression_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_parenthesized_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -139,7 +139,7 @@ vala_ccode_parenthesized_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeParenthesizedExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_parenthesized_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeParenthesizedExpression), 0, (GInstanceInitFunc) vala_ccode_parenthesized_expression_instance_init, NULL };
 	GType vala_ccode_parenthesized_expression_type_id;
-	vala_ccode_parenthesized_expression_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeParenthesizedExpression", &g_define_type_info, 0);
+	vala_ccode_parenthesized_expression_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeParenthesizedExpression", &g_define_type_info, 0);
 	ValaCCodeParenthesizedExpression_private_offset = g_type_add_instance_private (vala_ccode_parenthesized_expression_type_id, sizeof (ValaCCodeParenthesizedExpressionPrivate));
 	return vala_ccode_parenthesized_expression_type_id;
 }

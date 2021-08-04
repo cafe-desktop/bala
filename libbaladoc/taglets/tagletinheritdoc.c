@@ -32,11 +32,11 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_TAGLETS_INHERIT_DOC_0_PROPERTY,
-	VALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY,
-	VALADOC_TAGLETS_INHERIT_DOC_NUM_PROPERTIES
+	BALADOC_TAGLETS_INHERIT_DOC_0_PROPERTY,
+	BALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY,
+	BALADOC_TAGLETS_INHERIT_DOC_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_taglets_inherit_doc_properties[VALADOC_TAGLETS_INHERIT_DOC_NUM_PROPERTIES];
+static GParamSpec* valadoc_taglets_inherit_doc_properties[BALADOC_TAGLETS_INHERIT_DOC_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
@@ -144,7 +144,7 @@ valadoc_taglets_inherit_doc_set_inherited (ValadocTagletsInheritDoc* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_inherited);
 		self->priv->_inherited = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_inherit_doc_properties[VALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_taglets_inherit_doc_properties[BALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY]);
 	}
 }
 
@@ -216,7 +216,7 @@ valadoc_taglets_inherit_doc_find_parent_taglet (ValadocTagletsInheritDoc* self)
 			if (_tmp14_ != NULL) {
 				ValadocContentContentElement* _tmp15_;
 				_tmp15_ = pos;
-				_tmp13_ = VALADOC_CONTENT_IS_TAGLET (_tmp15_) == FALSE;
+				_tmp13_ = BALADOC_CONTENT_IS_TAGLET (_tmp15_) == FALSE;
 			} else {
 				_tmp13_ = FALSE;
 			}
@@ -226,11 +226,11 @@ valadoc_taglets_inherit_doc_find_parent_taglet (ValadocTagletsInheritDoc* self)
 		}
 	}
 	_tmp16_ = pos;
-	if (VALADOC_CONTENT_IS_TAGLET (_tmp16_)) {
+	if (BALADOC_CONTENT_IS_TAGLET (_tmp16_)) {
 		ValadocContentContentElement* _tmp17_;
 		ValadocContentTaglet* _tmp18_;
 		_tmp17_ = pos;
-		_tmp18_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, VALADOC_CONTENT_TYPE_TAGLET, ValadocContentTaglet));
+		_tmp18_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, BALADOC_CONTENT_TYPE_TAGLET, ValadocContentTaglet));
 		result = _tmp18_;
 		_g_object_unref0 (pos);
 		return result;
@@ -258,31 +258,31 @@ valadoc_taglets_inherit_doc_real_check (ValadocContentContentElement* base,
 	g_return_if_fail (file_path != NULL);
 	g_return_if_fail (reporter != NULL);
 	g_return_if_fail (settings != NULL);
-	if (VALADOC_API_IS_METHOD (container)) {
+	if (BALADOC_API_IS_METHOD (container)) {
 		ValadocApiMethod* _tmp0_;
 		ValadocApiMethod* _tmp1_;
 		ValadocApiNode* _tmp2_;
-		_tmp0_ = valadoc_api_method_get_base_method (G_TYPE_CHECK_INSTANCE_CAST (container, VALADOC_API_TYPE_METHOD, ValadocApiMethod));
+		_tmp0_ = valadoc_api_method_get_base_method (G_TYPE_CHECK_INSTANCE_CAST (container, BALADOC_API_TYPE_METHOD, ValadocApiMethod));
 		_tmp1_ = _tmp0_;
 		_tmp2_ = _g_object_ref0 ((ValadocApiNode*) _tmp1_);
 		_g_object_unref0 (self->priv->_inherited);
 		self->priv->_inherited = _tmp2_;
 	} else {
-		if (VALADOC_API_IS_PROPERTY (container)) {
+		if (BALADOC_API_IS_PROPERTY (container)) {
 			ValadocApiProperty* _tmp3_;
 			ValadocApiProperty* _tmp4_;
 			ValadocApiNode* _tmp5_;
-			_tmp3_ = valadoc_api_property_get_base_property (G_TYPE_CHECK_INSTANCE_CAST (container, VALADOC_API_TYPE_PROPERTY, ValadocApiProperty));
+			_tmp3_ = valadoc_api_property_get_base_property (G_TYPE_CHECK_INSTANCE_CAST (container, BALADOC_API_TYPE_PROPERTY, ValadocApiProperty));
 			_tmp4_ = _tmp3_;
 			_tmp5_ = _g_object_ref0 ((ValadocApiNode*) _tmp4_);
 			_g_object_unref0 (self->priv->_inherited);
 			self->priv->_inherited = _tmp5_;
 		} else {
 			gboolean _tmp6_ = FALSE;
-			if (VALADOC_API_IS_CLASS (container)) {
+			if (BALADOC_API_IS_CLASS (container)) {
 				ValadocApiTypeReference* _tmp7_;
 				ValadocApiTypeReference* _tmp8_;
-				_tmp7_ = valadoc_api_class_get_base_type (G_TYPE_CHECK_INSTANCE_CAST (container, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+				_tmp7_ = valadoc_api_class_get_base_type (G_TYPE_CHECK_INSTANCE_CAST (container, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 				_tmp8_ = _tmp7_;
 				_tmp6_ = _tmp8_ != NULL;
 			} else {
@@ -294,19 +294,19 @@ valadoc_taglets_inherit_doc_real_check (ValadocContentContentElement* base,
 				ValadocApiItem* _tmp11_;
 				ValadocApiItem* _tmp12_;
 				ValadocApiNode* _tmp13_;
-				_tmp9_ = valadoc_api_class_get_base_type (G_TYPE_CHECK_INSTANCE_CAST (container, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+				_tmp9_ = valadoc_api_class_get_base_type (G_TYPE_CHECK_INSTANCE_CAST (container, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 				_tmp10_ = _tmp9_;
 				_tmp11_ = valadoc_api_typereference_get_data_type (_tmp10_);
 				_tmp12_ = _tmp11_;
-				_tmp13_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, VALADOC_API_TYPE_NODE, ValadocApiNode));
+				_tmp13_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, BALADOC_API_TYPE_NODE, ValadocApiNode));
 				_g_object_unref0 (self->priv->_inherited);
 				self->priv->_inherited = _tmp13_;
 			} else {
 				gboolean _tmp14_ = FALSE;
-				if (VALADOC_API_IS_STRUCT (container)) {
+				if (BALADOC_API_IS_STRUCT (container)) {
 					ValadocApiTypeReference* _tmp15_;
 					ValadocApiTypeReference* _tmp16_;
-					_tmp15_ = valadoc_api_struct_get_base_type (G_TYPE_CHECK_INSTANCE_CAST (container, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+					_tmp15_ = valadoc_api_struct_get_base_type (G_TYPE_CHECK_INSTANCE_CAST (container, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 					_tmp16_ = _tmp15_;
 					_tmp14_ = _tmp16_ != NULL;
 				} else {
@@ -318,11 +318,11 @@ valadoc_taglets_inherit_doc_real_check (ValadocContentContentElement* base,
 					ValadocApiItem* _tmp19_;
 					ValadocApiItem* _tmp20_;
 					ValadocApiNode* _tmp21_;
-					_tmp17_ = valadoc_api_struct_get_base_type (G_TYPE_CHECK_INSTANCE_CAST (container, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+					_tmp17_ = valadoc_api_struct_get_base_type (G_TYPE_CHECK_INSTANCE_CAST (container, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 					_tmp18_ = _tmp17_;
 					_tmp19_ = valadoc_api_typereference_get_data_type (_tmp18_);
 					_tmp20_ = _tmp19_;
-					_tmp21_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, VALADOC_API_TYPE_NODE, ValadocApiNode));
+					_tmp21_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, BALADOC_API_TYPE_NODE, ValadocApiNode));
 					_g_object_unref0 (self->priv->_inherited);
 					self->priv->_inherited = _tmp21_;
 				}
@@ -385,14 +385,14 @@ valadoc_taglets_inherit_doc_split_run (ValadocTagletsInheritDoc* self,
 	parent = _tmp3_;
 	parent_content = NULL;
 	_tmp5_ = parent;
-	if (VALADOC_CONTENT_IS_RUN (_tmp5_)) {
+	if (BALADOC_CONTENT_IS_RUN (_tmp5_)) {
 		ValadocContentContentElement* _tmp6_;
 		ValadocContentRunStyle _tmp7_;
 		ValadocContentRunStyle _tmp8_;
 		_tmp6_ = parent;
-		_tmp7_ = valadoc_content_run_get_style (G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALADOC_CONTENT_TYPE_RUN, ValadocContentRun));
+		_tmp7_ = valadoc_content_run_get_style (G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALADOC_CONTENT_TYPE_RUN, ValadocContentRun));
 		_tmp8_ = _tmp7_;
-		_tmp4_ = _tmp8_ == VALADOC_CONTENT_RUN_STYLE_NONE;
+		_tmp4_ = _tmp8_ == BALADOC_CONTENT_RUN_STYLE_NONE;
 	} else {
 		_tmp4_ = FALSE;
 	}
@@ -402,7 +402,7 @@ valadoc_taglets_inherit_doc_split_run (ValadocTagletsInheritDoc* self,
 		ValaList* _tmp11_;
 		ValaList* _tmp12_;
 		_tmp9_ = parent;
-		_tmp10_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, VALADOC_CONTENT_TYPE_RUN, ValadocContentRun));
+		_tmp10_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, BALADOC_CONTENT_TYPE_RUN, ValadocContentRun));
 		_tmp11_ = _tmp10_;
 		_tmp12_ = _vala_iterable_ref0 (_tmp11_);
 		_vala_iterable_unref0 (parent_content);
@@ -410,13 +410,13 @@ valadoc_taglets_inherit_doc_split_run (ValadocTagletsInheritDoc* self,
 	} else {
 		ValadocContentContentElement* _tmp13_;
 		_tmp13_ = parent;
-		if (VALADOC_CONTENT_IS_PARAGRAPH (_tmp13_)) {
+		if (BALADOC_CONTENT_IS_PARAGRAPH (_tmp13_)) {
 			ValadocContentContentElement* _tmp14_;
 			ValaList* _tmp15_;
 			ValaList* _tmp16_;
 			ValaList* _tmp17_;
 			_tmp14_ = parent;
-			_tmp15_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) G_TYPE_CHECK_INSTANCE_CAST (_tmp14_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph));
+			_tmp15_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) G_TYPE_CHECK_INSTANCE_CAST (_tmp14_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph));
 			_tmp16_ = _tmp15_;
 			_tmp17_ = _vala_iterable_ref0 (_tmp16_);
 			_vala_iterable_unref0 (parent_content);
@@ -437,9 +437,9 @@ valadoc_taglets_inherit_doc_split_run (ValadocTagletsInheritDoc* self,
 		ValadocContentRun** _tmp47_;
 		ValadocContentRun** _tmp48_;
 		gint _tmp48__length1;
-		_tmp19_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_NONE);
+		_tmp19_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_NONE);
 		right_run = _tmp19_;
-		_tmp20_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_NONE);
+		_tmp20_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_NONE);
 		left_run = _tmp20_;
 		separated = FALSE;
 		{
@@ -611,7 +611,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 		ValadocContentRun* _tmp31_;
 		ValadocContentRun* _tmp32_;
 		_tmp1_ = separator;
-		_tmp3_ = valadoc_taglets_inherit_doc_split_run (self, VALADOC_CONTENT_IS_INLINE (_tmp1_) ? ((ValadocContentInline*) _tmp1_) : NULL, &_tmp2_);
+		_tmp3_ = valadoc_taglets_inherit_doc_split_run (self, BALADOC_CONTENT_IS_INLINE (_tmp1_) ? ((ValadocContentInline*) _tmp1_) : NULL, &_tmp2_);
 		parts = (_vala_array_free (parts, parts_length1, (GDestroyNotify) g_object_unref), NULL);
 		parts = _tmp3_;
 		parts_length1 = _tmp2_;
@@ -691,7 +691,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 		left_run = _tmp32_;
 	}
 	_tmp34_ = separator;
-	if (VALADOC_CONTENT_IS_PARAGRAPH (_tmp34_) == FALSE) {
+	if (BALADOC_CONTENT_IS_PARAGRAPH (_tmp34_) == FALSE) {
 		_tmp33_ = TRUE;
 	} else {
 		ValadocContentContentElement* _tmp35_;
@@ -700,7 +700,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 		_tmp35_ = separator;
 		_tmp36_ = valadoc_content_content_element_get_parent (_tmp35_);
 		_tmp37_ = _tmp36_;
-		_tmp33_ = VALADOC_CONTENT_IS_COMMENT (_tmp37_) == FALSE;
+		_tmp33_ = BALADOC_CONTENT_IS_COMMENT (_tmp37_) == FALSE;
 	}
 	if (_tmp33_) {
 		gchar* _tmp38_;
@@ -723,7 +723,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 	_tmp42_ = separator;
 	_tmp43_ = valadoc_content_content_element_get_parent (_tmp42_);
 	_tmp44_ = _tmp43_;
-	_tmp45_ = _g_object_ref0 (VALADOC_CONTENT_IS_COMMENT (_tmp44_) ? ((ValadocContentComment*) _tmp44_) : NULL);
+	_tmp45_ = _g_object_ref0 (BALADOC_CONTENT_IS_COMMENT (_tmp44_) ? ((ValadocContentComment*) _tmp44_) : NULL);
 	comment = _tmp45_;
 	_tmp46_ = comment;
 	_vala_assert (_tmp46_ != NULL, "comment != null");
@@ -731,7 +731,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 	_tmp48_ = valadoc_content_block_content_get_content ((ValadocContentBlockContent*) _tmp47_);
 	_tmp49_ = _tmp48_;
 	_tmp50_ = separator;
-	insert_pos = vala_list_index_of (_tmp49_, (ValadocContentBlock*) G_TYPE_CHECK_INSTANCE_CAST (_tmp50_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph));
+	insert_pos = vala_list_index_of (_tmp49_, (ValadocContentBlock*) G_TYPE_CHECK_INSTANCE_CAST (_tmp50_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph));
 	start_pos = insert_pos;
 	_vala_assert (insert_pos >= 0, "insert_pos >= 0");
 	{
@@ -788,7 +788,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 			_tmp67_ = block;
 			_tmp68_ = comment;
 			_tmp69_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp67_, (ValadocContentContentElement*) _tmp68_);
-			_tmp70_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp69_, VALADOC_CONTENT_TYPE_BLOCK, ValadocContentBlock);
+			_tmp70_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp69_, BALADOC_CONTENT_TYPE_BLOCK, ValadocContentBlock);
 			vala_list_insert (_tmp66_, insert_pos, _tmp70_);
 			_g_object_unref0 (_tmp70_);
 			_tmp71_ = insert_pos;
@@ -810,7 +810,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 		_tmp75_ = _tmp74_;
 		_tmp76_ = vala_list_get (_tmp75_, insert_pos - 1);
 		_tmp77_ = (ValadocContentBlock*) _tmp76_;
-		_tmp78_ = VALADOC_CONTENT_IS_PARAGRAPH (_tmp77_);
+		_tmp78_ = BALADOC_CONTENT_IS_PARAGRAPH (_tmp77_);
 		_g_object_unref0 (_tmp77_);
 		if (_tmp78_) {
 			ValadocContentComment* _tmp79_;
@@ -831,7 +831,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 			_tmp80_ = valadoc_content_block_content_get_content ((ValadocContentBlockContent*) _tmp79_);
 			_tmp81_ = _tmp80_;
 			_tmp82_ = vala_list_get (_tmp81_, insert_pos - 1);
-			_tmp83_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentBlock*) _tmp82_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+			_tmp83_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentBlock*) _tmp82_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 			_tmp84_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp83_);
 			_tmp85_ = _tmp84_;
 			_tmp86_ = right_run;
@@ -894,7 +894,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 		_tmp109_ = _tmp108_;
 		_tmp110_ = vala_list_get (_tmp109_, start_pos);
 		_tmp111_ = (ValadocContentBlock*) _tmp110_;
-		_tmp112_ = VALADOC_CONTENT_IS_PARAGRAPH (_tmp111_);
+		_tmp112_ = BALADOC_CONTENT_IS_PARAGRAPH (_tmp111_);
 		_g_object_unref0 (_tmp111_);
 		if (_tmp112_) {
 			ValadocContentComment* _tmp113_;
@@ -915,7 +915,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 			_tmp114_ = valadoc_content_block_content_get_content ((ValadocContentBlockContent*) _tmp113_);
 			_tmp115_ = _tmp114_;
 			_tmp116_ = vala_list_get (_tmp115_, start_pos);
-			_tmp117_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentBlock*) _tmp116_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
+			_tmp117_ = G_TYPE_CHECK_INSTANCE_CAST ((ValadocContentBlock*) _tmp116_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph);
 			_tmp118_ = valadoc_content_inline_content_get_content ((ValadocContentInlineContent*) _tmp117_);
 			_tmp119_ = _tmp118_;
 			_tmp120_ = left_run;
@@ -969,7 +969,7 @@ valadoc_taglets_inherit_doc_transform (ValadocTagletsInheritDoc* self,
 	_tmp141_ = valadoc_content_block_content_get_content ((ValadocContentBlockContent*) _tmp140_);
 	_tmp142_ = _tmp141_;
 	_tmp143_ = separator;
-	vala_collection_remove ((ValaCollection*) _tmp142_, (ValadocContentBlock*) G_TYPE_CHECK_INSTANCE_CAST (_tmp143_, VALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph));
+	vala_collection_remove ((ValaCollection*) _tmp142_, (ValadocContentBlock*) G_TYPE_CHECK_INSTANCE_CAST (_tmp143_, BALADOC_CONTENT_TYPE_PARAGRAPH, ValadocContentParagraph));
 	_g_object_unref0 (comment);
 	parts = (_vala_array_free (parts, parts_length1, (GDestroyNotify) g_object_unref), NULL);
 	_g_object_unref0 (left_run);
@@ -986,7 +986,7 @@ valadoc_taglets_inherit_doc_content_copy (ValadocTagletsInheritDoc* self,
 	ValadocContentRun* _tmp1_;
 	ValadocContentRun* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
-	_tmp0_ = valadoc_content_run_new (VALADOC_CONTENT_RUN_STYLE_NONE);
+	_tmp0_ = valadoc_content_run_new (BALADOC_CONTENT_RUN_STYLE_NONE);
 	run = _tmp0_;
 	_tmp1_ = run;
 	valadoc_content_content_element_set_parent ((ValadocContentContentElement*) _tmp1_, (ValadocContentContentElement*) self);
@@ -1033,7 +1033,7 @@ valadoc_taglets_inherit_doc_content_copy (ValadocTagletsInheritDoc* self,
 				_tmp12_ = _tmp11_;
 				_tmp13_ = item;
 				_tmp14_ = valadoc_content_content_element_copy (_tmp13_, (ValadocContentContentElement*) self);
-				_tmp15_ = VALADOC_CONTENT_IS_INLINE (_tmp14_) ? ((ValadocContentInline*) _tmp14_) : NULL;
+				_tmp15_ = BALADOC_CONTENT_IS_INLINE (_tmp14_) ? ((ValadocContentInline*) _tmp14_) : NULL;
 				if (_tmp15_ == NULL) {
 					_g_object_unref0 (_tmp14_);
 				}
@@ -1211,7 +1211,7 @@ valadoc_taglets_inherit_doc_construct (GType object_type)
 ValadocTagletsInheritDoc*
 valadoc_taglets_inherit_doc_new (void)
 {
-	return valadoc_taglets_inherit_doc_construct (VALADOC_TAGLETS_TYPE_INHERIT_DOC);
+	return valadoc_taglets_inherit_doc_construct (BALADOC_TAGLETS_TYPE_INHERIT_DOC);
 }
 
 static void
@@ -1228,7 +1228,7 @@ valadoc_taglets_inherit_doc_class_init (ValadocTagletsInheritDocClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_taglets_inherit_doc_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_taglets_inherit_doc_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_taglets_inherit_doc_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY, valadoc_taglets_inherit_doc_properties[VALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY] = g_param_spec_object ("inherited", "inherited", "inherited", VALADOC_API_TYPE_NODE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY, valadoc_taglets_inherit_doc_properties[BALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY] = g_param_spec_object ("inherited", "inherited", "inherited", BALADOC_API_TYPE_NODE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -1243,7 +1243,7 @@ static void
 valadoc_taglets_inherit_doc_finalize (GObject * obj)
 {
 	ValadocTagletsInheritDoc * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TAGLETS_TYPE_INHERIT_DOC, ValadocTagletsInheritDoc);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TAGLETS_TYPE_INHERIT_DOC, ValadocTagletsInheritDoc);
 	_g_object_unref0 (self->priv->parent_taglet);
 	_g_object_unref0 (self->priv->_inherited);
 	G_OBJECT_CLASS (valadoc_taglets_inherit_doc_parent_class)->finalize (obj);
@@ -1254,7 +1254,7 @@ valadoc_taglets_inherit_doc_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocTagletsInheritDocClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_taglets_inherit_doc_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocTagletsInheritDoc), 0, (GInstanceInitFunc) valadoc_taglets_inherit_doc_instance_init, NULL };
 	GType valadoc_taglets_inherit_doc_type_id;
-	valadoc_taglets_inherit_doc_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_INLINE_TAGLET, "ValadocTagletsInheritDoc", &g_define_type_info, 0);
+	valadoc_taglets_inherit_doc_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_INLINE_TAGLET, "ValadocTagletsInheritDoc", &g_define_type_info, 0);
 	ValadocTagletsInheritDoc_private_offset = g_type_add_instance_private (valadoc_taglets_inherit_doc_type_id, sizeof (ValadocTagletsInheritDocPrivate));
 	return valadoc_taglets_inherit_doc_type_id;
 }
@@ -1278,9 +1278,9 @@ _vala_valadoc_taglets_inherit_doc_get_property (GObject * object,
                                                 GParamSpec * pspec)
 {
 	ValadocTagletsInheritDoc * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TAGLETS_TYPE_INHERIT_DOC, ValadocTagletsInheritDoc);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TAGLETS_TYPE_INHERIT_DOC, ValadocTagletsInheritDoc);
 	switch (property_id) {
-		case VALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY:
+		case BALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY:
 		g_value_set_object (value, valadoc_taglets_inherit_doc_get_inherited (self));
 		break;
 		default:
@@ -1296,9 +1296,9 @@ _vala_valadoc_taglets_inherit_doc_set_property (GObject * object,
                                                 GParamSpec * pspec)
 {
 	ValadocTagletsInheritDoc * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_TAGLETS_TYPE_INHERIT_DOC, ValadocTagletsInheritDoc);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_TAGLETS_TYPE_INHERIT_DOC, ValadocTagletsInheritDoc);
 	switch (property_id) {
-		case VALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY:
+		case BALADOC_TAGLETS_INHERIT_DOC_INHERITED_PROPERTY:
 		valadoc_taglets_inherit_doc_set_inherited (self, g_value_get_object (value));
 		break;
 		default:

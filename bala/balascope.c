@@ -116,7 +116,7 @@ vala_scope_construct (GType object_type,
 ValaScope*
 vala_scope_new (ValaSymbol* owner)
 {
-	return vala_scope_construct (VALA_TYPE_SCOPE, owner);
+	return vala_scope_construct (BALA_TYPE_SCOPE, owner);
 }
 
 /**
@@ -134,10 +134,10 @@ vala_scope_add (ValaScope* self,
 	gboolean _tmp0_ = FALSE;
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (sym != NULL);
-	if (VALA_IS_PARAMETER (sym)) {
+	if (BALA_IS_PARAMETER (sym)) {
 		gboolean _tmp1_;
 		gboolean _tmp2_;
-		_tmp1_ = vala_parameter_get_params_array (G_TYPE_CHECK_INSTANCE_CAST (sym, VALA_TYPE_PARAMETER, ValaParameter));
+		_tmp1_ = vala_parameter_get_params_array (G_TYPE_CHECK_INSTANCE_CAST (sym, BALA_TYPE_PARAMETER, ValaParameter));
 		_tmp2_ = _tmp1_;
 		_tmp0_ = _tmp2_;
 	} else {
@@ -158,7 +158,7 @@ vala_scope_add (ValaScope* self,
 			_tmp4_ = g_str_hash;
 			_tmp5_ = g_str_equal;
 			_tmp6_ = g_direct_equal;
-			_tmp7_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_, _tmp5_, _tmp6_);
+			_tmp7_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_, _tmp5_, _tmp6_);
 			_vala_map_unref0 (self->priv->symbol_table);
 			self->priv->symbol_table = (ValaMap*) _tmp7_;
 		} else {
@@ -249,7 +249,7 @@ vala_scope_add (ValaScope* self,
 			GEqualFunc _tmp38_;
 			ValaArrayList* _tmp39_;
 			_tmp38_ = g_direct_equal;
-			_tmp39_ = vala_array_list_new (VALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp38_);
+			_tmp39_ = vala_array_list_new (BALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp38_);
 			_vala_iterable_unref0 (self->priv->anonymous_members);
 			self->priv->anonymous_members = (ValaList*) _tmp39_;
 		}
@@ -443,7 +443,7 @@ vala_param_spec_scope (const gchar* name,
                        GParamFlags flags)
 {
 	ValaParamSpecScope* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_SCOPE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_SCOPE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -452,7 +452,7 @@ vala_param_spec_scope (const gchar* name,
 gpointer
 vala_value_get_scope (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SCOPE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SCOPE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -461,10 +461,10 @@ vala_value_set_scope (GValue* value,
                       gpointer v_object)
 {
 	ValaScope * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SCOPE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SCOPE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_SCOPE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_SCOPE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_scope_ref (value->data[0].v_pointer);
@@ -481,10 +481,10 @@ vala_value_take_scope (GValue* value,
                        gpointer v_object)
 {
 	ValaScope * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_SCOPE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_SCOPE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_SCOPE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_SCOPE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -516,7 +516,7 @@ static void
 vala_scope_finalize (ValaScope * obj)
 {
 	ValaScope * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SCOPE, ValaScope);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SCOPE, ValaScope);
 	g_signal_handlers_destroy (self);
 	_vala_map_unref0 (self->priv->symbol_table);
 	_vala_iterable_unref0 (self->priv->anonymous_members);
@@ -564,7 +564,7 @@ vala_scope_unref (gpointer instance)
 	ValaScope * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_SCOPE_GET_CLASS (self)->finalize (self);
+		BALA_SCOPE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

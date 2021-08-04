@@ -5029,7 +5029,7 @@ namespace GLib {
 		public void @set (owned K key, owned V value);
 		[Version (since = "2.14")]
 		public List<unowned K> get_keys ();
-#if VALA_0_26
+#if BALA_0_26
 		[CCode (array_length_type = "guint")]
 		[Version (since = "2.40")]
 		public (unowned K)[] get_keys_as_array ();
@@ -5923,7 +5923,7 @@ namespace GLib {
 
 		public Variant.strv (string[] value);
 		[CCode (array_length_type = "size_t")]
-#if VALA_0_26
+#if BALA_0_26
 		public (unowned string)[] get_strv ();
 #else
 		public string*[] get_strv ();
@@ -5935,7 +5935,7 @@ namespace GLib {
 		public Variant.bytestring_array (string[] value);
 		[Version (since = "2.26")]
 		[CCode (array_length_type = "size_t")]
-#if VALA_0_26
+#if BALA_0_26
 		public (unowned string)[] get_bytestring_array ();
 #else
 		public string*[] get_bytestring_array ();
@@ -5948,7 +5948,7 @@ namespace GLib {
 		public Variant.objv (string[] value);
 		[Version (since = "2.30")]
 		[CCode (array_length_type = "size_t")]
-#if VALA_0_26
+#if BALA_0_26
 		public (unowned string)[] get_objv ();
 #else
 		public string*[] get_objv ();

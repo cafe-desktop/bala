@@ -140,7 +140,7 @@ vala_named_argument_new (const gchar* name,
                          ValaExpression* inner,
                          ValaSourceReference* source_reference)
 {
-	return vala_named_argument_construct (VALA_TYPE_NAMED_ARGUMENT, name, inner, source_reference);
+	return vala_named_argument_construct (BALA_TYPE_NAMED_ARGUMENT, name, inner, source_reference);
 }
 
 static void
@@ -341,10 +341,10 @@ static void
 vala_named_argument_finalize (ValaCodeNode * obj)
 {
 	ValaNamedArgument * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_NAMED_ARGUMENT, ValaNamedArgument);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_NAMED_ARGUMENT, ValaNamedArgument);
 	_g_free0 (self->priv->_name);
 	_vala_code_node_unref0 (self->priv->_inner);
-	VALA_CODE_NODE_CLASS (vala_named_argument_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_named_argument_parent_class)->finalize (obj);
 }
 
 static GType
@@ -352,7 +352,7 @@ vala_named_argument_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaNamedArgumentClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_named_argument_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaNamedArgument), 0, (GInstanceInitFunc) vala_named_argument_instance_init, NULL };
 	GType vala_named_argument_type_id;
-	vala_named_argument_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaNamedArgument", &g_define_type_info, 0);
+	vala_named_argument_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaNamedArgument", &g_define_type_info, 0);
 	ValaNamedArgument_private_offset = g_type_add_instance_private (vala_named_argument_type_id, sizeof (ValaNamedArgumentPrivate));
 	return vala_named_argument_type_id;
 }

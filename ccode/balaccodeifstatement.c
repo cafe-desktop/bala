@@ -142,7 +142,7 @@ vala_ccode_if_statement_new (ValaCCodeExpression* cond,
                              ValaCCodeStatement* true_stmt,
                              ValaCCodeStatement* false_stmt)
 {
-	return vala_ccode_if_statement_construct (VALA_TYPE_CCODE_IF_STATEMENT, cond, true_stmt, false_stmt);
+	return vala_ccode_if_statement_construct (BALA_TYPE_CCODE_IF_STATEMENT, cond, true_stmt, false_stmt);
 }
 
 gboolean
@@ -197,7 +197,7 @@ vala_ccode_if_statement_real_write (ValaCCodeNode* base,
 	if (_tmp6_ != NULL) {
 		ValaCCodeStatement* _tmp7_;
 		_tmp7_ = self->priv->_true_statement;
-		_tmp5_ = VALA_IS_CCODE_BLOCK (_tmp7_);
+		_tmp5_ = BALA_IS_CCODE_BLOCK (_tmp7_);
 	} else {
 		_tmp5_ = FALSE;
 	}
@@ -207,7 +207,7 @@ vala_ccode_if_statement_real_write (ValaCCodeNode* base,
 		ValaCCodeBlock* _tmp9_;
 		ValaCCodeBlock* _tmp10_;
 		_tmp8_ = self->priv->_true_statement;
-		_tmp9_ = _vala_ccode_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, VALA_TYPE_CCODE_BLOCK, ValaCCodeBlock));
+		_tmp9_ = _vala_ccode_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, BALA_TYPE_CCODE_BLOCK, ValaCCodeBlock));
 		cblock = _tmp9_;
 		_tmp10_ = cblock;
 		vala_ccode_block_set_suppress_newline (_tmp10_, TRUE);
@@ -230,13 +230,13 @@ vala_ccode_if_statement_real_write (ValaCCodeNode* base,
 			vala_ccode_writer_write_string (writer, " else");
 		}
 		_tmp15_ = self->priv->_false_statement;
-		if (VALA_IS_CCODE_IF_STATEMENT (_tmp15_)) {
+		if (BALA_IS_CCODE_IF_STATEMENT (_tmp15_)) {
 			ValaCCodeIfStatement* cif = NULL;
 			ValaCCodeStatement* _tmp16_;
 			ValaCCodeIfStatement* _tmp17_;
 			ValaCCodeIfStatement* _tmp18_;
 			_tmp16_ = self->priv->_false_statement;
-			_tmp17_ = _vala_ccode_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, VALA_TYPE_CCODE_IF_STATEMENT, ValaCCodeIfStatement));
+			_tmp17_ = _vala_ccode_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, BALA_TYPE_CCODE_IF_STATEMENT, ValaCCodeIfStatement));
 			cif = _tmp17_;
 			_tmp18_ = cif;
 			vala_ccode_if_statement_set_else_if (_tmp18_, TRUE);
@@ -268,11 +268,11 @@ static void
 vala_ccode_if_statement_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeIfStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_IF_STATEMENT, ValaCCodeIfStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_IF_STATEMENT, ValaCCodeIfStatement);
 	_vala_ccode_node_unref0 (self->priv->_condition);
 	_vala_ccode_node_unref0 (self->priv->_true_statement);
 	_vala_ccode_node_unref0 (self->priv->_false_statement);
-	VALA_CCODE_NODE_CLASS (vala_ccode_if_statement_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_if_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -283,7 +283,7 @@ vala_ccode_if_statement_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeIfStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_if_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeIfStatement), 0, (GInstanceInitFunc) vala_ccode_if_statement_instance_init, NULL };
 	GType vala_ccode_if_statement_type_id;
-	vala_ccode_if_statement_type_id = g_type_register_static (VALA_TYPE_CCODE_STATEMENT, "ValaCCodeIfStatement", &g_define_type_info, 0);
+	vala_ccode_if_statement_type_id = g_type_register_static (BALA_TYPE_CCODE_STATEMENT, "ValaCCodeIfStatement", &g_define_type_info, 0);
 	ValaCCodeIfStatement_private_offset = g_type_add_instance_private (vala_ccode_if_statement_type_id, sizeof (ValaCCodeIfStatementPrivate));
 	return vala_ccode_if_statement_type_id;
 }

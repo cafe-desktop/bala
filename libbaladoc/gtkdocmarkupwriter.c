@@ -148,7 +148,7 @@ valadoc_gtk_doc_markup_writer_construct (GType object_type)
 ValadocGtkDocMarkupWriter*
 valadoc_gtk_doc_markup_writer_new (void)
 {
-	return valadoc_gtk_doc_markup_writer_construct (VALADOC_TYPE_GTK_DOC_MARKUP_WRITER);
+	return valadoc_gtk_doc_markup_writer_construct (BALADOC_TYPE_GTK_DOC_MARKUP_WRITER);
 }
 
 static gboolean
@@ -311,8 +311,8 @@ static void
 valadoc_gtk_doc_markup_writer_finalize (ValadocMarkupWriter * obj)
 {
 	ValadocGtkDocMarkupWriter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_GTK_DOC_MARKUP_WRITER, ValadocGtkDocMarkupWriter);
-	VALADOC_MARKUP_WRITER_CLASS (valadoc_gtk_doc_markup_writer_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_GTK_DOC_MARKUP_WRITER, ValadocGtkDocMarkupWriter);
+	BALADOC_MARKUP_WRITER_CLASS (valadoc_gtk_doc_markup_writer_parent_class)->finalize (obj);
 }
 
 static GType
@@ -320,7 +320,7 @@ valadoc_gtk_doc_markup_writer_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocGtkDocMarkupWriterClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_gtk_doc_markup_writer_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocGtkDocMarkupWriter), 0, (GInstanceInitFunc) valadoc_gtk_doc_markup_writer_instance_init, NULL };
 	GType valadoc_gtk_doc_markup_writer_type_id;
-	valadoc_gtk_doc_markup_writer_type_id = g_type_register_static (VALADOC_TYPE_MARKUP_WRITER, "ValadocGtkDocMarkupWriter", &g_define_type_info, 0);
+	valadoc_gtk_doc_markup_writer_type_id = g_type_register_static (BALADOC_TYPE_MARKUP_WRITER, "ValadocGtkDocMarkupWriter", &g_define_type_info, 0);
 	ValadocGtkDocMarkupWriter_private_offset = g_type_add_instance_private (valadoc_gtk_doc_markup_writer_type_id, sizeof (ValadocGtkDocMarkupWriterPrivate));
 	return valadoc_gtk_doc_markup_writer_type_id;
 }

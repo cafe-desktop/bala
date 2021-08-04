@@ -21,7 +21,7 @@ noinst_PROGRAMS = \
 TEST_EXTENSIONS = .vala .gs .test
 
 TEST_RUNNER = $(abs_top_srcdir)/build-aux/testrunner.sh
-VALA_LOG_COMPILER = $(TEST_RUNNER)
+BALA_LOG_COMPILER = $(TEST_RUNNER)
 GS_LOG_COMPILER = $(TEST_RUNNER)
 TEST_LOG_COMPILER = $(TEST_RUNNER)
 

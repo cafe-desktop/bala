@@ -145,7 +145,7 @@ vala_postfix_expression_new (ValaExpression* _inner,
                              gboolean inc,
                              ValaSourceReference* source)
 {
-	return vala_postfix_expression_construct (VALA_TYPE_POSTFIX_EXPRESSION, _inner, inc, source);
+	return vala_postfix_expression_construct (BALA_TYPE_POSTFIX_EXPRESSION, _inner, inc, source);
 }
 
 static void
@@ -226,12 +226,12 @@ vala_postfix_expression_real_get_defined_variables (ValaCodeNode* base,
 	_tmp3_ = _tmp2_;
 	_tmp4_ = vala_expression_get_symbol_reference (_tmp3_);
 	_tmp5_ = _tmp4_;
-	local = VALA_IS_LOCAL_VARIABLE (_tmp5_) ? ((ValaLocalVariable*) _tmp5_) : NULL;
+	local = BALA_IS_LOCAL_VARIABLE (_tmp5_) ? ((ValaLocalVariable*) _tmp5_) : NULL;
 	_tmp6_ = vala_postfix_expression_get_inner (self);
 	_tmp7_ = _tmp6_;
 	_tmp8_ = vala_expression_get_symbol_reference (_tmp7_);
 	_tmp9_ = _tmp8_;
-	param = VALA_IS_PARAMETER (_tmp9_) ? ((ValaParameter*) _tmp9_) : NULL;
+	param = BALA_IS_PARAMETER (_tmp9_) ? ((ValaParameter*) _tmp9_) : NULL;
 	_tmp10_ = local;
 	if (_tmp10_ != NULL) {
 		ValaLocalVariable* _tmp11_;
@@ -248,7 +248,7 @@ vala_postfix_expression_real_get_defined_variables (ValaCodeNode* base,
 			_tmp14_ = param;
 			_tmp15_ = vala_parameter_get_direction (_tmp14_);
 			_tmp16_ = _tmp15_;
-			_tmp12_ = _tmp16_ == VALA_PARAMETER_DIRECTION_OUT;
+			_tmp12_ = _tmp16_ == BALA_PARAMETER_DIRECTION_OUT;
 		} else {
 			_tmp12_ = FALSE;
 		}
@@ -347,7 +347,7 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 	_tmp11_ = _tmp10_;
 	_tmp12_ = vala_expression_get_value_type (_tmp11_);
 	_tmp13_ = _tmp12_;
-	if (!VALA_IS_INTEGER_TYPE (_tmp13_)) {
+	if (!BALA_IS_INTEGER_TYPE (_tmp13_)) {
 		ValaExpression* _tmp14_;
 		ValaExpression* _tmp15_;
 		ValaDataType* _tmp16_;
@@ -356,7 +356,7 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 		_tmp15_ = _tmp14_;
 		_tmp16_ = vala_expression_get_value_type (_tmp15_);
 		_tmp17_ = _tmp16_;
-		_tmp9_ = !VALA_IS_FLOATING_TYPE (_tmp17_);
+		_tmp9_ = !BALA_IS_FLOATING_TYPE (_tmp17_);
 	} else {
 		_tmp9_ = FALSE;
 	}
@@ -369,7 +369,7 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 		_tmp19_ = _tmp18_;
 		_tmp20_ = vala_expression_get_value_type (_tmp19_);
 		_tmp21_ = _tmp20_;
-		_tmp8_ = !VALA_IS_POINTER_TYPE (_tmp21_);
+		_tmp8_ = !BALA_IS_POINTER_TYPE (_tmp21_);
 	} else {
 		_tmp8_ = FALSE;
 	}
@@ -385,7 +385,7 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 	}
 	_tmp24_ = vala_postfix_expression_get_inner (self);
 	_tmp25_ = _tmp24_;
-	if (VALA_IS_MEMBER_ACCESS (_tmp25_)) {
+	if (BALA_IS_MEMBER_ACCESS (_tmp25_)) {
 		ValaMemberAccess* ma = NULL;
 		ValaExpression* _tmp26_;
 		ValaExpression* _tmp27_;
@@ -398,7 +398,7 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 		gboolean _tmp43_;
 		_tmp26_ = vala_postfix_expression_get_inner (self);
 		_tmp27_ = _tmp26_;
-		ma = G_TYPE_CHECK_INSTANCE_CAST (_tmp27_, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess);
+		ma = G_TYPE_CHECK_INSTANCE_CAST (_tmp27_, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess);
 		_tmp28_ = ma;
 		_tmp29_ = vala_member_access_get_prototype_access (_tmp28_);
 		_tmp30_ = _tmp29_;
@@ -452,7 +452,7 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 		ValaExpression* _tmp48_;
 		_tmp47_ = vala_postfix_expression_get_inner (self);
 		_tmp48_ = _tmp47_;
-		if (VALA_IS_ELEMENT_ACCESS (_tmp48_)) {
+		if (BALA_IS_ELEMENT_ACCESS (_tmp48_)) {
 			ValaElementAccess* ea = NULL;
 			ValaExpression* _tmp49_;
 			ValaExpression* _tmp50_;
@@ -463,13 +463,13 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 			ValaDataType* _tmp55_;
 			_tmp49_ = vala_postfix_expression_get_inner (self);
 			_tmp50_ = _tmp49_;
-			ea = G_TYPE_CHECK_INSTANCE_CAST (_tmp50_, VALA_TYPE_ELEMENT_ACCESS, ValaElementAccess);
+			ea = G_TYPE_CHECK_INSTANCE_CAST (_tmp50_, BALA_TYPE_ELEMENT_ACCESS, ValaElementAccess);
 			_tmp51_ = ea;
 			_tmp52_ = vala_element_access_get_container (_tmp51_);
 			_tmp53_ = _tmp52_;
 			_tmp54_ = vala_expression_get_value_type (_tmp53_);
 			_tmp55_ = _tmp54_;
-			if (!VALA_IS_ARRAY_TYPE (_tmp55_)) {
+			if (!BALA_IS_ARRAY_TYPE (_tmp55_)) {
 				ValaSourceReference* _tmp56_;
 				ValaSourceReference* _tmp57_;
 				vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -492,7 +492,7 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 	}
 	_tmp60_ = vala_postfix_expression_get_inner (self);
 	_tmp61_ = _tmp60_;
-	if (VALA_IS_MEMBER_ACCESS (_tmp61_)) {
+	if (BALA_IS_MEMBER_ACCESS (_tmp61_)) {
 		ValaMemberAccess* ma = NULL;
 		ValaExpression* _tmp62_;
 		ValaExpression* _tmp63_;
@@ -501,11 +501,11 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 		ValaSymbol* _tmp66_;
 		_tmp62_ = vala_postfix_expression_get_inner (self);
 		_tmp63_ = _tmp62_;
-		ma = G_TYPE_CHECK_INSTANCE_CAST (_tmp63_, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess);
+		ma = G_TYPE_CHECK_INSTANCE_CAST (_tmp63_, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess);
 		_tmp64_ = ma;
 		_tmp65_ = vala_expression_get_symbol_reference ((ValaExpression*) _tmp64_);
 		_tmp66_ = _tmp65_;
-		if (VALA_IS_PROPERTY (_tmp66_)) {
+		if (BALA_IS_PROPERTY (_tmp66_)) {
 			ValaProperty* prop = NULL;
 			ValaMemberAccess* _tmp67_;
 			ValaSymbol* _tmp68_;
@@ -517,7 +517,7 @@ vala_postfix_expression_real_check (ValaCodeNode* base,
 			_tmp67_ = ma;
 			_tmp68_ = vala_expression_get_symbol_reference ((ValaExpression*) _tmp67_);
 			_tmp69_ = _tmp68_;
-			prop = G_TYPE_CHECK_INSTANCE_CAST (_tmp69_, VALA_TYPE_PROPERTY, ValaProperty);
+			prop = G_TYPE_CHECK_INSTANCE_CAST (_tmp69_, BALA_TYPE_PROPERTY, ValaProperty);
 			_tmp71_ = prop;
 			_tmp72_ = vala_property_get_set_accessor (_tmp71_);
 			_tmp73_ = _tmp72_;
@@ -652,9 +652,9 @@ static void
 vala_postfix_expression_finalize (ValaCodeNode * obj)
 {
 	ValaPostfixExpression * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_POSTFIX_EXPRESSION, ValaPostfixExpression);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_POSTFIX_EXPRESSION, ValaPostfixExpression);
 	_vala_code_node_unref0 (self->priv->_inner);
-	VALA_CODE_NODE_CLASS (vala_postfix_expression_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_postfix_expression_parent_class)->finalize (obj);
 }
 
 /**
@@ -665,7 +665,7 @@ vala_postfix_expression_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaPostfixExpressionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_postfix_expression_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaPostfixExpression), 0, (GInstanceInitFunc) vala_postfix_expression_instance_init, NULL };
 	GType vala_postfix_expression_type_id;
-	vala_postfix_expression_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaPostfixExpression", &g_define_type_info, 0);
+	vala_postfix_expression_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaPostfixExpression", &g_define_type_info, 0);
 	ValaPostfixExpression_private_offset = g_type_add_instance_private (vala_postfix_expression_type_id, sizeof (ValaPostfixExpressionPrivate));
 	return vala_postfix_expression_type_id;
 }

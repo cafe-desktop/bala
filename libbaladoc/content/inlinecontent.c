@@ -32,11 +32,11 @@
 #include <glib.h>
 
 enum  {
-	VALADOC_CONTENT_INLINE_CONTENT_0_PROPERTY,
-	VALADOC_CONTENT_INLINE_CONTENT_CONTENT_PROPERTY,
-	VALADOC_CONTENT_INLINE_CONTENT_NUM_PROPERTIES
+	BALADOC_CONTENT_INLINE_CONTENT_0_PROPERTY,
+	BALADOC_CONTENT_INLINE_CONTENT_CONTENT_PROPERTY,
+	BALADOC_CONTENT_INLINE_CONTENT_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_inline_content_properties[VALADOC_CONTENT_INLINE_CONTENT_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_inline_content_properties[BALADOC_CONTENT_INLINE_CONTENT_NUM_PROPERTIES];
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_assert(expr, msg) if G_LIKELY (expr) ; else g_assertion_message_expr (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);
@@ -300,9 +300,9 @@ valadoc_content_inline_content_constructor (GType type,
 	ValaArrayList* _tmp1_;
 	parent_class = G_OBJECT_CLASS (valadoc_content_inline_content_parent_class);
 	obj = parent_class->constructor (type, n_construct_properties, construct_properties);
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_CONTENT_TYPE_INLINE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_CONTENT_TYPE_INLINE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	_vala_iterable_unref0 (self->priv->_content);
 	self->priv->_content = (ValaList*) _tmp1_;
 	return obj;
@@ -320,7 +320,7 @@ valadoc_content_inline_content_class_init (ValadocContentInlineContentClass * kl
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_content_inline_content_get_property;
 	G_OBJECT_CLASS (klass)->constructor = valadoc_content_inline_content_constructor;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_content_inline_content_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_INLINE_CONTENT_CONTENT_PROPERTY, valadoc_content_inline_content_properties[VALADOC_CONTENT_INLINE_CONTENT_CONTENT_PROPERTY] = vala_param_spec_iterable ("content", "content", "content", VALA_TYPE_LIST, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_INLINE_CONTENT_CONTENT_PROPERTY, valadoc_content_inline_content_properties[BALADOC_CONTENT_INLINE_CONTENT_CONTENT_PROPERTY] = vala_param_spec_iterable ("content", "content", "content", BALA_TYPE_LIST, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -334,7 +334,7 @@ static void
 valadoc_content_inline_content_finalize (GObject * obj)
 {
 	ValadocContentInlineContent * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
 	_vala_iterable_unref0 (self->priv->_content);
 	G_OBJECT_CLASS (valadoc_content_inline_content_parent_class)->finalize (obj);
 }
@@ -344,7 +344,7 @@ valadoc_content_inline_content_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentInlineContentClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_inline_content_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentInlineContent), 0, (GInstanceInitFunc) valadoc_content_inline_content_instance_init, NULL };
 	GType valadoc_content_inline_content_type_id;
-	valadoc_content_inline_content_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocContentInlineContent", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	valadoc_content_inline_content_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_CONTENT_ELEMENT, "ValadocContentInlineContent", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	ValadocContentInlineContent_private_offset = g_type_add_instance_private (valadoc_content_inline_content_type_id, sizeof (ValadocContentInlineContentPrivate));
 	return valadoc_content_inline_content_type_id;
 }
@@ -368,9 +368,9 @@ _vala_valadoc_content_inline_content_get_property (GObject * object,
                                                    GParamSpec * pspec)
 {
 	ValadocContentInlineContent * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent);
 	switch (property_id) {
-		case VALADOC_CONTENT_INLINE_CONTENT_CONTENT_PROPERTY:
+		case BALADOC_CONTENT_INLINE_CONTENT_CONTENT_PROPERTY:
 		vala_value_set_iterable (value, valadoc_content_inline_content_get_content (self));
 		break;
 		default:

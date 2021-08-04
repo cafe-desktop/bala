@@ -31,12 +31,12 @@
 
 typedef struct _ValaHashSetNode ValaHashSetNode;
 
-#define VALA_HASH_SET_TYPE_ITERATOR (vala_hash_set_iterator_get_type ())
-#define VALA_HASH_SET_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_HASH_SET_TYPE_ITERATOR, ValaHashSetIterator))
-#define VALA_HASH_SET_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_HASH_SET_TYPE_ITERATOR, ValaHashSetIteratorClass))
-#define VALA_HASH_SET_IS_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_HASH_SET_TYPE_ITERATOR))
-#define VALA_HASH_SET_IS_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_HASH_SET_TYPE_ITERATOR))
-#define VALA_HASH_SET_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_HASH_SET_TYPE_ITERATOR, ValaHashSetIteratorClass))
+#define BALA_HASH_SET_TYPE_ITERATOR (vala_hash_set_iterator_get_type ())
+#define BALA_HASH_SET_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_HASH_SET_TYPE_ITERATOR, ValaHashSetIterator))
+#define BALA_HASH_SET_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_HASH_SET_TYPE_ITERATOR, ValaHashSetIteratorClass))
+#define BALA_HASH_SET_IS_ITERATOR(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_HASH_SET_TYPE_ITERATOR))
+#define BALA_HASH_SET_IS_ITERATOR_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_HASH_SET_TYPE_ITERATOR))
+#define BALA_HASH_SET_ITERATOR_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_HASH_SET_TYPE_ITERATOR, ValaHashSetIteratorClass))
 
 typedef struct _ValaHashSetIterator ValaHashSetIterator;
 typedef struct _ValaHashSetIteratorClass ValaHashSetIteratorClass;
@@ -94,8 +94,8 @@ static gint ValaHashSetIterator_private_offset;
 static gpointer vala_hash_set_iterator_parent_class = NULL;
 
 static void vala_hash_set_node_free (ValaHashSetNode * self);
-#define VALA_HASH_SET_MIN_SIZE 11
-#define VALA_HASH_SET_MAX_SIZE 13845163
+#define BALA_HASH_SET_MIN_SIZE 11
+#define BALA_HASH_SET_MAX_SIZE 13845163
 static ValaHashSetNode** vala_hash_set_lookup_node (ValaHashSet* self,
                                              gconstpointer key);
 static gboolean vala_hash_set_real_contains (ValaCollection* base,
@@ -188,7 +188,7 @@ vala_hash_set_construct (GType object_type,
 	self->priv->g_destroy_func = g_destroy_func;
 	vala_hash_set_set_hash_func (self, hash_func);
 	vala_hash_set_set_equal_func (self, equal_func);
-	self->priv->_array_size = VALA_HASH_SET_MIN_SIZE;
+	self->priv->_array_size = BALA_HASH_SET_MIN_SIZE;
 	_tmp0_ = g_new0 (ValaHashSetNode*, self->priv->_array_size + 1);
 	self->priv->_nodes = (_vala_array_free (self->priv->_nodes, self->priv->_nodes_length1, (GDestroyNotify) vala_hash_set_node_free), NULL);
 	self->priv->_nodes = _tmp0_;
@@ -204,7 +204,7 @@ vala_hash_set_new (GType g_type,
                    GHashFunc hash_func,
                    GEqualFunc equal_func)
 {
-	return vala_hash_set_construct (VALA_TYPE_HASH_SET, g_type, g_dup_func, g_destroy_func, hash_func, equal_func);
+	return vala_hash_set_construct (BALA_TYPE_HASH_SET, g_type, g_dup_func, g_destroy_func, hash_func, equal_func);
 }
 
 static ValaHashSetNode**
@@ -504,7 +504,7 @@ vala_hash_set_resize (ValaHashSet* self)
 	gboolean _tmp1_ = FALSE;
 	g_return_if_fail (self != NULL);
 	if (self->priv->_array_size >= (3 * self->priv->_nnodes)) {
-		_tmp1_ = self->priv->_array_size >= VALA_HASH_SET_MIN_SIZE;
+		_tmp1_ = self->priv->_array_size >= BALA_HASH_SET_MIN_SIZE;
 	} else {
 		_tmp1_ = FALSE;
 	}
@@ -513,7 +513,7 @@ vala_hash_set_resize (ValaHashSet* self)
 	} else {
 		gboolean _tmp2_ = FALSE;
 		if ((3 * self->priv->_array_size) <= self->priv->_nnodes) {
-			_tmp2_ = self->priv->_array_size < VALA_HASH_SET_MAX_SIZE;
+			_tmp2_ = self->priv->_array_size < BALA_HASH_SET_MAX_SIZE;
 		} else {
 			_tmp2_ = FALSE;
 		}
@@ -528,7 +528,7 @@ vala_hash_set_resize (ValaHashSet* self)
 		ValaHashSetNode** _tmp19_;
 		gint _tmp19__length1;
 		new_array_size = (gint) g_spaced_primes_closest ((guint) self->priv->_nnodes);
-		new_array_size = CLAMP (new_array_size, VALA_HASH_SET_MIN_SIZE, VALA_HASH_SET_MAX_SIZE);
+		new_array_size = CLAMP (new_array_size, BALA_HASH_SET_MIN_SIZE, BALA_HASH_SET_MAX_SIZE);
 		_tmp3_ = g_new0 (ValaHashSetNode*, new_array_size + 1);
 		new_nodes = _tmp3_;
 		new_nodes_length1 = new_array_size;
@@ -705,7 +705,7 @@ vala_hash_set_iterator_new (GType g_type,
                             GDestroyNotify g_destroy_func,
                             ValaHashSet* set)
 {
-	return vala_hash_set_iterator_construct (VALA_HASH_SET_TYPE_ITERATOR, g_type, g_dup_func, g_destroy_func, set);
+	return vala_hash_set_iterator_construct (BALA_HASH_SET_TYPE_ITERATOR, g_type, g_dup_func, g_destroy_func, set);
 }
 
 static gboolean
@@ -859,7 +859,7 @@ vala_hash_set_iterator_class_init (ValaHashSetIteratorClass * klass,
 	((ValaIteratorClass *) klass)->has_next = (gboolean (*) (ValaIterator*)) vala_hash_set_iterator_real_has_next;
 	((ValaIteratorClass *) klass)->get = (gpointer (*) (ValaIterator*)) vala_hash_set_iterator_real_get;
 	((ValaIteratorClass *) klass)->remove = (void (*) (ValaIterator*)) vala_hash_set_iterator_real_remove;
-	VALA_ITERATOR_CLASS (klass)->get_valid = vala_hash_set_iterator_real_get_valid;
+	BALA_ITERATOR_CLASS (klass)->get_valid = vala_hash_set_iterator_real_get_valid;
 }
 
 static void
@@ -875,9 +875,9 @@ static void
 vala_hash_set_iterator_finalize (ValaIterator * obj)
 {
 	ValaHashSetIterator * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_HASH_SET_TYPE_ITERATOR, ValaHashSetIterator);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_HASH_SET_TYPE_ITERATOR, ValaHashSetIterator);
 	_vala_iterable_unref0 (self->priv->_set);
-	VALA_ITERATOR_CLASS (vala_hash_set_iterator_parent_class)->finalize (obj);
+	BALA_ITERATOR_CLASS (vala_hash_set_iterator_parent_class)->finalize (obj);
 }
 
 static GType
@@ -885,7 +885,7 @@ vala_hash_set_iterator_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaHashSetIteratorClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_hash_set_iterator_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaHashSetIterator), 0, (GInstanceInitFunc) vala_hash_set_iterator_instance_init, NULL };
 	GType vala_hash_set_iterator_type_id;
-	vala_hash_set_iterator_type_id = g_type_register_static (VALA_TYPE_ITERATOR, "ValaHashSetIterator", &g_define_type_info, 0);
+	vala_hash_set_iterator_type_id = g_type_register_static (BALA_TYPE_ITERATOR, "ValaHashSetIterator", &g_define_type_info, 0);
 	ValaHashSetIterator_private_offset = g_type_add_instance_private (vala_hash_set_iterator_type_id, sizeof (ValaHashSetIteratorPrivate));
 	return vala_hash_set_iterator_type_id;
 }
@@ -915,7 +915,7 @@ vala_hash_set_class_init (ValaHashSetClass * klass,
 	((ValaCollectionClass *) klass)->add = (gboolean (*) (ValaCollection*, gconstpointer)) vala_hash_set_real_add;
 	((ValaCollectionClass *) klass)->remove = (gboolean (*) (ValaCollection*, gconstpointer)) vala_hash_set_real_remove;
 	((ValaCollectionClass *) klass)->clear = (void (*) (ValaCollection*)) vala_hash_set_real_clear;
-	VALA_COLLECTION_CLASS (klass)->get_size = vala_hash_set_real_get_size;
+	BALA_COLLECTION_CLASS (klass)->get_size = vala_hash_set_real_get_size;
 }
 
 static void
@@ -930,10 +930,10 @@ static void
 vala_hash_set_finalize (ValaIterable * obj)
 {
 	ValaHashSet * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_HASH_SET, ValaHashSet);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_HASH_SET, ValaHashSet);
 	vala_collection_clear ((ValaCollection*) self);
 	self->priv->_nodes = (_vala_array_free (self->priv->_nodes, self->priv->_nodes_length1, (GDestroyNotify) vala_hash_set_node_free), NULL);
-	VALA_ITERABLE_CLASS (vala_hash_set_parent_class)->finalize (obj);
+	BALA_ITERABLE_CLASS (vala_hash_set_parent_class)->finalize (obj);
 }
 
 /**
@@ -944,7 +944,7 @@ vala_hash_set_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaHashSetClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_hash_set_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaHashSet), 0, (GInstanceInitFunc) vala_hash_set_instance_init, NULL };
 	GType vala_hash_set_type_id;
-	vala_hash_set_type_id = g_type_register_static (VALA_TYPE_SET, "ValaHashSet", &g_define_type_info, 0);
+	vala_hash_set_type_id = g_type_register_static (BALA_TYPE_SET, "ValaHashSet", &g_define_type_info, 0);
 	ValaHashSet_private_offset = g_type_add_instance_private (vala_hash_set_type_id, sizeof (ValaHashSetPrivate));
 	return vala_hash_set_type_id;
 }

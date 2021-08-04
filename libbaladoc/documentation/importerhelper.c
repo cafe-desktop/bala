@@ -130,7 +130,7 @@ valadoc_importer_helper_resolve_parameter_ctype (ValadocApiTree* tree,
 		gint _tmp4_;
 		gint _tmp5_;
 		gint _node_index = 0;
-		_tmp2_ = valadoc_api_node_get_children_by_type (element, VALADOC_API_NODE_TYPE_FORMAL_PARAMETER, FALSE);
+		_tmp2_ = valadoc_api_node_get_children_by_type (element, BALADOC_API_NODE_TYPE_FORMAL_PARAMETER, FALSE);
 		_node_list = _tmp2_;
 		_tmp3_ = _node_list;
 		_tmp4_ = vala_collection_get_size ((ValaCollection*) _tmp3_);
@@ -174,14 +174,14 @@ valadoc_importer_helper_resolve_parameter_ctype (ValadocApiTree* tree,
 				ValadocApiNode* _tmp15_;
 				ValadocApiParameter* _tmp16_;
 				_tmp15_ = node;
-				_tmp16_ = _g_object_ref0 (VALADOC_API_IS_PARAMETER (_tmp15_) ? ((ValadocApiParameter*) _tmp15_) : NULL);
+				_tmp16_ = _g_object_ref0 (BALADOC_API_IS_PARAMETER (_tmp15_) ? ((ValadocApiParameter*) _tmp15_) : NULL);
 				_g_object_unref0 (param);
 				param = _tmp16_;
 				_g_object_unref0 (node);
 				break;
 			}
 			_tmp17_ = node;
-			_tmp18_ = valadoc_api_parameter_get_implicit_array_length_cparameter_name (G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, VALADOC_API_TYPE_PARAMETER, ValadocApiParameter));
+			_tmp18_ = valadoc_api_parameter_get_implicit_array_length_cparameter_name (G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, BALADOC_API_TYPE_PARAMETER, ValadocApiParameter));
 			_tmp19_ = _tmp18_;
 			_tmp20_ = parts;
 			_tmp20__length1 = parts_length1;
@@ -192,7 +192,7 @@ valadoc_importer_helper_resolve_parameter_ctype (ValadocApiTree* tree,
 				const gchar* _tmp24_;
 				gchar* _tmp25_;
 				_tmp22_ = node;
-				_tmp23_ = valadoc_api_node_get_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp22_, VALADOC_API_TYPE_PARAMETER, ValadocApiParameter));
+				_tmp23_ = valadoc_api_node_get_name ((ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp22_, BALADOC_API_TYPE_PARAMETER, ValadocApiParameter));
 				_tmp24_ = _tmp23_;
 				_tmp25_ = g_strdup (_tmp24_);
 				_g_free0 (_vala_param_array_name);
@@ -204,13 +204,13 @@ valadoc_importer_helper_resolve_parameter_ctype (ValadocApiTree* tree,
 		}
 		_vala_iterable_unref0 (_node_list);
 	}
-	if (VALADOC_API_IS_CALLABLE (element)) {
+	if (BALADOC_API_IS_CALLABLE (element)) {
 		const gchar* _tmp27_;
 		const gchar* _tmp28_;
 		gchar** _tmp29_;
 		gint _tmp29__length1;
 		const gchar* _tmp30_;
-		_tmp27_ = valadoc_api_callable_get_implicit_array_length_cparameter_name (G_TYPE_CHECK_INSTANCE_CAST (element, VALADOC_API_TYPE_CALLABLE, ValadocApiCallable));
+		_tmp27_ = valadoc_api_callable_get_implicit_array_length_cparameter_name (G_TYPE_CHECK_INSTANCE_CAST (element, BALADOC_API_TYPE_CALLABLE, ValadocApiCallable));
 		_tmp28_ = _tmp27_;
 		_tmp29_ = parts;
 		_tmp29__length1 = parts_length1;
@@ -283,13 +283,13 @@ valadoc_importer_helper_resolve_parameter_ctype (ValadocApiTree* tree,
 			break;
 		}
 		_tmp42_ = inner;
-		if (VALADOC_API_IS_TYPEREFERENCE (_tmp42_)) {
+		if (BALADOC_API_IS_TYPEREFERENCE (_tmp42_)) {
 			ValadocApiItem* _tmp43_;
 			ValadocApiItem* _tmp44_;
 			ValadocApiItem* _tmp45_;
 			ValadocApiItem* _tmp46_;
 			_tmp43_ = inner;
-			_tmp44_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp43_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+			_tmp44_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp43_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 			_tmp45_ = _tmp44_;
 			_tmp46_ = _g_object_ref0 (_tmp45_);
 			_g_object_unref0 (inner);
@@ -297,13 +297,13 @@ valadoc_importer_helper_resolve_parameter_ctype (ValadocApiTree* tree,
 		} else {
 			ValadocApiItem* _tmp47_;
 			_tmp47_ = inner;
-			if (VALADOC_API_IS_POINTER (_tmp47_)) {
+			if (BALADOC_API_IS_POINTER (_tmp47_)) {
 				ValadocApiItem* _tmp48_;
 				ValadocApiItem* _tmp49_;
 				ValadocApiItem* _tmp50_;
 				ValadocApiItem* _tmp51_;
 				_tmp48_ = inner;
-				_tmp49_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp48_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+				_tmp49_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp48_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 				_tmp50_ = _tmp49_;
 				_tmp51_ = _g_object_ref0 (_tmp50_);
 				_g_object_unref0 (inner);
@@ -311,13 +311,13 @@ valadoc_importer_helper_resolve_parameter_ctype (ValadocApiTree* tree,
 			} else {
 				ValadocApiItem* _tmp52_;
 				_tmp52_ = inner;
-				if (VALADOC_API_IS_ARRAY (_tmp52_)) {
+				if (BALADOC_API_IS_ARRAY (_tmp52_)) {
 					ValadocApiItem* _tmp53_;
 					ValadocApiItem* _tmp54_;
 					ValadocApiItem* _tmp55_;
 					ValadocApiItem* _tmp56_;
 					_tmp53_ = inner;
-					_tmp54_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp53_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+					_tmp54_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp53_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 					_tmp55_ = _tmp54_;
 					_tmp56_ = _g_object_ref0 (_tmp55_);
 					_g_object_unref0 (inner);
@@ -355,41 +355,41 @@ valadoc_importer_helper_resolve_parameter_ctype (ValadocApiTree* tree,
 	}
 	cname = NULL;
 	_tmp59_ = inner;
-	if (VALADOC_API_IS_ERROR_DOMAIN (_tmp59_)) {
+	if (BALADOC_API_IS_ERROR_DOMAIN (_tmp59_)) {
 		ValadocApiItem* _tmp60_;
 		gchar* _tmp61_;
 		_tmp60_ = inner;
-		_tmp61_ = valadoc_api_error_domain_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp60_, VALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain));
+		_tmp61_ = valadoc_api_error_domain_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp60_, BALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain));
 		_g_free0 (cname);
 		cname = _tmp61_;
 	} else {
 		ValadocApiItem* _tmp62_;
 		_tmp62_ = inner;
-		if (VALADOC_API_IS_STRUCT (_tmp62_)) {
+		if (BALADOC_API_IS_STRUCT (_tmp62_)) {
 			ValadocApiItem* _tmp63_;
 			gchar* _tmp64_;
 			_tmp63_ = inner;
-			_tmp64_ = valadoc_api_struct_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp63_, VALADOC_API_TYPE_STRUCT, ValadocApiStruct));
+			_tmp64_ = valadoc_api_struct_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp63_, BALADOC_API_TYPE_STRUCT, ValadocApiStruct));
 			_g_free0 (cname);
 			cname = _tmp64_;
 		} else {
 			ValadocApiItem* _tmp65_;
 			_tmp65_ = inner;
-			if (VALADOC_API_IS_CLASS (_tmp65_)) {
+			if (BALADOC_API_IS_CLASS (_tmp65_)) {
 				ValadocApiItem* _tmp66_;
 				gchar* _tmp67_;
 				_tmp66_ = inner;
-				_tmp67_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp66_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+				_tmp67_ = valadoc_api_class_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp66_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 				_g_free0 (cname);
 				cname = _tmp67_;
 			} else {
 				ValadocApiItem* _tmp68_;
 				_tmp68_ = inner;
-				if (VALADOC_API_IS_ENUM (_tmp68_)) {
+				if (BALADOC_API_IS_ENUM (_tmp68_)) {
 					ValadocApiItem* _tmp69_;
 					gchar* _tmp70_;
 					_tmp69_ = inner;
-					_tmp70_ = valadoc_api_enum_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp69_, VALADOC_API_TYPE_ENUM, ValadocApiEnum));
+					_tmp70_ = valadoc_api_enum_get_cname (G_TYPE_CHECK_INSTANCE_CAST (_tmp69_, BALADOC_API_TYPE_ENUM, ValadocApiEnum));
 					_g_free0 (cname);
 					cname = _tmp70_;
 				} else {
@@ -702,7 +702,7 @@ valadoc_importer_helper_extract_short_desc (ValadocContentComment* comment,
 	_tmp5_ = _tmp4_;
 	_tmp6_ = vala_list_get (_tmp5_, 0);
 	_tmp7_ = (ValadocContentBlock*) _tmp6_;
-	_tmp8_ = VALADOC_CONTENT_IS_PARAGRAPH (_tmp7_) ? ((ValadocContentParagraph*) _tmp7_) : NULL;
+	_tmp8_ = BALADOC_CONTENT_IS_PARAGRAPH (_tmp7_) ? ((ValadocContentParagraph*) _tmp7_) : NULL;
 	if (_tmp8_ == NULL) {
 		_g_object_unref0 (_tmp7_);
 	}
@@ -723,9 +723,9 @@ valadoc_importer_helper_extract_short_desc (ValadocContentComment* comment,
 		return;
 	}
 	_tmp14_ = first_paragraph;
-	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp14_, VALADOC_CONTENT_HORIZONTAL_ALIGN_NONE);
+	valadoc_content_style_attributes_set_horizontal_align ((ValadocContentStyleAttributes*) _tmp14_, BALADOC_CONTENT_HORIZONTAL_ALIGN_NONE);
 	_tmp15_ = first_paragraph;
-	valadoc_content_style_attributes_set_vertical_align ((ValadocContentStyleAttributes*) _tmp15_, VALADOC_CONTENT_VERTICAL_ALIGN_NONE);
+	valadoc_content_style_attributes_set_vertical_align ((ValadocContentStyleAttributes*) _tmp15_, BALADOC_CONTENT_VERTICAL_ALIGN_NONE);
 	_tmp16_ = first_paragraph;
 	valadoc_content_style_attributes_set_style ((ValadocContentStyleAttributes*) _tmp16_, NULL);
 	_tmp17_ = first_paragraph;
@@ -907,7 +907,7 @@ valadoc_importer_helper_split_run (ValadocContentRun* run,
 	g_return_val_if_fail (factory != NULL, NULL);
 	_tmp0_ = valadoc_content_run_get_style (run);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ != VALADOC_CONTENT_RUN_STYLE_NONE) {
+	if (_tmp1_ != BALADOC_CONTENT_RUN_STYLE_NONE) {
 		result = NULL;
 		return result;
 	}
@@ -1001,15 +1001,15 @@ valadoc_importer_helper_split_inline (ValadocContentInline* item,
 	ValadocContentInline* result = NULL;
 	g_return_val_if_fail (item != NULL, NULL);
 	g_return_val_if_fail (factory != NULL, NULL);
-	if (VALADOC_CONTENT_IS_TEXT (item)) {
+	if (BALADOC_CONTENT_IS_TEXT (item)) {
 		ValadocContentText* _tmp0_;
-		_tmp0_ = valadoc_importer_helper_split_text (G_TYPE_CHECK_INSTANCE_CAST (item, VALADOC_CONTENT_TYPE_TEXT, ValadocContentText), factory);
+		_tmp0_ = valadoc_importer_helper_split_text (G_TYPE_CHECK_INSTANCE_CAST (item, BALADOC_CONTENT_TYPE_TEXT, ValadocContentText), factory);
 		result = (ValadocContentInline*) _tmp0_;
 		return result;
 	} else {
-		if (VALADOC_CONTENT_IS_RUN (item)) {
+		if (BALADOC_CONTENT_IS_RUN (item)) {
 			ValadocContentRun* _tmp1_;
-			_tmp1_ = valadoc_importer_helper_split_run (G_TYPE_CHECK_INSTANCE_CAST (item, VALADOC_CONTENT_TYPE_RUN, ValadocContentRun), factory);
+			_tmp1_ = valadoc_importer_helper_split_run (G_TYPE_CHECK_INSTANCE_CAST (item, BALADOC_CONTENT_TYPE_RUN, ValadocContentRun), factory);
 			result = (ValadocContentInline*) _tmp1_;
 			return result;
 		}

@@ -10,7 +10,7 @@ SUBDIRS = \
 
 AM_CFLAGS = \
 	-DG_LOG_DOMAIN=\"valadoc\" \
-	-DPACKAGE_VALADOC_LIBDIR=\"$(pkgdoclibdir)\" \
+	-DPACKAGE_BALADOC_LIBDIR=\"$(pkgdoclibdir)\" \
 	-DPACKAGE_VERSION=\"$(VERSION)\" \
 	-I$(top_srcdir)/libvaladoc/ \
 	-I$(top_srcdir)/gee \
@@ -27,7 +27,7 @@ BUILT_SOURCES = valadoc.vala.stamp
 
 bin_PROGRAMS = valadoc
 
-valadoc_VALASOURCES = \
+valadoc_BALASOURCES = \
 	girwriter.vala \
 	initializerbuilder.vala \
 	symbolresolver.vala \
@@ -37,7 +37,7 @@ valadoc_VALASOURCES = \
 
 valadoc_SOURCES = \
 	valadoc.vala.stamp \
-	$(valadoc_VALASOURCES:.vala=.c) \
+	$(valadoc_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 valadoc_LDADD = \
@@ -51,10 +51,10 @@ valadoc_LDADD = \
 	$(LIBGVC_LIBS) \
 	$(NULL)
 
-valadoc.vala.stamp: $(valadoc_VALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libvaladoc/valadoc@PACKAGE_SUFFIX@.vapi
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+valadoc.vala.stamp: $(valadoc_BALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libvaladoc/valadoc@PACKAGE_SUFFIX@.vapi
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--pkg gmodule-2.0 \
@@ -69,7 +69,7 @@ valadoc.vala.stamp: $(valadoc_VALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SU
 	touch $@
 
 EXTRA_DIST = \
-	$(valadoc_VALASOURCES) \
+	$(valadoc_BALASOURCES) \
 	valadoc.vala.stamp \
 	$(NULL)
 
@@ -79,5 +79,5 @@ install-exec-hook:
 endif
 
 MAINTAINERCLEANFILES = \
-	$(valadoc_VALASOURCES:.vala=.c) \
+	$(valadoc_BALASOURCES:.vala=.c) \
 	$(NULL)

@@ -35,30 +35,30 @@
 #include <config.h>
 #include <vala.h>
 
-#define VALADOC_MODULE_LOADER_TYPE_MODULE_DATA (valadoc_module_loader_module_data_get_type ())
-#define VALADOC_MODULE_LOADER_MODULE_DATA(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_MODULE_LOADER_TYPE_MODULE_DATA, ValadocModuleLoaderModuleData))
-#define VALADOC_MODULE_LOADER_MODULE_DATA_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_MODULE_LOADER_TYPE_MODULE_DATA, ValadocModuleLoaderModuleDataClass))
-#define VALADOC_MODULE_LOADER_IS_MODULE_DATA(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_MODULE_LOADER_TYPE_MODULE_DATA))
-#define VALADOC_MODULE_LOADER_IS_MODULE_DATA_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_MODULE_LOADER_TYPE_MODULE_DATA))
-#define VALADOC_MODULE_LOADER_MODULE_DATA_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_MODULE_LOADER_TYPE_MODULE_DATA, ValadocModuleLoaderModuleDataClass))
+#define BALADOC_MODULE_LOADER_TYPE_MODULE_DATA (valadoc_module_loader_module_data_get_type ())
+#define BALADOC_MODULE_LOADER_MODULE_DATA(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_MODULE_LOADER_TYPE_MODULE_DATA, ValadocModuleLoaderModuleData))
+#define BALADOC_MODULE_LOADER_MODULE_DATA_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_MODULE_LOADER_TYPE_MODULE_DATA, ValadocModuleLoaderModuleDataClass))
+#define BALADOC_MODULE_LOADER_IS_MODULE_DATA(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_MODULE_LOADER_TYPE_MODULE_DATA))
+#define BALADOC_MODULE_LOADER_IS_MODULE_DATA_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_MODULE_LOADER_TYPE_MODULE_DATA))
+#define BALADOC_MODULE_LOADER_MODULE_DATA_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_MODULE_LOADER_TYPE_MODULE_DATA, ValadocModuleLoaderModuleDataClass))
 
 typedef struct _ValadocModuleLoaderModuleData ValadocModuleLoaderModuleData;
 typedef struct _ValadocModuleLoaderModuleDataClass ValadocModuleLoaderModuleDataClass;
 enum  {
-	VALADOC_MODULE_LOADER_0_PROPERTY,
-	VALADOC_MODULE_LOADER_NUM_PROPERTIES
+	BALADOC_MODULE_LOADER_0_PROPERTY,
+	BALADOC_MODULE_LOADER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_module_loader_properties[VALADOC_MODULE_LOADER_NUM_PROPERTIES];
+static GParamSpec* valadoc_module_loader_properties[BALADOC_MODULE_LOADER_NUM_PROPERTIES];
 #define _vala_map_unref0(var) ((var == NULL) ? NULL : (var = (vala_map_unref (var), NULL)))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_module_close0(var) ((var == NULL) ? NULL : (var = (g_module_close (var), NULL)))
 typedef struct _ValadocModuleLoaderModuleDataPrivate ValadocModuleLoaderModuleDataPrivate;
 enum  {
-	VALADOC_MODULE_LOADER_MODULE_DATA_0_PROPERTY,
-	VALADOC_MODULE_LOADER_MODULE_DATA_NUM_PROPERTIES
+	BALADOC_MODULE_LOADER_MODULE_DATA_0_PROPERTY,
+	BALADOC_MODULE_LOADER_MODULE_DATA_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_module_loader_module_data_properties[VALADOC_MODULE_LOADER_MODULE_DATA_NUM_PROPERTIES];
+static GParamSpec* valadoc_module_loader_module_data_properties[BALADOC_MODULE_LOADER_MODULE_DATA_NUM_PROPERTIES];
 
 struct _ValadocModuleLoaderPrivate {
 	ValaHashMap* doclets;
@@ -140,7 +140,7 @@ valadoc_module_loader_construct (GType object_type)
 static ValadocModuleLoader*
 valadoc_module_loader_new (void)
 {
-	return valadoc_module_loader_construct (VALADOC_TYPE_MODULE_LOADER);
+	return valadoc_module_loader_construct (BALADOC_TYPE_MODULE_LOADER);
 }
 
 gboolean
@@ -192,7 +192,7 @@ valadoc_module_loader_get_plugin_path (const gchar* pluginpath,
 			return result;
 		} else {
 			gchar* _tmp5_;
-			_tmp5_ = g_build_filename (PACKAGE_VALADOC_LIBDIR, pluginsubdir, pluginpath, NULL);
+			_tmp5_ = g_build_filename (PACKAGE_BALADOC_LIBDIR, pluginsubdir, pluginpath, NULL);
 			result = _tmp5_;
 			_g_free0 (local_path);
 			return result;
@@ -213,7 +213,7 @@ valadoc_module_loader_get_doclet_path (const gchar* docletpath,
 	g_return_val_if_fail (reporter != NULL, NULL);
 	if (docletpath == NULL) {
 		gchar* _tmp0_;
-		_tmp0_ = g_build_filename (PACKAGE_VALADOC_LIBDIR, "doclets", "html", NULL);
+		_tmp0_ = g_build_filename (PACKAGE_BALADOC_LIBDIR, "doclets", "html", NULL);
 		result = _tmp0_;
 		return result;
 	}
@@ -242,7 +242,7 @@ valadoc_module_loader_create_taglet (ValadocModuleLoader* self,
 		_tmp4_ = g_object_new ((GType) ((gintptr) _tmp3_), NULL);
 		_tmp5_ = G_IS_INITIALLY_UNOWNED (_tmp4_) ? g_object_ref_sink (_tmp4_) : _tmp4_;
 		_g_object_unref0 (_tmp0_);
-		_tmp0_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, VALADOC_CONTENT_TYPE_TAGLET, ValadocContentTaglet);
+		_tmp0_ = G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, BALADOC_CONTENT_TYPE_TAGLET, ValadocContentTaglet);
 	} else {
 		_g_object_unref0 (_tmp0_);
 		_tmp0_ = NULL;
@@ -357,7 +357,7 @@ valadoc_module_loader_create_doclet (ValadocModuleLoader* self,
 	_tmp23_ = data;
 	_tmp24_ = g_object_new (_tmp23_->type, NULL);
 	_tmp25_ = G_IS_INITIALLY_UNOWNED (_tmp24_) ? g_object_ref_sink (_tmp24_) : _tmp24_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp25_, VALADOC_TYPE_DOCLET, ValadocDoclet);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp25_, BALADOC_TYPE_DOCLET, ValadocDoclet);
 	_g_object_unref0 (data);
 	_g_free0 (path);
 	return result;
@@ -374,7 +374,7 @@ valadoc_module_loader_module_data_construct (GType object_type)
 static ValadocModuleLoaderModuleData*
 valadoc_module_loader_module_data_new (void)
 {
-	return valadoc_module_loader_module_data_construct (VALADOC_MODULE_LOADER_TYPE_MODULE_DATA);
+	return valadoc_module_loader_module_data_construct (BALADOC_MODULE_LOADER_TYPE_MODULE_DATA);
 }
 
 static void
@@ -395,7 +395,7 @@ static void
 valadoc_module_loader_module_data_finalize (GObject * obj)
 {
 	ValadocModuleLoaderModuleData * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_MODULE_LOADER_TYPE_MODULE_DATA, ValadocModuleLoaderModuleData);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_MODULE_LOADER_TYPE_MODULE_DATA, ValadocModuleLoaderModuleData);
 	_g_module_close0 (self->module);
 	G_OBJECT_CLASS (valadoc_module_loader_module_data_parent_class)->finalize (obj);
 }
@@ -446,7 +446,7 @@ valadoc_module_loader_instance_init (ValadocModuleLoader * self,
 	_tmp0_ = g_str_hash;
 	_tmp1_ = g_str_equal;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALADOC_MODULE_LOADER_TYPE_MODULE_DATA, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_, _tmp2_);
+	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALADOC_MODULE_LOADER_TYPE_MODULE_DATA, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_, _tmp2_);
 	self->priv->doclets = _tmp3_;
 	_tmp4_ = g_str_hash;
 	_tmp5_ = g_str_equal;
@@ -459,7 +459,7 @@ static void
 valadoc_module_loader_finalize (GObject * obj)
 {
 	ValadocModuleLoader * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_MODULE_LOADER, ValadocModuleLoader);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_MODULE_LOADER, ValadocModuleLoader);
 	_vala_map_unref0 (self->priv->doclets);
 	_vala_map_unref0 (self->priv->taglets);
 	G_OBJECT_CLASS (valadoc_module_loader_parent_class)->finalize (obj);

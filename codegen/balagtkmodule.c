@@ -105,7 +105,7 @@ vala_gtk_module_ensure_type_id_to_vala_map (ValaGtkModule* self)
 	_tmp1_ = g_str_hash;
 	_tmp2_ = g_str_equal;
 	_tmp3_ = g_direct_equal;
-	_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp1_, _tmp2_, _tmp3_);
+	_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp1_, _tmp2_, _tmp3_);
 	_vala_map_unref0 (self->priv->type_id_to_vala_map);
 	self->priv->type_id_to_vala_map = _tmp4_;
 	_tmp5_ = vala_ccode_base_module_get_context ((ValaCCodeBaseModule*) self);
@@ -376,7 +376,7 @@ vala_gtk_module_ensure_cclass_to_vala_map (ValaGtkModule* self)
 	_tmp1_ = g_str_hash;
 	_tmp2_ = g_str_equal;
 	_tmp3_ = g_direct_equal;
-	_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp1_, _tmp2_, _tmp3_);
+	_tmp4_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp1_, _tmp2_, _tmp3_);
 	_vala_map_unref0 (self->priv->cclass_to_vala_map);
 	self->priv->cclass_to_vala_map = _tmp4_;
 	_tmp5_ = vala_ccode_base_module_get_context ((ValaCCodeBaseModule*) self);
@@ -570,11 +570,11 @@ vala_gtk_module_ensure_gresource_to_file_map (ValaGtkModule* self)
 					ValaMarkupTokenType _tmp20_;
 					ValaMarkupReader* _tmp57_;
 					_tmp18_ = current_token;
-					if (!(_tmp18_ != VALA_MARKUP_TOKEN_TYPE_EOF)) {
+					if (!(_tmp18_ != BALA_MARKUP_TOKEN_TYPE_EOF)) {
 						break;
 					}
 					_tmp20_ = current_token;
-					if (_tmp20_ == VALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
+					if (_tmp20_ == BALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
 						ValaMarkupReader* _tmp21_;
 						const gchar* _tmp22_;
 						const gchar* _tmp23_;
@@ -596,7 +596,7 @@ vala_gtk_module_ensure_gresource_to_file_map (ValaGtkModule* self)
 						gboolean _tmp26_ = FALSE;
 						ValaMarkupTokenType _tmp27_;
 						_tmp27_ = current_token;
-						if (_tmp27_ == VALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
+						if (_tmp27_ == BALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
 							ValaMarkupReader* _tmp28_;
 							const gchar* _tmp29_;
 							const gchar* _tmp30_;
@@ -620,7 +620,7 @@ vala_gtk_module_ensure_gresource_to_file_map (ValaGtkModule* self)
 							if (state == 1) {
 								ValaMarkupTokenType _tmp34_;
 								_tmp34_ = current_token;
-								_tmp33_ = _tmp34_ == VALA_MARKUP_TOKEN_TYPE_TEXT;
+								_tmp33_ = _tmp34_ == BALA_MARKUP_TOKEN_TYPE_TEXT;
 							} else {
 								_tmp33_ = FALSE;
 							}
@@ -874,13 +874,13 @@ vala_gtk_module_process_current_ui_resource (ValaGtkModule* self,
 	_tmp9_ = g_str_hash;
 	_tmp10_ = g_str_equal;
 	_tmp11_ = g_direct_equal;
-	_tmp12_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_SIGNAL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp9_, _tmp10_, _tmp11_);
+	_tmp12_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_SIGNAL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp9_, _tmp10_, _tmp11_);
 	_vala_map_unref0 (self->priv->current_handler_to_signal_map);
 	self->priv->current_handler_to_signal_map = _tmp12_;
 	_tmp13_ = g_str_hash;
 	_tmp14_ = g_str_equal;
 	_tmp15_ = g_direct_equal;
-	_tmp16_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp13_, _tmp14_, _tmp15_);
+	_tmp16_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp13_, _tmp14_, _tmp15_);
 	_vala_map_unref0 (self->priv->current_child_to_class_map);
 	self->priv->current_child_to_class_map = _tmp16_;
 	_tmp17_ = ui_file;
@@ -900,7 +900,7 @@ vala_gtk_module_process_current_ui_resource (ValaGtkModule* self,
 		ValaMarkupTokenType _tmp25_;
 		ValaMarkupReader* _tmp91_;
 		_tmp20_ = current_token;
-		if (!(_tmp20_ != VALA_MARKUP_TOKEN_TYPE_EOF)) {
+		if (!(_tmp20_ != BALA_MARKUP_TOKEN_TYPE_EOF)) {
 			break;
 		}
 		_tmp21_ = reader;
@@ -908,7 +908,7 @@ vala_gtk_module_process_current_ui_resource (ValaGtkModule* self,
 		_tmp23_ = _tmp22_;
 		current_name = _tmp23_;
 		_tmp25_ = current_token;
-		if (_tmp25_ == VALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
+		if (_tmp25_ == BALA_MARKUP_TOKEN_TYPE_START_ELEMENT) {
 			gboolean _tmp26_ = FALSE;
 			const gchar* _tmp27_;
 			_tmp27_ = current_name;
@@ -1027,7 +1027,7 @@ vala_gtk_module_process_current_ui_resource (ValaGtkModule* self,
 			if (_tmp60_ != NULL) {
 				ValaMarkupTokenType _tmp61_;
 				_tmp61_ = current_token;
-				_tmp59_ = _tmp61_ == VALA_MARKUP_TOKEN_TYPE_START_ELEMENT;
+				_tmp59_ = _tmp61_ == BALA_MARKUP_TOKEN_TYPE_START_ELEMENT;
 			} else {
 				_tmp59_ = FALSE;
 			}
@@ -1110,7 +1110,7 @@ vala_gtk_module_process_current_ui_resource (ValaGtkModule* self,
 					_tmp82_ = string_replace (_tmp81_, "-", "_");
 					_tmp83_ = _tmp82_;
 					_tmp84_ = vala_semantic_analyzer_symbol_lookup_inherited ((ValaSymbol*) _tmp80_, _tmp83_);
-					_tmp85_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp84_, VALA_TYPE_SIGNAL) ? ((ValaSignal*) _tmp84_) : NULL;
+					_tmp85_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp84_, BALA_TYPE_SIGNAL) ? ((ValaSignal*) _tmp84_) : NULL;
 					if (_tmp85_ == NULL) {
 						_vala_code_node_unref0 (_tmp84_);
 					}
@@ -1245,7 +1245,7 @@ vala_gtk_module_real_generate_class_init (ValaGTypeModule* base,
 	ValaList* _tmp24_;
 	self = (ValaGtkModule*) base;
 	g_return_if_fail (cl != NULL);
-	VALA_GTYPE_MODULE_CLASS (vala_gtk_module_parent_class)->generate_class_init ((ValaGTypeModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GSIGNAL_MODULE, ValaGSignalModule), cl);
+	BALA_GTYPE_MODULE_CLASS (vala_gtk_module_parent_class)->generate_class_init ((ValaGTypeModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GSIGNAL_MODULE, ValaGSignalModule), cl);
 	_tmp1_ = vala_code_node_get_error ((ValaCodeNode*) cl);
 	_tmp2_ = _tmp1_;
 	if (_tmp2_) {
@@ -1327,7 +1327,7 @@ vala_gtk_module_real_visit_property (ValaCodeVisitor* base,
 		_tmp5_ = _tmp4_;
 		vala_report_error (_tmp5_, "[GtkChild] is only allowed on automatic properties");
 	}
-	VALA_CODE_VISITOR_CLASS (vala_gtk_module_parent_class)->visit_property ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GSIGNAL_MODULE, ValaGSignalModule), prop);
+	BALA_CODE_VISITOR_CLASS (vala_gtk_module_parent_class)->visit_property ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GSIGNAL_MODULE, ValaGSignalModule), prop);
 }
 
 static gpointer
@@ -1399,7 +1399,7 @@ vala_gtk_module_real_visit_field (ValaCodeVisitor* base,
 	gboolean _tmp114_;
 	self = (ValaGtkModule*) base;
 	g_return_if_fail (f != NULL);
-	VALA_CODE_VISITOR_CLASS (vala_gtk_module_parent_class)->visit_field ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GSIGNAL_MODULE, ValaGSignalModule), f);
+	BALA_CODE_VISITOR_CLASS (vala_gtk_module_parent_class)->visit_field ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GSIGNAL_MODULE, ValaGSignalModule), f);
 	_tmp0_ = vala_ccode_base_module_get_current_class ((ValaCCodeBaseModule*) self);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = _vala_code_node_ref0 (_tmp1_);
@@ -1422,7 +1422,7 @@ vala_gtk_module_real_visit_field (ValaCodeVisitor* base,
 	}
 	_tmp9_ = vala_field_get_binding (f);
 	_tmp10_ = _tmp9_;
-	if (_tmp10_ != VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp10_ != BALA_MEMBER_BINDING_INSTANCE) {
 		_tmp8_ = TRUE;
 	} else {
 		ValaAttribute* _tmp11_;
@@ -1476,7 +1476,7 @@ vala_gtk_module_real_visit_field (ValaCodeVisitor* base,
 	_tmp29_ = _tmp28_;
 	_tmp30_ = vala_data_type_get_type_symbol (_tmp29_);
 	_tmp31_ = _tmp30_;
-	field_class = G_TYPE_CHECK_INSTANCE_TYPE (_tmp31_, VALA_TYPE_CLASS) ? ((ValaClass*) _tmp31_) : NULL;
+	field_class = G_TYPE_CHECK_INSTANCE_TYPE (_tmp31_, BALA_TYPE_CLASS) ? ((ValaClass*) _tmp31_) : NULL;
 	_tmp33_ = field_class;
 	if (_tmp33_ == NULL) {
 		_tmp32_ = TRUE;
@@ -1580,7 +1580,7 @@ vala_gtk_module_real_visit_field (ValaCodeVisitor* base,
 		_tmp68_ = vala_ccode_identifier_new (_tmp67_);
 		_tmp69_ = _tmp68_;
 		_tmp70_ = private_field_offset;
-		_tmp71_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp69_, (ValaCCodeExpression*) _tmp70_);
+		_tmp71_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_PLUS, (ValaCCodeExpression*) _tmp69_, (ValaCCodeExpression*) _tmp70_);
 		_vala_ccode_node_unref0 (offset);
 		offset = (ValaCCodeExpression*) _tmp71_;
 		_vala_ccode_node_unref0 (_tmp69_);
@@ -1729,7 +1729,7 @@ vala_gtk_module_real_visit_method (ValaCodeVisitor* base,
 	ValaSignal* _tmp27_;
 	self = (ValaGtkModule*) base;
 	g_return_if_fail (m != NULL);
-	VALA_CODE_VISITOR_CLASS (vala_gtk_module_parent_class)->visit_method ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GSIGNAL_MODULE, ValaGSignalModule), m);
+	BALA_CODE_VISITOR_CLASS (vala_gtk_module_parent_class)->visit_method ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GSIGNAL_MODULE, ValaGSignalModule), m);
 	_tmp0_ = vala_ccode_base_module_get_current_class ((ValaCCodeBaseModule*) self);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = _vala_code_node_ref0 (_tmp1_);
@@ -1759,7 +1759,7 @@ vala_gtk_module_real_visit_method (ValaCodeVisitor* base,
 	}
 	_tmp11_ = vala_method_get_binding (m);
 	_tmp12_ = _tmp11_;
-	if (_tmp12_ != VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp12_ != BALA_MEMBER_BINDING_INSTANCE) {
 		_tmp10_ = TRUE;
 	} else {
 		ValaAttribute* _tmp13_;
@@ -2083,7 +2083,7 @@ vala_gtk_module_construct (GType object_type)
 ValaGtkModule*
 vala_gtk_module_new (void)
 {
-	return vala_gtk_module_construct (VALA_TYPE_GTK_MODULE);
+	return vala_gtk_module_construct (BALA_TYPE_GTK_MODULE);
 }
 
 static void
@@ -2121,15 +2121,15 @@ vala_gtk_module_instance_init (ValaGtkModule * self,
 	_tmp0_ = g_str_hash;
 	_tmp1_ = g_str_equal;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_SIGNAL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_, _tmp1_, _tmp2_);
+	_tmp3_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_SIGNAL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_, _tmp1_, _tmp2_);
 	self->priv->current_handler_to_signal_map = _tmp3_;
 	_tmp4_ = g_str_hash;
 	_tmp5_ = g_str_equal;
 	_tmp6_ = g_direct_equal;
-	_tmp7_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, VALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_, _tmp5_, _tmp6_);
+	_tmp7_ = vala_hash_map_new (G_TYPE_STRING, (GBoxedCopyFunc) g_strdup, (GDestroyNotify) g_free, BALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_, _tmp5_, _tmp6_);
 	self->priv->current_child_to_class_map = _tmp7_;
 	_tmp8_ = g_direct_equal;
-	_tmp9_ = vala_array_list_new (VALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp8_);
+	_tmp9_ = vala_array_list_new (BALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp8_);
 	self->priv->current_required_app_classes = (ValaList*) _tmp9_;
 }
 
@@ -2137,14 +2137,14 @@ static void
 vala_gtk_module_finalize (ValaCodeVisitor * obj)
 {
 	ValaGtkModule * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_GTK_MODULE, ValaGtkModule);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_GTK_MODULE, ValaGtkModule);
 	_vala_map_unref0 (self->priv->type_id_to_vala_map);
 	_vala_map_unref0 (self->priv->cclass_to_vala_map);
 	_vala_map_unref0 (self->priv->gresource_to_file_map);
 	_vala_map_unref0 (self->priv->current_handler_to_signal_map);
 	_vala_map_unref0 (self->priv->current_child_to_class_map);
 	_vala_iterable_unref0 (self->priv->current_required_app_classes);
-	VALA_CODE_VISITOR_CLASS (vala_gtk_module_parent_class)->finalize (obj);
+	BALA_CODE_VISITOR_CLASS (vala_gtk_module_parent_class)->finalize (obj);
 }
 
 static GType
@@ -2152,7 +2152,7 @@ vala_gtk_module_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaGtkModuleClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_gtk_module_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaGtkModule), 0, (GInstanceInitFunc) vala_gtk_module_instance_init, NULL };
 	GType vala_gtk_module_type_id;
-	vala_gtk_module_type_id = g_type_register_static (VALA_TYPE_GSIGNAL_MODULE, "ValaGtkModule", &g_define_type_info, 0);
+	vala_gtk_module_type_id = g_type_register_static (BALA_TYPE_GSIGNAL_MODULE, "ValaGtkModule", &g_define_type_info, 0);
 	ValaGtkModule_private_offset = g_type_add_instance_private (vala_gtk_module_type_id, sizeof (ValaGtkModulePrivate));
 	return vala_gtk_module_type_id;
 }

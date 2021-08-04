@@ -28,7 +28,7 @@
 static GType
 valadoc_api_ownership_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALADOC_API_OWNERSHIP_DEFAULT, "VALADOC_API_OWNERSHIP_DEFAULT", "default"}, {VALADOC_API_OWNERSHIP_UNOWNED, "VALADOC_API_OWNERSHIP_UNOWNED", "unowned"}, {VALADOC_API_OWNERSHIP_OWNED, "VALADOC_API_OWNERSHIP_OWNED", "owned"}, {VALADOC_API_OWNERSHIP_WEAK, "VALADOC_API_OWNERSHIP_WEAK", "weak"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALADOC_API_OWNERSHIP_DEFAULT, "BALADOC_API_OWNERSHIP_DEFAULT", "default"}, {BALADOC_API_OWNERSHIP_UNOWNED, "BALADOC_API_OWNERSHIP_UNOWNED", "unowned"}, {BALADOC_API_OWNERSHIP_OWNED, "BALADOC_API_OWNERSHIP_OWNED", "owned"}, {BALADOC_API_OWNERSHIP_WEAK, "BALADOC_API_OWNERSHIP_WEAK", "weak"}, {0, NULL, NULL}};
 	GType valadoc_api_ownership_type_id;
 	valadoc_api_ownership_type_id = g_enum_register_static ("ValadocApiOwnership", values);
 	return valadoc_api_ownership_type_id;

@@ -72,7 +72,7 @@ vala_template_construct (GType object_type,
 ValaTemplate*
 vala_template_new (ValaSourceReference* source_reference)
 {
-	return vala_template_construct (VALA_TYPE_TEMPLATE, source_reference);
+	return vala_template_construct (BALA_TYPE_TEMPLATE, source_reference);
 }
 
 static void
@@ -185,7 +185,7 @@ vala_template_stringify (ValaTemplate* self,
 	ValaExpression* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (expr != NULL, NULL);
-	if (VALA_IS_STRING_LITERAL (expr)) {
+	if (BALA_IS_STRING_LITERAL (expr)) {
 		ValaExpression* _tmp0_;
 		_tmp0_ = _vala_code_node_ref0 (expr);
 		result = _tmp0_;
@@ -410,7 +410,7 @@ vala_template_instance_init (ValaTemplate * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_template_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->expression_list = (ValaList*) _tmp1_;
 }
 
@@ -418,9 +418,9 @@ static void
 vala_template_finalize (ValaCodeNode * obj)
 {
 	ValaTemplate * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_TEMPLATE, ValaTemplate);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_TEMPLATE, ValaTemplate);
 	_vala_iterable_unref0 (self->priv->expression_list);
-	VALA_CODE_NODE_CLASS (vala_template_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_template_parent_class)->finalize (obj);
 }
 
 static GType
@@ -428,7 +428,7 @@ vala_template_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaTemplateClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_template_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaTemplate), 0, (GInstanceInitFunc) vala_template_instance_init, NULL };
 	GType vala_template_type_id;
-	vala_template_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaTemplate", &g_define_type_info, 0);
+	vala_template_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaTemplate", &g_define_type_info, 0);
 	ValaTemplate_private_offset = g_type_add_instance_private (vala_template_type_id, sizeof (ValaTemplatePrivate));
 	return vala_template_type_id;
 }

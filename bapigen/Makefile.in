@@ -279,7 +279,7 @@ CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 COVERAGE_CFLAGS = @COVERAGE_CFLAGS@
 COVERAGE_LIBS = @COVERAGE_LIBS@
-COVERAGE_VALAFLAGS = @COVERAGE_VALAFLAGS@
+COVERAGE_BALAFLAGS = @COVERAGE_BALAFLAGS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -348,11 +348,11 @@ SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
 TEST_CFLAGS = @TEST_CFLAGS@
-VALAC = @VALAC@
-VALAFLAGS = @VALAFLAGS@
-VALA_MAJOR_VERSION = @VALA_MAJOR_VERSION@
-VALA_MICRO_VERSION = @VALA_MICRO_VERSION@
-VALA_MINOR_VERSION = @VALA_MINOR_VERSION@
+BALAC = @BALAC@
+BALAFLAGS = @BALAFLAGS@
+BALA_MAJOR_VERSION = @BALA_MAJOR_VERSION@
+BALA_MICRO_VERSION = @BALA_MICRO_VERSION@
+BALA_MINOR_VERSION = @BALA_MINOR_VERSION@
 VERSION = @VERSION@
 WEASYPRINT = @WEASYPRINT@
 XSLTPROC = @XSLTPROC@
@@ -412,9 +412,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-VALA_V = $(VALA_V_$(V))
-VALA_V_ = $(VALA_V_$(AM_DEFAULT_VERBOSITY))
-VALA_V_0 = @echo "  VALAC " $^;
+BALA_V = $(BALA_V_$(V))
+BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
+BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 SUBDIRS = \
 	vala-gen-introspect \
@@ -431,23 +431,23 @@ AM_CPPFLAGS = \
 	$(NULL)
 
 BUILT_SOURCES = vapigen.vala.stamp vapicheck.vala.stamp
-vapigen_VALASOURCES = \
+vapigen_BALASOURCES = \
 	valagidlparser.vala \
 	valavapigen.vala \
 	$(NULL)
 
 vapigen_SOURCES = \
 	vapigen.vala.stamp \
-	$(vapigen_VALASOURCES:.vala=.c) \
+	$(vapigen_BALASOURCES:.vala=.c) \
 	$(NULL)
 
-vapicheck_VALASOURCES = \
+vapicheck_BALASOURCES = \
 	valavapicheck.vala \
 	$(NULL)
 
 vapicheck_SOURCES = \
 	vapicheck.vala.stamp \
-	$(vapicheck_VALASOURCES:.vala=.c) \
+	$(vapicheck_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 vapigen_LDADD = \
@@ -471,8 +471,8 @@ vapicheck_LDADD = \
 pkgconfigdir = $(libdir)/pkgconfig
 pkgconfig_DATA = vapigen@PACKAGE_SUFFIX@.pc
 EXTRA_DIST = \
-	$(vapigen_VALASOURCES) \
-	$(vapicheck_VALASOURCES) \
+	$(vapigen_BALASOURCES) \
+	$(vapicheck_BALASOURCES) \
 	Makefile.vapigen \
 	vapigen.m4 \
 	vapigen.vala.stamp \
@@ -483,8 +483,8 @@ CLEANFILES = \
 	vapigen@PACKAGE_SUFFIX@.pc
 
 MAINTAINERCLEANFILES = \
-	$(vapigen_VALASOURCES:.vala=.c) \
-	$(vapicheck_VALASOURCES:.vala=.c) \
+	$(vapigen_BALASOURCES:.vala=.c) \
+	$(vapicheck_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -1007,10 +1007,10 @@ uninstall-am: uninstall-aclocalDATA uninstall-binPROGRAMS \
 .PRECIOUS: Makefile
 
 
-vapigen.vala.stamp: $(vapigen_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+vapigen.vala.stamp: $(vapigen_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--vapidir $(top_srcdir)/gee --pkg gee \
@@ -1020,10 +1020,10 @@ vapigen.vala.stamp: $(vapigen_VALASOURCES)
 		$^
 	@touch $@
 
-vapicheck.vala.stamp: $(vapicheck_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+vapicheck.vala.stamp: $(vapicheck_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--vapidir $(top_srcdir)/gee --pkg gee \

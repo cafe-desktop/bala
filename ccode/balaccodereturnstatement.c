@@ -87,7 +87,7 @@ vala_ccode_return_statement_construct (GType object_type,
 ValaCCodeReturnStatement*
 vala_ccode_return_statement_new (ValaCCodeExpression* expr)
 {
-	return vala_ccode_return_statement_construct (VALA_TYPE_CCODE_RETURN_STATEMENT, expr);
+	return vala_ccode_return_statement_construct (BALA_TYPE_CCODE_RETURN_STATEMENT, expr);
 }
 
 static void
@@ -136,9 +136,9 @@ static void
 vala_ccode_return_statement_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeReturnStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_RETURN_STATEMENT, ValaCCodeReturnStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_RETURN_STATEMENT, ValaCCodeReturnStatement);
 	_vala_ccode_node_unref0 (self->priv->_return_expression);
-	VALA_CCODE_NODE_CLASS (vala_ccode_return_statement_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_return_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -149,7 +149,7 @@ vala_ccode_return_statement_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeReturnStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_return_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeReturnStatement), 0, (GInstanceInitFunc) vala_ccode_return_statement_instance_init, NULL };
 	GType vala_ccode_return_statement_type_id;
-	vala_ccode_return_statement_type_id = g_type_register_static (VALA_TYPE_CCODE_STATEMENT, "ValaCCodeReturnStatement", &g_define_type_info, 0);
+	vala_ccode_return_statement_type_id = g_type_register_static (BALA_TYPE_CCODE_STATEMENT, "ValaCCodeReturnStatement", &g_define_type_info, 0);
 	ValaCCodeReturnStatement_private_offset = g_type_add_instance_private (vala_ccode_return_statement_type_id, sizeof (ValaCCodeReturnStatementPrivate));
 	return vala_ccode_return_statement_type_id;
 }

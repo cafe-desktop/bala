@@ -34,12 +34,12 @@
 #include <locale.h>
 #include <gobject/gvaluecollector.h>
 
-#define VALA_TYPE_VAPI_GEN (vala_vapi_gen_get_type ())
-#define VALA_VAPI_GEN(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_TYPE_VAPI_GEN, ValaVAPIGen))
-#define VALA_VAPI_GEN_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_TYPE_VAPI_GEN, ValaVAPIGenClass))
-#define VALA_IS_VAPI_GEN(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_TYPE_VAPI_GEN))
-#define VALA_IS_VAPI_GEN_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_TYPE_VAPI_GEN))
-#define VALA_VAPI_GEN_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_TYPE_VAPI_GEN, ValaVAPIGenClass))
+#define BALA_TYPE_VAPI_GEN (vala_vapi_gen_get_type ())
+#define BALA_VAPI_GEN(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_TYPE_VAPI_GEN, ValaVAPIGen))
+#define BALA_VAPI_GEN_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_TYPE_VAPI_GEN, ValaVAPIGenClass))
+#define BALA_IS_VAPI_GEN(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_TYPE_VAPI_GEN))
+#define BALA_IS_VAPI_GEN_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_TYPE_VAPI_GEN))
+#define BALA_VAPI_GEN_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_TYPE_VAPI_GEN, ValaVAPIGenClass))
 
 typedef struct _ValaVAPIGen ValaVAPIGen;
 typedef struct _ValaVAPIGenClass ValaVAPIGenClass;
@@ -49,12 +49,12 @@ typedef struct _ValaVAPIGenPrivate ValaVAPIGenPrivate;
 #define _vala_source_file_unref0(var) ((var == NULL) ? NULL : (var = (vala_source_file_unref (var), NULL)))
 #define _vala_code_visitor_unref0(var) ((var == NULL) ? NULL : (var = (vala_code_visitor_unref (var), NULL)))
 
-#define VALA_TYPE_GIDL_PARSER (vala_gidl_parser_get_type ())
-#define VALA_GIDL_PARSER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_TYPE_GIDL_PARSER, ValaGIdlParser))
-#define VALA_GIDL_PARSER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_TYPE_GIDL_PARSER, ValaGIdlParserClass))
-#define VALA_IS_GIDL_PARSER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_TYPE_GIDL_PARSER))
-#define VALA_IS_GIDL_PARSER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_TYPE_GIDL_PARSER))
-#define VALA_GIDL_PARSER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_TYPE_GIDL_PARSER, ValaGIdlParserClass))
+#define BALA_TYPE_GIDL_PARSER (vala_gidl_parser_get_type ())
+#define BALA_GIDL_PARSER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_TYPE_GIDL_PARSER, ValaGIdlParser))
+#define BALA_GIDL_PARSER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_TYPE_GIDL_PARSER, ValaGIdlParserClass))
+#define BALA_IS_GIDL_PARSER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_TYPE_GIDL_PARSER))
+#define BALA_IS_GIDL_PARSER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_TYPE_GIDL_PARSER))
+#define BALA_GIDL_PARSER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_TYPE_GIDL_PARSER, ValaGIdlParserClass))
 
 typedef struct _ValaGIdlParser ValaGIdlParser;
 typedef struct _ValaGIdlParserClass ValaGIdlParserClass;
@@ -151,7 +151,7 @@ static void _vala_array_free (gpointer array,
                        GDestroyNotify destroy_func);
 static gint _vala_array_length (gpointer array);
 
-static const GOptionEntry VALA_VAPI_GEN_options[12] = {{"vapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_vapi_gen_vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_vapi_gen_gir_directories, "Look for GIR bindings in DIRECTORY", "DIRECTORY..."}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_vapi_gen_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"nostdpkg", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_vapi_gen_nostdpkg, "Do not include standard packages", NULL}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_vapi_gen_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"library", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_vapi_gen_library, "Library name", "NAME"}, {"directory", 'd', 0, G_OPTION_ARG_FILENAME, &vala_vapi_gen_directory, "Output directory", "DIRECTORY"}, {"disable-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_vapi_gen_disable_warnings, "Disable warnings", NULL}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_vapi_gen_version, "Display version number", NULL}, {"quiet", 'q', 0, G_OPTION_ARG_NONE, &vala_vapi_gen_quiet_mode, "Do not print messages to the console", NULL}, {G_OPTION_REMAINING, (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_vapi_gen_sources, NULL, "FILE..."}, {NULL}};
+static const GOptionEntry BALA_VAPI_GEN_options[12] = {{"vapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_vapi_gen_vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_vapi_gen_gir_directories, "Look for GIR bindings in DIRECTORY", "DIRECTORY..."}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_vapi_gen_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"nostdpkg", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_vapi_gen_nostdpkg, "Do not include standard packages", NULL}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_vapi_gen_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"library", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_vapi_gen_library, "Library name", "NAME"}, {"directory", 'd', 0, G_OPTION_ARG_FILENAME, &vala_vapi_gen_directory, "Output directory", "DIRECTORY"}, {"disable-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_vapi_gen_disable_warnings, "Disable warnings", NULL}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_vapi_gen_version, "Display version number", NULL}, {"quiet", 'q', 0, G_OPTION_ARG_NONE, &vala_vapi_gen_quiet_mode, "Do not print messages to the console", NULL}, {G_OPTION_REMAINING, (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_vapi_gen_sources, NULL, "FILE..."}, {NULL}};
 
 static inline gpointer
 vala_vapi_gen_get_instance_private (ValaVAPIGen* self)
@@ -399,7 +399,7 @@ vala_vapi_gen_run (ValaVAPIGen* self)
 	_vala_code_context_unref0 (self->priv->context);
 	self->priv->context = _tmp0_;
 	_tmp1_ = self->priv->context;
-	vala_code_context_set_profile (_tmp1_, VALA_PROFILE_GOBJECT);
+	vala_code_context_set_profile (_tmp1_, BALA_PROFILE_GOBJECT);
 	_tmp2_ = self->priv->context;
 	vala_code_context_add_define (_tmp2_, "GOBJECT");
 	_tmp3_ = self->priv->context;
@@ -592,7 +592,7 @@ vala_vapi_gen_run (ValaVAPIGen* self)
 					ValaSourceFile* _tmp64_;
 					_tmp59_ = self->priv->context;
 					_tmp60_ = source;
-					_tmp61_ = vala_source_file_new (_tmp59_, VALA_SOURCE_FILE_TYPE_PACKAGE, _tmp60_, NULL, FALSE);
+					_tmp61_ = vala_source_file_new (_tmp59_, BALA_SOURCE_FILE_TYPE_PACKAGE, _tmp60_, NULL, FALSE);
 					source_file = _tmp61_;
 					_tmp62_ = source_file;
 					vala_source_file_set_from_commandline (_tmp62_, TRUE);
@@ -739,7 +739,7 @@ vala_vapi_gen_run (ValaVAPIGen* self)
 				const gchar* _tmp113_;
 				const gchar* _tmp114_;
 				_tmp111_ = file;
-				vala_source_file_set_file_type (_tmp111_, VALA_SOURCE_FILE_TYPE_SOURCE);
+				vala_source_file_set_file_type (_tmp111_, BALA_SOURCE_FILE_TYPE_SOURCE);
 				_tmp112_ = file;
 				_tmp113_ = vala_source_file_get_filename (_tmp112_);
 				_tmp114_ = _tmp113_;
@@ -776,7 +776,7 @@ vala_vapi_gen_run (ValaVAPIGen* self)
 						if (_tmp124_ != NULL) {
 							ValaSourceFile* _tmp125_;
 							_tmp125_ = metadata_file;
-							vala_source_file_set_file_type (_tmp125_, VALA_SOURCE_FILE_TYPE_SOURCE);
+							vala_source_file_set_file_type (_tmp125_, BALA_SOURCE_FILE_TYPE_SOURCE);
 						}
 					}
 					_tmp127_ = file;
@@ -846,7 +846,7 @@ vala_vapi_gen_run (ValaVAPIGen* self)
 		_g_free0 (_tmp148_);
 		_g_free0 (_tmp146_);
 	}
-	_tmp149_ = vala_code_writer_new (VALA_CODE_WRITER_TYPE_VAPIGEN);
+	_tmp149_ = vala_code_writer_new (BALA_CODE_WRITER_TYPE_VAPIGEN);
 	interface_writer = _tmp149_;
 	_tmp150_ = vala_vapi_gen_library;
 	_tmp151_ = g_strdup_printf ("%s.vapi", _tmp150_);
@@ -902,7 +902,7 @@ vala_vapi_gen_main (gchar** args,
 		_tmp1_ = opt_context;
 		g_option_context_set_help_enabled (_tmp1_, TRUE);
 		_tmp2_ = opt_context;
-		g_option_context_add_main_entries (_tmp2_, VALA_VAPI_GEN_options, NULL);
+		g_option_context_add_main_entries (_tmp2_, BALA_VAPI_GEN_options, NULL);
 		_tmp3_ = opt_context;
 		g_option_context_parse (_tmp3_, (gint*) (&args_length1), &args, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
@@ -949,7 +949,7 @@ vala_vapi_gen_main (gchar** args,
 	if (vala_vapi_gen_version) {
 		FILE* _tmp11_;
 		_tmp11_ = stdout;
-		fprintf (_tmp11_, "Vala API Generator %s\n", VALA_BUILD_VERSION);
+		fprintf (_tmp11_, "Vala API Generator %s\n", BALA_BUILD_VERSION);
 		result = 0;
 		return result;
 	}
@@ -988,7 +988,7 @@ vala_vapi_gen_construct (GType object_type)
 G_GNUC_INTERNAL ValaVAPIGen*
 vala_vapi_gen_new (void)
 {
-	return vala_vapi_gen_construct (VALA_TYPE_VAPI_GEN);
+	return vala_vapi_gen_construct (BALA_TYPE_VAPI_GEN);
 }
 
 static void
@@ -1072,7 +1072,7 @@ vala_param_spec_vapi_gen (const gchar* name,
                           GParamFlags flags)
 {
 	ValaParamSpecVAPIGen* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_VAPI_GEN), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_VAPI_GEN), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1081,7 +1081,7 @@ vala_param_spec_vapi_gen (const gchar* name,
 G_GNUC_INTERNAL gpointer
 vala_value_get_vapi_gen (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_VAPI_GEN), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_GEN), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1090,10 +1090,10 @@ vala_value_set_vapi_gen (GValue* value,
                          gpointer v_object)
 {
 	ValaVAPIGen * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_VAPI_GEN));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_GEN));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_VAPI_GEN));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VAPI_GEN));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_vapi_gen_ref (value->data[0].v_pointer);
@@ -1110,10 +1110,10 @@ vala_value_take_vapi_gen (GValue* value,
                           gpointer v_object)
 {
 	ValaVAPIGen * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_VAPI_GEN));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_VAPI_GEN));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_VAPI_GEN));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_VAPI_GEN));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -1145,7 +1145,7 @@ static void
 vala_vapi_gen_finalize (ValaVAPIGen * obj)
 {
 	ValaVAPIGen * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_VAPI_GEN, ValaVAPIGen);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_VAPI_GEN, ValaVAPIGen);
 	g_signal_handlers_destroy (self);
 	_vala_code_context_unref0 (self->priv->context);
 }
@@ -1189,7 +1189,7 @@ vala_vapi_gen_unref (gpointer instance)
 	ValaVAPIGen * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_VAPI_GEN_GET_CLASS (self)->finalize (self);
+		BALA_VAPI_GEN_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

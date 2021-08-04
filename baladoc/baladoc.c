@@ -34,53 +34,53 @@
 #include <locale.h>
 #include <glib/gstdio.h>
 
-#define TYPE_VALA_DOC (vala_doc_get_type ())
-#define VALA_DOC(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), TYPE_VALA_DOC, ValaDoc))
-#define VALA_DOC_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), TYPE_VALA_DOC, ValaDocClass))
-#define IS_VALA_DOC(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), TYPE_VALA_DOC))
-#define IS_VALA_DOC_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), TYPE_VALA_DOC))
-#define VALA_DOC_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), TYPE_VALA_DOC, ValaDocClass))
+#define TYPE_BALA_DOC (vala_doc_get_type ())
+#define BALA_DOC(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), TYPE_BALA_DOC, ValaDoc))
+#define BALA_DOC_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), TYPE_BALA_DOC, ValaDocClass))
+#define IS_BALA_DOC(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), TYPE_BALA_DOC))
+#define IS_BALA_DOC_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), TYPE_BALA_DOC))
+#define BALA_DOC_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), TYPE_BALA_DOC, ValaDocClass))
 
 typedef struct _ValaDoc ValaDoc;
 typedef struct _ValaDocClass ValaDocClass;
 typedef struct _ValaDocPrivate ValaDocPrivate;
 enum  {
-	VALA_DOC_0_PROPERTY,
-	VALA_DOC_NUM_PROPERTIES
+	BALA_DOC_0_PROPERTY,
+	BALA_DOC_NUM_PROPERTIES
 };
-static GParamSpec* vala_doc_properties[VALA_DOC_NUM_PROPERTIES];
+static GParamSpec* vala_doc_properties[BALA_DOC_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_code_context_unref0(var) ((var == NULL) ? NULL : (var = (vala_code_context_unref (var), NULL)))
 
-#define VALADOC_TYPE_TREE_BUILDER (valadoc_tree_builder_get_type ())
-#define VALADOC_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilder))
-#define VALADOC_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
-#define VALADOC_IS_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TYPE_TREE_BUILDER))
-#define VALADOC_IS_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TYPE_TREE_BUILDER))
-#define VALADOC_TREE_BUILDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
+#define BALADOC_TYPE_TREE_BUILDER (valadoc_tree_builder_get_type ())
+#define BALADOC_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilder))
+#define BALADOC_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
+#define BALADOC_IS_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TYPE_TREE_BUILDER))
+#define BALADOC_IS_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TYPE_TREE_BUILDER))
+#define BALADOC_TREE_BUILDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
 
 typedef struct _ValadocTreeBuilder ValadocTreeBuilder;
 typedef struct _ValadocTreeBuilderClass ValadocTreeBuilderClass;
 #define _valadoc_api_tree_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_api_tree_unref (var), NULL)))
 #define _vala_code_visitor_unref0(var) ((var == NULL) ? NULL : (var = (vala_code_visitor_unref (var), NULL)))
 
-#define VALADOC_TYPE_SYMBOL_RESOLVER (valadoc_symbol_resolver_get_type ())
-#define VALADOC_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolver))
-#define VALADOC_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
-#define VALADOC_IS_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TYPE_SYMBOL_RESOLVER))
-#define VALADOC_IS_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TYPE_SYMBOL_RESOLVER))
-#define VALADOC_SYMBOL_RESOLVER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
+#define BALADOC_TYPE_SYMBOL_RESOLVER (valadoc_symbol_resolver_get_type ())
+#define BALADOC_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolver))
+#define BALADOC_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
+#define BALADOC_IS_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TYPE_SYMBOL_RESOLVER))
+#define BALADOC_IS_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TYPE_SYMBOL_RESOLVER))
+#define BALADOC_SYMBOL_RESOLVER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
 
 typedef struct _ValadocSymbolResolver ValadocSymbolResolver;
 typedef struct _ValadocSymbolResolverClass ValadocSymbolResolverClass;
 
-#define VALADOC_TYPE_GIR_WRITER (valadoc_gir_writer_get_type ())
-#define VALADOC_GIR_WRITER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TYPE_GIR_WRITER, ValadocGirWriter))
-#define VALADOC_GIR_WRITER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TYPE_GIR_WRITER, ValadocGirWriterClass))
-#define VALADOC_IS_GIR_WRITER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TYPE_GIR_WRITER))
-#define VALADOC_IS_GIR_WRITER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TYPE_GIR_WRITER))
-#define VALADOC_GIR_WRITER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TYPE_GIR_WRITER, ValadocGirWriterClass))
+#define BALADOC_TYPE_GIR_WRITER (valadoc_gir_writer_get_type ())
+#define BALADOC_GIR_WRITER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TYPE_GIR_WRITER, ValadocGirWriter))
+#define BALADOC_GIR_WRITER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TYPE_GIR_WRITER, ValadocGirWriterClass))
+#define BALADOC_IS_GIR_WRITER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TYPE_GIR_WRITER))
+#define BALADOC_IS_GIR_WRITER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TYPE_GIR_WRITER))
+#define BALADOC_GIR_WRITER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TYPE_GIR_WRITER, ValadocGirWriterClass))
 
 typedef struct _ValadocGirWriter ValadocGirWriter;
 typedef struct _ValadocGirWriterClass ValadocGirWriterClass;
@@ -168,7 +168,7 @@ static gchar* vala_doc_target_glib = NULL;
 
 GType vala_doc_get_type (void) G_GNUC_CONST;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (ValaDoc, g_object_unref)
-#define VALA_DOC_DEFAULT_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+#define BALA_DOC_DEFAULT_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 static gboolean vala_doc_option_deprecated (const gchar* option_name,
                                      const gchar* val,
                                      void* data,
@@ -229,7 +229,7 @@ static void _vala_array_free (gpointer array,
                        GDestroyNotify destroy_func);
 static gint _vala_array_length (gpointer array);
 
-static const GOptionEntry VALA_DOC_options[33] = {{"directory", 'o', 0, G_OPTION_ARG_FILENAME, &vala_doc_directory, "Output directory", "DIRECTORY"}, {"basedir", 'b', 0, G_OPTION_ARG_FILENAME, &vala_doc_basedir, "Base source directory", "DIRECTORY"}, {"define", 'D', 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_defines, "Define SYMBOL", "SYMBOL..."}, {"profile", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_profile, "Use the given profile instead of the default", "PROFILE"}, {"enable-experimental", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_experimental, "Enable experimental features", NULL}, {"enable-experimental-non-null", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_experimental_non_null, "Enable experimental enhancements for non-null types", NULL}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_gir_directories, "Look for .gir files in DIRECTORY", "DIRECTORY..."}, {"vapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"driver", (gchar) 0, (gint) G_OPTION_FLAG_OPTIONAL_ARG, G_OPTION_ARG_CALLBACK, (void*) vala_doc_option_deprecated, "Name of an driver or path to a custom driver (DEPRECATED AND IGNORED)", NULL}, {"importdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_import_directories, "Look for external documentation in DIRECTORY", "DIRECTORY..."}, {"import", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_import_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"alternative-resource-dir", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_alternative_resource_dirs, "Alternative resource directories", "DIRECTORY..."}, {"wiki", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_doc_wikidirectory, "Wiki directory", "DIRECTORY"}, {"deps", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_with_deps, "Adds packages to the documentation", NULL}, {"doclet", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_docletpath, "Name of an included doclet or path to custom doclet", "PLUGIN"}, {"doclet-arg", 'X', 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_pluginargs, "Pass arguments to the doclet", "ARG"}, {"no-protected", (gchar) 0, (gint) G_OPTION_FLAG_REVERSE, G_OPTION_ARG_NONE, &vala_doc__protected, "Removes protected elements from documentation", NULL}, {"internal", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc__internal, "Adds internal elements to documentation", NULL}, {"private", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc__private, "Adds private elements to documentation", NULL}, {"use-svg-images", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_use_svg_images, "Generate SVG image charts instead of PNG", NULL}, {"package-name", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_pkg_name, "package name", "NAME"}, {"package-version", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_pkg_version, "package version", "VERSION"}, {"gir", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_gir_name, "GObject-Introspection repository file name", "NAME-VERSION.gir"}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_version, "Display version number", NULL}, {"force", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_force, "force", NULL}, {"fatal-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_fatal_warnings, "Treat warnings as fatal", NULL}, {"verbose", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_verbose, "Show all warnings", NULL}, {"no-color", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_disable_diagnostic_colors, "Disable colored output", NULL}, {"target-glib", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_target_glib, "Target version of glib for code generation", "'MAJOR.MINOR', or 'auto'"}, {G_OPTION_REMAINING, (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_tsources, NULL, "FILE..."}, {NULL}};
+static const GOptionEntry BALA_DOC_options[33] = {{"directory", 'o', 0, G_OPTION_ARG_FILENAME, &vala_doc_directory, "Output directory", "DIRECTORY"}, {"basedir", 'b', 0, G_OPTION_ARG_FILENAME, &vala_doc_basedir, "Base source directory", "DIRECTORY"}, {"define", 'D', 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_defines, "Define SYMBOL", "SYMBOL..."}, {"profile", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_profile, "Use the given profile instead of the default", "PROFILE"}, {"enable-experimental", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_experimental, "Enable experimental features", NULL}, {"enable-experimental-non-null", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_experimental_non_null, "Enable experimental enhancements for non-null types", NULL}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_gir_directories, "Look for .gir files in DIRECTORY", "DIRECTORY..."}, {"vapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"driver", (gchar) 0, (gint) G_OPTION_FLAG_OPTIONAL_ARG, G_OPTION_ARG_CALLBACK, (void*) vala_doc_option_deprecated, "Name of an driver or path to a custom driver (DEPRECATED AND IGNORED)", NULL}, {"importdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_import_directories, "Look for external documentation in DIRECTORY", "DIRECTORY..."}, {"import", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_import_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"alternative-resource-dir", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_alternative_resource_dirs, "Alternative resource directories", "DIRECTORY..."}, {"wiki", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_doc_wikidirectory, "Wiki directory", "DIRECTORY"}, {"deps", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_with_deps, "Adds packages to the documentation", NULL}, {"doclet", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_docletpath, "Name of an included doclet or path to custom doclet", "PLUGIN"}, {"doclet-arg", 'X', 0, G_OPTION_ARG_STRING_ARRAY, &vala_doc_pluginargs, "Pass arguments to the doclet", "ARG"}, {"no-protected", (gchar) 0, (gint) G_OPTION_FLAG_REVERSE, G_OPTION_ARG_NONE, &vala_doc__protected, "Removes protected elements from documentation", NULL}, {"internal", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc__internal, "Adds internal elements to documentation", NULL}, {"private", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc__private, "Adds private elements to documentation", NULL}, {"use-svg-images", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_use_svg_images, "Generate SVG image charts instead of PNG", NULL}, {"package-name", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_pkg_name, "package name", "NAME"}, {"package-version", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_pkg_version, "package version", "VERSION"}, {"gir", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_gir_name, "GObject-Introspection repository file name", "NAME-VERSION.gir"}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_version, "Display version number", NULL}, {"force", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_force, "force", NULL}, {"fatal-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_fatal_warnings, "Treat warnings as fatal", NULL}, {"verbose", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_verbose, "Show all warnings", NULL}, {"no-color", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_doc_disable_diagnostic_colors, "Disable colored output", NULL}, {"target-glib", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_doc_target_glib, "Target version of glib for code generation", "'MAJOR.MINOR', or 'auto'"}, {G_OPTION_REMAINING, (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_doc_tsources, NULL, "FILE..."}, {NULL}};
 
 static gboolean
 vala_doc_option_deprecated (const gchar* option_name,
@@ -1316,7 +1316,7 @@ vala_doc_main (gchar** args,
 		_tmp2_ = opt_context;
 		g_option_context_set_help_enabled (_tmp2_, TRUE);
 		_tmp3_ = opt_context;
-		g_option_context_add_main_entries (_tmp3_, VALA_DOC_options, NULL);
+		g_option_context_add_main_entries (_tmp3_, BALA_DOC_options, NULL);
 		_tmp4_ = opt_context;
 		g_option_context_parse (_tmp4_, (gint*) (&args_length1), &args, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
@@ -1369,7 +1369,7 @@ vala_doc_main (gchar** args,
 		const gchar* env_colors = NULL;
 		const gchar* _tmp13_;
 		const gchar* _tmp14_;
-		_tmp13_ = g_getenv ("VALA_COLORS");
+		_tmp13_ = g_getenv ("BALA_COLORS");
 		env_colors = _tmp13_;
 		_tmp14_ = env_colors;
 		if (_tmp14_ != NULL) {
@@ -1381,13 +1381,13 @@ vala_doc_main (gchar** args,
 		} else {
 			ValadocErrorReporter* _tmp17_;
 			_tmp17_ = reporter;
-			valadoc_error_reporter_set_colors (_tmp17_, VALA_DOC_DEFAULT_COLORS);
+			valadoc_error_reporter_set_colors (_tmp17_, BALA_DOC_DEFAULT_COLORS);
 		}
 	}
 	if (vala_doc_version) {
 		FILE* _tmp18_;
 		_tmp18_ = stdout;
-		fprintf (_tmp18_, "Valadoc %s\n", VALA_BUILD_VERSION);
+		fprintf (_tmp18_, "Valadoc %s\n", BALA_BUILD_VERSION);
 		result = 0;
 		_g_object_unref0 (reporter);
 		return result;
@@ -1665,7 +1665,7 @@ vala_doc_construct (GType object_type)
 ValaDoc*
 vala_doc_new (void)
 {
-	return vala_doc_construct (TYPE_VALA_DOC);
+	return vala_doc_construct (TYPE_BALA_DOC);
 }
 
 static void
@@ -1686,7 +1686,7 @@ static void
 vala_doc_finalize (GObject * obj)
 {
 	ValaDoc * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_VALA_DOC, ValaDoc);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, TYPE_BALA_DOC, ValaDoc);
 	G_OBJECT_CLASS (vala_doc_parent_class)->finalize (obj);
 }
 

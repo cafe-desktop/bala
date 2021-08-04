@@ -10,7 +10,7 @@ dist_man_MANS = \
 	vapigen.1 \
 	$(NULL)
 
-if ENABLE_VALADOC
+if ENABLE_BALADOC
 dist_man_MANS += \
 	valadoc.1 \
 	$(NULL)
@@ -24,7 +24,7 @@ EXTRA_DIST = \
 	$(NULL)
 
 if HAVE_HELP2MAN
-if ENABLE_VALADOC
+if ENABLE_BALADOC
 manpages: valac.1 valadoc.1 vala-gen-introspect.1 vapigen.1
 else
 manpages: valac.1 vala-gen-introspect.1 vapigen.1
@@ -37,7 +37,7 @@ valac.1:
 		--include $(srcdir)/valac.h2m \
 		--libtool --no-info \
 		--output=$@
-if ENABLE_VALADOC
+if ENABLE_BALADOC
 valadoc.1:
 	$(HELP2MAN) $(top_builddir)/valadoc/valadoc \
 		--include $(srcdir)/valadoc.h2m \
@@ -60,7 +60,7 @@ endif
 if ENABLE_UNVERSIONED
 install-data-hook:
 	cd $(DESTDIR)$(man1dir) && $(LN_S) -f valac@PACKAGE_SUFFIX@.1 valac.1
-if ENABLE_VALADOC
+if ENABLE_BALADOC
 	cd $(DESTDIR)$(man1dir) && $(LN_S) -f valadoc@PACKAGE_SUFFIX@.1 valadoc.1
 endif
 	cd $(DESTDIR)$(man1dir) && $(LN_S) -f vala-gen-introspect@PACKAGE_SUFFIX@.1 vala-gen-introspect.1
@@ -68,8 +68,8 @@ endif
 endif
 
 
-if ENABLE_VALADOC
-COMMON_VALADOCFLAGS = \
+if ENABLE_BALADOC
+COMMON_BALADOCFLAGS = \
 	--force \
 	--verbose \
 	--private \
@@ -85,23 +85,23 @@ COMMON_VALADOCFLAGS = \
 	$(NULL)
 
 if HAVE_CGRAPH
-COMMON_VALADOCFLAGS += -D WITH_CGRAPH
+COMMON_BALADOCFLAGS += -D WITH_CGRAPH
 endif
 
-gee_VALASOURCES = $(top_srcdir)/gee/*.vala
-internal-apis/gee: $(gee_VALASOURCES)
+gee_BALASOURCES = $(top_srcdir)/gee/*.vala
+internal-apis/gee: $(gee_BALASOURCES)
 	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
-		$(COMMON_VALADOCFLAGS) \
+		$(COMMON_BALADOCFLAGS) \
 		--package-name gee \
 		--package-version $(PACKAGE_VERSION) \
 		--deps \
 		$(filter %.vala,$^)
 	@touch $@
 
-vala_VALASOURCES = $(top_srcdir)/vala/*.vala
-internal-apis/vala: $(vala_VALASOURCES) internal-apis/gee
+vala_BALASOURCES = $(top_srcdir)/vala/*.vala
+internal-apis/vala: $(vala_BALASOURCES) internal-apis/gee
 	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
-		$(COMMON_VALADOCFLAGS) \
+		$(COMMON_BALADOCFLAGS) \
 		--package-name vala \
 		--package-version $(PACKAGE_VERSION) \
 		--vapidir=$(top_builddir)/gee --pkg gee \
@@ -109,10 +109,10 @@ internal-apis/vala: $(vala_VALASOURCES) internal-apis/gee
 		$(filter %.vala,$^)
 	@touch $@
 
-ccode_VALASOURCES = $(top_srcdir)/ccode/*.vala
-internal-apis/ccode: $(ccode_VALASOURCES) internal-apis/gee
+ccode_BALASOURCES = $(top_srcdir)/ccode/*.vala
+internal-apis/ccode: $(ccode_BALASOURCES) internal-apis/gee
 	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
-		$(COMMON_VALADOCFLAGS) \
+		$(COMMON_BALADOCFLAGS) \
 		--package-name ccode \
 		--package-version $(PACKAGE_VERSION) \
 		--vapidir=$(top_builddir)/gee --pkg gee \
@@ -121,10 +121,10 @@ internal-apis/ccode: $(ccode_VALASOURCES) internal-apis/gee
 		$(filter %.vala,$^)
 	@touch $@
 
-codegen_VALASOURCES = $(top_srcdir)/codegen/*.vala
-internal-apis/codegen: $(codegen_VALASOURCES) internal-apis/vala internal-apis/ccode
+codegen_BALASOURCES = $(top_srcdir)/codegen/*.vala
+internal-apis/codegen: $(codegen_BALASOURCES) internal-apis/vala internal-apis/ccode
 	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
-		$(COMMON_VALADOCFLAGS) \
+		$(COMMON_BALADOCFLAGS) \
 		--package-name codegen \
 		--package-version $(PACKAGE_VERSION) \
 		--vapidir=$(top_builddir)/gee --pkg gee \
@@ -134,10 +134,10 @@ internal-apis/codegen: $(codegen_VALASOURCES) internal-apis/vala internal-apis/c
 		$(filter %.vala,$^)
 	@touch $@
 
-valadoc_VALASOURCES = $(top_srcdir)/libvaladoc/*.vala $(top_srcdir)/libvaladoc/*/*.vala
-internal-apis/valadoc: $(valadoc_VALASOURCES) internal-apis/codegen
+valadoc_BALASOURCES = $(top_srcdir)/libvaladoc/*.vala $(top_srcdir)/libvaladoc/*/*.vala
+internal-apis/valadoc: $(valadoc_BALASOURCES) internal-apis/codegen
 	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
-		$(COMMON_VALADOCFLAGS) \
+		$(COMMON_BALADOCFLAGS) \
 		--package-name valadoc \
 		--package-version $(PACKAGE_VERSION) \
 		--vapidir=$(top_srcdir)/vapi --pkg libgvc \

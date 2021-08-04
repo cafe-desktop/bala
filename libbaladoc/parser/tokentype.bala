@@ -61,12 +61,12 @@ public class Valadoc.TokenType : Object {
 
 
 	// .valadoc (importer)
-	public static TokenType VALADOC_COMMENT_START;
-	public static TokenType VALADOC_COMMENT_END;
-	public static TokenType VALADOC_ANY_WORD;
-	public static TokenType VALADOC_SPACE;
-	public static TokenType VALADOC_TAB;
-	public static TokenType VALADOC_EOL;
+	public static TokenType BALADOC_COMMENT_START;
+	public static TokenType BALADOC_COMMENT_END;
+	public static TokenType BALADOC_ANY_WORD;
+	public static TokenType BALADOC_SPACE;
+	public static TokenType BALADOC_TAB;
+	public static TokenType BALADOC_EOL;
 
 
 	// markdown:
@@ -143,12 +143,12 @@ public class Valadoc.TokenType : Object {
 			ALIGN_CENTER = new TokenType.basic (")(");
 
 			// .valadoc (importer)
-			VALADOC_COMMENT_START = new TokenType.basic ("/*");
-			VALADOC_COMMENT_END = new TokenType.basic ("*/");
-			VALADOC_ANY_WORD = ANY_WORD;
-			VALADOC_SPACE = SPACE;
-			VALADOC_TAB = TAB;
-			VALADOC_EOL = EOL;
+			BALADOC_COMMENT_START = new TokenType.basic ("/*");
+			BALADOC_COMMENT_END = new TokenType.basic ("*/");
+			BALADOC_ANY_WORD = ANY_WORD;
+			BALADOC_SPACE = SPACE;
+			BALADOC_TAB = TAB;
+			BALADOC_EOL = EOL;
 
 			initialized = true;
 

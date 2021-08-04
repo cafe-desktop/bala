@@ -44,7 +44,7 @@ valadoc_doclet_process (ValadocDoclet* self,
                         ValadocErrorReporter* reporter)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_DOCLET_GET_INTERFACE (self)->process (self, settings, tree, reporter);
+	BALADOC_DOCLET_GET_INTERFACE (self)->process (self, settings, tree, reporter);
 }
 
 static void

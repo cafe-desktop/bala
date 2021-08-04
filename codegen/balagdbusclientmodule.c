@@ -36,13 +36,13 @@
 #include <math.h>
 
 typedef enum  {
-	VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC,
-	VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC,
-	VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH,
-	VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY
+	BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC,
+	BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC,
+	BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH,
+	BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY
 } ValaGDBusClientModuleCallType;
 
-#define VALA_GD_BUS_CLIENT_MODULE_TYPE_CALL_TYPE (vala_gd_bus_client_module_call_type_get_type ())
+#define BALA_GD_BUS_CLIENT_MODULE_TYPE_CALL_TYPE (vala_gd_bus_client_module_call_type_get_type ())
 #define _vala_code_node_unref0(var) ((var == NULL) ? NULL : (var = (vala_code_node_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _vala_map_unref0(var) ((var == NULL) ? NULL : (var = (vala_map_unref (var), NULL)))
@@ -107,7 +107,7 @@ static GType vala_gd_bus_client_module_get_type_once (void);
 static GType
 vala_gd_bus_client_module_call_type_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC, "VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC", "sync"}, {VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC, "VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC", "async"}, {VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH, "VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH", "finish"}, {VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY, "VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY", "no-reply"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC, "BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC", "sync"}, {BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC, "BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC", "async"}, {BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH, "BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH", "finish"}, {BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY, "BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY", "no-reply"}, {0, NULL, NULL}};
 	GType vala_gd_bus_client_module_call_type_type_id;
 	vala_gd_bus_client_module_call_type_type_id = g_enum_register_static ("ValaGDBusClientModuleCallType", values);
 	return vala_gd_bus_client_module_call_type_type_id;
@@ -229,11 +229,11 @@ vala_gd_bus_client_module_real_generate_dynamic_method_wrapper (ValaCCodeBaseMod
 	_g_free0 (_tmp1_);
 	func = _tmp3_;
 	_tmp4_ = func;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp4_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp4_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp5_ = g_direct_hash;
 	_tmp6_ = g_direct_equal;
 	_tmp7_ = g_direct_equal;
-	_tmp8_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp5_, _tmp6_, _tmp7_);
+	_tmp8_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp5_, _tmp6_, _tmp7_);
 	cparam_map = _tmp8_;
 	_tmp9_ = ((ValaCCodeBaseModule*) self)->cfile;
 	_tmp10_ = cparam_map;
@@ -251,7 +251,7 @@ vala_gd_bus_client_module_real_generate_dynamic_method_wrapper (ValaCCodeBaseMod
 		const gchar* _tmp19_;
 		_tmp18_ = vala_symbol_get_name ((ValaSymbol*) method);
 		_tmp19_ = _tmp18_;
-		vala_gd_bus_client_module_generate_marshalling (self, (ValaMethod*) method, VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC, NULL, _tmp19_, -1);
+		vala_gd_bus_client_module_generate_marshalling (self, (ValaMethod*) method, BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC, NULL, _tmp19_, -1);
 	} else {
 		ValaSourceReference* _tmp20_;
 		ValaSourceReference* _tmp21_;
@@ -366,14 +366,14 @@ vala_gd_bus_client_module_generate_proxy_interface_init (ValaGDBusClientModule* 
 			_tmp9_ = prereq;
 			_tmp10_ = vala_data_type_get_type_symbol (_tmp9_);
 			_tmp11_ = _tmp10_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp11_, VALA_TYPE_INTERFACE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp11_, BALA_TYPE_INTERFACE)) {
 				ValaDataType* _tmp12_;
 				ValaTypeSymbol* _tmp13_;
 				ValaTypeSymbol* _tmp14_;
 				_tmp12_ = prereq;
 				_tmp13_ = vala_data_type_get_type_symbol (_tmp12_);
 				_tmp14_ = _tmp13_;
-				vala_gd_bus_client_module_generate_proxy_interface_init (self, main_iface, G_TYPE_CHECK_INSTANCE_CAST (_tmp14_, VALA_TYPE_INTERFACE, ValaInterface));
+				vala_gd_bus_client_module_generate_proxy_interface_init (self, main_iface, G_TYPE_CHECK_INSTANCE_CAST (_tmp14_, BALA_TYPE_INTERFACE, ValaInterface));
 			}
 			_vala_code_node_unref0 (prereq);
 		}
@@ -708,7 +708,7 @@ vala_gd_bus_client_module_generate_proxy_interface_init (ValaGDBusClientModule* 
 		_vala_iterable_unref0 (_prop_list);
 	}
 	_tmp142_ = proxy_iface_init;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp142_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp142_, BALA_CCODE_MODIFIERS_STATIC);
 	vala_ccode_base_module_pop_function ((ValaCCodeBaseModule*) self);
 	_tmp143_ = ((ValaCCodeBaseModule*) self)->cfile;
 	_tmp144_ = proxy_iface_init;
@@ -785,7 +785,7 @@ vala_gd_bus_client_module_implement_interface (ValaGDBusClientModule* self,
 			_tmp10_ = prereq;
 			_tmp11_ = vala_data_type_get_type_symbol (_tmp10_);
 			_tmp12_ = _tmp11_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp12_, VALA_TYPE_INTERFACE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp12_, BALA_TYPE_INTERFACE)) {
 				const gchar* _tmp13_;
 				ValaDataType* _tmp14_;
 				ValaTypeSymbol* _tmp15_;
@@ -797,7 +797,7 @@ vala_gd_bus_client_module_implement_interface (ValaGDBusClientModule* self,
 				_tmp14_ = prereq;
 				_tmp15_ = vala_data_type_get_type_symbol (_tmp14_);
 				_tmp16_ = _tmp15_;
-				_tmp17_ = vala_gd_bus_client_module_implement_interface (self, define_type, main_iface, G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, VALA_TYPE_INTERFACE, ValaInterface));
+				_tmp17_ = vala_gd_bus_client_module_implement_interface (self, define_type, main_iface, G_TYPE_CHECK_INSTANCE_CAST (_tmp16_, BALA_TYPE_INTERFACE, ValaInterface));
 				_tmp18_ = _tmp17_;
 				_tmp19_ = g_strconcat (_tmp13_, _tmp18_, NULL);
 				_g_free0 (_result_);
@@ -876,7 +876,7 @@ vala_gd_bus_client_module_real_generate_interface_declaration (ValaCCodeBaseModu
 	self = (ValaGDBusClientModule*) base;
 	g_return_if_fail (iface != NULL);
 	g_return_if_fail (decl_space != NULL);
-	VALA_CCODE_BASE_MODULE_CLASS (vala_gd_bus_client_module_parent_class)->generate_interface_declaration ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GD_BUS_MODULE, ValaGDBusModule), iface, decl_space);
+	BALA_CCODE_BASE_MODULE_CLASS (vala_gd_bus_client_module_parent_class)->generate_interface_declaration ((ValaCCodeBaseModule*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GD_BUS_MODULE, ValaGDBusModule), iface, decl_space);
 	_tmp0_ = vala_gd_bus_module_get_dbus_name ((ValaTypeSymbol*) iface);
 	dbus_iface_name = _tmp0_;
 	_tmp1_ = dbus_iface_name;
@@ -918,7 +918,7 @@ vala_gd_bus_client_module_real_generate_interface_declaration (ValaCCodeBaseModu
 	_tmp19_ = vala_ccode_function_new (_tmp18_, "GType");
 	proxy_get_type = _tmp19_;
 	_tmp20_ = proxy_get_type;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp20_, VALA_CCODE_MODIFIERS_CONST);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp20_, BALA_CCODE_MODIFIERS_CONST);
 	_tmp21_ = proxy_get_type;
 	vala_ccode_file_add_function_declaration (decl_space, _tmp21_);
 	if (((ValaCCodeBaseModule*) self)->in_plugin) {
@@ -1070,7 +1070,7 @@ vala_gd_bus_client_module_real_visit_interface (ValaCodeVisitor* base,
 	ValaCCodeFunction* _tmp137_;
 	self = (ValaGDBusClientModule*) base;
 	g_return_if_fail (iface != NULL);
-	VALA_CODE_VISITOR_CLASS (vala_gd_bus_client_module_parent_class)->visit_interface ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GD_BUS_MODULE, ValaGDBusModule), iface);
+	BALA_CODE_VISITOR_CLASS (vala_gd_bus_client_module_parent_class)->visit_interface ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GD_BUS_MODULE, ValaGDBusModule), iface);
 	_tmp0_ = vala_gd_bus_module_get_dbus_name ((ValaTypeSymbol*) iface);
 	dbus_iface_name = _tmp0_;
 	_tmp1_ = dbus_iface_name;
@@ -1182,7 +1182,7 @@ vala_gd_bus_client_module_real_visit_interface (ValaCodeVisitor* base,
 	_vala_ccode_node_unref0 (_tmp64_);
 	_g_free0 (_tmp62_);
 	_tmp65_ = proxy_class_init;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp65_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp65_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp66_ = proxy_class_init;
 	vala_ccode_base_module_push_function ((ValaCCodeBaseModule*) self, _tmp66_);
 	_tmp67_ = vala_ccode_identifier_new ("G_DBUS_PROXY_CLASS");
@@ -1274,7 +1274,7 @@ vala_gd_bus_client_module_real_visit_interface (ValaCodeVisitor* base,
 		_vala_ccode_node_unref0 (_tmp96_);
 		_g_free0 (_tmp94_);
 		_tmp97_ = proxy_class_finalize;
-		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp97_, VALA_CCODE_MODIFIERS_STATIC);
+		vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp97_, BALA_CCODE_MODIFIERS_STATIC);
 		_tmp98_ = ((ValaCCodeBaseModule*) self)->cfile;
 		_tmp99_ = proxy_class_finalize;
 		vala_ccode_file_add_function (_tmp98_, _tmp99_);
@@ -1336,7 +1336,7 @@ vala_gd_bus_client_module_real_visit_interface (ValaCodeVisitor* base,
 	_vala_ccode_node_unref0 (_tmp134_);
 	_g_free0 (_tmp132_);
 	_tmp135_ = proxy_instance_init;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp135_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp135_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp136_ = ((ValaCCodeBaseModule*) self)->cfile;
 	_tmp137_ = proxy_instance_init;
 	vala_ccode_file_add_function (_tmp136_, _tmp137_);
@@ -1506,7 +1506,7 @@ vala_gd_bus_client_module_real_visit_method_call (ValaCodeVisitor* base,
 	_tmp1_ = _tmp0_;
 	_tmp2_ = vala_expression_get_value_type (_tmp1_);
 	_tmp3_ = _tmp2_;
-	_tmp4_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp3_, VALA_TYPE_METHOD_TYPE) ? ((ValaMethodType*) _tmp3_) : NULL);
+	_tmp4_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp3_, BALA_TYPE_METHOD_TYPE) ? ((ValaMethodType*) _tmp3_) : NULL);
 	mtype = _tmp4_;
 	_tmp6_ = mtype;
 	if (_tmp6_ != NULL) {
@@ -1596,20 +1596,20 @@ vala_gd_bus_client_module_real_visit_method_call (ValaCodeVisitor* base,
 		_tmp33_ = FALSE;
 	}
 	if (_tmp33_) {
-		VALA_CODE_VISITOR_CLASS (vala_gd_bus_client_module_parent_class)->visit_method_call ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_GD_BUS_MODULE, ValaGDBusModule), expr);
+		BALA_CODE_VISITOR_CLASS (vala_gd_bus_client_module_parent_class)->visit_method_call ((ValaCodeVisitor*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_GD_BUS_MODULE, ValaGDBusModule), expr);
 		_vala_code_node_unref0 (mtype);
 		return;
 	}
 	_tmp36_ = vala_method_call_get_call (expr);
 	_tmp37_ = _tmp36_;
-	_tmp38_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp37_, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
+	_tmp38_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp37_, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
 	ma = _tmp38_;
 	_tmp39_ = ma;
 	_tmp40_ = vala_member_access_get_type_arguments (_tmp39_);
 	_tmp41_ = vala_list_get (_tmp40_, 0);
 	type_arg = (ValaDataType*) _tmp41_;
 	_tmp42_ = type_arg;
-	_tmp43_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp42_, VALA_TYPE_OBJECT_TYPE) ? ((ValaObjectType*) _tmp42_) : NULL);
+	_tmp43_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp42_, BALA_TYPE_OBJECT_TYPE) ? ((ValaObjectType*) _tmp42_) : NULL);
 	object_type = _tmp43_;
 	_tmp44_ = object_type;
 	if (_tmp44_ != NULL) {
@@ -1637,7 +1637,7 @@ vala_gd_bus_client_module_real_visit_method_call (ValaCodeVisitor* base,
 		_tmp45_ = object_type;
 		_tmp46_ = vala_data_type_get_type_symbol ((ValaDataType*) _tmp45_);
 		_tmp47_ = _tmp46_;
-		_tmp48_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp47_, VALA_TYPE_INTERFACE, ValaInterface));
+		_tmp48_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp47_, BALA_TYPE_INTERFACE, ValaInterface));
 		iface = _tmp48_;
 		_tmp49_ = iface;
 		_tmp50_ = vala_gd_bus_module_get_dbus_name ((ValaTypeSymbol*) _tmp49_);
@@ -2005,7 +2005,7 @@ vala_gd_bus_client_module_real_visit_method_call (ValaCodeVisitor* base,
 			_tmp180_ = ccall;
 			_tmp181_ = vala_ccode_base_module_get_inner_error_cexpression ((ValaCCodeBaseModule*) self);
 			_tmp182_ = _tmp181_;
-			_tmp183_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp182_);
+			_tmp183_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp182_);
 			_tmp184_ = _tmp183_;
 			vala_ccode_function_call_add_argument (_tmp180_, (ValaCCodeExpression*) _tmp184_);
 			_vala_ccode_node_unref0 (_tmp184_);
@@ -2215,7 +2215,7 @@ vala_gd_bus_client_module_real_visit_method_call (ValaCodeVisitor* base,
 		_tmp265_ = ccall;
 		_tmp266_ = vala_ccode_base_module_get_inner_error_cexpression ((ValaCCodeBaseModule*) self);
 		_tmp267_ = _tmp266_;
-		_tmp268_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp267_);
+		_tmp268_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp267_);
 		_tmp269_ = _tmp268_;
 		vala_ccode_function_call_add_argument (_tmp265_, (ValaCCodeExpression*) _tmp269_);
 		_vala_ccode_node_unref0 (_tmp269_);
@@ -2325,7 +2325,7 @@ vala_gd_bus_client_module_real_visit_method_call (ValaCodeVisitor* base,
 			_tmp307_ = ma;
 			_tmp308_ = vala_member_access_get_inner (_tmp307_);
 			_tmp309_ = _tmp308_;
-			_tmp310_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp309_, VALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
+			_tmp310_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp309_, BALA_TYPE_MEMBER_ACCESS, ValaMemberAccess));
 			inner_ma = _tmp310_;
 			_tmp311_ = inner_ma;
 			_tmp312_ = vala_member_access_get_inner (_tmp311_);
@@ -2502,7 +2502,7 @@ vala_gd_bus_client_module_real_visit_method_call (ValaCodeVisitor* base,
 			_tmp382_ = ccall;
 			_tmp383_ = vala_ccode_base_module_get_inner_error_cexpression ((ValaCCodeBaseModule*) self);
 			_tmp384_ = _tmp383_;
-			_tmp385_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp384_);
+			_tmp385_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp384_);
 			_tmp386_ = _tmp385_;
 			vala_ccode_function_call_add_argument (_tmp382_, (ValaCCodeExpression*) _tmp386_);
 			_vala_ccode_node_unref0 (_tmp386_);
@@ -2664,7 +2664,7 @@ vala_gd_bus_client_module_generate_dbus_signal_handler (ValaGDBusClientModule* s
 	_tmp7_ = vala_ccode_function_new (_tmp6_, "void");
 	function = _tmp7_;
 	_tmp8_ = function;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp8_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp8_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp9_ = function;
 	_tmp10_ = vala_get_ccode_name ((ValaCodeNode*) sym);
 	_tmp11_ = _tmp10_;
@@ -2698,7 +2698,7 @@ vala_gd_bus_client_module_generate_dbus_signal_handler (ValaGDBusClientModule* s
 	_tmp28_ = iter_init;
 	_tmp29_ = vala_ccode_identifier_new ("_arguments_iter");
 	_tmp30_ = _tmp29_;
-	_tmp31_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp30_);
+	_tmp31_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp30_);
 	_tmp32_ = _tmp31_;
 	vala_ccode_function_call_add_argument (_tmp28_, (ValaCCodeExpression*) _tmp32_);
 	_vala_ccode_node_unref0 (_tmp32_);
@@ -2838,7 +2838,7 @@ vala_gd_bus_client_module_generate_dbus_signal_handler (ValaGDBusClientModule* s
 			_tmp82_ = _tmp81_;
 			_tmp83_ = vala_data_type_get_type_symbol (_tmp82_);
 			_tmp84_ = _tmp83_;
-			st = G_TYPE_CHECK_INSTANCE_TYPE (_tmp84_, VALA_TYPE_STRUCT) ? ((ValaStruct*) _tmp84_) : NULL;
+			st = G_TYPE_CHECK_INSTANCE_TYPE (_tmp84_, BALA_TYPE_STRUCT) ? ((ValaStruct*) _tmp84_) : NULL;
 			_tmp86_ = st;
 			if (_tmp86_ != NULL) {
 				ValaStruct* _tmp87_;
@@ -2858,7 +2858,7 @@ vala_gd_bus_client_module_generate_dbus_signal_handler (ValaGDBusClientModule* s
 				_tmp89_ = param_name;
 				_tmp90_ = vala_ccode_identifier_new (_tmp89_);
 				_tmp91_ = _tmp90_;
-				_tmp92_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp91_);
+				_tmp92_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp91_);
 				_tmp93_ = _tmp92_;
 				vala_ccode_function_call_add_argument (_tmp88_, (ValaCCodeExpression*) _tmp93_);
 				_vala_ccode_node_unref0 (_tmp93_);
@@ -2878,7 +2878,7 @@ vala_gd_bus_client_module_generate_dbus_signal_handler (ValaGDBusClientModule* s
 			_tmp98_ = param;
 			_tmp99_ = vala_variable_get_variable_type ((ValaVariable*) _tmp98_);
 			_tmp100_ = _tmp99_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp100_, VALA_TYPE_ARRAY_TYPE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp100_, BALA_TYPE_ARRAY_TYPE)) {
 				ValaArrayType* array_type = NULL;
 				ValaParameter* _tmp101_;
 				ValaDataType* _tmp102_;
@@ -2890,7 +2890,7 @@ vala_gd_bus_client_module_generate_dbus_signal_handler (ValaGDBusClientModule* s
 				_tmp101_ = param;
 				_tmp102_ = vala_variable_get_variable_type ((ValaVariable*) _tmp101_);
 				_tmp103_ = _tmp102_;
-				_tmp104_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp103_, VALA_TYPE_ARRAY_TYPE, ValaArrayType));
+				_tmp104_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp103_, BALA_TYPE_ARRAY_TYPE, ValaArrayType));
 				array_type = _tmp104_;
 				_tmp105_ = array_type;
 				_tmp106_ = vala_get_ccode_array_length_type ((ValaCodeNode*) _tmp105_);
@@ -3142,7 +3142,7 @@ vala_gd_bus_client_module_generate_signal_handler_function (ValaGDBusClientModul
 	_tmp19_ = cfunc;
 	_tmp20_ = vala_ccode_node_get_modifiers ((ValaCCodeNode*) _tmp19_);
 	_tmp21_ = _tmp20_;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp19_, _tmp21_ | VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp19_, _tmp21_ | BALA_CCODE_MODIFIERS_STATIC);
 	_tmp22_ = ((ValaCCodeBaseModule*) self)->cfile;
 	_tmp23_ = cfunc;
 	vala_ccode_file_add_function_declaration (_tmp22_, _tmp23_);
@@ -3233,7 +3233,7 @@ vala_gd_bus_client_module_generate_signal_handler_function (ValaGDBusClientModul
 			_tmp34_ = sig;
 			_tmp35_ = vala_symbol_get_access ((ValaSymbol*) _tmp34_);
 			_tmp36_ = _tmp35_;
-			if (_tmp36_ != VALA_SYMBOL_ACCESSIBILITY_PUBLIC) {
+			if (_tmp36_ != BALA_SYMBOL_ACCESSIBILITY_PUBLIC) {
 				_vala_code_node_unref0 (sig);
 				continue;
 			}
@@ -3265,7 +3265,7 @@ vala_gd_bus_client_module_generate_signal_handler_function (ValaGDBusClientModul
 			_tmp53_ = ccheck;
 			_tmp54_ = vala_ccode_constant_new ("0");
 			_tmp55_ = _tmp54_;
-			_tmp56_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_EQUALITY, (ValaCCodeExpression*) _tmp53_, (ValaCCodeExpression*) _tmp55_);
+			_tmp56_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_EQUALITY, (ValaCCodeExpression*) _tmp53_, (ValaCCodeExpression*) _tmp55_);
 			_tmp57_ = _tmp56_;
 			_vala_ccode_node_unref0 (_tmp55_);
 			cond = _tmp57_;
@@ -3414,7 +3414,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 		_vala_ccode_node_unref0 (error_argument);
 		error_argument = (ValaCCodeExpression*) _tmp18_;
 	}
-	if (call_type != VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH) {
+	if (call_type != BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH) {
 		ValaCCodeFunctionCall* destination = NULL;
 		ValaCCodeIdentifier* _tmp19_;
 		ValaCCodeIdentifier* _tmp20_;
@@ -3569,7 +3569,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 			_vala_ccode_node_unref0 (_tmp38_);
 			_tmp40_ = timeout;
 			_tmp41_ = gdbusproxy;
-			vala_ccode_function_call_add_argument (G_TYPE_CHECK_INSTANCE_CAST (_tmp40_, VALA_TYPE_CCODE_FUNCTION_CALL, ValaCCodeFunctionCall), (ValaCCodeExpression*) _tmp41_);
+			vala_ccode_function_call_add_argument (G_TYPE_CHECK_INSTANCE_CAST (_tmp40_, BALA_TYPE_CCODE_FUNCTION_CALL, ValaCCodeFunctionCall), (ValaCCodeExpression*) _tmp41_);
 		} else {
 			gchar* _tmp42_;
 			gchar* _tmp43_;
@@ -3582,7 +3582,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 			_g_free0 (_tmp43_);
 		}
 		_tmp45_ = g_direct_equal;
-		_tmp46_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp45_);
+		_tmp46_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp45_);
 		error_types = _tmp46_;
 		_tmp47_ = error_types;
 		vala_code_node_get_error_types ((ValaCodeNode*) m, (ValaCollection*) _tmp47_, NULL);
@@ -3625,7 +3625,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 				_tmp56_ = vala_list_get ((ValaList*) _tmp55_, _error_type_index);
 				error_type = (ValaDataType*) _tmp56_;
 				_tmp57_ = error_type;
-				_tmp58_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp57_, VALA_TYPE_ERROR_TYPE, ValaErrorType));
+				_tmp58_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp57_, BALA_TYPE_ERROR_TYPE, ValaErrorType));
 				errtype = _tmp58_;
 				_tmp59_ = errtype;
 				_tmp60_ = vala_error_type_get_error_domain (_tmp59_);
@@ -3733,7 +3733,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 		_tmp112_ = builder_init;
 		_tmp113_ = vala_ccode_identifier_new ("_arguments_builder");
 		_tmp114_ = _tmp113_;
-		_tmp115_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp114_);
+		_tmp115_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp114_);
 		_tmp116_ = _tmp115_;
 		vala_ccode_function_call_add_argument (_tmp112_, (ValaCCodeExpression*) _tmp116_);
 		_vala_ccode_node_unref0 (_tmp116_);
@@ -3809,7 +3809,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 				_tmp141_ = param;
 				_tmp142_ = vala_parameter_get_direction (_tmp141_);
 				_tmp143_ = _tmp142_;
-				if (_tmp143_ == VALA_PARAMETER_DIRECTION_IN) {
+				if (_tmp143_ == BALA_PARAMETER_DIRECTION_IN) {
 					ValaCCodeExpression* expr = NULL;
 					ValaParameter* _tmp144_;
 					const gchar* _tmp145_;
@@ -3852,14 +3852,14 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 						ValaCCodeExpression* _tmp154_;
 						ValaCCodeUnaryExpression* _tmp155_;
 						_tmp154_ = expr;
-						_tmp155_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, _tmp154_);
+						_tmp155_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, _tmp154_);
 						_vala_ccode_node_unref0 (expr);
 						expr = (ValaCCodeExpression*) _tmp155_;
 					}
 					_tmp157_ = param;
 					_tmp158_ = vala_variable_get_variable_type ((ValaVariable*) _tmp157_);
 					_tmp159_ = _tmp158_;
-					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp159_, VALA_TYPE_OBJECT_TYPE)) {
+					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp159_, BALA_TYPE_OBJECT_TYPE)) {
 						ValaParameter* _tmp160_;
 						ValaDataType* _tmp161_;
 						ValaDataType* _tmp162_;
@@ -3893,7 +3893,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 					_tmp170_ = param;
 					_tmp171_ = vala_variable_get_variable_type ((ValaVariable*) _tmp170_);
 					_tmp172_ = _tmp171_;
-					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp172_, VALA_TYPE_OBJECT_TYPE)) {
+					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp172_, BALA_TYPE_OBJECT_TYPE)) {
 						ValaParameter* _tmp173_;
 						ValaDataType* _tmp174_;
 						ValaDataType* _tmp175_;
@@ -3942,7 +3942,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 		_tmp191_ = builder_end;
 		_tmp192_ = vala_ccode_identifier_new ("_arguments_builder");
 		_tmp193_ = _tmp192_;
-		_tmp194_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp193_);
+		_tmp194_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp193_);
 		_tmp195_ = _tmp194_;
 		vala_ccode_function_call_add_argument (_tmp191_, (ValaCCodeExpression*) _tmp195_);
 		_vala_ccode_node_unref0 (_tmp195_);
@@ -4032,7 +4032,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 			_tmp234_ = ccall;
 			vala_ccode_function_add_expression (_tmp233_, (ValaCCodeExpression*) _tmp234_);
 		}
-		if (call_type == VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC) {
+		if (call_type == BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC) {
 			ValaCCodeIdentifier* _tmp235_;
 			ValaCCodeIdentifier* _tmp236_;
 			ValaCCodeFunctionCall* _tmp237_;
@@ -4099,7 +4099,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 			vala_ccode_function_add_assignment (_tmp256_, (ValaCCodeExpression*) _tmp258_, (ValaCCodeExpression*) _tmp259_);
 			_vala_ccode_node_unref0 (_tmp258_);
 		} else {
-			if (call_type == VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY) {
+			if (call_type == BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY) {
 				ValaCCodeFunctionCall* set_flags = NULL;
 				ValaCCodeIdentifier* _tmp260_;
 				ValaCCodeIdentifier* _tmp261_;
@@ -4186,7 +4186,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 				vala_ccode_function_add_expression (_tmp290_, (ValaCCodeExpression*) _tmp291_);
 				_vala_ccode_node_unref0 (set_flags);
 			} else {
-				if (call_type == VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC) {
+				if (call_type == BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC) {
 					ValaCCodeIdentifier* _tmp292_;
 					ValaCCodeIdentifier* _tmp293_;
 					ValaCCodeFunctionCall* _tmp294_;
@@ -4463,10 +4463,10 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 		_vala_ccode_node_unref0 (inner_res);
 		_vala_ccode_node_unref0 (ccall);
 	}
-	if (call_type == VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC) {
+	if (call_type == BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC) {
 		_tmp393_ = TRUE;
 	} else {
-		_tmp393_ = call_type == VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH;
+		_tmp393_ = call_type == BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH;
 	}
 	if (_tmp393_) {
 		ValaCCodeFunction* _tmp394_;
@@ -4541,7 +4541,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 		_vala_ccode_node_unref0 (_tmp404_);
 		_tmp405_ = vala_ccode_identifier_new ("_reply_message");
 		_tmp406_ = _tmp405_;
-		_tmp407_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaCCodeExpression*) _tmp406_);
+		_tmp407_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaCCodeExpression*) _tmp406_);
 		_tmp408_ = _tmp407_;
 		_vala_ccode_node_unref0 (_tmp406_);
 		reply_is_null = _tmp408_;
@@ -4585,7 +4585,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 		vala_ccode_function_close (_tmp434_);
 		_tmp435_ = vala_callable_get_return_type ((ValaCallable*) m);
 		_tmp436_ = _tmp435_;
-		has_result = !G_TYPE_CHECK_INSTANCE_TYPE (_tmp436_, VALA_TYPE_VOID_TYPE);
+		has_result = !G_TYPE_CHECK_INSTANCE_TYPE (_tmp436_, BALA_TYPE_VOID_TYPE);
 		if (uses_fd) {
 			ValaCCodeFunction* _tmp437_;
 			ValaCCodeFunction* _tmp438_;
@@ -4651,7 +4651,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 				_tmp456_ = param;
 				_tmp457_ = vala_parameter_get_direction (_tmp456_);
 				_tmp458_ = _tmp457_;
-				if (_tmp458_ == VALA_PARAMETER_DIRECTION_OUT) {
+				if (_tmp458_ == BALA_PARAMETER_DIRECTION_OUT) {
 					has_result = TRUE;
 				}
 				_vala_code_node_unref0 (param);
@@ -4735,7 +4735,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 			_tmp482_ = iter_init;
 			_tmp483_ = vala_ccode_identifier_new ("_reply_iter");
 			_tmp484_ = _tmp483_;
-			_tmp485_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp484_);
+			_tmp485_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp484_);
 			_tmp486_ = _tmp485_;
 			vala_ccode_function_call_add_argument (_tmp482_, (ValaCCodeExpression*) _tmp486_);
 			_vala_ccode_node_unref0 (_tmp486_);
@@ -4787,7 +4787,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 					_tmp502_ = param;
 					_tmp503_ = vala_parameter_get_direction (_tmp502_);
 					_tmp504_ = _tmp503_;
-					if (_tmp504_ == VALA_PARAMETER_DIRECTION_OUT) {
+					if (_tmp504_ == BALA_PARAMETER_DIRECTION_OUT) {
 						ValaCCodeFunction* _tmp505_;
 						ValaCCodeFunction* _tmp506_;
 						ValaParameter* _tmp507_;
@@ -4874,7 +4874,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 						_tmp524_ = param;
 						_tmp525_ = vala_variable_get_variable_type ((ValaVariable*) _tmp524_);
 						_tmp526_ = _tmp525_;
-						_tmp527_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp526_, VALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp526_) : NULL);
+						_tmp527_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp526_, BALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp526_) : NULL);
 						array_type = _tmp527_;
 						_tmp528_ = array_type;
 						if (_tmp528_ != NULL) {
@@ -4971,7 +4971,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 						_tmp572_ = _tmp571_;
 						_tmp573_ = vala_ccode_identifier_new (_tmp572_);
 						_tmp574_ = _tmp573_;
-						_tmp575_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp574_);
+						_tmp575_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp574_);
 						_tmp576_ = _tmp575_;
 						_tmp577_ = target;
 						vala_ccode_function_add_assignment (_tmp567_, (ValaCCodeExpression*) _tmp576_, (ValaCCodeExpression*) _tmp577_);
@@ -5029,7 +5029,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 										_tmp590_ = _tmp589_;
 										_tmp591_ = vala_ccode_identifier_new (_tmp590_);
 										_tmp592_ = _tmp591_;
-										_tmp593_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp592_);
+										_tmp593_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp592_);
 										_tmp594_ = _tmp593_;
 										_tmp595_ = param;
 										_tmp596_ = vala_symbol_get_name ((ValaSymbol*) _tmp595_);
@@ -5077,9 +5077,9 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 							_tmp606_ = _tmp605_;
 							_tmp607_ = vala_ccode_identifier_new ("error");
 							_tmp608_ = _tmp607_;
-							_tmp609_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp608_);
+							_tmp609_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp608_);
 							_tmp610_ = _tmp609_;
-							_tmp611_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp606_, (ValaCCodeExpression*) _tmp610_);
+							_tmp611_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp606_, (ValaCCodeExpression*) _tmp610_);
 							_tmp612_ = _tmp611_;
 							vala_ccode_function_open_if (_tmp604_, (ValaCCodeExpression*) _tmp612_);
 							_vala_ccode_node_unref0 (_tmp612_);
@@ -5106,7 +5106,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 			}
 			_tmp620_ = vala_callable_get_return_type ((ValaCallable*) m);
 			_tmp621_ = _tmp620_;
-			if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp621_, VALA_TYPE_VOID_TYPE)) {
+			if (!G_TYPE_CHECK_INSTANCE_TYPE (_tmp621_, BALA_TYPE_VOID_TYPE)) {
 				ValaDataType* _tmp622_;
 				ValaDataType* _tmp623_;
 				_tmp622_ = vala_callable_get_return_type ((ValaCallable*) m);
@@ -5126,7 +5126,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 					ValaCCodeUnaryExpression* _tmp634_;
 					_tmp624_ = vala_ccode_identifier_new ("result");
 					_tmp625_ = _tmp624_;
-					_tmp626_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp625_);
+					_tmp626_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp625_);
 					_tmp627_ = _tmp626_;
 					_vala_ccode_node_unref0 (_tmp625_);
 					target = _tmp627_;
@@ -5190,7 +5190,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 					_g_free0 (_tmp640_);
 					_tmp647_ = vala_callable_get_return_type ((ValaCallable*) m);
 					_tmp648_ = _tmp647_;
-					_tmp649_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp648_, VALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp648_) : NULL);
+					_tmp649_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp648_, BALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp648_) : NULL);
 					array_type = _tmp649_;
 					_tmp650_ = array_type;
 					if (_tmp650_ != NULL) {
@@ -5307,7 +5307,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 									_tmp687_ = _tmp686_;
 									_tmp688_ = vala_ccode_identifier_new (_tmp687_);
 									_tmp689_ = _tmp688_;
-									_tmp690_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp689_);
+									_tmp690_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp689_);
 									_tmp691_ = _tmp690_;
 									_tmp692_ = g_strdup_printf ("_result_length%d", dim);
 									_tmp693_ = _tmp692_;
@@ -5347,9 +5347,9 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 						_tmp699_ = _tmp698_;
 						_tmp700_ = vala_ccode_identifier_new ("error");
 						_tmp701_ = _tmp700_;
-						_tmp702_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp701_);
+						_tmp702_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp701_);
 						_tmp703_ = _tmp702_;
-						_tmp704_ = vala_ccode_binary_expression_new (VALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp699_, (ValaCCodeExpression*) _tmp703_);
+						_tmp704_ = vala_ccode_binary_expression_new (BALA_CCODE_BINARY_OPERATOR_AND, (ValaCCodeExpression*) _tmp699_, (ValaCCodeExpression*) _tmp703_);
 						_tmp705_ = _tmp704_;
 						vala_ccode_function_open_if (_tmp697_, (ValaCCodeExpression*) _tmp705_);
 						_vala_ccode_node_unref0 (_tmp705_);
@@ -5378,7 +5378,7 @@ vala_gd_bus_client_module_generate_marshalling (ValaGDBusClientModule* self,
 		vala_ccode_function_add_expression (_tmp714_, (ValaCCodeExpression*) _tmp715_);
 		_tmp717_ = vala_callable_get_return_type ((ValaCallable*) m);
 		_tmp718_ = _tmp717_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp718_, VALA_TYPE_VOID_TYPE)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp718_, BALA_TYPE_VOID_TYPE)) {
 			_tmp716_ = TRUE;
 		} else {
 			ValaDataType* _tmp719_;
@@ -5465,11 +5465,11 @@ vala_gd_bus_client_module_generate_dbus_proxy_method (ValaGDBusClientModule* sel
 	_tmp8_ = vala_ccode_function_new (_tmp7_, "void");
 	function = _tmp8_;
 	_tmp9_ = function;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp9_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp9_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp10_ = g_direct_hash;
 	_tmp11_ = g_direct_equal;
 	_tmp12_ = g_direct_equal;
-	_tmp13_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp10_, _tmp11_, _tmp12_);
+	_tmp13_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp10_, _tmp11_, _tmp12_);
 	cparam_map = _tmp13_;
 	_tmp14_ = ((ValaCCodeBaseModule*) self)->cfile;
 	_tmp15_ = cparam_map;
@@ -5478,9 +5478,9 @@ vala_gd_bus_client_module_generate_dbus_proxy_method (ValaGDBusClientModule* sel
 	_tmp17_ = function;
 	vala_ccode_base_module_push_function ((ValaCCodeBaseModule*) self, _tmp17_);
 	if (no_reply) {
-		_tmp18_ = VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY;
+		_tmp18_ = BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_NO_REPLY;
 	} else {
-		_tmp18_ = VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC;
+		_tmp18_ = BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_SYNC;
 	}
 	_tmp19_ = dbus_iface_name;
 	_tmp20_ = vala_gd_bus_module_get_dbus_name_for_member ((ValaSymbol*) m);
@@ -5549,11 +5549,11 @@ vala_gd_bus_client_module_generate_async_dbus_proxy_method (ValaGDBusClientModul
 	dbus_iface_name = _tmp6_;
 	_tmp7_ = vala_ccode_function_new (proxy_name, "void");
 	function = _tmp7_;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) function, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) function, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp8_ = g_direct_hash;
 	_tmp9_ = g_direct_equal;
 	_tmp10_ = g_direct_equal;
-	_tmp11_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp8_, _tmp9_, _tmp10_);
+	_tmp11_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp8_, _tmp9_, _tmp10_);
 	cparam_map = _tmp11_;
 	_tmp12_ = vala_ccode_parameter_new ("_callback_", "GAsyncReadyCallback");
 	_tmp13_ = _tmp12_;
@@ -5568,7 +5568,7 @@ vala_gd_bus_client_module_generate_async_dbus_proxy_method (ValaGDBusClientModul
 	vala_ccode_base_module_push_function ((ValaCCodeBaseModule*) self, function);
 	_tmp17_ = vala_gd_bus_module_get_dbus_name_for_member ((ValaSymbol*) m);
 	_tmp18_ = _tmp17_;
-	vala_gd_bus_client_module_generate_marshalling (self, m, VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC, dbus_iface_name, _tmp18_, vala_gd_bus_module_get_dbus_timeout_for_member ((ValaSymbol*) m));
+	vala_gd_bus_client_module_generate_marshalling (self, m, BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_ASYNC, dbus_iface_name, _tmp18_, vala_gd_bus_module_get_dbus_timeout_for_member ((ValaSymbol*) m));
 	_g_free0 (_tmp18_);
 	vala_ccode_base_module_pop_function ((ValaCCodeBaseModule*) self);
 	_tmp19_ = ((ValaCCodeBaseModule*) self)->cfile;
@@ -5622,11 +5622,11 @@ vala_gd_bus_client_module_generate_finish_dbus_proxy_method (ValaGDBusClientModu
 	proxy_name = _tmp5_;
 	_tmp6_ = vala_ccode_function_new (proxy_name, "void");
 	function = _tmp6_;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) function, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) function, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp7_ = g_direct_hash;
 	_tmp8_ = g_direct_equal;
 	_tmp9_ = g_direct_equal;
-	_tmp10_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, VALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp7_, _tmp8_, _tmp9_);
+	_tmp10_ = vala_hash_map_new (G_TYPE_INT, NULL, NULL, BALA_TYPE_CCODE_PARAMETER, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp7_, _tmp8_, _tmp9_);
 	cparam_map = _tmp10_;
 	_tmp11_ = vala_ccode_parameter_new ("_res_", "GAsyncResult*");
 	_tmp12_ = _tmp11_;
@@ -5635,7 +5635,7 @@ vala_gd_bus_client_module_generate_finish_dbus_proxy_method (ValaGDBusClientModu
 	_tmp13_ = ((ValaCCodeBaseModule*) self)->cfile;
 	vala_ccode_base_module_generate_cparameters ((ValaCCodeBaseModule*) self, m, _tmp13_, (ValaMap*) cparam_map, function, NULL, NULL, NULL, 2);
 	vala_ccode_base_module_push_function ((ValaCCodeBaseModule*) self, function);
-	vala_gd_bus_client_module_generate_marshalling (self, m, VALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH, NULL, NULL, -1);
+	vala_gd_bus_client_module_generate_marshalling (self, m, BALA_GD_BUS_CLIENT_MODULE_CALL_TYPE_FINISH, NULL, NULL, -1);
 	vala_ccode_base_module_pop_function ((ValaCCodeBaseModule*) self);
 	_tmp14_ = ((ValaCCodeBaseModule*) self)->cfile;
 	vala_ccode_file_add_function_declaration (_tmp14_, function);
@@ -5927,13 +5927,13 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_get (ValaGDBusClientModul
 	_tmp28_ = _tmp27_;
 	_tmp29_ = vala_property_accessor_get_value_type (_tmp28_);
 	_tmp30_ = _tmp29_;
-	_tmp31_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp30_, VALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp30_) : NULL);
+	_tmp31_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp30_, BALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp30_) : NULL);
 	array_type = _tmp31_;
 	_tmp32_ = proxy_name;
 	_tmp33_ = vala_ccode_function_new (_tmp32_, "void");
 	function = _tmp33_;
 	_tmp34_ = function;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp34_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp34_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp35_ = function;
 	_tmp36_ = vala_get_ccode_name ((ValaCodeNode*) iface);
 	_tmp37_ = _tmp36_;
@@ -6094,7 +6094,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_get (ValaGDBusClientModul
 	_tmp106_ = _tmp105_;
 	_tmp107_ = vala_ccode_identifier_new ("_inner_reply");
 	_tmp108_ = _tmp107_;
-	_tmp109_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaCCodeExpression*) _tmp108_);
+	_tmp109_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaCCodeExpression*) _tmp108_);
 	_tmp110_ = _tmp109_;
 	vala_ccode_function_open_if (_tmp106_, (ValaCCodeExpression*) _tmp110_);
 	_vala_ccode_node_unref0 (_tmp110_);
@@ -6126,7 +6126,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_get (ValaGDBusClientModul
 	_tmp127_ = builder_init;
 	_tmp128_ = vala_ccode_identifier_new ("_arguments_builder");
 	_tmp129_ = _tmp128_;
-	_tmp130_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp129_);
+	_tmp130_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp129_);
 	_tmp131_ = _tmp130_;
 	vala_ccode_function_call_add_argument (_tmp127_, (ValaCCodeExpression*) _tmp131_);
 	_vala_ccode_node_unref0 (_tmp131_);
@@ -6175,7 +6175,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_get (ValaGDBusClientModul
 	_tmp159_ = builder_end;
 	_tmp160_ = vala_ccode_identifier_new ("_arguments_builder");
 	_tmp161_ = _tmp160_;
-	_tmp162_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp161_);
+	_tmp162_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp161_);
 	_tmp163_ = _tmp162_;
 	vala_ccode_function_call_add_argument (_tmp159_, (ValaCCodeExpression*) _tmp163_);
 	_vala_ccode_node_unref0 (_tmp163_);
@@ -6242,7 +6242,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_get (ValaGDBusClientModul
 	_tmp201_ = _tmp200_;
 	_tmp202_ = vala_ccode_identifier_new ("_reply");
 	_tmp203_ = _tmp202_;
-	_tmp204_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaCCodeExpression*) _tmp203_);
+	_tmp204_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaCCodeExpression*) _tmp203_);
 	_tmp205_ = _tmp204_;
 	vala_ccode_function_open_if (_tmp201_, (ValaCCodeExpression*) _tmp205_);
 	_vala_ccode_node_unref0 (_tmp205_);
@@ -6272,7 +6272,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_get (ValaGDBusClientModul
 	_tmp220_ = get_variant;
 	_tmp221_ = vala_ccode_identifier_new ("_inner_reply");
 	_tmp222_ = _tmp221_;
-	_tmp223_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp222_);
+	_tmp223_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp222_);
 	_tmp224_ = _tmp223_;
 	vala_ccode_function_call_add_argument (_tmp220_, (ValaCCodeExpression*) _tmp224_);
 	_vala_ccode_node_unref0 (_tmp224_);
@@ -6323,7 +6323,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_get (ValaGDBusClientModul
 		ValaCCodeExpression* _tmp258_;
 		_tmp242_ = vala_ccode_identifier_new ("result");
 		_tmp243_ = _tmp242_;
-		_tmp244_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp243_);
+		_tmp244_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp243_);
 		_tmp245_ = _tmp244_;
 		_vala_ccode_node_unref0 (_tmp243_);
 		target = _tmp245_;
@@ -6530,7 +6530,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_get (ValaGDBusClientModul
 							_tmp319_ = _tmp318_;
 							_tmp320_ = vala_ccode_identifier_new (_tmp319_);
 							_tmp321_ = _tmp320_;
-							_tmp322_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp321_);
+							_tmp322_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp321_);
 							_tmp323_ = _tmp322_;
 							_tmp324_ = g_strdup_printf ("_result_length%d", dim);
 							_tmp325_ = _tmp324_;
@@ -6816,13 +6816,13 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_set (ValaGDBusClientModul
 	_tmp8_ = _tmp7_;
 	_tmp9_ = vala_property_accessor_get_value_type (_tmp8_);
 	_tmp10_ = _tmp9_;
-	_tmp11_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, VALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp10_) : NULL);
+	_tmp11_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, BALA_TYPE_ARRAY_TYPE) ? ((ValaArrayType*) _tmp10_) : NULL);
 	array_type = _tmp11_;
 	_tmp12_ = proxy_name;
 	_tmp13_ = vala_ccode_function_new (_tmp12_, "void");
 	function = _tmp13_;
 	_tmp14_ = function;
-	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp14_, VALA_CCODE_MODIFIERS_STATIC);
+	vala_ccode_node_set_modifiers ((ValaCCodeNode*) _tmp14_, BALA_CCODE_MODIFIERS_STATIC);
 	_tmp15_ = function;
 	_tmp16_ = vala_get_ccode_name ((ValaCodeNode*) iface);
 	_tmp17_ = _tmp16_;
@@ -6966,7 +6966,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_set (ValaGDBusClientModul
 	_tmp75_ = builder_init;
 	_tmp76_ = vala_ccode_identifier_new ("_arguments_builder");
 	_tmp77_ = _tmp76_;
-	_tmp78_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp77_);
+	_tmp78_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp77_);
 	_tmp79_ = _tmp78_;
 	vala_ccode_function_call_add_argument (_tmp75_, (ValaCCodeExpression*) _tmp79_);
 	_vala_ccode_node_unref0 (_tmp79_);
@@ -7015,7 +7015,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_set (ValaGDBusClientModul
 	_tmp107_ = builder_open;
 	_tmp108_ = vala_ccode_identifier_new ("_arguments_builder");
 	_tmp109_ = _tmp108_;
-	_tmp110_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp109_);
+	_tmp110_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp109_);
 	_tmp111_ = _tmp110_;
 	vala_ccode_function_call_add_argument (_tmp107_, (ValaCCodeExpression*) _tmp111_);
 	_vala_ccode_node_unref0 (_tmp111_);
@@ -7050,7 +7050,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_set (ValaGDBusClientModul
 		_tmp125_ = _tmp124_;
 		_tmp126_ = vala_ccode_identifier_new ("value");
 		_tmp127_ = _tmp126_;
-		_tmp128_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp127_);
+		_tmp128_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_POINTER_INDIRECTION, (ValaCCodeExpression*) _tmp127_);
 		_tmp129_ = _tmp128_;
 		vala_gvariant_module_write_expression ((ValaGVariantModule*) self, _tmp123_, (ValaCCodeExpression*) _tmp125_, (ValaCCodeExpression*) _tmp129_, (ValaSymbol*) prop);
 		_vala_ccode_node_unref0 (_tmp129_);
@@ -7085,7 +7085,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_set (ValaGDBusClientModul
 	builder_close = _tmp141_;
 	_tmp142_ = vala_ccode_identifier_new ("_arguments_builder");
 	_tmp143_ = _tmp142_;
-	_tmp144_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp143_);
+	_tmp144_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp143_);
 	_tmp145_ = _tmp144_;
 	vala_ccode_function_call_add_argument (builder_close, (ValaCCodeExpression*) _tmp145_);
 	_vala_ccode_node_unref0 (_tmp145_);
@@ -7101,7 +7101,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_set (ValaGDBusClientModul
 	builder_end = _tmp151_;
 	_tmp152_ = vala_ccode_identifier_new ("_arguments_builder");
 	_tmp153_ = _tmp152_;
-	_tmp154_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp153_);
+	_tmp154_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, (ValaCCodeExpression*) _tmp153_);
 	_tmp155_ = _tmp154_;
 	vala_ccode_function_call_add_argument (builder_end, (ValaCCodeExpression*) _tmp155_);
 	_vala_ccode_node_unref0 (_tmp155_);
@@ -7159,7 +7159,7 @@ vala_gd_bus_client_module_generate_dbus_proxy_property_set (ValaGDBusClientModul
 	_tmp185_ = _tmp184_;
 	_tmp186_ = vala_ccode_identifier_new ("_reply");
 	_tmp187_ = _tmp186_;
-	_tmp188_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaCCodeExpression*) _tmp187_);
+	_tmp188_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_LOGICAL_NEGATION, (ValaCCodeExpression*) _tmp187_);
 	_tmp189_ = _tmp188_;
 	vala_ccode_function_open_if (_tmp185_, (ValaCCodeExpression*) _tmp189_);
 	_vala_ccode_node_unref0 (_tmp189_);
@@ -7306,7 +7306,7 @@ vala_gd_bus_client_module_real_register_dbus_info (ValaCCodeBaseModule* base,
 	self = (ValaGDBusClientModule*) base;
 	g_return_if_fail (block != NULL);
 	g_return_if_fail (sym != NULL);
-	if (!G_TYPE_CHECK_INSTANCE_TYPE (sym, VALA_TYPE_INTERFACE)) {
+	if (!G_TYPE_CHECK_INSTANCE_TYPE (sym, BALA_TYPE_INTERFACE)) {
 		return;
 	}
 	_tmp0_ = vala_gd_bus_module_get_dbus_name ((ValaTypeSymbol*) sym);
@@ -7446,7 +7446,7 @@ vala_gd_bus_client_module_real_register_dbus_info (ValaCCodeBaseModule* base,
 	_tmp80_ = set_qdata;
 	_tmp81_ = vala_gd_bus_module_get_interface_info ((ValaGDBusModule*) self, sym);
 	_tmp82_ = _tmp81_;
-	_tmp83_ = vala_ccode_unary_expression_new (VALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp82_);
+	_tmp83_ = vala_ccode_unary_expression_new (BALA_CCODE_UNARY_OPERATOR_ADDRESS_OF, _tmp82_);
 	_tmp84_ = _tmp83_;
 	_tmp85_ = vala_ccode_cast_expression_new ((ValaCCodeExpression*) _tmp84_, "void*");
 	_tmp86_ = _tmp85_;
@@ -7476,7 +7476,7 @@ vala_gd_bus_client_module_construct (GType object_type)
 ValaGDBusClientModule*
 vala_gd_bus_client_module_new (void)
 {
-	return vala_gd_bus_client_module_construct (VALA_TYPE_GD_BUS_CLIENT_MODULE);
+	return vala_gd_bus_client_module_construct (BALA_TYPE_GD_BUS_CLIENT_MODULE);
 }
 
 static void
@@ -7502,7 +7502,7 @@ vala_gd_bus_client_module_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaGDBusClientModuleClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_gd_bus_client_module_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaGDBusClientModule), 0, (GInstanceInitFunc) vala_gd_bus_client_module_instance_init, NULL };
 	GType vala_gd_bus_client_module_type_id;
-	vala_gd_bus_client_module_type_id = g_type_register_static (VALA_TYPE_GD_BUS_MODULE, "ValaGDBusClientModule", &g_define_type_info, 0);
+	vala_gd_bus_client_module_type_id = g_type_register_static (BALA_TYPE_GD_BUS_MODULE, "ValaGDBusClientModule", &g_define_type_info, 0);
 	return vala_gd_bus_client_module_type_id;
 }
 

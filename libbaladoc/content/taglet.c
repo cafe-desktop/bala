@@ -38,7 +38,7 @@ valadoc_content_taglet_get_parser_rule (ValadocContentTaglet* self,
                                         ValadocRule* run_rule)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CONTENT_TAGLET_GET_INTERFACE (self)->get_parser_rule (self, run_rule);
+	return BALADOC_CONTENT_TAGLET_GET_INTERFACE (self)->get_parser_rule (self, run_rule);
 }
 
 static ValaList*
@@ -53,7 +53,7 @@ ValaList*
 valadoc_content_taglet_get_inheritable_documentation (ValadocContentTaglet* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CONTENT_TAGLET_GET_INTERFACE (self)->get_inheritable_documentation (self);
+	return BALADOC_CONTENT_TAGLET_GET_INTERFACE (self)->get_inheritable_documentation (self);
 }
 
 static gboolean
@@ -71,7 +71,7 @@ valadoc_content_taglet_inheritable (ValadocContentTaglet* self,
                                     ValadocContentTaglet* taglet)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALADOC_CONTENT_TAGLET_GET_INTERFACE (self)->inheritable (self, taglet);
+	return BALADOC_CONTENT_TAGLET_GET_INTERFACE (self)->inheritable (self, taglet);
 }
 
 static void
@@ -88,7 +88,7 @@ valadoc_content_taglet_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentTagletIface), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_taglet_default_init, (GClassFinalizeFunc) NULL, NULL, 0, 0, (GInstanceInitFunc) NULL, NULL };
 	GType valadoc_content_taglet_type_id;
 	valadoc_content_taglet_type_id = g_type_register_static (G_TYPE_INTERFACE, "ValadocContentTaglet", &g_define_type_info, 0);
-	g_type_interface_add_prerequisite (valadoc_content_taglet_type_id, VALADOC_CONTENT_TYPE_CONTENT_ELEMENT);
+	g_type_interface_add_prerequisite (valadoc_content_taglet_type_id, BALADOC_CONTENT_TYPE_CONTENT_ELEMENT);
 	return valadoc_content_taglet_type_id;
 }
 

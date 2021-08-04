@@ -53,7 +53,7 @@ vala_callable_type_get_callable_symbol (ValaCallableType* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_CALLABLE, ValaCallable);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_CALLABLE, ValaCallable);
 	return result;
 }
 
@@ -154,9 +154,9 @@ vala_callable_type_real_to_prototype_string (ValaDataType* base,
 	self = (ValaCallableType*) base;
 	_tmp0_ = g_string_new ("");
 	builder = _tmp0_;
-	delegate_type = VALA_IS_DELEGATE_TYPE (self) ? ((ValaDelegateType*) self) : NULL;
-	method_type = VALA_IS_METHOD_TYPE (self) ? ((ValaMethodType*) self) : NULL;
-	signal_type = VALA_IS_SIGNAL_TYPE (self) ? ((ValaSignalType*) self) : NULL;
+	delegate_type = BALA_IS_DELEGATE_TYPE (self) ? ((ValaDelegateType*) self) : NULL;
+	method_type = BALA_IS_METHOD_TYPE (self) ? ((ValaMethodType*) self) : NULL;
+	signal_type = BALA_IS_SIGNAL_TYPE (self) ? ((ValaSignalType*) self) : NULL;
 	_tmp2_ = method_type;
 	if (_tmp2_ != NULL) {
 		ValaMethodType* _tmp3_;
@@ -204,7 +204,7 @@ vala_callable_type_real_to_prototype_string (ValaDataType* base,
 		_tmp15_ = method_type;
 		_tmp16_ = vala_method_type_get_method_symbol (_tmp15_);
 		_tmp17_ = _tmp16_;
-		_tmp13_ = !VALA_IS_CREATION_METHOD (_tmp17_);
+		_tmp13_ = !BALA_IS_CREATION_METHOD (_tmp17_);
 	}
 	if (_tmp13_) {
 		GString* _tmp18_;
@@ -252,7 +252,7 @@ vala_callable_type_real_to_prototype_string (ValaDataType* base,
 		_tmp34_ = delegate_symbol;
 		_tmp35_ = vala_symbol_get_parent_symbol ((ValaSymbol*) _tmp34_);
 		_tmp36_ = _tmp35_;
-		if (VALA_IS_SIGNAL (_tmp36_)) {
+		if (BALA_IS_SIGNAL (_tmp36_)) {
 			ValaDelegate* _tmp37_;
 			ValaDataType* _tmp38_;
 			ValaDataType* _tmp39_;
@@ -360,7 +360,7 @@ vala_callable_type_real_to_prototype_string (ValaDataType* base,
 			_tmp65_ = param;
 			_tmp66_ = vala_parameter_get_direction (_tmp65_);
 			_tmp67_ = _tmp66_;
-			if (_tmp67_ == VALA_PARAMETER_DIRECTION_IN) {
+			if (_tmp67_ == BALA_PARAMETER_DIRECTION_IN) {
 				ValaParameter* _tmp68_;
 				ValaDataType* _tmp69_;
 				ValaDataType* _tmp70_;
@@ -389,7 +389,7 @@ vala_callable_type_real_to_prototype_string (ValaDataType* base,
 				_tmp74_ = param;
 				_tmp75_ = vala_parameter_get_direction (_tmp74_);
 				_tmp76_ = _tmp75_;
-				if (_tmp76_ == VALA_PARAMETER_DIRECTION_REF) {
+				if (_tmp76_ == BALA_PARAMETER_DIRECTION_REF) {
 					GString* _tmp77_;
 					_tmp77_ = builder;
 					g_string_append (_tmp77_, "ref ");
@@ -400,7 +400,7 @@ vala_callable_type_real_to_prototype_string (ValaDataType* base,
 					_tmp78_ = param;
 					_tmp79_ = vala_parameter_get_direction (_tmp78_);
 					_tmp80_ = _tmp79_;
-					if (_tmp80_ == VALA_PARAMETER_DIRECTION_OUT) {
+					if (_tmp80_ == BALA_PARAMETER_DIRECTION_OUT) {
 						GString* _tmp81_;
 						_tmp81_ = builder;
 						g_string_append (_tmp81_, "out ");
@@ -418,7 +418,7 @@ vala_callable_type_real_to_prototype_string (ValaDataType* base,
 					_tmp88_ = param;
 					_tmp89_ = vala_variable_get_variable_type ((ValaVariable*) _tmp88_);
 					_tmp90_ = _tmp89_;
-					_tmp82_ = VALA_IS_REFERENCE_TYPE (_tmp90_);
+					_tmp82_ = BALA_IS_REFERENCE_TYPE (_tmp90_);
 				} else {
 					_tmp82_ = FALSE;
 				}
@@ -467,7 +467,7 @@ vala_callable_type_real_to_prototype_string (ValaDataType* base,
 	_tmp109_ = builder;
 	g_string_append_c (_tmp109_, ')');
 	_tmp110_ = g_direct_equal;
-	_tmp111_ = vala_array_list_new (VALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp110_);
+	_tmp111_ = vala_array_list_new (BALA_TYPE_DATA_TYPE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp110_);
 	error_types = _tmp111_;
 	_tmp112_ = error_types;
 	vala_code_node_get_error_types ((ValaCodeNode*) self, (ValaCollection*) _tmp112_, NULL);
@@ -569,7 +569,7 @@ vala_callable_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCallableTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_callable_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCallableType), 0, (GInstanceInitFunc) vala_callable_type_instance_init, NULL };
 	GType vala_callable_type_type_id;
-	vala_callable_type_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaCallableType", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_callable_type_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaCallableType", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	return vala_callable_type_type_id;
 }
 

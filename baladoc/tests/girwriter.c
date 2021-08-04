@@ -32,23 +32,23 @@
 #include <glib.h>
 #include <valagee.h>
 
-#define VALADOC_TYPE_GIR_WRITER (valadoc_gir_writer_get_type ())
-#define VALADOC_GIR_WRITER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TYPE_GIR_WRITER, ValadocGirWriter))
-#define VALADOC_GIR_WRITER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TYPE_GIR_WRITER, ValadocGirWriterClass))
-#define VALADOC_IS_GIR_WRITER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TYPE_GIR_WRITER))
-#define VALADOC_IS_GIR_WRITER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TYPE_GIR_WRITER))
-#define VALADOC_GIR_WRITER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TYPE_GIR_WRITER, ValadocGirWriterClass))
+#define BALADOC_TYPE_GIR_WRITER (valadoc_gir_writer_get_type ())
+#define BALADOC_GIR_WRITER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TYPE_GIR_WRITER, ValadocGirWriter))
+#define BALADOC_GIR_WRITER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TYPE_GIR_WRITER, ValadocGirWriterClass))
+#define BALADOC_IS_GIR_WRITER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TYPE_GIR_WRITER))
+#define BALADOC_IS_GIR_WRITER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TYPE_GIR_WRITER))
+#define BALADOC_GIR_WRITER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TYPE_GIR_WRITER, ValadocGirWriterClass))
 
 typedef struct _ValadocGirWriter ValadocGirWriter;
 typedef struct _ValadocGirWriterClass ValadocGirWriterClass;
 typedef struct _ValadocGirWriterPrivate ValadocGirWriterPrivate;
 
-#define VALADOC_TYPE_SYMBOL_RESOLVER (valadoc_symbol_resolver_get_type ())
-#define VALADOC_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolver))
-#define VALADOC_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
-#define VALADOC_IS_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TYPE_SYMBOL_RESOLVER))
-#define VALADOC_IS_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TYPE_SYMBOL_RESOLVER))
-#define VALADOC_SYMBOL_RESOLVER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
+#define BALADOC_TYPE_SYMBOL_RESOLVER (valadoc_symbol_resolver_get_type ())
+#define BALADOC_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolver))
+#define BALADOC_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
+#define BALADOC_IS_SYMBOL_RESOLVER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TYPE_SYMBOL_RESOLVER))
+#define BALADOC_IS_SYMBOL_RESOLVER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TYPE_SYMBOL_RESOLVER))
+#define BALADOC_SYMBOL_RESOLVER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TYPE_SYMBOL_RESOLVER, ValadocSymbolResolverClass))
 
 typedef struct _ValadocSymbolResolver ValadocSymbolResolver;
 typedef struct _ValadocSymbolResolverClass ValadocSymbolResolverClass;
@@ -155,7 +155,7 @@ valadoc_gir_writer_construct (GType object_type,
 ValadocGirWriter*
 valadoc_gir_writer_new (ValadocSymbolResolver* resolver)
 {
-	return valadoc_gir_writer_construct (VALADOC_TYPE_GIR_WRITER, resolver);
+	return valadoc_gir_writer_construct (BALADOC_TYPE_GIR_WRITER, resolver);
 }
 
 static gchar*
@@ -225,7 +225,7 @@ valadoc_gir_writer_real_get_interface_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (viface != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) viface);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_INTERFACE) ? ((ValadocApiInterface*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_INTERFACE) ? ((ValadocApiInterface*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -255,7 +255,7 @@ valadoc_gir_writer_real_get_struct_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vst != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vst);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_STRUCT) ? ((ValadocApiStruct*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_STRUCT) ? ((ValadocApiStruct*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -285,7 +285,7 @@ valadoc_gir_writer_real_get_enum_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (ven != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) ven);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_ENUM) ? ((ValadocApiEnum*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_ENUM) ? ((ValadocApiEnum*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -315,7 +315,7 @@ valadoc_gir_writer_real_get_class_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vc != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vc);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_CLASS) ? ((ValadocApiClass*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_CLASS) ? ((ValadocApiClass*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -345,7 +345,7 @@ valadoc_gir_writer_real_get_error_code_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vecode != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vecode);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_ERROR_CODE) ? ((ValadocApiErrorCode*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_ERROR_CODE) ? ((ValadocApiErrorCode*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -375,7 +375,7 @@ valadoc_gir_writer_real_get_enum_value_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vev != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vev);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_ENUM_VALUE) ? ((ValadocApiEnumValue*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_ENUM_VALUE) ? ((ValadocApiEnumValue*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -405,7 +405,7 @@ valadoc_gir_writer_real_get_constant_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vc != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vc);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_CONSTANT) ? ((ValadocApiConstant*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -435,7 +435,7 @@ valadoc_gir_writer_real_get_error_domain_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vedomain != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vedomain);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_ERROR_DOMAIN) ? ((ValadocApiErrorDomain*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_ERROR_DOMAIN) ? ((ValadocApiErrorDomain*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -465,7 +465,7 @@ valadoc_gir_writer_real_get_field_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vf != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vf);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_FIELD) ? ((ValadocApiField*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_FIELD) ? ((ValadocApiField*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -495,7 +495,7 @@ valadoc_gir_writer_real_get_delegate_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vcb != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vcb);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -525,7 +525,7 @@ valadoc_gir_writer_real_get_method_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vm != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vm);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -555,7 +555,7 @@ valadoc_gir_writer_real_get_property_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vprop != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vprop);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_PROPERTY) ? ((ValadocApiProperty*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_PROPERTY) ? ((ValadocApiProperty*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -601,7 +601,7 @@ valadoc_gir_writer_real_get_delegate_return_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vcb != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vcb);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_DELEGATE) ? ((ValadocApiDelegate*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -628,7 +628,7 @@ valadoc_gir_writer_real_get_delegate_return_comment (ValaGIRWriter* base,
 	}
 	_tmp11_ = documentation;
 	_tmp12_ = cb;
-	_tmp13_ = valadoc_content_comment_find_taglets (_tmp11_, (ValadocApiNode*) _tmp12_, VALADOC_TAGLETS_TYPE_RETURN);
+	_tmp13_ = valadoc_content_comment_find_taglets (_tmp11_, (ValadocApiNode*) _tmp12_, BALADOC_TAGLETS_TYPE_RETURN);
 	taglets = _tmp13_;
 	{
 		ValaList* _taglet_list = NULL;
@@ -710,7 +710,7 @@ valadoc_gir_writer_real_get_signal_return_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vsig != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vsig);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_SIGNAL) ? ((ValadocApiSignal*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_SIGNAL) ? ((ValadocApiSignal*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -737,7 +737,7 @@ valadoc_gir_writer_real_get_signal_return_comment (ValaGIRWriter* base,
 	}
 	_tmp11_ = documentation;
 	_tmp12_ = sig;
-	_tmp13_ = valadoc_content_comment_find_taglets (_tmp11_, (ValadocApiNode*) _tmp12_, VALADOC_TAGLETS_TYPE_RETURN);
+	_tmp13_ = valadoc_content_comment_find_taglets (_tmp11_, (ValadocApiNode*) _tmp12_, BALADOC_TAGLETS_TYPE_RETURN);
 	taglets = _tmp13_;
 	{
 		ValaList* _taglet_list = NULL;
@@ -819,7 +819,7 @@ valadoc_gir_writer_real_get_method_return_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vm != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vm);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_METHOD) ? ((ValadocApiMethod*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -846,7 +846,7 @@ valadoc_gir_writer_real_get_method_return_comment (ValaGIRWriter* base,
 	}
 	_tmp11_ = documentation;
 	_tmp12_ = m;
-	_tmp13_ = valadoc_content_comment_find_taglets (_tmp11_, (ValadocApiNode*) _tmp12_, VALADOC_TAGLETS_TYPE_RETURN);
+	_tmp13_ = valadoc_content_comment_find_taglets (_tmp11_, (ValadocApiNode*) _tmp12_, BALADOC_TAGLETS_TYPE_RETURN);
 	taglets = _tmp13_;
 	{
 		ValaList* _taglet_list = NULL;
@@ -918,7 +918,7 @@ valadoc_gir_writer_real_get_signal_comment (ValaGIRWriter* base,
 	g_return_val_if_fail (vsig != NULL, NULL);
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = valadoc_symbol_resolver_resolve (_tmp0_, (ValaSymbol*) vsig);
-	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALADOC_API_TYPE_SIGNAL) ? ((ValadocApiSignal*) _tmp1_) : NULL;
+	_tmp2_ = G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALADOC_API_TYPE_SIGNAL) ? ((ValadocApiSignal*) _tmp1_) : NULL;
 	if (_tmp2_ == NULL) {
 		_g_object_unref0 (_tmp1_);
 	}
@@ -958,7 +958,7 @@ valadoc_gir_writer_real_get_parameter_comment (ValaGIRWriter* base,
 	_tmp0_ = self->priv->resolver;
 	_tmp1_ = vala_symbol_get_parent_symbol ((ValaSymbol*) param);
 	_tmp2_ = _tmp1_;
-	_tmp3_ = valadoc_symbol_resolver_resolve (_tmp0_, G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, VALA_TYPE_SYMBOL, ValaSymbol));
+	_tmp3_ = valadoc_symbol_resolver_resolve (_tmp0_, G_TYPE_CHECK_INSTANCE_CAST (_tmp2_, BALA_TYPE_SYMBOL, ValaSymbol));
 	symbol = _tmp3_;
 	_tmp4_ = symbol;
 	if (_tmp4_ == NULL) {
@@ -980,7 +980,7 @@ valadoc_gir_writer_real_get_parameter_comment (ValaGIRWriter* base,
 	}
 	_tmp10_ = documentation;
 	_tmp11_ = symbol;
-	_tmp12_ = valadoc_content_comment_find_taglets (_tmp10_, (ValadocApiNode*) _tmp11_, VALADOC_TAGLETS_TYPE_PARAM);
+	_tmp12_ = valadoc_content_comment_find_taglets (_tmp10_, (ValadocApiNode*) _tmp11_, BALADOC_TAGLETS_TYPE_PARAM);
 	taglets = _tmp12_;
 	{
 		ValaList* __taglet_list = NULL;
@@ -1023,7 +1023,7 @@ valadoc_gir_writer_real_get_parameter_comment (ValaGIRWriter* base,
 			_tmp21_ = vala_list_get (_tmp20_, __taglet_index);
 			_taglet = (ValadocContentTaglet*) _tmp21_;
 			_tmp22_ = _taglet;
-			_tmp23_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp22_, VALADOC_TAGLETS_TYPE_PARAM, ValadocTagletsParam));
+			_tmp23_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp22_, BALADOC_TAGLETS_TYPE_PARAM, ValadocTagletsParam));
 			taglet = _tmp23_;
 			_tmp24_ = taglet;
 			_tmp25_ = valadoc_taglets_param_get_parameter_name (_tmp24_);
@@ -1093,10 +1093,10 @@ static void
 valadoc_gir_writer_finalize (ValaCodeVisitor * obj)
 {
 	ValadocGirWriter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_GIR_WRITER, ValadocGirWriter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_GIR_WRITER, ValadocGirWriter);
 	_g_object_unref0 (self->priv->renderer);
 	_g_object_unref0 (self->priv->resolver);
-	VALA_CODE_VISITOR_CLASS (valadoc_gir_writer_parent_class)->finalize (obj);
+	BALA_CODE_VISITOR_CLASS (valadoc_gir_writer_parent_class)->finalize (obj);
 }
 
 /**
@@ -1107,7 +1107,7 @@ valadoc_gir_writer_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocGirWriterClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_gir_writer_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocGirWriter), 0, (GInstanceInitFunc) valadoc_gir_writer_instance_init, NULL };
 	GType valadoc_gir_writer_type_id;
-	valadoc_gir_writer_type_id = g_type_register_static (VALA_TYPE_GIR_WRITER, "ValadocGirWriter", &g_define_type_info, 0);
+	valadoc_gir_writer_type_id = g_type_register_static (BALA_TYPE_GIR_WRITER, "ValadocGirWriter", &g_define_type_info, 0);
 	ValadocGirWriter_private_offset = g_type_add_instance_private (valadoc_gir_writer_type_id, sizeof (ValadocGirWriterPrivate));
 	return valadoc_gir_writer_type_id;
 }

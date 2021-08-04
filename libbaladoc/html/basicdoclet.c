@@ -34,13 +34,13 @@
 #include <vala.h>
 
 enum  {
-	VALADOC_HTML_BASIC_DOCLET_0_PROPERTY,
-	VALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY,
-	VALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY,
-	VALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY,
-	VALADOC_HTML_BASIC_DOCLET_NUM_PROPERTIES
+	BALADOC_HTML_BASIC_DOCLET_0_PROPERTY,
+	BALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY,
+	BALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY,
+	BALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY,
+	BALADOC_HTML_BASIC_DOCLET_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_html_basic_doclet_properties[VALADOC_HTML_BASIC_DOCLET_NUM_PROPERTIES];
+static GParamSpec* valadoc_html_basic_doclet_properties[BALADOC_HTML_BASIC_DOCLET_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _valadoc_api_tree_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_api_tree_unref (var), NULL)))
@@ -70,62 +70,62 @@ static gint valadoc_html_basic_doclet_inheritable_members_length1 = 0;
 static gint _valadoc_html_basic_doclet_inheritable_members_size_ = 0;
 static ValadocDocletIface * valadoc_html_basic_doclet_valadoc_doclet_parent_iface = NULL;
 
-#define VALADOC_HTML_BASIC_DOCLET_css_inline_navigation "navi_inline"
-#define VALADOC_HTML_BASIC_DOCLET_css_package_index "package_index"
-#define VALADOC_HTML_BASIC_DOCLET_css_brief_description "brief_description"
-#define VALADOC_HTML_BASIC_DOCLET_css_description "description"
-#define VALADOC_HTML_BASIC_DOCLET_css_known_list "known_nodes"
-#define VALADOC_HTML_BASIC_DOCLET_css_leaf_brief_description "leaf_brief_description"
-#define VALADOC_HTML_BASIC_DOCLET_css_leaf_code_definition "leaf_code_definition"
-#define VALADOC_HTML_BASIC_DOCLET_css_box_headline_text "text"
-#define VALADOC_HTML_BASIC_DOCLET_css_box_headline_toggle "toggle"
-#define VALADOC_HTML_BASIC_DOCLET_css_box_headline "headline"
-#define VALADOC_HTML_BASIC_DOCLET_css_box_content "content"
-#define VALADOC_HTML_BASIC_DOCLET_css_box_column "column"
-#define VALADOC_HTML_BASIC_DOCLET_css_box "box"
-#define VALADOC_HTML_BASIC_DOCLET_css_namespace_note "namespace_note"
-#define VALADOC_HTML_BASIC_DOCLET_css_package_note "package_note"
-#define VALADOC_HTML_BASIC_DOCLET_css_site_header "site_header"
-#define VALADOC_HTML_BASIC_DOCLET_css_navi "navi_main"
-#define VALADOC_HTML_BASIC_DOCLET_css_navi_hr "navi_hr"
-#define VALADOC_HTML_BASIC_DOCLET_css_errordomain_table_name "main_errordomain_table_name"
-#define VALADOC_HTML_BASIC_DOCLET_css_errordomain_table_text "main_errordomain_table_text"
-#define VALADOC_HTML_BASIC_DOCLET_css_errordomain_table "main_errordomain_table"
-#define VALADOC_HTML_BASIC_DOCLET_css_enum_table_name "main_enum_table_name"
-#define VALADOC_HTML_BASIC_DOCLET_css_enum_table_text "main_enum_table_text"
-#define VALADOC_HTML_BASIC_DOCLET_css_enum_table "main_enum_table"
-#define VALADOC_HTML_BASIC_DOCLET_css_diagram "main_diagram"
-#define VALADOC_HTML_BASIC_DOCLET_css_see_list "main_see_list"
-#define VALADOC_HTML_BASIC_DOCLET_css_wiki_table "main_table"
-#define VALADOC_HTML_BASIC_DOCLET_css_notification_area "main_notification"
-#define VALADOC_HTML_BASIC_DOCLET_css_source_sample "main_sourcesample"
-#define VALADOC_HTML_BASIC_DOCLET_css_exception_table "main_parameter_table"
-#define VALADOC_HTML_BASIC_DOCLET_css_parameter_table_text "main_parameter_table_text"
-#define VALADOC_HTML_BASIC_DOCLET_css_parameter_table_name "main_parameter_table_name"
-#define VALADOC_HTML_BASIC_DOCLET_css_parameter_table "main_parameter_table"
-#define VALADOC_HTML_BASIC_DOCLET_css_title "main_title"
-#define VALADOC_HTML_BASIC_DOCLET_css_other_type "main_other_type"
-#define VALADOC_HTML_BASIC_DOCLET_css_basic_type "main_basic_type"
-#define VALADOC_HTML_BASIC_DOCLET_css_keyword "main_keyword"
-#define VALADOC_HTML_BASIC_DOCLET_css_optional_parameter "main_optional_parameter"
-#define VALADOC_HTML_BASIC_DOCLET_css_code_definition "main_code_definition"
-#define VALADOC_HTML_BASIC_DOCLET_css_headline_hr "main_hr"
-#define VALADOC_HTML_BASIC_DOCLET_css_hr "main_hr"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_errdom "main_list_errdom"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_en "main_list_en"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_ns "main_list_ns"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_cl "main_list_cl"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_iface "main_list_iface"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_stru "main_list_stru"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_field "main_list_field"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_prop "main_list_prop"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_del "main_list_del"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_sig "main_list_sig"
-#define VALADOC_HTML_BASIC_DOCLET_css_list_m "main_list_m"
-#define VALADOC_HTML_BASIC_DOCLET_css_style_navigation "site_navigation"
-#define VALADOC_HTML_BASIC_DOCLET_css_style_content "site_content"
-#define VALADOC_HTML_BASIC_DOCLET_css_style_body "site_body"
-#define VALADOC_HTML_BASIC_DOCLET_css_deprecated "deprecated"
+#define BALADOC_HTML_BASIC_DOCLET_css_inline_navigation "navi_inline"
+#define BALADOC_HTML_BASIC_DOCLET_css_package_index "package_index"
+#define BALADOC_HTML_BASIC_DOCLET_css_brief_description "brief_description"
+#define BALADOC_HTML_BASIC_DOCLET_css_description "description"
+#define BALADOC_HTML_BASIC_DOCLET_css_known_list "known_nodes"
+#define BALADOC_HTML_BASIC_DOCLET_css_leaf_brief_description "leaf_brief_description"
+#define BALADOC_HTML_BASIC_DOCLET_css_leaf_code_definition "leaf_code_definition"
+#define BALADOC_HTML_BASIC_DOCLET_css_box_headline_text "text"
+#define BALADOC_HTML_BASIC_DOCLET_css_box_headline_toggle "toggle"
+#define BALADOC_HTML_BASIC_DOCLET_css_box_headline "headline"
+#define BALADOC_HTML_BASIC_DOCLET_css_box_content "content"
+#define BALADOC_HTML_BASIC_DOCLET_css_box_column "column"
+#define BALADOC_HTML_BASIC_DOCLET_css_box "box"
+#define BALADOC_HTML_BASIC_DOCLET_css_namespace_note "namespace_note"
+#define BALADOC_HTML_BASIC_DOCLET_css_package_note "package_note"
+#define BALADOC_HTML_BASIC_DOCLET_css_site_header "site_header"
+#define BALADOC_HTML_BASIC_DOCLET_css_navi "navi_main"
+#define BALADOC_HTML_BASIC_DOCLET_css_navi_hr "navi_hr"
+#define BALADOC_HTML_BASIC_DOCLET_css_errordomain_table_name "main_errordomain_table_name"
+#define BALADOC_HTML_BASIC_DOCLET_css_errordomain_table_text "main_errordomain_table_text"
+#define BALADOC_HTML_BASIC_DOCLET_css_errordomain_table "main_errordomain_table"
+#define BALADOC_HTML_BASIC_DOCLET_css_enum_table_name "main_enum_table_name"
+#define BALADOC_HTML_BASIC_DOCLET_css_enum_table_text "main_enum_table_text"
+#define BALADOC_HTML_BASIC_DOCLET_css_enum_table "main_enum_table"
+#define BALADOC_HTML_BASIC_DOCLET_css_diagram "main_diagram"
+#define BALADOC_HTML_BASIC_DOCLET_css_see_list "main_see_list"
+#define BALADOC_HTML_BASIC_DOCLET_css_wiki_table "main_table"
+#define BALADOC_HTML_BASIC_DOCLET_css_notification_area "main_notification"
+#define BALADOC_HTML_BASIC_DOCLET_css_source_sample "main_sourcesample"
+#define BALADOC_HTML_BASIC_DOCLET_css_exception_table "main_parameter_table"
+#define BALADOC_HTML_BASIC_DOCLET_css_parameter_table_text "main_parameter_table_text"
+#define BALADOC_HTML_BASIC_DOCLET_css_parameter_table_name "main_parameter_table_name"
+#define BALADOC_HTML_BASIC_DOCLET_css_parameter_table "main_parameter_table"
+#define BALADOC_HTML_BASIC_DOCLET_css_title "main_title"
+#define BALADOC_HTML_BASIC_DOCLET_css_other_type "main_other_type"
+#define BALADOC_HTML_BASIC_DOCLET_css_basic_type "main_basic_type"
+#define BALADOC_HTML_BASIC_DOCLET_css_keyword "main_keyword"
+#define BALADOC_HTML_BASIC_DOCLET_css_optional_parameter "main_optional_parameter"
+#define BALADOC_HTML_BASIC_DOCLET_css_code_definition "main_code_definition"
+#define BALADOC_HTML_BASIC_DOCLET_css_headline_hr "main_hr"
+#define BALADOC_HTML_BASIC_DOCLET_css_hr "main_hr"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_errdom "main_list_errdom"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_en "main_list_en"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_ns "main_list_ns"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_cl "main_list_cl"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_iface "main_list_iface"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_stru "main_list_stru"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_field "main_list_field"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_prop "main_list_prop"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_del "main_list_del"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_sig "main_list_sig"
+#define BALADOC_HTML_BASIC_DOCLET_css_list_m "main_list_m"
+#define BALADOC_HTML_BASIC_DOCLET_css_style_navigation "site_navigation"
+#define BALADOC_HTML_BASIC_DOCLET_css_style_content "site_content"
+#define BALADOC_HTML_BASIC_DOCLET_css_style_body "site_body"
+#define BALADOC_HTML_BASIC_DOCLET_css_deprecated "deprecated"
 static void valadoc_html_basic_doclet_real_process (ValadocHtmlBasicDoclet* self,
                                              ValadocSettings* settings,
                                              ValadocApiTree* tree,
@@ -233,7 +233,7 @@ valadoc_html_basic_doclet_set_linker (ValadocHtmlBasicDoclet* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_linker);
 		self->priv->_linker = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_html_basic_doclet_properties[VALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_html_basic_doclet_properties[BALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY]);
 	}
 }
 
@@ -260,7 +260,7 @@ valadoc_html_basic_doclet_set_settings (ValadocHtmlBasicDoclet* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_settings);
 		self->priv->_settings = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_html_basic_doclet_properties[VALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_html_basic_doclet_properties[BALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY]);
 	}
 }
 
@@ -287,7 +287,7 @@ valadoc_html_basic_doclet_set_wiki_index_name (ValadocHtmlBasicDoclet* self,
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_wiki_index_name);
 		self->priv->_wiki_index_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_html_basic_doclet_properties[VALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_html_basic_doclet_properties[BALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY]);
 	}
 }
 
@@ -348,7 +348,7 @@ valadoc_html_basic_doclet_process (ValadocHtmlBasicDoclet* self,
                                    ValadocErrorReporter* reporter)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->process (self, settings, tree, reporter);
+	BALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->process (self, settings, tree, reporter);
 }
 
 gchar*
@@ -407,7 +407,7 @@ valadoc_html_basic_doclet_get_img_path_html (ValadocHtmlBasicDoclet* self,
                                              const gchar* type)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->get_img_path_html (self, element, type);
+	return BALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->get_img_path_html (self, element, type);
 }
 
 static gchar*
@@ -459,7 +459,7 @@ valadoc_html_basic_doclet_get_img_path (ValadocHtmlBasicDoclet* self,
                                         const gchar* type)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->get_img_path (self, element, type);
+	return BALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->get_img_path (self, element, type);
 }
 
 static gchar*
@@ -476,7 +476,7 @@ gchar*
 valadoc_html_basic_doclet_get_icon_directory (ValadocHtmlBasicDoclet* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->get_icon_directory (self);
+	return BALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->get_icon_directory (self);
 }
 
 static ValadocApiTypeSymbol*
@@ -497,13 +497,13 @@ valadoc_html_basic_doclet_unpack_type_reference (ValadocHtmlBasicDoclet* self,
 			break;
 		}
 		_tmp2_ = pos;
-		if (VALADOC_API_IS_TYPEREFERENCE (_tmp2_)) {
+		if (BALADOC_API_IS_TYPEREFERENCE (_tmp2_)) {
 			ValadocApiItem* _tmp3_;
 			ValadocApiItem* _tmp4_;
 			ValadocApiItem* _tmp5_;
 			ValadocApiItem* _tmp6_;
 			_tmp3_ = pos;
-			_tmp4_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
+			_tmp4_ = valadoc_api_typereference_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALADOC_API_TYPE_TYPEREFERENCE, ValadocApiTypeReference));
 			_tmp5_ = _tmp4_;
 			_tmp6_ = _g_object_ref0 (_tmp5_);
 			_g_object_unref0 (pos);
@@ -511,13 +511,13 @@ valadoc_html_basic_doclet_unpack_type_reference (ValadocHtmlBasicDoclet* self,
 		} else {
 			ValadocApiItem* _tmp7_;
 			_tmp7_ = pos;
-			if (VALADOC_API_IS_ARRAY (_tmp7_)) {
+			if (BALADOC_API_IS_ARRAY (_tmp7_)) {
 				ValadocApiItem* _tmp8_;
 				ValadocApiItem* _tmp9_;
 				ValadocApiItem* _tmp10_;
 				ValadocApiItem* _tmp11_;
 				_tmp8_ = pos;
-				_tmp9_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, VALADOC_API_TYPE_ARRAY, ValadocApiArray));
+				_tmp9_ = valadoc_api_array_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, BALADOC_API_TYPE_ARRAY, ValadocApiArray));
 				_tmp10_ = _tmp9_;
 				_tmp11_ = _g_object_ref0 (_tmp10_);
 				_g_object_unref0 (pos);
@@ -525,13 +525,13 @@ valadoc_html_basic_doclet_unpack_type_reference (ValadocHtmlBasicDoclet* self,
 			} else {
 				ValadocApiItem* _tmp12_;
 				_tmp12_ = pos;
-				if (VALADOC_API_IS_POINTER (_tmp12_)) {
+				if (BALADOC_API_IS_POINTER (_tmp12_)) {
 					ValadocApiItem* _tmp13_;
 					ValadocApiItem* _tmp14_;
 					ValadocApiItem* _tmp15_;
 					ValadocApiItem* _tmp16_;
 					_tmp13_ = pos;
-					_tmp14_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, VALADOC_API_TYPE_POINTER, ValadocApiPointer));
+					_tmp14_ = valadoc_api_pointer_get_data_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp13_, BALADOC_API_TYPE_POINTER, ValadocApiPointer));
 					_tmp15_ = _tmp14_;
 					_tmp16_ = _g_object_ref0 (_tmp15_);
 					_g_object_unref0 (pos);
@@ -541,9 +541,9 @@ valadoc_html_basic_doclet_unpack_type_reference (ValadocHtmlBasicDoclet* self,
 					ValadocApiItem* _tmp18_;
 					ValadocApiTypeSymbol* _tmp19_;
 					_tmp17_ = pos;
-					_vala_assert (VALADOC_API_IS_TYPESYMBOL (_tmp17_), "pos is TypeSymbol");
+					_vala_assert (BALADOC_API_IS_TYPESYMBOL (_tmp17_), "pos is TypeSymbol");
 					_tmp18_ = pos;
-					_tmp19_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, VALADOC_API_TYPE_TYPESYMBOL, ValadocApiTypeSymbol));
+					_tmp19_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp18_, BALADOC_API_TYPE_TYPESYMBOL, ValadocApiTypeSymbol));
 					result = _tmp19_;
 					_g_object_unref0 (pos);
 					return result;
@@ -593,7 +593,7 @@ valadoc_html_basic_doclet_write_navi_entry_html_template (ValadocHtmlBasicDoclet
 		ValadocHtmlMarkupWriter* _tmp11_;
 		_tmp5_ = self->writer;
 		_tmp6_ = g_strdup ("class");
-		_tmp7_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_deprecated);
+		_tmp7_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_deprecated);
 		_tmp8_ = g_new0 (gchar*, 2 + 1);
 		_tmp8_[0] = _tmp6_;
 		_tmp8_[1] = _tmp7_;
@@ -653,7 +653,7 @@ valadoc_html_basic_doclet_write_navi_entry_html_template_with_link (ValadocHtmlB
 		ValadocHtmlMarkupWriter* _tmp11_;
 		_tmp5_ = self->writer;
 		_tmp6_ = g_strdup ("class");
-		_tmp7_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_deprecated);
+		_tmp7_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_deprecated);
 		_tmp8_ = g_new0 (gchar*, 2 + 1);
 		_tmp8_[0] = _tmp6_;
 		_tmp8_[1] = _tmp7_;
@@ -690,7 +690,7 @@ valadoc_html_basic_doclet_write_navi_entry (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (element != NULL);
 	g_return_if_fail (style != NULL);
 	if (full_name == TRUE) {
-		_tmp0_ = VALADOC_API_IS_NAMESPACE (element);
+		_tmp0_ = BALADOC_API_IS_NAMESPACE (element);
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -739,10 +739,10 @@ valadoc_html_basic_doclet_write_navi_entry (ValadocHtmlBasicDoclet* self,
 		name = _tmp12_;
 		_g_free0 (tmp);
 	}
-	if (VALADOC_API_IS_SYMBOL (element)) {
+	if (BALADOC_API_IS_SYMBOL (element)) {
 		gboolean _tmp14_;
 		gboolean _tmp15_;
-		_tmp14_ = valadoc_api_symbol_get_is_deprecated (G_TYPE_CHECK_INSTANCE_CAST (element, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+		_tmp14_ = valadoc_api_symbol_get_is_deprecated (G_TYPE_CHECK_INSTANCE_CAST (element, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 		_tmp15_ = _tmp14_;
 		_tmp13_ = _tmp15_;
 	} else {
@@ -1091,7 +1091,7 @@ valadoc_html_basic_doclet_write_wiki_page (ValadocHtmlBasicDoclet* self,
                                            const gchar* pkg_name)
 {
 	g_return_if_fail (self != NULL);
-	VALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->write_wiki_page (self, page, contentp, css_path, js_path, pkg_name);
+	BALADOC_HTML_BASIC_DOCLET_GET_CLASS (self)->write_wiki_page (self, page, contentp, css_path, js_path, pkg_name);
 }
 
 void
@@ -1123,7 +1123,7 @@ valadoc_html_basic_doclet_write_navi_top_entry (ValadocHtmlBasicDoclet* self,
 	style = _tmp1_;
 	_tmp2_ = self->writer;
 	_tmp3_ = g_strdup ("class");
-	_tmp4_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_navi);
+	_tmp4_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_navi);
 	_tmp5_ = g_new0 (gchar*, 2 + 1);
 	_tmp5_[0] = _tmp3_;
 	_tmp5_[1] = _tmp4_;
@@ -1149,7 +1149,7 @@ valadoc_html_basic_doclet_write_navi_top_entry (ValadocHtmlBasicDoclet* self,
 	valadoc_markup_writer_end_tag ((ValadocMarkupWriter*) _tmp10_, "ul");
 	_tmp11_ = self->writer;
 	_tmp12_ = g_strdup ("class");
-	_tmp13_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_navi_hr);
+	_tmp13_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_navi_hr);
 	_tmp14_ = g_new0 (gchar*, 2 + 1);
 	_tmp14_[0] = _tmp12_;
 	_tmp14_[1] = _tmp13_;
@@ -1189,7 +1189,7 @@ valadoc_html_basic_doclet_write_top_element_template (ValadocHtmlBasicDoclet* se
 	g_return_if_fail (link != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_navi);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_navi);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -1199,7 +1199,7 @@ valadoc_html_basic_doclet_write_top_element_template (ValadocHtmlBasicDoclet* se
 	_tmp4_ = (_vala_array_free (_tmp4_, _tmp4__length1, (GDestroyNotify) g_free), NULL);
 	_tmp5_ = self->writer;
 	_tmp6_ = g_strdup ("class");
-	_tmp7_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_package_index);
+	_tmp7_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_package_index);
 	_tmp8_ = g_new0 (gchar*, 2 + 1);
 	_tmp8_[0] = _tmp6_;
 	_tmp8_[1] = _tmp7_;
@@ -1215,7 +1215,7 @@ valadoc_html_basic_doclet_write_top_element_template (ValadocHtmlBasicDoclet* se
 	valadoc_markup_writer_end_tag ((ValadocMarkupWriter*) _tmp12_, "ul");
 	_tmp13_ = self->writer;
 	_tmp14_ = g_strdup ("class");
-	_tmp15_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_navi_hr);
+	_tmp15_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_navi_hr);
 	_tmp16_ = g_new0 (gchar*, 2 + 1);
 	_tmp16_[0] = _tmp14_;
 	_tmp16_[1] = _tmp15_;
@@ -1239,7 +1239,7 @@ valadoc_html_basic_doclet_write_top_elements (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (element != NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_API_TYPE_NODE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_API_TYPE_NODE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	lst = _tmp1_;
 	_tmp2_ = _g_object_ref0 (element);
 	pos = _tmp2_;
@@ -1263,7 +1263,7 @@ valadoc_html_basic_doclet_write_top_elements (ValadocHtmlBasicDoclet* self,
 		_tmp7_ = pos;
 		_tmp8_ = valadoc_api_item_get_parent ((ValadocApiItem*) _tmp7_);
 		_tmp9_ = _tmp8_;
-		_tmp10_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, VALADOC_API_TYPE_NODE, ValadocApiNode));
+		_tmp10_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, BALADOC_API_TYPE_NODE, ValadocApiNode));
 		_g_object_unref0 (pos);
 		pos = _tmp10_;
 	}
@@ -1331,7 +1331,7 @@ valadoc_html_basic_doclet_fetch_subnamespace_names (ValadocHtmlBasicDoclet* self
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (node != NULL);
 	g_return_if_fail (namespaces != NULL);
-	_tmp0_ = valadoc_api_node_get_children_by_type (node, VALADOC_API_NODE_TYPE_NAMESPACE, TRUE);
+	_tmp0_ = valadoc_api_node_get_children_by_type (node, BALADOC_API_NODE_TYPE_NAMESPACE, TRUE);
 	children = _tmp0_;
 	_tmp1_ = children;
 	vala_list_sort (_tmp1_, (GCompareDataFunc) valadoc_api_node_compare_to, NULL, NULL);
@@ -1370,7 +1370,7 @@ valadoc_html_basic_doclet_fetch_subnamespace_names (ValadocHtmlBasicDoclet* self
 			_tmp10_ = vala_list_get (_tmp9_, _child_index);
 			child = (ValadocApiNode*) _tmp10_;
 			_tmp11_ = child;
-			vala_collection_add ((ValaCollection*) namespaces, G_TYPE_CHECK_INSTANCE_CAST (_tmp11_, VALADOC_API_TYPE_NAMESPACE, ValadocApiNamespace));
+			vala_collection_add ((ValaCollection*) namespaces, G_TYPE_CHECK_INSTANCE_CAST (_tmp11_, BALADOC_API_TYPE_NAMESPACE, ValadocApiNamespace));
 			_tmp12_ = child;
 			valadoc_html_basic_doclet_fetch_subnamespace_names (self, _tmp12_, namespaces);
 			_g_object_unref0 (child);
@@ -1407,13 +1407,13 @@ valadoc_html_basic_doclet_write_navi_package (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (package != NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_API_TYPE_NAMESPACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_API_TYPE_NAMESPACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	ns_list = _tmp1_;
 	_tmp2_ = ns_list;
 	valadoc_html_basic_doclet_fetch_subnamespace_names (self, (ValadocApiNode*) package, _tmp2_);
 	_tmp3_ = self->writer;
 	_tmp4_ = g_strdup ("class");
-	_tmp5_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_style_navigation);
+	_tmp5_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_style_navigation);
 	_tmp6_ = g_new0 (gchar*, 2 + 1);
 	_tmp6_[0] = _tmp4_;
 	_tmp6_[1] = _tmp5_;
@@ -1424,7 +1424,7 @@ valadoc_html_basic_doclet_write_navi_package (ValadocHtmlBasicDoclet* self,
 	valadoc_html_basic_doclet_write_top_elements (self, (ValadocApiNode*) package, (ValadocApiNode*) package);
 	_tmp8_ = self->writer;
 	_tmp9_ = g_strdup ("class");
-	_tmp10_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_navi);
+	_tmp10_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_navi);
 	_tmp11_ = g_new0 (gchar*, 2 + 1);
 	_tmp11_[0] = _tmp9_;
 	_tmp11_[1] = _tmp10_;
@@ -1513,33 +1513,33 @@ valadoc_html_basic_doclet_write_navi_package (ValadocHtmlBasicDoclet* self,
 		ValadocApiNamespace* _tmp45_;
 		ValadocApiNamespace* _tmp46_;
 		_tmp33_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp33_, VALADOC_API_NODE_TYPE_ERROR_CODE, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp33_, BALADOC_API_NODE_TYPE_ERROR_CODE, (ValadocApiNode*) package);
 		_tmp34_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp34_, VALADOC_API_NODE_TYPE_ENUM_VALUE, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp34_, BALADOC_API_NODE_TYPE_ENUM_VALUE, (ValadocApiNode*) package);
 		_tmp35_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp35_, VALADOC_API_NODE_TYPE_ENUM, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp35_, BALADOC_API_NODE_TYPE_ENUM, (ValadocApiNode*) package);
 		_tmp36_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp36_, VALADOC_API_NODE_TYPE_INTERFACE, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp36_, BALADOC_API_NODE_TYPE_INTERFACE, (ValadocApiNode*) package);
 		_tmp37_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp37_, VALADOC_API_NODE_TYPE_CLASS, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp37_, BALADOC_API_NODE_TYPE_CLASS, (ValadocApiNode*) package);
 		_tmp38_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp38_, VALADOC_API_NODE_TYPE_STRUCT, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp38_, BALADOC_API_NODE_TYPE_STRUCT, (ValadocApiNode*) package);
 		_tmp39_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp39_, VALADOC_API_NODE_TYPE_CONSTANT, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp39_, BALADOC_API_NODE_TYPE_CONSTANT, (ValadocApiNode*) package);
 		_tmp40_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp40_, VALADOC_API_NODE_TYPE_PROPERTY, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp40_, BALADOC_API_NODE_TYPE_PROPERTY, (ValadocApiNode*) package);
 		_tmp41_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp41_, VALADOC_API_NODE_TYPE_DELEGATE, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp41_, BALADOC_API_NODE_TYPE_DELEGATE, (ValadocApiNode*) package);
 		_tmp42_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp42_, VALADOC_API_NODE_TYPE_STATIC_METHOD, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp42_, BALADOC_API_NODE_TYPE_STATIC_METHOD, (ValadocApiNode*) package);
 		_tmp43_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp43_, VALADOC_API_NODE_TYPE_CREATION_METHOD, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp43_, BALADOC_API_NODE_TYPE_CREATION_METHOD, (ValadocApiNode*) package);
 		_tmp44_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp44_, VALADOC_API_NODE_TYPE_METHOD, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp44_, BALADOC_API_NODE_TYPE_METHOD, (ValadocApiNode*) package);
 		_tmp45_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp45_, VALADOC_API_NODE_TYPE_SIGNAL, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp45_, BALADOC_API_NODE_TYPE_SIGNAL, (ValadocApiNode*) package);
 		_tmp46_ = globals;
-		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp46_, VALADOC_API_NODE_TYPE_FIELD, (ValadocApiNode*) package);
+		valadoc_html_basic_doclet_write_navi_children (self, (ValadocApiNode*) _tmp46_, BALADOC_API_NODE_TYPE_FIELD, (ValadocApiNode*) package);
 	}
 	_tmp47_ = self->writer;
 	valadoc_markup_writer_end_tag ((ValadocMarkupWriter*) _tmp47_, "ul");
@@ -1564,7 +1564,7 @@ valadoc_html_basic_doclet_write_navi_symbol (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (node != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_style_navigation);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_style_navigation);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -1597,7 +1597,7 @@ valadoc_html_basic_doclet_write_navi_leaf_symbol (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (node != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_style_navigation);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_style_navigation);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -1607,10 +1607,10 @@ valadoc_html_basic_doclet_write_navi_leaf_symbol (ValadocHtmlBasicDoclet* self,
 	_tmp4_ = (_vala_array_free (_tmp4_, _tmp4__length1, (GDestroyNotify) g_free), NULL);
 	_tmp5_ = valadoc_api_item_get_parent ((ValadocApiItem*) node);
 	_tmp6_ = _tmp5_;
-	valadoc_html_basic_doclet_write_top_elements (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALADOC_API_TYPE_NODE, ValadocApiNode), node);
+	valadoc_html_basic_doclet_write_top_elements (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALADOC_API_TYPE_NODE, ValadocApiNode), node);
 	_tmp7_ = valadoc_api_item_get_parent ((ValadocApiItem*) node);
 	_tmp8_ = _tmp7_;
-	valadoc_html_basic_doclet_write_navi_symbol_inline (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, VALADOC_API_TYPE_NODE, ValadocApiNode), node);
+	valadoc_html_basic_doclet_write_navi_symbol_inline (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp8_, BALADOC_API_TYPE_NODE, ValadocApiNode), node);
 	_tmp9_ = self->writer;
 	valadoc_markup_writer_end_tag ((ValadocMarkupWriter*) _tmp9_, "div");
 }
@@ -1631,7 +1631,7 @@ valadoc_html_basic_doclet_write_navi_symbol_inline (ValadocHtmlBasicDoclet* self
 	g_return_if_fail (node != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_navi);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_navi);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -1639,21 +1639,21 @@ valadoc_html_basic_doclet_write_navi_symbol_inline (ValadocHtmlBasicDoclet* self
 	_tmp4__length1 = 2;
 	valadoc_markup_writer_start_tag ((ValadocMarkupWriter*) _tmp0_, "ul", _tmp4_, (gint) 2);
 	_tmp4_ = (_vala_array_free (_tmp4_, _tmp4__length1, (GDestroyNotify) g_free), NULL);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_NAMESPACE, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_ERROR_CODE, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_ENUM_VALUE, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_ENUM, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_INTERFACE, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_CLASS, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_STRUCT, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_CONSTANT, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_PROPERTY, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_DELEGATE, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_STATIC_METHOD, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_CREATION_METHOD, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_METHOD, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_SIGNAL, parent);
-	valadoc_html_basic_doclet_write_navi_children (self, node, VALADOC_API_NODE_TYPE_FIELD, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_NAMESPACE, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_ERROR_CODE, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_ENUM_VALUE, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_ENUM, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_INTERFACE, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_CLASS, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_STRUCT, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_CONSTANT, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_PROPERTY, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_DELEGATE, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_STATIC_METHOD, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_CREATION_METHOD, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_METHOD, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_SIGNAL, parent);
+	valadoc_html_basic_doclet_write_navi_children (self, node, BALADOC_API_NODE_TYPE_FIELD, parent);
 	_tmp5_ = self->writer;
 	valadoc_markup_writer_end_tag ((ValadocMarkupWriter*) _tmp5_, "ul");
 }
@@ -1774,7 +1774,7 @@ valadoc_html_basic_doclet_write_package_note (ValadocHtmlBasicDoclet* self,
 	}
 	_tmp6_ = self->writer;
 	_tmp7_ = g_strdup ("class");
-	_tmp8_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_package_note);
+	_tmp8_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_package_note);
 	_tmp9_ = g_new0 (gchar*, 2 + 1);
 	_tmp9_[0] = _tmp7_;
 	_tmp9_[1] = _tmp8_;
@@ -1862,7 +1862,7 @@ valadoc_html_basic_doclet_write_namespace_note (ValadocHtmlBasicDoclet* self,
 	}
 	_tmp7_ = self->writer;
 	_tmp8_ = g_strdup ("class");
-	_tmp9_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_namespace_note);
+	_tmp9_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_namespace_note);
 	_tmp10_ = g_new0 (gchar*, 2 + 1);
 	_tmp10_[0] = _tmp8_;
 	_tmp10_[1] = _tmp9_;
@@ -1966,7 +1966,7 @@ valadoc_html_basic_doclet_write_brief_description (ValadocHtmlBasicDoclet* self,
 		ValadocHtmlMarkupWriter* _tmp23_;
 		_tmp11_ = self->writer;
 		_tmp12_ = g_strdup ("class");
-		_tmp13_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_brief_description);
+		_tmp13_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_brief_description);
 		_tmp14_ = g_new0 (gchar*, 2 + 1);
 		_tmp14_[0] = _tmp12_;
 		_tmp14_[1] = _tmp13_;
@@ -2022,10 +2022,10 @@ valadoc_html_basic_doclet_write_documentation (ValadocHtmlBasicDoclet* self,
 	_tmp1_ = _tmp0_;
 	_tmp2_ = _g_object_ref0 (_tmp1_);
 	doctree = _tmp2_;
-	if (VALADOC_API_IS_SYMBOL (element)) {
+	if (BALADOC_API_IS_SYMBOL (element)) {
 		gboolean _tmp4_;
 		gboolean _tmp5_;
-		_tmp4_ = valadoc_api_symbol_get_is_deprecated (G_TYPE_CHECK_INSTANCE_CAST (element, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+		_tmp4_ = valadoc_api_symbol_get_is_deprecated (G_TYPE_CHECK_INSTANCE_CAST (element, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 		_tmp5_ = _tmp4_;
 		_tmp3_ = _tmp5_;
 	} else {
@@ -2044,7 +2044,7 @@ valadoc_html_basic_doclet_write_documentation (ValadocHtmlBasicDoclet* self,
 	}
 	_tmp8_ = self->writer;
 	_tmp9_ = g_strdup ("class");
-	_tmp10_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_description);
+	_tmp10_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_description);
 	_tmp11_ = g_new0 (gchar*, 2 + 1);
 	_tmp11_[0] = _tmp9_;
 	_tmp11_[1] = _tmp10_;
@@ -2078,7 +2078,7 @@ valadoc_html_basic_doclet_write_documentation (ValadocHtmlBasicDoclet* self,
 		gboolean _tmp52_ = FALSE;
 		const gchar* _tmp53_;
 		ValadocHtmlMarkupWriter* _tmp89_;
-		_tmp14_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (element, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+		_tmp14_ = _g_object_ref0 (G_TYPE_CHECK_INSTANCE_CAST (element, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 		symbol = _tmp14_;
 		_tmp15_ = symbol;
 		_tmp16_ = valadoc_api_symbol_get_attribute (_tmp15_, "Version");
@@ -2097,13 +2097,13 @@ valadoc_html_basic_doclet_write_documentation (ValadocHtmlBasicDoclet* self,
 			_tmp18_ = version;
 			_tmp19_ = valadoc_api_item_get_data ((ValadocApiItem*) _tmp18_);
 			_tmp20_ = _tmp19_;
-			_tmp21_ = vala_attribute_get_string (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, VALA_TYPE_ATTRIBUTE, ValaAttribute), "replacement", NULL);
+			_tmp21_ = vala_attribute_get_string (G_TYPE_CHECK_INSTANCE_CAST (_tmp20_, BALA_TYPE_ATTRIBUTE, ValaAttribute), "replacement", NULL);
 			_g_free0 (replacement);
 			replacement = _tmp21_;
 			_tmp22_ = version;
 			_tmp23_ = valadoc_api_item_get_data ((ValadocApiItem*) _tmp22_);
 			_tmp24_ = _tmp23_;
-			_tmp25_ = vala_attribute_get_string (G_TYPE_CHECK_INSTANCE_CAST (_tmp24_, VALA_TYPE_ATTRIBUTE, ValaAttribute), "deprecated_since", NULL);
+			_tmp25_ = vala_attribute_get_string (G_TYPE_CHECK_INSTANCE_CAST (_tmp24_, BALA_TYPE_ATTRIBUTE, ValaAttribute), "deprecated_since", NULL);
 			_g_free0 (since);
 			since = _tmp25_;
 		} else {
@@ -2127,13 +2127,13 @@ valadoc_html_basic_doclet_write_documentation (ValadocHtmlBasicDoclet* self,
 				_tmp29_ = deprecated;
 				_tmp30_ = valadoc_api_item_get_data ((ValadocApiItem*) _tmp29_);
 				_tmp31_ = _tmp30_;
-				_tmp32_ = vala_attribute_get_string (G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, VALA_TYPE_ATTRIBUTE, ValaAttribute), "replacement", NULL);
+				_tmp32_ = vala_attribute_get_string (G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, BALA_TYPE_ATTRIBUTE, ValaAttribute), "replacement", NULL);
 				_g_free0 (replacement);
 				replacement = _tmp32_;
 				_tmp33_ = deprecated;
 				_tmp34_ = valadoc_api_item_get_data ((ValadocApiItem*) _tmp33_);
 				_tmp35_ = _tmp34_;
-				_tmp36_ = vala_attribute_get_string (G_TYPE_CHECK_INSTANCE_CAST (_tmp35_, VALA_TYPE_ATTRIBUTE, ValaAttribute), "version", NULL);
+				_tmp36_ = vala_attribute_get_string (G_TYPE_CHECK_INSTANCE_CAST (_tmp35_, BALA_TYPE_ATTRIBUTE, ValaAttribute), "version", NULL);
 				_g_free0 (since);
 				since = _tmp36_;
 			} else {
@@ -2395,45 +2395,45 @@ valadoc_html_basic_doclet_is_internal_node (ValadocHtmlBasicDoclet* self,
 	gboolean result = FALSE;
 	g_return_val_if_fail (self != NULL, FALSE);
 	g_return_val_if_fail (node != NULL, FALSE);
-	if (VALADOC_API_IS_PACKAGE (node)) {
+	if (BALADOC_API_IS_PACKAGE (node)) {
 		_tmp7_ = TRUE;
 	} else {
-		_tmp7_ = VALADOC_API_IS_NAMESPACE (node);
+		_tmp7_ = BALADOC_API_IS_NAMESPACE (node);
 	}
 	if (_tmp7_) {
 		_tmp6_ = TRUE;
 	} else {
-		_tmp6_ = VALADOC_API_IS_INTERFACE (node);
+		_tmp6_ = BALADOC_API_IS_INTERFACE (node);
 	}
 	if (_tmp6_) {
 		_tmp5_ = TRUE;
 	} else {
-		_tmp5_ = VALADOC_API_IS_CLASS (node);
+		_tmp5_ = BALADOC_API_IS_CLASS (node);
 	}
 	if (_tmp5_) {
 		_tmp4_ = TRUE;
 	} else {
-		_tmp4_ = VALADOC_API_IS_STRUCT (node);
+		_tmp4_ = BALADOC_API_IS_STRUCT (node);
 	}
 	if (_tmp4_) {
 		_tmp3_ = TRUE;
 	} else {
-		_tmp3_ = VALADOC_API_IS_ENUM (node);
+		_tmp3_ = BALADOC_API_IS_ENUM (node);
 	}
 	if (_tmp3_) {
 		_tmp2_ = TRUE;
 	} else {
-		_tmp2_ = VALADOC_API_IS_ENUM_VALUE (node);
+		_tmp2_ = BALADOC_API_IS_ENUM_VALUE (node);
 	}
 	if (_tmp2_) {
 		_tmp1_ = TRUE;
 	} else {
-		_tmp1_ = VALADOC_API_IS_ERROR_DOMAIN (node);
+		_tmp1_ = BALADOC_API_IS_ERROR_DOMAIN (node);
 	}
 	if (_tmp1_) {
 		_tmp0_ = TRUE;
 	} else {
-		_tmp0_ = VALADOC_API_IS_ERROR_CODE (node);
+		_tmp0_ = BALADOC_API_IS_ERROR_CODE (node);
 	}
 	result = _tmp0_;
 	return result;
@@ -2454,7 +2454,7 @@ valadoc_html_basic_doclet_write_navi_packages_inline (ValadocHtmlBasicDoclet* se
 	g_return_if_fail (tree != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_navi);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_navi);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -2591,7 +2591,7 @@ valadoc_html_basic_doclet_write_navi_packages (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (tree != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_style_navigation);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_style_navigation);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -2655,7 +2655,7 @@ valadoc_html_basic_doclet_write_package_index_content (ValadocHtmlBasicDoclet* s
 	g_return_if_fail (tree != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_style_content);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_style_content);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -2665,7 +2665,7 @@ valadoc_html_basic_doclet_write_package_index_content (ValadocHtmlBasicDoclet* s
 	_tmp4_ = (_vala_array_free (_tmp4_, _tmp4__length1, (GDestroyNotify) g_free), NULL);
 	_tmp5_ = self->writer;
 	_tmp6_ = g_strdup ("class");
-	_tmp7_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp7_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp8_ = g_new0 (gchar*, 2 + 1);
 	_tmp8_[0] = _tmp6_;
 	_tmp8_[1] = _tmp7_;
@@ -2677,7 +2677,7 @@ valadoc_html_basic_doclet_write_package_index_content (ValadocHtmlBasicDoclet* s
 	_tmp9_ = (_vala_array_free (_tmp9_, _tmp9__length1, (GDestroyNotify) g_free), NULL);
 	_tmp12_ = self->writer;
 	_tmp13_ = g_strdup ("class");
-	_tmp14_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_headline_hr);
+	_tmp14_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_headline_hr);
 	_tmp15_ = g_new0 (gchar*, 2 + 1);
 	_tmp15_[0] = _tmp13_;
 	_tmp15_[1] = _tmp14_;
@@ -2723,7 +2723,7 @@ valadoc_html_basic_doclet_write_package_index_content (ValadocHtmlBasicDoclet* s
 	}
 	_tmp32_ = self->writer;
 	_tmp33_ = g_strdup ("class");
-	_tmp34_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp34_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp35_ = g_new0 (gchar*, 2 + 1);
 	_tmp35_[0] = _tmp33_;
 	_tmp35_[1] = _tmp34_;
@@ -2735,7 +2735,7 @@ valadoc_html_basic_doclet_write_package_index_content (ValadocHtmlBasicDoclet* s
 	_tmp36_ = (_vala_array_free (_tmp36_, _tmp36__length1, (GDestroyNotify) g_free), NULL);
 	_tmp39_ = self->writer;
 	_tmp40_ = g_strdup ("class");
-	_tmp41_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp41_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp42_ = g_new0 (gchar*, 2 + 1);
 	_tmp42_[0] = _tmp40_;
 	_tmp42_[1] = _tmp41_;
@@ -2763,7 +2763,7 @@ valadoc_html_basic_doclet_get_accessible_nodes_from_list (ValadocHtmlBasicDoclet
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (nodes != NULL, NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_API_TYPE_NODE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_API_TYPE_NODE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	list = _tmp1_;
 	{
 		ValaIterator* _node_it = NULL;
@@ -2904,7 +2904,7 @@ valadoc_html_basic_doclet_write_known_symbols_note (ValadocHtmlBasicDoclet* self
 	self->priv->html_id_counter = _tmp9_ + 1;
 	_tmp10_ = self->writer;
 	_tmp11_ = g_strdup ("class");
-	_tmp12_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_box);
+	_tmp12_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_box);
 	_tmp13_ = g_new0 (gchar*, 2 + 1);
 	_tmp13_[0] = _tmp11_;
 	_tmp13_[1] = _tmp12_;
@@ -2914,7 +2914,7 @@ valadoc_html_basic_doclet_write_known_symbols_note (ValadocHtmlBasicDoclet* self
 	_tmp14_ = (_vala_array_free (_tmp14_, _tmp14__length1, (GDestroyNotify) g_free), NULL);
 	_tmp15_ = self->writer;
 	_tmp16_ = g_strdup ("class");
-	_tmp17_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_box_headline);
+	_tmp17_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_box_headline);
 	_tmp18_ = g_strdup ("onclick");
 	_tmp19_ = html_id;
 	_tmp20_ = g_strdup_printf ("toggle_box (this, '%s')", _tmp19_);
@@ -2968,7 +2968,7 @@ valadoc_html_basic_doclet_write_known_symbols_note (ValadocHtmlBasicDoclet* self
 	_tmp39_[0] -= _tmp41_;
 	_tmp42_ = self->writer;
 	_tmp43_ = g_strdup ("class");
-	_tmp44_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_box_content);
+	_tmp44_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_box_content);
 	_tmp45_ = g_strdup ("id");
 	_tmp46_ = html_id;
 	_tmp47_ = g_strdup (_tmp46_);
@@ -3020,7 +3020,7 @@ valadoc_html_basic_doclet_write_known_symbols_note (ValadocHtmlBasicDoclet* self
 				}
 				_tmp55_ = self->writer;
 				_tmp56_ = g_strdup ("class");
-				_tmp57_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_box_column);
+				_tmp57_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_box_column);
 				_tmp58_ = g_new0 (gchar*, 2 + 1);
 				_tmp58_[0] = _tmp56_;
 				_tmp58_[1] = _tmp57_;
@@ -3030,7 +3030,7 @@ valadoc_html_basic_doclet_write_known_symbols_note (ValadocHtmlBasicDoclet* self
 				_tmp59_ = (_vala_array_free (_tmp59_, _tmp59__length1, (GDestroyNotify) g_free), NULL);
 				_tmp60_ = self->writer;
 				_tmp61_ = g_strdup ("class");
-				_tmp62_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_inline_navigation);
+				_tmp62_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_inline_navigation);
 				_tmp63_ = g_new0 (gchar*, 2 + 1);
 				_tmp63_[0] = _tmp61_;
 				_tmp63_[1] = _tmp62_;
@@ -3200,7 +3200,7 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (node != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_style_content);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_style_content);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -3210,7 +3210,7 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 	_tmp4_ = (_vala_array_free (_tmp4_, _tmp4__length1, (GDestroyNotify) g_free), NULL);
 	_tmp5_ = self->writer;
 	_tmp6_ = g_strdup ("class");
-	_tmp7_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp7_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp8_ = g_new0 (gchar*, 2 + 1);
 	_tmp8_[0] = _tmp6_;
 	_tmp8_[1] = _tmp7_;
@@ -3224,7 +3224,7 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 	_tmp9_ = (_vala_array_free (_tmp9_, _tmp9__length1, (GDestroyNotify) g_free), NULL);
 	_tmp14_ = self->writer;
 	_tmp15_ = g_strdup ("class");
-	_tmp16_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_headline_hr);
+	_tmp16_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_headline_hr);
 	_tmp17_ = g_new0 (gchar*, 2 + 1);
 	_tmp17_[0] = _tmp15_;
 	_tmp17_[1] = _tmp16_;
@@ -3235,7 +3235,7 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 	valadoc_html_basic_doclet_write_image_block (self, node);
 	_tmp19_ = self->writer;
 	_tmp20_ = g_strdup ("class");
-	_tmp21_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp21_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp22_ = g_new0 (gchar*, 2 + 1);
 	_tmp22_[0] = _tmp20_;
 	_tmp22_[1] = _tmp21_;
@@ -3247,7 +3247,7 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 	_tmp23_ = (_vala_array_free (_tmp23_, _tmp23__length1, (GDestroyNotify) g_free), NULL);
 	_tmp26_ = self->writer;
 	_tmp27_ = g_strdup ("class");
-	_tmp28_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_code_definition);
+	_tmp28_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_code_definition);
 	_tmp29_ = g_new0 (gchar*, 2 + 1);
 	_tmp29_[0] = _tmp27_;
 	_tmp29_[1] = _tmp28_;
@@ -3255,14 +3255,14 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 	_tmp30__length1 = 2;
 	valadoc_markup_writer_start_tag ((ValadocMarkupWriter*) _tmp26_, "div", _tmp30_, (gint) 2);
 	_tmp30_ = (_vala_array_free (_tmp30_, _tmp30__length1, (GDestroyNotify) g_free), NULL);
-	if (VALADOC_API_IS_SYMBOL (node)) {
-		valadoc_html_basic_doclet_write_attributes (self, G_TYPE_CHECK_INSTANCE_CAST (node, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol), node);
+	if (BALADOC_API_IS_SYMBOL (node)) {
+		valadoc_html_basic_doclet_write_attributes (self, G_TYPE_CHECK_INSTANCE_CAST (node, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol), node);
 	}
 	valadoc_html_basic_doclet_write_signature (self, node, node);
 	_tmp31_ = self->writer;
 	valadoc_markup_writer_end_tag ((ValadocMarkupWriter*) _tmp31_, "div");
 	valadoc_html_basic_doclet_write_documentation (self, node, node);
-	if (VALADOC_API_IS_CLASS (node)) {
+	if (BALADOC_API_IS_CLASS (node)) {
 		ValadocApiClass* cl = NULL;
 		ValadocApiClass* _tmp32_;
 		ValadocApiClass* _tmp33_;
@@ -3273,7 +3273,7 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 		ValaCollection* _tmp38_;
 		ValaCollection* _tmp39_;
 		ValadocApiClass* _tmp40_;
-		_tmp32_ = _g_object_ref0 (VALADOC_API_IS_CLASS (node) ? ((ValadocApiClass*) node) : NULL);
+		_tmp32_ = _g_object_ref0 (BALADOC_API_IS_CLASS (node) ? ((ValadocApiClass*) node) : NULL);
 		cl = _tmp32_;
 		_tmp33_ = cl;
 		_tmp34_ = valadoc_api_class_get_known_child_classes (_tmp33_);
@@ -3289,7 +3289,7 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 		_vala_iterable_unref0 (_tmp39_);
 		_g_object_unref0 (cl);
 	} else {
-		if (VALADOC_API_IS_INTERFACE (node)) {
+		if (BALADOC_API_IS_INTERFACE (node)) {
 			ValadocApiInterface* iface = NULL;
 			ValadocApiInterface* _tmp41_;
 			ValadocApiInterface* _tmp42_;
@@ -3300,7 +3300,7 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 			ValaCollection* _tmp47_;
 			ValaCollection* _tmp48_;
 			ValadocApiInterface* _tmp49_;
-			_tmp41_ = _g_object_ref0 (VALADOC_API_IS_INTERFACE (node) ? ((ValadocApiInterface*) node) : NULL);
+			_tmp41_ = _g_object_ref0 (BALADOC_API_IS_INTERFACE (node) ? ((ValadocApiInterface*) node) : NULL);
 			iface = _tmp41_;
 			_tmp42_ = iface;
 			_tmp43_ = valadoc_api_interface_get_known_implementations (_tmp42_);
@@ -3316,14 +3316,14 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 			_vala_iterable_unref0 (_tmp48_);
 			_g_object_unref0 (iface);
 		} else {
-			if (VALADOC_API_IS_STRUCT (node)) {
+			if (BALADOC_API_IS_STRUCT (node)) {
 				ValadocApiStruct* stru = NULL;
 				ValadocApiStruct* _tmp50_;
 				ValadocApiStruct* _tmp51_;
 				ValaCollection* _tmp52_;
 				ValaCollection* _tmp53_;
 				ValadocApiStruct* _tmp54_;
-				_tmp50_ = _g_object_ref0 (VALADOC_API_IS_STRUCT (node) ? ((ValadocApiStruct*) node) : NULL);
+				_tmp50_ = _g_object_ref0 (BALADOC_API_IS_STRUCT (node) ? ((ValadocApiStruct*) node) : NULL);
 				stru = _tmp50_;
 				_tmp51_ = stru;
 				_tmp52_ = valadoc_api_struct_get_known_child_structs (_tmp51_);
@@ -3337,22 +3337,22 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 	}
 	_tmp55_ = valadoc_api_item_get_parent ((ValadocApiItem*) node);
 	_tmp56_ = _tmp55_;
-	if (VALADOC_API_IS_NAMESPACE (_tmp56_)) {
+	if (BALADOC_API_IS_NAMESPACE (_tmp56_)) {
 		ValadocHtmlMarkupWriter* _tmp57_;
 		_tmp57_ = self->writer;
 		valadoc_markup_writer_simple_tag ((ValadocMarkupWriter*) _tmp57_, "br", NULL, (gint) 0);
 		valadoc_html_basic_doclet_write_namespace_note (self, node);
 		valadoc_html_basic_doclet_write_package_note (self, node);
 	}
-	if (VALADOC_API_IS_METHOD (node)) {
+	if (BALADOC_API_IS_METHOD (node)) {
 		_tmp59_ = TRUE;
 	} else {
-		_tmp59_ = VALADOC_API_IS_DELEGATE (node);
+		_tmp59_ = BALADOC_API_IS_DELEGATE (node);
 	}
 	if (_tmp59_) {
 		_tmp58_ = TRUE;
 	} else {
-		_tmp58_ = VALADOC_API_IS_SIGNAL (node);
+		_tmp58_ = BALADOC_API_IS_SIGNAL (node);
 	}
 	if (!_tmp58_) {
 		ValadocApiNodeType* _tmp60_;
@@ -3360,19 +3360,19 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 		gint _tmp61__length1;
 		gboolean _tmp62_;
 		_tmp60_ = g_new0 (ValadocApiNodeType, 13);
-		_tmp60_[0] = VALADOC_API_NODE_TYPE_ERROR_CODE;
-		_tmp60_[1] = VALADOC_API_NODE_TYPE_ENUM_VALUE;
-		_tmp60_[2] = VALADOC_API_NODE_TYPE_CREATION_METHOD;
-		_tmp60_[3] = VALADOC_API_NODE_TYPE_STATIC_METHOD;
-		_tmp60_[4] = VALADOC_API_NODE_TYPE_CLASS;
-		_tmp60_[5] = VALADOC_API_NODE_TYPE_STRUCT;
-		_tmp60_[6] = VALADOC_API_NODE_TYPE_ENUM;
-		_tmp60_[7] = VALADOC_API_NODE_TYPE_DELEGATE;
-		_tmp60_[8] = VALADOC_API_NODE_TYPE_METHOD;
-		_tmp60_[9] = VALADOC_API_NODE_TYPE_SIGNAL;
-		_tmp60_[10] = VALADOC_API_NODE_TYPE_PROPERTY;
-		_tmp60_[11] = VALADOC_API_NODE_TYPE_FIELD;
-		_tmp60_[12] = VALADOC_API_NODE_TYPE_CONSTANT;
+		_tmp60_[0] = BALADOC_API_NODE_TYPE_ERROR_CODE;
+		_tmp60_[1] = BALADOC_API_NODE_TYPE_ENUM_VALUE;
+		_tmp60_[2] = BALADOC_API_NODE_TYPE_CREATION_METHOD;
+		_tmp60_[3] = BALADOC_API_NODE_TYPE_STATIC_METHOD;
+		_tmp60_[4] = BALADOC_API_NODE_TYPE_CLASS;
+		_tmp60_[5] = BALADOC_API_NODE_TYPE_STRUCT;
+		_tmp60_[6] = BALADOC_API_NODE_TYPE_ENUM;
+		_tmp60_[7] = BALADOC_API_NODE_TYPE_DELEGATE;
+		_tmp60_[8] = BALADOC_API_NODE_TYPE_METHOD;
+		_tmp60_[9] = BALADOC_API_NODE_TYPE_SIGNAL;
+		_tmp60_[10] = BALADOC_API_NODE_TYPE_PROPERTY;
+		_tmp60_[11] = BALADOC_API_NODE_TYPE_FIELD;
+		_tmp60_[12] = BALADOC_API_NODE_TYPE_CONSTANT;
 		_tmp61_ = _tmp60_;
 		_tmp61__length1 = 13;
 		_tmp62_ = valadoc_api_node_has_children (node, _tmp61_, (gint) 13);
@@ -3388,7 +3388,7 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 			ValadocMarkupWriter* _tmp69_;
 			_tmp63_ = self->writer;
 			_tmp64_ = g_strdup ("class");
-			_tmp65_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+			_tmp65_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 			_tmp66_ = g_new0 (gchar*, 2 + 1);
 			_tmp66_[0] = _tmp64_;
 			_tmp66_[1] = _tmp65_;
@@ -3398,29 +3398,29 @@ valadoc_html_basic_doclet_write_symbol_content (ValadocHtmlBasicDoclet* self,
 			_tmp69_ = valadoc_markup_writer_text (_tmp68_, "Content:");
 			valadoc_markup_writer_end_tag (_tmp69_, "h2");
 			_tmp67_ = (_vala_array_free (_tmp67_, _tmp67__length1, (GDestroyNotify) g_free), NULL);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_ERROR_CODE, "Error codes", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_ENUM_VALUE, "Enum values", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_CLASS, "Classes", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_STRUCT, "Structs", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_ENUM, "Enums", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_CONSTANT, "Constants", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_PROPERTY, "Properties", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_DELEGATE, "Delegates", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_STATIC_METHOD, "Static methods", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_CREATION_METHOD, "Creation methods", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_METHOD, "Methods", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_SIGNAL, "Signals", node);
-			valadoc_html_basic_doclet_write_children (self, node, VALADOC_API_NODE_TYPE_FIELD, "Fields", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_ERROR_CODE, "Error codes", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_ENUM_VALUE, "Enum values", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_CLASS, "Classes", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_STRUCT, "Structs", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_ENUM, "Enums", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_CONSTANT, "Constants", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_PROPERTY, "Properties", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_DELEGATE, "Delegates", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_STATIC_METHOD, "Static methods", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_CREATION_METHOD, "Creation methods", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_METHOD, "Methods", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_SIGNAL, "Signals", node);
+			valadoc_html_basic_doclet_write_children (self, node, BALADOC_API_NODE_TYPE_FIELD, "Fields", node);
 		}
 	}
-	if (VALADOC_API_IS_CLASS (node)) {
-		valadoc_html_basic_doclet_write_inherited_symbols_note_for_class (self, G_TYPE_CHECK_INSTANCE_CAST (node, VALADOC_API_TYPE_CLASS, ValadocApiClass), node);
+	if (BALADOC_API_IS_CLASS (node)) {
+		valadoc_html_basic_doclet_write_inherited_symbols_note_for_class (self, G_TYPE_CHECK_INSTANCE_CAST (node, BALADOC_API_TYPE_CLASS, ValadocApiClass), node);
 	} else {
-		if (VALADOC_API_IS_INTERFACE (node)) {
-			valadoc_html_basic_doclet_write_inherited_symbols_note_for_interface (self, G_TYPE_CHECK_INSTANCE_CAST (node, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface), node);
+		if (BALADOC_API_IS_INTERFACE (node)) {
+			valadoc_html_basic_doclet_write_inherited_symbols_note_for_interface (self, G_TYPE_CHECK_INSTANCE_CAST (node, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface), node);
 		} else {
-			if (VALADOC_API_IS_STRUCT (node)) {
-				valadoc_html_basic_doclet_write_inherited_symbols_note_for_struct (self, G_TYPE_CHECK_INSTANCE_CAST (node, VALADOC_API_TYPE_STRUCT, ValadocApiStruct), node);
+			if (BALADOC_API_IS_STRUCT (node)) {
+				valadoc_html_basic_doclet_write_inherited_symbols_note_for_struct (self, G_TYPE_CHECK_INSTANCE_CAST (node, BALADOC_API_TYPE_STRUCT, ValadocApiStruct), node);
 			}
 		}
 	}
@@ -3459,7 +3459,7 @@ valadoc_html_basic_doclet_write_inherited_members_headline (ValadocHtmlBasicDocl
 	g_return_if_fail (self != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -3492,7 +3492,7 @@ valadoc_html_basic_doclet_write_inherited_symbols_note_for_class (ValadocHtmlBas
 	_tmp0_ = valadoc_api_class_get_base_type (cl);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_html_basic_doclet_unpack_type_reference (self, _tmp1_);
-	_tmp3_ = VALADOC_API_IS_CLASS (_tmp2_) ? ((ValadocApiClass*) _tmp2_) : NULL;
+	_tmp3_ = BALADOC_API_IS_CLASS (_tmp2_) ? ((ValadocApiClass*) _tmp2_) : NULL;
 	if (_tmp3_ == NULL) {
 		_g_object_unref0 (_tmp2_);
 	}
@@ -3527,7 +3527,7 @@ valadoc_html_basic_doclet_write_inherited_symbols_note_for_class (ValadocHtmlBas
 		_tmp9_ = valadoc_api_class_get_base_type (_tmp8_);
 		_tmp10_ = _tmp9_;
 		_tmp11_ = valadoc_html_basic_doclet_unpack_type_reference (self, _tmp10_);
-		_tmp12_ = VALADOC_API_IS_CLASS (_tmp11_) ? ((ValadocApiClass*) _tmp11_) : NULL;
+		_tmp12_ = BALADOC_API_IS_CLASS (_tmp11_) ? ((ValadocApiClass*) _tmp11_) : NULL;
 		if (_tmp12_ == NULL) {
 			_g_object_unref0 (_tmp11_);
 		}
@@ -3535,7 +3535,7 @@ valadoc_html_basic_doclet_write_inherited_symbols_note_for_class (ValadocHtmlBas
 		base_class = _tmp12_;
 	}
 	_tmp13_ = g_direct_equal;
-	_tmp14_ = vala_array_list_new (VALADOC_API_TYPE_INTERFACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp13_);
+	_tmp14_ = vala_array_list_new (BALADOC_API_TYPE_INTERFACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp13_);
 	printed_interfaces = (ValaCollection*) _tmp14_;
 	{
 		ValaIterator* _iface_ref_it = NULL;
@@ -3570,7 +3570,7 @@ valadoc_html_basic_doclet_write_inherited_symbols_note_for_class (ValadocHtmlBas
 			iface_ref = (ValadocApiTypeReference*) _tmp21_;
 			_tmp22_ = iface_ref;
 			_tmp23_ = valadoc_html_basic_doclet_unpack_type_reference (self, _tmp22_);
-			iface = G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
+			iface = G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
 			if (!headline_printed) {
 				ValadocApiInterface* _tmp25_;
 				_tmp25_ = iface;
@@ -3627,7 +3627,7 @@ valadoc_html_basic_doclet_write_inherited_symbols_note_for_interface (ValadocHtm
 	_tmp0_ = valadoc_api_interface_get_base_type (iface);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_html_basic_doclet_unpack_type_reference (self, _tmp1_);
-	_tmp3_ = VALADOC_API_IS_CLASS (_tmp2_) ? ((ValadocApiClass*) _tmp2_) : NULL;
+	_tmp3_ = BALADOC_API_IS_CLASS (_tmp2_) ? ((ValadocApiClass*) _tmp2_) : NULL;
 	if (_tmp3_ == NULL) {
 		_g_object_unref0 (_tmp2_);
 	}
@@ -3662,7 +3662,7 @@ valadoc_html_basic_doclet_write_inherited_symbols_note_for_interface (ValadocHtm
 		_tmp9_ = valadoc_api_class_get_base_type (_tmp8_);
 		_tmp10_ = _tmp9_;
 		_tmp11_ = valadoc_html_basic_doclet_unpack_type_reference (self, _tmp10_);
-		_tmp12_ = VALADOC_API_IS_CLASS (_tmp11_) ? ((ValadocApiClass*) _tmp11_) : NULL;
+		_tmp12_ = BALADOC_API_IS_CLASS (_tmp11_) ? ((ValadocApiClass*) _tmp11_) : NULL;
 		if (_tmp12_ == NULL) {
 			_g_object_unref0 (_tmp11_);
 		}
@@ -3670,7 +3670,7 @@ valadoc_html_basic_doclet_write_inherited_symbols_note_for_interface (ValadocHtm
 		base_class = _tmp12_;
 	}
 	_tmp13_ = g_direct_equal;
-	_tmp14_ = vala_array_list_new (VALADOC_API_TYPE_INTERFACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp13_);
+	_tmp14_ = vala_array_list_new (BALADOC_API_TYPE_INTERFACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp13_);
 	printed_interfaces = (ValaCollection*) _tmp14_;
 	{
 		ValaIterator* _pre_ref_it = NULL;
@@ -3705,7 +3705,7 @@ valadoc_html_basic_doclet_write_inherited_symbols_note_for_interface (ValadocHtm
 			pre_ref = (ValadocApiTypeReference*) _tmp21_;
 			_tmp22_ = pre_ref;
 			_tmp23_ = valadoc_html_basic_doclet_unpack_type_reference (self, _tmp22_);
-			pre = G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, VALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
+			pre = G_TYPE_CHECK_INSTANCE_CAST (_tmp23_, BALADOC_API_TYPE_INTERFACE, ValadocApiInterface);
 			if (!headline_printed) {
 				ValadocApiInterface* _tmp25_;
 				_tmp25_ = pre;
@@ -3759,7 +3759,7 @@ valadoc_html_basic_doclet_write_inherited_symbols_note_for_struct (ValadocHtmlBa
 	_tmp0_ = valadoc_api_struct_get_base_type (str);
 	_tmp1_ = _tmp0_;
 	_tmp2_ = valadoc_html_basic_doclet_unpack_type_reference (self, _tmp1_);
-	_tmp3_ = VALADOC_API_IS_STRUCT (_tmp2_) ? ((ValadocApiStruct*) _tmp2_) : NULL;
+	_tmp3_ = BALADOC_API_IS_STRUCT (_tmp2_) ? ((ValadocApiStruct*) _tmp2_) : NULL;
 	if (_tmp3_ == NULL) {
 		_g_object_unref0 (_tmp2_);
 	}
@@ -3848,7 +3848,7 @@ valadoc_html_basic_doclet_write_child_namespaces (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (node != NULL);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_API_TYPE_NAMESPACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_API_TYPE_NAMESPACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_);
 	namespaces = _tmp1_;
 	_tmp2_ = namespaces;
 	valadoc_html_basic_doclet_fetch_subnamespace_names (self, node, _tmp2_);
@@ -3882,14 +3882,14 @@ valadoc_html_basic_doclet_write_child_namespaces (ValadocHtmlBasicDoclet* self,
 		}
 	}
 	if (parent != NULL) {
-		_tmp15_ = VALADOC_API_IS_PACKAGE (parent);
+		_tmp15_ = BALADOC_API_IS_PACKAGE (parent);
 	} else {
 		_tmp15_ = FALSE;
 	}
 	with_childs = _tmp15_;
 	_tmp16_ = self->writer;
 	_tmp17_ = g_strdup ("class");
-	_tmp18_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp18_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp19_ = g_new0 (gchar*, 2 + 1);
 	_tmp19_[0] = _tmp17_;
 	_tmp19_[1] = _tmp18_;
@@ -3901,7 +3901,7 @@ valadoc_html_basic_doclet_write_child_namespaces (ValadocHtmlBasicDoclet* self,
 	_tmp20_ = (_vala_array_free (_tmp20_, _tmp20__length1, (GDestroyNotify) g_free), NULL);
 	_tmp23_ = self->writer;
 	_tmp24_ = g_strdup ("class");
-	_tmp25_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_inline_navigation);
+	_tmp25_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_inline_navigation);
 	_tmp26_ = g_new0 (gchar*, 2 + 1);
 	_tmp26_[0] = _tmp24_;
 	_tmp26_[1] = _tmp25_;
@@ -4008,23 +4008,23 @@ valadoc_html_basic_doclet_write_child_namespaces (ValadocHtmlBasicDoclet* self,
 					ValadocApiNamespace* _tmp65_;
 					ValadocApiNamespace* _tmp66_;
 					_tmp58_ = child;
-					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp58_, VALADOC_API_NODE_TYPE_INTERFACE, "Interfaces", parent);
+					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp58_, BALADOC_API_NODE_TYPE_INTERFACE, "Interfaces", parent);
 					_tmp59_ = child;
-					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp59_, VALADOC_API_NODE_TYPE_CLASS, "Classes", parent);
+					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp59_, BALADOC_API_NODE_TYPE_CLASS, "Classes", parent);
 					_tmp60_ = child;
-					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp60_, VALADOC_API_NODE_TYPE_STRUCT, "Structs", parent);
+					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp60_, BALADOC_API_NODE_TYPE_STRUCT, "Structs", parent);
 					_tmp61_ = child;
-					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp61_, VALADOC_API_NODE_TYPE_ENUM, "Enums", parent);
+					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp61_, BALADOC_API_NODE_TYPE_ENUM, "Enums", parent);
 					_tmp62_ = child;
-					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp62_, VALADOC_API_NODE_TYPE_ERROR_DOMAIN, "Error domains", parent);
+					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp62_, BALADOC_API_NODE_TYPE_ERROR_DOMAIN, "Error domains", parent);
 					_tmp63_ = child;
-					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp63_, VALADOC_API_NODE_TYPE_CONSTANT, "Constants", parent);
+					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp63_, BALADOC_API_NODE_TYPE_CONSTANT, "Constants", parent);
 					_tmp64_ = child;
-					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp64_, VALADOC_API_NODE_TYPE_DELEGATE, "Delegates", parent);
+					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp64_, BALADOC_API_NODE_TYPE_DELEGATE, "Delegates", parent);
 					_tmp65_ = child;
-					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp65_, VALADOC_API_NODE_TYPE_METHOD, "Methods", parent);
+					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp65_, BALADOC_API_NODE_TYPE_METHOD, "Methods", parent);
 					_tmp66_ = child;
-					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp66_, VALADOC_API_NODE_TYPE_FIELD, "Fields", parent);
+					valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) _tmp66_, BALADOC_API_NODE_TYPE_FIELD, "Fields", parent);
 				}
 			}
 			_g_object_unref0 (child);
@@ -4074,7 +4074,7 @@ valadoc_html_basic_doclet_write_child_dependencies (ValadocHtmlBasicDoclet* self
 	}
 	_tmp4_ = self->writer;
 	_tmp5_ = g_strdup ("class");
-	_tmp6_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp6_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp7_ = g_new0 (gchar*, 2 + 1);
 	_tmp7_[0] = _tmp5_;
 	_tmp7_[1] = _tmp6_;
@@ -4086,7 +4086,7 @@ valadoc_html_basic_doclet_write_child_dependencies (ValadocHtmlBasicDoclet* self
 	_tmp8_ = (_vala_array_free (_tmp8_, _tmp8__length1, (GDestroyNotify) g_free), NULL);
 	_tmp11_ = self->writer;
 	_tmp12_ = g_strdup ("class");
-	_tmp13_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_inline_navigation);
+	_tmp13_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_inline_navigation);
 	_tmp14_ = g_new0 (gchar*, 2 + 1);
 	_tmp14_[0] = _tmp12_;
 	_tmp14_[1] = _tmp13_;
@@ -4253,8 +4253,8 @@ valadoc_html_basic_doclet_write_children (ValadocHtmlBasicDoclet* self,
 		gchar** _tmp18_;
 		gint _tmp18__length1;
 		ValadocHtmlMarkupWriter* _tmp91_;
-		if (VALADOC_API_IS_STRUCT (node)) {
-			_tmp4_ = type == VALADOC_API_NODE_TYPE_FIELD;
+		if (BALADOC_API_IS_STRUCT (node)) {
+			_tmp4_ = type == BALADOC_API_NODE_TYPE_FIELD;
 		} else {
 			_tmp4_ = FALSE;
 		}
@@ -4265,7 +4265,7 @@ valadoc_html_basic_doclet_write_children (ValadocHtmlBasicDoclet* self,
 		}
 		_tmp6_ = self->writer;
 		_tmp7_ = g_strdup ("class");
-		_tmp8_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+		_tmp8_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 		_tmp9_ = g_new0 (gchar*, 2 + 1);
 		_tmp9_[0] = _tmp7_;
 		_tmp9_[1] = _tmp8_;
@@ -4278,7 +4278,7 @@ valadoc_html_basic_doclet_write_children (ValadocHtmlBasicDoclet* self,
 		_tmp10_ = (_vala_array_free (_tmp10_, _tmp10__length1, (GDestroyNotify) g_free), NULL);
 		_tmp14_ = self->writer;
 		_tmp15_ = g_strdup ("class");
-		_tmp16_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_inline_navigation);
+		_tmp16_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_inline_navigation);
 		_tmp17_ = g_new0 (gchar*, 2 + 1);
 		_tmp17_[0] = _tmp15_;
 		_tmp17_[1] = _tmp16_;
@@ -4346,12 +4346,12 @@ valadoc_html_basic_doclet_write_children (ValadocHtmlBasicDoclet* self,
 					ValadocApiNode* _tmp37_;
 					ValadocApiNode* _tmp61_;
 					_tmp37_ = child;
-					if (VALADOC_API_IS_SYMBOL (_tmp37_)) {
+					if (BALADOC_API_IS_SYMBOL (_tmp37_)) {
 						ValadocApiNode* _tmp38_;
 						gboolean _tmp39_;
 						gboolean _tmp40_;
 						_tmp38_ = child;
-						_tmp39_ = valadoc_api_symbol_get_is_deprecated (G_TYPE_CHECK_INSTANCE_CAST (_tmp38_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp39_ = valadoc_api_symbol_get_is_deprecated (G_TYPE_CHECK_INSTANCE_CAST (_tmp38_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp40_ = _tmp39_;
 						_tmp36_ = _tmp40_;
 					} else {
@@ -4374,7 +4374,7 @@ valadoc_html_basic_doclet_write_children (ValadocHtmlBasicDoclet* self,
 						ValadocHtmlMarkupWriter* _tmp53_;
 						_tmp41_ = self->writer;
 						_tmp42_ = g_strdup ("class");
-						_tmp43_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_deprecated);
+						_tmp43_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_deprecated);
 						_tmp44_ = g_new0 (gchar*, 2 + 1);
 						_tmp44_[0] = _tmp42_;
 						_tmp44_[1] = _tmp43_;
@@ -4440,7 +4440,7 @@ valadoc_html_basic_doclet_write_children (ValadocHtmlBasicDoclet* self,
 					ValadocHtmlMarkupWriter* _tmp89_;
 					_tmp64_ = self->writer;
 					_tmp65_ = g_strdup ("class");
-					_tmp66_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_leaf_code_definition);
+					_tmp66_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_leaf_code_definition);
 					_tmp67_ = g_new0 (gchar*, 2 + 1);
 					_tmp67_[0] = _tmp65_;
 					_tmp67_[1] = _tmp66_;
@@ -4449,12 +4449,12 @@ valadoc_html_basic_doclet_write_children (ValadocHtmlBasicDoclet* self,
 					valadoc_markup_writer_start_tag ((ValadocMarkupWriter*) _tmp64_, "span", _tmp68_, (gint) 2);
 					_tmp68_ = (_vala_array_free (_tmp68_, _tmp68__length1, (GDestroyNotify) g_free), NULL);
 					_tmp70_ = child;
-					if (VALADOC_API_IS_SYMBOL (_tmp70_)) {
+					if (BALADOC_API_IS_SYMBOL (_tmp70_)) {
 						ValadocApiNode* _tmp71_;
 						gboolean _tmp72_;
 						gboolean _tmp73_;
 						_tmp71_ = child;
-						_tmp72_ = valadoc_api_symbol_get_is_deprecated (G_TYPE_CHECK_INSTANCE_CAST (_tmp71_, VALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
+						_tmp72_ = valadoc_api_symbol_get_is_deprecated (G_TYPE_CHECK_INSTANCE_CAST (_tmp71_, BALADOC_API_TYPE_SYMBOL, ValadocApiSymbol));
 						_tmp73_ = _tmp72_;
 						_tmp69_ = _tmp73_;
 					} else {
@@ -4471,7 +4471,7 @@ valadoc_html_basic_doclet_write_children (ValadocHtmlBasicDoclet* self,
 						ValadocHtmlMarkupWriter* _tmp80_;
 						_tmp74_ = self->writer;
 						_tmp75_ = g_strdup ("class");
-						_tmp76_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_deprecated);
+						_tmp76_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_deprecated);
 						_tmp77_ = g_new0 (gchar*, 2 + 1);
 						_tmp77_[0] = _tmp75_;
 						_tmp77_[1] = _tmp76_;
@@ -4492,7 +4492,7 @@ valadoc_html_basic_doclet_write_children (ValadocHtmlBasicDoclet* self,
 					valadoc_markup_writer_end_tag ((ValadocMarkupWriter*) _tmp82_, "span");
 					_tmp83_ = self->writer;
 					_tmp84_ = g_strdup ("class");
-					_tmp85_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_leaf_brief_description);
+					_tmp85_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_leaf_brief_description);
 					_tmp86_ = g_new0 (gchar*, 2 + 1);
 					_tmp86_[0] = _tmp84_;
 					_tmp86_[1] = _tmp85_;
@@ -4525,15 +4525,15 @@ valadoc_html_basic_doclet_write_image_block (ValadocHtmlBasicDoclet* self,
 	gboolean _tmp1_ = FALSE;
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (element != NULL);
-	if (VALADOC_API_IS_CLASS (element)) {
+	if (BALADOC_API_IS_CLASS (element)) {
 		_tmp1_ = TRUE;
 	} else {
-		_tmp1_ = VALADOC_API_IS_INTERFACE (element);
+		_tmp1_ = BALADOC_API_IS_INTERFACE (element);
 	}
 	if (_tmp1_) {
 		_tmp0_ = TRUE;
 	} else {
-		_tmp0_ = VALADOC_API_IS_STRUCT (element);
+		_tmp0_ = BALADOC_API_IS_STRUCT (element);
 	}
 	if (_tmp0_) {
 		const gchar* _tmp2_ = NULL;
@@ -4593,7 +4593,7 @@ valadoc_html_basic_doclet_write_image_block (ValadocHtmlBasicDoclet* self,
 		_g_free0 (_tmp9_);
 		_tmp11_ = self->writer;
 		_tmp12_ = g_strdup ("class");
-		_tmp13_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+		_tmp13_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 		_tmp14_ = g_new0 (gchar*, 2 + 1);
 		_tmp14_[0] = _tmp12_;
 		_tmp14_[1] = _tmp13_;
@@ -4605,7 +4605,7 @@ valadoc_html_basic_doclet_write_image_block (ValadocHtmlBasicDoclet* self,
 		_tmp15_ = (_vala_array_free (_tmp15_, _tmp15__length1, (GDestroyNotify) g_free), NULL);
 		_tmp18_ = self->writer;
 		_tmp19_ = g_strdup ("class");
-		_tmp20_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_diagram);
+		_tmp20_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_diagram);
 		_tmp21_ = g_strdup ("usemap");
 		_tmp22_ = valadoc_api_node_get_full_name (element);
 		_tmp23_ = _tmp22_;
@@ -4689,7 +4689,7 @@ valadoc_html_basic_doclet_write_namespace_content (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (node != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_style_content);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_style_content);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -4712,7 +4712,7 @@ valadoc_html_basic_doclet_write_namespace_content (ValadocHtmlBasicDoclet* self,
 	}
 	_tmp10_ = self->writer;
 	_tmp11_ = g_strdup ("class");
-	_tmp12_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp12_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp13_ = g_new0 (gchar*, 2 + 1);
 	_tmp13_[0] = _tmp11_;
 	_tmp13_[1] = _tmp12_;
@@ -4724,7 +4724,7 @@ valadoc_html_basic_doclet_write_namespace_content (ValadocHtmlBasicDoclet* self,
 	_tmp14_ = (_vala_array_free (_tmp14_, _tmp14__length1, (GDestroyNotify) g_free), NULL);
 	_tmp17_ = self->writer;
 	_tmp18_ = g_strdup ("class");
-	_tmp19_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_hr);
+	_tmp19_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_hr);
 	_tmp20_ = g_new0 (gchar*, 2 + 1);
 	_tmp20_[0] = _tmp18_;
 	_tmp20_[1] = _tmp19_;
@@ -4734,7 +4734,7 @@ valadoc_html_basic_doclet_write_namespace_content (ValadocHtmlBasicDoclet* self,
 	_tmp21_ = (_vala_array_free (_tmp21_, _tmp21__length1, (GDestroyNotify) g_free), NULL);
 	_tmp22_ = self->writer;
 	_tmp23_ = g_strdup ("class");
-	_tmp24_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp24_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp25_ = g_new0 (gchar*, 2 + 1);
 	_tmp25_[0] = _tmp23_;
 	_tmp25_[1] = _tmp24_;
@@ -4747,7 +4747,7 @@ valadoc_html_basic_doclet_write_namespace_content (ValadocHtmlBasicDoclet* self,
 	valadoc_html_basic_doclet_write_documentation (self, (ValadocApiNode*) node, parent);
 	_tmp29_ = self->writer;
 	_tmp30_ = g_strdup ("class");
-	_tmp31_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp31_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp32_ = g_new0 (gchar*, 2 + 1);
 	_tmp32_[0] = _tmp30_;
 	_tmp32_[1] = _tmp31_;
@@ -4764,19 +4764,19 @@ valadoc_html_basic_doclet_write_namespace_content (ValadocHtmlBasicDoclet* self,
 		ValadocApiItem* _tmp39_;
 		_tmp38_ = valadoc_api_item_get_parent ((ValadocApiItem*) node);
 		_tmp39_ = _tmp38_;
-		valadoc_html_basic_doclet_write_child_namespaces (self, (ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp39_, VALADOC_API_TYPE_PACKAGE, ValadocApiPackage), parent);
+		valadoc_html_basic_doclet_write_child_namespaces (self, (ValadocApiNode*) G_TYPE_CHECK_INSTANCE_CAST (_tmp39_, BALADOC_API_TYPE_PACKAGE, ValadocApiPackage), parent);
 	} else {
 		valadoc_html_basic_doclet_write_child_namespaces (self, (ValadocApiNode*) node, parent);
 	}
-	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, VALADOC_API_NODE_TYPE_INTERFACE, "Interfaces", parent);
-	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, VALADOC_API_NODE_TYPE_CLASS, "Classes", parent);
-	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, VALADOC_API_NODE_TYPE_STRUCT, "Structs", parent);
-	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, VALADOC_API_NODE_TYPE_ENUM, "Enums", parent);
-	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, VALADOC_API_NODE_TYPE_ERROR_DOMAIN, "Error domains", parent);
-	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, VALADOC_API_NODE_TYPE_CONSTANT, "Constants", parent);
-	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, VALADOC_API_NODE_TYPE_DELEGATE, "Delegates", parent);
-	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, VALADOC_API_NODE_TYPE_METHOD, "Functions", parent);
-	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, VALADOC_API_NODE_TYPE_FIELD, "Fields", parent);
+	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, BALADOC_API_NODE_TYPE_INTERFACE, "Interfaces", parent);
+	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, BALADOC_API_NODE_TYPE_CLASS, "Classes", parent);
+	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, BALADOC_API_NODE_TYPE_STRUCT, "Structs", parent);
+	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, BALADOC_API_NODE_TYPE_ENUM, "Enums", parent);
+	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, BALADOC_API_NODE_TYPE_ERROR_DOMAIN, "Error domains", parent);
+	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, BALADOC_API_NODE_TYPE_CONSTANT, "Constants", parent);
+	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, BALADOC_API_NODE_TYPE_DELEGATE, "Delegates", parent);
+	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, BALADOC_API_NODE_TYPE_METHOD, "Functions", parent);
+	valadoc_html_basic_doclet_write_children (self, (ValadocApiNode*) node, BALADOC_API_NODE_TYPE_FIELD, "Fields", parent);
 	_tmp40_ = self->writer;
 	valadoc_markup_writer_end_tag ((ValadocMarkupWriter*) _tmp40_, "div");
 	_g_free0 (_tmp5_);
@@ -4841,7 +4841,7 @@ valadoc_html_basic_doclet_write_package_content (ValadocHtmlBasicDoclet* self,
 	g_return_if_fail (node != NULL);
 	_tmp0_ = self->writer;
 	_tmp1_ = g_strdup ("class");
-	_tmp2_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_style_content);
+	_tmp2_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_style_content);
 	_tmp3_ = g_new0 (gchar*, 2 + 1);
 	_tmp3_[0] = _tmp1_;
 	_tmp3_[1] = _tmp2_;
@@ -4851,7 +4851,7 @@ valadoc_html_basic_doclet_write_package_content (ValadocHtmlBasicDoclet* self,
 	_tmp4_ = (_vala_array_free (_tmp4_, _tmp4__length1, (GDestroyNotify) g_free), NULL);
 	_tmp5_ = self->writer;
 	_tmp6_ = g_strdup ("class");
-	_tmp7_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp7_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp8_ = g_strdup ("id");
 	_tmp9_ = valadoc_api_node_get_name ((ValadocApiNode*) node);
 	_tmp10_ = _tmp9_;
@@ -4871,7 +4871,7 @@ valadoc_html_basic_doclet_write_package_content (ValadocHtmlBasicDoclet* self,
 	_tmp13_ = (_vala_array_free (_tmp13_, _tmp13__length1, (GDestroyNotify) g_free), NULL);
 	_tmp18_ = self->writer;
 	_tmp19_ = g_strdup ("class");
-	_tmp20_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_headline_hr);
+	_tmp20_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_headline_hr);
 	_tmp21_ = g_new0 (gchar*, 2 + 1);
 	_tmp21_[0] = _tmp19_;
 	_tmp21_[1] = _tmp20_;
@@ -4881,7 +4881,7 @@ valadoc_html_basic_doclet_write_package_content (ValadocHtmlBasicDoclet* self,
 	_tmp22_ = (_vala_array_free (_tmp22_, _tmp22__length1, (GDestroyNotify) g_free), NULL);
 	_tmp23_ = self->writer;
 	_tmp24_ = g_strdup ("class");
-	_tmp25_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp25_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp26_ = g_new0 (gchar*, 2 + 1);
 	_tmp26_[0] = _tmp24_;
 	_tmp26_[1] = _tmp25_;
@@ -4930,7 +4930,7 @@ valadoc_html_basic_doclet_write_package_content (ValadocHtmlBasicDoclet* self,
 	}
 	_tmp46_ = self->writer;
 	_tmp47_ = g_strdup ("class");
-	_tmp48_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_title);
+	_tmp48_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_title);
 	_tmp49_ = g_new0 (gchar*, 2 + 1);
 	_tmp49_[0] = _tmp47_;
 	_tmp49_[1] = _tmp48_;
@@ -4949,7 +4949,7 @@ valadoc_html_basic_doclet_write_package_content (ValadocHtmlBasicDoclet* self,
 		gint _tmp55_;
 		gint _tmp56_;
 		gint _child_index = 0;
-		_tmp53_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) node, VALADOC_API_NODE_TYPE_NAMESPACE, TRUE);
+		_tmp53_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) node, BALADOC_API_NODE_TYPE_NAMESPACE, TRUE);
 		_child_list = _tmp53_;
 		_tmp54_ = _child_list;
 		_tmp55_ = vala_collection_get_size ((ValaCollection*) _tmp54_);
@@ -4988,23 +4988,23 @@ valadoc_html_basic_doclet_write_package_content (ValadocHtmlBasicDoclet* self,
 				ValadocApiNode* _tmp71_;
 				ValadocApiNode* _tmp72_;
 				_tmp64_ = child;
-				valadoc_html_basic_doclet_write_children (self, _tmp64_, VALADOC_API_NODE_TYPE_INTERFACE, "Interfaces", parent);
+				valadoc_html_basic_doclet_write_children (self, _tmp64_, BALADOC_API_NODE_TYPE_INTERFACE, "Interfaces", parent);
 				_tmp65_ = child;
-				valadoc_html_basic_doclet_write_children (self, _tmp65_, VALADOC_API_NODE_TYPE_CLASS, "Classes", parent);
+				valadoc_html_basic_doclet_write_children (self, _tmp65_, BALADOC_API_NODE_TYPE_CLASS, "Classes", parent);
 				_tmp66_ = child;
-				valadoc_html_basic_doclet_write_children (self, _tmp66_, VALADOC_API_NODE_TYPE_STRUCT, "Structs", parent);
+				valadoc_html_basic_doclet_write_children (self, _tmp66_, BALADOC_API_NODE_TYPE_STRUCT, "Structs", parent);
 				_tmp67_ = child;
-				valadoc_html_basic_doclet_write_children (self, _tmp67_, VALADOC_API_NODE_TYPE_ENUM, "Enums", parent);
+				valadoc_html_basic_doclet_write_children (self, _tmp67_, BALADOC_API_NODE_TYPE_ENUM, "Enums", parent);
 				_tmp68_ = child;
-				valadoc_html_basic_doclet_write_children (self, _tmp68_, VALADOC_API_NODE_TYPE_ERROR_DOMAIN, "Error domains", parent);
+				valadoc_html_basic_doclet_write_children (self, _tmp68_, BALADOC_API_NODE_TYPE_ERROR_DOMAIN, "Error domains", parent);
 				_tmp69_ = child;
-				valadoc_html_basic_doclet_write_children (self, _tmp69_, VALADOC_API_NODE_TYPE_CONSTANT, "Constants", parent);
+				valadoc_html_basic_doclet_write_children (self, _tmp69_, BALADOC_API_NODE_TYPE_CONSTANT, "Constants", parent);
 				_tmp70_ = child;
-				valadoc_html_basic_doclet_write_children (self, _tmp70_, VALADOC_API_NODE_TYPE_DELEGATE, "Delegates", parent);
+				valadoc_html_basic_doclet_write_children (self, _tmp70_, BALADOC_API_NODE_TYPE_DELEGATE, "Delegates", parent);
 				_tmp71_ = child;
-				valadoc_html_basic_doclet_write_children (self, _tmp71_, VALADOC_API_NODE_TYPE_METHOD, "Functions", parent);
+				valadoc_html_basic_doclet_write_children (self, _tmp71_, BALADOC_API_NODE_TYPE_METHOD, "Functions", parent);
 				_tmp72_ = child;
-				valadoc_html_basic_doclet_write_children (self, _tmp72_, VALADOC_API_NODE_TYPE_FIELD, "Fields", parent);
+				valadoc_html_basic_doclet_write_children (self, _tmp72_, BALADOC_API_NODE_TYPE_FIELD, "Fields", parent);
 			}
 			_g_object_unref0 (child);
 		}
@@ -5098,7 +5098,7 @@ valadoc_html_basic_doclet_write_file_header (ValadocHtmlBasicDoclet* self,
 	valadoc_markup_writer_start_tag ((ValadocMarkupWriter*) _tmp17_, "body", NULL, (gint) 0);
 	_tmp18_ = self->writer;
 	_tmp19_ = g_strdup ("class");
-	_tmp20_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_site_header);
+	_tmp20_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_site_header);
 	_tmp21_ = g_new0 (gchar*, 2 + 1);
 	_tmp21_[0] = _tmp19_;
 	_tmp21_[1] = _tmp20_;
@@ -5120,7 +5120,7 @@ valadoc_html_basic_doclet_write_file_header (ValadocHtmlBasicDoclet* self,
 	valadoc_markup_writer_end_tag ((ValadocMarkupWriter*) _tmp27_, "div");
 	_tmp28_ = self->writer;
 	_tmp29_ = g_strdup ("class");
-	_tmp30_ = g_strdup (VALADOC_HTML_BASIC_DOCLET_css_style_body);
+	_tmp30_ = g_strdup (BALADOC_HTML_BASIC_DOCLET_css_style_body);
 	_tmp31_ = g_new0 (gchar*, 2 + 1);
 	_tmp31_[0] = _tmp29_;
 	_tmp31_[1] = _tmp30_;
@@ -5196,17 +5196,17 @@ valadoc_html_basic_doclet_class_init (ValadocHtmlBasicDocletClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_html_basic_doclet_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_html_basic_doclet_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_html_basic_doclet_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY, valadoc_html_basic_doclet_properties[VALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY] = g_param_spec_object ("linker", "linker", "linker", VALADOC_HTML_TYPE_LINK_HELPER, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY, valadoc_html_basic_doclet_properties[VALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY] = g_param_spec_object ("settings", "settings", "settings", VALADOC_TYPE_SETTINGS, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY, valadoc_html_basic_doclet_properties[VALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY] = g_param_spec_string ("wiki-index-name", "wiki-index-name", "wiki-index-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY, valadoc_html_basic_doclet_properties[BALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY] = g_param_spec_object ("linker", "linker", "linker", BALADOC_HTML_TYPE_LINK_HELPER, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY, valadoc_html_basic_doclet_properties[BALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY] = g_param_spec_object ("settings", "settings", "settings", BALADOC_TYPE_SETTINGS, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY, valadoc_html_basic_doclet_properties[BALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY] = g_param_spec_string ("wiki-index-name", "wiki-index-name", "wiki-index-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	_tmp0_ = g_new0 (ValadocApiNodeType, 7);
-	_tmp0_[0] = VALADOC_API_NODE_TYPE_CONSTANT;
-	_tmp0_[1] = VALADOC_API_NODE_TYPE_PROPERTY;
-	_tmp0_[2] = VALADOC_API_NODE_TYPE_DELEGATE;
-	_tmp0_[3] = VALADOC_API_NODE_TYPE_STATIC_METHOD;
-	_tmp0_[4] = VALADOC_API_NODE_TYPE_METHOD;
-	_tmp0_[5] = VALADOC_API_NODE_TYPE_SIGNAL;
-	_tmp0_[6] = VALADOC_API_NODE_TYPE_FIELD;
+	_tmp0_[0] = BALADOC_API_NODE_TYPE_CONSTANT;
+	_tmp0_[1] = BALADOC_API_NODE_TYPE_PROPERTY;
+	_tmp0_[2] = BALADOC_API_NODE_TYPE_DELEGATE;
+	_tmp0_[3] = BALADOC_API_NODE_TYPE_STATIC_METHOD;
+	_tmp0_[4] = BALADOC_API_NODE_TYPE_METHOD;
+	_tmp0_[5] = BALADOC_API_NODE_TYPE_SIGNAL;
+	_tmp0_[6] = BALADOC_API_NODE_TYPE_FIELD;
 	valadoc_html_basic_doclet_inheritable_members = _tmp0_;
 	valadoc_html_basic_doclet_inheritable_members_length1 = 7;
 }
@@ -5237,7 +5237,7 @@ static void
 valadoc_html_basic_doclet_finalize (GObject * obj)
 {
 	ValadocHtmlBasicDoclet * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_HTML_TYPE_BASIC_DOCLET, ValadocHtmlBasicDoclet);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_HTML_TYPE_BASIC_DOCLET, ValadocHtmlBasicDoclet);
 	_g_object_unref0 (self->priv->_linker);
 	_g_object_unref0 (self->priv->_settings);
 	_g_free0 (self->priv->_wiki_index_name);
@@ -5257,8 +5257,8 @@ valadoc_html_basic_doclet_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocHtmlBasicDocletClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_html_basic_doclet_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocHtmlBasicDoclet), 0, (GInstanceInitFunc) valadoc_html_basic_doclet_instance_init, NULL };
 	static const GInterfaceInfo valadoc_doclet_info = { (GInterfaceInitFunc) valadoc_html_basic_doclet_valadoc_doclet_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_html_basic_doclet_type_id;
-	valadoc_html_basic_doclet_type_id = g_type_register_static (VALADOC_API_TYPE_VISITOR, "ValadocHtmlBasicDoclet", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
-	g_type_add_interface_static (valadoc_html_basic_doclet_type_id, VALADOC_TYPE_DOCLET, &valadoc_doclet_info);
+	valadoc_html_basic_doclet_type_id = g_type_register_static (BALADOC_API_TYPE_VISITOR, "ValadocHtmlBasicDoclet", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	g_type_add_interface_static (valadoc_html_basic_doclet_type_id, BALADOC_TYPE_DOCLET, &valadoc_doclet_info);
 	ValadocHtmlBasicDoclet_private_offset = g_type_add_instance_private (valadoc_html_basic_doclet_type_id, sizeof (ValadocHtmlBasicDocletPrivate));
 	return valadoc_html_basic_doclet_type_id;
 }
@@ -5282,15 +5282,15 @@ _vala_valadoc_html_basic_doclet_get_property (GObject * object,
                                               GParamSpec * pspec)
 {
 	ValadocHtmlBasicDoclet * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_HTML_TYPE_BASIC_DOCLET, ValadocHtmlBasicDoclet);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_HTML_TYPE_BASIC_DOCLET, ValadocHtmlBasicDoclet);
 	switch (property_id) {
-		case VALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY:
+		case BALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY:
 		g_value_set_object (value, valadoc_html_basic_doclet_get_linker (self));
 		break;
-		case VALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY:
+		case BALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY:
 		g_value_set_object (value, valadoc_html_basic_doclet_get_settings (self));
 		break;
-		case VALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY:
+		case BALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_html_basic_doclet_get_wiki_index_name (self));
 		break;
 		default:
@@ -5306,15 +5306,15 @@ _vala_valadoc_html_basic_doclet_set_property (GObject * object,
                                               GParamSpec * pspec)
 {
 	ValadocHtmlBasicDoclet * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_HTML_TYPE_BASIC_DOCLET, ValadocHtmlBasicDoclet);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_HTML_TYPE_BASIC_DOCLET, ValadocHtmlBasicDoclet);
 	switch (property_id) {
-		case VALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY:
+		case BALADOC_HTML_BASIC_DOCLET_LINKER_PROPERTY:
 		valadoc_html_basic_doclet_set_linker (self, g_value_get_object (value));
 		break;
-		case VALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY:
+		case BALADOC_HTML_BASIC_DOCLET_SETTINGS_PROPERTY:
 		valadoc_html_basic_doclet_set_settings (self, g_value_get_object (value));
 		break;
-		case VALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY:
+		case BALADOC_HTML_BASIC_DOCLET_WIKI_INDEX_NAME_PROPERTY:
 		valadoc_html_basic_doclet_set_wiki_index_name (self, g_value_get_string (value));
 		break;
 		default:

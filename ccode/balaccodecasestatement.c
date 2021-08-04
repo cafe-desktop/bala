@@ -88,7 +88,7 @@ vala_ccode_case_statement_construct (GType object_type,
 ValaCCodeCaseStatement*
 vala_ccode_case_statement_new (ValaCCodeExpression* expression)
 {
-	return vala_ccode_case_statement_construct (VALA_TYPE_CCODE_CASE_STATEMENT, expression);
+	return vala_ccode_case_statement_construct (BALA_TYPE_CCODE_CASE_STATEMENT, expression);
 }
 
 static void
@@ -132,9 +132,9 @@ static void
 vala_ccode_case_statement_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeCaseStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_CASE_STATEMENT, ValaCCodeCaseStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_CASE_STATEMENT, ValaCCodeCaseStatement);
 	_vala_ccode_node_unref0 (self->priv->_expression);
-	VALA_CCODE_NODE_CLASS (vala_ccode_case_statement_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_case_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -145,7 +145,7 @@ vala_ccode_case_statement_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeCaseStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_case_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeCaseStatement), 0, (GInstanceInitFunc) vala_ccode_case_statement_instance_init, NULL };
 	GType vala_ccode_case_statement_type_id;
-	vala_ccode_case_statement_type_id = g_type_register_static (VALA_TYPE_CCODE_STATEMENT, "ValaCCodeCaseStatement", &g_define_type_info, 0);
+	vala_ccode_case_statement_type_id = g_type_register_static (BALA_TYPE_CCODE_STATEMENT, "ValaCCodeCaseStatement", &g_define_type_info, 0);
 	ValaCCodeCaseStatement_private_offset = g_type_add_instance_private (vala_ccode_case_statement_type_id, sizeof (ValaCCodeCaseStatementPrivate));
 	return vala_ccode_case_statement_type_id;
 }

@@ -76,7 +76,7 @@ vala_integer_type_new (ValaStruct* type_symbol,
                        const gchar* literal_value,
                        const gchar* literal_type_name)
 {
-	return vala_integer_type_construct (VALA_TYPE_INTEGER_TYPE, type_symbol, literal_value, literal_type_name);
+	return vala_integer_type_construct (BALA_TYPE_INTEGER_TYPE, type_symbol, literal_value, literal_type_name);
 }
 
 static ValaDataType*
@@ -101,7 +101,7 @@ vala_integer_type_real_copy (ValaDataType* base)
 	_tmp1_ = _tmp0_;
 	_tmp2_ = self->priv->literal_value;
 	_tmp3_ = self->priv->literal_type_name;
-	_tmp4_ = vala_integer_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_STRUCT, ValaStruct), _tmp2_, _tmp3_);
+	_tmp4_ = vala_integer_type_new (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_STRUCT, ValaStruct), _tmp2_, _tmp3_);
 	_result_ = _tmp4_;
 	_tmp5_ = vala_code_node_get_source_reference ((ValaCodeNode*) self);
 	_tmp6_ = _tmp5_;
@@ -135,7 +135,7 @@ vala_integer_type_real_compatible (ValaDataType* base,
 	g_return_val_if_fail (target_type != NULL, FALSE);
 	_tmp1_ = vala_data_type_get_type_symbol (target_type);
 	_tmp2_ = _tmp1_;
-	if (VALA_IS_STRUCT (_tmp2_)) {
+	if (BALA_IS_STRUCT (_tmp2_)) {
 		const gchar* _tmp3_;
 		_tmp3_ = self->priv->literal_type_name;
 		_tmp0_ = g_strcmp0 (_tmp3_, "int") == 0;
@@ -150,7 +150,7 @@ vala_integer_type_real_compatible (ValaDataType* base,
 		ValaStruct* _tmp7_;
 		_tmp4_ = vala_data_type_get_type_symbol (target_type);
 		_tmp5_ = _tmp4_;
-		_tmp6_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, VALA_TYPE_STRUCT, ValaStruct));
+		_tmp6_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp5_, BALA_TYPE_STRUCT, ValaStruct));
 		target_st = _tmp6_;
 		_tmp7_ = target_st;
 		if (vala_struct_is_integer_type (_tmp7_)) {
@@ -214,7 +214,7 @@ vala_integer_type_real_compatible (ValaDataType* base,
 		ValaTypeSymbol* _tmp22_;
 		_tmp21_ = vala_data_type_get_type_symbol (target_type);
 		_tmp22_ = _tmp21_;
-		if (VALA_IS_ENUM (_tmp22_)) {
+		if (BALA_IS_ENUM (_tmp22_)) {
 			gboolean _tmp23_ = FALSE;
 			const gchar* _tmp24_;
 			_tmp24_ = self->priv->literal_type_name;
@@ -238,7 +238,7 @@ vala_integer_type_real_compatible (ValaDataType* base,
 			}
 		}
 	}
-	result = VALA_DATA_TYPE_CLASS (vala_integer_type_parent_class)->compatible ((ValaDataType*) G_TYPE_CHECK_INSTANCE_CAST (self, VALA_TYPE_VALUE_TYPE, ValaValueType), target_type);
+	result = BALA_DATA_TYPE_CLASS (vala_integer_type_parent_class)->compatible ((ValaDataType*) G_TYPE_CHECK_INSTANCE_CAST (self, BALA_TYPE_VALUE_TYPE, ValaValueType), target_type);
 	return result;
 }
 
@@ -264,10 +264,10 @@ static void
 vala_integer_type_finalize (ValaCodeNode * obj)
 {
 	ValaIntegerType * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_INTEGER_TYPE, ValaIntegerType);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_INTEGER_TYPE, ValaIntegerType);
 	_g_free0 (self->priv->literal_value);
 	_g_free0 (self->priv->literal_type_name);
-	VALA_CODE_NODE_CLASS (vala_integer_type_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_integer_type_parent_class)->finalize (obj);
 }
 
 /**
@@ -278,7 +278,7 @@ vala_integer_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaIntegerTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_integer_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaIntegerType), 0, (GInstanceInitFunc) vala_integer_type_instance_init, NULL };
 	GType vala_integer_type_type_id;
-	vala_integer_type_type_id = g_type_register_static (VALA_TYPE_VALUE_TYPE, "ValaIntegerType", &g_define_type_info, 0);
+	vala_integer_type_type_id = g_type_register_static (BALA_TYPE_VALUE_TYPE, "ValaIntegerType", &g_define_type_info, 0);
 	ValaIntegerType_private_offset = g_type_add_instance_private (vala_integer_type_type_id, sizeof (ValaIntegerTypePrivate));
 	return vala_integer_type_type_id;
 }

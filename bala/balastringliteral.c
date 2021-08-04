@@ -120,7 +120,7 @@ ValaStringLiteral*
 vala_string_literal_new (const gchar* value,
                          ValaSourceReference* source_reference)
 {
-	return vala_string_literal_construct (VALA_TYPE_STRING_LITERAL, value, source_reference);
+	return vala_string_literal_construct (BALA_TYPE_STRING_LITERAL, value, source_reference);
 }
 
 /**
@@ -333,7 +333,7 @@ vala_string_literal_get_format_literal (ValaExpression* expr)
 	ValaMethodCall* _tmp3_;
 	ValaStringLiteral* result = NULL;
 	g_return_val_if_fail (expr != NULL, NULL);
-	format_literal = VALA_IS_STRING_LITERAL (expr) ? ((ValaStringLiteral*) expr) : NULL;
+	format_literal = BALA_IS_STRING_LITERAL (expr) ? ((ValaStringLiteral*) expr) : NULL;
 	_tmp0_ = format_literal;
 	if (_tmp0_ != NULL) {
 		ValaStringLiteral* _tmp1_;
@@ -343,7 +343,7 @@ vala_string_literal_get_format_literal (ValaExpression* expr)
 		result = _tmp2_;
 		return result;
 	}
-	call = VALA_IS_METHOD_CALL (expr) ? ((ValaMethodCall*) expr) : NULL;
+	call = BALA_IS_METHOD_CALL (expr) ? ((ValaMethodCall*) expr) : NULL;
 	_tmp3_ = call;
 	if (_tmp3_ != NULL) {
 		ValaMethodCall* _tmp4_;
@@ -383,9 +383,9 @@ static void
 vala_string_literal_finalize (ValaCodeNode * obj)
 {
 	ValaStringLiteral * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_STRING_LITERAL, ValaStringLiteral);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_STRING_LITERAL, ValaStringLiteral);
 	_g_free0 (self->priv->_value);
-	VALA_CODE_NODE_CLASS (vala_string_literal_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_string_literal_parent_class)->finalize (obj);
 }
 
 /**
@@ -396,7 +396,7 @@ vala_string_literal_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaStringLiteralClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_string_literal_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaStringLiteral), 0, (GInstanceInitFunc) vala_string_literal_instance_init, NULL };
 	GType vala_string_literal_type_id;
-	vala_string_literal_type_id = g_type_register_static (VALA_TYPE_LITERAL, "ValaStringLiteral", &g_define_type_info, 0);
+	vala_string_literal_type_id = g_type_register_static (BALA_TYPE_LITERAL, "ValaStringLiteral", &g_define_type_info, 0);
 	ValaStringLiteral_private_offset = g_type_add_instance_private (vala_string_literal_type_id, sizeof (ValaStringLiteralPrivate));
 	return vala_string_literal_type_id;
 }

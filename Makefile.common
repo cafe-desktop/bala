@@ -1,3 +1,3 @@
-VALA_V = $(VALA_V_$(V))
-VALA_V_ = $(VALA_V_$(AM_DEFAULT_VERBOSITY))
-VALA_V_0 = @echo "  VALAC " $^;
+BALA_V = $(BALA_V_$(V))
+BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
+BALA_V_0 = @echo "  BALAC " $^;

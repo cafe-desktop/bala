@@ -31,10 +31,10 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CHARTS_FACTORY_0_PROPERTY,
-	VALADOC_CHARTS_FACTORY_NUM_PROPERTIES
+	BALADOC_CHARTS_FACTORY_0_PROPERTY,
+	BALADOC_CHARTS_FACTORY_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_charts_factory_properties[VALADOC_CHARTS_FACTORY_NUM_PROPERTIES];
+static GParamSpec* valadoc_charts_factory_properties[BALADOC_CHARTS_FACTORY_NUM_PROPERTIES];
 #define _g_free0(var) (var = (g_free (var), NULL))
 
 static gpointer valadoc_charts_factory_parent_class = NULL;
@@ -107,7 +107,7 @@ valadoc_charts_factory_create_graph (ValadocChartsFactory* self,
                                      ValadocApiNode* item)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_graph (self, item);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_graph (self, item);
 }
 
 static GVC_t*
@@ -123,7 +123,7 @@ valadoc_charts_factory_create_context (ValadocChartsFactory* self,
                                        Agraph_t* graph)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_context (self, graph);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_context (self, graph);
 }
 
 static Agnode_t*
@@ -141,7 +141,7 @@ valadoc_charts_factory_create_class (ValadocChartsFactory* self,
                                      ValadocApiClass* item)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_class (self, graph, item);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_class (self, graph, item);
 }
 
 static Agnode_t*
@@ -159,7 +159,7 @@ valadoc_charts_factory_create_struct (ValadocChartsFactory* self,
                                       ValadocApiStruct* item)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_struct (self, graph, item);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_struct (self, graph, item);
 }
 
 static Agnode_t*
@@ -177,7 +177,7 @@ valadoc_charts_factory_create_interface (ValadocChartsFactory* self,
                                          ValadocApiInterface* item)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_interface (self, graph, item);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_interface (self, graph, item);
 }
 
 static Agnode_t*
@@ -195,7 +195,7 @@ valadoc_charts_factory_create_enum (ValadocChartsFactory* self,
                                     ValadocApiEnum* item)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_enum (self, graph, item);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_enum (self, graph, item);
 }
 
 static Agnode_t*
@@ -213,7 +213,7 @@ valadoc_charts_factory_create_delegate (ValadocChartsFactory* self,
                                         ValadocApiDelegate* item)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_delegate (self, graph, item);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_delegate (self, graph, item);
 }
 
 static Agnode_t*
@@ -231,7 +231,7 @@ valadoc_charts_factory_create_errordomain (ValadocChartsFactory* self,
                                            ValadocApiErrorDomain* item)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_errordomain (self, graph, item);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_errordomain (self, graph, item);
 }
 
 static Agnode_t*
@@ -249,7 +249,7 @@ valadoc_charts_factory_create_namespace (ValadocChartsFactory* self,
                                          ValadocApiNamespace* item)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_namespace (self, graph, item);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->create_namespace (self, graph, item);
 }
 
 static Agedge_t*
@@ -269,7 +269,7 @@ valadoc_charts_factory_add_children (ValadocChartsFactory* self,
                                      Agnode_t* child)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALADOC_CHARTS_FACTORY_GET_CLASS (self)->add_children (self, graph, parent, child);
+	return BALADOC_CHARTS_FACTORY_GET_CLASS (self)->add_children (self, graph, parent, child);
 }
 
 ValadocChartsFactory*

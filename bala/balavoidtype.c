@@ -52,7 +52,7 @@ vala_void_type_construct (GType object_type,
 ValaVoidType*
 vala_void_type_new (ValaSourceReference* source_reference)
 {
-	return vala_void_type_construct (VALA_TYPE_VOID_TYPE, source_reference);
+	return vala_void_type_construct (BALA_TYPE_VOID_TYPE, source_reference);
 }
 
 static gboolean
@@ -63,7 +63,7 @@ vala_void_type_real_stricter (ValaDataType* base,
 	gboolean result = FALSE;
 	self = (ValaVoidType*) base;
 	g_return_val_if_fail (type2 != NULL, FALSE);
-	result = VALA_IS_VOID_TYPE (type2);
+	result = BALA_IS_VOID_TYPE (type2);
 	return result;
 }
 
@@ -75,7 +75,7 @@ vala_void_type_real_compatible (ValaDataType* base,
 	gboolean result = FALSE;
 	self = (ValaVoidType*) base;
 	g_return_val_if_fail (type2 != NULL, FALSE);
-	result = VALA_IS_VOID_TYPE (type2);
+	result = BALA_IS_VOID_TYPE (type2);
 	return result;
 }
 
@@ -133,7 +133,7 @@ vala_void_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaVoidTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_void_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaVoidType), 0, (GInstanceInitFunc) vala_void_type_instance_init, NULL };
 	GType vala_void_type_type_id;
-	vala_void_type_type_id = g_type_register_static (VALA_TYPE_DATA_TYPE, "ValaVoidType", &g_define_type_info, 0);
+	vala_void_type_type_id = g_type_register_static (BALA_TYPE_DATA_TYPE, "ValaVoidType", &g_define_type_info, 0);
 	return vala_void_type_type_id;
 }
 

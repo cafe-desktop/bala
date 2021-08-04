@@ -54,7 +54,7 @@ vala_empty_statement_construct (GType object_type,
 ValaEmptyStatement*
 vala_empty_statement_new (ValaSourceReference* source)
 {
-	return vala_empty_statement_construct (VALA_TYPE_EMPTY_STATEMENT, source);
+	return vala_empty_statement_construct (BALA_TYPE_EMPTY_STATEMENT, source);
 }
 
 static void
@@ -108,8 +108,8 @@ vala_empty_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaEmptyStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_empty_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaEmptyStatement), 0, (GInstanceInitFunc) vala_empty_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_empty_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_empty_statement_type_id;
-	vala_empty_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaEmptyStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_empty_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_empty_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaEmptyStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_empty_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	return vala_empty_statement_type_id;
 }
 

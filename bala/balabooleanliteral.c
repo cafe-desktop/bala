@@ -92,7 +92,7 @@ ValaBooleanLiteral*
 vala_boolean_literal_new (gboolean b,
                           ValaSourceReference* source)
 {
-	return vala_boolean_literal_construct (VALA_TYPE_BOOLEAN_LITERAL, b, source);
+	return vala_boolean_literal_construct (BALA_TYPE_BOOLEAN_LITERAL, b, source);
 }
 
 static void
@@ -209,8 +209,8 @@ static void
 vala_boolean_literal_finalize (ValaCodeNode * obj)
 {
 	ValaBooleanLiteral * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_BOOLEAN_LITERAL, ValaBooleanLiteral);
-	VALA_CODE_NODE_CLASS (vala_boolean_literal_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_BOOLEAN_LITERAL, ValaBooleanLiteral);
+	BALA_CODE_NODE_CLASS (vala_boolean_literal_parent_class)->finalize (obj);
 }
 
 /**
@@ -221,7 +221,7 @@ vala_boolean_literal_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaBooleanLiteralClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_boolean_literal_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaBooleanLiteral), 0, (GInstanceInitFunc) vala_boolean_literal_instance_init, NULL };
 	GType vala_boolean_literal_type_id;
-	vala_boolean_literal_type_id = g_type_register_static (VALA_TYPE_LITERAL, "ValaBooleanLiteral", &g_define_type_info, 0);
+	vala_boolean_literal_type_id = g_type_register_static (BALA_TYPE_LITERAL, "ValaBooleanLiteral", &g_define_type_info, 0);
 	ValaBooleanLiteral_private_offset = g_type_add_instance_private (vala_boolean_literal_type_id, sizeof (ValaBooleanLiteralPrivate));
 	return vala_boolean_literal_type_id;
 }

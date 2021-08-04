@@ -66,7 +66,7 @@ GType
 vala_iterable_get_element_type (ValaIterable* self)
 {
 	g_return_val_if_fail (self != NULL, 0UL);
-	return VALA_ITERABLE_GET_CLASS (self)->get_element_type (self);
+	return BALA_ITERABLE_GET_CLASS (self)->get_element_type (self);
 }
 
 /**
@@ -87,7 +87,7 @@ ValaIterator*
 vala_iterable_iterator (ValaIterable* self)
 {
 	g_return_val_if_fail (self != NULL, NULL);
-	return VALA_ITERABLE_GET_CLASS (self)->iterator (self);
+	return BALA_ITERABLE_GET_CLASS (self)->iterator (self);
 }
 
 ValaIterable*
@@ -185,7 +185,7 @@ vala_param_spec_iterable (const gchar* name,
                           GParamFlags flags)
 {
 	ValaParamSpecIterable* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_ITERABLE), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_ITERABLE), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -194,7 +194,7 @@ vala_param_spec_iterable (const gchar* name,
 gpointer
 vala_value_get_iterable (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_ITERABLE), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_ITERABLE), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -203,10 +203,10 @@ vala_value_set_iterable (GValue* value,
                          gpointer v_object)
 {
 	ValaIterable * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_ITERABLE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_ITERABLE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_ITERABLE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_ITERABLE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_iterable_ref (value->data[0].v_pointer);
@@ -223,10 +223,10 @@ vala_value_take_iterable (GValue* value,
                           gpointer v_object)
 {
 	ValaIterable * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_ITERABLE));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_ITERABLE));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_ITERABLE));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_ITERABLE));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -260,7 +260,7 @@ static void
 vala_iterable_finalize (ValaIterable * obj)
 {
 	ValaIterable * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ITERABLE, ValaIterable);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ITERABLE, ValaIterable);
 	g_signal_handlers_destroy (self);
 }
 
@@ -307,7 +307,7 @@ vala_iterable_unref (gpointer instance)
 	ValaIterable * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_ITERABLE_GET_CLASS (self)->finalize (self);
+		BALA_ITERABLE_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

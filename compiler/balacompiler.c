@@ -38,12 +38,12 @@
 #include <config.h>
 #include <gobject/gvaluecollector.h>
 
-#define VALA_TYPE_COMPILER (vala_compiler_get_type ())
-#define VALA_COMPILER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALA_TYPE_COMPILER, ValaCompiler))
-#define VALA_COMPILER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALA_TYPE_COMPILER, ValaCompilerClass))
-#define VALA_IS_COMPILER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALA_TYPE_COMPILER))
-#define VALA_IS_COMPILER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALA_TYPE_COMPILER))
-#define VALA_COMPILER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALA_TYPE_COMPILER, ValaCompilerClass))
+#define BALA_TYPE_COMPILER (vala_compiler_get_type ())
+#define BALA_COMPILER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALA_TYPE_COMPILER, ValaCompiler))
+#define BALA_COMPILER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALA_TYPE_COMPILER, ValaCompilerClass))
+#define BALA_IS_COMPILER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALA_TYPE_COMPILER))
+#define BALA_IS_COMPILER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALA_TYPE_COMPILER))
+#define BALA_COMPILER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALA_TYPE_COMPILER, ValaCompilerClass))
 
 typedef struct _ValaCompiler ValaCompiler;
 typedef struct _ValaCompilerClass ValaCompilerClass;
@@ -205,7 +205,7 @@ static gboolean vala_compiler_disable_version_header = FALSE;
 static gboolean vala_compiler_fatal_warnings = FALSE;
 static gboolean vala_compiler_disable_colored_output = FALSE;
 static ValaReportColored vala_compiler_colored_output;
-static ValaReportColored vala_compiler_colored_output = VALA_REPORT_COLORED_AUTO;
+static ValaReportColored vala_compiler_colored_output = BALA_REPORT_COLORED_AUTO;
 static gchar* vala_compiler_dependencies = NULL;
 static gchar* vala_compiler_depfile = NULL;
 static gchar* vala_compiler_entry_point = NULL;
@@ -227,7 +227,7 @@ G_GNUC_INTERNAL void vala_value_take_compiler (GValue* value,
 G_GNUC_INTERNAL gpointer vala_value_get_compiler (const GValue* value) G_GNUC_UNUSED;
 G_GNUC_INTERNAL GType vala_compiler_get_type (void) G_GNUC_CONST G_GNUC_UNUSED;
 G_DEFINE_AUTOPTR_CLEANUP_FUNC (ValaCompiler, vala_compiler_unref)
-#define VALA_COMPILER_DEFAULT_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
+#define BALA_COMPILER_DEFAULT_COLORS "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01"
 static gboolean vala_compiler_option_deprecated (const gchar* option_name,
                                           const gchar* val,
                                           void* data,
@@ -266,7 +266,7 @@ static void _vala_array_free (gpointer array,
                        GDestroyNotify destroy_func);
 static gint _vala_array_length (gpointer array);
 
-static const GOptionEntry VALA_COMPILER_options[63] = {{"vapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_compiler_vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_compiler_gir_directories, "Look for .gir files in DIRECTORY", "DIRECTORY..."}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_compiler_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_compiler_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"vapi", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_compiler_vapi_filename, "Output VAPI file name", "FILE"}, {"library", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_library, "Library name", "NAME"}, {"shared-library", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_shared_library, "Shared library name used in generated gir", "NAME"}, {"gir", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_gir, "GObject-Introspection repository file name", "NAME-VERSION.gir"}, {"basedir", 'b', 0, G_OPTION_ARG_FILENAME, &vala_compiler_basedir, "Base source directory", "DIRECTORY"}, {"directory", 'd', 0, G_OPTION_ARG_FILENAME, &vala_compiler_directory, "Change output directory from current working directory", "DIRECTORY"}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_version, "Display version number", NULL}, {"api-version", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_api_version, "Display API version number", NULL}, {"ccode", 'C', 0, G_OPTION_ARG_NONE, &vala_compiler_ccode_only, "Output C code", NULL}, {"header", 'H', 0, G_OPTION_ARG_FILENAME, &vala_compiler_header_filename, "Output C header file", "FILE"}, {"use-header", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_use_header, "Use C header file", NULL}, {"includedir", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_compiler_includedir, "Directory used to include the C header file", "DIRECTORY"}, {"internal-header", 'h', 0, G_OPTION_ARG_FILENAME, &vala_compiler_internal_header_filename, "Output internal C header file", "FILE"}, {"internal-vapi", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_compiler_internal_vapi_filename, "Output vapi with internal api", "FILE"}, {"fast-vapi", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_fast_vapi_filename, "Output vapi without performing symbol resolution", NULL}, {"use-fast-vapi", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_compiler_fast_vapis, "Use --fast-vapi output during this compile", NULL}, {"vapi-comments", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_vapi_comments, "Include comments in generated vapi", NULL}, {"deps", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_dependencies, "Write make-style dependency information to this file", NULL}, {"depfile", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_depfile, "Write make-style external dependency information for build systems to " \
+static const GOptionEntry BALA_COMPILER_options[63] = {{"vapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_compiler_vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_compiler_gir_directories, "Look for .gir files in DIRECTORY", "DIRECTORY..."}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_compiler_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_compiler_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"vapi", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_compiler_vapi_filename, "Output VAPI file name", "FILE"}, {"library", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_library, "Library name", "NAME"}, {"shared-library", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_shared_library, "Shared library name used in generated gir", "NAME"}, {"gir", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_gir, "GObject-Introspection repository file name", "NAME-VERSION.gir"}, {"basedir", 'b', 0, G_OPTION_ARG_FILENAME, &vala_compiler_basedir, "Base source directory", "DIRECTORY"}, {"directory", 'd', 0, G_OPTION_ARG_FILENAME, &vala_compiler_directory, "Change output directory from current working directory", "DIRECTORY"}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_version, "Display version number", NULL}, {"api-version", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_api_version, "Display API version number", NULL}, {"ccode", 'C', 0, G_OPTION_ARG_NONE, &vala_compiler_ccode_only, "Output C code", NULL}, {"header", 'H', 0, G_OPTION_ARG_FILENAME, &vala_compiler_header_filename, "Output C header file", "FILE"}, {"use-header", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_use_header, "Use C header file", NULL}, {"includedir", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_compiler_includedir, "Directory used to include the C header file", "DIRECTORY"}, {"internal-header", 'h', 0, G_OPTION_ARG_FILENAME, &vala_compiler_internal_header_filename, "Output internal C header file", "FILE"}, {"internal-vapi", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_compiler_internal_vapi_filename, "Output vapi with internal api", "FILE"}, {"fast-vapi", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_fast_vapi_filename, "Output vapi without performing symbol resolution", NULL}, {"use-fast-vapi", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &vala_compiler_fast_vapis, "Use --fast-vapi output during this compile", NULL}, {"vapi-comments", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_vapi_comments, "Include comments in generated vapi", NULL}, {"deps", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_dependencies, "Write make-style dependency information to this file", NULL}, {"depfile", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_depfile, "Write make-style external dependency information for build systems to " \
 "this file", NULL}, {"list-sources", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_list_sources, "Output a list of all source and binding files which are used", NULL}, {"symbols", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_compiler_symbols_filename, "Output symbols file", "FILE"}, {"compile", 'c', 0, G_OPTION_ARG_NONE, &vala_compiler_compile_only, "Compile but do not link", NULL}, {"output", 'o', 0, G_OPTION_ARG_FILENAME, &vala_compiler_output, "Place output in file FILE", "FILE"}, {"debug", 'g', 0, G_OPTION_ARG_NONE, &vala_compiler_debug, "Produce debug information", NULL}, {"thread", (gchar) 0, (gint) (G_OPTION_FLAG_OPTIONAL_ARG | G_OPTION_FLAG_NO_ARG), G_OPTION_ARG_CALLBACK, (void*) vala_compiler_option_deprecated, "Enable multithreading support (DEPRECATED AND IGNORED)", NULL}, {"enable-mem-profiler", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_mem_profiler, "Enable GLib memory profiler", NULL}, {"define", 'D', 0, G_OPTION_ARG_STRING_ARRAY, &vala_compiler_defines, "Define SYMBOL", "SYMBOL..."}, {"main", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_entry_point, "Use SYMBOL as entry point", "SYMBOL..."}, {"nostdpkg", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_nostdpkg, "Do not include standard packages", NULL}, {"disable-assert", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_disable_assert, "Disable assertions", NULL}, {"enable-checking", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_enable_checking, "Enable additional run-time checks", NULL}, {"enable-deprecated", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_deprecated, "Enable deprecated features", NULL}, {"hide-internal", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_hide_internal, "Hide symbols marked as internal", NULL}, {"enable-experimental", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_experimental, "Enable experimental features", NULL}, {"disable-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_disable_warnings, "Disable warnings", NULL}, {"fatal-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_fatal_warnings, "Treat warnings as fatal", NULL}, {"disable-since-check", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_disable_since_check, "Do not check whether used symbols exist in local packages", NULL}, {"keep-going", 'k', 0, G_OPTION_ARG_NONE, &vala_compiler_keep_going, "Continue as much as possible after an error", NULL}, {"enable-experimental-non-null", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_experimental_non_null, "Enable experimental enhancements for non-null types", NULL}, {"enable-gobject-tracing", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_gobject_tracing, "Enable GObject creation tracing", NULL}, {"cc", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_cc_command, "Use COMMAND as C compiler command", "COMMAND"}, {"Xcc", 'X', 0, G_OPTION_ARG_STRING_ARRAY, &vala_compiler_cc_options, "Pass OPTION to the C compiler", "OPTION..."}, {"pkg-config", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_pkg_config_command, "Use COMMAND as pkg-config command", "COMMAND"}, {"dump-tree", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &vala_compiler_dump_tree, "Write code tree to FILE", "FILE"}, {"save-temps", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_save_temps, "Keep temporary files", NULL}, {"profile", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_profile, "Use the given profile instead of the default", "PROFILE"}, {"quiet", 'q', 0, G_OPTION_ARG_NONE, &vala_compiler_quiet_mode, "Do not print messages to the console", NULL}, {"verbose", 'v', 0, G_OPTION_ARG_NONE, &vala_compiler_verbose_mode, "Print additional messages to the console", NULL}, {"no-color", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_disable_colored_output, "Disable colored output, alias for --color=never", NULL}, {"color", (gchar) 0, (gint) G_OPTION_FLAG_OPTIONAL_ARG, G_OPTION_ARG_CALLBACK, (void*) vala_compiler_option_parse_color, "Enable color output, options are 'always', 'never', or 'auto'", "WHEN"}, {"target-glib", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_target_glib, "Target version of glib for code generation", "'MAJOR.MINOR', or 'auto'"}, {"gresources", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_compiler_gresources, "XML of gresources", "FILE..."}, {"gresourcesdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_compiler_gresources_directories, "Look for resources in DIRECTORY", "DIRECTORY..."}, {"enable-version-header", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_enable_version_header, "Write vala build version in generated files", NULL}, {"disable-version-header", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_disable_version_header, "Do not write vala build version in generated files", NULL}, {"run-args", (gchar) 0, 0, G_OPTION_ARG_STRING, &vala_compiler_run_args, "Arguments passed to directly compiled executable", NULL}, {"abi-stability", (gchar) 0, 0, G_OPTION_ARG_NONE, &vala_compiler_abi_stability, "Enable support for ABI stability", NULL}, {G_OPTION_REMAINING, (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &vala_compiler_sources, NULL, "FILE..."}, {NULL}};
 
 static inline gpointer
@@ -296,7 +296,7 @@ vala_compiler_option_parse_color (const gchar* option_name,
 		switch (0) {
 			default:
 			{
-				vala_compiler_colored_output = VALA_REPORT_COLORED_AUTO;
+				vala_compiler_colored_output = BALA_REPORT_COLORED_AUTO;
 				break;
 			}
 		}
@@ -304,7 +304,7 @@ vala_compiler_option_parse_color (const gchar* option_name,
 		switch (0) {
 			default:
 			{
-				vala_compiler_colored_output = VALA_REPORT_COLORED_NEVER;
+				vala_compiler_colored_output = BALA_REPORT_COLORED_NEVER;
 				break;
 			}
 		}
@@ -312,7 +312,7 @@ vala_compiler_option_parse_color (const gchar* option_name,
 		switch (0) {
 			default:
 			{
-				vala_compiler_colored_output = VALA_REPORT_COLORED_ALWAYS;
+				vala_compiler_colored_output = BALA_REPORT_COLORED_ALWAYS;
 				break;
 			}
 		}
@@ -718,14 +718,14 @@ vala_compiler_run (ValaCompiler* self)
 	_tmp1_ = self->priv->context;
 	vala_code_context_push (_tmp1_);
 	if (vala_compiler_disable_colored_output) {
-		vala_compiler_colored_output = VALA_REPORT_COLORED_NEVER;
+		vala_compiler_colored_output = BALA_REPORT_COLORED_NEVER;
 	}
 	_tmp2_ = vala_compiler_colored_output;
-	if (_tmp2_ != VALA_REPORT_COLORED_NEVER) {
+	if (_tmp2_ != BALA_REPORT_COLORED_NEVER) {
 		const gchar* env_colors = NULL;
 		const gchar* _tmp3_;
 		const gchar* _tmp4_;
-		_tmp3_ = g_getenv ("VALA_COLORS");
+		_tmp3_ = g_getenv ("BALA_COLORS");
 		env_colors = _tmp3_;
 		_tmp4_ = env_colors;
 		if (_tmp4_ != NULL) {
@@ -749,7 +749,7 @@ vala_compiler_run (ValaCompiler* self)
 			_tmp11_ = vala_code_context_get_report (_tmp10_);
 			_tmp12_ = _tmp11_;
 			_tmp13_ = vala_compiler_colored_output;
-			vala_report_set_colors (_tmp12_, VALA_COMPILER_DEFAULT_COLORS, _tmp13_);
+			vala_report_set_colors (_tmp12_, BALA_COMPILER_DEFAULT_COLORS, _tmp13_);
 		}
 	}
 	if (!vala_compiler_ccode_only) {
@@ -958,7 +958,7 @@ vala_compiler_run (ValaCompiler* self)
 		ValaCodeContext* _tmp92_;
 		ValaCodeContext* _tmp93_;
 		_tmp92_ = self->priv->context;
-		vala_code_context_set_profile (_tmp92_, VALA_PROFILE_POSIX);
+		vala_code_context_set_profile (_tmp92_, BALA_PROFILE_POSIX);
 		_tmp93_ = self->priv->context;
 		vala_code_context_add_define (_tmp93_, "POSIX");
 	} else {
@@ -984,7 +984,7 @@ vala_compiler_run (ValaCompiler* self)
 			ValaCodeContext* _tmp99_;
 			ValaCodeContext* _tmp100_;
 			_tmp99_ = self->priv->context;
-			vala_code_context_set_profile (_tmp99_, VALA_PROFILE_GOBJECT);
+			vala_code_context_set_profile (_tmp99_, BALA_PROFILE_GOBJECT);
 			_tmp100_ = self->priv->context;
 			vala_code_context_add_define (_tmp100_, "GOBJECT");
 		} else {
@@ -1057,7 +1057,7 @@ vala_compiler_run (ValaCompiler* self)
 	_tmp120_ = self->priv->context;
 	_tmp121_ = vala_code_context_get_profile (_tmp120_);
 	_tmp122_ = _tmp121_;
-	if (_tmp122_ == VALA_PROFILE_POSIX) {
+	if (_tmp122_ == BALA_PROFILE_POSIX) {
 		if (!vala_compiler_nostdpkg) {
 			ValaCodeContext* _tmp123_;
 			_tmp123_ = self->priv->context;
@@ -1070,7 +1070,7 @@ vala_compiler_run (ValaCompiler* self)
 		_tmp124_ = self->priv->context;
 		_tmp125_ = vala_code_context_get_profile (_tmp124_);
 		_tmp126_ = _tmp125_;
-		if (_tmp126_ == VALA_PROFILE_GOBJECT) {
+		if (_tmp126_ == BALA_PROFILE_GOBJECT) {
 			const gchar* _tmp127_;
 			_tmp127_ = vala_compiler_target_glib;
 			if (_tmp127_ != NULL) {
@@ -1157,7 +1157,7 @@ vala_compiler_run (ValaCompiler* self)
 					rpath = _tmp141_;
 					_tmp142_ = self->priv->context;
 					_tmp143_ = rpath;
-					_tmp144_ = vala_source_file_new (_tmp142_, VALA_SOURCE_FILE_TYPE_FAST, _tmp143_, NULL, FALSE);
+					_tmp144_ = vala_source_file_new (_tmp142_, BALA_SOURCE_FILE_TYPE_FAST, _tmp143_, NULL, FALSE);
 					source_file = _tmp144_;
 					_tmp145_ = self->priv->context;
 					_tmp146_ = source_file;
@@ -1206,7 +1206,7 @@ vala_compiler_run (ValaCompiler* self)
 	_tmp160_ = self->priv->context;
 	_tmp161_ = vala_code_context_get_profile (_tmp160_);
 	_tmp162_ = _tmp161_;
-	if (_tmp162_ == VALA_PROFILE_GOBJECT) {
+	if (_tmp162_ == BALA_PROFILE_GOBJECT) {
 		ValaCodeContext* _tmp163_;
 		ValaGDBusServerModule* _tmp164_;
 		ValaGDBusServerModule* _tmp165_;
@@ -1444,7 +1444,7 @@ vala_compiler_run (ValaCompiler* self)
 		ValaCodeWriter* _tmp228_;
 		ValaCodeContext* _tmp229_;
 		const gchar* _tmp230_;
-		_tmp227_ = vala_code_writer_new (VALA_CODE_WRITER_TYPE_FAST);
+		_tmp227_ = vala_code_writer_new (BALA_CODE_WRITER_TYPE_FAST);
 		interface_writer = _tmp227_;
 		_tmp228_ = interface_writer;
 		_tmp229_ = self->priv->context;
@@ -1522,7 +1522,7 @@ vala_compiler_run (ValaCompiler* self)
 		ValaCodeWriter* _tmp249_;
 		ValaCodeContext* _tmp250_;
 		const gchar* _tmp251_;
-		_tmp248_ = vala_code_writer_new (VALA_CODE_WRITER_TYPE_DUMP);
+		_tmp248_ = vala_code_writer_new (BALA_CODE_WRITER_TYPE_DUMP);
 		code_writer = _tmp248_;
 		_tmp249_ = code_writer;
 		_tmp250_ = self->priv->context;
@@ -1616,7 +1616,7 @@ vala_compiler_run (ValaCompiler* self)
 			_tmp279_ = self->priv->context;
 			_tmp280_ = vala_code_context_get_profile (_tmp279_);
 			_tmp281_ = _tmp280_;
-			if (_tmp281_ == VALA_PROFILE_GOBJECT) {
+			if (_tmp281_ == BALA_PROFILE_GOBJECT) {
 				gchar* gir_base = NULL;
 				const gchar* _tmp282_;
 				gchar* _tmp283_;
@@ -1774,7 +1774,7 @@ vala_compiler_run (ValaCompiler* self)
 		ValaCodeWriter* _tmp334_;
 		ValaCodeContext* _tmp335_;
 		const gchar* _tmp336_;
-		_tmp325_ = vala_code_writer_new (VALA_CODE_WRITER_TYPE_EXTERNAL);
+		_tmp325_ = vala_code_writer_new (BALA_CODE_WRITER_TYPE_EXTERNAL);
 		interface_writer = _tmp325_;
 		_tmp327_ = vala_compiler_directory;
 		if (_tmp327_ != NULL) {
@@ -1838,7 +1838,7 @@ vala_compiler_run (ValaCompiler* self)
 			_vala_code_visitor_unref0 (parser);
 			return result;
 		}
-		_tmp341_ = vala_code_writer_new (VALA_CODE_WRITER_TYPE_INTERNAL);
+		_tmp341_ = vala_code_writer_new (BALA_CODE_WRITER_TYPE_INTERNAL);
 		interface_writer = _tmp341_;
 		_tmp342_ = self->priv->context;
 		_tmp343_ = vala_code_context_get_includedir (_tmp342_);
@@ -2133,7 +2133,7 @@ vala_compiler_run_source (gchar** args,
 		_tmp1_ = opt_context;
 		g_option_context_set_help_enabled (_tmp1_, TRUE);
 		_tmp2_ = opt_context;
-		g_option_context_add_main_entries (_tmp2_, VALA_COMPILER_options, NULL);
+		g_option_context_add_main_entries (_tmp2_, BALA_COMPILER_options, NULL);
 		_tmp3_ = opt_context;
 		g_option_context_parse (_tmp3_, (gint*) (&args_length1), &args, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
@@ -2180,14 +2180,14 @@ vala_compiler_run_source (gchar** args,
 	if (vala_compiler_version) {
 		FILE* _tmp11_;
 		_tmp11_ = stdout;
-		fprintf (_tmp11_, "Vala %s\n", VALA_BUILD_VERSION);
+		fprintf (_tmp11_, "Vala %s\n", BALA_BUILD_VERSION);
 		result = 0;
 		return result;
 	} else {
 		if (vala_compiler_api_version) {
 			FILE* _tmp12_;
 			_tmp12_ = stdout;
-			fprintf (_tmp12_, "%s\n", VALA_API_VERSION);
+			fprintf (_tmp12_, "%s\n", BALA_API_VERSION);
 			result = 0;
 			return result;
 		}
@@ -2413,7 +2413,7 @@ vala_compiler_main (gchar** args,
 		_tmp9_ = opt_context;
 		g_option_context_set_help_enabled (_tmp9_, TRUE);
 		_tmp10_ = opt_context;
-		g_option_context_add_main_entries (_tmp10_, VALA_COMPILER_options, NULL);
+		g_option_context_add_main_entries (_tmp10_, BALA_COMPILER_options, NULL);
 		_tmp11_ = opt_context;
 		g_option_context_parse (_tmp11_, (gint*) (&args_length1), &args, &_inner_error0_);
 		if (G_UNLIKELY (_inner_error0_ != NULL)) {
@@ -2460,14 +2460,14 @@ vala_compiler_main (gchar** args,
 	if (vala_compiler_version) {
 		FILE* _tmp19_;
 		_tmp19_ = stdout;
-		fprintf (_tmp19_, "Vala %s\n", VALA_BUILD_VERSION);
+		fprintf (_tmp19_, "Vala %s\n", BALA_BUILD_VERSION);
 		result = 0;
 		return result;
 	} else {
 		if (vala_compiler_api_version) {
 			FILE* _tmp20_;
 			_tmp20_ = stdout;
-			fprintf (_tmp20_, "%s\n", VALA_API_VERSION);
+			fprintf (_tmp20_, "%s\n", BALA_API_VERSION);
 			result = 0;
 			return result;
 		}
@@ -2516,7 +2516,7 @@ vala_compiler_construct (GType object_type)
 G_GNUC_INTERNAL ValaCompiler*
 vala_compiler_new (void)
 {
-	return vala_compiler_construct (VALA_TYPE_COMPILER);
+	return vala_compiler_construct (BALA_TYPE_COMPILER);
 }
 
 static void
@@ -2600,7 +2600,7 @@ vala_param_spec_compiler (const gchar* name,
                           GParamFlags flags)
 {
 	ValaParamSpecCompiler* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_COMPILER), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_COMPILER), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -2609,7 +2609,7 @@ vala_param_spec_compiler (const gchar* name,
 G_GNUC_INTERNAL gpointer
 vala_value_get_compiler (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_COMPILER), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_COMPILER), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -2618,10 +2618,10 @@ vala_value_set_compiler (GValue* value,
                          gpointer v_object)
 {
 	ValaCompiler * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_COMPILER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_COMPILER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_COMPILER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_COMPILER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_compiler_ref (value->data[0].v_pointer);
@@ -2638,10 +2638,10 @@ vala_value_take_compiler (GValue* value,
                           gpointer v_object)
 {
 	ValaCompiler * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_COMPILER));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_COMPILER));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_COMPILER));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_COMPILER));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -2673,7 +2673,7 @@ static void
 vala_compiler_finalize (ValaCompiler * obj)
 {
 	ValaCompiler * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_COMPILER, ValaCompiler);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_COMPILER, ValaCompiler);
 	g_signal_handlers_destroy (self);
 	_vala_code_context_unref0 (self->priv->context);
 }
@@ -2717,7 +2717,7 @@ vala_compiler_unref (gpointer instance)
 	ValaCompiler * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_COMPILER_GET_CLASS (self)->finalize (self);
+		BALA_COMPILER_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

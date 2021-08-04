@@ -217,7 +217,7 @@ vala_code_visitor_visit_source_file (ValaCodeVisitor* self,
                                      ValaSourceFile* source_file)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_source_file (self, source_file);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_source_file (self, source_file);
 }
 
 /**
@@ -237,7 +237,7 @@ vala_code_visitor_visit_namespace (ValaCodeVisitor* self,
                                    ValaNamespace* ns)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_namespace (self, ns);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_namespace (self, ns);
 }
 
 /**
@@ -257,7 +257,7 @@ vala_code_visitor_visit_class (ValaCodeVisitor* self,
                                ValaClass* cl)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_class (self, cl);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_class (self, cl);
 }
 
 /**
@@ -277,7 +277,7 @@ vala_code_visitor_visit_struct (ValaCodeVisitor* self,
                                 ValaStruct* st)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_struct (self, st);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_struct (self, st);
 }
 
 /**
@@ -297,7 +297,7 @@ vala_code_visitor_visit_interface (ValaCodeVisitor* self,
                                    ValaInterface* iface)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_interface (self, iface);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_interface (self, iface);
 }
 
 /**
@@ -317,7 +317,7 @@ vala_code_visitor_visit_enum (ValaCodeVisitor* self,
                               ValaEnum* en)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_enum (self, en);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_enum (self, en);
 }
 
 /**
@@ -337,7 +337,7 @@ vala_code_visitor_visit_enum_value (ValaCodeVisitor* self,
                                     ValaEnumValue* ev)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_enum_value (self, ev);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_enum_value (self, ev);
 }
 
 /**
@@ -357,7 +357,7 @@ vala_code_visitor_visit_error_domain (ValaCodeVisitor* self,
                                       ValaErrorDomain* edomain)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_error_domain (self, edomain);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_error_domain (self, edomain);
 }
 
 /**
@@ -377,7 +377,7 @@ vala_code_visitor_visit_error_code (ValaCodeVisitor* self,
                                     ValaErrorCode* ecode)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_error_code (self, ecode);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_error_code (self, ecode);
 }
 
 /**
@@ -397,7 +397,7 @@ vala_code_visitor_visit_delegate (ValaCodeVisitor* self,
                                   ValaDelegate* d)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_delegate (self, d);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_delegate (self, d);
 }
 
 /**
@@ -417,7 +417,7 @@ vala_code_visitor_visit_constant (ValaCodeVisitor* self,
                                   ValaConstant* c)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_constant (self, c);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_constant (self, c);
 }
 
 /**
@@ -437,7 +437,7 @@ vala_code_visitor_visit_field (ValaCodeVisitor* self,
                                ValaField* f)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_field (self, f);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_field (self, f);
 }
 
 /**
@@ -457,7 +457,7 @@ vala_code_visitor_visit_method (ValaCodeVisitor* self,
                                 ValaMethod* m)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_method (self, m);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_method (self, m);
 }
 
 /**
@@ -477,7 +477,7 @@ vala_code_visitor_visit_creation_method (ValaCodeVisitor* self,
                                          ValaCreationMethod* m)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_creation_method (self, m);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_creation_method (self, m);
 }
 
 /**
@@ -497,7 +497,7 @@ vala_code_visitor_visit_formal_parameter (ValaCodeVisitor* self,
                                           ValaParameter* p)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_formal_parameter (self, p);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_formal_parameter (self, p);
 }
 
 /**
@@ -517,7 +517,7 @@ vala_code_visitor_visit_property (ValaCodeVisitor* self,
                                   ValaProperty* prop)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_property (self, prop);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_property (self, prop);
 }
 
 /**
@@ -537,7 +537,7 @@ vala_code_visitor_visit_property_accessor (ValaCodeVisitor* self,
                                            ValaPropertyAccessor* acc)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_property_accessor (self, acc);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_property_accessor (self, acc);
 }
 
 /**
@@ -557,7 +557,7 @@ vala_code_visitor_visit_signal (ValaCodeVisitor* self,
                                 ValaSignal* sig)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_signal (self, sig);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_signal (self, sig);
 }
 
 /**
@@ -577,7 +577,7 @@ vala_code_visitor_visit_constructor (ValaCodeVisitor* self,
                                      ValaConstructor* c)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_constructor (self, c);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_constructor (self, c);
 }
 
 /**
@@ -597,7 +597,7 @@ vala_code_visitor_visit_destructor (ValaCodeVisitor* self,
                                     ValaDestructor* d)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_destructor (self, d);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_destructor (self, d);
 }
 
 /**
@@ -617,7 +617,7 @@ vala_code_visitor_visit_type_parameter (ValaCodeVisitor* self,
                                         ValaTypeParameter* p)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_type_parameter (self, p);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_type_parameter (self, p);
 }
 
 /**
@@ -637,7 +637,7 @@ vala_code_visitor_visit_using_directive (ValaCodeVisitor* self,
                                          ValaUsingDirective* ns)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_using_directive (self, ns);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_using_directive (self, ns);
 }
 
 /**
@@ -657,7 +657,7 @@ vala_code_visitor_visit_data_type (ValaCodeVisitor* self,
                                    ValaDataType* type)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_data_type (self, type);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_data_type (self, type);
 }
 
 /**
@@ -677,7 +677,7 @@ vala_code_visitor_visit_block (ValaCodeVisitor* self,
                                ValaBlock* b)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_block (self, b);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_block (self, b);
 }
 
 /**
@@ -697,7 +697,7 @@ vala_code_visitor_visit_empty_statement (ValaCodeVisitor* self,
                                          ValaEmptyStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_empty_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_empty_statement (self, stmt);
 }
 
 /**
@@ -717,7 +717,7 @@ vala_code_visitor_visit_declaration_statement (ValaCodeVisitor* self,
                                                ValaDeclarationStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_declaration_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_declaration_statement (self, stmt);
 }
 
 /**
@@ -737,7 +737,7 @@ vala_code_visitor_visit_local_variable (ValaCodeVisitor* self,
                                         ValaLocalVariable* local)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_local_variable (self, local);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_local_variable (self, local);
 }
 
 /**
@@ -757,7 +757,7 @@ vala_code_visitor_visit_initializer_list (ValaCodeVisitor* self,
                                           ValaInitializerList* list)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_initializer_list (self, list);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_initializer_list (self, list);
 }
 
 /**
@@ -777,7 +777,7 @@ vala_code_visitor_visit_expression_statement (ValaCodeVisitor* self,
                                               ValaExpressionStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_expression_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_expression_statement (self, stmt);
 }
 
 /**
@@ -797,7 +797,7 @@ vala_code_visitor_visit_if_statement (ValaCodeVisitor* self,
                                       ValaIfStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_if_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_if_statement (self, stmt);
 }
 
 /**
@@ -817,7 +817,7 @@ vala_code_visitor_visit_switch_statement (ValaCodeVisitor* self,
                                           ValaSwitchStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_switch_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_switch_statement (self, stmt);
 }
 
 /**
@@ -837,7 +837,7 @@ vala_code_visitor_visit_switch_section (ValaCodeVisitor* self,
                                         ValaSwitchSection* section)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_switch_section (self, section);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_switch_section (self, section);
 }
 
 /**
@@ -857,7 +857,7 @@ vala_code_visitor_visit_switch_label (ValaCodeVisitor* self,
                                       ValaSwitchLabel* label)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_switch_label (self, label);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_switch_label (self, label);
 }
 
 /**
@@ -877,7 +877,7 @@ vala_code_visitor_visit_loop (ValaCodeVisitor* self,
                               ValaLoop* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_loop (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_loop (self, stmt);
 }
 
 /**
@@ -897,7 +897,7 @@ vala_code_visitor_visit_while_statement (ValaCodeVisitor* self,
                                          ValaWhileStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_while_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_while_statement (self, stmt);
 }
 
 /**
@@ -917,7 +917,7 @@ vala_code_visitor_visit_do_statement (ValaCodeVisitor* self,
                                       ValaDoStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_do_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_do_statement (self, stmt);
 }
 
 /**
@@ -937,7 +937,7 @@ vala_code_visitor_visit_for_statement (ValaCodeVisitor* self,
                                        ValaForStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_for_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_for_statement (self, stmt);
 }
 
 /**
@@ -957,7 +957,7 @@ vala_code_visitor_visit_foreach_statement (ValaCodeVisitor* self,
                                            ValaForeachStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_foreach_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_foreach_statement (self, stmt);
 }
 
 /**
@@ -977,7 +977,7 @@ vala_code_visitor_visit_break_statement (ValaCodeVisitor* self,
                                          ValaBreakStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_break_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_break_statement (self, stmt);
 }
 
 /**
@@ -997,7 +997,7 @@ vala_code_visitor_visit_continue_statement (ValaCodeVisitor* self,
                                             ValaContinueStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_continue_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_continue_statement (self, stmt);
 }
 
 /**
@@ -1017,7 +1017,7 @@ vala_code_visitor_visit_return_statement (ValaCodeVisitor* self,
                                           ValaReturnStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_return_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_return_statement (self, stmt);
 }
 
 /**
@@ -1037,7 +1037,7 @@ vala_code_visitor_visit_yield_statement (ValaCodeVisitor* self,
                                          ValaYieldStatement* y)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_yield_statement (self, y);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_yield_statement (self, y);
 }
 
 /**
@@ -1057,7 +1057,7 @@ vala_code_visitor_visit_throw_statement (ValaCodeVisitor* self,
                                          ValaThrowStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_throw_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_throw_statement (self, stmt);
 }
 
 /**
@@ -1077,7 +1077,7 @@ vala_code_visitor_visit_try_statement (ValaCodeVisitor* self,
                                        ValaTryStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_try_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_try_statement (self, stmt);
 }
 
 /**
@@ -1097,7 +1097,7 @@ vala_code_visitor_visit_catch_clause (ValaCodeVisitor* self,
                                       ValaCatchClause* clause)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_catch_clause (self, clause);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_catch_clause (self, clause);
 }
 
 /**
@@ -1117,7 +1117,7 @@ vala_code_visitor_visit_lock_statement (ValaCodeVisitor* self,
                                         ValaLockStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_lock_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_lock_statement (self, stmt);
 }
 
 /**
@@ -1137,7 +1137,7 @@ vala_code_visitor_visit_unlock_statement (ValaCodeVisitor* self,
                                           ValaUnlockStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_unlock_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_unlock_statement (self, stmt);
 }
 
 /**
@@ -1157,7 +1157,7 @@ vala_code_visitor_visit_delete_statement (ValaCodeVisitor* self,
                                           ValaDeleteStatement* stmt)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_delete_statement (self, stmt);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_delete_statement (self, stmt);
 }
 
 /**
@@ -1177,7 +1177,7 @@ vala_code_visitor_visit_expression (ValaCodeVisitor* self,
                                     ValaExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_expression (self, expr);
 }
 
 /**
@@ -1197,7 +1197,7 @@ vala_code_visitor_visit_array_creation_expression (ValaCodeVisitor* self,
                                                    ValaArrayCreationExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_array_creation_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_array_creation_expression (self, expr);
 }
 
 /**
@@ -1217,7 +1217,7 @@ vala_code_visitor_visit_boolean_literal (ValaCodeVisitor* self,
                                          ValaBooleanLiteral* lit)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_boolean_literal (self, lit);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_boolean_literal (self, lit);
 }
 
 /**
@@ -1237,7 +1237,7 @@ vala_code_visitor_visit_character_literal (ValaCodeVisitor* self,
                                            ValaCharacterLiteral* lit)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_character_literal (self, lit);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_character_literal (self, lit);
 }
 
 /**
@@ -1257,7 +1257,7 @@ vala_code_visitor_visit_integer_literal (ValaCodeVisitor* self,
                                          ValaIntegerLiteral* lit)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_integer_literal (self, lit);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_integer_literal (self, lit);
 }
 
 /**
@@ -1277,7 +1277,7 @@ vala_code_visitor_visit_real_literal (ValaCodeVisitor* self,
                                       ValaRealLiteral* lit)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_real_literal (self, lit);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_real_literal (self, lit);
 }
 
 /**
@@ -1297,7 +1297,7 @@ vala_code_visitor_visit_regex_literal (ValaCodeVisitor* self,
                                        ValaRegexLiteral* lit)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_regex_literal (self, lit);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_regex_literal (self, lit);
 }
 
 /**
@@ -1317,7 +1317,7 @@ vala_code_visitor_visit_string_literal (ValaCodeVisitor* self,
                                         ValaStringLiteral* lit)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_string_literal (self, lit);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_string_literal (self, lit);
 }
 
 /**
@@ -1337,7 +1337,7 @@ vala_code_visitor_visit_template (ValaCodeVisitor* self,
                                   ValaTemplate* tmpl)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_template (self, tmpl);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_template (self, tmpl);
 }
 
 /**
@@ -1357,7 +1357,7 @@ vala_code_visitor_visit_tuple (ValaCodeVisitor* self,
                                ValaTuple* tuple)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_tuple (self, tuple);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_tuple (self, tuple);
 }
 
 /**
@@ -1377,7 +1377,7 @@ vala_code_visitor_visit_null_literal (ValaCodeVisitor* self,
                                       ValaNullLiteral* lit)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_null_literal (self, lit);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_null_literal (self, lit);
 }
 
 /**
@@ -1397,7 +1397,7 @@ vala_code_visitor_visit_member_access (ValaCodeVisitor* self,
                                        ValaMemberAccess* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_member_access (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_member_access (self, expr);
 }
 
 /**
@@ -1417,7 +1417,7 @@ vala_code_visitor_visit_method_call (ValaCodeVisitor* self,
                                      ValaMethodCall* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_method_call (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_method_call (self, expr);
 }
 
 /**
@@ -1437,7 +1437,7 @@ vala_code_visitor_visit_element_access (ValaCodeVisitor* self,
                                         ValaElementAccess* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_element_access (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_element_access (self, expr);
 }
 
 /**
@@ -1457,7 +1457,7 @@ vala_code_visitor_visit_slice_expression (ValaCodeVisitor* self,
                                           ValaSliceExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_slice_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_slice_expression (self, expr);
 }
 
 /**
@@ -1477,7 +1477,7 @@ vala_code_visitor_visit_base_access (ValaCodeVisitor* self,
                                      ValaBaseAccess* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_base_access (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_base_access (self, expr);
 }
 
 /**
@@ -1497,7 +1497,7 @@ vala_code_visitor_visit_postfix_expression (ValaCodeVisitor* self,
                                             ValaPostfixExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_postfix_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_postfix_expression (self, expr);
 }
 
 /**
@@ -1517,7 +1517,7 @@ vala_code_visitor_visit_object_creation_expression (ValaCodeVisitor* self,
                                                     ValaObjectCreationExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_object_creation_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_object_creation_expression (self, expr);
 }
 
 /**
@@ -1537,7 +1537,7 @@ vala_code_visitor_visit_sizeof_expression (ValaCodeVisitor* self,
                                            ValaSizeofExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_sizeof_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_sizeof_expression (self, expr);
 }
 
 /**
@@ -1557,7 +1557,7 @@ vala_code_visitor_visit_typeof_expression (ValaCodeVisitor* self,
                                            ValaTypeofExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_typeof_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_typeof_expression (self, expr);
 }
 
 /**
@@ -1577,7 +1577,7 @@ vala_code_visitor_visit_unary_expression (ValaCodeVisitor* self,
                                           ValaUnaryExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_unary_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_unary_expression (self, expr);
 }
 
 /**
@@ -1597,7 +1597,7 @@ vala_code_visitor_visit_cast_expression (ValaCodeVisitor* self,
                                          ValaCastExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_cast_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_cast_expression (self, expr);
 }
 
 /**
@@ -1617,7 +1617,7 @@ vala_code_visitor_visit_named_argument (ValaCodeVisitor* self,
                                         ValaNamedArgument* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_named_argument (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_named_argument (self, expr);
 }
 
 /**
@@ -1637,7 +1637,7 @@ vala_code_visitor_visit_pointer_indirection (ValaCodeVisitor* self,
                                              ValaPointerIndirection* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_pointer_indirection (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_pointer_indirection (self, expr);
 }
 
 /**
@@ -1657,7 +1657,7 @@ vala_code_visitor_visit_addressof_expression (ValaCodeVisitor* self,
                                               ValaAddressofExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_addressof_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_addressof_expression (self, expr);
 }
 
 /**
@@ -1677,7 +1677,7 @@ vala_code_visitor_visit_reference_transfer_expression (ValaCodeVisitor* self,
                                                        ValaReferenceTransferExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_reference_transfer_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_reference_transfer_expression (self, expr);
 }
 
 /**
@@ -1697,7 +1697,7 @@ vala_code_visitor_visit_binary_expression (ValaCodeVisitor* self,
                                            ValaBinaryExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_binary_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_binary_expression (self, expr);
 }
 
 /**
@@ -1717,7 +1717,7 @@ vala_code_visitor_visit_type_check (ValaCodeVisitor* self,
                                     ValaTypeCheck* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_type_check (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_type_check (self, expr);
 }
 
 /**
@@ -1737,7 +1737,7 @@ vala_code_visitor_visit_conditional_expression (ValaCodeVisitor* self,
                                                 ValaConditionalExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_conditional_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_conditional_expression (self, expr);
 }
 
 /**
@@ -1757,7 +1757,7 @@ vala_code_visitor_visit_lambda_expression (ValaCodeVisitor* self,
                                            ValaLambdaExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_lambda_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_lambda_expression (self, expr);
 }
 
 /**
@@ -1777,7 +1777,7 @@ vala_code_visitor_visit_assignment (ValaCodeVisitor* self,
                                     ValaAssignment* a)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_assignment (self, a);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_assignment (self, a);
 }
 
 /**
@@ -1797,7 +1797,7 @@ vala_code_visitor_visit_end_full_expression (ValaCodeVisitor* self,
                                              ValaExpression* expr)
 {
 	g_return_if_fail (self != NULL);
-	VALA_CODE_VISITOR_GET_CLASS (self)->visit_end_full_expression (self, expr);
+	BALA_CODE_VISITOR_GET_CLASS (self)->visit_end_full_expression (self, expr);
 }
 
 ValaCodeVisitor*
@@ -1889,7 +1889,7 @@ vala_param_spec_code_visitor (const gchar* name,
                               GParamFlags flags)
 {
 	ValaParamSpecCodeVisitor* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALA_TYPE_CODE_VISITOR), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALA_TYPE_CODE_VISITOR), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -1898,7 +1898,7 @@ vala_param_spec_code_visitor (const gchar* name,
 gpointer
 vala_value_get_code_visitor (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CODE_VISITOR), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CODE_VISITOR), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -1907,10 +1907,10 @@ vala_value_set_code_visitor (GValue* value,
                              gpointer v_object)
 {
 	ValaCodeVisitor * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CODE_VISITOR));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CODE_VISITOR));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CODE_VISITOR));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CODE_VISITOR));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		vala_code_visitor_ref (value->data[0].v_pointer);
@@ -1927,10 +1927,10 @@ vala_value_take_code_visitor (GValue* value,
                               gpointer v_object)
 {
 	ValaCodeVisitor * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALA_TYPE_CODE_VISITOR));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALA_TYPE_CODE_VISITOR));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALA_TYPE_CODE_VISITOR));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALA_TYPE_CODE_VISITOR));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -2040,7 +2040,7 @@ static void
 vala_code_visitor_finalize (ValaCodeVisitor * obj)
 {
 	ValaCodeVisitor * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CODE_VISITOR, ValaCodeVisitor);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CODE_VISITOR, ValaCodeVisitor);
 	g_signal_handlers_destroy (self);
 }
 
@@ -2085,7 +2085,7 @@ vala_code_visitor_unref (gpointer instance)
 	ValaCodeVisitor * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALA_CODE_VISITOR_GET_CLASS (self)->finalize (self);
+		BALA_CODE_VISITOR_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }

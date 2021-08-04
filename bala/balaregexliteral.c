@@ -104,7 +104,7 @@ ValaRegexLiteral*
 vala_regex_literal_new (const gchar* value,
                         ValaSourceReference* source_reference)
 {
-	return vala_regex_literal_construct (VALA_TYPE_REGEX_LITERAL, value, source_reference);
+	return vala_regex_literal_construct (BALA_TYPE_REGEX_LITERAL, value, source_reference);
 }
 
 static void
@@ -280,9 +280,9 @@ static void
 vala_regex_literal_finalize (ValaCodeNode * obj)
 {
 	ValaRegexLiteral * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_REGEX_LITERAL, ValaRegexLiteral);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_REGEX_LITERAL, ValaRegexLiteral);
 	_g_free0 (self->priv->_value);
-	VALA_CODE_NODE_CLASS (vala_regex_literal_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_regex_literal_parent_class)->finalize (obj);
 }
 
 /**
@@ -293,7 +293,7 @@ vala_regex_literal_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaRegexLiteralClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_regex_literal_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaRegexLiteral), 0, (GInstanceInitFunc) vala_regex_literal_instance_init, NULL };
 	GType vala_regex_literal_type_id;
-	vala_regex_literal_type_id = g_type_register_static (VALA_TYPE_LITERAL, "ValaRegexLiteral", &g_define_type_info, 0);
+	vala_regex_literal_type_id = g_type_register_static (BALA_TYPE_LITERAL, "ValaRegexLiteral", &g_define_type_info, 0);
 	ValaRegexLiteral_private_offset = g_type_add_instance_private (vala_regex_literal_type_id, sizeof (ValaRegexLiteralPrivate));
 	return vala_regex_literal_type_id;
 }

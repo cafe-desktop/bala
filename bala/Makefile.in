@@ -416,7 +416,7 @@ CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 COVERAGE_CFLAGS = @COVERAGE_CFLAGS@
 COVERAGE_LIBS = @COVERAGE_LIBS@
-COVERAGE_VALAFLAGS = @COVERAGE_VALAFLAGS@
+COVERAGE_BALAFLAGS = @COVERAGE_BALAFLAGS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -485,11 +485,11 @@ SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
 TEST_CFLAGS = @TEST_CFLAGS@
-VALAC = @VALAC@
-VALAFLAGS = @VALAFLAGS@
-VALA_MAJOR_VERSION = @VALA_MAJOR_VERSION@
-VALA_MICRO_VERSION = @VALA_MICRO_VERSION@
-VALA_MINOR_VERSION = @VALA_MINOR_VERSION@
+BALAC = @BALAC@
+BALAFLAGS = @BALAFLAGS@
+BALA_MAJOR_VERSION = @BALA_MAJOR_VERSION@
+BALA_MICRO_VERSION = @BALA_MICRO_VERSION@
+BALA_MINOR_VERSION = @BALA_MINOR_VERSION@
 VERSION = @VERSION@
 WEASYPRINT = @WEASYPRINT@
 XSLTPROC = @XSLTPROC@
@@ -549,9 +549,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-VALA_V = $(VALA_V_$(V))
-VALA_V_ = $(VALA_V_$(AM_DEFAULT_VERBOSITY))
-VALA_V_0 = @echo "  VALAC " $^;
+BALA_V = $(BALA_V_$(V))
+BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
+BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 AM_CPPFLAGS = \
 	-DG_LOG_DOMAIN=\"vala\" \
@@ -567,7 +567,7 @@ lib_LTLIBRARIES = \
 	libvala@PACKAGE_SUFFIX@.la \
 	$(NULL)
 
-libvala_la_VALASOURCES = \
+libvala_la_BALASOURCES = \
 	valaaddressofexpression.vala \
 	valaarraycopymethod.vala \
 	valaarraycreationexpression.vala \
@@ -730,7 +730,7 @@ libvala_la_VALASOURCES = \
 
 libvala@PACKAGE_SUFFIX@_la_SOURCES = \
 	vala.vala.stamp \
-	$(libvala_la_VALASOURCES:.vala=.c) \
+	$(libvala_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 valaincludedir = $(includedir)/vala@PACKAGE_SUFFIX@
@@ -751,11 +751,11 @@ libvala@PACKAGE_SUFFIX@_la_LIBADD = \
 
 vapidir = $(datadir)/vala/vapi
 dist_vapi_DATA = libvala@PACKAGE_SUFFIX@.vapi
-EXTRA_DIST = $(libvala_la_VALASOURCES) vala.vapi vala.vala.stamp vala.h valaversion.vala.in
+EXTRA_DIST = $(libvala_la_BALASOURCES) vala.vapi vala.vala.stamp vala.h valaversion.vala.in
 MAINTAINERCLEANFILES = \
 	vala.vapi \
 	vala.h \
-	$(libvala_la_VALASOURCES:.vala=.c) \
+	$(libvala_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -1611,17 +1611,17 @@ uninstall-am: uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
 
 
 $(srcdir)/valaversion.vala:
-	sed -e "s#\@VALA_MAJOR_VERSION\@#$(VALA_MAJOR_VERSION)#g" \
-		-e "s#\@VALA_MINOR_VERSION\@#$(VALA_MINOR_VERSION)#g" \
-		-e "s#\@VALA_MICRO_VERSION\@#$(VALA_MICRO_VERSION)#g" \
+	sed -e "s#\@BALA_MAJOR_VERSION\@#$(BALA_MAJOR_VERSION)#g" \
+		-e "s#\@BALA_MINOR_VERSION\@#$(BALA_MINOR_VERSION)#g" \
+		-e "s#\@BALA_MICRO_VERSION\@#$(BALA_MICRO_VERSION)#g" \
 		-e "s#\@API_VERSION\@#$(API_VERSION)#g" \
 		-e "s#\@PACKAGE_VERSION\@#$(PACKAGE_VERSION)#g" \
 		< $@.in > $@
 
-vala.vapi vala.vala.stamp: $(libvala_la_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+vala.vapi vala.vala.stamp: $(libvala_la_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi --pkg gmodule-2.0 --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \

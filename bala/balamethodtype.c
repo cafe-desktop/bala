@@ -48,7 +48,7 @@ vala_method_type_get_method_symbol (ValaMethodType* self)
 	g_return_val_if_fail (self != NULL, NULL);
 	_tmp0_ = vala_data_type_get_symbol ((ValaDataType*) self);
 	_tmp1_ = _tmp0_;
-	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_METHOD, ValaMethod);
+	result = G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_METHOD, ValaMethod);
 	return result;
 }
 
@@ -65,7 +65,7 @@ vala_method_type_construct (GType object_type,
 ValaMethodType*
 vala_method_type_new (ValaMethod* method_symbol)
 {
-	return vala_method_type_construct (VALA_TYPE_METHOD_TYPE, method_symbol);
+	return vala_method_type_construct (BALA_TYPE_METHOD_TYPE, method_symbol);
 }
 
 static ValaDataType*
@@ -100,7 +100,7 @@ vala_method_type_real_compatible (ValaDataType* base,
 	gboolean result = FALSE;
 	self = (ValaMethodType*) base;
 	g_return_val_if_fail (target_type != NULL, FALSE);
-	dt = VALA_IS_DELEGATE_TYPE (target_type) ? ((ValaDelegateType*) target_type) : NULL;
+	dt = BALA_IS_DELEGATE_TYPE (target_type) ? ((ValaDelegateType*) target_type) : NULL;
 	_tmp0_ = dt;
 	if (_tmp0_ == NULL) {
 		result = FALSE;
@@ -252,7 +252,7 @@ vala_method_type_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaMethodTypeClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_method_type_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaMethodType), 0, (GInstanceInitFunc) vala_method_type_instance_init, NULL };
 	GType vala_method_type_type_id;
-	vala_method_type_type_id = g_type_register_static (VALA_TYPE_CALLABLE_TYPE, "ValaMethodType", &g_define_type_info, 0);
+	vala_method_type_type_id = g_type_register_static (BALA_TYPE_CALLABLE_TYPE, "ValaMethodType", &g_define_type_info, 0);
 	return vala_method_type_type_id;
 }
 

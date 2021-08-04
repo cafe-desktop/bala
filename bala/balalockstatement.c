@@ -138,7 +138,7 @@ vala_lock_statement_new (ValaExpression* resource,
                          ValaBlock* body,
                          ValaSourceReference* source_reference)
 {
-	return vala_lock_statement_construct (VALA_TYPE_LOCK_STATEMENT, resource, body, source_reference);
+	return vala_lock_statement_construct (BALA_TYPE_LOCK_STATEMENT, resource, body, source_reference);
 }
 
 static void
@@ -302,7 +302,7 @@ vala_lock_statement_real_check (ValaCodeNode* base,
 		_vala_code_node_unref0 (_tmp29_);
 		_tmp30_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 		_tmp31_ = _tmp30_;
-		_tmp32_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, VALA_TYPE_BLOCK, ValaBlock));
+		_tmp32_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, BALA_TYPE_BLOCK, ValaBlock));
 		parent_block = _tmp32_;
 		_tmp33_ = parent_block;
 		_tmp34_ = block;
@@ -330,7 +330,7 @@ vala_lock_statement_real_check (ValaCodeNode* base,
 	vala_code_node_check ((ValaCodeNode*) _tmp41_, context);
 	_tmp43_ = vala_lock_statement_get_resource (self);
 	_tmp44_ = _tmp43_;
-	if (VALA_IS_MEMBER_ACCESS (_tmp44_)) {
+	if (BALA_IS_MEMBER_ACCESS (_tmp44_)) {
 		ValaExpression* _tmp45_;
 		ValaExpression* _tmp46_;
 		ValaSymbol* _tmp47_;
@@ -339,7 +339,7 @@ vala_lock_statement_real_check (ValaCodeNode* base,
 		_tmp46_ = _tmp45_;
 		_tmp47_ = vala_expression_get_symbol_reference (_tmp46_);
 		_tmp48_ = _tmp47_;
-		_tmp42_ = VALA_IS_LOCKABLE (_tmp48_);
+		_tmp42_ = BALA_IS_LOCKABLE (_tmp48_);
 	} else {
 		_tmp42_ = FALSE;
 	}
@@ -373,7 +373,7 @@ vala_lock_statement_real_check (ValaCodeNode* base,
 	_tmp62_ = _tmp61_;
 	_tmp63_ = vala_semantic_analyzer_get_current_class (_tmp62_);
 	_tmp64_ = _tmp63_;
-	if (_tmp60_ != G_TYPE_CHECK_INSTANCE_CAST (_tmp64_, VALA_TYPE_SYMBOL, ValaSymbol)) {
+	if (_tmp60_ != G_TYPE_CHECK_INSTANCE_CAST (_tmp64_, BALA_TYPE_SYMBOL, ValaSymbol)) {
 		ValaExpression* _tmp65_;
 		ValaExpression* _tmp66_;
 		ValaExpression* _tmp67_;
@@ -421,7 +421,7 @@ vala_lock_statement_real_check (ValaCodeNode* base,
 	_tmp84_ = _tmp83_;
 	_tmp85_ = vala_expression_get_symbol_reference (_tmp84_);
 	_tmp86_ = _tmp85_;
-	vala_lockable_set_lock_used (G_TYPE_CHECK_INSTANCE_CAST (_tmp86_, VALA_TYPE_LOCKABLE, ValaLockable), TRUE);
+	vala_lockable_set_lock_used (G_TYPE_CHECK_INSTANCE_CAST (_tmp86_, BALA_TYPE_LOCKABLE, ValaLockable), TRUE);
 	_tmp87_ = vala_code_node_get_error ((ValaCodeNode*) self);
 	_tmp88_ = _tmp87_;
 	result = !_tmp88_;
@@ -474,10 +474,10 @@ static void
 vala_lock_statement_finalize (ValaCodeNode * obj)
 {
 	ValaLockStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_LOCK_STATEMENT, ValaLockStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_LOCK_STATEMENT, ValaLockStatement);
 	_vala_code_node_unref0 (self->priv->_resource);
 	_vala_code_node_unref0 (self->priv->_body);
-	VALA_CODE_NODE_CLASS (vala_lock_statement_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_lock_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -495,8 +495,8 @@ vala_lock_statement_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaLockStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_lock_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaLockStatement), 0, (GInstanceInitFunc) vala_lock_statement_instance_init, NULL };
 	static const GInterfaceInfo vala_statement_info = { (GInterfaceInitFunc) vala_lock_statement_vala_statement_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_lock_statement_type_id;
-	vala_lock_statement_type_id = g_type_register_static (VALA_TYPE_CODE_NODE, "ValaLockStatement", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_lock_statement_type_id, VALA_TYPE_STATEMENT, &vala_statement_info);
+	vala_lock_statement_type_id = g_type_register_static (BALA_TYPE_CODE_NODE, "ValaLockStatement", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_lock_statement_type_id, BALA_TYPE_STATEMENT, &vala_statement_info);
 	ValaLockStatement_private_offset = g_type_add_instance_private (vala_lock_statement_type_id, sizeof (ValaLockStatementPrivate));
 	return vala_lock_statement_type_id;
 }

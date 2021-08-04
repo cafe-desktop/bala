@@ -149,7 +149,7 @@ vala_field_new (const gchar* name,
                 ValaSourceReference* source_reference,
                 ValaComment* comment)
 {
-	return vala_field_construct (VALA_TYPE_FIELD, name, variable_type, initializer, source_reference, comment);
+	return vala_field_construct (BALA_TYPE_FIELD, name, variable_type, initializer, source_reference, comment);
 }
 
 static void
@@ -354,7 +354,7 @@ vala_field_real_check (ValaCodeNode* base,
 	vala_semantic_analyzer_set_current_symbol (_tmp23_, (ValaSymbol*) self);
 	_tmp24_ = vala_variable_get_variable_type ((ValaVariable*) self);
 	_tmp25_ = _tmp24_;
-	if (VALA_IS_VOID_TYPE (_tmp25_)) {
+	if (BALA_IS_VOID_TYPE (_tmp25_)) {
 		ValaSourceReference* _tmp26_;
 		ValaSourceReference* _tmp27_;
 		vala_code_node_set_error ((ValaCodeNode*) self, TRUE);
@@ -485,7 +485,7 @@ vala_field_real_check (ValaCodeNode* base,
 	}
 	_tmp81_ = vala_variable_get_variable_type ((ValaVariable*) self);
 	_tmp82_ = _tmp81_;
-	variable_array_type = VALA_IS_ARRAY_TYPE (_tmp82_) ? ((ValaArrayType*) _tmp82_) : NULL;
+	variable_array_type = BALA_IS_ARRAY_TYPE (_tmp82_) ? ((ValaArrayType*) _tmp82_) : NULL;
 	_tmp86_ = variable_array_type;
 	if (_tmp86_ != NULL) {
 		ValaArrayType* _tmp87_;
@@ -503,7 +503,7 @@ vala_field_real_check (ValaCodeNode* base,
 		ValaExpression* _tmp91_;
 		_tmp90_ = vala_variable_get_initializer ((ValaVariable*) self);
 		_tmp91_ = _tmp90_;
-		_tmp84_ = VALA_IS_ARRAY_CREATION_EXPRESSION (_tmp91_);
+		_tmp84_ = BALA_IS_ARRAY_CREATION_EXPRESSION (_tmp91_);
 	} else {
 		_tmp84_ = FALSE;
 	}
@@ -514,7 +514,7 @@ vala_field_real_check (ValaCodeNode* base,
 		ValaInitializerList* _tmp95_;
 		_tmp92_ = vala_variable_get_initializer ((ValaVariable*) self);
 		_tmp93_ = _tmp92_;
-		_tmp94_ = vala_array_creation_expression_get_initializer_list (G_TYPE_CHECK_INSTANCE_CAST (_tmp93_, VALA_TYPE_ARRAY_CREATION_EXPRESSION, ValaArrayCreationExpression));
+		_tmp94_ = vala_array_creation_expression_get_initializer_list (G_TYPE_CHECK_INSTANCE_CAST (_tmp93_, BALA_TYPE_ARRAY_CREATION_EXPRESSION, ValaArrayCreationExpression));
 		_tmp95_ = _tmp94_;
 		_tmp83_ = _tmp95_ == NULL;
 	} else {
@@ -614,14 +614,14 @@ vala_field_real_check (ValaCodeNode* base,
 		initializer_size = -1;
 		_tmp115_ = vala_variable_get_initializer ((ValaVariable*) self);
 		_tmp116_ = _tmp115_;
-		if (VALA_IS_INITIALIZER_LIST (_tmp116_)) {
+		if (BALA_IS_INITIALIZER_LIST (_tmp116_)) {
 			ValaExpression* _tmp117_;
 			ValaExpression* _tmp118_;
 			gint _tmp119_;
 			gint _tmp120_;
 			_tmp117_ = vala_variable_get_initializer ((ValaVariable*) self);
 			_tmp118_ = _tmp117_;
-			_tmp119_ = vala_initializer_list_get_size (G_TYPE_CHECK_INSTANCE_CAST (_tmp118_, VALA_TYPE_INITIALIZER_LIST, ValaInitializerList));
+			_tmp119_ = vala_initializer_list_get_size (G_TYPE_CHECK_INSTANCE_CAST (_tmp118_, BALA_TYPE_INITIALIZER_LIST, ValaInitializerList));
 			_tmp120_ = _tmp119_;
 			initializer_size = _tmp120_;
 			is_initializer_list = TRUE;
@@ -766,7 +766,7 @@ vala_field_real_check (ValaCodeNode* base,
 			_tmp173_ = _tmp172_;
 			_tmp174_ = vala_expression_get_value_type (_tmp173_);
 			_tmp175_ = _tmp174_;
-			_tmp166_ = !VALA_IS_ARRAY_TYPE (_tmp175_);
+			_tmp166_ = !BALA_IS_ARRAY_TYPE (_tmp175_);
 		} else {
 			_tmp166_ = FALSE;
 		}
@@ -792,7 +792,7 @@ vala_field_real_check (ValaCodeNode* base,
 			ValaDataType* _tmp184_;
 			_tmp183_ = vala_variable_get_variable_type ((ValaVariable*) self);
 			_tmp184_ = _tmp183_;
-			if (!VALA_IS_POINTER_TYPE (_tmp184_)) {
+			if (!BALA_IS_POINTER_TYPE (_tmp184_)) {
 				ValaDataType* _tmp185_;
 				ValaDataType* _tmp186_;
 				gboolean _tmp187_;
@@ -820,7 +820,7 @@ vala_field_real_check (ValaCodeNode* base,
 		}
 		_tmp192_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 		_tmp193_ = _tmp192_;
-		if (VALA_IS_NAMESPACE (_tmp193_)) {
+		if (BALA_IS_NAMESPACE (_tmp193_)) {
 			ValaExpression* _tmp194_;
 			ValaExpression* _tmp195_;
 			_tmp194_ = vala_variable_get_initializer ((ValaVariable*) self);
@@ -843,7 +843,7 @@ vala_field_real_check (ValaCodeNode* base,
 		}
 		_tmp200_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 		_tmp201_ = _tmp200_;
-		if (VALA_IS_NAMESPACE (_tmp201_)) {
+		if (BALA_IS_NAMESPACE (_tmp201_)) {
 			ValaExpression* _tmp202_;
 			ValaExpression* _tmp203_;
 			_tmp202_ = vala_variable_get_initializer ((ValaVariable*) self);
@@ -894,12 +894,12 @@ vala_field_real_check (ValaCodeNode* base,
 			}
 		}
 		_tmp218_ = self->priv->_binding;
-		if (_tmp218_ == VALA_MEMBER_BINDING_STATIC) {
+		if (_tmp218_ == BALA_MEMBER_BINDING_STATIC) {
 			ValaSymbol* _tmp219_;
 			ValaSymbol* _tmp220_;
 			_tmp219_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 			_tmp220_ = _tmp219_;
-			_tmp217_ = VALA_IS_CLASS (_tmp220_);
+			_tmp217_ = BALA_IS_CLASS (_tmp220_);
 		} else {
 			_tmp217_ = FALSE;
 		}
@@ -910,7 +910,7 @@ vala_field_real_check (ValaCodeNode* base,
 			gboolean _tmp224_;
 			_tmp221_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 			_tmp222_ = _tmp221_;
-			_tmp223_ = vala_class_get_is_compact (G_TYPE_CHECK_INSTANCE_CAST (_tmp222_, VALA_TYPE_CLASS, ValaClass));
+			_tmp223_ = vala_class_get_is_compact (G_TYPE_CHECK_INSTANCE_CAST (_tmp222_, BALA_TYPE_CLASS, ValaClass));
 			_tmp224_ = _tmp223_;
 			_tmp216_ = _tmp224_;
 		} else {
@@ -949,12 +949,12 @@ vala_field_real_check (ValaCodeNode* base,
 		}
 	}
 	_tmp234_ = self->priv->_binding;
-	if (_tmp234_ == VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp234_ == BALA_MEMBER_BINDING_INSTANCE) {
 		ValaSymbol* _tmp235_;
 		ValaSymbol* _tmp236_;
 		_tmp235_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 		_tmp236_ = _tmp235_;
-		_tmp233_ = VALA_IS_INTERFACE (_tmp236_);
+		_tmp233_ = BALA_IS_INTERFACE (_tmp236_);
 	} else {
 		_tmp233_ = FALSE;
 	}
@@ -973,7 +973,7 @@ vala_field_real_check (ValaCodeNode* base,
 	field_in_header = !vala_symbol_is_internal_symbol ((ValaSymbol*) self);
 	_tmp239_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 	_tmp240_ = _tmp239_;
-	if (VALA_IS_CLASS (_tmp240_)) {
+	if (BALA_IS_CLASS (_tmp240_)) {
 		ValaClass* cl = NULL;
 		ValaSymbol* _tmp241_;
 		ValaSymbol* _tmp242_;
@@ -984,7 +984,7 @@ vala_field_real_check (ValaCodeNode* base,
 		gboolean _tmp247_;
 		_tmp241_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 		_tmp242_ = _tmp241_;
-		_tmp243_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp242_, VALA_TYPE_CLASS, ValaClass));
+		_tmp243_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp242_, BALA_TYPE_CLASS, ValaClass));
 		cl = _tmp243_;
 		_tmp245_ = cl;
 		_tmp246_ = vala_class_get_is_compact (_tmp245_);
@@ -1094,15 +1094,15 @@ vala_field_instance_init (ValaField * self,
                           gpointer klass)
 {
 	self->priv = vala_field_get_instance_private (self);
-	self->priv->_binding = VALA_MEMBER_BINDING_INSTANCE;
+	self->priv->_binding = BALA_MEMBER_BINDING_INSTANCE;
 }
 
 static void
 vala_field_finalize (ValaCodeNode * obj)
 {
 	ValaField * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_FIELD, ValaField);
-	VALA_CODE_NODE_CLASS (vala_field_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_FIELD, ValaField);
+	BALA_CODE_NODE_CLASS (vala_field_parent_class)->finalize (obj);
 }
 
 /**
@@ -1114,8 +1114,8 @@ vala_field_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaFieldClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_field_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaField), 0, (GInstanceInitFunc) vala_field_instance_init, NULL };
 	static const GInterfaceInfo vala_lockable_info = { (GInterfaceInitFunc) vala_field_vala_lockable_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_field_type_id;
-	vala_field_type_id = g_type_register_static (VALA_TYPE_VARIABLE, "ValaField", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_field_type_id, VALA_TYPE_LOCKABLE, &vala_lockable_info);
+	vala_field_type_id = g_type_register_static (BALA_TYPE_VARIABLE, "ValaField", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_field_type_id, BALA_TYPE_LOCKABLE, &vala_lockable_info);
 	ValaField_private_offset = g_type_add_instance_private (vala_field_type_id, sizeof (ValaFieldPrivate));
 	return vala_field_type_id;
 }

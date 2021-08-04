@@ -30,20 +30,20 @@
 #include <vala.h>
 
 enum  {
-	VALADOC_API_PARAMETER_0_PROPERTY,
-	VALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY,
-	VALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY,
-	VALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY,
-	VALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY,
-	VALADOC_API_PARAMETER_IS_OUT_PROPERTY,
-	VALADOC_API_PARAMETER_IS_REF_PROPERTY,
-	VALADOC_API_PARAMETER_HAS_DEFAULT_VALUE_PROPERTY,
-	VALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY,
-	VALADOC_API_PARAMETER_ELLIPSIS_PROPERTY,
-	VALADOC_API_PARAMETER_NODE_TYPE_PROPERTY,
-	VALADOC_API_PARAMETER_NUM_PROPERTIES
+	BALADOC_API_PARAMETER_0_PROPERTY,
+	BALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY,
+	BALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY,
+	BALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY,
+	BALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY,
+	BALADOC_API_PARAMETER_IS_OUT_PROPERTY,
+	BALADOC_API_PARAMETER_IS_REF_PROPERTY,
+	BALADOC_API_PARAMETER_HAS_DEFAULT_VALUE_PROPERTY,
+	BALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY,
+	BALADOC_API_PARAMETER_ELLIPSIS_PROPERTY,
+	BALADOC_API_PARAMETER_NODE_TYPE_PROPERTY,
+	BALADOC_API_PARAMETER_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_parameter_properties[VALADOC_API_PARAMETER_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_parameter_properties[BALADOC_API_PARAMETER_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _valadoc_api_signature_builder_unref0(var) ((var == NULL) ? NULL : (var = (valadoc_api_signature_builder_unref (var), NULL)))
@@ -125,7 +125,7 @@ valadoc_api_parameter_set_default_value (ValadocApiParameter* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_default_value);
 		self->priv->_default_value = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY]);
 	}
 }
 
@@ -152,7 +152,7 @@ valadoc_api_parameter_set_implicit_array_length_cparameter_name (ValadocApiParam
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_implicit_array_length_cparameter_name);
 		self->priv->_implicit_array_length_cparameter_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY]);
 	}
 }
 
@@ -179,7 +179,7 @@ valadoc_api_parameter_set_implicit_closure_cparameter_name (ValadocApiParameter*
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_implicit_closure_cparameter_name);
 		self->priv->_implicit_closure_cparameter_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY]);
 	}
 }
 
@@ -206,7 +206,7 @@ valadoc_api_parameter_set_implicit_destroy_cparameter_name (ValadocApiParameter*
 		_tmp0_ = g_strdup (value);
 		_g_free0 (self->priv->_implicit_destroy_cparameter_name);
 		self->priv->_implicit_destroy_cparameter_name = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY]);
 	}
 }
 
@@ -258,7 +258,7 @@ valadoc_api_parameter_new (ValadocApiNode* parent,
                            gboolean ellipsis,
                            ValaParameter* data)
 {
-	return valadoc_api_parameter_construct (VALADOC_API_TYPE_PARAMETER, parent, file, name, accessibility, type, ellipsis, data);
+	return valadoc_api_parameter_construct (BALADOC_API_TYPE_PARAMETER, parent, file, name, accessibility, type, ellipsis, data);
 }
 
 gboolean
@@ -268,7 +268,7 @@ valadoc_api_parameter_get_is_out (ValadocApiParameter* self)
 	ValaParameterDirection _tmp0_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->type;
-	result = _tmp0_ == VALA_PARAMETER_DIRECTION_OUT;
+	result = _tmp0_ == BALA_PARAMETER_DIRECTION_OUT;
 	return result;
 }
 
@@ -279,7 +279,7 @@ valadoc_api_parameter_get_is_ref (ValadocApiParameter* self)
 	ValaParameterDirection _tmp0_;
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = self->priv->type;
-	result = _tmp0_ == VALA_PARAMETER_DIRECTION_REF;
+	result = _tmp0_ == BALA_PARAMETER_DIRECTION_REF;
 	return result;
 }
 
@@ -317,7 +317,7 @@ valadoc_api_parameter_set_parameter_type (ValadocApiParameter* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_parameter_type);
 		self->priv->_parameter_type = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY]);
 	}
 }
 
@@ -339,7 +339,7 @@ valadoc_api_parameter_set_ellipsis (ValadocApiParameter* self,
 	old_value = valadoc_api_parameter_get_ellipsis (self);
 	if (old_value != value) {
 		self->priv->_ellipsis = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_ELLIPSIS_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_ELLIPSIS_PROPERTY]);
 	}
 }
 
@@ -349,7 +349,7 @@ valadoc_api_parameter_real_get_node_type (ValadocApiNode* base)
 	ValadocApiNodeType result;
 	ValadocApiParameter* self;
 	self = (ValadocApiParameter*) base;
-	result = VALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
+	result = BALADOC_API_NODE_TYPE_FORMAL_PARAMETER;
 	return result;
 }
 
@@ -453,47 +453,47 @@ valadoc_api_parameter_class_init (ValadocApiParameterClass * klass,
 	g_type_class_adjust_private_offset (klass, &ValadocApiParameter_private_offset);
 	((ValadocApiNodeClass *) klass)->accept = (void (*) (ValadocApiNode*, ValadocApiVisitor*)) valadoc_api_parameter_real_accept;
 	((ValadocApiItemClass *) klass)->build_signature = (ValadocContentInline* (*) (ValadocApiItem*)) valadoc_api_parameter_real_build_signature;
-	VALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_parameter_real_get_node_type;
+	BALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_parameter_real_get_node_type;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_parameter_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_parameter_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_parameter_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY] = g_param_spec_object ("default-value", "default-value", "default-value", VALADOC_CONTENT_TYPE_RUN, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY] = g_param_spec_object ("default-value", "default-value", "default-value", BALADOC_CONTENT_TYPE_RUN, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Used to translate imported C-documentation
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", "implicit-array-length-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Used to translate imported C-documentation
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-closure-cparameter-name", "implicit-closure-cparameter-name", "implicit-closure-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-closure-cparameter-name", "implicit-closure-cparameter-name", "implicit-closure-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Used to translate imported C-documentation
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-destroy-cparameter-name", "implicit-destroy-cparameter-name", "implicit-destroy-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY] = g_param_spec_string ("implicit-destroy-cparameter-name", "implicit-destroy-cparameter-name", "implicit-destroy-cparameter-name", NULL, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Specifies whether the parameter direction is out
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_IS_OUT_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_IS_OUT_PROPERTY] = g_param_spec_boolean ("is-out", "is-out", "is-out", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_IS_OUT_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_IS_OUT_PROPERTY] = g_param_spec_boolean ("is-out", "is-out", "is-out", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether the parameter direction is ref
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_IS_REF_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_IS_REF_PROPERTY] = g_param_spec_boolean ("is-ref", "is-ref", "is-ref", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_IS_REF_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_IS_REF_PROPERTY] = g_param_spec_boolean ("is-ref", "is-ref", "is-ref", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether the parameter has a default value
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_HAS_DEFAULT_VALUE_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_HAS_DEFAULT_VALUE_PROPERTY] = g_param_spec_boolean ("has-default-value", "has-default-value", "has-default-value", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_HAS_DEFAULT_VALUE_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_HAS_DEFAULT_VALUE_PROPERTY] = g_param_spec_boolean ("has-default-value", "has-default-value", "has-default-value", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * The parameter type.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY] = g_param_spec_object ("parameter-type", "parameter-type", "parameter-type", VALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY] = g_param_spec_object ("parameter-type", "parameter-type", "parameter-type", BALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Specifies whether the methods accepts a variable number of arguments
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_ELLIPSIS_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_ELLIPSIS_PROPERTY] = g_param_spec_boolean ("ellipsis", "ellipsis", "ellipsis", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_ELLIPSIS_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_ELLIPSIS_PROPERTY] = g_param_spec_boolean ("ellipsis", "ellipsis", "ellipsis", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_PARAMETER_NODE_TYPE_PROPERTY, valadoc_api_parameter_properties[VALADOC_API_PARAMETER_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", VALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_PARAMETER_NODE_TYPE_PROPERTY, valadoc_api_parameter_properties[BALADOC_API_PARAMETER_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", BALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -507,7 +507,7 @@ static void
 valadoc_api_parameter_finalize (GObject * obj)
 {
 	ValadocApiParameter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_PARAMETER, ValadocApiParameter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_PARAMETER, ValadocApiParameter);
 	_g_object_unref0 (self->priv->_default_value);
 	_g_free0 (self->priv->_implicit_array_length_cparameter_name);
 	_g_free0 (self->priv->_implicit_closure_cparameter_name);
@@ -524,7 +524,7 @@ valadoc_api_parameter_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiParameterClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_parameter_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiParameter), 0, (GInstanceInitFunc) valadoc_api_parameter_instance_init, NULL };
 	GType valadoc_api_parameter_type_id;
-	valadoc_api_parameter_type_id = g_type_register_static (VALADOC_API_TYPE_SYMBOL, "ValadocApiParameter", &g_define_type_info, 0);
+	valadoc_api_parameter_type_id = g_type_register_static (BALADOC_API_TYPE_SYMBOL, "ValadocApiParameter", &g_define_type_info, 0);
 	ValadocApiParameter_private_offset = g_type_add_instance_private (valadoc_api_parameter_type_id, sizeof (ValadocApiParameterPrivate));
 	return valadoc_api_parameter_type_id;
 }
@@ -548,36 +548,36 @@ _vala_valadoc_api_parameter_get_property (GObject * object,
                                           GParamSpec * pspec)
 {
 	ValadocApiParameter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_PARAMETER, ValadocApiParameter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_PARAMETER, ValadocApiParameter);
 	switch (property_id) {
-		case VALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY:
+		case BALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY:
 		g_value_set_object (value, valadoc_api_parameter_get_default_value (self));
 		break;
-		case VALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_api_parameter_get_implicit_array_length_cparameter_name (self));
 		break;
-		case VALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_api_parameter_get_implicit_closure_cparameter_name (self));
 		break;
-		case VALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY:
 		g_value_set_string (value, valadoc_api_parameter_get_implicit_destroy_cparameter_name (self));
 		break;
-		case VALADOC_API_PARAMETER_IS_OUT_PROPERTY:
+		case BALADOC_API_PARAMETER_IS_OUT_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_parameter_get_is_out (self));
 		break;
-		case VALADOC_API_PARAMETER_IS_REF_PROPERTY:
+		case BALADOC_API_PARAMETER_IS_REF_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_parameter_get_is_ref (self));
 		break;
-		case VALADOC_API_PARAMETER_HAS_DEFAULT_VALUE_PROPERTY:
+		case BALADOC_API_PARAMETER_HAS_DEFAULT_VALUE_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_parameter_get_has_default_value (self));
 		break;
-		case VALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY:
+		case BALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY:
 		g_value_set_object (value, valadoc_api_parameter_get_parameter_type (self));
 		break;
-		case VALADOC_API_PARAMETER_ELLIPSIS_PROPERTY:
+		case BALADOC_API_PARAMETER_ELLIPSIS_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_parameter_get_ellipsis (self));
 		break;
-		case VALADOC_API_PARAMETER_NODE_TYPE_PROPERTY:
+		case BALADOC_API_PARAMETER_NODE_TYPE_PROPERTY:
 		g_value_set_enum (value, valadoc_api_node_get_node_type ((ValadocApiNode*) self));
 		break;
 		default:
@@ -593,24 +593,24 @@ _vala_valadoc_api_parameter_set_property (GObject * object,
                                           GParamSpec * pspec)
 {
 	ValadocApiParameter * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_PARAMETER, ValadocApiParameter);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_PARAMETER, ValadocApiParameter);
 	switch (property_id) {
-		case VALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY:
+		case BALADOC_API_PARAMETER_DEFAULT_VALUE_PROPERTY:
 		valadoc_api_parameter_set_default_value (self, g_value_get_object (value));
 		break;
-		case VALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_PARAMETER_IMPLICIT_ARRAY_LENGTH_CPARAMETER_NAME_PROPERTY:
 		valadoc_api_parameter_set_implicit_array_length_cparameter_name (self, g_value_get_string (value));
 		break;
-		case VALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_PARAMETER_IMPLICIT_CLOSURE_CPARAMETER_NAME_PROPERTY:
 		valadoc_api_parameter_set_implicit_closure_cparameter_name (self, g_value_get_string (value));
 		break;
-		case VALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY:
+		case BALADOC_API_PARAMETER_IMPLICIT_DESTROY_CPARAMETER_NAME_PROPERTY:
 		valadoc_api_parameter_set_implicit_destroy_cparameter_name (self, g_value_get_string (value));
 		break;
-		case VALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY:
+		case BALADOC_API_PARAMETER_PARAMETER_TYPE_PROPERTY:
 		valadoc_api_parameter_set_parameter_type (self, g_value_get_object (value));
 		break;
-		case VALADOC_API_PARAMETER_ELLIPSIS_PROPERTY:
+		case BALADOC_API_PARAMETER_ELLIPSIS_PROPERTY:
 		valadoc_api_parameter_set_ellipsis (self, g_value_get_boolean (value));
 		break;
 		default:

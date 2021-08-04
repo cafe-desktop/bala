@@ -247,7 +247,7 @@ CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 COVERAGE_CFLAGS = @COVERAGE_CFLAGS@
 COVERAGE_LIBS = @COVERAGE_LIBS@
-COVERAGE_VALAFLAGS = @COVERAGE_VALAFLAGS@
+COVERAGE_BALAFLAGS = @COVERAGE_BALAFLAGS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -316,11 +316,11 @@ SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
 STRIP = @STRIP@
 TEST_CFLAGS = @TEST_CFLAGS@
-VALAC = @VALAC@
-VALAFLAGS = @VALAFLAGS@
-VALA_MAJOR_VERSION = @VALA_MAJOR_VERSION@
-VALA_MICRO_VERSION = @VALA_MICRO_VERSION@
-VALA_MINOR_VERSION = @VALA_MINOR_VERSION@
+BALAC = @BALAC@
+BALAFLAGS = @BALAFLAGS@
+BALA_MAJOR_VERSION = @BALA_MAJOR_VERSION@
+BALA_MICRO_VERSION = @BALA_MICRO_VERSION@
+BALA_MINOR_VERSION = @BALA_MINOR_VERSION@
 VERSION = @VERSION@
 WEASYPRINT = @WEASYPRINT@
 XSLTPROC = @XSLTPROC@
@@ -380,9 +380,9 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-VALA_V = $(VALA_V_$(V))
-VALA_V_ = $(VALA_V_$(AM_DEFAULT_VERBOSITY))
-VALA_V_0 = @echo "  VALAC " $^;
+BALA_V = $(BALA_V_$(V))
+BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
+BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 SUBDIRS = \
 	doclets \
@@ -392,7 +392,7 @@ SUBDIRS = \
 
 AM_CFLAGS = \
 	-DG_LOG_DOMAIN=\"valadoc\" \
-	-DPACKAGE_VALADOC_LIBDIR=\"$(pkgdoclibdir)\" \
+	-DPACKAGE_BALADOC_LIBDIR=\"$(pkgdoclibdir)\" \
 	-DPACKAGE_VERSION=\"$(VERSION)\" \
 	-I$(top_srcdir)/libvaladoc/ \
 	-I$(top_srcdir)/gee \
@@ -406,7 +406,7 @@ AM_CFLAGS = \
 	$(NULL)
 
 BUILT_SOURCES = valadoc.vala.stamp
-valadoc_VALASOURCES = \
+valadoc_BALASOURCES = \
 	girwriter.vala \
 	initializerbuilder.vala \
 	symbolresolver.vala \
@@ -416,7 +416,7 @@ valadoc_VALASOURCES = \
 
 valadoc_SOURCES = \
 	valadoc.vala.stamp \
-	$(valadoc_VALASOURCES:.vala=.c) \
+	$(valadoc_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 valadoc_LDADD = \
@@ -431,12 +431,12 @@ valadoc_LDADD = \
 	$(NULL)
 
 EXTRA_DIST = \
-	$(valadoc_VALASOURCES) \
+	$(valadoc_BALASOURCES) \
 	valadoc.vala.stamp \
 	$(NULL)
 
 MAINTAINERCLEANFILES = \
-	$(valadoc_VALASOURCES:.vala=.c) \
+	$(valadoc_BALASOURCES:.vala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -878,10 +878,10 @@ uninstall-am: uninstall-binPROGRAMS
 .PRECIOUS: Makefile
 
 
-valadoc.vala.stamp: $(valadoc_VALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libvaladoc/valadoc@PACKAGE_SUFFIX@.vapi
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+valadoc.vala.stamp: $(valadoc_BALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libvaladoc/valadoc@PACKAGE_SUFFIX@.vapi
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--pkg gmodule-2.0 \

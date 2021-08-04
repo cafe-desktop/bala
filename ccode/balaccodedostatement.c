@@ -115,7 +115,7 @@ ValaCCodeDoStatement*
 vala_ccode_do_statement_new (ValaCCodeStatement* stmt,
                              ValaCCodeExpression* cond)
 {
-	return vala_ccode_do_statement_construct (VALA_TYPE_CCODE_DO_STATEMENT, stmt, cond);
+	return vala_ccode_do_statement_construct (BALA_TYPE_CCODE_DO_STATEMENT, stmt, cond);
 }
 
 static void
@@ -135,13 +135,13 @@ vala_ccode_do_statement_real_write (ValaCCodeNode* base,
 	vala_ccode_writer_write_indent (writer, _tmp1_);
 	vala_ccode_writer_write_string (writer, "do");
 	_tmp2_ = self->priv->_body;
-	if (VALA_IS_CCODE_BLOCK (_tmp2_)) {
+	if (BALA_IS_CCODE_BLOCK (_tmp2_)) {
 		ValaCCodeBlock* cblock = NULL;
 		ValaCCodeStatement* _tmp3_;
 		ValaCCodeBlock* _tmp4_;
 		ValaCCodeBlock* _tmp5_;
 		_tmp3_ = self->priv->_body;
-		_tmp4_ = _vala_ccode_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALA_TYPE_CCODE_BLOCK, ValaCCodeBlock));
+		_tmp4_ = _vala_ccode_node_ref0 (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALA_TYPE_CCODE_BLOCK, ValaCCodeBlock));
 		cblock = _tmp4_;
 		_tmp5_ = cblock;
 		vala_ccode_block_set_suppress_newline (_tmp5_, TRUE);
@@ -176,10 +176,10 @@ static void
 vala_ccode_do_statement_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeDoStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_DO_STATEMENT, ValaCCodeDoStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_DO_STATEMENT, ValaCCodeDoStatement);
 	_vala_ccode_node_unref0 (self->priv->_body);
 	_vala_ccode_node_unref0 (self->priv->_condition);
-	VALA_CCODE_NODE_CLASS (vala_ccode_do_statement_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_do_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -190,7 +190,7 @@ vala_ccode_do_statement_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeDoStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_do_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeDoStatement), 0, (GInstanceInitFunc) vala_ccode_do_statement_instance_init, NULL };
 	GType vala_ccode_do_statement_type_id;
-	vala_ccode_do_statement_type_id = g_type_register_static (VALA_TYPE_CCODE_STATEMENT, "ValaCCodeDoStatement", &g_define_type_info, 0);
+	vala_ccode_do_statement_type_id = g_type_register_static (BALA_TYPE_CCODE_STATEMENT, "ValaCCodeDoStatement", &g_define_type_info, 0);
 	ValaCCodeDoStatement_private_offset = g_type_add_instance_private (vala_ccode_do_statement_type_id, sizeof (ValaCCodeDoStatementPrivate));
 	return vala_ccode_do_statement_type_id;
 }

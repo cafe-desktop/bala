@@ -128,7 +128,7 @@ vala_enum_new (const gchar* name,
                ValaSourceReference* source_reference,
                ValaComment* comment)
 {
-	return vala_enum_construct (VALA_TYPE_ENUM, name, source_reference, comment);
+	return vala_enum_construct (BALA_TYPE_ENUM, name, source_reference, comment);
 }
 
 /**
@@ -147,7 +147,7 @@ vala_enum_add_value (ValaEnum* self,
 	const gchar* _tmp4_;
 	g_return_if_fail (self != NULL);
 	g_return_if_fail (value != NULL);
-	vala_symbol_set_access ((ValaSymbol*) value, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+	vala_symbol_set_access ((ValaSymbol*) value, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	_tmp0_ = self->priv->values;
 	vala_collection_add ((ValaCollection*) _tmp0_, value);
 	_tmp1_ = vala_symbol_get_scope ((ValaSymbol*) self);
@@ -179,7 +179,7 @@ vala_enum_real_add_method (ValaSymbol* base,
 	const gchar* _tmp38_;
 	self = (ValaEnum*) base;
 	g_return_if_fail (m != NULL);
-	if (VALA_IS_CREATION_METHOD (m)) {
+	if (BALA_IS_CREATION_METHOD (m)) {
 		ValaSourceReference* _tmp0_;
 		ValaSourceReference* _tmp1_;
 		_tmp0_ = vala_code_node_get_source_reference ((ValaCodeNode*) m);
@@ -190,7 +190,7 @@ vala_enum_real_add_method (ValaSymbol* base,
 	}
 	_tmp2_ = vala_method_get_binding (m);
 	_tmp3_ = _tmp2_;
-	if (_tmp3_ == VALA_MEMBER_BINDING_INSTANCE) {
+	if (_tmp3_ == BALA_MEMBER_BINDING_INSTANCE) {
 		ValaEnumValueType* _tmp4_;
 		ValaEnumValueType* _tmp5_;
 		ValaSourceReference* _tmp6_;
@@ -226,7 +226,7 @@ vala_enum_real_add_method (ValaSymbol* base,
 	}
 	_tmp19_ = vala_callable_get_return_type ((ValaCallable*) m);
 	_tmp20_ = _tmp19_;
-	if (!VALA_IS_VOID_TYPE (_tmp20_)) {
+	if (!BALA_IS_VOID_TYPE (_tmp20_)) {
 		ValaList* _tmp21_;
 		gint _tmp22_;
 		gint _tmp23_;
@@ -775,13 +775,13 @@ vala_enum_instance_init (ValaEnum * self,
 	ValaArrayList* _tmp5_;
 	self->priv = vala_enum_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_ENUM_VALUE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_ENUM_VALUE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->values = (ValaList*) _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	self->priv->methods = (ValaList*) _tmp3_;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_array_list_new (VALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
+	_tmp5_ = vala_array_list_new (BALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
 	self->priv->constants = (ValaList*) _tmp5_;
 }
 
@@ -789,12 +789,12 @@ static void
 vala_enum_finalize (ValaCodeNode * obj)
 {
 	ValaEnum * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_ENUM, ValaEnum);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_ENUM, ValaEnum);
 	_vala_iterable_unref0 (self->priv->values);
 	_vala_iterable_unref0 (self->priv->methods);
 	_vala_iterable_unref0 (self->priv->constants);
 	_g_free0 (self->priv->_is_flags);
-	VALA_CODE_NODE_CLASS (vala_enum_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_enum_parent_class)->finalize (obj);
 }
 
 /**
@@ -805,7 +805,7 @@ vala_enum_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaEnumClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_enum_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaEnum), 0, (GInstanceInitFunc) vala_enum_instance_init, NULL };
 	GType vala_enum_type_id;
-	vala_enum_type_id = g_type_register_static (VALA_TYPE_TYPESYMBOL, "ValaEnum", &g_define_type_info, 0);
+	vala_enum_type_id = g_type_register_static (BALA_TYPE_TYPESYMBOL, "ValaEnum", &g_define_type_info, 0);
 	ValaEnum_private_offset = g_type_add_instance_private (vala_enum_type_id, sizeof (ValaEnumPrivate));
 	return vala_enum_type_id;
 }

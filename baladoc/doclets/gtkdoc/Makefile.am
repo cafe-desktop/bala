@@ -4,7 +4,7 @@ NULL =
 
 AM_CFLAGS = \
 	-DG_LOG_DOMAIN=\"valadoc-gtkdoc\" \
-	-DPACKAGE_VALADOC_ICONDIR=\"$(datadir)/valadoc@PACKAGE_SUFFIX@/icons/\" \
+	-DPACKAGE_BALADOC_ICONDIR=\"$(datadir)/valadoc@PACKAGE_SUFFIX@/icons/\" \
 	-I$(top_srcdir)/gee/ \
 	-I$(top_srcdir)/vala/ \
 	-I$(top_srcdir)/libvaladoc/ \
@@ -21,7 +21,7 @@ docletdir = $(libdir)/valadoc@PACKAGE_SUFFIX@/doclets/gtkdoc
 
 libdoclet_la_LDFLAGS = -module -avoid-version -no-undefined
 
-libdoclet_la_VALASOURCES = \
+libdoclet_la_BALASOURCES = \
 	commentconverter.vala \
 	dbus.vala \
 	doclet.vala \
@@ -32,13 +32,13 @@ libdoclet_la_VALASOURCES = \
 
 libdoclet_la_SOURCES = \
 	libdoclet.vala.stamp \
-	$(libdoclet_la_VALASOURCES:.vala=.c) \
+	$(libdoclet_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 
-libdoclet.vala.stamp: $(libdoclet_la_VALASOURCES)
-	$(VALA_V)$(VALAC) \
-		$(COVERAGE_VALAFLAGS) \
-		$(VALAFLAGS) \
+libdoclet.vala.stamp: $(libdoclet_la_BALASOURCES)
+	$(BALA_V)$(BALAC) \
+		$(COVERAGE_BALAFLAGS) \
+		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vala --pkg libvala@PACKAGE_SUFFIX@ \
 		--vapidir $(top_srcdir)/vapi \
@@ -54,11 +54,11 @@ libdoclet_la_LIBADD = \
 	$(NULL)
 
 EXTRA_DIST = \
-	$(libdoclet_la_VALASOURCES) \
+	$(libdoclet_la_BALASOURCES) \
 	libdoclet.vala.stamp \
 	$(NULL)
 
 MAINTAINERCLEANFILES = \
-	$(libdoclet_la_VALASOURCES:.vala=.c) \
+	$(libdoclet_la_BALASOURCES:.vala=.c) \
 	$(NULL)
 

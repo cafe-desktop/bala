@@ -103,7 +103,7 @@ vala_namespace_construct (GType object_type,
 {
 	ValaNamespace* self = NULL;
 	self = (ValaNamespace*) vala_symbol_construct (object_type, name, source_reference, NULL);
-	vala_symbol_set_access ((ValaSymbol*) self, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+	vala_symbol_set_access ((ValaSymbol*) self, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	return self;
 }
 
@@ -111,7 +111,7 @@ ValaNamespace*
 vala_namespace_new (const gchar* name,
                     ValaSourceReference* source_reference)
 {
-	return vala_namespace_construct (VALA_TYPE_NAMESPACE, name, source_reference);
+	return vala_namespace_construct (BALA_TYPE_NAMESPACE, name, source_reference);
 }
 
 /**
@@ -209,7 +209,7 @@ vala_namespace_real_add_namespace (ValaSymbol* base,
 	_tmp9_ = _tmp8_;
 	_tmp10_ = vala_scope_lookup (_tmp7_, _tmp9_);
 	_tmp11_ = _tmp10_;
-	_tmp12_ = VALA_IS_NAMESPACE (_tmp11_);
+	_tmp12_ = BALA_IS_NAMESPACE (_tmp11_);
 	_vala_code_node_unref0 (_tmp11_);
 	if (_tmp12_) {
 		ValaNamespace* old_ns = NULL;
@@ -228,7 +228,7 @@ vala_namespace_real_add_namespace (ValaSymbol* base,
 		_tmp15_ = vala_symbol_get_name ((ValaSymbol*) ns);
 		_tmp16_ = _tmp15_;
 		_tmp17_ = vala_scope_lookup (_tmp14_, _tmp16_);
-		old_ns = G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, VALA_TYPE_NAMESPACE, ValaNamespace);
+		old_ns = G_TYPE_CHECK_INSTANCE_CAST (_tmp17_, BALA_TYPE_NAMESPACE, ValaNamespace);
 		_tmp19_ = old_ns;
 		_tmp20_ = vala_symbol_get_external_package ((ValaSymbol*) _tmp19_);
 		_tmp21_ = _tmp20_;
@@ -832,8 +832,8 @@ vala_namespace_real_add_class (ValaSymbol* base,
 	g_return_if_fail (cl != NULL);
 	_tmp0_ = vala_symbol_get_access ((ValaSymbol*) cl);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
-		vala_symbol_set_access ((ValaSymbol*) cl, VALA_SYMBOL_ACCESSIBILITY_INTERNAL);
+	if (_tmp1_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_symbol_set_access ((ValaSymbol*) cl, BALA_SYMBOL_ACCESSIBILITY_INTERNAL);
 	}
 	_tmp2_ = vala_symbol_get_owner ((ValaSymbol*) cl);
 	_tmp3_ = _tmp2_;
@@ -880,8 +880,8 @@ vala_namespace_real_add_interface (ValaSymbol* base,
 	g_return_if_fail (iface != NULL);
 	_tmp0_ = vala_symbol_get_access ((ValaSymbol*) iface);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
-		vala_symbol_set_access ((ValaSymbol*) iface, VALA_SYMBOL_ACCESSIBILITY_INTERNAL);
+	if (_tmp1_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_symbol_set_access ((ValaSymbol*) iface, BALA_SYMBOL_ACCESSIBILITY_INTERNAL);
 	}
 	_tmp2_ = vala_symbol_get_owner ((ValaSymbol*) iface);
 	_tmp3_ = _tmp2_;
@@ -928,8 +928,8 @@ vala_namespace_real_add_struct (ValaSymbol* base,
 	g_return_if_fail (st != NULL);
 	_tmp0_ = vala_symbol_get_access ((ValaSymbol*) st);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
-		vala_symbol_set_access ((ValaSymbol*) st, VALA_SYMBOL_ACCESSIBILITY_INTERNAL);
+	if (_tmp1_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_symbol_set_access ((ValaSymbol*) st, BALA_SYMBOL_ACCESSIBILITY_INTERNAL);
 	}
 	_tmp2_ = vala_symbol_get_owner ((ValaSymbol*) st);
 	_tmp3_ = _tmp2_;
@@ -976,8 +976,8 @@ vala_namespace_real_add_enum (ValaSymbol* base,
 	g_return_if_fail (en != NULL);
 	_tmp0_ = vala_symbol_get_access ((ValaSymbol*) en);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
-		vala_symbol_set_access ((ValaSymbol*) en, VALA_SYMBOL_ACCESSIBILITY_INTERNAL);
+	if (_tmp1_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_symbol_set_access ((ValaSymbol*) en, BALA_SYMBOL_ACCESSIBILITY_INTERNAL);
 	}
 	_tmp2_ = vala_symbol_get_owner ((ValaSymbol*) en);
 	_tmp3_ = _tmp2_;
@@ -1024,8 +1024,8 @@ vala_namespace_real_add_error_domain (ValaSymbol* base,
 	g_return_if_fail (edomain != NULL);
 	_tmp0_ = vala_symbol_get_access ((ValaSymbol*) edomain);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
-		vala_symbol_set_access ((ValaSymbol*) edomain, VALA_SYMBOL_ACCESSIBILITY_INTERNAL);
+	if (_tmp1_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_symbol_set_access ((ValaSymbol*) edomain, BALA_SYMBOL_ACCESSIBILITY_INTERNAL);
 	}
 	_tmp2_ = vala_symbol_get_owner ((ValaSymbol*) edomain);
 	_tmp3_ = _tmp2_;
@@ -1072,8 +1072,8 @@ vala_namespace_real_add_delegate (ValaSymbol* base,
 	g_return_if_fail (d != NULL);
 	_tmp0_ = vala_symbol_get_access ((ValaSymbol*) d);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
-		vala_symbol_set_access ((ValaSymbol*) d, VALA_SYMBOL_ACCESSIBILITY_INTERNAL);
+	if (_tmp1_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_symbol_set_access ((ValaSymbol*) d, BALA_SYMBOL_ACCESSIBILITY_INTERNAL);
 	}
 	_tmp2_ = vala_symbol_get_owner ((ValaSymbol*) d);
 	_tmp3_ = _tmp2_;
@@ -1264,8 +1264,8 @@ vala_namespace_real_add_constant (ValaSymbol* base,
 	g_return_if_fail (constant != NULL);
 	_tmp0_ = vala_symbol_get_access ((ValaSymbol*) constant);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
-		vala_symbol_set_access ((ValaSymbol*) constant, VALA_SYMBOL_ACCESSIBILITY_INTERNAL);
+	if (_tmp1_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_symbol_set_access ((ValaSymbol*) constant, BALA_SYMBOL_ACCESSIBILITY_INTERNAL);
 	}
 	_tmp2_ = vala_symbol_get_owner ((ValaSymbol*) constant);
 	_tmp3_ = _tmp2_;
@@ -1312,8 +1312,8 @@ vala_namespace_real_add_field (ValaSymbol* base,
 	g_return_if_fail (f != NULL);
 	_tmp0_ = vala_symbol_get_access ((ValaSymbol*) f);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
-		vala_symbol_set_access ((ValaSymbol*) f, VALA_SYMBOL_ACCESSIBILITY_INTERNAL);
+	if (_tmp1_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_symbol_set_access ((ValaSymbol*) f, BALA_SYMBOL_ACCESSIBILITY_INTERNAL);
 	}
 	_tmp2_ = vala_symbol_get_owner ((ValaSymbol*) f);
 	_tmp3_ = _tmp2_;
@@ -1363,12 +1363,12 @@ vala_namespace_real_add_method (ValaSymbol* base,
 	g_return_if_fail (m != NULL);
 	_tmp0_ = vala_symbol_get_access ((ValaSymbol*) m);
 	_tmp1_ = _tmp0_;
-	if (_tmp1_ == VALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
-		vala_symbol_set_access ((ValaSymbol*) m, VALA_SYMBOL_ACCESSIBILITY_INTERNAL);
+	if (_tmp1_ == BALA_SYMBOL_ACCESSIBILITY_PRIVATE) {
+		vala_symbol_set_access ((ValaSymbol*) m, BALA_SYMBOL_ACCESSIBILITY_INTERNAL);
 	}
 	_tmp3_ = vala_callable_get_return_type ((ValaCallable*) m);
 	_tmp4_ = _tmp3_;
-	if (!VALA_IS_VOID_TYPE (_tmp4_)) {
+	if (!BALA_IS_VOID_TYPE (_tmp4_)) {
 		ValaList* _tmp5_;
 		gint _tmp6_;
 		gint _tmp7_;
@@ -1998,7 +1998,7 @@ vala_namespace_real_check (ValaCodeNode* base,
 			_tmp35_ = f;
 			_tmp36_ = vala_field_get_binding (_tmp35_);
 			_tmp37_ = _tmp36_;
-			if (_tmp37_ == VALA_MEMBER_BINDING_INSTANCE) {
+			if (_tmp37_ == BALA_MEMBER_BINDING_INSTANCE) {
 				ValaField* _tmp38_;
 				ValaSourceReference* _tmp39_;
 				ValaSourceReference* _tmp40_;
@@ -2017,7 +2017,7 @@ vala_namespace_real_check (ValaCodeNode* base,
 				_tmp42_ = f;
 				_tmp43_ = vala_field_get_binding (_tmp42_);
 				_tmp44_ = _tmp43_;
-				if (_tmp44_ == VALA_MEMBER_BINDING_CLASS) {
+				if (_tmp44_ == BALA_MEMBER_BINDING_CLASS) {
 					ValaField* _tmp45_;
 					ValaSourceReference* _tmp46_;
 					ValaSourceReference* _tmp47_;
@@ -2072,7 +2072,7 @@ vala_namespace_real_check (ValaCodeNode* base,
 			_tmp57_ = vala_list_get (_tmp56_, _m_index);
 			m = (ValaMethod*) _tmp57_;
 			_tmp58_ = m;
-			if (VALA_IS_CREATION_METHOD (_tmp58_)) {
+			if (BALA_IS_CREATION_METHOD (_tmp58_)) {
 				ValaMethod* _tmp59_;
 				ValaSourceReference* _tmp60_;
 				ValaSourceReference* _tmp61_;
@@ -2088,7 +2088,7 @@ vala_namespace_real_check (ValaCodeNode* base,
 			_tmp63_ = m;
 			_tmp64_ = vala_method_get_binding (_tmp63_);
 			_tmp65_ = _tmp64_;
-			if (_tmp65_ == VALA_MEMBER_BINDING_INSTANCE) {
+			if (_tmp65_ == BALA_MEMBER_BINDING_INSTANCE) {
 				ValaMethod* _tmp66_;
 				ValaSourceReference* _tmp67_;
 				ValaSourceReference* _tmp68_;
@@ -2107,7 +2107,7 @@ vala_namespace_real_check (ValaCodeNode* base,
 				_tmp70_ = m;
 				_tmp71_ = vala_method_get_binding (_tmp70_);
 				_tmp72_ = _tmp71_;
-				if (_tmp72_ == VALA_MEMBER_BINDING_CLASS) {
+				if (_tmp72_ == BALA_MEMBER_BINDING_CLASS) {
 					ValaMethod* _tmp73_;
 					ValaSourceReference* _tmp74_;
 					ValaSourceReference* _tmp75_;
@@ -2251,40 +2251,40 @@ vala_namespace_instance_init (ValaNamespace * self,
 	ValaArrayList* _tmp23_;
 	self->priv = vala_namespace_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CLASS, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->classes = (ValaList*) _tmp1_;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_array_list_new (VALA_TYPE_INTERFACE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
+	_tmp3_ = vala_array_list_new (BALA_TYPE_INTERFACE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp2_);
 	self->priv->interfaces = (ValaList*) _tmp3_;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_array_list_new (VALA_TYPE_STRUCT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
+	_tmp5_ = vala_array_list_new (BALA_TYPE_STRUCT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp4_);
 	self->priv->structs = (ValaList*) _tmp5_;
 	_tmp6_ = g_direct_equal;
-	_tmp7_ = vala_array_list_new (VALA_TYPE_ENUM, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp6_);
+	_tmp7_ = vala_array_list_new (BALA_TYPE_ENUM, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp6_);
 	self->priv->enums = (ValaList*) _tmp7_;
 	_tmp8_ = g_direct_equal;
-	_tmp9_ = vala_array_list_new (VALA_TYPE_ERROR_DOMAIN, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp8_);
+	_tmp9_ = vala_array_list_new (BALA_TYPE_ERROR_DOMAIN, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp8_);
 	self->priv->error_domains = (ValaList*) _tmp9_;
 	_tmp10_ = g_direct_equal;
-	_tmp11_ = vala_array_list_new (VALA_TYPE_DELEGATE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp10_);
+	_tmp11_ = vala_array_list_new (BALA_TYPE_DELEGATE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp10_);
 	self->priv->delegates = (ValaList*) _tmp11_;
 	_tmp12_ = g_direct_equal;
-	_tmp13_ = vala_array_list_new (VALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp12_);
+	_tmp13_ = vala_array_list_new (BALA_TYPE_CONSTANT, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp12_);
 	self->priv->constants = (ValaList*) _tmp13_;
 	_tmp14_ = g_direct_equal;
-	_tmp15_ = vala_array_list_new (VALA_TYPE_FIELD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp14_);
+	_tmp15_ = vala_array_list_new (BALA_TYPE_FIELD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp14_);
 	self->priv->fields = (ValaList*) _tmp15_;
 	_tmp16_ = g_direct_equal;
-	_tmp17_ = vala_array_list_new (VALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp16_);
+	_tmp17_ = vala_array_list_new (BALA_TYPE_METHOD, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp16_);
 	self->priv->methods = (ValaList*) _tmp17_;
 	_tmp18_ = g_direct_equal;
-	_tmp19_ = vala_array_list_new (VALA_TYPE_COMMENT, (GBoxedCopyFunc) vala_comment_ref, (GDestroyNotify) vala_comment_unref, _tmp18_);
+	_tmp19_ = vala_array_list_new (BALA_TYPE_COMMENT, (GBoxedCopyFunc) vala_comment_ref, (GDestroyNotify) vala_comment_unref, _tmp18_);
 	self->priv->comments = (ValaList*) _tmp19_;
 	_tmp20_ = g_direct_equal;
-	_tmp21_ = vala_array_list_new (VALA_TYPE_NAMESPACE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp20_);
+	_tmp21_ = vala_array_list_new (BALA_TYPE_NAMESPACE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp20_);
 	self->priv->namespaces = (ValaList*) _tmp21_;
 	_tmp22_ = g_direct_equal;
-	_tmp23_ = vala_array_list_new (VALA_TYPE_USING_DIRECTIVE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp22_);
+	_tmp23_ = vala_array_list_new (BALA_TYPE_USING_DIRECTIVE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp22_);
 	self->priv->using_directives = (ValaList*) _tmp23_;
 }
 
@@ -2292,7 +2292,7 @@ static void
 vala_namespace_finalize (ValaCodeNode * obj)
 {
 	ValaNamespace * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_NAMESPACE, ValaNamespace);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_NAMESPACE, ValaNamespace);
 	_vala_iterable_unref0 (self->priv->classes);
 	_vala_iterable_unref0 (self->priv->interfaces);
 	_vala_iterable_unref0 (self->priv->structs);
@@ -2305,7 +2305,7 @@ vala_namespace_finalize (ValaCodeNode * obj)
 	_vala_iterable_unref0 (self->priv->comments);
 	_vala_iterable_unref0 (self->priv->namespaces);
 	_vala_iterable_unref0 (self->priv->using_directives);
-	VALA_CODE_NODE_CLASS (vala_namespace_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_namespace_parent_class)->finalize (obj);
 }
 
 /**
@@ -2316,7 +2316,7 @@ vala_namespace_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaNamespaceClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_namespace_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaNamespace), 0, (GInstanceInitFunc) vala_namespace_instance_init, NULL };
 	GType vala_namespace_type_id;
-	vala_namespace_type_id = g_type_register_static (VALA_TYPE_SYMBOL, "ValaNamespace", &g_define_type_info, 0);
+	vala_namespace_type_id = g_type_register_static (BALA_TYPE_SYMBOL, "ValaNamespace", &g_define_type_info, 0);
 	ValaNamespace_private_offset = g_type_add_instance_private (vala_namespace_type_id, sizeof (ValaNamespacePrivate));
 	return vala_namespace_type_id;
 }

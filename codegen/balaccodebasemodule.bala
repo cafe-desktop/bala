@@ -797,7 +797,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 			append_vala_array_length ();
 		}
 		if (requires_array_n_elements) {
-			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("VALA_N_ELEMENTS(arr)", new CCodeConstant ("(sizeof (arr) / sizeof ((arr)[0]))")));
+			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("BALA_N_ELEMENTS(arr)", new CCodeConstant ("(sizeof (arr) / sizeof ((arr)[0]))")));
 		}
 		if (requires_clear_mutex) {
 			append_vala_clear_mutex ("GMutex", "g_mutex");

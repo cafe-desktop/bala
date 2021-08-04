@@ -60,15 +60,15 @@ public class Valadoc.Importer.ValadocDocumentationImporter : DocumentationImport
 		// init parser rules:
 		Rule unprinted_spaces = Rule.many ({
 			Rule.one_of ({
-				TokenType.VALADOC_SPACE,
-				TokenType.VALADOC_TAB
+				TokenType.BALADOC_SPACE,
+				TokenType.BALADOC_TAB
 			})
 		});
 
 		Rule empty_lines = Rule.many ({
 			Rule.one_of ({
 				unprinted_spaces,
-				TokenType.VALADOC_EOL
+				TokenType.BALADOC_EOL
 			})
 		})
 		.set_name ("EmptyLines");
@@ -79,17 +79,17 @@ public class Valadoc.Importer.ValadocDocumentationImporter : DocumentationImport
 
 		Rule documentation = Rule.one_of ({
 			Rule.seq ({
-				TokenType.VALADOC_COMMENT_START.action ((token) => { _comment_location = token.end; }),
+				TokenType.BALADOC_COMMENT_START.action ((token) => { _comment_location = token.end; }),
 				Rule.many ({
 					Rule.one_of ({
 						TokenType.ANY_WORD.action (add_comment),
-						TokenType.VALADOC_COMMENT_START.action (add_comment),
-						TokenType.VALADOC_SPACE.action (add_comment),
-						TokenType.VALADOC_TAB.action (add_comment),
-						TokenType.VALADOC_EOL.action (add_comment)
+						TokenType.BALADOC_COMMENT_START.action (add_comment),
+						TokenType.BALADOC_SPACE.action (add_comment),
+						TokenType.BALADOC_TAB.action (add_comment),
+						TokenType.BALADOC_EOL.action (add_comment)
 					})
 				}),
-				TokenType.VALADOC_COMMENT_END,
+				TokenType.BALADOC_COMMENT_END,
 				optional_empty_lines,
 				TokenType.ANY_WORD.action ((token) => { _cname = token.to_string (); })
 			})

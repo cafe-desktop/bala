@@ -123,7 +123,7 @@ vala_ccode_element_access_construct (GType object_type,
 	self = (ValaCCodeElementAccess*) vala_ccode_expression_construct (object_type);
 	vala_ccode_element_access_set_container (self, cont);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_CCODE_EXPRESSION, (GBoxedCopyFunc) vala_ccode_node_ref, (GDestroyNotify) vala_ccode_node_unref, _tmp0_);
 	_tmp2_ = _tmp1_;
 	vala_ccode_element_access_set_indices (self, (ValaList*) _tmp2_);
 	_vala_iterable_unref0 (_tmp2_);
@@ -136,7 +136,7 @@ ValaCCodeElementAccess*
 vala_ccode_element_access_new (ValaCCodeExpression* cont,
                                ValaCCodeExpression* i)
 {
-	return vala_ccode_element_access_construct (VALA_TYPE_CCODE_ELEMENT_ACCESS, cont, i);
+	return vala_ccode_element_access_construct (BALA_TYPE_CCODE_ELEMENT_ACCESS, cont, i);
 }
 
 ValaCCodeElementAccess*
@@ -157,7 +157,7 @@ ValaCCodeElementAccess*
 vala_ccode_element_access_new_with_indices (ValaCCodeExpression* cont,
                                             ValaList* i)
 {
-	return vala_ccode_element_access_construct_with_indices (VALA_TYPE_CCODE_ELEMENT_ACCESS, cont, i);
+	return vala_ccode_element_access_construct_with_indices (BALA_TYPE_CCODE_ELEMENT_ACCESS, cont, i);
 }
 
 static void
@@ -240,10 +240,10 @@ static void
 vala_ccode_element_access_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeElementAccess * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_ELEMENT_ACCESS, ValaCCodeElementAccess);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_ELEMENT_ACCESS, ValaCCodeElementAccess);
 	_vala_ccode_node_unref0 (self->priv->_container);
 	_vala_iterable_unref0 (self->priv->_indices);
-	VALA_CCODE_NODE_CLASS (vala_ccode_element_access_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_element_access_parent_class)->finalize (obj);
 }
 
 /**
@@ -254,7 +254,7 @@ vala_ccode_element_access_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeElementAccessClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_element_access_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeElementAccess), 0, (GInstanceInitFunc) vala_ccode_element_access_instance_init, NULL };
 	GType vala_ccode_element_access_type_id;
-	vala_ccode_element_access_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeElementAccess", &g_define_type_info, 0);
+	vala_ccode_element_access_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeElementAccess", &g_define_type_info, 0);
 	ValaCCodeElementAccess_private_offset = g_type_add_instance_private (vala_ccode_element_access_type_id, sizeof (ValaCCodeElementAccessPrivate));
 	return vala_ccode_element_access_type_id;
 }

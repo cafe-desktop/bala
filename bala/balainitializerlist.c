@@ -139,7 +139,7 @@ vala_initializer_list_construct (GType object_type,
 ValaInitializerList*
 vala_initializer_list_new (ValaSourceReference* source_reference)
 {
-	return vala_initializer_list_construct (VALA_TYPE_INITIALIZER_LIST, source_reference);
+	return vala_initializer_list_construct (BALA_TYPE_INITIALIZER_LIST, source_reference);
 }
 
 static gpointer
@@ -574,7 +574,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 			ValaDataType* _tmp13_;
 			_tmp12_ = vala_expression_get_target_type ((ValaExpression*) self);
 			_tmp13_ = _tmp12_;
-			if (VALA_IS_ARRAY_TYPE (_tmp13_)) {
+			if (BALA_IS_ARRAY_TYPE (_tmp13_)) {
 				ValaArrayType* array_type = NULL;
 				ValaDataType* _tmp14_;
 				ValaDataType* _tmp15_;
@@ -592,7 +592,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 				gint _tmp68_;
 				_tmp14_ = vala_expression_get_target_type ((ValaExpression*) self);
 				_tmp15_ = _tmp14_;
-				array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp15_, VALA_TYPE_ARRAY_TYPE, ValaArrayType);
+				array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp15_, BALA_TYPE_ARRAY_TYPE, ValaArrayType);
 				requires_constants_only = FALSE;
 				_tmp16_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 				_tmp17_ = _tmp16_;
@@ -608,7 +608,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 						break;
 					}
 					_tmp19_ = node;
-					if (VALA_IS_CONSTANT (_tmp19_)) {
+					if (BALA_IS_CONSTANT (_tmp19_)) {
 						requires_constants_only = TRUE;
 						break;
 					}
@@ -619,7 +619,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 				}
 				_tmp25_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 				_tmp26_ = _tmp25_;
-				if (!VALA_IS_ARRAY_CREATION_EXPRESSION (_tmp26_)) {
+				if (!BALA_IS_ARRAY_CREATION_EXPRESSION (_tmp26_)) {
 					_tmp24_ = !requires_constants_only;
 				} else {
 					_tmp24_ = FALSE;
@@ -630,7 +630,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 					ValaCodeNode* _tmp29_;
 					_tmp28_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 					_tmp29_ = _tmp28_;
-					if (!VALA_IS_INITIALIZER_LIST (_tmp29_)) {
+					if (!BALA_IS_INITIALIZER_LIST (_tmp29_)) {
 						_tmp27_ = TRUE;
 					} else {
 						ValaCodeNode* _tmp30_;
@@ -641,11 +641,11 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 						ValaTypeSymbol* _tmp35_;
 						_tmp30_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 						_tmp31_ = _tmp30_;
-						_tmp32_ = vala_expression_get_target_type ((ValaExpression*) G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, VALA_TYPE_INITIALIZER_LIST, ValaInitializerList));
+						_tmp32_ = vala_expression_get_target_type ((ValaExpression*) G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, BALA_TYPE_INITIALIZER_LIST, ValaInitializerList));
 						_tmp33_ = _tmp32_;
 						_tmp34_ = vala_data_type_get_type_symbol (_tmp33_);
 						_tmp35_ = _tmp34_;
-						_tmp27_ = VALA_IS_STRUCT (_tmp35_);
+						_tmp27_ = BALA_IS_STRUCT (_tmp35_);
 					}
 					_tmp23_ = _tmp27_;
 				} else {
@@ -742,7 +742,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 					ValaDataType* _tmp75_;
 					_tmp69_ = array_type;
 					_tmp70_ = vala_data_type_copy ((ValaDataType*) _tmp69_);
-					inner_array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp70_, VALA_TYPE_ARRAY_TYPE, ValaArrayType);
+					inner_array_type = G_TYPE_CHECK_INSTANCE_CAST (_tmp70_, BALA_TYPE_ARRAY_TYPE, ValaArrayType);
 					_tmp71_ = inner_array_type;
 					_tmp72_ = vala_array_type_get_rank (_tmp71_);
 					_tmp73_ = _tmp72_;
@@ -815,7 +815,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 				_tmp92_ = _tmp91_;
 				_tmp93_ = vala_data_type_get_type_symbol (_tmp92_);
 				_tmp94_ = _tmp93_;
-				if (VALA_IS_STRUCT (_tmp94_)) {
+				if (BALA_IS_STRUCT (_tmp94_)) {
 					ValaStruct* st = NULL;
 					ValaDataType* _tmp95_;
 					ValaDataType* _tmp96_;
@@ -834,7 +834,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 					_tmp96_ = _tmp95_;
 					_tmp97_ = vala_data_type_get_type_symbol (_tmp96_);
 					_tmp98_ = _tmp97_;
-					st = G_TYPE_CHECK_INSTANCE_CAST (_tmp98_, VALA_TYPE_STRUCT, ValaStruct);
+					st = G_TYPE_CHECK_INSTANCE_CAST (_tmp98_, BALA_TYPE_STRUCT, ValaStruct);
 					while (TRUE) {
 						ValaStruct* _tmp99_;
 						ValaStruct* _tmp100_;
@@ -855,7 +855,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 					}
 					_tmp106_ = vala_code_node_get_parent_node ((ValaCodeNode*) self);
 					_tmp107_ = _tmp106_;
-					if (VALA_IS_INITIALIZER_LIST (_tmp107_)) {
+					if (BALA_IS_INITIALIZER_LIST (_tmp107_)) {
 						ValaCodeNode* _tmp108_;
 						ValaCodeNode* _tmp109_;
 						ValaCodeNode* _tmp110_;
@@ -864,7 +864,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 						_tmp109_ = _tmp108_;
 						_tmp110_ = vala_code_node_get_parent_node (_tmp109_);
 						_tmp111_ = _tmp110_;
-						_tmp105_ = VALA_IS_ARRAY_CREATION_EXPRESSION (_tmp111_);
+						_tmp105_ = BALA_IS_ARRAY_CREATION_EXPRESSION (_tmp111_);
 					} else {
 						_tmp105_ = FALSE;
 					}
@@ -946,7 +946,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 								_tmp130_ = _tmp129_;
 								_tmp131_ = vala_code_context_get_root (context);
 								_tmp132_ = _tmp131_;
-								_tmp124_ = _tmp130_ != G_TYPE_CHECK_INSTANCE_CAST (_tmp132_, VALA_TYPE_SYMBOL, ValaSymbol);
+								_tmp124_ = _tmp130_ != G_TYPE_CHECK_INSTANCE_CAST (_tmp132_, BALA_TYPE_SYMBOL, ValaSymbol);
 							} else {
 								_tmp124_ = FALSE;
 							}
@@ -1080,7 +1080,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 								_tmp181_ = field;
 								_tmp182_ = vala_field_get_binding (_tmp181_);
 								_tmp183_ = _tmp182_;
-								if (_tmp183_ != VALA_MEMBER_BINDING_INSTANCE) {
+								if (_tmp183_ != BALA_MEMBER_BINDING_INSTANCE) {
 									_vala_code_node_unref0 (field);
 									field = NULL;
 								}
@@ -1295,7 +1295,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 				continue;
 			}
 			_tmp246_ = e;
-			unary = VALA_IS_UNARY_EXPRESSION (_tmp246_) ? ((ValaUnaryExpression*) _tmp246_) : NULL;
+			unary = BALA_IS_UNARY_EXPRESSION (_tmp246_) ? ((ValaUnaryExpression*) _tmp246_) : NULL;
 			_tmp248_ = unary;
 			if (_tmp248_ != NULL) {
 				gboolean _tmp249_ = FALSE;
@@ -1305,7 +1305,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 				_tmp250_ = unary;
 				_tmp251_ = vala_unary_expression_get_operator (_tmp250_);
 				_tmp252_ = _tmp251_;
-				if (_tmp252_ == VALA_UNARY_OPERATOR_REF) {
+				if (_tmp252_ == BALA_UNARY_OPERATOR_REF) {
 					_tmp249_ = TRUE;
 				} else {
 					ValaUnaryExpression* _tmp253_;
@@ -1314,7 +1314,7 @@ vala_initializer_list_real_check (ValaCodeNode* base,
 					_tmp253_ = unary;
 					_tmp254_ = vala_unary_expression_get_operator (_tmp253_);
 					_tmp255_ = _tmp254_;
-					_tmp249_ = _tmp255_ == VALA_UNARY_OPERATOR_OUT;
+					_tmp249_ = _tmp255_ == BALA_UNARY_OPERATOR_OUT;
 				}
 				_tmp247_ = _tmp249_;
 			} else {
@@ -1538,7 +1538,7 @@ vala_initializer_list_instance_init (ValaInitializerList * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_initializer_list_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_EXPRESSION, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->initializers = (ValaList*) _tmp1_;
 }
 
@@ -1546,9 +1546,9 @@ static void
 vala_initializer_list_finalize (ValaCodeNode * obj)
 {
 	ValaInitializerList * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_INITIALIZER_LIST, ValaInitializerList);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_INITIALIZER_LIST, ValaInitializerList);
 	_vala_iterable_unref0 (self->priv->initializers);
-	VALA_CODE_NODE_CLASS (vala_initializer_list_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_initializer_list_parent_class)->finalize (obj);
 }
 
 /**
@@ -1559,7 +1559,7 @@ vala_initializer_list_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaInitializerListClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_initializer_list_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaInitializerList), 0, (GInstanceInitFunc) vala_initializer_list_instance_init, NULL };
 	GType vala_initializer_list_type_id;
-	vala_initializer_list_type_id = g_type_register_static (VALA_TYPE_EXPRESSION, "ValaInitializerList", &g_define_type_info, 0);
+	vala_initializer_list_type_id = g_type_register_static (BALA_TYPE_EXPRESSION, "ValaInitializerList", &g_define_type_info, 0);
 	ValaInitializerList_private_offset = g_type_add_instance_private (vala_initializer_list_type_id, sizeof (ValaInitializerListPrivate));
 	return vala_initializer_list_type_id;
 }

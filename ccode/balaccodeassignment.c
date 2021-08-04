@@ -140,7 +140,7 @@ vala_ccode_assignment_new (ValaCCodeExpression* l,
                            ValaCCodeExpression* r,
                            ValaCCodeAssignmentOperator op)
 {
-	return vala_ccode_assignment_construct (VALA_TYPE_CCODE_ASSIGNMENT, l, r, op);
+	return vala_ccode_assignment_construct (BALA_TYPE_CCODE_ASSIGNMENT, l, r, op);
 }
 
 static void
@@ -157,57 +157,57 @@ vala_ccode_assignment_real_write (ValaCCodeNode* base,
 	vala_ccode_node_write ((ValaCCodeNode*) _tmp0_, writer);
 	_tmp1_ = self->priv->_operator;
 	switch (_tmp1_) {
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE:
 		{
 			vala_ccode_writer_write_string (writer, " = ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_OR:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_OR:
 		{
 			vala_ccode_writer_write_string (writer, " |= ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_AND:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_AND:
 		{
 			vala_ccode_writer_write_string (writer, " &= ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_XOR:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_XOR:
 		{
 			vala_ccode_writer_write_string (writer, " ^= ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_ADD:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_ADD:
 		{
 			vala_ccode_writer_write_string (writer, " += ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_SUB:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_SUB:
 		{
 			vala_ccode_writer_write_string (writer, " -= ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_MUL:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_MUL:
 		{
 			vala_ccode_writer_write_string (writer, " *= ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_DIV:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_DIV:
 		{
 			vala_ccode_writer_write_string (writer, " /= ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_PERCENT:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_PERCENT:
 		{
 			vala_ccode_writer_write_string (writer, " %= ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_LEFT:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_LEFT:
 		{
 			vala_ccode_writer_write_string (writer, " <<= ");
 			break;
 		}
-		case VALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_RIGHT:
+		case BALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_RIGHT:
 		{
 			vala_ccode_writer_write_string (writer, " >>= ");
 			break;
@@ -255,10 +255,10 @@ static void
 vala_ccode_assignment_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeAssignment * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_ASSIGNMENT, ValaCCodeAssignment);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_ASSIGNMENT, ValaCCodeAssignment);
 	_vala_ccode_node_unref0 (self->priv->_left);
 	_vala_ccode_node_unref0 (self->priv->_right);
-	VALA_CCODE_NODE_CLASS (vala_ccode_assignment_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_assignment_parent_class)->finalize (obj);
 }
 
 /**
@@ -269,7 +269,7 @@ vala_ccode_assignment_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeAssignmentClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_assignment_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeAssignment), 0, (GInstanceInitFunc) vala_ccode_assignment_instance_init, NULL };
 	GType vala_ccode_assignment_type_id;
-	vala_ccode_assignment_type_id = g_type_register_static (VALA_TYPE_CCODE_EXPRESSION, "ValaCCodeAssignment", &g_define_type_info, 0);
+	vala_ccode_assignment_type_id = g_type_register_static (BALA_TYPE_CCODE_EXPRESSION, "ValaCCodeAssignment", &g_define_type_info, 0);
 	ValaCCodeAssignment_private_offset = g_type_add_instance_private (vala_ccode_assignment_type_id, sizeof (ValaCCodeAssignmentPrivate));
 	return vala_ccode_assignment_type_id;
 }
@@ -289,7 +289,7 @@ vala_ccode_assignment_get_type (void)
 static GType
 vala_ccode_assignment_operator_get_type_once (void)
 {
-	static const GEnumValue values[] = {{VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE, "VALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE", "simple"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_OR, "VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_OR", "bitwise-or"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_AND, "VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_AND", "bitwise-and"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_XOR, "VALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_XOR", "bitwise-xor"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_ADD, "VALA_CCODE_ASSIGNMENT_OPERATOR_ADD", "add"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_SUB, "VALA_CCODE_ASSIGNMENT_OPERATOR_SUB", "sub"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_MUL, "VALA_CCODE_ASSIGNMENT_OPERATOR_MUL", "mul"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_DIV, "VALA_CCODE_ASSIGNMENT_OPERATOR_DIV", "div"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_PERCENT, "VALA_CCODE_ASSIGNMENT_OPERATOR_PERCENT", "percent"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_LEFT, "VALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_LEFT", "shift-left"}, {VALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_RIGHT, "VALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_RIGHT", "shift-right"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE, "BALA_CCODE_ASSIGNMENT_OPERATOR_SIMPLE", "simple"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_OR, "BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_OR", "bitwise-or"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_AND, "BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_AND", "bitwise-and"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_XOR, "BALA_CCODE_ASSIGNMENT_OPERATOR_BITWISE_XOR", "bitwise-xor"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_ADD, "BALA_CCODE_ASSIGNMENT_OPERATOR_ADD", "add"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_SUB, "BALA_CCODE_ASSIGNMENT_OPERATOR_SUB", "sub"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_MUL, "BALA_CCODE_ASSIGNMENT_OPERATOR_MUL", "mul"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_DIV, "BALA_CCODE_ASSIGNMENT_OPERATOR_DIV", "div"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_PERCENT, "BALA_CCODE_ASSIGNMENT_OPERATOR_PERCENT", "percent"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_LEFT, "BALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_LEFT", "shift-left"}, {BALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_RIGHT, "BALA_CCODE_ASSIGNMENT_OPERATOR_SHIFT_RIGHT", "shift-right"}, {0, NULL, NULL}};
 	GType vala_ccode_assignment_operator_type_id;
 	vala_ccode_assignment_operator_type_id = g_enum_register_static ("ValaCCodeAssignmentOperator", values);
 	return vala_ccode_assignment_operator_type_id;

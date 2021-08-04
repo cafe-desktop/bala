@@ -34,23 +34,23 @@
 #include <glib/gstdio.h>
 #include <gobject/gvaluecollector.h>
 
-#define VALADOC_TYPE_TREE_BUILDER (valadoc_tree_builder_get_type ())
-#define VALADOC_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilder))
-#define VALADOC_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
-#define VALADOC_IS_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TYPE_TREE_BUILDER))
-#define VALADOC_IS_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TYPE_TREE_BUILDER))
-#define VALADOC_TREE_BUILDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
+#define BALADOC_TYPE_TREE_BUILDER (valadoc_tree_builder_get_type ())
+#define BALADOC_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilder))
+#define BALADOC_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
+#define BALADOC_IS_TREE_BUILDER(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TYPE_TREE_BUILDER))
+#define BALADOC_IS_TREE_BUILDER_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TYPE_TREE_BUILDER))
+#define BALADOC_TREE_BUILDER_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilderClass))
 
 typedef struct _ValadocTreeBuilder ValadocTreeBuilder;
 typedef struct _ValadocTreeBuilderClass ValadocTreeBuilderClass;
 typedef struct _ValadocTreeBuilderPrivate ValadocTreeBuilderPrivate;
 
-#define VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA (valadoc_tree_builder_package_meta_data_get_type ())
-#define VALADOC_TREE_BUILDER_PACKAGE_META_DATA(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, ValadocTreeBuilderPackageMetaData))
-#define VALADOC_TREE_BUILDER_PACKAGE_META_DATA_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, ValadocTreeBuilderPackageMetaDataClass))
-#define VALADOC_TREE_BUILDER_IS_PACKAGE_META_DATA(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA))
-#define VALADOC_TREE_BUILDER_IS_PACKAGE_META_DATA_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA))
-#define VALADOC_TREE_BUILDER_PACKAGE_META_DATA_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, ValadocTreeBuilderPackageMetaDataClass))
+#define BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA (valadoc_tree_builder_package_meta_data_get_type ())
+#define BALADOC_TREE_BUILDER_PACKAGE_META_DATA(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, ValadocTreeBuilderPackageMetaData))
+#define BALADOC_TREE_BUILDER_PACKAGE_META_DATA_CLASS(klass) (G_TYPE_CHECK_CLASS_CAST ((klass), BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, ValadocTreeBuilderPackageMetaDataClass))
+#define BALADOC_TREE_BUILDER_IS_PACKAGE_META_DATA(obj) (G_TYPE_CHECK_INSTANCE_TYPE ((obj), BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA))
+#define BALADOC_TREE_BUILDER_IS_PACKAGE_META_DATA_CLASS(klass) (G_TYPE_CHECK_CLASS_TYPE ((klass), BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA))
+#define BALADOC_TREE_BUILDER_PACKAGE_META_DATA_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS ((obj), BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, ValadocTreeBuilderPackageMetaDataClass))
 
 typedef struct _ValadocTreeBuilderPackageMetaData ValadocTreeBuilderPackageMetaData;
 typedef struct _ValadocTreeBuilderPackageMetaDataClass ValadocTreeBuilderPackageMetaDataClass;
@@ -332,7 +332,7 @@ valadoc_tree_builder_create_pointer (ValadocTreeBuilder* self,
 	_tmp3_ = _vala_code_node_ref0 (_tmp2_);
 	vntype = _tmp3_;
 	_tmp4_ = vntype;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp4_, VALA_TYPE_POINTER_TYPE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp4_, BALA_TYPE_POINTER_TYPE)) {
 		ValadocApiPointer* _tmp5_;
 		ValaDataType* _tmp6_;
 		ValadocApiPointer* _tmp7_;
@@ -341,14 +341,14 @@ valadoc_tree_builder_create_pointer (ValadocTreeBuilder* self,
 		_tmp5_ = ptr;
 		_tmp6_ = vntype;
 		_tmp7_ = ptr;
-		_tmp8_ = valadoc_tree_builder_create_pointer (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALA_TYPE_POINTER_TYPE, ValaPointerType), (ValadocApiItem*) _tmp7_, caller);
+		_tmp8_ = valadoc_tree_builder_create_pointer (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALA_TYPE_POINTER_TYPE, ValaPointerType), (ValadocApiItem*) _tmp7_, caller);
 		_tmp9_ = _tmp8_;
 		valadoc_api_pointer_set_data_type (_tmp5_, (ValadocApiItem*) _tmp9_);
 		_g_object_unref0 (_tmp9_);
 	} else {
 		ValaDataType* _tmp10_;
 		_tmp10_ = vntype;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, VALA_TYPE_ARRAY_TYPE)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp10_, BALA_TYPE_ARRAY_TYPE)) {
 			ValadocApiPointer* _tmp11_;
 			ValaDataType* _tmp12_;
 			ValadocApiPointer* _tmp13_;
@@ -357,7 +357,7 @@ valadoc_tree_builder_create_pointer (ValadocTreeBuilder* self,
 			_tmp11_ = ptr;
 			_tmp12_ = vntype;
 			_tmp13_ = ptr;
-			_tmp14_ = valadoc_tree_builder_create_array (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, VALA_TYPE_ARRAY_TYPE, ValaArrayType), (ValadocApiItem*) _tmp13_, caller);
+			_tmp14_ = valadoc_tree_builder_create_array (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp12_, BALA_TYPE_ARRAY_TYPE, ValaArrayType), (ValadocApiItem*) _tmp13_, caller);
 			_tmp15_ = _tmp14_;
 			valadoc_api_pointer_set_data_type (_tmp11_, (ValadocApiItem*) _tmp15_);
 			_g_object_unref0 (_tmp15_);
@@ -406,7 +406,7 @@ valadoc_tree_builder_create_array (ValadocTreeBuilder* self,
 	_tmp3_ = _vala_code_node_ref0 (_tmp2_);
 	vntype = _tmp3_;
 	_tmp4_ = vntype;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp4_, VALA_TYPE_ARRAY_TYPE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp4_, BALA_TYPE_ARRAY_TYPE)) {
 		ValadocApiArray* _tmp5_;
 		ValaDataType* _tmp6_;
 		ValadocApiArray* _tmp7_;
@@ -415,7 +415,7 @@ valadoc_tree_builder_create_array (ValadocTreeBuilder* self,
 		_tmp5_ = arr;
 		_tmp6_ = vntype;
 		_tmp7_ = arr;
-		_tmp8_ = valadoc_tree_builder_create_array (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, VALA_TYPE_ARRAY_TYPE, ValaArrayType), (ValadocApiItem*) _tmp7_, caller);
+		_tmp8_ = valadoc_tree_builder_create_array (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp6_, BALA_TYPE_ARRAY_TYPE, ValaArrayType), (ValadocApiItem*) _tmp7_, caller);
 		_tmp9_ = _tmp8_;
 		valadoc_api_array_set_data_type (_tmp5_, (ValadocApiItem*) _tmp9_);
 		_g_object_unref0 (_tmp9_);
@@ -477,12 +477,12 @@ valadoc_tree_builder_create_type_reference (ValadocTreeBuilder* self,
 		_tmp2_ = FALSE;
 	}
 	if (_tmp2_) {
-		_tmp1_ = !G_TYPE_CHECK_INSTANCE_TYPE (vtyperef, VALA_TYPE_GENERIC_TYPE);
+		_tmp1_ = !G_TYPE_CHECK_INSTANCE_TYPE (vtyperef, BALA_TYPE_GENERIC_TYPE);
 	} else {
 		_tmp1_ = FALSE;
 	}
 	if (_tmp1_) {
-		_tmp0_ = !G_TYPE_CHECK_INSTANCE_TYPE (vtyperef, VALA_TYPE_POINTER_TYPE);
+		_tmp0_ = !G_TYPE_CHECK_INSTANCE_TYPE (vtyperef, BALA_TYPE_POINTER_TYPE);
 	} else {
 		_tmp0_ = FALSE;
 	}
@@ -524,26 +524,26 @@ valadoc_tree_builder_create_type_reference (ValadocTreeBuilder* self,
 	_tmp16_ = signature;
 	_tmp17_ = valadoc_api_typereference_new (parent, is_dynamic, is_nullable, _tmp16_, vtyperef);
 	type_ref = _tmp17_;
-	if (G_TYPE_CHECK_INSTANCE_TYPE (vtyperef, VALA_TYPE_POINTER_TYPE)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (vtyperef, BALA_TYPE_POINTER_TYPE)) {
 		ValadocApiTypeReference* _tmp18_;
 		ValadocApiTypeReference* _tmp19_;
 		ValadocApiPointer* _tmp20_;
 		ValadocApiPointer* _tmp21_;
 		_tmp18_ = type_ref;
 		_tmp19_ = type_ref;
-		_tmp20_ = valadoc_tree_builder_create_pointer (self, G_TYPE_CHECK_INSTANCE_CAST (vtyperef, VALA_TYPE_POINTER_TYPE, ValaPointerType), (ValadocApiItem*) _tmp19_, caller);
+		_tmp20_ = valadoc_tree_builder_create_pointer (self, G_TYPE_CHECK_INSTANCE_CAST (vtyperef, BALA_TYPE_POINTER_TYPE, ValaPointerType), (ValadocApiItem*) _tmp19_, caller);
 		_tmp21_ = _tmp20_;
 		valadoc_api_typereference_set_data_type (_tmp18_, (ValadocApiItem*) _tmp21_);
 		_g_object_unref0 (_tmp21_);
 	} else {
-		if (G_TYPE_CHECK_INSTANCE_TYPE (vtyperef, VALA_TYPE_ARRAY_TYPE)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (vtyperef, BALA_TYPE_ARRAY_TYPE)) {
 			ValadocApiTypeReference* _tmp22_;
 			ValadocApiTypeReference* _tmp23_;
 			ValadocApiArray* _tmp24_;
 			ValadocApiArray* _tmp25_;
 			_tmp22_ = type_ref;
 			_tmp23_ = type_ref;
-			_tmp24_ = valadoc_tree_builder_create_array (self, G_TYPE_CHECK_INSTANCE_CAST (vtyperef, VALA_TYPE_ARRAY_TYPE, ValaArrayType), (ValadocApiItem*) _tmp23_, caller);
+			_tmp24_ = valadoc_tree_builder_create_array (self, G_TYPE_CHECK_INSTANCE_CAST (vtyperef, BALA_TYPE_ARRAY_TYPE, ValaArrayType), (ValadocApiItem*) _tmp23_, caller);
 			_tmp25_ = _tmp24_;
 			valadoc_api_typereference_set_data_type (_tmp22_, (ValadocApiItem*) _tmp25_);
 			_g_object_unref0 (_tmp25_);
@@ -686,7 +686,7 @@ valadoc_tree_builder_create_comment (ValadocTreeBuilder* self,
 		_tmp6_ = _tmp5_;
 		_tmp7_ = vala_map_get ((ValaMap*) _tmp3_, _tmp6_);
 		file = (ValadocApiSourceFile*) _tmp7_;
-		if (G_TYPE_CHECK_INSTANCE_TYPE (comment, VALA_TYPE_GIR_COMMENT)) {
+		if (G_TYPE_CHECK_INSTANCE_TYPE (comment, BALA_TYPE_GIR_COMMENT)) {
 			ValadocApiGirSourceComment* tmp = NULL;
 			const gchar* _tmp8_;
 			const gchar* _tmp9_;
@@ -725,7 +725,7 @@ valadoc_tree_builder_create_comment (ValadocTreeBuilder* self,
 			_tmp22_ = _tmp21_;
 			_tmp23_ = valadoc_api_gir_source_comment_new (_tmp9_, _tmp10_, _tmp13_.line, _tmp16_.column, _tmp19_.line, _tmp22_.column);
 			tmp = _tmp23_;
-			_tmp24_ = vala_gir_comment_get_return_content (G_TYPE_CHECK_INSTANCE_CAST (comment, VALA_TYPE_GIR_COMMENT, ValaGirComment));
+			_tmp24_ = vala_gir_comment_get_return_content (G_TYPE_CHECK_INSTANCE_CAST (comment, BALA_TYPE_GIR_COMMENT, ValaGirComment));
 			_tmp25_ = _tmp24_;
 			if (_tmp25_ != NULL) {
 				ValaSourceReference* return_pos = NULL;
@@ -754,14 +754,14 @@ valadoc_tree_builder_create_comment (ValadocTreeBuilder* self,
 				ValaSourceLocation _tmp48_;
 				ValadocApiSourceComment* _tmp49_;
 				ValadocApiSourceComment* _tmp50_;
-				_tmp26_ = vala_gir_comment_get_return_content (G_TYPE_CHECK_INSTANCE_CAST (comment, VALA_TYPE_GIR_COMMENT, ValaGirComment));
+				_tmp26_ = vala_gir_comment_get_return_content (G_TYPE_CHECK_INSTANCE_CAST (comment, BALA_TYPE_GIR_COMMENT, ValaGirComment));
 				_tmp27_ = _tmp26_;
 				_tmp28_ = vala_comment_get_source_reference (_tmp27_);
 				_tmp29_ = _tmp28_;
 				_tmp30_ = _vala_source_reference_ref0 (_tmp29_);
 				return_pos = _tmp30_;
 				_tmp31_ = tmp;
-				_tmp32_ = vala_gir_comment_get_return_content (G_TYPE_CHECK_INSTANCE_CAST (comment, VALA_TYPE_GIR_COMMENT, ValaGirComment));
+				_tmp32_ = vala_gir_comment_get_return_content (G_TYPE_CHECK_INSTANCE_CAST (comment, BALA_TYPE_GIR_COMMENT, ValaGirComment));
 				_tmp33_ = _tmp32_;
 				_tmp34_ = vala_comment_get_content (_tmp33_);
 				_tmp35_ = _tmp34_;
@@ -784,7 +784,7 @@ valadoc_tree_builder_create_comment (ValadocTreeBuilder* self,
 				_valadoc_api_source_comment_unref0 (_tmp50_);
 				_vala_source_reference_unref0 (return_pos);
 			}
-			_tmp51_ = vala_gir_comment_parameter_iterator (G_TYPE_CHECK_INSTANCE_CAST (comment, VALA_TYPE_GIR_COMMENT, ValaGirComment));
+			_tmp51_ = vala_gir_comment_parameter_iterator (G_TYPE_CHECK_INSTANCE_CAST (comment, BALA_TYPE_GIR_COMMENT, ValaGirComment));
 			it = _tmp51_;
 			while (TRUE) {
 				ValaMapIterator* _tmp52_;
@@ -920,7 +920,7 @@ valadoc_tree_builder_get_method_name (ValadocTreeBuilder* self,
 	gchar* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (element != NULL, NULL);
-	if (G_TYPE_CHECK_INSTANCE_TYPE (element, VALA_TYPE_CREATION_METHOD)) {
+	if (G_TYPE_CHECK_INSTANCE_TYPE (element, BALA_TYPE_CREATION_METHOD)) {
 		const gchar* _tmp0_;
 		const gchar* _tmp1_;
 		_tmp0_ = vala_symbol_get_name ((ValaSymbol*) element);
@@ -1211,7 +1211,7 @@ valadoc_tree_builder_get_namespace (ValadocTreeBuilder* self,
 		ValaSymbol* _tmp4_;
 		ValaSymbol* _tmp5_;
 		_tmp1_ = namespace_symbol;
-		if (!(!G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, VALA_TYPE_NAMESPACE))) {
+		if (!(!G_TYPE_CHECK_INSTANCE_TYPE (_tmp1_, BALA_TYPE_NAMESPACE))) {
 			break;
 		}
 		_tmp2_ = namespace_symbol;
@@ -1225,7 +1225,7 @@ valadoc_tree_builder_get_namespace (ValadocTreeBuilder* self,
 	meta_data = _tmp6_;
 	_vala_assert (meta_data != NULL, "meta_data != null");
 	_tmp7_ = namespace_symbol;
-	_tmp8_ = valadoc_tree_builder_package_meta_data_get_namespace (meta_data, G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, VALA_TYPE_NAMESPACE, ValaNamespace), file);
+	_tmp8_ = valadoc_tree_builder_package_meta_data_get_namespace (meta_data, G_TYPE_CHECK_INSTANCE_CAST (_tmp7_, BALA_TYPE_NAMESPACE, ValaNamespace), file);
 	result = _tmp8_;
 	_valadoc_tree_builder_package_meta_data_unref0 (meta_data);
 	_vala_code_node_unref0 (namespace_symbol);
@@ -1461,7 +1461,7 @@ valadoc_tree_builder_add_package (ValadocTreeBuilder* self,
 	}
 	vala_code_context_add_package (context, pkg);
 	_tmp19_ = package_path;
-	_tmp20_ = vala_source_file_new (context, VALA_SOURCE_FILE_TYPE_PACKAGE, _tmp19_, NULL, FALSE);
+	_tmp20_ = vala_source_file_new (context, BALA_SOURCE_FILE_TYPE_PACKAGE, _tmp19_, NULL, FALSE);
 	vfile = _tmp20_;
 	_tmp21_ = vfile;
 	vala_code_context_add_source_file (context, _tmp21_);
@@ -1720,7 +1720,7 @@ valadoc_tree_builder_add_documented_files (ValadocTreeBuilder* self,
 						ValaProfile _tmp20_;
 						ValaSourceFile* _tmp41_;
 						_tmp7_ = rpath;
-						_tmp8_ = vala_source_file_new (context, VALA_SOURCE_FILE_TYPE_SOURCE, _tmp7_, NULL, FALSE);
+						_tmp8_ = vala_source_file_new (context, BALA_SOURCE_FILE_TYPE_SOURCE, _tmp7_, NULL, FALSE);
 						source_file = _tmp8_;
 						_tmp9_ = self->priv->source_package;
 						if (_tmp9_ == NULL) {
@@ -1745,7 +1745,7 @@ valadoc_tree_builder_add_documented_files (ValadocTreeBuilder* self,
 						_g_object_unref0 (_tmp18_);
 						_tmp19_ = vala_code_context_get_profile (context);
 						_tmp20_ = _tmp19_;
-						if (_tmp20_ == VALA_PROFILE_POSIX) {
+						if (_tmp20_ == BALA_PROFILE_POSIX) {
 							ValaUsingDirective* ns_ref = NULL;
 							ValaUnresolvedSymbol* _tmp21_;
 							ValaUnresolvedSymbol* _tmp22_;
@@ -1775,7 +1775,7 @@ valadoc_tree_builder_add_documented_files (ValadocTreeBuilder* self,
 							ValaProfile _tmp31_;
 							_tmp30_ = vala_code_context_get_profile (context);
 							_tmp31_ = _tmp30_;
-							if (_tmp31_ == VALA_PROFILE_GOBJECT) {
+							if (_tmp31_ == BALA_PROFILE_GOBJECT) {
 								ValaUsingDirective* ns_ref = NULL;
 								ValaUnresolvedSymbol* _tmp32_;
 								ValaUnresolvedSymbol* _tmp33_;
@@ -1842,7 +1842,7 @@ valadoc_tree_builder_add_documented_files (ValadocTreeBuilder* self,
 							_tmp46_ = valadoc_tree_builder_get_package_name (self, _tmp45_);
 							file_name = _tmp46_;
 							_tmp47_ = rpath;
-							_tmp48_ = vala_source_file_new (context, VALA_SOURCE_FILE_TYPE_PACKAGE, _tmp47_, NULL, FALSE);
+							_tmp48_ = vala_source_file_new (context, BALA_SOURCE_FILE_TYPE_PACKAGE, _tmp47_, NULL, FALSE);
 							vfile = _tmp48_;
 							_tmp49_ = vfile;
 							vala_code_context_add_source_file (context, _tmp49_);
@@ -2042,7 +2042,7 @@ valadoc_tree_builder_create_valac_tree (ValadocTreeBuilder* self,
 		_tmp18_ = _tmp22_ == NULL;
 	}
 	if (_tmp18_) {
-		vala_code_context_set_profile (context, VALA_PROFILE_GOBJECT);
+		vala_code_context_set_profile (context, BALA_PROFILE_GOBJECT);
 		vala_code_context_add_define (context, "GOBJECT");
 	}
 	_tmp23_ = settings->defines;
@@ -2075,7 +2075,7 @@ valadoc_tree_builder_create_valac_tree (ValadocTreeBuilder* self,
 	}
 	_tmp27_ = vala_code_context_get_profile (context);
 	_tmp28_ = _tmp27_;
-	if (_tmp28_ == VALA_PROFILE_GOBJECT) {
+	if (_tmp28_ == BALA_PROFILE_GOBJECT) {
 		const gchar* _tmp29_;
 		_tmp29_ = settings->target_glib;
 		if (_tmp29_ != NULL) {
@@ -2345,7 +2345,7 @@ valadoc_tree_builder_real_visit_class (ValaCodeVisitor* base,
 			_tmp30_ = vala_type_ref;
 			_tmp31_ = vala_data_type_get_type_symbol (_tmp30_);
 			_tmp32_ = _tmp31_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp32_, VALA_TYPE_INTERFACE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp32_, BALA_TYPE_INTERFACE)) {
 				ValadocApiClass* _tmp33_;
 				ValadocApiTypeReference* _tmp34_;
 				_tmp33_ = node;
@@ -2358,7 +2358,7 @@ valadoc_tree_builder_real_visit_class (ValaCodeVisitor* base,
 				_tmp35_ = vala_type_ref;
 				_tmp36_ = vala_data_type_get_type_symbol (_tmp35_);
 				_tmp37_ = _tmp36_;
-				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp37_, VALA_TYPE_CLASS)) {
+				if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp37_, BALA_TYPE_CLASS)) {
 					ValadocApiClass* _tmp38_;
 					ValadocApiTypeReference* _tmp39_;
 					_tmp38_ = node;
@@ -2508,7 +2508,7 @@ valadoc_tree_builder_real_visit_interface (ValaCodeVisitor* base,
 			_tmp30_ = vala_type_ref;
 			_tmp31_ = vala_data_type_get_type_symbol (_tmp30_);
 			_tmp32_ = _tmp31_;
-			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp32_, VALA_TYPE_INTERFACE)) {
+			if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp32_, BALA_TYPE_INTERFACE)) {
 				ValadocApiInterface* _tmp33_;
 				ValadocApiTypeReference* _tmp34_;
 				_tmp33_ = node;
@@ -2601,7 +2601,7 @@ valadoc_tree_builder_real_visit_struct (ValaCodeVisitor* base,
 	valadoc_api_node_add_child (_tmp15_, (ValadocApiSymbol*) _tmp16_);
 	_tmp17_ = vala_struct_get_base_type (element);
 	_tmp18_ = _tmp17_;
-	_tmp19_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp18_, VALA_TYPE_VALUE_TYPE) ? ((ValaValueType*) _tmp18_) : NULL);
+	_tmp19_ = _vala_code_node_ref0 (G_TYPE_CHECK_INSTANCE_TYPE (_tmp18_, BALA_TYPE_VALUE_TYPE) ? ((ValaValueType*) _tmp18_) : NULL);
 	basetype = _tmp19_;
 	_tmp20_ = basetype;
 	if (_tmp20_ != NULL) {
@@ -3187,7 +3187,7 @@ valadoc_tree_builder_real_visit_enum_value (ValaCodeVisitor* base,
 	self = (ValadocTreeBuilder*) base;
 	g_return_if_fail (element != NULL);
 	_tmp0_ = valadoc_tree_builder_get_parent_node_for (self, (ValaSymbol*) element);
-	parent = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_API_TYPE_ENUM, ValadocApiEnum);
+	parent = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_API_TYPE_ENUM, ValadocApiEnum);
 	_tmp1_ = valadoc_tree_builder_get_source_file (self, (ValaSymbol*) element);
 	file = _tmp1_;
 	_tmp2_ = vala_symbol_get_comment ((ValaSymbol*) element);
@@ -3353,7 +3353,7 @@ valadoc_tree_builder_real_visit_error_code (ValaCodeVisitor* base,
 	self = (ValadocTreeBuilder*) base;
 	g_return_if_fail (element != NULL);
 	_tmp0_ = valadoc_tree_builder_get_parent_node_for (self, (ValaSymbol*) element);
-	parent = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, VALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain);
+	parent = G_TYPE_CHECK_INSTANCE_CAST (_tmp0_, BALADOC_API_TYPE_ERROR_DOMAIN, ValadocApiErrorDomain);
 	_tmp1_ = valadoc_tree_builder_get_source_file (self, (ValaSymbol*) element);
 	file = _tmp1_;
 	_tmp2_ = file;
@@ -3576,7 +3576,7 @@ valadoc_tree_builder_build (ValadocTreeBuilder* self,
 			_tmp24_ = vfile;
 			_tmp25_ = vala_source_file_get_file_type (_tmp24_);
 			_tmp26_ = _tmp25_;
-			if (_tmp26_ == VALA_SOURCE_FILE_TYPE_PACKAGE) {
+			if (_tmp26_ == BALA_SOURCE_FILE_TYPE_PACKAGE) {
 				ValaSourceFile* _tmp27_;
 				ValaList* _tmp28_;
 				gint _tmp29_;
@@ -3664,7 +3664,7 @@ valadoc_tree_builder_construct (GType object_type)
 ValadocTreeBuilder*
 valadoc_tree_builder_new (void)
 {
-	return valadoc_tree_builder_construct (VALADOC_TYPE_TREE_BUILDER);
+	return valadoc_tree_builder_construct (BALADOC_TYPE_TREE_BUILDER);
 }
 
 static ValadocTreeBuilderPackageMetaData*
@@ -3684,7 +3684,7 @@ valadoc_tree_builder_package_meta_data_construct (GType object_type,
 static ValadocTreeBuilderPackageMetaData*
 valadoc_tree_builder_package_meta_data_new (ValadocApiPackage* package)
 {
-	return valadoc_tree_builder_package_meta_data_construct (VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, package);
+	return valadoc_tree_builder_package_meta_data_construct (BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, package);
 }
 
 static ValadocApiNamespace*
@@ -3787,16 +3787,16 @@ valadoc_tree_builder_package_meta_data_get_namespace (ValadocTreeBuilderPackageM
 					_tmp27_ = _tmp26_;
 					_tmp28_ = vala_source_file_get_file_type (_tmp27_);
 					_tmp29_ = _tmp28_;
-					if (_tmp29_ == VALA_SOURCE_FILE_TYPE_SOURCE) {
+					if (_tmp29_ == BALA_SOURCE_FILE_TYPE_SOURCE) {
 						ValaSourceFile* _tmp30_;
 						ValaSourceFile* _tmp31_;
 						ValaSourceFileType _tmp32_;
 						ValaSourceFileType _tmp33_;
 						_tmp30_ = valadoc_api_source_file_get_data (file);
 						_tmp31_ = _tmp30_;
-						_tmp32_ = vala_source_file_get_file_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, VALA_TYPE_SOURCE_FILE, ValaSourceFile));
+						_tmp32_ = vala_source_file_get_file_type (G_TYPE_CHECK_INSTANCE_CAST (_tmp31_, BALA_TYPE_SOURCE_FILE, ValaSourceFile));
 						_tmp33_ = _tmp32_;
-						_tmp22_ = _tmp33_ == VALA_SOURCE_FILE_TYPE_SOURCE;
+						_tmp22_ = _tmp33_ == BALA_SOURCE_FILE_TYPE_SOURCE;
 					} else {
 						_tmp22_ = FALSE;
 					}
@@ -3815,7 +3815,7 @@ valadoc_tree_builder_package_meta_data_get_namespace (ValadocTreeBuilderPackageM
 					_tmp37_ = _vala_source_reference_ref0 (_tmp36_);
 					pos = _tmp37_;
 					_tmp38_ = c;
-					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp38_, VALA_TYPE_GIR_COMMENT)) {
+					if (G_TYPE_CHECK_INSTANCE_TYPE (_tmp38_, BALA_TYPE_GIR_COMMENT)) {
 						ValaComment* _tmp39_;
 						const gchar* _tmp40_;
 						const gchar* _tmp41_;
@@ -3930,7 +3930,7 @@ valadoc_tree_builder_package_meta_data_get_namespace (ValadocTreeBuilderPackageM
 		ValadocApiNamespace* _tmp89_;
 		ValadocApiNamespace* _tmp90_;
 		_tmp82_ = parent_vns;
-		_tmp83_ = valadoc_tree_builder_package_meta_data_get_namespace (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp82_, VALA_TYPE_NAMESPACE, ValaNamespace), file);
+		_tmp83_ = valadoc_tree_builder_package_meta_data_get_namespace (self, G_TYPE_CHECK_INSTANCE_CAST (_tmp82_, BALA_TYPE_NAMESPACE, ValaNamespace), file);
 		parent_ns = _tmp83_;
 		_tmp84_ = parent_ns;
 		_tmp85_ = vala_symbol_get_name ((ValaSymbol*) vns);
@@ -3977,7 +3977,7 @@ valadoc_tree_builder_package_meta_data_is_package_for_file (ValadocTreeBuilderPa
 	g_return_val_if_fail (source_file != NULL, FALSE);
 	_tmp1_ = vala_source_file_get_file_type (source_file);
 	_tmp2_ = _tmp1_;
-	if (_tmp2_ == VALA_SOURCE_FILE_TYPE_SOURCE) {
+	if (_tmp2_ == BALA_SOURCE_FILE_TYPE_SOURCE) {
 		ValadocApiPackage* _tmp3_;
 		gboolean _tmp4_;
 		gboolean _tmp5_;
@@ -4078,7 +4078,7 @@ valadoc_tree_builder_param_spec_package_meta_data (const gchar* name,
                                                    GParamFlags flags)
 {
 	ValadocTreeBuilderParamSpecPackageMetaData* spec;
-	g_return_val_if_fail (g_type_is_a (object_type, VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA), NULL);
+	g_return_val_if_fail (g_type_is_a (object_type, BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA), NULL);
 	spec = g_param_spec_internal (G_TYPE_PARAM_OBJECT, name, nick, blurb, flags);
 	G_PARAM_SPEC (spec)->value_type = object_type;
 	return G_PARAM_SPEC (spec);
@@ -4087,7 +4087,7 @@ valadoc_tree_builder_param_spec_package_meta_data (const gchar* name,
 static gpointer
 valadoc_tree_builder_value_get_package_meta_data (const GValue* value)
 {
-	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA), NULL);
+	g_return_val_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA), NULL);
 	return value->data[0].v_pointer;
 }
 
@@ -4096,10 +4096,10 @@ valadoc_tree_builder_value_set_package_meta_data (GValue* value,
                                                   gpointer v_object)
 {
 	ValadocTreeBuilderPackageMetaData * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 		valadoc_tree_builder_package_meta_data_ref (value->data[0].v_pointer);
@@ -4116,10 +4116,10 @@ valadoc_tree_builder_value_take_package_meta_data (GValue* value,
                                                    gpointer v_object)
 {
 	ValadocTreeBuilderPackageMetaData * old;
-	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA));
+	g_return_if_fail (G_TYPE_CHECK_VALUE_TYPE (value, BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA));
 	old = value->data[0].v_pointer;
 	if (v_object) {
-		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA));
+		g_return_if_fail (G_TYPE_CHECK_INSTANCE_TYPE (v_object, BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA));
 		g_return_if_fail (g_value_type_compatible (G_TYPE_FROM_INSTANCE (v_object), G_VALUE_TYPE (value)));
 		value->data[0].v_pointer = v_object;
 	} else {
@@ -4151,10 +4151,10 @@ valadoc_tree_builder_package_meta_data_instance_init (ValadocTreeBuilderPackageM
 	_tmp0_ = g_direct_hash;
 	_tmp1_ = g_direct_equal;
 	_tmp2_ = g_direct_equal;
-	_tmp3_ = vala_hash_map_new (VALA_TYPE_NAMESPACE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, VALADOC_API_TYPE_NAMESPACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_, _tmp2_);
+	_tmp3_ = vala_hash_map_new (BALA_TYPE_NAMESPACE, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, BALADOC_API_TYPE_NAMESPACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_, _tmp2_);
 	self->namespaces = _tmp3_;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_array_list_new (VALA_TYPE_SOURCE_FILE, (GBoxedCopyFunc) vala_source_file_ref, (GDestroyNotify) vala_source_file_unref, _tmp4_);
+	_tmp5_ = vala_array_list_new (BALA_TYPE_SOURCE_FILE, (GBoxedCopyFunc) vala_source_file_ref, (GDestroyNotify) vala_source_file_unref, _tmp4_);
 	self->files = _tmp5_;
 	self->ref_count = 1;
 }
@@ -4163,7 +4163,7 @@ static void
 valadoc_tree_builder_package_meta_data_finalize (ValadocTreeBuilderPackageMetaData * obj)
 {
 	ValadocTreeBuilderPackageMetaData * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, ValadocTreeBuilderPackageMetaData);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, ValadocTreeBuilderPackageMetaData);
 	g_signal_handlers_destroy (self);
 	_g_object_unref0 (self->package);
 	_vala_map_unref0 (self->namespaces);
@@ -4208,7 +4208,7 @@ valadoc_tree_builder_package_meta_data_unref (gpointer instance)
 	ValadocTreeBuilderPackageMetaData * self;
 	self = instance;
 	if (g_atomic_int_dec_and_test (&self->ref_count)) {
-		VALADOC_TREE_BUILDER_PACKAGE_META_DATA_GET_CLASS (self)->finalize (self);
+		BALADOC_TREE_BUILDER_PACKAGE_META_DATA_GET_CLASS (self)->finalize (self);
 		g_type_free_instance ((GTypeInstance *) self);
 	}
 }
@@ -4255,17 +4255,17 @@ valadoc_tree_builder_instance_init (ValadocTreeBuilder * self,
 	ValaHashMap* _tmp9_;
 	self->priv = valadoc_tree_builder_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, (GBoxedCopyFunc) valadoc_tree_builder_package_meta_data_ref, (GDestroyNotify) valadoc_tree_builder_package_meta_data_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALADOC_TREE_BUILDER_TYPE_PACKAGE_META_DATA, (GBoxedCopyFunc) valadoc_tree_builder_package_meta_data_ref, (GDestroyNotify) valadoc_tree_builder_package_meta_data_unref, _tmp0_);
 	self->priv->packages = _tmp1_;
 	_tmp2_ = g_direct_hash;
 	_tmp3_ = g_direct_equal;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_hash_map_new (VALA_TYPE_SOURCE_FILE, (GBoxedCopyFunc) vala_source_file_ref, (GDestroyNotify) vala_source_file_unref, VALADOC_API_TYPE_SOURCE_FILE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp2_, _tmp3_, _tmp4_);
+	_tmp5_ = vala_hash_map_new (BALA_TYPE_SOURCE_FILE, (GBoxedCopyFunc) vala_source_file_ref, (GDestroyNotify) vala_source_file_unref, BALADOC_API_TYPE_SOURCE_FILE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp2_, _tmp3_, _tmp4_);
 	self->priv->files = _tmp5_;
 	_tmp6_ = g_direct_hash;
 	_tmp7_ = g_direct_equal;
 	_tmp8_ = g_direct_equal;
-	_tmp9_ = vala_hash_map_new (VALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, VALADOC_API_TYPE_SYMBOL, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp6_, _tmp7_, _tmp8_);
+	_tmp9_ = vala_hash_map_new (BALA_TYPE_SYMBOL, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, BALADOC_API_TYPE_SYMBOL, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp6_, _tmp7_, _tmp8_);
 	self->priv->symbol_map = _tmp9_;
 	self->priv->glib_error = NULL;
 }
@@ -4274,7 +4274,7 @@ static void
 valadoc_tree_builder_finalize (ValaCodeVisitor * obj)
 {
 	ValadocTreeBuilder * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilder);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_TYPE_TREE_BUILDER, ValadocTreeBuilder);
 	_vala_iterable_unref0 (self->priv->packages);
 	_valadoc_tree_builder_package_meta_data_unref0 (self->priv->source_package);
 	_vala_map_unref0 (self->priv->files);
@@ -4284,7 +4284,7 @@ valadoc_tree_builder_finalize (ValaCodeVisitor * obj)
 	_g_object_unref0 (self->priv->current_node);
 	_valadoc_api_tree_unref0 (self->priv->tree);
 	_g_object_unref0 (self->priv->glib_error);
-	VALA_CODE_VISITOR_CLASS (valadoc_tree_builder_parent_class)->finalize (obj);
+	BALA_CODE_VISITOR_CLASS (valadoc_tree_builder_parent_class)->finalize (obj);
 }
 
 /**
@@ -4295,7 +4295,7 @@ valadoc_tree_builder_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocTreeBuilderClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_tree_builder_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocTreeBuilder), 0, (GInstanceInitFunc) valadoc_tree_builder_instance_init, NULL };
 	GType valadoc_tree_builder_type_id;
-	valadoc_tree_builder_type_id = g_type_register_static (VALA_TYPE_CODE_VISITOR, "ValadocTreeBuilder", &g_define_type_info, 0);
+	valadoc_tree_builder_type_id = g_type_register_static (BALA_TYPE_CODE_VISITOR, "ValadocTreeBuilder", &g_define_type_info, 0);
 	ValadocTreeBuilder_private_offset = g_type_add_instance_private (valadoc_tree_builder_type_id, sizeof (ValadocTreeBuilderPrivate));
 	return valadoc_tree_builder_type_id;
 }

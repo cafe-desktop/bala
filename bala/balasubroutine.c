@@ -155,7 +155,7 @@ gboolean
 vala_subroutine_get_has_result (ValaSubroutine* self)
 {
 	g_return_val_if_fail (self != NULL, FALSE);
-	return VALA_SUBROUTINE_GET_CLASS (self)->get_has_result (self);
+	return BALA_SUBROUTINE_GET_CLASS (self)->get_has_result (self);
 }
 
 ValaSubroutine*
@@ -225,13 +225,13 @@ static void
 vala_subroutine_finalize (ValaCodeNode * obj)
 {
 	ValaSubroutine * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SUBROUTINE, ValaSubroutine);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SUBROUTINE, ValaSubroutine);
 	_vala_code_node_unref0 (self->priv->_body);
 	_vala_basic_block_unref0 (self->priv->_entry_block);
 	_vala_basic_block_unref0 (self->priv->_return_block);
 	_vala_basic_block_unref0 (self->priv->_exit_block);
 	_vala_code_node_unref0 (self->priv->_result_var);
-	VALA_CODE_NODE_CLASS (vala_subroutine_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_subroutine_parent_class)->finalize (obj);
 }
 
 static GType
@@ -239,7 +239,7 @@ vala_subroutine_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaSubroutineClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_subroutine_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaSubroutine), 0, (GInstanceInitFunc) vala_subroutine_instance_init, NULL };
 	GType vala_subroutine_type_id;
-	vala_subroutine_type_id = g_type_register_static (VALA_TYPE_SYMBOL, "ValaSubroutine", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
+	vala_subroutine_type_id = g_type_register_static (BALA_TYPE_SYMBOL, "ValaSubroutine", &g_define_type_info, G_TYPE_FLAG_ABSTRACT);
 	ValaSubroutine_private_offset = g_type_add_instance_private (vala_subroutine_type_id, sizeof (ValaSubroutinePrivate));
 	return vala_subroutine_type_id;
 }

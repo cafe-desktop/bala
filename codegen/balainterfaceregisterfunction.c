@@ -102,7 +102,7 @@ vala_interface_register_function_construct (GType object_type,
 ValaInterfaceRegisterFunction*
 vala_interface_register_function_new (ValaInterface* iface)
 {
-	return vala_interface_register_function_construct (VALA_TYPE_INTERFACE_REGISTER_FUNCTION, iface);
+	return vala_interface_register_function_construct (BALA_TYPE_INTERFACE_REGISTER_FUNCTION, iface);
 }
 
 static gpointer
@@ -371,7 +371,7 @@ vala_interface_register_function_real_get_type_interface_init_statements (ValaTy
 	_tmp34_ = vala_code_context_get_codegen (context);
 	_tmp35_ = _tmp34_;
 	_tmp36_ = self->priv->_interface_reference;
-	vala_ccode_base_module_register_dbus_info (G_TYPE_CHECK_INSTANCE_CAST (_tmp35_, VALA_TYPE_CCODE_BASE_MODULE, ValaCCodeBaseModule), block, (ValaObjectTypeSymbol*) _tmp36_);
+	vala_ccode_base_module_register_dbus_info (G_TYPE_CHECK_INSTANCE_CAST (_tmp35_, BALA_TYPE_CCODE_BASE_MODULE, ValaCCodeBaseModule), block, (ValaObjectTypeSymbol*) _tmp36_);
 }
 
 static void
@@ -405,8 +405,8 @@ static void
 vala_interface_register_function_finalize (ValaTypeRegisterFunction * obj)
 {
 	ValaInterfaceRegisterFunction * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_INTERFACE_REGISTER_FUNCTION, ValaInterfaceRegisterFunction);
-	VALA_TYPEREGISTER_FUNCTION_CLASS (vala_interface_register_function_parent_class)->finalize (obj);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_INTERFACE_REGISTER_FUNCTION, ValaInterfaceRegisterFunction);
+	BALA_TYPEREGISTER_FUNCTION_CLASS (vala_interface_register_function_parent_class)->finalize (obj);
 }
 
 /**
@@ -417,7 +417,7 @@ vala_interface_register_function_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaInterfaceRegisterFunctionClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_interface_register_function_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaInterfaceRegisterFunction), 0, (GInstanceInitFunc) vala_interface_register_function_instance_init, NULL };
 	GType vala_interface_register_function_type_id;
-	vala_interface_register_function_type_id = g_type_register_static (VALA_TYPE_TYPEREGISTER_FUNCTION, "ValaInterfaceRegisterFunction", &g_define_type_info, 0);
+	vala_interface_register_function_type_id = g_type_register_static (BALA_TYPE_TYPEREGISTER_FUNCTION, "ValaInterfaceRegisterFunction", &g_define_type_info, 0);
 	ValaInterfaceRegisterFunction_private_offset = g_type_add_instance_private (vala_interface_register_function_type_id, sizeof (ValaInterfaceRegisterFunctionPrivate));
 	return vala_interface_register_function_type_id;
 }

@@ -32,11 +32,11 @@
 #include <glib-object.h>
 
 enum  {
-	VALADOC_CONTENT_HEADLINE_0_PROPERTY,
-	VALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY,
-	VALADOC_CONTENT_HEADLINE_NUM_PROPERTIES
+	BALADOC_CONTENT_HEADLINE_0_PROPERTY,
+	BALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY,
+	BALADOC_CONTENT_HEADLINE_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_content_headline_properties[VALADOC_CONTENT_HEADLINE_NUM_PROPERTIES];
+static GParamSpec* valadoc_content_headline_properties[BALADOC_CONTENT_HEADLINE_NUM_PROPERTIES];
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 
@@ -99,7 +99,7 @@ valadoc_content_headline_set_level (ValadocContentHeadline* self,
 	old_value = valadoc_content_headline_get_level (self);
 	if (old_value != value) {
 		self->priv->_level = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_content_headline_properties[VALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_content_headline_properties[BALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY]);
 	}
 }
 
@@ -115,7 +115,7 @@ valadoc_content_headline_construct (GType object_type)
 G_GNUC_INTERNAL ValadocContentHeadline*
 valadoc_content_headline_new (void)
 {
-	return valadoc_content_headline_construct (VALADOC_CONTENT_TYPE_HEADLINE);
+	return valadoc_content_headline_construct (BALADOC_CONTENT_TYPE_HEADLINE);
 }
 
 static void
@@ -133,7 +133,7 @@ valadoc_content_headline_real_check (ValadocContentContentElement* base,
 	g_return_if_fail (file_path != NULL);
 	g_return_if_fail (reporter != NULL);
 	g_return_if_fail (settings != NULL);
-	VALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_headline_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, VALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent), api_root, container, file_path, reporter, settings);
+	BALADOC_CONTENT_CONTENT_ELEMENT_CLASS (valadoc_content_headline_parent_class)->check ((ValadocContentContentElement*) G_TYPE_CHECK_INSTANCE_CAST (self, BALADOC_CONTENT_TYPE_INLINE_CONTENT, ValadocContentInlineContent), api_root, container, file_path, reporter, settings);
 }
 
 static void
@@ -227,7 +227,7 @@ valadoc_content_headline_real_copy (ValadocContentContentElement* base,
 			_tmp14_ = element;
 			_tmp15_ = headline;
 			_tmp16_ = valadoc_content_content_element_copy ((ValadocContentContentElement*) _tmp14_, (ValadocContentContentElement*) _tmp15_);
-			_tmp17_ = VALADOC_CONTENT_IS_INLINE (_tmp16_) ? ((ValadocContentInline*) _tmp16_) : NULL;
+			_tmp17_ = BALADOC_CONTENT_IS_INLINE (_tmp16_) ? ((ValadocContentInline*) _tmp16_) : NULL;
 			if (_tmp17_ == NULL) {
 				_g_object_unref0 (_tmp16_);
 			}
@@ -259,7 +259,7 @@ valadoc_content_headline_class_init (ValadocContentHeadlineClass * klass,
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_content_headline_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_content_headline_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_content_headline_finalize;
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY, valadoc_content_headline_properties[VALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY] = g_param_spec_int ("level", "level", "level", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY, valadoc_content_headline_properties[BALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY] = g_param_spec_int ("level", "level", "level", G_MININT, G_MAXINT, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 }
 
 static void
@@ -280,7 +280,7 @@ static void
 valadoc_content_headline_finalize (GObject * obj)
 {
 	ValadocContentHeadline * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
 	G_OBJECT_CLASS (valadoc_content_headline_parent_class)->finalize (obj);
 }
 
@@ -290,8 +290,8 @@ valadoc_content_headline_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocContentHeadlineClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_content_headline_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocContentHeadline), 0, (GInstanceInitFunc) valadoc_content_headline_instance_init, NULL };
 	static const GInterfaceInfo valadoc_content_block_info = { (GInterfaceInitFunc) valadoc_content_headline_valadoc_content_block_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType valadoc_content_headline_type_id;
-	valadoc_content_headline_type_id = g_type_register_static (VALADOC_CONTENT_TYPE_INLINE_CONTENT, "ValadocContentHeadline", &g_define_type_info, 0);
-	g_type_add_interface_static (valadoc_content_headline_type_id, VALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
+	valadoc_content_headline_type_id = g_type_register_static (BALADOC_CONTENT_TYPE_INLINE_CONTENT, "ValadocContentHeadline", &g_define_type_info, 0);
+	g_type_add_interface_static (valadoc_content_headline_type_id, BALADOC_CONTENT_TYPE_BLOCK, &valadoc_content_block_info);
 	ValadocContentHeadline_private_offset = g_type_add_instance_private (valadoc_content_headline_type_id, sizeof (ValadocContentHeadlinePrivate));
 	return valadoc_content_headline_type_id;
 }
@@ -315,9 +315,9 @@ _vala_valadoc_content_headline_get_property (GObject * object,
                                              GParamSpec * pspec)
 {
 	ValadocContentHeadline * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
 	switch (property_id) {
-		case VALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY:
+		case BALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY:
 		g_value_set_int (value, valadoc_content_headline_get_level (self));
 		break;
 		default:
@@ -333,9 +333,9 @@ _vala_valadoc_content_headline_set_property (GObject * object,
                                              GParamSpec * pspec)
 {
 	ValadocContentHeadline * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_CONTENT_TYPE_HEADLINE, ValadocContentHeadline);
 	switch (property_id) {
-		case VALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY:
+		case BALADOC_CONTENT_HEADLINE_LEVEL_PROPERTY:
 		valadoc_content_headline_set_level (self, g_value_get_int (value));
 		break;
 		default:

@@ -105,7 +105,7 @@ ValaCCodeIncludeDirective*
 vala_ccode_include_directive_new (const gchar* _filename,
                                   gboolean _local)
 {
-	return vala_ccode_include_directive_construct (VALA_TYPE_CCODE_INCLUDE_DIRECTIVE, _filename, _local);
+	return vala_ccode_include_directive_construct (BALA_TYPE_CCODE_INCLUDE_DIRECTIVE, _filename, _local);
 }
 
 static void
@@ -156,9 +156,9 @@ static void
 vala_ccode_include_directive_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeIncludeDirective * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_INCLUDE_DIRECTIVE, ValaCCodeIncludeDirective);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_INCLUDE_DIRECTIVE, ValaCCodeIncludeDirective);
 	_g_free0 (self->priv->_filename);
-	VALA_CCODE_NODE_CLASS (vala_ccode_include_directive_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_include_directive_parent_class)->finalize (obj);
 }
 
 /**
@@ -169,7 +169,7 @@ vala_ccode_include_directive_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeIncludeDirectiveClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_include_directive_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeIncludeDirective), 0, (GInstanceInitFunc) vala_ccode_include_directive_instance_init, NULL };
 	GType vala_ccode_include_directive_type_id;
-	vala_ccode_include_directive_type_id = g_type_register_static (VALA_TYPE_CCODE_NODE, "ValaCCodeIncludeDirective", &g_define_type_info, 0);
+	vala_ccode_include_directive_type_id = g_type_register_static (BALA_TYPE_CCODE_NODE, "ValaCCodeIncludeDirective", &g_define_type_info, 0);
 	ValaCCodeIncludeDirective_private_offset = g_type_add_instance_private (vala_ccode_include_directive_type_id, sizeof (ValaCCodeIncludeDirectivePrivate));
 	return vala_ccode_include_directive_type_id;
 }

@@ -33,16 +33,16 @@
 #include <valacodegen.h>
 
 enum  {
-	VALADOC_API_CLASS_0_PROPERTY,
-	VALADOC_API_CLASS_BASE_TYPE_PROPERTY,
-	VALADOC_API_CLASS_IS_ABSTRACT_PROPERTY,
-	VALADOC_API_CLASS_IS_SEALED_PROPERTY,
-	VALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY,
-	VALADOC_API_CLASS_IS_COMPACT_PROPERTY,
-	VALADOC_API_CLASS_NODE_TYPE_PROPERTY,
-	VALADOC_API_CLASS_NUM_PROPERTIES
+	BALADOC_API_CLASS_0_PROPERTY,
+	BALADOC_API_CLASS_BASE_TYPE_PROPERTY,
+	BALADOC_API_CLASS_IS_ABSTRACT_PROPERTY,
+	BALADOC_API_CLASS_IS_SEALED_PROPERTY,
+	BALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY,
+	BALADOC_API_CLASS_IS_COMPACT_PROPERTY,
+	BALADOC_API_CLASS_NODE_TYPE_PROPERTY,
+	BALADOC_API_CLASS_NUM_PROPERTIES
 };
-static GParamSpec* valadoc_api_class_properties[VALADOC_API_CLASS_NUM_PROPERTIES];
+static GParamSpec* valadoc_api_class_properties[BALADOC_API_CLASS_NUM_PROPERTIES];
 #define _vala_iterable_unref0(var) ((var == NULL) ? NULL : (var = (vala_iterable_unref (var), NULL)))
 #define _g_free0(var) (var = (g_free (var), NULL))
 #define _g_object_unref0(var) ((var == NULL) ? NULL : (var = (g_object_unref (var), NULL)))
@@ -160,7 +160,7 @@ valadoc_api_class_construct (GType object_type,
 	is_basic_type = _tmp0_;
 	self = (ValadocApiClass*) valadoc_api_typesymbol_construct (object_type, parent, file, name, accessibility, comment, is_basic_type, (ValaTypeSymbol*) data);
 	_tmp5_ = g_direct_equal;
-	_tmp6_ = vala_array_list_new (VALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp5_);
+	_tmp6_ = vala_array_list_new (BALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp5_);
 	_vala_iterable_unref0 (self->priv->interfaces);
 	self->priv->interfaces = _tmp6_;
 	_tmp7_ = vala_class_get_is_compact (data);
@@ -261,7 +261,7 @@ valadoc_api_class_new (ValadocApiNode* parent,
                        ValadocApiSourceComment* comment,
                        ValaClass* data)
 {
-	return valadoc_api_class_construct (VALADOC_API_TYPE_CLASS, parent, file, name, accessibility, comment, data);
+	return valadoc_api_class_construct (BALADOC_API_TYPE_CLASS, parent, file, name, accessibility, comment, data);
 }
 
 static gchar*
@@ -331,7 +331,7 @@ valadoc_api_class_set_base_type (ValadocApiClass* self,
 		_tmp0_ = _g_object_ref0 (value);
 		_g_object_unref0 (self->priv->_base_type);
 		self->priv->_base_type = _tmp0_;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_class_properties[VALADOC_API_CLASS_BASE_TYPE_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_class_properties[BALADOC_API_CLASS_BASE_TYPE_PROPERTY]);
 	}
 }
 
@@ -634,7 +634,7 @@ valadoc_api_class_get_full_implemented_interface_list (ValadocApiClass* self)
 		ValaArrayList* _tmp4_;
 		ValadocApiTypeReference* _tmp5_;
 		_tmp1_ = g_direct_equal;
-		_tmp2_ = vala_array_list_new (VALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
+		_tmp2_ = vala_array_list_new (BALADOC_API_TYPE_TYPEREFERENCE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp1_);
 		_vala_iterable_unref0 (self->priv->_full_implemented_interfaces);
 		self->priv->_full_implemented_interfaces = (ValaCollection*) _tmp2_;
 		_tmp3_ = self->priv->_full_implemented_interfaces;
@@ -652,7 +652,7 @@ valadoc_api_class_get_full_implemented_interface_list (ValadocApiClass* self)
 			_tmp7_ = self->priv->_base_type;
 			_tmp8_ = valadoc_api_typereference_get_data_type (_tmp7_);
 			_tmp9_ = _tmp8_;
-			_tmp10_ = valadoc_api_class_get_full_implemented_interface_list (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, VALADOC_API_TYPE_CLASS, ValadocApiClass));
+			_tmp10_ = valadoc_api_class_get_full_implemented_interface_list (G_TYPE_CHECK_INSTANCE_CAST (_tmp9_, BALADOC_API_TYPE_CLASS, ValadocApiClass));
 			_tmp11_ = _tmp10_;
 			vala_collection_add_all (_tmp6_, _tmp11_);
 			_vala_iterable_unref0 (_tmp11_);
@@ -693,7 +693,7 @@ valadoc_api_class_set_is_abstract (ValadocApiClass* self,
 	old_value = valadoc_api_class_get_is_abstract (self);
 	if (old_value != value) {
 		self->priv->_is_abstract = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_class_properties[VALADOC_API_CLASS_IS_ABSTRACT_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_class_properties[BALADOC_API_CLASS_IS_ABSTRACT_PROPERTY]);
 	}
 }
 
@@ -715,7 +715,7 @@ valadoc_api_class_set_is_sealed (ValadocApiClass* self,
 	old_value = valadoc_api_class_get_is_sealed (self);
 	if (old_value != value) {
 		self->priv->_is_sealed = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_class_properties[VALADOC_API_CLASS_IS_SEALED_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_class_properties[BALADOC_API_CLASS_IS_SEALED_PROPERTY]);
 	}
 }
 
@@ -737,7 +737,7 @@ valadoc_api_class_set_is_fundamental (ValadocApiClass* self,
 	old_value = valadoc_api_class_get_is_fundamental (self);
 	if (old_value != value) {
 		self->priv->_is_fundamental = value;
-		g_object_notify_by_pspec ((GObject *) self, valadoc_api_class_properties[VALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY]);
+		g_object_notify_by_pspec ((GObject *) self, valadoc_api_class_properties[BALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY]);
 	}
 }
 
@@ -752,7 +752,7 @@ valadoc_api_class_get_is_compact (ValadocApiClass* self)
 	g_return_val_if_fail (self != NULL, FALSE);
 	_tmp0_ = valadoc_api_item_get_data ((ValadocApiItem*) self);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = vala_class_get_is_compact (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, VALA_TYPE_CLASS, ValaClass));
+	_tmp2_ = vala_class_get_is_compact (G_TYPE_CHECK_INSTANCE_CAST (_tmp1_, BALA_TYPE_CLASS, ValaClass));
 	_tmp3_ = _tmp2_;
 	result = _tmp3_;
 	return result;
@@ -764,7 +764,7 @@ valadoc_api_class_real_get_node_type (ValadocApiNode* base)
 	ValadocApiNodeType result;
 	ValadocApiClass* self;
 	self = (ValadocApiClass*) base;
-	result = VALADOC_API_NODE_TYPE_CLASS;
+	result = BALADOC_API_NODE_TYPE_CLASS;
 	return result;
 }
 
@@ -840,7 +840,7 @@ valadoc_api_class_register_child_class (ValadocApiClass* self,
 		_tmp1_ = self->priv->_base_type;
 		_tmp2_ = valadoc_api_typereference_get_data_type (_tmp1_);
 		_tmp3_ = _tmp2_;
-		valadoc_api_class_register_child_class (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, VALADOC_API_TYPE_CLASS, ValadocApiClass), cl);
+		valadoc_api_class_register_child_class (G_TYPE_CHECK_INSTANCE_CAST (_tmp3_, BALADOC_API_TYPE_CLASS, ValadocApiClass), cl);
 	}
 	_tmp4_ = self->priv->_known_child_classes;
 	vala_collection_add ((ValaCollection*) _tmp4_, cl);
@@ -900,7 +900,7 @@ valadoc_api_class_real_build_signature (ValadocApiItem* base)
 	valadoc_api_signature_builder_append_keyword (_tmp9_, "class", TRUE);
 	_tmp10_ = signature;
 	valadoc_api_signature_builder_append_symbol (_tmp10_, (ValadocApiNode*) self, TRUE);
-	_tmp11_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, VALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
+	_tmp11_ = valadoc_api_node_get_children_by_type ((ValadocApiNode*) self, BALADOC_API_NODE_TYPE_TYPE_PARAMETER, FALSE);
 	type_parameters = _tmp11_;
 	_tmp12_ = type_parameters;
 	_tmp13_ = vala_collection_get_size ((ValaCollection*) _tmp12_);
@@ -1060,32 +1060,32 @@ valadoc_api_class_class_init (ValadocApiClassClass * klass,
 	g_type_class_adjust_private_offset (klass, &ValadocApiClass_private_offset);
 	((ValadocApiNodeClass *) klass)->accept = (void (*) (ValadocApiNode*, ValadocApiVisitor*)) valadoc_api_class_real_accept;
 	((ValadocApiItemClass *) klass)->build_signature = (ValadocContentInline* (*) (ValadocApiItem*)) valadoc_api_class_real_build_signature;
-	VALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_class_real_get_node_type;
+	BALADOC_API_NODE_CLASS (klass)->get_node_type = valadoc_api_class_real_get_node_type;
 	G_OBJECT_CLASS (klass)->get_property = _vala_valadoc_api_class_get_property;
 	G_OBJECT_CLASS (klass)->set_property = _vala_valadoc_api_class_set_property;
 	G_OBJECT_CLASS (klass)->finalize = valadoc_api_class_finalize;
 	/**
 	 * Specifies the base class.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_CLASS_BASE_TYPE_PROPERTY, valadoc_api_class_properties[VALADOC_API_CLASS_BASE_TYPE_PROPERTY] = g_param_spec_object ("base-type", "base-type", "base-type", VALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_CLASS_BASE_TYPE_PROPERTY, valadoc_api_class_properties[BALADOC_API_CLASS_BASE_TYPE_PROPERTY] = g_param_spec_object ("base-type", "base-type", "base-type", BALADOC_API_TYPE_TYPEREFERENCE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));
 	/**
 	 * Specifies whether this class is abstract.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_CLASS_IS_ABSTRACT_PROPERTY, valadoc_api_class_properties[VALADOC_API_CLASS_IS_ABSTRACT_PROPERTY] = g_param_spec_boolean ("is-abstract", "is-abstract", "is-abstract", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_CLASS_IS_ABSTRACT_PROPERTY, valadoc_api_class_properties[BALADOC_API_CLASS_IS_ABSTRACT_PROPERTY] = g_param_spec_boolean ("is-abstract", "is-abstract", "is-abstract", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this class is sealed. Sealed classes may not be
 	 * sub-classed.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_CLASS_IS_SEALED_PROPERTY, valadoc_api_class_properties[VALADOC_API_CLASS_IS_SEALED_PROPERTY] = g_param_spec_boolean ("is-sealed", "is-sealed", "is-sealed", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_CLASS_IS_SEALED_PROPERTY, valadoc_api_class_properties[BALADOC_API_CLASS_IS_SEALED_PROPERTY] = g_param_spec_boolean ("is-sealed", "is-sealed", "is-sealed", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * Specifies whether this class is fundamental.
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY, valadoc_api_class_properties[VALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY] = g_param_spec_boolean ("is-fundamental", "is-fundamental", "is-fundamental", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_CLASS_IS_COMPACT_PROPERTY, valadoc_api_class_properties[VALADOC_API_CLASS_IS_COMPACT_PROPERTY] = g_param_spec_boolean ("is-compact", "is-compact", "is-compact", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY, valadoc_api_class_properties[BALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY] = g_param_spec_boolean ("is-fundamental", "is-fundamental", "is-fundamental", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_CLASS_IS_COMPACT_PROPERTY, valadoc_api_class_properties[BALADOC_API_CLASS_IS_COMPACT_PROPERTY] = g_param_spec_boolean ("is-compact", "is-compact", "is-compact", FALSE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
 	 * {@inheritDoc}
 	 */
-	g_object_class_install_property (G_OBJECT_CLASS (klass), VALADOC_API_CLASS_NODE_TYPE_PROPERTY, valadoc_api_class_properties[VALADOC_API_CLASS_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", VALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
+	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_CLASS_NODE_TYPE_PROPERTY, valadoc_api_class_properties[BALADOC_API_CLASS_NODE_TYPE_PROPERTY] = g_param_spec_enum ("node-type", "node-type", "node-type", BALADOC_API_TYPE_NODE_TYPE, 0, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 }
 
 static void
@@ -1102,11 +1102,11 @@ valadoc_api_class_instance_init (ValadocApiClass * self,
 	self->priv->_full_implemented_interfaces = NULL;
 	_tmp0_ = g_direct_hash;
 	_tmp1_ = g_direct_equal;
-	_tmp2_ = vala_hash_set_new (VALADOC_API_TYPE_INTERFACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_);
+	_tmp2_ = vala_hash_set_new (BALADOC_API_TYPE_INTERFACE, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp0_, _tmp1_);
 	self->priv->_known_derived_interfaces = (ValaSet*) _tmp2_;
 	_tmp3_ = g_direct_hash;
 	_tmp4_ = g_direct_equal;
-	_tmp5_ = vala_hash_set_new (VALADOC_API_TYPE_CLASS, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp3_, _tmp4_);
+	_tmp5_ = vala_hash_set_new (BALADOC_API_TYPE_CLASS, (GBoxedCopyFunc) g_object_ref, (GDestroyNotify) g_object_unref, _tmp3_, _tmp4_);
 	self->priv->_known_child_classes = (ValaSet*) _tmp5_;
 }
 
@@ -1114,7 +1114,7 @@ static void
 valadoc_api_class_finalize (GObject * obj)
 {
 	ValadocApiClass * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALADOC_API_TYPE_CLASS, ValadocApiClass);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALADOC_API_TYPE_CLASS, ValadocApiClass);
 	_vala_iterable_unref0 (self->priv->interfaces);
 	_g_free0 (self->priv->dbus_name);
 	_g_free0 (self->priv->take_value_function_cname);
@@ -1146,7 +1146,7 @@ valadoc_api_class_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValadocApiClassClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) valadoc_api_class_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValadocApiClass), 0, (GInstanceInitFunc) valadoc_api_class_instance_init, NULL };
 	GType valadoc_api_class_type_id;
-	valadoc_api_class_type_id = g_type_register_static (VALADOC_API_TYPE_TYPESYMBOL, "ValadocApiClass", &g_define_type_info, 0);
+	valadoc_api_class_type_id = g_type_register_static (BALADOC_API_TYPE_TYPESYMBOL, "ValadocApiClass", &g_define_type_info, 0);
 	ValadocApiClass_private_offset = g_type_add_instance_private (valadoc_api_class_type_id, sizeof (ValadocApiClassPrivate));
 	return valadoc_api_class_type_id;
 }
@@ -1170,24 +1170,24 @@ _vala_valadoc_api_class_get_property (GObject * object,
                                       GParamSpec * pspec)
 {
 	ValadocApiClass * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_CLASS, ValadocApiClass);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_CLASS, ValadocApiClass);
 	switch (property_id) {
-		case VALADOC_API_CLASS_BASE_TYPE_PROPERTY:
+		case BALADOC_API_CLASS_BASE_TYPE_PROPERTY:
 		g_value_set_object (value, valadoc_api_class_get_base_type (self));
 		break;
-		case VALADOC_API_CLASS_IS_ABSTRACT_PROPERTY:
+		case BALADOC_API_CLASS_IS_ABSTRACT_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_class_get_is_abstract (self));
 		break;
-		case VALADOC_API_CLASS_IS_SEALED_PROPERTY:
+		case BALADOC_API_CLASS_IS_SEALED_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_class_get_is_sealed (self));
 		break;
-		case VALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY:
+		case BALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_class_get_is_fundamental (self));
 		break;
-		case VALADOC_API_CLASS_IS_COMPACT_PROPERTY:
+		case BALADOC_API_CLASS_IS_COMPACT_PROPERTY:
 		g_value_set_boolean (value, valadoc_api_class_get_is_compact (self));
 		break;
-		case VALADOC_API_CLASS_NODE_TYPE_PROPERTY:
+		case BALADOC_API_CLASS_NODE_TYPE_PROPERTY:
 		g_value_set_enum (value, valadoc_api_node_get_node_type ((ValadocApiNode*) self));
 		break;
 		default:
@@ -1203,18 +1203,18 @@ _vala_valadoc_api_class_set_property (GObject * object,
                                       GParamSpec * pspec)
 {
 	ValadocApiClass * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (object, VALADOC_API_TYPE_CLASS, ValadocApiClass);
+	self = G_TYPE_CHECK_INSTANCE_CAST (object, BALADOC_API_TYPE_CLASS, ValadocApiClass);
 	switch (property_id) {
-		case VALADOC_API_CLASS_BASE_TYPE_PROPERTY:
+		case BALADOC_API_CLASS_BASE_TYPE_PROPERTY:
 		valadoc_api_class_set_base_type (self, g_value_get_object (value));
 		break;
-		case VALADOC_API_CLASS_IS_ABSTRACT_PROPERTY:
+		case BALADOC_API_CLASS_IS_ABSTRACT_PROPERTY:
 		valadoc_api_class_set_is_abstract (self, g_value_get_boolean (value));
 		break;
-		case VALADOC_API_CLASS_IS_SEALED_PROPERTY:
+		case BALADOC_API_CLASS_IS_SEALED_PROPERTY:
 		valadoc_api_class_set_is_sealed (self, g_value_get_boolean (value));
 		break;
-		case VALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY:
+		case BALADOC_API_CLASS_IS_FUNDAMENTAL_PROPERTY:
 		valadoc_api_class_set_is_fundamental (self, g_value_get_boolean (value));
 		break;
 		default:

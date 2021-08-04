@@ -2804,7 +2804,7 @@
 <para> Set if the profile is gobject </para></entry></row><row rowsep="1"><entry colsep="1" rowsep="1">
 <para> DOVA </para></entry><entry colsep="1" rowsep="1">
 <para> Set if the profile is dova </para></entry></row><row rowsep="1"><entry colsep="1" rowsep="1">
-<para> VALA_X_Y </para></entry><entry colsep="1" rowsep="1">
+<para> BALA_X_Y </para></entry><entry colsep="1" rowsep="1">
 <para> Set if Vala API version is equal or higher to version X.Y </para></entry></row><row rowsep="1"><entry colsep="1" rowsep="1">
 <para> DBUS_GLIB </para></entry><entry colsep="1" rowsep="1">
 <para> Set if using dbus-glib-1 package </para></entry></row></tbody></tgroup></informaltable>

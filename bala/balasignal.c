@@ -228,7 +228,7 @@ vala_signal_new (const gchar* name,
                  ValaSourceReference* source_reference,
                  ValaComment* comment)
 {
-	return vala_signal_construct (VALA_TYPE_SIGNAL, name, return_type, source_reference, comment);
+	return vala_signal_construct (BALA_TYPE_SIGNAL, name, return_type, source_reference, comment);
 }
 
 /**
@@ -318,7 +318,7 @@ vala_signal_get_delegate (ValaSignal* self,
 	_tmp4_ = vala_delegate_new (NULL, _tmp3_, NULL, NULL);
 	generated_delegate = _tmp4_;
 	_tmp5_ = generated_delegate;
-	vala_symbol_set_access ((ValaSymbol*) _tmp5_, VALA_SYMBOL_ACCESSIBILITY_PUBLIC);
+	vala_symbol_set_access ((ValaSymbol*) _tmp5_, BALA_SYMBOL_ACCESSIBILITY_PUBLIC);
 	_tmp6_ = generated_delegate;
 	_tmp7_ = vala_symbol_get_scope ((ValaSymbol*) self);
 	_tmp8_ = _tmp7_;
@@ -410,7 +410,7 @@ vala_signal_get_delegate (ValaSignal* self,
 		ValaSymbol* _tmp37_;
 		_tmp36_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 		_tmp37_ = _tmp36_;
-		cl = G_TYPE_CHECK_INSTANCE_CAST (_tmp37_, VALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol);
+		cl = G_TYPE_CHECK_INSTANCE_CAST (_tmp37_, BALA_TYPE_OBJECT_TYPE_SYMBOL, ValaObjectTypeSymbol);
 		{
 			ValaList* _type_param_list = NULL;
 			ValaObjectTypeSymbol* _tmp38_;
@@ -747,7 +747,7 @@ vala_signal_real_check (ValaCodeNode* base,
 	vala_code_node_set_checked ((ValaCodeNode*) self, TRUE);
 	_tmp4_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 	_tmp5_ = _tmp4_;
-	parent_cl = VALA_IS_CLASS (_tmp5_) ? ((ValaClass*) _tmp5_) : NULL;
+	parent_cl = BALA_IS_CLASS (_tmp5_) ? ((ValaClass*) _tmp5_) : NULL;
 	_tmp7_ = parent_cl;
 	if (_tmp7_ != NULL) {
 		ValaClass* _tmp8_;
@@ -821,7 +821,7 @@ vala_signal_real_check (ValaCodeNode* base,
 				_tmp28_ = _tmp27_;
 				_tmp29_ = vala_semantic_analyzer_symbol_lookup_inherited ((ValaSymbol*) _tmp26_, _tmp28_);
 				_tmp30_ = _tmp29_;
-				_tmp31_ = VALA_IS_SIGNAL (_tmp30_);
+				_tmp31_ = BALA_IS_SIGNAL (_tmp30_);
 				_vala_code_node_unref0 (_tmp30_);
 				if (_tmp31_) {
 					ValaSourceReference* _tmp32_;
@@ -841,7 +841,7 @@ vala_signal_real_check (ValaCodeNode* base,
 			_vala_iterable_unref0 (_base_type_list);
 		}
 	}
-	if (VALA_IS_DYNAMIC_SIGNAL (self)) {
+	if (BALA_IS_DYNAMIC_SIGNAL (self)) {
 		gboolean _tmp34_;
 		gboolean _tmp35_;
 		_tmp34_ = vala_code_node_get_error ((ValaCodeNode*) self);
@@ -1077,7 +1077,7 @@ vala_signal_real_check (ValaCodeNode* base,
 		}
 		_tmp116_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 		_tmp117_ = _tmp116_;
-		cl = VALA_IS_OBJECT_TYPE_SYMBOL (_tmp117_) ? ((ValaObjectTypeSymbol*) _tmp117_) : NULL;
+		cl = BALA_IS_OBJECT_TYPE_SYMBOL (_tmp117_) ? ((ValaObjectTypeSymbol*) _tmp117_) : NULL;
 		_tmp118_ = cl;
 		_tmp119_ = self->priv->_default_handler;
 		vala_object_type_symbol_add_hidden_method (_tmp118_, _tmp119_);
@@ -1221,7 +1221,7 @@ vala_signal_real_check (ValaCodeNode* base,
 		}
 		_tmp168_ = vala_callable_get_return_type ((ValaCallable*) self);
 		_tmp169_ = _tmp168_;
-		if (VALA_IS_VOID_TYPE (_tmp169_)) {
+		if (BALA_IS_VOID_TYPE (_tmp169_)) {
 			ValaBlock* _tmp170_;
 			ValaMethodCall* _tmp171_;
 			ValaSourceReference* _tmp172_;
@@ -1257,7 +1257,7 @@ vala_signal_real_check (ValaCodeNode* base,
 		vala_subroutine_set_body ((ValaSubroutine*) _tmp182_, _tmp183_);
 		_tmp184_ = vala_symbol_get_parent_symbol ((ValaSymbol*) self);
 		_tmp185_ = _tmp184_;
-		cl = VALA_IS_OBJECT_TYPE_SYMBOL (_tmp185_) ? ((ValaObjectTypeSymbol*) _tmp185_) : NULL;
+		cl = BALA_IS_OBJECT_TYPE_SYMBOL (_tmp185_) ? ((ValaObjectTypeSymbol*) _tmp185_) : NULL;
 		_tmp186_ = cl;
 		_tmp187_ = self->priv->_emitter;
 		vala_object_type_symbol_add_hidden_method (_tmp186_, _tmp187_);
@@ -1358,7 +1358,7 @@ vala_signal_instance_init (ValaSignal * self,
 	ValaArrayList* _tmp1_;
 	self->priv = vala_signal_get_instance_private (self);
 	_tmp0_ = g_direct_equal;
-	_tmp1_ = vala_array_list_new (VALA_TYPE_PARAMETER, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
+	_tmp1_ = vala_array_list_new (BALA_TYPE_PARAMETER, (GBoxedCopyFunc) vala_code_node_ref, (GDestroyNotify) vala_code_node_unref, _tmp0_);
 	self->priv->parameters = (ValaList*) _tmp1_;
 }
 
@@ -1366,13 +1366,13 @@ static void
 vala_signal_finalize (ValaCodeNode * obj)
 {
 	ValaSignal * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_SIGNAL, ValaSignal);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_SIGNAL, ValaSignal);
 	_vala_iterable_unref0 (self->priv->parameters);
 	_vala_code_node_unref0 (self->priv->_default_handler);
 	_vala_code_node_unref0 (self->priv->_emitter);
 	_vala_code_node_unref0 (self->priv->_return_type);
 	_vala_code_node_unref0 (self->priv->_body);
-	VALA_CODE_NODE_CLASS (vala_signal_parent_class)->finalize (obj);
+	BALA_CODE_NODE_CLASS (vala_signal_parent_class)->finalize (obj);
 }
 
 /**
@@ -1384,8 +1384,8 @@ vala_signal_get_type_once (void)
 	static const GTypeInfo g_define_type_info = { sizeof (ValaSignalClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_signal_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaSignal), 0, (GInstanceInitFunc) vala_signal_instance_init, NULL };
 	static const GInterfaceInfo vala_callable_info = { (GInterfaceInitFunc) vala_signal_vala_callable_interface_init, (GInterfaceFinalizeFunc) NULL, NULL};
 	GType vala_signal_type_id;
-	vala_signal_type_id = g_type_register_static (VALA_TYPE_SYMBOL, "ValaSignal", &g_define_type_info, 0);
-	g_type_add_interface_static (vala_signal_type_id, VALA_TYPE_CALLABLE, &vala_callable_info);
+	vala_signal_type_id = g_type_register_static (BALA_TYPE_SYMBOL, "ValaSignal", &g_define_type_info, 0);
+	g_type_add_interface_static (vala_signal_type_id, BALA_TYPE_CALLABLE, &vala_callable_info);
 	ValaSignal_private_offset = g_type_add_instance_private (vala_signal_type_id, sizeof (ValaSignalPrivate));
 	return vala_signal_type_id;
 }

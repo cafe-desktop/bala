@@ -94,7 +94,7 @@ vala_ccode_expression_statement_construct (GType object_type,
 ValaCCodeExpressionStatement*
 vala_ccode_expression_statement_new (ValaCCodeExpression* expr)
 {
-	return vala_ccode_expression_statement_construct (VALA_TYPE_CCODE_EXPRESSION_STATEMENT, expr);
+	return vala_ccode_expression_statement_construct (BALA_TYPE_CCODE_EXPRESSION_STATEMENT, expr);
 }
 
 static void
@@ -106,12 +106,12 @@ vala_ccode_expression_statement_real_write (ValaCCodeNode* base,
 	self = (ValaCCodeExpressionStatement*) base;
 	g_return_if_fail (writer != NULL);
 	_tmp0_ = self->priv->_expression;
-	if (VALA_IS_CCODE_COMMA_EXPRESSION (_tmp0_)) {
+	if (BALA_IS_CCODE_COMMA_EXPRESSION (_tmp0_)) {
 		ValaCCodeCommaExpression* ccomma = NULL;
 		ValaCCodeExpression* _tmp1_;
 		ValaCCodeCommaExpression* _tmp2_;
 		_tmp1_ = self->priv->_expression;
-		_tmp2_ = _vala_ccode_node_ref0 (VALA_IS_CCODE_COMMA_EXPRESSION (_tmp1_) ? ((ValaCCodeCommaExpression*) _tmp1_) : NULL);
+		_tmp2_ = _vala_ccode_node_ref0 (BALA_IS_CCODE_COMMA_EXPRESSION (_tmp1_) ? ((ValaCCodeCommaExpression*) _tmp1_) : NULL);
 		ccomma = _tmp2_;
 		{
 			ValaList* _expr_list = NULL;
@@ -156,7 +156,7 @@ vala_ccode_expression_statement_real_write (ValaCCodeNode* base,
 	} else {
 		ValaCCodeExpression* _tmp13_;
 		_tmp13_ = self->priv->_expression;
-		if (VALA_IS_CCODE_PARENTHESIZED_EXPRESSION (_tmp13_)) {
+		if (BALA_IS_CCODE_PARENTHESIZED_EXPRESSION (_tmp13_)) {
 			ValaCCodeParenthesizedExpression* cpar = NULL;
 			ValaCCodeExpression* _tmp14_;
 			ValaCCodeParenthesizedExpression* _tmp15_;
@@ -164,7 +164,7 @@ vala_ccode_expression_statement_real_write (ValaCCodeNode* base,
 			ValaCCodeExpression* _tmp17_;
 			ValaCCodeExpression* _tmp18_;
 			_tmp14_ = self->priv->_expression;
-			_tmp15_ = _vala_ccode_node_ref0 (VALA_IS_CCODE_PARENTHESIZED_EXPRESSION (_tmp14_) ? ((ValaCCodeParenthesizedExpression*) _tmp14_) : NULL);
+			_tmp15_ = _vala_ccode_node_ref0 (BALA_IS_CCODE_PARENTHESIZED_EXPRESSION (_tmp14_) ? ((ValaCCodeParenthesizedExpression*) _tmp14_) : NULL);
 			cpar = _tmp15_;
 			_tmp16_ = cpar;
 			_tmp17_ = vala_ccode_parenthesized_expression_get_inner (_tmp16_);
@@ -219,9 +219,9 @@ static void
 vala_ccode_expression_statement_finalize (ValaCCodeNode * obj)
 {
 	ValaCCodeExpressionStatement * self;
-	self = G_TYPE_CHECK_INSTANCE_CAST (obj, VALA_TYPE_CCODE_EXPRESSION_STATEMENT, ValaCCodeExpressionStatement);
+	self = G_TYPE_CHECK_INSTANCE_CAST (obj, BALA_TYPE_CCODE_EXPRESSION_STATEMENT, ValaCCodeExpressionStatement);
 	_vala_ccode_node_unref0 (self->priv->_expression);
-	VALA_CCODE_NODE_CLASS (vala_ccode_expression_statement_parent_class)->finalize (obj);
+	BALA_CCODE_NODE_CLASS (vala_ccode_expression_statement_parent_class)->finalize (obj);
 }
 
 /**
@@ -232,7 +232,7 @@ vala_ccode_expression_statement_get_type_once (void)
 {
 	static const GTypeInfo g_define_type_info = { sizeof (ValaCCodeExpressionStatementClass), (GBaseInitFunc) NULL, (GBaseFinalizeFunc) NULL, (GClassInitFunc) vala_ccode_expression_statement_class_init, (GClassFinalizeFunc) NULL, NULL, sizeof (ValaCCodeExpressionStatement), 0, (GInstanceInitFunc) vala_ccode_expression_statement_instance_init, NULL };
 	GType vala_ccode_expression_statement_type_id;
-	vala_ccode_expression_statement_type_id = g_type_register_static (VALA_TYPE_CCODE_STATEMENT, "ValaCCodeExpressionStatement", &g_define_type_info, 0);
+	vala_ccode_expression_statement_type_id = g_type_register_static (BALA_TYPE_CCODE_STATEMENT, "ValaCCodeExpressionStatement", &g_define_type_info, 0);
 	ValaCCodeExpressionStatement_private_offset = g_type_add_instance_private (vala_ccode_expression_statement_type_id, sizeof (ValaCCodeExpressionStatementPrivate));
 	return vala_ccode_expression_statement_type_id;
 }
