@@ -1,4 +1,4 @@
-namespace FastVapi {
+namespace FastBapi {
 	public const int CONSTANT = 42;
 
 	public enum EnumTest {

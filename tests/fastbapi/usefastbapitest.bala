@@ -1,7 +1,7 @@
 void main () {
-	assert (FastVapi.CONSTANT == 42);
-	assert (FastVapi.CONSTANT_TWO == 42);
+	assert (FastBapi.CONSTANT == 42);
+	assert (FastBapi.CONSTANT_TWO == 42);
 
-	assert (FastVapi.EnumTestTwo.VALUE == 3);
-	assert (FastVapi.EnumTestTwo.VALUE_TWO == 3);
+	assert (FastBapi.EnumTestTwo.VALUE == 3);
+	assert (FastBapi.EnumTestTwo.VALUE_TWO == 3);
 }
