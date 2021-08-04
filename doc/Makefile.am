@@ -5,48 +5,48 @@ SUBDIRS = \
 	$(NULL)
 
 dist_man_MANS = \
-	valac.1 \
-	vala-gen-introspect.1 \
+	balac.1 \
+	bala-gen-introspect.1 \
 	vapigen.1 \
 	$(NULL)
 
 if ENABLE_BALADOC
 dist_man_MANS += \
-	valadoc.1 \
+	baladoc.1 \
 	$(NULL)
 endif
 
 EXTRA_DIST = \
-	valac.h2m \
-	valadoc.h2m \
-	vala-gen-introspect.h2m \
+	balac.h2m \
+	baladoc.h2m \
+	bala-gen-introspect.h2m \
 	vapigen.h2m \
 	$(NULL)
 
 if HAVE_HELP2MAN
 if ENABLE_BALADOC
-manpages: valac.1 valadoc.1 vala-gen-introspect.1 vapigen.1
+manpages: balac.1 baladoc.1 bala-gen-introspect.1 vapigen.1
 else
-manpages: valac.1 vala-gen-introspect.1 vapigen.1
+manpages: balac.1 bala-gen-introspect.1 vapigen.1
 endif
 	@rm $^
 	$(MAKE) $(AM_MAKEFLAGS) $^
 
-valac.1:
-	$(HELP2MAN) $(top_builddir)/compiler/valac \
-		--include $(srcdir)/valac.h2m \
+balac.1:
+	$(HELP2MAN) $(top_builddir)/compiler/balac \
+		--include $(srcdir)/balac.h2m \
 		--libtool --no-info \
 		--output=$@
 if ENABLE_BALADOC
-valadoc.1:
-	$(HELP2MAN) $(top_builddir)/valadoc/valadoc \
-		--include $(srcdir)/valadoc.h2m \
+baladoc.1:
+	$(HELP2MAN) $(top_builddir)/baladoc/baladoc \
+		--include $(srcdir)/baladoc.h2m \
 		--libtool --no-info \
 		--output=$@
 endif
-vala-gen-introspect.1:
+bala-gen-introspect.1:
 	$(HELP2MAN) $(top_builddir)/gobject-introspection/gen-introspect \
-		--include $(srcdir)/vala-gen-introspect.h2m \
+		--include $(srcdir)/bala-gen-introspect.h2m \
 		--version-string=$(PACKAGE_VERSION) \
 		--libtool --no-info \
 		--output=$@
@@ -59,11 +59,11 @@ endif
 
 if ENABLE_UNVERSIONED
 install-data-hook:
-	cd $(DESTDIR)$(man1dir) && $(LN_S) -f valac@PACKAGE_SUFFIX@.1 valac.1
+	cd $(DESTDIR)$(man1dir) && $(LN_S) -f balac@PACKAGE_SUFFIX@.1 balac.1
 if ENABLE_BALADOC
-	cd $(DESTDIR)$(man1dir) && $(LN_S) -f valadoc@PACKAGE_SUFFIX@.1 valadoc.1
+	cd $(DESTDIR)$(man1dir) && $(LN_S) -f baladoc@PACKAGE_SUFFIX@.1 baladoc.1
 endif
-	cd $(DESTDIR)$(man1dir) && $(LN_S) -f vala-gen-introspect@PACKAGE_SUFFIX@.1 vala-gen-introspect.1
+	cd $(DESTDIR)$(man1dir) && $(LN_S) -f bala-gen-introspect@PACKAGE_SUFFIX@.1 bala-gen-introspect.1
 	cd $(DESTDIR)$(man1dir) && $(LN_S) -f vapigen@PACKAGE_SUFFIX@.1 vapigen.1
 endif
 
@@ -79,7 +79,7 @@ COMMON_BALADOCFLAGS = \
 	--pkg config \
 	--pkg gmodule-2.0 \
 	--directory=internal-apis/ \
-	--doclet=$(top_builddir)/valadoc/doclets/html/.libs \
+	--doclet=$(top_builddir)/baladoc/doclets/html/.libs \
 	--doclet-arg "--no-browsable-check" \
 	--basedir=internal-apis/ \
 	$(NULL)
@@ -88,68 +88,68 @@ if HAVE_CGRAPH
 COMMON_BALADOCFLAGS += -D WITH_CGRAPH
 endif
 
-gee_BALASOURCES = $(top_srcdir)/gee/*.vala
+gee_BALASOURCES = $(top_srcdir)/gee/*.bala
 internal-apis/gee: $(gee_BALASOURCES)
-	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
+	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc \
 		$(COMMON_BALADOCFLAGS) \
 		--package-name gee \
 		--package-version $(PACKAGE_VERSION) \
 		--deps \
-		$(filter %.vala,$^)
+		$(filter %.bala,$^)
 	@touch $@
 
-vala_BALASOURCES = $(top_srcdir)/vala/*.vala
-internal-apis/vala: $(vala_BALASOURCES) internal-apis/gee
-	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
+bala_BALASOURCES = $(top_srcdir)/bala/*.bala
+internal-apis/bala: $(bala_BALASOURCES) internal-apis/gee
+	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc \
 		$(COMMON_BALADOCFLAGS) \
-		--package-name vala \
+		--package-name bala \
 		--package-version $(PACKAGE_VERSION) \
 		--vapidir=$(top_builddir)/gee --pkg gee \
 		--deps \
-		$(filter %.vala,$^)
+		$(filter %.bala,$^)
 	@touch $@
 
-ccode_BALASOURCES = $(top_srcdir)/ccode/*.vala
+ccode_BALASOURCES = $(top_srcdir)/ccode/*.bala
 internal-apis/ccode: $(ccode_BALASOURCES) internal-apis/gee
-	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
+	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc \
 		$(COMMON_BALADOCFLAGS) \
 		--package-name ccode \
 		--package-version $(PACKAGE_VERSION) \
 		--vapidir=$(top_builddir)/gee --pkg gee \
-		--vapidir=$(top_builddir)/vala --pkg vala \
+		--vapidir=$(top_builddir)/bala --pkg bala \
 		--deps \
-		$(filter %.vala,$^)
+		$(filter %.bala,$^)
 	@touch $@
 
-codegen_BALASOURCES = $(top_srcdir)/codegen/*.vala
-internal-apis/codegen: $(codegen_BALASOURCES) internal-apis/vala internal-apis/ccode
-	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
+codegen_BALASOURCES = $(top_srcdir)/codegen/*.bala
+internal-apis/codegen: $(codegen_BALASOURCES) internal-apis/bala internal-apis/ccode
+	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc\
 		$(COMMON_BALADOCFLAGS) \
 		--package-name codegen \
 		--package-version $(PACKAGE_VERSION) \
 		--vapidir=$(top_builddir)/gee --pkg gee \
-		--vapidir=$(top_builddir)/vala --pkg vala \
+		--vapidir=$(top_builddir)/bala --pkg bala \
 		--vapidir=$(top_builddir)/ccode --pkg ccode \
 		--deps \
-		$(filter %.vala,$^)
+		$(filter %.bala,$^)
 	@touch $@
 
-valadoc_BALASOURCES = $(top_srcdir)/libvaladoc/*.vala $(top_srcdir)/libvaladoc/*/*.vala
-internal-apis/valadoc: $(valadoc_BALASOURCES) internal-apis/codegen
-	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
+baladoc_BALASOURCES = $(top_srcdir)/libbaladoc/*.bala $(top_srcdir)/libbaladoc/*/*.bala
+internal-apis/baladoc: $(baladoc_BALASOURCES) internal-apis/codegen
+	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc\
 		$(COMMON_BALADOCFLAGS) \
-		--package-name valadoc \
+		--package-name baladoc \
 		--package-version $(PACKAGE_VERSION) \
 		--vapidir=$(top_srcdir)/vapi --pkg libgvc \
 		--vapidir=$(top_builddir)/gee --pkg gee \
-		--vapidir=$(top_builddir)/vala --pkg vala \
+		--vapidir=$(top_builddir)/bala --pkg bala \
 		--vapidir=$(top_builddir)/ccode --pkg ccode \
 		--vapidir=$(top_builddir)/codegen --pkg codegen \
 		--deps \
-		$(filter %.vala,$^)
+		$(filter %.bala,$^)
 	@touch $@
 
-internal-api-docs: internal-apis/gee internal-apis/vala internal-apis/ccode internal-apis/codegen internal-apis/valadoc
+internal-api-docs: internal-apis/gee internal-apis/bala internal-apis/ccode internal-apis/codegen internal-apis/baladoc
 endif
 
 clean-local:

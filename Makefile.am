@@ -4,7 +4,7 @@ NULL =
 
 SUBDIRS = \
 	gee \
-	vala \
+	bala \
 	ccode \
 	codegen \
 	compiler \
@@ -17,31 +17,31 @@ SUBDIRS = \
 
 if ENABLE_BALADOC
 SUBDIRS += \
-	libvaladoc \
-	valadoc \
+	libbaladoc \
+	baladoc \
 	$(NULL)
 endif
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-valadoc \
+	--enable-baladoc \
 	--enable-unversioned \
 	$(NULL)
 
 if ENABLE_UNVERSIONED
 aclocaldir = $(datadir)/aclocal
-aclocal_DATA = vala.m4
+aclocal_DATA = bala.m4
 endif
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libvala@PACKAGE_SUFFIX@.pc
+pkgconfig_DATA = libbala@PACKAGE_SUFFIX@.pc
 
-libvala@PACKAGE_SUFFIX@.pc: libvala.pc
+libbala@PACKAGE_SUFFIX@.pc: libbala.pc
 	cp $< $@
 
 .PHONY: bootstrap
 bootstrap: all
-	find $(top_srcdir) -name "*.vala.stamp" | xargs rm -f
-	$(MAKE) $(AM_MAKEFLAGS) all BALAC=$(abs_top_builddir)/compiler/valac$(EXEEXT) V=$V \
+	find $(top_srcdir) -name "*.bala.stamp" | xargs rm -f
+	$(MAKE) $(AM_MAKEFLAGS) all BALAC=$(abs_top_builddir)/compiler/balac$(EXEEXT) V=$V \
 		BALAFLAGS="$(BALAFLAGS) --hide-internal --abi-stability"
 
 .PHONY: test
@@ -88,15 +88,15 @@ gen-ChangeLog:
 	fi
 
 CLEANFILES = \
-	libvala@PACKAGE_SUFFIX@.pc \
+	libbala@PACKAGE_SUFFIX@.pc \
 	$(NULL)
 
 EXTRA_DIST = \
 	ChangeLog.pre-0-4 \
 	ChangeLog.pre-0-5-7 \
 	README.md \
-	libvala.pc.in \
-	vala.m4 \
+	libbala.pc.in \
+	bala.m4 \
 	.version \
 	build-aux/git-version-gen \
 	build-aux/gitlog-to-changelog \

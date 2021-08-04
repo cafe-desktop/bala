@@ -1,4 +1,4 @@
-/* glib-2.0.vala
+/* glib-2.0.bala
  *
  * Copyright (C) 2006-2014  Jürg Billeter
  * Copyright (C) 2006-2008  Raffaele Sandrini
@@ -1195,7 +1195,7 @@ public class string {
 	public string[] split_set (string delimiters, int max_tokens = 0);
 	[CCode (cname = "g_stpcpy")]
 	private static void* copy_to_buffer (void* dest, string src);
-	[CCode (cname = "_vala_g_strjoinv")]
+	[CCode (cname = "_bala_g_strjoinv")]
 	public static string joinv (string? separator, string?[]? str_array) {
 		if (separator == null) {
 			separator = "";
@@ -2329,11 +2329,11 @@ namespace GLib {
 	[Compact]
 	[CCode (free_function = "g_thread_pool_free")]
 	public class ThreadPool<T> {
-		[Version (deprecated_since = "vala-0.18", replacement = "ThreadPool.with_owned_data")]
+		[Version (deprecated_since = "bala-0.18", replacement = "ThreadPool.with_owned_data")]
 		public ThreadPool (Func<T> func, int max_threads, bool exclusive) throws ThreadError;
 		[CCode (cname = "g_thread_pool_new")]
 		public ThreadPool.with_owned_data (ThreadPoolFunc<T> func, int max_threads, bool exclusive) throws ThreadError;
-		[Version (deprecated_since = "vala-0.18", replacement = "add")]
+		[Version (deprecated_since = "bala-0.18", replacement = "add")]
 		public void push (T data) throws ThreadError;
 		[CCode (cname = "g_thread_pool_push")]
 		public void add (owned T data) throws ThreadError;
@@ -2345,7 +2345,7 @@ namespace GLib {
 		public uint unprocessed ();
 		[CCode (cname = "g_thread_pool_free")]
 		void _free (bool immediate, bool wait);
-		[CCode (cname = "vala__g_thread_pool_free_wrapper")]
+		[CCode (cname = "bala__g_thread_pool_free_wrapper")]
 		public static void free (owned ThreadPool<T>? pool, bool immediate, bool wait) {
 			ThreadPool<T>* ptr = (owned) pool;
 			if (ptr != null) {
@@ -4935,29 +4935,29 @@ namespace GLib {
 		[Version (since = "2.28")]
 		public SequenceIter<G> lookup_iter (G data, SequenceIterCompareFunc<G> iter_cmp);
 
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.foreach_range")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.foreach_range")]
 		public static void foreach_range (SequenceIter<G> begin, SequenceIter<G> end, Func<G> func);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.insert_before")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.insert_before")]
 		public static SequenceIter<G> insert_before (SequenceIter<G> iter, owned G data);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.move_to")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.move_to")]
 		public static void move (SequenceIter<G> src, SequenceIter<G> dest);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.swap")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.swap")]
 		public static void swap (SequenceIter<G> src, SequenceIter<G> dest);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.sort_changed")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.sort_changed")]
 		public static void sort_changed (SequenceIter<G> iter, CompareDataFunc<G> cmp_func);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.sort_changed_iter")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.sort_changed_iter")]
 		public static void sort_changed_iter (SequenceIter<G> iter, SequenceIterCompareFunc<G> iter_cmp);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.remove")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.remove")]
 		public static void remove (SequenceIter<G> iter);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.remove_range")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.remove_range")]
 		public static void remove_range (SequenceIter<G> begin, SequenceIter<G> end);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.move_range")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.move_range")]
 		public static void move_range (SequenceIter<G> dest, SequenceIter<G> begin, SequenceIter<G> end);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.get")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.get")]
 		public static unowned G get (SequenceIter<G> iter);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.set")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.set")]
 		public static void set (SequenceIter<G> iter, owned G data);
-		[Version (deprecated_since = "vala-0.26", replacement = "SequenceIter.range_get_midpoint")]
+		[Version (deprecated_since = "bala-0.26", replacement = "SequenceIter.range_get_midpoint")]
 		public static SequenceIter<G> range_get_midpoint (SequenceIter<G> begin, SequenceIter<G> end);
 	}
 
@@ -5012,7 +5012,7 @@ namespace GLib {
 		public HashTable.full (HashFunc<K>? hash_func, EqualFunc<K>? key_equal_func, DestroyNotify? key_destroy_func, DestroyNotify? value_destroy_func);
 		public void insert (owned K key, owned V value);
 		public void replace (owned K key, owned V value);
-		[Version (since = "2.32", deprecated_since = "vala-0.26", replacement = "GenericSet.add")]
+		[Version (since = "2.32", deprecated_since = "bala-0.26", replacement = "GenericSet.add")]
 		public void add (owned K key);
 		public unowned V? lookup (K key);
 		public bool lookup_extended (K lookup_key, out unowned K orig_key, out unowned V value);
@@ -5047,7 +5047,7 @@ namespace GLib {
 		public void steal_all ();
 		[Version (since = "2.58")]
 		public bool steal_extended (K lookup_key, out K stolen_key, out V stolen_value);
-		[CCode (cname = "_vala_g_hash_table_take")]
+		[CCode (cname = "_bala_g_hash_table_take")]
 		public V? take (K key, out bool exists = null) {
 			GLib.HashTable<K,V>? ht = null;
 			void** htp = &ht;
@@ -5083,7 +5083,7 @@ namespace GLib {
 		public GLib.List<unowned T> get_values ();
 		[CCode (cname = "g_hash_table_iter_init", instance_pos = -1)]
 		public GLib.GenericSetIter<T> iterator ();
-		[CCode (cname = "_vala_g_hash_set_foreach")]
+		[CCode (cname = "_bala_g_hash_set_foreach")]
 		public void @foreach (GLib.Func<T> func) {
 			((GLib.HashTable<unowned T,T>) this).foreach ((k, v) => func (v));
 		}
@@ -5096,7 +5096,7 @@ namespace GLib {
 	[Version (since = "2.32")]
 	[CCode (cname = "GHashTableIter", lower_case_cprefix = "g_hash_table_iter_", has_type_id = false)]
 	public struct GenericSetIter<T> {
-		[CCode (cname = "_vala_hash_set_next_value")]
+		[CCode (cname = "_bala_hash_set_next_value")]
 		public unowned T? next_value () {
 			void* vi = &this;
 			GLib.HashTableIter<unowned T,T>* htp = vi;
@@ -5214,7 +5214,7 @@ namespace GLib {
 	/* Pointer Arrays */
 
 	[Compact]
-	[Version (since = "2.22", deprecated_since = "vala-0.26", replacement="GenericArray")]
+	[Version (since = "2.22", deprecated_since = "bala-0.26", replacement="GenericArray")]
 	[CCode (ref_function = "g_ptr_array_ref", unref_function = "g_ptr_array_unref", type_id = "G_TYPE_PTR_ARRAY")]
 	public class PtrArray {
 		public PtrArray ();
@@ -5281,7 +5281,7 @@ namespace GLib {
 			this.add ((owned) data);
 			this.remove_index_fast (index);
 		}
-		[CCode (cname = "vala_g_ptr_array_sort")]
+		[CCode (cname = "bala_g_ptr_array_sort")]
 		public void sort (GLib.CompareFunc<G> compare_func) {
 			this._sort_with_data ((a, b) => {
 				return compare_func ((G**) (*a), (G**) (*b));
@@ -5289,7 +5289,7 @@ namespace GLib {
 		}
 		[CCode (cname = "g_ptr_array_sort_with_data")]
 		public void _sort_with_data (GLib.CompareDataFunc<G**> compare_func);
-		[CCode (cname = "vala_g_ptr_array_sort_with_data")]
+		[CCode (cname = "bala_g_ptr_array_sort_with_data")]
 		public void sort_with_data (GLib.CompareDataFunc<G> compare_func) {
 			this._sort_with_data ((a, b) => {
 				return compare_func ((G**) (*a), (G**) (*b));
@@ -5306,7 +5306,7 @@ namespace GLib {
 		private void set_size (int length);
 
 		public int length {
-			[CCode (cname = "vala_g_ptr_array_get_length")]
+			[CCode (cname = "bala_g_ptr_array_get_length")]
 			get { return (int) this.len; }
 			[CCode (cname = "g_ptr_array_set_size")]
 			set;
@@ -5340,19 +5340,19 @@ namespace GLib {
 		public static uint8[] unref_to_data (owned GLib.Bytes bytes);
 		public static GLib.ByteArray unref_to_array (owned GLib.Bytes bytes);
 
-		[CCode (cname = "_vala_g_bytes_get")]
+		[CCode (cname = "_bala_g_bytes_get")]
 		public uint8 get (int index) {
 			unowned uint8[] data = this.get_data ();
 			return data[index];
 		}
 
-		[CCode (cname = "_vala_g_bytes_slice")]
+		[CCode (cname = "_bala_g_bytes_slice")]
 		public GLib.Bytes slice (size_t start, size_t end) {
 			return new GLib.Bytes.from_bytes (this, start, end - start);
 		}
 
 		public int length {
-			[CCode (cname = "_vala_g_bytes_get_length")]
+			[CCode (cname = "_bala_g_bytes_get_length")]
 			get {
 				return (int) this.get_size ();
 			}
@@ -5449,7 +5449,7 @@ namespace GLib {
 
 		[CCode (cname = "g_node_unlink")]
 		public void _unlink ();
-		[CCode (cname = "g_node_unlink_vala")]
+		[CCode (cname = "g_node_unlink_bala")]
 		public Node<G> unlink ()
 		{
 			void *ptr = this;
@@ -5530,21 +5530,21 @@ namespace GLib {
 		public void _remove_index_fast (uint index);
 		[CCode (cname = "g_array_remove_range")]
 		public void _remove_range (uint index, uint length);
-		[CCode (cname = "vala_g_array_remove_index")]
+		[CCode (cname = "bala_g_array_remove_index")]
 		public G remove_index (uint index) {
 			assert (length > index);
 			G g = (owned) data[index];
 			_remove_index (index);
 			return g;
 		}
-		[CCode (cname = "vala_g_array_remove_index_fast")]
+		[CCode (cname = "bala_g_array_remove_index_fast")]
 		public G remove_index_fast (uint index) {
 			assert (length > index);
 			G g = (owned) data[index];
 			_remove_index_fast (index);
 			return g;
 		}
-		[CCode (cname = "vala_g_array_remove_range")]
+		[CCode (cname = "bala_g_array_remove_range")]
 		public G[] remove_range (uint index, uint length) {
 			assert (this.length >= index + length);
 			G[] ga = new G[length];
@@ -5586,7 +5586,7 @@ namespace GLib {
 	public class Tree<K,V> {
 		[CCode (cname = "g_tree_new_full", simple_generics = true)]
 		public Tree (CompareDataFunc<K> key_compare_func);
-		[Version (deprecated_since = "vala-0.20", replacement = "Tree ()")]
+		[Version (deprecated_since = "bala-0.20", replacement = "Tree ()")]
 		public Tree.with_data (CompareDataFunc<K> key_compare_func);
 		public Tree.full (CompareDataFunc<K> key_compare_func, DestroyNotify? key_destroy_func, DestroyNotify? value_destroy_func);
 		public void insert (owned K key, owned V value);
@@ -6107,7 +6107,7 @@ namespace GLib {
 	[CCode (simple_generics = true, cname = "g_qsort_with_data")]
 	private static void _qsort_with_data<T> (T[] elems, size_t size, [CCode (type = "GCompareDataFunc")] GLib.CompareDataFunc<T> compare_func);
 
-	[CCode (cname = "_vala_g_qsort_with_data")]
+	[CCode (cname = "_bala_g_qsort_with_data")]
 	public static void qsort_with_data<T> (T[] elems, size_t size, [CCode (type = "GCompareDataFunc")] GLib.CompareDataFunc<T> compare_func) {
 		_qsort_with_data<T*> (elems, size, (a, b) => {
 				return compare_func (*a, *b);

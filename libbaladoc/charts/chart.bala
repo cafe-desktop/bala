@@ -1,4 +1,4 @@
-/* chart.vala
+/* chart.bala
  *
  * Copyright (C) 2008  Florian Brosch
  *
@@ -20,8 +20,8 @@
  * 	Florian Brosch <flo.brosch@gmail.com>
  */
 
-[CCode (cname = "valadoc_compat_gvc_init")]
-extern void valadoc_gvc_init ();
+[CCode (cname = "baladoc_compat_gvc_init")]
+extern void baladoc_gvc_init ();
 
 public class Valadoc.Charts.Chart : Api.Visitor {
 	protected Gvc.Context context;
@@ -29,7 +29,7 @@ public class Valadoc.Charts.Chart : Api.Visitor {
 	protected Factory factory;
 
 	static construct {
-		valadoc_gvc_init ();
+		baladoc_gvc_init ();
 	}
 
 	public Chart (Factory factory, Api.Node node) {

@@ -1,4 +1,4 @@
-/* valaccodebasemodule.vala
+/* balaccodebasemodule.bala
  *
  * Copyright (C) 2006-2012  Jürg Billeter
  * Copyright (C) 2006-2008  Raffaele Sandrini
@@ -702,23 +702,23 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 		}
 	}
 
-	public virtual void append_vala_array_free () {
+	public virtual void append_bala_array_free () {
 	}
 
-	public virtual void append_vala_array_move () {
+	public virtual void append_bala_array_move () {
 	}
 
-	public virtual void append_vala_array_length () {
+	public virtual void append_bala_array_length () {
 	}
 
 	public virtual void append_params_array (Method m) {
 	}
 
-	public void append_vala_clear_mutex (string typename, string funcprefix) {
+	public void append_bala_clear_mutex (string typename, string funcprefix) {
 		// memset
 		cfile.add_include ("string.h");
 
-		var fun = new CCodeFunction ("_vala_clear_" + typename);
+		var fun = new CCodeFunction ("_bala_clear_" + typename);
 		fun.modifiers = CCodeModifiers.STATIC;
 		fun.add_parameter (new CCodeParameter ("mutex", typename + " *"));
 
@@ -782,28 +782,28 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 		}
 
 		if (requires_assert) {
-			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("_vala_assert(expr, msg)", new CCodeConstant ("if G_LIKELY (expr) ; else g_assertion_message_expr (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);")));
-			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("_vala_return_if_fail(expr, msg)", new CCodeConstant ("if G_LIKELY (expr) ; else { g_return_if_fail_warning (G_LOG_DOMAIN, G_STRFUNC, msg); return; }")));
-			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("_vala_return_val_if_fail(expr, msg, val)", new CCodeConstant ("if G_LIKELY (expr) ; else { g_return_if_fail_warning (G_LOG_DOMAIN, G_STRFUNC, msg); return val; }")));
-			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("_vala_warn_if_fail(expr, msg)", new CCodeConstant ("if G_LIKELY (expr) ; else g_warn_message (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);")));
+			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("_bala_assert(expr, msg)", new CCodeConstant ("if G_LIKELY (expr) ; else g_assertion_message_expr (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);")));
+			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("_bala_return_if_fail(expr, msg)", new CCodeConstant ("if G_LIKELY (expr) ; else { g_return_if_fail_warning (G_LOG_DOMAIN, G_STRFUNC, msg); return; }")));
+			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("_bala_return_val_if_fail(expr, msg, val)", new CCodeConstant ("if G_LIKELY (expr) ; else { g_return_if_fail_warning (G_LOG_DOMAIN, G_STRFUNC, msg); return val; }")));
+			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("_bala_warn_if_fail(expr, msg)", new CCodeConstant ("if G_LIKELY (expr) ; else g_warn_message (G_LOG_DOMAIN, __FILE__, __LINE__, G_STRFUNC, msg);")));
 		}
 		if (requires_array_free) {
-			append_vala_array_free ();
+			append_bala_array_free ();
 		}
 		if (requires_array_move) {
-			append_vala_array_move ();
+			append_bala_array_move ();
 		}
 		if (requires_array_length) {
-			append_vala_array_length ();
+			append_bala_array_length ();
 		}
 		if (requires_array_n_elements) {
 			cfile.add_type_declaration (new CCodeMacroReplacement.with_expression ("BALA_N_ELEMENTS(arr)", new CCodeConstant ("(sizeof (arr) / sizeof ((arr)[0]))")));
 		}
 		if (requires_clear_mutex) {
-			append_vala_clear_mutex ("GMutex", "g_mutex");
-			append_vala_clear_mutex ("GRecMutex", "g_rec_mutex");
-			append_vala_clear_mutex ("GRWLock", "g_rw_lock");
-			append_vala_clear_mutex ("GCond", "g_cond");
+			append_bala_clear_mutex ("GMutex", "g_mutex");
+			append_bala_clear_mutex ("GRecMutex", "g_rec_mutex");
+			append_bala_clear_mutex ("GRWLock", "g_rw_lock");
+			append_bala_clear_mutex ("GCond", "g_cond");
 		}
 
 		var comments = source_file.get_comments();
@@ -1211,7 +1211,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 							}
 						} else if (glib_value.array_null_terminated) {
 							requires_array_length = true;
-							var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_vala_array_length"));
+							var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_bala_array_length"));
 							len_call.add_argument (get_cvalue_ (glib_value));
 
 							ccode.add_assignment (get_array_length_cvalue (field_value, 1), len_call);
@@ -1409,7 +1409,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 									}
 								} else if (glib_value.array_null_terminated) {
 									requires_array_length = true;
-									var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_vala_array_length"));
+									var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_bala_array_length"));
 									len_call.add_argument (get_cvalue_ (glib_value));
 
 									ccode.add_assignment (get_array_length_cvalue (field_value, 1), len_call);
@@ -2505,7 +2505,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 		if (is_in_coroutine ()) {
 			var clash_index = emit_context.closure_variable_clash_map.get (local);
 			if (clash_index > 0) {
-				cname = "_vala%d_%s".printf (clash_index, cname);
+				cname = "_bala%d_%s".printf (clash_index, cname);
 			}
 		}
 		return cname;
@@ -3196,7 +3196,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 	}
 
 	protected string generate_dup_func_wrapper (DataType type) {
-		string destroy_func = "_vala_%s_copy".printf (get_ccode_name (type.type_symbol));
+		string destroy_func = "_bala_%s_copy".printf (get_ccode_name (type.type_symbol));
 
 		if (!add_wrapper (destroy_func)) {
 			// wrapper already defined
@@ -3224,7 +3224,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 	}
 
 	protected string generate_free_function_address_of_wrapper (DataType type) {
-		string destroy_func = "_vala_%s_free_function_address_of".printf (get_ccode_name (type.type_symbol));
+		string destroy_func = "_bala_%s_free_function_address_of".printf (get_ccode_name (type.type_symbol));
 
 		if (!add_wrapper (destroy_func)) {
 			// wrapper already defined
@@ -3255,7 +3255,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 
 	protected string generate_destroy_function_content_of_wrapper (DataType type) {
 		// g_array_set_clear_func has a specific GDestroyNotify where the content of an element is given
-		string destroy_func = "_vala_%s_free_function_content_of".printf (get_ccode_name (type.type_symbol));
+		string destroy_func = "_bala_%s_free_function_content_of".printf (get_ccode_name (type.type_symbol));
 
 		if (!add_wrapper (destroy_func)) {
 			// wrapper already defined
@@ -3285,7 +3285,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 	}
 
 	protected string generate_free_func_wrapper (DataType type) {
-		string destroy_func = "_vala_%s_free".printf (get_ccode_name (type.type_symbol));
+		string destroy_func = "_bala_%s_free".printf (get_ccode_name (type.type_symbol));
 
 		if (!add_wrapper (destroy_func)) {
 			// wrapper already defined
@@ -3696,7 +3696,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 				// g_mutex_clear must not be called for uninitialized mutex
 				// also, g_mutex_clear does not clear the struct
 				requires_clear_mutex = true;
-				ccall.call = new CCodeIdentifier ("_vala_clear_" + get_ccode_name (type.type_symbol));
+				ccall.call = new CCodeIdentifier ("_bala_clear_" + get_ccode_name (type.type_symbol));
 				return ccall;
 			} else {
 				return ccall;
@@ -3777,7 +3777,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 					csizeexpr = get_array_length_cvalue (value);
 				} else if (get_array_null_terminated (value)) {
 					requires_array_length = true;
-					var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_vala_array_length"));
+					var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_bala_array_length"));
 					len_call.add_argument (cvar);
 					csizeexpr = len_call;
 				} else {
@@ -3793,7 +3793,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 						requires_array_free = true;
 						generate_type_declaration (delegate_target_destroy_type, cfile);
 
-						ccall.call = new CCodeIdentifier ("_vala_array_free");
+						ccall.call = new CCodeIdentifier ("_bala_array_free");
 						ccall.add_argument (csizeexpr);
 						ccall.add_argument (new CCodeCastExpression (get_destroy_func_expression (array_type.element_type), get_ccode_name (delegate_target_destroy_type)));
 					}
@@ -4129,7 +4129,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 
 		// TODO: don't duplicate the code in CCodeMethodModule, we do this right now because it needs to be before return
 		if (current_method != null && current_method.get_attribute ("Profile") != null) {
-			string prefix = "_vala_prof_%s".printf (get_ccode_real_name (current_method));
+			string prefix = "_bala_prof_%s".printf (get_ccode_real_name (current_method));
 
 			var level = new CCodeIdentifier (prefix + "_level");
 			ccode.open_if (new CCodeUnaryExpression (CCodeUnaryOperator.LOGICAL_NEGATION, new CCodeUnaryExpression (CCodeUnaryOperator.PREFIX_DECREMENT, level)));
@@ -4865,7 +4865,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 					if (in_creation_method) {
 						creation_call = new CCodeFunctionCall (new CCodeIdentifier ("va_copy"));
 						creation_call.add_argument (instance);
-						creation_call.add_argument (new CCodeIdentifier ("_vala_va_list"));
+						creation_call.add_argument (new CCodeIdentifier ("_bala_va_list"));
 					} else {
 						Parameter last_param = null;
 						// FIXME: this doesn't take into account exception handling parameters
@@ -5169,7 +5169,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 
 					var set_data_call = new CCodeFunctionCall (new CCodeIdentifier ("g_object_set_data"));
 					set_data_call.add_argument (new CCodeCastExpression (get_cvalue_ (expr.target_value), "GObject *"));
-					set_data_call.add_argument (new CCodeConstant ("\"vala-creation-function\""));
+					set_data_call.add_argument (new CCodeConstant ("\"bala-creation-function\""));
 
 					string func_name = "";
 					if (current_method != null) {
@@ -5753,7 +5753,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 	}
 
 	string generate_array_contains_wrapper (ArrayType array_type) {
-		string array_contains_func = "_vala_%s_array_contains".printf (get_ccode_lower_case_name (array_type.element_type));
+		string array_contains_func = "_bala_%s_array_contains".printf (get_ccode_lower_case_name (array_type.element_type));
 
 		if (!add_wrapper (array_contains_func)) {
 			return array_contains_func;
@@ -6476,7 +6476,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 	}
 
 	public void create_postcondition_statement (Expression postcondition) {
-		var cassert = new CCodeFunctionCall (new CCodeIdentifier ("_vala_warn_if_fail"));
+		var cassert = new CCodeFunctionCall (new CCodeIdentifier ("_bala_warn_if_fail"));
 
 		postcondition.emit (this);
 

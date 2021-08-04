@@ -3,32 +3,32 @@ include $(top_srcdir)/Makefile.common
 NULL =
 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"valac\" \
+	-DG_LOG_DOMAIN=\"balac\" \
 	$(COVERAGE_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	-I$(top_srcdir)/codegen \
 	$(GLIB_CFLAGS) \
 	-DPACKAGE_DATADIR=\"$(pkgdatadir)\" \
 	$(NULL)
 
-BUILT_SOURCES = valac.vala.stamp
+BUILT_SOURCES = balac.bala.stamp
 
 bin_PROGRAMS = \
-	valac \
+	balac \
 	$(NULL)
 
-valac_BALASOURCES = \
-	valacompiler.vala \
+balac_BALASOURCES = \
+	balacompiler.bala \
 	$(NULL)
 
-valac_SOURCES = \
-	valac.vala.stamp \
-	$(valac_BALASOURCES:.vala=.c) \
+balac_SOURCES = \
+	balac.bala.stamp \
+	$(balac_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-valac.vala.stamp: $(valac_BALASOURCES)
+balac.bala.stamp: $(balac_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -36,29 +36,29 @@ valac.vala.stamp: $(valac_BALASOURCES)
 		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
 		--vapidir $(top_srcdir)/ccode --pkg ccode \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--vapidir $(top_srcdir)/codegen --pkg codegen \
 		--pkg config \
 		$^
 	@touch $@
 
-valac_LDADD = \
+balac_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(NULL)
 
-EXTRA_DIST = $(valac_BALASOURCES) valac.vala.stamp
+EXTRA_DIST = $(balac_BALASOURCES) balac.bala.stamp
 
 install-exec-hook:
-	cd $(DESTDIR)$(bindir) && $(LN_S) -f valac@PACKAGE_SUFFIX@$(EXEEXT) vala@PACKAGE_SUFFIX@$(EXEEXT)
+	cd $(DESTDIR)$(bindir) && $(LN_S) -f balac@PACKAGE_SUFFIX@$(EXEEXT) bala@PACKAGE_SUFFIX@$(EXEEXT)
 if ENABLE_UNVERSIONED
-	cd $(DESTDIR)$(bindir) && $(LN_S) -f valac@PACKAGE_SUFFIX@$(EXEEXT) valac$(EXEEXT)
-	cd $(DESTDIR)$(bindir) && $(LN_S) -f vala@PACKAGE_SUFFIX@$(EXEEXT) vala$(EXEEXT)
+	cd $(DESTDIR)$(bindir) && $(LN_S) -f balac@PACKAGE_SUFFIX@$(EXEEXT) balac$(EXEEXT)
+	cd $(DESTDIR)$(bindir) && $(LN_S) -f bala@PACKAGE_SUFFIX@$(EXEEXT) bala$(EXEEXT)
 endif
 
 MAINTAINERCLEANFILES = \
-	$(valac_BALASOURCES:.vala=.c) \
+	$(balac_BALASOURCES:.bala=.c) \
 	$(NULL)

@@ -25,7 +25,7 @@ async void run () {
 	string t, u;
 	u = yield test.test_string ("hello", out t);
 	assert (t == "world");
-	assert (u == "vala");
+	assert (u == "bala");
 
 	main_loop.quit ();
 }
@@ -60,7 +60,7 @@ class Test : Object {
 		Idle.add (test_string.callback);
 		yield;
 		t = "world";
-		return "vala";
+		return "bala";
 	}
 }
 

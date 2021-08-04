@@ -1,4 +1,4 @@
-/* valaccodedelegatemodule.vala
+/* balaccodedelegatemodule.bala
  *
  * Copyright (C) 2006-2010  Jürg Billeter
  * Copyright (C) 2006-2008  Raffaele Sandrini
@@ -325,7 +325,7 @@ public class Vala.CCodeDelegateModule : CCodeArrayModule {
 					CCodeExpression clength;
 					if (get_ccode_array_null_terminated (d_params.get (i))) {
 						requires_array_length = true;
-						var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_vala_array_length"));
+						var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_bala_array_length"));
 						len_call.add_argument (new CCodeIdentifier (d_params.get (i).name));
 						clength = len_call;
 					} else if (!get_ccode_array_length (d_params.get (i))) {

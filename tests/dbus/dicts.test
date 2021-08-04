@@ -33,7 +33,7 @@ class Test : Object {
 }
 
 namespace TestInterface {
-	[DBus (name = "org.vala.Test.Bar")]
+	[DBus (name = "org.bala.Test.Bar")]
 	public interface Bar : GLib.Object {
 		public abstract HashTable<string, Variant> foo () throws IOError;
 	}

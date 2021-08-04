@@ -1,4 +1,4 @@
-/* codescanner.vala
+/* codescanner.bala
  *
  * Copyright (C) 2015       Florian Brosch
  *
@@ -456,7 +456,7 @@ public class Valadoc.Highlighter.CodeScanner : Object, Scanner {
 		NONE
 	}
 
-	// based on libvala
+	// based on libbala
 	private void queue_numeric_literal () {
 		NumericType numeric_type = NumericType.INTEGER;
 		unowned string start = pos;

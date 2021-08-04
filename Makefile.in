@@ -87,8 +87,8 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 @ENABLE_BALADOC_TRUE@am__append_1 = \
-@ENABLE_BALADOC_TRUE@	libvaladoc \
-@ENABLE_BALADOC_TRUE@	valadoc \
+@ENABLE_BALADOC_TRUE@	libbaladoc \
+@ENABLE_BALADOC_TRUE@	baladoc \
 @ENABLE_BALADOC_TRUE@	$(NULL)
 
 subdir = .
@@ -106,7 +106,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = config.h
-CONFIG_CLEAN_FILES = libvala.pc
+CONFIG_CLEAN_FILES = libbala.pc
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -194,10 +194,10 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = gee vala ccode codegen compiler vapi tests doc \
-	gobject-introspection vapigen libvaladoc valadoc
+DIST_SUBDIRS = gee bala ccode codegen compiler vapi tests doc \
+	gobject-introspection vapigen libbaladoc baladoc
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
-	$(srcdir)/libvala.pc.in $(top_srcdir)/build-aux/compile \
+	$(srcdir)/libbala.pc.in $(top_srcdir)/build-aux/compile \
 	$(top_srcdir)/build-aux/config.guess \
 	$(top_srcdir)/build-aux/config.sub \
 	$(top_srcdir)/build-aux/install-sh \
@@ -401,30 +401,30 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = --install -I m4 ${ACLOCAL_FLAGS}
 NULL = 
-SUBDIRS = gee vala ccode codegen compiler vapi tests doc \
+SUBDIRS = gee bala ccode codegen compiler vapi tests doc \
 	gobject-introspection vapigen $(NULL) $(am__append_1)
 DISTCHECK_CONFIGURE_FLAGS = \
-	--enable-valadoc \
+	--enable-baladoc \
 	--enable-unversioned \
 	$(NULL)
 
 @ENABLE_UNVERSIONED_TRUE@aclocaldir = $(datadir)/aclocal
-@ENABLE_UNVERSIONED_TRUE@aclocal_DATA = vala.m4
+@ENABLE_UNVERSIONED_TRUE@aclocal_DATA = bala.m4
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libvala@PACKAGE_SUFFIX@.pc
+pkgconfig_DATA = libbala@PACKAGE_SUFFIX@.pc
 #endif
 BUILT_SOURCES = $(top_srcdir)/.version
 gen_start_date = 2009-02-25
 CLEANFILES = \
-	libvala@PACKAGE_SUFFIX@.pc \
+	libbala@PACKAGE_SUFFIX@.pc \
 	$(NULL)
 
 EXTRA_DIST = \
 	ChangeLog.pre-0-4 \
 	ChangeLog.pre-0-5-7 \
 	README.md \
-	libvala.pc.in \
-	vala.m4 \
+	libbala.pc.in \
+	bala.m4 \
 	.version \
 	build-aux/git-version-gen \
 	build-aux/gitlog-to-changelog \
@@ -483,7 +483,7 @@ $(srcdir)/config.h.in: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 
 distclean-hdr:
 	-rm -f config.h stamp-h1
-libvala.pc: $(top_builddir)/config.status $(srcdir)/libvala.pc.in
+libbala.pc: $(top_builddir)/config.status $(srcdir)/libbala.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 
 mostlyclean-libtool:
@@ -979,13 +979,13 @@ uninstall-am: uninstall-aclocalDATA uninstall-pkgconfigDATA
 .PRECIOUS: Makefile
 
 
-libvala@PACKAGE_SUFFIX@.pc: libvala.pc
+libbala@PACKAGE_SUFFIX@.pc: libbala.pc
 	cp $< $@
 
 .PHONY: bootstrap
 bootstrap: all
-	find $(top_srcdir) -name "*.vala.stamp" | xargs rm -f
-	$(MAKE) $(AM_MAKEFLAGS) all BALAC=$(abs_top_builddir)/compiler/valac$(EXEEXT) V=$V \
+	find $(top_srcdir) -name "*.bala.stamp" | xargs rm -f
+	$(MAKE) $(AM_MAKEFLAGS) all BALAC=$(abs_top_builddir)/compiler/balac$(EXEEXT) V=$V \
 		BALAFLAGS="$(BALAFLAGS) --hide-internal --abi-stability"
 
 .PHONY: test

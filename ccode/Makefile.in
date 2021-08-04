@@ -102,39 +102,39 @@ CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
 LTLIBRARIES = $(noinst_LTLIBRARIES)
 am__DEPENDENCIES_1 =
-libvalaccode_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+libbalaccode_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(am__DEPENDENCIES_1)
 am__objects_1 =
-am__objects_2 = valaccodeassignment.lo valaccodebinaryexpression.lo \
-	valaccodeblock.lo valaccodebreakstatement.lo \
-	valaccodecasestatement.lo valaccodecastexpression.lo \
-	valaccodecommaexpression.lo valaccodecomment.lo \
-	valaccodeconditionalexpression.lo valaccodeconstant.lo \
-	valaccodecontinuestatement.lo valaccodedeclaration.lo \
-	valaccodedeclarator.lo valaccodedefine.lo \
-	valaccodedostatement.lo valaccodeemptystatement.lo \
-	valaccodeenum.lo valaccodeenumvalue.lo valaccodeexpression.lo \
-	valaccodeexpressionstatement.lo valaccodefile.lo \
-	valaccodeforstatement.lo valaccodefragment.lo \
-	valaccodefunction.lo valaccodefunctioncall.lo \
-	valaccodefunctiondeclarator.lo valaccodeggnucsection.lo \
-	valaccodegotostatement.lo valaccodeidentifier.lo \
-	valaccodeifstatement.lo valaccodeincludedirective.lo \
-	valaccodeinitializerlist.lo valaccodeinvalidexpression.lo \
-	valaccodelabel.lo valaccodelinedirective.lo \
-	valaccodeifsection.lo valaccodemacroreplacement.lo \
-	valaccodememberaccess.lo valaccodemodifiers.lo \
-	valaccodenewline.lo valaccodenode.lo valaccodeoncesection.lo \
-	valaccodeparameter.lo valaccodeparenthesizedexpression.lo \
-	valaccodereturnstatement.lo valaccodestatement.lo \
-	valaccodestruct.lo valaccodeswitchstatement.lo \
-	valaccodetypedefinition.lo valaccodeunaryexpression.lo \
-	valaccodevariabledeclarator.lo valaccodewhilestatement.lo \
-	valaccodewriter.lo valaccodeelementaccess.lo $(am__objects_1)
-am_libvalaccode_la_OBJECTS = $(am__objects_2) $(am__objects_1)
-libvalaccode_la_OBJECTS = $(am_libvalaccode_la_OBJECTS)
+am__objects_2 = balaccodeassignment.lo balaccodebinaryexpression.lo \
+	balaccodeblock.lo balaccodebreakstatement.lo \
+	balaccodecasestatement.lo balaccodecastexpression.lo \
+	balaccodecommaexpression.lo balaccodecomment.lo \
+	balaccodeconditionalexpression.lo balaccodeconstant.lo \
+	balaccodecontinuestatement.lo balaccodedeclaration.lo \
+	balaccodedeclarator.lo balaccodedefine.lo \
+	balaccodedostatement.lo balaccodeemptystatement.lo \
+	balaccodeenum.lo balaccodeenumvalue.lo balaccodeexpression.lo \
+	balaccodeexpressionstatement.lo balaccodefile.lo \
+	balaccodeforstatement.lo balaccodefragment.lo \
+	balaccodefunction.lo balaccodefunctioncall.lo \
+	balaccodefunctiondeclarator.lo balaccodeggnucsection.lo \
+	balaccodegotostatement.lo balaccodeidentifier.lo \
+	balaccodeifstatement.lo balaccodeincludedirective.lo \
+	balaccodeinitializerlist.lo balaccodeinvalidexpression.lo \
+	balaccodelabel.lo balaccodelinedirective.lo \
+	balaccodeifsection.lo balaccodemacroreplacement.lo \
+	balaccodememberaccess.lo balaccodemodifiers.lo \
+	balaccodenewline.lo balaccodenode.lo balaccodeoncesection.lo \
+	balaccodeparameter.lo balaccodeparenthesizedexpression.lo \
+	balaccodereturnstatement.lo balaccodestatement.lo \
+	balaccodestruct.lo balaccodeswitchstatement.lo \
+	balaccodetypedefinition.lo balaccodeunaryexpression.lo \
+	balaccodevariabledeclarator.lo balaccodewhilestatement.lo \
+	balaccodewriter.lo balaccodeelementaccess.lo $(am__objects_1)
+am_libbalaccode_la_OBJECTS = $(am__objects_2) $(am__objects_1)
+libbalaccode_la_OBJECTS = $(am_libbalaccode_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
@@ -154,59 +154,59 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/valaccodeassignment.Plo \
-	./$(DEPDIR)/valaccodebinaryexpression.Plo \
-	./$(DEPDIR)/valaccodeblock.Plo \
-	./$(DEPDIR)/valaccodebreakstatement.Plo \
-	./$(DEPDIR)/valaccodecasestatement.Plo \
-	./$(DEPDIR)/valaccodecastexpression.Plo \
-	./$(DEPDIR)/valaccodecommaexpression.Plo \
-	./$(DEPDIR)/valaccodecomment.Plo \
-	./$(DEPDIR)/valaccodeconditionalexpression.Plo \
-	./$(DEPDIR)/valaccodeconstant.Plo \
-	./$(DEPDIR)/valaccodecontinuestatement.Plo \
-	./$(DEPDIR)/valaccodedeclaration.Plo \
-	./$(DEPDIR)/valaccodedeclarator.Plo \
-	./$(DEPDIR)/valaccodedefine.Plo \
-	./$(DEPDIR)/valaccodedostatement.Plo \
-	./$(DEPDIR)/valaccodeelementaccess.Plo \
-	./$(DEPDIR)/valaccodeemptystatement.Plo \
-	./$(DEPDIR)/valaccodeenum.Plo \
-	./$(DEPDIR)/valaccodeenumvalue.Plo \
-	./$(DEPDIR)/valaccodeexpression.Plo \
-	./$(DEPDIR)/valaccodeexpressionstatement.Plo \
-	./$(DEPDIR)/valaccodefile.Plo \
-	./$(DEPDIR)/valaccodeforstatement.Plo \
-	./$(DEPDIR)/valaccodefragment.Plo \
-	./$(DEPDIR)/valaccodefunction.Plo \
-	./$(DEPDIR)/valaccodefunctioncall.Plo \
-	./$(DEPDIR)/valaccodefunctiondeclarator.Plo \
-	./$(DEPDIR)/valaccodeggnucsection.Plo \
-	./$(DEPDIR)/valaccodegotostatement.Plo \
-	./$(DEPDIR)/valaccodeidentifier.Plo \
-	./$(DEPDIR)/valaccodeifsection.Plo \
-	./$(DEPDIR)/valaccodeifstatement.Plo \
-	./$(DEPDIR)/valaccodeincludedirective.Plo \
-	./$(DEPDIR)/valaccodeinitializerlist.Plo \
-	./$(DEPDIR)/valaccodeinvalidexpression.Plo \
-	./$(DEPDIR)/valaccodelabel.Plo \
-	./$(DEPDIR)/valaccodelinedirective.Plo \
-	./$(DEPDIR)/valaccodemacroreplacement.Plo \
-	./$(DEPDIR)/valaccodememberaccess.Plo \
-	./$(DEPDIR)/valaccodemodifiers.Plo \
-	./$(DEPDIR)/valaccodenewline.Plo ./$(DEPDIR)/valaccodenode.Plo \
-	./$(DEPDIR)/valaccodeoncesection.Plo \
-	./$(DEPDIR)/valaccodeparameter.Plo \
-	./$(DEPDIR)/valaccodeparenthesizedexpression.Plo \
-	./$(DEPDIR)/valaccodereturnstatement.Plo \
-	./$(DEPDIR)/valaccodestatement.Plo \
-	./$(DEPDIR)/valaccodestruct.Plo \
-	./$(DEPDIR)/valaccodeswitchstatement.Plo \
-	./$(DEPDIR)/valaccodetypedefinition.Plo \
-	./$(DEPDIR)/valaccodeunaryexpression.Plo \
-	./$(DEPDIR)/valaccodevariabledeclarator.Plo \
-	./$(DEPDIR)/valaccodewhilestatement.Plo \
-	./$(DEPDIR)/valaccodewriter.Plo
+am__depfiles_remade = ./$(DEPDIR)/balaccodeassignment.Plo \
+	./$(DEPDIR)/balaccodebinaryexpression.Plo \
+	./$(DEPDIR)/balaccodeblock.Plo \
+	./$(DEPDIR)/balaccodebreakstatement.Plo \
+	./$(DEPDIR)/balaccodecasestatement.Plo \
+	./$(DEPDIR)/balaccodecastexpression.Plo \
+	./$(DEPDIR)/balaccodecommaexpression.Plo \
+	./$(DEPDIR)/balaccodecomment.Plo \
+	./$(DEPDIR)/balaccodeconditionalexpression.Plo \
+	./$(DEPDIR)/balaccodeconstant.Plo \
+	./$(DEPDIR)/balaccodecontinuestatement.Plo \
+	./$(DEPDIR)/balaccodedeclaration.Plo \
+	./$(DEPDIR)/balaccodedeclarator.Plo \
+	./$(DEPDIR)/balaccodedefine.Plo \
+	./$(DEPDIR)/balaccodedostatement.Plo \
+	./$(DEPDIR)/balaccodeelementaccess.Plo \
+	./$(DEPDIR)/balaccodeemptystatement.Plo \
+	./$(DEPDIR)/balaccodeenum.Plo \
+	./$(DEPDIR)/balaccodeenumvalue.Plo \
+	./$(DEPDIR)/balaccodeexpression.Plo \
+	./$(DEPDIR)/balaccodeexpressionstatement.Plo \
+	./$(DEPDIR)/balaccodefile.Plo \
+	./$(DEPDIR)/balaccodeforstatement.Plo \
+	./$(DEPDIR)/balaccodefragment.Plo \
+	./$(DEPDIR)/balaccodefunction.Plo \
+	./$(DEPDIR)/balaccodefunctioncall.Plo \
+	./$(DEPDIR)/balaccodefunctiondeclarator.Plo \
+	./$(DEPDIR)/balaccodeggnucsection.Plo \
+	./$(DEPDIR)/balaccodegotostatement.Plo \
+	./$(DEPDIR)/balaccodeidentifier.Plo \
+	./$(DEPDIR)/balaccodeifsection.Plo \
+	./$(DEPDIR)/balaccodeifstatement.Plo \
+	./$(DEPDIR)/balaccodeincludedirective.Plo \
+	./$(DEPDIR)/balaccodeinitializerlist.Plo \
+	./$(DEPDIR)/balaccodeinvalidexpression.Plo \
+	./$(DEPDIR)/balaccodelabel.Plo \
+	./$(DEPDIR)/balaccodelinedirective.Plo \
+	./$(DEPDIR)/balaccodemacroreplacement.Plo \
+	./$(DEPDIR)/balaccodememberaccess.Plo \
+	./$(DEPDIR)/balaccodemodifiers.Plo \
+	./$(DEPDIR)/balaccodenewline.Plo ./$(DEPDIR)/balaccodenode.Plo \
+	./$(DEPDIR)/balaccodeoncesection.Plo \
+	./$(DEPDIR)/balaccodeparameter.Plo \
+	./$(DEPDIR)/balaccodeparenthesizedexpression.Plo \
+	./$(DEPDIR)/balaccodereturnstatement.Plo \
+	./$(DEPDIR)/balaccodestatement.Plo \
+	./$(DEPDIR)/balaccodestruct.Plo \
+	./$(DEPDIR)/balaccodeswitchstatement.Plo \
+	./$(DEPDIR)/balaccodetypedefinition.Plo \
+	./$(DEPDIR)/balaccodeunaryexpression.Plo \
+	./$(DEPDIR)/balaccodevariabledeclarator.Plo \
+	./$(DEPDIR)/balaccodewhilestatement.Plo \
+	./$(DEPDIR)/balaccodewriter.Plo
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -226,8 +226,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libvalaccode_la_SOURCES)
-DIST_SOURCES = $(libvalaccode_la_SOURCES)
+SOURCES = $(libbalaccode_la_SOURCES)
+DIST_SOURCES = $(libbalaccode_la_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -409,91 +409,91 @@ BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
 BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"vala-ccode\" \
+	-DG_LOG_DOMAIN=\"bala-ccode\" \
 	$(COVERAGE_CFLAGS) \
 	-I$(top_srcdir)/gee \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	$(GLIB_CFLAGS) \
 	$(NULL)
 
-BUILT_SOURCES = ccode.vala.stamp
+BUILT_SOURCES = ccode.bala.stamp
 noinst_LTLIBRARIES = \
-	libvalaccode.la \
+	libbalaccode.la \
 	$(NULL)
 
-libvalaccode_la_BALASOURCES = \
-	valaccodeassignment.vala \
-	valaccodebinaryexpression.vala \
-	valaccodeblock.vala \
-	valaccodebreakstatement.vala \
-	valaccodecasestatement.vala \
-	valaccodecastexpression.vala \
-	valaccodecommaexpression.vala \
-	valaccodecomment.vala \
-	valaccodeconditionalexpression.vala \
-	valaccodeconstant.vala \
-	valaccodecontinuestatement.vala \
-	valaccodedeclaration.vala \
-	valaccodedeclarator.vala \
-	valaccodedefine.vala \
-	valaccodedostatement.vala \
-	valaccodeemptystatement.vala \
-	valaccodeenum.vala \
-	valaccodeenumvalue.vala \
-	valaccodeexpression.vala \
-	valaccodeexpressionstatement.vala \
-	valaccodefile.vala \
-	valaccodeforstatement.vala \
-	valaccodefragment.vala \
-	valaccodefunction.vala \
-	valaccodefunctioncall.vala \
-	valaccodefunctiondeclarator.vala \
-	valaccodeggnucsection.vala \
-	valaccodegotostatement.vala \
-	valaccodeidentifier.vala \
-	valaccodeifstatement.vala \
-	valaccodeincludedirective.vala \
-	valaccodeinitializerlist.vala \
-	valaccodeinvalidexpression.vala \
-	valaccodelabel.vala \
-	valaccodelinedirective.vala \
-	valaccodeifsection.vala \
-	valaccodemacroreplacement.vala \
-	valaccodememberaccess.vala \
-	valaccodemodifiers.vala \
-	valaccodenewline.vala \
-	valaccodenode.vala \
-	valaccodeoncesection.vala \
-	valaccodeparameter.vala \
-	valaccodeparenthesizedexpression.vala \
-	valaccodereturnstatement.vala \
-	valaccodestatement.vala \
-	valaccodestruct.vala \
-	valaccodeswitchstatement.vala \
-	valaccodetypedefinition.vala \
-	valaccodeunaryexpression.vala \
-	valaccodevariabledeclarator.vala \
-	valaccodewhilestatement.vala \
-	valaccodewriter.vala \
-	valaccodeelementaccess.vala \
+libbalaccode_la_BALASOURCES = \
+	balaccodeassignment.bala \
+	balaccodebinaryexpression.bala \
+	balaccodeblock.bala \
+	balaccodebreakstatement.bala \
+	balaccodecasestatement.bala \
+	balaccodecastexpression.bala \
+	balaccodecommaexpression.bala \
+	balaccodecomment.bala \
+	balaccodeconditionalexpression.bala \
+	balaccodeconstant.bala \
+	balaccodecontinuestatement.bala \
+	balaccodedeclaration.bala \
+	balaccodedeclarator.bala \
+	balaccodedefine.bala \
+	balaccodedostatement.bala \
+	balaccodeemptystatement.bala \
+	balaccodeenum.bala \
+	balaccodeenumvalue.bala \
+	balaccodeexpression.bala \
+	balaccodeexpressionstatement.bala \
+	balaccodefile.bala \
+	balaccodeforstatement.bala \
+	balaccodefragment.bala \
+	balaccodefunction.bala \
+	balaccodefunctioncall.bala \
+	balaccodefunctiondeclarator.bala \
+	balaccodeggnucsection.bala \
+	balaccodegotostatement.bala \
+	balaccodeidentifier.bala \
+	balaccodeifstatement.bala \
+	balaccodeincludedirective.bala \
+	balaccodeinitializerlist.bala \
+	balaccodeinvalidexpression.bala \
+	balaccodelabel.bala \
+	balaccodelinedirective.bala \
+	balaccodeifsection.bala \
+	balaccodemacroreplacement.bala \
+	balaccodememberaccess.bala \
+	balaccodemodifiers.bala \
+	balaccodenewline.bala \
+	balaccodenode.bala \
+	balaccodeoncesection.bala \
+	balaccodeparameter.bala \
+	balaccodeparenthesizedexpression.bala \
+	balaccodereturnstatement.bala \
+	balaccodestatement.bala \
+	balaccodestruct.bala \
+	balaccodeswitchstatement.bala \
+	balaccodetypedefinition.bala \
+	balaccodeunaryexpression.bala \
+	balaccodevariabledeclarator.bala \
+	balaccodewhilestatement.bala \
+	balaccodewriter.bala \
+	balaccodeelementaccess.bala \
 	$(NULL)
 
-libvalaccode_la_SOURCES = \
-	ccode.vala.stamp \
-	$(libvalaccode_la_BALASOURCES:.vala=.c) \
+libbalaccode_la_SOURCES = \
+	ccode.bala.stamp \
+	$(libbalaccode_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-libvalaccode_la_LIBADD = \
+libbalaccode_la_LIBADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(NULL)
 
-EXTRA_DIST = $(libvalaccode_la_BALASOURCES) ccode.vapi ccode.vala.stamp valaccode.h
+EXTRA_DIST = $(libbalaccode_la_BALASOURCES) ccode.vapi ccode.bala.stamp balaccode.h
 MAINTAINERCLEANFILES = \
 	ccode.vapi \
-	valaccode.h \
-	$(libvalaccode_la_BALASOURCES:.vala=.c) \
+	balaccode.h \
+	$(libbalaccode_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -543,8 +543,8 @@ clean-noinstLTLIBRARIES:
 	  rm -f $${locs}; \
 	}
 
-libvalaccode.la: $(libvalaccode_la_OBJECTS) $(libvalaccode_la_DEPENDENCIES) $(EXTRA_libvalaccode_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(LINK)  $(libvalaccode_la_OBJECTS) $(libvalaccode_la_LIBADD) $(LIBS)
+libbalaccode.la: $(libbalaccode_la_OBJECTS) $(libbalaccode_la_DEPENDENCIES) $(EXTRA_libbalaccode_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(LINK)  $(libbalaccode_la_OBJECTS) $(libbalaccode_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -552,60 +552,60 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeassignment.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodebinaryexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeblock.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodebreakstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodecasestatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodecastexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodecommaexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodecomment.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeconditionalexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeconstant.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodecontinuestatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodedeclaration.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodedeclarator.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodedefine.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodedostatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeelementaccess.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeemptystatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeenum.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeenumvalue.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeexpressionstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodefile.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeforstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodefragment.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodefunction.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodefunctioncall.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodefunctiondeclarator.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeggnucsection.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodegotostatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeidentifier.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeifsection.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeifstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeincludedirective.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeinitializerlist.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeinvalidexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodelabel.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodelinedirective.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodemacroreplacement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodememberaccess.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodemodifiers.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodenewline.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodenode.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeoncesection.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeparameter.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeparenthesizedexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodereturnstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodestatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodestruct.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeswitchstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodetypedefinition.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeunaryexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodevariabledeclarator.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodewhilestatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodewriter.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeassignment.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodebinaryexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeblock.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodebreakstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodecasestatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodecastexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodecommaexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodecomment.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeconditionalexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeconstant.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodecontinuestatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodedeclaration.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodedeclarator.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodedefine.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodedostatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeelementaccess.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeemptystatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeenum.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeenumvalue.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeexpressionstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodefile.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeforstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodefragment.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodefunction.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodefunctioncall.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodefunctiondeclarator.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeggnucsection.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodegotostatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeidentifier.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeifsection.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeifstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeincludedirective.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeinitializerlist.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeinvalidexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodelabel.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodelinedirective.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodemacroreplacement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodememberaccess.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodemodifiers.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodenewline.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodenode.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeoncesection.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeparameter.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeparenthesizedexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodereturnstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodestatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodestruct.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeswitchstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodetypedefinition.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeunaryexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodevariabledeclarator.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodewhilestatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodewriter.Plo@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -773,60 +773,60 @@ clean-am: clean-generic clean-libtool clean-noinstLTLIBRARIES \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/valaccodeassignment.Plo
-	-rm -f ./$(DEPDIR)/valaccodebinaryexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodeblock.Plo
-	-rm -f ./$(DEPDIR)/valaccodebreakstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodecasestatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodecastexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodecommaexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodecomment.Plo
-	-rm -f ./$(DEPDIR)/valaccodeconditionalexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodeconstant.Plo
-	-rm -f ./$(DEPDIR)/valaccodecontinuestatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodedeclaration.Plo
-	-rm -f ./$(DEPDIR)/valaccodedeclarator.Plo
-	-rm -f ./$(DEPDIR)/valaccodedefine.Plo
-	-rm -f ./$(DEPDIR)/valaccodedostatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodeelementaccess.Plo
-	-rm -f ./$(DEPDIR)/valaccodeemptystatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodeenum.Plo
-	-rm -f ./$(DEPDIR)/valaccodeenumvalue.Plo
-	-rm -f ./$(DEPDIR)/valaccodeexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodeexpressionstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodefile.Plo
-	-rm -f ./$(DEPDIR)/valaccodeforstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodefragment.Plo
-	-rm -f ./$(DEPDIR)/valaccodefunction.Plo
-	-rm -f ./$(DEPDIR)/valaccodefunctioncall.Plo
-	-rm -f ./$(DEPDIR)/valaccodefunctiondeclarator.Plo
-	-rm -f ./$(DEPDIR)/valaccodeggnucsection.Plo
-	-rm -f ./$(DEPDIR)/valaccodegotostatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodeidentifier.Plo
-	-rm -f ./$(DEPDIR)/valaccodeifsection.Plo
-	-rm -f ./$(DEPDIR)/valaccodeifstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodeincludedirective.Plo
-	-rm -f ./$(DEPDIR)/valaccodeinitializerlist.Plo
-	-rm -f ./$(DEPDIR)/valaccodeinvalidexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodelabel.Plo
-	-rm -f ./$(DEPDIR)/valaccodelinedirective.Plo
-	-rm -f ./$(DEPDIR)/valaccodemacroreplacement.Plo
-	-rm -f ./$(DEPDIR)/valaccodememberaccess.Plo
-	-rm -f ./$(DEPDIR)/valaccodemodifiers.Plo
-	-rm -f ./$(DEPDIR)/valaccodenewline.Plo
-	-rm -f ./$(DEPDIR)/valaccodenode.Plo
-	-rm -f ./$(DEPDIR)/valaccodeoncesection.Plo
-	-rm -f ./$(DEPDIR)/valaccodeparameter.Plo
-	-rm -f ./$(DEPDIR)/valaccodeparenthesizedexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodereturnstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodestatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodestruct.Plo
-	-rm -f ./$(DEPDIR)/valaccodeswitchstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodetypedefinition.Plo
-	-rm -f ./$(DEPDIR)/valaccodeunaryexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodevariabledeclarator.Plo
-	-rm -f ./$(DEPDIR)/valaccodewhilestatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodewriter.Plo
+		-rm -f ./$(DEPDIR)/balaccodeassignment.Plo
+	-rm -f ./$(DEPDIR)/balaccodebinaryexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodeblock.Plo
+	-rm -f ./$(DEPDIR)/balaccodebreakstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodecasestatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodecastexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodecommaexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodecomment.Plo
+	-rm -f ./$(DEPDIR)/balaccodeconditionalexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodeconstant.Plo
+	-rm -f ./$(DEPDIR)/balaccodecontinuestatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodedeclaration.Plo
+	-rm -f ./$(DEPDIR)/balaccodedeclarator.Plo
+	-rm -f ./$(DEPDIR)/balaccodedefine.Plo
+	-rm -f ./$(DEPDIR)/balaccodedostatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodeelementaccess.Plo
+	-rm -f ./$(DEPDIR)/balaccodeemptystatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodeenum.Plo
+	-rm -f ./$(DEPDIR)/balaccodeenumvalue.Plo
+	-rm -f ./$(DEPDIR)/balaccodeexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodeexpressionstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodefile.Plo
+	-rm -f ./$(DEPDIR)/balaccodeforstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodefragment.Plo
+	-rm -f ./$(DEPDIR)/balaccodefunction.Plo
+	-rm -f ./$(DEPDIR)/balaccodefunctioncall.Plo
+	-rm -f ./$(DEPDIR)/balaccodefunctiondeclarator.Plo
+	-rm -f ./$(DEPDIR)/balaccodeggnucsection.Plo
+	-rm -f ./$(DEPDIR)/balaccodegotostatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodeidentifier.Plo
+	-rm -f ./$(DEPDIR)/balaccodeifsection.Plo
+	-rm -f ./$(DEPDIR)/balaccodeifstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodeincludedirective.Plo
+	-rm -f ./$(DEPDIR)/balaccodeinitializerlist.Plo
+	-rm -f ./$(DEPDIR)/balaccodeinvalidexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodelabel.Plo
+	-rm -f ./$(DEPDIR)/balaccodelinedirective.Plo
+	-rm -f ./$(DEPDIR)/balaccodemacroreplacement.Plo
+	-rm -f ./$(DEPDIR)/balaccodememberaccess.Plo
+	-rm -f ./$(DEPDIR)/balaccodemodifiers.Plo
+	-rm -f ./$(DEPDIR)/balaccodenewline.Plo
+	-rm -f ./$(DEPDIR)/balaccodenode.Plo
+	-rm -f ./$(DEPDIR)/balaccodeoncesection.Plo
+	-rm -f ./$(DEPDIR)/balaccodeparameter.Plo
+	-rm -f ./$(DEPDIR)/balaccodeparenthesizedexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodereturnstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodestatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodestruct.Plo
+	-rm -f ./$(DEPDIR)/balaccodeswitchstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodetypedefinition.Plo
+	-rm -f ./$(DEPDIR)/balaccodeunaryexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodevariabledeclarator.Plo
+	-rm -f ./$(DEPDIR)/balaccodewhilestatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodewriter.Plo
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -872,60 +872,60 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/valaccodeassignment.Plo
-	-rm -f ./$(DEPDIR)/valaccodebinaryexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodeblock.Plo
-	-rm -f ./$(DEPDIR)/valaccodebreakstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodecasestatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodecastexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodecommaexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodecomment.Plo
-	-rm -f ./$(DEPDIR)/valaccodeconditionalexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodeconstant.Plo
-	-rm -f ./$(DEPDIR)/valaccodecontinuestatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodedeclaration.Plo
-	-rm -f ./$(DEPDIR)/valaccodedeclarator.Plo
-	-rm -f ./$(DEPDIR)/valaccodedefine.Plo
-	-rm -f ./$(DEPDIR)/valaccodedostatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodeelementaccess.Plo
-	-rm -f ./$(DEPDIR)/valaccodeemptystatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodeenum.Plo
-	-rm -f ./$(DEPDIR)/valaccodeenumvalue.Plo
-	-rm -f ./$(DEPDIR)/valaccodeexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodeexpressionstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodefile.Plo
-	-rm -f ./$(DEPDIR)/valaccodeforstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodefragment.Plo
-	-rm -f ./$(DEPDIR)/valaccodefunction.Plo
-	-rm -f ./$(DEPDIR)/valaccodefunctioncall.Plo
-	-rm -f ./$(DEPDIR)/valaccodefunctiondeclarator.Plo
-	-rm -f ./$(DEPDIR)/valaccodeggnucsection.Plo
-	-rm -f ./$(DEPDIR)/valaccodegotostatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodeidentifier.Plo
-	-rm -f ./$(DEPDIR)/valaccodeifsection.Plo
-	-rm -f ./$(DEPDIR)/valaccodeifstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodeincludedirective.Plo
-	-rm -f ./$(DEPDIR)/valaccodeinitializerlist.Plo
-	-rm -f ./$(DEPDIR)/valaccodeinvalidexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodelabel.Plo
-	-rm -f ./$(DEPDIR)/valaccodelinedirective.Plo
-	-rm -f ./$(DEPDIR)/valaccodemacroreplacement.Plo
-	-rm -f ./$(DEPDIR)/valaccodememberaccess.Plo
-	-rm -f ./$(DEPDIR)/valaccodemodifiers.Plo
-	-rm -f ./$(DEPDIR)/valaccodenewline.Plo
-	-rm -f ./$(DEPDIR)/valaccodenode.Plo
-	-rm -f ./$(DEPDIR)/valaccodeoncesection.Plo
-	-rm -f ./$(DEPDIR)/valaccodeparameter.Plo
-	-rm -f ./$(DEPDIR)/valaccodeparenthesizedexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodereturnstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodestatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodestruct.Plo
-	-rm -f ./$(DEPDIR)/valaccodeswitchstatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodetypedefinition.Plo
-	-rm -f ./$(DEPDIR)/valaccodeunaryexpression.Plo
-	-rm -f ./$(DEPDIR)/valaccodevariabledeclarator.Plo
-	-rm -f ./$(DEPDIR)/valaccodewhilestatement.Plo
-	-rm -f ./$(DEPDIR)/valaccodewriter.Plo
+		-rm -f ./$(DEPDIR)/balaccodeassignment.Plo
+	-rm -f ./$(DEPDIR)/balaccodebinaryexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodeblock.Plo
+	-rm -f ./$(DEPDIR)/balaccodebreakstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodecasestatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodecastexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodecommaexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodecomment.Plo
+	-rm -f ./$(DEPDIR)/balaccodeconditionalexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodeconstant.Plo
+	-rm -f ./$(DEPDIR)/balaccodecontinuestatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodedeclaration.Plo
+	-rm -f ./$(DEPDIR)/balaccodedeclarator.Plo
+	-rm -f ./$(DEPDIR)/balaccodedefine.Plo
+	-rm -f ./$(DEPDIR)/balaccodedostatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodeelementaccess.Plo
+	-rm -f ./$(DEPDIR)/balaccodeemptystatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodeenum.Plo
+	-rm -f ./$(DEPDIR)/balaccodeenumvalue.Plo
+	-rm -f ./$(DEPDIR)/balaccodeexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodeexpressionstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodefile.Plo
+	-rm -f ./$(DEPDIR)/balaccodeforstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodefragment.Plo
+	-rm -f ./$(DEPDIR)/balaccodefunction.Plo
+	-rm -f ./$(DEPDIR)/balaccodefunctioncall.Plo
+	-rm -f ./$(DEPDIR)/balaccodefunctiondeclarator.Plo
+	-rm -f ./$(DEPDIR)/balaccodeggnucsection.Plo
+	-rm -f ./$(DEPDIR)/balaccodegotostatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodeidentifier.Plo
+	-rm -f ./$(DEPDIR)/balaccodeifsection.Plo
+	-rm -f ./$(DEPDIR)/balaccodeifstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodeincludedirective.Plo
+	-rm -f ./$(DEPDIR)/balaccodeinitializerlist.Plo
+	-rm -f ./$(DEPDIR)/balaccodeinvalidexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodelabel.Plo
+	-rm -f ./$(DEPDIR)/balaccodelinedirective.Plo
+	-rm -f ./$(DEPDIR)/balaccodemacroreplacement.Plo
+	-rm -f ./$(DEPDIR)/balaccodememberaccess.Plo
+	-rm -f ./$(DEPDIR)/balaccodemodifiers.Plo
+	-rm -f ./$(DEPDIR)/balaccodenewline.Plo
+	-rm -f ./$(DEPDIR)/balaccodenode.Plo
+	-rm -f ./$(DEPDIR)/balaccodeoncesection.Plo
+	-rm -f ./$(DEPDIR)/balaccodeparameter.Plo
+	-rm -f ./$(DEPDIR)/balaccodeparenthesizedexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodereturnstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodestatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodestruct.Plo
+	-rm -f ./$(DEPDIR)/balaccodeswitchstatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodetypedefinition.Plo
+	-rm -f ./$(DEPDIR)/balaccodeunaryexpression.Plo
+	-rm -f ./$(DEPDIR)/balaccodevariabledeclarator.Plo
+	-rm -f ./$(DEPDIR)/balaccodewhilestatement.Plo
+	-rm -f ./$(DEPDIR)/balaccodewriter.Plo
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -963,17 +963,17 @@ uninstall-am:
 .PRECIOUS: Makefile
 
 
-ccode.vapi ccode.vala.stamp: $(libvalaccode_la_BALASOURCES)
+ccode.vapi ccode.bala.stamp: $(libbalaccode_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--pkg config \
 		--use-header \
-		-H valaccode.h \
+		-H balaccode.h \
 		--library ccode \
 		$^
 	touch $@

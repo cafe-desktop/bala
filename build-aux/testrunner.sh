@@ -39,7 +39,7 @@ fi
 vapidir=$abs_top_srcdir/vapi
 run_prefix=""
 
-BALAC=$abs_top_builddir/compiler/valac$EXEEXT
+BALAC=$abs_top_builddir/compiler/balac$EXEEXT
 BALAFLAGS="$BALAFLAGS \
 	--vapidir $vapidir \
 	--enable-checking \
@@ -50,7 +50,7 @@ BALAFLAGS="$BALAFLAGS \
 	-X -O0 \
 	-X -pipe \
 	-X -lm \
-	-X -DGETTEXT_PACKAGE=\"valac\""
+	-X -DGETTEXT_PACKAGE=\"balac\""
 VAPIGEN=$abs_top_builddir/vapigen/vapigen$EXEEXT
 VAPIGENFLAGS="--vapidir $vapidir"
 
@@ -74,7 +74,7 @@ function testheader() {
 	elif [ "$*" = "Invalid Code" ]; then
 		INVALIDCODE=1
 		INHEADER=0
-		SOURCEFILE=${testpath}_invalid.vala
+		SOURCEFILE=${testpath}_invalid.bala
 	elif [ "$1" = "D-Bus" ]; then
 		DBUSTEST=1
 		run_prefix="dbus-run-session -- $run_prefix"
@@ -91,7 +91,7 @@ function sourceheader() {
 		ns=$testpath/$2
 		ns=${ns//\//_}
 		ns=${ns//-/_}
-		SOURCEFILE=$ns.vala
+		SOURCEFILE=$ns.bala
 		SOURCEFILES="$SOURCEFILES $SOURCEFILE"
 	elif [ $GIRTEST -eq 1 ]; then
 		if [ "$1" = "Input:" ]; then
@@ -159,8 +159,8 @@ case "$testfile" in
 *.gs)
 	SOURCEFILE=$testpath.gs
 	;&
-*.vala)
-	SOURCEFILE=${SOURCEFILE:-$testpath.vala}
+*.bala)
+	SOURCEFILE=${SOURCEFILE:-$testpath.bala}
 	cat "$abs_srcdir/$testfile" > ./$SOURCEFILE
 	PACKAGEFLAGS=$([ -z "$PACKAGES" ] || echo $PACKAGES | xargs -n 1 echo -n " --pkg")
 	$BALAC $BALAFLAGS $PACKAGEFLAGS -o $testpath$EXEEXT $SOURCEFILE

@@ -1,4 +1,4 @@
-/* valacodewriter.vala
+/* balacodewriter.bala
  *
  * Copyright (C) 2006-2014  Jürg Billeter
  * Copyright (C) 2006-2008  Raffaele Sandrini
@@ -69,7 +69,7 @@ public class Vala.CodeWriter : CodeVisitor {
 	 */
 	public void write_file (CodeContext context, string filename) {
 		var file_exists = FileUtils.test (filename, FileTest.EXISTS);
-		var temp_filename = "%s.valatmp".printf (filename);
+		var temp_filename = "%s.balatmp".printf (filename);
 		this.context = context;
 
 		if (file_exists) {

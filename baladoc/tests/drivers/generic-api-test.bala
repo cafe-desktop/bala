@@ -1,4 +1,4 @@
-/* api-test.vala
+/* api-test.bala
  *
  * Copyright (C) 2013  Florian Brosch
  *
@@ -2887,7 +2887,7 @@ public static void test_driver () {
 	var reporter = new ErrorReporter ();
 
 	settings.source_files = {
-			TOP_SRC_DIR + "/valadoc/tests/drivers/api-test.data.vapi"
+			TOP_SRC_DIR + "/baladoc/tests/drivers/api-test.data.vapi"
 		};
 
 	settings._protected = false;

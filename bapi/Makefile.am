@@ -1,12 +1,12 @@
 NULL =
 
-check: $(top_builddir)/compiler/valac
-	echo "void main () {}" > test.vala; \
+check: $(top_builddir)/compiler/balac
+	echo "void main () {}" > test.bala; \
 	for vapi in `ls *.vapi | sed -e "s/\.vapi//g"`; do \
 		echo "Checking $$vapi..."; \
-		$(top_builddir)/compiler/valac -C --enable-deprecated --pkg=$$vapi --vapidir=. test.vala || exit 1; \
+		$(top_builddir)/compiler/balac -C --enable-deprecated --pkg=$$vapi --vapidir=. test.bala || exit 1; \
 	done; \
-	rm -f test.vala test.c
+	rm -f test.bala test.c
 
 vapidir = $(pkgdatadir)/vapi
 
@@ -431,13 +431,13 @@ gstreamer-1.0-bindings: $(GSTREAMER_1_0_BINDINGS)
 all-bindings: gir-bindings gidl-bindings
 
 atk:
-	$(GENVAPI) --library $(srcdir)/atk --metadatadir $(METADATADIR) $(METADATADIR)/Atk-1.0-custom.vala $(GIRDIR)/Atk-1.0.gir
+	$(GENVAPI) --library $(srcdir)/atk --metadatadir $(METADATADIR) $(METADATADIR)/Atk-1.0-custom.bala $(GIRDIR)/Atk-1.0.gir
 
 atspi-2:
 	$(GENVAPI) --library $(srcdir)/atspi-2 --metadatadir $(METADATADIR) $(GIRDIR)/Atspi-2.0.gir
 
 clutter-1.0:
-	$(GENVAPI) --library $(srcdir)/clutter-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/Clutter-1.0-custom.vala --pkg atk --pkg cairo --pkg pango --pkg cogl-1.0 --pkg cogl-pango-1.0 --pkg json-glib-1.0 $(GIRDIR)/Clutter-1.0.gir
+	$(GENVAPI) --library $(srcdir)/clutter-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/Clutter-1.0-custom.bala --pkg atk --pkg cairo --pkg pango --pkg cogl-1.0 --pkg cogl-pango-1.0 --pkg json-glib-1.0 $(GIRDIR)/Clutter-1.0.gir
 
 clutter-gdk-1.0:
 	$(GENVAPI) --library $(srcdir)/clutter-gdk-1.0 --metadatadir $(METADATADIR) --pkg clutter-1.0 --pkg gdk-3.0 $(GIRDIR)/ClutterGdk-1.0.gir
@@ -446,19 +446,19 @@ clutter-gtk-0.10:
 	$(GENVAPI) --library $(srcdir)/clutter-gtk-0.10 $(PACKAGESDIR)/clutter-gtk-0.10/clutter-gtk-0.10.gi
 
 clutter-gtk-1.0:
-	$(GENVAPI) --library $(srcdir)/clutter-gtk-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GtkClutter-1.0-custom.vala --pkg clutter-1.0 --pkg gtk+-3.0 --pkg cogl-pango-1.0 $(GIRDIR)/GtkClutter-1.0.gir
+	$(GENVAPI) --library $(srcdir)/clutter-gtk-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GtkClutter-1.0-custom.bala --pkg clutter-1.0 --pkg gtk+-3.0 --pkg cogl-pango-1.0 $(GIRDIR)/GtkClutter-1.0.gir
 
 clutter-gst-2.0:
-	$(GENVAPI) --library $(srcdir)/clutter-gst-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/ClutterGst-2.0-custom.vala --pkg cogl-1.0 --pkg clutter-1.0 --pkg gstreamer-base-1.0 --pkg gstreamer-video-1.0 $(GIRDIR)/ClutterGst-2.0.gir
+	$(GENVAPI) --library $(srcdir)/clutter-gst-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/ClutterGst-2.0-custom.bala --pkg cogl-1.0 --pkg clutter-1.0 --pkg gstreamer-base-1.0 --pkg gstreamer-video-1.0 $(GIRDIR)/ClutterGst-2.0.gir
 
 clutter-gst-3.0:
-	$(GENVAPI) --library $(srcdir)/clutter-gst-3.0 --metadatadir $(METADATADIR) $(METADATADIR)/ClutterGst-3.0-custom.vala --pkg cogl-1.0 --pkg clutter-1.0 --pkg gdk-pixbuf-2.0 --pkg gstreamer-1.0 --pkg gstreamer-audio-1.0 --pkg gstreamer-base-1.0 --pkg gstreamer-pbutils-1.0 --pkg gstreamer-video-1.0 $(GIRDIR)/ClutterGst-3.0.gir
+	$(GENVAPI) --library $(srcdir)/clutter-gst-3.0 --metadatadir $(METADATADIR) $(METADATADIR)/ClutterGst-3.0-custom.bala --pkg cogl-1.0 --pkg clutter-1.0 --pkg gdk-pixbuf-2.0 --pkg gstreamer-1.0 --pkg gstreamer-audio-1.0 --pkg gstreamer-base-1.0 --pkg gstreamer-pbutils-1.0 --pkg gstreamer-video-1.0 $(GIRDIR)/ClutterGst-3.0.gir
 
 clutter-x11-1.0:
 	$(GENVAPI) --library $(srcdir)/clutter-x11-1.0 --metadatadir $(METADATADIR) --pkg clutter-1.0 --pkg x11 $(GIRDIR)/ClutterX11-1.0.gir
 
 cogl-1.0:
-	$(GENVAPI) --library $(srcdir)/cogl-1.0 $(PACKAGESDIR)/cogl-1.0/cogl-1.0-custom.vala $(PACKAGESDIR)/cogl-1.0/cogl-1.0.gi
+	$(GENVAPI) --library $(srcdir)/cogl-1.0 $(PACKAGESDIR)/cogl-1.0/cogl-1.0-custom.bala $(PACKAGESDIR)/cogl-1.0/cogl-1.0.gi
 
 cogl-pango-1.0:
 	$(GENVAPI) --library $(srcdir)/cogl-pango-1.0 --metadatadir $(METADATADIR) --pkg cogl-1.0 --pkg pango $(GIRDIR)/CoglPango-1.0.gir
@@ -473,28 +473,28 @@ gdesktopenums-3.0:
 	$(GENVAPI) --library $(srcdir)/gdesktopenums-3.0 --metadatadir $(METADATADIR) $(GIRDIR)/GDesktopEnums-3.0.gir
 
 gdk-2.0:
-	$(GENVAPI) --library $(srcdir)/gdk-2.0 $(PACKAGESDIR)/gdk-2.0/gdk-2.0-custom.vala $(PACKAGESDIR)/gdk-2.0/gdk-2.0.gi
+	$(GENVAPI) --library $(srcdir)/gdk-2.0 $(PACKAGESDIR)/gdk-2.0/gdk-2.0-custom.bala $(PACKAGESDIR)/gdk-2.0/gdk-2.0.gi
 
 gdk-3.0:
-	$(GENVAPI) --library $(srcdir)/gdk-3.0 --pkg gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Gdk-3.0-custom.vala $(GIRDIR)/Gdk-3.0.gir
+	$(GENVAPI) --library $(srcdir)/gdk-3.0 --pkg gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Gdk-3.0-custom.bala $(GIRDIR)/Gdk-3.0.gir
 
 cdk-3.0:
-	$(GENVAPI) --library $(srcdir)/cdk-3.0 --pkg gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Cdk-3.0-custom.vala $(GIRDIR)/Cdk-3.0.gir
+	$(GENVAPI) --library $(srcdir)/cdk-3.0 --pkg gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Cdk-3.0-custom.bala $(GIRDIR)/Cdk-3.0.gir
 
 gdk-pixbuf-2.0:
-	$(GENVAPI) --library $(srcdir)/gdk-pixbuf-2.0 --pkg gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/GdkPixbuf-2.0-custom.vala $(GIRDIR)/GdkPixdata-2.0.gir $(GIRDIR)/GdkPixbuf-2.0.gir
+	$(GENVAPI) --library $(srcdir)/gdk-pixbuf-2.0 --pkg gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/GdkPixbuf-2.0-custom.bala $(GIRDIR)/GdkPixdata-2.0.gir $(GIRDIR)/GdkPixbuf-2.0.gir
 
 gdk-x11-2.0:
-	$(GENVAPI) --library $(srcdir)/gdk-x11-2.0 $(PACKAGESDIR)/gdk-x11-2.0/gdk-x11-2.0-custom.vala $(PACKAGESDIR)/gdk-x11-2.0/gdk-x11-2.0.gi
+	$(GENVAPI) --library $(srcdir)/gdk-x11-2.0 $(PACKAGESDIR)/gdk-x11-2.0/gdk-x11-2.0-custom.bala $(PACKAGESDIR)/gdk-x11-2.0/gdk-x11-2.0.gi
 
 gdk-x11-3.0:
-	$(GENVAPI) --library $(srcdir)/gdk-x11-3.0 --pkg gio-2.0 --pkg gdk-3.0 --pkg x11 --metadatadir $(METADATADIR) $(METADATADIR)/GdkX11-3.0-custom.vala $(GIRDIR)/GdkX11-3.0.gir
+	$(GENVAPI) --library $(srcdir)/gdk-x11-3.0 --pkg gio-2.0 --pkg gdk-3.0 --pkg x11 --metadatadir $(METADATADIR) $(METADATADIR)/GdkX11-3.0-custom.bala $(GIRDIR)/GdkX11-3.0.gir
 
 cdk-x11-3.0:
-	$(GENVAPI) --library $(srcdir)/cdk-x11-3.0 --pkg gio-2.0 --pkg cdk-3.0 --pkg x11 --metadatadir $(METADATADIR) $(METADATADIR)/CdkX11-3.0-custom.vala $(GIRDIR)/CdkX11-3.0.gir
+	$(GENVAPI) --library $(srcdir)/cdk-x11-3.0 --pkg gio-2.0 --pkg cdk-3.0 --pkg x11 --metadatadir $(METADATADIR) $(METADATADIR)/CdkX11-3.0-custom.bala $(GIRDIR)/CdkX11-3.0.gir
 
 gdl-1.0:
-	$(GENVAPI) --library $(srcdir)/gdl-1.0 $(PACKAGESDIR)/gdl-1.0/gdl-1.0-custom.vala $(PACKAGESDIR)/gdl-1.0/gdl-1.0.gi
+	$(GENVAPI) --library $(srcdir)/gdl-1.0 $(PACKAGESDIR)/gdl-1.0/gdl-1.0-custom.bala $(PACKAGESDIR)/gdl-1.0/gdl-1.0.gi
 
 gdl-3.0:
 	$(GENVAPI) --library $(srcdir)/gdl-3.0 --pkg gio-2.0 --pkg gtk+-3.0 --metadatadir $(METADATADIR) $(GIRDIR)/Gdl-3.gir
@@ -503,28 +503,28 @@ gedit-2.20:
 	$(GENVAPI) --library $(srcdir)/gedit-2.20 $(PACKAGESDIR)/gedit-2.20/gedit-2.20.gi
 
 gio-2.0:
-	$(GENVAPI) --library $(srcdir)/gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Gio-2.0-custom.vala $(GIRDIR)/Gio-2.0.gir
+	$(GENVAPI) --library $(srcdir)/gio-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Gio-2.0-custom.bala $(GIRDIR)/Gio-2.0.gir
 
 gio-unix-2.0:
-	$(GENVAPI) --library $(srcdir)/gio-unix-2.0 $(PACKAGESDIR)/gio-unix-2.0/gio-unix-2.0-custom.vala $(PACKAGESDIR)/gio-unix-2.0/gio-unix-2.0.gi
+	$(GENVAPI) --library $(srcdir)/gio-unix-2.0 $(PACKAGESDIR)/gio-unix-2.0/gio-unix-2.0-custom.bala $(PACKAGESDIR)/gio-unix-2.0/gio-unix-2.0.gi
 
 gmodule-2.0:
-	$(GENVAPI) --library $(srcdir)/gmodule-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/GModule-2.0-custom.vala $(GIRDIR)/GModule-2.0.gir
+	$(GENVAPI) --library $(srcdir)/gmodule-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/GModule-2.0-custom.bala $(GIRDIR)/GModule-2.0.gir
 
 gnome-desktop-2.0:
 	$(GENVAPI) --library $(srcdir)/gnome-desktop-2.0 $(PACKAGESDIR)/gnome-desktop-2.0/gnome-desktop-2.0.gi
 
 gnome-desktop-3.0:
-	$(GENVAPI) --library $(srcdir)/gnome-desktop-3.0 --pkg gtk+-3.0 --metadatadir $(METADATADIR) $(METADATADIR)/GnomeDesktop-3.0-custom.vala $(GIRDIR)/GnomeDesktop-3.0.gir
+	$(GENVAPI) --library $(srcdir)/gnome-desktop-3.0 --pkg gtk+-3.0 --metadatadir $(METADATADIR) $(METADATADIR)/GnomeDesktop-3.0-custom.bala $(GIRDIR)/GnomeDesktop-3.0.gir
 
 gnome-vfs-2.0:
-	$(GENVAPI) --library $(srcdir)/gnome-vfs-2.0 $(PACKAGESDIR)/gnome-vfs-2.0/gnome-vfs-2.0-custom.vala $(PACKAGESDIR)/gnome-vfs-2.0/gnome-vfs-2.0.gi
+	$(GENVAPI) --library $(srcdir)/gnome-vfs-2.0 $(PACKAGESDIR)/gnome-vfs-2.0/gnome-vfs-2.0-custom.bala $(PACKAGESDIR)/gnome-vfs-2.0/gnome-vfs-2.0.gi
 
 gobject-introspection-1.0:
-	$(GENVAPI) --library $(srcdir)/gobject-introspection-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GIRepository-2.0-custom.vala $(GIRDIR)/GIRepository-2.0.gir
+	$(GENVAPI) --library $(srcdir)/gobject-introspection-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GIRepository-2.0-custom.bala $(GIRDIR)/GIRepository-2.0.gir
 
 goocanvas:
-	$(GENVAPI) --library $(srcdir)/goocanvas $(PACKAGESDIR)/goocanvas/goocanvas-custom.vala $(PACKAGESDIR)/goocanvas/goocanvas.gi
+	$(GENVAPI) --library $(srcdir)/goocanvas $(PACKAGESDIR)/goocanvas/goocanvas-custom.bala $(PACKAGESDIR)/goocanvas/goocanvas.gi
 
 goocanvas-2.0:
 	$(GENVAPI) --library $(srcdir)/goocanvas-2.0 --pkg cairo --pkg gtk+-3.0 --metadatadir $(METADATADIR) $(GIRDIR)/GooCanvas-2.0.gir
@@ -533,7 +533,7 @@ graphene-gobject-1.0:
 	$(GENVAPI) --library $(srcdir)/graphene-gobject-1.0 --pkg gobject-2.0 --metadatadir $(METADATADIR) $(GIRDIR)/Graphene-1.0.gir
 
 gstreamer-1.0:
-	$(GENVAPI) --library $(srcdir)/gstreamer-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/Gst-1.0-custom.vala $(GIRDIR)/Gst-1.0.gir
+	$(GENVAPI) --library $(srcdir)/gstreamer-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/Gst-1.0-custom.bala $(GIRDIR)/Gst-1.0.gir
 
 gstreamer-allocators-1.0:
 	$(GENVAPI) --library $(srcdir)/gstreamer-allocators-1.0 --pkg gstreamer-1.0 --metadatadir $(METADATADIR) $(GIRDIR)/GstAllocators-1.0.gir
@@ -542,19 +542,19 @@ gstreamer-app-1.0:
 	$(GENVAPI) --library $(srcdir)/gstreamer-app-1.0 --pkg gstreamer-base-1.0 --metadatadir $(METADATADIR) $(GIRDIR)/GstApp-1.0.gir
 
 gstreamer-audio-1.0:
-	$(GENVAPI) --library $(srcdir)/gstreamer-audio-1.0 --pkg gstreamer-base-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstAudio-1.0-custom.vala $(GIRDIR)/GstAudio-1.0.gir
+	$(GENVAPI) --library $(srcdir)/gstreamer-audio-1.0 --pkg gstreamer-base-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstAudio-1.0-custom.bala $(GIRDIR)/GstAudio-1.0.gir
 
 gstreamer-bad-allocators-1.0:
 	$(GENVAPI) --library $(srcdir)/gstreamer-bad-allocators-1.0 --pkg gstreamer-1.0 --metadatadir $(METADATADIR) $(GIRDIR)/GstBadAllocators-1.0.gir
 
 gstreamer-base-1.0:
-	$(GENVAPI) --library $(srcdir)/gstreamer-base-1.0 --pkg gstreamer-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstBase-1.0-custom.vala $(GIRDIR)/GstBase-1.0.gir
+	$(GENVAPI) --library $(srcdir)/gstreamer-base-1.0 --pkg gstreamer-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstBase-1.0-custom.bala $(GIRDIR)/GstBase-1.0.gir
 
 gstreamer-check-1.0:
-	$(GENVAPI) --library $(srcdir)/gstreamer-check-1.0 --pkg gstreamer-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstCheck-1.0-custom.vala $(GIRDIR)/GstCheck-1.0.gir
+	$(GENVAPI) --library $(srcdir)/gstreamer-check-1.0 --pkg gstreamer-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstCheck-1.0-custom.bala $(GIRDIR)/GstCheck-1.0.gir
 
 gstreamer-fft-1.0:
-	$(GENVAPI) --library $(srcdir)/gstreamer-fft-1.0 --pkg gstreamer-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstFft-1.0-custom.vala $(GIRDIR)/GstFft-1.0.gir
+	$(GENVAPI) --library $(srcdir)/gstreamer-fft-1.0 --pkg gstreamer-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstFft-1.0-custom.bala $(GIRDIR)/GstFft-1.0.gir
 
 gstreamer-controller-1.0:
 	$(GENVAPI) --library $(srcdir)/gstreamer-controller-1.0 --pkg gstreamer-1.0 --metadatadir $(METADATADIR) $(GIRDIR)/GstController-1.0.gir
@@ -587,7 +587,7 @@ gstreamer-tag-1.0:
 	$(GENVAPI) --library $(srcdir)/gstreamer-tag-1.0 --pkg gstreamer-base-1.0 --metadatadir $(METADATADIR) $(GIRDIR)/GstTag-1.0.gir
 
 gstreamer-video-1.0:
-	$(GENVAPI) --library $(srcdir)/gstreamer-video-1.0 --pkg gstreamer-base-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstVideo-1.0-custom.vala $(GIRDIR)/GstVideo-1.0.gir
+	$(GENVAPI) --library $(srcdir)/gstreamer-video-1.0 --pkg gstreamer-base-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GstVideo-1.0-custom.bala $(GIRDIR)/GstVideo-1.0.gir
 
 gstreamer-webrtc-1.0:
 	$(GENVAPI) --library $(srcdir)/gstreamer-webrtc-1.0 --pkg gstreamer-base-1.0 --pkg gstreamer-sdp-1.0 --metadatadir $(METADATADIR) $(GIRDIR)/GstWebRTC-1.0.gir
@@ -596,57 +596,57 @@ gst-editing-services-1.0:
 	$(GENVAPI) --library $(srcdir)/gst-editing-services-1.0 --pkg gstreamer-pbutils-1.0 --pkg gstreamer-video-1.0 --metadatadir $(METADATADIR) $(GIRDIR)/GES-1.0.gir
 
 gtk+-2.0:
-	$(GENVAPI) --library $(srcdir)/gtk+-2.0 $(PACKAGESDIR)/gtk+-2.0/gtk+-2.0-custom.vala $(PACKAGESDIR)/gtk+-2.0/gtk+-2.0.gi
+	$(GENVAPI) --library $(srcdir)/gtk+-2.0 $(PACKAGESDIR)/gtk+-2.0/gtk+-2.0-custom.bala $(PACKAGESDIR)/gtk+-2.0/gtk+-2.0.gi
 
 gtk+-3.0:
-	$(GENVAPI) --library $(srcdir)/gtk+-3.0 --pkg atk --pkg cdk-3.0 --pkg gdk-pixbuf-2.0 --pkg gio-2.0 --pkg pango --pkg cairo --metadatadir $(METADATADIR) $(METADATADIR)/Gtk-3.0-custom.vala $(GIRDIR)/Gtk-3.0.gir
+	$(GENVAPI) --library $(srcdir)/gtk+-3.0 --pkg atk --pkg cdk-3.0 --pkg gdk-pixbuf-2.0 --pkg gio-2.0 --pkg pango --pkg cairo --metadatadir $(METADATADIR) $(METADATADIR)/Gtk-3.0-custom.bala $(GIRDIR)/Gtk-3.0.gir
 
 ctk+-3.0:
-	$(GENVAPI) --library $(srcdir)/ctk+-3.0 --pkg atk --pkg cdk-3.0 --pkg gdk-pixbuf-2.0 --pkg gio-2.0 --pkg pango --pkg cairo --metadatadir $(METADATADIR) $(METADATADIR)/Ctk-3.0-custom.vala $(GIRDIR)/Ctk-3.0.gir
+	$(GENVAPI) --library $(srcdir)/ctk+-3.0 --pkg atk --pkg cdk-3.0 --pkg gdk-pixbuf-2.0 --pkg gio-2.0 --pkg pango --pkg cairo --metadatadir $(METADATADIR) $(METADATADIR)/Ctk-3.0-custom.bala $(GIRDIR)/Ctk-3.0.gir
 
 gtk4:
 	$(GENVAPI) --library $(srcdir)/gtk4 --pkg cairo --pkg gdk-pixbuf-2.0 --pkg gio-2.0 --pkg graphene-gobject-1.0 --pkg pango --pkg pangocairo --pkg x11 \
 		--metadatadir $(METADATADIR) \
-		$(METADATADIR)/GdkWayland-4.0-custom.vala $(GIRDIR)/GdkWayland-4.0.gir \
-		$(METADATADIR)/GdkX11-4.0-custom.vala $(GIRDIR)/GdkX11-4.0.gir \
-		$(METADATADIR)/Gdk-4.0-custom.vala $(GIRDIR)/Gdk-4.0.gir \
-		$(METADATADIR)/Gsk-4.0-custom.vala $(GIRDIR)/Gsk-4.0.gir \
-		$(METADATADIR)/Gtk-4.0-custom.vala $(GIRDIR)/Gtk-4.0.gir
+		$(METADATADIR)/GdkWayland-4.0-custom.bala $(GIRDIR)/GdkWayland-4.0.gir \
+		$(METADATADIR)/GdkX11-4.0-custom.bala $(GIRDIR)/GdkX11-4.0.gir \
+		$(METADATADIR)/Gdk-4.0-custom.bala $(GIRDIR)/Gdk-4.0.gir \
+		$(METADATADIR)/Gsk-4.0-custom.bala $(GIRDIR)/Gsk-4.0.gir \
+		$(METADATADIR)/Gtk-4.0-custom.bala $(GIRDIR)/Gtk-4.0.gir
 
 gtk+-unix-print-2.0:
-	$(GENVAPI) --library $(srcdir)/gtk+-unix-print-2.0 $(PACKAGESDIR)/gtk+-unix-print-2.0/gtk+-unix-print-2.0-custom.vala $(PACKAGESDIR)/gtk+-unix-print-2.0/gtk+-unix-print-2.0.gi
+	$(GENVAPI) --library $(srcdir)/gtk+-unix-print-2.0 $(PACKAGESDIR)/gtk+-unix-print-2.0/gtk+-unix-print-2.0-custom.bala $(PACKAGESDIR)/gtk+-unix-print-2.0/gtk+-unix-print-2.0.gi
 
 gtk+-unix-print-3.0:
-	$(GENVAPI) --library $(srcdir)/gtk+-unix-print-3.0 $(PACKAGESDIR)/gtk+-unix-print-3.0/gtk+-unix-print-3.0-custom.vala $(PACKAGESDIR)/gtk+-unix-print-3.0/gtk+-unix-print-3.0.gi
+	$(GENVAPI) --library $(srcdir)/gtk+-unix-print-3.0 $(PACKAGESDIR)/gtk+-unix-print-3.0/gtk+-unix-print-3.0-custom.bala $(PACKAGESDIR)/gtk+-unix-print-3.0/gtk+-unix-print-3.0.gi
 
 ctk+-unix-print-3.0:
-	$(GENVAPI) --library $(srcdir)/ctk+-unix-print-3.0 $(PACKAGESDIR)/ctk+-unix-print-3.0/ctk+-unix-print-3.0-custom.vala $(PACKAGESDIR)/ctk+-unix-print-3.0/ctk+-unix-print-3.0.gi
+	$(GENVAPI) --library $(srcdir)/ctk+-unix-print-3.0 $(PACKAGESDIR)/ctk+-unix-print-3.0/ctk+-unix-print-3.0-custom.bala $(PACKAGESDIR)/ctk+-unix-print-3.0/ctk+-unix-print-3.0.gi
 
 gtk4-unix-print:
 	ln -s $(GIRDIR)/Gtk-4.0.gir GtkUnixPrint-4.0.gir; \
-	$(GENVAPI) --library $(srcdir)/gtk4-unix-print --pkg gtk4 --pkg pangocairo --metadatadir $(METADATADIR) $(METADATADIR)/GtkUnixPrint-4.0-custom.vala GtkUnixPrint-4.0.gir; \
+	$(GENVAPI) --library $(srcdir)/gtk4-unix-print --pkg gtk4 --pkg pangocairo --metadatadir $(METADATADIR) $(METADATADIR)/GtkUnixPrint-4.0-custom.bala GtkUnixPrint-4.0.gir; \
 	rm -f GtkUnixPrint-4.0.gir
 
 gtksourceview-2.0:
 	$(GENVAPI) --library $(srcdir)/gtksourceview-2.0 $(PACKAGESDIR)/gtksourceview-2.0/gtksourceview-2.0.gi
 
 gudev-1.0:
-	$(GENVAPI) --library $(srcdir)/gudev-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GUdev-1.0-custom.vala $(GIRDIR)/GUdev-1.0.gir
+	$(GENVAPI) --library $(srcdir)/gudev-1.0 --metadatadir $(METADATADIR) $(METADATADIR)/GUdev-1.0-custom.bala $(GIRDIR)/GUdev-1.0.gir
 
 harfbuzz-gobject:
 	$(GENVAPI) --library $(srcdir)/harfbuzz-gobject --metadatadir $(METADATADIR) $(GIRDIR)/HarfBuzz-0.0.gir
 
 hildon-1:
-	$(GENVAPI) --library $(srcdir)/hildon-1 $(PACKAGESDIR)/hildon-1/hildon-1-custom.vala $(PACKAGESDIR)/hildon-1/hildon-1.gi
+	$(GENVAPI) --library $(srcdir)/hildon-1 $(PACKAGESDIR)/hildon-1/hildon-1-custom.bala $(PACKAGESDIR)/hildon-1/hildon-1.gi
 
 hildon-fm-2:
 	$(GENVAPI) --library $(srcdir)/hildon-fm-2 $(PACKAGESDIR)/hildon-fm-2/hildon-fm-2.gi
 
 javascriptcoregtk-4.0:
-	$(GENVAPI) --library $(srcdir)/javascriptcoregtk-4.0 --metadatadir $(METADATADIR) $(METADATADIR)/JavaScriptCore-4.0-custom.vala $(GIRDIR)/JavaScriptCore-4.0.gir
+	$(GENVAPI) --library $(srcdir)/javascriptcoregtk-4.0 --metadatadir $(METADATADIR) $(METADATADIR)/JavaScriptCore-4.0-custom.bala $(GIRDIR)/JavaScriptCore-4.0.gir
 
 json-glib-1.0:
-	$(GENVAPI) --library $(srcdir)/json-glib-1.0 --metadatadir $(METADATADIR) --pkg gio-2.0 $(METADATADIR)/Json-1.0-custom.vala $(GIRDIR)/Json-1.0.gir
+	$(GENVAPI) --library $(srcdir)/json-glib-1.0 --metadatadir $(METADATADIR) --pkg gio-2.0 $(METADATADIR)/Json-1.0-custom.bala $(GIRDIR)/Json-1.0.gir
 
 libepc-1.0:
 	$(GENVAPI) --library $(srcdir)/libepc-1.0 $(PACKAGESDIR)/libepc-1.0/libepc-1.0.gi
@@ -661,19 +661,19 @@ libgnome-2.0:
 	$(GENVAPI) --library $(srcdir)/libgnome-2.0 $(PACKAGESDIR)/libgnome-2.0/libgnome-2.0.gi
 
 libgnome-menu:
-	$(GENVAPI) --library $(srcdir)/libgnome-menu $(PACKAGESDIR)/libgnome-menu/libgnome-menu-custom.vala $(PACKAGESDIR)/libgnome-menu/libgnome-menu.gi
+	$(GENVAPI) --library $(srcdir)/libgnome-menu $(PACKAGESDIR)/libgnome-menu/libgnome-menu-custom.bala $(PACKAGESDIR)/libgnome-menu/libgnome-menu.gi
 
 libgnome-menu-3.0:
 	$(GENVAPI) --library $(srcdir)/libgnome-menu-3.0 --metadatadir $(METADATADIR) --pkg gio-unix-2.0 $(GIRDIR)/GMenu-3.0.gir
 
 libgnomeui-2.0:
-	$(GENVAPI) --library $(srcdir)/libgnomeui-2.0 $(PACKAGESDIR)/libgnomeui-2.0/libgnomeui-2.0-custom.vala $(PACKAGESDIR)/libgnomeui-2.0/libgnomeui-2.0.gi
+	$(GENVAPI) --library $(srcdir)/libgnomeui-2.0 $(PACKAGESDIR)/libgnomeui-2.0/libgnomeui-2.0-custom.bala $(PACKAGESDIR)/libgnomeui-2.0/libgnomeui-2.0.gi
 
 libgrss:
 	$(GENVAPI) --library $(srcdir)/libgrss --metadatadir $(METADATADIR) --pkg gio-2.0 --pkg libsoup-2.4 --pkg libxml-2.0 $(GIRDIR)/Grss-0.7.gir
 
 libgsf-1:
-	$(GENVAPI) --library $(srcdir)/libgsf-1 --pkg gio-2.0 --pkg libxml-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Gsf-1-custom.vala $(GIRDIR)/Gsf-1.gir
+	$(GENVAPI) --library $(srcdir)/libgsf-1 --pkg gio-2.0 --pkg libxml-2.0 --metadatadir $(METADATADIR) $(METADATADIR)/Gsf-1-custom.bala $(GIRDIR)/Gsf-1.gir
 
 libnotify:
 	$(GENVAPI) --library $(srcdir)/libnotify --pkg gdk-pixbuf-2.0 --pkg gio-2.0 --metadatadir $(METADATADIR) $(GIRDIR)/Notify-0.7.gir
@@ -691,7 +691,7 @@ libsexy:
 	$(GENVAPI) --library $(srcdir)/libsexy $(PACKAGESDIR)/libsexy/libsexy.gi
 
 libsoup-2.4:
-	$(GENVAPI) --library $(srcdir)/libsoup-2.4 --metadatadir $(METADATADIR) $(METADATADIR)/Soup-2.4-custom.vala --pkg gio-2.0 $(GIRDIR)/Soup-2.4.gir
+	$(GENVAPI) --library $(srcdir)/libsoup-2.4 --metadatadir $(METADATADIR) $(METADATADIR)/Soup-2.4-custom.bala --pkg gio-2.0 $(GIRDIR)/Soup-2.4.gir
 
 libwnck-1.0:
 	$(GENVAPI) --library $(srcdir)/libwnck-1.0 $(PACKAGESDIR)/libwnck-1.0/libwnck-1.0.gi
@@ -700,13 +700,13 @@ libwnck-3.0:
 	$(GENVAPI) --library $(srcdir)/libwnck-3.0 --metadatadir $(METADATADIR) --pkg gio-2.0 --pkg gtk+-3.0 $(GIRDIR)/Wnck-3.0.gir
 
 loudmouth-1.0:
-	$(GENVAPI) --library $(srcdir)/loudmouth-1.0 $(PACKAGESDIR)/loudmouth-1.0/loudmouth-1.0-custom.vala $(PACKAGESDIR)/loudmouth-1.0/loudmouth-1.0.gi
+	$(GENVAPI) --library $(srcdir)/loudmouth-1.0 $(PACKAGESDIR)/loudmouth-1.0/loudmouth-1.0-custom.bala $(PACKAGESDIR)/loudmouth-1.0/loudmouth-1.0.gi
 
 packagekit-glib2:
 	$(GENVAPI) --library $(srcdir)/packagekit-glib2 --metadatadir $(METADATADIR) --pkg gio-2.0 $(GIRDIR)/PackageKitGlib-1.0.gir
 
 pango:
-	$(GENVAPI) --library $(srcdir)/pango --pkg cairo --pkg harfbuzz-gobject --metadatadir $(METADATADIR) $(METADATADIR)/Pango-1.0-custom.vala $(GIRDIR)/Pango-1.0.gir
+	$(GENVAPI) --library $(srcdir)/pango --pkg cairo --pkg harfbuzz-gobject --metadatadir $(METADATADIR) $(METADATADIR)/Pango-1.0-custom.bala $(GIRDIR)/Pango-1.0.gir
 
 pangocairo:
 	$(GENVAPI) --library $(srcdir)/pangocairo --metadatadir $(METADATADIR) $(GIRDIR)/PangoCairo-1.0.gir
@@ -721,7 +721,7 @@ poppler-glib:
 	$(GENVAPI) --library $(srcdir)/poppler-glib --pkg cairo --pkg gio-2.0 --metadatadir $(METADATADIR) $(GIRDIR)/Poppler-0.18.gir
 
 purple:
-	$(GENVAPI) --library $(srcdir)/purple $(PACKAGESDIR)/purple/purple-custom.vala $(PACKAGESDIR)/purple/purple.gi
+	$(GENVAPI) --library $(srcdir)/purple $(PACKAGESDIR)/purple/purple-custom.bala $(PACKAGESDIR)/purple/purple.gi
 
 rest-0.7:
 	$(GENVAPI) --library $(srcdir)/rest-0.7 --metadatadir $(METADATADIR) --pkg gio-2.0 $(GIRDIR)/Rest-0.7.gir
@@ -742,4 +742,4 @@ webkit2gtk-4.0:
 	$(GENVAPI) --library $(srcdir)/webkit2gtk-4.0 --metadatadir $(METADATADIR) --pkg gtk+-3.0 --pkg libsoup-2.4 $(GIRDIR)/WebKit2-4.0.gir
 
 webkit2gtk-web-extension-4.0:
-	$(GENVAPI) --library $(srcdir)/webkit2gtk-web-extension-4.0 --metadatadir $(METADATADIR) --pkg gtk+-3.0 $(METADATADIR)/WebKit2WebExtension-4.0-custom.vala $(GIRDIR)/WebKit2WebExtension-4.0.gir
+	$(GENVAPI) --library $(srcdir)/webkit2gtk-web-extension-4.0 --metadatadir $(METADATADIR) --pkg gtk+-3.0 $(METADATADIR)/WebKit2WebExtension-4.0-custom.bala $(GIRDIR)/WebKit2WebExtension-4.0.gir

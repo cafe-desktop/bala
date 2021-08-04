@@ -1,4 +1,4 @@
-/* valaccodecontrolflowmodule.vala
+/* balaccodecontrolflowmodule.bala
  *
  * Copyright (C) 2006-2011  Jürg Billeter
  * Copyright (C) 2006-2008  Raffaele Sandrini
@@ -244,7 +244,7 @@ public abstract class Vala.CCodeControlFlowModule : CCodeMethodModule {
 
 			var array_len = get_variable_cexpression (get_array_length_cname (get_local_cname (collection_backup), 1));
 
-			// store array length for use by _vala_array_free
+			// store array length for use by _bala_array_free
 			ccode.add_assignment (array_len, get_array_length_cexpression (stmt.collection));
 
 			var iterator_variable = new LocalVariable (array_type.length_type.copy (), stmt.variable_name + "_it");

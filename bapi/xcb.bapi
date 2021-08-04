@@ -22,7 +22,7 @@
  *  Sergio Costas <raster@rastersoft.com>
  */
 
-[Version (deprecated_since = "vala-0.26", replacement = "bindings distributed with vala-extra-vapis")]
+[Version (deprecated_since = "bala-0.26", replacement = "bindings distributed with bala-extra-vapis")]
 [CCode (lower_case_cprefix = "xcb_", cheader_filename = "xcb/xcb.h,xcb/xproto.h")]
 namespace Xcb {
 	[Compact]
@@ -80,16 +80,16 @@ namespace Xcb {
 		public QueryTreeReply? query_tree_reply (QueryTreeCookie cookie, out GenericError? e = null);
 
 		[CCode (cname = "xcb_intern_atom")]
-		private InternAtomCookie vala_intern_atom (bool only_if_exists, uint16 len, string name);
-		[CCode (cname = "vala_xcb_intern_atom")]
+		private InternAtomCookie bala_intern_atom (bool only_if_exists, uint16 len, string name);
+		[CCode (cname = "bala_xcb_intern_atom")]
 		public InternAtomCookie intern_atom (bool only_if_exists, string name) {
-			return this.vala_intern_atom (only_if_exists, (uint16) name.length, name);
+			return this.bala_intern_atom (only_if_exists, (uint16) name.length, name);
 		}
 		[CCode (cname = "xcb_intern_atom_unchecked")]
-		private InternAtomCookie vala_intern_atom_unchecked (bool only_if_exists, uint16 len, string name);
-		[CCode (cname = "vala_xcb_intern_atom_unchecked")]
+		private InternAtomCookie bala_intern_atom_unchecked (bool only_if_exists, uint16 len, string name);
+		[CCode (cname = "bala_xcb_intern_atom_unchecked")]
 		public InternAtomCookie intern_atom_unchecked (bool only_if_exists, string name) {
-			return this.vala_intern_atom (only_if_exists, (uint16) name.length, name);
+			return this.bala_intern_atom (only_if_exists, (uint16) name.length, name);
 		}
 		public InternAtomReply? intern_atom_reply (InternAtomCookie cookie, out GenericError? e = null);
 
@@ -98,41 +98,41 @@ namespace Xcb {
 		public GetAtomNameReply? get_atom_name_reply (GetAtomNameCookie cookie, out GenericError? e = null);
 
 		[CCode (cname = "xcb_change_property")]
-		private VoidCookie vala_change_property (PropMode mode, Window window, AtomT property, AtomT type, uint8 format, uint32 len, void *data);
-		[CCode (cname = "vala_xcb_change_property")]
+		private VoidCookie bala_change_property (PropMode mode, Window window, AtomT property, AtomT type, uint8 format, uint32 len, void *data);
+		[CCode (cname = "bala_xcb_change_property")]
 		public VoidCookie change_property_uint8 (PropMode mode, Window window, AtomT property, AtomT type, uint32 len, uint8 *data) {
-			return this.vala_change_property (mode, window, property, type, 8, len, (void *)data);
+			return this.bala_change_property (mode, window, property, type, 8, len, (void *)data);
 		}
 		public VoidCookie change_property_uint16 (PropMode mode, Window window, AtomT property, AtomT type, uint32 len, uint16 *data) {
-			return this.vala_change_property (mode, window, property, type, 16, len, (void *)data);
+			return this.bala_change_property (mode, window, property, type, 16, len, (void *)data);
 		}
 		public VoidCookie change_property_uint32 (PropMode mode, Window window, AtomT property, AtomT type, uint32 len, uint32 *data) {
-			return this.vala_change_property (mode, window, property, type, 32, len, (void *)data);
+			return this.bala_change_property (mode, window, property, type, 32, len, (void *)data);
 		}
 		public VoidCookie change_property_atom (PropMode mode, Window window, AtomT property, AtomT type, uint32 len, AtomT *data) {
-			return this.vala_change_property (mode, window, property, type, 32, len, (void *)data);
+			return this.bala_change_property (mode, window, property, type, 32, len, (void *)data);
 		}
 		public VoidCookie change_property_string (PropMode mode, Window window, AtomT property, AtomT type, string data) {
-			return this.vala_change_property (mode, window, property, type, 8, data.length, (void *)data.data);
+			return this.bala_change_property (mode, window, property, type, 8, data.length, (void *)data.data);
 		}
 
 		[CCode (cname = "xcb_change_property_checked")]
-		private VoidCookie vala_change_property_checked (PropMode mode, Window window, AtomT property, AtomT type, uint8 format, uint32 len, void *data);
-		[CCode (cname = "vala_xcb_change_property_checked")]
+		private VoidCookie bala_change_property_checked (PropMode mode, Window window, AtomT property, AtomT type, uint8 format, uint32 len, void *data);
+		[CCode (cname = "bala_xcb_change_property_checked")]
 		public VoidCookie change_property_checked_uint8 (PropMode mode, Window window, AtomT property, AtomT type, uint32 len, uint8 *data) {
-			return this.vala_change_property (mode, window, property, type, 8, len, (void *)data);
+			return this.bala_change_property (mode, window, property, type, 8, len, (void *)data);
 		}
 		public VoidCookie change_property_checked_uint16 (PropMode mode, Window window, AtomT property, AtomT type, uint32 len, uint16 *data) {
-			return this.vala_change_property (mode, window, property, type, 16, len, (void *)data);
+			return this.bala_change_property (mode, window, property, type, 16, len, (void *)data);
 		}
 		public VoidCookie change_property_checked_uint32 (PropMode mode, Window window, AtomT property, AtomT type, uint32 len, uint32 *data) {
-			return this.vala_change_property (mode, window, property, type, 32, len, (void *)data);
+			return this.bala_change_property (mode, window, property, type, 32, len, (void *)data);
 		}
 		public VoidCookie change_property_checked_atom (PropMode mode, Window window, AtomT property, AtomT type, uint32 len, AtomT *data) {
-			return this.vala_change_property (mode, window, property, type, 32, len, (void *)data);
+			return this.bala_change_property (mode, window, property, type, 32, len, (void *)data);
 		}
 		public VoidCookie change_property_checked_string (PropMode mode, Window window, AtomT property, AtomT type, string data) {
-			return this.vala_change_property (mode, window, property, type, 8, data.length, (void *)data.data);
+			return this.bala_change_property (mode, window, property, type, 8, data.length, (void *)data.data);
 		}
 
 		public VoidCookie delete_property_checked (Window window, AtomT property);
@@ -230,16 +230,16 @@ namespace Xcb {
 		//query_keymap
 
 		[CCode (cname = "xcb_open_font_checked")]
-		private VoidCookie vala_open_font_checked (Font fid, uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_open_font_checked")]
+		private VoidCookie bala_open_font_checked (Font fid, uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_open_font_checked")]
 		public VoidCookie open_font_checked (Font fid, string name) {
-			return this.vala_open_font_checked (fid, (uint16) name.length, name);
+			return this.bala_open_font_checked (fid, (uint16) name.length, name);
 		}
 		[CCode (cname = "xcb_open_font")]
-		private VoidCookie vala_open_font (Font fid, uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_open_font")]
+		private VoidCookie bala_open_font (Font fid, uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_open_font")]
 		public VoidCookie open_font (Font fid, string name) {
-			return this.vala_open_font (fid, (uint16) name.length, name);
+			return this.bala_open_font (fid, (uint16) name.length, name);
 		}
 
 		public VoidCookie close_font_checked (Font fid);
@@ -250,44 +250,44 @@ namespace Xcb {
 		public QueryFontReply? query_font_reply (QueryFontCookie cookie, out GenericError? e = null);
 
 		/*[CCode (cname = "xcb_query_text_extents")]
-		private QueryTextExtentsCookie vala_query_text_extents (Fontable font, uint32 string_len, Char2b* s);
-		[CCode (cname = "vala_xcb_query_text_extents")]
+		private QueryTextExtentsCookie bala_query_text_extents (Fontable font, uint32 string_len, Char2b* s);
+		[CCode (cname = "bala_xcb_query_text_extents")]
 		public QueryTextExtentsCookie query_text_extents (Fontable font, uint16[] s) {
-			this.vala_query_text_extents (font, s.length, s);
+			this.bala_query_text_extents (font, s.length, s);
 		}
 		[CCode (cname = "xcb_query_text_extents_unchecked")]
-		private QueryTextExtentsCookie vala_query_text_extents_unchecked (Fontable font, uint32 string_len, Char2b* s);
-		[CCode (cname = "vala_xcb_query_text_extents_unchecked")]
+		private QueryTextExtentsCookie bala_query_text_extents_unchecked (Fontable font, uint32 string_len, Char2b* s);
+		[CCode (cname = "bala_xcb_query_text_extents_unchecked")]
 		public QueryTextExtentsCookie query_text_extents_unchecked (Fontable font, uint16[] s) { // FIXME: How to handle Char2b?
-			this.vala_query_text_extents_unchecked (font, s.length, s);
+			this.bala_query_text_extents_unchecked (font, s.length, s);
 		}
 		public QueryTextExtentsReply? query_text_extents_reply (QueryTextExtentsCookie cookie, out GenericError? e = null);*/
 
 		[CCode (cname = "xcb_list_fonts")]
-		private ListFontsCookie vala_list_fonts (uint16 max_names, uint16 pattern_len, string pattern);
-		[CCode (cname = "vala_xcb_list_fonts")]
+		private ListFontsCookie bala_list_fonts (uint16 max_names, uint16 pattern_len, string pattern);
+		[CCode (cname = "bala_xcb_list_fonts")]
 		public ListFontsCookie list_fonts (uint16 max_names, string pattern) {
-			return this.vala_list_fonts (max_names, (uint16) pattern.length, pattern);
+			return this.bala_list_fonts (max_names, (uint16) pattern.length, pattern);
 		}
 		[CCode (cname = "xcb_list_fonts_unchecked")]
-		private ListFontsCookie vala_list_fonts_unchecked (uint16 max_names, uint16 pattern_len, string pattern);
-		[CCode (cname = "vala_xcb_list_fonts_unchecked")]
+		private ListFontsCookie bala_list_fonts_unchecked (uint16 max_names, uint16 pattern_len, string pattern);
+		[CCode (cname = "bala_xcb_list_fonts_unchecked")]
 		public ListFontsCookie list_fonts_unchecked (uint16 max_names, string pattern) {
-			return this.vala_list_fonts_unchecked (max_names, (uint16) pattern.length, pattern);
+			return this.bala_list_fonts_unchecked (max_names, (uint16) pattern.length, pattern);
 		}
 		public ListFontsReply? list_fonts_reply (ListFontsCookie cookie, out GenericError? e = null);
 
 		[CCode (cname = "xcb_list_fonts_with_info")]
-		private ListFontsWithInfoCookie vala_list_fonts_with_info (uint16 max_names, uint16 pattern_len, string pattern);
-		[CCode (cname = "vala_xcb_list_fonts_with_info")]
+		private ListFontsWithInfoCookie bala_list_fonts_with_info (uint16 max_names, uint16 pattern_len, string pattern);
+		[CCode (cname = "bala_xcb_list_fonts_with_info")]
 		public ListFontsWithInfoCookie list_fonts_with_info (uint16 max_names, string pattern) {
-			return this.vala_list_fonts_with_info (max_names, (uint16) pattern.length, pattern);
+			return this.bala_list_fonts_with_info (max_names, (uint16) pattern.length, pattern);
 		}
 		[CCode (cname = "xcb_list_fonts_with_info_unchecked")]
-		private ListFontsWithInfoCookie vala_list_fonts_with_info_unchecked (uint16 max_names, uint16 pattern_len, string pattern);
-		[CCode (cname = "vala_xcb_list_fonts_with_info_unchecked")]
+		private ListFontsWithInfoCookie bala_list_fonts_with_info_unchecked (uint16 max_names, uint16 pattern_len, string pattern);
+		[CCode (cname = "bala_xcb_list_fonts_with_info_unchecked")]
 		public ListFontsWithInfoCookie list_fonts_with_info_unchecked (uint16 max_names, string pattern) {
-			return this.vala_list_fonts_with_info_unchecked (max_names, (uint16) pattern.length, pattern);
+			return this.bala_list_fonts_with_info_unchecked (max_names, (uint16) pattern.length, pattern);
 		}
 		public ListFontsWithInfoReply? list_fonts_with_info_reply (ListFontsWithInfoCookie cookie, out GenericError? e = null);
 
@@ -368,16 +368,16 @@ namespace Xcb {
 		public VoidCookie poly_text_16 (Drawable drawable, GContext gc, int16 x, int16 y, [CCode (array_length_pos = 4.9, array_length_type = "uint32_t")] uint8[] items);
 
 		[CCode (cname = "xcb_image_text_8_checked")]
-		private VoidCookie vala_image_text_8_checked (uint8 string_len, Drawable drawable, GContext gc, int16 x, int16 y, string text);
-		[CCode (cname = "vala_xcb_image_text8_checked")]
+		private VoidCookie bala_image_text_8_checked (uint8 string_len, Drawable drawable, GContext gc, int16 x, int16 y, string text);
+		[CCode (cname = "bala_xcb_image_text8_checked")]
 		public VoidCookie image_text_8_checked (Drawable drawable, GContext gc, int16 x, int16 y, string text) {
-			return this.vala_image_text_8_checked ((uint8) text.length, drawable, gc, x, y, text);
+			return this.bala_image_text_8_checked ((uint8) text.length, drawable, gc, x, y, text);
 		}
 		[CCode (cname = "xcb_image_text_8")]
-		private VoidCookie vala_image_text_8 (uint8 string_len, Drawable drawable, GContext gc, int16 x, int16 y, string text);
-		[CCode (cname = "vala_xcb_image_text8")]
+		private VoidCookie bala_image_text_8 (uint8 string_len, Drawable drawable, GContext gc, int16 x, int16 y, string text);
+		[CCode (cname = "bala_xcb_image_text8")]
 		public VoidCookie image_text_8 (Drawable drawable, GContext gc, int16 x, int16 y, string text) {
-			return this.vala_image_text_8 ((uint8) text.length, drawable, gc, x, y, text);
+			return this.bala_image_text_8 ((uint8) text.length, drawable, gc, x, y, text);
 		}
 
 		//image_text_16
@@ -406,16 +406,16 @@ namespace Xcb {
 		public AllocColorReply? alloc_color_reply (AllocColorCookie cookie, out GenericError? e = null);
 
 		[CCode (cname = "xcb_alloc_named_color")]
-		private AllocNamedColorCookie vala_alloc_named_color (Colormap cmap, uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_alloc_named_color")]
+		private AllocNamedColorCookie bala_alloc_named_color (Colormap cmap, uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_alloc_named_color")]
 		public AllocNamedColorCookie alloc_named_color (Colormap cmap, string name) {
-			return this.vala_alloc_named_color (cmap, (uint16) name.length, name);
+			return this.bala_alloc_named_color (cmap, (uint16) name.length, name);
 		}
 		[CCode (cname = "xcb_alloc_named_color_unchecked")]
-		private AllocNamedColorCookie vala_alloc_named_color_unchecked (Colormap cmap, uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_alloc_named_color_unchecked")]
+		private AllocNamedColorCookie bala_alloc_named_color_unchecked (Colormap cmap, uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_alloc_named_color_unchecked")]
 		public AllocNamedColorCookie alloc_named_color_unchecked (Colormap cmap, string name) {
-			return this.vala_alloc_named_color_unchecked (cmap, (uint16) name.length, name);
+			return this.bala_alloc_named_color_unchecked (cmap, (uint16) name.length, name);
 		}
 		public AllocNamedColorReply? alloc_named_color_reply (AllocNamedColorCookie cookie, out GenericError? e = null);
 
@@ -434,16 +434,16 @@ namespace Xcb {
 		public VoidCookie store_colors (Colormap cmap, [CCode (array_length_pos = 1.9, array_length_type = "uint32_t")] Coloritem[] items);
 
 		[CCode (cname = "xcb_store_named_color_checked")]
-		private VoidCookie vala_store_named_color_checked (ColorFlag flags, Colormap cmap, uint32 pixel, uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_store_named_color_checked")]
+		private VoidCookie bala_store_named_color_checked (ColorFlag flags, Colormap cmap, uint32 pixel, uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_store_named_color_checked")]
 		public VoidCookie store_named_color_checked (ColorFlag flags, Colormap cmap, uint32 pixel, string name) {
-			return this.vala_store_named_color_checked (flags, cmap, pixel, (uint16) name.length, name);
+			return this.bala_store_named_color_checked (flags, cmap, pixel, (uint16) name.length, name);
 		}
 		[CCode (cname = "xcb_store_named_color")]
-		private VoidCookie vala_store_named_color (ColorFlag flags, Colormap cmap, uint32 pixel, uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_store_named_color")]
+		private VoidCookie bala_store_named_color (ColorFlag flags, Colormap cmap, uint32 pixel, uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_store_named_color")]
 		public VoidCookie store_named_color (ColorFlag flags, Colormap cmap, uint32 pixel, string name) {
-			return this.vala_store_named_color (flags, cmap, pixel, (uint16) name.length, name);
+			return this.bala_store_named_color (flags, cmap, pixel, (uint16) name.length, name);
 		}
 
 		public QueryColorsCookie query_colors (Colormap cmap, [CCode (array_length_pos = 1.9, array_length_type = "uint32_t")] uint32[] pixels);
@@ -451,16 +451,16 @@ namespace Xcb {
 		public QueryColorsReply? query_colors_reply (QueryColorsCookie cookie, out GenericError? e = null);
 
 		[CCode (cname = "xcb_lookup_color")]
-		private LookupColorCookie vala_lookup_color (Colormap cmap, uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_lookup_color")]
+		private LookupColorCookie bala_lookup_color (Colormap cmap, uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_lookup_color")]
 		public LookupColorCookie lookup_color (Colormap cmap, string name) {
-			return this.vala_lookup_color (cmap, (uint16) name.length, name);
+			return this.bala_lookup_color (cmap, (uint16) name.length, name);
 		}
 		[CCode (cname = "xcb_lookup_color_unchecked")]
-		private LookupColorCookie vala_lookup_color_unchecked (Colormap cmap, uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_lookup_color_unchecked")]
+		private LookupColorCookie bala_lookup_color_unchecked (Colormap cmap, uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_lookup_color_unchecked")]
 		public LookupColorCookie lookup_color_unchecked (Colormap cmap, string name) {
-			return this.vala_lookup_color_unchecked (cmap, (uint16) name.length, name);
+			return this.bala_lookup_color_unchecked (cmap, (uint16) name.length, name);
 		}
 		public LookupColorReply? lookup_color_reply (LookupColorCookie cookie, out GenericError? e = null);
 
@@ -481,16 +481,16 @@ namespace Xcb {
 		public QueryBestSizeReply? query_best_size_reply (QueryBestSizeCookie cookie, out GenericError? e = null);
 
 		[CCode (cname = "xcb_query_extension")]
-		private QueryExtensionCookie vala_query_extension (uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_query_extension")]
+		private QueryExtensionCookie bala_query_extension (uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_query_extension")]
 		public QueryExtensionCookie query_extension (string name) {
-			return this.vala_query_extension ((uint16) name.length, name);
+			return this.bala_query_extension ((uint16) name.length, name);
 		}
 		[CCode (cname = "xcb_query_extension_unchecked")]
-		private QueryExtensionCookie vala_query_extension_unchecked (uint16 name_len, string name);
-		[CCode (cname = "vala_xcb_query_extension_unchecked")]
+		private QueryExtensionCookie bala_query_extension_unchecked (uint16 name_len, string name);
+		[CCode (cname = "bala_xcb_query_extension_unchecked")]
 		public QueryExtensionCookie query_extension_unchecked (string name) {
-			return this.vala_query_extension_unchecked ((uint16) name.length, name);
+			return this.bala_query_extension_unchecked ((uint16) name.length, name);
 		}
 		public QueryExtensionReply? query_extension_reply (QueryExtensionCookie cookie, out GenericError? e = null);
 
@@ -650,8 +650,8 @@ namespace Xcb {
 		public uint32 length;
 		public uint16 name_len;
 		[CCode (cname = "xcb_get_atom_name_name")]
-		private unowned string vala_name ();
-		public string name { owned get { return "%.*s".printf (name_len, vala_name ()); } }
+		private unowned string bala_name ();
+		public string name { owned get { return "%.*s".printf (name_len, bala_name ()); } }
 	}
 
 	[SimpleType]
@@ -665,12 +665,12 @@ namespace Xcb {
 	public class ListPropertiesReply {
 		private uint16 atoms_len;
 		[CCode (cname = "xcb_list_properties_atoms")]
-		private Atom* vala_atoms ();
+		private Atom* bala_atoms ();
 		public Atom[] atoms
 		{
 			get
 			{
-				unowned Atom[] res = (Atom[]) vala_atoms ();
+				unowned Atom[] res = (Atom[]) bala_atoms ();
 				res.length = atoms_len;
 				return res;
 			}
@@ -743,12 +743,12 @@ namespace Xcb {
 	public class GetMotionEventsReply {
 		private uint32 events_len;
 		[CCode (cname = "xcb_get_motion_events_events")]
-		private Timecoord* vala_events ();
+		private Timecoord* bala_events ();
 		public Timecoord[] events
 		{
 			get
 			{
-				unowned Timecoord[] res = (Timecoord[]) vala_events ();
+				unowned Timecoord[] res = (Timecoord[]) bala_events ();
 				res.length = (int) events_len;
 				return res;
 			}
@@ -768,12 +768,12 @@ namespace Xcb {
 		public VisualID visual;
 		private uint32 length;
 		[CCode (cname = "xcb_get_image_data")]
-		public uint8* vala_data ();
+		public uint8* bala_data ();
 		public uint8[] data
 		{
 			get
 			{
-				unowned uint8[] res = (uint8[]) vala_data ();
+				unowned uint8[] res = (uint8[]) bala_data ();
 				res.length = (int) length;
 				return res;
 			}
@@ -791,12 +791,12 @@ namespace Xcb {
 	public class ListInstalledColormapsReply {
 		private uint16 cmaps_len;
 		[CCode (cname = "xcb_list_installed_colormaps_cmaps")]
-		private Colormap* vala_cmaps ();
+		private Colormap* bala_cmaps ();
 		public Colormap[] cmaps
 		{
 			get
 			{
-				unowned Colormap[] res = (Colormap[]) vala_cmaps ();
+				unowned Colormap[] res = (Colormap[]) bala_cmaps ();
 				res.length = (int) cmaps_len;
 				return res;
 			}
@@ -847,22 +847,22 @@ namespace Xcb {
 	public class AllocColorCellsReply {
 		private uint16 pixels_len;
 		[CCode (cname = "xcb_alloc_color_cells_pixels")]
-		private uint32* vala_pixels ();
+		private uint32* bala_pixels ();
 		public uint32[] pixels
 		{
 			get {
-				unowned uint32[] res = (uint32[]) vala_pixels ();
+				unowned uint32[] res = (uint32[]) bala_pixels ();
 				res.length = (int) pixels_len;
 				return res;
 			}
 		}
 		private uint16 masks_len;
 		[CCode (cname = "xcb_alloc_color_cells_masks")]
-		private uint32* vala_masks ();
+		private uint32* bala_masks ();
 		public uint32[] masks
 		{
 			get {
-				unowned uint32[] res = (uint32[]) vala_masks ();
+				unowned uint32[] res = (uint32[]) bala_masks ();
 				res.length = (int) masks_len;
 				return res;
 			}
@@ -883,11 +883,11 @@ namespace Xcb {
 		public uint32 blue_mask;
 		private uint16 pixels_len;
 		[CCode (cname = "xcb_alloc_color_planes_pixels")]
-		private uint32* vala_pixels ();
+		private uint32* bala_pixels ();
 		public uint32[] pixels
 		{
 			get {
-				unowned uint32[] res = (uint32[]) vala_pixels ();
+				unowned uint32[] res = (uint32[]) bala_pixels ();
 				res.length = (int) pixels_len;
 				return res;
 			}
@@ -905,11 +905,11 @@ namespace Xcb {
 	public class QueryColorsReply {
 		private uint16 colors_len;
 		[CCode (cname = "xcb_query_colors_colors")]
-		private RGB* vala_colors ();
+		private RGB* bala_colors ();
 		public RGB[] colors
 		{
 			get {
-				unowned RGB[] res = (RGB[]) vala_colors ();
+				unowned RGB[] res = (RGB[]) bala_colors ();
 				res.length = (int) colors_len;
 				return res;
 			}
@@ -1169,24 +1169,24 @@ namespace Xcb {
 		public int16 font_descent;
 		private uint16 properties_len;
 		[CCode (cname = "xcb_query_font_properties")]
-		private Fontprop* vala_properties ();
+		private Fontprop* bala_properties ();
 		public Fontprop[] properties
 		{
 			get
 			{
-				unowned Fontprop[] res = (Fontprop[]) vala_properties ();
+				unowned Fontprop[] res = (Fontprop[]) bala_properties ();
 				res.length = properties_len;
 				return res;
 			}
 		}
 		private uint32 char_infos_len;
 		[CCode (cname = "xcb_query_font_char_infos")]
-		private Charinfo* vala_char_infos ();
+		private Charinfo* bala_char_infos ();
 		public Charinfo[] char_infos
 		{
 			get
 			{
-				unowned Charinfo[] res = (Charinfo[]) vala_char_infos ();
+				unowned Charinfo[] res = (Charinfo[]) bala_char_infos ();
 				res.length = (int) char_infos_len;
 				return res;
 			}
@@ -1299,20 +1299,20 @@ namespace Xcb {
 		public uint32 replies_hint;
 		private uint16 properties_len;
 		[CCode (cname = "xcb_list_fonts_with_info_properties")]
-		private Fontprop* vala_properties ();
+		private Fontprop* bala_properties ();
 		public Fontprop[] properties
 		{
 			get
 			{
-				unowned Fontprop[] res = (Fontprop[]) vala_properties ();
+				unowned Fontprop[] res = (Fontprop[]) bala_properties ();
 				res.length = properties_len;
 				return res;
 			}
 		}
 		private uint8 name_len;
 		[CCode (cname = "xcb_list_fonts_with_info_name")]
-		private unowned string vala_name ();
-		public string name { owned get { return "%.*s".printf (name_len, vala_name ()); } }
+		private unowned string bala_name ();
+		public string name { owned get { return "%.*s".printf (name_len, bala_name ()); } }
 	}
 
 	[SimpleType]
@@ -1538,8 +1538,8 @@ namespace Xcb {
 		public uint32 motion_buffer_size;
 		private uint16 vendor_len;
 		[CCode (cname = "xcb_setup_vendor")]
-		private unowned string vala_vendor ();
-		public string vendor { owned get { return "%.*s".printf (vendor_len, vala_vendor ()); } }
+		private unowned string bala_vendor ();
+		public string vendor { owned get { return "%.*s".printf (vendor_len, bala_vendor ()); } }
 		public uint32 maximum_request_length;
 		public uint8 image_byte_order;
 		public uint8 bitmap_format_bit_order;
@@ -1549,18 +1549,18 @@ namespace Xcb {
 		public Keycode max_keycode;
 		private uint8 pixmap_formats_len;
 		[CCode (cname = "xcb_setup_pixmap_formats")]
-		private Format* vala_pixmap_formats ();
+		private Format* bala_pixmap_formats ();
 		public Format[] pixmap_formats
 		{
 			get
 			{
-				unowned Format[] res = (Format[]) vala_pixmap_formats ();
+				unowned Format[] res = (Format[]) bala_pixmap_formats ();
 				res.length = pixmap_formats_len;
 				return res;
 			}
 		}
 		private uint8 roots_len;
-		[Version (deprecated_since = "vala-0.26", replacement = "Xcb.Setup.screens")]
+		[Version (deprecated_since = "bala-0.26", replacement = "Xcb.Setup.screens")]
 		public int roots_length ();
 		public ScreenIterator roots_iterator ();
 		public Screen[] screens {
@@ -2039,16 +2039,16 @@ namespace Xcb {
 		public uint8 depth;
 		private uint16 visuals_len;
 		[CCode (cname = "xcb_depth_visuals")]
-		private VisualType* vala_visuals ();
+		private VisualType* bala_visuals ();
 		public VisualType[] visuals
 		{
 			get {
-				unowned VisualType[] res = (VisualType[]) vala_visuals ();
+				unowned VisualType[] res = (VisualType[]) bala_visuals ();
 				res.length = (int) visuals_len;
 				return res;
 			}
 		}
-		[Version (deprecated_since = "vala-0.26", replacement = "Xcb.Depth.visuals")]
+		[Version (deprecated_since = "bala-0.26", replacement = "Xcb.Depth.visuals")]
 		public VisualTypeIterator visuals_iterator ();
 	}
 
@@ -2071,7 +2071,7 @@ namespace Xcb {
 		public static void next (ref DepthIterator iter);
 	}
 
-	[Version (deprecated_since = "vala-0.26", replacement = "Xcb.Depth.visuals")]
+	[Version (deprecated_since = "bala-0.26", replacement = "Xcb.Depth.visuals")]
 	[SimpleType]
 	[CCode (cname = "xcb_visualtype_iterator_t", has_type_id = false)]
 	public struct VisualTypeIterator {
@@ -2412,8 +2412,8 @@ namespace Xcb {
 	private class Str {
 		private uint8 name_len;
 		[CCode (cname = "xcb_str_name")]
-		private unowned string vala_name ();
-		public string name { owned get { return "%.*s".printf (name_len, vala_name ()); } }
+		private unowned string bala_name ();
+		public string name { owned get { return "%.*s".printf (name_len, bala_name ()); } }
 	}
 
 	[SimpleType]
@@ -2432,12 +2432,12 @@ namespace Xcb {
 		public Family family;
 		private uint16 address_len;
 		[CCode (cname = "xcb_host_address")]
-		public unowned uint8* vala_address ();
+		public unowned uint8* bala_address ();
 		public uint8[] address
 		{
 			get
 			{
-				unowned uint8[] res = (uint8[]) vala_address ();
+				unowned uint8[] res = (uint8[]) bala_address ();
 				res.length = address_len;
 				return res;
 			}

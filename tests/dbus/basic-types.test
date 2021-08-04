@@ -27,7 +27,7 @@ void main () {
 	string t, u;
 	u = test.test_string ("hello", out t);
 	assert (t == "world");
-	assert (u == "vala");
+	assert (u == "bala");
 
 	test.test_property = "hello";
 	t = test.test_property;
@@ -57,7 +57,7 @@ class Test : Object {
 	public string test_string (string s, out string t) {
 		assert (s == "hello");
 		t = "world";
-		return "vala";
+		return "bala";
 	}
 }
 

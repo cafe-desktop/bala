@@ -1,4 +1,4 @@
-/* valacodecontext.vala
+/* balacodecontext.bala
  *
  * Copyright (C) 2006-2012  Jürg Billeter
  *
@@ -449,11 +449,11 @@ public class Vala.CodeContext {
 	}
 
 	/**
-	 * Add the specified source file to the context. Only .vala, .vapi, .gs,
+	 * Add the specified source file to the context. Only .bala, .vapi, .gs,
 	 * and .c extensions are supported.
 	 *
 	 * @param filename a filename
-	 * @param is_source true to force adding the file as .vala or .gs
+	 * @param is_source true to force adding the file as .bala or .gs
 	 * @param cmdline true if the file came from the command line.
 	 * @return false if the file is not recognized or the file does not exist
 	 */
@@ -464,7 +464,7 @@ public class Vala.CodeContext {
 		}
 
 		var rpath = realpath (filename);
-		if (is_source || filename.has_suffix (".vala") || filename.has_suffix (".gs")) {
+		if (is_source || filename.has_suffix (".bala") || filename.has_suffix (".gs")) {
 			var source_file = new SourceFile (this, SourceFileType.SOURCE, rpath, null, cmdline);
 			source_file.relative_filename = filename;
 
@@ -497,7 +497,7 @@ public class Vala.CodeContext {
 		} else if (filename.has_suffix (".h")) {
 			/* Ignore */
 		} else {
-			Report.error (null, "%s is not a supported source file type. Only .vala, .vapi, .gs, and .c files are supported.".printf (filename));
+			Report.error (null, "%s is not a supported source file type. Only .bala, .vapi, .gs, and .c files are supported.".printf (filename));
 			return false;
 		}
 
@@ -620,7 +620,7 @@ public class Vala.CodeContext {
 		}
 
 		if (glib_major != 2) {
-			Report.error (null, "This version of valac only supports GLib 2");
+			Report.error (null, "This version of balac only supports GLib 2");
 		}
 
 		if (glib_minor <= target_glib_minor) {
@@ -637,7 +637,7 @@ public class Vala.CodeContext {
 	}
 
 	public string? get_vapi_path (string pkg) {
-		var path = get_file_path (pkg + ".vapi", "vala" + Config.PACKAGE_SUFFIX + "/vapi", "vala/vapi", vapi_directories);
+		var path = get_file_path (pkg + ".vapi", "bala" + Config.PACKAGE_SUFFIX + "/vapi", "bala/vapi", vapi_directories);
 
 		if (path == null) {
 			/* last chance: try the package compiled-in vapi dir */

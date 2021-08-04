@@ -1,4 +1,4 @@
-/* wiki.vala
+/* wiki.bala
  *
  * Copyright (C) 2008-2009 Florian Brosch
  *
@@ -112,7 +112,7 @@ public class Valadoc.WikiPageTree : Object {
 
 			for (string? curname = dir.read_name (); curname!=null ; curname = dir.read_name ()) {
 				string filename = Path.build_filename (path, curname);
-				if (curname.has_suffix (".valadoc") && FileUtils.test (filename, FileTest.IS_REGULAR)) {
+				if (curname.has_suffix (".baladoc") && FileUtils.test (filename, FileTest.IS_REGULAR)) {
 					WikiPage wikipage = new WikiPage ((nameoffset!=null)
 						? Path.build_filename (nameoffset, curname)
 						: curname, filename, package);

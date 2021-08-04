@@ -4,7 +4,7 @@ language features to GNOME developers without imposing any additional
 runtime requirements and without using a different ABI compared to
 applications and libraries written in C.
 
-`valac`, the Vala compiler, is a self-hosting compiler that translates
+`balac`, the Vala compiler, is a self-hosting compiler that translates
 Vala source code into C source and header files. It uses the GObject
 type system to create classes and interfaces declared in the Vala source
 code.
@@ -52,7 +52,7 @@ Install the following packages:
  * glib (>= 2.48)
  * flex
  * bison
- * Graphviz (libgvc) (>= 2.16) to build valadoc
+ * Graphviz (libgvc) (>= 2.16) to build baladoc
  * make
  * autoconf
  * autoconf-archive
@@ -64,72 +64,72 @@ Install the following packages:
 Decide where the Vala compiler is to be found.
 
 Vala is self-hosting so it needs another Vala compiler to compile
-itself.  `valac` is the name of the executable and can be:
+itself.  `balac` is the name of the executable and can be:
 
  * installed from an existing package
  * built from a source tarball
- * built from the [Vala bootstrap module](https://gitlab.gnome.org/Archive/vala-bootstrap)
+ * built from the [Vala bootstrap module](https://gitlab.gnome.org/Archive/bala-bootstrap)
 
-If you have an existing `valac` installed then move on to step three.
+If you have an existing `balac` installed then move on to step three.
 
 If you don't have an existing version of Vala installed (i.e. because you're
-bootstrapping or cross-compiling) then a source tarball or the vala-bootstrap
+bootstrapping or cross-compiling) then a source tarball or the bala-bootstrap
 module contain pre-compiled C files from the Vala sources. These can be used
-to bootstrap `valac`.
+to bootstrap `balac`.
 
 Source tarballs can be downloaded via:
 
 https://wiki.gnome.org/Projects/Vala/Release
 
-or the vala-bootstrap module is available at:
+or the bala-bootstrap module is available at:
 
-https://gitlab.gnome.org/Archive/vala-bootstrap
+https://gitlab.gnome.org/Archive/bala-bootstrap
 
 
 Here is an example on how to download and compile from a Vala release tarball.
 In this example it is release version 0.42.3:
 
 ```sh
-curl --silent --show-error --location https://download.gnome.org/sources/vala/0.42/vala-0.42.3.tar.xz --output vala-bootstrap.tar.xz
-tar --extract --file vala-bootstrap.tar.xz
-cd vala-bootstrap
-./configure --prefix=/opt/vala-bootstrap
+curl --silent --show-error --location https://download.gnome.org/sources/bala/0.42/bala-0.42.3.tar.xz --output bala-bootstrap.tar.xz
+tar --extract --file bala-bootstrap.tar.xz
+cd bala-bootstrap
+./configure --prefix=/opt/bala-bootstrap
 make && sudo make install
 ```
 
-The configure script will check if `valac` can be found in PATH. If not then
-`valac` is bootstrapped from the C source files in the tarball.
-If you do not wish to install the bootstrapped version of `valac` it can be
-found in `vala-bootstrap/compiler/valac` This is a libtool wrapper script
+The configure script will check if `balac` can be found in PATH. If not then
+`balac` is bootstrapped from the C source files in the tarball.
+If you do not wish to install the bootstrapped version of `balac` it can be
+found in `bala-bootstrap/compiler/balac` This is a libtool wrapper script
 that makes the libraries in the build directory work together.
 
 
 An example of downloading and compiling from the bootstrap module:
 
 ```sh
-git clone https://gitlab.gnome.org/Archive/vala-bootstrap
-cd vala-bootstrap
+git clone https://gitlab.gnome.org/Archive/bala-bootstrap
+cd bala-bootstrap
 touch */*.stamp
-BALAC=/no-valac ./configure --prefix=/opt/vala-bootstrap
+BALAC=/no-balac ./configure --prefix=/opt/bala-bootstrap
 make && sudo make install
 ```
 
 ### Step Three:
-Compiling the newest Vala from the repository using a pre-installed `valac`:
+Compiling the newest Vala from the repository using a pre-installed `balac`:
 
 ```sh
-git clone https://gitlab.gnome.org/GNOME/vala
-cd vala
+git clone https://gitlab.gnome.org/GNOME/bala
+cd bala
 ./autogen.sh
 make && sudo make install
 ```
 
-To use `valac` from a bootstrapped build detailed in step two use:
+To use `balac` from a bootstrapped build detailed in step two use:
 
 ```sh
-git clone https://gitlab.gnome.org/GNOME/vala
-cd vala
-BALAC=/opt/vala-bootstrap/bin/vala ./autogen.sh
+git clone https://gitlab.gnome.org/GNOME/bala
+cd bala
+BALAC=/opt/bala-bootstrap/bin/bala ./autogen.sh
 make && sudo make install
 ```
 

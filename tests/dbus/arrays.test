@@ -23,7 +23,7 @@ void main () {
 	string[] t, u;
 	u = test.test_string ({ "hello" }, out t);
 	assert (t.length == 1 && t[0] == "world");
-	assert (u.length == 1 && u[0] == "vala");
+	assert (u.length == 1 && u[0] == "bala");
 
 	test.test_property = { "hello" };
 	t = test.test_property;
@@ -45,7 +45,7 @@ class Test : Object {
 	public string[] test_string (string[] s, out string[] t) {
 		assert (s.length == 1 && s[0] == "hello");
 		t = { "world" };
-		return { "vala" };
+		return { "bala" };
 	}
 }
 

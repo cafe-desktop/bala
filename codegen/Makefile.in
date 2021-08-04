@@ -127,38 +127,38 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(libvalaccodegen_ladir)"
-LTLIBRARIES = $(libvalaccodegen_la_LTLIBRARIES)
+am__installdirs = "$(DESTDIR)$(libbalaccodegen_ladir)"
+LTLIBRARIES = $(libbalaccodegen_la_LTLIBRARIES)
 am__DEPENDENCIES_1 =
-libvalaccodegen_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+libbalaccodegen_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la $(am__DEPENDENCIES_1)
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la $(am__DEPENDENCIES_1)
 am__objects_1 =
-am__objects_2 = valaccode.lo valaccodearraymodule.lo \
-	valaccodeassignmentmodule.lo valaccodeattribute.lo \
-	valaccodebasemodule.lo valaccodecompiler.lo \
-	valaccodecontrolflowmodule.lo valaccodedelegatemodule.lo \
-	valaccodememberaccessmodule.lo valaccodemethodcallmodule.lo \
-	valaccodemethodmodule.lo valaccodestructmodule.lo \
-	valaclassregisterfunction.lo valactype.lo \
-	valaenumregisterfunction.lo valagasyncmodule.lo \
-	valagdbusclientmodule.lo valagdbusmodule.lo \
-	valagdbusservermodule.lo valagerrormodule.lo valagirwriter.lo \
-	valaglibvalue.lo valagobjectmodule.lo valagtkmodule.lo \
-	valagsignalmodule.lo valagtypemodule.lo valagvaluemodule.lo \
-	valagvariantmodule.lo valainterfaceregisterfunction.lo \
-	valastructregisterfunction.lo valatyperegisterfunction.lo \
+am__objects_2 = balaccode.lo balaccodearraymodule.lo \
+	balaccodeassignmentmodule.lo balaccodeattribute.lo \
+	balaccodebasemodule.lo balaccodecompiler.lo \
+	balaccodecontrolflowmodule.lo balaccodedelegatemodule.lo \
+	balaccodememberaccessmodule.lo balaccodemethodcallmodule.lo \
+	balaccodemethodmodule.lo balaccodestructmodule.lo \
+	balaclassregisterfunction.lo balactype.lo \
+	balaenumregisterfunction.lo balagasyncmodule.lo \
+	balagdbusclientmodule.lo balagdbusmodule.lo \
+	balagdbusservermodule.lo balagerrormodule.lo balagirwriter.lo \
+	balaglibvalue.lo balagobjectmodule.lo balagtkmodule.lo \
+	balagsignalmodule.lo balagtypemodule.lo balagvaluemodule.lo \
+	balagvariantmodule.lo balainterfaceregisterfunction.lo \
+	balastructregisterfunction.lo balatyperegisterfunction.lo \
 	$(am__objects_1)
-am_libvalaccodegen_la_OBJECTS = $(am__objects_2) $(am__objects_1)
-libvalaccodegen_la_OBJECTS = $(am_libvalaccodegen_la_OBJECTS)
+am_libbalaccodegen_la_OBJECTS = $(am__objects_2) $(am__objects_1)
+libbalaccodegen_la_OBJECTS = $(am_libbalaccodegen_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-libvalaccodegen_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+libbalaccodegen_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(AM_CFLAGS) $(CFLAGS) $(libvalaccodegen_la_LDFLAGS) \
+	$(AM_CFLAGS) $(CFLAGS) $(libbalaccodegen_la_LDFLAGS) \
 	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -175,35 +175,35 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/valaccode.Plo \
-	./$(DEPDIR)/valaccodearraymodule.Plo \
-	./$(DEPDIR)/valaccodeassignmentmodule.Plo \
-	./$(DEPDIR)/valaccodeattribute.Plo \
-	./$(DEPDIR)/valaccodebasemodule.Plo \
-	./$(DEPDIR)/valaccodecompiler.Plo \
-	./$(DEPDIR)/valaccodecontrolflowmodule.Plo \
-	./$(DEPDIR)/valaccodedelegatemodule.Plo \
-	./$(DEPDIR)/valaccodememberaccessmodule.Plo \
-	./$(DEPDIR)/valaccodemethodcallmodule.Plo \
-	./$(DEPDIR)/valaccodemethodmodule.Plo \
-	./$(DEPDIR)/valaccodestructmodule.Plo \
-	./$(DEPDIR)/valaclassregisterfunction.Plo \
-	./$(DEPDIR)/valactype.Plo \
-	./$(DEPDIR)/valaenumregisterfunction.Plo \
-	./$(DEPDIR)/valagasyncmodule.Plo \
-	./$(DEPDIR)/valagdbusclientmodule.Plo \
-	./$(DEPDIR)/valagdbusmodule.Plo \
-	./$(DEPDIR)/valagdbusservermodule.Plo \
-	./$(DEPDIR)/valagerrormodule.Plo ./$(DEPDIR)/valagirwriter.Plo \
-	./$(DEPDIR)/valaglibvalue.Plo \
-	./$(DEPDIR)/valagobjectmodule.Plo \
-	./$(DEPDIR)/valagsignalmodule.Plo \
-	./$(DEPDIR)/valagtkmodule.Plo ./$(DEPDIR)/valagtypemodule.Plo \
-	./$(DEPDIR)/valagvaluemodule.Plo \
-	./$(DEPDIR)/valagvariantmodule.Plo \
-	./$(DEPDIR)/valainterfaceregisterfunction.Plo \
-	./$(DEPDIR)/valastructregisterfunction.Plo \
-	./$(DEPDIR)/valatyperegisterfunction.Plo
+am__depfiles_remade = ./$(DEPDIR)/balaccode.Plo \
+	./$(DEPDIR)/balaccodearraymodule.Plo \
+	./$(DEPDIR)/balaccodeassignmentmodule.Plo \
+	./$(DEPDIR)/balaccodeattribute.Plo \
+	./$(DEPDIR)/balaccodebasemodule.Plo \
+	./$(DEPDIR)/balaccodecompiler.Plo \
+	./$(DEPDIR)/balaccodecontrolflowmodule.Plo \
+	./$(DEPDIR)/balaccodedelegatemodule.Plo \
+	./$(DEPDIR)/balaccodememberaccessmodule.Plo \
+	./$(DEPDIR)/balaccodemethodcallmodule.Plo \
+	./$(DEPDIR)/balaccodemethodmodule.Plo \
+	./$(DEPDIR)/balaccodestructmodule.Plo \
+	./$(DEPDIR)/balaclassregisterfunction.Plo \
+	./$(DEPDIR)/balactype.Plo \
+	./$(DEPDIR)/balaenumregisterfunction.Plo \
+	./$(DEPDIR)/balagasyncmodule.Plo \
+	./$(DEPDIR)/balagdbusclientmodule.Plo \
+	./$(DEPDIR)/balagdbusmodule.Plo \
+	./$(DEPDIR)/balagdbusservermodule.Plo \
+	./$(DEPDIR)/balagerrormodule.Plo ./$(DEPDIR)/balagirwriter.Plo \
+	./$(DEPDIR)/balaglibvalue.Plo \
+	./$(DEPDIR)/balagobjectmodule.Plo \
+	./$(DEPDIR)/balagsignalmodule.Plo \
+	./$(DEPDIR)/balagtkmodule.Plo ./$(DEPDIR)/balagtypemodule.Plo \
+	./$(DEPDIR)/balagvaluemodule.Plo \
+	./$(DEPDIR)/balagvariantmodule.Plo \
+	./$(DEPDIR)/balainterfaceregisterfunction.Plo \
+	./$(DEPDIR)/balastructregisterfunction.Plo \
+	./$(DEPDIR)/balatyperegisterfunction.Plo
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -223,8 +223,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libvalaccodegen_la_SOURCES)
-DIST_SOURCES = $(libvalaccodegen_la_SOURCES)
+SOURCES = $(libbalaccodegen_la_SOURCES)
+DIST_SOURCES = $(libbalaccodegen_la_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -406,76 +406,76 @@ BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
 BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"vala-ccodegen\" \
+	-DG_LOG_DOMAIN=\"bala-ccodegen\" \
 	$(COVERAGE_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	$(GLIB_CFLAGS) \
 	$(NULL)
 
-BUILT_SOURCES = codegen.vala.stamp
-libvalaccodegen_la_LTLIBRARIES = \
-	libvalaccodegen.la \
+BUILT_SOURCES = codegen.bala.stamp
+libbalaccodegen_la_LTLIBRARIES = \
+	libbalaccodegen.la \
 	$(NULL)
 
-libvalaccodegen_ladir = $(pkglibdir)
-libvalaccodegen_la_LDFLAGS = \
+libbalaccodegen_ladir = $(pkglibdir)
+libbalaccodegen_la_LDFLAGS = \
 	-no-undefined \
 	-avoid-version \
 	$(NULL)
 
-libvalaccodegen_la_BALASOURCES = \
-	valaccode.vala \
-	valaccodearraymodule.vala \
-	valaccodeassignmentmodule.vala \
-	valaccodeattribute.vala \
-	valaccodebasemodule.vala \
-	valaccodecompiler.vala \
-	valaccodecontrolflowmodule.vala \
-	valaccodedelegatemodule.vala \
-	valaccodememberaccessmodule.vala \
-	valaccodemethodcallmodule.vala \
-	valaccodemethodmodule.vala \
-	valaccodestructmodule.vala \
-	valaclassregisterfunction.vala \
-	valactype.vala \
-	valaenumregisterfunction.vala \
-	valagasyncmodule.vala \
-	valagdbusclientmodule.vala \
-	valagdbusmodule.vala \
-	valagdbusservermodule.vala \
-	valagerrormodule.vala \
-	valagirwriter.vala \
-	valaglibvalue.vala \
-	valagobjectmodule.vala \
-	valagtkmodule.vala \
-	valagsignalmodule.vala \
-	valagtypemodule.vala \
-	valagvaluemodule.vala \
-	valagvariantmodule.vala \
-	valainterfaceregisterfunction.vala \
-	valastructregisterfunction.vala \
-	valatyperegisterfunction.vala \
+libbalaccodegen_la_BALASOURCES = \
+	balaccode.bala \
+	balaccodearraymodule.bala \
+	balaccodeassignmentmodule.bala \
+	balaccodeattribute.bala \
+	balaccodebasemodule.bala \
+	balaccodecompiler.bala \
+	balaccodecontrolflowmodule.bala \
+	balaccodedelegatemodule.bala \
+	balaccodememberaccessmodule.bala \
+	balaccodemethodcallmodule.bala \
+	balaccodemethodmodule.bala \
+	balaccodestructmodule.bala \
+	balaclassregisterfunction.bala \
+	balactype.bala \
+	balaenumregisterfunction.bala \
+	balagasyncmodule.bala \
+	balagdbusclientmodule.bala \
+	balagdbusmodule.bala \
+	balagdbusservermodule.bala \
+	balagerrormodule.bala \
+	balagirwriter.bala \
+	balaglibvalue.bala \
+	balagobjectmodule.bala \
+	balagtkmodule.bala \
+	balagsignalmodule.bala \
+	balagtypemodule.bala \
+	balagvaluemodule.bala \
+	balagvariantmodule.bala \
+	balainterfaceregisterfunction.bala \
+	balastructregisterfunction.bala \
+	balatyperegisterfunction.bala \
 	$(NULL)
 
-libvalaccodegen_la_SOURCES = \
-	codegen.vala.stamp \
-	$(libvalaccodegen_la_BALASOURCES:.vala=.c) \
+libbalaccodegen_la_SOURCES = \
+	codegen.bala.stamp \
+	$(libbalaccodegen_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-libvalaccodegen_la_LIBADD = \
+libbalaccodegen_la_LIBADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la \
 	$(NULL)
 
-EXTRA_DIST = $(libvalaccodegen_la_BALASOURCES) codegen.vapi codegen.vala.stamp valacodegen.h
+EXTRA_DIST = $(libbalaccodegen_la_BALASOURCES) codegen.vapi codegen.bala.stamp balacodegen.h
 MAINTAINERCLEANFILES = \
 	codegen.vapi \
-	valacodegen.h \
-	$(libvalaccodegen_la_BALASOURCES:.vala=.c) \
+	balacodegen.h \
+	$(libbalaccodegen_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -514,33 +514,33 @@ $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
 
-install-libvalaccodegen_laLTLIBRARIES: $(libvalaccodegen_la_LTLIBRARIES)
+install-libbalaccodegen_laLTLIBRARIES: $(libbalaccodegen_la_LTLIBRARIES)
 	@$(NORMAL_INSTALL)
-	@list='$(libvalaccodegen_la_LTLIBRARIES)'; test -n "$(libvalaccodegen_ladir)" || list=; \
+	@list='$(libbalaccodegen_la_LTLIBRARIES)'; test -n "$(libbalaccodegen_ladir)" || list=; \
 	list2=; for p in $$list; do \
 	  if test -f $$p; then \
 	    list2="$$list2 $$p"; \
 	  else :; fi; \
 	done; \
 	test -z "$$list2" || { \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(libvalaccodegen_ladir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(libvalaccodegen_ladir)" || exit 1; \
-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(libvalaccodegen_ladir)'"; \
-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(libvalaccodegen_ladir)"; \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(libbalaccodegen_ladir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(libbalaccodegen_ladir)" || exit 1; \
+	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 '$(DESTDIR)$(libbalaccodegen_ladir)'"; \
+	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=install $(INSTALL) $(INSTALL_STRIP_FLAG) $$list2 "$(DESTDIR)$(libbalaccodegen_ladir)"; \
 	}
 
-uninstall-libvalaccodegen_laLTLIBRARIES:
+uninstall-libbalaccodegen_laLTLIBRARIES:
 	@$(NORMAL_UNINSTALL)
-	@list='$(libvalaccodegen_la_LTLIBRARIES)'; test -n "$(libvalaccodegen_ladir)" || list=; \
+	@list='$(libbalaccodegen_la_LTLIBRARIES)'; test -n "$(libbalaccodegen_ladir)" || list=; \
 	for p in $$list; do \
 	  $(am__strip_dir) \
-	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(DESTDIR)$(libvalaccodegen_ladir)/$$f'"; \
-	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(DESTDIR)$(libvalaccodegen_ladir)/$$f"; \
+	  echo " $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f '$(DESTDIR)$(libbalaccodegen_ladir)/$$f'"; \
+	  $(LIBTOOL) $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=uninstall rm -f "$(DESTDIR)$(libbalaccodegen_ladir)/$$f"; \
 	done
 
-clean-libvalaccodegen_laLTLIBRARIES:
-	-test -z "$(libvalaccodegen_la_LTLIBRARIES)" || rm -f $(libvalaccodegen_la_LTLIBRARIES)
-	@list='$(libvalaccodegen_la_LTLIBRARIES)'; \
+clean-libbalaccodegen_laLTLIBRARIES:
+	-test -z "$(libbalaccodegen_la_LTLIBRARIES)" || rm -f $(libbalaccodegen_la_LTLIBRARIES)
+	@list='$(libbalaccodegen_la_LTLIBRARIES)'; \
 	locs=`for p in $$list; do echo $$p; done | \
 	      sed 's|^[^/]*$$|.|; s|/[^/]*$$||; s|$$|/so_locations|' | \
 	      sort -u`; \
@@ -549,8 +549,8 @@ clean-libvalaccodegen_laLTLIBRARIES:
 	  rm -f $${locs}; \
 	}
 
-libvalaccodegen.la: $(libvalaccodegen_la_OBJECTS) $(libvalaccodegen_la_DEPENDENCIES) $(EXTRA_libvalaccodegen_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libvalaccodegen_la_LINK) -rpath $(libvalaccodegen_ladir) $(libvalaccodegen_la_OBJECTS) $(libvalaccodegen_la_LIBADD) $(LIBS)
+libbalaccodegen.la: $(libbalaccodegen_la_OBJECTS) $(libbalaccodegen_la_DEPENDENCIES) $(EXTRA_libbalaccodegen_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libbalaccodegen_la_LINK) -rpath $(libbalaccodegen_ladir) $(libbalaccodegen_la_OBJECTS) $(libbalaccodegen_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -558,37 +558,37 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccode.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodearraymodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeassignmentmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodeattribute.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodebasemodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodecompiler.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodecontrolflowmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodedelegatemodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodememberaccessmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodemethodcallmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodemethodmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaccodestructmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaclassregisterfunction.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valactype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaenumregisterfunction.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagasyncmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagdbusclientmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagdbusmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagdbusservermodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagerrormodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagirwriter.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaglibvalue.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagobjectmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagsignalmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagtkmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagtypemodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagvaluemodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagvariantmodule.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valainterfaceregisterfunction.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valastructregisterfunction.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatyperegisterfunction.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccode.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodearraymodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeassignmentmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodeattribute.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodebasemodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodecompiler.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodecontrolflowmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodedelegatemodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodememberaccessmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodemethodcallmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodemethodmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaccodestructmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaclassregisterfunction.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balactype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaenumregisterfunction.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagasyncmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagdbusclientmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagdbusmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagdbusservermodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagerrormodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagirwriter.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaglibvalue.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagobjectmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagsignalmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagtkmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagtypemodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagvaluemodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagvariantmodule.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balainterfaceregisterfunction.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balastructregisterfunction.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatyperegisterfunction.Plo@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -716,7 +716,7 @@ check: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) check-am
 all-am: Makefile $(LTLIBRARIES)
 installdirs:
-	for dir in "$(DESTDIR)$(libvalaccodegen_ladir)"; do \
+	for dir in "$(DESTDIR)$(libbalaccodegen_ladir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -756,40 +756,40 @@ maintainer-clean-generic:
 clean: clean-am
 
 clean-am: clean-generic clean-libtool \
-	clean-libvalaccodegen_laLTLIBRARIES mostlyclean-am
+	clean-libbalaccodegen_laLTLIBRARIES mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/valaccode.Plo
-	-rm -f ./$(DEPDIR)/valaccodearraymodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodeassignmentmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodeattribute.Plo
-	-rm -f ./$(DEPDIR)/valaccodebasemodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodecompiler.Plo
-	-rm -f ./$(DEPDIR)/valaccodecontrolflowmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodedelegatemodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodememberaccessmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodemethodcallmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodemethodmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodestructmodule.Plo
-	-rm -f ./$(DEPDIR)/valaclassregisterfunction.Plo
-	-rm -f ./$(DEPDIR)/valactype.Plo
-	-rm -f ./$(DEPDIR)/valaenumregisterfunction.Plo
-	-rm -f ./$(DEPDIR)/valagasyncmodule.Plo
-	-rm -f ./$(DEPDIR)/valagdbusclientmodule.Plo
-	-rm -f ./$(DEPDIR)/valagdbusmodule.Plo
-	-rm -f ./$(DEPDIR)/valagdbusservermodule.Plo
-	-rm -f ./$(DEPDIR)/valagerrormodule.Plo
-	-rm -f ./$(DEPDIR)/valagirwriter.Plo
-	-rm -f ./$(DEPDIR)/valaglibvalue.Plo
-	-rm -f ./$(DEPDIR)/valagobjectmodule.Plo
-	-rm -f ./$(DEPDIR)/valagsignalmodule.Plo
-	-rm -f ./$(DEPDIR)/valagtkmodule.Plo
-	-rm -f ./$(DEPDIR)/valagtypemodule.Plo
-	-rm -f ./$(DEPDIR)/valagvaluemodule.Plo
-	-rm -f ./$(DEPDIR)/valagvariantmodule.Plo
-	-rm -f ./$(DEPDIR)/valainterfaceregisterfunction.Plo
-	-rm -f ./$(DEPDIR)/valastructregisterfunction.Plo
-	-rm -f ./$(DEPDIR)/valatyperegisterfunction.Plo
+		-rm -f ./$(DEPDIR)/balaccode.Plo
+	-rm -f ./$(DEPDIR)/balaccodearraymodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodeassignmentmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodeattribute.Plo
+	-rm -f ./$(DEPDIR)/balaccodebasemodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodecompiler.Plo
+	-rm -f ./$(DEPDIR)/balaccodecontrolflowmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodedelegatemodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodememberaccessmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodemethodcallmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodemethodmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodestructmodule.Plo
+	-rm -f ./$(DEPDIR)/balaclassregisterfunction.Plo
+	-rm -f ./$(DEPDIR)/balactype.Plo
+	-rm -f ./$(DEPDIR)/balaenumregisterfunction.Plo
+	-rm -f ./$(DEPDIR)/balagasyncmodule.Plo
+	-rm -f ./$(DEPDIR)/balagdbusclientmodule.Plo
+	-rm -f ./$(DEPDIR)/balagdbusmodule.Plo
+	-rm -f ./$(DEPDIR)/balagdbusservermodule.Plo
+	-rm -f ./$(DEPDIR)/balagerrormodule.Plo
+	-rm -f ./$(DEPDIR)/balagirwriter.Plo
+	-rm -f ./$(DEPDIR)/balaglibvalue.Plo
+	-rm -f ./$(DEPDIR)/balagobjectmodule.Plo
+	-rm -f ./$(DEPDIR)/balagsignalmodule.Plo
+	-rm -f ./$(DEPDIR)/balagtkmodule.Plo
+	-rm -f ./$(DEPDIR)/balagtypemodule.Plo
+	-rm -f ./$(DEPDIR)/balagvaluemodule.Plo
+	-rm -f ./$(DEPDIR)/balagvariantmodule.Plo
+	-rm -f ./$(DEPDIR)/balainterfaceregisterfunction.Plo
+	-rm -f ./$(DEPDIR)/balastructregisterfunction.Plo
+	-rm -f ./$(DEPDIR)/balatyperegisterfunction.Plo
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -806,7 +806,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-libvalaccodegen_laLTLIBRARIES
+install-data-am: install-libbalaccodegen_laLTLIBRARIES
 
 install-dvi: install-dvi-am
 
@@ -835,37 +835,37 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/valaccode.Plo
-	-rm -f ./$(DEPDIR)/valaccodearraymodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodeassignmentmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodeattribute.Plo
-	-rm -f ./$(DEPDIR)/valaccodebasemodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodecompiler.Plo
-	-rm -f ./$(DEPDIR)/valaccodecontrolflowmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodedelegatemodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodememberaccessmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodemethodcallmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodemethodmodule.Plo
-	-rm -f ./$(DEPDIR)/valaccodestructmodule.Plo
-	-rm -f ./$(DEPDIR)/valaclassregisterfunction.Plo
-	-rm -f ./$(DEPDIR)/valactype.Plo
-	-rm -f ./$(DEPDIR)/valaenumregisterfunction.Plo
-	-rm -f ./$(DEPDIR)/valagasyncmodule.Plo
-	-rm -f ./$(DEPDIR)/valagdbusclientmodule.Plo
-	-rm -f ./$(DEPDIR)/valagdbusmodule.Plo
-	-rm -f ./$(DEPDIR)/valagdbusservermodule.Plo
-	-rm -f ./$(DEPDIR)/valagerrormodule.Plo
-	-rm -f ./$(DEPDIR)/valagirwriter.Plo
-	-rm -f ./$(DEPDIR)/valaglibvalue.Plo
-	-rm -f ./$(DEPDIR)/valagobjectmodule.Plo
-	-rm -f ./$(DEPDIR)/valagsignalmodule.Plo
-	-rm -f ./$(DEPDIR)/valagtkmodule.Plo
-	-rm -f ./$(DEPDIR)/valagtypemodule.Plo
-	-rm -f ./$(DEPDIR)/valagvaluemodule.Plo
-	-rm -f ./$(DEPDIR)/valagvariantmodule.Plo
-	-rm -f ./$(DEPDIR)/valainterfaceregisterfunction.Plo
-	-rm -f ./$(DEPDIR)/valastructregisterfunction.Plo
-	-rm -f ./$(DEPDIR)/valatyperegisterfunction.Plo
+		-rm -f ./$(DEPDIR)/balaccode.Plo
+	-rm -f ./$(DEPDIR)/balaccodearraymodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodeassignmentmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodeattribute.Plo
+	-rm -f ./$(DEPDIR)/balaccodebasemodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodecompiler.Plo
+	-rm -f ./$(DEPDIR)/balaccodecontrolflowmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodedelegatemodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodememberaccessmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodemethodcallmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodemethodmodule.Plo
+	-rm -f ./$(DEPDIR)/balaccodestructmodule.Plo
+	-rm -f ./$(DEPDIR)/balaclassregisterfunction.Plo
+	-rm -f ./$(DEPDIR)/balactype.Plo
+	-rm -f ./$(DEPDIR)/balaenumregisterfunction.Plo
+	-rm -f ./$(DEPDIR)/balagasyncmodule.Plo
+	-rm -f ./$(DEPDIR)/balagdbusclientmodule.Plo
+	-rm -f ./$(DEPDIR)/balagdbusmodule.Plo
+	-rm -f ./$(DEPDIR)/balagdbusservermodule.Plo
+	-rm -f ./$(DEPDIR)/balagerrormodule.Plo
+	-rm -f ./$(DEPDIR)/balagirwriter.Plo
+	-rm -f ./$(DEPDIR)/balaglibvalue.Plo
+	-rm -f ./$(DEPDIR)/balagobjectmodule.Plo
+	-rm -f ./$(DEPDIR)/balagsignalmodule.Plo
+	-rm -f ./$(DEPDIR)/balagtkmodule.Plo
+	-rm -f ./$(DEPDIR)/balagtypemodule.Plo
+	-rm -f ./$(DEPDIR)/balagvaluemodule.Plo
+	-rm -f ./$(DEPDIR)/balagvariantmodule.Plo
+	-rm -f ./$(DEPDIR)/balainterfaceregisterfunction.Plo
+	-rm -f ./$(DEPDIR)/balastructregisterfunction.Plo
+	-rm -f ./$(DEPDIR)/balatyperegisterfunction.Plo
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -882,30 +882,30 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-libvalaccodegen_laLTLIBRARIES
+uninstall-am: uninstall-libbalaccodegen_laLTLIBRARIES
 
 .MAKE: all check install install-am install-exec install-strip
 
 .PHONY: CTAGS GTAGS TAGS all all-am am--depfiles check check-am clean \
 	clean-generic clean-libtool \
-	clean-libvalaccodegen_laLTLIBRARIES cscopelist-am ctags \
+	clean-libbalaccodegen_laLTLIBRARIES cscopelist-am ctags \
 	ctags-am distclean distclean-compile distclean-generic \
 	distclean-libtool distclean-tags distdir dvi dvi-am html \
 	html-am info info-am install install-am install-data \
 	install-data-am install-dvi install-dvi-am install-exec \
 	install-exec-am install-html install-html-am install-info \
-	install-info-am install-libvalaccodegen_laLTLIBRARIES \
+	install-info-am install-libbalaccodegen_laLTLIBRARIES \
 	install-man install-pdf install-pdf-am install-ps \
 	install-ps-am install-strip installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-compile mostlyclean-generic \
 	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
-	uninstall-am uninstall-libvalaccodegen_laLTLIBRARIES
+	uninstall-am uninstall-libbalaccodegen_laLTLIBRARIES
 
 .PRECIOUS: Makefile
 
 
-codegen.vapi codegen.vala.stamp: $(libvalaccodegen_la_BALASOURCES)
+codegen.vapi codegen.bala.stamp: $(libbalaccodegen_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -913,9 +913,9 @@ codegen.vapi codegen.vala.stamp: $(libvalaccodegen_la_BALASOURCES)
 		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
 		--vapidir $(top_srcdir)/ccode --pkg ccode \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--use-header \
-		-H valacodegen.h \
+		-H balacodegen.h \
 		--library codegen \
 		$^
 	@touch $@

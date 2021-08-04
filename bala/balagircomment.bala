@@ -1,4 +1,4 @@
-/* valagircomment.vala
+/* balagircomment.bala
  *
  * Copyright (C) 2011  Florian Brosch
  *
@@ -24,7 +24,7 @@ using GLib;
 
 
 /**
- * A documentation comment used by valadoc
+ * A documentation comment used by baladoc
  */
 public class Vala.GirComment : Comment {
 	private HashMap<string, Comment> parameter_content = new HashMap<string, Comment> ();

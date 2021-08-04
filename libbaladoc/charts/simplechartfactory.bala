@@ -1,4 +1,4 @@
-/* simplechartfactory.vala
+/* simplechartfactory.bala
  *
  * Copyright (C) 2008  Florian Brosch
  *
@@ -20,11 +20,11 @@
  * 	Florian Brosch <flo.brosch@gmail.com>
  */
 
-[CCode (cname = "valadoc_compat_gvc_graph_new")]
-extern Gvc.Graph valadoc_gvc_graph_new (string name);
+[CCode (cname = "baladoc_compat_gvc_graph_new")]
+extern Gvc.Graph baladoc_gvc_graph_new (string name);
 
-[CCode (cname = "valadoc_compat_gvc_graph_create_edge")]
-extern Gvc.Edge valadoc_gvc_graph_create_edge (Gvc.Graph graph, Gvc.Node from, Gvc.Node to);
+[CCode (cname = "baladoc_compat_gvc_graph_create_edge")]
+extern Gvc.Edge baladoc_gvc_graph_create_edge (Gvc.Graph graph, Gvc.Node from, Gvc.Node to);
 
 public class Valadoc.Charts.SimpleFactory : Charts.Factory {
 	protected virtual Gvc.Node configure_type (Gvc.Node node, Api.Node item) {
@@ -35,7 +35,7 @@ public class Valadoc.Charts.SimpleFactory : Charts.Factory {
 	}
 
 	public override Gvc.Graph create_graph (Api.Node item) {
-		return valadoc_gvc_graph_new (item.get_full_name ());
+		return baladoc_gvc_graph_new (item.get_full_name ());
 	}
 
 	public override Gvc.Context create_context (Gvc.Graph graph) {
@@ -78,7 +78,7 @@ public class Valadoc.Charts.SimpleFactory : Charts.Factory {
 	}
 
 	public override Gvc.Edge add_children (Gvc.Graph graph, Gvc.Node parent, Gvc.Node child) {
-		var edge = valadoc_gvc_graph_create_edge (graph, parent, child);
+		var edge = baladoc_gvc_graph_create_edge (graph, parent, child);
 		edge.safe_set ("dir", "back", "");
 		return edge;
 	}

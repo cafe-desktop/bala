@@ -1,4 +1,4 @@
-/* valagasyncmodule.vala
+/* balagasyncmodule.bala
  *
  * Copyright (C) 2008-2012  Jürg Billeter
  *
@@ -180,7 +180,7 @@ public class Vala.GAsyncModule : GtkModule {
 
 		push_function (asyncfunc);
 
-		// logic copied from valaccodemethodmodule
+		// logic copied from balaccodemethodmodule
 		if (m.overrides || (m.base_interface_method != null && !m.is_abstract && !m.is_virtual)) {
 			Method base_method;
 
@@ -771,7 +771,7 @@ public class Vala.GAsyncModule : GtkModule {
 	}
 
 	public string generate_async_callback_wrapper () {
-		string async_callback_wrapper_func = "_vala_g_async_ready_callback";
+		string async_callback_wrapper_func = "_bala_g_async_ready_callback";
 
 		if (!add_wrapper (async_callback_wrapper_func)) {
 			return async_callback_wrapper_func;

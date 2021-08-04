@@ -1,4 +1,4 @@
-/* codehighlighter.vala
+/* codehighlighter.bala
  *
  * Copyright (C) 2015       Florian Brosch
  *
@@ -25,140 +25,140 @@ using Valadoc.Content;
 
 
 public class Valadoc.Highlighter.Highlighter : Object {
-	private Vala.HashMap<string, CodeTokenType?> vala_keywords;
+	private Vala.HashMap<string, CodeTokenType?> bala_keywords;
 	private Vala.HashMap<string, CodeTokenType?> c_keywords;
 
 
 	/**
-	 * Used to highlight vala source code.
+	 * Used to highlight bala source code.
 	 */
-	public Run highlight_vala (string source_code) {
-		if (vala_keywords == null) {
-			vala_keywords = new Vala.HashMap<string, CodeTokenType?> (str_hash, str_equal);
+	public Run highlight_bala (string source_code) {
+		if (bala_keywords == null) {
+			bala_keywords = new Vala.HashMap<string, CodeTokenType?> (str_hash, str_equal);
 
 			// ** Types: **
-			vala_keywords.set ("string", CodeTokenType.TYPE);
-			vala_keywords.set ("bool", CodeTokenType.TYPE);
-			vala_keywords.set ("void", CodeTokenType.TYPE);
+			bala_keywords.set ("string", CodeTokenType.TYPE);
+			bala_keywords.set ("bool", CodeTokenType.TYPE);
+			bala_keywords.set ("void", CodeTokenType.TYPE);
 
-			vala_keywords.set ("double", CodeTokenType.TYPE);
-			vala_keywords.set ("float", CodeTokenType.TYPE);
+			bala_keywords.set ("double", CodeTokenType.TYPE);
+			bala_keywords.set ("float", CodeTokenType.TYPE);
 
-			vala_keywords.set ("char", CodeTokenType.TYPE);
-			vala_keywords.set ("uchar", CodeTokenType.TYPE);
-			vala_keywords.set ("unichar", CodeTokenType.TYPE);
+			bala_keywords.set ("char", CodeTokenType.TYPE);
+			bala_keywords.set ("uchar", CodeTokenType.TYPE);
+			bala_keywords.set ("unichar", CodeTokenType.TYPE);
 
-			vala_keywords.set ("short", CodeTokenType.TYPE);
-			vala_keywords.set ("ushort", CodeTokenType.TYPE);
+			bala_keywords.set ("short", CodeTokenType.TYPE);
+			bala_keywords.set ("ushort", CodeTokenType.TYPE);
 
-			vala_keywords.set ("long", CodeTokenType.TYPE);
-			vala_keywords.set ("ulong", CodeTokenType.TYPE);
+			bala_keywords.set ("long", CodeTokenType.TYPE);
+			bala_keywords.set ("ulong", CodeTokenType.TYPE);
 
-			vala_keywords.set ("size_t", CodeTokenType.TYPE);
-			vala_keywords.set ("ssize_t", CodeTokenType.TYPE);
+			bala_keywords.set ("size_t", CodeTokenType.TYPE);
+			bala_keywords.set ("ssize_t", CodeTokenType.TYPE);
 
-			vala_keywords.set ("int", CodeTokenType.TYPE);
-			vala_keywords.set ("int8", CodeTokenType.TYPE);
-			vala_keywords.set ("int16", CodeTokenType.TYPE);
-			vala_keywords.set ("int32", CodeTokenType.TYPE);
-			vala_keywords.set ("int64", CodeTokenType.TYPE);
+			bala_keywords.set ("int", CodeTokenType.TYPE);
+			bala_keywords.set ("int8", CodeTokenType.TYPE);
+			bala_keywords.set ("int16", CodeTokenType.TYPE);
+			bala_keywords.set ("int32", CodeTokenType.TYPE);
+			bala_keywords.set ("int64", CodeTokenType.TYPE);
 
-			vala_keywords.set ("uint", CodeTokenType.TYPE);
-			vala_keywords.set ("uint8", CodeTokenType.TYPE);
-			vala_keywords.set ("uint16", CodeTokenType.TYPE);
-			vala_keywords.set ("uint32", CodeTokenType.TYPE);
-			vala_keywords.set ("uint64", CodeTokenType.TYPE);
+			bala_keywords.set ("uint", CodeTokenType.TYPE);
+			bala_keywords.set ("uint8", CodeTokenType.TYPE);
+			bala_keywords.set ("uint16", CodeTokenType.TYPE);
+			bala_keywords.set ("uint32", CodeTokenType.TYPE);
+			bala_keywords.set ("uint64", CodeTokenType.TYPE);
 
 
 			// ** Literals: **
-			vala_keywords.set ("null", CodeTokenType.LITERAL);
-			vala_keywords.set ("true", CodeTokenType.LITERAL);
-			vala_keywords.set ("false", CodeTokenType.LITERAL);
+			bala_keywords.set ("null", CodeTokenType.LITERAL);
+			bala_keywords.set ("true", CodeTokenType.LITERAL);
+			bala_keywords.set ("false", CodeTokenType.LITERAL);
 
 
 			// ** Keywords: **
-			vala_keywords.set ("return", CodeTokenType.KEYWORD);
-			vala_keywords.set ("lock", CodeTokenType.KEYWORD);
-			vala_keywords.set ("unlock", CodeTokenType.KEYWORD);
-			vala_keywords.set ("var", CodeTokenType.KEYWORD);
-			vala_keywords.set ("yield", CodeTokenType.KEYWORD);
-			vala_keywords.set ("global", CodeTokenType.KEYWORD);
-			vala_keywords.set ("construct", CodeTokenType.KEYWORD);
+			bala_keywords.set ("return", CodeTokenType.KEYWORD);
+			bala_keywords.set ("lock", CodeTokenType.KEYWORD);
+			bala_keywords.set ("unlock", CodeTokenType.KEYWORD);
+			bala_keywords.set ("var", CodeTokenType.KEYWORD);
+			bala_keywords.set ("yield", CodeTokenType.KEYWORD);
+			bala_keywords.set ("global", CodeTokenType.KEYWORD);
+			bala_keywords.set ("construct", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("value", CodeTokenType.KEYWORD);
-			vala_keywords.set ("get", CodeTokenType.KEYWORD);
-			vala_keywords.set ("set", CodeTokenType.KEYWORD);
+			bala_keywords.set ("value", CodeTokenType.KEYWORD);
+			bala_keywords.set ("get", CodeTokenType.KEYWORD);
+			bala_keywords.set ("set", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("owned", CodeTokenType.KEYWORD);
-			vala_keywords.set ("unowned", CodeTokenType.KEYWORD);
-			vala_keywords.set ("const", CodeTokenType.KEYWORD);
-			vala_keywords.set ("weak", CodeTokenType.KEYWORD);
-			vala_keywords.set ("dynamic", CodeTokenType.KEYWORD);
+			bala_keywords.set ("owned", CodeTokenType.KEYWORD);
+			bala_keywords.set ("unowned", CodeTokenType.KEYWORD);
+			bala_keywords.set ("const", CodeTokenType.KEYWORD);
+			bala_keywords.set ("weak", CodeTokenType.KEYWORD);
+			bala_keywords.set ("dynamic", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("out", CodeTokenType.KEYWORD);
-			vala_keywords.set ("ref", CodeTokenType.KEYWORD);
+			bala_keywords.set ("out", CodeTokenType.KEYWORD);
+			bala_keywords.set ("ref", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("break", CodeTokenType.KEYWORD);
-			vala_keywords.set ("continue", CodeTokenType.KEYWORD);
-			vala_keywords.set ("return", CodeTokenType.KEYWORD);
+			bala_keywords.set ("break", CodeTokenType.KEYWORD);
+			bala_keywords.set ("continue", CodeTokenType.KEYWORD);
+			bala_keywords.set ("return", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("if", CodeTokenType.KEYWORD);
-			vala_keywords.set ("else", CodeTokenType.KEYWORD);
-			vala_keywords.set ("switch", CodeTokenType.KEYWORD);
-			vala_keywords.set ("case", CodeTokenType.KEYWORD);
-			vala_keywords.set ("default", CodeTokenType.KEYWORD);
+			bala_keywords.set ("if", CodeTokenType.KEYWORD);
+			bala_keywords.set ("else", CodeTokenType.KEYWORD);
+			bala_keywords.set ("switch", CodeTokenType.KEYWORD);
+			bala_keywords.set ("case", CodeTokenType.KEYWORD);
+			bala_keywords.set ("default", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("do", CodeTokenType.KEYWORD);
-			vala_keywords.set ("while", CodeTokenType.KEYWORD);
-			vala_keywords.set ("for", CodeTokenType.KEYWORD);
-			vala_keywords.set ("foreach", CodeTokenType.KEYWORD);
-			vala_keywords.set ("in", CodeTokenType.KEYWORD);
+			bala_keywords.set ("do", CodeTokenType.KEYWORD);
+			bala_keywords.set ("while", CodeTokenType.KEYWORD);
+			bala_keywords.set ("for", CodeTokenType.KEYWORD);
+			bala_keywords.set ("foreach", CodeTokenType.KEYWORD);
+			bala_keywords.set ("in", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("try", CodeTokenType.KEYWORD);
-			vala_keywords.set ("catch", CodeTokenType.KEYWORD);
-			vala_keywords.set ("finally", CodeTokenType.KEYWORD);
-			vala_keywords.set ("throw", CodeTokenType.KEYWORD);
+			bala_keywords.set ("try", CodeTokenType.KEYWORD);
+			bala_keywords.set ("catch", CodeTokenType.KEYWORD);
+			bala_keywords.set ("finally", CodeTokenType.KEYWORD);
+			bala_keywords.set ("throw", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("class", CodeTokenType.KEYWORD);
-			vala_keywords.set ("interface", CodeTokenType.KEYWORD);
-			vala_keywords.set ("struct", CodeTokenType.KEYWORD);
-			vala_keywords.set ("enum", CodeTokenType.KEYWORD);
-			vala_keywords.set ("delegate", CodeTokenType.KEYWORD);
-			vala_keywords.set ("errordomain", CodeTokenType.KEYWORD);
+			bala_keywords.set ("class", CodeTokenType.KEYWORD);
+			bala_keywords.set ("interface", CodeTokenType.KEYWORD);
+			bala_keywords.set ("struct", CodeTokenType.KEYWORD);
+			bala_keywords.set ("enum", CodeTokenType.KEYWORD);
+			bala_keywords.set ("delegate", CodeTokenType.KEYWORD);
+			bala_keywords.set ("errordomain", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("abstract", CodeTokenType.KEYWORD);
-			vala_keywords.set ("virtual", CodeTokenType.KEYWORD);
-			vala_keywords.set ("override", CodeTokenType.KEYWORD);
-			vala_keywords.set ("signal", CodeTokenType.KEYWORD);
-			vala_keywords.set ("extern", CodeTokenType.KEYWORD);
-			vala_keywords.set ("static", CodeTokenType.KEYWORD);
-			vala_keywords.set ("async", CodeTokenType.KEYWORD);
-			vala_keywords.set ("inline", CodeTokenType.KEYWORD);
-			vala_keywords.set ("new", CodeTokenType.KEYWORD);
+			bala_keywords.set ("abstract", CodeTokenType.KEYWORD);
+			bala_keywords.set ("virtual", CodeTokenType.KEYWORD);
+			bala_keywords.set ("override", CodeTokenType.KEYWORD);
+			bala_keywords.set ("signal", CodeTokenType.KEYWORD);
+			bala_keywords.set ("extern", CodeTokenType.KEYWORD);
+			bala_keywords.set ("static", CodeTokenType.KEYWORD);
+			bala_keywords.set ("async", CodeTokenType.KEYWORD);
+			bala_keywords.set ("inline", CodeTokenType.KEYWORD);
+			bala_keywords.set ("new", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("public", CodeTokenType.KEYWORD);
-			vala_keywords.set ("private", CodeTokenType.KEYWORD);
-			vala_keywords.set ("protected", CodeTokenType.KEYWORD);
-			vala_keywords.set ("internal", CodeTokenType.KEYWORD);
+			bala_keywords.set ("public", CodeTokenType.KEYWORD);
+			bala_keywords.set ("private", CodeTokenType.KEYWORD);
+			bala_keywords.set ("protected", CodeTokenType.KEYWORD);
+			bala_keywords.set ("internal", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("throws", CodeTokenType.KEYWORD);
-			vala_keywords.set ("requires", CodeTokenType.KEYWORD);
-			vala_keywords.set ("ensures", CodeTokenType.KEYWORD);
-			vala_keywords.set ("assert", CodeTokenType.KEYWORD);
+			bala_keywords.set ("throws", CodeTokenType.KEYWORD);
+			bala_keywords.set ("requires", CodeTokenType.KEYWORD);
+			bala_keywords.set ("ensures", CodeTokenType.KEYWORD);
+			bala_keywords.set ("assert", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("namespace", CodeTokenType.KEYWORD);
-			vala_keywords.set ("using", CodeTokenType.KEYWORD);
+			bala_keywords.set ("namespace", CodeTokenType.KEYWORD);
+			bala_keywords.set ("using", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("as", CodeTokenType.KEYWORD);
-			vala_keywords.set ("is", CodeTokenType.KEYWORD);
-			vala_keywords.set ("in", CodeTokenType.KEYWORD);
-			vala_keywords.set ("new", CodeTokenType.KEYWORD);
-			vala_keywords.set ("delete", CodeTokenType.KEYWORD);
-			vala_keywords.set ("sizeof", CodeTokenType.KEYWORD);
-			vala_keywords.set ("typeof", CodeTokenType.KEYWORD);
+			bala_keywords.set ("as", CodeTokenType.KEYWORD);
+			bala_keywords.set ("is", CodeTokenType.KEYWORD);
+			bala_keywords.set ("in", CodeTokenType.KEYWORD);
+			bala_keywords.set ("new", CodeTokenType.KEYWORD);
+			bala_keywords.set ("delete", CodeTokenType.KEYWORD);
+			bala_keywords.set ("sizeof", CodeTokenType.KEYWORD);
+			bala_keywords.set ("typeof", CodeTokenType.KEYWORD);
 
-			vala_keywords.set ("this", CodeTokenType.KEYWORD);
-			vala_keywords.set ("base", CodeTokenType.KEYWORD);
+			bala_keywords.set ("this", CodeTokenType.KEYWORD);
+			bala_keywords.set ("base", CodeTokenType.KEYWORD);
 		}
 
 		bool enable_string_templates = true;
@@ -169,7 +169,7 @@ public class Valadoc.Highlighter.Highlighter : Object {
 
 		CodeScanner scanner = new CodeScanner (source_code, enable_string_templates, enabel_verbatim_string,
 			enable_preprocessor_define, enable_preprocessor_include, enable_keyword_escape,
-			vala_keywords);
+			bala_keywords);
 
 		return highlight_code (scanner);
 	}

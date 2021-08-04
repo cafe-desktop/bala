@@ -1,4 +1,4 @@
-/* valaarraytype.vala
+/* balaarraytype.bala
  *
  * Copyright (C) 2007-2012  Jürg Billeter
  *
@@ -150,7 +150,7 @@ public class Vala.ArrayType : ReferenceType {
 			move_method.return_type = new VoidType ();
 			move_method.access = SymbolAccessibility.PUBLIC;
 
-			move_method.set_attribute_string ("CCode", "cname", "_vala_array_move");
+			move_method.set_attribute_string ("CCode", "cname", "_bala_array_move");
 
 			move_method.add_parameter (new Parameter ("src", length_type));
 			move_method.add_parameter (new Parameter ("dest", length_type));
@@ -167,7 +167,7 @@ public class Vala.ArrayType : ReferenceType {
 			copy_method.return_type.value_owned = true;
 			copy_method.access = SymbolAccessibility.PUBLIC;
 
-			copy_method.set_attribute_string ("CCode", "cname", "_vala_array_copy");
+			copy_method.set_attribute_string ("CCode", "cname", "_bala_array_copy");
 		}
 		return copy_method;
 	}

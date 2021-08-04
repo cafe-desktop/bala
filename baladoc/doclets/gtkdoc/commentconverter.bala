@@ -1,4 +1,4 @@
-/* commentconverter.vala
+/* commentconverter.bala
  *
  * Copyright (C) 2010 Luca Bruno
  *
@@ -278,7 +278,7 @@ public class Gtkdoc.CommentConverter : ContentVisitor {
 			versioning.add (header);
 		} else if (t is Taglets.See) {
 			var see = (Taglets.See)t;
-			var see_also = this.see_also; // vala bug
+			var see_also = this.see_also; // bala bug
 			if (see.symbol != null) {
 				see_also += get_docbook_link (see.symbol, is_dbus) ?? see.symbol_name;
 			} else {

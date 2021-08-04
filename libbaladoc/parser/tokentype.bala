@@ -1,4 +1,4 @@
-/* tokentype.vala
+/* tokentype.bala
  *
  * Copyright (C) 2008-2009 Florian Brosch, Didier Villevalois
  *
@@ -22,7 +22,7 @@
 
 
 public class Valadoc.TokenType : Object {
-	// valadoc-comments:
+	// baladoc-comments:
 	public static TokenType ANY;
 	public static TokenType ANY_WORD;
 	public static TokenType ANY_NUMBER;
@@ -60,7 +60,7 @@ public class Valadoc.TokenType : Object {
 	public static TokenType ALIGN_CENTER;
 
 
-	// .valadoc (importer)
+	// .baladoc (importer)
 	public static TokenType BALADOC_COMMENT_START;
 	public static TokenType BALADOC_COMMENT_END;
 	public static TokenType BALADOC_ANY_WORD;
@@ -105,7 +105,7 @@ public class Valadoc.TokenType : Object {
 
 	internal static void init_token_types () {
 		if (!initialized) {
-			// valadoc-comments:
+			// baladoc-comments:
 			ANY = new TokenType.basic ("<any>");
 			ANY_WORD = new TokenType.basic ("<any-word>");
 			ANY_NUMBER = new TokenType.basic ("<any-number>");
@@ -142,7 +142,7 @@ public class Valadoc.TokenType : Object {
 			ALIGN_RIGHT = new TokenType.basic ("))");
 			ALIGN_CENTER = new TokenType.basic (")(");
 
-			// .valadoc (importer)
+			// .baladoc (importer)
 			BALADOC_COMMENT_START = new TokenType.basic ("/*");
 			BALADOC_COMMENT_END = new TokenType.basic ("*/");
 			BALADOC_ANY_WORD = ANY_WORD;

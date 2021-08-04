@@ -3,67 +3,67 @@ include $(top_srcdir)/Makefile.common
 NULL =
 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"vala-ccodegen\" \
+	-DG_LOG_DOMAIN=\"bala-ccodegen\" \
 	$(COVERAGE_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	$(GLIB_CFLAGS) \
 	$(NULL)
 
-BUILT_SOURCES = codegen.vala.stamp
+BUILT_SOURCES = codegen.bala.stamp
 
-libvalaccodegen_la_LTLIBRARIES = \
-	libvalaccodegen.la \
+libbalaccodegen_la_LTLIBRARIES = \
+	libbalaccodegen.la \
 	$(NULL)
 
-libvalaccodegen_ladir = $(pkglibdir)
+libbalaccodegen_ladir = $(pkglibdir)
 
-libvalaccodegen_la_LDFLAGS = \
+libbalaccodegen_la_LDFLAGS = \
 	-no-undefined \
 	-avoid-version \
 	$(NULL)
 
-libvalaccodegen_la_BALASOURCES = \
-	valaccode.vala \
-	valaccodearraymodule.vala \
-	valaccodeassignmentmodule.vala \
-	valaccodeattribute.vala \
-	valaccodebasemodule.vala \
-	valaccodecompiler.vala \
-	valaccodecontrolflowmodule.vala \
-	valaccodedelegatemodule.vala \
-	valaccodememberaccessmodule.vala \
-	valaccodemethodcallmodule.vala \
-	valaccodemethodmodule.vala \
-	valaccodestructmodule.vala \
-	valaclassregisterfunction.vala \
-	valactype.vala \
-	valaenumregisterfunction.vala \
-	valagasyncmodule.vala \
-	valagdbusclientmodule.vala \
-	valagdbusmodule.vala \
-	valagdbusservermodule.vala \
-	valagerrormodule.vala \
-	valagirwriter.vala \
-	valaglibvalue.vala \
-	valagobjectmodule.vala \
-	valagtkmodule.vala \
-	valagsignalmodule.vala \
-	valagtypemodule.vala \
-	valagvaluemodule.vala \
-	valagvariantmodule.vala \
-	valainterfaceregisterfunction.vala \
-	valastructregisterfunction.vala \
-	valatyperegisterfunction.vala \
+libbalaccodegen_la_BALASOURCES = \
+	balaccode.bala \
+	balaccodearraymodule.bala \
+	balaccodeassignmentmodule.bala \
+	balaccodeattribute.bala \
+	balaccodebasemodule.bala \
+	balaccodecompiler.bala \
+	balaccodecontrolflowmodule.bala \
+	balaccodedelegatemodule.bala \
+	balaccodememberaccessmodule.bala \
+	balaccodemethodcallmodule.bala \
+	balaccodemethodmodule.bala \
+	balaccodestructmodule.bala \
+	balaclassregisterfunction.bala \
+	balactype.bala \
+	balaenumregisterfunction.bala \
+	balagasyncmodule.bala \
+	balagdbusclientmodule.bala \
+	balagdbusmodule.bala \
+	balagdbusservermodule.bala \
+	balagerrormodule.bala \
+	balagirwriter.bala \
+	balaglibvalue.bala \
+	balagobjectmodule.bala \
+	balagtkmodule.bala \
+	balagsignalmodule.bala \
+	balagtypemodule.bala \
+	balagvaluemodule.bala \
+	balagvariantmodule.bala \
+	balainterfaceregisterfunction.bala \
+	balastructregisterfunction.bala \
+	balatyperegisterfunction.bala \
 	$(NULL)
 
-libvalaccodegen_la_SOURCES = \
-	codegen.vala.stamp \
-	$(libvalaccodegen_la_BALASOURCES:.vala=.c) \
+libbalaccodegen_la_SOURCES = \
+	codegen.bala.stamp \
+	$(libbalaccodegen_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-codegen.vapi codegen.vala.stamp: $(libvalaccodegen_la_BALASOURCES)
+codegen.vapi codegen.bala.stamp: $(libbalaccodegen_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -71,24 +71,24 @@ codegen.vapi codegen.vala.stamp: $(libvalaccodegen_la_BALASOURCES)
 		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
 		--vapidir $(top_srcdir)/ccode --pkg ccode \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--use-header \
-		-H valacodegen.h \
+		-H balacodegen.h \
 		--library codegen \
 		$^
 	@touch $@
 
-libvalaccodegen_la_LIBADD = \
+libbalaccodegen_la_LIBADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la \
 	$(NULL)
 
-EXTRA_DIST = $(libvalaccodegen_la_BALASOURCES) codegen.vapi codegen.vala.stamp valacodegen.h
+EXTRA_DIST = $(libbalaccodegen_la_BALASOURCES) codegen.vapi codegen.bala.stamp balacodegen.h
 
 MAINTAINERCLEANFILES = \
 	codegen.vapi \
-	valacodegen.h \
-	$(libvalaccodegen_la_BALASOURCES:.vala=.c) \
+	balacodegen.h \
+	$(libbalaccodegen_la_BALASOURCES:.bala=.c) \
 	$(NULL)

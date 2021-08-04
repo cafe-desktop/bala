@@ -1,4 +1,4 @@
-/* valaccodememberaccessmodule.vala
+/* balaccodememberaccessmodule.bala
  *
  * Copyright (C) 2006-2010  Jürg Billeter
  * Copyright (C) 2006-2008  Raffaele Sandrini
@@ -221,7 +221,7 @@ public abstract class Vala.CCodeMemberAccessModule : CCodeControlFlowModule {
 			}
 
 			if (pub_inst == null && prop.binding == MemberBinding.INSTANCE) {
-				// FIXME Report this with proper source-reference on the vala side!
+				// FIXME Report this with proper source-reference on the bala side!
 				Report.error (prop.source_reference, "Invalid access to instance member `%s'".printf (prop.get_full_name ()));
 				set_cvalue (expr, new CCodeInvalidExpression ());
 				return;
@@ -307,7 +307,7 @@ public abstract class Vala.CCodeMemberAccessModule : CCodeControlFlowModule {
 					if (array_type != null) {
 						if (get_ccode_array_null_terminated (prop)) {
 							requires_array_length = true;
-							var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_vala_array_length"));
+							var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_bala_array_length"));
 							len_call.add_argument (ctemp);
 
 							ccode.add_assignment (ctemp, ccall);
@@ -556,7 +556,7 @@ public abstract class Vala.CCodeMemberAccessModule : CCodeControlFlowModule {
 				unowned Struct? type_as_struct = result.value_type.type_symbol as Struct;
 
 				if (param.direction == ParameterDirection.OUT) {
-					name = "_vala_%s".printf (name);
+					name = "_bala_%s".printf (name);
 				}
 
 				if (param.direction == ParameterDirection.REF ||
@@ -580,8 +580,8 @@ public abstract class Vala.CCodeMemberAccessModule : CCodeControlFlowModule {
 					var target_cname = get_ccode_delegate_target_name (param);
 					var destroy_cname = get_ccode_delegate_target_destroy_notify_name (param);
 					if (param.direction == ParameterDirection.OUT) {
-						target_cname = "_vala_%s".printf (target_cname);
-						destroy_cname = "_vala_%s".printf (destroy_cname);
+						target_cname = "_bala_%s".printf (target_cname);
+						destroy_cname = "_bala_%s".printf (destroy_cname);
 					}
 					CCodeExpression target_expr = new CCodeIdentifier (target_cname);
 					CCodeExpression delegate_target_destroy_notify = new CCodeIdentifier (destroy_cname);
@@ -654,7 +654,7 @@ public abstract class Vala.CCodeMemberAccessModule : CCodeControlFlowModule {
 			}
 
 			if (inst == null) {
-				// FIXME Report this with proper source-reference on the vala side!
+				// FIXME Report this with proper source-reference on the bala side!
 				Report.error (field.source_reference, "Invalid access to instance member `%s'".printf (field.get_full_name ()));
 				result.cvalue = new CCodeInvalidExpression ();
 				return result;
@@ -770,7 +770,7 @@ public abstract class Vala.CCodeMemberAccessModule : CCodeControlFlowModule {
 				result.lvalue = false;
 			} else if (get_ccode_array_null_terminated (variable)) {
 				requires_array_length = true;
-				var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_vala_array_length"));
+				var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_bala_array_length"));
 				len_call.add_argument (result.cvalue);
 
 				result.array_length_cvalues = null;

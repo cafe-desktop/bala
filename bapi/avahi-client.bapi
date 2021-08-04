@@ -1,4 +1,4 @@
-/* avahi-common.vala
+/* avahi-common.bala
  *
  * Copyright (C) 2009  Sebastian Noack
  *
@@ -145,7 +145,7 @@ namespace Avahi {
 
 		[CCode (cname="avahi_escape_label")]
 		private string? _escape_label(char* src, size_t src_len, ref char* dest, ref size_t dest_len);
-		[CCode (cname = "_vala_avahi_escape_label")]
+		[CCode (cname = "_bala_avahi_escape_label")]
 		public string? escape_label(string s) {
 			size_t len = LABEL_MAX * 4;
 			char* dest = new char[len];
@@ -165,7 +165,7 @@ namespace Avahi {
 		[CCode (cname = "avahi_service_name_split")]
 		public int _service_name_split(string src, [CCode (array_length_type = "size_t")] uint8[] name, [CCode (array_length_type = "size_t")] uint8[] type, [CCode (array_length_type = "size_t")] uint8[] domain);
 
-		[CCode(cname = "_vala_avahi_service_name_split")]
+		[CCode(cname = "_bala_avahi_service_name_split")]
 		public int split_service_name (string src, out string name, out string type, out string domain) {
 			uint8[] name_data = new uint8[LABEL_MAX];
 			uint8[] type_data = new uint8[DOMAIN_NAME_MAX];

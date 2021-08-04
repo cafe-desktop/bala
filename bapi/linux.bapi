@@ -1043,13 +1043,13 @@ namespace Linux {
     [CCode (cheader_filename = "errno.h", feature_test_macro = "_GNU_SOURCE")]
     public const string program_invocation_short_name;
 
-    [Version (deprecated_since = "vala-0.26", replacement = "Backtrace.get"), CCode (cheader_filename = "execinfo.h")]
+    [Version (deprecated_since = "bala-0.26", replacement = "Backtrace.get"), CCode (cheader_filename = "execinfo.h")]
     public int backtrace (void* buffer, int size);
 
-    [Version (deprecated_since = "vala-0.26", replacement = "Backtrace.symbols"), CCode (cheader_filename = "execinfo.h", array_length = false)]
+    [Version (deprecated_since = "bala-0.26", replacement = "Backtrace.symbols"), CCode (cheader_filename = "execinfo.h", array_length = false)]
     public (unowned string)[]? backtrace_symbols (void* buffer, int size);
 
-    [Version (deprecated_since = "vala-0.26", replacement = "Backtrace.symbols_fd"), CCode (cheader_filename = "execinfo.h")]
+    [Version (deprecated_since = "bala-0.26", replacement = "Backtrace.symbols_fd"), CCode (cheader_filename = "execinfo.h")]
     public void backtrace_symbols_fd (void* buffer, int size, int fd);
 
     namespace Backtrace {
@@ -1057,7 +1057,7 @@ namespace Linux {
       public int @get (void*[] buffer);
       [CCode (cname = "backtrace_symbols", cheader_filename = "execinfo.h", array_length = false)]
       private (unowned string)[]? _symbols (void*[] buffer);
-      [CCode (cname = "_vala_backtrace_symbols")]
+      [CCode (cname = "_bala_backtrace_symbols")]
       public (unowned string)[]? symbols (void*[] buffer) {
         (unowned string)[]? s = _symbols (buffer);
         s.length = buffer.length;

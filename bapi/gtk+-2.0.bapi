@@ -8023,7 +8023,7 @@ namespace Gtk {
 	[CCode (cheader_filename = "gtk/gtk.h")]
 	public static bool show_uri (Gdk.Screen? screen, string uri, uint32 timestamp) throws GLib.Error;
 	[CCode (cheader_filename = "gtk/gtk.h")]
-	[Version (deprecated_since = "vala-0.26", replacement = "Gtk.Stock.set_translate_func")]
+	[Version (deprecated_since = "bala-0.26", replacement = "Gtk.Stock.set_translate_func")]
 	public static void stock_set_translate_func (string domain, owned Gtk.TranslateFunc func);
 	[CCode (cheader_filename = "gtk/gtk.h")]
 	public static void target_table_free (Gtk.TargetEntry[] targets);

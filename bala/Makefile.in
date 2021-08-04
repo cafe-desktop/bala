@@ -88,7 +88,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = vala
+subdir = bala
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -98,7 +98,7 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(dist_vapi_DATA) \
-	$(valainclude_HEADERS) $(am__DIST_COMMON)
+	$(balainclude_HEADERS) $(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
@@ -131,84 +131,84 @@ am__uninstall_files_from_dir = { \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
 am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(vapidir)" \
-	"$(DESTDIR)$(valaincludedir)"
+	"$(DESTDIR)$(balaincludedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 am__DEPENDENCIES_1 =
-libvala@PACKAGE_SUFFIX@_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+libbala@PACKAGE_SUFFIX@_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(top_builddir)/gee/libgee.la $(am__DEPENDENCIES_1)
 am__objects_1 =
-am__objects_2 = valaaddressofexpression.lo valaarraycopymethod.lo \
-	valaarraycreationexpression.lo valaarraylengthfield.lo \
-	valaarraymovemethod.lo valaarrayresizemethod.lo \
-	valaarraytype.lo valaassignment.lo valaattribute.lo \
-	valabaseaccess.lo valabasicblock.lo valabinaryexpression.lo \
-	valablock.lo valabooleanliteral.lo valabooleantype.lo \
-	valabreakstatement.lo valacallable.lo valacallabletype.lo \
-	valacastexpression.lo valacatchclause.lo \
-	valacharacterliteral.lo valaclass.lo valaclasstype.lo \
-	valacodecontext.lo valacodegenerator.lo valacodenode.lo \
-	valacodevisitor.lo valacodewriter.lo valacomment.lo \
-	valagircomment.lo valaconditionalexpression.lo valaconstant.lo \
-	valaconstructor.lo valacontinuestatement.lo \
-	valacreationmethod.lo valadatatype.lo \
-	valadeclarationstatement.lo valadelegate.lo \
-	valadelegatedestroyfield.lo valadelegatetargetfield.lo \
-	valadelegatetype.lo valadeletestatement.lo valadestructor.lo \
-	valadostatement.lo valadynamicmethod.lo valadynamicproperty.lo \
-	valadynamicsignal.lo valaelementaccess.lo \
-	valaemptystatement.lo valaenum.lo valaenumvalue.lo \
-	valaenumvaluetype.lo valaerrorcode.lo valaerrordomain.lo \
-	valaerrortype.lo valaexpression.lo valaexpressionstatement.lo \
-	valafield.lo valafieldprototype.lo valafloatingtype.lo \
-	valaflowanalyzer.lo valaforeachstatement.lo \
-	valaforstatement.lo valagirparser.lo \
-	valagenericdestroyfield.lo valagenericdupfield.lo \
-	valagenerictype.lo valagenieparser.lo valageniescanner.lo \
-	valagenietokentype.lo valaifstatement.lo \
-	valainitializerlist.lo valaintegerliteral.lo \
-	valaintegertype.lo valainterface.lo valainterfacetype.lo \
-	valainvalidtype.lo valalambdaexpression.lo valaliteral.lo \
-	valalocalvariable.lo valalockable.lo valalockstatement.lo \
-	valaloop.lo valamarkupreader.lo valamemberaccess.lo \
-	valamemberinitializer.lo valamethod.lo valamethodcall.lo \
-	valamethodtype.lo valanamedargument.lo valanamespace.lo \
-	valanullliteral.lo valanulltype.lo \
-	valaobjectcreationexpression.lo valaobjecttype.lo \
-	valaobjecttypesymbol.lo valaparameter.lo valaparser.lo \
-	valaphifunction.lo valapointerindirection.lo \
-	valapointertype.lo valapostfixexpression.lo valaprofile.lo \
-	valapropertyaccessor.lo valaproperty.lo \
-	valapropertyprototype.lo valarealliteral.lo \
-	valareferencetransferexpression.lo valareferencetype.lo \
-	valaregexliteral.lo valareport.lo valareturnstatement.lo \
-	valascanner.lo valascope.lo valasemanticanalyzer.lo \
-	valasignal.lo valasignaltype.lo valasizeofexpression.lo \
-	valasliceexpression.lo valasourcefile.lo valasourcelocation.lo \
-	valasourcereference.lo valastatement.lo valastatementlist.lo \
-	valastringliteral.lo valastruct.lo valastructvaluetype.lo \
-	valasubroutine.lo valaswitchlabel.lo valaswitchsection.lo \
-	valaswitchstatement.lo valasymbol.lo valasymbolresolver.lo \
-	valatargetvalue.lo valatemplate.lo valathrowstatement.lo \
-	valatokentype.lo valatraversevisitor.lo valatrystatement.lo \
-	valatuple.lo valatypecheck.lo valatypeofexpression.lo \
-	valatypeparameter.lo valatypesymbol.lo valaunaryexpression.lo \
-	valaunlockstatement.lo valaunresolvedsymbol.lo \
-	valaunresolvedtype.lo valausedattr.lo valausingdirective.lo \
-	valavaluetype.lo valavariable.lo valavartype.lo valaversion.lo \
-	valaversionattribute.lo valavoidtype.lo valawhilestatement.lo \
-	valayieldstatement.lo $(am__objects_1)
-am_libvala@PACKAGE_SUFFIX@_la_OBJECTS = $(am__objects_2) \
+am__objects_2 = balaaddressofexpression.lo balaarraycopymethod.lo \
+	balaarraycreationexpression.lo balaarraylengthfield.lo \
+	balaarraymovemethod.lo balaarrayresizemethod.lo \
+	balaarraytype.lo balaassignment.lo balaattribute.lo \
+	balabaseaccess.lo balabasicblock.lo balabinaryexpression.lo \
+	balablock.lo balabooleanliteral.lo balabooleantype.lo \
+	balabreakstatement.lo balacallable.lo balacallabletype.lo \
+	balacastexpression.lo balacatchclause.lo \
+	balacharacterliteral.lo balaclass.lo balaclasstype.lo \
+	balacodecontext.lo balacodegenerator.lo balacodenode.lo \
+	balacodevisitor.lo balacodewriter.lo balacomment.lo \
+	balagircomment.lo balaconditionalexpression.lo balaconstant.lo \
+	balaconstructor.lo balacontinuestatement.lo \
+	balacreationmethod.lo baladatatype.lo \
+	baladeclarationstatement.lo baladelegate.lo \
+	baladelegatedestroyfield.lo baladelegatetargetfield.lo \
+	baladelegatetype.lo baladeletestatement.lo baladestructor.lo \
+	baladostatement.lo baladynamicmethod.lo baladynamicproperty.lo \
+	baladynamicsignal.lo balaelementaccess.lo \
+	balaemptystatement.lo balaenum.lo balaenumvalue.lo \
+	balaenumvaluetype.lo balaerrorcode.lo balaerrordomain.lo \
+	balaerrortype.lo balaexpression.lo balaexpressionstatement.lo \
+	balafield.lo balafieldprototype.lo balafloatingtype.lo \
+	balaflowanalyzer.lo balaforeachstatement.lo \
+	balaforstatement.lo balagirparser.lo \
+	balagenericdestroyfield.lo balagenericdupfield.lo \
+	balagenerictype.lo balagenieparser.lo balageniescanner.lo \
+	balagenietokentype.lo balaifstatement.lo \
+	balainitializerlist.lo balaintegerliteral.lo \
+	balaintegertype.lo balainterface.lo balainterfacetype.lo \
+	balainvalidtype.lo balalambdaexpression.lo balaliteral.lo \
+	balalocalvariable.lo balalockable.lo balalockstatement.lo \
+	balaloop.lo balamarkupreader.lo balamemberaccess.lo \
+	balamemberinitializer.lo balamethod.lo balamethodcall.lo \
+	balamethodtype.lo balanamedargument.lo balanamespace.lo \
+	balanullliteral.lo balanulltype.lo \
+	balaobjectcreationexpression.lo balaobjecttype.lo \
+	balaobjecttypesymbol.lo balaparameter.lo balaparser.lo \
+	balaphifunction.lo balapointerindirection.lo \
+	balapointertype.lo balapostfixexpression.lo balaprofile.lo \
+	balapropertyaccessor.lo balaproperty.lo \
+	balapropertyprototype.lo balarealliteral.lo \
+	balareferencetransferexpression.lo balareferencetype.lo \
+	balaregexliteral.lo balareport.lo balareturnstatement.lo \
+	balascanner.lo balascope.lo balasemanticanalyzer.lo \
+	balasignal.lo balasignaltype.lo balasizeofexpression.lo \
+	balasliceexpression.lo balasourcefile.lo balasourcelocation.lo \
+	balasourcereference.lo balastatement.lo balastatementlist.lo \
+	balastringliteral.lo balastruct.lo balastructvaluetype.lo \
+	balasubroutine.lo balaswitchlabel.lo balaswitchsection.lo \
+	balaswitchstatement.lo balasymbol.lo balasymbolresolver.lo \
+	balatargetvalue.lo balatemplate.lo balathrowstatement.lo \
+	balatokentype.lo balatraversevisitor.lo balatrystatement.lo \
+	balatuple.lo balatypecheck.lo balatypeofexpression.lo \
+	balatypeparameter.lo balatypesymbol.lo balaunaryexpression.lo \
+	balaunlockstatement.lo balaunresolvedsymbol.lo \
+	balaunresolvedtype.lo balausedattr.lo balausingdirective.lo \
+	balavaluetype.lo balavariable.lo balavartype.lo balaversion.lo \
+	balaversionattribute.lo balavoidtype.lo balawhilestatement.lo \
+	balayieldstatement.lo $(am__objects_1)
+am_libbala@PACKAGE_SUFFIX@_la_OBJECTS = $(am__objects_2) \
 	$(am__objects_1)
-libvala@PACKAGE_SUFFIX@_la_OBJECTS =  \
-	$(am_libvala@PACKAGE_SUFFIX@_la_OBJECTS)
+libbala@PACKAGE_SUFFIX@_la_OBJECTS =  \
+	$(am_libbala@PACKAGE_SUFFIX@_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-libvala@PACKAGE_SUFFIX@_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+libbala@PACKAGE_SUFFIX@_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
-	$(AM_CFLAGS) $(CFLAGS) $(libvala@PACKAGE_SUFFIX@_la_LDFLAGS) \
+	$(AM_CFLAGS) $(CFLAGS) $(libbala@PACKAGE_SUFFIX@_la_LDFLAGS) \
 	$(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -225,131 +225,131 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/valaaddressofexpression.Plo \
-	./$(DEPDIR)/valaarraycopymethod.Plo \
-	./$(DEPDIR)/valaarraycreationexpression.Plo \
-	./$(DEPDIR)/valaarraylengthfield.Plo \
-	./$(DEPDIR)/valaarraymovemethod.Plo \
-	./$(DEPDIR)/valaarrayresizemethod.Plo \
-	./$(DEPDIR)/valaarraytype.Plo ./$(DEPDIR)/valaassignment.Plo \
-	./$(DEPDIR)/valaattribute.Plo ./$(DEPDIR)/valabaseaccess.Plo \
-	./$(DEPDIR)/valabasicblock.Plo \
-	./$(DEPDIR)/valabinaryexpression.Plo ./$(DEPDIR)/valablock.Plo \
-	./$(DEPDIR)/valabooleanliteral.Plo \
-	./$(DEPDIR)/valabooleantype.Plo \
-	./$(DEPDIR)/valabreakstatement.Plo \
-	./$(DEPDIR)/valacallable.Plo ./$(DEPDIR)/valacallabletype.Plo \
-	./$(DEPDIR)/valacastexpression.Plo \
-	./$(DEPDIR)/valacatchclause.Plo \
-	./$(DEPDIR)/valacharacterliteral.Plo ./$(DEPDIR)/valaclass.Plo \
-	./$(DEPDIR)/valaclasstype.Plo ./$(DEPDIR)/valacodecontext.Plo \
-	./$(DEPDIR)/valacodegenerator.Plo ./$(DEPDIR)/valacodenode.Plo \
-	./$(DEPDIR)/valacodevisitor.Plo ./$(DEPDIR)/valacodewriter.Plo \
-	./$(DEPDIR)/valacomment.Plo \
-	./$(DEPDIR)/valaconditionalexpression.Plo \
-	./$(DEPDIR)/valaconstant.Plo ./$(DEPDIR)/valaconstructor.Plo \
-	./$(DEPDIR)/valacontinuestatement.Plo \
-	./$(DEPDIR)/valacreationmethod.Plo \
-	./$(DEPDIR)/valadatatype.Plo \
-	./$(DEPDIR)/valadeclarationstatement.Plo \
-	./$(DEPDIR)/valadelegate.Plo \
-	./$(DEPDIR)/valadelegatedestroyfield.Plo \
-	./$(DEPDIR)/valadelegatetargetfield.Plo \
-	./$(DEPDIR)/valadelegatetype.Plo \
-	./$(DEPDIR)/valadeletestatement.Plo \
-	./$(DEPDIR)/valadestructor.Plo ./$(DEPDIR)/valadostatement.Plo \
-	./$(DEPDIR)/valadynamicmethod.Plo \
-	./$(DEPDIR)/valadynamicproperty.Plo \
-	./$(DEPDIR)/valadynamicsignal.Plo \
-	./$(DEPDIR)/valaelementaccess.Plo \
-	./$(DEPDIR)/valaemptystatement.Plo ./$(DEPDIR)/valaenum.Plo \
-	./$(DEPDIR)/valaenumvalue.Plo \
-	./$(DEPDIR)/valaenumvaluetype.Plo \
-	./$(DEPDIR)/valaerrorcode.Plo ./$(DEPDIR)/valaerrordomain.Plo \
-	./$(DEPDIR)/valaerrortype.Plo ./$(DEPDIR)/valaexpression.Plo \
-	./$(DEPDIR)/valaexpressionstatement.Plo \
-	./$(DEPDIR)/valafield.Plo ./$(DEPDIR)/valafieldprototype.Plo \
-	./$(DEPDIR)/valafloatingtype.Plo \
-	./$(DEPDIR)/valaflowanalyzer.Plo \
-	./$(DEPDIR)/valaforeachstatement.Plo \
-	./$(DEPDIR)/valaforstatement.Plo \
-	./$(DEPDIR)/valagenericdestroyfield.Plo \
-	./$(DEPDIR)/valagenericdupfield.Plo \
-	./$(DEPDIR)/valagenerictype.Plo \
-	./$(DEPDIR)/valagenieparser.Plo \
-	./$(DEPDIR)/valageniescanner.Plo \
-	./$(DEPDIR)/valagenietokentype.Plo \
-	./$(DEPDIR)/valagircomment.Plo ./$(DEPDIR)/valagirparser.Plo \
-	./$(DEPDIR)/valaifstatement.Plo \
-	./$(DEPDIR)/valainitializerlist.Plo \
-	./$(DEPDIR)/valaintegerliteral.Plo \
-	./$(DEPDIR)/valaintegertype.Plo ./$(DEPDIR)/valainterface.Plo \
-	./$(DEPDIR)/valainterfacetype.Plo \
-	./$(DEPDIR)/valainvalidtype.Plo \
-	./$(DEPDIR)/valalambdaexpression.Plo \
-	./$(DEPDIR)/valaliteral.Plo ./$(DEPDIR)/valalocalvariable.Plo \
-	./$(DEPDIR)/valalockable.Plo ./$(DEPDIR)/valalockstatement.Plo \
-	./$(DEPDIR)/valaloop.Plo ./$(DEPDIR)/valamarkupreader.Plo \
-	./$(DEPDIR)/valamemberaccess.Plo \
-	./$(DEPDIR)/valamemberinitializer.Plo \
-	./$(DEPDIR)/valamethod.Plo ./$(DEPDIR)/valamethodcall.Plo \
-	./$(DEPDIR)/valamethodtype.Plo \
-	./$(DEPDIR)/valanamedargument.Plo \
-	./$(DEPDIR)/valanamespace.Plo ./$(DEPDIR)/valanullliteral.Plo \
-	./$(DEPDIR)/valanulltype.Plo \
-	./$(DEPDIR)/valaobjectcreationexpression.Plo \
-	./$(DEPDIR)/valaobjecttype.Plo \
-	./$(DEPDIR)/valaobjecttypesymbol.Plo \
-	./$(DEPDIR)/valaparameter.Plo ./$(DEPDIR)/valaparser.Plo \
-	./$(DEPDIR)/valaphifunction.Plo \
-	./$(DEPDIR)/valapointerindirection.Plo \
-	./$(DEPDIR)/valapointertype.Plo \
-	./$(DEPDIR)/valapostfixexpression.Plo \
-	./$(DEPDIR)/valaprofile.Plo ./$(DEPDIR)/valaproperty.Plo \
-	./$(DEPDIR)/valapropertyaccessor.Plo \
-	./$(DEPDIR)/valapropertyprototype.Plo \
-	./$(DEPDIR)/valarealliteral.Plo \
-	./$(DEPDIR)/valareferencetransferexpression.Plo \
-	./$(DEPDIR)/valareferencetype.Plo \
-	./$(DEPDIR)/valaregexliteral.Plo ./$(DEPDIR)/valareport.Plo \
-	./$(DEPDIR)/valareturnstatement.Plo \
-	./$(DEPDIR)/valascanner.Plo ./$(DEPDIR)/valascope.Plo \
-	./$(DEPDIR)/valasemanticanalyzer.Plo \
-	./$(DEPDIR)/valasignal.Plo ./$(DEPDIR)/valasignaltype.Plo \
-	./$(DEPDIR)/valasizeofexpression.Plo \
-	./$(DEPDIR)/valasliceexpression.Plo \
-	./$(DEPDIR)/valasourcefile.Plo \
-	./$(DEPDIR)/valasourcelocation.Plo \
-	./$(DEPDIR)/valasourcereference.Plo \
-	./$(DEPDIR)/valastatement.Plo \
-	./$(DEPDIR)/valastatementlist.Plo \
-	./$(DEPDIR)/valastringliteral.Plo ./$(DEPDIR)/valastruct.Plo \
-	./$(DEPDIR)/valastructvaluetype.Plo \
-	./$(DEPDIR)/valasubroutine.Plo ./$(DEPDIR)/valaswitchlabel.Plo \
-	./$(DEPDIR)/valaswitchsection.Plo \
-	./$(DEPDIR)/valaswitchstatement.Plo ./$(DEPDIR)/valasymbol.Plo \
-	./$(DEPDIR)/valasymbolresolver.Plo \
-	./$(DEPDIR)/valatargetvalue.Plo ./$(DEPDIR)/valatemplate.Plo \
-	./$(DEPDIR)/valathrowstatement.Plo \
-	./$(DEPDIR)/valatokentype.Plo \
-	./$(DEPDIR)/valatraversevisitor.Plo \
-	./$(DEPDIR)/valatrystatement.Plo ./$(DEPDIR)/valatuple.Plo \
-	./$(DEPDIR)/valatypecheck.Plo \
-	./$(DEPDIR)/valatypeofexpression.Plo \
-	./$(DEPDIR)/valatypeparameter.Plo \
-	./$(DEPDIR)/valatypesymbol.Plo \
-	./$(DEPDIR)/valaunaryexpression.Plo \
-	./$(DEPDIR)/valaunlockstatement.Plo \
-	./$(DEPDIR)/valaunresolvedsymbol.Plo \
-	./$(DEPDIR)/valaunresolvedtype.Plo \
-	./$(DEPDIR)/valausedattr.Plo \
-	./$(DEPDIR)/valausingdirective.Plo \
-	./$(DEPDIR)/valavaluetype.Plo ./$(DEPDIR)/valavariable.Plo \
-	./$(DEPDIR)/valavartype.Plo ./$(DEPDIR)/valaversion.Plo \
-	./$(DEPDIR)/valaversionattribute.Plo \
-	./$(DEPDIR)/valavoidtype.Plo \
-	./$(DEPDIR)/valawhilestatement.Plo \
-	./$(DEPDIR)/valayieldstatement.Plo
+am__depfiles_remade = ./$(DEPDIR)/balaaddressofexpression.Plo \
+	./$(DEPDIR)/balaarraycopymethod.Plo \
+	./$(DEPDIR)/balaarraycreationexpression.Plo \
+	./$(DEPDIR)/balaarraylengthfield.Plo \
+	./$(DEPDIR)/balaarraymovemethod.Plo \
+	./$(DEPDIR)/balaarrayresizemethod.Plo \
+	./$(DEPDIR)/balaarraytype.Plo ./$(DEPDIR)/balaassignment.Plo \
+	./$(DEPDIR)/balaattribute.Plo ./$(DEPDIR)/balabaseaccess.Plo \
+	./$(DEPDIR)/balabasicblock.Plo \
+	./$(DEPDIR)/balabinaryexpression.Plo ./$(DEPDIR)/balablock.Plo \
+	./$(DEPDIR)/balabooleanliteral.Plo \
+	./$(DEPDIR)/balabooleantype.Plo \
+	./$(DEPDIR)/balabreakstatement.Plo \
+	./$(DEPDIR)/balacallable.Plo ./$(DEPDIR)/balacallabletype.Plo \
+	./$(DEPDIR)/balacastexpression.Plo \
+	./$(DEPDIR)/balacatchclause.Plo \
+	./$(DEPDIR)/balacharacterliteral.Plo ./$(DEPDIR)/balaclass.Plo \
+	./$(DEPDIR)/balaclasstype.Plo ./$(DEPDIR)/balacodecontext.Plo \
+	./$(DEPDIR)/balacodegenerator.Plo ./$(DEPDIR)/balacodenode.Plo \
+	./$(DEPDIR)/balacodevisitor.Plo ./$(DEPDIR)/balacodewriter.Plo \
+	./$(DEPDIR)/balacomment.Plo \
+	./$(DEPDIR)/balaconditionalexpression.Plo \
+	./$(DEPDIR)/balaconstant.Plo ./$(DEPDIR)/balaconstructor.Plo \
+	./$(DEPDIR)/balacontinuestatement.Plo \
+	./$(DEPDIR)/balacreationmethod.Plo \
+	./$(DEPDIR)/baladatatype.Plo \
+	./$(DEPDIR)/baladeclarationstatement.Plo \
+	./$(DEPDIR)/baladelegate.Plo \
+	./$(DEPDIR)/baladelegatedestroyfield.Plo \
+	./$(DEPDIR)/baladelegatetargetfield.Plo \
+	./$(DEPDIR)/baladelegatetype.Plo \
+	./$(DEPDIR)/baladeletestatement.Plo \
+	./$(DEPDIR)/baladestructor.Plo ./$(DEPDIR)/baladostatement.Plo \
+	./$(DEPDIR)/baladynamicmethod.Plo \
+	./$(DEPDIR)/baladynamicproperty.Plo \
+	./$(DEPDIR)/baladynamicsignal.Plo \
+	./$(DEPDIR)/balaelementaccess.Plo \
+	./$(DEPDIR)/balaemptystatement.Plo ./$(DEPDIR)/balaenum.Plo \
+	./$(DEPDIR)/balaenumvalue.Plo \
+	./$(DEPDIR)/balaenumvaluetype.Plo \
+	./$(DEPDIR)/balaerrorcode.Plo ./$(DEPDIR)/balaerrordomain.Plo \
+	./$(DEPDIR)/balaerrortype.Plo ./$(DEPDIR)/balaexpression.Plo \
+	./$(DEPDIR)/balaexpressionstatement.Plo \
+	./$(DEPDIR)/balafield.Plo ./$(DEPDIR)/balafieldprototype.Plo \
+	./$(DEPDIR)/balafloatingtype.Plo \
+	./$(DEPDIR)/balaflowanalyzer.Plo \
+	./$(DEPDIR)/balaforeachstatement.Plo \
+	./$(DEPDIR)/balaforstatement.Plo \
+	./$(DEPDIR)/balagenericdestroyfield.Plo \
+	./$(DEPDIR)/balagenericdupfield.Plo \
+	./$(DEPDIR)/balagenerictype.Plo \
+	./$(DEPDIR)/balagenieparser.Plo \
+	./$(DEPDIR)/balageniescanner.Plo \
+	./$(DEPDIR)/balagenietokentype.Plo \
+	./$(DEPDIR)/balagircomment.Plo ./$(DEPDIR)/balagirparser.Plo \
+	./$(DEPDIR)/balaifstatement.Plo \
+	./$(DEPDIR)/balainitializerlist.Plo \
+	./$(DEPDIR)/balaintegerliteral.Plo \
+	./$(DEPDIR)/balaintegertype.Plo ./$(DEPDIR)/balainterface.Plo \
+	./$(DEPDIR)/balainterfacetype.Plo \
+	./$(DEPDIR)/balainvalidtype.Plo \
+	./$(DEPDIR)/balalambdaexpression.Plo \
+	./$(DEPDIR)/balaliteral.Plo ./$(DEPDIR)/balalocalvariable.Plo \
+	./$(DEPDIR)/balalockable.Plo ./$(DEPDIR)/balalockstatement.Plo \
+	./$(DEPDIR)/balaloop.Plo ./$(DEPDIR)/balamarkupreader.Plo \
+	./$(DEPDIR)/balamemberaccess.Plo \
+	./$(DEPDIR)/balamemberinitializer.Plo \
+	./$(DEPDIR)/balamethod.Plo ./$(DEPDIR)/balamethodcall.Plo \
+	./$(DEPDIR)/balamethodtype.Plo \
+	./$(DEPDIR)/balanamedargument.Plo \
+	./$(DEPDIR)/balanamespace.Plo ./$(DEPDIR)/balanullliteral.Plo \
+	./$(DEPDIR)/balanulltype.Plo \
+	./$(DEPDIR)/balaobjectcreationexpression.Plo \
+	./$(DEPDIR)/balaobjecttype.Plo \
+	./$(DEPDIR)/balaobjecttypesymbol.Plo \
+	./$(DEPDIR)/balaparameter.Plo ./$(DEPDIR)/balaparser.Plo \
+	./$(DEPDIR)/balaphifunction.Plo \
+	./$(DEPDIR)/balapointerindirection.Plo \
+	./$(DEPDIR)/balapointertype.Plo \
+	./$(DEPDIR)/balapostfixexpression.Plo \
+	./$(DEPDIR)/balaprofile.Plo ./$(DEPDIR)/balaproperty.Plo \
+	./$(DEPDIR)/balapropertyaccessor.Plo \
+	./$(DEPDIR)/balapropertyprototype.Plo \
+	./$(DEPDIR)/balarealliteral.Plo \
+	./$(DEPDIR)/balareferencetransferexpression.Plo \
+	./$(DEPDIR)/balareferencetype.Plo \
+	./$(DEPDIR)/balaregexliteral.Plo ./$(DEPDIR)/balareport.Plo \
+	./$(DEPDIR)/balareturnstatement.Plo \
+	./$(DEPDIR)/balascanner.Plo ./$(DEPDIR)/balascope.Plo \
+	./$(DEPDIR)/balasemanticanalyzer.Plo \
+	./$(DEPDIR)/balasignal.Plo ./$(DEPDIR)/balasignaltype.Plo \
+	./$(DEPDIR)/balasizeofexpression.Plo \
+	./$(DEPDIR)/balasliceexpression.Plo \
+	./$(DEPDIR)/balasourcefile.Plo \
+	./$(DEPDIR)/balasourcelocation.Plo \
+	./$(DEPDIR)/balasourcereference.Plo \
+	./$(DEPDIR)/balastatement.Plo \
+	./$(DEPDIR)/balastatementlist.Plo \
+	./$(DEPDIR)/balastringliteral.Plo ./$(DEPDIR)/balastruct.Plo \
+	./$(DEPDIR)/balastructvaluetype.Plo \
+	./$(DEPDIR)/balasubroutine.Plo ./$(DEPDIR)/balaswitchlabel.Plo \
+	./$(DEPDIR)/balaswitchsection.Plo \
+	./$(DEPDIR)/balaswitchstatement.Plo ./$(DEPDIR)/balasymbol.Plo \
+	./$(DEPDIR)/balasymbolresolver.Plo \
+	./$(DEPDIR)/balatargetvalue.Plo ./$(DEPDIR)/balatemplate.Plo \
+	./$(DEPDIR)/balathrowstatement.Plo \
+	./$(DEPDIR)/balatokentype.Plo \
+	./$(DEPDIR)/balatraversevisitor.Plo \
+	./$(DEPDIR)/balatrystatement.Plo ./$(DEPDIR)/balatuple.Plo \
+	./$(DEPDIR)/balatypecheck.Plo \
+	./$(DEPDIR)/balatypeofexpression.Plo \
+	./$(DEPDIR)/balatypeparameter.Plo \
+	./$(DEPDIR)/balatypesymbol.Plo \
+	./$(DEPDIR)/balaunaryexpression.Plo \
+	./$(DEPDIR)/balaunlockstatement.Plo \
+	./$(DEPDIR)/balaunresolvedsymbol.Plo \
+	./$(DEPDIR)/balaunresolvedtype.Plo \
+	./$(DEPDIR)/balausedattr.Plo \
+	./$(DEPDIR)/balausingdirective.Plo \
+	./$(DEPDIR)/balavaluetype.Plo ./$(DEPDIR)/balavariable.Plo \
+	./$(DEPDIR)/balavartype.Plo ./$(DEPDIR)/balaversion.Plo \
+	./$(DEPDIR)/balaversionattribute.Plo \
+	./$(DEPDIR)/balavoidtype.Plo \
+	./$(DEPDIR)/balawhilestatement.Plo \
+	./$(DEPDIR)/balayieldstatement.Plo
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -369,15 +369,15 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libvala@PACKAGE_SUFFIX@_la_SOURCES)
-DIST_SOURCES = $(libvala@PACKAGE_SUFFIX@_la_SOURCES)
+SOURCES = $(libbala@PACKAGE_SUFFIX@_la_SOURCES)
+DIST_SOURCES = $(libbala@PACKAGE_SUFFIX@_la_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
 DATA = $(dist_vapi_DATA)
-HEADERS = $(valainclude_HEADERS)
+HEADERS = $(balainclude_HEADERS)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
@@ -554,7 +554,7 @@ BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
 BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"vala\" \
+	-DG_LOG_DOMAIN=\"bala\" \
 	$(COVERAGE_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	$(GLIB_CFLAGS) \
@@ -562,200 +562,200 @@ AM_CPPFLAGS = \
 	-DPACKAGE_DATADIR=\"$(pkgdatadir)\" \
 	$(NULL)
 
-BUILT_SOURCES = vala.vala.stamp $(srcdir)/valaversion.vala
+BUILT_SOURCES = bala.bala.stamp $(srcdir)/balaversion.bala
 lib_LTLIBRARIES = \
-	libvala@PACKAGE_SUFFIX@.la \
+	libbala@PACKAGE_SUFFIX@.la \
 	$(NULL)
 
-libvala_la_BALASOURCES = \
-	valaaddressofexpression.vala \
-	valaarraycopymethod.vala \
-	valaarraycreationexpression.vala \
-	valaarraylengthfield.vala \
-	valaarraymovemethod.vala \
-	valaarrayresizemethod.vala \
-	valaarraytype.vala \
-	valaassignment.vala \
-	valaattribute.vala \
-	valabaseaccess.vala \
-	valabasicblock.vala \
-	valabinaryexpression.vala \
-	valablock.vala \
-	valabooleanliteral.vala \
-	valabooleantype.vala \
-	valabreakstatement.vala \
-	valacallable.vala \
-	valacallabletype.vala \
-	valacastexpression.vala \
-	valacatchclause.vala \
-	valacharacterliteral.vala \
-	valaclass.vala \
-	valaclasstype.vala \
-	valacodecontext.vala \
-	valacodegenerator.vala \
-	valacodenode.vala \
-	valacodevisitor.vala \
-	valacodewriter.vala \
-	valacomment.vala \
-	valagircomment.vala \
-	valaconditionalexpression.vala \
-	valaconstant.vala \
-	valaconstructor.vala \
-	valacontinuestatement.vala \
-	valacreationmethod.vala \
-	valadatatype.vala \
-	valadeclarationstatement.vala \
-	valadelegate.vala \
-	valadelegatedestroyfield.vala \
-	valadelegatetargetfield.vala \
-	valadelegatetype.vala \
-	valadeletestatement.vala \
-	valadestructor.vala \
-	valadostatement.vala \
-	valadynamicmethod.vala \
-	valadynamicproperty.vala \
-	valadynamicsignal.vala \
-	valaelementaccess.vala \
-	valaemptystatement.vala \
-	valaenum.vala \
-	valaenumvalue.vala \
-	valaenumvaluetype.vala \
-	valaerrorcode.vala \
-	valaerrordomain.vala \
-	valaerrortype.vala \
-	valaexpression.vala \
-	valaexpressionstatement.vala \
-	valafield.vala \
-	valafieldprototype.vala \
-	valafloatingtype.vala \
-	valaflowanalyzer.vala \
-	valaforeachstatement.vala \
-	valaforstatement.vala \
-	valagirparser.vala \
-	valagenericdestroyfield.vala \
-	valagenericdupfield.vala \
-	valagenerictype.vala \
-	valagenieparser.vala \
-	valageniescanner.vala \
-	valagenietokentype.vala \
-	valaifstatement.vala \
-	valainitializerlist.vala \
-	valaintegerliteral.vala \
-	valaintegertype.vala \
-	valainterface.vala \
-	valainterfacetype.vala \
-	valainvalidtype.vala \
-	valalambdaexpression.vala \
-	valaliteral.vala \
-	valalocalvariable.vala \
-	valalockable.vala \
-	valalockstatement.vala \
-	valaloop.vala \
-	valamarkupreader.vala \
-	valamemberaccess.vala \
-	valamemberinitializer.vala \
-	valamethod.vala \
-	valamethodcall.vala \
-	valamethodtype.vala \
-	valanamedargument.vala \
-	valanamespace.vala \
-	valanullliteral.vala \
-	valanulltype.vala \
-	valaobjectcreationexpression.vala \
-	valaobjecttype.vala \
-	valaobjecttypesymbol.vala \
-	valaparameter.vala \
-	valaparser.vala \
-	valaphifunction.vala \
-	valapointerindirection.vala \
-	valapointertype.vala \
-	valapostfixexpression.vala \
-	valaprofile.vala \
-	valapropertyaccessor.vala \
-	valaproperty.vala \
-	valapropertyprototype.vala \
-	valarealliteral.vala \
-	valareferencetransferexpression.vala \
-	valareferencetype.vala \
-	valaregexliteral.vala \
-	valareport.vala \
-	valareturnstatement.vala \
-	valascanner.vala \
-	valascope.vala \
-	valasemanticanalyzer.vala \
-	valasignal.vala \
-	valasignaltype.vala \
-	valasizeofexpression.vala \
-	valasliceexpression.vala \
-	valasourcefile.vala \
-	valasourcelocation.vala \
-	valasourcereference.vala \
-	valastatement.vala \
-	valastatementlist.vala \
-	valastringliteral.vala \
-	valastruct.vala \
-	valastructvaluetype.vala \
-	valasubroutine.vala \
-	valaswitchlabel.vala \
-	valaswitchsection.vala \
-	valaswitchstatement.vala \
-	valasymbol.vala \
-	valasymbolresolver.vala \
-	valatargetvalue.vala \
-	valatemplate.vala \
-	valathrowstatement.vala \
-	valatokentype.vala \
-	valatraversevisitor.vala \
-	valatrystatement.vala \
-	valatuple.vala \
-	valatypecheck.vala \
-	valatypeofexpression.vala \
-	valatypeparameter.vala \
-	valatypesymbol.vala \
-	valaunaryexpression.vala \
-	valaunlockstatement.vala \
-	valaunresolvedsymbol.vala \
-	valaunresolvedtype.vala \
-	valausedattr.vala \
-	valausingdirective.vala \
-	valavaluetype.vala \
-	valavariable.vala \
-	valavartype.vala \
-	valaversion.vala \
-	valaversionattribute.vala \
-	valavoidtype.vala \
-	valawhilestatement.vala \
-	valayieldstatement.vala \
+libbala_la_BALASOURCES = \
+	balaaddressofexpression.bala \
+	balaarraycopymethod.bala \
+	balaarraycreationexpression.bala \
+	balaarraylengthfield.bala \
+	balaarraymovemethod.bala \
+	balaarrayresizemethod.bala \
+	balaarraytype.bala \
+	balaassignment.bala \
+	balaattribute.bala \
+	balabaseaccess.bala \
+	balabasicblock.bala \
+	balabinaryexpression.bala \
+	balablock.bala \
+	balabooleanliteral.bala \
+	balabooleantype.bala \
+	balabreakstatement.bala \
+	balacallable.bala \
+	balacallabletype.bala \
+	balacastexpression.bala \
+	balacatchclause.bala \
+	balacharacterliteral.bala \
+	balaclass.bala \
+	balaclasstype.bala \
+	balacodecontext.bala \
+	balacodegenerator.bala \
+	balacodenode.bala \
+	balacodevisitor.bala \
+	balacodewriter.bala \
+	balacomment.bala \
+	balagircomment.bala \
+	balaconditionalexpression.bala \
+	balaconstant.bala \
+	balaconstructor.bala \
+	balacontinuestatement.bala \
+	balacreationmethod.bala \
+	baladatatype.bala \
+	baladeclarationstatement.bala \
+	baladelegate.bala \
+	baladelegatedestroyfield.bala \
+	baladelegatetargetfield.bala \
+	baladelegatetype.bala \
+	baladeletestatement.bala \
+	baladestructor.bala \
+	baladostatement.bala \
+	baladynamicmethod.bala \
+	baladynamicproperty.bala \
+	baladynamicsignal.bala \
+	balaelementaccess.bala \
+	balaemptystatement.bala \
+	balaenum.bala \
+	balaenumvalue.bala \
+	balaenumvaluetype.bala \
+	balaerrorcode.bala \
+	balaerrordomain.bala \
+	balaerrortype.bala \
+	balaexpression.bala \
+	balaexpressionstatement.bala \
+	balafield.bala \
+	balafieldprototype.bala \
+	balafloatingtype.bala \
+	balaflowanalyzer.bala \
+	balaforeachstatement.bala \
+	balaforstatement.bala \
+	balagirparser.bala \
+	balagenericdestroyfield.bala \
+	balagenericdupfield.bala \
+	balagenerictype.bala \
+	balagenieparser.bala \
+	balageniescanner.bala \
+	balagenietokentype.bala \
+	balaifstatement.bala \
+	balainitializerlist.bala \
+	balaintegerliteral.bala \
+	balaintegertype.bala \
+	balainterface.bala \
+	balainterfacetype.bala \
+	balainvalidtype.bala \
+	balalambdaexpression.bala \
+	balaliteral.bala \
+	balalocalvariable.bala \
+	balalockable.bala \
+	balalockstatement.bala \
+	balaloop.bala \
+	balamarkupreader.bala \
+	balamemberaccess.bala \
+	balamemberinitializer.bala \
+	balamethod.bala \
+	balamethodcall.bala \
+	balamethodtype.bala \
+	balanamedargument.bala \
+	balanamespace.bala \
+	balanullliteral.bala \
+	balanulltype.bala \
+	balaobjectcreationexpression.bala \
+	balaobjecttype.bala \
+	balaobjecttypesymbol.bala \
+	balaparameter.bala \
+	balaparser.bala \
+	balaphifunction.bala \
+	balapointerindirection.bala \
+	balapointertype.bala \
+	balapostfixexpression.bala \
+	balaprofile.bala \
+	balapropertyaccessor.bala \
+	balaproperty.bala \
+	balapropertyprototype.bala \
+	balarealliteral.bala \
+	balareferencetransferexpression.bala \
+	balareferencetype.bala \
+	balaregexliteral.bala \
+	balareport.bala \
+	balareturnstatement.bala \
+	balascanner.bala \
+	balascope.bala \
+	balasemanticanalyzer.bala \
+	balasignal.bala \
+	balasignaltype.bala \
+	balasizeofexpression.bala \
+	balasliceexpression.bala \
+	balasourcefile.bala \
+	balasourcelocation.bala \
+	balasourcereference.bala \
+	balastatement.bala \
+	balastatementlist.bala \
+	balastringliteral.bala \
+	balastruct.bala \
+	balastructvaluetype.bala \
+	balasubroutine.bala \
+	balaswitchlabel.bala \
+	balaswitchsection.bala \
+	balaswitchstatement.bala \
+	balasymbol.bala \
+	balasymbolresolver.bala \
+	balatargetvalue.bala \
+	balatemplate.bala \
+	balathrowstatement.bala \
+	balatokentype.bala \
+	balatraversevisitor.bala \
+	balatrystatement.bala \
+	balatuple.bala \
+	balatypecheck.bala \
+	balatypeofexpression.bala \
+	balatypeparameter.bala \
+	balatypesymbol.bala \
+	balaunaryexpression.bala \
+	balaunlockstatement.bala \
+	balaunresolvedsymbol.bala \
+	balaunresolvedtype.bala \
+	balausedattr.bala \
+	balausingdirective.bala \
+	balavaluetype.bala \
+	balavariable.bala \
+	balavartype.bala \
+	balaversion.bala \
+	balaversionattribute.bala \
+	balavoidtype.bala \
+	balawhilestatement.bala \
+	balayieldstatement.bala \
 	$(NULL)
 
-libvala@PACKAGE_SUFFIX@_la_SOURCES = \
-	vala.vala.stamp \
-	$(libvala_la_BALASOURCES:.vala=.c) \
+libbala@PACKAGE_SUFFIX@_la_SOURCES = \
+	bala.bala.stamp \
+	$(libbala_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-valaincludedir = $(includedir)/vala@PACKAGE_SUFFIX@
-valainclude_HEADERS = \
-	vala.h \
+balaincludedir = $(includedir)/bala@PACKAGE_SUFFIX@
+balainclude_HEADERS = \
+	bala.h \
 	$(NULL)
 
-libvala@PACKAGE_SUFFIX@_la_LDFLAGS = \
+libbala@PACKAGE_SUFFIX@_la_LDFLAGS = \
 	-no-undefined \
 	$(NULL)
 
-libvala@PACKAGE_SUFFIX@_la_LIBADD = \
+libbala@PACKAGE_SUFFIX@_la_LIBADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(GMODULE_LIBS) \
 	$(top_builddir)/gee/libgee.la \
 	$(NULL)
 
-vapidir = $(datadir)/vala/vapi
-dist_vapi_DATA = libvala@PACKAGE_SUFFIX@.vapi
-EXTRA_DIST = $(libvala_la_BALASOURCES) vala.vapi vala.vala.stamp vala.h valaversion.vala.in
+vapidir = $(datadir)/bala/vapi
+dist_vapi_DATA = libbala@PACKAGE_SUFFIX@.vapi
+EXTRA_DIST = $(libbala_la_BALASOURCES) bala.vapi bala.bala.stamp bala.h balaversion.bala.in
 MAINTAINERCLEANFILES = \
-	vala.vapi \
-	vala.h \
-	$(libvala_la_BALASOURCES:.vala=.c) \
+	bala.vapi \
+	bala.h \
+	$(libbala_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -772,9 +772,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu vala/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu bala/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu vala/Makefile
+	  $(AUTOMAKE) --gnu bala/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -829,8 +829,8 @@ clean-libLTLIBRARIES:
 	  rm -f $${locs}; \
 	}
 
-libvala@PACKAGE_SUFFIX@.la: $(libvala@PACKAGE_SUFFIX@_la_OBJECTS) $(libvala@PACKAGE_SUFFIX@_la_DEPENDENCIES) $(EXTRA_libvala@PACKAGE_SUFFIX@_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libvala@PACKAGE_SUFFIX@_la_LINK) -rpath $(libdir) $(libvala@PACKAGE_SUFFIX@_la_OBJECTS) $(libvala@PACKAGE_SUFFIX@_la_LIBADD) $(LIBS)
+libbala@PACKAGE_SUFFIX@.la: $(libbala@PACKAGE_SUFFIX@_la_OBJECTS) $(libbala@PACKAGE_SUFFIX@_la_DEPENDENCIES) $(EXTRA_libbala@PACKAGE_SUFFIX@_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libbala@PACKAGE_SUFFIX@_la_LINK) -rpath $(libdir) $(libbala@PACKAGE_SUFFIX@_la_OBJECTS) $(libbala@PACKAGE_SUFFIX@_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -838,164 +838,164 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaaddressofexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaarraycopymethod.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaarraycreationexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaarraylengthfield.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaarraymovemethod.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaarrayresizemethod.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaarraytype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaassignment.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaattribute.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valabaseaccess.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valabasicblock.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valabinaryexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valablock.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valabooleanliteral.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valabooleantype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valabreakstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacallable.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacallabletype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacastexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacatchclause.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacharacterliteral.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaclass.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaclasstype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacodecontext.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacodegenerator.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacodenode.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacodevisitor.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacodewriter.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacomment.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaconditionalexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaconstant.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaconstructor.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacontinuestatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacreationmethod.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadatatype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadeclarationstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadelegate.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadelegatedestroyfield.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadelegatetargetfield.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadelegatetype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadeletestatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadestructor.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadostatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadynamicmethod.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadynamicproperty.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadynamicsignal.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaelementaccess.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaemptystatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaenum.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaenumvalue.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaenumvaluetype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaerrorcode.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaerrordomain.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaerrortype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaexpressionstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valafield.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valafieldprototype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valafloatingtype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaflowanalyzer.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaforeachstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaforstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagenericdestroyfield.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagenericdupfield.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagenerictype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagenieparser.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valageniescanner.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagenietokentype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagircomment.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagirparser.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaifstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valainitializerlist.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaintegerliteral.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaintegertype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valainterface.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valainterfacetype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valainvalidtype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valalambdaexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaliteral.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valalocalvariable.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valalockable.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valalockstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaloop.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valamarkupreader.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valamemberaccess.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valamemberinitializer.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valamethod.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valamethodcall.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valamethodtype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valanamedargument.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valanamespace.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valanullliteral.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valanulltype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaobjectcreationexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaobjecttype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaobjecttypesymbol.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaparameter.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaparser.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaphifunction.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valapointerindirection.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valapointertype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valapostfixexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaprofile.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaproperty.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valapropertyaccessor.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valapropertyprototype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valarealliteral.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valareferencetransferexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valareferencetype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaregexliteral.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valareport.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valareturnstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valascanner.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valascope.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasemanticanalyzer.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasignal.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasignaltype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasizeofexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasliceexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasourcefile.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasourcelocation.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasourcereference.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valastatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valastatementlist.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valastringliteral.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valastruct.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valastructvaluetype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasubroutine.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaswitchlabel.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaswitchsection.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaswitchstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasymbol.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valasymbolresolver.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatargetvalue.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatemplate.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valathrowstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatokentype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatraversevisitor.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatrystatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatuple.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatypecheck.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatypeofexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatypeparameter.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valatypesymbol.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaunaryexpression.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaunlockstatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaunresolvedsymbol.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaunresolvedtype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valausedattr.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valausingdirective.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valavaluetype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valavariable.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valavartype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaversion.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valaversionattribute.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valavoidtype.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valawhilestatement.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valayieldstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaaddressofexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaarraycopymethod.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaarraycreationexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaarraylengthfield.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaarraymovemethod.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaarrayresizemethod.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaarraytype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaassignment.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaattribute.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balabaseaccess.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balabasicblock.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balabinaryexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balablock.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balabooleanliteral.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balabooleantype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balabreakstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacallable.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacallabletype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacastexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacatchclause.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacharacterliteral.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaclass.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaclasstype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacodecontext.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacodegenerator.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacodenode.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacodevisitor.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacodewriter.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacomment.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaconditionalexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaconstant.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaconstructor.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacontinuestatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacreationmethod.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladatatype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladeclarationstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladelegate.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladelegatedestroyfield.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladelegatetargetfield.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladelegatetype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladeletestatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladestructor.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladostatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladynamicmethod.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladynamicproperty.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladynamicsignal.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaelementaccess.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaemptystatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaenum.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaenumvalue.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaenumvaluetype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaerrorcode.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaerrordomain.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaerrortype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaexpressionstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balafield.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balafieldprototype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balafloatingtype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaflowanalyzer.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaforeachstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaforstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagenericdestroyfield.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagenericdupfield.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagenerictype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagenieparser.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balageniescanner.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagenietokentype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagircomment.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagirparser.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaifstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balainitializerlist.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaintegerliteral.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaintegertype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balainterface.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balainterfacetype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balainvalidtype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balalambdaexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaliteral.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balalocalvariable.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balalockable.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balalockstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaloop.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balamarkupreader.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balamemberaccess.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balamemberinitializer.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balamethod.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balamethodcall.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balamethodtype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balanamedargument.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balanamespace.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balanullliteral.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balanulltype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaobjectcreationexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaobjecttype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaobjecttypesymbol.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaparameter.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaparser.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaphifunction.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balapointerindirection.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balapointertype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balapostfixexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaprofile.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaproperty.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balapropertyaccessor.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balapropertyprototype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balarealliteral.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balareferencetransferexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balareferencetype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaregexliteral.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balareport.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balareturnstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balascanner.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balascope.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasemanticanalyzer.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasignal.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasignaltype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasizeofexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasliceexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasourcefile.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasourcelocation.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasourcereference.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balastatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balastatementlist.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balastringliteral.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balastruct.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balastructvaluetype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasubroutine.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaswitchlabel.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaswitchsection.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaswitchstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasymbol.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balasymbolresolver.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatargetvalue.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatemplate.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balathrowstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatokentype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatraversevisitor.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatrystatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatuple.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatypecheck.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatypeofexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatypeparameter.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balatypesymbol.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaunaryexpression.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaunlockstatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaunresolvedsymbol.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaunresolvedtype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balausedattr.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balausingdirective.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balavaluetype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balavariable.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balavartype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaversion.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balaversionattribute.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balavoidtype.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balawhilestatement.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balayieldstatement.Plo@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -1053,27 +1053,27 @@ uninstall-dist_vapiDATA:
 	@list='$(dist_vapi_DATA)'; test -n "$(vapidir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(vapidir)'; $(am__uninstall_files_from_dir)
-install-valaincludeHEADERS: $(valainclude_HEADERS)
+install-balaincludeHEADERS: $(balainclude_HEADERS)
 	@$(NORMAL_INSTALL)
-	@list='$(valainclude_HEADERS)'; test -n "$(valaincludedir)" || list=; \
+	@list='$(balainclude_HEADERS)'; test -n "$(balaincludedir)" || list=; \
 	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(valaincludedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(valaincludedir)" || exit 1; \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(balaincludedir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(balaincludedir)" || exit 1; \
 	fi; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(valaincludedir)'"; \
-	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(valaincludedir)" || exit $$?; \
+	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(balaincludedir)'"; \
+	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(balaincludedir)" || exit $$?; \
 	done
 
-uninstall-valaincludeHEADERS:
+uninstall-balaincludeHEADERS:
 	@$(NORMAL_UNINSTALL)
-	@list='$(valainclude_HEADERS)'; test -n "$(valaincludedir)" || list=; \
+	@list='$(balainclude_HEADERS)'; test -n "$(balaincludedir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(valaincludedir)'; $(am__uninstall_files_from_dir)
+	dir='$(DESTDIR)$(balaincludedir)'; $(am__uninstall_files_from_dir)
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
@@ -1165,7 +1165,7 @@ check: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) check-am
 all-am: Makefile $(LTLIBRARIES) $(DATA) $(HEADERS)
 installdirs:
-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(vapidir)" "$(DESTDIR)$(valaincludedir)"; do \
+	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(vapidir)" "$(DESTDIR)$(balaincludedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -1208,164 +1208,164 @@ clean-am: clean-generic clean-libLTLIBRARIES clean-libtool \
 	mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/valaaddressofexpression.Plo
-	-rm -f ./$(DEPDIR)/valaarraycopymethod.Plo
-	-rm -f ./$(DEPDIR)/valaarraycreationexpression.Plo
-	-rm -f ./$(DEPDIR)/valaarraylengthfield.Plo
-	-rm -f ./$(DEPDIR)/valaarraymovemethod.Plo
-	-rm -f ./$(DEPDIR)/valaarrayresizemethod.Plo
-	-rm -f ./$(DEPDIR)/valaarraytype.Plo
-	-rm -f ./$(DEPDIR)/valaassignment.Plo
-	-rm -f ./$(DEPDIR)/valaattribute.Plo
-	-rm -f ./$(DEPDIR)/valabaseaccess.Plo
-	-rm -f ./$(DEPDIR)/valabasicblock.Plo
-	-rm -f ./$(DEPDIR)/valabinaryexpression.Plo
-	-rm -f ./$(DEPDIR)/valablock.Plo
-	-rm -f ./$(DEPDIR)/valabooleanliteral.Plo
-	-rm -f ./$(DEPDIR)/valabooleantype.Plo
-	-rm -f ./$(DEPDIR)/valabreakstatement.Plo
-	-rm -f ./$(DEPDIR)/valacallable.Plo
-	-rm -f ./$(DEPDIR)/valacallabletype.Plo
-	-rm -f ./$(DEPDIR)/valacastexpression.Plo
-	-rm -f ./$(DEPDIR)/valacatchclause.Plo
-	-rm -f ./$(DEPDIR)/valacharacterliteral.Plo
-	-rm -f ./$(DEPDIR)/valaclass.Plo
-	-rm -f ./$(DEPDIR)/valaclasstype.Plo
-	-rm -f ./$(DEPDIR)/valacodecontext.Plo
-	-rm -f ./$(DEPDIR)/valacodegenerator.Plo
-	-rm -f ./$(DEPDIR)/valacodenode.Plo
-	-rm -f ./$(DEPDIR)/valacodevisitor.Plo
-	-rm -f ./$(DEPDIR)/valacodewriter.Plo
-	-rm -f ./$(DEPDIR)/valacomment.Plo
-	-rm -f ./$(DEPDIR)/valaconditionalexpression.Plo
-	-rm -f ./$(DEPDIR)/valaconstant.Plo
-	-rm -f ./$(DEPDIR)/valaconstructor.Plo
-	-rm -f ./$(DEPDIR)/valacontinuestatement.Plo
-	-rm -f ./$(DEPDIR)/valacreationmethod.Plo
-	-rm -f ./$(DEPDIR)/valadatatype.Plo
-	-rm -f ./$(DEPDIR)/valadeclarationstatement.Plo
-	-rm -f ./$(DEPDIR)/valadelegate.Plo
-	-rm -f ./$(DEPDIR)/valadelegatedestroyfield.Plo
-	-rm -f ./$(DEPDIR)/valadelegatetargetfield.Plo
-	-rm -f ./$(DEPDIR)/valadelegatetype.Plo
-	-rm -f ./$(DEPDIR)/valadeletestatement.Plo
-	-rm -f ./$(DEPDIR)/valadestructor.Plo
-	-rm -f ./$(DEPDIR)/valadostatement.Plo
-	-rm -f ./$(DEPDIR)/valadynamicmethod.Plo
-	-rm -f ./$(DEPDIR)/valadynamicproperty.Plo
-	-rm -f ./$(DEPDIR)/valadynamicsignal.Plo
-	-rm -f ./$(DEPDIR)/valaelementaccess.Plo
-	-rm -f ./$(DEPDIR)/valaemptystatement.Plo
-	-rm -f ./$(DEPDIR)/valaenum.Plo
-	-rm -f ./$(DEPDIR)/valaenumvalue.Plo
-	-rm -f ./$(DEPDIR)/valaenumvaluetype.Plo
-	-rm -f ./$(DEPDIR)/valaerrorcode.Plo
-	-rm -f ./$(DEPDIR)/valaerrordomain.Plo
-	-rm -f ./$(DEPDIR)/valaerrortype.Plo
-	-rm -f ./$(DEPDIR)/valaexpression.Plo
-	-rm -f ./$(DEPDIR)/valaexpressionstatement.Plo
-	-rm -f ./$(DEPDIR)/valafield.Plo
-	-rm -f ./$(DEPDIR)/valafieldprototype.Plo
-	-rm -f ./$(DEPDIR)/valafloatingtype.Plo
-	-rm -f ./$(DEPDIR)/valaflowanalyzer.Plo
-	-rm -f ./$(DEPDIR)/valaforeachstatement.Plo
-	-rm -f ./$(DEPDIR)/valaforstatement.Plo
-	-rm -f ./$(DEPDIR)/valagenericdestroyfield.Plo
-	-rm -f ./$(DEPDIR)/valagenericdupfield.Plo
-	-rm -f ./$(DEPDIR)/valagenerictype.Plo
-	-rm -f ./$(DEPDIR)/valagenieparser.Plo
-	-rm -f ./$(DEPDIR)/valageniescanner.Plo
-	-rm -f ./$(DEPDIR)/valagenietokentype.Plo
-	-rm -f ./$(DEPDIR)/valagircomment.Plo
-	-rm -f ./$(DEPDIR)/valagirparser.Plo
-	-rm -f ./$(DEPDIR)/valaifstatement.Plo
-	-rm -f ./$(DEPDIR)/valainitializerlist.Plo
-	-rm -f ./$(DEPDIR)/valaintegerliteral.Plo
-	-rm -f ./$(DEPDIR)/valaintegertype.Plo
-	-rm -f ./$(DEPDIR)/valainterface.Plo
-	-rm -f ./$(DEPDIR)/valainterfacetype.Plo
-	-rm -f ./$(DEPDIR)/valainvalidtype.Plo
-	-rm -f ./$(DEPDIR)/valalambdaexpression.Plo
-	-rm -f ./$(DEPDIR)/valaliteral.Plo
-	-rm -f ./$(DEPDIR)/valalocalvariable.Plo
-	-rm -f ./$(DEPDIR)/valalockable.Plo
-	-rm -f ./$(DEPDIR)/valalockstatement.Plo
-	-rm -f ./$(DEPDIR)/valaloop.Plo
-	-rm -f ./$(DEPDIR)/valamarkupreader.Plo
-	-rm -f ./$(DEPDIR)/valamemberaccess.Plo
-	-rm -f ./$(DEPDIR)/valamemberinitializer.Plo
-	-rm -f ./$(DEPDIR)/valamethod.Plo
-	-rm -f ./$(DEPDIR)/valamethodcall.Plo
-	-rm -f ./$(DEPDIR)/valamethodtype.Plo
-	-rm -f ./$(DEPDIR)/valanamedargument.Plo
-	-rm -f ./$(DEPDIR)/valanamespace.Plo
-	-rm -f ./$(DEPDIR)/valanullliteral.Plo
-	-rm -f ./$(DEPDIR)/valanulltype.Plo
-	-rm -f ./$(DEPDIR)/valaobjectcreationexpression.Plo
-	-rm -f ./$(DEPDIR)/valaobjecttype.Plo
-	-rm -f ./$(DEPDIR)/valaobjecttypesymbol.Plo
-	-rm -f ./$(DEPDIR)/valaparameter.Plo
-	-rm -f ./$(DEPDIR)/valaparser.Plo
-	-rm -f ./$(DEPDIR)/valaphifunction.Plo
-	-rm -f ./$(DEPDIR)/valapointerindirection.Plo
-	-rm -f ./$(DEPDIR)/valapointertype.Plo
-	-rm -f ./$(DEPDIR)/valapostfixexpression.Plo
-	-rm -f ./$(DEPDIR)/valaprofile.Plo
-	-rm -f ./$(DEPDIR)/valaproperty.Plo
-	-rm -f ./$(DEPDIR)/valapropertyaccessor.Plo
-	-rm -f ./$(DEPDIR)/valapropertyprototype.Plo
-	-rm -f ./$(DEPDIR)/valarealliteral.Plo
-	-rm -f ./$(DEPDIR)/valareferencetransferexpression.Plo
-	-rm -f ./$(DEPDIR)/valareferencetype.Plo
-	-rm -f ./$(DEPDIR)/valaregexliteral.Plo
-	-rm -f ./$(DEPDIR)/valareport.Plo
-	-rm -f ./$(DEPDIR)/valareturnstatement.Plo
-	-rm -f ./$(DEPDIR)/valascanner.Plo
-	-rm -f ./$(DEPDIR)/valascope.Plo
-	-rm -f ./$(DEPDIR)/valasemanticanalyzer.Plo
-	-rm -f ./$(DEPDIR)/valasignal.Plo
-	-rm -f ./$(DEPDIR)/valasignaltype.Plo
-	-rm -f ./$(DEPDIR)/valasizeofexpression.Plo
-	-rm -f ./$(DEPDIR)/valasliceexpression.Plo
-	-rm -f ./$(DEPDIR)/valasourcefile.Plo
-	-rm -f ./$(DEPDIR)/valasourcelocation.Plo
-	-rm -f ./$(DEPDIR)/valasourcereference.Plo
-	-rm -f ./$(DEPDIR)/valastatement.Plo
-	-rm -f ./$(DEPDIR)/valastatementlist.Plo
-	-rm -f ./$(DEPDIR)/valastringliteral.Plo
-	-rm -f ./$(DEPDIR)/valastruct.Plo
-	-rm -f ./$(DEPDIR)/valastructvaluetype.Plo
-	-rm -f ./$(DEPDIR)/valasubroutine.Plo
-	-rm -f ./$(DEPDIR)/valaswitchlabel.Plo
-	-rm -f ./$(DEPDIR)/valaswitchsection.Plo
-	-rm -f ./$(DEPDIR)/valaswitchstatement.Plo
-	-rm -f ./$(DEPDIR)/valasymbol.Plo
-	-rm -f ./$(DEPDIR)/valasymbolresolver.Plo
-	-rm -f ./$(DEPDIR)/valatargetvalue.Plo
-	-rm -f ./$(DEPDIR)/valatemplate.Plo
-	-rm -f ./$(DEPDIR)/valathrowstatement.Plo
-	-rm -f ./$(DEPDIR)/valatokentype.Plo
-	-rm -f ./$(DEPDIR)/valatraversevisitor.Plo
-	-rm -f ./$(DEPDIR)/valatrystatement.Plo
-	-rm -f ./$(DEPDIR)/valatuple.Plo
-	-rm -f ./$(DEPDIR)/valatypecheck.Plo
-	-rm -f ./$(DEPDIR)/valatypeofexpression.Plo
-	-rm -f ./$(DEPDIR)/valatypeparameter.Plo
-	-rm -f ./$(DEPDIR)/valatypesymbol.Plo
-	-rm -f ./$(DEPDIR)/valaunaryexpression.Plo
-	-rm -f ./$(DEPDIR)/valaunlockstatement.Plo
-	-rm -f ./$(DEPDIR)/valaunresolvedsymbol.Plo
-	-rm -f ./$(DEPDIR)/valaunresolvedtype.Plo
-	-rm -f ./$(DEPDIR)/valausedattr.Plo
-	-rm -f ./$(DEPDIR)/valausingdirective.Plo
-	-rm -f ./$(DEPDIR)/valavaluetype.Plo
-	-rm -f ./$(DEPDIR)/valavariable.Plo
-	-rm -f ./$(DEPDIR)/valavartype.Plo
-	-rm -f ./$(DEPDIR)/valaversion.Plo
-	-rm -f ./$(DEPDIR)/valaversionattribute.Plo
-	-rm -f ./$(DEPDIR)/valavoidtype.Plo
-	-rm -f ./$(DEPDIR)/valawhilestatement.Plo
-	-rm -f ./$(DEPDIR)/valayieldstatement.Plo
+		-rm -f ./$(DEPDIR)/balaaddressofexpression.Plo
+	-rm -f ./$(DEPDIR)/balaarraycopymethod.Plo
+	-rm -f ./$(DEPDIR)/balaarraycreationexpression.Plo
+	-rm -f ./$(DEPDIR)/balaarraylengthfield.Plo
+	-rm -f ./$(DEPDIR)/balaarraymovemethod.Plo
+	-rm -f ./$(DEPDIR)/balaarrayresizemethod.Plo
+	-rm -f ./$(DEPDIR)/balaarraytype.Plo
+	-rm -f ./$(DEPDIR)/balaassignment.Plo
+	-rm -f ./$(DEPDIR)/balaattribute.Plo
+	-rm -f ./$(DEPDIR)/balabaseaccess.Plo
+	-rm -f ./$(DEPDIR)/balabasicblock.Plo
+	-rm -f ./$(DEPDIR)/balabinaryexpression.Plo
+	-rm -f ./$(DEPDIR)/balablock.Plo
+	-rm -f ./$(DEPDIR)/balabooleanliteral.Plo
+	-rm -f ./$(DEPDIR)/balabooleantype.Plo
+	-rm -f ./$(DEPDIR)/balabreakstatement.Plo
+	-rm -f ./$(DEPDIR)/balacallable.Plo
+	-rm -f ./$(DEPDIR)/balacallabletype.Plo
+	-rm -f ./$(DEPDIR)/balacastexpression.Plo
+	-rm -f ./$(DEPDIR)/balacatchclause.Plo
+	-rm -f ./$(DEPDIR)/balacharacterliteral.Plo
+	-rm -f ./$(DEPDIR)/balaclass.Plo
+	-rm -f ./$(DEPDIR)/balaclasstype.Plo
+	-rm -f ./$(DEPDIR)/balacodecontext.Plo
+	-rm -f ./$(DEPDIR)/balacodegenerator.Plo
+	-rm -f ./$(DEPDIR)/balacodenode.Plo
+	-rm -f ./$(DEPDIR)/balacodevisitor.Plo
+	-rm -f ./$(DEPDIR)/balacodewriter.Plo
+	-rm -f ./$(DEPDIR)/balacomment.Plo
+	-rm -f ./$(DEPDIR)/balaconditionalexpression.Plo
+	-rm -f ./$(DEPDIR)/balaconstant.Plo
+	-rm -f ./$(DEPDIR)/balaconstructor.Plo
+	-rm -f ./$(DEPDIR)/balacontinuestatement.Plo
+	-rm -f ./$(DEPDIR)/balacreationmethod.Plo
+	-rm -f ./$(DEPDIR)/baladatatype.Plo
+	-rm -f ./$(DEPDIR)/baladeclarationstatement.Plo
+	-rm -f ./$(DEPDIR)/baladelegate.Plo
+	-rm -f ./$(DEPDIR)/baladelegatedestroyfield.Plo
+	-rm -f ./$(DEPDIR)/baladelegatetargetfield.Plo
+	-rm -f ./$(DEPDIR)/baladelegatetype.Plo
+	-rm -f ./$(DEPDIR)/baladeletestatement.Plo
+	-rm -f ./$(DEPDIR)/baladestructor.Plo
+	-rm -f ./$(DEPDIR)/baladostatement.Plo
+	-rm -f ./$(DEPDIR)/baladynamicmethod.Plo
+	-rm -f ./$(DEPDIR)/baladynamicproperty.Plo
+	-rm -f ./$(DEPDIR)/baladynamicsignal.Plo
+	-rm -f ./$(DEPDIR)/balaelementaccess.Plo
+	-rm -f ./$(DEPDIR)/balaemptystatement.Plo
+	-rm -f ./$(DEPDIR)/balaenum.Plo
+	-rm -f ./$(DEPDIR)/balaenumvalue.Plo
+	-rm -f ./$(DEPDIR)/balaenumvaluetype.Plo
+	-rm -f ./$(DEPDIR)/balaerrorcode.Plo
+	-rm -f ./$(DEPDIR)/balaerrordomain.Plo
+	-rm -f ./$(DEPDIR)/balaerrortype.Plo
+	-rm -f ./$(DEPDIR)/balaexpression.Plo
+	-rm -f ./$(DEPDIR)/balaexpressionstatement.Plo
+	-rm -f ./$(DEPDIR)/balafield.Plo
+	-rm -f ./$(DEPDIR)/balafieldprototype.Plo
+	-rm -f ./$(DEPDIR)/balafloatingtype.Plo
+	-rm -f ./$(DEPDIR)/balaflowanalyzer.Plo
+	-rm -f ./$(DEPDIR)/balaforeachstatement.Plo
+	-rm -f ./$(DEPDIR)/balaforstatement.Plo
+	-rm -f ./$(DEPDIR)/balagenericdestroyfield.Plo
+	-rm -f ./$(DEPDIR)/balagenericdupfield.Plo
+	-rm -f ./$(DEPDIR)/balagenerictype.Plo
+	-rm -f ./$(DEPDIR)/balagenieparser.Plo
+	-rm -f ./$(DEPDIR)/balageniescanner.Plo
+	-rm -f ./$(DEPDIR)/balagenietokentype.Plo
+	-rm -f ./$(DEPDIR)/balagircomment.Plo
+	-rm -f ./$(DEPDIR)/balagirparser.Plo
+	-rm -f ./$(DEPDIR)/balaifstatement.Plo
+	-rm -f ./$(DEPDIR)/balainitializerlist.Plo
+	-rm -f ./$(DEPDIR)/balaintegerliteral.Plo
+	-rm -f ./$(DEPDIR)/balaintegertype.Plo
+	-rm -f ./$(DEPDIR)/balainterface.Plo
+	-rm -f ./$(DEPDIR)/balainterfacetype.Plo
+	-rm -f ./$(DEPDIR)/balainvalidtype.Plo
+	-rm -f ./$(DEPDIR)/balalambdaexpression.Plo
+	-rm -f ./$(DEPDIR)/balaliteral.Plo
+	-rm -f ./$(DEPDIR)/balalocalvariable.Plo
+	-rm -f ./$(DEPDIR)/balalockable.Plo
+	-rm -f ./$(DEPDIR)/balalockstatement.Plo
+	-rm -f ./$(DEPDIR)/balaloop.Plo
+	-rm -f ./$(DEPDIR)/balamarkupreader.Plo
+	-rm -f ./$(DEPDIR)/balamemberaccess.Plo
+	-rm -f ./$(DEPDIR)/balamemberinitializer.Plo
+	-rm -f ./$(DEPDIR)/balamethod.Plo
+	-rm -f ./$(DEPDIR)/balamethodcall.Plo
+	-rm -f ./$(DEPDIR)/balamethodtype.Plo
+	-rm -f ./$(DEPDIR)/balanamedargument.Plo
+	-rm -f ./$(DEPDIR)/balanamespace.Plo
+	-rm -f ./$(DEPDIR)/balanullliteral.Plo
+	-rm -f ./$(DEPDIR)/balanulltype.Plo
+	-rm -f ./$(DEPDIR)/balaobjectcreationexpression.Plo
+	-rm -f ./$(DEPDIR)/balaobjecttype.Plo
+	-rm -f ./$(DEPDIR)/balaobjecttypesymbol.Plo
+	-rm -f ./$(DEPDIR)/balaparameter.Plo
+	-rm -f ./$(DEPDIR)/balaparser.Plo
+	-rm -f ./$(DEPDIR)/balaphifunction.Plo
+	-rm -f ./$(DEPDIR)/balapointerindirection.Plo
+	-rm -f ./$(DEPDIR)/balapointertype.Plo
+	-rm -f ./$(DEPDIR)/balapostfixexpression.Plo
+	-rm -f ./$(DEPDIR)/balaprofile.Plo
+	-rm -f ./$(DEPDIR)/balaproperty.Plo
+	-rm -f ./$(DEPDIR)/balapropertyaccessor.Plo
+	-rm -f ./$(DEPDIR)/balapropertyprototype.Plo
+	-rm -f ./$(DEPDIR)/balarealliteral.Plo
+	-rm -f ./$(DEPDIR)/balareferencetransferexpression.Plo
+	-rm -f ./$(DEPDIR)/balareferencetype.Plo
+	-rm -f ./$(DEPDIR)/balaregexliteral.Plo
+	-rm -f ./$(DEPDIR)/balareport.Plo
+	-rm -f ./$(DEPDIR)/balareturnstatement.Plo
+	-rm -f ./$(DEPDIR)/balascanner.Plo
+	-rm -f ./$(DEPDIR)/balascope.Plo
+	-rm -f ./$(DEPDIR)/balasemanticanalyzer.Plo
+	-rm -f ./$(DEPDIR)/balasignal.Plo
+	-rm -f ./$(DEPDIR)/balasignaltype.Plo
+	-rm -f ./$(DEPDIR)/balasizeofexpression.Plo
+	-rm -f ./$(DEPDIR)/balasliceexpression.Plo
+	-rm -f ./$(DEPDIR)/balasourcefile.Plo
+	-rm -f ./$(DEPDIR)/balasourcelocation.Plo
+	-rm -f ./$(DEPDIR)/balasourcereference.Plo
+	-rm -f ./$(DEPDIR)/balastatement.Plo
+	-rm -f ./$(DEPDIR)/balastatementlist.Plo
+	-rm -f ./$(DEPDIR)/balastringliteral.Plo
+	-rm -f ./$(DEPDIR)/balastruct.Plo
+	-rm -f ./$(DEPDIR)/balastructvaluetype.Plo
+	-rm -f ./$(DEPDIR)/balasubroutine.Plo
+	-rm -f ./$(DEPDIR)/balaswitchlabel.Plo
+	-rm -f ./$(DEPDIR)/balaswitchsection.Plo
+	-rm -f ./$(DEPDIR)/balaswitchstatement.Plo
+	-rm -f ./$(DEPDIR)/balasymbol.Plo
+	-rm -f ./$(DEPDIR)/balasymbolresolver.Plo
+	-rm -f ./$(DEPDIR)/balatargetvalue.Plo
+	-rm -f ./$(DEPDIR)/balatemplate.Plo
+	-rm -f ./$(DEPDIR)/balathrowstatement.Plo
+	-rm -f ./$(DEPDIR)/balatokentype.Plo
+	-rm -f ./$(DEPDIR)/balatraversevisitor.Plo
+	-rm -f ./$(DEPDIR)/balatrystatement.Plo
+	-rm -f ./$(DEPDIR)/balatuple.Plo
+	-rm -f ./$(DEPDIR)/balatypecheck.Plo
+	-rm -f ./$(DEPDIR)/balatypeofexpression.Plo
+	-rm -f ./$(DEPDIR)/balatypeparameter.Plo
+	-rm -f ./$(DEPDIR)/balatypesymbol.Plo
+	-rm -f ./$(DEPDIR)/balaunaryexpression.Plo
+	-rm -f ./$(DEPDIR)/balaunlockstatement.Plo
+	-rm -f ./$(DEPDIR)/balaunresolvedsymbol.Plo
+	-rm -f ./$(DEPDIR)/balaunresolvedtype.Plo
+	-rm -f ./$(DEPDIR)/balausedattr.Plo
+	-rm -f ./$(DEPDIR)/balausingdirective.Plo
+	-rm -f ./$(DEPDIR)/balavaluetype.Plo
+	-rm -f ./$(DEPDIR)/balavariable.Plo
+	-rm -f ./$(DEPDIR)/balavartype.Plo
+	-rm -f ./$(DEPDIR)/balaversion.Plo
+	-rm -f ./$(DEPDIR)/balaversionattribute.Plo
+	-rm -f ./$(DEPDIR)/balavoidtype.Plo
+	-rm -f ./$(DEPDIR)/balawhilestatement.Plo
+	-rm -f ./$(DEPDIR)/balayieldstatement.Plo
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -1382,7 +1382,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-dist_vapiDATA install-valaincludeHEADERS
+install-data-am: install-dist_vapiDATA install-balaincludeHEADERS
 
 install-dvi: install-dvi-am
 
@@ -1411,164 +1411,164 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/valaaddressofexpression.Plo
-	-rm -f ./$(DEPDIR)/valaarraycopymethod.Plo
-	-rm -f ./$(DEPDIR)/valaarraycreationexpression.Plo
-	-rm -f ./$(DEPDIR)/valaarraylengthfield.Plo
-	-rm -f ./$(DEPDIR)/valaarraymovemethod.Plo
-	-rm -f ./$(DEPDIR)/valaarrayresizemethod.Plo
-	-rm -f ./$(DEPDIR)/valaarraytype.Plo
-	-rm -f ./$(DEPDIR)/valaassignment.Plo
-	-rm -f ./$(DEPDIR)/valaattribute.Plo
-	-rm -f ./$(DEPDIR)/valabaseaccess.Plo
-	-rm -f ./$(DEPDIR)/valabasicblock.Plo
-	-rm -f ./$(DEPDIR)/valabinaryexpression.Plo
-	-rm -f ./$(DEPDIR)/valablock.Plo
-	-rm -f ./$(DEPDIR)/valabooleanliteral.Plo
-	-rm -f ./$(DEPDIR)/valabooleantype.Plo
-	-rm -f ./$(DEPDIR)/valabreakstatement.Plo
-	-rm -f ./$(DEPDIR)/valacallable.Plo
-	-rm -f ./$(DEPDIR)/valacallabletype.Plo
-	-rm -f ./$(DEPDIR)/valacastexpression.Plo
-	-rm -f ./$(DEPDIR)/valacatchclause.Plo
-	-rm -f ./$(DEPDIR)/valacharacterliteral.Plo
-	-rm -f ./$(DEPDIR)/valaclass.Plo
-	-rm -f ./$(DEPDIR)/valaclasstype.Plo
-	-rm -f ./$(DEPDIR)/valacodecontext.Plo
-	-rm -f ./$(DEPDIR)/valacodegenerator.Plo
-	-rm -f ./$(DEPDIR)/valacodenode.Plo
-	-rm -f ./$(DEPDIR)/valacodevisitor.Plo
-	-rm -f ./$(DEPDIR)/valacodewriter.Plo
-	-rm -f ./$(DEPDIR)/valacomment.Plo
-	-rm -f ./$(DEPDIR)/valaconditionalexpression.Plo
-	-rm -f ./$(DEPDIR)/valaconstant.Plo
-	-rm -f ./$(DEPDIR)/valaconstructor.Plo
-	-rm -f ./$(DEPDIR)/valacontinuestatement.Plo
-	-rm -f ./$(DEPDIR)/valacreationmethod.Plo
-	-rm -f ./$(DEPDIR)/valadatatype.Plo
-	-rm -f ./$(DEPDIR)/valadeclarationstatement.Plo
-	-rm -f ./$(DEPDIR)/valadelegate.Plo
-	-rm -f ./$(DEPDIR)/valadelegatedestroyfield.Plo
-	-rm -f ./$(DEPDIR)/valadelegatetargetfield.Plo
-	-rm -f ./$(DEPDIR)/valadelegatetype.Plo
-	-rm -f ./$(DEPDIR)/valadeletestatement.Plo
-	-rm -f ./$(DEPDIR)/valadestructor.Plo
-	-rm -f ./$(DEPDIR)/valadostatement.Plo
-	-rm -f ./$(DEPDIR)/valadynamicmethod.Plo
-	-rm -f ./$(DEPDIR)/valadynamicproperty.Plo
-	-rm -f ./$(DEPDIR)/valadynamicsignal.Plo
-	-rm -f ./$(DEPDIR)/valaelementaccess.Plo
-	-rm -f ./$(DEPDIR)/valaemptystatement.Plo
-	-rm -f ./$(DEPDIR)/valaenum.Plo
-	-rm -f ./$(DEPDIR)/valaenumvalue.Plo
-	-rm -f ./$(DEPDIR)/valaenumvaluetype.Plo
-	-rm -f ./$(DEPDIR)/valaerrorcode.Plo
-	-rm -f ./$(DEPDIR)/valaerrordomain.Plo
-	-rm -f ./$(DEPDIR)/valaerrortype.Plo
-	-rm -f ./$(DEPDIR)/valaexpression.Plo
-	-rm -f ./$(DEPDIR)/valaexpressionstatement.Plo
-	-rm -f ./$(DEPDIR)/valafield.Plo
-	-rm -f ./$(DEPDIR)/valafieldprototype.Plo
-	-rm -f ./$(DEPDIR)/valafloatingtype.Plo
-	-rm -f ./$(DEPDIR)/valaflowanalyzer.Plo
-	-rm -f ./$(DEPDIR)/valaforeachstatement.Plo
-	-rm -f ./$(DEPDIR)/valaforstatement.Plo
-	-rm -f ./$(DEPDIR)/valagenericdestroyfield.Plo
-	-rm -f ./$(DEPDIR)/valagenericdupfield.Plo
-	-rm -f ./$(DEPDIR)/valagenerictype.Plo
-	-rm -f ./$(DEPDIR)/valagenieparser.Plo
-	-rm -f ./$(DEPDIR)/valageniescanner.Plo
-	-rm -f ./$(DEPDIR)/valagenietokentype.Plo
-	-rm -f ./$(DEPDIR)/valagircomment.Plo
-	-rm -f ./$(DEPDIR)/valagirparser.Plo
-	-rm -f ./$(DEPDIR)/valaifstatement.Plo
-	-rm -f ./$(DEPDIR)/valainitializerlist.Plo
-	-rm -f ./$(DEPDIR)/valaintegerliteral.Plo
-	-rm -f ./$(DEPDIR)/valaintegertype.Plo
-	-rm -f ./$(DEPDIR)/valainterface.Plo
-	-rm -f ./$(DEPDIR)/valainterfacetype.Plo
-	-rm -f ./$(DEPDIR)/valainvalidtype.Plo
-	-rm -f ./$(DEPDIR)/valalambdaexpression.Plo
-	-rm -f ./$(DEPDIR)/valaliteral.Plo
-	-rm -f ./$(DEPDIR)/valalocalvariable.Plo
-	-rm -f ./$(DEPDIR)/valalockable.Plo
-	-rm -f ./$(DEPDIR)/valalockstatement.Plo
-	-rm -f ./$(DEPDIR)/valaloop.Plo
-	-rm -f ./$(DEPDIR)/valamarkupreader.Plo
-	-rm -f ./$(DEPDIR)/valamemberaccess.Plo
-	-rm -f ./$(DEPDIR)/valamemberinitializer.Plo
-	-rm -f ./$(DEPDIR)/valamethod.Plo
-	-rm -f ./$(DEPDIR)/valamethodcall.Plo
-	-rm -f ./$(DEPDIR)/valamethodtype.Plo
-	-rm -f ./$(DEPDIR)/valanamedargument.Plo
-	-rm -f ./$(DEPDIR)/valanamespace.Plo
-	-rm -f ./$(DEPDIR)/valanullliteral.Plo
-	-rm -f ./$(DEPDIR)/valanulltype.Plo
-	-rm -f ./$(DEPDIR)/valaobjectcreationexpression.Plo
-	-rm -f ./$(DEPDIR)/valaobjecttype.Plo
-	-rm -f ./$(DEPDIR)/valaobjecttypesymbol.Plo
-	-rm -f ./$(DEPDIR)/valaparameter.Plo
-	-rm -f ./$(DEPDIR)/valaparser.Plo
-	-rm -f ./$(DEPDIR)/valaphifunction.Plo
-	-rm -f ./$(DEPDIR)/valapointerindirection.Plo
-	-rm -f ./$(DEPDIR)/valapointertype.Plo
-	-rm -f ./$(DEPDIR)/valapostfixexpression.Plo
-	-rm -f ./$(DEPDIR)/valaprofile.Plo
-	-rm -f ./$(DEPDIR)/valaproperty.Plo
-	-rm -f ./$(DEPDIR)/valapropertyaccessor.Plo
-	-rm -f ./$(DEPDIR)/valapropertyprototype.Plo
-	-rm -f ./$(DEPDIR)/valarealliteral.Plo
-	-rm -f ./$(DEPDIR)/valareferencetransferexpression.Plo
-	-rm -f ./$(DEPDIR)/valareferencetype.Plo
-	-rm -f ./$(DEPDIR)/valaregexliteral.Plo
-	-rm -f ./$(DEPDIR)/valareport.Plo
-	-rm -f ./$(DEPDIR)/valareturnstatement.Plo
-	-rm -f ./$(DEPDIR)/valascanner.Plo
-	-rm -f ./$(DEPDIR)/valascope.Plo
-	-rm -f ./$(DEPDIR)/valasemanticanalyzer.Plo
-	-rm -f ./$(DEPDIR)/valasignal.Plo
-	-rm -f ./$(DEPDIR)/valasignaltype.Plo
-	-rm -f ./$(DEPDIR)/valasizeofexpression.Plo
-	-rm -f ./$(DEPDIR)/valasliceexpression.Plo
-	-rm -f ./$(DEPDIR)/valasourcefile.Plo
-	-rm -f ./$(DEPDIR)/valasourcelocation.Plo
-	-rm -f ./$(DEPDIR)/valasourcereference.Plo
-	-rm -f ./$(DEPDIR)/valastatement.Plo
-	-rm -f ./$(DEPDIR)/valastatementlist.Plo
-	-rm -f ./$(DEPDIR)/valastringliteral.Plo
-	-rm -f ./$(DEPDIR)/valastruct.Plo
-	-rm -f ./$(DEPDIR)/valastructvaluetype.Plo
-	-rm -f ./$(DEPDIR)/valasubroutine.Plo
-	-rm -f ./$(DEPDIR)/valaswitchlabel.Plo
-	-rm -f ./$(DEPDIR)/valaswitchsection.Plo
-	-rm -f ./$(DEPDIR)/valaswitchstatement.Plo
-	-rm -f ./$(DEPDIR)/valasymbol.Plo
-	-rm -f ./$(DEPDIR)/valasymbolresolver.Plo
-	-rm -f ./$(DEPDIR)/valatargetvalue.Plo
-	-rm -f ./$(DEPDIR)/valatemplate.Plo
-	-rm -f ./$(DEPDIR)/valathrowstatement.Plo
-	-rm -f ./$(DEPDIR)/valatokentype.Plo
-	-rm -f ./$(DEPDIR)/valatraversevisitor.Plo
-	-rm -f ./$(DEPDIR)/valatrystatement.Plo
-	-rm -f ./$(DEPDIR)/valatuple.Plo
-	-rm -f ./$(DEPDIR)/valatypecheck.Plo
-	-rm -f ./$(DEPDIR)/valatypeofexpression.Plo
-	-rm -f ./$(DEPDIR)/valatypeparameter.Plo
-	-rm -f ./$(DEPDIR)/valatypesymbol.Plo
-	-rm -f ./$(DEPDIR)/valaunaryexpression.Plo
-	-rm -f ./$(DEPDIR)/valaunlockstatement.Plo
-	-rm -f ./$(DEPDIR)/valaunresolvedsymbol.Plo
-	-rm -f ./$(DEPDIR)/valaunresolvedtype.Plo
-	-rm -f ./$(DEPDIR)/valausedattr.Plo
-	-rm -f ./$(DEPDIR)/valausingdirective.Plo
-	-rm -f ./$(DEPDIR)/valavaluetype.Plo
-	-rm -f ./$(DEPDIR)/valavariable.Plo
-	-rm -f ./$(DEPDIR)/valavartype.Plo
-	-rm -f ./$(DEPDIR)/valaversion.Plo
-	-rm -f ./$(DEPDIR)/valaversionattribute.Plo
-	-rm -f ./$(DEPDIR)/valavoidtype.Plo
-	-rm -f ./$(DEPDIR)/valawhilestatement.Plo
-	-rm -f ./$(DEPDIR)/valayieldstatement.Plo
+		-rm -f ./$(DEPDIR)/balaaddressofexpression.Plo
+	-rm -f ./$(DEPDIR)/balaarraycopymethod.Plo
+	-rm -f ./$(DEPDIR)/balaarraycreationexpression.Plo
+	-rm -f ./$(DEPDIR)/balaarraylengthfield.Plo
+	-rm -f ./$(DEPDIR)/balaarraymovemethod.Plo
+	-rm -f ./$(DEPDIR)/balaarrayresizemethod.Plo
+	-rm -f ./$(DEPDIR)/balaarraytype.Plo
+	-rm -f ./$(DEPDIR)/balaassignment.Plo
+	-rm -f ./$(DEPDIR)/balaattribute.Plo
+	-rm -f ./$(DEPDIR)/balabaseaccess.Plo
+	-rm -f ./$(DEPDIR)/balabasicblock.Plo
+	-rm -f ./$(DEPDIR)/balabinaryexpression.Plo
+	-rm -f ./$(DEPDIR)/balablock.Plo
+	-rm -f ./$(DEPDIR)/balabooleanliteral.Plo
+	-rm -f ./$(DEPDIR)/balabooleantype.Plo
+	-rm -f ./$(DEPDIR)/balabreakstatement.Plo
+	-rm -f ./$(DEPDIR)/balacallable.Plo
+	-rm -f ./$(DEPDIR)/balacallabletype.Plo
+	-rm -f ./$(DEPDIR)/balacastexpression.Plo
+	-rm -f ./$(DEPDIR)/balacatchclause.Plo
+	-rm -f ./$(DEPDIR)/balacharacterliteral.Plo
+	-rm -f ./$(DEPDIR)/balaclass.Plo
+	-rm -f ./$(DEPDIR)/balaclasstype.Plo
+	-rm -f ./$(DEPDIR)/balacodecontext.Plo
+	-rm -f ./$(DEPDIR)/balacodegenerator.Plo
+	-rm -f ./$(DEPDIR)/balacodenode.Plo
+	-rm -f ./$(DEPDIR)/balacodevisitor.Plo
+	-rm -f ./$(DEPDIR)/balacodewriter.Plo
+	-rm -f ./$(DEPDIR)/balacomment.Plo
+	-rm -f ./$(DEPDIR)/balaconditionalexpression.Plo
+	-rm -f ./$(DEPDIR)/balaconstant.Plo
+	-rm -f ./$(DEPDIR)/balaconstructor.Plo
+	-rm -f ./$(DEPDIR)/balacontinuestatement.Plo
+	-rm -f ./$(DEPDIR)/balacreationmethod.Plo
+	-rm -f ./$(DEPDIR)/baladatatype.Plo
+	-rm -f ./$(DEPDIR)/baladeclarationstatement.Plo
+	-rm -f ./$(DEPDIR)/baladelegate.Plo
+	-rm -f ./$(DEPDIR)/baladelegatedestroyfield.Plo
+	-rm -f ./$(DEPDIR)/baladelegatetargetfield.Plo
+	-rm -f ./$(DEPDIR)/baladelegatetype.Plo
+	-rm -f ./$(DEPDIR)/baladeletestatement.Plo
+	-rm -f ./$(DEPDIR)/baladestructor.Plo
+	-rm -f ./$(DEPDIR)/baladostatement.Plo
+	-rm -f ./$(DEPDIR)/baladynamicmethod.Plo
+	-rm -f ./$(DEPDIR)/baladynamicproperty.Plo
+	-rm -f ./$(DEPDIR)/baladynamicsignal.Plo
+	-rm -f ./$(DEPDIR)/balaelementaccess.Plo
+	-rm -f ./$(DEPDIR)/balaemptystatement.Plo
+	-rm -f ./$(DEPDIR)/balaenum.Plo
+	-rm -f ./$(DEPDIR)/balaenumvalue.Plo
+	-rm -f ./$(DEPDIR)/balaenumvaluetype.Plo
+	-rm -f ./$(DEPDIR)/balaerrorcode.Plo
+	-rm -f ./$(DEPDIR)/balaerrordomain.Plo
+	-rm -f ./$(DEPDIR)/balaerrortype.Plo
+	-rm -f ./$(DEPDIR)/balaexpression.Plo
+	-rm -f ./$(DEPDIR)/balaexpressionstatement.Plo
+	-rm -f ./$(DEPDIR)/balafield.Plo
+	-rm -f ./$(DEPDIR)/balafieldprototype.Plo
+	-rm -f ./$(DEPDIR)/balafloatingtype.Plo
+	-rm -f ./$(DEPDIR)/balaflowanalyzer.Plo
+	-rm -f ./$(DEPDIR)/balaforeachstatement.Plo
+	-rm -f ./$(DEPDIR)/balaforstatement.Plo
+	-rm -f ./$(DEPDIR)/balagenericdestroyfield.Plo
+	-rm -f ./$(DEPDIR)/balagenericdupfield.Plo
+	-rm -f ./$(DEPDIR)/balagenerictype.Plo
+	-rm -f ./$(DEPDIR)/balagenieparser.Plo
+	-rm -f ./$(DEPDIR)/balageniescanner.Plo
+	-rm -f ./$(DEPDIR)/balagenietokentype.Plo
+	-rm -f ./$(DEPDIR)/balagircomment.Plo
+	-rm -f ./$(DEPDIR)/balagirparser.Plo
+	-rm -f ./$(DEPDIR)/balaifstatement.Plo
+	-rm -f ./$(DEPDIR)/balainitializerlist.Plo
+	-rm -f ./$(DEPDIR)/balaintegerliteral.Plo
+	-rm -f ./$(DEPDIR)/balaintegertype.Plo
+	-rm -f ./$(DEPDIR)/balainterface.Plo
+	-rm -f ./$(DEPDIR)/balainterfacetype.Plo
+	-rm -f ./$(DEPDIR)/balainvalidtype.Plo
+	-rm -f ./$(DEPDIR)/balalambdaexpression.Plo
+	-rm -f ./$(DEPDIR)/balaliteral.Plo
+	-rm -f ./$(DEPDIR)/balalocalvariable.Plo
+	-rm -f ./$(DEPDIR)/balalockable.Plo
+	-rm -f ./$(DEPDIR)/balalockstatement.Plo
+	-rm -f ./$(DEPDIR)/balaloop.Plo
+	-rm -f ./$(DEPDIR)/balamarkupreader.Plo
+	-rm -f ./$(DEPDIR)/balamemberaccess.Plo
+	-rm -f ./$(DEPDIR)/balamemberinitializer.Plo
+	-rm -f ./$(DEPDIR)/balamethod.Plo
+	-rm -f ./$(DEPDIR)/balamethodcall.Plo
+	-rm -f ./$(DEPDIR)/balamethodtype.Plo
+	-rm -f ./$(DEPDIR)/balanamedargument.Plo
+	-rm -f ./$(DEPDIR)/balanamespace.Plo
+	-rm -f ./$(DEPDIR)/balanullliteral.Plo
+	-rm -f ./$(DEPDIR)/balanulltype.Plo
+	-rm -f ./$(DEPDIR)/balaobjectcreationexpression.Plo
+	-rm -f ./$(DEPDIR)/balaobjecttype.Plo
+	-rm -f ./$(DEPDIR)/balaobjecttypesymbol.Plo
+	-rm -f ./$(DEPDIR)/balaparameter.Plo
+	-rm -f ./$(DEPDIR)/balaparser.Plo
+	-rm -f ./$(DEPDIR)/balaphifunction.Plo
+	-rm -f ./$(DEPDIR)/balapointerindirection.Plo
+	-rm -f ./$(DEPDIR)/balapointertype.Plo
+	-rm -f ./$(DEPDIR)/balapostfixexpression.Plo
+	-rm -f ./$(DEPDIR)/balaprofile.Plo
+	-rm -f ./$(DEPDIR)/balaproperty.Plo
+	-rm -f ./$(DEPDIR)/balapropertyaccessor.Plo
+	-rm -f ./$(DEPDIR)/balapropertyprototype.Plo
+	-rm -f ./$(DEPDIR)/balarealliteral.Plo
+	-rm -f ./$(DEPDIR)/balareferencetransferexpression.Plo
+	-rm -f ./$(DEPDIR)/balareferencetype.Plo
+	-rm -f ./$(DEPDIR)/balaregexliteral.Plo
+	-rm -f ./$(DEPDIR)/balareport.Plo
+	-rm -f ./$(DEPDIR)/balareturnstatement.Plo
+	-rm -f ./$(DEPDIR)/balascanner.Plo
+	-rm -f ./$(DEPDIR)/balascope.Plo
+	-rm -f ./$(DEPDIR)/balasemanticanalyzer.Plo
+	-rm -f ./$(DEPDIR)/balasignal.Plo
+	-rm -f ./$(DEPDIR)/balasignaltype.Plo
+	-rm -f ./$(DEPDIR)/balasizeofexpression.Plo
+	-rm -f ./$(DEPDIR)/balasliceexpression.Plo
+	-rm -f ./$(DEPDIR)/balasourcefile.Plo
+	-rm -f ./$(DEPDIR)/balasourcelocation.Plo
+	-rm -f ./$(DEPDIR)/balasourcereference.Plo
+	-rm -f ./$(DEPDIR)/balastatement.Plo
+	-rm -f ./$(DEPDIR)/balastatementlist.Plo
+	-rm -f ./$(DEPDIR)/balastringliteral.Plo
+	-rm -f ./$(DEPDIR)/balastruct.Plo
+	-rm -f ./$(DEPDIR)/balastructvaluetype.Plo
+	-rm -f ./$(DEPDIR)/balasubroutine.Plo
+	-rm -f ./$(DEPDIR)/balaswitchlabel.Plo
+	-rm -f ./$(DEPDIR)/balaswitchsection.Plo
+	-rm -f ./$(DEPDIR)/balaswitchstatement.Plo
+	-rm -f ./$(DEPDIR)/balasymbol.Plo
+	-rm -f ./$(DEPDIR)/balasymbolresolver.Plo
+	-rm -f ./$(DEPDIR)/balatargetvalue.Plo
+	-rm -f ./$(DEPDIR)/balatemplate.Plo
+	-rm -f ./$(DEPDIR)/balathrowstatement.Plo
+	-rm -f ./$(DEPDIR)/balatokentype.Plo
+	-rm -f ./$(DEPDIR)/balatraversevisitor.Plo
+	-rm -f ./$(DEPDIR)/balatrystatement.Plo
+	-rm -f ./$(DEPDIR)/balatuple.Plo
+	-rm -f ./$(DEPDIR)/balatypecheck.Plo
+	-rm -f ./$(DEPDIR)/balatypeofexpression.Plo
+	-rm -f ./$(DEPDIR)/balatypeparameter.Plo
+	-rm -f ./$(DEPDIR)/balatypesymbol.Plo
+	-rm -f ./$(DEPDIR)/balaunaryexpression.Plo
+	-rm -f ./$(DEPDIR)/balaunlockstatement.Plo
+	-rm -f ./$(DEPDIR)/balaunresolvedsymbol.Plo
+	-rm -f ./$(DEPDIR)/balaunresolvedtype.Plo
+	-rm -f ./$(DEPDIR)/balausedattr.Plo
+	-rm -f ./$(DEPDIR)/balausingdirective.Plo
+	-rm -f ./$(DEPDIR)/balavaluetype.Plo
+	-rm -f ./$(DEPDIR)/balavariable.Plo
+	-rm -f ./$(DEPDIR)/balavartype.Plo
+	-rm -f ./$(DEPDIR)/balaversion.Plo
+	-rm -f ./$(DEPDIR)/balaversionattribute.Plo
+	-rm -f ./$(DEPDIR)/balavoidtype.Plo
+	-rm -f ./$(DEPDIR)/balawhilestatement.Plo
+	-rm -f ./$(DEPDIR)/balayieldstatement.Plo
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -1586,7 +1586,7 @@ ps: ps-am
 ps-am:
 
 uninstall-am: uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
-	uninstall-valaincludeHEADERS
+	uninstall-balaincludeHEADERS
 
 .MAKE: all check install install-am install-exec install-strip
 
@@ -1600,17 +1600,17 @@ uninstall-am: uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
 	install-html-am install-info install-info-am \
 	install-libLTLIBRARIES install-man install-pdf install-pdf-am \
 	install-ps install-ps-am install-strip \
-	install-valaincludeHEADERS installcheck installcheck-am \
+	install-balaincludeHEADERS installcheck installcheck-am \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-compile mostlyclean-generic \
 	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
 	uninstall-am uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
-	uninstall-valaincludeHEADERS
+	uninstall-balaincludeHEADERS
 
 .PRECIOUS: Makefile
 
 
-$(srcdir)/valaversion.vala:
+$(srcdir)/balaversion.bala:
 	sed -e "s#\@BALA_MAJOR_VERSION\@#$(BALA_MAJOR_VERSION)#g" \
 		-e "s#\@BALA_MINOR_VERSION\@#$(BALA_MINOR_VERSION)#g" \
 		-e "s#\@BALA_MICRO_VERSION\@#$(BALA_MICRO_VERSION)#g" \
@@ -1618,7 +1618,7 @@ $(srcdir)/valaversion.vala:
 		-e "s#\@PACKAGE_VERSION\@#$(PACKAGE_VERSION)#g" \
 		< $@.in > $@
 
-vala.vapi vala.vala.stamp: $(libvala_la_BALASOURCES)
+bala.vapi bala.bala.stamp: $(libbala_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -1627,12 +1627,12 @@ vala.vapi vala.vala.stamp: $(libvala_la_BALASOURCES)
 		--vapidir $(top_srcdir)/gee --pkg gee \
 		--pkg config \
 		--use-header \
-		-H vala.h \
-		--library vala \
+		-H bala.h \
+		--library bala \
 		$^
 	@touch $@
 
-libvala@PACKAGE_SUFFIX@.vapi: $(top_srcdir)/gee/gee.vapi $(top_srcdir)/vala/vala.vapi
+libbala@PACKAGE_SUFFIX@.vapi: $(top_srcdir)/gee/gee.vapi $(top_srcdir)/bala/bala.vapi
 	cat $^ > $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

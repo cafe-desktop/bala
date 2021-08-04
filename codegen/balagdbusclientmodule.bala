@@ -1,4 +1,4 @@
-/* valagdbusclientmodule.vala
+/* balagdbusclientmodule.bala
  *
  * Copyright (C) 2010-2011  Jürg Billeter
  *
@@ -274,7 +274,7 @@ public class Vala.GDBusClientModule : GDBusModule {
 			// use runtime type information for generic methods
 
 			var quark = new CCodeFunctionCall (new CCodeIdentifier ("g_quark_from_static_string"));
-			quark.add_argument (new CCodeConstant ("\"vala-dbus-proxy-type\""));
+			quark.add_argument (new CCodeConstant ("\"bala-dbus-proxy-type\""));
 
 			var get_qdata = new CCodeFunctionCall (new CCodeIdentifier ("g_type_get_qdata"));
 			get_qdata.add_argument (get_type_id_expression (type_arg));
@@ -283,7 +283,7 @@ public class Vala.GDBusClientModule : GDBusModule {
 			proxy_type = new CCodeFunctionCall (new CCodeCastExpression (get_qdata, "GType (*) (void)"));
 
 			quark = new CCodeFunctionCall (new CCodeIdentifier ("g_quark_from_static_string"));
-			quark.add_argument (new CCodeConstant ("\"vala-dbus-interface-name\""));
+			quark.add_argument (new CCodeConstant ("\"bala-dbus-interface-name\""));
 
 			get_qdata = new CCodeFunctionCall (new CCodeIdentifier ("g_type_get_qdata"));
 			get_qdata.add_argument (get_type_id_expression (type_arg));
@@ -293,7 +293,7 @@ public class Vala.GDBusClientModule : GDBusModule {
 		}
 
 		var quark = new CCodeFunctionCall (new CCodeIdentifier ("g_quark_from_static_string"));
-		quark.add_argument (new CCodeConstant ("\"vala-dbus-interface-info\""));
+		quark.add_argument (new CCodeConstant ("\"bala-dbus-interface-info\""));
 
 		var get_qdata = new CCodeFunctionCall (new CCodeIdentifier ("g_type_get_qdata"));
 		get_qdata.add_argument (get_type_id_expression (type_arg));
@@ -795,17 +795,17 @@ public class Vala.GDBusClientModule : GDBusModule {
 
 				foreach (Parameter param in m.get_parameters ()) {
 					if (param.direction == ParameterDirection.OUT) {
-						ccode.add_declaration (get_ccode_name (param.variable_type), new CCodeVariableDeclarator.zero ("_vala_%s".printf (param.name), default_value_for_type (param.variable_type, true)));
+						ccode.add_declaration (get_ccode_name (param.variable_type), new CCodeVariableDeclarator.zero ("_bala_%s".printf (param.name), default_value_for_type (param.variable_type, true)));
 
 						var array_type = param.variable_type as ArrayType;
 						if (array_type != null) {
 							var length_ctype = get_ccode_array_length_type (array_type);
 							for (int dim = 1; dim <= array_type.rank; dim++) {
-								ccode.add_declaration (length_ctype, new CCodeVariableDeclarator ("_vala_%s_length%d".printf (param.name, dim), new CCodeConstant ("0")));
+								ccode.add_declaration (length_ctype, new CCodeVariableDeclarator ("_bala_%s_length%d".printf (param.name, dim), new CCodeConstant ("0")));
 							}
 						}
 
-						var target = new CCodeIdentifier ("_vala_%s".printf (param.name));
+						var target = new CCodeIdentifier ("_bala_%s".printf (param.name));
 						bool may_fail;
 
 						receive_dbus_value (param.variable_type, new CCodeIdentifier ("_reply_message"), new CCodeIdentifier ("_reply_iter"), target, param, error_argument, out may_fail);
@@ -817,7 +817,7 @@ public class Vala.GDBusClientModule : GDBusModule {
 						if (array_type != null) {
 							for (int dim = 1; dim <= array_type.rank; dim++) {
 								// TODO check that parameter is not NULL (out parameters are optional)
-								ccode.add_assignment (new CCodeUnaryExpression (CCodeUnaryOperator.POINTER_INDIRECTION, new CCodeIdentifier ("%s_length%d".printf (param.name, dim))), new CCodeIdentifier ("_vala_%s_length%d".printf (param.name, dim)));
+								ccode.add_assignment (new CCodeUnaryExpression (CCodeUnaryOperator.POINTER_INDIRECTION, new CCodeIdentifier ("%s_length%d".printf (param.name, dim))), new CCodeIdentifier ("_bala_%s_length%d".printf (param.name, dim)));
 							}
 						}
 
@@ -1191,7 +1191,7 @@ public class Vala.GDBusClientModule : GDBusModule {
 		}
 
 		var quark = new CCodeFunctionCall (new CCodeIdentifier ("g_quark_from_static_string"));
-		quark.add_argument (new CCodeConstant ("\"vala-dbus-proxy-type\""));
+		quark.add_argument (new CCodeConstant ("\"bala-dbus-proxy-type\""));
 
 		var proxy_type = new CCodeIdentifier (get_ccode_lower_case_prefix (sym) + "proxy_get_type");
 
@@ -1203,7 +1203,7 @@ public class Vala.GDBusClientModule : GDBusModule {
 		block.add_statement (new CCodeExpressionStatement (set_qdata));
 
 		quark = new CCodeFunctionCall (new CCodeIdentifier ("g_quark_from_static_string"));
-		quark.add_argument (new CCodeConstant ("\"vala-dbus-interface-name\""));
+		quark.add_argument (new CCodeConstant ("\"bala-dbus-interface-name\""));
 
 		set_qdata = new CCodeFunctionCall (new CCodeIdentifier ("g_type_set_qdata"));
 		set_qdata.add_argument (new CCodeIdentifier ("%s_type_id".printf (get_ccode_lower_case_name (sym, null))));
@@ -1213,7 +1213,7 @@ public class Vala.GDBusClientModule : GDBusModule {
 		block.add_statement (new CCodeExpressionStatement (set_qdata));
 
 		quark = new CCodeFunctionCall (new CCodeIdentifier ("g_quark_from_static_string"));
-		quark.add_argument (new CCodeConstant ("\"vala-dbus-interface-info\""));
+		quark.add_argument (new CCodeConstant ("\"bala-dbus-interface-info\""));
 
 		set_qdata = new CCodeFunctionCall (new CCodeIdentifier ("g_type_set_qdata"));
 		set_qdata.add_argument (new CCodeIdentifier ("%s_type_id".printf (get_ccode_lower_case_name (sym, null))));

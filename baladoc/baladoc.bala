@@ -1,4 +1,4 @@
-/* valadoc.vala
+/* baladoc.bala
  *
  * Copyright (C) 2008-2014 Florian Brosch
  *
@@ -394,7 +394,7 @@ public class ValaDoc : Object {
 
 			bool report_warning = true;
 			foreach (string source in tsources) {
-				if (source.has_suffix (".vala") || source.has_suffix (".gs")) {
+				if (source.has_suffix (".bala") || source.has_suffix (".gs")) {
 					report_warning = false;
 					break;
 				}
@@ -407,8 +407,8 @@ public class ValaDoc : Object {
 		}
 
 
-		var valadoc = new ValaDoc( );
-		return valadoc.run (reporter);
+		var baladoc = new ValaDoc( );
+		return baladoc.run (reporter);
 	}
 }
 

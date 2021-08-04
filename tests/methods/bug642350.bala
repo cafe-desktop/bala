@@ -1,4 +1,4 @@
-const string[] FOO = { N_ ("foo"), NC_ ("valac", "bar") };
+const string[] FOO = { N_ ("foo"), NC_ ("balac", "bar") };
 const string BAZ = N_ ("bar");
 
 struct Foo {
@@ -26,7 +26,7 @@ void main () {
 	const Foo LOCAL_STRUCT = { "foo", N_ ("bar") };
 	assert (LOCAL_STRUCT.bar == "bar");
 
-	Foo f = { N_ ("foo"), NC_ ("valac", "bar") };
+	Foo f = { N_ ("foo"), NC_ ("balac", "bar") };
 	assert (f.foo == "foo");
 	assert (f.bar == "bar");
 

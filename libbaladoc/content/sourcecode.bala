@@ -1,4 +1,4 @@
-/* sourcecode.vala
+/* sourcecode.bala
  *
  * Copyright (C) 2008-2009 Didier Villevalois
  * Copyright (C) 2008-2012 Florian Brosch
@@ -51,7 +51,7 @@ public class Valadoc.Content.SourceCode : ContentElement, Inline {
 				return Language.GENIE;
 			case "xml":
 				return Language.XML;
-			case "vala":
+			case "bala":
 				return Language.BALA;
 			case "c":
 			case "h":
@@ -66,7 +66,7 @@ public class Valadoc.Content.SourceCode : ContentElement, Inline {
 			case Language.GENIE:
 				return "genie";
 			case Language.BALA:
-				return "vala";
+				return "bala";
 			case Language.XML:
 				return "xml";
 			case Language.C:
@@ -194,7 +194,7 @@ public class Valadoc.Content.SourceCode : ContentElement, Inline {
 		code = strip_code (code);
 
 		if (_language == Language.BALA) {
-			highlighted_code = api_root.highlighter.highlight_vala (code);
+			highlighted_code = api_root.highlighter.highlight_bala (code);
 		} else if (_language == Language.XML) {
 			highlighted_code = api_root.highlighter.highlight_xml (code);
 		} else if (_language == Language.C) {

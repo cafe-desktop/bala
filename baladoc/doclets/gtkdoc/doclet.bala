@@ -1,4 +1,4 @@
-/* doclet.vala
+/* doclet.bala
  *
  * Copyright (C) 2010 Luca Bruno
  *
@@ -81,7 +81,7 @@ public class Gtkdoc.Director : Valadoc.Doclet, Object {
 	private Settings settings;
 	private Api.Tree tree;
 	private Gtkdoc.Generator generator;
-	private string[] vala_headers;
+	private string[] bala_headers;
 	private string[] c_headers;
 
 	private static string[] combine_string_arrays (string[] a, string[] b) {
@@ -120,7 +120,7 @@ public class Gtkdoc.Director : Valadoc.Doclet, Object {
 			return;
 		}
 
-		var all_headers = combine_string_arrays (vala_headers, c_headers);
+		var all_headers = combine_string_arrays (bala_headers, c_headers);
 		if (!scan (settings.path, all_headers)) {
 			return;
 		}
@@ -151,7 +151,7 @@ public class Gtkdoc.Director : Valadoc.Doclet, Object {
 	}
 
 	private void prepare_c_file (string filename, string comments_dir) {
-		if (is_generated_by_vala (filename)) {
+		if (is_generated_by_bala (filename)) {
 			return;
 		}
 
@@ -165,15 +165,15 @@ public class Gtkdoc.Director : Valadoc.Doclet, Object {
 			return;
 		}
 
-		if (is_generated_by_vala (filename)) {
-			vala_headers += filename;
+		if (is_generated_by_bala (filename)) {
+			bala_headers += filename;
 		} else {
 			c_headers += filename;
 		}
 	}
 
 	private bool prepare_files (string[] files, string comments_dir) {
-		vala_headers = new string[]{};
+		bala_headers = new string[]{};
 		c_headers = new string[]{};
 
 		string[] prepared = new string[]{};
@@ -202,8 +202,8 @@ public class Gtkdoc.Director : Valadoc.Doclet, Object {
 			}
 		}
 
-		if (vala_headers.length <= 0) {
-			reporter.simple_error ("GtkDoc", "No vala header found");
+		if (bala_headers.length <= 0) {
+			reporter.simple_error ("GtkDoc", "No bala header found");
 		}
 
 		return reporter.errors == 0;

@@ -1,14 +1,14 @@
 NULL =
 
 bin_SCRIPTS = \
-	vala-gen-introspect \
+	bala-gen-introspect \
 	$(NULL)
 
 EXTRA_DIST = \
-	vala-gen-introspect.in
+	bala-gen-introspect.in
 	$(NULL)
 
 if ENABLE_UNVERSIONED
 install-exec-hook:
-	cd $(DESTDIR)$(bindir) && $(LN_S) -f vala-gen-introspect@PACKAGE_SUFFIX@ vala-gen-introspect
+	cd $(DESTDIR)$(bindir) && $(LN_S) -f bala-gen-introspect@PACKAGE_SUFFIX@ bala-gen-introspect
 endif

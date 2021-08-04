@@ -19,13 +19,13 @@ namespace GLib {
 	[CCode (cheader_filename = "gmodule.h", cprefix = "G_MODULE_BIND_", has_type_id = false)]
 	public enum ModuleFlags {
 		[CCode (cname = "G_MODULE_BIND_LAZY")]
-		[Version (deprecated = true, deprecated_since = "vala-0.46", replacement = "LAZY")]
+		[Version (deprecated = true, deprecated_since = "bala-0.46", replacement = "LAZY")]
 		BIND_LAZY,
 		[CCode (cname = "G_MODULE_BIND_LOCAL")]
-		[Version (deprecated = true, deprecated_since = "vala-0.46", replacement = "LOCAL")]
+		[Version (deprecated = true, deprecated_since = "bala-0.46", replacement = "LOCAL")]
 		BIND_LOCAL,
 		[CCode (cname = "G_MODULE_BIND_MASK")]
-		[Version (deprecated = true, deprecated_since = "vala-0.46", replacement = "MASK")]
+		[Version (deprecated = true, deprecated_since = "bala-0.46", replacement = "MASK")]
 		BIND_MASK,
 		LAZY,
 		LOCAL,

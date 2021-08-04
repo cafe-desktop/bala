@@ -18,7 +18,7 @@ BUILT_SOURCES = \
 noinst_PROGRAMS = \
 	$(NULL)
 
-TEST_EXTENSIONS = .vala .gs .test
+TEST_EXTENSIONS = .bala .gs .test
 
 TEST_RUNNER = $(abs_top_srcdir)/build-aux/testrunner.sh
 BALA_LOG_COMPILER = $(TEST_RUNNER)
@@ -38,77 +38,77 @@ AM_TESTS_ENVIRONMENT = \
 	export CC='$(CC)';
 
 TESTS = \
-	basic-types/integers.vala \
-	basic-types/integers-boxed-cast.vala \
-	basic-types/escape-chars.vala \
-	basic-types/floats.vala \
-	basic-types/floats-boxed-cast.vala \
-	basic-types/boolean.vala \
-	basic-types/custom-types.vala \
-	basic-types/default-gtype.vala \
-	basic-types/strings.vala \
-	basic-types/arrays.vala \
-	basic-types/arrays-generics.vala \
-	basic-types/arrays-fixed-assignment.vala \
-	basic-types/array-uint8-uchar-compat.vala \
-	basic-types/pointers.vala \
-	basic-types/pointers-arithmetic.vala \
-	basic-types/sizeof.vala \
-	basic-types/garray.vala \
-	basic-types/glists.vala \
-	basic-types/gptrarray.vala \
-	basic-types/gvariants.vala \
+	basic-types/integers.bala \
+	basic-types/integers-boxed-cast.bala \
+	basic-types/escape-chars.bala \
+	basic-types/floats.bala \
+	basic-types/floats-boxed-cast.bala \
+	basic-types/boolean.bala \
+	basic-types/custom-types.bala \
+	basic-types/default-gtype.bala \
+	basic-types/strings.bala \
+	basic-types/arrays.bala \
+	basic-types/arrays-generics.bala \
+	basic-types/arrays-fixed-assignment.bala \
+	basic-types/array-uint8-uchar-compat.bala \
+	basic-types/pointers.bala \
+	basic-types/pointers-arithmetic.bala \
+	basic-types/sizeof.bala \
+	basic-types/garray.bala \
+	basic-types/glists.bala \
+	basic-types/gptrarray.bala \
+	basic-types/gvariants.bala \
 	basic-types/gvariants-hashtable-missing-type-arguments.test \
-	basic-types/gvariants-unboxing-safe.vala \
-	basic-types/null.vala \
+	basic-types/gvariants-unboxing-safe.bala \
+	basic-types/null.bala \
 	basic-types/bug570846.test \
-	basic-types/bug571486.vala \
-	basic-types/bug591552.vala \
-	basic-types/bug595751.vala \
-	basic-types/bug596637.vala \
-	basic-types/bug596785.vala \
-	basic-types/bug604371.vala \
+	basic-types/bug571486.bala \
+	basic-types/bug591552.bala \
+	basic-types/bug595751.bala \
+	basic-types/bug596637.bala \
+	basic-types/bug596785.bala \
+	basic-types/bug604371.bala \
 	basic-types/bug604589.test \
-	basic-types/bug610660.vala \
-	basic-types/bug622178.vala \
-	basic-types/bug632322.vala \
+	basic-types/bug610660.bala \
+	basic-types/bug622178.bala \
+	basic-types/bug632322.bala \
 	basic-types/bug641308.test \
-	basic-types/bug643612.vala \
-	basic-types/bug644046.vala \
-	basic-types/bug647222.vala \
-	basic-types/bug648364.vala \
-	basic-types/bug650993.vala \
-	basic-types/bug652380.vala \
-	basic-types/bug655908.vala \
-	basic-types/bug659975.vala \
-	basic-types/bug678791.vala \
-	basic-types/bug686336.vala \
-	basic-types/bug729907.vala \
-	basic-types/bug731017.vala \
+	basic-types/bug643612.bala \
+	basic-types/bug644046.bala \
+	basic-types/bug647222.bala \
+	basic-types/bug648364.bala \
+	basic-types/bug650993.bala \
+	basic-types/bug652380.bala \
+	basic-types/bug655908.bala \
+	basic-types/bug659975.bala \
+	basic-types/bug678791.bala \
+	basic-types/bug686336.bala \
+	basic-types/bug729907.bala \
+	basic-types/bug731017.bala \
 	basic-types/bug744923.test \
-	basic-types/bug756376.vala \
-	basic-types/bug761307.vala \
-	basic-types/bug761736.vala \
+	basic-types/bug756376.bala \
+	basic-types/bug761307.bala \
+	basic-types/bug761736.bala \
 	basic-types/bug771626.test \
-	basic-types/bug772426.vala \
+	basic-types/bug772426.bala \
 	basic-types/bug777697.test \
-	basic-types/bug787152.vala \
-	basic-types/bug788775.vala \
+	basic-types/bug787152.bala \
+	basic-types/bug788775.bala \
 	constants/array-type-invalid.test \
-	constants/glog.vala \
-	constants/strings.vala \
-	namespace/unique.vala \
+	constants/glog.bala \
+	constants/strings.bala \
+	namespace/unique.bala \
 	arrays/cast-silent-invalid.test \
-	arrays/cast-struct-boxed-element-access.vala \
-	arrays/class-field-initializer.vala \
-	arrays/class-field-length-cname.vala \
-	arrays/constant-element-access.vala \
-	arrays/empty-length-0.vala \
+	arrays/cast-struct-boxed-element-access.bala \
+	arrays/class-field-initializer.bala \
+	arrays/class-field-length-cname.bala \
+	arrays/constant-element-access.bala \
+	arrays/empty-length-0.bala \
 	arrays/expression-bracket.test \
-	arrays/fixed-length-init0-not-allowed.vala \
-	arrays/field-global-length-cname.vala \
+	arrays/fixed-length-init0-not-allowed.bala \
+	arrays/field-global-length-cname.bala \
 	arrays/fixed-length-concat-invalid.test \
-	arrays/fixed-length-enum-value.vala \
+	arrays/fixed-length-enum-value.bala \
 	arrays/fixed-length-non-const.test \
 	arrays/fixed-length-resize-invalid.test \
 	arrays/inline-field.test \
@@ -116,23 +116,23 @@ TESTS = \
 	arrays/inline-local-variable.test \
 	arrays/inline-ownership-transfer.test \
 	arrays/inline-parameter.test \
-	arrays/inline-struct.vala \
+	arrays/inline-struct.bala \
 	arrays/inline-struct-field.test \
-	arrays/in-operator-with-boxed-needle.vala \
-	arrays/length-inline-assignment.vala \
-	arrays/length-type-include.vala \
+	arrays/in-operator-with-boxed-needle.bala \
+	arrays/length-inline-assignment.bala \
+	arrays/length-type-include.bala \
 	arrays/length-no-int-type.test \
-	arrays/struct-field-length-cname.vala \
-	arrays/struct-field-initializer.vala \
-	arrays/struct-namespaced-initializer.vala \
+	arrays/struct-field-length-cname.bala \
+	arrays/struct-field-initializer.bala \
+	arrays/struct-namespaced-initializer.bala \
 	arrays/incompatible-integer-elements.test \
-	arrays/resize.vala \
-	arrays/resize-local-size.vala \
-	arrays/resize-local-size-captured.vala \
+	arrays/resize.bala \
+	arrays/resize-local-size.bala \
+	arrays/resize-local-size-captured.bala \
 	arrays/resize-unowned-invalid.test \
 	arrays/resize-unowned-invalid-2.test \
 	arrays/resize-unowned-invalid-3.test \
-	arrays/slice-fixed-length.vala \
+	arrays/slice-fixed-length.bala \
 	arrays/slice-invalid-start.test \
 	arrays/slice-invalid-stop.test \
 	arrays/slice-no-array.test \
@@ -140,149 +140,149 @@ TESTS = \
 	chainup/base-enum-invalid.test \
 	chainup/base-invalid.test \
 	chainup/base-struct-invalid.test \
-	chainup/class-base.vala \
-	chainup/class-base-foo.vala \
-	chainup/class-compact-base.vala \
-	chainup/class-compact-this.vala \
-	chainup/class-object.vala \
-	chainup/class-this.vala \
-	chainup/class-this-foo.vala \
-	chainup/method-lambda-base.vala \
-	chainup/no-chainup.vala \
-	chainup/signal-default-handler.vala \
-	chainup/struct-base.vala \
-	chainup/struct-base-foo.vala \
-	chainup/struct-no-gtype-base.vala \
-	chainup/struct-simple-no-gtype-base.vala \
-	chainup/struct-this.vala \
-	chainup/struct-this-foo.vala \
-	chainup/bug791785.vala \
-	pointers/bug590641.vala \
-	methods/array-length-type.vala \
-	methods/lambda.vala \
-	methods/closures.vala \
-	methods/contains.vala \
-	methods/extern.vala \
-	methods/iterator.vala \
-	methods/parameter-fixed-array-initializer.vala \
-	methods/parameter-out-free-on-error.vala \
-	methods/parameter-ref-array-resize.vala \
-	methods/parameter-ref-array-resize-captured.vala \
-	methods/parameter-ref-delegate.vala \
-	methods/parameter-ref-element-access.vala \
-	methods/preconditions-temp-variables.vala \
-	methods/prepostconditions.vala \
-	methods/prepostconditions-captured.vala \
-	methods/postconditions.vala \
-	methods/postconditions-temp-variables.vala \
-	methods/return-unowned-delegate.vala \
-	methods/same-name.vala \
-	methods/symbolresolution.vala \
-	methods/bug540483.vala \
-	methods/bug595538.vala \
-	methods/bug596726.vala \
-	methods/bug597426.vala \
-	methods/bug598738.vala \
-	methods/bug599892.vala \
-	methods/bug613483.vala \
+	chainup/class-base.bala \
+	chainup/class-base-foo.bala \
+	chainup/class-compact-base.bala \
+	chainup/class-compact-this.bala \
+	chainup/class-object.bala \
+	chainup/class-this.bala \
+	chainup/class-this-foo.bala \
+	chainup/method-lambda-base.bala \
+	chainup/no-chainup.bala \
+	chainup/signal-default-handler.bala \
+	chainup/struct-base.bala \
+	chainup/struct-base-foo.bala \
+	chainup/struct-no-gtype-base.bala \
+	chainup/struct-simple-no-gtype-base.bala \
+	chainup/struct-this.bala \
+	chainup/struct-this-foo.bala \
+	chainup/bug791785.bala \
+	pointers/bug590641.bala \
+	methods/array-length-type.bala \
+	methods/lambda.bala \
+	methods/closures.bala \
+	methods/contains.bala \
+	methods/extern.bala \
+	methods/iterator.bala \
+	methods/parameter-fixed-array-initializer.bala \
+	methods/parameter-out-free-on-error.bala \
+	methods/parameter-ref-array-resize.bala \
+	methods/parameter-ref-array-resize-captured.bala \
+	methods/parameter-ref-delegate.bala \
+	methods/parameter-ref-element-access.bala \
+	methods/preconditions-temp-variables.bala \
+	methods/prepostconditions.bala \
+	methods/prepostconditions-captured.bala \
+	methods/postconditions.bala \
+	methods/postconditions-temp-variables.bala \
+	methods/return-unowned-delegate.bala \
+	methods/same-name.bala \
+	methods/symbolresolution.bala \
+	methods/bug540483.bala \
+	methods/bug595538.bala \
+	methods/bug596726.bala \
+	methods/bug597426.bala \
+	methods/bug598738.bala \
+	methods/bug599892.bala \
+	methods/bug613483.bala \
 	methods/bug615450.test \
 	methods/bug620673.test \
-	methods/bug620673.vala \
-	methods/bug622570.vala \
-	methods/bug626783.vala \
-	methods/bug634753.vala \
-	methods/bug639054.vala \
-	methods/bug642350.vala \
-	methods/bug642885.vala \
-	methods/bug642899.vala \
+	methods/bug620673.bala \
+	methods/bug622570.bala \
+	methods/bug626783.bala \
+	methods/bug634753.bala \
+	methods/bug639054.bala \
+	methods/bug642350.bala \
+	methods/bug642885.bala \
+	methods/bug642899.bala \
 	methods/bug643088.test \
-	methods/bug646345.vala \
+	methods/bug646345.bala \
 	methods/bug648030.test \
-	methods/bug648320.vala \
-	methods/bug649562.vala \
-	methods/bug652098.vala \
-	methods/bug653391.vala \
-	methods/bug653908.vala \
-	methods/bug663210.vala \
-	methods/bug699956.vala \
-	methods/bug710862.vala \
-	methods/bug723009.vala \
-	methods/bug723195.vala \
-	methods/bug726347.vala \
-	methods/bug736235.vala \
-	methods/bug737222.vala \
-	methods/bug743877.vala \
-	methods/bug771964.vala \
-	methods/bug774060.vala \
+	methods/bug648320.bala \
+	methods/bug649562.bala \
+	methods/bug652098.bala \
+	methods/bug653391.bala \
+	methods/bug653908.bala \
+	methods/bug663210.bala \
+	methods/bug699956.bala \
+	methods/bug710862.bala \
+	methods/bug723009.bala \
+	methods/bug723195.bala \
+	methods/bug726347.bala \
+	methods/bug736235.bala \
+	methods/bug737222.bala \
+	methods/bug743877.bala \
+	methods/bug771964.bala \
+	methods/bug774060.bala \
 	methods/bug775466.test \
-	methods/bug781061.vala \
-	methods/bug784691.vala \
-	methods/bug791215.vala \
-	methods/bug791283.vala \
-	methods/argument-array-initilizer.vala \
-	methods/argument-named.vala \
-	methods/delegate-target.vala \
-	methods/generics.vala \
-	methods/nowrapper-interface.vala \
+	methods/bug781061.bala \
+	methods/bug784691.bala \
+	methods/bug791215.bala \
+	methods/bug791283.bala \
+	methods/argument-array-initilizer.bala \
+	methods/argument-named.bala \
+	methods/delegate-target.bala \
+	methods/generics.bala \
+	methods/nowrapper-interface.bala \
 	methods/nowrapper-no-vfunc.test \
-	methods/params-array.vala \
+	methods/params-array.bala \
 	methods/params-array-abstract.test \
-	methods/params-array-with-throws.vala \
-	methods/print-attribute.vala \
+	methods/params-array-with-throws.bala \
+	methods/print-attribute.bala \
 	methods/print-attribute-invalid.test \
 	methods/printf-invalid.test \
-	methods/printf-constructor.vala \
+	methods/printf-constructor.bala \
 	methods/printf-constructor-invalid.test \
-	methods/varargs-delegate.vala \
-	methods/varargs-delegate-without-target.vala \
-	methods/varargs-gvalue.vala \
-	methods/varargs-out.vala \
-	methods/varargs-ref.vala \
-	methods/varargs-struct.vala \
-	control-flow/assigned-local-variable.vala \
-	control-flow/break.vala \
+	methods/varargs-delegate.bala \
+	methods/varargs-delegate-without-target.bala \
+	methods/varargs-gvalue.bala \
+	methods/varargs-out.bala \
+	methods/varargs-ref.bala \
+	methods/varargs-struct.bala \
+	control-flow/assigned-local-variable.bala \
+	control-flow/break.bala \
 	control-flow/break-invalid.test \
-	control-flow/coalesce-as-argument.vala \
-	control-flow/coalesce-execution-order.vala \
-	control-flow/coalesce-reference-transfer.vala \
-	control-flow/coalesce-right-value.vala \
-	control-flow/coalesce-short-circuit.vala \
-	control-flow/conditional-as-argument.vala \
+	control-flow/coalesce-as-argument.bala \
+	control-flow/coalesce-execution-order.bala \
+	control-flow/coalesce-reference-transfer.bala \
+	control-flow/coalesce-right-value.bala \
+	control-flow/coalesce-short-circuit.bala \
+	control-flow/conditional-as-argument.bala \
 	control-flow/continue-invalid.test \
 	control-flow/double-catch.test \
-	control-flow/expressions-conditional.vala \
+	control-flow/expressions-conditional.bala \
 	control-flow/finally-return.test \
-	control-flow/for.vala \
-	control-flow/for-switch-continue.vala \
-	control-flow/foreach.vala \
-	control-flow/local-clash-with-implicit-this.vala \
+	control-flow/for.bala \
+	control-flow/for-switch-continue.bala \
+	control-flow/foreach.bala \
+	control-flow/local-clash-with-implicit-this.bala \
 	control-flow/missing-break.test \
 	control-flow/missing-return.test \
-	control-flow/nested-conditional.vala \
-	control-flow/pre-post-increment.vala \
-	control-flow/pre-post-increment-field.vala \
-	control-flow/pre-post-increment-local.vala \
-	control-flow/pre-post-increment-parameter.vala \
-	control-flow/pre-post-increment-property.vala \
-	control-flow/switch.vala \
-	control-flow/switch-string.vala \
-	control-flow/sideeffects.vala \
+	control-flow/nested-conditional.bala \
+	control-flow/pre-post-increment.bala \
+	control-flow/pre-post-increment-field.bala \
+	control-flow/pre-post-increment-local.bala \
+	control-flow/pre-post-increment-parameter.bala \
+	control-flow/pre-post-increment-property.bala \
+	control-flow/switch.bala \
+	control-flow/switch-string.bala \
+	control-flow/sideeffects.bala \
 	control-flow/unassigned-captured-local-variable.test \
 	control-flow/unassigned-local-block-variable.test \
 	control-flow/unassigned-local-variable.test \
 	control-flow/unassigned-local-variable-2.test \
 	control-flow/unassigned-local-variable-3.test \
 	control-flow/unassigned-local-variable-while.test \
-	control-flow/while-false.vala \
-	control-flow/bug628336.vala \
-	control-flow/bug639482.vala \
-	control-flow/bug652549.vala \
-	control-flow/bug661985.vala \
-	control-flow/bug665904.vala \
-	control-flow/bug691514.vala	\
-	control-flow/bug736774-1.vala \
-	control-flow/bug736774-2.vala \
-	control-flow/bug764440.vala \
+	control-flow/while-false.bala \
+	control-flow/bug628336.bala \
+	control-flow/bug639482.bala \
+	control-flow/bug652549.bala \
+	control-flow/bug661985.bala \
+	control-flow/bug665904.bala \
+	control-flow/bug691514.bala	\
+	control-flow/bug736774-1.bala \
+	control-flow/bug736774-2.bala \
+	control-flow/bug764440.bala \
 	control-flow/bug790903.test \
 	control-flow/bug790903-2.test \
 	control-semantic/argument-extra.test \
@@ -308,85 +308,85 @@ TESTS = \
 	control-semantic/printf-too-many.test \
 	control-semantic/this-assignment.test \
 	control-semantic/variadic-argument-invalid.test \
-	enums/default-gtype.vala \
-	enums/enum_only.vala \
-	enums/enum-no-gtype.vala \
-	enums/enums.vala \
-	enums/flags.vala \
-	enums/from-0-literal.vala \
-	enums/in-inference.vala \
-	enums/no_gtype_to_string.vala \
-	enums/switch.vala \
-	enums/bug666035.vala \
+	enums/default-gtype.bala \
+	enums/enum_only.bala \
+	enums/enum-no-gtype.bala \
+	enums/enums.bala \
+	enums/flags.bala \
+	enums/from-0-literal.bala \
+	enums/in-inference.bala \
+	enums/no_gtype_to_string.bala \
+	enums/switch.bala \
+	enums/bug666035.bala \
 	enums/bug666035-1.test \
 	enums/bug666035-2.test \
-	enums/bug673879.vala \
-	enums/bug763831.vala \
-	enums/bug780050.vala \
-	structs/cast-struct-boxed.vala \
-	structs/struct_only.vala \
-	structs/struct-base-types.vala \
-	structs/struct-boxed-cast.vala \
+	enums/bug673879.bala \
+	enums/bug763831.bala \
+	enums/bug780050.bala \
+	structs/cast-struct-boxed.bala \
+	structs/struct_only.bala \
+	structs/struct-base-types.bala \
+	structs/struct-boxed-cast.bala \
 	structs/struct-empty-still.test \
-	structs/struct-initializer-list-in-array.vala \
-	structs/struct-initializer-list-nested.vala \
-	structs/struct-no-gtype.vala \
-	structs/struct-no-gtype-inherit.vala \
-	structs/struct-static-field-initializer.vala \
+	structs/struct-initializer-list-in-array.bala \
+	structs/struct-initializer-list-nested.bala \
+	structs/struct-no-gtype.bala \
+	structs/struct-no-gtype-inherit.bala \
+	structs/struct-static-field-initializer.bala \
 	structs/struct-static-field-initializer.test \
 	structs/struct-static-property-initializer.test \
-	structs/structs.vala \
+	structs/structs.bala \
 	structs/constructor-wrong-name.test \
-	structs/default-gtype.vala \
-	structs/gmutex.vala \
-	structs/gtype-base-struct.vala \
-	structs/gvalue.vala \
-	structs/gvalue-implicit-comparison.vala \
-	structs/simple-type-constructor.vala \
+	structs/default-gtype.bala \
+	structs/gmutex.bala \
+	structs/gtype-base-struct.bala \
+	structs/gvalue.bala \
+	structs/gvalue-implicit-comparison.bala \
+	structs/simple-type-constructor.bala \
 	structs/simple-type-disposable.test \
-	structs/bug530605.vala \
-	structs/bug572091.vala \
-	structs/bug583603.vala \
-	structs/bug595587.vala \
-	structs/bug596144.vala \
-	structs/bug603056.vala \
-	structs/bug606202.vala \
-	structs/bug609642.vala \
-	structs/bug613513.vala \
-	structs/bug613825.vala \
-	structs/bug621176.vala \
-	structs/bug622422.vala \
-	structs/bug623092.vala \
-	structs/bug651441.vala \
-	structs/bug654646.vala \
-	structs/bug654753.vala \
-	structs/bug656693.vala \
-	structs/bug657378.vala \
-	structs/bug658048.vala \
-	structs/bug660426.vala \
-	structs/bug661945.vala \
-	structs/bug667890.vala \
-	structs/bug669580.vala \
-	structs/bug685177.vala \
-	structs/bug686190.vala \
-	structs/bug688732.vala \
-	structs/bug690380.vala \
-	structs/bug694140.vala \
-	structs/bug749952.vala \
+	structs/bug530605.bala \
+	structs/bug572091.bala \
+	structs/bug583603.bala \
+	structs/bug595587.bala \
+	structs/bug596144.bala \
+	structs/bug603056.bala \
+	structs/bug606202.bala \
+	structs/bug609642.bala \
+	structs/bug613513.bala \
+	structs/bug613825.bala \
+	structs/bug621176.bala \
+	structs/bug622422.bala \
+	structs/bug623092.bala \
+	structs/bug651441.bala \
+	structs/bug654646.bala \
+	structs/bug654753.bala \
+	structs/bug656693.bala \
+	structs/bug657378.bala \
+	structs/bug658048.bala \
+	structs/bug660426.bala \
+	structs/bug661945.bala \
+	structs/bug667890.bala \
+	structs/bug669580.bala \
+	structs/bug685177.bala \
+	structs/bug686190.bala \
+	structs/bug688732.bala \
+	structs/bug690380.bala \
+	structs/bug694140.bala \
+	structs/bug749952.bala \
 	structs/bug764041.test \
-	structs/bug775761.vala \
-	structs/bug777194.vala \
-	structs/bug777194-2.vala \
-	delegates/casting.vala \
-	delegates/compatible.vala \
-	delegates/delegate_only.vala \
-	delegates/delegate-recusive.vala \
-	delegates/delegates.vala \
+	structs/bug775761.bala \
+	structs/bug777194.bala \
+	structs/bug777194-2.bala \
+	delegates/casting.bala \
+	delegates/compatible.bala \
+	delegates/delegate_only.bala \
+	delegates/delegate-recusive.bala \
+	delegates/delegates.bala \
 	delegates/delegates-error.test \
-	delegates/error-pos.vala \
-	delegates/fields.vala \
-	delegates/fields-no-target.vala \
-	delegates/gclosure-conversion.vala \
+	delegates/error-pos.bala \
+	delegates/fields.bala \
+	delegates/fields-no-target.bala \
+	delegates/gclosure-conversion.bala \
 	delegates/incompatible.test \
 	delegates/incompatible-assignment.test \
 	delegates/incompatible-initializer.test \
@@ -394,289 +394,289 @@ TESTS = \
 	delegates/instance-method-to-no-target.test \
 	delegates/instance-method-to-no-target-2.test \
 	delegates/lambda-incompatible.test \
-	delegates/lambda-mixed-instance-static.vala \
-	delegates/lambda-shared-closure.vala \
-	delegates/member-target-destroy.vala \
-	delegates/reference_transfer.vala \
-	delegates/return-array-null-terminated.vala \
-	delegates/wrapper.vala \
+	delegates/lambda-mixed-instance-static.bala \
+	delegates/lambda-shared-closure.bala \
+	delegates/member-target-destroy.bala \
+	delegates/reference_transfer.bala \
+	delegates/return-array-null-terminated.bala \
+	delegates/wrapper.bala \
 	delegates/bug519949.test \
-	delegates/bug539166.vala \
-	delegates/bug595610.vala \
-	delegates/bug595639.vala \
+	delegates/bug539166.bala \
+	delegates/bug595610.bala \
+	delegates/bug595639.bala \
 	delegates/bug598869.test \
 	delegates/bug632017.test \
-	delegates/bug638415.vala \
-	delegates/bug639751.vala \
-	delegates/bug659778.vala \
-	delegates/bug683925.vala \
-	delegates/bug703804.vala \
-	delegates/bug761360.vala \
+	delegates/bug638415.bala \
+	delegates/bug639751.bala \
+	delegates/bug659778.bala \
+	delegates/bug683925.bala \
+	delegates/bug703804.bala \
+	delegates/bug761360.bala \
 	delegates/bug772204.test \
-	delegates/bug792077.vala \
-	objects/chainup.vala \
-	objects/class-ccode-cprefix.vala \
-	objects/class_only.vala \
-	objects/class-destroysinstance.vala \
-	objects/class-inner-types.vala \
-	objects/class-new-no-override.vala \
-	objects/class-vfunc-base-access.vala \
-	objects/classes.vala \
-	objects/classes-interfaces.vala \
-	objects/classes-interfaces-virtuals.vala \
-	objects/classes-implicit-implementation.vala \
-	objects/compact-class.vala \
-	objects/compact-class-destructor.vala \
-	objects/compact-class-refcount.vala \
-	objects/compact-class-custom-ref.vala \
+	delegates/bug792077.bala \
+	objects/chainup.bala \
+	objects/class-ccode-cprefix.bala \
+	objects/class_only.bala \
+	objects/class-destroysinstance.bala \
+	objects/class-inner-types.bala \
+	objects/class-new-no-override.bala \
+	objects/class-vfunc-base-access.bala \
+	objects/classes.bala \
+	objects/classes-interfaces.bala \
+	objects/classes-interfaces-virtuals.bala \
+	objects/classes-implicit-implementation.bala \
+	objects/compact-class.bala \
+	objects/compact-class-destructor.bala \
+	objects/compact-class-refcount.bala \
+	objects/compact-class-custom-ref.bala \
 	objects/constructor-abstract-public.test \
-	objects/constructor-inner-error.vala \
+	objects/constructor-inner-error.bala \
 	objects/constructor-variadic.test \
 	objects/constructor-wrong-name.test \
-	objects/constructors.vala \
-	objects/destructors.vala \
+	objects/constructors.bala \
+	objects/destructors.bala \
 	objects/duplicating-instance-invalid.test \
-	objects/dynamic.vala \
-	objects/generics.vala \
-	objects/initially-unowned.vala \
+	objects/dynamic.bala \
+	objects/generics.bala \
+	objects/initially-unowned.bala \
 	objects/field-leading-digit.test \
-	objects/fields.vala \
-	objects/gobject-class-lifetime.vala \
-	objects/gsource.vala \
-	objects/gtype-class-lifetime.vala \
-	objects/instance-comparison.vala \
-	objects/interface_only.vala \
-	objects/interface-async-base-access.vala \
-	objects/interface-base-access.vala \
-	objects/interface-inner-types.vala \
-	objects/interfaces.vala \
-	objects/interface-abstract-async-override.vala \
-	objects/interface-async-captured-generic.vala \
-	objects/interface-generics.vala \
-	objects/interface-property-base-access.vala \
-	objects/interface-property-base-impl.vala \
-	objects/interface-property-delegate.vala \
-	objects/interface-property-override.vala \
-	objects/interface-virtual-override.vala \
-	objects/member-initializer-base-properties.vala \
-	objects/member-initializer-property.vala \
-	objects/member-initializer-property-owned-setter.vala \
-	objects/methods.vala \
-	objects/paramspec.vala \
-	objects/plugin-module-init.vala \
-	objects/properties.vala \
-	objects/property-array.vala \
-	objects/property-array-length.vala \
-	objects/property-base-access.vala \
-	objects/property-enum.vala \
-	objects/property-notify.vala \
-	objects/property-notify-owned-getter.vala \
-	objects/property-ownership.vala \
-	objects/property-read-only-auto.vala \
+	objects/fields.bala \
+	objects/gobject-class-lifetime.bala \
+	objects/gsource.bala \
+	objects/gtype-class-lifetime.bala \
+	objects/instance-comparison.bala \
+	objects/interface_only.bala \
+	objects/interface-async-base-access.bala \
+	objects/interface-base-access.bala \
+	objects/interface-inner-types.bala \
+	objects/interfaces.bala \
+	objects/interface-abstract-async-override.bala \
+	objects/interface-async-captured-generic.bala \
+	objects/interface-generics.bala \
+	objects/interface-property-base-access.bala \
+	objects/interface-property-base-impl.bala \
+	objects/interface-property-delegate.bala \
+	objects/interface-property-override.bala \
+	objects/interface-virtual-override.bala \
+	objects/member-initializer-base-properties.bala \
+	objects/member-initializer-property.bala \
+	objects/member-initializer-property-owned-setter.bala \
+	objects/methods.bala \
+	objects/paramspec.bala \
+	objects/plugin-module-init.bala \
+	objects/properties.bala \
+	objects/property-array.bala \
+	objects/property-array-length.bala \
+	objects/property-base-access.bala \
+	objects/property-enum.bala \
+	objects/property-notify.bala \
+	objects/property-notify-owned-getter.bala \
+	objects/property-ownership.bala \
+	objects/property-read-only-auto.bala \
 	objects/property-read-only-member-write.test \
 	objects/property-read-only-write.test \
-	objects/property-construct-only.vala \
+	objects/property-construct-only.bala \
 	objects/property-construct-only-write.test \
 	objects/property-construct-only-write-after.test \
 	objects/property-construct-only-write-foreign.test \
-	objects/property-delegate.vala \
-	objects/property-delegate-owned.vala \
-	objects/property-gboxed-nullable.vala \
-	objects/property-real-struct-assignment.vala \
+	objects/property-delegate.bala \
+	objects/property-delegate-owned.bala \
+	objects/property-gboxed-nullable.bala \
+	objects/property-real-struct-assignment.bala \
 	objects/property-real-struct-no-accessor.test \
-	objects/property-simple-type-struct-nullable.vala \
-	objects/property-static.vala \
-	objects/property-struct-no-gtype.vala \
+	objects/property-simple-type-struct-nullable.bala \
+	objects/property-static.bala \
+	objects/property-struct-no-gtype.bala \
 	objects/property-write-only-member-read.test \
-	objects/regex.vala \
+	objects/regex.bala \
 	objects/sealed-abstract-class.test \
 	objects/sealed-class.test \
 	objects/sealed-compact-class.test \
-	objects/signals.vala \
-	objects/signals-enum-marshal.vala \
-	objects/signals-delegate.vala \
-	objects/signals-delegate-parameter.vala \
+	objects/signals.bala \
+	objects/signals-enum-marshal.bala \
+	objects/signals-delegate.bala \
+	objects/signals-delegate-parameter.bala \
 	objects/signals-dymanic-invalid-handler.test \
-	objects/signals-error-marshal.vala \
-	objects/signals-fundamental-return.vala \
-	objects/signals-gobject-return.vala \
-	objects/signals-lambda-delegate.vala \
-	objects/signals-prototype-access.vala \
+	objects/signals-error-marshal.bala \
+	objects/signals-fundamental-return.bala \
+	objects/signals-gobject-return.bala \
+	objects/signals-lambda-delegate.bala \
+	objects/signals-prototype-access.bala \
 	objects/signals-prototype-access-invalid.test \
 	objects/signals-prototype-access-invalid-2.test \
-	objects/signals-struct-return.vala \
-	objects/singleton.vala \
-	objects/test-025.vala \
-	objects/test-026.vala \
-	objects/test-029.vala \
-	objects/test-034.vala \
+	objects/signals-struct-return.bala \
+	objects/singleton.bala \
+	objects/test-025.bala \
+	objects/test-026.bala \
+	objects/test-029.bala \
+	objects/test-034.bala \
 	objects/bug541728.test \
 	objects/bug554329.test \
 	objects/bug564011.test \
 	objects/bug564090.test \
-	objects/bug566909.vala \
+	objects/bug566909.bala \
 	objects/bug574146.test \
 	objects/bug585344.test \
 	objects/bug587905.test \
-	objects/bug588203.vala \
-	objects/bug589928.vala \
-	objects/bug593137.vala \
-	objects/bug593260.vala \
-	objects/bug596621.vala \
-	objects/bug597155.vala \
-	objects/bug597161.vala \
+	objects/bug588203.bala \
+	objects/bug589928.bala \
+	objects/bug593137.bala \
+	objects/bug593260.bala \
+	objects/bug596621.bala \
+	objects/bug597155.bala \
+	objects/bug597161.bala \
 	objects/bug603491.test \
-	objects/bug613486.vala \
-	objects/bug613840.vala \
-	objects/bug620675.vala \
-	objects/bug620706.vala \
-	objects/bug624594.vala \
-	objects/bug626038.vala \
-	objects/bug626038-2.vala \
-	objects/bug628639.vala \
-	objects/bug629593.vala \
-	objects/bug631267.vala \
-	objects/bug634782.vala \
+	objects/bug613486.bala \
+	objects/bug613840.bala \
+	objects/bug620675.bala \
+	objects/bug620706.bala \
+	objects/bug624594.bala \
+	objects/bug626038.bala \
+	objects/bug626038-2.bala \
+	objects/bug628639.bala \
+	objects/bug629593.bala \
+	objects/bug631267.bala \
+	objects/bug634782.bala \
 	objects/bug641418-1.test \
 	objects/bug641418-2.test \
 	objects/bug641418-3.test \
-	objects/bug641828.vala \
-	objects/bug642809.vala \
-	objects/bug643711.vala \
-	objects/bug644938.vala \
-	objects/bug646362.vala \
-	objects/bug646792.vala \
-	objects/bug647018.vala \
-	objects/bug653138.vala \
-	objects/bug654702.vala \
-	objects/bug663134.vala \
-	objects/bug664529.vala \
-	objects/bug667668.vala \
-	objects/bug681356.vala \
-	objects/bug683646.vala \
-	objects/bug695671.vala \
-	objects/bug702736.vala \
-	objects/bug702846.vala \
-	objects/bug731547.vala \
-	objects/bug741465.vala \
-	objects/bug751338.vala \
-	objects/bug758816.vala \
+	objects/bug641828.bala \
+	objects/bug642809.bala \
+	objects/bug643711.bala \
+	objects/bug644938.bala \
+	objects/bug646362.bala \
+	objects/bug646792.bala \
+	objects/bug647018.bala \
+	objects/bug653138.bala \
+	objects/bug654702.bala \
+	objects/bug663134.bala \
+	objects/bug664529.bala \
+	objects/bug667668.bala \
+	objects/bug681356.bala \
+	objects/bug683646.bala \
+	objects/bug695671.bala \
+	objects/bug702736.bala \
+	objects/bug702846.bala \
+	objects/bug731547.bala \
+	objects/bug741465.bala \
+	objects/bug751338.bala \
+	objects/bug758816.bala \
 	objects/bug760031.test \
-	objects/bug764481.vala \
+	objects/bug764481.bala \
 	objects/bug767092.test \
 	objects/bug768823.test \
 	objects/bug773956-1.test \
 	objects/bug773956-2.test \
 	objects/bug615830-1.test \
 	objects/bug615830-2.test \
-	objects/bug766739.vala \
-	objects/bug778632.vala \
+	objects/bug766739.bala \
+	objects/bug778632.bala \
 	objects/bug779038-1.test \
 	objects/bug779038-2.test \
 	objects/bug779038-3.test \
-	objects/bug779219.vala \
-	objects/bug779955.vala \
-	objects/bug783897.vala \
-	objects/bug788964.vala \
+	objects/bug779219.bala \
+	objects/bug779955.bala \
+	objects/bug783897.bala \
+	objects/bug788964.bala \
 	objects/bug795225-1.test \
 	objects/bug795225-2.test \
 	objects/bug795225-3.test \
 	objects/bug795225-4.test \
-	objects/bug795521.vala \
-	errors/catch-error-code.vala \
-	errors/catch-in-finally.vala \
-	errors/default-gtype.vala \
-	errors/errors.vala \
-	errors/errorcode.vala \
-	errors/errordomain.vala \
+	objects/bug795521.bala \
+	errors/catch-error-code.bala \
+	errors/catch-in-finally.bala \
+	errors/default-gtype.bala \
+	errors/errors.bala \
+	errors/errorcode.bala \
+	errors/errordomain.bala \
 	errors/errordomain-instance-method.test \
-	errors/errordomain-static-method.vala \
+	errors/errordomain-static-method.bala \
 	errors/invalid-type-check.test \
-	errors/loops.vala \
-	errors/method-throws.vala \
-	errors/bug567181.vala \
-	errors/bug579101.vala \
-	errors/bug596228.vala \
-	errors/bug623049.vala \
-	errors/bug627090.vala \
-	errors/bug639589.vala \
-	errors/bug651145.vala \
-	errors/bug762377.vala \
-	errors/bug778224.vala \
-	asynchronous/bug595735.vala \
-	asynchronous/bug595755.vala \
-	asynchronous/bug596177.vala \
-	asynchronous/bug596861.vala \
-	asynchronous/bug597294.vala \
-	asynchronous/bug598677.vala \
-	asynchronous/bug598697.vala \
-	asynchronous/bug598698.vala \
-	asynchronous/bug599568.vala \
-	asynchronous/bug600827.vala \
-	asynchronous/bug601558.vala \
-	asynchronous/bug612641.vala \
-	asynchronous/bug613484.vala \
-	asynchronous/bug614294.vala \
-	asynchronous/bug620740.vala \
-	asynchronous/bug626053.vala \
-	asynchronous/bug639591.vala \
-	asynchronous/bug640721.vala \
-	asynchronous/bug641182.vala \
-	asynchronous/bug646945.vala \
-	asynchronous/bug652252.vala \
-	asynchronous/bug653861.vala \
-	asynchronous/bug654336.vala \
-	asynchronous/bug654337.vala \
-	asynchronous/bug659886.vala \
-	asynchronous/bug661961.vala \
-	asynchronous/bug710103.vala \
-	asynchronous/bug741929.vala \
-	asynchronous/bug742621.vala \
-	asynchronous/bug762819.vala \
-	asynchronous/bug777242.vala \
-	asynchronous/bug783543.vala \
-	asynchronous/bug792660.vala \
-	asynchronous/bug792942.vala \
-	asynchronous/bug793158.vala \
-	asynchronous/captured-fixed-array.vala \
-	asynchronous/catch-error-scope.vala \
-	asynchronous/catch-in-finally.vala \
+	errors/loops.bala \
+	errors/method-throws.bala \
+	errors/bug567181.bala \
+	errors/bug579101.bala \
+	errors/bug596228.bala \
+	errors/bug623049.bala \
+	errors/bug627090.bala \
+	errors/bug639589.bala \
+	errors/bug651145.bala \
+	errors/bug762377.bala \
+	errors/bug778224.bala \
+	asynchronous/bug595735.bala \
+	asynchronous/bug595755.bala \
+	asynchronous/bug596177.bala \
+	asynchronous/bug596861.bala \
+	asynchronous/bug597294.bala \
+	asynchronous/bug598677.bala \
+	asynchronous/bug598697.bala \
+	asynchronous/bug598698.bala \
+	asynchronous/bug599568.bala \
+	asynchronous/bug600827.bala \
+	asynchronous/bug601558.bala \
+	asynchronous/bug612641.bala \
+	asynchronous/bug613484.bala \
+	asynchronous/bug614294.bala \
+	asynchronous/bug620740.bala \
+	asynchronous/bug626053.bala \
+	asynchronous/bug639591.bala \
+	asynchronous/bug640721.bala \
+	asynchronous/bug641182.bala \
+	asynchronous/bug646945.bala \
+	asynchronous/bug652252.bala \
+	asynchronous/bug653861.bala \
+	asynchronous/bug654336.bala \
+	asynchronous/bug654337.bala \
+	asynchronous/bug659886.bala \
+	asynchronous/bug661961.bala \
+	asynchronous/bug710103.bala \
+	asynchronous/bug741929.bala \
+	asynchronous/bug742621.bala \
+	asynchronous/bug762819.bala \
+	asynchronous/bug777242.bala \
+	asynchronous/bug783543.bala \
+	asynchronous/bug792660.bala \
+	asynchronous/bug792942.bala \
+	asynchronous/bug793158.bala \
+	asynchronous/captured-fixed-array.bala \
+	asynchronous/catch-error-scope.bala \
+	asynchronous/catch-in-finally.bala \
 	asynchronous/creation-missing-yield.test \
-	asynchronous/closures.vala \
-	asynchronous/constructor-argument-check.vala \
-	asynchronous/finish-name.vala \
-	asynchronous/generator.vala \
-	asynchronous/nowrapper.vala \
-	asynchronous/out-parameter-free-on-error.vala \
+	asynchronous/closures.bala \
+	asynchronous/constructor-argument-check.bala \
+	asynchronous/finish-name.bala \
+	asynchronous/generator.bala \
+	asynchronous/nowrapper.bala \
+	asynchronous/out-parameter-free-on-error.bala \
 	asynchronous/out-parameter-invalid.test \
 	asynchronous/params-array-invalid.test \
-	asynchronous/result-pos.vala \
+	asynchronous/result-pos.bala \
 	asynchronous/variadic-invalid.test \
 	asynchronous/variadic-invalid-2.test \
-	asynchronous/yield.vala \
+	asynchronous/yield.bala \
 	generics/arrays-not-supported.test \
 	generics/arrays-not-supported-2.test \
 	generics/arrays-not-supported-3.test \
-	generics/constructor-chain-up.vala \
-	generics/floating-type-cast.vala \
+	generics/constructor-chain-up.bala \
+	generics/floating-type-cast.bala \
 	generics/gvariant-serialization.test \
-	generics/inference-argument-may-fail.vala \
-	generics/inference-static-function.vala \
-	generics/integer-member-access.vala \
-	generics/integer-type-cast.vala \
-	generics/integer-type-cast-return.vala \
+	generics/inference-argument-may-fail.bala \
+	generics/inference-static-function.bala \
+	generics/integer-member-access.bala \
+	generics/integer-type-cast.bala \
+	generics/integer-type-cast-return.bala \
 	generics/parameter-invalid-initializer.test \
-	generics/parameter-sizeof-initializer.vala \
-	generics/member-dup-destroy.vala \
-	generics/property-int-cast.vala \
-	generics/string-literal-comparison.vala \
-	generics/type-parameter-properties.vala \
-	generics/value-pointer-type-access.vala \
+	generics/parameter-sizeof-initializer.bala \
+	generics/member-dup-destroy.bala \
+	generics/property-int-cast.bala \
+	generics/string-literal-comparison.bala \
+	generics/type-parameter-properties.bala \
+	generics/value-pointer-type-access.bala \
 	generics/bug640330.test \
-	generics/bug640330.vala \
-	generics/bug694765-1.vala \
-	generics/bug694765-2.vala \
-	generics/bug694765-3.vala \
+	generics/bug640330.bala \
+	generics/bug694765-1.bala \
+	generics/bug694765-2.bala \
+	generics/bug694765-3.bala \
 	dbus/basic-types.test \
 	dbus/arrays.test \
 	dbus/structs.test \
@@ -687,18 +687,18 @@ TESTS = \
 	dbus/async-errors.test \
 	dbus/connection.test \
 	dbus/dynamic-method.test \
-	dbus/enum-string-marshalling.vala \
+	dbus/enum-string-marshalling.bala \
 	dbus/signals.test \
 	dbus/filedescriptor.test \
 	dbus/filedescriptor-async.test \
 	dbus/filedescriptor-errors.test \
 	dbus/dicts.test \
-	dbus/bug596862.vala \
+	dbus/bug596862.bala \
 	dbus/bug602003.test \
 	dbus/bug735437.test \
 	dbus/bug782719.test \
 	dbus/bug783002.test \
-	dbus/bug792277.vala \
+	dbus/bug792277.bala \
 	dbus/rawvariants.test \
 	dbus/interface-info.test \
 	gir/bug651773.test \
@@ -739,13 +739,13 @@ TESTS = \
 	gtktemplate/gtkchild-property-unknown.test \
 	gtktemplate/gtkchild-without-gtktemplate.test \
 	gtktemplate/gtktemplate-gtkwidget-subclass.test \
-	annotations/deprecated.vala \
-	annotations/deprecated-delegate-minimal.vala \
-	annotations/deprecated-enum-minimal.vala \
-	annotations/deprecated-method-minimal.vala \
-	annotations/deprecated-property-minimal.vala \
-	annotations/deprecated-struct-minimal.vala \
-	annotations/description.vala \
+	annotations/deprecated.bala \
+	annotations/deprecated-delegate-minimal.bala \
+	annotations/deprecated-enum-minimal.bala \
+	annotations/deprecated-method-minimal.bala \
+	annotations/deprecated-property-minimal.bala \
+	annotations/deprecated-struct-minimal.bala \
+	annotations/description.bala \
 	annotations/noaccessormethod.test \
 	scanner/comment-not-closed.test \
 	scanner/preprocessor-invalid.test \
@@ -756,7 +756,7 @@ TESTS = \
 	scanner/regex-escape-u-empty.test \
 	scanner/regex-escape-x-digit-length.test \
 	scanner/regex-escape-x-empty.test \
-	scanner/regex-escape-x.vala \
+	scanner/regex-escape-x.bala \
 	scanner/regex-multiple-i.test \
 	scanner/regex-multiple-m.test \
 	scanner/regex-multiple-s.test \
@@ -765,10 +765,10 @@ TESTS = \
 	scanner/string-escape-u-empty.test \
 	scanner/string-escape-x-digit-length.test \
 	scanner/string-escape-x-empty.test \
-	scanner/string-escape-x.vala \
+	scanner/string-escape-x.bala \
 	parser/argument-list-incomplete.test \
 	parser/array-creation-invalid.test \
-	parser/assignment.vala \
+	parser/assignment.bala \
 	parser/attribute-duplicate.test \
 	parser/attribute-missing-literal.test \
 	parser/attribute-wrong-number.test \
@@ -780,7 +780,7 @@ TESTS = \
 	parser/constructor-no-new.test \
 	parser/constructor-no-static-class.test \
 	parser/constructor-static-exists.test \
-	parser/continue-statement.vala \
+	parser/continue-statement.bala \
 	parser/creation-no-abstract.test \
 	parser/creation-no-new.test \
 	parser/creation-no-override.test \
@@ -794,24 +794,24 @@ TESTS = \
 	parser/destructor-no-static-class.test \
 	parser/destructor-static-exists.test \
 	parser/destructor-wrong-name.test \
-	parser/do-statement.vala \
+	parser/do-statement.bala \
 	parser/expect-endbrace.test \
 	parser/expect-error.test \
 	parser/field-no-abstract.test \
 	parser/field-no-override.test \
 	parser/field-no-static-class.test \
 	parser/field-no-virtual.test \
-	parser/foreach.vala \
+	parser/foreach.bala \
 	parser/foreach-no-type.test \
 	parser/function-syntax-error.test \
 	parser/initializer-list-incomplete.test \
 	parser/inner-array-size.test \
 	parser/invalid-brace.test \
 	parser/invalid-statement-delimiter.test \
-	parser/local-variable.vala \
-	parser/lock-statement.vala \
-	parser/main-block.vala \
-	parser/member-access-pointer.vala \
+	parser/local-variable.bala \
+	parser/lock-statement.bala \
+	parser/main-block.bala \
+	parser/member-access-pointer.bala \
 	parser/method-no-abstract-override.test \
 	parser/method-no-abstract-virtual-override.test \
 	parser/method-no-abstract-virtual.test \
@@ -823,11 +823,11 @@ TESTS = \
 	parser/method-no-static-override.test \
 	parser/method-no-static-virtual.test \
 	parser/method-no-virtual-override.test \
-	parser/namespaces.vala \
+	parser/namespaces.bala \
 	parser/namespace-missing-bracket.test \
-	parser/preprocessor.vala \
-	parser/preprocessor-glib.vala \
-	parser/preprocessor-vala.vala \
+	parser/preprocessor.bala \
+	parser/preprocessor-glib.bala \
+	parser/preprocessor-bala.bala \
 	parser/property-default-redefined.test \
 	parser/property-get-must-have-body.test \
 	parser/property-get-redefined.test \
@@ -839,32 +839,32 @@ TESTS = \
 	parser/property-no-virtual-override.test \
 	parser/property-set-must-have-body.test \
 	parser/property-set-redefined.test \
-	parser/qualified-member-access.vala \
-	parser/qualified-symbol-access.vala \
+	parser/qualified-member-access.bala \
+	parser/qualified-symbol-access.bala \
 	parser/signal-no-class.test \
 	parser/signal-no-static.test \
 	parser/statement-outside-root.test \
-	parser/switch-statement.vala \
-	parser/template.vala \
-	parser/tuple.vala \
+	parser/switch-statement.bala \
+	parser/template.bala \
+	parser/tuple.bala \
 	parser/unsupported-property-async.test \
 	parser/unsupported-property-throws.test \
 	parser/using-ambiguous-reference.test \
-	parser/using-directive.vala \
+	parser/using-directive.bala \
 	parser/using-invalid-namespace.test \
 	parser/yield-method.test \
 	parser/yield-return.test \
-	parser/yield-return.vala \
-	parser/bug728574.vala \
-	parser/bug749576.vala \
+	parser/yield-return.bala \
+	parser/bug728574.bala \
+	parser/bug749576.bala \
 	resolver/class-base-cycle.test \
 	resolver/interface-prerequisite-cycle.test \
 	resolver/struct-base-cycle.test \
-	ordering/delegate-class.vala \
-	ordering/delegate-enum.vala \
-	ordering/delegate-interface.vala \
-	ordering/delegate-struct.vala \
-	ordering/struct-delegate.vala \
+	ordering/delegate-class.bala \
+	ordering/delegate-enum.bala \
+	ordering/delegate-interface.bala \
+	ordering/delegate-struct.bala \
+	ordering/struct-delegate.bala \
 	semantic/address-of-invalid.test \
 	semantic/array-stacked.test \
 	semantic/array-incompatible-initializer.test \
@@ -875,7 +875,7 @@ TESTS = \
 	semantic/assignment-element-incompatible-ownership.test \
 	semantic/assignment-element-incompatible-type.test \
 	semantic/assignment-fixed-array-length.test \
-	semantic/assignment-same-variable.vala \
+	semantic/assignment-same-variable.bala \
 	semantic/assignment-signal-incompatible-method.test \
 	semantic/assignment-signal-incompatible-type.test \
 	semantic/cast-gvalue-unsupported.test \
@@ -940,9 +940,9 @@ TESTS = \
 	semantic/field-static-instance-access.test \
 	semantic/field-valist.test \
 	semantic/field-void.test \
-	semantic/floating-reference.vala \
-	semantic/floating-reference-base-method.vala \
-	semantic/floating-reference-error.vala \
+	semantic/floating-reference.bala \
+	semantic/floating-reference-base-method.bala \
+	semantic/floating-reference-error.bala \
 	semantic/foreach-iterator-args.test \
 	semantic/foreach-iterator-element-owned.test \
 	semantic/foreach-iterator-void.test \
@@ -964,7 +964,7 @@ TESTS = \
 	semantic/interface-prerequisite-multiple.test \
 	semantic/literal-expression.test \
 	semantic/localvariable-owned-to-unowned.test \
-	semantic/localvariable-var-pointer-initializer.vala \
+	semantic/localvariable-var-pointer-initializer.bala \
 	semantic/localvariable-var-static-access-instance-field.test \
 	semantic/localvariable-var-static-access-instance-method.test \
 	semantic/localvariable-var-static-access-instance-property.test \
@@ -977,9 +977,9 @@ TESTS = \
 	semantic/member-access-capture-valist-variable.test \
 	semantic/member-access-protected-invalid.test \
 	semantic/member-access-undefined.test \
-	semantic/member-access-static-with-instance.vala \
-	semantic/member-access-static-transformed-qualified.vala \
-	semantic/member-access-transformed-qualified.vala \
+	semantic/member-access-static-with-instance.bala \
+	semantic/member-access-static-transformed-qualified.bala \
+	semantic/member-access-transformed-qualified.bala \
 	semantic/method-abstract.test \
 	semantic/method-abstract-body.test \
 	semantic/method-async-ref-parameter.test \
@@ -1082,7 +1082,7 @@ TESTS = \
 	semantic/yield-creation-requires-async-context.test \
 	semantic/yield-creation-requires-async-method.test \
 	semantic/yield-statement-requires-async-context.test \
-	nullability/bug611223.vala \
+	nullability/bug611223.bala \
 	nullability/local-variable-invalid-convert.test \
 	nullability/member-access-nullable-instance.test \
 	nullability/method-parameter-invalid-convert.test \
@@ -1164,15 +1164,15 @@ LINUX_TESTS = $(NULL)
 
 if HAVE_LINUX
 LINUX_TESTS += \
-	linux/bug793444.vala \
-	linux/file-commandpipe.vala \
-	posix/arrays.vala \
-	posix/empty-length-0.vala \
-	posix/string-concat.vala \
-	posix/struct_only.vala \
-	posix/delegate_only.vala \
-	posix/enum_only.vala \
-	posix/enum-to-string.vala \
+	linux/bug793444.bala \
+	linux/file-commandpipe.bala \
+	posix/arrays.bala \
+	posix/empty-length-0.bala \
+	posix/string-concat.bala \
+	posix/struct_only.bala \
+	posix/delegate_only.bala \
+	posix/enum_only.bala \
+	posix/enum-to-string.bala \
 	$(NULL)
 endif
 

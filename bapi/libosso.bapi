@@ -44,7 +44,7 @@
  *
  * Initial code based on r78 from
  *
- *     http://code.google.com/p/setanta-labs/source/browse/trunk/vala/osso/libosso.vala
+ *     http://code.google.com/p/setanta-labs/source/browse/trunk/bala/osso/libosso.bala
  */
 
 [CCode (cheader_filename = "libosso.h")]

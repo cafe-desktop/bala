@@ -86,7 +86,7 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 @ENABLE_BALADOC_TRUE@am__append_1 = \
-@ENABLE_BALADOC_TRUE@	valadoc.1 \
+@ENABLE_BALADOC_TRUE@	baladoc.1 \
 @ENABLE_BALADOC_TRUE@	$(NULL)
 
 @ENABLE_BALADOC_TRUE@@HAVE_CGRAPH_TRUE@am__append_2 = -D WITH_CGRAPH
@@ -371,12 +371,12 @@ SUBDIRS = \
 	manual \
 	$(NULL)
 
-dist_man_MANS = valac.1 vala-gen-introspect.1 vapigen.1 $(NULL) \
+dist_man_MANS = balac.1 bala-gen-introspect.1 vapigen.1 $(NULL) \
 	$(am__append_1)
 EXTRA_DIST = \
-	valac.h2m \
-	valadoc.h2m \
-	vala-gen-introspect.h2m \
+	balac.h2m \
+	baladoc.h2m \
+	bala-gen-introspect.h2m \
 	vapigen.h2m \
 	$(NULL)
 
@@ -385,15 +385,15 @@ EXTRA_DIST = \
 @ENABLE_BALADOC_TRUE@	--vapidir=$(top_builddir)/vapi --pkg \
 @ENABLE_BALADOC_TRUE@	config --pkg gmodule-2.0 \
 @ENABLE_BALADOC_TRUE@	--directory=internal-apis/ \
-@ENABLE_BALADOC_TRUE@	--doclet=$(top_builddir)/valadoc/doclets/html/.libs \
+@ENABLE_BALADOC_TRUE@	--doclet=$(top_builddir)/baladoc/doclets/html/.libs \
 @ENABLE_BALADOC_TRUE@	--doclet-arg "--no-browsable-check" \
 @ENABLE_BALADOC_TRUE@	--basedir=internal-apis/ $(NULL) \
 @ENABLE_BALADOC_TRUE@	$(am__append_2)
-@ENABLE_BALADOC_TRUE@gee_BALASOURCES = $(top_srcdir)/gee/*.vala
-@ENABLE_BALADOC_TRUE@vala_BALASOURCES = $(top_srcdir)/vala/*.vala
-@ENABLE_BALADOC_TRUE@ccode_BALASOURCES = $(top_srcdir)/ccode/*.vala
-@ENABLE_BALADOC_TRUE@codegen_BALASOURCES = $(top_srcdir)/codegen/*.vala
-@ENABLE_BALADOC_TRUE@valadoc_BALASOURCES = $(top_srcdir)/libvaladoc/*.vala $(top_srcdir)/libvaladoc/*/*.vala
+@ENABLE_BALADOC_TRUE@gee_BALASOURCES = $(top_srcdir)/gee/*.bala
+@ENABLE_BALADOC_TRUE@bala_BALASOURCES = $(top_srcdir)/bala/*.bala
+@ENABLE_BALADOC_TRUE@ccode_BALASOURCES = $(top_srcdir)/ccode/*.bala
+@ENABLE_BALADOC_TRUE@codegen_BALASOURCES = $(top_srcdir)/codegen/*.bala
+@ENABLE_BALADOC_TRUE@baladoc_BALASOURCES = $(top_srcdir)/libbaladoc/*.bala $(top_srcdir)/libbaladoc/*/*.bala
 all: all-recursive
 
 .SUFFIXES:
@@ -762,24 +762,24 @@ uninstall-man: uninstall-man1
 .PRECIOUS: Makefile
 
 
-@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@manpages: valac.1 valadoc.1 vala-gen-introspect.1 vapigen.1
-@ENABLE_BALADOC_FALSE@@HAVE_HELP2MAN_TRUE@manpages: valac.1 vala-gen-introspect.1 vapigen.1
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@manpages: balac.1 baladoc.1 bala-gen-introspect.1 vapigen.1
+@ENABLE_BALADOC_FALSE@@HAVE_HELP2MAN_TRUE@manpages: balac.1 bala-gen-introspect.1 vapigen.1
 @HAVE_HELP2MAN_TRUE@	@rm $^
 @HAVE_HELP2MAN_TRUE@	$(MAKE) $(AM_MAKEFLAGS) $^
 
-@HAVE_HELP2MAN_TRUE@valac.1:
-@HAVE_HELP2MAN_TRUE@	$(HELP2MAN) $(top_builddir)/compiler/valac \
-@HAVE_HELP2MAN_TRUE@		--include $(srcdir)/valac.h2m \
+@HAVE_HELP2MAN_TRUE@balac.1:
+@HAVE_HELP2MAN_TRUE@	$(HELP2MAN) $(top_builddir)/compiler/balac \
+@HAVE_HELP2MAN_TRUE@		--include $(srcdir)/balac.h2m \
 @HAVE_HELP2MAN_TRUE@		--libtool --no-info \
 @HAVE_HELP2MAN_TRUE@		--output=$@
-@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@valadoc.1:
-@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@	$(HELP2MAN) $(top_builddir)/valadoc/valadoc \
-@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--include $(srcdir)/valadoc.h2m \
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@baladoc.1:
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@	$(HELP2MAN) $(top_builddir)/baladoc/baladoc \
+@ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--include $(srcdir)/baladoc.h2m \
 @ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--libtool --no-info \
 @ENABLE_BALADOC_TRUE@@HAVE_HELP2MAN_TRUE@		--output=$@
-@HAVE_HELP2MAN_TRUE@vala-gen-introspect.1:
+@HAVE_HELP2MAN_TRUE@bala-gen-introspect.1:
 @HAVE_HELP2MAN_TRUE@	$(HELP2MAN) $(top_builddir)/gobject-introspection/gen-introspect \
-@HAVE_HELP2MAN_TRUE@		--include $(srcdir)/vala-gen-introspect.h2m \
+@HAVE_HELP2MAN_TRUE@		--include $(srcdir)/bala-gen-introspect.h2m \
 @HAVE_HELP2MAN_TRUE@		--version-string=$(PACKAGE_VERSION) \
 @HAVE_HELP2MAN_TRUE@		--libtool --no-info \
 @HAVE_HELP2MAN_TRUE@		--output=$@
@@ -790,63 +790,63 @@ uninstall-man: uninstall-man1
 @HAVE_HELP2MAN_TRUE@		--output=$@
 
 @ENABLE_UNVERSIONED_TRUE@install-data-hook:
-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f valac@PACKAGE_SUFFIX@.1 valac.1
-@ENABLE_UNVERSIONED_TRUE@@ENABLE_BALADOC_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f valadoc@PACKAGE_SUFFIX@.1 valadoc.1
-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f vala-gen-introspect@PACKAGE_SUFFIX@.1 vala-gen-introspect.1
+@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f balac@PACKAGE_SUFFIX@.1 balac.1
+@ENABLE_UNVERSIONED_TRUE@@ENABLE_BALADOC_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f baladoc@PACKAGE_SUFFIX@.1 baladoc.1
+@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f bala-gen-introspect@PACKAGE_SUFFIX@.1 bala-gen-introspect.1
 @ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(man1dir) && $(LN_S) -f vapigen@PACKAGE_SUFFIX@.1 vapigen.1
 @ENABLE_BALADOC_TRUE@internal-apis/gee: $(gee_BALASOURCES)
-@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc \
 @ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
 @ENABLE_BALADOC_TRUE@		--package-name gee \
 @ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
 @ENABLE_BALADOC_TRUE@		--deps \
-@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@		$(filter %.bala,$^)
 @ENABLE_BALADOC_TRUE@	@touch $@
-@ENABLE_BALADOC_TRUE@internal-apis/vala: $(vala_BALASOURCES) internal-apis/gee
-@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
+@ENABLE_BALADOC_TRUE@internal-apis/bala: $(bala_BALASOURCES) internal-apis/gee
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc \
 @ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
-@ENABLE_BALADOC_TRUE@		--package-name vala \
+@ENABLE_BALADOC_TRUE@		--package-name bala \
 @ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
 @ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
 @ENABLE_BALADOC_TRUE@		--deps \
-@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@		$(filter %.bala,$^)
 @ENABLE_BALADOC_TRUE@	@touch $@
 @ENABLE_BALADOC_TRUE@internal-apis/ccode: $(ccode_BALASOURCES) internal-apis/gee
-@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc \
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc \
 @ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
 @ENABLE_BALADOC_TRUE@		--package-name ccode \
 @ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
 @ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
-@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/vala --pkg vala \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/bala --pkg bala \
 @ENABLE_BALADOC_TRUE@		--deps \
-@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@		$(filter %.bala,$^)
 @ENABLE_BALADOC_TRUE@	@touch $@
-@ENABLE_BALADOC_TRUE@internal-apis/codegen: $(codegen_BALASOURCES) internal-apis/vala internal-apis/ccode
-@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
+@ENABLE_BALADOC_TRUE@internal-apis/codegen: $(codegen_BALASOURCES) internal-apis/bala internal-apis/ccode
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc\
 @ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
 @ENABLE_BALADOC_TRUE@		--package-name codegen \
 @ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
 @ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
-@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/vala --pkg vala \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/bala --pkg bala \
 @ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/ccode --pkg ccode \
 @ENABLE_BALADOC_TRUE@		--deps \
-@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@		$(filter %.bala,$^)
 @ENABLE_BALADOC_TRUE@	@touch $@
-@ENABLE_BALADOC_TRUE@internal-apis/valadoc: $(valadoc_BALASOURCES) internal-apis/codegen
-@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/valadoc/valadoc\
+@ENABLE_BALADOC_TRUE@internal-apis/baladoc: $(baladoc_BALASOURCES) internal-apis/codegen
+@ENABLE_BALADOC_TRUE@	$(AM_V_GEN)$(top_builddir)/baladoc/baladoc\
 @ENABLE_BALADOC_TRUE@		$(COMMON_BALADOCFLAGS) \
-@ENABLE_BALADOC_TRUE@		--package-name valadoc \
+@ENABLE_BALADOC_TRUE@		--package-name baladoc \
 @ENABLE_BALADOC_TRUE@		--package-version $(PACKAGE_VERSION) \
 @ENABLE_BALADOC_TRUE@		--vapidir=$(top_srcdir)/vapi --pkg libgvc \
 @ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/gee --pkg gee \
-@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/vala --pkg vala \
+@ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/bala --pkg bala \
 @ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/ccode --pkg ccode \
 @ENABLE_BALADOC_TRUE@		--vapidir=$(top_builddir)/codegen --pkg codegen \
 @ENABLE_BALADOC_TRUE@		--deps \
-@ENABLE_BALADOC_TRUE@		$(filter %.vala,$^)
+@ENABLE_BALADOC_TRUE@		$(filter %.bala,$^)
 @ENABLE_BALADOC_TRUE@	@touch $@
 
-@ENABLE_BALADOC_TRUE@internal-api-docs: internal-apis/gee internal-apis/vala internal-apis/ccode internal-apis/codegen internal-apis/valadoc
+@ENABLE_BALADOC_TRUE@internal-api-docs: internal-apis/gee internal-apis/bala internal-apis/ccode internal-apis/codegen internal-apis/baladoc
 
 clean-local:
 	rm -rf $(builddir)/internal-apis

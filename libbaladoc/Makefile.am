@@ -3,8 +3,8 @@ include $(top_srcdir)/Makefile.common
 NULL =
 
 AM_CFLAGS = \
-	-DG_LOG_DOMAIN=\"valadoc\" \
-	-DPACKAGE_BALADOC_LIBDIR=\"$(libdir)/valadoc@PACKAGE_SUFFIX@\" \
+	-DG_LOG_DOMAIN=\"baladoc\" \
+	-DPACKAGE_BALADOC_LIBDIR=\"$(libdir)/baladoc@PACKAGE_SUFFIX@\" \
 	-DPACKAGE_VERSION=\"$(VERSION)\" \
 	$(COVERAGE_CFLAGS) \
 	$(LIBGVC_CFLAGS) \
@@ -12,7 +12,7 @@ AM_CFLAGS = \
 	$(GMODULE_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	-I$(top_srcdir)/codegen \
 	$(NULL)
 
@@ -20,150 +20,150 @@ AM_BALAFLAGS = \
 	$(NULL)
 
 BUILT_SOURCES = \
-	libvaladoc.vala.stamp \
-	valadoc.h \
+	libbaladoc.bala.stamp \
+	baladoc.h \
 	$(NULL)
 
-lib_LTLIBRARIES = libvaladoc@PACKAGE_SUFFIX@.la
+lib_LTLIBRARIES = libbaladoc@PACKAGE_SUFFIX@.la
 
-libvaladoc_la_BALASOURCES = \
-	doclet.vala \
-	errorreporter.vala \
-	filehelper.vala \
-	moduleloader.vala \
-	settings.vala \
-	markupwriter.vala \
-	gtkdocmarkupwriter.vala \
-	devhelp-markupwriter.vala \
-	ctyperesolver.vala \
-	gtkdocrenderer.vala \
-	documentation/commentscanner.vala \
-	documentation/documentation.vala \
-	documentation/documentationparser.vala \
-	documentation/wiki.vala \
-	documentation/wikiscanner.vala \
-	documentation/gtkdoccommentparser.vala \
-	documentation/gtkdoccommentscanner.vala \
-	documentation/gtkdocmarkdownparser.vala \
-	documentation/gtkdocmarkdownscanner.vala \
-	documentation/importerhelper.vala \
-	documentation/girmetadata.vala \
-	importer/documentationimporter.vala \
-	importer/valadocdocumentationimporter.vala \
-	importer/valadocdocumentationimporterscanner.vala \
-	importer/girdocumentationimporter.vala \
-	importer/internalidregistrar.vala \
-	api/sourcecomment.vala \
-	api/girsourcecomment.vala \
-	api/attribute.vala \
-	api/array.vala \
-	api/callable.vala \
-	api/childsymbolregistrar.vala \
-	api/class.vala \
-	api/constant.vala \
-	api/delegate.vala \
-	api/enum.vala \
-	api/enumvalue.vala \
-	api/errorcode.vala \
-	api/errordomain.vala \
-	api/field.vala \
-	api/interface.vala \
-	api/item.vala \
-	api/method.vala \
-	api/namespace.vala \
-	api/node.vala \
-	api/nodetype.vala \
-	api/ownership.vala \
-	api/package.vala \
-	api/parameter.vala \
-	api/pointer.vala \
-	api/property.vala \
-	api/propertyaccessor.vala \
-	api/signal.vala \
-	api/signaturebuilder.vala \
-	api/sourcefile.vala \
-	api/struct.vala \
-	api/symbol.vala \
-	api/tree.vala \
-	api/typeparameter.vala \
-	api/typereference.vala \
-	api/typesymbol.vala \
-	api/visitor.vala \
-	content/block.vala \
-	content/blockcontent.vala \
-	content/comment.vala \
-	content/contentfactory.vala \
-	content/contentelement.vala \
-	content/contentrenderer.vala \
-	content/contentvisitor.vala \
-	content/embedded.vala \
-	content/headline.vala \
-	content/inline.vala \
-	content/inlinetaglet.vala \
-	content/inlinecontent.vala \
-	content/wikilink.vala \
-	content/link.vala \
-	content/list.vala \
-	content/listitem.vala \
-	content/page.vala \
-	content/paragraph.vala \
-	content/warning.vala \
-	content/note.vala \
-	content/resourcelocator.vala \
-	content/run.vala \
-	content/sourcecode.vala \
-	content/styleattributes.vala \
-	content/symbollink.vala \
-	content/table.vala \
-	content/tablecell.vala \
-	content/tablerow.vala \
-	content/taglet.vala \
-	content/text.vala \
-	charts/chart.vala \
-	charts/chartfactory.vala \
-	charts/hierarchychart.vala \
-	charts/simplechartfactory.vala \
-	parser/manyrule.vala \
-	parser/oneofrule.vala \
-	parser/optionalrule.vala \
-	parser/parser.vala \
-	parser/parsercallback.vala \
-	parser/rule.vala \
-	parser/scanner.vala \
-	parser/sequencerule.vala \
-	parser/stubrule.vala \
-	parser/token.vala \
-	parser/tokentype.vala \
-	taglets/tagletdeprecated.vala \
-	taglets/tagletinheritdoc.vala \
-	taglets/tagletinit.vala \
-	taglets/tagletlink.vala \
-	taglets/tagletparam.vala \
-	taglets/tagletreturn.vala \
-	taglets/tagletsee.vala \
-	taglets/tagletsince.vala \
-	taglets/tagletthrows.vala \
-	highlighter/scanner.vala \
-	highlighter/codescanner.vala \
-	highlighter/xmlscanner.vala \
-	highlighter/codetoken.vala \
-	highlighter/highlighter.vala \
-	html/basicdoclet.vala \
-	html/htmlchartfactory.vala \
-	html/linkhelper.vala \
-	html/cssclassresolver.vala \
-	html/htmlmarkupwriter.vala \
-	html/htmlrenderer.vala \
+libbaladoc_la_BALASOURCES = \
+	doclet.bala \
+	errorreporter.bala \
+	filehelper.bala \
+	moduleloader.bala \
+	settings.bala \
+	markupwriter.bala \
+	gtkdocmarkupwriter.bala \
+	devhelp-markupwriter.bala \
+	ctyperesolver.bala \
+	gtkdocrenderer.bala \
+	documentation/commentscanner.bala \
+	documentation/documentation.bala \
+	documentation/documentationparser.bala \
+	documentation/wiki.bala \
+	documentation/wikiscanner.bala \
+	documentation/gtkdoccommentparser.bala \
+	documentation/gtkdoccommentscanner.bala \
+	documentation/gtkdocmarkdownparser.bala \
+	documentation/gtkdocmarkdownscanner.bala \
+	documentation/importerhelper.bala \
+	documentation/girmetadata.bala \
+	importer/documentationimporter.bala \
+	importer/baladocdocumentationimporter.bala \
+	importer/baladocdocumentationimporterscanner.bala \
+	importer/girdocumentationimporter.bala \
+	importer/internalidregistrar.bala \
+	api/sourcecomment.bala \
+	api/girsourcecomment.bala \
+	api/attribute.bala \
+	api/array.bala \
+	api/callable.bala \
+	api/childsymbolregistrar.bala \
+	api/class.bala \
+	api/constant.bala \
+	api/delegate.bala \
+	api/enum.bala \
+	api/enumvalue.bala \
+	api/errorcode.bala \
+	api/errordomain.bala \
+	api/field.bala \
+	api/interface.bala \
+	api/item.bala \
+	api/method.bala \
+	api/namespace.bala \
+	api/node.bala \
+	api/nodetype.bala \
+	api/ownership.bala \
+	api/package.bala \
+	api/parameter.bala \
+	api/pointer.bala \
+	api/property.bala \
+	api/propertyaccessor.bala \
+	api/signal.bala \
+	api/signaturebuilder.bala \
+	api/sourcefile.bala \
+	api/struct.bala \
+	api/symbol.bala \
+	api/tree.bala \
+	api/typeparameter.bala \
+	api/typereference.bala \
+	api/typesymbol.bala \
+	api/visitor.bala \
+	content/block.bala \
+	content/blockcontent.bala \
+	content/comment.bala \
+	content/contentfactory.bala \
+	content/contentelement.bala \
+	content/contentrenderer.bala \
+	content/contentvisitor.bala \
+	content/embedded.bala \
+	content/headline.bala \
+	content/inline.bala \
+	content/inlinetaglet.bala \
+	content/inlinecontent.bala \
+	content/wikilink.bala \
+	content/link.bala \
+	content/list.bala \
+	content/listitem.bala \
+	content/page.bala \
+	content/paragraph.bala \
+	content/warning.bala \
+	content/note.bala \
+	content/resourcelocator.bala \
+	content/run.bala \
+	content/sourcecode.bala \
+	content/styleattributes.bala \
+	content/symbollink.bala \
+	content/table.bala \
+	content/tablecell.bala \
+	content/tablerow.bala \
+	content/taglet.bala \
+	content/text.bala \
+	charts/chart.bala \
+	charts/chartfactory.bala \
+	charts/hierarchychart.bala \
+	charts/simplechartfactory.bala \
+	parser/manyrule.bala \
+	parser/oneofrule.bala \
+	parser/optionalrule.bala \
+	parser/parser.bala \
+	parser/parsercallback.bala \
+	parser/rule.bala \
+	parser/scanner.bala \
+	parser/sequencerule.bala \
+	parser/stubrule.bala \
+	parser/token.bala \
+	parser/tokentype.bala \
+	taglets/tagletdeprecated.bala \
+	taglets/tagletinheritdoc.bala \
+	taglets/tagletinit.bala \
+	taglets/tagletlink.bala \
+	taglets/tagletparam.bala \
+	taglets/tagletreturn.bala \
+	taglets/tagletsee.bala \
+	taglets/tagletsince.bala \
+	taglets/tagletthrows.bala \
+	highlighter/scanner.bala \
+	highlighter/codescanner.bala \
+	highlighter/xmlscanner.bala \
+	highlighter/codetoken.bala \
+	highlighter/highlighter.bala \
+	html/basicdoclet.bala \
+	html/htmlchartfactory.bala \
+	html/linkhelper.bala \
+	html/cssclassresolver.bala \
+	html/htmlmarkupwriter.bala \
+	html/htmlrenderer.bala \
 	$(NULL)
 
-libvaladoc@PACKAGE_SUFFIX@_la_SOURCES = \
-	libvaladoc.vala.stamp \
-	$(libvaladoc_la_BALASOURCES:.vala=.c) \
+libbaladoc@PACKAGE_SUFFIX@_la_SOURCES = \
+	libbaladoc.bala.stamp \
+	$(libbaladoc_la_BALASOURCES:.bala=.c) \
 	gvc-compat.c \
 	$(NULL)
 
-valadoc@PACKAGE_SUFFIX@.vapi valadoc.h: libvaladoc.vala.stamp
-libvaladoc.vala.stamp: $(libvaladoc_la_BALASOURCES)
+baladoc@PACKAGE_SUFFIX@.vapi baladoc.h: libbaladoc.bala.stamp
+libbaladoc.bala.stamp: $(libbaladoc_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -171,67 +171,67 @@ libvaladoc.vala.stamp: $(libvaladoc_la_BALASOURCES)
 		--directory $(builddir) \
 		-C \
 		--use-header \
-		-H valadoc.h \
-		--library valadoc \
-		--vapi valadoc@PACKAGE_SUFFIX@.vapi \
+		-H baladoc.h \
+		--library baladoc \
+		--vapi baladoc@PACKAGE_SUFFIX@.vapi \
 		--vapidir $(top_srcdir)/vapi --pkg gmodule-2.0 \
 		--vapidir $(top_srcdir)/vapi --pkg libgvc \
 		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--vapidir $(top_srcdir)/ccode --pkg ccode \
 		--vapidir $(top_srcdir)/codegen --pkg codegen \
 		--pkg config \
-		$(filter %.vala %.c,$^)
+		$(filter %.bala %.c,$^)
 	touch $@
 
-libvaladoc@PACKAGE_SUFFIX@_la_LDFLAGS = \
+libbaladoc@PACKAGE_SUFFIX@_la_LDFLAGS = \
 	-no-undefined \
 	$(NULL)
 
-libvaladoc@PACKAGE_SUFFIX@_la_LIBADD = \
+libbaladoc@PACKAGE_SUFFIX@_la_LIBADD = \
 	$(COVERAGE_LIBS) \
 	$(LIBGVC_LIBS) \
 	$(GLIB_LIBS) \
 	$(GMODULE_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(NULL)
 
-libvaladocincludedir = $(includedir)/valadoc@PACKAGE_SUFFIX@
-libvaladocinclude_HEADERS = \
-	valadoc.h \
+libbaladocincludedir = $(includedir)/baladoc@PACKAGE_SUFFIX@
+libbaladocinclude_HEADERS = \
+	baladoc.h \
 	$(NULL)
 
 pkgconfigdir = $(libdir)/pkgconfig
-nodist_pkgconfig_DATA = valadoc@PACKAGE_SUFFIX@.pc
+nodist_pkgconfig_DATA = baladoc@PACKAGE_SUFFIX@.pc
 
-valadoc@PACKAGE_SUFFIX@.pc: valadoc.pc
+baladoc@PACKAGE_SUFFIX@.pc: baladoc.pc
 	cp $< $@
 
-vapidir = $(datadir)/vala/vapi
-dist_vapi_DATA = valadoc@PACKAGE_SUFFIX@.vapi
-nodist_vapi_DATA = valadoc@PACKAGE_SUFFIX@.deps
+vapidir = $(datadir)/bala/vapi
+dist_vapi_DATA = baladoc@PACKAGE_SUFFIX@.vapi
+nodist_vapi_DATA = baladoc@PACKAGE_SUFFIX@.deps
 
-valadoc@PACKAGE_SUFFIX@.deps: valadoc.deps
+baladoc@PACKAGE_SUFFIX@.deps: baladoc.deps
 	cp $< $@
 
 EXTRA_DIST = \
-	$(libvaladoc_la_BALASOURCES) \
-	libvaladoc.vala.stamp \
-	valadoc.deps.in \
-	valadoc.pc.in \
+	$(libbaladoc_la_BALASOURCES) \
+	libbaladoc.bala.stamp \
+	baladoc.deps.in \
+	baladoc.pc.in \
 	$(NULL)
 
 CLEANFILES = \
-	valadoc@PACKAGE_SUFFIX@.deps \
-	valadoc@PACKAGE_SUFFIX@.pc \
+	baladoc@PACKAGE_SUFFIX@.deps \
+	baladoc@PACKAGE_SUFFIX@.pc \
 	$(NULL)
 
 MAINTAINERCLEANFILES = \
-	valadoc.deps \
-	valadoc.pc \
-	valadoc.vapi \
-	valadoc.h \
-	$(libvaladoc_la_BALASOURCES:.vala=.c) \
+	baladoc.deps \
+	baladoc.pc \
+	baladoc.vapi \
+	baladoc.h \
+	$(libbaladoc_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 

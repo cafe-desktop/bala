@@ -16,12 +16,12 @@ Vala 0.48.16
     + Fix default value of get_ccode_destroy_notify_pos()
     + Don't override valid target/destroy of previous lambda argument [#59]
     + Don't call *_instance_init() in compact class chainup
-  - vala: Mark tranformed static member-access as qualified [#270]
+  - bala: Mark tranformed static member-access as qualified [#270]
   - girwriter: namespace expects "c:symbol-prefixes" attribute [#1038]
   - girwriter: Don't use instance-parameter inside callback [#1167]
-  - girparser,libvaladoc/girimporter: Don't guess length of xml header, iterate
+  - girparser,libbaladoc/girimporter: Don't guess length of xml header, iterate
     forward to <repository>
-  - libvaladoc/girimporter: parse_constant() use "c:identifier" attribute first
+  - libbaladoc/girimporter: parse_constant() use "c:identifier" attribute first
 
  * Bindings:
   - rest-0.7: Fix OAuthProxyAuthCallback binding
@@ -46,7 +46,7 @@ Vala 0.48.15
     + Don't add generics arguments/parameters to async finish method
     + Drop inner casts before converting between generics and integers
     + Include "glib.h" for deprecated symbols (GOBJECT) [#1155]
-  - vala:
+  - bala:
     + Report warning if --target-glib=auto was not evaluated successfully
     + Fix ownership inheritance of "unowned var" in foreach statement
     + Add missing null-check in DataType.get_type_signature()
@@ -97,7 +97,7 @@ Vala 0.48.14
     + Strip all nested occurances of CCodeCastExpression [#1134]
     + Don't wrongly emit declaration for default-handler of signals
     + Include "string.h" for strcmp() (POSIX)
-  - vala:
+  - bala:
     + Improve detection of duplicate package source files
     + Apply stricter condition for lambda to delegate assignment
     + Don't allow disposable SimpleType structs
@@ -119,9 +119,9 @@ Vala 0.48.14
     + Set CCode.type_cname for classes if it doesn't match our default
   - girwriter: Write instance-parameter elements [#1128]
   - girwriter: Output default handler of signals
-  - libvaladoc/html: Don't sort struct fields to keep their original order
-  - libvaladoc: Correctly retrieve value for Api.Class.is_compact
-  - libvaladoc: Add wrapper for "agedge" of graphviz
+  - libbaladoc/html: Don't sort struct fields to keep their original order
+  - libbaladoc: Correctly retrieve value for Api.Class.is_compact
+  - libbaladoc: Add wrapper for "agedge" of graphviz
 
  * Bindings:
   - Fix several bindings which lead to invalid code by using them in:
@@ -145,7 +145,7 @@ Vala 0.48.13
     + Don't leak memory of already assigned out-parameter on error [#1123]
     + Don't leak memory on internal value comparison of property setter
     + Fix assignment of casted struct value to property [#1126]
-  - vala:
+  - bala:
     + Report an error if gio-2.0 is missing for DBus support
     + Add missing TraverseVisitor.visit_addressof_expression()
     + value_type of PointerIndirection expressions must not be owned [#1118]
@@ -172,14 +172,14 @@ Vala 0.48.12
     + Don't use inferred type for temp-value to access generic property [#1088]
     + Update outdated array _size_ variable of captured local-variable [#1090]
     + Report internal error for unsupported collection type in foreach
-  - vala:
+  - bala:
     + Issue an error on void initializer for local-variable
     + Allow markup-reader to accept spaces around '=' of attribute assignment
     + CodeNode.source_reference is optional, so let the API respect that
     + Use DataType.compatible() to check for string concatenation [#1100]
-  - valadoc: Don't call CodeContext.pop() on empty stack [#1064]
-  - libvaladoc: Don't filter-out generic type-parameters of delegates
-  - libvaladoc/girimporter: Skip "docsection" elements in <namespace>
+  - baladoc: Don't call CodeContext.pop() on empty stack [#1064]
+  - libbaladoc: Don't filter-out generic type-parameters of delegates
+  - libbaladoc/girimporter: Skip "docsection" elements in <namespace>
   - testrunner: Add "-Werror=return-local-addr" flag
   - manual: Update from wiki.gnome.org
 
@@ -206,7 +206,7 @@ Vala 0.48.11
     + The actual struct size is required for calloc (POSIX) [#1068]
     + Don't pass CCodeFunctionCall to NULL-aware free macro
   - g-i: Fix a couple of C compiler warnings
-  - libvaladoc: Fix a couple of C compiler warnings
+  - libbaladoc: Fix a couple of C compiler warnings
   - testrunner: Pass --enable-checking to increase coverage, Filter external
     -0X flags to preserve current default -O0
 
@@ -224,21 +224,21 @@ Vala 0.48.10
   - tests: Don't rely on undefined use-after-free behaviour of glibc
   - Add TraverseVisitor for traversing the tree with a callback
   - Force usage of temporary variables for "tainted" member accesses [#1061]
-  - vala: Move transformation of unary increment/decrement to codegen
-  - vala: Set parent_node for child nodes of lambda-expression [#1062]
+  - bala: Move transformation of unary increment/decrement to codegen
+  - bala: Set parent_node for child nodes of lambda-expression [#1062]
   - codegen: Don't append unreachable clean-up section of Block [#169] [#838]
   - codegen: Always include base_struct declaration if available [#464]
-  - vala: Additionally break on ObjectCreationExpression in "tainted" check
-  - vala: Add ObjectCreationExpression.to_string()
+  - bala: Additionally break on ObjectCreationExpression in "tainted" check
+  - bala: Add ObjectCreationExpression.to_string()
   - manual: Update from wiki.gnome.org
   - Don't use locale dependent string functions on syntax strings [#1067]
   - girparser: Additionally fallback to "glib:type-name" to retrieve the cname
-  - libvaladoc/girimporter:
+  - libbaladoc/girimporter:
     + Fallback to "name" for callback
     + Fallback to "glib:type-name" for class, interface and record
     + Improve parse_symbol_doc() and don't use parse_doc()
     + Skip "attribute" elements
-  - libvaladoc/gtkdoc-importer:
+  - libbaladoc/gtkdoc-importer:
     + Correctly retrieve "url" from "ulink" elements
     + Don't let parse_block_taglet() return null
 
@@ -253,7 +253,7 @@ Vala 0.48.9
 ===========
  * Regression and bug fixes:
   - codegen: Include header for base-symbols when connecting vfuncs
-  - vala:
+  - bala:
     + Inherit CCode.returns_floating_reference attribute from base [#1053]
     + Mark tranformed member-access as qualified [#57]
   - girparser: Add support for string "feature_test_macro" metadata
@@ -279,7 +279,7 @@ Vala 0.48.8
     + Inline allocated and constant arrays are never NULL
     + Check param for null before using it
     + Properly destroy elements of an inline struct array [#365]
-  - vala:
+  - bala:
     + Avoid subsequent critical caused by invalid array type for constant
     + Improve error handling of nested initializer lists
     + Don't allow "resize" invocation on variable with unowned array type [#928]
@@ -300,7 +300,7 @@ Vala 0.48.8
     + Write c:symbol-prefix on supported elements
     + Don't include symbols outside of a namespace [#241]
     + Use appropriate get_ccode_* functions
-  - libvaladoc: Support exporting the `class` modifier on methods and fields
+  - libbaladoc: Support exporting the `class` modifier on methods and fields
   - Disable deprecation warnings when checking bindings
   - tests: Fix "methods/extern" test with -Werror=address and gcc 5.4.0
 
@@ -323,7 +323,7 @@ Vala 0.48.7
     + Don't call get_ccode_finish_instance() with non-async methods
     + Cast initializer-list to struct for non-constant/-array assignment [#1013]
     + Consistently use get_ccode_lower_case_prefix() for function names [#1008]
-  - vala:
+  - bala:
     + Correctly handle qualified struct type in initializer list [#1004]
     + Reduce calls of CodeContext.get()
     + Fix value-type for ArrayCreationExpression used as argument [#1009]
@@ -333,7 +333,7 @@ Vala 0.48.7
   - girwriter: Append symbol-attributes to callback field [#1006]
   - parser: Avoid mitigation for missing token if it follows DOT or
     DOUBLE_COLON [#987]
-  - libvaladoc/girimporter: Skip "function-macro" elements
+  - libbaladoc/girimporter: Skip "function-macro" elements
   - build: Update git-version-gen to latest upstream
   - tests: Build typelib if g-ir-compiler is available
 
@@ -355,7 +355,7 @@ Vala 0.48.6
   - codegen:
     + Correctly handle cast-expression of real struct to nullable struct [#991]
     + Use loop index instead of get_ccode_pos() for ellipsis parameter [#995]
-  - vala:
+  - bala:
     + Allow node_ref being null in SemanticAnalyzer.get_instance_base_type()
     + SemanticAnalyzer.get_instance_base_type() is not allowed to return null
     + params-array parameter is not allowed in abstract/virtual method [#985]
@@ -365,7 +365,7 @@ Vala 0.48.6
     + Transform cast from floating-type to boxed-type [#991]
     + Transform cast from integer-type to boxed-type [#992]
     + Explicit "new" method may be incompatible with a posssible base method
-  - valadoc: Add implicit "Posix" using-directive for POSIX profile
+  - baladoc: Add implicit "Posix" using-directive for POSIX profile
   - girparser: Add support for boolean "new" argument for methods
 
  * Bindings:
@@ -374,7 +374,7 @@ Vala 0.48.6
 Vala 0.48.5
 ===========
  * Regression and bug fixes:
-  - Revert "vala: Set default_construction_method in semantic-analyzer check
+  - Revert "bala: Set default_construction_method in semantic-analyzer check
     if required" [#982]
   - tests: Fix make dist
 
@@ -388,7 +388,7 @@ Vala 0.48.4
     + Use specified indices to access multidimensional array constants [#905]
     + Fix base-access to non-abstract/non-virtual properties [#204]
     + Fix default of CCode.pos for parameters in async methods
-  - vala:
+  - bala:
     + Set default_construction_method in semantic-analyzer check if required
     + Fix cleaning of output in CodeContext.pkg_config_modversion()
     + Don't use possibly uninitialized backing field of package_name [#971]
@@ -426,7 +426,7 @@ Vala 0.48.3
     + Include "glib.h" for G_BEGIN_DECLS/G_END_DECLS usage
     + Correctly handle transformation of translated string-literal constants
     + Don't pass CCodeCastExpression to NULL-aware free macro [#953]
-  - vala:
+  - bala:
     + Support struct initializer list in non-constant array [#949]
     + Handle unlock() statement in CodeWriter
     + Handle all ctors and dtors in CodeWriter
@@ -454,13 +454,13 @@ Vala 0.48.2
     + Use memset to init inline-allocated array with non-constant size [#910]
     + Initialize temp-var for property array length before calling getter
     + Include "glib.h" for g_return_*() usage [#940]
-  - vala:
+  - bala:
     + Use error() instead of Report.error() inside of CodeContext.get()
     + Accept enum-values as length for inline allocated arrays [#935]
     + Improve copy of required attributes from delegate to lamdba method
     + Inherit lambda parameter attributes from delegate
     + Inline-allocated array aren't instantiated with creation expression [#926]
-  - valadoc: Create and register current Vala.CodeContext properly
+  - baladoc: Create and register current Vala.CodeContext properly
   - parser: Improve error message for invalid ArrayCreationExpression [#939]
   - tests: Drop usage of "--main main" and avoid ambigious entry-points
   - manual: Update from wiki.gnome.org
@@ -489,7 +489,7 @@ Vala 0.48.1
     + Move ObjectTypeSymbol casting to GTypeModule
     + Factor out GValueModule and GLibValue into a separate source-files
     + Avoid symbol clashes with "va_*" from "stdarg.h"
-  - vala:
+  - bala:
     + Fix search for Parameter.base_parameter
     + Real struct-type without type_id can't be used for GObject property [#921]
   - codewriter: Output inner interface declarations [#918]
@@ -505,7 +505,7 @@ Vala 0.48.1
 Vala 0.48.0
 ===========
  * Various improvements and bug fixes:
-  - vala:
+  - bala:
     + Fix circular reference in Property/EnumValueType
     + Report an internal error for unavailable context and bail
     + Prevent possible stack-overflow in Class.is_subtype_of()
@@ -529,8 +529,8 @@ Vala 0.47.92
   - Add support for sealed classes in bindings [#278]
   - codegen: Don't initialize stack-allocated array with local-constant
     length [#910]
-  - vala: Improve robustness of analyzer pass for language-servers [#911]
-  - vala: Add local-variables to current scope regardless its error state
+  - bala: Improve robustness of analyzer pass for language-servers [#911]
+  - bala: Add local-variables to current scope regardless its error state
   - testrunner: Pass G_DEBUG=fatal-warnings to invalid test
 
  * Bindings:
@@ -539,7 +539,7 @@ Vala 0.47.92
 Vala 0.47.91
 ============
  * Various improvements and bug fixes:
-  - vala:
+  - bala:
     + Fix base-access check for compact classes (2)
     + Don't ignore errors in Parameter and acknowledge them further
     + Properly set CodeNode.error when reporting an error
@@ -564,7 +564,7 @@ Vala 0.47.4
     + Explicitly include header for length-type of arrays
     + Explicitly include <glib.h> as needed for null-literal
     + Make *_try_id specific to emit-context instead being global states
-  - vala:
+  - bala:
     + Improve detection of recursive struct declarations [#902]
     + Inline allocated arrays require length or initializer [#903]
   - parser: Improve robustness and behavior of --keep-going
@@ -584,7 +584,7 @@ Vala 0.47.3
     + Don't set implemenation of interface property to its own [#891]
     + Use result value of assignment rather than its computation [#895]
     + Cast instance parameter in member-initializer for base-properties [#899]
-  - vala:
+  - bala:
     + Infer target_type in coalescing expressions [#892]
     + Non-nullable value-type in coalesce expression needs to be copied [#893]
     + Fix short-circuiting behavior of coalescing operator [#534]
@@ -610,7 +610,7 @@ Vala 0.47.2
     + Fix precondition in creation method of structs
     + Remove unreachable code in TypeRegisterFunction.init_from_type()
     + Improve *_get_type() fast path (requires glib >= 2.58) [#879]
-  - vala:
+  - bala:
     + Report error for async creation expression without yield
     + Don't require constant initializer in fast-vapi [#461]
     + VoidType is actually compatible with itself [#878]
@@ -648,7 +648,7 @@ Vala 0.47.1
     + Support gobject property of null-terminated array without length [#855]
     + Support gobject property of delegates not carrying their target [#856]
     + Warn when directly accessing member of silent cast-expression
-  - vala:
+  - bala:
     + Add DelegateType.target/destroy fields to access its user-data [#857]
     + Accept interface as inner type for object-type symbols [#697]
     + Add GenericType.dup/destroy fields [#190]
@@ -663,15 +663,15 @@ Vala 0.47.1
     + G_DEFINE_AUTOPTR_CLEANUP_FUNC must not declared more than once
     + Use SemanticAnalyzer.get_data_type_for_symbol()
     + Commonize the determining of return-type for delegates and methods
-  - vala:
+  - bala:
     + Rename DataType.data_type property to DataType.type_symbol
     + Unify backing symbol instance of data-types
     + Respect --abi-stability in Class/Interface.accept_children()
     + Don't mark method as used on recursive usage of itself [#100]
     + Set GLib.Error as symbol of error-types if no error-domain was given
     + Make Callable derive from Symbol
-  - libvaladoc: Remove TypeReference.pass_ownership API
-  - valadoc: Rename FormalParameter to Parameter
+  - libbaladoc: Remove TypeReference.pass_ownership API
+  - baladoc: Rename FormalParameter to Parameter
   - girwriter: Fix position of priv field (--abi-stability) [#850]
 
  * Bindings:
@@ -693,7 +693,7 @@ Vala 0.46.4
     + Fix setting of generic-type properties for gobject chain up [#654702]
     + Make type-parameter properties readable [#190]
     + Reduce code duplications when generation base-access
-  - vala:
+  - bala:
     + Warn when passing arrays to typeof(), except for "string[]" [#868]
     + Don't falsely resolve binary-expression to bool [#869]
     + Do not allow += for arrays with fixed length
@@ -711,12 +711,12 @@ Vala 0.46.4
     + Calculate size correctly, avoid use-after-free
     + Avoid use of uninitialized "markup" warning
     + Ignore flags like -mfpmath=sse, -msse or -msse2
-  - valadoc:
-    + libvaladoc: Fix parameter and property ownership declarations
+  - baladoc:
+    + libbaladoc: Fix parameter and property ownership declarations
     + Fix ownership declarations of Constants
   - pkg-config:
-    + vala: Add missing gmodule-2.0 to Requires.private of pkg-config file
-    + libvaladoc: Move gmodule-2.0 to Requires.private of pkg-config file
+    + bala: Add missing gmodule-2.0 to Requires.private of pkg-config file
+    + libbaladoc: Move gmodule-2.0 to Requires.private of pkg-config file
 
  * Bindings:
   - glib-2.0: Guard against passing null source to GLib.Memory.copy()
@@ -740,8 +740,8 @@ Vala 0.46.3
     + Silence warning about copying if delegate doesn't carry its target
     + Use gtype-boxed API for structs with "g_boxed_free" attribute [#863]
   - ccode: Implicitly register declaration for added CCodeFunction
-  - vala: Fix compatible/disposable check between structs and their subtypes
-  - vala: Don't issue a warning for non-public struct fields in bindings
+  - bala: Fix compatible/disposable check between structs and their subtypes
+  - bala: Don't issue a warning for non-public struct fields in bindings
   - girparser: Add required copy/free attributes for gtype-boxed structs
     and regenerate GIR-based bindings to pick up copy/free attributes [#863]
   - docs: Mention requirement of autoconf-archive as build-dependency
@@ -757,13 +757,13 @@ Vala 0.46.3
 Vala 0.46.2
 ===========
  * Various improvements and bug fixes:
-  - vala:
+  - bala:
     + Report dedicated error message for params-array parameter mismatch
     + Output "params" qualifier of parameters
     + Allow to override virtual interface implementations [#852]
     + Perform stricter compatibility check for delegates
   - codegen: Directly use "memmove()" while g_memmove() is deprecated
-  - valadoc: Explicitly pass --pkg libgvc
+  - baladoc: Explicitly pass --pkg libgvc
   - tests: Add more tests to increase coverage
 
  * Bindings:
@@ -778,8 +778,8 @@ Vala 0.46.2
 Vala 0.46.1
 ===========
  * Regression and bug fixes:
-  - vala: Run FlowAnalyzer on all given source-files [#843]
-  - valadoc: Explicitly pass --pkg libvala@PACKAGE_SUFFIX@ as for doclets/tests
+  - bala: Run FlowAnalyzer on all given source-files [#843]
+  - baladoc: Explicitly pass --pkg libbala@PACKAGE_SUFFIX@ as for doclets/tests
 
  * Bindings:
   - gio-unix-2.0: Add UnixMountEntry.get_root_path() since 2.60
@@ -794,7 +794,7 @@ Vala 0.46.0
   - Add boolean CodeContext.keep_going and corresponding compiler option
 
  * Various improvements and bug fixes:
-  - vala:
+  - bala:
     + Move find_parent_type_symbol/get_this_type() to SemanticAnalyzer
     + Exclude nullable simple-type structs from gobject-property support
     + Reject unary operations on nullable integer/floating/boolean type [#772]
@@ -806,7 +806,7 @@ Vala 0.46.0
   - girparser: Improve evalution of instance-parameter information [#836]
     (Regenerate GIR-based bindings to pick up out/ref instance-parameters)
   - girparser/gidlparser: "value_owned = true" by default for property types
-  - libvaladoc: Don't traverse into close circles with parent [#829]
+  - libbaladoc: Don't traverse into close circles with parent [#829]
   - genie: Creation methods should not be static
 
  * Bindings:
@@ -824,9 +824,9 @@ Vala 0.46.0
 Vala 0.45.91
 ============
  * Various improvements and bug fixes:
-  - vala: Init formal_target_type of built ArrayCreationExpression from
+  - bala: Init formal_target_type of built ArrayCreationExpression from
     InitializerList [#835]
-  - vala: Add missing closing brace/bracket in to_string() of
+  - bala: Add missing closing brace/bracket in to_string() of
     ArrayCreationExpression and InitializerList
 
  * Bindings:
@@ -837,7 +837,7 @@ Vala 0.45.91
 Vala 0.45.90
 ============
  * Various improvements and bug fixes:
-  - vala:
+  - bala:
     + Support static methods in error-domains [#829]
     + Fix mixup of target_glib_major/minor in set_target_glib_version() [#825]
     + Implicit GValue cast requires GOBJECT profile
@@ -849,7 +849,7 @@ Vala 0.45.90
     + Move private type-struct to type-definition section
     + Include required type-definition when casting from generic pointer [#828]
   - girparser: Handle "function-macro" by skipping them [gi#159]
-  - valadoc: Install icons and doclets to API dependent folders
+  - baladoc: Install icons and doclets to API dependent folders
 
  * Bindings:
   - glib-2.0: Add new symbols and deprecations from 2.62
@@ -864,12 +864,12 @@ Vala 0.45.90
 Vala 0.45.3
 ===========
  * Various improvements and bug fixes:
-  - vala: Add Symbol.is_extern and use/set is accordingly (#745)
+  - bala: Add Symbol.is_extern and use/set is accordingly (#745)
   - codegen:
     + Don't write declaration of extern symbols with given header (#745)
     + Real structs are allowed by simple generics and passed as reference (#819)
     + Assign GValue result of function calls to temp-var on copy_value (#819)
-  - build: Pass -no-undefined when linking libvalaccodegen (#820)
+  - build: Pass -no-undefined when linking libbalaccodegen (#820)
 
  * Bindings:
   - glib-2.0: Add binding for g_strv_equal() (since 2.60)
@@ -912,7 +912,7 @@ Vala 0.45.1
   - No-accessor struct properties in GLib.Object class must be owned
   - Support GObject properties with nullable GType-based struct type [#792]
   - Always use G_TYPE_CHECK_INSTANCE_TYPE for external symbols
-  - valadoc: Drop obsolete "Driver" API
+  - baladoc: Drop obsolete "Driver" API
 
  * Various improvements and bug fixes:
   - parser: Multiple corrections for source-location of code-nodes
@@ -961,11 +961,11 @@ Vala 0.44.2
     + Move try_cast_variant_to_type() to GVariantModule.visit_cast_expression()
     + Don't create special GArray clear-func for non-null structs
     + Implement silent-cast for GLib.Variant [#767]
-  - vala: Variadic parameters are not supported for async methods
-  - vala: Report error for unsupported operator instead of assertion
+  - bala: Variadic parameters are not supported for async methods
+  - bala: Report error for unsupported operator instead of assertion
   - girparser: Create correct output in get_default_lower_case_suffix() [#778]
-  - libvaladoc: Handle missing Content.List.Bullet.ORDERED in switch
-  - libvaladoc: Handle missing Run.Style.NONE in switch
+  - libbaladoc: Handle missing Content.List.Bullet.ORDERED in switch
+  - libbaladoc: Handle missing Run.Style.NONE in switch
   - Add explicit "default: break;" statements for coverage of enum-typed switch
 
  * Bindings:
@@ -986,8 +986,8 @@ Vala 0.44.1
   - Move disconnect error from signal-module to semantic-analyzer pass
   - Mark defined constructors of abstract classes as protected
   - parser: Implicit creation method of abstract classes must be protected
-  - vala: Allow assignment of 0U to enum types
-  - libvaladoc: Don't try to create a Content.ListItem when there is none
+  - bala: Allow assignment of 0U to enum types
+  - libbaladoc: Don't try to create a Content.ListItem when there is none
 
  * Bindings:
   - gio-2.0: SocketAddress.from_native() is a factory method not a constructor
@@ -1002,7 +1002,7 @@ Vala 0.44.0
 ===========
  * Various improvements and bug fixes:
   - parser: Adjust various source references
-  - vala: More regular invocations of check() on inferred Expression.value_type
+  - bala: More regular invocations of check() on inferred Expression.value_type
 
  * Bindings:
   - gstreamer: Update from 1.15.2+ git master
@@ -1018,9 +1018,9 @@ Vala 0.43.92
     + Add get_variable_array_length_cname() and use as possible
     + Respect array_length_cname attribute for global fields
     + Replace gvaluecollector_h_needed with dedidated add_include() calls
-    + Respect finish[_vfunc]_name attributes defined in vala sources
+    + Respect finish[_vfunc]_name attributes defined in bala sources
     + Include "glib-object.h" for typeof expression
-  - vala:
+  - bala:
     + Correctly perform compatibility check of array length-type [#607]
     + Don't ignore qualified parent when inferring type of enum member [#666035]
   - girwriter:
@@ -1039,12 +1039,12 @@ Vala 0.43.92
 Vala 0.43.91
 ============
  * Various improvements and bug fixes:
-  - Revert "valadoc: Drop duplicated code to add source files and use
-    CodeContext API" and "valadoc: Update API tests" (#748)
-  - valadoc: Report warning if resources for doclet could not be copied
-  - libvaladoc: Properly support the output of async constructors (#753)
+  - Revert "baladoc: Drop duplicated code to add source files and use
+    CodeContext API" and "baladoc: Update API tests" (#748)
+  - baladoc: Report warning if resources for doclet could not be copied
+  - libbaladoc: Properly support the output of async constructors (#753)
   - girparser: Correctly set array_length_type for delegates returning an array
-  - Revert "vala: Don't replace assignments for local variables with non-null
+  - Revert "bala: Don't replace assignments for local variables with non-null
     simple-types" (#755)
 
  * Bindings:
@@ -1067,9 +1067,9 @@ Vala 0.43.90
   - codegen: Replace some unfortunate asserts with internal error reports
   - codegen: Properly handle and catch inner-error of finally-block (#742)
   - codegen: Pass lambda expression of variable initializer to signal connect
-  - vala: Check inferred variable_type of LocalVariables
-  - vala: Parser doesn't ensure "protected" to be applied on TypeSymbol members
-  - libvaladoc: Don't change the size of an array in-parameter
+  - bala: Check inferred variable_type of LocalVariables
+  - bala: Parser doesn't ensure "protected" to be applied on TypeSymbol members
+  - libbaladoc: Don't change the size of an array in-parameter
   - g-i: Fix return value on error in start_discriminator()
 
  * Bindings:
@@ -1086,11 +1086,11 @@ Vala 0.43.6
 ===========
  * Various improvements and bug fixes:
   - codegen: Don't apply address-of operator on literals when casting to array
-  - vala: Don't tweak closure on static lambdas [#740]
+  - bala: Don't tweak closure on static lambdas [#740]
   - Revert "codegen: Use copies of error_variable of catch-clauses for nested
     usage" and add asynchronous "catch-error-scope" regression test [#741]
-  - libvaladoc: Build backing Vala.SourceFile for GIRs processed by importer
-  - libvaladoc/girimporter: Skip "source-position" elements
+  - libbaladoc: Build backing Vala.SourceFile for GIRs processed by importer
+  - libbaladoc/girimporter: Skip "source-position" elements
   - genie: Support "protected" accessibility and allow explicit "public" [#346]
 
  * Bindings:
@@ -1100,7 +1100,7 @@ Vala 0.43.6
 Vala 0.43.5
 ===========
  * Various improvements and bug fixes:
-  - vala:
+  - bala:
     + Use dedicated error message for assignments to literals
     + Async methods don't allow out-parameters before in-parameters [#636]
     + Allow direct access to the integer constants of an error-domain [#732]
@@ -1115,7 +1115,7 @@ Vala 0.43.5
     + Include "stddef.h" in CCodeBaseModule.destroy_value() (POSIX) [#730]
   - girparser: Recognize error parameter before delegate target parameter [#265]
   - compiler: Report deprecated command-line option "--thread"
-  - valadoc: Specify that the "--driver" option is deprecated [#736]
+  - baladoc: Specify that the "--driver" option is deprecated [#736]
 
  * Bindings:
   - atk: Don't use a custom SignalEmissionHook while it is part of gobject-2.0
@@ -1132,7 +1132,7 @@ Vala 0.43.5
 Vala 0.43.4
 ===========
  * Various improvements and bug fixes:
-  - vala:
+  - bala:
     + Array with fixed length don't require explicit instantiation (#720)
     + Add GenericType.get_actual_type()
     + Allow get_actual_type() to be used for expected failures
@@ -1151,9 +1151,9 @@ Vala 0.43.4
     + Add missing data parameter to GTypeInfo callbacks
     + Properly set annotations field of GDBus*Info struct to NULL
     + Cast instance and result of g_async_initable_new_finish() call
-  - valadoc: Drop duplicated code to add source files and use CodeContext API
-  - libvaladoc: Skip empty Version.replacement attribute to avoid critical
-  - build: Don't leak libvalaccode symbols to libvaladoc
+  - baladoc: Drop duplicated code to add source files and use CodeContext API
+  - libbaladoc: Skip empty Version.replacement attribute to avoid critical
+  - build: Don't leak libbalaccode symbols to libbaladoc
   - Add a basic CONTRIBUTING.md file that links to the relevant Wiki page
   - tests:
     + Fix try_parse() tests to not compare to already free'd memory
@@ -1193,7 +1193,7 @@ Vala 0.43.1
   - Enforce "return yield ..." syntax to be expected [#675]
   - Drop deprecated syntax support of += and -= for signals [#676]
   - Drop deprecated syntax support of # modifier and operator [#677]
-  - Allow disabling the build of valadoc [#596]
+  - Allow disabling the build of baladoc [#596]
   - Add support for SingleInstance attribute for GObject classes [#647]
   - Don't allow to declare array parameters with "type array[]" [#163]
   - Collect error_types on demand to allow transformations
@@ -1222,7 +1222,7 @@ Vala 0.43.1
     + Fix get_ccode_name() for properties
     + Add ccode getters for GType functions of Classes and Interfaces
     + Don't allow more than one consecutive empty lines in generated code
-  - vala:
+  - bala:
     + Copy instance_pos argument from virtual/abstract base methods [#540483]
     + Compact classes don't allow private/class fields and to lock fields
     + Use comment which was already retrieved in parse_declaration()
@@ -1238,8 +1238,8 @@ Vala 0.43.1
     + Use is_weak() for type-arguments in DataType.to_qualified_string()
   - girwriter: Write glib-type attributes for Enums/Structs with type_id
   - girparser: Skip "source-position" elements and docs in transparent union
-  - valadoc:
-    + Match property signature with vala's codewriter
+  - baladoc:
+    + Match property signature with bala's codewriter
     + Sort symbols and members where possible
     + Actually assign type_id of Api.Structs
     + Add type_id to Api.Enum/Interface
@@ -1250,7 +1250,7 @@ Vala 0.43.1
     + Add --fatal-warnings command line option
   - docs: Use Markdown for README and include build instructions
   - testrunner: Compile and run tests separately and pass buildsystem's CC
-    through to valac, add various -Werror=* build cflags
+    through to balac, add various -Werror=* build cflags
 
  * Bindings:
   - gio-2.0: Add missing File.new_build_filename()
@@ -1282,7 +1282,7 @@ Vala 0.42.3
     + Add missing replace_expression() implementations
     + Fix several construction/parenting issues
     + DataType for GLib.Error should be should resolved as ErrorType
-  - libvaladoc: Add "unlock" to keywords in Highligher
+  - libbaladoc: Add "unlock" to keywords in Highligher
   - posix:
     + Add replacement for G_(BEGIN|END)_DECLS
     + Don't check for GLib.Variant casting
@@ -1307,8 +1307,8 @@ Vala 0.42.2
     MethodCall and ObjectCreationExpression
   - codegen: Fix typo in is_pure_ccode_expression() [#673]
   - gobject-introspection: Fix use after free in scanner [#674]
-  - vala: Check if ArrayType supports its given element-type in analyzer pass
-  - valadoc: Fix some string escaping which gettext complains about
+  - bala: Check if ArrayType supports its given element-type in analyzer pass
+  - baladoc: Fix some string escaping which gettext complains about
 
  * Bindings:
   - Update GIDL-based bindings to fix unsupported type-arguments
@@ -1345,7 +1345,7 @@ Vala 0.41.92
   - codegen: Fix floating reference regression with Variants [#661]
   - build: Correctly quote square brackets in regular expression
   - codegen: Call ref_sink on Object.new_valist/new_with_properties if needed
-  - vala: Don't bail early on property with not supported default value
+  - bala: Don't bail early on property with not supported default value
   - manual: Update from wiki.gnome.org
 
  * Bindings:
@@ -1360,7 +1360,7 @@ Vala 0.41.91
    - codegen: Call ref_sink on objects passed to generic type [#655]
    - codegen: Free errors after returning them on GDBusMethodInvocation [#657]
    - girparser: Actually resolve type-arguments to be able to box them if needed
-   - vala: Add consts/methods to retrieve and check library version [#304]
+   - bala: Add consts/methods to retrieve and check library version [#304]
 
  * Bindings:
    - glib-2.0: Add Array.remove*() wrapper to avoid leaking generic elements
@@ -1374,24 +1374,24 @@ Vala 0.41.90
  * Highlights
   - Reintroduce POSIX profile
   - parser: Add support for explicit "unlock" syntax
-  - vala: Support anonymous definitions of delegates in bindings
+  - bala: Support anonymous definitions of delegates in bindings
   - codegen: Support automatic properties as GtkChild
   - codegen: Apply G_PARAM_EXPLICIT_NOTIFY on properties with "notify = false"
   - codegen: Drop support for non-auto property initializer in gobjects
   - codegen: Avoid using deprecated "g_type_class_add_private"
 
  * Various bug fixes:
-  - vala: Constants and signals are not lockable
+  - bala: Constants and signals are not lockable
   - codegen: Don't apply ref_sink_function if target_type is floating_reference
-  - vala: Treat floating method-return-type as nullable if error may be thrown
-  - vala: Transfer floating-reference attribute while casting
+  - bala: Treat floating method-return-type as nullable if error may be thrown
+  - bala: Transfer floating-reference attribute while casting
   - analyzer: Break cyclic references of BasicBlock
-  - vala: Break reference chain between DataType and Symbol if possible
+  - bala: Break reference chain between DataType and Symbol if possible
   - codegen: Fix invocation of abstract/virtual methods with NoWrapper in
     compact classes
-  - vala: Report error for invalid base access in method/property of compact
+  - bala: Report error for invalid base access in method/property of compact
     class
-  - libvaladoc: Replace void* with corresponding Vala API
+  - libbaladoc: Replace void* with corresponding Vala API
   - codegen: Don't include the full absolute path in line directives
   - codegen: Add source_reference to unsupported floating reference error
 
@@ -1405,19 +1405,19 @@ Vala 0.41.90
   - Remove clutter-gst-1.0, GStreamer 0.10, rest-0.6,
     tracker-indexer-module-1.0, libsoup-2.2, gdu and gdu-gtk,
     twitter-glib-1.0, mx-1.0
-  - Remove vala-specific deprecations <= vala-0.22
+  - Remove bala-specific deprecations <= bala-0.22
 
 Vala 0.40.8
 ===========
  * Various improvements and bug fixes:
   - Fix links in the Manual
-  - libvaladoc: Change link to Valadoc wiki page for HTML doclet
-  - valadoc: Use HTML5 doctype in HTML doclet
+  - libbaladoc: Change link to Valadoc wiki page for HTML doclet
+  - baladoc: Use HTML5 doctype in HTML doclet
   - codegen: Let methods return -1 on error by default if possible [#526]
   - Allow TypeModule subclasses as parameter-type in module-init-method [#648]
   - girparser: Allow changing the type of constants using metadata [#643]
   - girwriter: Add boolean GIR visible attribute to allow skipping symbols
-  - vala: Report error for error-domains without any code
+  - bala: Report error for error-domains without any code
   - parser: Accept "empty" enums/error-domains [#253]
   - codewriter: Output bodies of code-blocks if in VAPIGEN mode [#253]
 
@@ -1431,7 +1431,7 @@ Vala 0.40.8
 Vala 0.40.7
 ===========
  * Various improvements and bug fixes:
-  - Update bugtracker links to https://gitlab.gnome.org/GNOME/vala/issues
+  - Update bugtracker links to https://gitlab.gnome.org/GNOME/bala/issues
   - codegen:
     + Handle delegate_target attribute of fields [#520]
     + Free generic elements of glib collections [#694765]
@@ -1447,7 +1447,7 @@ Vala 0.40.7
     + Output deprecated="1"
     + construct-only properties don't have a setter method
     + Don't write any custom attributes [#608]
-  - valadoc: Fix TreeBuilder.create_array() for stacked Arrays
+  - baladoc: Fix TreeBuilder.create_array() for stacked Arrays
 
  * Bindings:
   - glib-2.0:
@@ -1524,7 +1524,7 @@ Vala 0.40.4
 Vala 0.40.3
 ===========
  * Various bug fixes:
-  - vala: Fix return-type of BasicBlock.get_successors()
+  - bala: Fix return-type of BasicBlock.get_successors()
 
  * Bindings:
   - gstreamer: Update from 1.15+ git master
@@ -1548,7 +1548,7 @@ Vala 0.40.1
  * Various bug fixes:
   - codegen: Don't add target fields for captured delegates without target
   - codegen: Don't add length fields for captured fixed-length array variables
-  - valadoc: Bump BALA_0_xx defines and glib_minor to match 0.40 series
+  - baladoc: Bump BALA_0_xx defines and glib_minor to match 0.40 series
 
  * Bindings:
   - Add libgeoclue-2.0 bindings [#794376]
@@ -1569,7 +1569,7 @@ Vala 0.40.1
 Vala 0.40.0
 ===========
  * Various bug fixes:
-  - compiler: Fix critical when vala is called without run args [#793657]
+  - compiler: Fix critical when bala is called without run args [#793657]
 
  * Bindings:
   - alsa: Add the major part of the ALSA Sequencer API [#763127]
@@ -1615,10 +1615,10 @@ Vala 0.39.91
  * Various bug fixes:
   - Fix GDestroyNotify of delegate parameters in delegate declaration [#639059]
   - Avoid critical when connecting dynamic signals
-  - valac: Always use the given "pkg-config" and respect PKG_CONFIG envar
+  - balac: Always use the given "pkg-config" and respect PKG_CONFIG envar
   - compiler: Prefix headers for set_cheader_override() if includedir is given
     [#793299]
-  - vala: Issue a warning on DBus methods which are not throwing an Error
+  - bala: Issue a warning on DBus methods which are not throwing an Error
   - Don't warn about unused internal methods which are meant to be visible
     on DBus [#593902]
   - Don't install vapicheck [#793370]
@@ -1653,8 +1653,8 @@ Vala 0.39.6
     + Internally generated delegates don't require a typedef [#787521]
     + Fix return-type for cancelled async creation methods of classes [#792942]
     + Use G_PARAM_STATIC_STRINGS
-  - vala: Variadic constructors without a real first parameter are not allowed
-  - libvaladoc: Keep bootstrap-support with valac >= 0.16.1
+  - bala: Variadic constructors without a real first parameter are not allowed
+  - libbaladoc: Keep bootstrap-support with balac >= 0.16.1
 
  * Bindings:
   - gtk+-3.0: Fix cheader_filename of Plug and Socket
@@ -1665,12 +1665,12 @@ Vala 0.39.6
 Vala 0.39.5
 ===========
  * Various bug fixes:
-  - libvaladoc: Allow @link tags to be split over multiple lines [#646982]
-  - libvaladoc: Add support for single line documentation comments [#736483]
+  - libbaladoc: Allow @link tags to be split over multiple lines [#646982]
+  - libbaladoc: Add support for single line documentation comments [#736483]
   - girparser: Improve instance method detection [#732460]
   - codegen: Add support for abstract/virtual methods and properties in
     compact classes [#741465]
-  - vala: Fix parameter type inference of overridden async methods [#792660]
+  - bala: Fix parameter type inference of overridden async methods [#792660]
   - codewriter: Don't use string.replace() to apply header_to_override [#731322]
 
  * Bindings:
@@ -1688,7 +1688,7 @@ Vala 0.39.4
     + Use g_enum/flags_to_string while targeting glib >= 2.54
     + Add destroy param when invoking delegate returned by delegate [#792077]
   - Don't write trailing space in function declarations/definitions [#688447]
-  - vala: Add pkgdatadir and pkglibdir to pkg-config file
+  - bala: Add pkgdatadir and pkglibdir to pkg-config file
   - gidlparser: Update type qualifiers
 
  * Bindings:
@@ -1718,7 +1718,7 @@ Vala 0.39.3
 Vala 0.39.2
 ===========
  * Various bug fixes:
-  - vala: Don't transform an explicit "null" into valid format-string [#791215]
+  - bala: Don't transform an explicit "null" into valid format-string [#791215]
   - codegen: Don't create null-safe destroy-wrapper for GenericType [#791283]
   - Improve error message for missing type-parameter on enclosing type [#587905]
 
@@ -1729,7 +1729,7 @@ Vala 0.39.2
   - Don't mark simple-type out-parameters with '?' as nullable
 
  * Valadoc
-  - libvaladoc: Actually resolve "percnt;" to '%'
+  - libbaladoc: Actually resolve "percnt;" to '%'
 
  * Bindings:
   - glib-2.0: Fix potential null pointer dereference in string.joinv() [#791257]
@@ -1752,7 +1752,7 @@ Vala 0.39.1
 
  * Various bug fixes:
   - Use array_length_cexpr to support fixed-arrays for return-values [#784691]
-  - Properly parse arguments for vala interpeter-mode [#663070]
+  - Properly parse arguments for bala interpeter-mode [#663070]
   - Enforce name-length >= 3 for structs using GType [#764041]
   - Report error for missing type-parameter on enclosing type [#587905]
   - Add boolean "use_inplace" ccode-attribute for methods [#750840]
@@ -1801,9 +1801,9 @@ Vala 0.38.2
 Vala 0.38.1
 ===========
  * Various bug fixes:
-  - valadoc: Don't use 'stderr' as variable name [#787305]
+  - baladoc: Don't use 'stderr' as variable name [#787305]
   - codegen: Try to use a more unique internal define for properties [#787436]
-  - vala: Update list of used attributes
+  - bala: Update list of used attributes
   - method: Use prototype-string for error-reports of return-type mismatches
 
  * Bindings:
@@ -1834,7 +1834,7 @@ Vala 0.37.91
     + Don't transfer ownership of variable if target-type is unknown [#736774]
     + Adjust format-index for printf/scanf-methods which throw errors [#781061]
     + Use given dup_function for structs
-  - libvaladoc: Fix some -Wincompatible-pointer-types warnings
+  - libbaladoc: Fix some -Wincompatible-pointer-types warnings
   - tests: Fix some syntax issues [#786652]
   - Add .editorconfig file [#786620]
 
@@ -1851,9 +1851,9 @@ Vala 0.37.90
 ============
  * Various bug fixes:
   - Fix some build-system problem
-    + valadoc/tests: Add the source vapi directory to driver-test [#786505],
-      Add ./vala/.libs rather than ./gee/.libs to LD_LIBRARY_PATH
-    + Explicitly link doclets against libvala-*.la [#786534]
+    + baladoc/tests: Add the source vapi directory to driver-test [#786505],
+      Add ./bala/.libs rather than ./gee/.libs to LD_LIBRARY_PATH
+    + Explicitly link doclets against libbala-*.la [#786534]
     + Add missing include of Makefile.common
   - vapigen: Mark given source-files as such and force girparser to handle them
   - codegen: Include glib-object.h for Enums/Structs with type_id
@@ -1863,8 +1863,8 @@ Vala 0.37.90
 Vala 0.37.2
 ===========
  * Various bug fixes:
-  - libvaladoc: Keep bootstrap-support with valac >= 0.16.1
-  - valadoc: Fix tests while bootstapping with valac < 0.31/32
+  - libbaladoc: Keep bootstrap-support with balac >= 0.16.1
+  - baladoc: Fix tests while bootstapping with balac < 0.31/32
 
  * Bindings:
   - glib-2.0: Update Unicode symbols
@@ -1879,16 +1879,16 @@ Vala 0.37.1
  * Highlights
   - Don't warn about deprecated symbols if installed_version is older
   - Add --gresourcesdir option [#783133]
-  - Install libvala-0.xx.vapi to "global" vapi directory
+  - Install libbala-0.xx.vapi to "global" vapi directory
   - Require and target GLib >= 2.40
   - build: Make ccode and codegen private API
-  - build: Use --use-header for vala's libraries
+  - build: Use --use-header for bala's libraries
   - compiler: Add --color=WHEN option
   - codegen: Use g_object_notify_by_pspec() to notify property-changes
   - codegen: Use *_free_full to free GLib.List, GLib.SList and GLib.Queue
   - codegen: Support renamed signals [#731547]
   - Optimize (de)serialization of arrays with type-signature "ay" [#772426]
-  - Merge valadoc - Consider valadoc a part of vala's toolchain and
+  - Merge baladoc - Consider baladoc a part of bala's toolchain and
     therefore let it live in the main repository (adds graphviz to the
     build-requirements)
 
@@ -1948,7 +1948,7 @@ Vala 0.36.1
 
  * GIR parser and writer:
   - girparser: Add destroy argument for metadata [#750838]
-  - vapigen: Add --nostdpkg option like in valac
+  - vapigen: Add --nostdpkg option like in balac
 
  * Bindings:
   - gstreamer-1.0: Fix Pad.set_*_function() bindings [#750838]
@@ -1967,7 +1967,7 @@ Vala 0.36.0
   - Deny access to protected constructors [#760031]
   - Support [DBus (signature = ...)] for properties [#744595]
   - Add [CCode ("finish_instance = ...")] attribute [#710103]
-  - Support [HasEmitter] for vala sources [#681356]
+  - Support [HasEmitter] for bala sources [#681356]
   - Add support for the \v escape charactor [#664689]
   - Add explicit copy method for arrays [#650663]
   - Allow underscores in type parameter names [#644938]
@@ -2083,11 +2083,11 @@ Vala 0.36.0
  * Various bug fixes:
   - codegen: Don't create duplicated complete-async code [#778302]
   - codegen: Don't return void for non-nullable simple-type structs [#778224]
-  - vala: Non-null initializers not allowed for owned namespace fields [#777697]
+  - bala: Non-null initializers not allowed for owned namespace fields [#777697]
   - codegen: Support casting arbitary value-types to arrays [#777194]
   - codegen: Reference struct fields with their actual cname [#775761]
   - codegen: Add function-prototypes for all register-type calls [#775446]
-  - vala: check a property has an accessor and/or a mutator [#773956]
+  - bala: check a property has an accessor and/or a mutator [#773956]
   - codegen: Don't declare CreationMethod for compact-classes twice [#772661]
   - method: Print encountered type if return types mismatch [#769501]
   - codegen: Fix memory-leak with object initializer for properties [#766739]
@@ -2099,10 +2099,10 @@ Vala 0.36.0
     [#657346]
   - codegen: Fix base-access from within overriding struct-property-accessor
     [#764481]
-  - vala: Check accessibility of default arguments [#648030]
-  - vala: Disallow private accessors in overridable properties [#603491]
+  - bala: Check accessibility of default arguments [#648030]
+  - bala: Disallow private accessors in overridable properties [#603491]
   - methodcall: Don't try to remove N_/NC_ while properly handled in C [#642350]
-  - vala: Check type arguments in DataType.equals [#641418]
+  - bala: Check type arguments in DataType.equals [#641418]
   - parser: Allow cast pointer expressions without enclosing parens [#590641]
   - Don't initialize local variable if not requested
   - codegen: Don't implicitly initialize local variables with initializer
@@ -2113,7 +2113,7 @@ Vala 0.36.0
   - signalmodule: Add signal-emitter declaration if needed [#779609]
   - signalmodule: Fix deprecation of signals
   - codegen: Properly null-out source on ownership-transfer of delegates
-  - vala: Fix MemberAccess.is_non_null() for EnumValue constants [#780050]
+  - bala: Fix MemberAccess.is_non_null() for EnumValue constants [#780050]
 
  * Contributors:
     Abderrahim Kitouni, Alistair Thomas, Andrea Del Signore, Carlos Garnacho,
@@ -2351,7 +2351,7 @@ Vala 0.17.0
 ===========
 
  * Support simple method-level profiling.
- * Add BALA_CHECK_MODULES and BALA_PROG_VAPIGEN to vala.m4.
+ * Add BALA_CHECK_MODULES and BALA_PROG_VAPIGEN to bala.m4.
  * Bug fixes and binding updates.
 
 Vala 0.16.0
@@ -2542,7 +2542,7 @@ Vala 0.9.5
  * Add version suffix to support parallel installation.
  * Define BALA_X_Y according to compiler version.
  * Enable version header by default.
- * Add vala.m4 with BALA_CHECK_PACKAGES macro.
+ * Add bala.m4 with BALA_CHECK_PACKAGES macro.
  * Add gedit-2.20 bindings (Andrea Del Signore).
  * Add tokyocabinet bindings (Evan Nemerson).
  * Various improvements to the Dova profile.
@@ -2561,7 +2561,7 @@ Vala 0.9.3
 
  * Support newlines in double quoted string literals.
  * Add experimental support for main blocks.
- * Add experimental vala tool to compile and run code.
+ * Add experimental bala tool to compile and run code.
  * Initial support for generic delegates.
  * Support using GClosure for delegate parameters.
  * Support GBoxed-based memory management.
@@ -2782,7 +2782,7 @@ Vala 0.5.3
  * Improve error reporting on invalid code.
  * Support private class fields and class destructors.
  * Add partial raptor and rasqal bindings.
- * Drop vala-gen-project, moved to vtg.
+ * Drop bala-gen-project, moved to vtg.
  * Many bug fixes.
 
 Vala 0.5.2
@@ -2952,8 +2952,8 @@ Vala 0.1.5
  * Add Vala Project Generator.
  * Support `in` operator for enums.
  * Support typeof for generic type parameters.
- * Replace gidlgen by vala-gen-introspect with a real C parser.
- * Update all bindings to use vala-gen-introspect.
+ * Replace gidlgen by bala-gen-introspect with a real C parser.
+ * Update all bindings to use bala-gen-introspect.
  * Fix many gcc warnings.
  * Fix build with Cygwin and MinGW (Yaakov Selkowitz).
  * Many bug fixes.
@@ -3120,7 +3120,7 @@ Vala 0.0.3
  * Follow package dependencies.
  * Support hexadecimal and octal integer literals and hexadecimal escape
    sequences.
- * Install libvala as shared library.
+ * Install libbala as shared library.
 
 Vala 0.0.2
 ==========

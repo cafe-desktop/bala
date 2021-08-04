@@ -1,4 +1,4 @@
-/* sourcecomment.vala
+/* sourcecomment.bala
  *
  * Copyright (C) 2011  Florian Brosch
  *
@@ -22,7 +22,7 @@
 
 
 /**
- * A documentation comment used by valadoc
+ * A documentation comment used by baladoc
  */
 public class Valadoc.Api.SourceComment {
 	public SourceFile file {

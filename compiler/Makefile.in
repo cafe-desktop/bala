@@ -86,7 +86,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-bin_PROGRAMS = valac$(EXEEXT) $(am__EXEEXT_1)
+bin_PROGRAMS = balac$(EXEEXT) $(am__EXEEXT_1)
 subdir = compiler
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
@@ -105,14 +105,14 @@ am__EXEEXT_1 =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__objects_1 =
-am__objects_2 = valacompiler.$(OBJEXT) $(am__objects_1)
-am_valac_OBJECTS = $(am__objects_2) $(am__objects_1)
-valac_OBJECTS = $(am_valac_OBJECTS)
+am__objects_2 = balacompiler.$(OBJEXT) $(am__objects_1)
+am_balac_OBJECTS = $(am__objects_2) $(am__objects_1)
+balac_OBJECTS = $(am_balac_OBJECTS)
 am__DEPENDENCIES_1 =
-valac_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+balac_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
@@ -133,7 +133,7 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/valacompiler.Po
+am__depfiles_remade = ./$(DEPDIR)/balacompiler.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -153,8 +153,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(valac_SOURCES)
-DIST_SOURCES = $(valac_SOURCES)
+SOURCES = $(balac_SOURCES)
+DIST_SOURCES = $(balac_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
@@ -336,37 +336,37 @@ BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
 BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"valac\" \
+	-DG_LOG_DOMAIN=\"balac\" \
 	$(COVERAGE_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	-I$(top_srcdir)/codegen \
 	$(GLIB_CFLAGS) \
 	-DPACKAGE_DATADIR=\"$(pkgdatadir)\" \
 	$(NULL)
 
-BUILT_SOURCES = valac.vala.stamp
-valac_BALASOURCES = \
-	valacompiler.vala \
+BUILT_SOURCES = balac.bala.stamp
+balac_BALASOURCES = \
+	balacompiler.bala \
 	$(NULL)
 
-valac_SOURCES = \
-	valac.vala.stamp \
-	$(valac_BALASOURCES:.vala=.c) \
+balac_SOURCES = \
+	balac.bala.stamp \
+	$(balac_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-valac_LDADD = \
+balac_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(NULL)
 
-EXTRA_DIST = $(valac_BALASOURCES) valac.vala.stamp
+EXTRA_DIST = $(balac_BALASOURCES) balac.bala.stamp
 MAINTAINERCLEANFILES = \
-	$(valac_BALASOURCES:.vala=.c) \
+	$(balac_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -454,9 +454,9 @@ clean-binPROGRAMS:
 	echo " rm -f" $$list; \
 	rm -f $$list
 
-valac$(EXEEXT): $(valac_OBJECTS) $(valac_DEPENDENCIES) $(EXTRA_valac_DEPENDENCIES) 
-	@rm -f valac$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(valac_OBJECTS) $(valac_LDADD) $(LIBS)
+balac$(EXEEXT): $(balac_OBJECTS) $(balac_DEPENDENCIES) $(EXTRA_balac_DEPENDENCIES) 
+	@rm -f balac$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(balac_OBJECTS) $(balac_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -464,7 +464,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valacompiler.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balacompiler.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -634,7 +634,7 @@ clean: clean-am
 clean-am: clean-binPROGRAMS clean-generic clean-libtool mostlyclean-am
 
 distclean: distclean-am
-		-rm -f ./$(DEPDIR)/valacompiler.Po
+		-rm -f ./$(DEPDIR)/balacompiler.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -681,7 +681,7 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-am
-		-rm -f ./$(DEPDIR)/valacompiler.Po
+		-rm -f ./$(DEPDIR)/balacompiler.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -721,7 +721,7 @@ uninstall-am: uninstall-binPROGRAMS
 .PRECIOUS: Makefile
 
 
-valac.vala.stamp: $(valac_BALASOURCES)
+balac.bala.stamp: $(balac_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -729,16 +729,16 @@ valac.vala.stamp: $(valac_BALASOURCES)
 		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
 		--vapidir $(top_srcdir)/ccode --pkg ccode \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--vapidir $(top_srcdir)/codegen --pkg codegen \
 		--pkg config \
 		$^
 	@touch $@
 
 install-exec-hook:
-	cd $(DESTDIR)$(bindir) && $(LN_S) -f valac@PACKAGE_SUFFIX@$(EXEEXT) vala@PACKAGE_SUFFIX@$(EXEEXT)
-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f valac@PACKAGE_SUFFIX@$(EXEEXT) valac$(EXEEXT)
-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f vala@PACKAGE_SUFFIX@$(EXEEXT) vala$(EXEEXT)
+	cd $(DESTDIR)$(bindir) && $(LN_S) -f balac@PACKAGE_SUFFIX@$(EXEEXT) bala@PACKAGE_SUFFIX@$(EXEEXT)
+@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f balac@PACKAGE_SUFFIX@$(EXEEXT) balac$(EXEEXT)
+@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f bala@PACKAGE_SUFFIX@$(EXEEXT) bala$(EXEEXT)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

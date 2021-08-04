@@ -1,4 +1,4 @@
-/* symbolresolver.vala
+/* symbolresolver.bala
  *
  * Copyright (C) 2011  Florian Brosch
  *
@@ -37,12 +37,12 @@ public class Valadoc.SymbolResolver : Visitor {
 		return symbol_map.get (symbol);
 	}
 
-	private void resolve_thrown_list (Symbol symbol, Vala.Symbol vala_symbol) {
+	private void resolve_thrown_list (Symbol symbol, Vala.Symbol bala_symbol) {
 		var error_types = new Vala.ArrayList<Vala.DataType> ();
-		vala_symbol.get_error_types (error_types);
+		bala_symbol.get_error_types (error_types);
 		foreach (Vala.DataType type in error_types) {
-			unowned Vala.ErrorDomain? vala_edom = ((Vala.ErrorType) type).error_domain;
-			Symbol? edom = symbol_map.get (vala_edom);
+			unowned Vala.ErrorDomain? bala_edom = ((Vala.ErrorType) type).error_domain;
+			Symbol? edom = symbol_map.get (bala_edom);
 			symbol.add_child (edom ?? glib_error);
 		}
 	}
@@ -172,19 +172,19 @@ public class Valadoc.SymbolResolver : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_property (Property item) {
-		Vala.Property vala_property = item.data as Vala.Property;
-		Vala.Property? base_vala_property = null;
+		Vala.Property bala_property = item.data as Vala.Property;
+		Vala.Property? base_bala_property = null;
 
-		if (vala_property.base_property != null) {
-			base_vala_property = vala_property.base_property;
-		} else if (vala_property.base_interface_property != null) {
-			base_vala_property = vala_property.base_interface_property;
+		if (bala_property.base_property != null) {
+			base_bala_property = bala_property.base_property;
+		} else if (bala_property.base_interface_property != null) {
+			base_bala_property = bala_property.base_interface_property;
 		}
-		if (base_vala_property == vala_property && vala_property.base_interface_property != null) {
-			base_vala_property = vala_property.base_interface_property;
+		if (base_bala_property == bala_property && bala_property.base_interface_property != null) {
+			base_bala_property = bala_property.base_interface_property;
 		}
-		if (base_vala_property != null) {
-			item.base_property = (Property?) resolve (base_vala_property);
+		if (base_bala_property != null) {
+			item.base_property = (Property?) resolve (base_bala_property);
 		}
 
 		resolve_type_reference (item.property_type);
@@ -214,11 +214,11 @@ public class Valadoc.SymbolResolver : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_delegate (Delegate item) {
-		Vala.Delegate vala_delegate = item.data as Vala.Delegate;
+		Vala.Delegate bala_delegate = item.data as Vala.Delegate;
 
 		resolve_type_reference (item.return_type);
 
-		resolve_thrown_list (item, vala_delegate);
+		resolve_thrown_list (item, bala_delegate);
 
 		item.accept_all_children (this, false);
 	}
@@ -236,21 +236,21 @@ public class Valadoc.SymbolResolver : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_method (Method item) {
-		Vala.Method vala_method = item.data as Vala.Method;
-		Vala.Method? base_vala_method = null;
-		if (vala_method.base_method != null) {
-			base_vala_method = vala_method.base_method;
-		} else if (vala_method.base_interface_method != null) {
-			base_vala_method = vala_method.base_interface_method;
+		Vala.Method bala_method = item.data as Vala.Method;
+		Vala.Method? base_bala_method = null;
+		if (bala_method.base_method != null) {
+			base_bala_method = bala_method.base_method;
+		} else if (bala_method.base_interface_method != null) {
+			base_bala_method = bala_method.base_interface_method;
 		}
-		if (base_vala_method == vala_method && vala_method.base_interface_method != null) {
-			base_vala_method = vala_method.base_interface_method;
+		if (base_bala_method == bala_method && bala_method.base_interface_method != null) {
+			base_bala_method = bala_method.base_interface_method;
 		}
-		if (base_vala_method != null) {
-			item.base_method = (Method?) resolve (base_vala_method);
+		if (base_bala_method != null) {
+			item.base_method = (Method?) resolve (base_bala_method);
 		}
 
-		resolve_thrown_list (item, vala_method);
+		resolve_thrown_list (item, bala_method);
 
 		resolve_type_reference (item.return_type);
 

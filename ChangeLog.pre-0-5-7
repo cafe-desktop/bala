@@ -40,14 +40,14 @@
 2009-02-20  Ryan Lortie  <desrt@desrt.ca>
 
 	* configure.ac:
-	* vala-1.0.pc.in:
+	* bala-1.0.pc.in:
 
-	Output 'vapigen' 'gen_introspect' and 'vala_gen_introspect' variables
-	into the vala-1.0.pc file if --enable-vapigen, fixes bug 572554
+	Output 'vapigen' 'gen_introspect' and 'bala_gen_introspect' variables
+	into the bala-1.0.pc file if --enable-vapigen, fixes bug 572554
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Support error handling when dynamically calling void methods,
 	patch by Frederik Sdun, fixes bug 571258
@@ -62,23 +62,23 @@
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valascope.vala:
+	* bala/balascope.bala:
 
 	Add Scope.get_symbol_table method, patch by Abderrahim Kitouni
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodecontext.vala:
-	* vala/valareport.vala:
+	* bala/balacodecontext.bala:
+	* bala/balareport.bala:
 
 	Support context-specific error reporting and add a context stack,
 	based on patch by Abderrahim Kitouni, fixes bug 542920
 
-	* vala/valagenieparser.vala:
-	* vala/valaparser.vala:
-	* gobject/valaccodebasemodule.vala:
-	* compiler/valacompiler.vala:
-	* vapigen/valavapigen.vala:
+	* bala/balagenieparser.bala:
+	* bala/balaparser.bala:
+	* gobject/balaccodebasemodule.bala:
+	* compiler/balacompiler.bala:
+	* vapigen/balavapigen.bala:
 
 	Adapt to interface changes
 
@@ -106,7 +106,7 @@
 
 2009-02-19  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10-custom.vala:
+	* vapi/packages/gstreamer-0.10/gstreamer-0.10-custom.bala:
 	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Various ownership and missing type parameters fixes
@@ -115,7 +115,7 @@
 
 2009-02-19  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Support to_string attribute for enums
 
@@ -144,18 +144,18 @@
 
 2009-02-18  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valaassignment.vala:
-	* vala/valacodevisitor.vala:
-	* vala/valacodewriter.vala:
-	* vala/valagenieparser.vala:
-	* vala/valaparenthesizedexpression.vala:
-	* vala/valaparser.vala:
-	* vala/valasymbolresolver.vala:
-	* vala/valaunaryexpression.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
+	* bala/Makefile.am:
+	* bala/balaassignment.bala:
+	* bala/balacodevisitor.bala:
+	* bala/balacodewriter.bala:
+	* bala/balagenieparser.bala:
+	* bala/balaparenthesizedexpression.bala:
+	* bala/balaparser.bala:
+	* bala/balasymbolresolver.bala:
+	* bala/balaunaryexpression.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
 
 	Remove ParenthesizedExpression to simmplify AST
 
@@ -169,14 +169,14 @@
 
 2009-02-17  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodcallmodule.vala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Support chaining up to constructors in generic classes,
 	fixes bug 567319
 
 2009-02-17  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Support takes_ownership attribute for delegate parameters
 
@@ -186,15 +186,15 @@
 
 2009-02-16  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vala/valacodewriter.vala: escape the dynamic keyword, and identifiers
+	* bala/balacodewriter.bala: escape the dynamic keyword, and identifiers
 	starting with a digit
 
 2009-02-17  Ryan Lortie  <desrt@desrt.ca>
 
-	* gobject/valaccodebasemodule.vala:
-	* vala/valacodewriter.vala:
-	* vala/valastruct.vala:
-	* vapigen/valagidlparser.vala:
+	* gobject/balaccodebasemodule.bala:
+	* bala/balacodewriter.bala:
+	* bala/balastruct.bala:
+	* vapigen/balagidlparser.bala:
 
 	Add support for a 'use_const' CCode attribute and GIDL XML attribute
 	that, when set to false, causes Vala not to emit the 'const' modifier
@@ -209,17 +209,17 @@
 
 2009-02-16  Ryan Lortie  <desrt@desrt.ca>
 
-	* vala/valaclass.vala: only use g_value_set_pointer if the GType of a
+	* bala/balaclass.bala: only use g_value_set_pointer if the GType of a
 	class is G_TYPE_POINTER; else use g_value_set_boxed.
 
 2009-02-16  Ryan Lortie  <desrt@desrt.ca>
 
-	* gobject/valagasyncmodule.vala: remove the dummy-object hack since
+	* gobject/balagasyncmodule.bala: remove the dummy-object hack since
 	gio now supports NULL source objects for GSimpleAsyncResult
 
 2009-02-14  Ryan Lortie  <desrt@desrt.ca>
 
-	* gobject/valagasyncmodule.vala:
+	* gobject/balagasyncmodule.bala:
 
 	Split method code generation into many smaller functions.  Enable
 	experimental generation of synchronous code.
@@ -240,13 +240,13 @@
 
 2009-02-14  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
+	* bala/balacodewriter.bala:
 
 	Add error domains to VAPI files, fixes bug 571692
 
 2009-02-13  Ryan Lortie  <desrt@desrt.ca>
 
-	* gobject/valamethodmodule.vala:
+	* gobject/balamethodmodule.bala:
 
 	Emit 'default:' label with g_assert_not_reached() for async state
 	switch statement (to avoid GCC warning).  Don't emit virtual functions
@@ -256,71 +256,71 @@
 
 	Bug 571484 – free owned result even if _finish isn't called
 
-	* gobject/valagasyncmodule.vala:
+	* gobject/balagasyncmodule.bala:
 
 	Emit code to free the result in the result in the event that _finish
 	was not called.
 
 2009-02-12  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valaconstant.vala:
-	* vala/valafield.vala:
-	* vala/valamember.vala:
-	* vala/valamethod.vala:
-	* vala/valaproperty.vala:
-	* vala/valastruct.vala:
+	* bala/balaclass.bala:
+	* bala/balaconstant.bala:
+	* bala/balafield.bala:
+	* bala/balamember.bala:
+	* bala/balamethod.bala:
+	* bala/balaproperty.bala:
+	* bala/balastruct.bala:
 
 	Warn when hiding members, support `new' keyword to suppress
 	warning, based on patch by Andreas Brauchli, fixes bug 567743
 
-	* vala/valacodenode.vala:
-	* vala/valacreationmethod.vala:
-	* vala/valaenum.vala:
-	* vala/valaerrordomain.vala:
-	* vala/valanamespace.vala:
-	* ccode/valaccodelinedirective.vala:
+	* bala/balacodenode.bala:
+	* bala/balacreationmethod.bala:
+	* bala/balaenum.bala:
+	* bala/balaerrordomain.bala:
+	* bala/balanamespace.bala:
+	* ccode/balaccodelinedirective.bala:
 
 	Avoid hidden members
 
 2009-02-12  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valastruct.vala:
-	* vala/valasymbolresolver.vala:
+	* bala/balastruct.bala:
+	* bala/balasymbolresolver.bala:
 
 	Add base_struct property to Struct class, patch by Andreas Brauchli
 
 2009-02-12  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamember.vala:
-	* vala/valaparser.vala:
+	* bala/balamember.bala:
+	* bala/balaparser.bala:
 
 	Support `new' as member modifier in parser to prepare support for
 	hiding members, patch by Andreas Brauchli
 
 2009-02-12  Ryan Lortie  <desrt@desrt.ca>
 
-	* vala/valamethod.vala:
+	* bala/balamethod.bala:
 
 	For now, just forbid ref/out paramters on yielding functions since
 	they are hard to deal with.
 
 2009-02-12  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valagenieparser.vala:
+	* bala/balagenieparser.bala:
 
 	Fix else if parsing, fixes bug 562632
 
 2009-02-12  Ryan Lortie  <desrt@desrt.ca>
 
-	* gobject/valagasyncmodule.vala:
+	* gobject/balagasyncmodule.bala:
 
 	Store the Data structure as the op_res gpointer of the
 	GSimpleAsyncResult.  Emit a function to free it and hook it in.
 
 2009-02-12  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
+	* gobject/balaccodearraymodule.bala:
 
 	Keep arrays NULL-terminated when appending
 
@@ -328,8 +328,8 @@
 
 	Bug 571263 – make yielding functions dispatch results to mainloop
 
-	* gobject/valaccodemethodmodule.vala:
-	* valagasyncmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
+	* balagasyncmodule.bala:
 	
 	Create simple async result from _async entry function and use it when
 	doing return; throw; or at the end of the function.  Fix return
@@ -340,8 +340,8 @@
 
 	Bug 566363 – yielding functions that throw don't work
 
-	* gobject/valagerrormodule.vala:
-	* gobject/valagasyncmodule.vala:
+	* gobject/balagerrormodule.bala:
+	* gobject/balagasyncmodule.bala:
 
 	Refactor GErrorModule to remove some common code and introduce a
 	separate (virtual) function 'return_with_exception' to create
@@ -354,9 +354,9 @@
 
 	Bug 571256 – [CCode (async_only = true)] formal parameter annotation
 
-	* vala/valacodewriter.vala:
-	* vala/valaformalparameter.vala:
-	* gobject/valaccodemethodcallmodule.vala:
+	* bala/balacodewriter.bala:
+	* bala/balaformalparameter.bala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Allow emitting some C code arguments only in the case that we are
 	calling the asynchronous version of a yielding function.  This helps
@@ -364,10 +364,10 @@
 
 2009-02-11  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaenum.vala:
-	* vala/valainterface.vala:
-	* vala/valastruct.vala:
-	* vapigen/valagirparser.vala:
+	* bala/balaenum.bala:
+	* bala/balainterface.bala:
+	* bala/balastruct.bala:
+	* vapigen/balagirparser.bala:
 
 	Recognize c:type attributes in .gir
 
@@ -375,12 +375,12 @@
 
 	Bug 571169 – make floating references generic
 
-	* gobject/valaccodebasemodule.vala:
-	* vala/valainterface.vala:
-	* vala/valaclass.vala:
-	* vala/valaobjectcreationexpression.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valatypesymbol.vala:
+	* gobject/balaccodebasemodule.bala:
+	* bala/balainterface.bala:
+	* bala/balaclass.bala:
+	* bala/balaobjectcreationexpression.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balatypesymbol.bala:
 
 	Add support for 'ref_sink_function' CCode attribute on classes. 
 	Use this instead of hardcoding g_object_ref_sink() for
@@ -392,13 +392,13 @@
 
 2009-02-09  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodedelegatemodule.vala:
+	* gobject/balaccodedelegatemodule.bala:
 
 	Emit delegate documentation to the C header files
 
 2009-02-08  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valanamespace.vala:
+	* bala/balanamespace.bala:
 
 	Drop experimental support for partial classes
 
@@ -411,19 +411,19 @@
 
 2009-02-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Remove D-Bus message filter when disposing proxy object
 
 2009-02-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusmodule.vala:
+	* gobject/baladbusmodule.bala:
 
 	NULL-terminate arrays when demarshalling
 
 2009-02-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Do not handle signals of irrelevant object paths
 
@@ -436,7 +436,7 @@
 
 2009-02-02  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
+	* bala/balacodewriter.bala:
 
 	Write type_id attribute for GBoxed compact classes
 
@@ -448,76 +448,76 @@
 
 2009-02-02  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valathrowstatement.vala:
+	* bala/balathrowstatement.bala:
 
 	Fix crash on invalid error expressions
 
 2009-02-01  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaproperty.vala:
+	* bala/balaproperty.bala:
 
 	Support overriding members in .vapi files
 
 2009-01-31  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
-	* gobject/valaccodedelegatemodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaccodestructmodule.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusmodule.vala:
-	* gobject/valadbusservermodule.vala:
-	* gobject/valagasyncmodule.vala:
-	* gobject/valagerrormodule.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valagsignalmodule.vala:
-	* gobject/valagtypemodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
+	* gobject/balaccodedelegatemodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaccodestructmodule.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusmodule.bala:
+	* gobject/baladbusservermodule.bala:
+	* gobject/balagasyncmodule.bala:
+	* gobject/balagerrormodule.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balagsignalmodule.bala:
+	* gobject/balagtypemodule.bala:
 
 	Use `internal' modifier in class declarations to fix build with
 	Vala older than r2411
 
 2009-01-31  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valagobjectmodule.vala:
+	* gobject/balagobjectmodule.bala:
 
 	Fix struct construct properties
 
 2009-01-31  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaflowanalyzer.vala:
-	* vala/valasymbol.vala:
+	* bala/balaflowanalyzer.bala:
+	* bala/balasymbol.bala:
 
 	Report unused internal methods
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
-	* gobject/valaccodedelegatemodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaccodestructmodule.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusmodule.vala:
-	* gobject/valadbusservermodule.vala:
-	* gobject/valagasyncmodule.vala:
-	* gobject/valagerrormodule.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valagsignalmodule.vala:
-	* gobject/valagtypemodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
+	* gobject/balaccodedelegatemodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaccodestructmodule.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusmodule.bala:
+	* gobject/baladbusservermodule.bala:
+	* gobject/balagasyncmodule.bala:
+	* gobject/balagerrormodule.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balagsignalmodule.bala:
+	* gobject/balagtypemodule.bala:
 
 	Mark modules as internal
 
 2009-01-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valanamespace.vala:
-	* vala/valaparser.vala:
+	* bala/balanamespace.bala:
+	* bala/balaparser.bala:
 
 	Ensure that classes in implicit namespaces are not private as
 	namespaces cannot have private members
@@ -530,20 +530,20 @@
 
 2009-01-29  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Support transfer_ownership attribute for signal parameters
 
 2009-01-29  Philip Van Hoof  <philip@codeminded.be>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
-	Checking for vstore in vala_dbus_register_object. Fixes a crash when
+	Checking for vstore in bala_dbus_register_object. Fixes a crash when
 	you use conn.register_object with an instance that isn't a DBus one
 
 2009-01-29  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valapropertyaccessor.vala:
+	* bala/balapropertyaccessor.bala:
 
 	Honor lower_case_cprefix attribute for property accessors,
 	fixes bug 569646
@@ -557,14 +557,14 @@
 
 2009-01-27  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
-	* vala/valamethod.vala:
+	* bala/balacodewriter.bala:
+	* bala/balamethod.bala:
 
 	Add overriding members to .vapi files, fixes bug 569219
 
 2009-01-27  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamemberaccess.vala:
+	* bala/balamemberaccess.bala:
 
 	Skip overriding methods and properties in member access,
 	fixes default arguments when calling virtual methods
@@ -585,53 +585,53 @@
 
 2009-01-26  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Revert incorrect code generation change for constants, will need to
 	use `extern' to properly export constants
 
 2009-01-25  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Support signals in static D-Bus client
 
 2009-01-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
+	* bala/balaclass.bala:
 
 	Fix type of implicit `this' parameter when using generics
 
 2009-01-23  Jürg Billeter  <j@bitron.ch>
 
-	* ccode/valaccodefunction.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valagasyncmodule.vala:
-	* gobject/valagobjectmodule.vala:
+	* ccode/balaccodefunction.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/balagasyncmodule.bala:
+	* gobject/balagobjectmodule.bala:
 
 	Refactor method parameter and result code generation
 
 2009-01-23  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodedelegatemodule.vala:
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodedelegatemodule.bala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Add virtual generate_parameter method. Move array and delegate type
 	specific parameter generation to corresponding modules.
 
 2009-01-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Support struct methods
 
 2009-01-20  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Do not declare public constants as `static'
 
@@ -643,13 +643,13 @@
 
 2009-01-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodedelegatemodule.vala:
+	* gobject/balaccodedelegatemodule.bala:
 
 	Use correct C identifier for delegate target of static fields
 
 2009-01-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Fix assigning to properties in lambda expressions in creation
 	methods, patch by Yu Feng, fixes bug 568267
@@ -664,9 +664,9 @@
 
 2009-01-18  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodecontext.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecompiler.vala:
+	* bala/balacodecontext.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecompiler.bala:
 
 	Do not generate legacy header files when using -H
 
@@ -680,7 +680,7 @@
 
 2009-01-18  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodememberaccessmodule.vala:
+	* gobject/balaccodememberaccessmodule.bala:
 	* vapi/glib-2.0.vapi:
 
 	Add Log.FILE, Log.LINE, and Log.METHOD constants as replacements
@@ -695,7 +695,7 @@
 
 2009-01-18  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
+	* bala/balaparser.bala:
 
 	Accept `params' as identifier after cast parentheses
 
@@ -707,29 +707,29 @@
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodcallmodule.vala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Fix crash when using lambda expressions with owned delegate
 	parameters, fixes bug 566344
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaenumvalue.vala:
-	* vala/valasourcefile.vala:
+	* bala/balaenumvalue.bala:
+	* bala/balasourcefile.bala:
 
 	Add missing include for enum values, fixes bug 531724
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaconstant.vala:
-	* vala/valafield.vala:
+	* bala/balaconstant.bala:
+	* bala/balafield.bala:
 
 	Fix symbol lookup in constant and field initializers,
 	fixes bug 567760
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodedelegatemodule.vala:
+	* gobject/balaccodedelegatemodule.bala:
 
 	Fix wrapper for delegates returning arrays, fixes bug 564474
 
@@ -749,19 +749,19 @@
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Parse callback parameter annotations
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valamarkupreader.vala:
+	* vapigen/balamarkupreader.bala:
 
 	Fix infinite loop when reading entity references
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valamarkupreader.vala:
+	* vapigen/balamarkupreader.bala:
 
 	Read comments
 
@@ -775,26 +775,26 @@
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaobjectcreationexpression.vala:
+	* bala/balaobjectcreationexpression.bala:
 
 	Set formal_target_type to fix constructors using generic parameter
 	types, fixes bug 543477
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodememberaccessmodule.vala:
+	* gobject/balaccodememberaccessmodule.bala:
 
 	Do not try to convert from generic pointer twice when accessing
 	generic field
 
-	* vala/valaassignment.vala:
+	* bala/balaassignment.bala:
 
 	Set formal_target_type to fix assignment to generic fields,
 	fixes bug 543486
 
 2009-01-17  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10-custom.vala:
+	* vapi/packages/gstreamer-0.10/gstreamer-0.10-custom.bala:
 
 	Add missing bindings for GstValue. fixes bug 530812
 
@@ -802,39 +802,39 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasymbol.vala:
+	* bala/balasymbol.bala:
 
 	Fix determining relative accessibility, fixes bug 559798
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacreationmethod.vala:
+	* bala/balacreationmethod.bala:
 
 	Fix bogus errors about missing return type in creation methods,
 	fixes bug 564178
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Use correct cname when calling property set accessor,
 	fixes bug 562172
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaassignment.vala:
-	* vala/valaelementaccess.vala:
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balaassignment.bala:
+	* bala/balaelementaccess.bala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Do not require libgee to support element access in custom types
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaexpression.vala:
-	* vala/valareturnstatement.vala:
+	* bala/balaexpression.bala:
+	* bala/balareturnstatement.bala:
 
 	Report error when returning owned variable in method or property
 	with unowned return value, fixes bug 547102
@@ -850,8 +850,8 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
-	* vapigen/valagidlparser.vala:
+	* bala/balacodewriter.bala:
+	* vapigen/balagidlparser.bala:
 
 	Support vfunc_name attribute
 
@@ -871,14 +871,14 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valabaseaccess.vala:
-	* vala/valacodewriter.vala:
-	* vala/valagenieparser.vala:
-	* vala/valaparser.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valastruct.vala:
-	* vala/valasymbolresolver.vala:
-	* vapigen/valagirparser.vala:
+	* bala/balabaseaccess.bala:
+	* bala/balacodewriter.bala:
+	* bala/balagenieparser.bala:
+	* bala/balaparser.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balastruct.bala:
+	* bala/balasymbolresolver.bala:
+	* vapigen/balagirparser.bala:
 
 	Do not allow structs to have more than one base type and detect
 	cycles, patch by Andreas Brauchli, fixes bug 556063 and bug 567661
@@ -894,13 +894,13 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valablock.vala:
+	* bala/balablock.bala:
 
 	Detect local variables conflicting with parameters,
 	patch by Andreas Brauchli, fixes bug 523189
 
-	* vala/valaflowanalyzer.vala:
-	* vala/valaparser.vala:
+	* bala/balaflowanalyzer.bala:
+	* bala/balaparser.bala:
 
 	Fix conflicts
 
@@ -913,7 +913,7 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valastruct.vala:
+	* bala/balastruct.bala:
 
 	Fix struct base type error message, patch by Carlos Cadete,
 	fixes bug 567366
@@ -926,19 +926,19 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valafield.vala:
-	* gobject/valaccodearraymodule.vala:
+	* bala/balafield.bala:
+	* gobject/balaccodearraymodule.bala:
 
 	Add array_length_cexpr CCode attribute for fields with constant
 	array length, patch by Andreas Brauchli, fixes bug 567301
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
+	* bala/balacodewriter.bala:
 
 	Support void ref functions
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Detect void ref functions, patch by Andreas Brauchli,
 	fixes bug 549061
@@ -947,15 +947,15 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodestructmodule.vala:
-	* gobject/valagobjectmodule.vala:
+	* gobject/balaccodestructmodule.bala:
+	* gobject/balagobjectmodule.bala:
 
 	Fix typedef generation for private types, patch by Yu Feng,
 	fixes bug 567237
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Warn about possibly missing GLib.Object prerequisite,
 	patch by Andreas Brauchli, fixes bug 554329
@@ -969,8 +969,8 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valafield.vala:
-	* vala/valaparser.vala:
+	* bala/balafield.bala:
+	* bala/balaparser.bala:
 
 	Use `internal' accessibility for namespace members by default
 
@@ -995,13 +995,13 @@
 
 2009-01-15  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Ignore BusName sender parameters in marshalling code
 
 2009-01-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Fix accessor detection for properties
 
@@ -1015,31 +1015,31 @@
 
 2009-01-15  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaobjectcreationexpression.vala:
+	* bala/balaobjectcreationexpression.bala:
 
 	Track usage of creation methods to avoid bogus warnings from the
 	flow analyzer
 
 2009-01-15  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusservermodule.vala:
+	* gobject/baladbusservermodule.bala:
 
 	Fix generated introspection information when using DBus.BusName
 	sender parameter
 
 2009-01-15  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
+	* bala/balaparser.bala:
 
 	Accept numbers with characters as identifiers where possible
 
 2009-01-14  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
+	* bala/balacodewriter.bala:
 
 	Improve output for owned property getters
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Getters of properties without accessor have to return owned value
 
@@ -1047,29 +1047,29 @@
 
 2009-01-14  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodememberaccessmodule.vala:
+	* gobject/balaccodememberaccessmodule.bala:
 
 	Report error when using getters of properties with unowned return
 	value and without accessor, fixes bug 567750
 
 2009-01-14  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
+	* bala/balaparser.bala:
 
 	Improve syntax error message when expecting declaration
 
 2009-01-13  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/vala.h:
+	* bala/Makefile.am:
+	* bala/bala.h:
 
-	Remove obsolete vala.h
+	Remove obsolete bala.h
 
 2009-01-13  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodecontext.vala:
-	* gobject/valaccodebasemodule.vala:
-	* compiler/valacompiler.vala:
+	* bala/balacodecontext.bala:
+	* gobject/balaccodebasemodule.bala:
+	* compiler/balacompiler.bala:
 
 	Add -H command-line option to generate C header file for public
 	API, stub implementation
@@ -1102,7 +1102,7 @@
 
 2009-01-11  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodedelegatemodule.vala:
+	* gobject/balaccodedelegatemodule.bala:
 
 	Support null-terminated array parameters in delegates,
 	patch by Ali Sabil
@@ -1118,16 +1118,16 @@
 
 2009-01-11  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamemberaccess.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balamemberaccess.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Fix crash when assigning to dynamic properties
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodenode.vala:
-	* vala/valaparser.vala:
-	* vala/valapointertype.vala:
+	* bala/balacodenode.bala:
+	* bala/balaparser.bala:
+	* bala/balapointertype.bala:
 
 	Fix pointer properties
 
@@ -1141,8 +1141,8 @@
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
-	* vapigen/valagidlparser.vala:
+	* bala/balacodewriter.bala:
+	* vapigen/balagidlparser.bala:
 
 	Support methods returning null-terminated arrays
 
@@ -1154,38 +1154,38 @@
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
-	* vala/valagenieparser.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valaparser.vala:
-	* vala/valapropertyaccessor.vala:
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* vapigen/valagidlparser.vala:
-	* vapigen/valagirparser.vala:
+	* bala/balacodewriter.bala:
+	* bala/balagenieparser.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balaparser.bala:
+	* bala/balapropertyaccessor.bala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* vapigen/balagidlparser.bala:
+	* vapigen/balagirparser.bala:
 
 	Replace `#' in property declarations by `owned' modifier
 	before `get'
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valalocalvariable.vala:
+	* bala/balalocalvariable.bala:
 
 	Warn when using result variable with incompatible type to prepare
 	possible introduction of implicit result variable
 
-	* vala/valageniescanner.vala:
-	* vala/valascanner.vala:
-	* vala/valasymbol.vala:
+	* bala/balageniescanner.bala:
+	* bala/balascanner.bala:
+	* bala/balasymbol.bala:
 
 	Fix new warnings
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodecontext.vala:
-	* vala/valaobjectcreationexpression.vala:
-	* compiler/valacompiler.vala:
+	* bala/balacodecontext.bala:
+	* bala/balaobjectcreationexpression.bala:
+	* compiler/balacompiler.bala:
 
 	Add --enable-deprecated and --enable-experimental command-line
 	options to disable warnings when using deprecated and experimental
@@ -1193,61 +1193,61 @@
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodecontext.vala:
-	* vala/valaformalparameter.vala:
-	* vala/valareturnstatement.vala:
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* compiler/valacompiler.vala:
+	* bala/balacodecontext.bala:
+	* bala/balaformalparameter.bala:
+	* bala/balareturnstatement.bala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* compiler/balacompiler.bala:
 
 	Remove --disable-non-null option after transition period
 	of 9 months
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valalocalvariable.vala:
-	* vala/valamethod.vala:
+	* bala/balaclass.bala:
+	* bala/balalocalvariable.bala:
+	* bala/balamethod.bala:
 
 	Fix compile errors when using postconditions
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Use dbus-glib types for dynamic D-Bus signals, fixes bug 561545
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Use correct C type for set accessors of properties whose get
 	accessor returns owned value, fixes bug 538666
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodedelegatemodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodedelegatemodule.bala:
 
 	Fix critical and generated code for static delegate fields,
 	fixes bug 563016
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valafield.vala:
+	* bala/balafield.bala:
 
 	Report error when field type is less accessible than field
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasemanticanalyzer.vala:
+	* bala/balasemanticanalyzer.bala:
 
 	Fix memory leak when retrieving values from property getters
 	returning owned values, fixes bug 564081
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodememberaccessmodule.vala:
+	* gobject/balaccodememberaccessmodule.bala:
 
 	Do not free values returned via g_object_get prematurely, require
 	properties without accessor methods to return an owned value,
@@ -1255,14 +1255,14 @@
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaunaryexpression.vala:
+	* bala/balaunaryexpression.bala:
 
 	Fix critical when trying to access instance member,
 	fixes bug 566337
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodenode.vala:
+	* bala/balacodenode.bala:
 
 	Add CodeNode.get_type_name method
 
@@ -1305,33 +1305,33 @@
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
+	* bala/balaparser.bala:
 
 	Do not accept `ref' and `out' expressions outside of arguments,
 	fixes bug 548418
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valalambdaexpression.vala:
+	* bala/balalambdaexpression.bala:
 
 	Support lambda expressions throwing errors, fixes bug 563018
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
+	* bala/balaparser.bala:
 
 	Do not allow empty enums and errordomains, fixes bug 543564
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaflowanalyzer.vala:
+	* bala/balaflowanalyzer.bala:
 
 	Perform flow analysis on code in creation methods, fixes bug 566000
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valascanner.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balascanner.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix some type suffix issues with real literals
 
@@ -1348,41 +1348,41 @@
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Fix error handling in try statements nested across method
 	boundaries (using lambda expressions)
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* compiler/valacompiler.vala:
+	* compiler/balacompiler.bala:
 
 	Do not pass null as option to CCodeCompiler
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Fix critical in compiled applications using null-terminated arrays,
 	fixes bug 567025
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* ccode/valaccodevariabledeclarator.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaclassregisterfunction.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusmodule.vala:
-	* gobject/valadbusservermodule.vala:
-	* gobject/valagerrormodule.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valagsignalmodule.vala:
-	* gobject/valagtypemodule.vala:
-	* gobject/valatyperegisterfunction.vala:
+	* ccode/balaccodevariabledeclarator.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaclassregisterfunction.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusmodule.bala:
+	* gobject/baladbusservermodule.bala:
+	* gobject/balagerrormodule.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balagsignalmodule.bala:
+	* gobject/balagtypemodule.bala:
+	* gobject/balatyperegisterfunction.bala:
 
 	Simplify CCodeVariableDeclarator construction with initializer
 
@@ -1402,7 +1402,7 @@
 
 2009-01-08  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadelegate.vala:
+	* bala/baladelegate.bala:
 
 	Visit declared error types to resolve symbols
 
@@ -1416,19 +1416,19 @@
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix critical when using immutable classes without copy function
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasymbolresolver.vala:
+	* bala/balasymbolresolver.bala:
 
 	Fix critical when using invalid `using' directive
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valagerrormodule.vala:
+	* gobject/balagerrormodule.bala:
 
 	Handle errors that occur within a try block but are not handled
 	by a catch clause, fixes bug 533929
@@ -1458,13 +1458,13 @@
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valaparser.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaclassregisterfunction.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valainterfaceregisterfunction.vala:
-	* gobject/valatyperegisterfunction.vala:
+	* bala/balaclass.bala:
+	* bala/balaparser.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaclassregisterfunction.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balainterfaceregisterfunction.bala:
+	* gobject/balatyperegisterfunction.bala:
 
 	Add support for static destructors, patch by Sebastian Dröge,
 	fixes bug 564011
@@ -1484,45 +1484,45 @@
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valainterface.vala:
-	* vala/valastruct.vala:
+	* bala/balaclass.bala:
+	* bala/balainterface.bala:
+	* bala/balastruct.bala:
 
 	Check base types of classes, interfaces, and structs,
 	patch by Andreas Brauchli, fixes bug 566592
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valatyperegisterfunction.vala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balatyperegisterfunction.bala:
 
 	Do not break ABI when using private class fields,
 	patch by Sebastian Dröge, fixes bug 561469
 
 2009-01-06  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balaclass.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Support [CCode (ref_function_void = true)] attribute for bindings,
 	based on patch by Andreas Brauchli, fixes bug 566078
 
 2009-01-06  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaarraytype.vala:
-	* gobject/valadbusmodule.vala:
+	* bala/balaarraytype.bala:
+	* gobject/baladbusmodule.bala:
 
 	Support marshalling multi-dimensional arrays,
 	based on patch by Didier Villevalois, fixes bug 565792
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Fix array out parameters in static D-Bus clients
 
 2009-01-05  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Do not accidentally generate stacked arrays
 
@@ -1544,7 +1544,7 @@
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valathrowstatement.vala:
+	* bala/balathrowstatement.bala:
 
 	Fix crash when using invalid throw expressions, fixes bug 565571
 
@@ -1558,16 +1558,16 @@
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamethodcall.vala:
+	* bala/balamethodcall.bala:
 
 	Fix potential crash when argument check of method call fails,
 	fixes bug 566077
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaarraycreationexpression.vala:
-	* vala/valainitializerlist.vala:
-	* gobject/valaccodearraymodule.vala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balainitializerlist.bala:
+	* gobject/balaccodearraymodule.bala:
 
 	Support initializers for multi-dimensional arrays, fixes bug 541256
 
@@ -1597,30 +1597,30 @@
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Fix array length handling for get_attributes method
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodecontrolflowmodule.vala:
+	* gobject/balaccodecontrolflowmodule.bala:
 
 	Drop obsolete foreach support for null-terminated arrays
 
-	* gobject/valaccodearraymodule.vala:
+	* gobject/balaccodearraymodule.bala:
 
 	Fix array length C expression for null-terminated array fields,
 	drop obsolete array_free support for null-terminated arrays
 
-	* gobject/valaccodeassignmentmodule.vala:
+	* gobject/balaccodeassignmentmodule.bala:
 
 	Correctly obey no_array_length when assigning to fields
 
-	* vala/valacodecontext.vala:
-	* gobject/valaccodecompiler.vala:
-	* compiler/valacompiler.vala:
+	* bala/balacodecontext.bala:
+	* gobject/balaccodecompiler.bala:
+	* compiler/balacompiler.bala:
 	* vapi/glib-2.0.vapi:
-	* vapigen/valavapigen.vala:
+	* vapigen/balavapigen.bala:
 
 	Use array_null_termianted attribute where appropriate
 
@@ -1634,12 +1634,12 @@
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadelegate.vala:
-	* vala/valafield.vala:
-	* vala/valaformalparameter.vala:
-	* vala/valamethod.vala:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
+	* bala/baladelegate.bala:
+	* bala/balafield.bala:
+	* bala/balaformalparameter.bala:
+	* bala/balamethod.bala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Support [CCode (array_null_terminated = true)] attribute to fix
 	length handling of null terminated arrays, fixes bug 514186
@@ -1671,37 +1671,37 @@
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
-	* vala/valadelegate.vala:
-	* vala/valafield.vala:
-	* vala/valaformalparameter.vala:
-	* vala/valamethod.vala:
+	* bala/balacodewriter.bala:
+	* bala/baladelegate.bala:
+	* bala/balafield.bala:
+	* bala/balaformalparameter.bala:
+	* bala/balamethod.bala:
 
 	Replace [NoArrayLength] by [CCode (array_length = false)], which
 	can also be applied to single parameters, fixes bug 532486
 
-	* gobject/valaccodecompiler.vala:
-	* compiler/valacompiler.vala:
+	* gobject/balaccodecompiler.bala:
+	* compiler/balacompiler.bala:
 	* vapi/glib-2.0.vapi:
-	* vapigen/valagidlparser.vala:
-	* vapigen/valavapigen.vala:
+	* vapigen/balagidlparser.bala:
+	* vapigen/balavapigen.bala:
 
 	Adapt to attribute changes
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valabinaryexpression.vala:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemodule.vala:
+	* bala/balabinaryexpression.bala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemodule.bala:
 
 	Support += to efficiently append elements to arrays,
 	fixes part of bug 566425
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix generated code for static array and delegate fields,
 	based on patch by Andreas Brauchli, fixes bug 521246
@@ -1726,8 +1726,8 @@
 
 2009-01-03  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valafield.vala:
-	* gobject/valaccodearraymodule.vala:
+	* bala/balafield.bala:
+	* gobject/balaccodearraymodule.bala:
 
 	Add array_length_cname attribute for fields,
 	patch by Andreas Brauchli, fixes bug 565793
@@ -1743,45 +1743,45 @@
 
 2009-01-03  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaarraycreationexpression.vala:
-	* vala/valafield.vala:
-	* vala/valagenieparser.vala:
-	* vala/valainitializerlist.vala:
-	* vala/valalocalvariable.vala:
-	* vala/valaparser.vala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balafield.bala:
+	* bala/balagenieparser.bala:
+	* bala/balainitializerlist.bala:
+	* bala/balalocalvariable.bala:
+	* bala/balaparser.bala:
 
 	Support short-form of array creation expressions not just in
 	local variable initializers, fixes bug 547410
 
 2009-01-03  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
+	* bala/balacodewriter.bala:
 
 	Support writing array creation expressions and initializer lists
 
 2009-01-03  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valaarraytype.vala:
-	* vala/valabinaryexpression.vala:
-	* vala/valabooleantype.vala:
-	* vala/valacharacterliteral.vala:
-	* vala/valadostatement.vala:
-	* vala/valaenum.vala:
-	* vala/valaenumvaluetype.vala:
-	* vala/valaerrordomain.vala:
-	* vala/valafloatingtype.vala:
-	* vala/valaintegerliteral.vala:
-	* vala/valaintegertype.vala:
-	* vala/valaobjectcreationexpression.vala:
-	* vala/valarealliteral.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valastruct.vala:
-	* vala/valastructvaluetype.vala:
-	* vala/valasymbolresolver.vala:
-	* vala/valavaluetype.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodmodule.vala:
+	* bala/Makefile.am:
+	* bala/balaarraytype.bala:
+	* bala/balabinaryexpression.bala:
+	* bala/balabooleantype.bala:
+	* bala/balacharacterliteral.bala:
+	* bala/baladostatement.bala:
+	* bala/balaenum.bala:
+	* bala/balaenumvaluetype.bala:
+	* bala/balaerrordomain.bala:
+	* bala/balafloatingtype.bala:
+	* bala/balaintegerliteral.bala:
+	* bala/balaintegertype.bala:
+	* bala/balaobjectcreationexpression.bala:
+	* bala/balarealliteral.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balastruct.bala:
+	* bala/balastructvaluetype.bala:
+	* bala/balasymbolresolver.bala:
+	* bala/balavaluetype.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodmodule.bala:
 	* vapi/glib-2.0.vapi:
 
 	Add BooleanType, EnumValueType, FloatingType, and StructValueType
@@ -1818,15 +1818,15 @@
 
 2009-01-01  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valagerrormodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balagerrormodule.bala:
 
 	Fix memory leaks when handling errors, patch by Philip Van Hoof,
 	fixes bug 557856
 
 2008-12-30  Jürg Billeter  <j@bitron.ch>
 
-	* doc/valac.1:
+	* doc/balac.1:
 
 	Fix dashes in option descriptions, patch by Andrew Feren,
 	fixes bug 565479
@@ -1851,7 +1851,7 @@
 
 2008-12-30  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
+	* gobject/balaccodearraymodule.bala:
 
 	More closure fixes for array variables
 
@@ -1872,39 +1872,39 @@
 
 2008-12-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valalambdaexpression.vala:
+	* bala/balalambdaexpression.bala:
 
 	Support instance access in lambda expressions in property accessors
 
 2008-12-26  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Don't notify struct properties without type id
 
 2008-12-26  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadatatype.vala:
-	* gobject/valadbusservermodule.vala:
+	* bala/baladatatype.bala:
+	* gobject/baladbusservermodule.bala:
 
 	Fix crash when using unsupported types in D-Bus servers
 
 2008-12-25  Étienne Bersac  <bersace03@laposte.net>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Don't prevent notifying struct property.
 
 2008-12-22  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Use copy function in generated dup function for structs if
 	necessary
 
 2008-12-22  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valastruct.vala:
+	* bala/balastruct.bala:
 
 	Fix type id for library structs registered as boxed types
 
@@ -1920,15 +1920,15 @@
 
 2008-12-22  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valastruct.vala:
+	* bala/balastruct.bala:
 
 	Use BOXED as marshaller name for structs with type id
 
 2008-12-21  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valastruct.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valagobjectmodule.vala:
+	* bala/balastruct.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balagobjectmodule.bala:
 	* vapi/glib-2.0.vapi:
 
 	Support boxed structs as GObject properties,
@@ -1936,7 +1936,7 @@
 
 2008-12-21  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Use `const' for struct input parameters, fixes bug 548413
 
@@ -1951,12 +1951,12 @@
 
 2008-12-20  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
-	* gobject/valagasyncmodule.vala:
-	* gobject/valagerrormodule.vala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
+	* gobject/balagasyncmodule.bala:
+	* gobject/balagerrormodule.bala:
 
 	More closure fixes
 
@@ -1991,91 +1991,91 @@
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valagasyncmodule.vala:
+	* gobject/balagasyncmodule.bala:
 
 	Fix temporary async idle support
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix async method calls in simple expression statements
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valagerrormodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balagerrormodule.bala:
 
 	Redirect more variable access to closure struct
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Fix generated finish function for static D-Bus client methods
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
 
 	Fix disposing local variables in coroutines
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Generate async and finish calls when calling async methods from
 	coroutines
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Do not generate invalid type check statements in coroutines
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valagasyncmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balagasyncmodule.bala:
 
 	Use closure struct to declare and initialize local variables in
 	coroutines
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Do not use g_error_new for non-format strings, fixes bug 564961
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodememberaccessmodule.vala:
+	* gobject/balaccodememberaccessmodule.bala:
 
 	Use closure struct to access local variables and parameters in
 	coroutines
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusservermodule.vala:
+	* gobject/baladbusservermodule.bala:
 
 	Do not generate property code if not necessary
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Update wording for error message when trying to duplicate
 	non-reference counted object
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaformalparameter.vala:
-	* vala/valagenieparser.vala:
-	* vala/valaparser.vala:
+	* bala/balaformalparameter.bala:
+	* bala/balagenieparser.bala:
+	* bala/balaparser.bala:
 
 	Remove support for deprecated syntax for construct parameters
 
@@ -2086,27 +2086,27 @@
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodewriter.vala:
+	* bala/balacodewriter.bala:
 
 	Update syntax to use owned and unowned where appropriate
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
+	* bala/balaparser.bala:
 
 	Remove support for deprecated syntax for property default values
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamemberaccess.vala:
+	* bala/balamemberaccess.bala:
 
 	Fix crash when using property prototype as value
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
-	* vala/valascanner.vala:
-	* vala/valatokentype.vala:
+	* bala/balaparser.bala:
+	* bala/balascanner.bala:
+	* bala/balatokentype.bala:
 
 	Add `owned' type modifier and `(owned)' cast to replace `#',
 	add `unowned' type modifier to complement `weak' for non-reference
@@ -2116,8 +2116,8 @@
 
 2008-12-18  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Fix named constructor chaining, fixes bug 559303
 
@@ -2129,46 +2129,46 @@
 
 2008-12-18  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodcallmodule.vala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Support error propagation from base constructor, fixes bug 564984
 
 2008-12-18  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Fix error propagation in creation methods, fixes part of 564944
 
 2008-12-18  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodecontrolflowmodule.vala:
+	* gobject/balaccodecontrolflowmodule.bala:
 
 	Fix temporary variable handling in switch expressions,
 	fixes bug 559278
 
 2008-12-18  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Remove statements without effect, fixes bug 530601
 
 2008-12-18  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix member initializers for array fields, fixes bug 562600
 
 2008-12-18  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaassignment.vala:
+	* bala/balaassignment.bala:
 
 	Report error when trying to connect signal to instance method
 	from static context, fixes bug 502669
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix initialization of static array fields, fixes bug 472545
 
@@ -2216,22 +2216,22 @@
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
-	* vala/valavoidtype.vala:
+	* bala/balaparser.bala:
+	* bala/balavoidtype.bala:
 
 	Store source_reference for void types
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valagobjectmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balagobjectmodule.bala:
 
 	Report error when using class fields or constructors in compact
 	classes, fixes bug 564090
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
+	* gobject/balaccodearraymodule.bala:
 
 	Fix private array fields in structs, fixes bug 557174
 
@@ -2249,19 +2249,19 @@
 	* configure.ac:
 	* gen-project/:
 
-	Drop vala-gen-project, moved to vtg, Vala Toys for gedit
+	Drop bala-gen-project, moved to vtg, Vala Toys for gedit
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Fix temporary variable handling when using methods defined in
 	VAPI files
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Fix handling of int16, uint16, int32, and uint32
 
@@ -2290,30 +2290,30 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valaparser.vala:
-	* gobject/valaclassregisterfunction.vala:
-	* gobject/valagobjectmodule.vala:
+	* bala/balaclass.bala:
+	* bala/balaparser.bala:
+	* gobject/balaclassregisterfunction.bala:
+	* gobject/balagobjectmodule.bala:
 
 	Add support for class destructors, patch by Sebastian Dröge,
 	fixes bug 564011
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valaclassregisterfunction.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valainterfaceregisterfunction.vala:
-	* gobject/valatyperegisterfunction.vala:
+	* bala/balaclass.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balaclassregisterfunction.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balainterfaceregisterfunction.bala:
+	* gobject/balatyperegisterfunction.bala:
 
 	Add support for private class fields, patch by Sebastian Dröge,
 	fixes bug 561469
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 	* vapi/glib-2.0.vapi:
 
 	Fix GByteArray binding, patch by Evan Nemerson, fixes bug 561867
@@ -2329,15 +2329,15 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valafield.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balafield.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix crash and temporary variable declarations when using struct
 	initialization methods in field initializer, fixes bug 559459
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Extend metadata support for delegates
 
@@ -2350,13 +2350,13 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Fix crash when parsing metadata, fixes bug 563390
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodcallmodule.vala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Fix crash when using out parameters in delegates,
 	fixes bug 563705
@@ -2371,10 +2371,10 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadelegate.vala:
-	* vala/valamethodcall.vala:
-	* vala/valaparser.vala:
-	* gobject/valaccodedelegatemodule.vala:
+	* bala/baladelegate.bala:
+	* bala/balamethodcall.bala:
+	* bala/balaparser.bala:
+	* gobject/balaccodedelegatemodule.bala:
 
 	Support delegates throwing errors, fixes bug 557332
 
@@ -2401,8 +2401,8 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
 	* vapi/glib-2.0.vapi:
 
 	Move substring method to VAPI file, handle negative and out of
@@ -2428,14 +2428,14 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasizeofexpression.vala:
+	* bala/balasizeofexpression.bala:
 
 	Include C header files for types used in sizeof expressions,
 	fixes bug 542705
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Report error when using construct properties in non-GObject
 	classes, fixes bug 541728
@@ -2451,7 +2451,7 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valagobjectmodule.vala:
+	* gobject/balagobjectmodule.bala:
 
 	Report error when using construct blocks in non-GObject classes
 
@@ -2476,7 +2476,7 @@
 
 	* tests/testrunner.sh:
 
-	Fix make check of uninstalled vala, based on patch by Götz Waschk,
+	Fix make check of uninstalled bala, based on patch by Götz Waschk,
 	fixes bug 562951
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
@@ -2537,7 +2537,7 @@
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaswitchstatement.vala:
+	* bala/balaswitchstatement.bala:
 
 	Check switch expression
 
@@ -2549,50 +2549,50 @@
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix comparison of nullable and non-nullable values
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodestructmodule.vala:
+	* gobject/balaccodestructmodule.bala:
 
 	Fix bug introduced in last commit
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodestructmodule.vala:
+	* gobject/balaccodestructmodule.bala:
 
 	Fix handling of array fields in structs, fixes bug 562665
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix comparing nullable struct values with null, fixes bug 548672
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Fix constructors in inner structs
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valastruct.vala:
+	* bala/balastruct.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodestructmodule.vala:
-	* gobject/valagtypemodule.vala:
-	* gobject/valastructregisterfunction.vala:
-	* gobject/valatyperegisterfunction.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodestructmodule.bala:
+	* gobject/balagtypemodule.bala:
+	* gobject/balastructregisterfunction.bala:
+	* gobject/balatyperegisterfunction.bala:
 
 	Register structs as boxed types, generate dup, copy, and free
 	functions, fixes bug 548864
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 	* vapi/glib-2.0.vapi:
 
 	Support empty ref_function and unref_function attributes,
@@ -2600,22 +2600,22 @@
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Support GLib.Type as generic type argument
 
 2008-12-14  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Detect unsupported generic type arguments in local variable
 	declarations
 
 2008-12-14  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valadbusservermodule.vala:
-	* gobject/valagsignalmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/baladbusservermodule.bala:
+	* gobject/balagsignalmodule.bala:
 	* vapi/dbus-glib-1.vapi:
 
 	Rewrite D-Bus server support to directly use libdbus without
@@ -2631,26 +2631,26 @@
 
 2008-12-14  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusmodule.vala:
+	* gobject/baladbusmodule.bala:
 
 	Support reading and writing nullable struct values
 
 2008-12-14  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix struct dup function for GValue
 
 2008-12-14  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Detect unsupported generic type arguments, fixes bug 561674
 
 2008-12-13  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusmodule.vala:
+	* gobject/baladbusmodule.bala:
 
 	Support reading and writing nullable GLib.Value values
 
@@ -2669,41 +2669,41 @@
 
 2008-12-13  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valagenieparser.vala:
-	* vala/valaparser.vala:
+	* bala/balagenieparser.bala:
+	* bala/balaparser.bala:
 
 	Remove workarounds for old Vala versions
 
 2008-12-13  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valablock.vala:
+	* bala/balablock.bala:
 
 	Detect conflicting local variables in parent scopes
 
-	* vala/valaarraycreationexpression.vala:
-	* vala/valacodewriter.vala:
-	* vala/valaforeachstatement.vala:
-	* vala/valagenieparser.vala:
-	* vala/valaparser.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
-	* gobject/valagobjectmodule.vala:
-	* vapigen/valagidlparser.vala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balacodewriter.bala:
+	* bala/balaforeachstatement.bala:
+	* bala/balagenieparser.bala:
+	* bala/balaparser.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
+	* gobject/balagobjectmodule.bala:
+	* vapigen/balagidlparser.bala:
 
 	Fix conflicting local variables
 
 2008-12-12  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusmodule.vala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusmodule.bala:
 
 	Support reading multi-dimensional arrays in static D-Bus clients
 
 2008-12-12  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusmodule.vala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusmodule.bala:
 
 	Fix array length and size handling in static D-Bus clients
 
@@ -2729,7 +2729,7 @@
 
 2008-12-09  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valagsignalmodule.vala:
+	* gobject/balagsignalmodule.bala:
 
 	Do not use g_signal_connect_object if the target object is not a
 	GObject, fixes bug 539614
@@ -2759,21 +2759,21 @@
 
 2008-12-09  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Fix dbus-glib type for structs
 
 2008-12-09  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valagsignalmodule.vala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/balagsignalmodule.bala:
 
 	Use specialized dbus-glib types for signals in D-Bus servers
 
 2008-12-09  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vala/valacodewriter.vala:
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10-custom.vala:
+	* bala/balacodewriter.bala:
+	* vapi/packages/gstreamer-0.10/gstreamer-0.10-custom.bala:
 	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Fix *_make_writable functions in gstreamer by marking them
@@ -2789,7 +2789,7 @@
 
 2008-12-09  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Fix inline struct methods in VAPI files
 
@@ -2811,20 +2811,20 @@
 
 2008-12-06  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamethodcall.vala:
+	* bala/balamethodcall.bala:
 
 	Report error when trying to call constructor without `new' operator
 
 2008-12-06  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasourcefile.vala:
+	* bala/balasourcefile.bala:
 
 	Add SourceFile.clear_using_directives method, required by
-	anjuta-vala-plugin
+	anjuta-bala-plugin
 
 2008-12-05  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix struct constants
 
@@ -2854,14 +2854,14 @@
 
 2008-12-02  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaassignment.vala:
-	* vala/valasignal.vala:
+	* bala/balaassignment.bala:
+	* bala/balasignal.bala:
 
 	Resolve generic types when connecting signals
 
 2008-12-02  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadatatype.vala:
+	* bala/baladatatype.bala:
 
 	Fix type resolving with nested generic types, fixes bug 562956
 
@@ -2883,15 +2883,15 @@
 
 2008-12-01  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valabinaryexpression.vala:
-	* vala/valaconditionalexpression.vala:
+	* bala/balabinaryexpression.bala:
+	* bala/balaconditionalexpression.bala:
 
 	Fix critical when using conditional expressions in method contracts
 
 2008-12-01  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valagobjectmodule.vala:
-	* gobject/valagsignalmodule.vala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balagsignalmodule.bala:
 
 	Support signals in non-GObject classes, patch by Yu Feng,
 	fixes bug 561989
@@ -2906,15 +2906,15 @@
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasymbolresolver.vala:
+	* bala/balasymbolresolver.bala:
 
 	Resolve types in switch labels
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaarraycreationexpression.vala:
-	* vala/valaelementaccess.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balaelementaccess.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Accept any integer type as array index
 
@@ -2926,231 +2926,231 @@
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix array length variable name for internal variables
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valalocalvariable.vala:
-	* vala/valamethodcall.vala:
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balalocalvariable.bala:
+	* bala/balamethodcall.bala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Avoid object duplication due to error handling
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamethodcall.vala:
+	* bala/balamethodcall.bala:
 
 	Move compiler internal variable to right block
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaelementaccess.vala:
+	* bala/balaelementaccess.bala:
 
 	Fix error handling in element access expressions
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valacodewriter.vala:
-	* compiler/valacompiler.vala:
-	* vapigen/valavapigen.vala:
+	* bala/Makefile.am:
+	* bala/balacodewriter.bala:
+	* compiler/balacompiler.bala:
+	* vapigen/balavapigen.bala:
 
 	Add --dump-tree command-line option to write code tree to file
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valanullchecker.vala:
-	* vala/valaswitchlabel.vala:
-	* vala/valaswitchstatement.vala:
-	* vala/valasymbolresolver.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
+	* bala/balanullchecker.bala:
+	* bala/balaswitchlabel.bala:
+	* bala/balaswitchstatement.bala:
+	* bala/balasymbolresolver.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
 
 	Separate visiting switch sections from visiting switch statements
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamemberaccess.vala:
-	* vala/valasymbolresolver.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valagsignalmodule.vala:
+	* bala/balamemberaccess.bala:
+	* bala/balasymbolresolver.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balagsignalmodule.bala:
 
 	Separate visiting inner expressions from visiting member access
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaaddressofexpression.vala:
-	* vala/valaarraycreationexpression.vala:
-	* vala/valaassignment.vala:
-	* vala/valabaseaccess.vala:
-	* vala/valabinaryexpression.vala:
-	* vala/valablock.vala:
-	* vala/valacastexpression.vala:
-	* vala/valaconditionalexpression.vala:
-	* vala/valadostatement.vala:
-	* vala/valaelementaccess.vala:
-	* vala/valaexpression.vala:
-	* vala/valaforstatement.vala:
-	* vala/valainitializerlist.vala:
-	* vala/valalambdaexpression.vala:
-	* vala/valaliteral.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valamethodcall.vala:
-	* vala/valaobjectcreationexpression.vala:
-	* vala/valaparenthesizedexpression.vala:
-	* vala/valapointerindirection.vala:
-	* vala/valapostfixexpression.vala:
-	* vala/valareferencetransferexpression.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valasizeofexpression.vala:
-	* vala/valaswitchsection.vala:
-	* vala/valatuple.vala:
-	* vala/valatypecheck.vala:
-	* vala/valatypeofexpression.vala:
-	* vala/valaunaryexpression.vala:
-	* vala/valawhilestatement.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balaaddressofexpression.bala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balaassignment.bala:
+	* bala/balabaseaccess.bala:
+	* bala/balabinaryexpression.bala:
+	* bala/balablock.bala:
+	* bala/balacastexpression.bala:
+	* bala/balaconditionalexpression.bala:
+	* bala/baladostatement.bala:
+	* bala/balaelementaccess.bala:
+	* bala/balaexpression.bala:
+	* bala/balaforstatement.bala:
+	* bala/balainitializerlist.bala:
+	* bala/balalambdaexpression.bala:
+	* bala/balaliteral.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balamethodcall.bala:
+	* bala/balaobjectcreationexpression.bala:
+	* bala/balaparenthesizedexpression.bala:
+	* bala/balapointerindirection.bala:
+	* bala/balapostfixexpression.bala:
+	* bala/balareferencetransferexpression.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balasizeofexpression.bala:
+	* bala/balaswitchsection.bala:
+	* bala/balatuple.bala:
+	* bala/balatypecheck.bala:
+	* bala/balatypeofexpression.bala:
+	* bala/balaunaryexpression.bala:
+	* bala/balawhilestatement.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix error handling in condition of while, do, and for statements
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaexpressionstatement.vala:
-	* vala/valanullchecker.vala:
-	* vala/valasymbolresolver.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balaexpressionstatement.bala:
+	* bala/balanullchecker.bala:
+	* bala/balasymbolresolver.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Separate visiting expressions from visiting expression statements
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valabinaryexpression.vala:
-	* vala/valasymbolresolver.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balabinaryexpression.bala:
+	* bala/balasymbolresolver.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Separate visiting operands from visiting binary expression
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadeclarationstatement.vala:
-	* vala/valasymbolresolver.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/baladeclarationstatement.bala:
+	* bala/balasymbolresolver.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Separate visiting declaration from visiting declaration statement
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* ccode/valaccodeassignment.vala:
-	* ccode/valaccodeconditionalexpression.vala:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
-	* gobject/valaccodedelegatemodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
+	* ccode/balaccodeassignment.bala:
+	* ccode/balaccodeconditionalexpression.bala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
+	* gobject/balaccodedelegatemodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	More parenthesis improvements
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaforeachstatement.vala:
-	* ccode/valaccodebinaryexpression.vala:
-	* ccode/valaccodecastexpression.vala:
-	* ccode/valaccodeelementaccess.vala:
-	* ccode/valaccodeexpression.vala:
-	* ccode/valaccodememberaccess.vala:
-	* ccode/valaccodeunaryexpression.vala:
+	* bala/balaforeachstatement.bala:
+	* ccode/balaccodebinaryexpression.bala:
+	* ccode/balaccodecastexpression.bala:
+	* ccode/balaccodeelementaccess.bala:
+	* ccode/balaccodeexpression.bala:
+	* ccode/balaccodememberaccess.bala:
+	* ccode/balaccodeunaryexpression.bala:
 
 	Fix generated parentheses
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valathrowstatement.vala:
+	* bala/balathrowstatement.bala:
 
 	Check type of error expression in throw statements
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
+	* gobject/balaccodearraymodule.bala:
 
 	Fix array length variable name for internal variables,
 	fixes bug 562723
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasourcefile.vala:
+	* bala/balasourcefile.bala:
 
 	Fix critical when using error codes
 
 2008-11-29  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valavoidtype.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balavoidtype.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Use G_TYPE_POINTER for pointers and G_TYPE_INVALID for
 	unsupported types in typeof expressions
 
 2008-11-29  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamethodcall.vala:
+	* bala/balamethodcall.bala:
 
 	Fix error handling in inner expressions, fixes bug 475922
 
 2008-11-29  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaaddressofexpression.vala:
-	* vala/valaarraycreationexpression.vala:
-	* vala/valaassignment.vala:
-	* vala/valabaseaccess.vala:
-	* vala/valabinaryexpression.vala:
-	* vala/valacastexpression.vala:
-	* vala/valaconditionalexpression.vala:
-	* vala/valadostatement.vala:
-	* vala/valaelementaccess.vala:
-	* vala/valaexpression.vala:
-	* vala/valaforstatement.vala:
-	* vala/valainitializerlist.vala:
-	* vala/valalambdaexpression.vala:
-	* vala/valaliteral.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valamethodcall.vala:
-	* vala/valaobjectcreationexpression.vala:
-	* vala/valaparenthesizedexpression.vala:
-	* vala/valapointerindirection.vala:
-	* vala/valapostfixexpression.vala:
-	* vala/valareferencetransferexpression.vala:
-	* vala/valasizeofexpression.vala:
-	* vala/valatuple.vala:
-	* vala/valatypecheck.vala:
-	* vala/valatypeofexpression.vala:
-	* vala/valaunaryexpression.vala:
-	* vala/valawhilestatement.vala:
+	* bala/balaaddressofexpression.bala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balaassignment.bala:
+	* bala/balabaseaccess.bala:
+	* bala/balabinaryexpression.bala:
+	* bala/balacastexpression.bala:
+	* bala/balaconditionalexpression.bala:
+	* bala/baladostatement.bala:
+	* bala/balaelementaccess.bala:
+	* bala/balaexpression.bala:
+	* bala/balaforstatement.bala:
+	* bala/balainitializerlist.bala:
+	* bala/balalambdaexpression.bala:
+	* bala/balaliteral.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balamethodcall.bala:
+	* bala/balaobjectcreationexpression.bala:
+	* bala/balaparenthesizedexpression.bala:
+	* bala/balapointerindirection.bala:
+	* bala/balapostfixexpression.bala:
+	* bala/balareferencetransferexpression.bala:
+	* bala/balasizeofexpression.bala:
+	* bala/balatuple.bala:
+	* bala/balatypecheck.bala:
+	* bala/balatypeofexpression.bala:
+	* bala/balaunaryexpression.bala:
+	* bala/balawhilestatement.bala:
 
 	Convert binary conditional expressions into if statements
 
 2008-11-29  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaflowanalyzer.vala:
+	* bala/balaflowanalyzer.bala:
 
 	Detect unreachable code in if and while statements
 
 2008-11-29  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valablock.vala:
-	* vala/valacodenode.vala:
-	* vala/valaconditionalexpression.vala:
-	* vala/valadeclarationstatement.vala:
-	* vala/valaexpression.vala:
-	* vala/valanullchecker.vala:
-	* vala/valastatementlist.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
+	* bala/Makefile.am:
+	* bala/balablock.bala:
+	* bala/balacodenode.bala:
+	* bala/balaconditionalexpression.bala:
+	* bala/baladeclarationstatement.bala:
+	* bala/balaexpression.bala:
+	* bala/balanullchecker.bala:
+	* bala/balastatementlist.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
 
 	Convert ternary conditionals into if statements,
 	fixes bug 543870 and bug 554594
@@ -3163,13 +3163,13 @@
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix generated code in struct destroy function for array fields
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagidlparser.vala:
+	* vapigen/balagidlparser.bala:
 
 	Support ssize_t and size_t
 
@@ -3182,31 +3182,31 @@
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Support construct properties
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Support nullable parameters
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Support interface prerequisites
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Support functions in classes
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix copying and destroying GValue values
 
@@ -3218,15 +3218,15 @@
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Remove unused fields
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valabinaryexpression.vala:
-	* gobject/valaccodebasemodule.vala:
+	* bala/balabinaryexpression.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Don't require libgee for `in' operations
 
@@ -3238,65 +3238,65 @@
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaflowanalyzer.vala:
+	* bala/balaflowanalyzer.bala:
 
 	Analyze errors in return expressions
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valablock.vala:
-	* vala/valaforeachstatement.vala:
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
+	* bala/balablock.bala:
+	* bala/balaforeachstatement.bala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
 
 	Don't require libgee for foreach statements
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valadatatype.vala:
-	* vala/valagenerictype.vala:
-	* vala/valainterface.vala:
-	* vala/valamethod.vala:
-	* vala/valaobjecttypesymbol.vala:
-	* vala/valasymbolresolver.vala:
+	* bala/balaclass.bala:
+	* bala/baladatatype.bala:
+	* bala/balagenerictype.bala:
+	* bala/balainterface.bala:
+	* bala/balamethod.bala:
+	* bala/balaobjecttypesymbol.bala:
+	* bala/balasymbolresolver.bala:
 
 	Fix method checking with generic base types, fixes bug 511286
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadatatype.vala:
-	* vala/valaexpression.vala:
-	* vala/valaintegertype.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valamethodcall.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valavaluetype.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
+	* bala/baladatatype.bala:
+	* bala/balaexpression.bala:
+	* bala/balaintegertype.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balamethodcall.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balavaluetype.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
 
 	Improve handling of generic values, fixes bug 562460
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valabinaryexpression.vala:
-	* vala/valaelementaccess.vala:
-	* vala/valaforeachstatement.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valamethodcall.vala:
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
+	* bala/balabinaryexpression.bala:
+	* bala/balaelementaccess.bala:
+	* bala/balaforeachstatement.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balamethodcall.bala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
 
 	Improve get_actual_type signature
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valagenerictype.vala:
-	* vala/valasymbolresolver.vala:
+	* bala/Makefile.am:
+	* bala/balagenerictype.bala:
+	* bala/balasymbolresolver.bala:
 
 	Rename TypeParameterType to GenericType
 
@@ -3310,7 +3310,7 @@
 
 2008-11-26  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Include dbus.h, required for static D-Bus client support
 
@@ -3322,11 +3322,11 @@
 
 2008-11-24  Jürg Billeter  <j@bitron.ch>
 
-	* ccode/valaccodefunctioncall.vala:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodcallmodule.vala:
-	* vala/valasemanticanalyzer.vala:
+	* ccode/balaccodefunctioncall.bala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodcallmodule.bala:
+	* bala/balasemanticanalyzer.bala:
 	* vapi/glib-2.0.vapi:
 
 	Add g_array_index binding and fix g_array_free calls,
@@ -3340,67 +3340,67 @@
 
 2008-11-22  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Whitespace fixes
 
 2008-11-22  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valagasyncmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/balagasyncmodule.bala:
 
 	Support async method calls in static D-Bus clients
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valagasyncmodule.vala:
+	* gobject/balagasyncmodule.bala:
 
 	Fix return type of finish vfunc
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamethod.vala:
-	* gobject/valaccodemethodcallmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valagasyncmodule.vala:
+	* bala/balamethod.bala:
+	* gobject/balaccodemethodcallmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/balagasyncmodule.bala:
 
 	Various coroutine code generation improvements
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Small refactoring
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusmodule.vala:
+	* gobject/baladbusmodule.bala:
 
 	Support serialization and deserialization of GHashTable objects
 	in static D-Bus clients
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusmodule.vala:
+	* gobject/baladbusmodule.bala:
 
 	Support serialization and deserialization of GValue values in
 	static D-Bus clients
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusmodule.vala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusmodule.bala:
 
 	Support serialization and deserialization of structs in static
 	D-Bus clients
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusmodule.vala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusmodule.bala:
 
 	Support serialization and deserialization of arrays in static
 	D-Bus clients
@@ -3408,9 +3408,9 @@
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusmodule.bala:
 	* vapi/dbus-glib-1.vapi:
 
 	Add partial static D-Bus client support without dbus-glib
@@ -3467,49 +3467,49 @@
 
 2008-11-20  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaassignment.vala:
+	* bala/balaassignment.bala:
 
 	Check types in property assignments, fixes bug 550088
 
 2008-11-20  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacatchclause.vala:
+	* bala/balacatchclause.bala:
 
 	Fix generic catch clauses
 
 2008-11-20  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodcallmodule.vala:
+	* gobject/balaccodemethodcallmodule.bala:
 
 	Fix base access to virtual signal handlers with return values,
 	fixes bug 538901
 
 2008-11-20  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valacodevisitor.vala:
-	* vala/valadynamicmethod.vala:
-	* vala/valaflowanalyzer.vala:
-	* vala/valagenieparser.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valamethodcall.vala:
-	* vala/valanullchecker.vala:
-	* vala/valaparser.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valasymbolresolver.vala:
+	* bala/Makefile.am:
+	* bala/balacodevisitor.bala:
+	* bala/baladynamicmethod.bala:
+	* bala/balaflowanalyzer.bala:
+	* bala/balagenieparser.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balamethodcall.bala:
+	* bala/balanullchecker.bala:
+	* bala/balaparser.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balasymbolresolver.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodedelegatemodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemethodcallmodule.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodedelegatemodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemethodcallmodule.bala:
+	* gobject/balaccodemodule.bala:
 
 	Rename InvocationExpression to MethodCall
 
 2008-11-20  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valainvocationexpression.vala:
+	* bala/balainvocationexpression.bala:
 
 	Fix struct initialization
 
@@ -3531,28 +3531,28 @@
 
 2008-11-20  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacatchclause.vala:
-	* vala/valaerrortype.vala:
+	* bala/balacatchclause.bala:
+	* bala/balaerrortype.bala:
 
 	Correct source file dependencies for catch clauses,
 	fixes bug 561437
 
 2008-11-19  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valatypeofexpression.vala:
+	* bala/balatypeofexpression.bala:
 
 	Include C header files for types used in typeof expressions,
 	fixes bug 559494
 
 2008-11-19  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Remove extra g_type_create_instance in constructors
 
 2008-11-19  Sebastian Dröge  <sebastian.droege@collabora.co.uk>
 
-	* gobject/valagobjectmodule.vala:
+	* gobject/balagobjectmodule.bala:
 
 	Add support for class field initializers for classes that are not
 	derived from GObject.
@@ -3575,42 +3575,42 @@
 
 2008-11-17  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaarraycreationexpression.vala:
-	* vala/valaelementaccess.vala:
-	* vala/valasourcefile.vala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balaelementaccess.bala:
+	* bala/balasourcefile.bala:
 
 	Allow any integer compatible value to be used as array index,
 	fixes bug 561057
 
 2008-11-17  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaflowanalyzer.vala:
+	* bala/balaflowanalyzer.bala:
 
 	Fix control flow graph for try statements with finally clause,
 	fixes bug 561115
 
 2008-11-17  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadynamicmethod.vala:
-	* vala/valadynamicsignal.vala:
+	* bala/baladynamicmethod.bala:
+	* bala/baladynamicsignal.bala:
 
 	Fix checking of dynamic methods and signals
 
 2008-11-17  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valafield.vala:
+	* bala/balafield.bala:
 
 	Correct source file dependencies for private fields of compact
 	classes, based on patch by Thijs Vermeir, fixes bug 555249
 
 2008-11-17  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacatchclause.vala:
-	* vala/valacreationmethod.vala:
-	* vala/valafield.vala:
-	* vala/valaforeachstatement.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valamethod.vala:
+	* bala/balacatchclause.bala:
+	* bala/balacreationmethod.bala:
+	* bala/balafield.bala:
+	* bala/balaforeachstatement.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balamethod.bala:
 
 	Ensure that members are checked when accessing them,
 	fixes bug 561018
@@ -3623,7 +3623,7 @@
 
 2008-11-14  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasemanticanalyzer.vala:
+	* bala/balasemanticanalyzer.bala:
 
 	Set target_type for member initializers
 
@@ -3637,105 +3637,105 @@
 
 2008-11-14  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaformalparameter.vala:
-	* vala/valainterfacewriter.vala:
-	* vala/valainvocationexpression.vala:
-	* vala/valaparser.vala:
-	* vala/valascanner.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valatokentype.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
+	* bala/balaformalparameter.bala:
+	* bala/balainterfacewriter.bala:
+	* bala/balainvocationexpression.bala:
+	* bala/balaparser.bala:
+	* bala/balascanner.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balatokentype.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
 
 	Support parameter arrays, fixes bug 538897
 
 2008-11-14  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valagenieparser.vala:
-	* vala/valaparser.vala:
+	* bala/balagenieparser.bala:
+	* bala/balaparser.bala:
 
 	Avoid C compiler warnings with switch statements
 
 2008-11-14  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Fix non-struct output arguments in dynamic D-Bus method calls
 
 2008-11-14  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valaassignment.vala:
-	* vala/valabasicblock.vala:
-	* vala/valabinaryexpression.vala:
-	* vala/valacastexpression.vala:
-	* vala/valacatchclause.vala:
-	* vala/valacodenode.vala:
-	* vala/valadeclarationstatement.vala:
-	* vala/valaelementaccess.vala:
-	* vala/valaexpressionstatement.vala:
-	* vala/valaflowanalyzer.vala:
-	* vala/valaforeachstatement.vala:
-	* vala/valainvocationexpression.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valaobjectcreationexpression.vala:
-	* vala/valaparenthesizedexpression.vala:
-	* vala/valaphifunction.vala:
-	* vala/valapointerindirection.vala:
-	* vala/valareferencetransferexpression.vala:
-	* vala/valareturnstatement.vala:
-	* vala/valathrowstatement.vala:
-	* vala/valaunaryexpression.vala:
-	* compiler/valacompiler.vala:
+	* bala/Makefile.am:
+	* bala/balaassignment.bala:
+	* bala/balabasicblock.bala:
+	* bala/balabinaryexpression.bala:
+	* bala/balacastexpression.bala:
+	* bala/balacatchclause.bala:
+	* bala/balacodenode.bala:
+	* bala/baladeclarationstatement.bala:
+	* bala/balaelementaccess.bala:
+	* bala/balaexpressionstatement.bala:
+	* bala/balaflowanalyzer.bala:
+	* bala/balaforeachstatement.bala:
+	* bala/balainvocationexpression.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balaobjectcreationexpression.bala:
+	* bala/balaparenthesizedexpression.bala:
+	* bala/balaphifunction.bala:
+	* bala/balapointerindirection.bala:
+	* bala/balareferencetransferexpression.bala:
+	* bala/balareturnstatement.bala:
+	* bala/balathrowstatement.bala:
+	* bala/balaunaryexpression.bala:
+	* compiler/balacompiler.bala:
 
 	Report use of possibly uninitialized variables, fixes bug 508477
 	and bug 556861
 
 2008-11-14  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valagenieparser.vala:
-	* vala/valainterface.vala:
-	* vala/valainterfacewriter.vala:
-	* vala/valaparser.vala:
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
+	* bala/balagenieparser.bala:
+	* bala/balainterface.bala:
+	* bala/balainterfacewriter.bala:
+	* bala/balaparser.bala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
 	* vapi/glib-2.0.vapi:
-	* vapigen/valagidlparser.vala:
-	* vapigen/valagirparser.vala:
-	* vapigen/valamarkupreader.vala:
-	* vapigen/valavapicheck.vala:
-	* gen-project/valaprojectgenerator.vala:
+	* vapigen/balagidlparser.bala:
+	* vapigen/balagirparser.bala:
+	* vapigen/balamarkupreader.bala:
+	* vapigen/balavapicheck.bala:
+	* gen-project/balaprojectgenerator.bala:
 
 	Do not use possibly uninitialized variables
 
 2008-11-14  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacfgbuilder.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valamethod.vala:
-	* vala/valasymbol.vala:
-	* gobject/valaccodemethodmodule.vala:
+	* bala/balacfgbuilder.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balamethod.bala:
+	* bala/balasymbol.bala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Report unused fields, methods, and local variables
 
-	* vala/valacodecontext.vala:
-	* vala/valadynamicproperty.vala:
-	* vala/valaenum.vala:
-	* vala/valagenieparser.vala:
-	* vala/valainterfacewriter.vala:
-	* vala/valaparser.vala:
-	* vala/valastruct.vala:
-	* vala/valaunresolvedtype.vala:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valadbusservermodule.vala:
-	* gobject/valagobjectmodule.vala:
-	* vapigen/valagirparser.vala:
-	* vapigen/valamarkupreader.vala:
+	* bala/balacodecontext.bala:
+	* bala/baladynamicproperty.bala:
+	* bala/balaenum.bala:
+	* bala/balagenieparser.bala:
+	* bala/balainterfacewriter.bala:
+	* bala/balaparser.bala:
+	* bala/balastruct.bala:
+	* bala/balaunresolvedtype.bala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/baladbusservermodule.bala:
+	* gobject/balagobjectmodule.bala:
+	* vapigen/balagirparser.bala:
+	* vapigen/balamarkupreader.bala:
 
 	Remove unused symbols
 
@@ -3754,9 +3754,9 @@
 
 2008-11-13  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodecontext.vala:
-	* gobject/valadbusclientmodule.vala:
-	* compiler/valacompiler.vala:
+	* bala/balacodecontext.bala:
+	* gobject/baladbusclientmodule.bala:
+	* compiler/balacompiler.bala:
 
 	Add --disable-dbus-transformation command-line option to disable
 	case transformation of D-Bus member names in dynamic D-Bus client
@@ -3765,170 +3765,170 @@
 
 2008-11-13  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Fix retrieving D-Bus structs with owned strings
 
 2008-11-13  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodebasemodule.bala:
 
 	Fix copy of constant arrays
 
 2008-11-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaaddressofexpression.vala:
-	* vala/valaarraycreationexpression.vala:
-	* vala/valaassignment.vala:
-	* vala/valabinaryexpression.vala:
-	* vala/valablock.vala:
-	* vala/valacastexpression.vala:
-	* vala/valacatchclause.vala:
-	* vala/valaclass.vala:
-	* vala/valaconditionalexpression.vala:
-	* vala/valaconstant.vala:
-	* vala/valaconstructor.vala:
-	* vala/valacreationmethod.vala:
-	* vala/valadeclarationstatement.vala:
-	* vala/valadelegate.vala:
-	* vala/valadeletestatement.vala:
-	* vala/valadestructor.vala:
-	* vala/valadostatement.vala:
-	* vala/valaelementaccess.vala:
-	* vala/valaenum.vala:
-	* vala/valaenumvalue.vala:
-	* vala/valaerrorcode.vala:
-	* vala/valaerrordomain.vala:
-	* vala/valaexpressionstatement.vala:
-	* vala/valafield.vala:
-	* vala/valaforeachstatement.vala:
-	* vala/valaformalparameter.vala:
-	* vala/valaforstatement.vala:
-	* vala/valaifstatement.vala:
-	* vala/valainitializerlist.vala:
-	* vala/valainterface.vala:
-	* vala/valainvocationexpression.vala:
-	* vala/valalambdaexpression.vala:
-	* vala/valalocalvariable.vala:
-	* vala/valalockstatement.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valamemberinitializer.vala:
-	* vala/valamethod.vala:
-	* vala/valanamespace.vala:
-	* vala/valaobjectcreationexpression.vala:
-	* vala/valaparenthesizedexpression.vala:
-	* vala/valapointerindirection.vala:
-	* vala/valapostfixexpression.vala:
-	* vala/valaproperty.vala:
-	* vala/valapropertyaccessor.vala:
-	* vala/valareferencetransferexpression.vala:
-	* vala/valareturnstatement.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valasignal.vala:
-	* vala/valasizeofexpression.vala:
-	* vala/valasourcefile.vala:
-	* vala/valastruct.vala:
-	* vala/valaswitchlabel.vala:
-	* vala/valaswitchsection.vala:
-	* vala/valaswitchstatement.vala:
-	* vala/valathrowstatement.vala:
-	* vala/valatrystatement.vala:
-	* vala/valatypecheck.vala:
-	* vala/valatypeofexpression.vala:
-	* vala/valaunaryexpression.vala:
-	* vala/valawhilestatement.vala:
-	* vala/valayieldstatement.vala:
+	* bala/balaaddressofexpression.bala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balaassignment.bala:
+	* bala/balabinaryexpression.bala:
+	* bala/balablock.bala:
+	* bala/balacastexpression.bala:
+	* bala/balacatchclause.bala:
+	* bala/balaclass.bala:
+	* bala/balaconditionalexpression.bala:
+	* bala/balaconstant.bala:
+	* bala/balaconstructor.bala:
+	* bala/balacreationmethod.bala:
+	* bala/baladeclarationstatement.bala:
+	* bala/baladelegate.bala:
+	* bala/baladeletestatement.bala:
+	* bala/baladestructor.bala:
+	* bala/baladostatement.bala:
+	* bala/balaelementaccess.bala:
+	* bala/balaenum.bala:
+	* bala/balaenumvalue.bala:
+	* bala/balaerrorcode.bala:
+	* bala/balaerrordomain.bala:
+	* bala/balaexpressionstatement.bala:
+	* bala/balafield.bala:
+	* bala/balaforeachstatement.bala:
+	* bala/balaformalparameter.bala:
+	* bala/balaforstatement.bala:
+	* bala/balaifstatement.bala:
+	* bala/balainitializerlist.bala:
+	* bala/balainterface.bala:
+	* bala/balainvocationexpression.bala:
+	* bala/balalambdaexpression.bala:
+	* bala/balalocalvariable.bala:
+	* bala/balalockstatement.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balamemberinitializer.bala:
+	* bala/balamethod.bala:
+	* bala/balanamespace.bala:
+	* bala/balaobjectcreationexpression.bala:
+	* bala/balaparenthesizedexpression.bala:
+	* bala/balapointerindirection.bala:
+	* bala/balapostfixexpression.bala:
+	* bala/balaproperty.bala:
+	* bala/balapropertyaccessor.bala:
+	* bala/balareferencetransferexpression.bala:
+	* bala/balareturnstatement.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balasignal.bala:
+	* bala/balasizeofexpression.bala:
+	* bala/balasourcefile.bala:
+	* bala/balastruct.bala:
+	* bala/balaswitchlabel.bala:
+	* bala/balaswitchsection.bala:
+	* bala/balaswitchstatement.bala:
+	* bala/balathrowstatement.bala:
+	* bala/balatrystatement.bala:
+	* bala/balatypecheck.bala:
+	* bala/balatypeofexpression.bala:
+	* bala/balaunaryexpression.bala:
+	* bala/balawhilestatement.bala:
+	* bala/balayieldstatement.bala:
 
 	Remove unnecessary accept calls in semantic analyzer
 
 2008-11-10  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaaddressofexpression.vala:
-	* vala/valabaseaccess.vala:
-	* vala/valabooleanliteral.vala:
-	* vala/valacastexpression.vala:
-	* vala/valacharacterliteral.vala:
-	* vala/valaconditionalexpression.vala:
-	* vala/valaintegerliteral.vala:
-	* vala/valalambdaexpression.vala:
-	* vala/valanullliteral.vala:
-	* vala/valaobjectcreationexpression.vala:
-	* vala/valaparenthesizedexpression.vala:
-	* vala/valapointerindirection.vala:
-	* vala/valapostfixexpression.vala:
-	* vala/valarealliteral.vala:
-	* vala/valareferencetransferexpression.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valasizeofexpression.vala:
-	* vala/valastringliteral.vala:
-	* vala/valatypecheck.vala:
-	* vala/valatypeofexpression.vala:
-	* vala/valaunaryexpression.vala:
+	* bala/balaaddressofexpression.bala:
+	* bala/balabaseaccess.bala:
+	* bala/balabooleanliteral.bala:
+	* bala/balacastexpression.bala:
+	* bala/balacharacterliteral.bala:
+	* bala/balaconditionalexpression.bala:
+	* bala/balaintegerliteral.bala:
+	* bala/balalambdaexpression.bala:
+	* bala/balanullliteral.bala:
+	* bala/balaobjectcreationexpression.bala:
+	* bala/balaparenthesizedexpression.bala:
+	* bala/balapointerindirection.bala:
+	* bala/balapostfixexpression.bala:
+	* bala/balarealliteral.bala:
+	* bala/balareferencetransferexpression.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balasizeofexpression.bala:
+	* bala/balastringliteral.bala:
+	* bala/balatypecheck.bala:
+	* bala/balatypeofexpression.bala:
+	* bala/balaunaryexpression.bala:
 
 	Move expression checking to code nodes
 
 2008-11-10  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusservermodule.vala:
+	* gobject/baladbusservermodule.bala:
 
 	Work around missing enum support in dbus-glib
 
 2008-11-10  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusservermodule.vala:
+	* gobject/baladbusservermodule.bala:
 
 	Really insert GValueArray into hash table
 
 2008-11-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacreationmethod.vala:
-	* vala/valadelegate.vala:
-	* vala/valadelegatetype.vala:
-	* vala/valaenum.vala:
-	* vala/valafield.vala:
-	* vala/valaformalparameter.vala:
-	* vala/valamethod.vala:
-	* vala/valaproperty.vala:
-	* vala/valastruct.vala:
-	* vala/valavaluetype.vala:
+	* bala/balacreationmethod.bala:
+	* bala/baladelegate.bala:
+	* bala/baladelegatetype.bala:
+	* bala/balaenum.bala:
+	* bala/balafield.bala:
+	* bala/balaformalparameter.bala:
+	* bala/balamethod.bala:
+	* bala/balaproperty.bala:
+	* bala/balastruct.bala:
+	* bala/balavaluetype.bala:
 
 	Ensure attributes of field, property, parameter, and return types
 	are processed before querying C header filenames
 
 2008-11-09  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusservermodule.vala:
+	* gobject/baladbusservermodule.bala:
 
 	Support hash tables with struct values
 
 2008-11-09  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valainterface.vala:
-	* vala/valamemberaccess.vala:
-	* vala/valaobjecttype.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaclass.bala:
+	* bala/balainterface.bala:
+	* bala/balamemberaccess.bala:
+	* bala/balaobjecttype.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Ensure attributes of base types are processed before querying
 	C header filenames
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valablock.vala:
-	* vala/valacatchclause.vala:
-	* vala/valadeclarationstatement.vala:
-	* vala/valadeletestatement.vala:
-	* vala/valadostatement.vala:
-	* vala/valaexpressionstatement.vala:
-	* vala/valaforstatement.vala:
-	* vala/valaifstatement.vala:
-	* vala/valainitializerlist.vala:
-	* vala/valalocalvariable.vala:
-	* vala/valalockstatement.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valaswitchsection.vala:
-	* vala/valatrystatement.vala:
-	* vala/valawhilestatement.vala:
+	* bala/balablock.bala:
+	* bala/balacatchclause.bala:
+	* bala/baladeclarationstatement.bala:
+	* bala/baladeletestatement.bala:
+	* bala/baladostatement.bala:
+	* bala/balaexpressionstatement.bala:
+	* bala/balaforstatement.bala:
+	* bala/balaifstatement.bala:
+	* bala/balainitializerlist.bala:
+	* bala/balalocalvariable.bala:
+	* bala/balalockstatement.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balaswitchsection.bala:
+	* bala/balatrystatement.bala:
+	* bala/balawhilestatement.bala:
 
 	Move statement checking to code nodes
 
@@ -3940,103 +3940,103 @@
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Fix D-Bus methods with out parameters but no return value
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaconstant.vala:
-	* vala/valaconstructor.vala:
-	* vala/valacreationmethod.vala:
-	* vala/valadestructor.vala:
-	* vala/valafield.vala:
-	* vala/valaformalparameter.vala:
-	* vala/valaproperty.vala:
-	* vala/valapropertyaccessor.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valasignal.vala:
+	* bala/balaconstant.bala:
+	* bala/balaconstructor.bala:
+	* bala/balacreationmethod.bala:
+	* bala/baladestructor.bala:
+	* bala/balafield.bala:
+	* bala/balaformalparameter.bala:
+	* bala/balaproperty.bala:
+	* bala/balapropertyaccessor.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balasignal.bala:
 
 	Move member checking to code nodes
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadelegate.vala:
-	* vala/valaenum.vala:
-	* vala/valaenumvalue.vala:
-	* vala/valaerrorcode.vala:
-	* vala/valaerrordomain.vala:
-	* vala/valainterface.vala:
-	* vala/valanamespace.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valastruct.vala:
+	* bala/baladelegate.bala:
+	* bala/balaenum.bala:
+	* bala/balaenumvalue.bala:
+	* bala/balaerrorcode.bala:
+	* bala/balaerrordomain.bala:
+	* bala/balainterface.bala:
+	* bala/balanamespace.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balastruct.bala:
 
 	Move type symbol checking to code nodes
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaarraycreationexpression.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move array creation expression checking to
 	ArrayCreationExpression.check
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasemanticanalyzer.vala:
-	* vala/valathrowstatement.vala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balathrowstatement.bala:
 
 	Move throw statement checking to ThrowStatement.check
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valareturnstatement.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balareturnstatement.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move return statement checking to ReturnStatement.check
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaforeachstatement.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaforeachstatement.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move foreach statement checking to ForeachStatement.check
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaelementaccess.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaelementaccess.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move element access checking to ElementAccess.check
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Set source_reference in parsed nodes
 
 2008-11-06  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamethod.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balamethod.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move method checking to Method.check
 
 2008-11-06  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaclass.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move class checking to Class.check
 
 2008-11-06  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodedynamicsignalmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valagerrormodule.vala:
-	* gobject/valagobjectmodule.vala:
+	* gobject/balaccodedynamicsignalmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/balagerrormodule.bala:
+	* gobject/balagobjectmodule.bala:
 
 	Move dynamic signal generation to GObjectModule and
 	DBusClientModule
@@ -4044,124 +4044,124 @@
 2008-11-06  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodedynamicpropertymodule.vala:
-	* gobject/valaccodedynamicsignalmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valagobjectmodule.vala:
+	* gobject/balaccodedynamicpropertymodule.bala:
+	* gobject/balaccodedynamicsignalmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/balagobjectmodule.bala:
 
 	Move dynamic property generation to GObjectModule and
 	DBusClientModule
 
 2008-11-06  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valagobjectmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balagobjectmodule.bala:
 
 	Move constructor code generation to GObjectModule
 
 2008-11-05  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valainvocationexpression.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balainvocationexpression.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move invocation expression checking to InvocationExpression.check
 
 2008-11-05  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamemberaccess.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balamemberaccess.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move member access checking to MemberAccess.check
 
 2008-11-05  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valabinaryexpression.vala:
-	* vala/valaobjectcreationexpression.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balabinaryexpression.bala:
+	* bala/balaobjectcreationexpression.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move object creation expression checking to
 	ObjectCreationExpression.check
 
 2008-11-05  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valabinaryexpression.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balabinaryexpression.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move binary expression checking to BinaryExpression.check
 
 2008-11-05  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaassignment.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaassignment.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move assignment checking to Assignment.check
 
 2008-11-05  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaenum.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valagsignalmodule.vala:
+	* bala/balaenum.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/balagsignalmodule.bala:
 
 	Support enums in D-Bus clients and servers, fixes bug 534105
 
 2008-11-05  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodecontrolflowmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodememberaccessmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodecontrolflowmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodememberaccessmodule.bala:
 
 	Add CCodeControlFlowModule
 
 2008-11-04  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadynamicproperty.vala:
-	* vala/valaproperty.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/baladynamicproperty.bala:
+	* bala/balaproperty.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Fix crash when using dynamic properties, fixes bug 559304
 
 2008-11-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valagsignalmodule.vala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balagsignalmodule.bala:
 
 	Move signal emission to GSignalModule
 
 2008-11-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodedelegatemodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodedelegatemodule.bala:
 
 	Move delegate wrapper generation to CCodeDelegateModule
 
 2008-11-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Move array dup wrapper generation to CCodeArrayModule
 
 2008-11-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valagobjectmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balagobjectmodule.bala:
 
 	Move construct property assignment to GObjectModule
 
 2008-11-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valagsignalmodule.vala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balagsignalmodule.bala:
 
 	Move signal connection and disconnection to GSignalModule
 
 2008-11-04  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valagsignalmodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balagsignalmodule.bala:
 
 	Move detailed signal emission to GSignalModule
 
@@ -4175,62 +4175,62 @@
 
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valadbusclientmodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/baladbusclientmodule.bala:
 
 	Move dbus_use_ptr_array to DBusClientModule
 
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodedelegatemodule.vala:
-	* gobject/valaccodedynamicpropertymodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valagerrormodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodedelegatemodule.bala:
+	* gobject/balaccodedynamicpropertymodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balagerrormodule.bala:
 
 	Add CCodeDelegateModule, move more code to GErrorModule
 
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valagasyncmodule.vala:
-	* gobject/valagerrormodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balagasyncmodule.bala:
+	* gobject/balagerrormodule.bala:
 
 	Move code generation for try and yield statements to GErrorModule
 	and GAsyncModule, resp.
 
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodedynamicpropertymodule.vala:
-	* gobject/valaccodedynamicsignalmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valaccodestructmodule.vala:
-	* gobject/valaclassregisterfunction.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusservermodule.vala:
-	* gobject/valagasyncmodule.vala:
-	* gobject/valagerrormodule.vala:
-	* gobject/valagirwriter.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valagsignalmodule.vala:
-	* gobject/valagtypemodule.vala:
-	* gobject/valainterfaceregisterfunction.vala:
-	* gobject/valatyperegisterfunction.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodedynamicpropertymodule.bala:
+	* gobject/balaccodedynamicsignalmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/balaccodestructmodule.bala:
+	* gobject/balaclassregisterfunction.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusservermodule.bala:
+	* gobject/balagasyncmodule.bala:
+	* gobject/balagerrormodule.bala:
+	* gobject/balagirwriter.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balagsignalmodule.bala:
+	* gobject/balagtypemodule.bala:
+	* gobject/balainterfaceregisterfunction.bala:
+	* gobject/balatyperegisterfunction.bala:
 
 	Move code generation to module
 
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodebasemodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodebasemodule.bala:
 
 	Move array helper functions to CCodeArrayModule
 
@@ -4246,7 +4246,7 @@
 
 	Mark lm_message_new.to as nullable, and unhide lm_connection_new
 
-	* vapi/packages/loudmouth-1.0/loudmouth-1.0-custom.vala:
+	* vapi/packages/loudmouth-1.0/loudmouth-1.0-custom.bala:
 
 	Add the missing Message.get_type () method, and remove the now unecessary
 	creation method from Connection
@@ -4259,49 +4259,49 @@
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valagerrormodule.vala:
-	* gobject/valagtypemodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/balagerrormodule.bala:
+	* gobject/balagtypemodule.bala:
 
 	Add GErrorModule
 
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodedynamicpropertymodule.vala:
-	* gobject/valaccodedynamicsignalmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaccodestructmodule.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusservermodule.vala:
-	* gobject/valagasyncmodule.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valagsignalmodule.vala:
-	* gobject/valagtypemodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodedynamicpropertymodule.bala:
+	* gobject/balaccodedynamicsignalmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaccodestructmodule.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusservermodule.bala:
+	* gobject/balagasyncmodule.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balagsignalmodule.bala:
+	* gobject/balagtypemodule.bala:
 
 	Combine internal modules by inheritance to improve performance
 
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valagasyncmodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balagasyncmodule.bala:
 
 	Add GAsyncModule
 
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valagsignalmodule.vala:
-	* gobject/valagtypemodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balagsignalmodule.bala:
+	* gobject/balagtypemodule.bala:
 
 	Add GTypeModule, GObjectModule, and GSignalModule to replace
 	GObjectInterfaceModule, GObjectClassModule, and
@@ -4310,10 +4310,10 @@
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valagobjectclassmodule.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valagobjectsignalmodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balagobjectclassmodule.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balagobjectsignalmodule.bala:
 
 	Move parameter handling to GObjectClassModule and signal handling
 	to GObjectSignalModule
@@ -4321,32 +4321,32 @@
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeelementaccessmodule.vala:
-	* gobject/valaccodegenerator.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeelementaccessmodule.bala:
+	* gobject/balaccodegenerator.bala:
 
 	Move element access handling to CCodeArrayModule
 
 2008-11-02  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodegenerator.vala:
+	* gobject/balaccodegenerator.bala:
 
 	Fix comment generation of private enums, patch by Carlos Cadete,
 	fixes bug 558533
 
 2008-11-02  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valagenieparser.vala:
-	* vala/valainterface.vala:
-	* vala/valainterfacewriter.vala:
-	* vala/valaparser.vala:
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaclassregisterfunction.vala:
-	* gobject/valagobjectclassmodule.vala:
-	* gobject/valagobjectinterfacemodule.vala:
+	* bala/balaclass.bala:
+	* bala/balagenieparser.bala:
+	* bala/balainterface.bala:
+	* bala/balainterfacewriter.bala:
+	* bala/balaparser.bala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaclassregisterfunction.bala:
+	* gobject/balagobjectclassmodule.bala:
+	* gobject/balagobjectinterfacemodule.bala:
 
 	Drop deprecated support for static classes and interfaces
 
@@ -4358,13 +4358,13 @@
 
 2008-11-02  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valadbusclientmodule.vala:
+	* gobject/baladbusclientmodule.bala:
 
 	Support GHashTable in D-Bus clients, patch by Marc-André Lureau
 
 2008-11-02  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadatatype.vala:
+	* bala/baladatatype.bala:
 	* vapi/glib-2.0.vapi:
 
 	Return the right D-Bus type signature for GHashTable,
@@ -4372,120 +4372,120 @@
 
 2008-11-02  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Add partial support for calling coroutines from other coroutines
 
 2008-11-02  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamethodtype.vala:
-	* gobject/valaccodegenerator.vala:
+	* bala/balamethodtype.bala:
+	* gobject/balaccodegenerator.bala:
 
 	Add member `begin' to coroutines
 
 2008-11-02  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valaattributeprocessor.vala:
-	* vala/valaclass.vala:
-	* vala/valaenum.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valastruct.vala:
-	* compiler/valacompiler.vala:
-	* vapigen/valagidlparser.vala:
-	* vapigen/valavapigen.vala:
+	* bala/Makefile.am:
+	* bala/balaattributeprocessor.bala:
+	* bala/balaclass.bala:
+	* bala/balaenum.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balastruct.bala:
+	* compiler/balacompiler.bala:
+	* vapigen/balagidlparser.bala:
+	* vapigen/balavapigen.bala:
 
 	Move attribute processing to semantic analyzer
 
 2008-11-01  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valamethod.vala:
-	* ccode/valaccodeblock.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaccodemodule.vala:
+	* bala/balamethod.bala:
+	* ccode/balaccodeblock.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaccodemodule.bala:
 
 	Add experimental support for yield statements and coroutines
 
 2008-11-01  Jürg Billeter  <j@bitron.ch>
 
-	* ccode/valaccodecasestatement.vala:
-	* ccode/valaccodeswitchstatement.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valagobjectclassmodule.vala:
+	* ccode/balaccodecasestatement.bala:
+	* ccode/balaccodeswitchstatement.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balagobjectclassmodule.bala:
 
 	Support more flexible C switch statements
 
 2008-11-01  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valacfgbuilder.vala:
-	* vala/valacodevisitor.vala:
-	* vala/valamethod.vala:
-	* vala/valanullchecker.vala:
-	* vala/valaparser.vala:
-	* vala/valascanner.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valasymbolresolver.vala:
-	* vala/valatokentype.vala:
-	* vala/valayieldstatement.vala:
-	* gobject/valaccodegenerator.vala:
+	* bala/Makefile.am:
+	* bala/balacfgbuilder.bala:
+	* bala/balacodevisitor.bala:
+	* bala/balamethod.bala:
+	* bala/balanullchecker.bala:
+	* bala/balaparser.bala:
+	* bala/balascanner.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balasymbolresolver.bala:
+	* bala/balatokentype.bala:
+	* bala/balayieldstatement.bala:
+	* gobject/balaccodegenerator.bala:
 
 	Parse yield statements
 
 2008-10-31  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaproperty.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaproperty.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Check properties when accessing them
 
 2008-10-31  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaproperty.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaproperty.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Set PropertyAccessor.prop property earlier, don't require the
 	semantic analyzer to set it
 
 2008-10-31  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodenode.vala:
-	* vala/valaformalparameter.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valasourcefile.vala:
+	* bala/balacodenode.bala:
+	* bala/balaformalparameter.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balasourcefile.bala:
 
 	Check parameters when checking arguments
 
 2008-10-31  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaformalparameter.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaformalparameter.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Move parameter checking to FormalParameter.check
 
 2008-10-31  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
 
 	Move default argument processing from code generator to	semantic
 	analyzer
 
 2008-10-31  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodenode.vala:
+	* bala/balacodenode.bala:
 
 	Add check method to CodeNode class to prepare support for more
 	modular semantic analyzer
 
 2008-10-31  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodegenerator.vala:
+	* gobject/balaccodegenerator.bala:
 
 	Generate C switch statements for Vala switch statements where
 	possible
@@ -4517,81 +4517,81 @@
 
 2008-10-28  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valainterfacewriter.vala:
+	* bala/balainterfacewriter.bala:
 
 	Don't sort struct fields in vapi files to fix struct
 	initialization, patch by Hans Vercammen
 
 2008-10-27  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodecontext.vala:
-	* gobject/valaccodegenerator.vala:
-	* compiler/valacompiler.vala:
+	* bala/balacodecontext.bala:
+	* gobject/balaccodegenerator.bala:
+	* compiler/balacompiler.bala:
 
 	Disable additional run-time checks by default to improve
 	performance
 
 2008-10-27  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodemethodmodule.vala:
+	* gobject/balaccodemethodmodule.bala:
 
 	Remove unused method
 
 2008-10-27  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaarraylengthfield.vala:
-	* vala/valaarraymovemethod.vala:
-	* vala/valaarrayresizemethod.vala:
-	* vala/valablock.vala:
-	* vala/valaclass.vala:
-	* vala/valaconstant.vala:
-	* vala/valaconstructor.vala:
-	* vala/valacreationmethod.vala:
-	* vala/valadelegate.vala:
-	* vala/valadestructor.vala:
-	* vala/valadynamicmethod.vala:
-	* vala/valadynamicproperty.vala:
-	* vala/valadynamicsignal.vala:
-	* vala/valaenum.vala:
-	* vala/valaenumvalue.vala:
-	* vala/valaerrorcode.vala:
-	* vala/valaerrordomain.vala:
-	* vala/valafield.vala:
-	* vala/valaforeachstatement.vala:
-	* vala/valaformalparameter.vala:
-	* vala/valainterface.vala:
-	* vala/valalocalvariable.vala:
-	* vala/valamember.vala:
-	* vala/valamethod.vala:
-	* vala/valanamespace.vala:
-	* vala/valaobjecttypesymbol.vala:
-	* vala/valaproperty.vala:
-	* vala/valasignal.vala:
-	* vala/valastruct.vala:
-	* vala/valaswitchsection.vala:
-	* vala/valasymbol.vala:
-	* vala/valatypeparameter.vala:
-	* vala/valatypesymbol.vala:
+	* bala/balaarraylengthfield.bala:
+	* bala/balaarraymovemethod.bala:
+	* bala/balaarrayresizemethod.bala:
+	* bala/balablock.bala:
+	* bala/balaclass.bala:
+	* bala/balaconstant.bala:
+	* bala/balaconstructor.bala:
+	* bala/balacreationmethod.bala:
+	* bala/baladelegate.bala:
+	* bala/baladestructor.bala:
+	* bala/baladynamicmethod.bala:
+	* bala/baladynamicproperty.bala:
+	* bala/baladynamicsignal.bala:
+	* bala/balaenum.bala:
+	* bala/balaenumvalue.bala:
+	* bala/balaerrorcode.bala:
+	* bala/balaerrordomain.bala:
+	* bala/balafield.bala:
+	* bala/balaforeachstatement.bala:
+	* bala/balaformalparameter.bala:
+	* bala/balainterface.bala:
+	* bala/balalocalvariable.bala:
+	* bala/balamember.bala:
+	* bala/balamethod.bala:
+	* bala/balanamespace.bala:
+	* bala/balaobjecttypesymbol.bala:
+	* bala/balaproperty.bala:
+	* bala/balasignal.bala:
+	* bala/balastruct.bala:
+	* bala/balaswitchsection.bala:
+	* bala/balasymbol.bala:
+	* bala/balatypeparameter.bala:
+	* bala/balatypesymbol.bala:
 
 	Use constructor chaining instead of helper method
 
 2008-10-26  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valaattribute.vala:
-	* vala/valacodevisitor.vala:
-	* vala/valafield.vala:
-	* vala/valagenieparser.vala:
-	* vala/valanamedargument.vala:
-	* vala/valaparser.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/Makefile.am:
+	* bala/balaattribute.bala:
+	* bala/balacodevisitor.bala:
+	* bala/balafield.bala:
+	* bala/balagenieparser.bala:
+	* bala/balanamedargument.bala:
+	* bala/balaparser.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Remove NamedArgument, improve attribute lookup performance
 
 2008-10-26  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodeinvocationexpressionmodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
 
 	Support calling base method of virtual signal handler,
 	fixes bug 538901
@@ -4612,15 +4612,15 @@
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodegenerator.vala:
+	* gobject/balaccodegenerator.bala:
 
 	Support custom sentinels for constructors
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valadelegate.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
+	* bala/baladelegate.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
 
 	Next attempt to correct parameter positions for instance and
 	error parameters in delegate wrappers
@@ -4635,7 +4635,7 @@
 
 	* vapi/glib-2.0.vapi:
 
-	Changed the ScannerConfig string fields to string* to avoid valac
+	Changed the ScannerConfig string fields to string* to avoid balac
 	looking for a g_scanner_config_destroy function
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
@@ -4646,13 +4646,13 @@
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodegenerator.vala:
+	* gobject/balaccodegenerator.bala:
 
 	Fix parameter position for errors in delegate wrappers
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodegenerator.vala:
+	* gobject/balaccodegenerator.bala:
 
 	Fix crash when using delegates in combination with pointer types,
 	fixes bug 557728
@@ -4666,32 +4666,32 @@
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
+	* bala/balaparser.bala:
 
 	Fix support for arrays of nullable types, fixes bug 555050
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasemanticanalyzer.vala:
+	* bala/balasemanticanalyzer.bala:
 
 	Fix crash with invalid return values, fixes bug 549996
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaerrorcode.vala:
-	* vala/valaerrordomain.vala:
-	* vala/valaerrortype.vala:
-	* vala/valasemanticanalyzer.vala:
-	* vala/valasymbolresolver.vala:
-	* gobject/valaccodegenerator.vala:
-	* vapigen/valagirparser.vala:
+	* bala/balaerrorcode.bala:
+	* bala/balaerrordomain.bala:
+	* bala/balaerrortype.bala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balasymbolresolver.bala:
+	* gobject/balaccodegenerator.bala:
+	* vapigen/balagirparser.bala:
 
 	Support type checks for error domains and error codes
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasemanticanalyzer.vala:
-	* vala/valasourcefile.vala:
+	* bala/balasemanticanalyzer.bala:
+	* bala/balasourcefile.bala:
 
 	Fix crash on certain header dependencies, fixes bug 546183
 
@@ -4724,29 +4724,29 @@
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
+	* bala/balaparser.bala:
 
 	Report error when using virtual method modifiers for static
 	methods, fixes bug 556881
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
+	* bala/balaparser.bala:
 
 	Report error when using conflicting method modifiers,
 	fixes bug 535853
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodecontext.vala:
-	* compiler/valacompiler.vala:
+	* bala/balacodecontext.bala:
+	* compiler/balacompiler.bala:
 
 	Remove non-working support for conditional compilation
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
 	* tests/exceptions.exp:
-	* tests/exceptions.vala:
+	* tests/exceptions.bala:
 	* tests/testrunner.sh:
 	* vapi/Makefile.am:
 
@@ -4755,42 +4755,42 @@
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valadbusclientmodule.vala:
-	* gobject/valadbusservermodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/baladbusclientmodule.bala:
+	* gobject/baladbusservermodule.bala:
 
 	Split DBusModule into DBusClientModule and DBusServerModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodeelementaccessmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valadbusmodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodeelementaccessmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/baladbusmodule.bala:
 
 	Move get_array_length_cname and get_array_length_cexpression to
 	CCodeArrayModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Support virtual methods
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Support methods throwing errors
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Support shared namespaces
 
@@ -4802,178 +4802,178 @@
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valainterfacewriter.vala:
+	* bala/balainterfacewriter.bala:
 
 	Sort output to allow comparison of generated vapi files
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/valagirparser.vala:
+	* vapigen/balagirparser.bala:
 
 	Recognize goffset
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valanamespace.vala:
-	* vapigen/valagirparser.vala:
+	* bala/balanamespace.bala:
+	* vapigen/balagirparser.bala:
 
 	Remove Class and Iface structs
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodegeneratorsourcefile.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodegeneratorsourcefile.bala:
+	* gobject/balaccodemodule.bala:
 
 	Move visit_source_file to CCodeBaseModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valaccodestructmodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/balaccodestructmodule.bala:
 
 	Add CCodeStructModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodedynamicsignalmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valadbusmodule.vala:
-	* gobject/valagobjectmodule.vala:
-	* gobject/valagobjectsignalmodule.vala:
+	* gobject/balaccodedynamicsignalmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/baladbusmodule.bala:
+	* gobject/balagobjectmodule.bala:
+	* gobject/balagobjectsignalmodule.bala:
 
 	Add GObjectSignalModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodegenerator.vala:
+	* gobject/balaccodegenerator.bala:
 
 	Enable CCodeDynamicSignalModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/Makefile.am:
-	* vala/valacodebinding.vala:
-	* vala/valacodegenerator.vala:
-	* vala/valacodenode.vala:
-	* vala/valadynamicsignal.vala:
+	* bala/Makefile.am:
+	* bala/balacodebinding.bala:
+	* bala/balacodegenerator.bala:
+	* bala/balacodenode.bala:
+	* bala/baladynamicsignal.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebinding.vala:
-	* gobject/valaccodedynamicsignalmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebinding.bala:
+	* gobject/balaccodedynamicsignalmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
 
 	Add CCodeDynamicSignalModule, remove CodeBinding and CCodeBinding
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodegenerator.vala:
-	* vala/valadynamicproperty.vala:
+	* bala/balacodegenerator.bala:
+	* bala/baladynamicproperty.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodedynamicpropertymodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodedynamicpropertymodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balaccodemodule.bala:
 
 	Add CCodeDynamicPropertyModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodeassignmentmodule.vala:
-	* gobject/valaccodebinding.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
-	* vala/valaassignment.vala:
-	* vala/valacodegenerator.vala:
+	* gobject/balaccodeassignmentmodule.bala:
+	* gobject/balaccodebinding.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
+	* bala/balaassignment.bala:
+	* bala/balacodegenerator.bala:
 
 	Add CCodeAssignmentModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodegenerator.vala:
-	* vala/valaelementaccess.vala:
+	* bala/balacodegenerator.bala:
+	* bala/balaelementaccess.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodebinding.vala:
-	* gobject/valaccodeelementaccessmodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodebinding.bala:
+	* gobject/balaccodeelementaccessmodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
 
 	Add CCodeElementAccessModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodegenerator.vala:
-	* vala/valainvocationexpression.vala:
+	* bala/balacodegenerator.bala:
+	* bala/balainvocationexpression.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodeinvocationexpressionmodule.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodeinvocationexpressionmodule.bala:
+	* gobject/balaccodemodule.bala:
 
 	Add CCodeInvocationExpressionModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodegenerator.vala:
-	* vala/valamemberaccess.vala:
+	* bala/balacodegenerator.bala:
+	* bala/balamemberaccess.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodememberaccessmodule.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodememberaccessmodule.bala:
+	* gobject/balaccodemodule.bala:
 
 	Add CCodeMemberAccessModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaarraycreationexpression.vala:
-	* vala/valacodegenerator.vala:
+	* bala/balaarraycreationexpression.bala:
+	* bala/balacodegenerator.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodearraymodule.vala:
-	* gobject/valaccodebinding.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodearraymodule.bala:
+	* gobject/balaccodebinding.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
 
 	Add CCodeArrayModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodearraycreationexpressionbinding.vala:
-	* gobject/valaccodeassignmentbinding.vala:
-	* gobject/valaccodeelementaccessbinding.vala:
-	* gobject/valaccodeexpressionbinding.vala:
-	* gobject/valaccodeinvocationexpressionbinding.vala:
-	* gobject/valaccodememberaccessbinding.vala:
+	* gobject/balaccodearraycreationexpressionbinding.bala:
+	* gobject/balaccodeassignmentbinding.bala:
+	* gobject/balaccodeelementaccessbinding.bala:
+	* gobject/balaccodeexpressionbinding.bala:
+	* gobject/balaccodeinvocationexpressionbinding.bala:
+	* gobject/balaccodememberaccessbinding.bala:
 
 	Remove CCodeExpressionBinding
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaclass.vala:
-	* vala/valacodegenerator.vala:
-	* vala/valainterface.vala:
+	* bala/balaclass.bala:
+	* bala/balacodegenerator.bala:
+	* bala/balainterface.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valagobjectclassmodule.vala:
-	* gobject/valagobjectinterfacemodule.vala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/balagobjectclassmodule.bala:
+	* gobject/balagobjectinterfacemodule.bala:
 
 	Add GObjectClassModule and GObjectInterfaceModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodeclassbinding.vala:
-	* gobject/valaccodeinterfacebinding.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valadbusmodule.vala:
+	* gobject/balaccodeclassbinding.bala:
+	* gobject/balaccodeinterfacebinding.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/baladbusmodule.bala:
 
 	Move register_dbus_info from CCodeObjectTypeSymbolBinding
 	to DBusModule
@@ -4981,63 +4981,63 @@
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodeclassbinding.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodeinterfacebinding.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valaccodeobjecttypesymbolbinding.vala:
-	* gobject/valagobjectmodule.vala:
+	* gobject/balaccodeclassbinding.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodeinterfacebinding.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/balaccodeobjecttypesymbolbinding.bala:
+	* gobject/balagobjectmodule.bala:
 
 	Add GObjectModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodegenerator.vala:
-	* vala/valacreationmethod.vala:
-	* vala/valadynamicmethod.vala:
-	* vala/valamethod.vala:
+	* bala/balacodegenerator.bala:
+	* bala/balacreationmethod.bala:
+	* bala/baladynamicmethod.bala:
+	* bala/balamethod.bala:
 	* gobject/Makefile.am:
-	* gobject/valaccodeassignmentbinding.vala:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodebinding.vala:
-	* gobject/valaccodeclassbinding.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodeinvocationexpressionbinding.vala:
-	* gobject/valaccodememberaccessbinding.vala:
-	* gobject/valaccodemethodmodule.vala:
-	* gobject/valaccodemodule.vala:
-	* gobject/valadbusmodule.vala:
+	* gobject/balaccodeassignmentbinding.bala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodebinding.bala:
+	* gobject/balaccodeclassbinding.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodeinvocationexpressionbinding.bala:
+	* gobject/balaccodememberaccessbinding.bala:
+	* gobject/balaccodemethodmodule.bala:
+	* gobject/balaccodemodule.bala:
+	* gobject/baladbusmodule.bala:
 
 	Add CCodeMethodModule and DBusModule
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
 
 	Allow access to head and codegen from CCode modules
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valacodegenerator.vala:
-	* gobject/valaccodegenerator.vala:
+	* bala/balacodegenerator.bala:
+	* gobject/balaccodegenerator.bala:
 
 	Remove unused stubs for code bindings
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/Makefile.am:
-	* gobject/valaccodebasemodule.vala:
-	* gobject/valaccodegenerator.vala:
-	* gobject/valaccodemodule.vala:
+	* gobject/balaccodebasemodule.bala:
+	* gobject/balaccodegenerator.bala:
+	* gobject/balaccodemodule.bala:
 
 	Add CCodeModule and CCodeBaseModule classes as preparation to
 	make the backend more modular
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodeinvocationexpressionbinding.vala:
+	* gobject/balaccodeinvocationexpressionbinding.bala:
 
 	Fix constructor chain-up
 
@@ -5050,16 +5050,16 @@
 
 2008-10-23  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaparser.vala:
-	* vala/valasemanticanalyzer.vala:
-	* gobject/valaccodemethodbinding.vala:
+	* bala/balaparser.bala:
+	* bala/balasemanticanalyzer.bala:
+	* gobject/balaccodemethodbinding.bala:
 
 	Mark creation methods as instance methods to fix lambda
 	expressions in creation methods
 
 2008-10-23  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodegenerator.vala:
+	* gobject/balaccodegenerator.bala:
 
 	Fix virtual struct properties
 
@@ -5081,7 +5081,7 @@
 
 2008-10-23  Jürg Billeter  <j@bitron.ch>
 
-	* gobject/valaccodegenerator.vala:
+	* gobject/balaccodegenerator.bala:
 
 	Fix foreach over stacked arrays
 
@@ -5095,14 +5095,14 @@
 
 2008-10-22  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valaintegertype.vala:
-	* vala/valasemanticanalyzer.vala:
+	* bala/balaintegertype.bala:
+	* bala/balasemanticanalyzer.bala:
 
 	Fix leaked reference cycle
 
 2008-10-22  Jürg Billeter  <j@bitron.ch>
 
-	* vala/valasignal.vala:
+	* bala/balasignal.bala:
 
 	Always mangle signal name from camel case to lower case
 
@@ -5114,18 +5114,18 @@
 
 	Move gobject-2.0 bindings to separate VAPI file
 
-	* compiler/valacompiler.vala:
-	* vapigen/valavapigen.vala:
+	* compiler/balacompiler.bala:
+	* vapigen/balavapigen.bala:
 
 	Include gobject-2.0 by default
 
 	* gee/Makefile.am:
 	* ccode/Makefile.am:
-	* vala/Makefile.am:
+	* bala/Makefile.am:
 	* gobject/Makefile.am:
 	* compiler/Makefile.am:
 
-	Support building libvala and valac with older Vala versions
+	Support building libbala and balac with older Vala versions
 
 2008-10-22  Jürg Billeter  <j@bitron.ch>
 

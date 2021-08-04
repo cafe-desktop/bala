@@ -1,4 +1,4 @@
-/* resourcelocator.vala
+/* resourcelocator.bala
  *
  * Copyright (C) 2010 Florian Brosch
  *
@@ -25,7 +25,7 @@ using Valadoc;
 using Valadoc.Content;
 
 public class Valadoc.Importer.ValadocDocumentationImporter : DocumentationImporter, ResourceLocator {
-	public override string file_extension { get { return "valadoc"; } }
+	public override string file_extension { get { return "baladoc"; } }
 
 	private ValadocDocumentationScanner _scanner;
 	private DocumentationParser _doc_parser;

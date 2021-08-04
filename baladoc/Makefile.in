@@ -86,8 +86,8 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-bin_PROGRAMS = valadoc$(EXEEXT)
-subdir = valadoc
+bin_PROGRAMS = baladoc$(EXEEXT)
+subdir = baladoc
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -106,15 +106,15 @@ PROGRAMS = $(bin_PROGRAMS)
 am__objects_1 =
 am__objects_2 = girwriter.$(OBJEXT) initializerbuilder.$(OBJEXT) \
 	symbolresolver.$(OBJEXT) treebuilder.$(OBJEXT) \
-	valadoc.$(OBJEXT) $(am__objects_1)
-am_valadoc_OBJECTS = $(am__objects_2) $(am__objects_1)
-valadoc_OBJECTS = $(am_valadoc_OBJECTS)
+	baladoc.$(OBJEXT) $(am__objects_1)
+am_baladoc_OBJECTS = $(am__objects_2) $(am__objects_1)
+baladoc_OBJECTS = $(am_baladoc_OBJECTS)
 am__DEPENDENCIES_1 =
-valadoc_DEPENDENCIES =  \
-	$(top_builddir)/libvaladoc/libvaladoc@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+baladoc_DEPENDENCIES =  \
+	$(top_builddir)/libbaladoc/libbaladoc@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
@@ -140,7 +140,7 @@ am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/girwriter.Po \
 	./$(DEPDIR)/initializerbuilder.Po \
 	./$(DEPDIR)/symbolresolver.Po ./$(DEPDIR)/treebuilder.Po \
-	./$(DEPDIR)/valadoc.Po
+	./$(DEPDIR)/baladoc.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -160,8 +160,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(valadoc_SOURCES)
-DIST_SOURCES = $(valadoc_SOURCES)
+SOURCES = $(baladoc_SOURCES)
+DIST_SOURCES = $(baladoc_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -391,13 +391,13 @@ SUBDIRS = \
 	$(NULL)
 
 AM_CFLAGS = \
-	-DG_LOG_DOMAIN=\"valadoc\" \
+	-DG_LOG_DOMAIN=\"baladoc\" \
 	-DPACKAGE_BALADOC_LIBDIR=\"$(pkgdoclibdir)\" \
 	-DPACKAGE_VERSION=\"$(VERSION)\" \
-	-I$(top_srcdir)/libvaladoc/ \
+	-I$(top_srcdir)/libbaladoc/ \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	-I$(top_srcdir)/codegen \
 	$(COVERAGE_CFLAGS) \
 	$(GLIB_CFLAGS) \
@@ -405,25 +405,25 @@ AM_CFLAGS = \
 	$(LIBGVC_CFLAGS) \
 	$(NULL)
 
-BUILT_SOURCES = valadoc.vala.stamp
-valadoc_BALASOURCES = \
-	girwriter.vala \
-	initializerbuilder.vala \
-	symbolresolver.vala \
-	treebuilder.vala \
-	valadoc.vala \
+BUILT_SOURCES = baladoc.bala.stamp
+baladoc_BALASOURCES = \
+	girwriter.bala \
+	initializerbuilder.bala \
+	symbolresolver.bala \
+	treebuilder.bala \
+	baladoc.bala \
     $(NULL)
 
-valadoc_SOURCES = \
-	valadoc.vala.stamp \
-	$(valadoc_BALASOURCES:.vala=.c) \
+baladoc_SOURCES = \
+	baladoc.bala.stamp \
+	$(baladoc_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-valadoc_LDADD = \
-	$(top_builddir)/libvaladoc/libvaladoc@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+baladoc_LDADD = \
+	$(top_builddir)/libbaladoc/libbaladoc@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(GMODULE_LIBS) \
@@ -431,12 +431,12 @@ valadoc_LDADD = \
 	$(NULL)
 
 EXTRA_DIST = \
-	$(valadoc_BALASOURCES) \
-	valadoc.vala.stamp \
+	$(baladoc_BALASOURCES) \
+	baladoc.bala.stamp \
 	$(NULL)
 
 MAINTAINERCLEANFILES = \
-	$(valadoc_BALASOURCES:.vala=.c) \
+	$(baladoc_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -453,9 +453,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu valadoc/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu baladoc/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu valadoc/Makefile
+	  $(AUTOMAKE) --gnu baladoc/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -524,9 +524,9 @@ clean-binPROGRAMS:
 	echo " rm -f" $$list; \
 	rm -f $$list
 
-valadoc$(EXEEXT): $(valadoc_OBJECTS) $(valadoc_DEPENDENCIES) $(EXTRA_valadoc_DEPENDENCIES) 
-	@rm -f valadoc$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(valadoc_OBJECTS) $(valadoc_LDADD) $(LIBS)
+baladoc$(EXEEXT): $(baladoc_OBJECTS) $(baladoc_DEPENDENCIES) $(EXTRA_baladoc_DEPENDENCIES) 
+	@rm -f baladoc$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(baladoc_OBJECTS) $(baladoc_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -538,7 +538,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/initializerbuilder.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/symbolresolver.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/treebuilder.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valadoc.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/baladoc.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -786,7 +786,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/initializerbuilder.Po
 	-rm -f ./$(DEPDIR)/symbolresolver.Po
 	-rm -f ./$(DEPDIR)/treebuilder.Po
-	-rm -f ./$(DEPDIR)/valadoc.Po
+	-rm -f ./$(DEPDIR)/baladoc.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -837,7 +837,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/initializerbuilder.Po
 	-rm -f ./$(DEPDIR)/symbolresolver.Po
 	-rm -f ./$(DEPDIR)/treebuilder.Po
-	-rm -f ./$(DEPDIR)/valadoc.Po
+	-rm -f ./$(DEPDIR)/baladoc.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -878,7 +878,7 @@ uninstall-am: uninstall-binPROGRAMS
 .PRECIOUS: Makefile
 
 
-valadoc.vala.stamp: $(valadoc_BALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libvaladoc/valadoc@PACKAGE_SUFFIX@.vapi
+baladoc.bala.stamp: $(baladoc_BALASOURCES) $(top_srcdir)/bala/libbala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libbaladoc/baladoc@PACKAGE_SUFFIX@.vapi
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -887,16 +887,16 @@ valadoc.vala.stamp: $(valadoc_BALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SU
 		--pkg gmodule-2.0 \
 		--pkg gobject-2.0 \
 		--pkg libgvc \
-		--vapidir $(top_srcdir)/vala --pkg libvala@PACKAGE_SUFFIX@ \
+		--vapidir $(top_srcdir)/bala --pkg libbala@PACKAGE_SUFFIX@ \
 		--vapidir $(top_srcdir)/ccode --pkg ccode \
 		--vapidir $(top_srcdir)/codegen --pkg codegen \
-		--vapidir $(top_srcdir)/libvaladoc --pkg valadoc@PACKAGE_SUFFIX@ \
+		--vapidir $(top_srcdir)/libbaladoc --pkg baladoc@PACKAGE_SUFFIX@ \
 		--pkg config \
-		$(filter %.vala %.c,$^)
+		$(filter %.bala %.c,$^)
 	touch $@
 
 @ENABLE_UNVERSIONED_TRUE@install-exec-hook:
-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f valadoc@PACKAGE_SUFFIX@$(EXEEXT) valadoc$(EXEEXT)
+@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f baladoc@PACKAGE_SUFFIX@$(EXEEXT) baladoc$(EXEEXT)
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

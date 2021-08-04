@@ -1,4 +1,4 @@
-/* doclet.vala
+/* doclet.bala
  *
  * Copyright (C) 2008-2012 Florian Brosch
  *
@@ -90,7 +90,7 @@ public class Valadoc.Devhelp.Doclet : Valadoc.Html.BasicDoclet {
 		_devhelpwriter = new Devhelp.MarkupWriter (devfile);
 
 		_devhelpwriter.start_book (pkg_name+" Reference Manual",
-								   "vala",
+								   "bala",
 								   "index.htm",
 								   pkg_name,
 								   "",

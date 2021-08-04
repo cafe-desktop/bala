@@ -1,4 +1,4 @@
-/* valagdbusservermodule.vala
+/* balagdbusservermodule.bala
  *
  * Copyright (C) 2010-2011  Jürg Billeter
  *
@@ -926,7 +926,7 @@ public class Vala.GDBusServerModule : GDBusClientModule {
 	}
 
 	string generate_register_object_function () {
-		string register_object_func = "_vala_g_dbus_connection_register_object";
+		string register_object_func = "_bala_g_dbus_connection_register_object";
 
 		if (!add_wrapper (register_object_func)) {
 			return register_object_func;
@@ -946,7 +946,7 @@ public class Vala.GDBusServerModule : GDBusClientModule {
 		push_function (function);
 
 		var quark = new CCodeFunctionCall (new CCodeIdentifier ("g_quark_from_static_string"));
-		quark.add_argument (new CCodeConstant ("\"vala-dbus-register-object\""));
+		quark.add_argument (new CCodeConstant ("\"bala-dbus-register-object\""));
 
 		var get_qdata = new CCodeFunctionCall (new CCodeIdentifier ("g_type_get_qdata"));
 		get_qdata.add_argument (new CCodeIdentifier ("type"));
@@ -1209,7 +1209,7 @@ public class Vala.GDBusServerModule : GDBusClientModule {
 		base.register_dbus_info (block, sym);
 
 		var quark = new CCodeFunctionCall (new CCodeIdentifier ("g_quark_from_static_string"));
-		quark.add_argument (new CCodeConstant ("\"vala-dbus-register-object\""));
+		quark.add_argument (new CCodeConstant ("\"bala-dbus-register-object\""));
 
 		var set_qdata = new CCodeFunctionCall (new CCodeIdentifier ("g_type_set_qdata"));
 		set_qdata.add_argument (new CCodeIdentifier ("%s_type_id".printf (get_ccode_lower_case_name (sym, null))));

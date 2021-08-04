@@ -1,4 +1,4 @@
-/* mysql.vala
+/* mysql.bala
  *
  * Copyright (C) 2008, 2010 Jukka-Pekka Iivonen
  *
@@ -226,7 +226,7 @@ namespace Mysql {
 
 		[CCode (cname = "mysql_fetch_fields", array_length = false)]
 		public unowned Field[] _fetch_fields ();
-		[CCode (cname = "_vala_mysql_fetch_fields")]
+		[CCode (cname = "_bala_mysql_fetch_fields")]
 		public unowned Field[] fetch_fields () {
 			unowned Field[] fields = this._fetch_fields ();
 			fields.length = (int) this.num_fields ();
@@ -235,7 +235,7 @@ namespace Mysql {
 
 		[CCode (cname = "mysql_fetch_lengths", array_length = false)]
 		public unowned ulong[] _fetch_lengths ();
-		[CCode (cname = "_vala_mysql_fetch_lengths")]
+		[CCode (cname = "_bala_mysql_fetch_lengths")]
 		public unowned ulong[] fetch_lengths () {
 			unowned ulong[] lengths = this._fetch_lengths ();
 			lengths.length = (int) this.num_fields ();
@@ -244,7 +244,7 @@ namespace Mysql {
 
 		[CCode (cname = "mysql_fetch_row", array_length = false)]
 		public unowned string[]? _fetch_row ();
-		[CCode (cname = "_vala_mysql_fetch_row")]
+		[CCode (cname = "_bala_mysql_fetch_row")]
 		public unowned string[]? fetch_row () {
 			unowned string[]? row = this._fetch_row ();
 			row.length = (int) this.num_fields ();

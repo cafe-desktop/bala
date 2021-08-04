@@ -15,7 +15,7 @@ void main () {
 	// client
 	Test test = Bus.get_proxy_sync (BusType.SESSION, "org.example.Test", "/org/example/test");
 
-	unowned DBusInterfaceInfo? iface_info = (DBusInterfaceInfo?) typeof (Test).get_qdata (Quark.from_string ("vala-dbus-interface-info"));
+	unowned DBusInterfaceInfo? iface_info = (DBusInterfaceInfo?) typeof (Test).get_qdata (Quark.from_string ("bala-dbus-interface-info"));
 	assert (iface_info != null);
 	assert (iface_info.signals != null);
 	assert (iface_info.signals[0] != null);

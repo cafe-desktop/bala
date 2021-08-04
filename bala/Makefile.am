@@ -3,7 +3,7 @@ include $(top_srcdir)/Makefile.common
 NULL =
 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"vala\" \
+	-DG_LOG_DOMAIN=\"bala\" \
 	$(COVERAGE_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	$(GLIB_CFLAGS) \
@@ -11,9 +11,9 @@ AM_CPPFLAGS = \
 	-DPACKAGE_DATADIR=\"$(pkgdatadir)\" \
 	$(NULL)
 
-BUILT_SOURCES = vala.vala.stamp $(srcdir)/valaversion.vala
+BUILT_SOURCES = bala.bala.stamp $(srcdir)/balaversion.bala
 
-$(srcdir)/valaversion.vala:
+$(srcdir)/balaversion.bala:
 	sed -e "s#\@BALA_MAJOR_VERSION\@#$(BALA_MAJOR_VERSION)#g" \
 		-e "s#\@BALA_MINOR_VERSION\@#$(BALA_MINOR_VERSION)#g" \
 		-e "s#\@BALA_MICRO_VERSION\@#$(BALA_MICRO_VERSION)#g" \
@@ -22,182 +22,182 @@ $(srcdir)/valaversion.vala:
 		< $@.in > $@
 
 lib_LTLIBRARIES = \
-	libvala@PACKAGE_SUFFIX@.la \
+	libbala@PACKAGE_SUFFIX@.la \
 	$(NULL)
 
-libvala_la_BALASOURCES = \
-	valaaddressofexpression.vala \
-	valaarraycopymethod.vala \
-	valaarraycreationexpression.vala \
-	valaarraylengthfield.vala \
-	valaarraymovemethod.vala \
-	valaarrayresizemethod.vala \
-	valaarraytype.vala \
-	valaassignment.vala \
-	valaattribute.vala \
-	valabaseaccess.vala \
-	valabasicblock.vala \
-	valabinaryexpression.vala \
-	valablock.vala \
-	valabooleanliteral.vala \
-	valabooleantype.vala \
-	valabreakstatement.vala \
-	valacallable.vala \
-	valacallabletype.vala \
-	valacastexpression.vala \
-	valacatchclause.vala \
-	valacharacterliteral.vala \
-	valaclass.vala \
-	valaclasstype.vala \
-	valacodecontext.vala \
-	valacodegenerator.vala \
-	valacodenode.vala \
-	valacodevisitor.vala \
-	valacodewriter.vala \
-	valacomment.vala \
-	valagircomment.vala \
-	valaconditionalexpression.vala \
-	valaconstant.vala \
-	valaconstructor.vala \
-	valacontinuestatement.vala \
-	valacreationmethod.vala \
-	valadatatype.vala \
-	valadeclarationstatement.vala \
-	valadelegate.vala \
-	valadelegatedestroyfield.vala \
-	valadelegatetargetfield.vala \
-	valadelegatetype.vala \
-	valadeletestatement.vala \
-	valadestructor.vala \
-	valadostatement.vala \
-	valadynamicmethod.vala \
-	valadynamicproperty.vala \
-	valadynamicsignal.vala \
-	valaelementaccess.vala \
-	valaemptystatement.vala \
-	valaenum.vala \
-	valaenumvalue.vala \
-	valaenumvaluetype.vala \
-	valaerrorcode.vala \
-	valaerrordomain.vala \
-	valaerrortype.vala \
-	valaexpression.vala \
-	valaexpressionstatement.vala \
-	valafield.vala \
-	valafieldprototype.vala \
-	valafloatingtype.vala \
-	valaflowanalyzer.vala \
-	valaforeachstatement.vala \
-	valaforstatement.vala \
-	valagirparser.vala \
-	valagenericdestroyfield.vala \
-	valagenericdupfield.vala \
-	valagenerictype.vala \
-	valagenieparser.vala \
-	valageniescanner.vala \
-	valagenietokentype.vala \
-	valaifstatement.vala \
-	valainitializerlist.vala \
-	valaintegerliteral.vala \
-	valaintegertype.vala \
-	valainterface.vala \
-	valainterfacetype.vala \
-	valainvalidtype.vala \
-	valalambdaexpression.vala \
-	valaliteral.vala \
-	valalocalvariable.vala \
-	valalockable.vala \
-	valalockstatement.vala \
-	valaloop.vala \
-	valamarkupreader.vala \
-	valamemberaccess.vala \
-	valamemberinitializer.vala \
-	valamethod.vala \
-	valamethodcall.vala \
-	valamethodtype.vala \
-	valanamedargument.vala \
-	valanamespace.vala \
-	valanullliteral.vala \
-	valanulltype.vala \
-	valaobjectcreationexpression.vala \
-	valaobjecttype.vala \
-	valaobjecttypesymbol.vala \
-	valaparameter.vala \
-	valaparser.vala \
-	valaphifunction.vala \
-	valapointerindirection.vala \
-	valapointertype.vala \
-	valapostfixexpression.vala \
-	valaprofile.vala \
-	valapropertyaccessor.vala \
-	valaproperty.vala \
-	valapropertyprototype.vala \
-	valarealliteral.vala \
-	valareferencetransferexpression.vala \
-	valareferencetype.vala \
-	valaregexliteral.vala \
-	valareport.vala \
-	valareturnstatement.vala \
-	valascanner.vala \
-	valascope.vala \
-	valasemanticanalyzer.vala \
-	valasignal.vala \
-	valasignaltype.vala \
-	valasizeofexpression.vala \
-	valasliceexpression.vala \
-	valasourcefile.vala \
-	valasourcelocation.vala \
-	valasourcereference.vala \
-	valastatement.vala \
-	valastatementlist.vala \
-	valastringliteral.vala \
-	valastruct.vala \
-	valastructvaluetype.vala \
-	valasubroutine.vala \
-	valaswitchlabel.vala \
-	valaswitchsection.vala \
-	valaswitchstatement.vala \
-	valasymbol.vala \
-	valasymbolresolver.vala \
-	valatargetvalue.vala \
-	valatemplate.vala \
-	valathrowstatement.vala \
-	valatokentype.vala \
-	valatraversevisitor.vala \
-	valatrystatement.vala \
-	valatuple.vala \
-	valatypecheck.vala \
-	valatypeofexpression.vala \
-	valatypeparameter.vala \
-	valatypesymbol.vala \
-	valaunaryexpression.vala \
-	valaunlockstatement.vala \
-	valaunresolvedsymbol.vala \
-	valaunresolvedtype.vala \
-	valausedattr.vala \
-	valausingdirective.vala \
-	valavaluetype.vala \
-	valavariable.vala \
-	valavartype.vala \
-	valaversion.vala \
-	valaversionattribute.vala \
-	valavoidtype.vala \
-	valawhilestatement.vala \
-	valayieldstatement.vala \
+libbala_la_BALASOURCES = \
+	balaaddressofexpression.bala \
+	balaarraycopymethod.bala \
+	balaarraycreationexpression.bala \
+	balaarraylengthfield.bala \
+	balaarraymovemethod.bala \
+	balaarrayresizemethod.bala \
+	balaarraytype.bala \
+	balaassignment.bala \
+	balaattribute.bala \
+	balabaseaccess.bala \
+	balabasicblock.bala \
+	balabinaryexpression.bala \
+	balablock.bala \
+	balabooleanliteral.bala \
+	balabooleantype.bala \
+	balabreakstatement.bala \
+	balacallable.bala \
+	balacallabletype.bala \
+	balacastexpression.bala \
+	balacatchclause.bala \
+	balacharacterliteral.bala \
+	balaclass.bala \
+	balaclasstype.bala \
+	balacodecontext.bala \
+	balacodegenerator.bala \
+	balacodenode.bala \
+	balacodevisitor.bala \
+	balacodewriter.bala \
+	balacomment.bala \
+	balagircomment.bala \
+	balaconditionalexpression.bala \
+	balaconstant.bala \
+	balaconstructor.bala \
+	balacontinuestatement.bala \
+	balacreationmethod.bala \
+	baladatatype.bala \
+	baladeclarationstatement.bala \
+	baladelegate.bala \
+	baladelegatedestroyfield.bala \
+	baladelegatetargetfield.bala \
+	baladelegatetype.bala \
+	baladeletestatement.bala \
+	baladestructor.bala \
+	baladostatement.bala \
+	baladynamicmethod.bala \
+	baladynamicproperty.bala \
+	baladynamicsignal.bala \
+	balaelementaccess.bala \
+	balaemptystatement.bala \
+	balaenum.bala \
+	balaenumvalue.bala \
+	balaenumvaluetype.bala \
+	balaerrorcode.bala \
+	balaerrordomain.bala \
+	balaerrortype.bala \
+	balaexpression.bala \
+	balaexpressionstatement.bala \
+	balafield.bala \
+	balafieldprototype.bala \
+	balafloatingtype.bala \
+	balaflowanalyzer.bala \
+	balaforeachstatement.bala \
+	balaforstatement.bala \
+	balagirparser.bala \
+	balagenericdestroyfield.bala \
+	balagenericdupfield.bala \
+	balagenerictype.bala \
+	balagenieparser.bala \
+	balageniescanner.bala \
+	balagenietokentype.bala \
+	balaifstatement.bala \
+	balainitializerlist.bala \
+	balaintegerliteral.bala \
+	balaintegertype.bala \
+	balainterface.bala \
+	balainterfacetype.bala \
+	balainvalidtype.bala \
+	balalambdaexpression.bala \
+	balaliteral.bala \
+	balalocalvariable.bala \
+	balalockable.bala \
+	balalockstatement.bala \
+	balaloop.bala \
+	balamarkupreader.bala \
+	balamemberaccess.bala \
+	balamemberinitializer.bala \
+	balamethod.bala \
+	balamethodcall.bala \
+	balamethodtype.bala \
+	balanamedargument.bala \
+	balanamespace.bala \
+	balanullliteral.bala \
+	balanulltype.bala \
+	balaobjectcreationexpression.bala \
+	balaobjecttype.bala \
+	balaobjecttypesymbol.bala \
+	balaparameter.bala \
+	balaparser.bala \
+	balaphifunction.bala \
+	balapointerindirection.bala \
+	balapointertype.bala \
+	balapostfixexpression.bala \
+	balaprofile.bala \
+	balapropertyaccessor.bala \
+	balaproperty.bala \
+	balapropertyprototype.bala \
+	balarealliteral.bala \
+	balareferencetransferexpression.bala \
+	balareferencetype.bala \
+	balaregexliteral.bala \
+	balareport.bala \
+	balareturnstatement.bala \
+	balascanner.bala \
+	balascope.bala \
+	balasemanticanalyzer.bala \
+	balasignal.bala \
+	balasignaltype.bala \
+	balasizeofexpression.bala \
+	balasliceexpression.bala \
+	balasourcefile.bala \
+	balasourcelocation.bala \
+	balasourcereference.bala \
+	balastatement.bala \
+	balastatementlist.bala \
+	balastringliteral.bala \
+	balastruct.bala \
+	balastructvaluetype.bala \
+	balasubroutine.bala \
+	balaswitchlabel.bala \
+	balaswitchsection.bala \
+	balaswitchstatement.bala \
+	balasymbol.bala \
+	balasymbolresolver.bala \
+	balatargetvalue.bala \
+	balatemplate.bala \
+	balathrowstatement.bala \
+	balatokentype.bala \
+	balatraversevisitor.bala \
+	balatrystatement.bala \
+	balatuple.bala \
+	balatypecheck.bala \
+	balatypeofexpression.bala \
+	balatypeparameter.bala \
+	balatypesymbol.bala \
+	balaunaryexpression.bala \
+	balaunlockstatement.bala \
+	balaunresolvedsymbol.bala \
+	balaunresolvedtype.bala \
+	balausedattr.bala \
+	balausingdirective.bala \
+	balavaluetype.bala \
+	balavariable.bala \
+	balavartype.bala \
+	balaversion.bala \
+	balaversionattribute.bala \
+	balavoidtype.bala \
+	balawhilestatement.bala \
+	balayieldstatement.bala \
 	$(NULL)
 
-libvala@PACKAGE_SUFFIX@_la_SOURCES = \
-	vala.vala.stamp \
-	$(libvala_la_BALASOURCES:.vala=.c) \
+libbala@PACKAGE_SUFFIX@_la_SOURCES = \
+	bala.bala.stamp \
+	$(libbala_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-valaincludedir = $(includedir)/vala@PACKAGE_SUFFIX@
+balaincludedir = $(includedir)/bala@PACKAGE_SUFFIX@
 
-valainclude_HEADERS = \
-	vala.h \
+balainclude_HEADERS = \
+	bala.h \
 	$(NULL)
 
-vala.vapi vala.vala.stamp: $(libvala_la_BALASOURCES)
+bala.vapi bala.bala.stamp: $(libbala_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -206,32 +206,32 @@ vala.vapi vala.vala.stamp: $(libvala_la_BALASOURCES)
 		--vapidir $(top_srcdir)/gee --pkg gee \
 		--pkg config \
 		--use-header \
-		-H vala.h \
-		--library vala \
+		-H bala.h \
+		--library bala \
 		$^
 	@touch $@
 
-libvala@PACKAGE_SUFFIX@_la_LDFLAGS = \
+libbala@PACKAGE_SUFFIX@_la_LDFLAGS = \
 	-no-undefined \
 	$(NULL)
 
-libvala@PACKAGE_SUFFIX@_la_LIBADD = \
+libbala@PACKAGE_SUFFIX@_la_LIBADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(GMODULE_LIBS) \
 	$(top_builddir)/gee/libgee.la \
 	$(NULL)
 
-vapidir = $(datadir)/vala/vapi
-dist_vapi_DATA = libvala@PACKAGE_SUFFIX@.vapi
+vapidir = $(datadir)/bala/vapi
+dist_vapi_DATA = libbala@PACKAGE_SUFFIX@.vapi
 
-libvala@PACKAGE_SUFFIX@.vapi: $(top_srcdir)/gee/gee.vapi $(top_srcdir)/vala/vala.vapi
+libbala@PACKAGE_SUFFIX@.vapi: $(top_srcdir)/gee/gee.vapi $(top_srcdir)/bala/bala.vapi
 	cat $^ > $@
 
-EXTRA_DIST = $(libvala_la_BALASOURCES) vala.vapi vala.vala.stamp vala.h valaversion.vala.in
+EXTRA_DIST = $(libbala_la_BALASOURCES) bala.vapi bala.bala.stamp bala.h balaversion.bala.in
 
 MAINTAINERCLEANFILES = \
-	vala.vapi \
-	vala.h \
-	$(libvala_la_BALASOURCES:.vala=.c) \
+	bala.vapi \
+	bala.h \
+	$(libbala_la_BALASOURCES:.bala=.c) \
 	$(NULL)
