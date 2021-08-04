@@ -24,7 +24,7 @@
 /**
  * Abstract visitor for traversing API.
  */
-public abstract class Valadoc.Api.Visitor : GLib.Object {
+public abstract class Baladoc.Api.Visitor : GLib.Object {
 	/**
 	 * Visit operation called for api trees.
 	 *

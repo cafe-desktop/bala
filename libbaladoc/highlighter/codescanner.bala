@@ -24,10 +24,10 @@ using GLib;
 
 
 /**
- * A cheap scanner used to highlight C and Vala source code.
+ * A cheap scanner used to highlight C and Bala source code.
  */
-public class Valadoc.Highlighter.CodeScanner : Object, Scanner {
-	private Vala.HashMap<string, CodeTokenType?> keywords;
+public class Baladoc.Highlighter.CodeScanner : Object, Scanner {
+	private Bala.HashMap<string, CodeTokenType?> keywords;
 	private bool enable_string_templates;
 	private bool enabel_verbatim_string;
 	private bool enable_preprocessor_define;
@@ -42,7 +42,7 @@ public class Valadoc.Highlighter.CodeScanner : Object, Scanner {
 
 	public CodeScanner (string content, bool enable_string_templates, bool enabel_verbatim_string,
 		bool enable_preprocessor_define, bool enable_preprocessor_include, bool enable_keyword_escape,
-		Vala.HashMap<string, CodeTokenType?> keywords)
+		Bala.HashMap<string, CodeTokenType?> keywords)
 	{
 		this.content = content;
 		this.pos = content;

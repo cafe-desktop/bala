@@ -21,16 +21,16 @@
  */
 
 
-public class Valadoc.Token : Object {
+public class Baladoc.Token : Object {
 
-	public Token.from_type (TokenType type, Vala.SourceLocation begin, Vala.SourceLocation end, string? val = null) {
+	public Token.from_type (TokenType type, Bala.SourceLocation begin, Bala.SourceLocation end, string? val = null) {
 		_type = type;
 		_begin = begin;
 		_end = end;
 		_value = val;
 	}
 
-	public Token.from_word (string word, Vala.SourceLocation begin, Vala.SourceLocation end) {
+	public Token.from_word (string word, Bala.SourceLocation begin, Bala.SourceLocation end) {
 		_word = word;
 		_begin = begin;
 		_end = end;
@@ -38,8 +38,8 @@ public class Valadoc.Token : Object {
 
 	private TokenType? _type = null;
 	private string? _word = null;
-	private Vala.SourceLocation _begin;
-	private Vala.SourceLocation _end;
+	private Bala.SourceLocation _begin;
+	private Bala.SourceLocation _end;
 	private string? _value;
 
 	public bool is_word {
@@ -82,13 +82,13 @@ public class Valadoc.Token : Object {
 		}
 	}
 
-	public Vala.SourceLocation begin {
+	public Bala.SourceLocation begin {
 		get {
 			return _begin;
 		}
 	}
 
-	public Vala.SourceLocation end {
+	public Bala.SourceLocation end {
 		get {
 			return _end;
 		}

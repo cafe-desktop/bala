@@ -26,7 +26,7 @@ using GLib;
 /**
  * Represents a regular expression literal in the source code.
  */
-public class Vala.RegexLiteral : Literal {
+public class Bala.RegexLiteral : Literal {
 	/**
 	 * The literal value.
 	 */

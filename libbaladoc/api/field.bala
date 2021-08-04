@@ -21,25 +21,25 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a field.
  */
-public class Valadoc.Api.Field : Symbol {
+public class Baladoc.Api.Field : Symbol {
 	private string? cname;
 
-	public Field (Node parent, SourceFile file, string name, Vala.SymbolAccessibility accessibility,
+	public Field (Node parent, SourceFile file, string name, Bala.SymbolAccessibility accessibility,
 				  SourceComment? comment,
-				  Vala.Field data)
+				  Bala.Field data)
 	{
 		base (parent, file, name, accessibility, comment, data);
 
-		this.is_static = !(parent is Namespace) && data.binding == Vala.MemberBinding.STATIC;
-		this.is_class = data.binding == Vala.MemberBinding.CLASS;
+		this.is_static = !(parent is Namespace) && data.binding == Bala.MemberBinding.STATIC;
+		this.is_class = data.binding == Bala.MemberBinding.CLASS;
 		this.is_volatile = data.is_volatile;
 
-		this.cname = Vala.get_ccode_name (data);
+		this.cname = Bala.get_ccode_name (data);
 	}
 
 	/**

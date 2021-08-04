@@ -22,9 +22,9 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
-public class Valadoc.Taglets.InheritDoc : InlineTaglet {
+public class Baladoc.Taglets.InheritDoc : InlineTaglet {
 	private Taglet? parent_taglet = null;
 
 	public Api.Node? inherited {
@@ -86,7 +86,7 @@ public class Valadoc.Taglets.InheritDoc : InlineTaglet {
 		}
 
 		ContentElement parent = separator.parent;
-		Vala.List<Inline> parent_content = null;
+		Bala.List<Inline> parent_content = null;
 
 		if (parent is Run && ((Run) parent).style == Run.Style.NONE) {
 			parent_content = ((Run) parent).content;
@@ -188,7 +188,7 @@ public class Valadoc.Taglets.InheritDoc : InlineTaglet {
 		comment.content.remove ((Paragraph) separator);
 	}
 
-	private Run content_copy (Vala.List<ContentElement>? content) {
+	private Run content_copy (Bala.List<ContentElement>? content) {
 		Run run = new Run (Run.Style.NONE);
 		run.parent = this;
 
@@ -203,7 +203,7 @@ public class Valadoc.Taglets.InheritDoc : InlineTaglet {
 
 	public override ContentElement produce_content () {
 		if (_inherited != null && _inherited.documentation != null && parent_taglet != null) {
-			Vala.List<Taglet> parent_taglets = _inherited.documentation.find_taglets (null, parent_taglet.get_type ());
+			Bala.List<Taglet> parent_taglets = _inherited.documentation.find_taglets (null, parent_taglet.get_type ());
 			foreach (Taglet parent in parent_taglets) {
 				// we only care about the first match:
 				if (parent.inheritable (parent_taglet)) {

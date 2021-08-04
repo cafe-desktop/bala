@@ -26,7 +26,7 @@ using GLib;
 /**
  * An unresolved reference to a data type.
  */
-public class Vala.UnresolvedType : DataType {
+public class Bala.UnresolvedType : DataType {
 	/**
 	 * The unresolved reference to a type symbol.
 	 */

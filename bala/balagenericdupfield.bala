@@ -23,7 +23,7 @@
 /**
  * Represents the Generic.dup field.
  */
-public class Vala.GenericDupField : Field {
+public class Bala.GenericDupField : Field {
 	/**
 	 * Creates a new generic dup field.
 	 *

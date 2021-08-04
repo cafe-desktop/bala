@@ -21,7 +21,7 @@
  */
 
 
-public interface Valadoc.ResourceLocator : Object {
+public interface Baladoc.ResourceLocator : Object {
 	public abstract string resolve (string path);
 }
 

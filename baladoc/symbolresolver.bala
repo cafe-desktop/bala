@@ -21,11 +21,11 @@
  */
 
 
-using Valadoc.Api;
+using Baladoc.Api;
 
-public class Valadoc.SymbolResolver : Visitor {
-	private Vala.HashMap<Vala.Symbol, Symbol> symbol_map;
-	private Valadoc.Api.Class glib_error;
+public class Baladoc.SymbolResolver : Visitor {
+	private Bala.HashMap<Bala.Symbol, Symbol> symbol_map;
+	private Baladoc.Api.Class glib_error;
 	private Api.Tree root;
 
 	public SymbolResolver (TreeBuilder builder) {
@@ -33,15 +33,15 @@ public class Valadoc.SymbolResolver : Visitor {
 		this.glib_error = builder.get_glib_error ();
 	}
 
-	public Symbol? resolve (Vala.Symbol symbol) {
+	public Symbol? resolve (Bala.Symbol symbol) {
 		return symbol_map.get (symbol);
 	}
 
-	private void resolve_thrown_list (Symbol symbol, Vala.Symbol bala_symbol) {
-		var error_types = new Vala.ArrayList<Vala.DataType> ();
+	private void resolve_thrown_list (Symbol symbol, Bala.Symbol bala_symbol) {
+		var error_types = new Bala.ArrayList<Bala.DataType> ();
 		bala_symbol.get_error_types (error_types);
-		foreach (Vala.DataType type in error_types) {
-			unowned Vala.ErrorDomain? bala_edom = ((Vala.ErrorType) type).error_domain;
+		foreach (Bala.DataType type in error_types) {
+			unowned Bala.ErrorDomain? bala_edom = ((Bala.ErrorType) type).error_domain;
 			Symbol? edom = symbol_map.get (bala_edom);
 			symbol.add_child (edom ?? glib_error);
 		}
@@ -74,18 +74,18 @@ public class Valadoc.SymbolResolver : Visitor {
 	}
 
 	private void resolve_type_reference (TypeReference reference) {
-		Vala.DataType vtyperef = (Vala.DataType) reference.data;
-		if (vtyperef is Vala.ErrorType) {
-			Vala.ErrorDomain verrdom = ((Vala.ErrorType) vtyperef).error_domain;
+		Bala.DataType vtyperef = (Bala.DataType) reference.data;
+		if (vtyperef is Bala.ErrorType) {
+			Bala.ErrorDomain verrdom = ((Bala.ErrorType) vtyperef).error_domain;
 			if (verrdom != null) {
 				reference.data_type = resolve (verrdom);
 			} else {
 				reference.data_type = glib_error;
 			}
-		} else if (vtyperef is Vala.DelegateType) {
-			reference.data_type = resolve (((Vala.DelegateType) vtyperef).delegate_symbol);
-		} else if (vtyperef is Vala.GenericType) {
-			reference.data_type = resolve (((Vala.GenericType) vtyperef).type_parameter);
+		} else if (vtyperef is Bala.DelegateType) {
+			reference.data_type = resolve (((Bala.DelegateType) vtyperef).delegate_symbol);
+		} else if (vtyperef is Bala.GenericType) {
+			reference.data_type = resolve (((Bala.GenericType) vtyperef).type_parameter);
 		} else if (vtyperef.type_symbol != null) {
 			reference.data_type = resolve (vtyperef.type_symbol);
 		}
@@ -129,7 +129,7 @@ public class Valadoc.SymbolResolver : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_interface (Interface item) {
-		Vala.Collection<TypeReference> interfaces = item.get_implemented_interface_list ();
+		Bala.Collection<TypeReference> interfaces = item.get_implemented_interface_list ();
 		foreach (var type_ref in interfaces) {
 			resolve_type_reference (type_ref);
 		}
@@ -145,7 +145,7 @@ public class Valadoc.SymbolResolver : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_class (Class item) {
-		Vala.Collection<TypeReference> interfaces = item.get_implemented_interface_list ();
+		Bala.Collection<TypeReference> interfaces = item.get_implemented_interface_list ();
 		foreach (TypeReference type_ref in interfaces) {
 			resolve_type_reference (type_ref);
 		}
@@ -172,8 +172,8 @@ public class Valadoc.SymbolResolver : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_property (Property item) {
-		Vala.Property bala_property = item.data as Vala.Property;
-		Vala.Property? base_bala_property = null;
+		Bala.Property bala_property = item.data as Bala.Property;
+		Bala.Property? base_bala_property = null;
 
 		if (bala_property.base_property != null) {
 			base_bala_property = bala_property.base_property;
@@ -214,7 +214,7 @@ public class Valadoc.SymbolResolver : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_delegate (Delegate item) {
-		Vala.Delegate bala_delegate = item.data as Vala.Delegate;
+		Bala.Delegate bala_delegate = item.data as Bala.Delegate;
 
 		resolve_type_reference (item.return_type);
 
@@ -236,8 +236,8 @@ public class Valadoc.SymbolResolver : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_method (Method item) {
-		Vala.Method bala_method = item.data as Vala.Method;
-		Vala.Method? base_bala_method = null;
+		Bala.Method bala_method = item.data as Bala.Method;
+		Bala.Method? base_bala_method = null;
 		if (bala_method.base_method != null) {
 			base_bala_method = bala_method.base_method;
 		} else if (bala_method.base_interface_method != null) {
@@ -272,10 +272,10 @@ public class Valadoc.SymbolResolver : Visitor {
 			return;
 		}
 
-		if (((Vala.Parameter) item.data).initializer != null) {
+		if (((Bala.Parameter) item.data).initializer != null) {
 			SignatureBuilder signature = new SignatureBuilder ();
 			InitializerBuilder ibuilder = new InitializerBuilder (signature, symbol_map);
-			((Vala.Parameter) item.data).initializer.accept (ibuilder);
+			((Bala.Parameter) item.data).initializer.accept (ibuilder);
 			item.default_value = signature.get ();
 		}
 
@@ -309,10 +309,10 @@ public class Valadoc.SymbolResolver : Visitor {
 	 */
 	public override void visit_enum_value (Api.EnumValue item) {
 
-		if (((Vala.EnumValue) item.data).value != null) {
+		if (((Bala.EnumValue) item.data).value != null) {
 			SignatureBuilder signature = new SignatureBuilder ();
 			InitializerBuilder ibuilder = new InitializerBuilder (signature, symbol_map);
-			((Vala.EnumValue) item.data).value.accept (ibuilder);
+			((Bala.EnumValue) item.data).value.accept (ibuilder);
 			item.default_value = signature.get ();
 		}
 

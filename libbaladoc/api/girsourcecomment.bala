@@ -24,8 +24,8 @@
 /**
  * A documentation comment used by baladoc
  */
-public class Valadoc.Api.GirSourceComment : SourceComment {
-	private Vala.Map<string, SourceComment> parameters = new Vala.HashMap<string, SourceComment> (str_hash, str_equal);
+public class Baladoc.Api.GirSourceComment : SourceComment {
+	private Bala.Map<string, SourceComment> parameters = new Bala.HashMap<string, SourceComment> (str_hash, str_equal);
 
 	public string? instance_param_name { set; get; }
 	public SourceComment? return_comment { set; get; }
@@ -34,7 +34,7 @@ public class Valadoc.Api.GirSourceComment : SourceComment {
 	public SourceComment? stability_comment { get; set; }
 
 
-	public Vala.MapIterator<string, SourceComment> parameter_iterator () {
+	public Bala.MapIterator<string, SourceComment> parameter_iterator () {
 		return parameters.map_iterator ();
 	}
 

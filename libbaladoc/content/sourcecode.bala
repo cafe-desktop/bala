@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.SourceCode : ContentElement, Inline {
+public class Baladoc.Content.SourceCode : ContentElement, Inline {
 	public enum Language {
 		UNKNOWN,
 		GENIE,

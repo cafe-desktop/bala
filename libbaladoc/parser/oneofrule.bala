@@ -21,7 +21,7 @@
  */
 
 
-internal class Valadoc.OneOfRule : Rule {
+internal class Baladoc.OneOfRule : Rule {
 
 	public OneOfRule (Object[] scheme) {
 		_scheme = scheme;

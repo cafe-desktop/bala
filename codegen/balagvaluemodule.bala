@@ -20,7 +20,7 @@
  * 	Rico Tzschichholz <ricotz@ubuntu.com>
  */
 
-public class Vala.GValueModule : GAsyncModule {
+public class Bala.GValueModule : GAsyncModule {
 	public override void visit_cast_expression (CastExpression expr) {
 		unowned DataType? value_type = expr.inner.value_type;
 		unowned DataType? target_type = expr.type_reference;

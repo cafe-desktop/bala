@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.ListItem : BlockContent {
+public class Baladoc.Content.ListItem : BlockContent {
 
 	internal ListItem () {
 		base ();

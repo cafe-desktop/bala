@@ -22,7 +22,7 @@
  */
 
 
-public abstract class Valadoc.Content.InlineTaglet : ContentElement, Taglet, Inline {
+public abstract class Baladoc.Content.InlineTaglet : ContentElement, Taglet, Inline {
 	protected Settings settings;
 	protected ResourceLocator locator;
 	private ContentElement _content;

@@ -24,7 +24,7 @@
 /**
  * A documentation comment used by baladoc
  */
-public class Valadoc.Api.SourceComment {
+public class Baladoc.Api.SourceComment {
 	public SourceFile file {
 		private set;
 		get;

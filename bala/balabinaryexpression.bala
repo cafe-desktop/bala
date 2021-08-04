@@ -26,7 +26,7 @@
  *
  * Supports +, -, *, /, %, <<, >>, <, >, <=, >=, ==, !=, &, |, ^, &&, ||, ??.
  */
-public class Vala.BinaryExpression : Expression {
+public class Bala.BinaryExpression : Expression {
 	/**
 	 * The binary operator.
 	 */
@@ -636,7 +636,7 @@ public class Vala.BinaryExpression : Expression {
 	}
 }
 
-public enum Vala.BinaryOperator {
+public enum Bala.BinaryOperator {
 	NONE,
 	PLUS,
 	MINUS,

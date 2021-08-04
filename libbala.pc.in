@@ -13,8 +13,8 @@ vapigen=@bindir@/vapigen@PACKAGE_SUFFIX@
 gen_introspect=@pkglibdir@/gen-introspect@PACKAGE_SUFFIX@
 bala_gen_introspect=@bindir@/bala-gen-introspect@PACKAGE_SUFFIX@
 
-Name: Vala
-Description: The Vala compiler library
+Name: Bala
+Description: The Bala compiler library
 Version: @VERSION@
 Requires: glib-2.0 gobject-2.0
 Requires.private: gmodule-2.0

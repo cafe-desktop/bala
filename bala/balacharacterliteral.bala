@@ -27,7 +27,7 @@ using GLib;
 /**
  * Represents a single literal character.
  */
-public class Vala.CharacterLiteral : Literal {
+public class Bala.CharacterLiteral : Literal {
 	/**
 	 * The literal value.
 	 */

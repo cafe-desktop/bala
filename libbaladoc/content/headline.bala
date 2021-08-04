@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.Headline : InlineContent, Block {
+public class Baladoc.Content.Headline : InlineContent, Block {
 	public int level { get; set; }
 
 	internal Headline () {

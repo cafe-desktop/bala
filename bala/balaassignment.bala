@@ -26,7 +26,7 @@
  *
  * Supports =, |=, &=, ^=, +=, -=, *=, /=, %=, <<=, >>=.
  */
-public class Vala.Assignment : Expression {
+public class Bala.Assignment : Expression {
 	/**
 	 * Left hand side of the assignment.
 	 */
@@ -539,7 +539,7 @@ public class Vala.Assignment : Expression {
 	}
 }
 
-public enum Vala.AssignmentOperator {
+public enum Bala.AssignmentOperator {
 	NONE,
 	SIMPLE,
 	BITWISE_OR,

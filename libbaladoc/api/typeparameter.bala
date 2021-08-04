@@ -21,15 +21,15 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a generic type parameter in the source code.
  */
-public class Valadoc.Api.TypeParameter : Symbol {
+public class Baladoc.Api.TypeParameter : Symbol {
 
-	public TypeParameter (Node parent, SourceFile file, string name, Vala.TypeParameter data) {
-		base (parent, file, name, Vala.SymbolAccessibility.PUBLIC, null, data);
+	public TypeParameter (Node parent, SourceFile file, string name, Bala.TypeParameter data) {
+		base (parent, file, name, Bala.SymbolAccessibility.PUBLIC, null, data);
 	}
 
 	/**

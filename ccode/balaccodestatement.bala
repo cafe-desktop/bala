@@ -25,5 +25,5 @@ using GLib;
 /**
  * Represents a statement in the C code.
  */
-public abstract class Vala.CCodeStatement : CCodeNode {
+public abstract class Bala.CCodeStatement : CCodeNode {
 }

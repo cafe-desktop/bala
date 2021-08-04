@@ -21,9 +21,9 @@
  * 	Luca Bruno <lethalman88@gmail.com>
  */
 
-using Valadoc;
-using Valadoc.Api;
-using Valadoc.Content;
+using Baladoc;
+using Baladoc.Api;
+using Baladoc.Content;
 
 namespace Gtkdoc {
 	public string get_section (string filename) {

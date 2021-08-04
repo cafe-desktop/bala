@@ -26,7 +26,7 @@ using GLib;
 /**
  * A cheap scanner used to highlight XML.
  */
-public class Valadoc.Highlighter.XmlScanner : Object, Scanner {
+public class Baladoc.Highlighter.XmlScanner : Object, Scanner {
 	private Queue<CodeToken> token_queue = new Queue<CodeToken> ();
 	private unowned string content;
 	private unowned string pos;

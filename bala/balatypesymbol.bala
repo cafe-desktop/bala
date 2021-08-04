@@ -25,10 +25,10 @@
 using GLib;
 
 /**
- * Represents a runtime data type. This data type may be defined in Vala source
- * code or imported from an external library with a Vala API file.
+ * Represents a runtime data type. This data type may be defined in Bala source
+ * code or imported from an external library with a Bala API file.
  */
-public abstract class Vala.TypeSymbol : Symbol {
+public abstract class Bala.TypeSymbol : Symbol {
 	protected TypeSymbol (string? name, SourceReference? source_reference = null, Comment? comment = null) {
 		base (name, source_reference, comment);
 	}

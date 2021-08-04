@@ -21,10 +21,10 @@
  */
 
 
-using Valadoc.Content;
-using Valadoc;
+using Baladoc.Content;
+using Baladoc;
 
-public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
+public class Baladoc.Gtkdoc.MarkdownScanner : GLib.Object, Baladoc.Scanner {
 	private enum State {
 		NORMAL,
 		UNORDERED_LIST,
@@ -33,7 +33,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 	}
 
 	private Settings _settings;
-	private Valadoc.Parser parser;
+	private Baladoc.Parser parser;
 
 	private unowned string _content;
 	private int _skip;
@@ -52,7 +52,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 
 	private Regex regex_mail;
 
-	private Vala.List<State> states = new Vala.ArrayList<State> ();
+	private Bala.List<State> states = new Bala.ArrayList<State> ();
 
 	private inline void push_state (State state) {
 		states.insert (0, state);
@@ -77,7 +77,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 		}
 	}
 
-	public void set_parser (Valadoc.Parser parser) {
+	public void set_parser (Baladoc.Parser parser) {
 		this.parser = parser;
 	}
 
@@ -105,7 +105,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 			_index = _index.next_char ();
 		} else {
 			// Empty string
-	 		emit_token (Valadoc.TokenType.MARKDOWN_PARAGRAPH);
+	 		emit_token (Baladoc.TokenType.MARKDOWN_PARAGRAPH);
 		}
 
 
@@ -120,7 +120,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 		// Close open blocks:
 		while (peek_state () != State.NORMAL) {
 			if (peek_state () == State.BLOCK) {
-				emit_token (Valadoc.TokenType.MARKDOWN_BLOCK_END);
+				emit_token (Baladoc.TokenType.MARKDOWN_BLOCK_END);
 				pop_state ();
 			} else {
 				close_block ();
@@ -128,7 +128,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 		}
 
 
-		emit_token (Valadoc.TokenType.MARKDOWN_EOC);
+		emit_token (Baladoc.TokenType.MARKDOWN_EOC);
 	}
 
 	private void accept (unichar c) throws ParserError {
@@ -143,9 +143,9 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 
 		if (headline_end != null && is_headline_end (ref _index, headline_end, out hash)) {
 			if (hash != null) {
-				emit_token (Valadoc.TokenType.MARKDOWN_HEADLINE_HASH, hash);
+				emit_token (Baladoc.TokenType.MARKDOWN_HEADLINE_HASH, hash);
 			}
-			emit_token (Valadoc.TokenType.MARKDOWN_HEADLINE_END);
+			emit_token (Baladoc.TokenType.MARKDOWN_HEADLINE_END);
 			headline_end = null;
 
 			handle_newline (_index, true);
@@ -220,7 +220,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 					_skip++;
 				}
 
-				emit_token (Valadoc.TokenType.MARKDOWN_LOCAL_GMEMBER, _index.substring (0, _skip + 1));
+				emit_token (Baladoc.TokenType.MARKDOWN_LOCAL_GMEMBER, _index.substring (0, _skip + 1));
 				break;
 			}
 
@@ -237,7 +237,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 					_skip++;
 				}
 
-				emit_token (Valadoc.TokenType.MARKDOWN_CONSTANT, _index.substring (1, _skip));
+				emit_token (Baladoc.TokenType.MARKDOWN_CONSTANT, _index.substring (1, _skip));
 				break;
 			}
 			// %numeric:
@@ -254,13 +254,13 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 					_iter = _iter.offset (1);
 					_skip += 2;
 
-					emit_token (Valadoc.TokenType.MARKDOWN_CONSTANT, _index.substring (1, _skip));
+					emit_token (Baladoc.TokenType.MARKDOWN_CONSTANT, _index.substring (1, _skip));
 					break;
 				} else if (_iter[0].tolower () == 'u' || _iter[0].tolower () == 'l') {
 					_iter = _iter.offset (1);
 					_skip++;
 
-					emit_token (Valadoc.TokenType.MARKDOWN_CONSTANT, _index.substring (1, _skip));
+					emit_token (Baladoc.TokenType.MARKDOWN_CONSTANT, _index.substring (1, _skip));
 					break;
 				}
 
@@ -281,7 +281,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 					_skip++;
 				}
 
-				emit_token (Valadoc.TokenType.MARKDOWN_CONSTANT, _index.substring (1, _skip));
+				emit_token (Baladoc.TokenType.MARKDOWN_CONSTANT, _index.substring (1, _skip));
 				break;
 			}
 
@@ -316,9 +316,9 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 				if (is_field && _iter.has_prefix ("()")) {
 					_skip += 2;
 
-					emit_token (Valadoc.TokenType.MARKDOWN_SYMBOL, _index.substring (1, _skip - 2));
+					emit_token (Baladoc.TokenType.MARKDOWN_SYMBOL, _index.substring (1, _skip - 2));
 				} else {
-					emit_token (Valadoc.TokenType.MARKDOWN_SYMBOL, _index.substring (1, _skip));
+					emit_token (Baladoc.TokenType.MARKDOWN_SYMBOL, _index.substring (1, _skip));
 				}
 
 				break;
@@ -338,11 +338,11 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 						_skip++;
 					}
 
-					emit_token (Valadoc.TokenType.MARKDOWN_PARAMETER, _index.substring (1, _skip));
+					emit_token (Baladoc.TokenType.MARKDOWN_PARAMETER, _index.substring (1, _skip));
 					break;
 				} else if (_index.has_prefix ("@...")) {
 					_skip += 3;
-					emit_token (Valadoc.TokenType.MARKDOWN_PARAMETER, "...");
+					emit_token (Baladoc.TokenType.MARKDOWN_PARAMETER, "...");
 					break;
 				}
 			}
@@ -357,16 +357,16 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 				_current_string.erase (0, -1);
 				contains_at = false;
 
-				emit_token (Valadoc.TokenType.MARKDOWN_FUNCTION, id);
+				emit_token (Baladoc.TokenType.MARKDOWN_FUNCTION, id);
 				_skip++;
 				break;
 			}
 
-			emit_token (Valadoc.TokenType.MARKDOWN_OPEN_PARENS);
+			emit_token (Baladoc.TokenType.MARKDOWN_OPEN_PARENS);
 			break;
 
 		case ')':
-			emit_token (Valadoc.TokenType.MARKDOWN_CLOSE_PARENS);
+			emit_token (Baladoc.TokenType.MARKDOWN_CLOSE_PARENS);
 			break;
 
 		case '[':
@@ -386,26 +386,26 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 			}
 
 			if (iter[0] == ']') {
-				emit_token (Valadoc.TokenType.MARKDOWN_OPEN_BRACKET);
+				emit_token (Baladoc.TokenType.MARKDOWN_OPEN_BRACKET);
 			} else {
 				append_char ('[');
 			}
 			break;
 
 		case ']':
-			emit_token (Valadoc.TokenType.MARKDOWN_CLOSE_BRACKET);
+			emit_token (Baladoc.TokenType.MARKDOWN_CLOSE_BRACKET);
 			break;
 
 		case '<':
-			emit_token (Valadoc.TokenType.MARKDOWN_LESS_THAN);
+			emit_token (Baladoc.TokenType.MARKDOWN_LESS_THAN);
 			break;
 
 		case '>':
-			emit_token (Valadoc.TokenType.MARKDOWN_GREATER_THAN);
+			emit_token (Baladoc.TokenType.MARKDOWN_GREATER_THAN);
 			break;
 
 		case '!':
-			emit_token (Valadoc.TokenType.MARKDOWN_EXCLAMATION_MARK);
+			emit_token (Baladoc.TokenType.MARKDOWN_EXCLAMATION_MARK);
 			break;
 
 		case '|':
@@ -415,7 +415,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 				if (end < 0) {
 					append_char ('|');
 				} else {
-					emit_token (Valadoc.TokenType.MARKDOWN_SOURCE, _index.substring (2, end));
+					emit_token (Baladoc.TokenType.MARKDOWN_SOURCE, _index.substring (2, end));
 					_skip = end + 3;
 				}
 
@@ -431,7 +431,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 			_skip += skip_spaces (ref _iter);
 
 			if (_iter[0] != '\n' && _iter[0] != '\0') {
-				emit_token (Valadoc.TokenType.MARKDOWN_SPACE);
+				emit_token (Baladoc.TokenType.MARKDOWN_SPACE);
 			}
 			break;
 
@@ -480,7 +480,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 				if (is_paragraph) {
 					_column += (int) ((char*) _iter - (char*) _index);
 					_index = _iter.offset (1);
-					emit_token (Valadoc.TokenType.MARKDOWN_BLOCK_START);
+					emit_token (Baladoc.TokenType.MARKDOWN_BLOCK_START);
 					push_state (State.BLOCK);
 				}
 			}
@@ -498,7 +498,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 
 			close_block ();
 
-			emit_token (Valadoc.TokenType.MARKDOWN_BLOCK_END);
+			emit_token (Baladoc.TokenType.MARKDOWN_BLOCK_END);
 			pop_state ();
 		}
 
@@ -507,11 +507,11 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 		bool is_unsorted_list = _iter[0] == '-' && _iter[1].isspace ();
 		bool is_sorted_list = is_ordered_list (_iter, out list_token_len);
 		if ((is_unsorted_list || is_sorted_list)  && (is_paragraph || states.contains (State.UNORDERED_LIST) || states.contains (State.ORDERED_LIST))) {
-			Valadoc.TokenType start_token = Valadoc.TokenType.MARKDOWN_ORDERED_LIST_ITEM_START;
+			Baladoc.TokenType start_token = Baladoc.TokenType.MARKDOWN_ORDERED_LIST_ITEM_START;
 			State new_state = State.ORDERED_LIST;
 
 			if (is_unsorted_list) {
-				start_token = Valadoc.TokenType.MARKDOWN_UNORDERED_LIST_ITEM_START;
+				start_token = Baladoc.TokenType.MARKDOWN_UNORDERED_LIST_ITEM_START;
 				new_state = State.UNORDERED_LIST;
 				list_token_len = 2;
 			}
@@ -527,7 +527,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 			emit_token (start_token);
 			push_state (new_state);
 
-			emit_token (Valadoc.TokenType.MARKDOWN_PARAGRAPH);
+			emit_token (Baladoc.TokenType.MARKDOWN_PARAGRAPH);
 			return true;
 		}
 
@@ -536,10 +536,10 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 
 			if (_iter[1] != '#') {
 				_iter = _iter.offset (1);
-				emit_token (Valadoc.TokenType.MARKDOWN_HEADLINE_1);
+				emit_token (Baladoc.TokenType.MARKDOWN_HEADLINE_1);
 				headline_end = "#";
 			} else {
-				emit_token (Valadoc.TokenType.MARKDOWN_HEADLINE_2);
+				emit_token (Baladoc.TokenType.MARKDOWN_HEADLINE_2);
 				_iter = _iter.offset (2);
 				headline_end = "##";
 			}
@@ -557,7 +557,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 
 			_column += (int) ((char*) _iter - (char*) _index);
 			_index = _iter.offset (-1);
-			emit_token (Valadoc.TokenType.MARKDOWN_PARAGRAPH);
+			emit_token (Baladoc.TokenType.MARKDOWN_PARAGRAPH);
 		} else if (_iter[0] == '\n') {
 			_line++;
 			_column = 0;
@@ -565,7 +565,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 
 			handle_newline (_iter.offset (1), true);
 		} else {
-			emit_token (Valadoc.TokenType.MARKDOWN_SPACE);
+			emit_token (Baladoc.TokenType.MARKDOWN_SPACE);
 		}
 
 		return true;
@@ -650,11 +650,11 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 
 	private bool close_block () throws ParserError {
 		if (states.get (0) == State.UNORDERED_LIST) {
-			emit_token (Valadoc.TokenType.MARKDOWN_UNORDERED_LIST_ITEM_END);
+			emit_token (Baladoc.TokenType.MARKDOWN_UNORDERED_LIST_ITEM_END);
 			pop_state ();
 			return true;
 		} else if (states.get (0) == State.ORDERED_LIST) {
-			emit_token (Valadoc.TokenType.MARKDOWN_ORDERED_LIST_ITEM_END);
+			emit_token (Baladoc.TokenType.MARKDOWN_ORDERED_LIST_ITEM_END);
 			pop_state ();
 			return true;
 		}
@@ -663,7 +663,7 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 	}
 
 	public void end () throws ParserError {
-		emit_token (Valadoc.TokenType.EOF);
+		emit_token (Baladoc.TokenType.EOF);
 	}
 
 	public void stop () {
@@ -691,21 +691,21 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 		return builder.str;
 	}
 
-	private void emit_token (Valadoc.TokenType type, string? value = null) throws ParserError {
+	private void emit_token (Baladoc.TokenType type, string? value = null) throws ParserError {
 		emit_current_word ();
 
-		parser.accept_token (new Valadoc.Token.from_type (type, get_begin (), get_end (_skip), value));
+		parser.accept_token (new Baladoc.Token.from_type (type, get_begin (), get_end (_skip), value));
 	}
 
 	private void emit_current_word () throws ParserError {
 		if (_current_string.len > 0) {
 			if (is_mail ()) {
-				parser.accept_token (new Valadoc.Token.from_type (Valadoc.TokenType.MARKDOWN_MAIL, get_begin (), get_end (_skip), _current_string.str));
+				parser.accept_token (new Baladoc.Token.from_type (Baladoc.TokenType.MARKDOWN_MAIL, get_begin (), get_end (_skip), _current_string.str));
 			} else if (_current_string.str.has_prefix ("http://") || _current_string.str.has_prefix ("https://")) {
 				// TODO: (https?:[\/]{2}[^\s]+?)
-				parser.accept_token (new Valadoc.Token.from_type (Valadoc.TokenType.MARKDOWN_LINK, get_begin (), get_end (_skip), _current_string.str));
+				parser.accept_token (new Baladoc.Token.from_type (Baladoc.TokenType.MARKDOWN_LINK, get_begin (), get_end (_skip), _current_string.str));
 			} else {
-				parser.accept_token (new Valadoc.Token.from_word (_current_string.str, get_begin (), get_end (-1)));
+				parser.accept_token (new Baladoc.Token.from_word (_current_string.str, get_begin (), get_end (-1)));
 			}
 
 			_current_string.erase (0, -1);
@@ -713,12 +713,12 @@ public class Valadoc.Gtkdoc.MarkdownScanner : GLib.Object, Valadoc.Scanner {
 		}
 	}
 
-	private Vala.SourceLocation get_begin () {
-		return Vala.SourceLocation (_index, _last_line, get_line_start_column () + _last_column);
+	private Bala.SourceLocation get_begin () {
+		return Bala.SourceLocation (_index, _last_line, get_line_start_column () + _last_column);
 	}
 
-	private Vala.SourceLocation get_end (int offset = 0) {
-		return Vala.SourceLocation (_index, _line, get_line_start_column () + _column + offset);
+	private Bala.SourceLocation get_end (int offset = 0) {
+		return Bala.SourceLocation (_index, _line, get_line_start_column () + _column + offset);
 	}
 
 	public int get_line_start_column () {

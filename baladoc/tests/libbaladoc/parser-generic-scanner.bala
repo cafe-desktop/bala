@@ -20,26 +20,26 @@
  * 	Florian Brosch <flo.brosch@gmail.com>
  */
 
-using Valadoc;
+using Baladoc;
 
 
-public class TestScanner : Object, Valadoc.Scanner {
-	Valadoc.Parser parser;
+public class TestScanner : Object, Baladoc.Scanner {
+	Baladoc.Parser parser;
 
-	Valadoc.TokenType[] seq = {};
+	Baladoc.TokenType[] seq = {};
 	bool _stop = false;
 	int pos = 0;
 
-	public void set_pattern (Valadoc.TokenType[] seq) {
+	public void set_pattern (Baladoc.TokenType[] seq) {
 		this.seq = seq;
 	}
 
-	private void emit_token (Valadoc.TokenType type) throws Valadoc.ParserError {
-		Vala.SourceLocation loc = Vala.SourceLocation (null, pos, pos);
+	private void emit_token (Baladoc.TokenType type) throws Baladoc.ParserError {
+		Bala.SourceLocation loc = Bala.SourceLocation (null, pos, pos);
 		parser.accept_token (new Token.from_type (type, loc, loc));
 	}
 
-	public void set_parser (Valadoc.Parser parser) {
+	public void set_parser (Baladoc.Parser parser) {
 		this.parser = parser;
 	}
 
@@ -48,15 +48,15 @@ public class TestScanner : Object, Valadoc.Scanner {
 		pos = 0;
 	}
 
-	public void scan (string content) throws Valadoc.ParserError {
+	public void scan (string content) throws Baladoc.ParserError {
 		while (!_stop && pos < seq.length) {
 			emit_token (seq[pos]);
 			pos++;
 		}
 	}
 
-	public void end () throws Valadoc.ParserError {
-		emit_token (Valadoc.TokenType.EOF);
+	public void end () throws Baladoc.ParserError {
+		emit_token (Baladoc.TokenType.EOF);
 	}
 
 	public void stop () {

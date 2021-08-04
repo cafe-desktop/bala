@@ -27,7 +27,7 @@ using GLib;
 /**
  * C function to register an interface at runtime.
  */
-public class Vala.InterfaceRegisterFunction : TypeRegisterFunction {
+public class Bala.InterfaceRegisterFunction : TypeRegisterFunction {
 	/**
 	 * Specifies the interface to be registered.
 	 */

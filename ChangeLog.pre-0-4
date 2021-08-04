@@ -5353,7 +5353,7 @@
 	  bala/balatokentype.bala, bala/balatuple.bala,
 	  bala/balaunaryexpression.bala, bala/balaunresolvedtype.bala:
 
-	  Replace generated Vala scanner and parser by handwritten classes
+	  Replace generated Bala scanner and parser by handwritten classes
 
 2008-04-13  Jürg Billeter  <j@bitron.ch>
 
@@ -8436,7 +8436,7 @@
 
 	* Makefile.am, configure.ac, gen-project/Makefile.am,
 	  gen-project/balaprojectgenerator.bala: add bala-gen-project, a simple
-	  gui for generating Vala projects, not built by default, requires GTK+
+	  gui for generating Bala projects, not built by default, requires GTK+
 
 2007-11-25  Jürg Billeter  <j@bitron.ch>
 
@@ -9306,7 +9306,7 @@
 2007-09-02  Mathias Hasselmann  <mathias.hasselmann@gmx.de>
 
 	* vapigen/Makefile.am, vapigen/balavapicheck.bala: adding vapicheck 
-	as tool to verify Vala bindings. currently only .metadata files are
+	as tool to verify Bala bindings. currently only .metadata files are
 	checked for unresolved symbols.
 
 2007-09-02  Mathias Hasselmann  <mathias.hasselmann@gmx.de>
@@ -9378,7 +9378,7 @@
 2007-09-01  Jürg Billeter  <j@bitron.ch>
 
 	* configure.ac: add xsltproc as optional dependency
-	* doc/bala/: add initial structure for the Vala Reference Manual, will
+	* doc/bala/: add initial structure for the Bala Reference Manual, will
 	  be built and installed if xsltproc is available
 	* tests/hello.exp, tests/hello.bala: add hello world test case
 	* doc/Makefile.am, tests/Makefile.am: updated
@@ -9933,12 +9933,12 @@
 2007-08-19  Mathias Hasselmann  <mathias.hasselmann@gmx.de>
 
 	* gobject/balacodegenerator.bala: also use _bala_array_free to
-	release string arrays as g_strfreev cannot handle Vala's sized
+	release string arrays as g_strfreev cannot handle Bala's sized
 	arrays, which have a _length variable, but no NULL sentinel.
 	* gobject/balacodegeneratorsourcefile.bala: enhance _bala_array_free
 	to handle unsized (NULL sentinel terminated) arrays.
 	* tests/test-022.*: test behaviour of _bala_array_free. currently
-	fails because Vala forgets to release old element members when 
+	fails because Bala forgets to release old element members when 
 	assigning a new value.
 
 2007-08-19  Mathias Hasselmann  <mathias.hasselmann@gmx.de>
@@ -10331,7 +10331,7 @@
 2007-07-28  Philip Van Hoof  <pvanhoof@gnome.org>
 
 	* doc/building.txt: Added some documentation about how to build your
-	own Vala
+	own Bala
 
 2007-07-27  Jürg Billeter  <j@bitron.ch>
 
@@ -10595,14 +10595,14 @@
 2007-07-22  Raffaele Sandrini  <raffaele@sandrini.ch>
 
 	* bala/balamember.bala: add cheader filename logic usable for all
-	  Vala.Member types.
+	  Bala.Member types.
 	* bala/balamethod.bala: parse cheader_filename CCode attribute
 	  argument
 	* bala/baladatatype.bala: fix get_cheader_filenames method signature
 	  to override the Symbol method instead of defining a new virtual
 	  method
 	* bala/balasourcefile.bala: adopt add_symbol_dependency to use the fact
-	  all Vala.Symbol types maintain their list of headers
+	  all Bala.Symbol types maintain their list of headers
 
 2007-07-22  Jürg Billeter  <j@bitron.ch>
 
@@ -12443,7 +12443,7 @@
 
 2006-08-09  Jürg Billeter  <j@bitron.ch>
 
-	* bala/parser.y: adapt to Vala.Signal change
+	* bala/parser.y: adapt to Bala.Signal change
 	* bala/balaattributeprocessor.bala: process signal attributes
 	* bala/balacodegenerator.bala: manage memory of element access
 	  expressions, mark get_property and set_property functions static,
@@ -12981,18 +12981,18 @@
 	* bala/balabooleanliteral.bala, bala/balacharacterliteral.bala,
 	  bala/balaintegerliteral.bala, bala/balaliteral.bala,
 	  bala/balanullliteral.bala, bala/balarealliteral.bala,
-	  bala/balastringliteral.bala: move source_reference to Vala.Literal,
+	  bala/balastringliteral.bala: move source_reference to Bala.Literal,
 	  use non-null types, don't mark properties as construct-only
 
 2006-06-26  Jürg Billeter  <j@bitron.ch>
 
-	* bala/parser.y: plug some memory leaks, adapt to Vala.Block changes
+	* bala/parser.y: plug some memory leaks, adapt to Bala.Block changes
 	* bala/balaattribute.bala, bala/balabinaryexpression.bala,
 	  bala/balablock.bala, bala/balabooleanexpression.bala,
 	  bala/balabreakstatement.bala, bala/balaliteral.bala,
 	  bala/balastatement.bala: replace public fields by properties / private
 	  fields, don't mark properties as construct-only, use non-null types
-	* bala/baladatatype.bala: renamed from Vala.Type_ to Vala.DataType
+	* bala/baladatatype.bala: renamed from Bala.Type_ to Bala.DataType
 	* bala/balasymbolbuilder.bala, bala/balasymbolresolver.bala,
 	  bala/balasemanticanalyzer.bala, bala/balacodegenerator.bala,
 	  bala/balasourcefile.bala, bala/balacallback.bala, bala/balaclass.bala,
@@ -13001,8 +13001,8 @@
 	  bala/balainterface.bala, bala/balainterfaceregisterfunction.bala,
 	  bala/balamethod.bala, bala/balastruct.bala,
 	  bala/balatypeparameter.bala, bala/balatypereference.bala,
-	  bala/balatypergisterfunction.bala: adapt to renaming of Vala.Type_ to
-	  Vala.DataType
+	  bala/balatypergisterfunction.bala: adapt to renaming of Bala.Type_ to
+	  Bala.DataType
 	* bala/Makefile.am: update
 
 2006-06-22  Jürg Billeter  <j@bitron.ch>
@@ -13859,7 +13859,7 @@
 	* balac/scanner.l: support ENUM, FLAGS, STRUCT
 	* balac/parser.y: add structs, generic types, enums, flags, attributes,
 	  ref and out parameters
-	* balac/context.h: add ValaFlags, ValaFlagsValue, and ValaAnnotation
+	* balac/context.h: add BalaFlags, BalaFlagsValue, and BalaAnnotation
 	  structs
 	* balac/context.c: support bool, uint, pointer, generic types
 	* balac/generator.h: save pointer to current struct
@@ -13874,7 +13874,7 @@
 	  directive, @ type qualifier, constants, ref and out variables,
 	  array element access, this access, struct and array initializer,
 	  var type
-	* balac/context.h: add ValaEnum, ValaConstant, and ValaEnumValue structs
+	* balac/context.h: add BalaEnum, BalaConstant, and BalaEnumValue structs
 	* balac/context.c: support constants, struct members, enums, var type,
 	  using directives
 	* balac/generator.h: save pointer to current class
@@ -13900,7 +13900,7 @@
 	* balac/scanner.l: support OVERRIDE, VIRTUAL
 	* balac/parser.y: add virtual methods
 	* balac/context.h: support virtual methods, improve init and class_init
-	* balac/context.c: set symbol in ValaMethod struct
+	* balac/context.c: set symbol in BalaMethod struct
 	* balac/generator.c: support virtual methods
 	* tests/test-007.bala: test virtual method declaration and invocation
 
@@ -13912,7 +13912,7 @@
 	* balac/parser.y: add array type references, equality expressions,
 	  relational expressions, multiplicative expressions, postfix
 	  operations, object creation, if conditionals, for loops
-	* balac/context.h: add ValaNamedArgument struct, support if and for
+	* balac/context.h: add BalaNamedArgument struct, support if and for
 	  statements
 	* balac/context.c: resolve types in object creation expressions of
 	  variable initializers
@@ -13926,7 +13926,7 @@
 
 	* balac/parser.y: save cname in class, save location of statements and
 	  expressions
-	* balac/context.h: add ValaStruct struct
+	* balac/context.h: add BalaStruct struct
 	* balac/context.c: support symbols from methods and structs, add int
 	  and string fundamental types, resolve types in local variable
 	  declarations
@@ -13942,8 +13942,8 @@
 	* balac/scanner.l: support single-line comments, ASSIGN, PLUS, RETURN,
 	  LITERAL_INTEGER, LITERAL_STRING
 	* balac/parser.y: add basic statements and expressions
-	* balac/context.h: add ValaStatement, ValaVariableDeclaration,
-	  ValaVariableDeclarator, and ValaExpression structs
+	* balac/context.h: add BalaStatement, BalaVariableDeclaration,
+	  BalaVariableDeclarator, and BalaExpression structs
 	* balac/context.c: remove unreachable line
 
 2006-04-24  Jürg Billeter  <j@bitron.ch>
@@ -13952,8 +13952,8 @@
 	  CLOSE_PARENS, SEMICOLON, PUBLIC, STATIC
 	* balac/parser.y: save symbol location, output exact error location,
 	  support method declarations
-	* balac/context.h: add ValaLocation, ValaMethod, and ValaFormalParameter
-	  structs, add location to ValaClass and ValaTypeReference structs
+	* balac/context.h: add BalaLocation, BalaMethod, and BalaFormalParameter
+	  structs, add location to BalaClass and BalaTypeReference structs
 	* balac/context.c: output error location, support method declarations
 	* balac/generator.c: support method declarations
 	* balac/driver.c: add comment
@@ -13964,8 +13964,8 @@
 	* balac/scanner.l: support DOT, COLON, and COMMA
 	* balac/parser.y: save lower and upper case cnames in namespace and
 	  class objects, support base classes
-	* balac/context.h: add ValaSymbol and ValaTypeReference structs, add
-	  cnames to ValaNamespace and ValaClass structs
+	* balac/context.h: add BalaSymbol and BalaTypeReference structs, add
+	  cnames to BalaNamespace and BalaClass structs
 	* balac/context.c: add symbol handling, type resolving, set cnames in
 	  root namespace
 	* balac/generator.c: remove cname generation, support base classes

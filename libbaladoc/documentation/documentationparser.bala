@@ -22,11 +22,11 @@
  */
 
 
-using Valadoc.Content;
-using Valadoc.Importer;
+using Baladoc.Content;
+using Baladoc.Importer;
 
-public class Valadoc.DocumentationParser : Object, ResourceLocator {
-	private Vala.HashMap<Api.SourceFile, GirMetaData> metadata;
+public class Baladoc.DocumentationParser : Object, ResourceLocator {
+	private Bala.HashMap<Api.SourceFile, GirMetaData> metadata;
 	private Importer.InternalIdRegistrar id_registrar;
 
 
@@ -52,7 +52,7 @@ public class Valadoc.DocumentationParser : Object, ResourceLocator {
 		gtkdoc_markdown_parser = new Gtkdoc.MarkdownParser (settings, reporter, tree, modules);
 
 
-		metadata = new Vala.HashMap<Api.SourceFile, GirMetaData> ();
+		metadata = new Bala.HashMap<Api.SourceFile, GirMetaData> ();
 		id_registrar = new Importer.InternalIdRegistrar ();
 
 		init_baladoc_rules ();
@@ -183,7 +183,7 @@ public class Valadoc.DocumentationParser : Object, ResourceLocator {
 		return path;
 	}
 
-	private Vala.ArrayList<Object> _stack = new Vala.ArrayList<Object> ();
+	private Bala.ArrayList<Object> _stack = new Bala.ArrayList<Object> ();
 
 	private void push (Object element) {
 		_stack.add (element);

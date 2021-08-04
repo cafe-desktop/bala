@@ -20,9 +20,9 @@
  * 	Luca Bruno <lethalman88@gmail.com>
  */
 
-using Valadoc;
-using Valadoc.Api;
-using Valadoc.Content;
+using Baladoc;
+using Baladoc.Api;
+using Baladoc.Content;
 
 namespace Gtkdoc.Config {
 	public static bool nohtml;
@@ -52,7 +52,7 @@ namespace Gtkdoc.Config {
 		}
 
 		try {
-			var opt_context = new OptionContext ("- Vala GTK-Doc");
+			var opt_context = new OptionContext ("- Bala GTK-Doc");
 			opt_context.set_help_enabled (true);
 			opt_context.add_main_entries (options, null);
 			unowned string[] gtkdoc_args = args;
@@ -64,7 +64,7 @@ namespace Gtkdoc.Config {
 
 		// real path to ignored headers
 		for (int i=0; i < ignore_headers.length; i++) {
-			var realheader = Vala.CodeContext.realpath (ignore_headers[i]);
+			var realheader = Bala.CodeContext.realpath (ignore_headers[i]);
 			if (realheader != null) {
 				ignore_headers[i] = realheader;
 			}
@@ -76,7 +76,7 @@ namespace Gtkdoc.Config {
 
 
 
-public class Gtkdoc.Director : Valadoc.Doclet, Object {
+public class Gtkdoc.Director : Baladoc.Doclet, Object {
 	private ErrorReporter reporter;
 	private Settings settings;
 	private Api.Tree tree;
@@ -93,12 +93,12 @@ public class Gtkdoc.Director : Valadoc.Doclet, Object {
 	}
 
 	/*
-	 * 1) Scan normal code, this generates -decl.txt for both C and Vala.
+	 * 1) Scan normal code, this generates -decl.txt for both C and Bala.
 	 * 2) Scan C code into a temp cscan directory. This generates C sections.
 	 *    Move C -sections.txt file to the real output -sections.txt.
-	 * 3) Generate and append Vala sections to -sections.txt.
+	 * 3) Generate and append Bala sections to -sections.txt.
 	 * Done. Now we have -decl.txt of the whole code and -sections.txt containing C sections
-	 * and Vala sections.
+	 * and Bala sections.
 	 */
 	public void process (Settings settings, Api.Tree tree, ErrorReporter reporter) {
 		if (!Config.parse (settings.pluginargs, reporter)) {
@@ -179,7 +179,7 @@ public class Gtkdoc.Director : Valadoc.Doclet, Object {
 		string[] prepared = new string[]{};
 
 		foreach (string relative_filename in files) {
-			var filename = Vala.CodeContext.realpath (relative_filename);
+			var filename = Bala.CodeContext.realpath (relative_filename);
 
 			if (filename in prepared) {
 				continue;
@@ -253,7 +253,7 @@ public class Gtkdoc.Director : Valadoc.Doclet, Object {
 		StringBuilder library_paths = new StringBuilder ();
 		StringBuilder library_dirs = new StringBuilder ();
 		foreach (string library in Config.library_filenames) {
-			string so_path = Vala.CodeContext.realpath (library);
+			string so_path = Bala.CodeContext.realpath (library);
 			string name = Path.get_dirname (so_path);
 			library_dirs.append (name);
 			library_paths.append (so_path);
@@ -436,7 +436,7 @@ public class Gtkdoc.Director : Valadoc.Doclet, Object {
 }
 
 
-public Type register_plugin (Valadoc.ModuleLoader module_loader) {
+public Type register_plugin (Baladoc.ModuleLoader module_loader) {
 	return typeof (Gtkdoc.Director);
 }
 

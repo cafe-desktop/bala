@@ -24,7 +24,7 @@
 /**
  * Represents a catch clause in a try statement in the source code.
  */
-public class Vala.CatchClause : CodeNode {
+public class Bala.CatchClause : CodeNode {
 	/**
 	 * Specifies the error type.
 	 */

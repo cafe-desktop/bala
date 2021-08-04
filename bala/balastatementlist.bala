@@ -21,7 +21,7 @@
  */
 
 
-public class Vala.StatementList : CodeNode, Statement {
+public class Bala.StatementList : CodeNode, Statement {
 	private List<Statement> list = new ArrayList<Statement> ();
 
 	public int length {

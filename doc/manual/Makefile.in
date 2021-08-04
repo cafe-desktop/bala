@@ -324,7 +324,7 @@ EXTRA_DIST = \
 	README \
 	$(NULL)
 
-MANUAL_DOCBOOK_URL = https://wiki.gnome.org/Projects/Vala/Manual/Export?action=format\&mimetype=text/docbook
+MANUAL_DOCBOOK_URL = https://wiki.gnome.org/Projects/Bala/Manual/Export?action=format\&mimetype=text/docbook
 all: all-am
 
 .SUFFIXES:
@@ -594,7 +594,7 @@ uninstall-am: uninstall-bookDATA
 @HAVE_WEASYPRINT_TRUE@@HAVE_XSLTPROC_TRUE@		manual.html \
 @HAVE_WEASYPRINT_TRUE@@HAVE_XSLTPROC_TRUE@		$@
 @HAVE_WEASYPRINT_FALSE@@HAVE_XSLTPROC_TRUE@pdf:
-@HAVE_WEASYPRINT_FALSE@@HAVE_XSLTPROC_TRUE@	@echo Install weasyprint and re-run ./configure to generate a PDF of the Vala manual
+@HAVE_WEASYPRINT_FALSE@@HAVE_XSLTPROC_TRUE@	@echo Install weasyprint and re-run ./configure to generate a PDF of the Bala manual
 
 mostlyclean-local:
 	rm -rf devhelp

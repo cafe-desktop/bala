@@ -23,7 +23,7 @@
 
 using GLib;
 
-class Vala.Compiler {
+class Bala.Compiler {
 	private const string DEFAULT_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01";
 
 	static string basedir;
@@ -555,7 +555,7 @@ class Vala.Compiler {
 
 	static int run_source (string[] args) {
 		try {
-			var opt_context = new OptionContext ("- Vala Interpreter");
+			var opt_context = new OptionContext ("- Bala Interpreter");
 			opt_context.set_help_enabled (true);
 			opt_context.add_main_entries (options, null);
 			opt_context.parse (ref args);
@@ -566,10 +566,10 @@ class Vala.Compiler {
 		}
 
 		if (version) {
-			stdout.printf ("Vala %s\n", Vala.BUILD_VERSION);
+			stdout.printf ("Bala %s\n", Bala.BUILD_VERSION);
 			return 0;
 		} else if (api_version) {
-			stdout.printf ("%s\n", Vala.API_VERSION);
+			stdout.printf ("%s\n", Bala.API_VERSION);
 			return 0;
 		}
 
@@ -643,7 +643,7 @@ class Vala.Compiler {
 		}
 
 		try {
-			var opt_context = new OptionContext ("- Vala Compiler");
+			var opt_context = new OptionContext ("- Bala Compiler");
 			opt_context.set_help_enabled (true);
 			opt_context.add_main_entries (options, null);
 			opt_context.parse (ref args);
@@ -654,10 +654,10 @@ class Vala.Compiler {
 		}
 		
 		if (version) {
-			stdout.printf ("Vala %s\n", Vala.BUILD_VERSION);
+			stdout.printf ("Bala %s\n", Bala.BUILD_VERSION);
 			return 0;
 		} else if (api_version) {
-			stdout.printf ("%s\n", Vala.API_VERSION);
+			stdout.printf ("%s\n", Bala.API_VERSION);
 			return 0;
 		}
 		

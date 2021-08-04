@@ -21,7 +21,7 @@
  */
 
 
-public class Vala.CCodeFile {
+public class Bala.CCodeFile {
 	public bool is_header { get; set; }
 
 	public weak SourceFile? file { get; private set; }

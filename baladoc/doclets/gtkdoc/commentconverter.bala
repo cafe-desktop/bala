@@ -20,9 +20,9 @@
  * 	Luca Bruno <lethalman88@gmail.com>
  */
 
-using Valadoc;
-using Valadoc.Api;
-using Valadoc.Content;
+using Baladoc;
+using Baladoc.Api;
+using Baladoc.Content;
 
 public class Gtkdoc.CommentConverter : ContentVisitor {
 	public Api.Node node_reference;
@@ -31,8 +31,8 @@ public class Gtkdoc.CommentConverter : ContentVisitor {
 	public string brief_comment;
 	public string long_comment;
 	public string returns;
-	public Vala.List<Header> parameters = new Vala.ArrayList<Header> ();
-	public Vala.List<Header> versioning = new Vala.ArrayList<Header> ();
+	public Bala.List<Header> parameters = new Bala.ArrayList<Header> ();
+	public Bala.List<Header> versioning = new Bala.ArrayList<Header> ();
 	public string[] see_also = new string[]{};
 
 	private StringBuilder current_builder = new StringBuilder ();

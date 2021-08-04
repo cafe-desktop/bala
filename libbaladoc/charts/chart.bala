@@ -23,7 +23,7 @@
 [CCode (cname = "baladoc_compat_gvc_init")]
 extern void baladoc_gvc_init ();
 
-public class Valadoc.Charts.Chart : Api.Visitor {
+public class Baladoc.Charts.Chart : Api.Visitor {
 	protected Gvc.Context context;
 	protected Gvc.Graph graph;
 	protected Factory factory;

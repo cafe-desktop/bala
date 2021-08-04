@@ -27,7 +27,7 @@ using GLib;
 /**
  * Code visitor parsing all Genie source files.
  */
-public class Vala.Genie.Parser : CodeVisitor {
+public class Bala.Genie.Parser : CodeVisitor {
 	Scanner scanner;
 
 	CodeContext context;
@@ -2720,8 +2720,8 @@ public class Vala.Genie.Parser : CodeVisitor {
 			cl.add_delegate ((Delegate) sym);
 		} else if (sym is Method) {
 			cl.add_method ((Method) sym);
-		} else if (sym is Vala.Signal) {
-			cl.add_signal ((Vala.Signal) sym);
+		} else if (sym is Bala.Signal) {
+			cl.add_signal ((Bala.Signal) sym);
 		} else if (sym is Field) {
 			cl.add_field ((Field) sym);
 		} else if (sym is Constant) {
@@ -3173,7 +3173,7 @@ public class Vala.Genie.Parser : CodeVisitor {
 		return prop;
 	}
 
-	Vala.Signal parse_signal_declaration (List<Attribute>? attrs) throws ParseError {
+	Bala.Signal parse_signal_declaration (List<Attribute>? attrs) throws ParseError {
 		var begin = get_location ();
 		DataType type;
 
@@ -3199,7 +3199,7 @@ public class Vala.Genie.Parser : CodeVisitor {
 			type = new VoidType ();
 		}
 
-		var sig = new Vala.Signal (id, type, get_src (begin), comment);
+		var sig = new Bala.Signal (id, type, get_src (begin), comment);
 		if (ModifierFlags.PRIVATE in flags) {
 			sig.access = SymbolAccessibility.PRIVATE;
 		} else if (ModifierFlags.PROTECTED in flags) {
@@ -3389,8 +3389,8 @@ public class Vala.Genie.Parser : CodeVisitor {
 			iface.add_delegate ((Delegate) sym);
 		} else if (sym is Method) {
 			iface.add_method ((Method) sym);
-		} else if (sym is Vala.Signal) {
-			iface.add_signal ((Vala.Signal) sym);
+		} else if (sym is Bala.Signal) {
+			iface.add_signal ((Bala.Signal) sym);
 		} else if (sym is Field) {
 			iface.add_field ((Field) sym);
 		} else if (sym is Constant) {

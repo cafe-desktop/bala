@@ -21,11 +21,11 @@
  */
 
 
-public interface Valadoc.Content.Taglet : ContentElement {
+public interface Baladoc.Content.Taglet : ContentElement {
 
 	public abstract Rule? get_parser_rule (Rule run_rule);
 
-	public virtual Vala.List<ContentElement>? get_inheritable_documentation () {
+	public virtual Bala.List<ContentElement>? get_inheritable_documentation () {
 		return null;
 	}
 

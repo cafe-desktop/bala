@@ -20,7 +20,7 @@
  * 	Jürg Billeter <j@bitron.ch>
  */
 
-public class Vala.GDBusServerModule : GDBusClientModule {
+public class Bala.GDBusServerModule : GDBusClientModule {
 	string generate_dbus_wrapper (Method m, ObjectTypeSymbol sym, bool ready = false) {
 		string wrapper_name = "_dbus_%s".printf (get_ccode_name (m));
 		bool need_goto_label = ready;

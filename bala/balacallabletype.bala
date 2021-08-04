@@ -25,7 +25,7 @@ using GLib;
 /**
  * A callable type, i.e. a delegate, method, or signal type.
  */
-public abstract class Vala.CallableType : DataType {
+public abstract class Bala.CallableType : DataType {
 	public weak Callable callable_symbol {
 		get {
 			return (Callable) symbol;

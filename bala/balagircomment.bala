@@ -26,7 +26,7 @@ using GLib;
 /**
  * A documentation comment used by baladoc
  */
-public class Vala.GirComment : Comment {
+public class Bala.GirComment : Comment {
 	private HashMap<string, Comment> parameter_content = new HashMap<string, Comment> ();
 
 	public MapIterator<string, Comment> parameter_iterator () {

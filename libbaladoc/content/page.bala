@@ -21,7 +21,7 @@
  */
 
 
-public class Valadoc.Content.Page : BlockContent {
+public class Baladoc.Content.Page : BlockContent {
 	private bool checked = false;
 
 

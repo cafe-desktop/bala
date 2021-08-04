@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.SymbolLink : InlineContent, Inline {
+public class Baladoc.Content.SymbolLink : InlineContent, Inline {
 	public Api.Node symbol {
 		get;
 		set;

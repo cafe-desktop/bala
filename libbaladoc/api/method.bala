@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a function or a method.
  */
-public class Valadoc.Api.Method : Symbol, Callable {
+public class Baladoc.Api.Method : Symbol, Callable {
 	private string? finish_function_cname;
 	private string? dbus_result_name;
 	private string? dbus_name;
@@ -41,18 +41,18 @@ public class Valadoc.Api.Method : Symbol, Callable {
 	}
 
 
-	public Method (Node parent, SourceFile file, string name, Vala.SymbolAccessibility accessibility,
-				   SourceComment? comment, Vala.Method data)
+	public Method (Node parent, SourceFile file, string name, Bala.SymbolAccessibility accessibility,
+				   SourceComment? comment, Bala.Method data)
 	{
 		base (parent, file, name, accessibility, comment, data);
 
-		this.finish_function_cname = (data.coroutine ? Vala.get_ccode_finish_name (data) : null);
-		this.dbus_result_name = Vala.GDBusModule.dbus_result_name (data);
-		this.dbus_name = Vala.GDBusModule.get_dbus_name_for_member (data);
-		this.cname = Vala.get_ccode_name (data);
+		this.finish_function_cname = (data.coroutine ? Bala.get_ccode_finish_name (data) : null);
+		this.dbus_result_name = Bala.GDBusModule.dbus_result_name (data);
+		this.dbus_name = Bala.GDBusModule.get_dbus_name_for_member (data);
+		this.cname = Bala.get_ccode_name (data);
 
-		this.is_dbus_visible = Vala.GDBusModule.is_dbus_visible (data);
-		this.is_constructor = data is Vala.CreationMethod;
+		this.is_dbus_visible = Bala.GDBusModule.is_dbus_visible (data);
+		this.is_constructor = data is Bala.CreationMethod;
 		this.is_yields = data.coroutine;
 	}
 
@@ -110,7 +110,7 @@ public class Valadoc.Api.Method : Symbol, Callable {
 	 */
 	public bool is_abstract {
 		get {
-			return ((Vala.Method) data).is_abstract;
+			return ((Bala.Method) data).is_abstract;
 		}
 	}
 
@@ -119,7 +119,7 @@ public class Valadoc.Api.Method : Symbol, Callable {
 	 */
 	public bool is_virtual {
 		get {
-			return ((Vala.Method) data).is_virtual;
+			return ((Bala.Method) data).is_virtual;
 		}
 	}
 
@@ -128,7 +128,7 @@ public class Valadoc.Api.Method : Symbol, Callable {
 	 */
 	public bool is_override {
 		get {
-			return ((Vala.Method) data).overrides;
+			return ((Bala.Method) data).overrides;
 		}
 	}
 
@@ -137,7 +137,7 @@ public class Valadoc.Api.Method : Symbol, Callable {
 	 */
 	public bool is_static {
 		get {
-			return !is_constructor && ((Vala.Method) data).binding == Vala.MemberBinding.STATIC
+			return !is_constructor && ((Bala.Method) data).binding == Bala.MemberBinding.STATIC
 				&& parent is Namespace == false;
 		}
 	}
@@ -147,7 +147,7 @@ public class Valadoc.Api.Method : Symbol, Callable {
 	 */
 	public bool is_class {
 		get {
-			return ((Vala.Method) data).binding == Vala.MemberBinding.CLASS;
+			return ((Bala.Method) data).binding == Bala.MemberBinding.CLASS;
 		}
 	}
 
@@ -164,7 +164,7 @@ public class Valadoc.Api.Method : Symbol, Callable {
 	 */
 	public bool is_inline {
 		get {
-			return ((Vala.Method) data).is_inline;
+			return ((Bala.Method) data).is_inline;
 		}
 	}
 

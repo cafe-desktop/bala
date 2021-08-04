@@ -21,13 +21,13 @@
  */
 
 
-using Valadoc;
-using Valadoc.Content;
+using Baladoc;
+using Baladoc.Content;
 
-public class Valadoc.Importer.ValadocDocumentationImporter : DocumentationImporter, ResourceLocator {
+public class Baladoc.Importer.BaladocDocumentationImporter : DocumentationImporter, ResourceLocator {
 	public override string file_extension { get { return "baladoc"; } }
 
-	private ValadocDocumentationScanner _scanner;
+	private BaladocDocumentationScanner _scanner;
 	private DocumentationParser _doc_parser;
 	private Parser _parser;
 
@@ -35,23 +35,23 @@ public class Valadoc.Importer.ValadocDocumentationImporter : DocumentationImport
 	private string _filename;
 	private string _cname;
 	private StringBuilder _comment;
-	private Vala.SourceLocation _comment_location;
+	private Bala.SourceLocation _comment_location;
 	protected Content.ContentFactory factory;
 
 
 	private ErrorReporter reporter;
 
-	public ValadocDocumentationImporter (Api.Tree tree, DocumentationParser parser, ModuleLoader modules,
+	public BaladocDocumentationImporter (Api.Tree tree, DocumentationParser parser, ModuleLoader modules,
 										 Settings settings, ErrorReporter reporter)
 	{
 		base (tree, modules, settings);
 		this.factory = new Content.ContentFactory (settings, this, modules);
 		this.reporter = reporter;
 
-		_scanner = new ValadocDocumentationScanner (settings);
+		_scanner = new BaladocDocumentationScanner (settings);
 		_doc_parser = parser;
 
-		_scanner = new ValadocDocumentationScanner (settings);
+		_scanner = new BaladocDocumentationScanner (settings);
 		_parser = new Parser (settings, _scanner, reporter);
 		_scanner.set_parser (_parser);
 
@@ -111,7 +111,7 @@ public class Valadoc.Importer.ValadocDocumentationImporter : DocumentationImport
 				optional_empty_lines
 			})
 		})
-		.set_name ("ValadocFile");
+		.set_name ("BaladocFile");
 
 		_parser.set_root_rule (file);
 	}
@@ -127,7 +127,7 @@ public class Valadoc.Importer.ValadocDocumentationImporter : DocumentationImport
 	}
 
 	private void add_documentation (string _symbol_name, StringBuilder? comment, string filename,
-									Vala.SourceLocation src_ref)
+									Bala.SourceLocation src_ref)
 	{
 		Api.Node? symbol = null;
 

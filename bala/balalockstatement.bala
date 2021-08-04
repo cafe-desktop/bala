@@ -31,10 +31,10 @@ using GLib;
  * {{{ lock (foo); }}} or {{{ lock (foo) { ... } }}}
  *
  * If the statement is empty, the mutex remains locked until a corresponding
- * {@link Vala.UnlockStatement} occurs. Otherwise it's translated into a
+ * {@link Bala.UnlockStatement} occurs. Otherwise it's translated into a
  * try/finally statement which unlocks the mutex after the block is finished.
  */
-public class Vala.LockStatement : CodeNode, Statement {
+public class Bala.LockStatement : CodeNode, Statement {
 	/**
 	 * Expression representing the resource to be locked.
 	 */

@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.Text : ContentElement, Inline {
+public class Baladoc.Content.Text : ContentElement, Inline {
 	public string content {
 		get;
 		set;

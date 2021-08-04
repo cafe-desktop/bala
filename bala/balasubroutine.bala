@@ -20,7 +20,7 @@
  * 	Jürg Billeter <j@bitron.ch>
  */
 
-public abstract class Vala.Subroutine : Symbol {
+public abstract class Bala.Subroutine : Symbol {
 	Block _body;
 
 	public BasicBlock entry_block { get; set; }

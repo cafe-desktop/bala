@@ -22,7 +22,7 @@
 
 
 
-public class Valadoc.Html.SimpleChartFactory : Charts.SimpleFactory {
+public class Baladoc.Html.SimpleChartFactory : Charts.SimpleFactory {
 	private Settings _settings;
 	private Api.Node _container;
 	private LinkHelper _linker;

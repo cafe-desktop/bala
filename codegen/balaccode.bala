@@ -20,7 +20,7 @@
  * 	Rico Tzschichholz <ricotz@ubuntu.com>
  */
 
-namespace Vala {
+namespace Bala {
 	static int? ccode_attribute_cache_index = null;
 
 	static unowned CCodeAttribute get_ccode_attribute (CodeNode node) {

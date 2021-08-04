@@ -22,22 +22,22 @@
  */
 
 
-public class Vala.GtkModule : GSignalModule {
-	/* C type-func name to Vala class mapping */
+public class Bala.GtkModule : GSignalModule {
+	/* C type-func name to Bala class mapping */
 	private HashMap<string, Class> type_id_to_bala_map = null;
-	/* C class name to Vala class mapping */
+	/* C class name to Bala class mapping */
 	private HashMap<string, Class> cclass_to_bala_map = null;
 	/* GResource name to real file name mapping */
 	private HashMap<string, string> gresource_to_file_map = null;
-	/* GtkBuilder xml handler to Vala signal mapping */
+	/* GtkBuilder xml handler to Bala signal mapping */
 	private HashMap<string, Signal> current_handler_to_signal_map = new HashMap<string, Signal>(str_hash, str_equal);
-	/* GtkBuilder xml child to Vala class mapping */
+	/* GtkBuilder xml child to Bala class mapping */
 	private HashMap<string, Class> current_child_to_class_map = new HashMap<string, Class>(str_hash, str_equal);
 	/* Required custom application-specific gtype classes to be ref'd before initializing the template */
 	private List<Class> current_required_app_classes = new ArrayList<Class>();
 
 	private void ensure_type_id_to_bala_map () {
-		// map C type-func name of gtypeinstance classes to Vala classes
+		// map C type-func name of gtypeinstance classes to Bala classes
 		if (type_id_to_bala_map != null) {
 			return;
 		}
@@ -67,7 +67,7 @@ public class Vala.GtkModule : GSignalModule {
 	}
 
 	private void ensure_cclass_to_bala_map () {
-		// map C name of gtypeinstance classes to Vala classes
+		// map C name of gtypeinstance classes to Bala classes
 		if (cclass_to_bala_map != null) {
 			return;
 		}
@@ -127,7 +127,7 @@ public class Vala.GtkModule : GSignalModule {
 
 	private void process_current_ui_resource (string ui_resource, CodeNode node) {
 		/* Scan a single gtkbuilder file for signal handlers in <object> elements,
-		   and save an handler string -> Vala.Signal mapping for each of them */
+		   and save an handler string -> Bala.Signal mapping for each of them */
 		ensure_type_id_to_bala_map ();
 		ensure_cclass_to_bala_map();
 		ensure_gresource_to_file_map();

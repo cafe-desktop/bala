@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents an array declaration.
  */
-public class Valadoc.Api.Array : Item {
+public class Baladoc.Api.Array : Item {
 
 	/**
 	 * The element type.
@@ -36,7 +36,7 @@ public class Valadoc.Api.Array : Item {
 		get;
 	}
 
-	public Array (Item parent, Vala.ArrayType data) {
+	public Array (Item parent, Bala.ArrayType data) {
 		base (data);
 
 		this.parent = parent;

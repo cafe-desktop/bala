@@ -8,7 +8,7 @@ bala-gen-introspect \- generate a GI file for GObject and glib based packages
 .B bala-gen-introspect
 is a utility which generates GI files from GObject and glib
 based packages. It can be used in combination with vapigen(1) to
-generate an API for Vala, and allow its usage in Vala for compiling
+generate an API for Bala, and allow its usage in Bala for compiling
 to native code. \fIPKGNAME\fP is the pkg-config name of the library
 and \fIPKGBASE\fP specifies the base directory for that package.
 .SS "Usage:"
@@ -37,14 +37,14 @@ Other gidls to include
 .SH BUGS
 https://gitlab.gnome.org/GNOME/bala/issues
 .SH "HOMEPAGE OR CONTACT"
-https://wiki.gnome.org/Projects/Vala
+https://wiki.gnome.org/Projects/Bala
 .SH AUTHORS
 J??rg Billeter, Raffaele Sandrini.
 .SH EXAMPLES
 After compilation, the following command generates a GI for pango:
 .B bala-gen-introspect pango packages/pango
 .TP
-This can then be converted to a Vala API as follows:
+This can then be converted to a Bala API as follows:
 .B vapigen --pkg cairo --vapidir . --library pango packages/pango/pango.gi
 .SH "SEE ALSO"
 vapigen (1)

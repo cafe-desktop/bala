@@ -20,9 +20,9 @@
  * 	Luca Bruno <lethalman88@gmail.com>
  */
 
-using Valadoc;
-using Valadoc.Api;
-using Valadoc.Content;
+using Baladoc;
+using Baladoc.Api;
+using Baladoc.Content;
 
 namespace Gtkdoc.DBus {
 	public class Parameter {
@@ -68,7 +68,7 @@ namespace Gtkdoc.DBus {
 
 	public class Member {
 		public string name;
-		public Vala.List<Parameter> parameters = new Vala.ArrayList<Parameter>();
+		public Bala.List<Parameter> parameters = new Bala.ArrayList<Parameter>();
 		public GComment comment;
 
 		internal DBus.Interface iface;
@@ -119,8 +119,8 @@ namespace Gtkdoc.DBus {
 		public string name;
 		public string purpose;
 		public string description;
-		public Vala.List<Member> methods = new Vala.ArrayList<Member>();
-		public Vala.List<Member> signals = new Vala.ArrayList<Member>();
+		public Bala.List<Member> methods = new Bala.ArrayList<Member>();
+		public Bala.List<Member> signals = new Bala.ArrayList<Member>();
 
 		public Interface (string package_name,
 						  string name,

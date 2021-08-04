@@ -26,7 +26,7 @@ using GLib;
 /**
  * Scanner interface used to highlight source code.
  */
-public interface Valadoc.Highlighter.Scanner : Object {
+public interface Baladoc.Highlighter.Scanner : Object {
 
 	public abstract CodeToken next ();
 }

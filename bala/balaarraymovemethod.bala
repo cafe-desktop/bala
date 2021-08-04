@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents the Array.move method.
  */
-public class Vala.ArrayMoveMethod : Method {
+public class Bala.ArrayMoveMethod : Method {
 	/**
 	 * Creates a new array move method.
 	 *

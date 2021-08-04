@@ -4276,7 +4276,7 @@ namespace GLib {
 	}
 
 	/* Simple XML Subset Parser
-	   See http://live.gnome.org/Vala/MarkupSample for an example */
+	   See http://live.gnome.org/Bala/MarkupSample for an example */
 
 	public errordomain MarkupError {
 		BAD_UTF8,

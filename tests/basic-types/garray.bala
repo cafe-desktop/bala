@@ -36,7 +36,7 @@ void test_garray () {
 void test_int_garray () {
 	var array = new GLib.Array<int> ();
 	// g_array_append_val() is a macro which uses a reference to the value parameter and thus can't use constants.
-	// FIXME: allow appending constants in Vala
+	// FIXME: allow appending constants in Bala
 	int val = 1;
 	array.prepend_val (val);
 	val++;

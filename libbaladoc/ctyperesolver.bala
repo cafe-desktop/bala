@@ -21,14 +21,14 @@
  */
 
 
-using Valadoc.Api;
+using Baladoc.Api;
 
 /**
  * Resolves symbols by C-names
  */
-public class Valadoc.CTypeResolver : Visitor {
-	private Vala.Map<string, Api.TypeSymbol> types = new Vala.HashMap<string, Api.TypeSymbol> (str_hash, str_equal);
-	private Vala.Map<string, Api.Node> nodes = new Vala.HashMap<string, Api.Node> (str_hash, str_equal);
+public class Baladoc.CTypeResolver : Visitor {
+	private Bala.Map<string, Api.TypeSymbol> types = new Bala.HashMap<string, Api.TypeSymbol> (str_hash, str_equal);
+	private Bala.Map<string, Api.Node> nodes = new Bala.HashMap<string, Api.Node> (str_hash, str_equal);
 	private Api.Tree tree;
 
 	public CTypeResolver (Api.Tree tree) {
@@ -260,8 +260,8 @@ public class Valadoc.CTypeResolver : Visitor {
 		register_symbol (parent_cname+":"+cname, item);
 
 
-		Vala.Collection<Interface> interfaces;
-		Vala.Collection<Class> classes;
+		Bala.Collection<Interface> interfaces;
+		Bala.Collection<Class> classes;
 
 		if (item.parent is Interface) {
 			interfaces = ((Api.Interface) item.parent).get_known_related_interfaces ();
@@ -329,8 +329,8 @@ public class Valadoc.CTypeResolver : Visitor {
 			register_symbol (parent_cname + "Class." + item.name, item);
 		}
 
-		Vala.Collection<Interface> interfaces = null;
-		Vala.Collection<Class> classes = null;
+		Bala.Collection<Interface> interfaces = null;
+		Bala.Collection<Class> classes = null;
 
 		if (item.parent is Interface) {
 			interfaces = ((Api.Interface) item.parent).get_known_related_interfaces ();

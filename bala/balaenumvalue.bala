@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents an enum value member in the source code.
  */
-public class Vala.EnumValue : Constant {
+public class Bala.EnumValue : Constant {
 	/**
 	 * The nick of this enum-value
 	 */

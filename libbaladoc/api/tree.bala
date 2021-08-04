@@ -21,15 +21,15 @@
  */
 
 
-using Valadoc.Importer;
+using Baladoc.Importer;
 
 /**
  * The root of the code tree.
  */
-public class Valadoc.Api.Tree {
-	private Vala.List<InheritDocContainer> inheritdocs = new Vala.ArrayList<InheritDocContainer> ();
-	private Vala.ArrayList<string> external_c_files = new Vala.ArrayList<string>(str_equal);
-	private Vala.ArrayList<Package> packages = new Vala.ArrayList<Package>();
+public class Baladoc.Api.Tree {
+	private Bala.List<InheritDocContainer> inheritdocs = new Bala.ArrayList<InheritDocContainer> ();
+	private Bala.ArrayList<string> external_c_files = new Bala.ArrayList<string>(str_equal);
+	private Bala.ArrayList<Package> packages = new Bala.ArrayList<Package>();
 	private Package source_package = null;
 	private Settings settings;
 	private ErrorReporter reporter;
@@ -53,7 +53,7 @@ public class Valadoc.Api.Tree {
 		this.packages.add (package);
 	}
 
-	public Vala.CodeContext context {
+	public Bala.CodeContext context {
 		set;
 		get;
 	}
@@ -81,7 +81,7 @@ public class Valadoc.Api.Tree {
 	 *
 	 * @return list of C source files
 	 */
-	public Vala.Collection<string> get_external_c_files () {
+	public Bala.Collection<string> get_external_c_files () {
 		return external_c_files;
 	}
 
@@ -95,13 +95,13 @@ public class Valadoc.Api.Tree {
 	 *
 	 * @return list of all packages
 	 */
-	public Vala.Collection<Package> get_package_list () {
+	public Bala.Collection<Package> get_package_list () {
 		return this.packages;
 	}
 
 	private void add_dependencies_to_source_package () {
 		if ( this.source_package != null ) {
-			Vala.ArrayList<Package> deplst = new Vala.ArrayList<Package> ();
+			Bala.ArrayList<Package> deplst = new Bala.ArrayList<Package> ();
 			foreach (Package pkg in this.packages) {
 				if (pkg != this.source_package) {
 					deplst.add (pkg);
@@ -216,7 +216,7 @@ public class Valadoc.Api.Tree {
 		return params;
 	}
 
-	public Tree (ErrorReporter reporter, Settings settings, Vala.CodeContext context) {
+	public Tree (ErrorReporter reporter, Settings settings, Bala.CodeContext context) {
 		this.settings = settings;
 		this.reporter = reporter;
 		this.context = context;
@@ -322,7 +322,7 @@ public class Valadoc.Api.Tree {
 	public void import_comments (DocumentationImporter[] importers, string[] packages,
 									  string[] import_directories)
 	{
-		Vala.HashSet<string> processed = new Vala.HashSet<string> ();
+		Bala.HashSet<string> processed = new Bala.HashSet<string> ();
 		foreach (string pkg_name in packages) {
 			bool imported = false;
 			foreach (DocumentationImporter importer in importers) {
@@ -332,7 +332,7 @@ public class Valadoc.Api.Tree {
 					continue;
 				}
 
-				path = Vala.CodeContext.realpath (path);
+				path = Bala.CodeContext.realpath (path);
 				imported = true;
 
 				if (!processed.contains (path)) {

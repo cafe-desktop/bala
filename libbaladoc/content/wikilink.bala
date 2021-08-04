@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.WikiLink : InlineContent, Inline {
+public class Baladoc.Content.WikiLink : InlineContent, Inline {
 	public WikiPage page {
 		internal set;
 		get;

@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a preprocessor macro replacement definition in the C code.
  */
-public class Vala.CCodeMacroReplacement : CCodeDefine {
+public class Bala.CCodeMacroReplacement : CCodeDefine {
 	public CCodeMacroReplacement (string name, string replacement) {
 		base (name, replacement);
 	}

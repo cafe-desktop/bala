@@ -20,7 +20,7 @@
  * 	Rico Tzschichholz <ricotz@ubuntu.com>
  */
 
-namespace Vala {
+namespace Bala {
 	/**
 	 * Like get_major_version, but from the headers used at application compile time,
 	 * rather than from the library linked against at application run time

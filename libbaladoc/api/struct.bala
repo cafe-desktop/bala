@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a struct declaration.
  */
-public class Valadoc.Api.Struct : TypeSymbol {
+public class Baladoc.Api.Struct : TypeSymbol {
 	private string? dup_function_cname;
 	private string? copy_function_cname;
 	private string? free_function_cname;
@@ -34,9 +34,9 @@ public class Valadoc.Api.Struct : TypeSymbol {
 	private string? type_id;
 	private string? cname;
 
-	public Struct (Node parent, SourceFile file, string name, Vala.SymbolAccessibility accessibility,
+	public Struct (Node parent, SourceFile file, string name, Bala.SymbolAccessibility accessibility,
 				   SourceComment? comment,
-				   Vala.Struct data)
+				   Bala.Struct data)
 	{
 		bool is_basic_type = data.base_type == null
 			&& (data.is_boolean_type ()
@@ -45,13 +45,13 @@ public class Valadoc.Api.Struct : TypeSymbol {
 
 		base (parent, file, name, accessibility, comment, is_basic_type, data);
 
-		this.dup_function_cname = Vala.get_ccode_dup_function (data);
-		this.copy_function_cname = Vala.get_ccode_copy_function (data);
-		this.free_function_cname = Vala.get_ccode_free_function (data);
-		this.destroy_function_cname = Vala.get_ccode_destroy_function (data);
+		this.dup_function_cname = Bala.get_ccode_dup_function (data);
+		this.copy_function_cname = Bala.get_ccode_copy_function (data);
+		this.free_function_cname = Bala.get_ccode_free_function (data);
+		this.destroy_function_cname = Bala.get_ccode_destroy_function (data);
 
-		this.cname = Vala.get_ccode_name (data);
-		this.type_id = Vala.get_ccode_type_id (data);
+		this.cname = Bala.get_ccode_name (data);
+		this.type_id = Bala.get_ccode_type_id (data);
 	}
 
 	/**
@@ -122,12 +122,12 @@ public class Valadoc.Api.Struct : TypeSymbol {
 	}
 
 
-	private Vala.Set<Struct> _known_child_structs = new Vala.HashSet<Struct> ();
+	private Bala.Set<Struct> _known_child_structs = new Bala.HashSet<Struct> ();
 
 	/**
 	 * Returns a list of all known structs based on this struct
 	 */
-	public Vala.Collection<Struct> get_known_child_structs () {
+	public Bala.Collection<Struct> get_known_child_structs () {
 		return _known_child_structs;
 	}
 

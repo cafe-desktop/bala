@@ -21,18 +21,18 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * A reference to a data type.
  */
-public class Valadoc.Api.TypeReference : Item {
-	private Vala.ArrayList<TypeReference> type_arguments = new Vala.ArrayList<TypeReference> ();
+public class Baladoc.Api.TypeReference : Item {
+	private Bala.ArrayList<TypeReference> type_arguments = new Bala.ArrayList<TypeReference> ();
 	private string? dbus_type_signature;
 	private Ownership ownership;
 
 	public TypeReference (Item parent, bool is_dynamic,
-						  bool is_nullable, string? dbus_type_signature, Vala.DataType? data)
+						  bool is_nullable, string? dbus_type_signature, Bala.DataType? data)
 	{
 		base (data);
 
@@ -43,11 +43,11 @@ public class Valadoc.Api.TypeReference : Item {
 		this.parent = parent;
 	}
 
-	Ownership get_type_reference_ownership (Vala.DataType? element) {
-		unowned Vala.DataType? type = element;
+	Ownership get_type_reference_ownership (Bala.DataType? element) {
+		unowned Bala.DataType? type = element;
 		if (type != null) {
-			if (type.parent_node is Vala.Parameter) {
-				if (((Vala.Parameter) type.parent_node).direction == Vala.ParameterDirection.IN) {
+			if (type.parent_node is Bala.Parameter) {
+				if (((Bala.Parameter) type.parent_node).direction == Bala.ParameterDirection.IN) {
 					if (type.value_owned) {
 						return Ownership.OWNED;
 					}
@@ -57,12 +57,12 @@ public class Valadoc.Api.TypeReference : Item {
 					}
 				}
 				return Ownership.DEFAULT;
-			} else if (type.parent_node is Vala.PropertyAccessor) {
-				if (((Vala.PropertyAccessor) type.parent_node).value_type.value_owned) {
+			} else if (type.parent_node is Bala.PropertyAccessor) {
+				if (((Bala.PropertyAccessor) type.parent_node).value_type.value_owned) {
 					return Ownership.OWNED;
 				}
 				return Ownership.DEFAULT;
-			} else if (type.parent_node is Vala.Constant) {
+			} else if (type.parent_node is Bala.Constant) {
 				return Ownership.DEFAULT;
 			}
 			if (type.is_weak ()) {
@@ -78,7 +78,7 @@ public class Valadoc.Api.TypeReference : Item {
 	 *
 	 * @return type argument list
 	 */
-	public Vala.Collection<TypeReference> get_type_arguments () {
+	public Bala.Collection<TypeReference> get_type_arguments () {
 		return this.type_arguments;
 	}
 

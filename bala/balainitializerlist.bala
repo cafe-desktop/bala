@@ -27,7 +27,7 @@ using GLib;
 /**
  * Represents an array or struct initializer list in the source code.
  */
-public class Vala.InitializerList : Expression {
+public class Bala.InitializerList : Expression {
 	private List<Expression> initializers = new ArrayList<Expression> ();
 
 	/**

@@ -21,15 +21,15 @@
  */
 
 
-using Valadoc.Content;
-using Valadoc.Gtkdoc;
+using Baladoc.Content;
+using Baladoc.Gtkdoc;
 
-public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
+public class Baladoc.Gtkdoc.Parser : Object, ResourceLocator {
 	private Scanner scanner = new Scanner ();
 	private Token current;
 
-	private Vala.List<string> stack = new Vala.ArrayList<string> (str_equal);
-	private Vala.List<Vala.List<Block>> footnotes = new Vala.ArrayList<Vala.ArrayList<Block>> ();
+	private Bala.List<string> stack = new Bala.ArrayList<string> (str_equal);
+	private Bala.List<Bala.List<Block>> footnotes = new Bala.ArrayList<Bala.ArrayList<Block>> ();
 
 	private ContentFactory factory;
 	private ErrorReporter reporter;
@@ -197,7 +197,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 
 
 		// parameters:
-		Vala.MapIterator<string, Api.SourceComment> iter = gir_comment.parameter_iterator ();
+		Bala.MapIterator<string, Api.SourceComment> iter = gir_comment.parameter_iterator ();
 		for (bool has_next = iter.next (); has_next; has_next = iter.next ()) {
 			Taglets.Param? taglet = parse_block_taglet (iter.get_value (), "param") as Taglets.Param;
 			string param_name = iter.get_key ();
@@ -209,7 +209,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 
 
 		bool first = true;
-		foreach (Vala.List<Block> note in this.footnotes) {
+		foreach (Bala.List<Block> note in this.footnotes) {
 			if (first == true && note.size > 0) {
 				Paragraph p = note.first () as Paragraph;
 				if (p == null) {
@@ -581,11 +581,11 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return (Warning?) parse_docbook_information_box_template ("warning", factory.create_warning ());
 	}
 
-	private inline Vala.Collection<Block>? parse_docbook_orderedlist () {
+	private inline Bala.Collection<Block>? parse_docbook_orderedlist () {
 		return parse_docbook_itemizedlist ("orderedlist", Content.List.Bullet.ORDERED);
 	}
 
-	private Vala.Collection<Block>? parse_docbook_itemizedlist (string tag_name = "itemizedlist",
+	private Bala.Collection<Block>? parse_docbook_itemizedlist (string tag_name = "itemizedlist",
 										   Content.List.Bullet bullet_type = Content.List.Bullet.UNORDERED)
 	{
 		if (!check_xml_open_tag (tag_name)) {
@@ -595,7 +595,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		next ();
 
 
-		Vala.Collection<Block> content = new Vala.ArrayList<Block> ();
+		Bala.Collection<Block> content = new Bala.ArrayList<Block> ();
 		parse_docbook_spaces ();
 
 		if (current.type == TokenType.XML_OPEN && current.content == "title") {
@@ -641,8 +641,8 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return p;
 	}
 
-	private Vala.Collection<Block> parse_mixed_content () {
-		Vala.Collection<Block> content = new Vala.ArrayList<Block> ();
+	private Bala.Collection<Block> parse_mixed_content () {
+		Bala.Collection<Block> content = new Bala.ArrayList<Block> ();
 		Token tmp = null;
 
 		while (tmp != current) {
@@ -657,7 +657,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 				continue;
 			}
 
-			Vala.Collection<Block> lst = parse_block_content ();
+			Bala.Collection<Block> lst = parse_block_content ();
 			if (lst != null && lst.size > 0) {
 				content.add_all (lst);
 				continue;
@@ -667,11 +667,11 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return content;
 	}
 
-	private inline Vala.Collection<Block>? parse_docbook_simpara () {
+	private inline Bala.Collection<Block>? parse_docbook_simpara () {
 		return parse_docbook_para ("simpara");
 	}
 
-	private Vala.Collection<Block>? parse_docbook_para (string tag_name = "para") {
+	private Bala.Collection<Block>? parse_docbook_para (string tag_name = "para") {
 		if (!check_xml_open_tag (tag_name)) {
 			this.report_unexpected_token (current, "<%s>".printf (tag_name));
 			return null;
@@ -679,7 +679,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 
 		next ();
 
-		Vala.Collection<Block> content = parse_mixed_content ();
+		Bala.Collection<Block> content = parse_mixed_content ();
 
 		// ignore missing </para> to match gtkdocs behaviour
 		if (!check_xml_close_tag (tag_name) && current.type != TokenType.EOF) {
@@ -831,7 +831,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 	}
 
 /*
-	private Vala.Collection<Block>? parse_docbook_informalexample () {
+	private Bala.Collection<Block>? parse_docbook_informalexample () {
 		if (!check_xml_open_tag ("informalexample")) {
 			this.report_unexpected_token (current, "<informalexample>");
 			return null;
@@ -841,7 +841,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 
 		parse_docbook_spaces ();
 
-		Vala.Collection<Block> content = new Vala.ArrayList<Block> ();
+		Bala.Collection<Block> content = new Bala.ArrayList<Block> ();
 
 		if (current.type == TokenType.XML_OPEN && current.content == "title") {
 			append_block_content_not_null (content, parse_docbook_title ());
@@ -870,11 +870,11 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 	}
 */
 
-	private inline Vala.Collection<Block>? parse_docbook_informalexample () {
+	private inline Bala.Collection<Block>? parse_docbook_informalexample () {
 		return parse_docbook_example ("informalexample");
 	}
 
-	private Vala.Collection<Block>? parse_docbook_example (string tag_name = "example") {
+	private Bala.Collection<Block>? parse_docbook_example (string tag_name = "example") {
 		if (!check_xml_open_tag (tag_name)) {
 			this.report_unexpected_token (current, "<%s>".printf (tag_name));
 			return null;
@@ -884,7 +884,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 
 		parse_docbook_spaces ();
 
-		Vala.Collection<Block> content = new Vala.ArrayList<Block> ();
+		Bala.Collection<Block> content = new Bala.ArrayList<Block> ();
 
 		content.add_all (parse_mixed_content ());
 
@@ -916,7 +916,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return content;
 	}
 
-	private Vala.List<Block>? parse_docbook_refsect2 (int nr = 2) {
+	private Bala.List<Block>? parse_docbook_refsect2 (int nr = 2) {
 		if (!check_xml_open_tag ("refsect%d".printf (nr))) {
 			this.report_unexpected_token (current, "<refsect%d>".printf (nr));
 			return null;
@@ -930,7 +930,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 
 		parse_docbook_spaces ();
 
-		Vala.List<Block> content = new Vala.ArrayList<Block> ();
+		Bala.List<Block> content = new Bala.ArrayList<Block> ();
 
 		this.append_block_content_not_null_all (content, parse_mixed_content ());
 
@@ -943,14 +943,14 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return content;
 	}
 
-	private Vala.List<Block>? parse_docbook_figure () {
+	private Bala.List<Block>? parse_docbook_figure () {
 		if (!check_xml_open_tag ("figure")) {
 			this.report_unexpected_token (current, "<figure>");
 			return null;
 		}
 		next ();
 
-		Vala.List<Block> content = new Vala.ArrayList<Block> ();
+		Bala.List<Block> content = new Bala.ArrayList<Block> ();
 		parse_docbook_spaces ();
 
 		if (current.type == TokenType.XML_OPEN && current.content == "title") {
@@ -997,7 +997,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		int counter = this.footnotes.size + 1;
 		Run? nr = factory.create_run (Run.Style.ITALIC);
 		nr.content.add (factory.create_text ("[%d] ".printf (counter)));
-		Vala.List<Block> content = new Vala.ArrayList<Block> ();
+		Bala.List<Block> content = new Bala.ArrayList<Block> ();
 		this.footnotes.add (content);
 
 		content.add_all (parse_mixed_content ());
@@ -1021,13 +1021,13 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return nr;
 	}
 
-	private inline void append_block_content_not_null_all (Vala.Collection<Block> run, Vala.Collection<Block>? elements) {
+	private inline void append_block_content_not_null_all (Bala.Collection<Block> run, Bala.Collection<Block>? elements) {
 		if (elements != null) {
 			run.add_all (elements);
 		}
 	}
 
-	private inline void append_block_content_not_null (Vala.Collection<Block> run, Block? element) {
+	private inline void append_block_content_not_null (Bala.Collection<Block> run, Block? element) {
 		if (element != null) {
 			run.add (element);
 		}
@@ -1103,7 +1103,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return row;
 	}
 
-	private Vala.Collection<TableRow>? parse_docbook_tbody () {
+	private Bala.Collection<TableRow>? parse_docbook_tbody () {
 		if (!check_xml_open_tag ("tbody")) {
 			this.report_unexpected_token (current, "<tbody>");
 			return null;
@@ -1112,7 +1112,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 
 		parse_docbook_spaces ();
 
-		Vala.Collection<TableRow> rows = new Vala.ArrayList<TableRow> ();
+		Bala.Collection<TableRow> rows = new Bala.ArrayList<TableRow> ();
 		while (current.type == TokenType.XML_OPEN && current.content == "row") {
 			TableRow? row = parse_docbook_row ();
 			if (row == null) {
@@ -1154,7 +1154,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		}
 
 		if (current.type == TokenType.XML_OPEN && current.content == "tbody") {
-			Vala.Collection<TableRow>? rows = parse_docbook_tbody ();
+			Bala.Collection<TableRow>? rows = parse_docbook_tbody ();
 			if (rows != null) {
 				table.rows.add_all (rows);
 			}
@@ -1191,7 +1191,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return table;
 	}
 
-	private Vala.Collection<Block>? parse_docbook_section () {
+	private Bala.Collection<Block>? parse_docbook_section () {
 		if (!check_xml_open_tag ("section")) {
 			this.report_unexpected_token (current, "<section>");
 			return null;
@@ -1203,7 +1203,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		}
 		next ();
 
-		Vala.Collection<Block> content = parse_mixed_content ();
+		Bala.Collection<Block> content = parse_mixed_content ();
 
 		if (!check_xml_close_tag ("section")) {
 			this.report_unexpected_token (current, "</section>");
@@ -1336,7 +1336,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return listitem;
 	}
 
-	private Vala.Collection<Block>? parse_docbook_variablelist () {
+	private Bala.Collection<Block>? parse_docbook_variablelist () {
 		if (!check_xml_open_tag ("variablelist")) {
 			this.report_unexpected_token (current, "<variablelist>");
 			return null;
@@ -1345,7 +1345,7 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 
 		parse_docbook_spaces ();
 
-		Vala.Collection<Block> content = new Vala.ArrayList<Block> ();
+		Bala.Collection<Block> content = new Bala.ArrayList<Block> ();
 
 		if (current.type == TokenType.XML_OPEN && current.content == "title") {
 			append_block_content_not_null (content, parse_docbook_title ());
@@ -1374,8 +1374,8 @@ public class Valadoc.Gtkdoc.Parser : Object, ResourceLocator {
 		return content;
 	}
 
-	private Vala.Collection<Block> parse_block_content () {
-		Vala.Collection<Block> content = new Vala.ArrayList<Block> ();
+	private Bala.Collection<Block> parse_block_content () {
+		Bala.Collection<Block> content = new Bala.ArrayList<Block> ();
 
 		while (current.type != TokenType.EOF) {
 			parse_docbook_spaces (false);

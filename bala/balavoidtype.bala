@@ -25,7 +25,7 @@ using GLib;
 /**
  * The void type.
  */
-public class Vala.VoidType : DataType {
+public class Bala.VoidType : DataType {
 	public VoidType (SourceReference? source_reference = null) {
 		this.source_reference = source_reference;
 	}

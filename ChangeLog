@@ -1398,7 +1398,7 @@
 
 	bala: Don't use possibly uninitialized backing field of package_name
 	Don't check _package_name directly, which may be null at the time
-	installed_version is accessed. This fixes a bug where Vala wouldn't
+	installed_version is accessed. This fixes a bug where Bala wouldn't
 	generate errors when using symbols that are unavailable for a package
 	version.
 
@@ -1615,7 +1615,7 @@
 
 2020-03-13  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	baladoc: Create and register current Vala.CodeContext properly
+	baladoc: Create and register current Bala.CodeContext properly
 
 	bala: Use error() instead of Report.error() inside of CodeContext.get()
 	This is a bad thing while Report.error() actually uses CodeContext.get()
@@ -4015,7 +4015,7 @@
 
 2019-01-19  Corentin Noël  <corentin@elementary.io>
 
-	libbaladoc: Build backing Vala.SourceFile for GIRs processed by importer
+	libbaladoc: Build backing Bala.SourceFile for GIRs processed by importer
 	This fixes criticals when reporting errors and warnings
 
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/738
@@ -4107,7 +4107,7 @@
 	codegen: Include "stddef.h" in CCodeBaseModule.destroy_value() (POSIX)
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/730
 
-	codegen: Set owner for ValaDestroyNotify (POSIX)
+	codegen: Set owner for BalaDestroyNotify (POSIX)
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/730
 
 2019-01-10  Rico Tzschichholz  <ricotz@ubuntu.com>
@@ -4142,7 +4142,7 @@
 
 	gdk-pixbuf-2.0: Make PixbufSaveFunc usable
 	This delegates does place its target at the end, where bala expects
-	the error parameter. Vala does not support that at this point.
+	the error parameter. Bala does not support that at this point.
 
 	See https://gitlab.gnome.org/GNOME/bala/issues/728
 
@@ -4164,7 +4164,7 @@
 
 	gio-2.0: Make DBusInterface[GS]etPropertyFunc usable
 	These delegates don't place their target at the end, but their error
-	parameter. Vala does not support that at this point.
+	parameter. Bala does not support that at this point.
 
 	Introduced with 1df2c050ba29c84026a14e7ee23fa6bcd00b1044
 
@@ -4386,7 +4386,7 @@
 	out-parameters therefore there is an "async_result_pos" attribute required
 	to handle this correctly.
 
-	Vala supposely follows the common practice to put the AsyncResult before
+	Bala supposely follows the common practice to put the AsyncResult before
 	out-parameters by default.
 
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/709
@@ -4565,9 +4565,9 @@
 
 	libbaladoc: Drop Api.Browsable
 
-	libbaladoc: Replace SymbolAccessibility with Vala.SymbolAccessibility
+	libbaladoc: Replace SymbolAccessibility with Bala.SymbolAccessibility
 
-	libbaladoc: Replace FormalParameterType with Vala.ParameterDirection
+	libbaladoc: Replace FormalParameterType with Bala.ParameterDirection
 
 2018-11-24  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -4654,7 +4654,7 @@
 2018-11-20  Alistair Thomas  <astavale@yahoo.co.uk>
 
 	docs: Update build instructions and move them to README.md
-	Updates the links for building Vala and how to bootstrap the build
+	Updates the links for building Bala and how to bootstrap the build
 
 	docs: Use Markdown for README and move to README.md
 
@@ -4857,7 +4857,7 @@
 	testrunner: Check if compiler flags are supported before using them
 	Use AX_CHECK_COMPILE_FLAG to collect TEST_CFLAGS in configure.
 
-	bala: Drop "explicit" from ValaSourceFile and use "from_commandline"
+	bala: Drop "explicit" from BalaSourceFile and use "from_commandline"
 
 2018-11-03  Alistair Thomas  <astavale@yahoo.co.uk>
 
@@ -5500,13 +5500,13 @@
 
 2018-07-04  Alistair Thomas  <astavale@yahoo.co.uk>
 
-	libbaladoc: Change link to Valadoc wiki page for HTML doclet
+	libbaladoc: Change link to Baladoc wiki page for HTML doclet
 	See https://gitlab.gnome.org/GNOME/bala/merge_requests/12
 
 2018-06-30  Alistair Thomas  <astavale@yahoo.co.uk>
 
 	doc: Fix links in the Manual
-	The DocBook source for the Vala Reference Manual is now only
+	The DocBook source for the Bala Reference Manual is now only
 	available through HTTPS. Update the XSLT so links are correctly
 	translated to in document links again.
 
@@ -5593,7 +5593,7 @@
 
 	libbaladoc: Avoid superfluous references of SignatureBuilder
 
-	libbaladoc: Replace void* with corresponding Vala API
+	libbaladoc: Replace void* with corresponding Bala API
 
 	Revert "Fix make check"
 	This reverts commit c0a23c28e964e41798a22fe2866508ad2b37110e.
@@ -5609,10 +5609,10 @@
 	baladoc: Use a more modern stylesheet and icons
 	The icons used in the documentation were recently completely rewritten
 	by Daniel Foré for baladoc.org. I just rendered the icons from
-	https://github.com/Valadoc/baladoc-org to PNG using Inkscape.
+	https://github.com/Baladoc/baladoc-org to PNG using Inkscape.
 
 	The stylesheet is also derived from the baladoc.org one to keep a
-	consistent design across all the Vala resources.
+	consistent design across all the Bala resources.
 
 2018-06-10  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -6929,7 +6929,7 @@
 	vapi: Remove gtksourceview-3.0 bindings
 	This binding was upstreamed 12 August 2014. See:
 	https://git.gnome.org/browse/gtksourceview/commit/?id=44742519a806240a528fd61a19027cf2c24bdf02
-	and have been partially removed from Vala back in 2014:
+	and have been partially removed from Bala back in 2014:
 	https://git.gnome.org/browse/bala/commit/?id=dbc07519e666c2ab9a2ecbee8dc550c0a3741204
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=776023
@@ -7058,7 +7058,7 @@
 	posix: Move signal constants to an enum and add a few missing ones
 	Added signal constants: CLD, EMT, INFO, IO, LOST, PWR, WINCH
 
-	This patch also adds Valadoc documentation for the signals based on the
+	This patch also adds Baladoc documentation for the signals based on the
 	Open Group documentation for signal.h and the header bits/signum.h in
 	GNU's libc version 2.22
 	(http://pubs.opengroup.org/onlinepubs/7908799/xsh/signal.h.html)
@@ -8675,7 +8675,7 @@
 2016-12-05  Yu Feng  <rainwoodman@gmail.com>
 
 	girwriter: Add fullname GIR attribute, and set fullname of GObject.Type
-	In gir files generated by Vala, members of type GType is referenced
+	In gir files generated by Bala, members of type GType is referenced
 	with name "GObject.Type", but GObject-introspection expect it to be
 	"GType".
 
@@ -8966,7 +8966,7 @@
 
 	build: Conditionally adjust BALAFLAGS in case of proper bootsrapped builds
 	This adds --hide-internal to BALAFLAGS to allow symbols to be marked
-	'internal' in Vala source files and not appear in the dynamic symbol table
+	'internal' in Bala source files and not appear in the dynamic symbol table
 	of libbala.
 
 	The build system checks for minimum balac version to fullfill required
@@ -9083,7 +9083,7 @@
 2016-10-12  Alistair Thomas  <astavale@yahoo.co.uk>
 
 	genie: Add empty file check to read_token ()
-	Vala.SourceFile uses GLib.MappedFile.get_contents () to read a source
+	Bala.SourceFile uses GLib.MappedFile.get_contents () to read a source
 	file. This can return null if the file is empty.
 
 	Fixes: https://bugzilla.gnome.org/show_bug.cgi?id=633083
@@ -9969,7 +9969,7 @@
 
 2016-01-10  Florian Brosch  <flo.brosch@gmail.com>
 
-	libbaladoc: Add highlighter for C, XML, Vala
+	libbaladoc: Add highlighter for C, XML, Bala
 
 2016-01-10  Philip Withnall  <philip.withnall@collabora.co.uk>
 
@@ -10792,7 +10792,7 @@
 
 	gtksourceview-3.0: remove from GIR_BINDINGS
 	gtksourceview distributes bindings upstream these days, no need to
-	keep the deprecated copy in the Vala repository updated.
+	keep the deprecated copy in the Bala repository updated.
 
 2014-10-16  Evan Nemerson  <evan@nemerson.com>
 
@@ -11234,7 +11234,7 @@
 
 	Replace WebKit 3.0 bindings with 4.0.
 	WebKitGTK+ is bumping their API version to 4.0 starting with 2.5.1.
-	These bindings haven't been part of a stable Vala release, so it should
+	These bindings haven't been part of a stable Bala release, so it should
 	be safe to just bump the version we distribute, too, instead of adding
 	4.0 alongside 3.0.
 
@@ -11313,7 +11313,7 @@
 	bindings: update GIR-based bindings to latest git
 
 	librsvg-2.0: remove from gir-bindings target
-	The librsvg bindings distributed with Vala have been deprecated in
+	The librsvg bindings distributed with Bala have been deprecated in
 	favor of those distributed with librsvg for some time now.  By
 	removing them from the gir-bindings target we can avoid API changes
 	and keep CI working while still updating the GIR for baladoc.org.
@@ -11405,7 +11405,7 @@
 	gstreamer-rtsp-server-1.0: update bindings
 	The previous bindings only worked for an unstable pre-release version
 	of gstreamer-rtsp-server-1.0.  The new (stable) version is not
-	backwards compatible, so neither can the Vala bindings be.  Since we
+	backwards compatible, so neither can the Bala bindings be.  Since we
 	had to break backwards compatibilitiy, why not go big?  I've taken the
 	opportunity to move the bindings into the Gst.RTSPServer namespace to
 	better match the other gstreamer bindings, as well as other assorted
@@ -11540,7 +11540,7 @@
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=730230
 
-	xcb: Add more methods and use Vala types for accessing data
+	xcb: Add more methods and use Bala types for accessing data
 	https://bugzilla.gnome.org/show_bug.cgi?id=730218
 
 2014-05-31  Luca Bruno  <lucabru@src.gnome.org>
@@ -11551,7 +11551,7 @@
 2014-05-31  Evan Nemerson  <evan@nemerson.com>
 
 	glib-2.0: remove HashTable.get_keys_as_array
-	This was causing a syntax error when trying to compile Vala with an
+	This was causing a syntax error when trying to compile Bala with an
 	older version of balac (whatever is in gnome-continuous).  It looks
 	like we should hold off on adding stuff with this syntax until
 	next cycle.
@@ -11703,7 +11703,7 @@
 	xcb: Remove unnecessary padding fields
 	Some structures allow access to the padding fields from the C structures. Since
 	these don't do anything except make the memory be set out correctly there's no
-	reason to access them from Vala.
+	reason to access them from Bala.
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=730094
 
@@ -12389,7 +12389,7 @@
 
 2013-12-14  Jesse van den Kieboom  <jessevdk@gmail.com>
 
-	Make Vala.Method._base_interface_method weak
+	Make Bala.Method._base_interface_method weak
 	This fixes a circular reference for interface methods which have
 	themselves as their base method.
 
@@ -12446,7 +12446,7 @@
 2013-11-08  Philip Withnall  <philip@tecnocode.co.uk>
 
 	posix: Fix cname of NLItem
-	This fixes the C type of variables of Vala type NLItem.
+	This fixes the C type of variables of Bala type NLItem.
 
 	Closes: https://bugzilla.gnome.org/show_bug.cgi?id=685039
 
@@ -12601,7 +12601,7 @@
 
 	sdl, sdl-image: remove default params preceding parass without defaults
 	They cause a warning from balac, and you always have to provide values
-	for them in Vala, so they really aren't doing any good.
+	for them in Bala, so they really aren't doing any good.
 
 	avahi-client: remove deprecated methods which throw errors.
 	They were wrapper methods which caused a dependency on avahi-gobject
@@ -13060,7 +13060,7 @@
 
 2013-06-15  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	doclets/htm: Properly use Valadoc.Html namespace
+	doclets/htm: Properly use Baladoc.Html namespace
 
 	Fix warnings accessing static members
 
@@ -14084,7 +14084,7 @@
 	the ‘since’ or ‘replacement’ arguments are missing from the
 	attribute, and suitable boilerplate if they are.
 
-	This means that deprecated Vala symbols are now correctly listed
+	This means that deprecated Bala symbols are now correctly listed
 	in the gtk-doc deprecation index.
 
 2012-08-17  Florian Brosch  <flo.brosch@gmail.com>
@@ -14119,7 +14119,7 @@
 	which needs some (boilerplate) documentation.
 
 	doclets/gtkdoc: Add gtk-doc headers for property accessor ‘result_length’ parameters
-	When getting or setting arrays, Vala generates input or output
+	When getting or setting arrays, Bala generates input or output
 	result length parameters, which need to have some (boilerplate)
 	documentation.
 
@@ -14128,9 +14128,9 @@
 	management of the input/return types in C.
 
 	doclets/gtkdoc: Print a warning if gtk-doc sections will be missing a long description
-	If a Valadoc comment is used as the description for a gtk-doc section,
+	If a Baladoc comment is used as the description for a gtk-doc section,
 	gtk-doc will emit a warning if only a short description is provided.
-	This pseudo-forwards that warning to the Valadoc output (from the
+	This pseudo-forwards that warning to the Baladoc output (from the
 	*-undocumented.txt file) so it doesn’t get lost.
 
 	doclet/gtkdoc: Generate gtk-doc comments for class and interface structs
@@ -14138,7 +14138,7 @@
 	‘parent_class’ and ‘parent_iface’ fields.
 
 	Add support for ‘standard’ and ‘private’ subsections in gtk-doc *-sections.txt
-	This shuts gtk-doc up about a lot of symbols which aren’t documented by Valadoc’s
+	This shuts gtk-doc up about a lot of symbols which aren’t documented by Baladoc’s
 	gtk-doc doclet. This includes support for the standard and private symbols in
 	classes, interfaces and error domains.
 
@@ -14184,7 +14184,7 @@
 	particular throw value and description.
 
 	doclet/gtkdoc: Use <code> rather than <blockquote> in for monospace in the gtkdoc doclet
-	<blockquote> is a block-level element, but Valadoc’s ``backtick syntax``
+	<blockquote> is a block-level element, but Baladoc’s ``backtick syntax``
 	for monospaced text is meant to be inline. Use <code> instead.
 
 	Helps: https://bugzilla.gnome.org/show_bug.cgi?id=681721
@@ -14290,7 +14290,7 @@
 
 	libbaladoc: accept @return in constructors
 
-	libbaladoc: accept "Vala ??.??.??-dirty" as driver format
+	libbaladoc: accept "Bala ??.??.??-dirty" as driver format
 
 2012-08-06  Dmitry Vagin  <dmitry2004@yandex.ru>
 
@@ -14574,7 +14574,7 @@
 
 	gio-2.0: fix Settings.bind_with_mapping
 	This method is skipped in the GIR because of the shared user_data
-	parameter.  Vala doesn't support this, either, so to get around it
+	parameter.  Bala doesn't support this, either, so to get around it
 	we have to set has_target = false on the delegates and pass the void*
 	manually.  This also changes the names of the relevant delegates so
 	there is no collision if/when the issue is resolved in GIO.
@@ -14656,14 +14656,14 @@
 2012-06-22  Evan Nemerson  <evan@coeus-group.com>
 
 	libgda-4.0, libgda-report-4.0, librsvg-2.0: deprecate
-	These libraries now distribute Vala bindings upstream which should be
-	preferred over those distributed with Vala.
+	These libraries now distribute Bala bindings upstream which should be
+	preferred over those distributed with Bala.
 
 	vapigen: support deprecated namespace annotations in metadata files
 
 	Give priority to unversioned vapi directory
 	This allows bindings distributed with upstream libraries to be
-	prioritized over bindings distributed with Vala.
+	prioritized over bindings distributed with Bala.
 
 2012-06-20  Evan Nemerson  <evan@coeus-group.com>
 
@@ -14672,7 +14672,7 @@
 
 	vapigen.m4: add an argument for the default value
 	The new argument allows people to specify a default value for enabling
-	Vala API generation (the default default value remains "auto").  This
+	Bala API generation (the default default value remains "auto").  This
 	is to accomodate projects, such as librsvg, which want more predictable
 	builds.
 
@@ -15054,7 +15054,7 @@
 
 2012-03-26  Florian Brosch  <flo.brosch@gmail.com>
 
-	libbaladoc: Fix typo in ValadocDocumentationScanner
+	libbaladoc: Fix typo in BaladocDocumentationScanner
 
 	libbaladoc: documentation fixes
 
@@ -15564,7 +15564,7 @@
 2012-01-18  Luca Bruno  <lucabru@src.gnome.org>
 
 	codegen: Reintroduce memory leak when using generics in interfaces
-	The bug was present in older Vala versions. Reintroducing it to avoid
+	The bug was present in older Bala versions. Reintroducing it to avoid
 	breaking old code, until a proper fix is found.
 
 	See bug 666480.
@@ -15815,7 +15815,7 @@
 2011-12-22  Luca Bruno  <lucabru@src.gnome.org>
 
 	gdk-3.0: Drop the abstract keyword from the Cursor class
-	Vala does not allow creating new Cursor if the class is abstract.
+	Bala does not allow creating new Cursor if the class is abstract.
 	As it doesn't affect its usage at all, drop the keyword
 	instead of breaking the backward compatibility.
 
@@ -16147,7 +16147,7 @@
 2011-10-21  Luca Bruno  <lucabru@src.gnome.org>
 
 	gdk-3.0: Fix regression to the bindings of GdkXEvent
-	Using non-simpletype struct might not be safe as Vala might dereference
+	Using non-simpletype struct might not be safe as Bala might dereference
 	the pointer to void.
 
 	The regression was introduced by the switch to gir.
@@ -16601,7 +16601,7 @@
 
 2011-08-19  Abderrahim Kitouni  <a.kitouni@gmail.com>
 
-	Make Vala.Report.{errors,warnings} fields protected
+	Make Bala.Report.{errors,warnings} fields protected
 
 2011-08-17  Luca Bruno  <lucabru@src.gnome.org>
 
@@ -16772,7 +16772,7 @@
 
 2011-08-06  Florian Brosch  <flo.brosch@gmail.com>
 
-	driver/0.13.x: Make use of Vala.CCodeBaseModule.get_ccode_nick
+	driver/0.13.x: Make use of Bala.CCodeBaseModule.get_ccode_nick
 
 2011-08-06  Luca Bruno  <lucabru@src.gnome.org>
 
@@ -17840,7 +17840,7 @@
 	Fixes bug 650768.
 
 	gtk+-3.0: Add FileFilter.set_filter_name and get_filter_name
-	Vala does not allow specifying methods that do not override interface
+	Bala does not allow specifying methods that do not override interface
 	abstract methods (get_name and set_name in this case from Gtk.Buildable).
 	Workaround the issue by renaming the methods as this feature isn't
 	going to be implemented anytime soon.
@@ -18489,7 +18489,7 @@
 
 	girparser: Always set the type_id for classes and interfaces
 
-	Support setting type_id to Vala.Interface
+	Support setting type_id to Bala.Interface
 
 	girparser: Fix processing deprecation.
 
@@ -18880,7 +18880,7 @@
 
 	GVariant binding: bind g_variant_{get,new}_va
 	I didn't bind these because I didn't know that it was possible to use
-	va_list from Vala.  It is, so bind them.
+	va_list from Bala.  It is, so bind them.
 
 2011-03-01  Michael 'Mickey' Lauer  <mickey@vanille-media.de>
 
@@ -20103,7 +20103,7 @@
 
 2010-11-02  Florian Brosch  <flo.brosch@gmail.com>
 
-	Fix building with Vala 0.12 branch (commit b6c980fe26b3b51399d9bb6cd92a36e900d6eff6)
+	Fix building with Bala 0.12 branch (commit b6c980fe26b3b51399d9bb6cd92a36e900d6eff6)
 
 2010-11-01  Evan Nemerson  <evan@coeus-group.com>
 
@@ -20129,7 +20129,7 @@
 
 2010-10-29  Evan Nemerson  <evan@coeus-group.com>
 
-	Fix building with Vala 0.12 branch
+	Fix building with Bala 0.12 branch
 
 2010-10-29  Florian Brosch  <flo.brosch@gmail.com>
 
@@ -20581,7 +20581,7 @@
 
 2010-10-10  Evan Nemerson  <evan@coeus-group.com>
 
-	Move several enums into the Vala namespace
+	Move several enums into the Bala namespace
 
 2010-10-10  Jürg Billeter  <j@bitron.ch>
 
@@ -21412,7 +21412,7 @@
 
 	readline.vapi: include stdio.h before readline.h
 	This solves compilation error with the readline sample
-	from the wiki http://live.gnome.org/Vala/InputSamples.
+	from the wiki http://live.gnome.org/Bala/InputSamples.
 
 	Fixes bug 626883.
 
@@ -21804,7 +21804,7 @@
 
 	Fixes bug 624923.
 
-	girparser: Add mapping from GIR's gsize to Vala's size_t
+	girparser: Add mapping from GIR's gsize to Bala's size_t
 
 	girparser: Completely ignore <doc> tags
 
@@ -22920,7 +22920,7 @@
 	Fixes bug 618406.
 
 	sqlite3: Cast errmsg to char** in C.
-	Vala's string out arguments are const char**, but sqlite3_exec() and
+	Bala's string out arguments are const char**, but sqlite3_exec() and
 	sqlite3_get_table() expect 'char**'. Add [CCode (type = "char**")] to
 	cast them to the wanted type, thus avoiding a warning from the C
 	compiler.
@@ -23734,7 +23734,7 @@
 
 	Generate dummy return statement to avoid C warning
 
-	Do not generate C code for unreachable Vala code
+	Do not generate C code for unreachable Bala code
 	Fixes bug 598190.
 
 	Avoid conflicts for internal array size variables
@@ -23913,7 +23913,7 @@
 2010-03-21  Jürg Billeter  <j@bitron.ch>
 
 	balac: Add --enable-version-header option
-	Writes Vala version in generated files. Disabled by default for
+	Writes Bala version in generated files. Disabled by default for
 	bootstrapping reasons.
 
 	Based on patch by Marc-André Lureau, fixes bug 608371.
@@ -23927,7 +23927,7 @@
 
 	gtk+-2.0: Hide gtk_tree_iter_{copy,free} bindings
 	Current bindings are broken, however, these functions should never be
-	used from Vala anyway.
+	used from Bala anyway.
 
 	Fixes bug 595697.
 
@@ -25791,7 +25791,7 @@
 
 	Clean up unused GError in case of catch statement without arguments
 	When catch statement has no arguments, no access to a GError is possible
-	from Vala source code. Therefore, do not create temporary variable which
+	from Bala source code. Therefore, do not create temporary variable which
 	is not used. Also, clear error object as it is not passed upwards then.
 
 2009-10-27  Florian Brosch  <flo.brosch@gmail.com>
@@ -25907,7 +25907,7 @@
 
 	Html: Reorder entries to make navigation and lists consistent
 
-	Fix build against Vala master
+	Fix build against Bala master
 
 	Html: Sort members in the navigation
 
@@ -25985,11 +25985,11 @@
 
 2009-10-16  Didier 'Ptitjes  <ptitjes@free.fr>
 
-	Api: Introduce Visitor and refactor Valadoc.Doclet
+	Api: Introduce Visitor and refactor Baladoc.Doclet
 
 	Api: Move to api/, make class names consistent and update Makefile
 
-	Api: Move all classes to the Valadoc.Api namespace
+	Api: Move all classes to the Baladoc.Api namespace
 
 	Make protected API documented by default
 
@@ -26311,7 +26311,7 @@
 
 2009-09-27  Jamie McCracken  <jamiemcc gnome org>
 
-	Genie: Briought Genie up to date with Vala
+	Genie: Briought Genie up to date with Bala
 	Added Async support
 	Added bug fixes
 	Added improved warnings
@@ -26354,7 +26354,7 @@
 	methods, so we need to write them out as two entries corresponding to
 	the .begin and .end submethods respectively.
 
-	To avoid code duplication, the Vala.GirWriter.write_signature method is
+	To avoid code duplication, the Bala.GirWriter.write_signature method is
 	split in two. The inner one takes all attributes that differ between
 	sync and async.begin/end methods as additional arguments and is called
 	twice for the async methods.
@@ -26890,7 +26890,7 @@
 	        ...
 	    </implements>
 
-	by Vala.GIRWriter. Note, that vapigen expects the same format as
+	by Bala.GIRWriter. Note, that vapigen expects the same format as
 	gobject-introspection, so it was not able to read bala-written .girs
 	before the change and is able to read them properly now.
 
@@ -27223,7 +27223,7 @@
 2009-08-17  Mark Lee  <marklee@src.gnome.org>
 
 	gtk+-2.0: Fix Gtk.Table:row-spacing binding
-	gtk_table_set_row_spacing() should not be emitted by Vala as an accessor
+	gtk_table_set_row_spacing() should not be emitted by Bala as an accessor
 	method for GtkTable's row-spacing property, as it has a different function
 	signature.
 
@@ -27342,10 +27342,10 @@
 
 2009-08-15  Jürg Billeter  <j@bitron.ch>
 
-	Replace Vala.InstanceCast class by method
+	Replace Bala.InstanceCast class by method
 
 	glib-2.0: Fix g_strchomp, g_strchug, and g_strstrip bindings
-	Strings are immutable in Vala. Fixes bug 571470.
+	Strings are immutable in Bala. Fixes bug 571470.
 
 	Report error on missing or duplicate entry point
 	Fixes bug 591819.
@@ -27363,7 +27363,7 @@
 	methods with non-int array length parameters to be declared properly.
 	Fixes possible crashes.
 
-	Also adds Vala.CType, to work around the temporary variable type
+	Also adds Bala.CType, to work around the temporary variable type
 	limitations.
 
 	This fix only works with array return types, not with array parameters.
@@ -27880,7 +27880,7 @@
 2009-07-08  Mark Lee  <marklee@src.gnome.org>
 
 	vapigen: Do not doubly-link to the static libgee
-	In the Vala Team PPA, it was reported that the vapigen binary did not run,
+	In the Bala Team PPA, it was reported that the vapigen binary did not run,
 	due to the fact that Gee classes were being registered multiple times. The
 	problem was fixed by removing the explicit reference to libgee in LDADD, as
 	it is already included via libbala.
@@ -27935,7 +27935,7 @@
 	type.
 
 	GAsync: Fix closure's field names
-	Parameter names must be escaped like other Vala variables.
+	Parameter names must be escaped like other Bala variables.
 
 	GAsync: Fix generated sync method variant
 	Yield statements must be ignored in synchronous variant.
@@ -28851,7 +28851,7 @@
 	Fixes bug 492481.
 
 	Remove result variable warning
-	Implicit result variable not planned for Vala 1.0.
+	Implicit result variable not planned for Bala 1.0.
 
 	Remove unused cheader_filename field
 
@@ -28935,7 +28935,7 @@
 
 2009-04-08  Jürg Billeter  <j@bitron.ch>
 
-	Emit line directive when there is no corresponding Vala line
+	Emit line directive when there is no corresponding Bala line
 
 2009-04-08  Rob Taylor  <rob.taylor@codethink.co.uk>
 

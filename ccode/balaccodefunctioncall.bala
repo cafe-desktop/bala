@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a function call in the C code.
  */
-public class Vala.CCodeFunctionCall : CCodeExpression {
+public class Bala.CCodeFunctionCall : CCodeExpression {
 	/**
 	 * The function to be called.
 	 */

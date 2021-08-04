@@ -22,9 +22,9 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
-public class Valadoc.Taglets.Param : BlockContent, Taglet, Block {
+public class Baladoc.Taglets.Param : BlockContent, Taglet, Block {
 	public string parameter_name { internal set; get; }
 
 	public weak Api.Symbol? parameter { private set; get; }
@@ -67,7 +67,7 @@ public class Valadoc.Taglets.Param : BlockContent, Taglet, Block {
 			this.is_this = true;
 			this.position = 0;
 		} else if (parameter_name == "...") {
-			Vala.List<Api.Node> params = container.get_children_by_type (Api.NodeType.FORMAL_PARAMETER, false);
+			Bala.List<Api.Node> params = container.get_children_by_type (Api.NodeType.FORMAL_PARAMETER, false);
 			foreach (Api.Node param in params) {
 				if (((Api.Parameter) param).ellipsis) {
 					this.parameter = (Api.Symbol) param;
@@ -76,7 +76,7 @@ public class Valadoc.Taglets.Param : BlockContent, Taglet, Block {
 				}
 			}
 		} else {
-			Vala.List<Api.Node> params = container.get_children_by_types ({Api.NodeType.FORMAL_PARAMETER,
+			Bala.List<Api.Node> params = container.get_children_by_types ({Api.NodeType.FORMAL_PARAMETER,
 																		  Api.NodeType.TYPE_PARAMETER},
 																		 false);
 			int pos = (has_instance)? 1 : 0;
@@ -134,7 +134,7 @@ public class Valadoc.Taglets.Param : BlockContent, Taglet, Block {
 		visitor.visit_taglet (this);
 	}
 
-	public Vala.List<ContentElement>? get_inheritable_documentation () {
+	public Bala.List<ContentElement>? get_inheritable_documentation () {
 		return content;
 	}
 

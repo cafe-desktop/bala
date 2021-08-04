@@ -23,9 +23,9 @@
 using GLib;
 
 /**
- * Represents a Vala source or VAPI package file.
+ * Represents a Bala source or VAPI package file.
  */
-public class Vala.SourceFile {
+public class Bala.SourceFile {
 	/**
 	 * The name of this source file.
 	 */
@@ -371,7 +371,7 @@ public class Vala.SourceFile {
 	}
 }
 
-public enum Vala.SourceFileType {
+public enum Bala.SourceFileType {
 	NONE,
 	SOURCE,
 	PACKAGE,

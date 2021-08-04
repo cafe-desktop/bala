@@ -21,21 +21,21 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
-private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
-	private Vala.HashMap<Vala.Symbol, Symbol> symbol_map;
+private class Baladoc.Api.InitializerBuilder : Bala.CodeVisitor {
+	private Bala.HashMap<Bala.Symbol, Symbol> symbol_map;
 	private SignatureBuilder signature;
 
-	private Symbol? resolve (Vala.Symbol symbol) {
+	private Symbol? resolve (Bala.Symbol symbol) {
 		return symbol_map.get (symbol);
 	}
 
-	private void write_node (Vala.Symbol vsymbol) {
+	private void write_node (Bala.Symbol vsymbol) {
 		signature.append_symbol (resolve (vsymbol));
 	}
 
-	private void write_type (Vala.DataType vsymbol) {
+	private void write_type (Bala.DataType vsymbol) {
 		if (vsymbol.type_symbol != null) {
 			write_node (vsymbol.type_symbol);
 		} else {
@@ -46,7 +46,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 		if (type_args.size > 0) {
 			signature.append ("<");
 			bool first = true;
-			foreach (Vala.DataType type_arg in type_args) {
+			foreach (Bala.DataType type_arg in type_args) {
 				if (!first) {
 					signature.append (",");
 				} else {
@@ -68,13 +68,13 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_array_creation_expression (Vala.ArrayCreationExpression expr) {
+	public override void visit_array_creation_expression (Bala.ArrayCreationExpression expr) {
 		signature.append_keyword ("new");
 		write_type (expr.element_type);
 		signature.append ("[", false);
 
 		bool first = true;
-		foreach (Vala.Expression size in expr.get_sizes ()) {
+		foreach (Bala.Expression size in expr.get_sizes ()) {
 			if (!first) {
 				signature.append (", ", false);
 			}
@@ -90,7 +90,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 		}
 	}
 
-	public InitializerBuilder (SignatureBuilder signature, Vala.HashMap<Vala.Symbol, Symbol> symbol_map) {
+	public InitializerBuilder (SignatureBuilder signature, Bala.HashMap<Bala.Symbol, Symbol> symbol_map) {
 		this.symbol_map = symbol_map;
 		this.signature = signature;
 	}
@@ -98,10 +98,10 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_binary_expression (Vala.BinaryExpression expr) {
+	public override void visit_binary_expression (Bala.BinaryExpression expr) {
 		expr.left.accept (this);
-		if (expr.operator == Vala.BinaryOperator.IN) {
-			signature.append_keyword (Vala.BinaryOperator.IN.to_string ());
+		if (expr.operator == Bala.BinaryOperator.IN) {
+			signature.append_keyword (Bala.BinaryOperator.IN.to_string ());
 		} else {
 			signature.append (expr.operator.to_string ());
 		}
@@ -112,8 +112,8 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_unary_expression (Vala.UnaryExpression expr) {
-		if (expr.operator == Vala.UnaryOperator.REF || expr.operator == Vala.UnaryOperator.OUT) {
+	public override void visit_unary_expression (Bala.UnaryExpression expr) {
+		if (expr.operator == Bala.UnaryOperator.REF || expr.operator == Bala.UnaryOperator.OUT) {
 			signature.append_keyword (expr.operator.to_string ());
 		} else {
 			signature.append (expr.operator.to_string ());
@@ -124,7 +124,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_assignment (Vala.Assignment a) {
+	public override void visit_assignment (Bala.Assignment a) {
 		a.left.accept (this);
 		signature.append (a.operator.to_string ());
 		a.right.accept (this);
@@ -133,7 +133,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_cast_expression (Vala.CastExpression expr) {
+	public override void visit_cast_expression (Bala.CastExpression expr) {
 		if (expr.is_non_null_cast) {
 			signature.append ("(!)");
 			expr.inner.accept (this);
@@ -157,11 +157,11 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_initializer_list (Vala.InitializerList list) {
+	public override void visit_initializer_list (Bala.InitializerList list) {
 		signature.append ("{", false);
 
 		bool first = true;
-		foreach (Vala.Expression initializer in list.get_initializers ()) {
+		foreach (Bala.Expression initializer in list.get_initializers ()) {
 			if (!first) {
 				signature.append (", ", false);
 			}
@@ -175,7 +175,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_member_access (Vala.MemberAccess expr) {
+	public override void visit_member_access (Bala.MemberAccess expr) {
 		if (expr.symbol_reference != null) {
 			expr.symbol_reference.accept (this);
 		} else {
@@ -186,12 +186,12 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_element_access (Vala.ElementAccess expr) {
+	public override void visit_element_access (Bala.ElementAccess expr) {
 		expr.container.accept (this);
 		signature.append ("[", false);
 
 		bool first = true;
-		foreach (Vala.Expression index in expr.get_indices ()) {
+		foreach (Bala.Expression index in expr.get_indices ()) {
 			if (!first) {
 				signature.append (", ", false);
 			}
@@ -206,7 +206,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_pointer_indirection (Vala.PointerIndirection expr) {
+	public override void visit_pointer_indirection (Bala.PointerIndirection expr) {
 		signature.append ("*", false);
 		expr.inner.accept (this);
 	}
@@ -214,7 +214,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_addressof_expression (Vala.AddressofExpression expr) {
+	public override void visit_addressof_expression (Bala.AddressofExpression expr) {
 		signature.append ("&", false);
 		expr.inner.accept (this);
 	}
@@ -222,7 +222,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_reference_transfer_expression (Vala.ReferenceTransferExpression expr) {
+	public override void visit_reference_transfer_expression (Bala.ReferenceTransferExpression expr) {
 		signature.append ("(", false).append_keyword ("owned", false).append (")", false);
 		expr.inner.accept (this);
 	}
@@ -230,7 +230,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_type_check (Vala.TypeCheck expr) {
+	public override void visit_type_check (Bala.TypeCheck expr) {
 		expr.expression.accept (this);
 		signature.append_keyword ("is");
 		write_type (expr.type_reference);
@@ -239,14 +239,14 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_method_call (Vala.MethodCall expr) {
+	public override void visit_method_call (Bala.MethodCall expr) {
 		// symbol-name:
 		expr.call.symbol_reference.accept (this);
 
 		// parameters:
 		signature.append (" (", false);
 		bool first = true;
-		foreach (Vala.Expression literal in expr.get_argument_list ()) {
+		foreach (Bala.Expression literal in expr.get_argument_list ()) {
 			if (!first) {
 				signature.append (", ", false);
 			}
@@ -260,7 +260,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_slice_expression (Vala.SliceExpression expr) {
+	public override void visit_slice_expression (Bala.SliceExpression expr) {
 		expr.container.accept (this);
 		signature.append ("[", false);
 		expr.start.accept (this);
@@ -272,14 +272,14 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_base_access (Vala.BaseAccess expr) {
+	public override void visit_base_access (Bala.BaseAccess expr) {
 		signature.append_keyword ("base", false);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_postfix_expression (Vala.PostfixExpression expr) {
+	public override void visit_postfix_expression (Bala.PostfixExpression expr) {
 		expr.inner.accept (this);
 		if (expr.increment) {
 			signature.append ("++", false);
@@ -291,7 +291,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_object_creation_expression (Vala.ObjectCreationExpression expr) {
+	public override void visit_object_creation_expression (Bala.ObjectCreationExpression expr) {
 		if (!expr.struct_creation) {
 			signature.append_keyword ("new");
 		}
@@ -302,7 +302,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 
 		//TODO: rm conditional space
 		bool first = true;
-		foreach (Vala.Expression arg in expr.get_argument_list ()) {
+		foreach (Bala.Expression arg in expr.get_argument_list ()) {
 			if (!first) {
 				signature.append (", ", false);
 			}
@@ -316,7 +316,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_sizeof_expression (Vala.SizeofExpression expr) {
+	public override void visit_sizeof_expression (Bala.SizeofExpression expr) {
 		signature.append_keyword ("sizeof", false).append (" (", false);
 		write_type (expr.type_reference);
 		signature.append (")", false);
@@ -325,7 +325,7 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_typeof_expression (Vala.TypeofExpression expr) {
+	public override void visit_typeof_expression (Bala.TypeofExpression expr) {
 		signature.append_keyword ("typeof", false).append (" (", false);
 		write_type (expr.type_reference);
 		signature.append (")", false);
@@ -334,11 +334,11 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_lambda_expression (Vala.LambdaExpression expr) {
+	public override void visit_lambda_expression (Bala.LambdaExpression expr) {
 		signature.append ("(", false);
 
 		bool first = true;
-		foreach (Vala.Parameter param in expr.get_parameters ()) {
+		foreach (Bala.Parameter param in expr.get_parameters ()) {
 			if (!first) {
 				signature.append (", ", false);
 			}
@@ -357,49 +357,49 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_boolean_literal (Vala.BooleanLiteral lit) {
+	public override void visit_boolean_literal (Bala.BooleanLiteral lit) {
 		signature.append_literal (lit.to_string (), false);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_character_literal (Vala.CharacterLiteral lit) {
+	public override void visit_character_literal (Bala.CharacterLiteral lit) {
 		signature.append_literal (lit.to_string (), false);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_integer_literal (Vala.IntegerLiteral lit) {
+	public override void visit_integer_literal (Bala.IntegerLiteral lit) {
 		signature.append_literal (lit.to_string (), false);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_real_literal (Vala.RealLiteral lit) {
+	public override void visit_real_literal (Bala.RealLiteral lit) {
 		signature.append_literal (lit.to_string (), false);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_regex_literal (Vala.RegexLiteral lit) {
+	public override void visit_regex_literal (Bala.RegexLiteral lit) {
 		signature.append_literal (lit.to_string (), false);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_string_literal (Vala.StringLiteral lit) {
+	public override void visit_string_literal (Bala.StringLiteral lit) {
 		signature.append_literal (lit.to_string (), false);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_null_literal (Vala.NullLiteral lit) {
+	public override void visit_null_literal (Bala.NullLiteral lit) {
 		signature.append_literal (lit.to_string (), false);
 	}
 
@@ -408,98 +408,98 @@ private class Valadoc.Api.InitializerBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_field (Vala.Field field) {
+	public override void visit_field (Bala.Field field) {
 		write_node (field);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_constant (Vala.Constant constant) {
+	public override void visit_constant (Bala.Constant constant) {
 		write_node (constant);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_enum_value (Vala.EnumValue ev) {
+	public override void visit_enum_value (Bala.EnumValue ev) {
 		write_node (ev);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_error_code (Vala.ErrorCode ec) {
+	public override void visit_error_code (Bala.ErrorCode ec) {
 		write_node (ec);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_delegate (Vala.Delegate d) {
+	public override void visit_delegate (Bala.Delegate d) {
 		write_node (d);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_method (Vala.Method m) {
+	public override void visit_method (Bala.Method m) {
 		write_node (m);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_creation_method (Vala.CreationMethod m) {
+	public override void visit_creation_method (Bala.CreationMethod m) {
 		write_node (m);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_signal (Vala.Signal sig) {
+	public override void visit_signal (Bala.Signal sig) {
 		write_node (sig);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_class (Vala.Class c) {
+	public override void visit_class (Bala.Class c) {
 		write_node (c);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_struct (Vala.Struct s) {
+	public override void visit_struct (Bala.Struct s) {
 		write_node (s);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_interface (Vala.Interface i) {
+	public override void visit_interface (Bala.Interface i) {
 		write_node (i);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_enum (Vala.Enum en) {
+	public override void visit_enum (Bala.Enum en) {
 		write_node (en);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_error_domain (Vala.ErrorDomain ed) {
+	public override void visit_error_domain (Bala.ErrorDomain ed) {
 		write_node (ed);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_property (Vala.Property prop) {
+	public override void visit_property (Bala.Property prop) {
 		write_node (prop);
 	}
 }

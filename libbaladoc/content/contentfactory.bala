@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.ContentFactory : Object {
+public class Baladoc.Content.ContentFactory : Object {
 
 	public ContentFactory (Settings settings, ResourceLocator locator, ModuleLoader modules) {
 		_settings = settings;

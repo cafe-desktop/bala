@@ -27,14 +27,14 @@
  * @see ModuleLoader
  */
 [CCode (has_target = false)]
-public delegate Type Valadoc.DocletRegisterFunction (ModuleLoader module_loader);
+public delegate Type Baladoc.DocletRegisterFunction (ModuleLoader module_loader);
 
 
 
 /**
  * Provides a mechanism to inspect the API & documentation of programs and libraries
  */
-public interface Valadoc.Doclet : GLib.Object {
+public interface Baladoc.Doclet : GLib.Object {
 
 	/**
 	 * Allows the doclet to inspect the given {@link Api.Tree}

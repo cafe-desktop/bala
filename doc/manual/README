@@ -1,4 +1,4 @@
-Vala Reference Manual
+Bala Reference Manual
 ---------------------
 
 The reference manual can be generated in the following formats:
@@ -19,7 +19,7 @@ Contributing
 ------------
 There are a number of ways you can contribute to improving the manual:
 
- * Raise questions on the Vala communication channels so an edit is then made
+ * Raise questions on the Bala communication channels so an edit is then made
  * Post blogs and other tutorials that can then be used as source material
    for updating the manual
  * Raise a report in bala's issue tracker
@@ -27,10 +27,10 @@ There are a number of ways you can contribute to improving the manual:
 
 Editing the manual
 ------------------
-The manual source is available at: https://wiki.gnome.org/Projects/Vala/Manual
+The manual source is available at: https://wiki.gnome.org/Projects/Bala/Manual
 The wiki version is editable by anyone who has access.
 
-To bring an edit in to the Vala source use 'make update-manual-from-wiki'
+To bring an edit in to the Bala source use 'make update-manual-from-wiki'
 This target will download the manual from the wiki. Using 'git diff' will show
 the changes. 'git add --patch' will allow changes to be added in stages.
 

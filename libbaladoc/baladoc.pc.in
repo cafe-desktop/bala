@@ -8,8 +8,8 @@ pkgdatadir=@pkgdocdatadir@
 pkglibdir=@pkgdoclibdir@
 vapidir=@datadir@/bala/vapi
 
-Name: Valadoc
-Description: The Vala documentation compiler library
+Name: Baladoc
+Description: The Bala documentation compiler library
 Version: @VERSION@
 Requires: gobject-2.0 libgvc libbala@PACKAGE_SUFFIX@
 Requires.private: gmodule-2.0

@@ -21,7 +21,7 @@
  */
 
 
-public class Valadoc.Devhelp.MarkupWriter : Valadoc.MarkupWriter {
+public class Baladoc.Devhelp.MarkupWriter : Baladoc.MarkupWriter {
 
 	public MarkupWriter (FileStream stream, bool xml_declaration = true) {
 		// avoid broken implicit copy

@@ -25,7 +25,7 @@
 /**
  * Specifies the context of a node.
  */
-public enum Valadoc.Api.NodeType {
+public enum Baladoc.Api.NodeType {
 	CLASS,
 	CONSTANT,
 	CREATION_METHOD,

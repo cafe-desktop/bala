@@ -20,7 +20,7 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  US
 # --------------------------------------
 # Check vapigen existence and version
 #
-# See http://live.gnome.org/Vala/UpstreamGuide for detailed documentation
+# See http://live.gnome.org/Bala/UpstreamGuide for detailed documentation
 AC_DEFUN([VAPIGEN_CHECK],
 [
   AS_IF([test "x$3" != "xyes"], [
@@ -32,7 +32,7 @@ AC_DEFUN([VAPIGEN_CHECK],
     ])
 
   AC_ARG_ENABLE([bala],
-    [AS_HELP_STRING([--enable-bala[=@<:@no/auto/yes@:>@]],[build Vala bindings @<:@default=]ifelse($4,,auto,$4)[@:>@])],,[
+    [AS_HELP_STRING([--enable-bala[=@<:@no/auto/yes@:>@]],[build Bala bindings @<:@default=]ifelse($4,,auto,$4)[@:>@])],,[
       AS_IF([test "x$4" = "x"], [
           enable_bala=auto
         ], [
@@ -43,7 +43,7 @@ AC_DEFUN([VAPIGEN_CHECK],
   AS_CASE([$enable_bala], [no], [enable_bala=no],
       [yes], [
         AS_IF([test "x$3" != "xyes" -a "x$found_introspection" != "xyes"], [
-            AC_MSG_ERROR([Vala bindings require GObject Introspection])
+            AC_MSG_ERROR([Bala bindings require GObject Introspection])
           ])
       ], [auto], [
         AS_IF([test "x$3" != "xyes" -a "x$found_introspection" != "xyes"], [

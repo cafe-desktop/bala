@@ -21,7 +21,7 @@
  */
 
 
-public enum Valadoc.Api.Ownership {
+public enum Baladoc.Api.Ownership {
 	DEFAULT,
 	UNOWNED,
 	OWNED,

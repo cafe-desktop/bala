@@ -21,7 +21,7 @@
  */
 
 
-public abstract class Valadoc.Rule : Object {
+public abstract class Baladoc.Rule : Object {
 
 	public static Rule seq (Object[] scheme) {
 		return new SequenceRule (scheme);

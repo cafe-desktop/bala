@@ -21,15 +21,15 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a node in the api tree.
  */
-public abstract class Valadoc.Api.Item : Object {
+public abstract class Baladoc.Api.Item : Object {
 	private Inline _signature;
 
-	public Vala.CodeNode? data {
+	public Bala.CodeNode? data {
 		private set;
 		get;
 	}
@@ -42,7 +42,7 @@ public abstract class Valadoc.Api.Item : Object {
 		get;
 	}
 
-	protected Item (Vala.CodeNode? data) {
+	protected Item (Bala.CodeNode? data) {
 		this.data = data;
 	}
 

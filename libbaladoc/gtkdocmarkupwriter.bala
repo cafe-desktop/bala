@@ -22,7 +22,7 @@
 
 
 
-public class Valadoc.GtkDocMarkupWriter : Valadoc.MarkupWriter {
+public class Baladoc.GtkDocMarkupWriter : Baladoc.MarkupWriter {
 	private unowned StringBuilder builder;
 
 	public void reset () {

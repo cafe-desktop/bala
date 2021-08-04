@@ -22,7 +22,7 @@
  * 	Luca Bruno <lucabru@src.gnome.org>
  */
 
-public class Vala.GLibValue : TargetValue {
+public class Bala.GLibValue : TargetValue {
 	public CCodeExpression cvalue;
 	public bool lvalue;
 	public bool non_null;
@@ -71,7 +71,7 @@ public class Vala.GLibValue : TargetValue {
 	}
 }
 
-namespace Vala {
+namespace Bala {
 	public static unowned CCodeExpression? get_cvalue (Expression expr) {
 		if (expr.target_value == null) {
 			return null;

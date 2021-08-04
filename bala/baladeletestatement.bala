@@ -25,7 +25,7 @@
  *
  * {{{ delete foo; }}}
  */
-public class Vala.DeleteStatement : CodeNode, Statement {
+public class Bala.DeleteStatement : CodeNode, Statement {
 	/**
 	 * Expression representing the instance to be freed.
 	 */

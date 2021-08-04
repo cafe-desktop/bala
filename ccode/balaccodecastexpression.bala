@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a type cast in the generated C code.
  */
-public class Vala.CCodeCastExpression : CCodeExpression {
+public class Bala.CCodeCastExpression : CCodeExpression {
 	/**
 	 * The expression to be cast.
 	 */

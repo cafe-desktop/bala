@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents an expression with one operand in the C code.
  */
-public class Vala.CCodeUnaryExpression : CCodeExpression {
+public class Bala.CCodeUnaryExpression : CCodeExpression {
 	/**
 	 * The unary operator.
 	 */
@@ -82,7 +82,7 @@ public class Vala.CCodeUnaryExpression : CCodeExpression {
 	}
 }
 
-public enum Vala.CCodeUnaryOperator {
+public enum Bala.CCodeUnaryOperator {
 	PLUS,
 	MINUS,
 	LOGICAL_NEGATION,

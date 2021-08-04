@@ -21,7 +21,7 @@
  */
 
 
-internal class Valadoc.OptionalRule : Rule {
+internal class Baladoc.OptionalRule : Rule {
 
 	public OptionalRule (Object scheme) {
 		_scheme = scheme;

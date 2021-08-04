@@ -25,7 +25,7 @@ using GLib;
 /**
  * C function to register a class at runtime.
  */
-public class Vala.ClassRegisterFunction : TypeRegisterFunction {
+public class Bala.ClassRegisterFunction : TypeRegisterFunction {
 	/**
 	 * Specifies the class to be registered.
 	 */

@@ -1,19 +1,19 @@
 [NAME]
-baladoc \- Vala Documentation Tool
+baladoc \- Bala Documentation Tool
 
 [SYNOPSIS]
 .B baladoc
 [\fIOPTION\fR]... \fIFILE\fR...
 
 [DESCRIPTION]
-Valadoc is a documentation generator for generating API documentation
-from Vala source code based on libbala.
+Baladoc is a documentation generator for generating API documentation
+from Bala source code based on libbala.
 
 [BUGS]
 https://gitlab.gnome.org/GNOME/bala/issues
 
 [HOMEPAGE or CONTACT]
-https://wiki.gnome.org/Projects/Valadoc
+https://wiki.gnome.org/Projects/Baladoc
 
 [AUTHORS]
 Florian Brosch

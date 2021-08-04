@@ -28,7 +28,7 @@ using GLib;
  * Code nodes get created by the parser and are used throughout the whole
  * compilation process.
  */
-public abstract class Vala.CodeNode {
+public abstract class Bala.CodeNode {
 	/**
 	 * Parent of this code node.
 	 */
@@ -426,5 +426,5 @@ public abstract class Vala.CodeNode {
 	}
 }
 
-public class Vala.AttributeCache {
+public class Bala.AttributeCache {
 }

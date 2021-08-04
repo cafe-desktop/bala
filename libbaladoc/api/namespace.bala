@@ -21,14 +21,14 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a namespace declaration.
  */
-public class Valadoc.Api.Namespace : Symbol {
-	public Namespace (Api.Node parent, SourceFile file, string? name, SourceComment? comment, Vala.Namespace data) {
-		base (parent, file, name, Vala.SymbolAccessibility.PUBLIC, comment, data);
+public class Baladoc.Api.Namespace : Symbol {
+	public Namespace (Api.Node parent, SourceFile file, string? name, SourceComment? comment, Bala.Namespace data) {
+		base (parent, file, name, Bala.SymbolAccessibility.PUBLIC, comment, data);
 	}
 
 	/**

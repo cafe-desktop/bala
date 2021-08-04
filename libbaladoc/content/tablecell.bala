@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.TableCell : InlineContent, StyleAttributes {
+public class Baladoc.Content.TableCell : InlineContent, StyleAttributes {
 	public HorizontalAlign horizontal_align {
 		get;
 		set;

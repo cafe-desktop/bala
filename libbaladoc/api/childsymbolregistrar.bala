@@ -21,9 +21,9 @@
  */
 
 
-using Valadoc.Api;
+using Baladoc.Api;
 
-public class Valadoc.Api.ChildSymbolRegistrar : Visitor {
+public class Baladoc.Api.ChildSymbolRegistrar : Visitor {
 	/**
 	 * {@inheritDoc}
 	 */
@@ -49,7 +49,7 @@ public class Valadoc.Api.ChildSymbolRegistrar : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_interface (Interface item) {
-		Vala.Collection<TypeReference> interfaces = item.get_implemented_interface_list ();
+		Bala.Collection<TypeReference> interfaces = item.get_implemented_interface_list ();
 		foreach (var type_ref in interfaces) {
 			((Interface) type_ref.data_type).register_related_interface (item);
 		}
@@ -65,7 +65,7 @@ public class Valadoc.Api.ChildSymbolRegistrar : Visitor {
 	 * {@inheritDoc}
 	 */
 	public override void visit_class (Class item) {
-		Vala.Collection<TypeReference> interfaces = item.get_implemented_interface_list ();
+		Bala.Collection<TypeReference> interfaces = item.get_implemented_interface_list ();
 		foreach (TypeReference type_ref in interfaces) {
 			((Interface) type_ref.data_type).register_implementation (item);
 		}

@@ -24,7 +24,7 @@
 /**
  * Represents an access to base type member in the source code.
  */
-public class Vala.BaseAccess : Expression {
+public class Bala.BaseAccess : Expression {
 	/**
 	 * Creates a new base access expression.
 	 *

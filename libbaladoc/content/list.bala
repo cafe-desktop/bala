@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.List : ContentElement, Block {
+public class Baladoc.Content.List : ContentElement, Block {
 	public enum Bullet {
 		NONE,
 		UNORDERED,
@@ -101,18 +101,18 @@ public class Valadoc.Content.List : ContentElement, Block {
 	}
 
 	// TODO add initial value (either a number or some letters)
-	public Vala.List<ListItem> items {
+	public Bala.List<ListItem> items {
 		get {
 			return _items;
 		}
 	}
 
-	private Vala.List<ListItem> _items;
+	private Bala.List<ListItem> _items;
 
 	internal List () {
 		base ();
 		_bullet = Bullet.NONE;
-		_items = new Vala.ArrayList<ListItem> ();
+		_items = new Bala.ArrayList<ListItem> ();
 	}
 
 	public override void check (Api.Tree api_root, Api.Node container, string file_path,

@@ -22,9 +22,9 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
-public class Valadoc.Taglets.Return : BlockContent, Taglet, Block {
+public class Baladoc.Taglets.Return : BlockContent, Taglet, Block {
 	public Rule? get_parser_rule (Rule run_rule) {
 		return run_rule;
 	}
@@ -56,7 +56,7 @@ public class Valadoc.Taglets.Return : BlockContent, Taglet, Block {
 		visitor.visit_taglet (this);
 	}
 
-	public Vala.List<ContentElement>? get_inheritable_documentation () {
+	public Bala.List<ContentElement>? get_inheritable_documentation () {
 		return content;
 	}
 

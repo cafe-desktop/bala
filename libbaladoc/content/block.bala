@@ -20,6 +20,6 @@
  * 	Didier 'Ptitjes Villevalois <ptitjes@free.fr>
  */
 
-public interface Valadoc.Content.Block : ContentElement {
+public interface Baladoc.Content.Block : ContentElement {
 }
 

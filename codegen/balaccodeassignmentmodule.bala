@@ -27,7 +27,7 @@ using GLib;
 /**
  * The link between an assignment and generated code.
  */
-public class Vala.CCodeAssignmentModule : CCodeMemberAccessModule {
+public class Bala.CCodeAssignmentModule : CCodeMemberAccessModule {
 	TargetValue emit_simple_assignment (Assignment assignment) {
 		if (requires_destroy (assignment.left.value_type)) {
 			/* unref old value */

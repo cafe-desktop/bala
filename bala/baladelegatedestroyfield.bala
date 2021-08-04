@@ -23,7 +23,7 @@
 /**
  * Represents the Delegate.destroy field.
  */
-public class Vala.DelegateDestroyField : Field {
+public class Bala.DelegateDestroyField : Field {
 	/**
 	 * Creates a new delegate destroy field.
 	 *

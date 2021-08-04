@@ -20,7 +20,7 @@
  * 	Jürg Billeter <j@bitron.ch>
  */
 
-public class Vala.GDBusModule : GVariantModule {
+public class Bala.GDBusModule : GVariantModule {
 	public static string? get_dbus_name (TypeSymbol symbol) {
 		return symbol.get_attribute_string ("DBus", "name");
 	}

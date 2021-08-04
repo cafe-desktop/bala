@@ -21,17 +21,17 @@
  */
 
 
-using Valadoc.Api;
+using Baladoc.Api;
 
 /**
  * Creates an simpler, minimized, more abstract AST for balacs AST.
  */
-public class Valadoc.TreeBuilder : Vala.CodeVisitor {
-	private Vala.ArrayList<PackageMetaData> packages = new Vala.ArrayList<PackageMetaData> ();
+public class Baladoc.TreeBuilder : Bala.CodeVisitor {
+	private Bala.ArrayList<PackageMetaData> packages = new Bala.ArrayList<PackageMetaData> ();
 	private PackageMetaData source_package;
 
-	private Vala.HashMap<Vala.SourceFile, SourceFile> files = new Vala.HashMap<Vala.SourceFile, SourceFile> ();
-	private Vala.HashMap<Vala.Symbol, Symbol> symbol_map = new Vala.HashMap<Vala.Symbol, Symbol> ();
+	private Bala.HashMap<Bala.SourceFile, SourceFile> files = new Bala.HashMap<Bala.SourceFile, SourceFile> ();
+	private Bala.HashMap<Bala.Symbol, Symbol> symbol_map = new Bala.HashMap<Bala.Symbol, Symbol> ();
 
 	private ErrorReporter reporter;
 	private Settings settings;
@@ -39,7 +39,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	private Api.Node current_node;
 	private Api.Tree tree;
 
-	private Valadoc.Api.Class glib_error = null;
+	private Baladoc.Api.Class glib_error = null;
 
 
 	//
@@ -50,7 +50,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		return glib_error;
 	}
 
-	public Vala.HashMap<Vala.Symbol, Symbol> get_symbol_map () {
+	public Bala.HashMap<Bala.Symbol, Symbol> get_symbol_map () {
 		return symbol_map;
 	}
 
@@ -61,14 +61,14 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 
 	private class PackageMetaData {
 		public Package package;
-		public Vala.HashMap<Vala.Namespace, Namespace> namespaces = new Vala.HashMap<Vala.Namespace, Namespace> ();
-		public Vala.ArrayList<Vala.SourceFile> files = new Vala.ArrayList<Vala.SourceFile> ();
+		public Bala.HashMap<Bala.Namespace, Namespace> namespaces = new Bala.HashMap<Bala.Namespace, Namespace> ();
+		public Bala.ArrayList<Bala.SourceFile> files = new Bala.ArrayList<Bala.SourceFile> ();
 
 		public PackageMetaData (Package package) {
 			this.package = package;
 		}
 
-		public Namespace get_namespace (Vala.Namespace vns, SourceFile file) {
+		public Namespace get_namespace (Bala.Namespace vns, SourceFile file) {
 			Namespace? ns = namespaces.get (vns);
 			if (ns != null) {
 				return ns;
@@ -77,13 +77,13 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 			// find documentation comment if existing:
 			SourceComment? comment = null;
 			if (vns.source_reference != null) {
-				foreach (Vala.Comment c in vns.get_comments()) {
+				foreach (Bala.Comment c in vns.get_comments()) {
 					if (c.source_reference.file == file.data ||
-						(c.source_reference.file.file_type == Vala.SourceFileType.SOURCE
-						 && ((Vala.SourceFile) file.data).file_type == Vala.SourceFileType.SOURCE)
+						(c.source_reference.file.file_type == Bala.SourceFileType.SOURCE
+						 && ((Bala.SourceFile) file.data).file_type == Bala.SourceFileType.SOURCE)
 					) {
-						Vala.SourceReference pos = c.source_reference;
-						if (c is Vala.GirComment) {
+						Bala.SourceReference pos = c.source_reference;
+						if (c is Bala.GirComment) {
 							comment = new GirSourceComment (c.content,
 															file,
 															pos.begin.line,
@@ -110,7 +110,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 				ns = new Namespace (package, file, vns.name, comment, vns);
 				package.add_child (ns);
 			} else {
-				Namespace parent_ns = get_namespace ((Vala.Namespace) parent_vns, file);
+				Namespace parent_ns = get_namespace ((Bala.Namespace) parent_vns, file);
 				ns = new Namespace (parent_ns, file, vns.name, comment, vns);
 				parent_ns.add_child (ns);
 			}
@@ -119,12 +119,12 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 			return ns;
 		}
 
-		public void register_source_file (Vala.SourceFile file) {
+		public void register_source_file (Bala.SourceFile file) {
 			files.add (file);
 		}
 
-		public bool is_package_for_file (Vala.SourceFile source_file) {
-			if (source_file.file_type == Vala.SourceFileType.SOURCE && !package.is_package) {
+		public bool is_package_for_file (Bala.SourceFile source_file) {
+			if (source_file.file_type == Bala.SourceFileType.SOURCE && !package.is_package) {
 				return true;
 			}
 
@@ -137,14 +137,14 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	// Type constructor translation helpers:
 	//
 
-	private Pointer create_pointer (Vala.PointerType vtyperef, Item parent, Api.Node caller) {
+	private Pointer create_pointer (Bala.PointerType vtyperef, Item parent, Api.Node caller) {
 		Pointer ptr = new Pointer (parent, vtyperef);
 
-		Vala.DataType vntype = vtyperef.base_type;
-		if (vntype is Vala.PointerType) {
-			ptr.data_type = create_pointer ((Vala.PointerType) vntype, ptr, caller);
-		} else if (vntype is Vala.ArrayType) {
-			ptr.data_type = create_array ((Vala.ArrayType) vntype, ptr, caller);
+		Bala.DataType vntype = vtyperef.base_type;
+		if (vntype is Bala.PointerType) {
+			ptr.data_type = create_pointer ((Bala.PointerType) vntype, ptr, caller);
+		} else if (vntype is Bala.ArrayType) {
+			ptr.data_type = create_array ((Bala.ArrayType) vntype, ptr, caller);
 		} else {
 			ptr.data_type = create_type_reference (vntype, ptr, caller);
 		}
@@ -152,12 +152,12 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		return ptr;
 	}
 
-	private Api.Array create_array (Vala.ArrayType vtyperef, Item parent, Api.Node caller) {
+	private Api.Array create_array (Bala.ArrayType vtyperef, Item parent, Api.Node caller) {
 		Api.Array arr = new Api.Array (parent, vtyperef);
 
-		Vala.DataType vntype = vtyperef.element_type;
-		if (vntype is Vala.ArrayType) {
-			arr.data_type = create_array ((Vala.ArrayType) vntype, arr, caller);
+		Bala.DataType vntype = vtyperef.element_type;
+		if (vntype is Bala.ArrayType) {
+			arr.data_type = create_array ((Bala.ArrayType) vntype, arr, caller);
 		} else {
 			arr.data_type = create_type_reference (vntype, arr, caller);
 		}
@@ -165,13 +165,13 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		return arr;
 	}
 
-	private TypeReference create_type_reference (Vala.DataType? vtyperef, Item parent, Api.Node caller) {
+	private TypeReference create_type_reference (Bala.DataType? vtyperef, Item parent, Api.Node caller) {
 		bool is_nullable = vtyperef != null
 			&& vtyperef.nullable
-			&& !(vtyperef is Vala.GenericType)
-			&& !(vtyperef is Vala.PointerType);
+			&& !(vtyperef is Bala.GenericType)
+			&& !(vtyperef is Bala.PointerType);
 		string? signature = (vtyperef != null
-			&& vtyperef.type_symbol != null)? Vala.GVariantModule.get_dbus_signature (vtyperef.type_symbol) : null;
+			&& vtyperef.type_symbol != null)? Bala.GVariantModule.get_dbus_signature (vtyperef.type_symbol) : null;
 		bool is_dynamic = vtyperef != null && vtyperef.is_dynamic;
 
 		TypeReference type_ref = new TypeReference (parent,
@@ -180,20 +180,20 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 													signature,
 													vtyperef);
 
-		if (vtyperef is Vala.PointerType) {
-			type_ref.data_type = create_pointer ((Vala.PointerType) vtyperef,  type_ref, caller);
-		} else if (vtyperef is Vala.ArrayType) {
-			type_ref.data_type = create_array ((Vala.ArrayType) vtyperef,  type_ref, caller);
-		//} else if (vtyperef is Vala.GenericType) {
+		if (vtyperef is Bala.PointerType) {
+			type_ref.data_type = create_pointer ((Bala.PointerType) vtyperef,  type_ref, caller);
+		} else if (vtyperef is Bala.ArrayType) {
+			type_ref.data_type = create_array ((Bala.ArrayType) vtyperef,  type_ref, caller);
+		//} else if (vtyperef is Bala.GenericType) {
 		//	type_ref.data_type = new TypeParameter (caller,
 		//											caller.get_source_file (),
-		//											((Vala.GenericType) vtyperef).type_parameter.name,
+		//											((Bala.GenericType) vtyperef).type_parameter.name,
 		//											vtyperef);
 		}
 
 		// type parameters:
 		if (vtyperef != null) {
-			foreach (Vala.DataType vdtype in vtyperef.get_type_arguments ()) {
+			foreach (Bala.DataType vdtype in vtyperef.get_type_arguments ()) {
 				var type_param = create_type_reference (vdtype, type_ref, caller);
 				type_ref.add_type_argument (type_param);
 			}
@@ -208,27 +208,27 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	// Translation helpers:
 	//
 
-	private void process_attributes (Api.Symbol parent, GLib.List<Vala.Attribute> lst) {
-		foreach (Vala.Attribute att in lst) {
+	private void process_attributes (Api.Symbol parent, GLib.List<Bala.Attribute> lst) {
+		foreach (Bala.Attribute att in lst) {
 			Attribute new_attribute = new Attribute (parent, parent.get_source_file (), att.name, att);
 			parent.add_attribute (new_attribute);
 		}
 	}
 
-	private SourceComment? create_comment (Vala.Comment? comment) {
+	private SourceComment? create_comment (Bala.Comment? comment) {
 		if (comment != null) {
-			Vala.SourceReference pos = comment.source_reference;
+			Bala.SourceReference pos = comment.source_reference;
 			SourceFile file = files.get (pos.file);
-			if (comment is Vala.GirComment) {
+			if (comment is Bala.GirComment) {
 				var tmp = new GirSourceComment (comment.content,
 												file,
 												pos.begin.line,
 												pos.begin.column,
 												pos.end.line,
 												pos.end.column);
-				if (((Vala.GirComment) comment).return_content != null) {
-					Vala.SourceReference return_pos = ((Vala.GirComment) comment).return_content.source_reference;
-					tmp.return_comment = new SourceComment (((Vala.GirComment) comment).return_content.content,
+				if (((Bala.GirComment) comment).return_content != null) {
+					Bala.SourceReference return_pos = ((Bala.GirComment) comment).return_content.source_reference;
+					tmp.return_comment = new SourceComment (((Bala.GirComment) comment).return_content.content,
 															file,
 															return_pos.begin.line,
 															return_pos.begin.column,
@@ -236,10 +236,10 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 															return_pos.end.column);
 				}
 
-				Vala.MapIterator<string, Vala.Comment> it = ((Vala.GirComment) comment).parameter_iterator ();
+				Bala.MapIterator<string, Bala.Comment> it = ((Bala.GirComment) comment).parameter_iterator ();
 				while (it.next ()) {
-					Vala.Comment bala_param = it.get_value ();
-					Vala.SourceReference param_pos = bala_param.source_reference;
+					Bala.Comment bala_param = it.get_value ();
+					Bala.SourceReference param_pos = bala_param.source_reference;
 					var param_comment = new SourceComment (bala_param.content,
 														   file,
 														   param_pos.begin.line,
@@ -262,8 +262,8 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		return null;
 	}
 
-	private string get_method_name (Vala.Method element) {
-		if (element is Vala.CreationMethod) {
+	private string get_method_name (Bala.Method element) {
+		if (element is Bala.CreationMethod) {
 			if (element.name == ".new") {
 				return element.parent_symbol.name;
 			} else {
@@ -291,7 +291,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		return meta_data;
 	}
 
-	private SourceFile register_source_file (PackageMetaData meta_data, Vala.SourceFile source_file) {
+	private SourceFile register_source_file (PackageMetaData meta_data, Bala.SourceFile source_file) {
 		SourceFile file = new SourceFile (meta_data.package,
 										  source_file.get_relative_filename (),
 										  source_file.get_csource_filename (),
@@ -302,8 +302,8 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		return file;
 	}
 
-	private SourceFile? get_source_file (Vala.Symbol symbol) {
-		Vala.SourceReference source_ref = symbol.source_reference;
+	private SourceFile? get_source_file (Bala.Symbol symbol) {
+		Bala.SourceReference source_ref = symbol.source_reference;
 		if (source_ref == null) {
 			return null;
 		}
@@ -313,7 +313,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		return file;
 	}
 
-	private Package? find_package_for_file (Vala.SourceFile source_file) {
+	private Package? find_package_for_file (Bala.SourceFile source_file) {
 		foreach (PackageMetaData pkg in this.packages) {
 			if (pkg.is_package_for_file (source_file)) {
 				return pkg.package;
@@ -324,22 +324,22 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	}
 
 
-	private Namespace get_namespace (Package pkg, Vala.Symbol symbol, SourceFile? file) {
+	private Namespace get_namespace (Package pkg, Bala.Symbol symbol, SourceFile? file) {
 		// Find the closest namespace in our bala-tree
-		Vala.Symbol namespace_symbol = symbol;
-		while (!(namespace_symbol is Vala.Namespace)) {
+		Bala.Symbol namespace_symbol = symbol;
+		while (!(namespace_symbol is Bala.Namespace)) {
 			namespace_symbol = namespace_symbol.parent_symbol;
 		}
 
 		PackageMetaData? meta_data = get_package_meta_data (pkg);
 		assert (meta_data != null);
 
-		return meta_data.get_namespace ((Vala.Namespace) namespace_symbol, file);
+		return meta_data.get_namespace ((Bala.Namespace) namespace_symbol, file);
 	}
 
 
 	//
-	// Vala tree creation:
+	// Bala tree creation:
 	//
 
 	private string get_package_name (string path) {
@@ -347,7 +347,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		return file_name.substring (0, file_name.last_index_of_char ('.'));
 	}
 
-	private bool add_package (Vala.CodeContext context, string pkg) {
+	private bool add_package (Bala.CodeContext context, string pkg) {
 		// ignore multiple occurrences of the same package
 		if (context.has_package (pkg)) {
 			return true;
@@ -365,13 +365,13 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 
 		var package_path = context.get_vapi_path (pkg) ?? context.get_gir_path (pkg);
 		if (package_path == null) {
-			Vala.Report.error (null, "Package `%s' not found in specified Vala API directories or GObject-Introspection GIR directories".printf (pkg));
+			Bala.Report.error (null, "Package `%s' not found in specified Bala API directories or GObject-Introspection GIR directories".printf (pkg));
 			return false;
 		}
 
 		context.add_package (pkg);
 
-		var vfile = new Vala.SourceFile (context, Vala.SourceFileType.PACKAGE, package_path);
+		var vfile = new Bala.SourceFile (context, Bala.SourceFileType.PACKAGE, package_path);
 		context.add_source_file (vfile);
 		Package vdpkg = new Package (pkg, true, null);
 		register_source_file (register_package (vdpkg), vfile);
@@ -380,7 +380,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		return true;
 	}
 
-	private void add_deps (Vala.CodeContext context, string file_path, string pkg_name) {
+	private void add_deps (Bala.CodeContext context, string file_path, string pkg_name) {
 		if (FileUtils.test (file_path, FileTest.EXISTS)) {
 			try {
 				string deps_content;
@@ -390,12 +390,12 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 					dep = dep.strip ();
 					if (dep != "") {
 						if (!add_package (context, dep)) {
-							Vala.Report.error (null, "%s, dependency of %s, not found in specified Vala API directories".printf (dep, pkg_name));
+							Bala.Report.error (null, "%s, dependency of %s, not found in specified Bala API directories".printf (dep, pkg_name));
 						}
 					}
 				}
 			} catch (FileError e) {
-				Vala.Report.error (null, "Unable to read dependency file: %s".printf (e.message));
+				Bala.Report.error (null, "Unable to read dependency file: %s".printf (e.message));
 			}
 		}
 	}
@@ -406,10 +406,10 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	 * @param context The code context
 	 * @param packages a list of package names
 	 */
-	private void add_depencies (Vala.CodeContext context, string[] packages) {
+	private void add_depencies (Bala.CodeContext context, string[] packages) {
 		foreach (string package in packages) {
 			if (!add_package (context, package)) {
-				Vala.Report.error (null, "Package `%s' not found in specified Vala API directories or GObject-Introspection GIR directories".printf (package));
+				Bala.Report.error (null, "Package `%s' not found in specified Bala API directories or GObject-Introspection GIR directories".printf (package));
 			}
 		}
 	}
@@ -418,16 +418,16 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	 * Add the specified source file to the context. Only .bala, .vapi, .gs,
 	 * and .c files are supported.
 	 */
-	private void add_documented_files (Vala.CodeContext context, string[] sources) {
+	private void add_documented_files (Bala.CodeContext context, string[] sources) {
 		if (sources == null) {
 			return;
 		}
 
 		foreach (string source in sources) {
 			if (FileUtils.test (source, FileTest.EXISTS)) {
-				var rpath = Vala.CodeContext.realpath (source);
+				var rpath = Bala.CodeContext.realpath (source);
 				if (source.has_suffix (".bala") || source.has_suffix (".gs")) {
-					var source_file = new Vala.SourceFile (context, Vala.SourceFileType.SOURCE, rpath);
+					var source_file = new Bala.SourceFile (context, Bala.SourceFileType.SOURCE, rpath);
 
 					if (source_package == null) {
 						source_package = register_package (new Package (settings.pkg_name, false, null));
@@ -435,14 +435,14 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 
 					register_source_file (source_package, source_file);
 
-					if (context.profile == Vala.Profile.POSIX) {
+					if (context.profile == Bala.Profile.POSIX) {
 						// import the Posix namespace by default (namespace of backend-specific standard library)
-						var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "Posix", null));
+						var ns_ref = new Bala.UsingDirective (new Bala.UnresolvedSymbol (null, "Posix", null));
 						source_file.add_using_directive (ns_ref);
 						context.root.add_using_directive (ns_ref);
-					} else if (context.profile == Vala.Profile.GOBJECT) {
+					} else if (context.profile == Bala.Profile.GOBJECT) {
 						// import the GLib namespace by default (namespace of backend-specific standard library)
-						var ns_ref = new Vala.UsingDirective (new Vala.UnresolvedSymbol (null, "GLib", null));
+						var ns_ref = new Bala.UsingDirective (new Bala.UnresolvedSymbol (null, "GLib", null));
 						source_file.add_using_directive (ns_ref);
 						context.root.add_using_directive (ns_ref);
 					}
@@ -451,7 +451,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 				} else if (source.has_suffix (".vapi") || source.has_suffix (".gir")) {
 					string file_name = get_package_name (source);
 
-					var vfile = new Vala.SourceFile (context, Vala.SourceFileType.PACKAGE, rpath);
+					var vfile = new Bala.SourceFile (context, Bala.SourceFileType.PACKAGE, rpath);
 					context.add_source_file (vfile);
 
 					if (source_package == null) {
@@ -465,15 +465,15 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 					context.add_c_source_file (rpath);
 					tree.add_external_c_files (rpath);
 				} else {
-					Vala.Report.error (null, "%s is not a supported source file type. Only .bala, .vapi, .gs, and .c files are supported.".printf (source));
+					Bala.Report.error (null, "%s is not a supported source file type. Only .bala, .vapi, .gs, and .c files are supported.".printf (source));
 				}
 			} else {
-				Vala.Report.error (null, "%s not found".printf (source));
+				Bala.Report.error (null, "%s not found".printf (source));
 			}
 		}
 	}
 
-	private void create_balac_tree (Vala.CodeContext context, Settings settings) {
+	private void create_balac_tree (Bala.CodeContext context, Settings settings) {
 		// settings:
 		context.experimental = settings.experimental;
 		context.experimental_non_null = settings.experimental || settings.experimental_non_null;
@@ -483,13 +483,13 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		context.gir_directories = settings.gir_directories;
 
 		if (settings.basedir == null) {
-			context.basedir = Vala.CodeContext.realpath (".");
+			context.basedir = Bala.CodeContext.realpath (".");
 		} else {
-			context.basedir = Vala.CodeContext.realpath (settings.basedir);
+			context.basedir = Bala.CodeContext.realpath (settings.basedir);
 		}
 
 		if (settings.directory != null) {
-			context.directory = Vala.CodeContext.realpath (settings.directory);
+			context.directory = Bala.CodeContext.realpath (settings.directory);
 		} else {
 			context.directory = context.basedir;
 		}
@@ -497,7 +497,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 
 		// add default packages:
 		if (settings.profile == "gobject-2.0" || settings.profile == "gobject" || settings.profile == null) {
-			context.profile = Vala.Profile.GOBJECT;
+			context.profile = Bala.Profile.GOBJECT;
 			context.add_define ("GOBJECT");
 		}
 
@@ -508,18 +508,18 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 			}
 		}
 
-		if (context.profile == Vala.Profile.GOBJECT) {
+		if (context.profile == Bala.Profile.GOBJECT) {
 			if (settings.target_glib != null) {
 				context.set_target_glib_version (settings.target_glib);
 			}
 
 			// default packages
 			if (!this.add_package (context, "glib-2.0")) { //
-				Vala.Report.error (null, "glib-2.0 not found in specified Vala API directories");
+				Bala.Report.error (null, "glib-2.0 not found in specified Bala API directories");
 			}
 
 			if (!this.add_package (context, "gobject-2.0")) { //
-				Vala.Report.error (null, "gobject-2.0 not found in specified Vala API directories");
+				Bala.Report.error (null, "gobject-2.0 not found in specified Bala API directories");
 			}
 		}
 
@@ -535,7 +535,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		}
 
 		// parse bala-code:
-		Vala.Parser parser = new Vala.Parser ();
+		Bala.Parser parser = new Bala.Parser ();
 
 		parser.parse (context);
 		if (context.report.get_errors () > 0) {
@@ -543,7 +543,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		}
 
 		// parse gir:
-		Vala.GirParser gir_parser = new Vala.GirParser ();
+		Bala.GirParser gir_parser = new Bala.GirParser ();
 
 		gir_parser.parse (context);
 		if (context.report.get_errors () > 0) {
@@ -560,22 +560,22 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 
 
 	//
-	// Valadoc tree creation:
+	// Baladoc tree creation:
 	//
 
-	private void process_children (Api.Node node, Vala.CodeNode element) {
+	private void process_children (Api.Node node, Bala.CodeNode element) {
 		Api.Node old_node = current_node;
 		current_node = node;
 		element.accept_children (this);
 		current_node = old_node;
 	}
 
-	private Api.Node get_parent_node_for (Vala.Symbol element) {
+	private Api.Node get_parent_node_for (Bala.Symbol element) {
 		if (current_node != null) {
 			return current_node;
 		}
 
-		Vala.SourceFile bala_source_file = element.source_reference.file;
+		Bala.SourceFile bala_source_file = element.source_reference.file;
 		Package package = find_package_for_file (bala_source_file);
 		SourceFile? source_file = get_source_file (element);
 
@@ -585,14 +585,14 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_namespace (Vala.Namespace element) {
+	public override void visit_namespace (Bala.Namespace element) {
 		element.accept_children (this);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_class (Vala.Class element) {
+	public override void visit_class (Bala.Class element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -607,12 +607,12 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		parent.add_child (node);
 
 		// relations
-		foreach (Vala.DataType bala_type_ref in element.get_base_types ()) {
+		foreach (Bala.DataType bala_type_ref in element.get_base_types ()) {
 			var type_ref = create_type_reference (bala_type_ref, node, node);
 
-			if (bala_type_ref.type_symbol is Vala.Interface) {
+			if (bala_type_ref.type_symbol is Bala.Interface) {
 				node.add_interface (type_ref);
-			} else if (bala_type_ref.type_symbol is Vala.Class) {
+			} else if (bala_type_ref.type_symbol is Bala.Class) {
 				node.base_type = type_ref;
 			}
 		}
@@ -629,7 +629,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_interface (Vala.Interface element) {
+	public override void visit_interface (Bala.Interface element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -644,9 +644,9 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		parent.add_child (node);
 
 		// prerequisites:
-		foreach (Vala.DataType bala_type_ref in element.get_prerequisites ()) {
+		foreach (Bala.DataType bala_type_ref in element.get_prerequisites ()) {
 			TypeReference type_ref = create_type_reference (bala_type_ref, node, node);
-			if (bala_type_ref.type_symbol is Vala.Interface) {
+			if (bala_type_ref.type_symbol is Bala.Interface) {
 				node.add_interface (type_ref);
 			} else {
 				node.base_type = type_ref;
@@ -660,7 +660,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_struct (Vala.Struct element) {
+	public override void visit_struct (Bala.Struct element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -675,7 +675,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		parent.add_child (node);
 
 		// parent type:
-		Vala.ValueType? basetype = element.base_type as Vala.ValueType;
+		Bala.ValueType? basetype = element.base_type as Bala.ValueType;
 		if (basetype != null) {
 			node.base_type = create_type_reference (basetype, node, node);
 		}
@@ -687,7 +687,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_field (Vala.Field element) {
+	public override void visit_field (Bala.Field element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -709,7 +709,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_property (Vala.Property element) {
+	public override void visit_property (Bala.Property element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -750,7 +750,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_creation_method (Vala.CreationMethod element) {
+	public override void visit_creation_method (Bala.CreationMethod element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -772,7 +772,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_method (Vala.Method element) {
+	public override void visit_method (Bala.Method element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -794,7 +794,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_signal (Vala.Signal element) {
+	public override void visit_signal (Bala.Signal element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -816,7 +816,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_delegate (Vala.Delegate element) {
+	public override void visit_delegate (Bala.Delegate element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -838,7 +838,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_enum (Vala.Enum element) {
+	public override void visit_enum (Bala.Enum element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -859,7 +859,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_enum_value (Vala.EnumValue element) {
+	public override void visit_enum_value (Bala.EnumValue element) {
 		Api.Enum parent = (Enum) get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -879,7 +879,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_constant (Vala.Constant element) {
+	public override void visit_constant (Bala.Constant element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -901,7 +901,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_error_domain (Vala.ErrorDomain element) {
+	public override void visit_error_domain (Bala.ErrorDomain element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		SourceComment? comment = create_comment (element.comment);
@@ -922,7 +922,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_error_code (Vala.ErrorCode element) {
+	public override void visit_error_code (Bala.ErrorCode element) {
 		Api.ErrorDomain parent = (ErrorDomain) get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 		if (file == null) {
@@ -946,7 +946,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_type_parameter (Vala.TypeParameter element) {
+	public override void visit_type_parameter (Bala.TypeParameter element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 
@@ -963,7 +963,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	/**
 	 * {@inheritDoc}
 	 */
-	public override void visit_formal_parameter (Vala.Parameter element) {
+	public override void visit_formal_parameter (Bala.Parameter element) {
 		Api.Node parent = get_parent_node_for (element);
 		SourceFile? file = get_source_file (element);
 
@@ -989,7 +989,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		this.settings = settings;
 		this.reporter = reporter;
 
-		var context = Vala.CodeContext.get ();
+		var context = Bala.CodeContext.get ();
 
 		this.tree = new Api.Tree (reporter, settings, context);
 		create_balac_tree (context, settings);
@@ -999,8 +999,8 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 
 		// TODO: Register all packages here
 		// register packages included by gir-files
-		foreach (Vala.SourceFile vfile in context.get_source_files ()) {
-			if (vfile.file_type == Vala.SourceFileType.PACKAGE
+		foreach (Bala.SourceFile vfile in context.get_source_files ()) {
+			if (vfile.file_type == Bala.SourceFileType.PACKAGE
 				&& vfile.get_nodes ().size > 0
 				&& files.contains (vfile) == false)
 			{

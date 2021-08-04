@@ -23,7 +23,7 @@
 /**
  * Represents the Delegate.target field.
  */
-public class Vala.DelegateTargetField : Field {
+public class Bala.DelegateTargetField : Field {
 	/**
 	 * Creates a new delegate target field.
 	 *

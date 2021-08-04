@@ -21,9 +21,9 @@
  */
 
 using GLib;
-using Valadoc.Content;
+using Baladoc.Content;
 
-public class Valadoc.Html.HtmlRenderer : ContentRenderer {
+public class Baladoc.Html.HtmlRenderer : ContentRenderer {
 
 	protected Documentation? _container;
 	protected Documentation? _owner;
@@ -107,7 +107,7 @@ public class Valadoc.Html.HtmlRenderer : ContentRenderer {
 	private delegate void TagletWrite (Taglet taglet);
 
 	private void write_taglets (Write header, Write footer, Write separator,
-	                            Vala.List<Taglet> taglets, TagletWrite write) {
+	                            Bala.List<Taglet> taglets, TagletWrite write) {
 		if (taglets.size > 0) {
 			header ();
 			bool first = true;
@@ -123,7 +123,7 @@ public class Valadoc.Html.HtmlRenderer : ContentRenderer {
 	}
 
 	public override void visit_comment (Comment element) {
-		Vala.List<Taglet> taglets;
+		Bala.List<Taglet> taglets;
 
 		taglets = element.find_taglets ((Api.Node) _container, typeof (Taglets.Deprecated));
 		write_taglets (

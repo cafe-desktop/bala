@@ -21,7 +21,7 @@
  */
 
 
-public class Vala.Template : Expression {
+public class Bala.Template : Expression {
 	private List<Expression> expression_list = new ArrayList<Expression> ();
 
 	public Template (SourceReference? source_reference = null) {

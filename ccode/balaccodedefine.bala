@@ -26,7 +26,7 @@ using GLib;
 /**
  * Represents a definition in the C code.
  */
-public class Vala.CCodeDefine : CCodeNode {
+public class Bala.CCodeDefine : CCodeNode {
 	/**
 	 * The name of this definition.
 	 */

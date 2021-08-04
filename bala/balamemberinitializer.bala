@@ -26,7 +26,7 @@ using GLib;
  * Represents a member initializer, i.e. an element of an object initializer, in
  * the source code.
  */
-public class Vala.MemberInitializer : CodeNode {
+public class Bala.MemberInitializer : CodeNode {
 	/**
 	 * Member name.
 	 */

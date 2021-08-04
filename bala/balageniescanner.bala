@@ -26,7 +26,7 @@ using GLib;
 /**
  * Lexical scanner for Genie source files.
  */
-public class Vala.Genie.Scanner {
+public class Bala.Genie.Scanner {
 	public SourceFile source_file { get; private set; }
 
 	public int indent_spaces { get; set;}

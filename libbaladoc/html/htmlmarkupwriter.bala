@@ -21,9 +21,9 @@
  */
 
 using GLib;
-using Valadoc.Content;
+using Baladoc.Content;
 
-public class Valadoc.Html.MarkupWriter : Valadoc.MarkupWriter {
+public class Baladoc.Html.MarkupWriter : Baladoc.MarkupWriter {
 
 	public MarkupWriter (FileStream stream, bool html5_declaration = true) {
 		// avoid broken implicit copy

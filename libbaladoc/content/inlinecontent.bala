@@ -22,17 +22,17 @@
  */
 
 
-public abstract class Valadoc.Content.InlineContent : ContentElement {
-	public Vala.List<Inline> content {
+public abstract class Baladoc.Content.InlineContent : ContentElement {
+	public Bala.List<Inline> content {
 		get {
 			return _content;
 		}
 	}
 
-	private Vala.List<Inline> _content;
+	private Bala.List<Inline> _content;
 
 	construct {
-		_content = new Vala.ArrayList<Inline> ();
+		_content = new Bala.ArrayList<Inline> ();
 	}
 
 	internal InlineContent () {

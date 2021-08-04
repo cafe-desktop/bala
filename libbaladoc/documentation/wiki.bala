@@ -21,7 +21,7 @@
  */
 
 
-public class Valadoc.WikiPage : Object, Documentation {
+public class Baladoc.WikiPage : Object, Documentation {
 	public Content.Page documentation {
 		protected set;
 		get;
@@ -80,15 +80,15 @@ public class Valadoc.WikiPage : Object, Documentation {
 }
 
 
-public class Valadoc.WikiPageTree : Object {
-	private Vala.ArrayList<WikiPage> wikipages;
+public class Baladoc.WikiPageTree : Object {
+	private Bala.ArrayList<WikiPage> wikipages;
 
 
 	public WikiPageTree () {
 	}
 
-	public Vala.Collection<WikiPage> get_pages () {
-		return this.wikipages == null ? new Vala.ArrayList<WikiPage> () : this.wikipages;
+	public Bala.Collection<WikiPage> get_pages () {
+		return this.wikipages == null ? new Bala.ArrayList<WikiPage> () : this.wikipages;
 	}
 
 	public WikiPage? search (string name) {
@@ -135,7 +135,7 @@ public class Valadoc.WikiPageTree : Object {
 			return ;
 		}
 
-		this.wikipages = new Vala.ArrayList<WikiPage> ();
+		this.wikipages = new Bala.ArrayList<WikiPage> ();
 		this.create_tree_from_path (docparser, package, reporter, path);
 
 		foreach (WikiPage page in this.wikipages) {

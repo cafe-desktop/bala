@@ -25,7 +25,7 @@ using GLib;
 /**
  * The root of the code tree.
  */
-public class Vala.CodeContext {
+public class Bala.CodeContext {
 	/**
 	 * Enable run-time checks for programming errors.
 	 */
@@ -331,7 +331,7 @@ public class Vala.CodeContext {
 	 * @param filename a path to a source file
 	 * @return the source file if found
 	 */
-	public unowned Vala.SourceFile? get_source_file (string filename) {
+	public unowned Bala.SourceFile? get_source_file (string filename) {
 		return source_files_map.get (filename);
 	}
 
@@ -393,7 +393,7 @@ public class Vala.CodeContext {
 			path = get_gir_path (pkg);
 		}
 		if (path == null) {
-			Report.error (null, "Package `%s' not found in specified Vala API directories or GObject-Introspection GIR directories".printf (pkg));
+			Report.error (null, "Package `%s' not found in specified Bala API directories or GObject-Introspection GIR directories".printf (pkg));
 			return false;
 		}
 
@@ -572,7 +572,7 @@ public class Vala.CodeContext {
 		if (API_VERSION.scanf ("%d.%d", out api_major, out api_minor) != 2
 		    || api_major > 0
 		    || api_minor % 2 != 0) {
-			Report.error (null, "Invalid format for Vala.API_VERSION");
+			Report.error (null, "Invalid format for Bala.API_VERSION");
 			return;
 		}
 

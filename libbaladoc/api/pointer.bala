@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a pointer declaration.
  */
-public class Valadoc.Api.Pointer : Item {
+public class Baladoc.Api.Pointer : Item {
 
 	/**
 	 * The type the pointer is referring to.
@@ -36,7 +36,7 @@ public class Valadoc.Api.Pointer : Item {
 		get;
 	}
 
-	public Pointer (Item parent, Vala.PointerType data) {
+	public Pointer (Item parent, Bala.PointerType data) {
 		base (data);
 
 		this.parent = parent;
