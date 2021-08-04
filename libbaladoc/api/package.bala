@@ -21,10 +21,10 @@
  */
 
 
-using Valadoc.Content;
-using Valadoc.Importer;
+using Baladoc.Content;
+using Baladoc.Importer;
 
-public class Valadoc.Api.Package : Node {
+public class Baladoc.Api.Package : Node {
 
 	/**
 	 * Specifies whether this package is a dependency
@@ -34,17 +34,17 @@ public class Valadoc.Api.Package : Node {
 		 get;
 	}
 
-	internal void set_dependency_list (Vala.ArrayList<Package> list) {
+	internal void set_dependency_list (Bala.ArrayList<Package> list) {
 		this._dependencies = list;
 	}
 
-	private Vala.ArrayList<Package> _dependencies;
+	private Bala.ArrayList<Package> _dependencies;
 
 	/**
 	 * Returns a list with all dependencies
 	 */
-	public Vala.Collection<Package> get_full_dependency_list () {
-		Vala.ArrayList<Package> list = new Vala.ArrayList<Package> ();
+	public Bala.Collection<Package> get_full_dependency_list () {
+		Bala.ArrayList<Package> list = new Bala.ArrayList<Package> ();
 
 		if (this._dependencies == null) {
 			return list;
@@ -65,15 +65,15 @@ public class Valadoc.Api.Package : Node {
 		return list;
 	}
 
-	public Vala.Collection<Package> get_dependency_list () {
+	public Bala.Collection<Package> get_dependency_list () {
 		if (this._dependencies == null) {
-			return new Vala.ArrayList<Package> ();
+			return new Bala.ArrayList<Package> ();
 		}
 
 		return this._dependencies;
 	}
 
-	public Package (string name, bool is_package, Vala.CodeNode? data) {
+	public Package (string name, bool is_package, Bala.CodeNode? data) {
 		base (null, null, name, data);
 
 		this.is_package = is_package;
@@ -81,29 +81,29 @@ public class Valadoc.Api.Package : Node {
 	}
 
 	// <version, symbols>
-	private Vala.HashMap<string, Vala.ArrayList<Symbol>> deprecated;
+	private Bala.HashMap<string, Bala.ArrayList<Symbol>> deprecated;
 
 	internal void register_deprecated_symbol (Symbol symbol, string? version) {
 		if (deprecated == null) {
-			deprecated = new Vala.HashMap<string, Vala.ArrayList<Symbol>> (str_hash, str_equal);
+			deprecated = new Bala.HashMap<string, Bala.ArrayList<Symbol>> (str_hash, str_equal);
 		}
 
 		if (version == null) {
 			version = "0xdeadbeef";
 		}
 
-		Vala.ArrayList<Symbol> list = deprecated.get (version);
+		Bala.ArrayList<Symbol> list = deprecated.get (version);
 		if (list == null) {
-			list = new Vala.ArrayList<Symbol> ();
+			list = new Bala.ArrayList<Symbol> ();
 			deprecated.set (version, list);
 		}
 
 		list.add (symbol);
 	}
 
-	public Vala.Map<string, Vala.Collection<Symbol>> get_deprecated_symbols () {
+	public Bala.Map<string, Bala.Collection<Symbol>> get_deprecated_symbols () {
 		if (deprecated == null) {
-			return new Vala.HashMap<string, Vala.Collection<Symbol>> (str_hash, str_equal);
+			return new Bala.HashMap<string, Bala.Collection<Symbol>> (str_hash, str_equal);
 		}
 
 		return deprecated;

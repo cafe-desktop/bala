@@ -24,7 +24,7 @@
 /**
  * Metadata reader for GIR files
  */
-public class Valadoc.GirMetaData : Object {
+public class Baladoc.GirMetaData : Object {
 	private string? metadata_path = null;
 	private string? resource_dir = null;
 

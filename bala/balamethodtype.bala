@@ -25,7 +25,7 @@ using GLib;
 /**
  * The type of a method referencea.
  */
-public class Vala.MethodType : CallableType {
+public class Bala.MethodType : CallableType {
 	public weak Method method_symbol {
 		get {
 			return (Method) symbol;

@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.Note : BlockContent, Block {
+public class Baladoc.Content.Note : BlockContent, Block {
 	internal Note () {
 		base ();
 	}

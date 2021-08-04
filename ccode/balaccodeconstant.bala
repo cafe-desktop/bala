@@ -25,7 +25,7 @@ using GLib;
 /**
  * A constant C expression.
  */
-public class Vala.CCodeConstant : CCodeExpression {
+public class Bala.CCodeConstant : CCodeExpression {
 	/**
 	 * The name of this constant.
 	 */

@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a type check (`is`) expression in the source code.
  */
-public class Vala.TypeCheck : Expression {
+public class Bala.TypeCheck : Expression {
 	/**
 	 * The expression to be checked.
 	 */

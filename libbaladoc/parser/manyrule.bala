@@ -21,7 +21,7 @@
  */
 
 
-internal class Valadoc.ManyRule : Rule {
+internal class Baladoc.ManyRule : Rule {
 
 	public ManyRule (Object scheme) {
 		_scheme = scheme;

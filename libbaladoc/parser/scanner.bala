@@ -21,7 +21,7 @@
  */
 
 
-public interface Valadoc.Scanner : Object {
+public interface Baladoc.Scanner : Object {
 
 	public abstract void set_parser (Parser parser);
 

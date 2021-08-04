@@ -21,25 +21,25 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a property declaration.
  */
-public class Valadoc.Api.Property : Symbol {
+public class Baladoc.Api.Property : Symbol {
 	private string? dbus_name;
 	private string? cname;
 
-	public Property (Node parent, SourceFile file, string name, Vala.SymbolAccessibility accessibility,
+	public Property (Node parent, SourceFile file, string name, Bala.SymbolAccessibility accessibility,
 					 SourceComment? comment,
-					 Vala.Property data)
+					 Bala.Property data)
 	{
 		base (parent, file, name, accessibility, comment, data);
 
-		this.is_dbus_visible = Vala.GDBusModule.is_dbus_visible (data);
+		this.is_dbus_visible = Bala.GDBusModule.is_dbus_visible (data);
 
-		this.dbus_name = Vala.GDBusModule.get_dbus_name_for_member (data);
-		this.cname = Vala.get_ccode_name (data);
+		this.dbus_name = Bala.GDBusModule.get_dbus_name_for_member (data);
+		this.cname = Bala.get_ccode_name (data);
 	}
 
 	/**
@@ -69,7 +69,7 @@ public class Valadoc.Api.Property : Symbol {
 	 */
 	public bool is_virtual {
 		get {
-			return ((Vala.Property) data).is_virtual;
+			return ((Bala.Property) data).is_virtual;
 		}
 	}
 
@@ -78,7 +78,7 @@ public class Valadoc.Api.Property : Symbol {
 	 */
 	public bool is_abstract {
 		get {
-			return ((Vala.Property) data).is_abstract;
+			return ((Bala.Property) data).is_abstract;
 		}
 	}
 
@@ -87,7 +87,7 @@ public class Valadoc.Api.Property : Symbol {
 	 */
 	public bool is_override {
 		get {
-			return ((Vala.Property) data).overrides;
+			return ((Bala.Property) data).overrides;
 		}
 	}
 

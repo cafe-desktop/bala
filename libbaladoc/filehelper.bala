@@ -21,7 +21,7 @@
  */
 
 
-namespace Valadoc {
+namespace Baladoc {
 	/**
 	 * Makes a copy of the file src to dest.
 	 *

@@ -1,5 +1,5 @@
 namespace GLib {
-	public class ValaFoo {
+	public class BalaFoo {
 	}
 
 	public int bala_foo () {
@@ -12,5 +12,5 @@ extern int bala_foo ();
 
 void main () {
 	assert (bala_foo () == 42);
-	assert (typeof (ValaFoo).name () == "GValaFoo");
+	assert (typeof (BalaFoo).name () == "GBalaFoo");
 }

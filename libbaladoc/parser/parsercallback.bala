@@ -21,7 +21,7 @@
  */
 
 
-public interface Valadoc.ParserCallback {
+public interface Baladoc.ParserCallback {
 	public abstract Object? get_rule_state ();
 	public abstract void set_rule_state (Object state);
 

@@ -26,7 +26,7 @@ using GLib;
 /**
  * A class type.
  */
-public class Vala.ErrorType : ReferenceType {
+public class Bala.ErrorType : ReferenceType {
 	/**
 	 * The error domain or null for generic error.
 	 */

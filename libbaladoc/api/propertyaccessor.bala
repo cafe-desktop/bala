@@ -21,25 +21,25 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a get or set accessor of a property.
  */
-public class Valadoc.Api.PropertyAccessor : Symbol {
+public class Baladoc.Api.PropertyAccessor : Symbol {
 	private Ownership ownership;
 	private string? cname;
 
-	public PropertyAccessor (Property parent, SourceFile file, string name, Vala.SymbolAccessibility accessibility,
-							 Vala.PropertyAccessor data)
+	public PropertyAccessor (Property parent, SourceFile file, string name, Bala.SymbolAccessibility accessibility,
+							 Bala.PropertyAccessor data)
 	{
 		base (parent, file, name, accessibility, null, data);
 
 		this.ownership = get_property_ownership (data);
-		this.cname = Vala.get_ccode_name (data);
+		this.cname = Bala.get_ccode_name (data);
 	}
 
-	Ownership get_property_ownership (Vala.PropertyAccessor element) {
+	Ownership get_property_ownership (Bala.PropertyAccessor element) {
 		if (element.value_type.value_owned) {
 			return Ownership.OWNED;
 		}
@@ -73,7 +73,7 @@ public class Valadoc.Api.PropertyAccessor : Symbol {
 	 */
 	public bool is_construct {
 		get {
-			return ((Vala.PropertyAccessor) data).construction;
+			return ((Bala.PropertyAccessor) data).construction;
 		}
 	}
 
@@ -82,7 +82,7 @@ public class Valadoc.Api.PropertyAccessor : Symbol {
 	 */
 	public bool is_set {
 		get {
-			return ((Vala.PropertyAccessor) data).writable;
+			return ((Bala.PropertyAccessor) data).writable;
 		}
 	}
 
@@ -91,7 +91,7 @@ public class Valadoc.Api.PropertyAccessor : Symbol {
 	 */
 	public bool is_get {
 		get {
-			return ((Vala.PropertyAccessor) data).readable;
+			return ((Bala.PropertyAccessor) data).readable;
 		}
 	}
 

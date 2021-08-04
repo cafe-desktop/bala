@@ -23,7 +23,7 @@
 /**
  * Represents an invalid expression.
  */
-public class Vala.CCodeInvalidExpression : CCodeExpression {
+public class Bala.CCodeInvalidExpression : CCodeExpression {
 	public CCodeInvalidExpression () {
 	}
 

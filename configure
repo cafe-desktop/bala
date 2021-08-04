@@ -653,7 +653,7 @@ PACKAGE_TARNAME='bala'
 PACKAGE_VERSION='0.48.17'
 PACKAGE_STRING='bala 0.48.17'
 PACKAGE_BUGREPORT='https://gitlab.gnome.org/GNOME/bala/issues'
-PACKAGE_URL='https://wiki.gnome.org/Projects/Vala'
+PACKAGE_URL='https://wiki.gnome.org/Projects/Bala'
 
 ac_unique_file="Makefile.am"
 # Factoring default headers for most tests.
@@ -1594,7 +1594,7 @@ Use these variables to override the choices made by `configure' or to help
 it to find libraries and programs with nonstandard names/locations.
 
 Report bugs to <https://gitlab.gnome.org/GNOME/bala/issues>.
-bala home page: <https://wiki.gnome.org/Projects/Vala>.
+bala home page: <https://wiki.gnome.org/Projects/Bala>.
 _ACEOF
 ac_status=$?
 fi
@@ -12478,7 +12478,7 @@ fi
 BALAC_BOOTSTRAP_REQUIRED=0.39.5.8
 
 if test "$BALAC" != balac; then :
-  FOUND_BALAC_VERION=`$BALAC --version | sed 's/Vala  *//'`
+  FOUND_BALAC_VERION=`$BALAC --version | sed 's/Bala  *//'`
 	as_arg_v1="$BALAC_BOOTSTRAP_REQUIRED"
 as_arg_v2="$FOUND_BALAC_VERION"
 awk "$as_awk_strverscmp" v1="$as_arg_v1" v2="$as_arg_v2" /dev/null
@@ -13872,7 +13872,7 @@ Configuration commands:
 $config_commands
 
 Report bugs to <https://gitlab.gnome.org/GNOME/bala/issues>.
-bala home page: <https://wiki.gnome.org/Projects/Vala>."
+bala home page: <https://wiki.gnome.org/Projects/Bala>."
 
 _ACEOF
 cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=1

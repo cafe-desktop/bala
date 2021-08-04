@@ -21,7 +21,7 @@
  */
 
 
-public abstract class Valadoc.Content.ContentRenderer : ContentVisitor {
+public abstract class Baladoc.Content.ContentRenderer : ContentVisitor {
 
 	public abstract void render (ContentElement element);
 

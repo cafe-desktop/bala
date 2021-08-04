@@ -21,7 +21,7 @@
  */
 
 
-public class Valadoc.ErrorReporter : Object {
+public class Baladoc.ErrorReporter : Object {
 	private int _warnings = 0;
 	private int _errors = 0;
 

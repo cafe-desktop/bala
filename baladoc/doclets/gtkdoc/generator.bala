@@ -20,19 +20,19 @@
  * 	Luca Bruno <lethalman88@gmail.com>
  */
 
-using Valadoc;
-using Valadoc.Api;
-using Valadoc.Content;
+using Baladoc;
+using Baladoc.Api;
+using Baladoc.Content;
 
 public class Gtkdoc.Generator : Api.Visitor {
 	class FileData {
 		public string filename;
 		public string title;
 		public GComment section_comment;
-		public Vala.List<GComment> comments;
-		public Vala.List<string> section_lines;
-		public Vala.List<string> standard_section_lines;
-		public Vala.List<string> private_section_lines;
+		public Bala.List<GComment> comments;
+		public Bala.List<string> section_lines;
+		public Bala.List<string> standard_section_lines;
+		public Bala.List<string> private_section_lines;
 
 		public void register_section_line (string? line) {
 			if (line != null) {
@@ -53,13 +53,13 @@ public class Gtkdoc.Generator : Api.Visitor {
 		}
 	}
 
-	public Vala.List<DBus.Interface> dbus_interfaces = new Vala.ArrayList<DBus.Interface>();
+	public Bala.List<DBus.Interface> dbus_interfaces = new Bala.ArrayList<DBus.Interface>();
 
 	private ErrorReporter reporter;
 	private Settings settings;
-	private Vala.Map<string, FileData> files_data = new Vala.HashMap<string, FileData> (str_hash, str_equal);
+	private Bala.Map<string, FileData> files_data = new Bala.HashMap<string, FileData> (str_hash, str_equal);
 	private string current_cname;
-	private Vala.List<Header> current_headers;
+	private Bala.List<Header> current_headers;
 	private Api.Tree current_tree;
 	private Class current_class;
 	private Method current_method;
@@ -166,7 +166,7 @@ public class Gtkdoc.Generator : Api.Visitor {
 		return true;
 	}
 
-	public Vala.Set<string> get_filenames () {
+	public Bala.Set<string> get_filenames () {
 		return files_data.get_keys ();
 	}
 
@@ -177,23 +177,23 @@ public class Gtkdoc.Generator : Api.Visitor {
 			file_data.filename = filename;
 			file_data.title = null;
 			file_data.section_comment = null;
-			file_data.comments = new Vala.ArrayList<GComment>();
-			file_data.section_lines = new Vala.ArrayList<string>(str_equal);
-			file_data.standard_section_lines = new Vala.ArrayList<string>(str_equal);
-			file_data.private_section_lines = new Vala.ArrayList<string>(str_equal);
+			file_data.comments = new Bala.ArrayList<GComment>();
+			file_data.section_lines = new Bala.ArrayList<string>(str_equal);
+			file_data.standard_section_lines = new Bala.ArrayList<string>(str_equal);
+			file_data.private_section_lines = new Bala.ArrayList<string>(str_equal);
 			files_data[filename] = file_data;
 		}
 		return file_data;
 	}
 
-	private Vala.List<Header> merge_headers (Vala.List<Header> doc_headers,
-											 Vala.List<Header>? lang_headers)
+	private Bala.List<Header> merge_headers (Bala.List<Header> doc_headers,
+											 Bala.List<Header>? lang_headers)
 	{
 		if (lang_headers == null) {
 			return doc_headers;
 		}
 
-		var headers = new Vala.ArrayList<Header>();
+		var headers = new Bala.ArrayList<Header>();
 
 		foreach (var doc_header in doc_headers) {
 			var header = doc_header;
@@ -256,7 +256,7 @@ public class Gtkdoc.Generator : Api.Visitor {
 
 		/* gtk-doc will warn about missing long descriptions (e.g.
 		 * “alias-details:Long_Description” in *-undocumented.txt), so
-		 * forward that as a Valadoc warning so that it doesn’t get lost
+		 * forward that as a Baladoc warning so that it doesn’t get lost
 		 * in the gtk-doc output files. */
 		if (gcomment.long_comment == null || gcomment.long_comment == "") {
 			reporter.simple_warning ("GtkDoc", "Missing long description in the documentation for ‘%s’ which forms gtk-doc section ‘%s’.",
@@ -397,7 +397,7 @@ public class Gtkdoc.Generator : Api.Visitor {
 		var old_headers = current_headers;
 		var old_dbus_interface = current_dbus_interface;
 		current_cname = iface.get_cname ();
-		current_headers = new Vala.ArrayList<Header>();
+		current_headers = new Bala.ArrayList<Header>();
 		current_dbus_interface = null;
 
 		if (iface.get_dbus_name () != null) {
@@ -476,7 +476,7 @@ public class Gtkdoc.Generator : Api.Visitor {
 		var old_class = current_class;
 		var old_dbus_interface = current_dbus_interface;
 		current_cname = cl.get_cname ();
-		current_headers = new Vala.ArrayList<Header>();
+		current_headers = new Bala.ArrayList<Header>();
 		current_class = cl;
 		current_dbus_interface = null;
 
@@ -626,7 +626,7 @@ It is important that your <link linkend="GValue"><type>GValue</type></link> hold
 		var old_cname = current_cname;
 		var old_headers = current_headers;
 		current_cname = st.get_cname ();
-		current_headers = new Vala.ArrayList<Header>();
+		current_headers = new Bala.ArrayList<Header>();
 
 		st.accept_all_children (this);
 		var gcomment = add_symbol (st.get_filename(), st.get_cname(), st.documentation);
@@ -739,7 +739,7 @@ It is important that your <link linkend="GValue"><type>GValue</type></link> hold
 	public override void visit_error_domain (Api.ErrorDomain edomain) {
 		// error domain definition
 		var old_headers = current_headers;
-		current_headers = new Vala.ArrayList<Header>();
+		current_headers = new Bala.ArrayList<Header>();
 
 		edomain.accept_all_children (this);
 		var gcomment = add_symbol (edomain.get_filename(),
@@ -765,7 +765,7 @@ It is important that your <link linkend="GValue"><type>GValue</type></link> hold
 
 	public override void visit_enum (Api.Enum en) {
 		var old_headers = current_headers;
-		current_headers = new Vala.ArrayList<Header>();
+		current_headers = new Bala.ArrayList<Header>();
 
 		en.accept_all_children (this);
 		var gcomment = add_symbol (en.get_filename(), en.get_cname(), en.documentation);
@@ -923,7 +923,7 @@ It is important that your <link linkend="GValue"><type>GValue</type></link> hold
 	public override void visit_delegate (Api.Delegate d) {
 		var old_headers = current_headers;
 		var old_delegate = current_delegate;
-		current_headers = new Vala.ArrayList<Header>();
+		current_headers = new Bala.ArrayList<Header>();
 		current_delegate = d;
 
 		d.accept_children ({NodeType.FORMAL_PARAMETER, NodeType.TYPE_PARAMETER}, this);
@@ -969,7 +969,7 @@ It is important that your <link linkend="GValue"><type>GValue</type></link> hold
 		var old_headers = current_headers;
 		var old_signal = current_signal;
 		var old_dbus_member = current_dbus_member;
-		current_headers = new Vala.ArrayList<Header>();
+		current_headers = new Bala.ArrayList<Header>();
 		current_signal = sig;
 		current_dbus_member = null;
 
@@ -1041,7 +1041,7 @@ It is important that your <link linkend="GValue"><type>GValue</type></link> hold
 		var old_headers = current_headers;
 		var old_method = current_method;
 		var old_dbus_member = current_dbus_member;
-		current_headers = new Vala.ArrayList<Header>();
+		current_headers = new Bala.ArrayList<Header>();
 		current_method = m;
 		current_dbus_member = null;
 
@@ -1342,11 +1342,11 @@ It is important that your <link linkend="GValue"><type>GValue</type></link> hold
 			string? deprecated_since;
 			string? replacement;
 			if ((version = sym.get_attribute ("Version")) != null) {
-				deprecated_since = ((Vala.Attribute) version.data).get_string ("deprecated_since");
-				replacement = ((Vala.Attribute) version.data).get_string ("replacement");
+				deprecated_since = ((Bala.Attribute) version.data).get_string ("deprecated_since");
+				replacement = ((Bala.Attribute) version.data).get_string ("replacement");
 			} else if ((deprecated = sym.get_attribute ("Deprecated")) != null) {
-				deprecated_since = ((Vala.Attribute) deprecated.data).get_string ("since");
-				replacement = ((Vala.Attribute) deprecated.data).get_string ("replacement");
+				deprecated_since = ((Bala.Attribute) deprecated.data).get_string ("since");
+				replacement = ((Bala.Attribute) deprecated.data).get_string ("replacement");
 			} else {
 				assert_not_reached ();
 			}

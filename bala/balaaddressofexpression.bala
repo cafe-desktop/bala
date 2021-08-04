@@ -27,7 +27,7 @@ using GLib;
  *
  * {{{ &foo }}}
  */
-public class Vala.AddressofExpression : Expression {
+public class Bala.AddressofExpression : Expression {
 	/**
 	 * The variable whose address is to be computed.
 	 */

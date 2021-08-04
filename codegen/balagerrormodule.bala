@@ -23,7 +23,7 @@
 
 using GLib;
 
-public class Vala.GErrorModule : CCodeDelegateModule {
+public class Bala.GErrorModule : CCodeDelegateModule {
 	private bool is_in_catch = false;
 
 	public override void generate_error_domain_declaration (ErrorDomain edomain, CCodeFile decl_space) {

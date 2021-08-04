@@ -11,5 +11,5 @@ vapidir=${datadir}/bala/vapi
 vapidir_versioned=${datadir}/bala@PACKAGE_SUFFIX@/vapi
 
 Name: vapigen
-Description: Vala API Generator
+Description: Bala API Generator
 Version: @VERSION@

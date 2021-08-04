@@ -25,7 +25,7 @@ using GLib;
 /**
  * Code visitor building the control flow graph.
  */
-public class Vala.FlowAnalyzer : CodeVisitor {
+public class Bala.FlowAnalyzer : CodeVisitor {
 	private class JumpTarget {
 		public bool is_break_target { get; set; }
 		public bool is_continue_target { get; set; }

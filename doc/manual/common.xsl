@@ -109,7 +109,7 @@
   <xsl:template match="articleinfo" mode="toc">
     <xsl:apply-templates select="abstract"/>
     <table class="c-document_version">
-    <tr><td>Vala version:</td><td><xsl:apply-templates select="edition"/></td></tr>
+    <tr><td>Bala version:</td><td><xsl:apply-templates select="edition"/></td></tr>
     <tr><td>Release:</td><td><xsl:apply-templates select="releaseinfo/text()"/></td></tr>
     <tr><td>Status:</td><td><xsl:apply-templates select="releaseinfo/remark"/></td></tr>
     <tr><td>Copyright:</td>
@@ -184,15 +184,15 @@
   </xsl:template>
 
   <xsl:template match="ulink">
-    <xsl:if test="starts-with(@url,'https://wiki.gnome.org/Projects/Vala/Manual/Export/Projects/Vala/Manual/')">
+    <xsl:if test="starts-with(@url,'https://wiki.gnome.org/Projects/Bala/Manual/Export/Projects/Bala/Manual/')">
       <xsl:variable name="pageid">
         <xsl:call-template name="normalizepath">
-          <xsl:with-param name="title" select="str:decode-uri(str:tokenize(substring-after(@url, 'https://wiki.gnome.org/Projects/Vala/Manual/Export/Projects/Vala/Manual/'),'#')[1])"/>
+          <xsl:with-param name="title" select="str:decode-uri(str:tokenize(substring-after(@url, 'https://wiki.gnome.org/Projects/Bala/Manual/Export/Projects/Bala/Manual/'),'#')[1])"/>
         </xsl:call-template>
       </xsl:variable>
-      <a href="{$pageid}.html#{str:tokenize(substring-after(@url, 'https://wiki.gnome.org/Projects/Vala/Manual/Export/Projects/Vala/Manual/'),'#')[2]}"><xsl:value-of select="."/></a>
+      <a href="{$pageid}.html#{str:tokenize(substring-after(@url, 'https://wiki.gnome.org/Projects/Bala/Manual/Export/Projects/Bala/Manual/'),'#')[2]}"><xsl:value-of select="."/></a>
     </xsl:if>
-    <xsl:if test="not(starts-with(@url,'https://wiki.gnome.org/Projects/Vala/Manual/Export/Projects/Vala/Manual/'))">
+    <xsl:if test="not(starts-with(@url,'https://wiki.gnome.org/Projects/Bala/Manual/Export/Projects/Bala/Manual/'))">
       <a href="{@url}"><xsl:value-of select="."/></a>
     </xsl:if>
   </xsl:template>

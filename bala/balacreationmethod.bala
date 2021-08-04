@@ -27,7 +27,7 @@ using GLib;
 /**
  * Represents a type creation method.
  */
-public class Vala.CreationMethod : Method {
+public class Bala.CreationMethod : Method {
 	/**
 	 * Specifies the name of the type this creation method belongs to.
 	 */

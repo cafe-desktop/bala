@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a real literal in the source code.
  */
-public class Vala.RealLiteral : Literal {
+public class Bala.RealLiteral : Literal {
 	/**
 	 * The literal value.
 	 */

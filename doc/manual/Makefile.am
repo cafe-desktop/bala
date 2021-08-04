@@ -56,7 +56,7 @@ manual.pdf: manual.html default.css
 		$@
 else
 pdf:
-	@echo Install weasyprint and re-run ./configure to generate a PDF of the Vala manual
+	@echo Install weasyprint and re-run ./configure to generate a PDF of the Bala manual
 endif
 
 endif
@@ -81,7 +81,7 @@ EXTRA_DIST = \
 	README \
 	$(NULL)
 
-MANUAL_DOCBOOK_URL=https://wiki.gnome.org/Projects/Vala/Manual/Export?action=format\&mimetype=text/docbook
+MANUAL_DOCBOOK_URL=https://wiki.gnome.org/Projects/Bala/Manual/Export?action=format\&mimetype=text/docbook
 
 $(srcdir)/manual.xml:
 	@echo "Generating $@ from $(MANUAL_DOCBOOK_URL)"

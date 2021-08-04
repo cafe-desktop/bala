@@ -21,10 +21,10 @@
  */
 
 
-using Valadoc;
+using Baladoc;
 
 void main () {
-	var reporter = new Valadoc.ErrorReporter ();
+	var reporter = new Baladoc.ErrorReporter ();
 	assert (reporter.warnings == 0);
 	assert (reporter.errors == 0);
 

@@ -23,7 +23,7 @@
 /**
  * An unresolved reference to a symbol.
  */
-public class Vala.UnresolvedSymbol : Symbol {
+public class Bala.UnresolvedSymbol : Symbol {
 	/**
 	 * The parent of the symbol or null.
 	 */

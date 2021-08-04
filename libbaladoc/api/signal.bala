@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents an signal.
  */
-public class Valadoc.Api.Signal : Symbol, Callable {
+public class Baladoc.Api.Signal : Symbol, Callable {
 	private string? default_impl_cname;
 	private string? dbus_name;
 	private string? cname;
@@ -41,17 +41,17 @@ public class Valadoc.Api.Signal : Symbol, Callable {
 	}
 
 
-	public Signal (Node parent, SourceFile file, string name, Vala.SymbolAccessibility accessibility,
+	public Signal (Node parent, SourceFile file, string name, Bala.SymbolAccessibility accessibility,
 				   SourceComment? comment,
-				   Vala.Signal data)
+				   Bala.Signal data)
 	{
 		base (parent, file, name, accessibility, comment, data);
 
-		this.default_impl_cname = (data.default_handler != null ? Vala.get_ccode_name (data.default_handler) : null);
-		this.dbus_name = Vala.GDBusModule.get_dbus_name_for_member (data);
-		this.cname = Vala.get_ccode_name (data);
+		this.default_impl_cname = (data.default_handler != null ? Bala.get_ccode_name (data.default_handler) : null);
+		this.dbus_name = Bala.GDBusModule.get_dbus_name_for_member (data);
+		this.cname = Bala.get_ccode_name (data);
 
-		this.is_dbus_visible = Vala.GDBusModule.is_dbus_visible (data);
+		this.is_dbus_visible = Bala.GDBusModule.is_dbus_visible (data);
 		this.is_virtual = data.is_virtual;
 	}
 

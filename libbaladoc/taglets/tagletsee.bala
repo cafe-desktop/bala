@@ -22,9 +22,9 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
-public class Valadoc.Taglets.See : ContentElement, Taglet, Block {
+public class Baladoc.Taglets.See : ContentElement, Taglet, Block {
 	public string symbol_name { private set; get; }
 	public Api.Node symbol { private set; get; }
 

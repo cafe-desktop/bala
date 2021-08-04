@@ -25,5 +25,5 @@ using GLib;
 /**
  * Interface for all statement types.
  */
-public interface Vala.Statement : CodeNode {
+public interface Bala.Statement : CodeNode {
 }

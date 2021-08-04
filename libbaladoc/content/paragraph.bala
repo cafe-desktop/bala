@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.Paragraph : InlineContent, Block, StyleAttributes {
+public class Baladoc.Content.Paragraph : InlineContent, Block, StyleAttributes {
 	public HorizontalAlign horizontal_align {
 		get;
 		set;

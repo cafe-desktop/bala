@@ -21,12 +21,12 @@
  */
 
 
-public class Valadoc.Charts.Hierarchy : Charts.Chart {
+public class Baladoc.Charts.Hierarchy : Charts.Chart {
 	public Hierarchy (Factory factory, Api.Node node) {
 		base (factory, node);
 	}
 
-	private void draw_implemented_interfaces (Gvc.Node child, Vala.Collection<Api.TypeReference> interfaces) {
+	private void draw_implemented_interfaces (Gvc.Node child, Bala.Collection<Api.TypeReference> interfaces) {
 		foreach (Api.TypeReference typeref in interfaces) {
 			var parent = factory.create_interface (graph, (Api.Interface) typeref.data_type);
 			factory.add_children (graph, parent, child);

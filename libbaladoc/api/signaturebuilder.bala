@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Builds up a signature from the given items.
  */
-public class Valadoc.Api.SignatureBuilder {
+public class Baladoc.Api.SignatureBuilder {
 	private Run run;
 	private Inline last_appended;
 

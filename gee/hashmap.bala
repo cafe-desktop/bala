@@ -27,7 +27,7 @@ using GLib;
 /**
  * Hashtable implementation of the Map interface.
  */
-public class Vala.HashMap<K,V> : Map<K,V> {
+public class Bala.HashMap<K,V> : Map<K,V> {
 	public override int size {
 		get { return _nnodes; }
 	}
@@ -74,7 +74,7 @@ public class Vala.HashMap<K,V> : Map<K,V> {
 		return new ValueCollection<K,V> (this);
 	}
 
-	public override Vala.MapIterator<K,V> map_iterator () {
+	public override Bala.MapIterator<K,V> map_iterator () {
 		return new MapIterator<K,V> (this);
 	}
 
@@ -228,7 +228,7 @@ public class Vala.HashMap<K,V> : Map<K,V> {
 		}
 	}
 
-	private class MapIterator<K,V> : Vala.MapIterator<K, V> {
+	private class MapIterator<K,V> : Bala.MapIterator<K, V> {
 		public HashMap<K,V> map {
 			set {
 				_map = value;

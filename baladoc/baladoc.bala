@@ -20,10 +20,10 @@
  * 	Florian Brosch <flo.brosch@gmail.com>
  */
 
-using Valadoc.Importer;
-using Valadoc;
+using Baladoc.Importer;
+using Baladoc;
 
-public class ValaDoc : Object {
+public class BalaDoc : Object {
 	private const string DEFAULT_COLORS = "error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01";
 
 	private static string wikidirectory = null;
@@ -132,13 +132,13 @@ public class ValaDoc : Object {
 		if (reporter.errors == 0 && (!fatal_warnings || reporter.warnings == 0)) {
 			stdout.printf ("Succeeded - %d warning(s)\n", reporter.warnings);
 			if (pop_context) {
-				Vala.CodeContext.pop ();
+				Bala.CodeContext.pop ();
 			}
 			return 0;
 		} else {
 			stdout.printf ("Failed: %d error(s), %d warning(s)\n", reporter.errors, reporter.warnings);
 			if (pop_context) {
-				Vala.CodeContext.pop ();
+				Bala.CodeContext.pop ();
 			}
 			return 1;
 		}
@@ -162,15 +162,15 @@ public class ValaDoc : Object {
 	}
 
 	private string get_pkg_name () {
-		if (ValaDoc.pkg_name == null) {
-			if (ValaDoc.directory.has_suffix ("/")) {
-				ValaDoc.pkg_name = GLib.Path.get_dirname (ValaDoc.directory);
+		if (BalaDoc.pkg_name == null) {
+			if (BalaDoc.directory.has_suffix ("/")) {
+				BalaDoc.pkg_name = GLib.Path.get_dirname (BalaDoc.directory);
 			} else {
-				ValaDoc.pkg_name = GLib.Path.get_basename (ValaDoc.directory);
+				BalaDoc.pkg_name = GLib.Path.get_basename (BalaDoc.directory);
 			}
 		}
 
-		return ValaDoc.pkg_name;
+		return BalaDoc.pkg_name;
 	}
 
 	private ModuleLoader? create_module_loader (ErrorReporter reporter, out Doclet? doclet) {
@@ -195,29 +195,29 @@ public class ValaDoc : Object {
 
 	private int run (ErrorReporter reporter) {
 		// settings:
-		var settings = new Valadoc.Settings ();
+		var settings = new Baladoc.Settings ();
 		reporter.settings = settings;
 
 		settings.pkg_name = this.get_pkg_name ();
-		settings.gir_namespace = ValaDoc.gir_namespace;
-		settings.gir_version = ValaDoc.gir_version;
-		if (ValaDoc.gir_name != null) {
-			settings.gir_name = GLib.Path.get_basename (ValaDoc.gir_name);
-			settings.gir_directory = GLib.Path.get_dirname (ValaDoc.gir_name);
+		settings.gir_namespace = BalaDoc.gir_namespace;
+		settings.gir_version = BalaDoc.gir_version;
+		if (BalaDoc.gir_name != null) {
+			settings.gir_name = GLib.Path.get_basename (BalaDoc.gir_name);
+			settings.gir_directory = GLib.Path.get_dirname (BalaDoc.gir_name);
 			if (settings.gir_directory == "") {
-				settings.gir_directory = GLib.Path.get_dirname (ValaDoc.directory);
+				settings.gir_directory = GLib.Path.get_dirname (BalaDoc.directory);
 			}
 		}
-		settings.pkg_version = ValaDoc.pkg_version;
-		settings.add_inherited = ValaDoc.add_inherited;
-		settings._protected = ValaDoc._protected;
-		settings._internal = ValaDoc._internal;
-		settings.with_deps = ValaDoc.with_deps;
-		settings._private = ValaDoc._private;
-		settings.path = Vala.CodeContext.realpath (ValaDoc.directory);
-		settings.verbose = ValaDoc.verbose;
-		settings.wiki_directory = ValaDoc.wikidirectory;
-		settings.pluginargs = ValaDoc.pluginargs;
+		settings.pkg_version = BalaDoc.pkg_version;
+		settings.add_inherited = BalaDoc.add_inherited;
+		settings._protected = BalaDoc._protected;
+		settings._internal = BalaDoc._internal;
+		settings.with_deps = BalaDoc.with_deps;
+		settings._private = BalaDoc._private;
+		settings.path = Bala.CodeContext.realpath (BalaDoc.directory);
+		settings.verbose = BalaDoc.verbose;
+		settings.wiki_directory = BalaDoc.wikidirectory;
+		settings.pluginargs = BalaDoc.pluginargs;
 
 		settings.experimental = experimental;
 		settings.experimental_non_null = experimental_non_null;
@@ -237,8 +237,8 @@ public class ValaDoc : Object {
 
 		settings.alternative_resource_dirs = alternative_resource_dirs;
 
-		var context = new Vala.CodeContext ();
-		Vala.CodeContext.push (context);
+		var context = new Bala.CodeContext ();
+		Bala.CodeContext.push (context);
 
 		// load plugins:
 		Doclet? doclet = null;
@@ -249,7 +249,7 @@ public class ValaDoc : Object {
 
 		// Create tree:
 		TreeBuilder builder = new TreeBuilder ();
-		Valadoc.Api.Tree doctree = builder.build (settings, reporter);
+		Baladoc.Api.Tree doctree = builder.build (settings, reporter);
 		if (reporter.errors > 0) {
 			doclet = null;
 			return quit (reporter, true);
@@ -258,17 +258,17 @@ public class ValaDoc : Object {
 		doctree.accept (resolver);
 
 		// register child symbols:
-		Valadoc.Api.ChildSymbolRegistrar registrar = new Valadoc.Api.ChildSymbolRegistrar ();
+		Baladoc.Api.ChildSymbolRegistrar registrar = new Baladoc.Api.ChildSymbolRegistrar ();
 		doctree.accept (registrar);
 
 		// process documentation
-		Valadoc.DocumentationParser docparser = new Valadoc.DocumentationParser (settings, reporter, doctree, modules);
+		Baladoc.DocumentationParser docparser = new Baladoc.DocumentationParser (settings, reporter, doctree, modules);
 		if (!doctree.create_tree()) {
 			return quit (reporter, true);
 		}
 
 		DocumentationImporter[] importers = {
-			new ValadocDocumentationImporter (doctree, docparser, modules, settings, reporter),
+			new BaladocDocumentationImporter (doctree, docparser, modules, settings, reporter),
 			new GirDocumentationImporter (doctree, docparser, modules, settings, reporter)
 		};
 
@@ -287,7 +287,7 @@ public class ValaDoc : Object {
 			return quit (reporter, true);
 		}
 
-		if (ValaDoc.gir_name != null) {
+		if (BalaDoc.gir_name != null) {
 			var gir_writer = new GirWriter (resolver);
 			gir_writer.write_file (doctree.context,
 				settings.gir_directory,
@@ -309,7 +309,7 @@ public class ValaDoc : Object {
 		ErrorReporter reporter = new ErrorReporter();
 
 		try {
-			var opt_context = new OptionContext ("- Vala Documentation Tool");
+			var opt_context = new OptionContext ("- Bala Documentation Tool");
 			opt_context.set_help_enabled (true);
 			opt_context.add_main_entries (options, null);
 			opt_context.parse (ref args);
@@ -329,7 +329,7 @@ public class ValaDoc : Object {
 		}
 
 		if (version) {
-			stdout.printf ("Valadoc %s\n", Vala.BUILD_VERSION);
+			stdout.printf ("Baladoc %s\n", Bala.BUILD_VERSION);
 			return 0;
 		}
 
@@ -407,7 +407,7 @@ public class ValaDoc : Object {
 		}
 
 
-		var baladoc = new ValaDoc( );
+		var baladoc = new BalaDoc( );
 		return baladoc.run (reporter);
 	}
 }

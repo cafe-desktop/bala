@@ -26,7 +26,7 @@
 /**
  * Code visitor generating C Code.
  */
-public abstract class Vala.CCodeBaseModule : CodeGenerator {
+public abstract class Bala.CCodeBaseModule : CodeGenerator {
 	public class EmitContext {
 		public Symbol? current_symbol;
 		public ArrayList<Symbol> symbol_stack = new ArrayList<Symbol> ();
@@ -450,7 +450,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 		// MSVC keywords
 		reserved_identifiers.add ("cdecl");
 
-		// reserved for Vala/GObject naming conventions
+		// reserved for Bala/GObject naming conventions
 		reserved_identifiers.add ("error");
 		reserved_identifiers.add ("result");
 		reserved_identifiers.add ("self");
@@ -543,7 +543,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 			pointer_type = new PointerType (new VoidType ());
 
 			delegate_target_type = pointer_type;
-			destroy_notify = new Delegate ("ValaDestroyNotify", new VoidType ());
+			destroy_notify = new Delegate ("BalaDestroyNotify", new VoidType ());
 			destroy_notify.add_parameter (new Parameter ("data", new PointerType (new VoidType ())));
 			destroy_notify.has_target = false;
 			destroy_notify.owner = root_symbol.scope;
@@ -6354,7 +6354,7 @@ public abstract class Vala.CCodeBaseModule : CodeGenerator {
 			unowned Struct? st = c.parent_symbol as Struct;
 			if (cl != null) {
 				// object creation methods return the new object in C
-				// in Vala they have no return type
+				// in Bala they have no return type
 				creturn_type = new ObjectType (cl);
 			} else if (st != null && st.is_simple_type ()) {
 				// constructors return simple type structs by value

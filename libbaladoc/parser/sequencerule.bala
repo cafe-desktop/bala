@@ -21,7 +21,7 @@
  */
 
 
-internal class Valadoc.SequenceRule : Rule {
+internal class Baladoc.SequenceRule : Rule {
 
 	public SequenceRule (Object[] scheme) {
 		_scheme = scheme;

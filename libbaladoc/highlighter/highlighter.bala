@@ -21,12 +21,12 @@
  */
 
 using GLib;
-using Valadoc.Content;
+using Baladoc.Content;
 
 
-public class Valadoc.Highlighter.Highlighter : Object {
-	private Vala.HashMap<string, CodeTokenType?> bala_keywords;
-	private Vala.HashMap<string, CodeTokenType?> c_keywords;
+public class Baladoc.Highlighter.Highlighter : Object {
+	private Bala.HashMap<string, CodeTokenType?> bala_keywords;
+	private Bala.HashMap<string, CodeTokenType?> c_keywords;
 
 
 	/**
@@ -34,7 +34,7 @@ public class Valadoc.Highlighter.Highlighter : Object {
 	 */
 	public Run highlight_bala (string source_code) {
 		if (bala_keywords == null) {
-			bala_keywords = new Vala.HashMap<string, CodeTokenType?> (str_hash, str_equal);
+			bala_keywords = new Bala.HashMap<string, CodeTokenType?> (str_hash, str_equal);
 
 			// ** Types: **
 			bala_keywords.set ("string", CodeTokenType.TYPE);
@@ -179,7 +179,7 @@ public class Valadoc.Highlighter.Highlighter : Object {
 	 */
 	public Run highlight_c (string source_code) {
 		if (c_keywords == null) {
-			c_keywords = new Vala.HashMap<string, CodeTokenType?> (str_hash, str_equal);
+			c_keywords = new Bala.HashMap<string, CodeTokenType?> (str_hash, str_equal);
 
 			// ** Types: **
 			c_keywords.set ("auto", CodeTokenType.TYPE);

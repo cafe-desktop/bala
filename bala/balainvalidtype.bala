@@ -25,7 +25,7 @@ using GLib;
 /**
  * An invalid reference to a data type.
  */
-public class Vala.InvalidType : DataType {
+public class Bala.InvalidType : DataType {
 	public InvalidType () {
 		error = true;
 	}

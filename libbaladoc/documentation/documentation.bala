@@ -21,7 +21,7 @@
  */
 
 
-public interface Valadoc.Documentation : Object {
+public interface Baladoc.Documentation : Object {
 
 	/**
 	 * The corresponding package

@@ -23,7 +23,7 @@
 /**
  * A reference to an instance property without a specific instance.
  */
-public class Vala.PropertyPrototype : DataType {
+public class Bala.PropertyPrototype : DataType {
 	public weak Property property_symbol {
 		get {
 			return (Property) symbol;

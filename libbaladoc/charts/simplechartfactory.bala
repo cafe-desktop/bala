@@ -26,7 +26,7 @@ extern Gvc.Graph baladoc_gvc_graph_new (string name);
 [CCode (cname = "baladoc_compat_gvc_graph_create_edge")]
 extern Gvc.Edge baladoc_gvc_graph_create_edge (Gvc.Graph graph, Gvc.Node from, Gvc.Node to);
 
-public class Valadoc.Charts.SimpleFactory : Charts.Factory {
+public class Baladoc.Charts.SimpleFactory : Charts.Factory {
 	protected virtual Gvc.Node configure_type (Gvc.Node node, Api.Node item) {
  		node.safe_set ("shape", "box", "");
 		node.safe_set ("fontname", "Times", "");

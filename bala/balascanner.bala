@@ -24,9 +24,9 @@
 using GLib;
 
 /**
- * Lexical scanner for Vala source files.
+ * Lexical scanner for Bala source files.
  */
-public class Vala.Scanner {
+public class Bala.Scanner {
 	public SourceFile source_file { get; private set; }
 
 	TokenType previous;

@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents an enum member.
  */
-public class Valadoc.Api.EnumValue: Symbol {
+public class Baladoc.Api.EnumValue: Symbol {
 	private string? cname;
 
 	public Content.Run default_value {
@@ -43,10 +43,10 @@ public class Valadoc.Api.EnumValue: Symbol {
 		}
 	}
 
-	public EnumValue (Enum parent, SourceFile file, string name, SourceComment? comment, Vala.EnumValue data) {
+	public EnumValue (Enum parent, SourceFile file, string name, SourceComment? comment, Bala.EnumValue data) {
 		base (parent, file, name, parent.accessibility, comment, data);
 
-		this.cname = Vala.get_ccode_name (data);
+		this.cname = Bala.get_ccode_name (data);
 	}
 
 	/**

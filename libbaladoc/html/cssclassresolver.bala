@@ -20,10 +20,10 @@
  * 	Florian Brosch <flo.brosch@gmail.com>
  */
 
-using Valadoc.Api;
+using Baladoc.Api;
 
 
-namespace Valadoc.Html {
+namespace Baladoc.Html {
 	public class CssClassResolver : Api.Visitor {
 		private string? css_class = null;
 

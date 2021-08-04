@@ -21,12 +21,12 @@
  */
 
 
-public errordomain Valadoc.ParserError {
+public errordomain Baladoc.ParserError {
 	INTERNAL_ERROR,
 	UNEXPECTED_TOKEN
 }
 
-public class Valadoc.Parser : ParserCallback {
+public class Baladoc.Parser : ParserCallback {
 
 	public Parser (Settings settings, Scanner scanner, ErrorReporter reporter) {
 		_settings = settings;
@@ -46,8 +46,8 @@ public class Valadoc.Parser : ParserCallback {
 	private int _first_column;
 	private Token _current_token;
 
-	private Vala.ArrayList<Rule> rule_stack = new Vala.ArrayList<Rule> ();
-	private Vala.ArrayList<Object?> rule_state_stack = new Vala.ArrayList<Object?> ();
+	private Bala.ArrayList<Rule> rule_stack = new Bala.ArrayList<Rule> ();
+	private Bala.ArrayList<Object?> rule_state_stack = new Bala.ArrayList<Object?> ();
 
 	public void set_root_rule (Rule root_rule) {
 		_root_rule = root_rule;

@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a conditional expression in the source code.
  */
-public class Vala.ConditionalExpression : Expression {
+public class Bala.ConditionalExpression : Expression {
 	/**
 	 * The condition.
 	 */

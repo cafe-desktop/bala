@@ -20,7 +20,7 @@
  * 	Jürg Billeter <j@bitron.ch>
  */
 
-public abstract class Vala.TargetValue {
+public abstract class Bala.TargetValue {
 	public DataType? value_type { get; set; }
 	public DataType? actual_value_type { get; set; }
 

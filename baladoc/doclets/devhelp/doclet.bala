@@ -21,11 +21,11 @@
  */
 
 
-using Valadoc;
-using Valadoc.Api;
-using Valadoc.Html;
+using Baladoc;
+using Baladoc.Api;
+using Baladoc.Html;
 
-public class Valadoc.Devhelp.Doclet : Valadoc.Html.BasicDoclet {
+public class Baladoc.Devhelp.Doclet : Baladoc.Html.BasicDoclet {
 	private const string css_path_wiki = "devhelpstyle.css";
 	private const string css_path = "devhelpstyle.css";
 
@@ -33,7 +33,7 @@ public class Valadoc.Devhelp.Doclet : Valadoc.Html.BasicDoclet {
 	private const string js_path = "scripts.js";
 
 
-	private Vala.ArrayList<Api.Node> nodes = new Vala.ArrayList<Api.Node> ();
+	private Bala.ArrayList<Api.Node> nodes = new Bala.ArrayList<Api.Node> ();
 	private string package_dir_name = ""; // remove
 
 	private Devhelp.MarkupWriter _devhelpwriter;
@@ -99,7 +99,7 @@ public class Valadoc.Devhelp.Doclet : Valadoc.Html.BasicDoclet {
 		GLib.FileStream file = GLib.FileStream.open (filepath, "w");
 		writer = new Html.MarkupWriter (file);
 		_renderer.set_writer (writer);
-		write_file_header (Valadoc.Devhelp.Doclet.css_path, Valadoc.Devhelp.Doclet.js_path, pkg_name);
+		write_file_header (Baladoc.Devhelp.Doclet.css_path, Baladoc.Devhelp.Doclet.js_path, pkg_name);
 		write_package_content (package, package);
 		write_file_footer ();
 		file = null;
@@ -243,7 +243,7 @@ public class Valadoc.Devhelp.Doclet : Valadoc.Html.BasicDoclet {
 }
 
 
-public Type register_plugin (Valadoc.ModuleLoader module_loader) {
-	return typeof (Valadoc.Devhelp.Doclet);
+public Type register_plugin (Baladoc.ModuleLoader module_loader) {
+	return typeof (Baladoc.Devhelp.Doclet);
 }
 

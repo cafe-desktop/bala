@@ -23,9 +23,9 @@
 using GLib;
 
 /**
- * Code visitor parsing all Vala source files.
+ * Code visitor parsing all Bala source files.
  */
-public class Vala.Parser : CodeVisitor {
+public class Bala.Parser : CodeVisitor {
 	Scanner scanner;
 
 	CodeContext context;
@@ -3724,7 +3724,7 @@ public class Vala.Parser : CodeVisitor {
 	}
 }
 
-public errordomain Vala.ParseError {
+public errordomain Bala.ParseError {
 	FAILED,
 	SYNTAX
 }

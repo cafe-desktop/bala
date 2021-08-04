@@ -21,7 +21,7 @@
  */
 
 
-public abstract class Valadoc.Importer.DocumentationImporter : Object, ResourceLocator {
+public abstract class Baladoc.Importer.DocumentationImporter : Object, ResourceLocator {
 	protected ModuleLoader modules;
 	protected Settings settings;
 	protected Api.Tree tree;

@@ -22,18 +22,18 @@
  */
 
 
-public class Valadoc.Content.TableRow : ContentElement {
-	public Vala.List<TableCell> cells {
+public class Baladoc.Content.TableRow : ContentElement {
+	public Bala.List<TableCell> cells {
 		get {
 			return _cells;
 		}
 	}
 
-	private Vala.List<TableCell> _cells;
+	private Bala.List<TableCell> _cells;
 
 	internal TableRow () {
 		base ();
-		_cells = new Vala.ArrayList<TableCell> ();
+		_cells = new Bala.ArrayList<TableCell> ();
 	}
 
 	public override void check (Api.Tree api_root, Api.Node container, string file_path,

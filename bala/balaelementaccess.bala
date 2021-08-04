@@ -29,7 +29,7 @@ using GLib;
  *
  * {{{ foo[1,2] }}}
  */
-public class Vala.ElementAccess : Expression {
+public class Bala.ElementAccess : Expression {
 	/**
 	 * Expression representing the container on which we want to access.
 	 */

@@ -25,7 +25,7 @@ using GLib;
 /**
  * A documentation comment used by baladoc
  */
-public class Vala.Comment {
+public class Bala.Comment {
 	public Comment (string comment, SourceReference _source_reference) {
 		source_reference = _source_reference;
 		content = comment;

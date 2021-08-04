@@ -24,7 +24,7 @@
 /**
  * Cache for the CCode attribute
  */
-public class Vala.CCodeAttribute : AttributeCache {
+public class Bala.CCodeAttribute : AttributeCache {
 	private weak CodeNode node;
 	private weak Symbol? sym;
 	private Attribute ccode;

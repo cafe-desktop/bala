@@ -21,7 +21,7 @@
  */
 
 
-public class Valadoc.TokenType : Object {
+public class Baladoc.TokenType : Object {
 	// baladoc-comments:
 	public static TokenType ANY;
 	public static TokenType ANY_WORD;

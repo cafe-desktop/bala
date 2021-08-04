@@ -28,7 +28,7 @@ using GLib;
  * A reference to a data type. This is used to specify static types of
  * expressions.
  */
-public abstract class Vala.DataType : CodeNode {
+public abstract class Bala.DataType : CodeNode {
 	/**
 	 * Specifies that the expression or variable owns the value.
 	 */

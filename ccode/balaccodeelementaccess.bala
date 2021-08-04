@@ -27,7 +27,7 @@ using GLib;
 /**
  * Represents an access to an array member in the C code.
  */
-public class Vala.CCodeElementAccess : CCodeExpression {
+public class Bala.CCodeElementAccess : CCodeExpression {
 	/**
 	 * Expression representing the container on which we want to access.
 	 */

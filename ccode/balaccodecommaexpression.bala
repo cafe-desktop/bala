@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a comma separated expression list in the C code.
  */
-public class Vala.CCodeCommaExpression : CCodeExpression {
+public class Bala.CCodeCommaExpression : CCodeExpression {
 	private List<CCodeExpression> inner = new ArrayList<CCodeExpression> ();
 
 	/**

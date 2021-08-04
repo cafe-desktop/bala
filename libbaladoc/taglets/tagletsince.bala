@@ -22,9 +22,9 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
-public class Valadoc.Taglets.Since : ContentElement, Taglet, Block {
+public class Baladoc.Taglets.Since : ContentElement, Taglet, Block {
 	public string version { get; internal set; }
 
 	public Rule? get_parser_rule (Rule run_rule) {

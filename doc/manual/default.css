@@ -207,7 +207,7 @@ blockquote span.literal {
 
 @page {
 	counter-increment: page;
-	@top-center { content: "Vala Reference Manual"; }
+	@top-center { content: "Bala Reference Manual"; }
 	@bottom-center {
 		content: counter(page);
 	}

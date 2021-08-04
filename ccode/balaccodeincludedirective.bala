@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents an include preprocessor directive in the C code.
  */
-public class Vala.CCodeIncludeDirective : CCodeNode {
+public class Bala.CCodeIncludeDirective : CCodeNode {
 	/**
 	 * The file to be included.
 	 */

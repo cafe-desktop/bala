@@ -2,7 +2,7 @@ AC_PREREQ([2.65])
 AC_INIT([bala], m4_esyscmd([build-aux/git-version-gen --prefix '' .tarball-version]),
 	[https://gitlab.gnome.org/GNOME/bala/issues],
 	[bala],
-	[https://wiki.gnome.org/Projects/Vala])
+	[https://wiki.gnome.org/Projects/Bala])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_HEADERS(config.h)
@@ -75,7 +75,7 @@ AC_SUBST(BALAC)
 
 BALAC_BOOTSTRAP_REQUIRED=0.39.5.8
 
-AS_IF([test "$BALAC" != balac], [FOUND_BALAC_VERION=`$BALAC --version | sed 's/Vala  *//'`
+AS_IF([test "$BALAC" != balac], [FOUND_BALAC_VERION=`$BALAC --version | sed 's/Bala  *//'`
 	AS_VERSION_COMPARE(["$BALAC_BOOTSTRAP_REQUIRED"], ["$FOUND_BALAC_VERION"],
 		[enable_boostrap=yes], [enable_boostrap=yes], [enable_boostrap=no])])
 

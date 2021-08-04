@@ -3264,7 +3264,7 @@ namespace Posix {
 		 *
 		 * Explicitly closing the pipe is only necessary when checking the
 		 * termination status of the command language interpreter. Normally
-		 * Vala will generate code to automatically close the pipe when the
+		 * Bala will generate code to automatically close the pipe when the
 		 * CommandPipe instance goes out of scope
 		 *
 		 * CommandPipe.close () is synchronous and will return when the child

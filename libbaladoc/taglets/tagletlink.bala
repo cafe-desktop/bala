@@ -22,9 +22,9 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
-public class Valadoc.Taglets.Link : InlineTaglet {
+public class Baladoc.Taglets.Link : InlineTaglet {
 	public string symbol_name { internal set; get; }
 
 	/**

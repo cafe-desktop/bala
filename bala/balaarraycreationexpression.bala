@@ -29,7 +29,7 @@ using GLib;
  *
  * {{{ new int[] { 1, 2, 3 } }}}
  */
-public class Vala.ArrayCreationExpression : Expression {
+public class Bala.ArrayCreationExpression : Expression {
 	/**
 	 * The type of the elements of the array.
 	 */

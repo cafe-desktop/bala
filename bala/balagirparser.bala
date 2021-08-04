@@ -29,11 +29,11 @@ using GLib;
  *
  * Pipeline:
  * 1) Parse metadata
- * 2) Parse GIR with metadata, track unresolved GIR symbols, create Vala symbols
+ * 2) Parse GIR with metadata, track unresolved GIR symbols, create Bala symbols
  * 3) Reconciliate the tree by mapping tracked symbols
  * 4) Process the tree
  */
-public class Vala.GirParser : CodeVisitor {
+public class Bala.GirParser : CodeVisitor {
 	/*
 	 * Metadata parser
 	 */
@@ -155,7 +155,7 @@ public class Vala.GirParser : CodeVisitor {
 		public SourceReference source_reference;
 
 		public bool used = false;
-		public Vala.Map<ArgumentType,Argument> args = new HashMap<ArgumentType,Argument> ();
+		public Bala.Map<ArgumentType,Argument> args = new HashMap<ArgumentType,Argument> ();
 		public ArrayList<Metadata> children = new ArrayList<Metadata> ();
 
 		public Metadata (string pattern, string? selector = null, SourceReference? source_reference = null) {
@@ -1007,7 +1007,7 @@ public class Vala.GirParser : CodeVisitor {
 							node.merged = true;
 							Report.warning (symbol.source_reference, "Signal `%s' conflicts with property of the same name".printf (get_full_name ()));
 						} else if (node.symbol is Method) {
-							// getter in C, but not in Vala
+							// getter in C, but not in Bala
 							node.merged = true;
 						}
 					}
@@ -4026,7 +4026,7 @@ public class Vala.GirParser : CodeVisitor {
 			if (!info.param.ellipsis && info.param.initializer == null) {
 				string type_string = info.param.variable_type.to_string ();
 				if (type_string == "GLib.Cancellable?" || type_string == "Gio.Cancellable?") {
-					info.param.initializer = new Vala.NullLiteral ();
+					info.param.initializer = new Bala.NullLiteral ();
 				} else {
 					break;
 				}

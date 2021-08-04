@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a namespace declaration in the source code.
  */
-public class Vala.Namespace : Symbol {
+public class Bala.Namespace : Symbol {
 	private List<Class> classes = new ArrayList<Class> ();
 	private List<Interface> interfaces = new ArrayList<Interface> ();
 	private List<Struct> structs = new ArrayList<Struct> ();

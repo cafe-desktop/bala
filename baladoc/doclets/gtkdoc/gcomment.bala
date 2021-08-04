@@ -47,13 +47,13 @@ public class Gtkdoc.Header {
 public class Gtkdoc.GComment {
 	public string symbol;
 	public string[] symbol_annotations;
-	public Vala.List<Header> headers = new Vala.ArrayList<Header> ();
+	public Bala.List<Header> headers = new Bala.ArrayList<Header> ();
 	public bool short_description;
 	public string brief_comment;
 	public string long_comment;
 	public string returns;
 	public string[] returns_annotations;
-	public Vala.List<Header> versioning = new Vala.ArrayList<Header> ();
+	public Bala.List<Header> versioning = new Bala.ArrayList<Header> ();
 	public string[] see_also;
 	public bool is_section;
 
@@ -130,7 +130,7 @@ public class Gtkdoc.GComment {
 		return builder.str;
 	}
 
-	public string to_docbook (Valadoc.ErrorReporter reporter) {
+	public string to_docbook (Baladoc.ErrorReporter reporter) {
 		/*
 		 * FIXME: this is not how it should be.
 		 * The real solution is to create a comment like gtkdoc-mkdb does.

@@ -26,7 +26,7 @@
  *
  * {{{ (owned) foo }}}
  */
-public class Vala.ReferenceTransferExpression : Expression {
+public class Bala.ReferenceTransferExpression : Expression {
 	/**
 	 * The variable whose reference is to be transferred.
 	 */

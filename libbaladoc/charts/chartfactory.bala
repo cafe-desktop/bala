@@ -23,7 +23,7 @@
 [CCode (cname = "baladoc_compat_gvc_graph_create_node")]
 extern Gvc.Node baladoc_gvc_graph_create_node (Gvc.Graph graph, string name);
 
-public abstract class Valadoc.Charts.Factory : Object {
+public abstract class Baladoc.Charts.Factory : Object {
 	protected Gvc.Node create_type (Gvc.Graph graph, Api.Node item) {
 		return baladoc_gvc_graph_create_node (graph, item.get_full_name ());
 	}

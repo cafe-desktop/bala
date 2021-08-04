@@ -3,7 +3,7 @@
  * Copyright (C) 2009 Michael B. Trausch <mike@trausch.us>
  * License: GNU LGPL v2.1 as published by the Free Software Foundation.
  *
- * Part of the Vala compiler system.
+ * Part of the Bala compiler system.
  *
  * Note that as of GLib 2.22, gnet-2.0 will be deprecated, so software using
  * gnet-2.0 will not be forward compatible to GLib 3.0.  Also, the async
@@ -14,7 +14,7 @@
  * read the header files for glib-2.0 and re-create as much of them as I could
  * here.  However, some things (such as when a "gchar *" in the header means
  * a char[] over a string) may be incorrect.  Someone who has used the gnet-2.0
- * libraries and who is familiar with Vala ought to review these bindings.
+ * libraries and who is familiar with Bala ought to review these bindings.
  */
 [CCode(cprefix = "G", lower_case_cprefix = "gnet_",
 	   cheader_filename = "gnet.h")]

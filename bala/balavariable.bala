@@ -20,7 +20,7 @@
  * 	Jürg Billeter <j@bitron.ch>
  */
 
-public class Vala.Variable : Symbol {
+public class Bala.Variable : Symbol {
 	/**
 	 * The optional initializer expression.
 	 */

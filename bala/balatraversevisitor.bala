@@ -23,7 +23,7 @@
 /**
  * Code visitor for traversing the tree with a simple callback
  */
-public class Vala.TraverseVisitor : CodeVisitor {
+public class Bala.TraverseVisitor : CodeVisitor {
 	private TraverseFunc func;
 
 	public TraverseVisitor (owned TraverseFunc func) {
@@ -385,9 +385,9 @@ public class Vala.TraverseVisitor : CodeVisitor {
 	}
 }
 
-public enum Vala.TraverseStatus {
+public enum Bala.TraverseStatus {
 	STOP,
 	CONTINUE
 }
 
-public delegate Vala.TraverseStatus Vala.TraverseFunc (CodeNode node);
+public delegate Bala.TraverseStatus Bala.TraverseFunc (CodeNode node);

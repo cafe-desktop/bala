@@ -23,7 +23,7 @@
 /**
  * Abstract code visitor generating code.
  */
-public abstract class Vala.CodeGenerator : CodeVisitor {
+public abstract class Bala.CodeGenerator : CodeVisitor {
 	/**
 	 * Generate and emit C code for the specified code context.
 	 *

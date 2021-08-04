@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a C code statement that evaluates a given expression.
  */
-public class Vala.CCodeExpressionStatement : CCodeStatement {
+public class Bala.CCodeExpressionStatement : CCodeStatement {
 	/**
 	 * The expression to evaluate.
 	 */

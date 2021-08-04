@@ -24,7 +24,7 @@
 /**
  * Represents a type cast in the source code.
  */
-public class Vala.CastExpression : Expression {
+public class Bala.CastExpression : Expression {
 	/**
 	 * The expression to be cast.
 	 */

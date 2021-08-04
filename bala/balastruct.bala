@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents a struct declaration in the source code.
  */
-public class Vala.Struct : TypeSymbol {
+public class Bala.Struct : TypeSymbol {
 	private List<TypeParameter> type_parameters = new ArrayList<TypeParameter> ();
 	private List<Constant> constants = new ArrayList<Constant> ();
 	private List<Field> fields = new ArrayList<Field> ();

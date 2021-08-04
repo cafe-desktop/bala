@@ -25,7 +25,7 @@
 /**
  * Represents a node in the api tree.
  */
-public abstract class Valadoc.Api.Node : Item, Documentation {
+public abstract class Baladoc.Api.Node : Item, Documentation {
 	protected bool do_document = false;
 	private SourceFile file;
 
@@ -46,17 +46,17 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 	 */
 	public abstract NodeType node_type { get; }
 
-	private Vala.Map<string, Node> per_name_children;
-	private Vala.Map<NodeType, Vala.List<Node>> per_type_children;
+	private Bala.Map<string, Node> per_name_children;
+	private Bala.Map<NodeType, Bala.List<Node>> per_type_children;
 
 
-	protected Node (Node? parent, SourceFile? file, string? name, Vala.CodeNode? data) {
+	protected Node (Node? parent, SourceFile? file, string? name, Bala.CodeNode? data) {
 		base (data);
 
-		per_name_children = new Vala.HashMap<string, Node> (str_hash, str_equal);
-		per_type_children = new Vala.HashMap<NodeType, Vala.List<Node>> ();
+		per_name_children = new Bala.HashMap<string, Node> (str_hash, str_equal);
+		per_type_children = new Bala.HashMap<NodeType, Bala.List<Node>> ();
 
-		if (name != null && (Vala.Scanner.get_identifier_or_keyword (name, name.length) != Vala.TokenType.IDENTIFIER || name[0].isdigit ())) {
+		if (name != null && (Bala.Scanner.get_identifier_or_keyword (name, name.length) != Bala.TokenType.IDENTIFIER || name[0].isdigit ())) {
 			this.name = "@" + name;
 		} else {
 			this.name = name;
@@ -102,9 +102,9 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 			per_name_children.set ("", child);
 		}
 
-		Vala.List<Node> children = per_type_children.get (child.node_type);
+		Bala.List<Node> children = per_type_children.get (child.node_type);
 		if (children == null) {
-			children = new Vala.ArrayList<Node> ();
+			children = new Bala.ArrayList<Node> ();
 			per_type_children.set (child.node_type, children);
 		}
 
@@ -149,7 +149,7 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 	 * @param type a node type
 	 */
 	public bool has_visible_children_by_type (NodeType type, Settings settings) {
-		Vala.List<Node>? all_children = per_type_children.get (type);
+		Bala.List<Node>? all_children = per_type_children.get (type);
 		if (all_children != null) {
 			foreach (Node node in all_children) {
 				if (node.is_browsable (settings)) {
@@ -189,7 +189,7 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 	 * @param type a node type
 	 */
 	public bool has_children_by_type (NodeType type) {
-		Vala.List<Node>? all_children = per_type_children.get (type);
+		Bala.List<Node>? all_children = per_type_children.get (type);
 		return all_children != null && !all_children.is_empty;
 	}
 
@@ -213,10 +213,10 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 	 * @param type a node type
 	 * @param filtered specifies whether nodes which are not browsable should appear in the list
 	 */
-	public Vala.List<Node> get_children_by_type (NodeType type, bool filtered = true) {
-		var children = new Vala.ArrayList<Node> ();
+	public Bala.List<Node> get_children_by_type (NodeType type, bool filtered = true) {
+		var children = new Bala.ArrayList<Node> ();
 
-		Vala.List<Node> all_children = per_type_children.get (type);
+		Bala.List<Node> all_children = per_type_children.get (type);
 		if (all_children != null) {
 			foreach (Node node in all_children) {
 				if (node.do_document || !filtered) {
@@ -234,8 +234,8 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 	 * @param types a list of node types
 	 * @param filtered specifies whether nodes which are not browsable should appear in the list
 	 */
-	public Vala.List<Node> get_children_by_types (NodeType[] types, bool filtered = true) {
-		var children = new Vala.ArrayList<Node> ();
+	public Bala.List<Node> get_children_by_types (NodeType[] types, bool filtered = true) {
+		var children = new Bala.ArrayList<Node> ();
 
 		foreach (NodeType type in types) {
 			children.add_all (get_children_by_type (type, filtered));
@@ -252,7 +252,7 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 	 * @param filtered specifies whether nodes which are not browsable should appear in the list
 	 */
 	public void accept_children_by_type (NodeType type, Visitor visitor, bool filtered = true) {
-		Vala.List<Node> all_children = per_type_children.get (type);
+		Bala.List<Node> all_children = per_type_children.get (type);
 		if (all_children != null) {
 			foreach (Node node in all_children) {
 				if (node.do_document || !filtered) {
@@ -282,7 +282,7 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 	 * @param filtered specifies whether nodes which are not browsable should appear in the list
 	 */
 	public void accept_all_children (Visitor visitor, bool filtered = true) {
-		foreach (Vala.List<Node> children in per_type_children.get_values ()) {
+		foreach (Bala.List<Node> children in per_type_children.get_values ()) {
 			if (this.parent == children[0]) {
 				continue;
 			}
@@ -313,13 +313,13 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 		get {
 			if (this._nspace == null) {
 				Api.Item ast = this;
-				while (ast is Valadoc.Api.Namespace == false) {
+				while (ast is Baladoc.Api.Namespace == false) {
 					ast = ast.parent;
 					if (ast == null) {
 						return null;
 					}
 				}
-				this._nspace = (Valadoc.Api.Namespace)ast;
+				this._nspace = (Baladoc.Api.Namespace)ast;
 			}
 			return this._nspace;
 		}
@@ -332,13 +332,13 @@ public abstract class Valadoc.Api.Node : Item, Documentation {
 		get {
 			if (this._package == null) {
 				Api.Item ast = this;
-				while (ast is Valadoc.Api.Package == false) {
+				while (ast is Baladoc.Api.Package == false) {
 					ast = ast.parent;
 					if (ast == null) {
 						return null;
 					}
 				}
-				this._package = (Valadoc.Api.Package)ast;
+				this._package = (Baladoc.Api.Package)ast;
 			}
 			return this._package;
 		}

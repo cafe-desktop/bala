@@ -21,7 +21,7 @@
  * 	Philip Van Hoof <pvanhoof@gnome.org>
  */
 
-public class Vala.GDBusClientModule : GDBusModule {
+public class Bala.GDBusClientModule : GDBusModule {
 	enum CallType {
 		SYNC,
 		ASYNC,

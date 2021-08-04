@@ -29,7 +29,7 @@ using GLib;
  *
  * {{{ foo[1:5] }}}
  */
-public class Vala.SliceExpression : Expression {
+public class Bala.SliceExpression : Expression {
 	public Expression container {
 		get {
 			return _container;

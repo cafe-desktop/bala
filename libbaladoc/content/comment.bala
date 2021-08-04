@@ -22,18 +22,18 @@
  */
 
 
-using Valadoc.Taglets;
+using Baladoc.Taglets;
 
-public class Valadoc.Content.Comment : BlockContent {
-	public Vala.List<Taglet> taglets { get { return _taglets; } }
-	private Vala.List<Taglet> _taglets;
+public class Baladoc.Content.Comment : BlockContent {
+	public Bala.List<Taglet> taglets { get { return _taglets; } }
+	private Bala.List<Taglet> _taglets;
 
 	private bool checked = false;
 
 
 	internal Comment () {
 		base ();
-		_taglets = new Vala.ArrayList<Taglet> ();
+		_taglets = new Bala.ArrayList<Taglet> ();
 	}
 
 	public override void configure (Settings settings, ResourceLocator locator) {
@@ -69,8 +69,8 @@ public class Valadoc.Content.Comment : BlockContent {
 		}
 	}
 
-	public Vala.List<Taglet> find_taglets (Api.Node? container, Type taglet_type) {
-		Vala.List<Taglet> selected_taglets = new Vala.ArrayList<Taglet> ();
+	public Bala.List<Taglet> find_taglets (Api.Node? container, Type taglet_type) {
+		Bala.List<Taglet> selected_taglets = new Bala.ArrayList<Taglet> ();
 
 		// TODO inherit stuff if needed
 

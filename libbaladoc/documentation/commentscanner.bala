@@ -20,7 +20,7 @@
  * 	Didier 'Ptitjes Villevalois <ptitjes@free.fr>
  */
 
-public class Valadoc.CommentScanner : WikiScanner {
+public class Baladoc.CommentScanner : WikiScanner {
 
 	public CommentScanner (Settings settings) {
 		base (settings);

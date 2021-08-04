@@ -21,7 +21,7 @@
  */
 
 
-public class Valadoc.Html.LinkHelper : Object {
+public class Baladoc.Html.LinkHelper : Object {
 	protected Settings _settings = null;
 
 	public bool enable_browsable_check {

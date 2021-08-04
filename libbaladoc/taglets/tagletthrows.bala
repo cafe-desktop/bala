@@ -22,9 +22,9 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
-public class Valadoc.Taglets.Throws : BlockContent, Taglet, Block {
+public class Baladoc.Taglets.Throws : BlockContent, Taglet, Block {
 	// TODO: rename
 	public string error_domain_name { private set; get; }
 
@@ -66,7 +66,7 @@ public class Valadoc.Taglets.Throws : BlockContent, Taglet, Block {
 
 
 		// Check if the method is allowed to throw the given type or error code:
-		Vala.List<Api.Node> exceptions = container.get_children_by_types ({Api.NodeType.ERROR_DOMAIN,
+		Bala.List<Api.Node> exceptions = container.get_children_by_types ({Api.NodeType.ERROR_DOMAIN,
 																		  Api.NodeType.CLASS},
 																		 false);
 		Api.Item expected_error_domain = (error_domain is Api.ErrorCode)
@@ -93,7 +93,7 @@ public class Valadoc.Taglets.Throws : BlockContent, Taglet, Block {
 		visitor.visit_taglet (this);
 	}
 
-	public Vala.List<ContentElement>? get_inheritable_documentation () {
+	public Bala.List<ContentElement>? get_inheritable_documentation () {
 		return content;
 	}
 

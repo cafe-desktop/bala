@@ -20,7 +20,7 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  US
 # _BALA_CHECK_COMPILE_WITH_ARGS(ARGS, [ACTION-IF-TRUE],
 #   [ACTION-IF-FALSE])
 # --------------------------------------
-# Check that Vala compile with ARGS.
+# Check that Bala compile with ARGS.
 #
 AC_DEFUN([_BALA_CHECK_COMPILE_WITH_ARGS],
 [AC_REQUIRE([AM_PROG_BALAC])[]dnl
@@ -38,7 +38,7 @@ _ACEOF
 # BALA_CHECK_PACKAGES(PKGS, [ACTION-IF-FOUND],
 #   [ACTION-IF-NOT-FOUND])
 # --------------------------------------
-# Check that PKGS Vala bindings are installed and usable.
+# Check that PKGS Bala bindings are installed and usable.
 #
 AC_DEFUN([BALA_CHECK_PACKAGES],
 [
@@ -73,7 +73,7 @@ $3])],[
 ])# BALA_CHECK_PACKAGES
 
 
-# Check for Vala bindings for a package, as well as the pkg-config
+# Check for Bala bindings for a package, as well as the pkg-config
 # CFLAGS and LIBS for the package. The arguments here work the
 # same as those for PKG_CHECK_MODULES, which is called internally.
 # As a result, the _CFLAGS, _LIBS, and _BALAFLAGS variables will
@@ -87,7 +87,7 @@ AC_DEFUN([BALA_CHECK_MODULES],
 		AC_REQUIRE([AM_PROG_BALAC])dnl
 		AC_REQUIRE([PKG_PROG_PKG_CONFIG])dnl
         AC_REQUIRE([_BALA_CHECK_COMPILE_WITH_ARGS])dnl
-		AC_ARG_VAR([$1][_BALAFLAGS], [Vala compiler flags for $1])dnl
+		AC_ARG_VAR([$1][_BALAFLAGS], [Bala compiler flags for $1])dnl
 
         BALA_MODULES="`echo $2 | sed -e 's/ [[=<>]]\+ [[0-9.]]\+//g'`"
         for MODULE in $BALA_MODULES; do
@@ -114,7 +114,7 @@ AC_DEFUN([BALA_CHECK_MODULES],
 		fi[]dnl
 ])
 
-# Check whether the Vala API Generator exists in `PATH'. If it is found,
+# Check whether the Bala API Generator exists in `PATH'. If it is found,
 # the variable VAPIGEN is set. Optionally a minimum release number of the
 # generator can be requested.
 #
@@ -123,13 +123,13 @@ AC_DEFUN([BALA_CHECK_MODULES],
 AC_DEFUN([BALA_PROG_VAPIGEN],
 [AC_PATH_PROG([VAPIGEN], [vapigen], [])
   AS_IF([test -z "$VAPIGEN"],
-    [AC_MSG_WARN([No Vala API Generator found. You will not be able to generate .vapi files.])],
+    [AC_MSG_WARN([No Bala API Generator found. You will not be able to generate .vapi files.])],
     [AS_IF([test -n "$1"],
         [AC_MSG_CHECKING([$VAPIGEN is at least version $1])
-         am__vapigen_version=`$VAPIGEN --version | sed 's/Vala API Generator  *//'`
+         am__vapigen_version=`$VAPIGEN --version | sed 's/Bala API Generator  *//'`
          AS_VERSION_COMPARE([$1], ["$am__vapigen_version"],
            [AC_MSG_RESULT([yes])],
            [AC_MSG_RESULT([yes])],
            [AC_MSG_RESULT([no])
-            AC_MSG_ERROR([Vala API Generator $1 not found.])])])])
+            AC_MSG_ERROR([Bala API Generator $1 not found.])])])])
 ])

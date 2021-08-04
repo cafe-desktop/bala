@@ -25,7 +25,7 @@ using GLib;
 /**
  * Represents an expression with two operands in C code.
  */
-public class Vala.CCodeBinaryExpression : CCodeExpression {
+public class Bala.CCodeBinaryExpression : CCodeExpression {
 	/**
 	 * The binary operator.
 	 */
@@ -82,7 +82,7 @@ public class Vala.CCodeBinaryExpression : CCodeExpression {
 	}
 }
 
-public enum Vala.CCodeBinaryOperator {
+public enum Bala.CCodeBinaryOperator {
 	PLUS,
 	MINUS,
 	MUL,

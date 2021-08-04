@@ -23,7 +23,7 @@
 /**
  * A to be inferred data type.
  */
-public class Vala.VarType : DataType {
+public class Bala.VarType : DataType {
 	public VarType (bool value_owned = true) {
 		this.value_owned = value_owned;
 	}

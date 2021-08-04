@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc.Api;
+using Baladoc.Api;
 
 /**
  * Code visitor generating .gir file for the public interface.
  */
-public class Valadoc.GirWriter : Vala.GIRWriter {
+public class Baladoc.GirWriter : Bala.GIRWriter {
 	private GtkdocRenderer renderer;
 	private SymbolResolver resolver;
 
@@ -55,67 +55,67 @@ public class Valadoc.GirWriter : Vala.GIRWriter {
 		return MarkupWriter.escape (renderer.content);
 	}
 
-	protected override string? get_interface_comment (Vala.Interface viface) {
+	protected override string? get_interface_comment (Bala.Interface viface) {
 		Interface iface = resolver.resolve (viface) as Interface;
 		return translate (iface.documentation);
 	}
 
-	protected override string? get_struct_comment (Vala.Struct vst) {
+	protected override string? get_struct_comment (Bala.Struct vst) {
 		Struct st = resolver.resolve (vst) as Struct;
 		return translate (st.documentation);
 	}
 
-	protected override string? get_enum_comment (Vala.Enum ven) {
+	protected override string? get_enum_comment (Bala.Enum ven) {
 		Enum en = resolver.resolve (ven) as Enum;
 		return translate (en.documentation);
 	}
 
-	protected override string? get_class_comment (Vala.Class vc) {
+	protected override string? get_class_comment (Bala.Class vc) {
 		Class c = resolver.resolve (vc) as Class;
 		return translate (c.documentation);
 	}
 
-	protected override string? get_error_code_comment (Vala.ErrorCode vecode) {
+	protected override string? get_error_code_comment (Bala.ErrorCode vecode) {
 		ErrorCode ecode = resolver.resolve (vecode) as ErrorCode;
 		return translate (ecode.documentation);
 	}
 
-	protected override string? get_enum_value_comment (Vala.EnumValue vev) {
+	protected override string? get_enum_value_comment (Bala.EnumValue vev) {
 		Api.EnumValue ev = resolver.resolve (vev) as Api.EnumValue;
 		return translate (ev.documentation);
 	}
 
-	protected override string? get_constant_comment (Vala.Constant vc) {
+	protected override string? get_constant_comment (Bala.Constant vc) {
 		Constant c = resolver.resolve (vc) as Constant;
 		return translate (c.documentation);
 	}
 
-	protected override string? get_error_domain_comment (Vala.ErrorDomain vedomain) {
+	protected override string? get_error_domain_comment (Bala.ErrorDomain vedomain) {
 		ErrorDomain edomain = resolver.resolve (vedomain) as ErrorDomain;
 		return translate (edomain.documentation);
 	}
 
-	protected override string? get_field_comment (Vala.Field vf) {
+	protected override string? get_field_comment (Bala.Field vf) {
 		Field f = resolver.resolve (vf) as Field;
 		return translate (f.documentation);
 	}
 
-	protected override string? get_delegate_comment (Vala.Delegate vcb) {
+	protected override string? get_delegate_comment (Bala.Delegate vcb) {
 		Delegate cb = resolver.resolve (vcb) as Delegate;
 		return translate (cb.documentation);
 	}
 
-	protected override string? get_method_comment (Vala.Method vm) {
+	protected override string? get_method_comment (Bala.Method vm) {
 		Method m = resolver.resolve (vm) as Method;
 		return translate (m.documentation);
 	}
 
-	protected override string? get_property_comment (Vala.Property vprop) {
+	protected override string? get_property_comment (Bala.Property vprop) {
 		Property prop = resolver.resolve (vprop) as Property;
 		return translate (prop.documentation);
 	}
 
-	protected override string? get_delegate_return_comment (Vala.Delegate vcb) {
+	protected override string? get_delegate_return_comment (Bala.Delegate vcb) {
 		Delegate cb = resolver.resolve (vcb) as Delegate;
 		if (cb.documentation == null) {
 			return null;
@@ -126,7 +126,7 @@ public class Valadoc.GirWriter : Vala.GIRWriter {
 			return null;
 		}
 
-		Vala.List<Content.Taglet> taglets = documentation.find_taglets (cb, typeof(Taglets.Return));
+		Bala.List<Content.Taglet> taglets = documentation.find_taglets (cb, typeof(Taglets.Return));
 		foreach (Content.Taglet taglet in taglets) {
 			return translate_taglet (taglet);
 		}
@@ -134,7 +134,7 @@ public class Valadoc.GirWriter : Vala.GIRWriter {
 		return null;
 	}
 
-	protected override string? get_signal_return_comment (Vala.Signal vsig) {
+	protected override string? get_signal_return_comment (Bala.Signal vsig) {
 		Api.Signal sig = resolver.resolve (vsig) as Api.Signal;
 		if (sig.documentation == null) {
 			return null;
@@ -145,7 +145,7 @@ public class Valadoc.GirWriter : Vala.GIRWriter {
 			return null;
 		}
 
-		Vala.List<Content.Taglet> taglets = documentation.find_taglets (sig, typeof(Taglets.Return));
+		Bala.List<Content.Taglet> taglets = documentation.find_taglets (sig, typeof(Taglets.Return));
 		foreach (Content.Taglet taglet in taglets) {
 			return translate_taglet (taglet);
 		}
@@ -153,7 +153,7 @@ public class Valadoc.GirWriter : Vala.GIRWriter {
 		return null;
 	}
 
-	protected override string? get_method_return_comment (Vala.Method vm) {
+	protected override string? get_method_return_comment (Bala.Method vm) {
 		Method m = resolver.resolve (vm) as Method;
 		if (m.documentation == null) {
 			return null;
@@ -164,7 +164,7 @@ public class Valadoc.GirWriter : Vala.GIRWriter {
 			return null;
 		}
 
-		Vala.List<Content.Taglet> taglets = documentation.find_taglets (m, typeof(Taglets.Return));
+		Bala.List<Content.Taglet> taglets = documentation.find_taglets (m, typeof(Taglets.Return));
 		foreach (Content.Taglet taglet in taglets) {
 			return translate_taglet (taglet);
 		}
@@ -172,13 +172,13 @@ public class Valadoc.GirWriter : Vala.GIRWriter {
 		return null;
 	}
 
-	protected override string? get_signal_comment (Vala.Signal vsig) {
+	protected override string? get_signal_comment (Bala.Signal vsig) {
 		Api.Signal sig = resolver.resolve (vsig) as Api.Signal;
 		return translate (sig.documentation);
 	}
 
-	protected override string? get_parameter_comment (Vala.Parameter param) {
-		Api.Symbol symbol = resolver.resolve (((Vala.Symbol) param.parent_symbol));
+	protected override string? get_parameter_comment (Bala.Parameter param) {
+		Api.Symbol symbol = resolver.resolve (((Bala.Symbol) param.parent_symbol));
 		if (symbol == null) {
 			return null;
 		}
@@ -188,7 +188,7 @@ public class Valadoc.GirWriter : Vala.GIRWriter {
 			return null;
 		}
 
-		Vala.List<Content.Taglet> taglets = documentation.find_taglets (symbol, typeof(Taglets.Param));
+		Bala.List<Content.Taglet> taglets = documentation.find_taglets (symbol, typeof(Taglets.Param));
 		foreach (Content.Taglet _taglet in taglets) {
 			Taglets.Param taglet = (Taglets.Param) _taglet;
 			if (taglet.parameter_name == param.name) {

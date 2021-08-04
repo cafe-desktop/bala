@@ -21,7 +21,7 @@
  */
 
 
-public class Vala.PhiFunction {
+public class Bala.PhiFunction {
 	public Variable original_variable { get; private set; }
 
 	public List<Variable?> operands { get; private set; }

@@ -24,7 +24,7 @@
 /**
  * Represents a return statement in the source code.
  */
-public class Vala.ReturnStatement : CodeNode, Statement {
+public class Bala.ReturnStatement : CodeNode, Statement {
 	/**
 	 * The optional expression to return.
 	 */

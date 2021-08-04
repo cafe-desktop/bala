@@ -21,9 +21,9 @@
  */
 
 
-public class Valadoc.Importer.ValadocDocumentationScanner : Object, Scanner {
+public class Baladoc.Importer.BaladocDocumentationScanner : Object, Scanner {
 
-	public ValadocDocumentationScanner (Settings settings) {
+	public BaladocDocumentationScanner (Settings settings) {
 		_settings = settings;
 	}
 
@@ -158,12 +158,12 @@ public class Valadoc.Importer.ValadocDocumentationScanner : Object, Scanner {
 		return 0;
 	}
 
-	private Vala.SourceLocation get_begin () {
-		return Vala.SourceLocation (_index, _last_line, get_line_start_column () + _last_column);
+	private Bala.SourceLocation get_begin () {
+		return Bala.SourceLocation (_index, _last_line, get_line_start_column () + _last_column);
 	}
 
-	private Vala.SourceLocation get_end (int offset = 0) {
-		return Vala.SourceLocation (_index, _line, get_line_start_column () + _column + offset);
+	private Bala.SourceLocation get_end (int offset = 0) {
+		return Bala.SourceLocation (_index, _line, get_line_start_column () + _column + offset);
 	}
 
 	private void emit_current_word () throws ParserError {

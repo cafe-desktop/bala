@@ -24,7 +24,7 @@
 /**
  * Writes markups and text to a file.
  */
-public class Valadoc.MarkupWriter {
+public class Baladoc.MarkupWriter {
 	protected WriteFunc write;
 	protected int indent;
 

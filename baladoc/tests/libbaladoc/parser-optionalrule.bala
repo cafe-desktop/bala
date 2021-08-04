@@ -20,18 +20,18 @@
  * 	Florian Brosch <flo.brosch@gmail.com>
  */
 
-using Valadoc;
+using Baladoc;
 
 
 public static void main () {
-	var settings = new Valadoc.Settings ();
+	var settings = new Baladoc.Settings ();
 	var scanner = new TestScanner ();
 	var reporter = new ErrorReporter ();
 	var parser = new Parser (settings, scanner, reporter);
 	scanner.set_parser (parser);
 
 	Rule rule = Rule.option ({
-			Valadoc.TokenType.EQUAL_1
+			Baladoc.TokenType.EQUAL_1
 		});
 
 
@@ -40,7 +40,7 @@ public static void main () {
 		parser.set_root_rule (rule);
 
 		scanner.set_pattern ({
-				Valadoc.TokenType.EQUAL_1
+				Baladoc.TokenType.EQUAL_1
 			});
 
 		parser.parse ("", "", 0, 0);
@@ -70,7 +70,7 @@ public static void main () {
 		reached = false;
 
 		scanner.set_pattern ({
-				Valadoc.TokenType.EQUAL_2
+				Baladoc.TokenType.EQUAL_2
 			});
 
 		parser.parse ("", "", 0, 0);

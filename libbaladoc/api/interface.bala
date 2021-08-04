@@ -21,33 +21,33 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a interface declaration in the source code.
  */
-public class Valadoc.Api.Interface : TypeSymbol {
+public class Baladoc.Api.Interface : TypeSymbol {
 	private string? interface_macro_name;
 	private string? dbus_name;
 	private string? cname;
 	private string? type_id;
 
-	public Interface (Node parent, SourceFile file, string name, Vala.SymbolAccessibility accessibility,
+	public Interface (Node parent, SourceFile file, string name, Bala.SymbolAccessibility accessibility,
 					  SourceComment? comment,
-					  Vala.Interface data)
+					  Bala.Interface data)
 	{
 		base (parent, file, name, accessibility, comment, false, data);
 
-		this.interface_macro_name = Vala.get_ccode_type_get_function (data);
-		this.dbus_name = Vala.GDBusModule.get_dbus_name (data);
-		this.cname = Vala.get_ccode_name (data);
-		this.type_id = Vala.get_ccode_type_id (data);
+		this.interface_macro_name = Bala.get_ccode_type_get_function (data);
+		this.dbus_name = Bala.GDBusModule.get_dbus_name (data);
+		this.cname = Bala.get_ccode_name (data);
+		this.type_id = Bala.get_ccode_type_id (data);
 	}
 
 	/**
 	 * A list of preconditioned interfaces
 	 */
-	private Vala.ArrayList<TypeReference> interfaces = new Vala.ArrayList<TypeReference> ();
+	private Bala.ArrayList<TypeReference> interfaces = new Bala.ArrayList<TypeReference> ();
 
 	/**
 	 * Add a newpreconditioned interface to the list
@@ -59,7 +59,7 @@ public class Valadoc.Api.Interface : TypeSymbol {
 	/**
 	 * Returns a list of newly preconditioned interfaces
 	 */
-	public Vala.Collection<TypeReference> get_implemented_interface_list () {
+	public Bala.Collection<TypeReference> get_implemented_interface_list () {
 		return this.interfaces;
 	}
 
@@ -67,14 +67,14 @@ public class Valadoc.Api.Interface : TypeSymbol {
 	/**
 	 * A list of all preconditioned interfaces
 	 */
-	private Vala.Collection<TypeReference> _full_implemented_interfaces = null;
+	private Bala.Collection<TypeReference> _full_implemented_interfaces = null;
 
 	/**
 	 * Returns a list of all preconditioned interfaces
 	 */
-	public Vala.Collection<TypeReference> get_full_implemented_interface_list () {
+	public Bala.Collection<TypeReference> get_full_implemented_interface_list () {
 		if (_full_implemented_interfaces == null) {
-			_full_implemented_interfaces = new Vala.ArrayList<TypeReference> ();
+			_full_implemented_interfaces = new Bala.ArrayList<TypeReference> ();
 			_full_implemented_interfaces.add_all (this.interfaces);
 
 			if (base_type != null) {
@@ -138,24 +138,24 @@ public class Valadoc.Api.Interface : TypeSymbol {
 	/**
 	 * A list of all known related (sub-)interfaces
 	 */
-	private Vala.Set<Interface> _known_related_interfaces = new Vala.HashSet<Interface> ();
+	private Bala.Set<Interface> _known_related_interfaces = new Bala.HashSet<Interface> ();
 
 	/**
 	 * A list of all known implementations of this interface
 	 */
-	private Vala.Set<Class> _known_implementations = new Vala.HashSet<Class> ();
+	private Bala.Set<Class> _known_implementations = new Bala.HashSet<Class> ();
 
 	/**
 	 * Returns a list of all known implementations of this interface
 	 */
-	public Vala.Collection<Class> get_known_implementations () {
+	public Bala.Collection<Class> get_known_implementations () {
 		return _known_implementations;
 	}
 
 	/**
 	 * Returns a list of all known related (sub-)interfaces
 	 */
-	public Vala.Collection<Interface> get_known_related_interfaces () {
+	public Bala.Collection<Interface> get_known_related_interfaces () {
 		return _known_related_interfaces;
 	}
 

@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents a parameter in method, signal and delegate signatures.
  */
-public class Valadoc.Api.Parameter : Symbol {
+public class Baladoc.Api.Parameter : Symbol {
 	public Content.Run default_value {
 		get;
 		set;
@@ -56,9 +56,9 @@ public class Valadoc.Api.Parameter : Symbol {
 		set;
 	}
 
-	private Vala.ParameterDirection type;
+	private Bala.ParameterDirection type;
 
-	public Parameter (Node parent, SourceFile file, string? name, Vala.SymbolAccessibility accessibility, Vala.ParameterDirection type, bool ellipsis, Vala.Parameter data) {
+	public Parameter (Node parent, SourceFile file, string? name, Bala.SymbolAccessibility accessibility, Bala.ParameterDirection type, bool ellipsis, Bala.Parameter data) {
 		base (parent, file, name, accessibility, null, data);
 		assert ((name == null && ellipsis) || (name != null && !ellipsis));
 
@@ -71,7 +71,7 @@ public class Valadoc.Api.Parameter : Symbol {
 	 */
 	public bool is_out {
 		get {
-			return type == Vala.ParameterDirection.OUT;
+			return type == Bala.ParameterDirection.OUT;
 		}
 	}
 
@@ -80,7 +80,7 @@ public class Valadoc.Api.Parameter : Symbol {
 	 */
 	public bool is_ref {
 		get {
-			return type == Vala.ParameterDirection.REF;
+			return type == Bala.ParameterDirection.REF;
 		}
 	}
 

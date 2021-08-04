@@ -21,12 +21,12 @@
  */
 
 
-using Valadoc;
+using Baladoc;
 
 /**
  * Used to translate imported C-documentation
  */
-public interface Valadoc.Api.Callable : Symbol {
+public interface Baladoc.Api.Callable : Symbol {
 	/**
 	 * The return type of this symbol.
 	 */

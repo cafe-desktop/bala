@@ -197,7 +197,7 @@
 	* vapigen/balagidlparser.bala:
 
 	Add support for a 'use_const' CCode attribute and GIDL XML attribute
-	that, when set to false, causes Vala not to emit the 'const' modifier
+	that, when set to false, causes Bala not to emit the 'const' modifier
 	on structure type input arguments.  This is useful for structure types
 	that, by convention, are not used with const (eg: GtkTreeIter).
 
@@ -479,7 +479,7 @@
 	* gobject/balagtypemodule.bala:
 
 	Use `internal' modifier in class declarations to fix build with
-	Vala older than r2411
+	Bala older than r2411
 
 2009-01-31  Jürg Billeter  <j@bitron.ch>
 
@@ -2112,7 +2112,7 @@
 	add `unowned' type modifier to complement `weak' for non-reference
 	counted objects.
 
-	`#' will be deprecated in Vala 0.5.5
+	`#' will be deprecated in Bala 0.5.5
 
 2008-12-18  Jürg Billeter  <j@bitron.ch>
 
@@ -2249,7 +2249,7 @@
 	* configure.ac:
 	* gen-project/:
 
-	Drop bala-gen-project, moved to vtg, Vala Toys for gedit
+	Drop bala-gen-project, moved to vtg, Bala Toys for gedit
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
@@ -2672,7 +2672,7 @@
 	* bala/balagenieparser.bala:
 	* bala/balaparser.bala:
 
-	Remove workarounds for old Vala versions
+	Remove workarounds for old Bala versions
 
 2008-12-13  Jürg Billeter  <j@bitron.ch>
 
@@ -3760,7 +3760,7 @@
 
 	Add --disable-dbus-transformation command-line option to disable
 	case transformation of D-Bus member names in dynamic D-Bus client
-	support, this option will be removed again when Vala gains static
+	support, this option will be removed again when Bala gains static
 	D-Bus client support
 
 2008-11-13  Jürg Billeter  <j@bitron.ch>
@@ -4487,7 +4487,7 @@
 
 	* gobject/balaccodegenerator.bala:
 
-	Generate C switch statements for Vala switch statements where
+	Generate C switch statements for Bala switch statements where
 	possible
 
 2008-10-29  Thijs Vermeir  <thijsvermeir@gmail.com>
@@ -5125,7 +5125,7 @@
 	* gobject/Makefile.am:
 	* compiler/Makefile.am:
 
-	Support building libbala and balac with older Vala versions
+	Support building libbala and balac with older Bala versions
 
 2008-10-22  Jürg Billeter  <j@bitron.ch>
 

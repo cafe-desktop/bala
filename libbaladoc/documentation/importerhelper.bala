@@ -21,9 +21,9 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
-namespace Valadoc.ImporterHelper {
+namespace Baladoc.ImporterHelper {
 
 	//
 	// resolve-parameter-ctype:
@@ -209,7 +209,7 @@ namespace Valadoc.ImporterHelper {
 		Run? sec = null;
 
 
-		Vala.Iterator<Inline> iter = run.content.iterator ();
+		Bala.Iterator<Inline> iter = run.content.iterator ();
 		for (bool has_next = iter.next (); has_next; has_next = iter.next ()) {
 			Inline item = iter.get ();
 			if (sec == null) {
@@ -240,7 +240,7 @@ namespace Valadoc.ImporterHelper {
 	private inline Paragraph? split_paragraph (Paragraph p, ContentFactory factory) {
 		Paragraph? sec = null;
 
-		Vala.Iterator<Inline> iter = p.content.iterator ();
+		Bala.Iterator<Inline> iter = p.content.iterator ();
 		for (bool has_next = iter.next (); has_next; has_next = iter.next ()) {
 			Inline item = iter.get ();
 			if (sec == null) {

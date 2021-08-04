@@ -23,7 +23,7 @@
 /**
  * Represents the Generic.destroy field.
  */
-public class Vala.GenericDestroyField : Field {
+public class Bala.GenericDestroyField : Field {
 	/**
 	 * Creates a new generic destroy field.
 	 *

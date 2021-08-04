@@ -22,7 +22,7 @@
  */
 
 
-public abstract class Valadoc.Content.ContentVisitor : Object {
+public abstract class Baladoc.Content.ContentVisitor : Object {
 
 	public virtual void visit_comment (Comment element) {
 	}

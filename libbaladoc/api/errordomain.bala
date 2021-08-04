@@ -21,34 +21,34 @@
  */
 
 
-using Valadoc.Content;
+using Baladoc.Content;
 
 /**
  * Represents an error domain declaration.
  */
-public class Valadoc.Api.ErrorDomain : TypeSymbol {
+public class Baladoc.Api.ErrorDomain : TypeSymbol {
 	private string? quark_function_name;
 	private string? quark_macro_name;
 	private string? dbus_name;
 	private string? cname;
 
-	public ErrorDomain (Node parent, SourceFile file, string name, Vala.SymbolAccessibility accessibility,
-						SourceComment? comment, Vala.ErrorDomain data)
+	public ErrorDomain (Node parent, SourceFile file, string name, Bala.SymbolAccessibility accessibility,
+						SourceComment? comment, Bala.ErrorDomain data)
 	{
 		base (parent, file, name, accessibility, comment, false, data);
 
 		this.quark_function_name = _get_quark_function_name (data);
 		this.quark_macro_name = _get_quark_macro_name (data);
-		this.dbus_name = Vala.GDBusModule.get_dbus_name (data);
-		this.cname = Vala.get_ccode_name (data);
+		this.dbus_name = Bala.GDBusModule.get_dbus_name (data);
+		this.cname = Bala.get_ccode_name (data);
 	}
 
-	string _get_quark_function_name (Vala.ErrorDomain element) {
-		return Vala.get_ccode_lower_case_prefix (element) + "quark";
+	string _get_quark_function_name (Bala.ErrorDomain element) {
+		return Bala.get_ccode_lower_case_prefix (element) + "quark";
 	}
 
-	string? _get_quark_macro_name (Vala.ErrorDomain element) {
-		return Vala.get_ccode_upper_case_name (element, null);
+	string? _get_quark_macro_name (Bala.ErrorDomain element) {
+		return Bala.get_ccode_upper_case_name (element, null);
 	}
 
 	/**

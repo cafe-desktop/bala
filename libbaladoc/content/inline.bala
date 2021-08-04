@@ -21,5 +21,5 @@
  */
 
 
-public interface Valadoc.Content.Inline : ContentElement {
+public interface Baladoc.Content.Inline : ContentElement {
 }

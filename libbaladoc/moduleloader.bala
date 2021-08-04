@@ -22,11 +22,11 @@
  */
 
 [CCode (has_target = false)]
-public delegate void Valadoc.TagletRegisterFunction (ModuleLoader loader);
+public delegate void Baladoc.TagletRegisterFunction (ModuleLoader loader);
 
-public class Valadoc.ModuleLoader : Object {
-	private Vala.HashMap<string, ModuleData> doclets = new Vala.HashMap<string, ModuleData> (str_hash, str_equal);
-	private Vala.HashMap<string, GLib.Type> taglets = new Vala.HashMap<string, GLib.Type> (str_hash, str_equal);
+public class Baladoc.ModuleLoader : Object {
+	private Bala.HashMap<string, ModuleData> doclets = new Bala.HashMap<string, ModuleData> (str_hash, str_equal);
+	private Bala.HashMap<string, GLib.Type> taglets = new Bala.HashMap<string, GLib.Type> (str_hash, str_equal);
 
 	private static ModuleLoader instance;
 
@@ -92,7 +92,7 @@ public class Valadoc.ModuleLoader : Object {
 	}
 
 	public Doclet? create_doclet (string _path) {
-		string path = Vala.CodeContext.realpath (_path);
+		string path = Bala.CodeContext.realpath (_path);
 
 		ModuleData? data = doclets.get (path);
 		if (data == null) {
@@ -108,7 +108,7 @@ public class Valadoc.ModuleLoader : Object {
 				return null;
 			}
 
-			Valadoc.DocletRegisterFunction register_func = (Valadoc.DocletRegisterFunction) function;
+			Baladoc.DocletRegisterFunction register_func = (Baladoc.DocletRegisterFunction) function;
 			data = new ModuleData ();
 			doclets.set (path, data);
 

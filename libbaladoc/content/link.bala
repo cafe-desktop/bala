@@ -22,7 +22,7 @@
  */
 
 
-public class Valadoc.Content.Link : InlineContent, Inline {
+public class Baladoc.Content.Link : InlineContent, Inline {
 	public string url {
 		set;
 		get;
