@@ -1,7 +1,7 @@
 using GLib;
 
 [Source (filename = "fastbapitest.bala", line = 1, column = 1)]
-namespace FastVapi {
+namespace FastBapi {
 	[Source (filename = "fastbapitest.bala", line = 23, column = 2)]
 	public class Test : Object {
 		[Source (filename = "fastbapitest.bala", line = 26, column = 3)]
