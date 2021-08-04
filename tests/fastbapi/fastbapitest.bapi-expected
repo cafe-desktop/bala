@@ -1,72 +1,72 @@
 using GLib;
 
-[Source (filename = "fastvapitest.bala", line = 1, column = 1)]
+[Source (filename = "fastbapitest.bala", line = 1, column = 1)]
 namespace FastVapi {
-	[Source (filename = "fastvapitest.bala", line = 23, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 23, column = 2)]
 	public class Test : Object {
-		[Source (filename = "fastvapitest.bala", line = 26, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 26, column = 3)]
 		public int field;
-		[Source (filename = "fastvapitest.bala", line = 28, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 28, column = 3)]
 		public weak Test weak_field;
-		[Source (filename = "fastvapitest.bala", line = 34, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 34, column = 3)]
 		public Test.sub ();
-		[Source (filename = "fastvapitest.bala", line = 37, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 37, column = 3)]
 		public void method ();
-		[Source (filename = "fastvapitest.bala", line = 23, column = 2)]
+		[Source (filename = "fastbapitest.bala", line = 23, column = 2)]
 		public Test ();
-		[Source (filename = "fastvapitest.bala", line = 30, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 30, column = 3)]
 		public string property { get; set construct; }
-		[Source (filename = "fastvapitest.bala", line = 32, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 32, column = 3)]
 		public weak Test weak_property { get; private set; }
-		[Source (filename = "fastvapitest.bala", line = 24, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 24, column = 3)]
 		public signal void some_signal (int param);
 	}
-	[Source (filename = "fastvapitest.bala", line = 52, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 52, column = 2)]
 	public class TestFundamental {
 	}
-	[Source (filename = "fastvapitest.bala", line = 57, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 57, column = 2)]
 	public abstract class AbstractTest {
-		[Source (filename = "fastvapitest.bala", line = 57, column = 2)]
+		[Source (filename = "fastbapitest.bala", line = 57, column = 2)]
 		protected AbstractTest ();
 	}
-	[Source (filename = "fastvapitest.bala", line = 16, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 16, column = 2)]
 	public interface InterfaceTest : Object {
-		[Source (filename = "fastvapitest.bala", line = 18, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 18, column = 3)]
 		public abstract void method (int param);
-		[Source (filename = "fastvapitest.bala", line = 17, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 17, column = 3)]
 		public abstract int property { get; set construct; }
 	}
-	[Source (filename = "fastvapitest.bala", line = 12, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 12, column = 2)]
 	public struct TestStruct {
-		[Source (filename = "fastvapitest.bala", line = 13, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 13, column = 3)]
 		public int field_name;
 	}
-	[Source (filename = "fastvapitest.bala", line = 41, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 41, column = 2)]
 	public struct TestSubStruct : TestStruct {
-		[Source (filename = "fastvapitest.bala", line = 42, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 42, column = 3)]
 		public static int static_field_name;
 	}
-	[Source (filename = "fastvapitest.bala", line = 4, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 4, column = 2)]
 	public enum EnumTest {
-		[Source (filename = "fastvapitest.bala", line = 5, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 5, column = 3)]
 		VALUE
 	}
-	[Source (filename = "fastvapitest.bala", line = 47, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 47, column = 2)]
 	public enum EnumTestTwo {
-		[Source (filename = "fastvapitest.bala", line = 48, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 48, column = 3)]
 		VALUE = 3,
-		[Source (filename = "fastvapitest.bala", line = 49, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 49, column = 3)]
 		VALUE_TWO
 	}
-	[Source (filename = "fastvapitest.bala", line = 8, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 8, column = 2)]
 	public errordomain ErrorTest {
-		[Source (filename = "fastvapitest.bala", line = 9, column = 3)]
+		[Source (filename = "fastbapitest.bala", line = 9, column = 3)]
 		FAILED
 	}
-	[Source (filename = "fastvapitest.bala", line = 21, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 21, column = 2)]
 	public delegate bool DelegateTest (int param);
-	[Source (filename = "fastvapitest.bala", line = 2, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 2, column = 2)]
 	public const int CONSTANT = 42;
-	[Source (filename = "fastvapitest.bala", line = 45, column = 2)]
+	[Source (filename = "fastbapitest.bala", line = 45, column = 2)]
 	public const int CONSTANT_TWO;
 }

@@ -228,19 +228,19 @@ AC_CONFIG_FILES([Makefile
            bala/Makefile
            codegen/Makefile
            compiler/Makefile
-           vapi/Makefile
+           bapi/Makefile
            tests/Makefile
-           tests/fastvapi/Makefile
+           tests/fastbapi/Makefile
            tests/girwriter/Makefile
            tests/gtktemplate/Makefile
            doc/Makefile
            doc/manual/Makefile
            doc/manual/version.xml
            gobject-introspection/Makefile
-           vapigen/vapigen.pc
-           vapigen/Makefile
-           vapigen/bala-gen-introspect/Makefile
-           vapigen/bala-gen-introspect/bala-gen-introspect
+           bapigen/bapigen.pc
+           bapigen/Makefile
+           bapigen/bala-gen-introspect/Makefile
+           bapigen/bala-gen-introspect/bala-gen-introspect
            libbaladoc/baladoc.pc
            libbaladoc/baladoc.deps
            libbaladoc/Makefile

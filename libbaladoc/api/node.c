@@ -1366,7 +1366,7 @@ baladoc_api_node_class_init (BaladocApiNodeClass * klass,
 	 */
 	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_NODE_NSPACE_PROPERTY, baladoc_api_node_properties[BALADOC_API_NODE_NSPACE_PROPERTY] = g_param_spec_object ("nspace", "nspace", "nspace", BALADOC_API_TYPE_NAMESPACE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	/**
-	 * The corresponding package such as a vapi or gir file
+	 * The corresponding package such as a bapi or gir file
 	 */
 	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_NODE_PACKAGE_PROPERTY, baladoc_api_node_properties[BALADOC_API_NODE_PACKAGE_PROPERTY] = g_param_spec_object ("package", "package", "package", BALADOC_API_TYPE_PACKAGE, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE));
 	g_object_class_install_property (G_OBJECT_CLASS (klass), BALADOC_API_NODE_DOCUMENTATION_PROPERTY, baladoc_api_node_properties[BALADOC_API_NODE_DOCUMENTATION_PROPERTY] = g_param_spec_object ("documentation", "documentation", "documentation", BALADOC_CONTENT_TYPE_COMMENT, G_PARAM_STATIC_STRINGS | G_PARAM_READABLE | G_PARAM_WRITABLE));

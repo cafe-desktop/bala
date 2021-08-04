@@ -36,12 +36,12 @@ if test -f $testdirname/$EXTRA_ENVIRONMENT_FILE; then
 	source $testdirname/$EXTRA_ENVIRONMENT_FILE
 fi
 
-vapidir=$abs_top_srcdir/vapi
+bapidir=$abs_top_srcdir/bapi
 run_prefix=""
 
 BALAC=$abs_top_builddir/compiler/balac$EXEEXT
 BALAFLAGS="$BALAFLAGS \
-	--vapidir $vapidir \
+	--bapidir $bapidir \
 	--enable-checking \
 	--disable-warnings \
 	--save-temps \
@@ -51,8 +51,8 @@ BALAFLAGS="$BALAFLAGS \
 	-X -pipe \
 	-X -lm \
 	-X -DGETTEXT_PACKAGE=\"balac\""
-BAPIGEN=$abs_top_builddir/vapigen/vapigen$EXEEXT
-BAPIGENFLAGS="--vapidir $vapidir"
+BAPIGEN=$abs_top_builddir/bapigen/bapigen$EXEEXT
+BAPIGENFLAGS="--bapidir $bapidir"
 
 # Incorporate the TEST_CFLAGS.
 for cflag in ${TEST_CFLAGS}; do
@@ -113,7 +113,7 @@ function sourceheader() {
 			 c:symbol-prefixes="test">
 EOF
 		elif [ "$1" = "Output:" ]; then
-			SOURCEFILE=$testpath.vapi.ref
+			SOURCEFILE=$testpath.bapi.ref
 		fi
 	fi
 }
@@ -132,7 +132,7 @@ function sourceend() {
 			echo "</repository>" >> $SOURCEFILE
 		fi
 		PACKAGEFLAGS=$([ -z "$PACKAGES" ] || echo $PACKAGES | xargs -n 1 echo -n " --pkg")
-		echo "$BAPIGEN $BAPIGENFLAGS $PACKAGEFLAGS --library $ns $ns.gir && tail -n +5 $ns.vapi|sed '\$d'|diff -wu $ns.vapi.ref -" > check
+		echo "$BAPIGEN $BAPIGENFLAGS $PACKAGEFLAGS --library $ns $ns.gir && tail -n +5 $ns.bapi|sed '\$d'|diff -wu $ns.bapi.ref -" > check
 	else
 		PACKAGEFLAGS=$([ -z "$PACKAGES" ] || echo $PACKAGES | xargs -n 1 echo -n " --pkg")
 		echo "$BALAC $BALAFLAGS $PACKAGEFLAGS -o $ns$EXEEXT $SOURCEFILE" >> prepare

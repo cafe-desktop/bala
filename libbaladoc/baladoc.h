@@ -1494,8 +1494,8 @@ struct _BaladocSettings {
 	gchar* directory;
 	gchar** defines;
 	gint defines_length1;
-	gchar** vapi_directories;
-	gint vapi_directories_length1;
+	gchar** bapi_directories;
+	gint bapi_directories_length1;
 	gchar** packages;
 	gint packages_length1;
 	gchar** source_files;

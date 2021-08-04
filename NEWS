@@ -73,7 +73,7 @@ Bala 0.48.15
   - gtk4: Update to 4.1.2
   - libwnck-3.0: Update to 3.36.0
   - linux: Provide Input.Event.input_event_sec/input_event_usec fields [#1152]
-  - vapi: Fix a couple of attribute typos
+  - bapi: Fix a couple of attribute typos
   - webkit2gtk-4.0: Update to 2.31.91
 
 Bala 0.48.14
@@ -197,7 +197,7 @@ Bala 0.48.12
   - posix: Declare fstat, stat, lstat and fstatat as public [#1086]
   - posix: Add freopen binding, as FILE.reopen()
   - rest-0.7: Fix ParamsIter.next() binding
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.48.11
 ============
@@ -215,7 +215,7 @@ Bala 0.48.11
   - gtk4: Don't skip LayoutManager.create_layout_child() [#1071]
   - gtk4: Update to 3.99.1+15b635d7
   - poppler-glib: Update to 20.09.0
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
   - webkit2gtk-4.0: Update to 2.30.1
 
 Bala 0.48.10
@@ -347,7 +347,7 @@ Bala 0.48.7
   - harfbuzz-gobject: Update to 2.6.8
   - pango: Update from 1.45.2
   - webkit2gtk-4.0: Update to 2.29.2
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.48.6
 ===========
@@ -413,7 +413,7 @@ Bala 0.48.4
     [#968]
   - gstreamer-1.0: Don't skip GST_*_FORMAT strings [#970]
   - gtk4: Update to 3.98.3
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.48.3
 ===========
@@ -442,7 +442,7 @@ Bala 0.48.3
 Bala 0.48.2
 ===========
  * Various improvements and bug fixes:
-  - vapigen: Define "GOBJECT" corresponding to set profile of CodeContext [#933]
+  - bapigen: Define "GOBJECT" corresponding to set profile of CodeContext [#933]
   - codegen:
     + Reset outdated array _size_ variable after use as ref parameter [#929]
     + Emit postconditions before free'ing local variables
@@ -475,7 +475,7 @@ Bala 0.48.2
   - gstreamer: Update from 1.17.0+ git master
   - gtk4: Update to 3.98.1
   - posix: Add pathconf and fpathconf bindings
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.48.1
 ===========
@@ -500,7 +500,7 @@ Bala 0.48.1
   - linux: Don't depend on GLib.Time when using POSIX profile
   - gtk4: Update to 3.98+2da445f9
   - poppler-glib: Update to 0.85
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.48.0
 ===========
@@ -516,7 +516,7 @@ Bala 0.48.0
   - manual: Update from wiki.gnome.org
 
  * Bindings:
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
  * Contributors:
    Alberto Fanjul, Arnaud Bonatti, Corentin Noël, Evan Nemerson, Florian Brosch,
@@ -572,7 +572,7 @@ Bala 0.47.4
  * Bindings:
   - javascriptcoregtk-4.0: Make JSC.Class usable by defining the right callback
   - gtk4: Update to 3.96.0+4ab12ab7
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.47.3
 ===========
@@ -595,7 +595,7 @@ Bala 0.47.3
   - glib-2.0: Let (u)int.try_parse() return false if there is an unparsed part
   - gtk4: Update to 3.96.0+7e2e92a8
   - gstreamer: Update from 1.17.0+ git master
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
   - webkit2gtk-4.0: Update to 2.27.4
 
 Bala 0.47.2
@@ -612,7 +612,7 @@ Bala 0.47.2
     + Improve *_get_type() fast path (requires glib >= 2.58) [#879]
   - bala:
     + Report error for async creation expression without yield
-    + Don't require constant initializer in fast-vapi [#461]
+    + Don't require constant initializer in fast-bapi [#461]
     + VoidType is actually compatible with itself [#878]
     + Improve handling of "void" as generic type [#878]
     + Keep formal_target_type on transform of method-call/object-creation [#835]
@@ -636,7 +636,7 @@ Bala 0.47.2
   - gstreamer: Update from 1.17.0+ git master
   - gtk4: Update to 3.96.0+448a4023
   - pango: Update to 1.44+
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
   - webkit2gtk-4.0: Update to 2.27.3
 
 Bala 0.47.1
@@ -702,7 +702,7 @@ Bala 0.46.4
     + Do not allow to change .length of arrays with fixed length
     + Improve error message for arrays as type arguments
     + Improve error reporting for invalid interface prerequisites [#437]
-    + Write value of constants/enums in fast-vapi if constant only [#461]
+    + Write value of constants/enums in fast-bapi if constant only [#461]
     + Restore DestroysInstance behaviour for non-compact classes [#873]
   - parser: `owned` is not allowed on Constants
   - girparser: Detect and replace "-" in parameter names
@@ -745,7 +745,7 @@ Bala 0.46.3
   - girparser: Add required copy/free attributes for gtype-boxed structs
     and regenerate GIR-based bindings to pick up copy/free attributes [#863]
   - docs: Mention requirement of autoconf-archive as build-dependency
-  - vapi: Perform syntax and semantic check for all bindings on "make check"
+  - bapi: Perform syntax and semantic check for all bindings on "make check"
 
  * Bindings:
   - avahi-client: Fix "use of possibly unassigned parameter" warnings
@@ -786,7 +786,7 @@ Bala 0.46.1
   - gstreamer: Update from 1.17.0+ git master
   - gtk4: Update to 3.96.0+97231ca2
   - gtk+-3.0: Ownership mismatch of ColorButton.rgba property-accessor [#844]
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.46.0
 ===========
@@ -819,7 +819,7 @@ Bala 0.46.0
   - gtk4: Regenerate to pick up DestroyInstance attributes
   - json-glib-1.0: Change abstract methods of Serializable to virtual [#840]
   - libsoup-2.4: soup_auth_new is not a constructor but a factory method [#791]
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.45.91
 ============
@@ -859,7 +859,7 @@ Bala 0.45.90
   - posix: Add *at() calls and related constants [#823]
   - webkit2gtk-4.0: Fix WebContext.initialize_notification_permissions()
   - x11: Fix return type of XInternAtoms and XGetAtomNames bindings
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.45.3
 ===========
@@ -879,7 +879,7 @@ Bala 0.45.3
   - gstreamer: Update from 1.17.0+ git master
   - gtk4: Update to 3.96.0+b05d1676
   - xtst: Fix signature of XTest.fake_relative_motion_event()
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.45.2
 ===========
@@ -899,7 +899,7 @@ Bala 0.45.2
   - gtk+-3.0: Update to 3.24.9~18177388
   - gtk4: Update to 3.96.0+8cfdd6c5
   - webkit2gtk-4.0: Update to 2.25.1
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.45.1
 ===========
@@ -908,7 +908,7 @@ Bala 0.45.1
   - Add support for --target-glib=auto [#761]
   - Report error for public creation methods of abstract classes [#766]
   - Report error for yield statements without async context
-  - Write "Source" attribute in fast-vapi mode
+  - Write "Source" attribute in fast-bapi mode
   - No-accessor struct properties in GLib.Object class must be owned
   - Support GObject properties with nullable GType-based struct type [#792]
   - Always use G_TYPE_CHECK_INSTANCE_TYPE for external symbols
@@ -935,7 +935,7 @@ Bala 0.45.1
     bitmasks [#794]
   - gstreamer: Update from 1.17.0+ git master
   - gtk4: Update to 3.96.0+322507f2
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.44.3
 ===========
@@ -975,7 +975,7 @@ Bala 0.44.2
   - gstreamer: Update from 1.15.2+ git master
   - gstreamer-1.0: Fix TypeFind and TypeFindFactory method references [#778]
   - gtk4: Update to 3.94.0+f273eca7
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.44.1
 ===========
@@ -996,7 +996,7 @@ Bala 0.44.1
   - gtk4: Update to 3.94.0+f14d998c
   - libgvc: Some additions and ownership/return-type fixes
   - vte-2.90: Mark as deprecated, it was replaced by vte-2.91
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.44.0
 ===========
@@ -1007,7 +1007,7 @@ Bala 0.44.0
  * Bindings:
   - gstreamer: Update from 1.15.2+ git master
   - gtk4: Update to 3.94.0+eacbeb9e
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.43.92
 ============
@@ -1034,7 +1034,7 @@ Bala 0.43.92
   - gobject-2.0: Add SignalHandler.disconnect_by_data()
   - poppler-glib: Update to 0.74
   - gtk4: Update to 3.94.0+b4ae491b
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.43.91
 ============
@@ -1059,7 +1059,7 @@ Bala 0.43.91
   - gio-unix-2.0: Add DesktopAppInfo.get_string_list() since 2.60
   - gstreamer: Update from 1.15.1+ git master
   - webkit2gtk-4.0: Update to 2.23.91
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.43.90
 ============
@@ -1080,7 +1080,7 @@ Bala 0.43.90
   - goocanvas: Update from 1.0.0+af07af5d
   - gstreamer: Update from 1.15.1+
   - gtk+-4.0: Update to 3.94.0+a7fa1cf6
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.43.6
 ===========
@@ -1127,7 +1127,7 @@ Bala 0.43.5
   - gdk-3.0,gtk+-3.0: Update to 3.24.3+9c8f1478
   - gtk+-4.0: Update to 3.94.0+9b15c690
   - libsoup-2.4: Fix Message.add_*_handler() [#731]
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.43.4
 ===========
@@ -1170,7 +1170,7 @@ Bala 0.43.4
   - gtk+-4.0: Update to 3.94.0+4404afc9
   - sqlite3: Correct return C type of Statement.column_text & Value.to_text
   - webkitgtk-4.0: Update to 2.23.1
-  - vapi: Update GIR-based bindings
+  - bapi: Update GIR-based bindings
 
 Bala 0.43.2
 ===========
@@ -1322,7 +1322,7 @@ Bala 0.42.2
 Bala 0.42.1
 ===========
  * Various improvements and bug fixes:
-  - vapigen: Warn if the library argument doesn't match any package attribute
+  - bapigen: Warn if the library argument doesn't match any package attribute
     [#669]
 
  * Bindings:
@@ -1621,7 +1621,7 @@ Bala 0.39.91
   - bala: Issue a warning on DBus methods which are not throwing an Error
   - Don't warn about unused internal methods which are meant to be visible
     on DBus [#593902]
-  - Don't install vapicheck [#793370]
+  - Don't install bapicheck [#793370]
 
  * Bindings:
   - glib-2.0: Add KeyFile.get_locale_for_key()
@@ -1851,11 +1851,11 @@ Bala 0.37.90
 ============
  * Various bug fixes:
   - Fix some build-system problem
-    + baladoc/tests: Add the source vapi directory to driver-test [#786505],
+    + baladoc/tests: Add the source bapi directory to driver-test [#786505],
       Add ./bala/.libs rather than ./gee/.libs to LD_LIBRARY_PATH
     + Explicitly link doclets against libbala-*.la [#786534]
     + Add missing include of Makefile.common
-  - vapigen: Mark given source-files as such and force girparser to handle them
+  - bapigen: Mark given source-files as such and force girparser to handle them
   - codegen: Include glib-object.h for Enums/Structs with type_id
  * Bindings:
   - gtk+-4.0: Make Gsk.Texturer.for_*() static factory methods
@@ -1879,7 +1879,7 @@ Bala 0.37.1
  * Highlights
   - Don't warn about deprecated symbols if installed_version is older
   - Add --gresourcesdir option [#783133]
-  - Install libbala-0.xx.vapi to "global" vapi directory
+  - Install libbala-0.xx.bapi to "global" bapi directory
   - Require and target GLib >= 2.40
   - build: Make ccode and codegen private API
   - build: Use --use-header for bala's libraries
@@ -1948,7 +1948,7 @@ Bala 0.36.1
 
  * GIR parser and writer:
   - girparser: Add destroy argument for metadata [#750838]
-  - vapigen: Add --nostdpkg option like in balac
+  - bapigen: Add --nostdpkg option like in balac
 
  * Bindings:
   - gstreamer-1.0: Fix Pad.set_*_function() bindings [#750838]
@@ -1999,7 +1999,7 @@ Bala 0.36.0
   - gdk-3.0: Three commits
   - gdk-pixbuf-2.0: Three commits
   - gobject-introspection-1.0: Prettify and fix the whole thing
-  - gsl.vapi: Fix attribute typos
+  - gsl.bapi: Fix attribute typos
   - gstreamer-1.0: Make ElementFactory.get_static_pad_templates fully "unowned",
       Mark *.make_writable with "ReturnsModifiedPointer",
       Fix Gst.Base.Adapter.map/take bindings
@@ -2195,7 +2195,7 @@ Bala 0.26.0
 Bala 0.25.4
 ===========
 
- * Add option --vapi-comments.
+ * Add option --bapi-comments.
  * Bug fixes and binding updates.
 
 Bala 0.25.3
@@ -2209,7 +2209,7 @@ Bala 0.25.2
  * Require and target GLib >= 2.24.
  * Report warning for private struct fields.
  * Replace webkit2gtk-3.0 bindings with webkit2gtk-4.0 bindings.
- * Always build vapigen.
+ * Always build bapigen.
  * Bug fixes and binding updates.
 
 Bala 0.25.1
@@ -2534,7 +2534,7 @@ Bala 0.9.6
 
  * Drop deprecated support for assigning to construct properties.
  * Some refactoring in the code generator.
- * Bug fixes in bindings and vapigen.
+ * Bug fixes in bindings and bapigen.
 
 Bala 0.9.5
 ==========
@@ -2697,7 +2697,7 @@ Bala 0.7.3
 ==========
 
  * Add initial support for POSIX profile.
- * Add --vapi and --gir commandline options.
+ * Add --bapi and --gir commandline options.
  * Add initial x11, xcb, and cairo-xcb bindings.
  * Many bug fixes and binding updates.
 
@@ -2961,7 +2961,7 @@ Bala 0.1.5
 Bala 0.1.4
 ==========
 
- * Use .vapi as file extension for bindings.
+ * Use .bapi as file extension for bindings.
  * Add Bala Reference Manual.
  * Add support for object initializers.
  * Emit #line directives in debug mode.
@@ -2971,7 +2971,7 @@ Bala 0.1.4
  * Add experimental support for registering new fundamental classed types.
  * Improve support for non-GObject classes.
  * Improve error reporting.
- * Add vapicheck to verify generated bindings (Mathias Hasselmann).
+ * Add bapicheck to verify generated bindings (Mathias Hasselmann).
  * Drop xml_pp dependency (Alberto Ruiz).
  * Many bug fixes.
 
@@ -2999,7 +2999,7 @@ Bala 0.1.3
  * Add SQLite bindings.
  * Add curses bindings (Ed Schouten).
  * Build system fixes (Nicolas Trangez).
- * Add manual pages for gidlgen and vapigen (Kumar Appaiah).
+ * Add manual pages for gidlgen and bapigen (Kumar Appaiah).
  * Many bug fixes all over the place.
 
 Bala 0.1.2

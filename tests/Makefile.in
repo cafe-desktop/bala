@@ -1375,7 +1375,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 NULL = 
 SUBDIRS = \
-	fastvapi \
+	fastbapi \
 	girwriter \
 	gtktemplate \
 	$(NULL)

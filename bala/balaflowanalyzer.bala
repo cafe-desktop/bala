@@ -143,7 +143,7 @@ public class Bala.FlowAnalyzer : CodeVisitor {
 
 	public override void visit_field (Field f) {
 		if (f.is_internal_symbol () && !f.used && !f.external_package) {
-			if (!f.is_private_symbol () && (context.internal_header_filename != null || context.use_fast_vapi)) {
+			if (!f.is_private_symbol () && (context.internal_header_filename != null || context.use_fast_bapi)) {
 				// do not warn if internal member may be used outside this compilation unit
 			} else {
 				Report.warning (f.source_reference, "field `%s' never used".printf (f.get_full_name ()));
@@ -169,7 +169,7 @@ public class Bala.FlowAnalyzer : CodeVisitor {
 		if (m.is_internal_symbol () && !m.used && !m.entry_point && !m.external_package
 		    && !m.overrides && (m.base_interface_method == null || m.base_interface_method == m)
 		    && !(m is CreationMethod)) {
-			if (!m.is_private_symbol () && (context.internal_header_filename != null || context.use_fast_vapi)) {
+			if (!m.is_private_symbol () && (context.internal_header_filename != null || context.use_fast_bapi)) {
 				// do not warn if internal member may be used outside this compilation unit
 			} else if (m.parent_symbol != null && m.parent_symbol.get_attribute ("DBus") != null
 			    && m.get_attribute_bool ("DBus", "visible", true)) {

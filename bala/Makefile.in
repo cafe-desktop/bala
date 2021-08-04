@@ -97,7 +97,7 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
-DIST_COMMON = $(srcdir)/Makefile.am $(dist_vapi_DATA) \
+DIST_COMMON = $(srcdir)/Makefile.am $(dist_bapi_DATA) \
 	$(balainclude_HEADERS) $(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
@@ -130,7 +130,7 @@ am__uninstall_files_from_dir = { \
     || { echo " ( cd '$$dir' && rm -f" $$files ")"; \
          $(am__cd) "$$dir" && rm -f $$files; }; \
   }
-am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(vapidir)" \
+am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bapidir)" \
 	"$(DESTDIR)$(balaincludedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 am__DEPENDENCIES_1 =
@@ -376,7 +376,7 @@ am__can_run_installinfo = \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
-DATA = $(dist_vapi_DATA)
+DATA = $(dist_bapi_DATA)
 HEADERS = $(balainclude_HEADERS)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
@@ -749,11 +749,11 @@ libbala@PACKAGE_SUFFIX@_la_LIBADD = \
 	$(top_builddir)/gee/libgee.la \
 	$(NULL)
 
-vapidir = $(datadir)/bala/vapi
-dist_vapi_DATA = libbala@PACKAGE_SUFFIX@.vapi
-EXTRA_DIST = $(libbala_la_BALASOURCES) bala.vapi bala.bala.stamp bala.h balaversion.bala.in
+bapidir = $(datadir)/bala/bapi
+dist_bapi_DATA = libbala@PACKAGE_SUFFIX@.bapi
+EXTRA_DIST = $(libbala_la_BALASOURCES) bala.bapi bala.bala.stamp bala.h balaversion.bala.in
 MAINTAINERCLEANFILES = \
-	bala.vapi \
+	bala.bapi \
 	bala.h \
 	$(libbala_la_BALASOURCES:.bala=.c) \
 	$(NULL)
@@ -1032,27 +1032,27 @@ mostlyclean-libtool:
 
 clean-libtool:
 	-rm -rf .libs _libs
-install-dist_vapiDATA: $(dist_vapi_DATA)
+install-dist_bapiDATA: $(dist_bapi_DATA)
 	@$(NORMAL_INSTALL)
-	@list='$(dist_vapi_DATA)'; test -n "$(vapidir)" || list=; \
+	@list='$(dist_bapi_DATA)'; test -n "$(bapidir)" || list=; \
 	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(vapidir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(vapidir)" || exit 1; \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(bapidir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(bapidir)" || exit 1; \
 	fi; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(vapidir)'"; \
-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(vapidir)" || exit $$?; \
+	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(bapidir)'"; \
+	  $(INSTALL_DATA) $$files "$(DESTDIR)$(bapidir)" || exit $$?; \
 	done
 
-uninstall-dist_vapiDATA:
+uninstall-dist_bapiDATA:
 	@$(NORMAL_UNINSTALL)
-	@list='$(dist_vapi_DATA)'; test -n "$(vapidir)" || list=; \
+	@list='$(dist_bapi_DATA)'; test -n "$(bapidir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(vapidir)'; $(am__uninstall_files_from_dir)
+	dir='$(DESTDIR)$(bapidir)'; $(am__uninstall_files_from_dir)
 install-balaincludeHEADERS: $(balainclude_HEADERS)
 	@$(NORMAL_INSTALL)
 	@list='$(balainclude_HEADERS)'; test -n "$(balaincludedir)" || list=; \
@@ -1165,7 +1165,7 @@ check: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) check-am
 all-am: Makefile $(LTLIBRARIES) $(DATA) $(HEADERS)
 installdirs:
-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(vapidir)" "$(DESTDIR)$(balaincludedir)"; do \
+	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bapidir)" "$(DESTDIR)$(balaincludedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -1382,7 +1382,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-dist_vapiDATA install-balaincludeHEADERS
+install-data-am: install-dist_bapiDATA install-balaincludeHEADERS
 
 install-dvi: install-dvi-am
 
@@ -1585,7 +1585,7 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
+uninstall-am: uninstall-dist_bapiDATA uninstall-libLTLIBRARIES \
 	uninstall-balaincludeHEADERS
 
 .MAKE: all check install install-am install-exec install-strip
@@ -1595,7 +1595,7 @@ uninstall-am: uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
 	ctags ctags-am distclean distclean-compile distclean-generic \
 	distclean-libtool distclean-tags distdir dvi dvi-am html \
 	html-am info info-am install install-am install-data \
-	install-data-am install-dist_vapiDATA install-dvi \
+	install-data-am install-dist_bapiDATA install-dvi \
 	install-dvi-am install-exec install-exec-am install-html \
 	install-html-am install-info install-info-am \
 	install-libLTLIBRARIES install-man install-pdf install-pdf-am \
@@ -1604,7 +1604,7 @@ uninstall-am: uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
 	installdirs maintainer-clean maintainer-clean-generic \
 	mostlyclean mostlyclean-compile mostlyclean-generic \
 	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
-	uninstall-am uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
+	uninstall-am uninstall-dist_bapiDATA uninstall-libLTLIBRARIES \
 	uninstall-balaincludeHEADERS
 
 .PRECIOUS: Makefile
@@ -1618,13 +1618,13 @@ $(srcdir)/balaversion.bala:
 		-e "s#\@PACKAGE_VERSION\@#$(PACKAGE_VERSION)#g" \
 		< $@.in > $@
 
-bala.vapi bala.bala.stamp: $(libbala_la_BALASOURCES)
+bala.bapi bala.bala.stamp: $(libbala_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi --pkg gmodule-2.0 --pkg gobject-2.0 \
-		--vapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/bapi --pkg gmodule-2.0 --pkg gobject-2.0 \
+		--bapidir $(top_srcdir)/gee --pkg gee \
 		--pkg config \
 		--use-header \
 		-H bala.h \
@@ -1632,7 +1632,7 @@ bala.vapi bala.bala.stamp: $(libbala_la_BALASOURCES)
 		$^
 	@touch $@
 
-libbala@PACKAGE_SUFFIX@.vapi: $(top_srcdir)/gee/gee.vapi $(top_srcdir)/bala/bala.vapi
+libbala@PACKAGE_SUFFIX@.bapi: $(top_srcdir)/gee/gee.bapi $(top_srcdir)/bala/bala.bapi
 	cat $^ > $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

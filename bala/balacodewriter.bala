@@ -159,7 +159,7 @@ public class Bala.CodeWriter : CodeVisitor {
 		}
 
 		var comments = ns.get_comments ();
-		if (context.vapi_comments && comments.size > 0) {
+		if (context.bapi_comments && comments.size > 0) {
 			bool first = true;
 			SourceReference? first_reference = null;
 			foreach (Comment comment in comments) {
@@ -235,7 +235,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && cl.comment != null) {
+		if (context.bapi_comments && cl.comment != null) {
 			write_comment (cl.comment);
 		}
 
@@ -315,7 +315,7 @@ public class Bala.CodeWriter : CodeVisitor {
 
 	void visit_sorted (List<Symbol> symbols) {
 		if (type != CodeWriterType.EXTERNAL && type != CodeWriterType.BAPIGEN) {
-			// order of virtual methods matters for fast vapis
+			// order of virtual methods matters for fast bapis
 			foreach (Symbol sym in symbols) {
 				sym.accept (this);
 			}
@@ -339,7 +339,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && st.comment != null) {
+		if (context.bapi_comments && st.comment != null) {
 			write_comment (st.comment);
 		}
 
@@ -383,7 +383,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && iface.comment != null) {
+		if (context.bapi_comments && iface.comment != null) {
 			write_comment (iface.comment);
 		}
 
@@ -440,7 +440,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && en.comment != null) {
+		if (context.bapi_comments && en.comment != null) {
 			write_comment (en.comment);
 		}
 
@@ -461,7 +461,7 @@ public class Bala.CodeWriter : CodeVisitor {
 				write_newline ();
 			}
 
-			if (context.vapi_comments && ev.comment != null) {
+			if (context.bapi_comments && ev.comment != null) {
 				write_comment (ev.comment);
 			}
 
@@ -505,7 +505,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && edomain.comment != null) {
+		if (context.bapi_comments && edomain.comment != null) {
 			write_comment (edomain.comment);
 		}
 
@@ -526,7 +526,7 @@ public class Bala.CodeWriter : CodeVisitor {
 				write_newline ();
 			}
 
-			if (context.vapi_comments && ecode.comment != null) {
+			if (context.bapi_comments && ecode.comment != null) {
 				write_comment (ecode.comment);
 			}
 
@@ -562,7 +562,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && c.comment != null) {
+		if (context.bapi_comments && c.comment != null) {
 			write_comment (c.comment);
 		}
 
@@ -599,7 +599,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && f.comment != null) {
+		if (context.bapi_comments && f.comment != null) {
 			write_comment (f.comment);
 		}
 
@@ -709,7 +709,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && cb.comment != null) {
+		if (context.bapi_comments && cb.comment != null) {
 			write_comment (cb.comment);
 		}
 
@@ -745,7 +745,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && c.comment != null) {
+		if (context.bapi_comments && c.comment != null) {
 			write_comment (c.comment);
 		}
 
@@ -765,7 +765,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && d.comment != null) {
+		if (context.bapi_comments && d.comment != null) {
 			write_comment (d.comment);
 		}
 
@@ -795,7 +795,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			}
 		}
 
-		if (context.vapi_comments && m.comment != null) {
+		if (context.bapi_comments && m.comment != null) {
 			write_comment (m.comment);
 		}
 
@@ -867,7 +867,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && prop.comment != null) {
+		if (context.bapi_comments && prop.comment != null) {
 			write_comment (prop.comment);
 		}
 
@@ -937,7 +937,7 @@ public class Bala.CodeWriter : CodeVisitor {
 			return;
 		}
 
-		if (context.vapi_comments && sig.comment != null) {
+		if (context.bapi_comments && sig.comment != null) {
 			write_comment (sig.comment);
 		}
 

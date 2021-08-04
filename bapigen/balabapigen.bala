@@ -1,4 +1,4 @@
-/* balavapigen.bala
+/* balabapigen.bala
  *
  * Copyright (C) 2006-2010  Jürg Billeter
  *
@@ -30,7 +30,7 @@ class Bala.BAPIGen {
 	[CCode (array_length = false, array_null_terminated = true)]
 	static string[] sources;
 	[CCode (array_length = false, array_null_terminated = true)]
-	static string[] vapi_directories;
+	static string[] bapi_directories;
 	[CCode (array_length = false, array_null_terminated = true)]
 	static string[] gir_directories;
 	[CCode (array_length = false, array_null_terminated = true)]
@@ -43,7 +43,7 @@ class Bala.BAPIGen {
 	CodeContext context;
 
 	const OptionEntry[] options = {
-		{ "vapidir", 0, 0, OptionArg.FILENAME_ARRAY, ref vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..." },
+		{ "bapidir", 0, 0, OptionArg.FILENAME_ARRAY, ref bapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..." },
 		{ "girdir", 0, 0, OptionArg.FILENAME_ARRAY, ref gir_directories, "Look for GIR bindings in DIRECTORY", "DIRECTORY..." },
 		{ "metadatadir", 0, 0, OptionArg.FILENAME_ARRAY, ref metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..." },
 		{ "nostdpkg", 0, 0, OptionArg.NONE, ref nostdpkg, "Do not include standard packages", null },
@@ -77,7 +77,7 @@ class Bala.BAPIGen {
 		context = new CodeContext ();
 		context.profile = Profile.GOBJECT;
 		context.add_define ("GOBJECT");
-		context.vapi_directories = vapi_directories;
+		context.bapi_directories = bapi_directories;
 		context.gir_directories = gir_directories;
 		context.metadata_directories = metadata_directories;
 		context.report.enable_warnings = !disable_warnings;
@@ -178,7 +178,7 @@ class Bala.BAPIGen {
 
 		// interface writer ignores external packages
 		foreach (SourceFile file in context.get_source_files ()) {
-			if (file.filename.has_suffix (".vapi")) {
+			if (file.filename.has_suffix (".bapi")) {
 				continue;
 			}
 			if (file.filename in sources) {
@@ -205,12 +205,12 @@ class Bala.BAPIGen {
 		}
 
 		var interface_writer = new CodeWriter (CodeWriterType.BAPIGEN);
-		var vapi_filename = "%s.vapi".printf (library);
+		var bapi_filename = "%s.bapi".printf (library);
 		if (directory != null) {
-			vapi_filename = Path.build_path ("/", directory, vapi_filename);
+			bapi_filename = Path.build_path ("/", directory, bapi_filename);
 		}
 
-		interface_writer.write_file (context, vapi_filename);
+		interface_writer.write_file (context, bapi_filename);
 			
 		library = null;
 		
@@ -240,7 +240,7 @@ class Bala.BAPIGen {
 			return 1;
 		}
 		
-		var vapigen = new BAPIGen ();
-		return vapigen.run ();
+		var bapigen = new BAPIGen ();
+		return bapigen.run ();
 	}
 }

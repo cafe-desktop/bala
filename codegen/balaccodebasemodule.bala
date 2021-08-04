@@ -773,7 +773,7 @@ public abstract class Bala.CCodeBaseModule : CodeGenerator {
 			return;
 		}
 
-		/* For fast-vapi, we only wanted the header declarations
+		/* For fast-bapi, we only wanted the header declarations
 		 * to be emitted, so bail out here without writing the
 		 * C code output.
 		 */

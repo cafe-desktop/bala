@@ -7,7 +7,7 @@ SUBDIRS = \
 	$(NULL)
 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"vapigen\" \
+	-DG_LOG_DOMAIN=\"bapigen\" \
 	$(COVERAGE_CFLAGS) \
 	$(GLIB_CFLAGS) \
 	-I$(top_srcdir)/gee \
@@ -17,68 +17,68 @@ AM_CPPFLAGS = \
 	$(NULL)
 
 bin_PROGRAMS = \
-	vapigen \
+	bapigen \
 	$(NULL)
 
 noinst_PROGRAMS = \
-	vapicheck \
+	bapicheck \
 	$(NULL)
 
-BUILT_SOURCES = vapigen.bala.stamp vapicheck.bala.stamp
+BUILT_SOURCES = bapigen.bala.stamp bapicheck.bala.stamp
 
-vapigen_BALASOURCES = \
+bapigen_BALASOURCES = \
 	balagidlparser.bala \
-	balavapigen.bala \
+	balabapigen.bala \
 	$(NULL)
 
-vapigen_SOURCES = \
-	vapigen.bala.stamp \
-	$(vapigen_BALASOURCES:.bala=.c) \
+bapigen_SOURCES = \
+	bapigen.bala.stamp \
+	$(bapigen_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-vapicheck_BALASOURCES = \
-	balavapicheck.bala \
+bapicheck_BALASOURCES = \
+	balabapicheck.bala \
 	$(NULL)
 
-vapicheck_SOURCES = \
-	vapicheck.bala.stamp \
-	$(vapicheck_BALASOURCES:.bala=.c) \
+bapicheck_SOURCES = \
+	bapicheck.bala.stamp \
+	$(bapicheck_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-vapigen.bala.stamp: $(vapigen_BALASOURCES)
+bapigen.bala.stamp: $(bapigen_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi \
-		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/bala --pkg bala \
-		--vapidir $(top_srcdir)/gobject-introspection --pkg gidl \
+		--bapidir $(top_srcdir)/bapi \
+		--bapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/bala --pkg bala \
+		--bapidir $(top_srcdir)/gobject-introspection --pkg gidl \
 		--pkg config \
 		$^
 	@touch $@
 
-vapicheck.bala.stamp: $(vapicheck_BALASOURCES)
+bapicheck.bala.stamp: $(bapicheck_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi \
-		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/bala --pkg bala \
-		--vapidir $(top_srcdir)/gobject-introspection --pkg gidl \
+		--bapidir $(top_srcdir)/bapi \
+		--bapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/bala --pkg bala \
+		--bapidir $(top_srcdir)/gobject-introspection --pkg gidl \
 		--pkg config \
 		$^
 	@touch $@
 
-vapigen_LDADD = \
+bapigen_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(NULL)
 
-vapicheck_LDADD = \
+bapicheck_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
@@ -87,40 +87,40 @@ vapicheck_LDADD = \
 
 if ENABLE_UNVERSIONED
 makedir = $(datadir)/bala
-make_DATA = Makefile.vapigen
+make_DATA = Makefile.bapigen
 
 aclocaldir = $(datadir)/aclocal
-aclocal_DATA = vapigen.m4
+aclocal_DATA = bapigen.m4
 endif
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = vapigen@PACKAGE_SUFFIX@.pc
+pkgconfig_DATA = bapigen@PACKAGE_SUFFIX@.pc
 
-vapigen@PACKAGE_SUFFIX@.pc: vapigen.pc
+bapigen@PACKAGE_SUFFIX@.pc: bapigen.pc
 	cp $< $@
 
 EXTRA_DIST = \
-	$(vapigen_BALASOURCES) \
-	$(vapicheck_BALASOURCES) \
-	Makefile.vapigen \
-	vapigen.m4 \
-	vapigen.bala.stamp \
-	vapicheck.bala.stamp \
+	$(bapigen_BALASOURCES) \
+	$(bapicheck_BALASOURCES) \
+	Makefile.bapigen \
+	bapigen.m4 \
+	bapigen.bala.stamp \
+	bapicheck.bala.stamp \
 	$(NULL)
 
 CLEANFILES = \
-	vapigen@PACKAGE_SUFFIX@.pc
+	bapigen@PACKAGE_SUFFIX@.pc
 	$(NULL)
 
 if ENABLE_UNVERSIONED
 install-exec-hook:
-	cd $(DESTDIR)$(bindir) && $(LN_S) -f vapigen@PACKAGE_SUFFIX@$(EXEEXT) vapigen$(EXEEXT)
+	cd $(DESTDIR)$(bindir) && $(LN_S) -f bapigen@PACKAGE_SUFFIX@$(EXEEXT) bapigen$(EXEEXT)
 
 install-data-hook:
-	cd $(DESTDIR)$(pkgconfigdir) && $(LN_S) -f vapigen@PACKAGE_SUFFIX@.pc vapigen.pc
+	cd $(DESTDIR)$(pkgconfigdir) && $(LN_S) -f bapigen@PACKAGE_SUFFIX@.pc bapigen.pc
 endif
 
 MAINTAINERCLEANFILES = \
-	$(vapigen_BALASOURCES:.bala=.c) \
-	$(vapicheck_BALASOURCES:.bala=.c) \
+	$(bapigen_BALASOURCES:.bala=.c) \
+	$(bapicheck_BALASOURCES:.bala=.c) \
 	$(NULL)

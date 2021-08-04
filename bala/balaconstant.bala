@@ -123,7 +123,7 @@ public class Bala.Constant : Symbol {
 
 		if (!external) {
 			if (value == null) {
-				// constants from fast-vapi files are special
+				// constants from fast-bapi files are special
 				if (source_type != SourceFileType.FAST) {
 					error = true;
 					Report.error (source_reference, "A const field requires a value to be provided");

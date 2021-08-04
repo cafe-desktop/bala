@@ -98,7 +98,7 @@ baladoc_settings_finalize (GObject * obj)
 	_g_free0 (self->basedir);
 	_g_free0 (self->directory);
 	self->defines = (_bala_array_free (self->defines, self->defines_length1, (GDestroyNotify) g_free), NULL);
-	self->vapi_directories = (_bala_array_free (self->vapi_directories, self->vapi_directories_length1, (GDestroyNotify) g_free), NULL);
+	self->bapi_directories = (_bala_array_free (self->bapi_directories, self->bapi_directories_length1, (GDestroyNotify) g_free), NULL);
 	self->packages = (_bala_array_free (self->packages, self->packages_length1, (GDestroyNotify) g_free), NULL);
 	self->source_files = (_bala_array_free (self->source_files, self->source_files_length1, (GDestroyNotify) g_free), NULL);
 	_g_free0 (self->gir_directory);

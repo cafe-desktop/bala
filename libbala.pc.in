@@ -7,9 +7,9 @@ datarootdir=@datarootdir@
 datadir=@datadir@
 pkgdatadir=@pkgdatadir@
 pkglibdir=@pkglibdir@
-vapidir=@datadir@/bala@PACKAGE_SUFFIX@/vapi
+bapidir=@datadir@/bala@PACKAGE_SUFFIX@/bapi
 
-vapigen=@bindir@/vapigen@PACKAGE_SUFFIX@
+bapigen=@bindir@/bapigen@PACKAGE_SUFFIX@
 gen_introspect=@pkglibdir@/gen-introspect@PACKAGE_SUFFIX@
 bala_gen_introspect=@bindir@/bala-gen-introspect@PACKAGE_SUFFIX@
 

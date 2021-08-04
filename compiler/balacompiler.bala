@@ -33,19 +33,19 @@ class Bala.Compiler {
 	[CCode (array_length = false, array_null_terminated = true)]
 	static string[] sources;
 	[CCode (array_length = false, array_null_terminated = true)]
-	static string[] vapi_directories;
+	static string[] bapi_directories;
 	[CCode (array_length = false, array_null_terminated = true)]
 	static string[] gir_directories;
 	[CCode (array_length = false, array_null_terminated = true)]
 	static string[] metadata_directories;
-	static string vapi_filename;
+	static string bapi_filename;
 	static string library;
 	static string shared_library;
 	static string gir;
 	[CCode (array_length = false, array_null_terminated = true)]
 	static string[] packages;
 	[CCode (array_length = false, array_null_terminated = true)]
-	static string[] fast_vapis;
+	static string[] fast_bapis;
 	static string target_glib;
 	[CCode (array_length = false, array_null_terminated = true)]
 	static string[] gresources;
@@ -57,9 +57,9 @@ class Bala.Compiler {
 	static string header_filename;
 	static bool use_header;
 	static string internal_header_filename;
-	static string internal_vapi_filename;
-	static string fast_vapi_filename;
-	static bool vapi_comments;
+	static string internal_bapi_filename;
+	static string fast_bapi_filename;
+	static bool bapi_comments;
 	static string symbols_filename;
 	static string includedir;
 	static bool compile_only;
@@ -105,11 +105,11 @@ class Bala.Compiler {
 	private CodeContext context;
 
 	const OptionEntry[] options = {
-		{ "vapidir", 0, 0, OptionArg.FILENAME_ARRAY, ref vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..." },
+		{ "bapidir", 0, 0, OptionArg.FILENAME_ARRAY, ref bapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..." },
 		{ "girdir", 0, 0, OptionArg.FILENAME_ARRAY, ref gir_directories, "Look for .gir files in DIRECTORY", "DIRECTORY..." },
 		{ "metadatadir", 0, 0, OptionArg.FILENAME_ARRAY, ref metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..." },
 		{ "pkg", 0, 0, OptionArg.STRING_ARRAY, ref packages, "Include binding for PACKAGE", "PACKAGE..." },
-		{ "vapi", 0, 0, OptionArg.FILENAME, ref vapi_filename, "Output BAPI file name", "FILE" },
+		{ "bapi", 0, 0, OptionArg.FILENAME, ref bapi_filename, "Output BAPI file name", "FILE" },
 		{ "library", 0, 0, OptionArg.STRING, ref library, "Library name", "NAME" },
 		{ "shared-library", 0, 0, OptionArg.STRING, ref shared_library, "Shared library name used in generated gir", "NAME" },
 		{ "gir", 0, 0, OptionArg.STRING, ref gir, "GObject-Introspection repository file name", "NAME-VERSION.gir" },
@@ -122,10 +122,10 @@ class Bala.Compiler {
 		{ "use-header", 0, 0, OptionArg.NONE, ref use_header, "Use C header file", null },
 		{ "includedir", 0, 0, OptionArg.FILENAME, ref includedir, "Directory used to include the C header file", "DIRECTORY" },
 		{ "internal-header", 'h', 0, OptionArg.FILENAME, ref internal_header_filename, "Output internal C header file", "FILE" },
-		{ "internal-vapi", 0, 0, OptionArg.FILENAME, ref internal_vapi_filename, "Output vapi with internal api", "FILE" },
-		{ "fast-vapi", 0, 0, OptionArg.STRING, ref fast_vapi_filename, "Output vapi without performing symbol resolution", null },
-		{ "use-fast-vapi", 0, 0, OptionArg.STRING_ARRAY, ref fast_vapis, "Use --fast-vapi output during this compile", null },
-		{ "vapi-comments", 0, 0, OptionArg.NONE, ref vapi_comments, "Include comments in generated vapi", null },
+		{ "internal-bapi", 0, 0, OptionArg.FILENAME, ref internal_bapi_filename, "Output bapi with internal api", "FILE" },
+		{ "fast-bapi", 0, 0, OptionArg.STRING, ref fast_bapi_filename, "Output bapi without performing symbol resolution", null },
+		{ "use-fast-bapi", 0, 0, OptionArg.STRING_ARRAY, ref fast_bapis, "Use --fast-bapi output during this compile", null },
+		{ "bapi-comments", 0, 0, OptionArg.NONE, ref bapi_comments, "Include comments in generated bapi", null },
 		{ "deps", 0, 0, OptionArg.STRING, ref dependencies, "Write make-style dependency information to this file", null },
 		{ "depfile", 0, 0, OptionArg.STRING, ref depfile, "Write make-style external dependency information for build systems to this file", null },
 		{ "list-sources", 0, 0, OptionArg.NONE, ref list_sources, "Output a list of all source and binding files which are used", null },
@@ -276,8 +276,8 @@ class Bala.Compiler {
 		} else {
 			context.directory = context.basedir;
 		}
-		context.vapi_directories = vapi_directories;
-		context.vapi_comments = vapi_comments;
+		context.bapi_directories = bapi_directories;
+		context.bapi_comments = bapi_comments;
 		context.gir_directories = gir_directories;
 		context.metadata_directories = metadata_directories;
 		context.debug = debug;
@@ -296,7 +296,7 @@ class Bala.Compiler {
 		} else {
 			Report.error (null, "Unknown profile %s".printf (profile));
 		}
-		nostdpkg |= fast_vapi_filename != null;
+		nostdpkg |= fast_bapi_filename != null;
 		context.nostdpkg = nostdpkg;
 
 		context.entry_point_name = entry_point;
@@ -338,13 +338,13 @@ class Bala.Compiler {
 			packages = null;
 		}
 
-		if (fast_vapis != null) {
-			foreach (string vapi in fast_vapis) {
-				var rpath = CodeContext.realpath (vapi);
+		if (fast_bapis != null) {
+			foreach (string bapi in fast_bapis) {
+				var rpath = CodeContext.realpath (bapi);
 				var source_file = new SourceFile (context, SourceFileType.FAST, rpath);
 				context.add_source_file (source_file);
 			}
-			context.use_fast_vapi = true;
+			context.use_fast_bapi = true;
 		}
 
 		context.gresources = gresources;
@@ -406,9 +406,9 @@ class Bala.Compiler {
 			return quit ();
 		}
 
-		if (fast_vapi_filename != null) {
+		if (fast_bapi_filename != null) {
 			var interface_writer = new CodeWriter (CodeWriterType.FAST);
-			interface_writer.write_file (context, fast_vapi_filename);
+			interface_writer.write_file (context, fast_bapi_filename);
 			return quit ();
 		}
 
@@ -440,9 +440,9 @@ class Bala.Compiler {
 			return quit ();
 		}
 
-		if (vapi_filename == null && library != null) {
+		if (bapi_filename == null && library != null) {
 			// keep backward compatibility with --library option
-			vapi_filename = "%s.vapi".printf (library);
+			bapi_filename = "%s.bapi".printf (library);
 		}
 
 		if (library != null) {
@@ -485,22 +485,22 @@ class Bala.Compiler {
 			}
 		}
 
-		// The GIRWriter places the gir_namespace and gir_version into the top namespace, so write the vapi after that stage
-		if (vapi_filename != null) {
+		// The GIRWriter places the gir_namespace and gir_version into the top namespace, so write the bapi after that stage
+		if (bapi_filename != null) {
 			var interface_writer = new CodeWriter ();
 
-			// put .vapi file in current directory unless -d has been explicitly specified
-			if (directory != null && !Path.is_absolute (vapi_filename)) {
-				vapi_filename = "%s%c%s".printf (context.directory, Path.DIR_SEPARATOR, vapi_filename);
+			// put .bapi file in current directory unless -d has been explicitly specified
+			if (directory != null && !Path.is_absolute (bapi_filename)) {
+				bapi_filename = "%s%c%s".printf (context.directory, Path.DIR_SEPARATOR, bapi_filename);
 			}
 
-			interface_writer.write_file (context, vapi_filename);
+			interface_writer.write_file (context, bapi_filename);
 		}
 
-		if (internal_vapi_filename != null) {
+		if (internal_bapi_filename != null) {
 			if (internal_header_filename == null ||
 			    header_filename == null) {
-				Report.error (null, "--internal-vapi may only be used in combination with --header and --internal-header");
+				Report.error (null, "--internal-bapi may only be used in combination with --header and --internal-header");
 				return quit();
 			}
 
@@ -514,16 +514,16 @@ class Bala.Compiler {
 				interface_writer.set_cheader_override (header_filename, internal_header_filename);
 			}
 
-			string vapi_filename = internal_vapi_filename;
+			string bapi_filename = internal_bapi_filename;
 
-			// put .vapi file in current directory unless -d has been explicitly specified
-			if (directory != null && !Path.is_absolute (vapi_filename)) {
-				vapi_filename = "%s%c%s".printf (context.directory, Path.DIR_SEPARATOR, vapi_filename);
+			// put .bapi file in current directory unless -d has been explicitly specified
+			if (directory != null && !Path.is_absolute (bapi_filename)) {
+				bapi_filename = "%s%c%s".printf (context.directory, Path.DIR_SEPARATOR, bapi_filename);
 			}
 
-			interface_writer.write_file (context, vapi_filename);
+			interface_writer.write_file (context, bapi_filename);
 
-			internal_vapi_filename = null;
+			internal_bapi_filename = null;
 		}
 
 		if (dependencies != null) {
@@ -661,7 +661,7 @@ class Bala.Compiler {
 			return 0;
 		}
 		
-		if (sources == null && fast_vapis == null) {
+		if (sources == null && fast_bapis == null) {
 			stderr.printf ("No source file specified.\n");
 			return 1;
 		}

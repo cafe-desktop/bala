@@ -403,7 +403,7 @@ gen_introspect_LDADD = \
 	libgidl.la \
 	$(NULL)
 
-EXTRA_DIST = gidl.vapi
+EXTRA_DIST = gidl.bapi
 all: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) all-am
 

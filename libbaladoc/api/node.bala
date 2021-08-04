@@ -326,7 +326,7 @@ public abstract class Baladoc.Api.Node : Item, Documentation {
 	}
 
 	/**
-	 * The corresponding package such as a vapi or gir file
+	 * The corresponding package such as a bapi or gir file
 	 */
 	public Package? package {
 		get {

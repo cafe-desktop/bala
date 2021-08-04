@@ -1,4 +1,4 @@
-/* balavapicheck.bala
+/* balabapicheck.bala
  *
  * Copyright (C) 2007  Mathias Hasselmann
  *
@@ -174,7 +174,7 @@ class Bala.BAPICheck {
 			return 2;
 		}
 
-		var vapicheck = new BAPICheck (args[1]);
-		return vapicheck.run ();
+		var bapicheck = new BAPICheck (args[1]);
+		return bapicheck.run ();
 	}
 }

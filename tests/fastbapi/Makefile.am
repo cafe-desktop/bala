@@ -1,33 +1,33 @@
 NULL =
 
-check-fastvapi: $(top_builddir)/compiler/balac
+check-fastbapi: $(top_builddir)/compiler/balac
 	G_DEBUG=fatal-warnings $(top_builddir)/compiler/balac \
 		-C \
 		--disable-version-header \
-		--vapidir $(top_srcdir)/vapi \
-		--fast-vapi fastvapitest.vapi \
+		--bapidir $(top_srcdir)/bapi \
+		--fast-bapi fastbapitest.bapi \
 		--basedir $(srcdir) \
-		$(srcdir)/fastvapitest.bala; \
-	tail -n +3 fastvapitest.vapi | diff -wu $(srcdir)/fastvapitest.vapi-expected - || exit 1; \
+		$(srcdir)/fastbapitest.bala; \
+	tail -n +3 fastbapitest.bapi | diff -wu $(srcdir)/fastbapitest.bapi-expected - || exit 1; \
 	G_DEBUG=fatal-warnings $(top_builddir)/compiler/balac \
 		-C \
 		--disable-version-header \
-		--vapidir $(top_srcdir)/vapi \
-		--use-fast-vapi fastvapitest.vapi \
+		--bapidir $(top_srcdir)/bapi \
+		--use-fast-bapi fastbapitest.bapi \
 		--basedir $(builddir) \
-		$(srcdir)/usefastvapitest.bala || exit 1; \
-	rm -f fastvapitest.vapi fastvapitest.c usefastvapitest.c
+		$(srcdir)/usefastbapitest.bala || exit 1; \
+	rm -f fastbapitest.bapi fastbapitest.c usefastbapitest.c
 
-check: check-fastvapi
+check: check-fastbapi
 
 EXTRA_DIST = \
-	fastvapitest.bala \
-	fastvapitest.vapi-expected \
-	usefastvapitest.bala \
+	fastbapitest.bala \
+	fastbapitest.bapi-expected \
+	usefastbapitest.bala \
 	$(NULL)
 
 CLEANFILES = \
-	fastvapitest.c \
-	fastvapitest.vapi \
-	usefastvapitest.c \
+	fastbapitest.c \
+	fastbapitest.bapi \
+	usefastbapitest.c \
 	$(NULL)

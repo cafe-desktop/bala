@@ -67,9 +67,9 @@ struct _BalaCodeContextPrivate {
 	gchar* _output;
 	gchar* _basedir;
 	gchar* _directory;
-	gchar** _vapi_directories;
-	gint _vapi_directories_length1;
-	gint __vapi_directories_size_;
+	gchar** _bapi_directories;
+	gint _bapi_directories_length1;
+	gint __bapi_directories_size_;
 	gchar** _gir_directories;
 	gint _gir_directories_length1;
 	gint __gir_directories_size_;
@@ -85,9 +85,9 @@ struct _BalaCodeContextPrivate {
 	gboolean _verbose_mode;
 	gboolean _version_header;
 	gboolean _nostdpkg;
-	gboolean _use_fast_vapi;
+	gboolean _use_fast_bapi;
 	gboolean _keep_going;
-	gboolean _vapi_comments;
+	gboolean _bapi_comments;
 	BalaReport* _report;
 	BalaMethod* _entry_point;
 	gchar* _entry_point_name;
@@ -546,7 +546,7 @@ bala_code_context_set_directory (BalaCodeContext* self,
 }
 
 gchar**
-bala_code_context_get_vapi_directories (BalaCodeContext* self,
+bala_code_context_get_bapi_directories (BalaCodeContext* self,
                                         gint* result_length1)
 {
 	gchar** result;
@@ -555,8 +555,8 @@ bala_code_context_get_vapi_directories (BalaCodeContext* self,
 	gchar** _tmp1_;
 	gint _tmp1__length1;
 	g_return_val_if_fail (self != NULL, NULL);
-	_tmp0_ = self->priv->_vapi_directories;
-	_tmp0__length1 = self->priv->_vapi_directories_length1;
+	_tmp0_ = self->priv->_bapi_directories;
+	_tmp0__length1 = self->priv->_bapi_directories_length1;
 	_tmp1_ = _tmp0_;
 	_tmp1__length1 = _tmp0__length1;
 	if (result_length1) {
@@ -585,7 +585,7 @@ _bala_array_dup1 (gchar** self,
 }
 
 void
-bala_code_context_set_vapi_directories (BalaCodeContext* self,
+bala_code_context_set_bapi_directories (BalaCodeContext* self,
                                         gchar** value,
                                         gint value_length1)
 {
@@ -594,10 +594,10 @@ bala_code_context_set_vapi_directories (BalaCodeContext* self,
 	g_return_if_fail (self != NULL);
 	_tmp0_ = (value != NULL) ? _bala_array_dup1 (value, value_length1) : ((gpointer) value);
 	_tmp0__length1 = value_length1;
-	self->priv->_vapi_directories = (_bala_array_free (self->priv->_vapi_directories, self->priv->_vapi_directories_length1, (GDestroyNotify) g_free), NULL);
-	self->priv->_vapi_directories = _tmp0_;
-	self->priv->_vapi_directories_length1 = _tmp0__length1;
-	self->priv->__vapi_directories_size_ = self->priv->_vapi_directories_length1;
+	self->priv->_bapi_directories = (_bala_array_free (self->priv->_bapi_directories, self->priv->_bapi_directories_length1, (GDestroyNotify) g_free), NULL);
+	self->priv->_bapi_directories = _tmp0_;
+	self->priv->_bapi_directories_length1 = _tmp0__length1;
+	self->priv->__bapi_directories_size_ = self->priv->_bapi_directories_length1;
 }
 
 gchar**
@@ -877,20 +877,20 @@ bala_code_context_set_nostdpkg (BalaCodeContext* self,
 }
 
 gboolean
-bala_code_context_get_use_fast_vapi (BalaCodeContext* self)
+bala_code_context_get_use_fast_bapi (BalaCodeContext* self)
 {
 	gboolean result;
 	g_return_val_if_fail (self != NULL, FALSE);
-	result = self->priv->_use_fast_vapi;
+	result = self->priv->_use_fast_bapi;
 	return result;
 }
 
 void
-bala_code_context_set_use_fast_vapi (BalaCodeContext* self,
+bala_code_context_set_use_fast_bapi (BalaCodeContext* self,
                                      gboolean value)
 {
 	g_return_if_fail (self != NULL);
-	self->priv->_use_fast_vapi = value;
+	self->priv->_use_fast_bapi = value;
 }
 
 gboolean
@@ -911,20 +911,20 @@ bala_code_context_set_keep_going (BalaCodeContext* self,
 }
 
 gboolean
-bala_code_context_get_vapi_comments (BalaCodeContext* self)
+bala_code_context_get_bapi_comments (BalaCodeContext* self)
 {
 	gboolean result;
 	g_return_val_if_fail (self != NULL, FALSE);
-	result = self->priv->_vapi_comments;
+	result = self->priv->_bapi_comments;
 	return result;
 }
 
 void
-bala_code_context_set_vapi_comments (BalaCodeContext* self,
+bala_code_context_set_bapi_comments (BalaCodeContext* self,
                                      gboolean value)
 {
 	g_return_if_fail (self != NULL);
-	self->priv->_vapi_comments = value;
+	self->priv->_bapi_comments = value;
 }
 
 /**
@@ -1646,7 +1646,7 @@ bala_code_context_add_external_package (BalaCodeContext* self,
 		result = TRUE;
 		return result;
 	}
-	_tmp0_ = bala_code_context_get_vapi_path (self, pkg);
+	_tmp0_ = bala_code_context_get_bapi_path (self, pkg);
 	path = _tmp0_;
 	_tmp1_ = path;
 	if (_tmp1_ == NULL) {
@@ -1842,7 +1842,7 @@ bala_code_context_add_packages_from_file (BalaCodeContext* self,
 }
 
 /**
- * Add the specified source file to the context. Only .bala, .vapi, .gs,
+ * Add the specified source file to the context. Only .bala, .bapi, .gs,
  * and .c extensions are supported.
  *
  * @param filename a filename
@@ -1967,7 +1967,7 @@ bala_code_context_add_source_filename (BalaCodeContext* self,
 		_bala_source_file_unref0 (source_file);
 	} else {
 		gboolean _tmp32_ = FALSE;
-		if (g_str_has_suffix (filename, ".vapi")) {
+		if (g_str_has_suffix (filename, ".bapi")) {
 			_tmp32_ = TRUE;
 		} else {
 			_tmp32_ = g_str_has_suffix (filename, ".gir");
@@ -2005,7 +2005,7 @@ bala_code_context_add_source_filename (BalaCodeContext* self,
 				} else {
 					gchar* _tmp41_;
 					gchar* _tmp42_;
-					_tmp41_ = g_strdup_printf ("%s is not a supported source file type. Only .bala, .vapi, .gs, and .c" \
+					_tmp41_ = g_strdup_printf ("%s is not a supported source file type. Only .bala, .bapi, .gs, and .c" \
 " files are supported.", filename);
 					_tmp42_ = _tmp41_;
 					bala_report_error (NULL, _tmp42_);
@@ -2364,7 +2364,7 @@ bala_code_context_set_target_glib_version (BalaCodeContext* self,
 }
 
 gchar*
-bala_code_context_get_vapi_path (BalaCodeContext* self,
+bala_code_context_get_bapi_path (BalaCodeContext* self,
                                  const gchar* pkg)
 {
 	gchar* path = NULL;
@@ -2381,13 +2381,13 @@ bala_code_context_get_vapi_path (BalaCodeContext* self,
 	gchar* result = NULL;
 	g_return_val_if_fail (self != NULL, NULL);
 	g_return_val_if_fail (pkg != NULL, NULL);
-	_tmp0_ = g_strconcat (pkg, ".vapi", NULL);
+	_tmp0_ = g_strconcat (pkg, ".bapi", NULL);
 	_tmp1_ = _tmp0_;
-	_tmp2_ = bala_code_context_get_vapi_directories (self, &_tmp3_);
+	_tmp2_ = bala_code_context_get_bapi_directories (self, &_tmp3_);
 	_tmp2__length1 = _tmp3_;
 	_tmp4_ = _tmp2_;
 	_tmp4__length1 = _tmp2__length1;
-	_tmp5_ = bala_code_context_get_file_path (self, _tmp1_, "bala" PACKAGE_SUFFIX "/vapi", "bala/vapi", _tmp4_, (gint) _tmp4__length1);
+	_tmp5_ = bala_code_context_get_file_path (self, _tmp1_, "bala" PACKAGE_SUFFIX "/bapi", "bala/bapi", _tmp4_, (gint) _tmp4__length1);
 	_tmp6_ = _tmp5_;
 	_g_free0 (_tmp1_);
 	path = _tmp6_;
@@ -2399,9 +2399,9 @@ bala_code_context_get_vapi_path (BalaCodeContext* self,
 		gchar* _tmp10_;
 		gchar* _tmp11_;
 		const gchar* _tmp12_;
-		_tmp8_ = g_strconcat (pkg, ".vapi", NULL);
+		_tmp8_ = g_strconcat (pkg, ".bapi", NULL);
 		_tmp9_ = _tmp8_;
-		_tmp10_ = g_build_path ("/", PACKAGE_DATADIR, "vapi", _tmp9_, NULL);
+		_tmp10_ = g_build_path ("/", PACKAGE_DATADIR, "bapi", _tmp9_, NULL);
 		_tmp11_ = _tmp10_;
 		_g_free0 (_tmp9_);
 		filename = _tmp11_;
@@ -3836,9 +3836,9 @@ bala_code_context_instance_init (BalaCodeContext * self,
 	_tmp0_ = g_strdup ("pkg-config");
 	self->priv->_pkg_config_command = _tmp0_;
 	_tmp1_ = g_new0 (gchar*, 0 + 1);
-	self->priv->_vapi_directories = _tmp1_;
-	self->priv->_vapi_directories_length1 = 0;
-	self->priv->__vapi_directories_size_ = self->priv->_vapi_directories_length1;
+	self->priv->_bapi_directories = _tmp1_;
+	self->priv->_bapi_directories_length1 = 0;
+	self->priv->__bapi_directories_size_ = self->priv->_bapi_directories_length1;
 	_tmp2_ = g_new0 (gchar*, 0 + 1);
 	self->priv->_gir_directories = _tmp2_;
 	self->priv->_gir_directories_length1 = 0;
@@ -3894,7 +3894,7 @@ bala_code_context_finalize (BalaCodeContext * obj)
 	_g_free0 (self->priv->_output);
 	_g_free0 (self->priv->_basedir);
 	_g_free0 (self->priv->_directory);
-	self->priv->_vapi_directories = (_bala_array_free (self->priv->_vapi_directories, self->priv->_vapi_directories_length1, (GDestroyNotify) g_free), NULL);
+	self->priv->_bapi_directories = (_bala_array_free (self->priv->_bapi_directories, self->priv->_bapi_directories_length1, (GDestroyNotify) g_free), NULL);
 	self->priv->_gir_directories = (_bala_array_free (self->priv->_gir_directories, self->priv->_gir_directories_length1, (GDestroyNotify) g_free), NULL);
 	self->priv->_metadata_directories = (_bala_array_free (self->priv->_metadata_directories, self->priv->_metadata_directories_length1, (GDestroyNotify) g_free), NULL);
 	_bala_code_node_unref0 (self->priv->_module_init_method);

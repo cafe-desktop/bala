@@ -6,10 +6,10 @@ datarootdir=@datarootdir@
 datadir=@datadir@
 includedir=@includedir@
 
-vapigen=${bindir}/vapigen@PACKAGE_SUFFIX@
-vapidir=${datadir}/bala/vapi
-vapidir_versioned=${datadir}/bala@PACKAGE_SUFFIX@/vapi
+bapigen=${bindir}/bapigen@PACKAGE_SUFFIX@
+bapidir=${datadir}/bala/bapi
+bapidir_versioned=${datadir}/bala@PACKAGE_SUFFIX@/bapi
 
-Name: vapigen
+Name: bapigen
 Description: Bala API Generator
 Version: @VERSION@

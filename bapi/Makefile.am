@@ -2,302 +2,302 @@ NULL =
 
 check: $(top_builddir)/compiler/balac
 	echo "void main () {}" > test.bala; \
-	for vapi in `ls *.vapi | sed -e "s/\.vapi//g"`; do \
-		echo "Checking $$vapi..."; \
-		$(top_builddir)/compiler/balac -C --enable-deprecated --pkg=$$vapi --vapidir=. test.bala || exit 1; \
+	for bapi in `ls *.bapi | sed -e "s/\.bapi//g"`; do \
+		echo "Checking $$bapi..."; \
+		$(top_builddir)/compiler/balac -C --enable-deprecated --pkg=$$bapi --bapidir=. test.bala || exit 1; \
 	done; \
 	rm -f test.bala test.c
 
-vapidir = $(pkgdatadir)/vapi
+bapidir = $(pkgdatadir)/bapi
 
-dist_vapi_DATA = \
-	alsa.vapi \
+dist_bapi_DATA = \
+	alsa.bapi \
 	alsa.deps \
 	atk.deps \
-	atk.vapi \
-	atspi-2.vapi \
+	atk.bapi \
+	atspi-2.bapi \
 	atspi-2.deps \
-	avahi-client.vapi \
+	avahi-client.bapi \
 	avahi-gobject.deps \
-	avahi-gobject.vapi \
-	bzlib.vapi \
-	cairo.vapi \
+	avahi-gobject.bapi \
+	bzlib.bapi \
+	cairo.bapi \
 	cairo-gobject.deps \
-	cairo-gobject.vapi \
+	cairo-gobject.bapi \
 	cairo-xcb.deps \
-	cairo-xcb.vapi \
-	ccss-1.vapi \
+	cairo-xcb.bapi \
+	ccss-1.bapi \
 	clutter-1.0.deps \
-	clutter-1.0.vapi \
+	clutter-1.0.bapi \
 	clutter-gdk-1.0.deps \
-	clutter-gdk-1.0.vapi \
+	clutter-gdk-1.0.bapi \
 	clutter-gst-2.0.deps \
-	clutter-gst-2.0.vapi \
+	clutter-gst-2.0.bapi \
 	clutter-gst-3.0.deps \
-	clutter-gst-3.0.vapi \
+	clutter-gst-3.0.bapi \
 	clutter-gtk-0.10.deps \
-	clutter-gtk-0.10.vapi \
+	clutter-gtk-0.10.bapi \
 	clutter-gtk-1.0.deps \
-	clutter-gtk-1.0.vapi \
+	clutter-gtk-1.0.bapi \
 	clutter-x11-1.0.deps \
-	clutter-x11-1.0.vapi \
-	cogl-1.0.vapi \
+	clutter-x11-1.0.bapi \
+	cogl-1.0.bapi \
 	cogl-1.0.deps \
-	cogl-pango-1.0.vapi \
+	cogl-pango-1.0.bapi \
 	cogl-pango-1.0.deps \
-	curses.vapi \
-	dbus-glib-1.vapi \
-	enchant.vapi \
+	curses.bapi \
+	dbus-glib-1.bapi \
+	enchant.bapi \
 	fuse.deps \
-	fuse.vapi \
-	gconf-2.0.vapi \
+	fuse.bapi \
+	gconf-2.0.bapi \
 	geocode-glib-1.0.deps \
-	geocode-glib-1.0.vapi \
-	glib-2.0.vapi \
-	gdesktopenums-3.0.vapi \
+	geocode-glib-1.0.bapi \
+	glib-2.0.bapi \
+	gdesktopenums-3.0.bapi \
 	gdk-2.0.deps \
-	gdk-2.0.vapi \
+	gdk-2.0.bapi \
 	gdk-3.0.deps \
-	gdk-3.0.vapi \
+	gdk-3.0.bapi \
 	cdk-3.0.deps \
-	cdk-3.0.vapi \
+	cdk-3.0.bapi \
 	gdk-pixbuf-2.0.deps \
-	gdk-pixbuf-2.0.vapi \
+	gdk-pixbuf-2.0.bapi \
 	gdk-x11-2.0.deps \
-	gdk-x11-2.0.vapi \
+	gdk-x11-2.0.bapi \
 	gdk-x11-3.0.deps \
-	gdk-x11-3.0.vapi \
+	gdk-x11-3.0.bapi \
 	cdk-x11-3.0.deps \
-	cdk-x11-3.0.vapi \
+	cdk-x11-3.0.bapi \
 	gdl-1.0.deps \
-	gdl-1.0.vapi \
+	gdl-1.0.bapi \
 	gdl-3.0.deps \
-	gdl-3.0.vapi \
-	gedit-2.20.vapi \
+	gdl-3.0.bapi \
+	gedit-2.20.bapi \
 	gedit-2.20.deps \
 	gio-2.0.deps \
-	gio-2.0.vapi \
+	gio-2.0.bapi \
 	gio-unix-2.0.deps \
-	gio-unix-2.0.vapi \
+	gio-unix-2.0.bapi \
 	gio-windows-2.0.deps \
-	gio-windows-2.0.vapi \
+	gio-windows-2.0.bapi \
 	gmodule-2.0.deps \
-	gmodule-2.0.vapi \
+	gmodule-2.0.bapi \
 	gnet-2.0.deps \
-	gnet-2.0.vapi \
+	gnet-2.0.bapi \
 	gnome-desktop-2.0.deps \
-	gnome-desktop-2.0.vapi \
+	gnome-desktop-2.0.bapi \
 	gnome-desktop-3.0.deps \
-	gnome-desktop-3.0.vapi \
-	gnome-vfs-2.0.vapi \
-	gnutls.vapi \
+	gnome-desktop-3.0.bapi \
+	gnome-vfs-2.0.bapi \
+	gnutls.bapi \
 	gobject-2.0.deps \
-	gobject-2.0.vapi \
+	gobject-2.0.bapi \
 	gobject-introspection-1.0.deps \
-	gobject-introspection-1.0.vapi \
+	gobject-introspection-1.0.bapi \
 	goocanvas.deps \
-	goocanvas.vapi \
+	goocanvas.bapi \
 	goocanvas-2.0.deps \
-	goocanvas-2.0.vapi \
+	goocanvas-2.0.bapi \
 	graphene-1.0.deps \
-	graphene-1.0.vapi \
+	graphene-1.0.bapi \
 	graphene-gobject-1.0.deps \
-	graphene-gobject-1.0.vapi \
-	gsl.vapi \
+	graphene-gobject-1.0.bapi \
+	gsl.bapi \
 	gstreamer-1.0.deps \
-	gstreamer-1.0.vapi \
-	gstreamer-allocators-1.0.vapi \
+	gstreamer-1.0.bapi \
+	gstreamer-allocators-1.0.bapi \
 	gstreamer-allocators-1.0.deps \
-	gstreamer-app-1.0.vapi \
+	gstreamer-app-1.0.bapi \
 	gstreamer-app-1.0.deps \
-	gstreamer-audio-1.0.vapi \
+	gstreamer-audio-1.0.bapi \
 	gstreamer-audio-1.0.deps \
 	gstreamer-bad-allocators-1.0.deps \
-	gstreamer-bad-allocators-1.0.vapi \
-	gstreamer-base-1.0.vapi \
+	gstreamer-bad-allocators-1.0.bapi \
+	gstreamer-base-1.0.bapi \
 	gstreamer-base-1.0.deps \
-	gstreamer-check-1.0.vapi \
+	gstreamer-check-1.0.bapi \
 	gstreamer-check-1.0.deps \
-	gstreamer-controller-1.0.vapi \
+	gstreamer-controller-1.0.bapi \
 	gstreamer-controller-1.0.deps \
-	gstreamer-fft-1.0.vapi \
+	gstreamer-fft-1.0.bapi \
 	gstreamer-fft-1.0.deps \
-	gstreamer-net-1.0.vapi \
+	gstreamer-net-1.0.bapi \
 	gstreamer-net-1.0.deps \
-	gstreamer-pbutils-1.0.vapi \
+	gstreamer-pbutils-1.0.bapi \
 	gstreamer-pbutils-1.0.deps \
-	gstreamer-player-1.0.vapi \
+	gstreamer-player-1.0.bapi \
 	gstreamer-player-1.0.deps \
 	gstreamer-riff-1.0.deps \
-	gstreamer-riff-1.0.vapi \
-	gstreamer-rtp-1.0.vapi \
+	gstreamer-riff-1.0.bapi \
+	gstreamer-rtp-1.0.bapi \
 	gstreamer-rtp-1.0.deps \
-	gstreamer-rtsp-1.0.vapi \
+	gstreamer-rtsp-1.0.bapi \
 	gstreamer-rtsp-1.0.deps \
-	gstreamer-rtsp-server-1.0.vapi \
+	gstreamer-rtsp-server-1.0.bapi \
 	gstreamer-rtsp-server-1.0.deps \
-	gstreamer-sdp-1.0.vapi \
+	gstreamer-sdp-1.0.bapi \
 	gstreamer-sdp-1.0.deps \
-	gstreamer-tag-1.0.vapi \
+	gstreamer-tag-1.0.bapi \
 	gstreamer-tag-1.0.deps \
-	gstreamer-video-1.0.vapi \
+	gstreamer-video-1.0.bapi \
 	gstreamer-video-1.0.deps \
-	gstreamer-webrtc-1.0.vapi \
+	gstreamer-webrtc-1.0.bapi \
 	gstreamer-webrtc-1.0.deps \
-	gst-editing-services-1.0.vapi \
+	gst-editing-services-1.0.bapi \
 	gst-editing-services-1.0.deps \
 	gtk+-2.0.deps \
-	gtk+-2.0.vapi \
+	gtk+-2.0.bapi \
 	gtk+-3.0.deps \
-	gtk+-3.0.vapi \
+	gtk+-3.0.bapi \
 	ctk+-3.0.deps \
-	ctk+-3.0.vapi \
+	ctk+-3.0.bapi \
 	gtk+-unix-print-2.0.deps \
-	gtk+-unix-print-2.0.vapi \
+	gtk+-unix-print-2.0.bapi \
 	gtk+-unix-print-3.0.deps \
-	gtk+-unix-print-3.0.vapi \
+	gtk+-unix-print-3.0.bapi \
 	ctk+-unix-print-3.0.deps \
-	ctk+-unix-print-3.0.vapi \
+	ctk+-unix-print-3.0.bapi \
 	gtk4.deps \
-	gtk4.vapi \
+	gtk4.bapi \
 	gtk4-unix-print.deps \
-	gtk4-unix-print.vapi \
+	gtk4-unix-print.bapi \
 	gtkmozembed.deps \
-	gtkmozembed.vapi \
+	gtkmozembed.bapi \
 	gtksourceview-2.0.deps \
-	gtksourceview-2.0.vapi \
+	gtksourceview-2.0.bapi \
 	gudev-1.0.deps \
-	gudev-1.0.vapi \
+	gudev-1.0.bapi \
 	hal.deps \
-	hal.vapi \
+	hal.bapi \
 	harfbuzz-gobject.deps \
-	harfbuzz-gobject.vapi \
+	harfbuzz-gobject.bapi \
 	hildon-1.deps \
-	hildon-1.vapi \
+	hildon-1.bapi \
 	hildon-fm-2.deps \
-	hildon-fm-2.vapi \
-	javascriptcoregtk-4.0.vapi \
+	hildon-fm-2.bapi \
+	javascriptcoregtk-4.0.bapi \
 	json-glib-1.0.deps \
-	json-glib-1.0.vapi \
+	json-glib-1.0.bapi \
 	libarchive.deps \
-	libarchive.vapi \
-	libbonoboui-2.0.vapi \
-	libdaemon.vapi \
-	libepc-1.0.vapi \
-	libesmtp.vapi \
+	libarchive.bapi \
+	libbonoboui-2.0.bapi \
+	libdaemon.bapi \
+	libepc-1.0.bapi \
+	libesmtp.bapi \
 	libftdi.deps \
-	libftdi.vapi \
-	libgeoclue-2.0.vapi \
+	libftdi.bapi \
+	libgeoclue-2.0.bapi \
 	libgeoclue-2.0.deps \
 	libglade-2.0.deps \
-	libglade-2.0.vapi \
-	libgnome-2.0.vapi \
-	libgnome-menu.vapi \
+	libglade-2.0.bapi \
+	libgnome-2.0.bapi \
+	libgnome-menu.bapi \
 	libgnome-menu-3.0.deps \
-	libgnome-menu-3.0.vapi \
+	libgnome-menu-3.0.bapi \
 	libgnomeui-2.0.deps \
-	libgnomeui-2.0.vapi \
+	libgnomeui-2.0.bapi \
 	libgrss.deps \
-	libgrss.vapi \
+	libgrss.bapi \
 	libgsf-1.deps \
-	libgsf-1.vapi \
-	libgvc.vapi \
-	libmagic.vapi \
-	libnl-1.vapi \
+	libgsf-1.bapi \
+	libgvc.bapi \
+	libmagic.bapi \
+	libnl-1.bapi \
 	libnl-2.0.deps \
-	libnl-2.0.vapi \
+	libnl-2.0.bapi \
 	libnl-3.0.deps \
-	libnl-3.0.vapi \
+	libnl-3.0.bapi \
 	libnotify.deps \
-	libnotify.vapi \
-	liboobs-1.vapi \
-	libosso.vapi \
+	libnotify.bapi \
+	liboobs-1.bapi \
+	libosso.bapi \
 	libpanelapplet-2.0.deps \
-	libpanelapplet-2.0.vapi \
+	libpanelapplet-2.0.bapi \
 	libpeas-1.0.deps \
-	libpeas-1.0.vapi \
+	libpeas-1.0.bapi \
 	libpeas-gtk-1.0.deps \
-	libpeas-gtk-1.0.vapi \
-	libpq.vapi \
+	libpeas-gtk-1.0.bapi \
+	libpq.bapi \
 	libsexy.deps \
-	libsexy.vapi \
+	libsexy.bapi \
 	libsoup-2.4.deps \
-	libsoup-2.4.vapi \
-	libusb.vapi \
+	libsoup-2.4.bapi \
+	libusb.bapi \
 	libusb-1.0.deps \
-	libusb-1.0.vapi \
+	libusb-1.0.bapi \
 	libwnck-1.0.deps \
-	libwnck-1.0.vapi \
+	libwnck-1.0.bapi \
 	libwnck-3.0.deps \
-	libwnck-3.0.vapi \
-	libxml-2.0.vapi \
+	libwnck-3.0.bapi \
+	libxml-2.0.bapi \
 	linux.deps \
-	linux.vapi \
-	loudmouth-1.0.vapi \
-	lua.vapi \
-	mysql.vapi \
-	orc-0.4.vapi \
+	linux.bapi \
+	loudmouth-1.0.bapi \
+	lua.bapi \
+	mysql.bapi \
+	orc-0.4.bapi \
 	packagekit-glib2.deps \
-	packagekit-glib2.vapi \
+	packagekit-glib2.bapi \
 	pango.deps \
-	pango.vapi \
+	pango.bapi \
 	pangocairo.deps \
-	pangocairo.vapi \
-	pixman-1.vapi \
+	pangocairo.bapi \
+	pixman-1.bapi \
 	polkit-agent-1.deps \
-	polkit-agent-1.vapi \
+	polkit-agent-1.bapi \
 	polkit-gobject-1.deps \
-	polkit-gobject-1.vapi \
+	polkit-gobject-1.bapi \
 	poppler-glib.deps \
-	poppler-glib.vapi \
-	posix.vapi \
+	poppler-glib.bapi \
+	posix.bapi \
 	purple.deps \
-	purple.vapi \
-	raptor.vapi \
-	rasqal.vapi \
+	purple.bapi \
+	raptor.bapi \
+	rasqal.bapi \
 	rasqal.deps \
-	readline.vapi \
+	readline.bapi \
 	rest-0.7.deps \
-	rest-0.7.vapi \
+	rest-0.7.bapi \
 	rest-extras-0.7.deps \
-	rest-extras-0.7.vapi \
-	sdl.vapi \
-	sdl-gfx.vapi \
+	rest-extras-0.7.bapi \
+	sdl.bapi \
+	sdl-gfx.bapi \
 	sdl-gfx.deps \
-	sdl-image.vapi \
+	sdl-image.bapi \
 	sdl-image.deps \
-	sdl-mixer.vapi \
+	sdl-mixer.bapi \
 	sdl-mixer.deps \
-	sdl-net.vapi \
+	sdl-net.bapi \
 	sdl-net.deps \
-	sdl-ttf.vapi \
+	sdl-ttf.bapi \
 	sdl-ttf.deps \
-	sqlite3.vapi \
-	taglib_c.vapi \
-	tiff.vapi \
-	tokyocabinet.vapi \
+	sqlite3.bapi \
+	taglib_c.bapi \
+	tiff.bapi \
+	tokyocabinet.bapi \
 	udisks2.deps \
-	udisks2.vapi \
+	udisks2.bapi \
 	unique-1.0.deps \
-	unique-1.0.vapi \
-	v4l2.vapi \
+	unique-1.0.bapi \
+	v4l2.bapi \
 	webkit-1.0.deps \
-	webkit-1.0.vapi \
-	webkit2gtk-4.0.vapi \
+	webkit-1.0.bapi \
+	webkit2gtk-4.0.bapi \
 	webkit2gtk-4.0.deps \
-	webkit2gtk-web-extension-4.0.vapi \
+	webkit2gtk-web-extension-4.0.bapi \
 	webkit2gtk-web-extension-4.0.deps \
-	x11.vapi \
-	xcb.vapi \
-	xcb-icccm.vapi \
+	x11.bapi \
+	xcb.bapi \
+	xcb-icccm.bapi \
 	xcb-icccm.deps \
-	xtst.vapi \
+	xtst.bapi \
 	xtst.deps \
-	zlib.vapi \
+	zlib.bapi \
 	$(NULL)
 
 dist_noinst_DATA = \
-	config.vapi \
+	config.bapi \
 	$(NULL)
 
 GIDL_BINDINGS = \
@@ -413,8 +413,8 @@ GIR_BINDINGS = \
 
 BINDINGS = $(GIR_BINDINGS) $(GIDL_BINDINGS)
 
-BAPIGEN = $(top_builddir)/vapigen/vapigen$(EXEEXT)
-BAPIGENFLAGS = --vapidir $(srcdir)
+BAPIGEN = $(top_builddir)/bapigen/bapigen$(EXEEXT)
+BAPIGENFLAGS = --bapidir $(srcdir)
 GENBAPI = $(BAPIGEN) $(BAPIGENFLAGS)
 METADATADIR = $(srcdir)/metadata
 PACKAGESDIR = $(srcdir)/packages

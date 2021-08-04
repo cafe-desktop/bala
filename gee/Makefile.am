@@ -39,12 +39,12 @@ geeinclude_HEADERS = \
 	balagee.h \
 	$(NULL)
 
-gee.vapi gee.bala.stamp: $(libgee_la_BALASOURCES)
+gee.bapi gee.bala.stamp: $(libgee_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
+		--bapidir $(top_srcdir)/bapi --pkg gobject-2.0 \
 		--use-header \
 		-H balagee.h \
 		--library gee \
@@ -56,10 +56,10 @@ libgee_la_LIBADD = \
 	$(GLIB_LIBS) \
 	$(NULL)
 
-EXTRA_DIST = $(libgee_la_BALASOURCES) gee.vapi gee.bala.stamp balagee.h
+EXTRA_DIST = $(libgee_la_BALASOURCES) gee.bapi gee.bala.stamp balagee.h
 
 MAINTAINERCLEANFILES = \
-	gee.vapi \
+	gee.bapi \
 	balagee.h \
 	$(libgee_la_BALASOURCES:.bala=.c) \
 	$(NULL)

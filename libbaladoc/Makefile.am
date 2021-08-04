@@ -162,7 +162,7 @@ libbaladoc@PACKAGE_SUFFIX@_la_SOURCES = \
 	gvc-compat.c \
 	$(NULL)
 
-baladoc@PACKAGE_SUFFIX@.vapi baladoc.h: libbaladoc.bala.stamp
+baladoc@PACKAGE_SUFFIX@.bapi baladoc.h: libbaladoc.bala.stamp
 libbaladoc.bala.stamp: $(libbaladoc_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
@@ -173,13 +173,13 @@ libbaladoc.bala.stamp: $(libbaladoc_la_BALASOURCES)
 		--use-header \
 		-H baladoc.h \
 		--library baladoc \
-		--vapi baladoc@PACKAGE_SUFFIX@.vapi \
-		--vapidir $(top_srcdir)/vapi --pkg gmodule-2.0 \
-		--vapidir $(top_srcdir)/vapi --pkg libgvc \
-		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/bala --pkg bala \
-		--vapidir $(top_srcdir)/ccode --pkg ccode \
-		--vapidir $(top_srcdir)/codegen --pkg codegen \
+		--bapi baladoc@PACKAGE_SUFFIX@.bapi \
+		--bapidir $(top_srcdir)/bapi --pkg gmodule-2.0 \
+		--bapidir $(top_srcdir)/bapi --pkg libgvc \
+		--bapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/bala --pkg bala \
+		--bapidir $(top_srcdir)/ccode --pkg ccode \
+		--bapidir $(top_srcdir)/codegen --pkg codegen \
 		--pkg config \
 		$(filter %.bala %.c,$^)
 	touch $@
@@ -208,9 +208,9 @@ nodist_pkgconfig_DATA = baladoc@PACKAGE_SUFFIX@.pc
 baladoc@PACKAGE_SUFFIX@.pc: baladoc.pc
 	cp $< $@
 
-vapidir = $(datadir)/bala/vapi
-dist_vapi_DATA = baladoc@PACKAGE_SUFFIX@.vapi
-nodist_vapi_DATA = baladoc@PACKAGE_SUFFIX@.deps
+bapidir = $(datadir)/bala/bapi
+dist_bapi_DATA = baladoc@PACKAGE_SUFFIX@.bapi
+nodist_bapi_DATA = baladoc@PACKAGE_SUFFIX@.deps
 
 baladoc@PACKAGE_SUFFIX@.deps: baladoc.deps
 	cp $< $@
@@ -230,7 +230,7 @@ CLEANFILES = \
 MAINTAINERCLEANFILES = \
 	baladoc.deps \
 	baladoc.pc \
-	baladoc.vapi \
+	baladoc.bapi \
 	baladoc.h \
 	$(libbaladoc_la_BALASOURCES:.bala=.c) \
 	$(NULL)
