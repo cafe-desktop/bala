@@ -63,15 +63,15 @@ libbalaccodegen_la_SOURCES = \
 	$(libbalaccodegen_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-codegen.vapi codegen.bala.stamp: $(libbalaccodegen_la_BALASOURCES)
+codegen.bapi codegen.bala.stamp: $(libbalaccodegen_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
-		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/ccode --pkg ccode \
-		--vapidir $(top_srcdir)/bala --pkg bala \
+		--bapidir $(top_srcdir)/bapi --pkg gobject-2.0 \
+		--bapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/ccode --pkg ccode \
+		--bapidir $(top_srcdir)/bala --pkg bala \
 		--use-header \
 		-H balacodegen.h \
 		--library codegen \
@@ -85,10 +85,10 @@ libbalaccodegen_la_LIBADD = \
 	$(top_builddir)/ccode/libbalaccode.la \
 	$(NULL)
 
-EXTRA_DIST = $(libbalaccodegen_la_BALASOURCES) codegen.vapi codegen.bala.stamp balacodegen.h
+EXTRA_DIST = $(libbalaccodegen_la_BALASOURCES) codegen.bapi codegen.bala.stamp balacodegen.h
 
 MAINTAINERCLEANFILES = \
-	codegen.vapi \
+	codegen.bapi \
 	balacodegen.h \
 	$(libbalaccodegen_la_BALASOURCES:.bala=.c) \
 	$(NULL)

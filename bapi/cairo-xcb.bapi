@@ -20,7 +20,7 @@
  * 	Jürg Billeter <j@bitron.ch>
  */
 
-[Version (deprecated_since = "bala-0.26", replacement = "bindings distributed with bala-extra-vapis")]
+[Version (deprecated_since = "bala-0.26", replacement = "bindings distributed with bala-extra-bapis")]
 namespace Cairo {
 	[Compact]
 	[CCode (cname = "cairo_surface_t", cheader_filename = "cairo-xcb.h")]

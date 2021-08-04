@@ -94,7 +94,7 @@ baladoc_api_visitor_visit_tree (BaladocApiVisitor* self,
 }
 
 /**
- * Visit operation called for packages like gir-files and vapi-files.
+ * Visit operation called for packages like gir-files and bapi-files.
  *
  * @param item a package
  */

@@ -353,17 +353,17 @@ public class Baladoc.TreeBuilder : Bala.CodeVisitor {
 			return true;
 		}
 
-		string vapi_name = pkg + ".vapi";
+		string bapi_name = pkg + ".bapi";
 		string gir_name = pkg + ".gir";
 		foreach (string source_file in settings.source_files) {
 			string basename = Path.get_basename (source_file);
-			if (basename == vapi_name || basename == gir_name) {
+			if (basename == bapi_name || basename == gir_name) {
 				return true;
 			}
 		}
 
 
-		var package_path = context.get_vapi_path (pkg) ?? context.get_gir_path (pkg);
+		var package_path = context.get_bapi_path (pkg) ?? context.get_gir_path (pkg);
 		if (package_path == null) {
 			Bala.Report.error (null, "Package `%s' not found in specified Bala API directories or GObject-Introspection GIR directories".printf (pkg));
 			return false;
@@ -415,7 +415,7 @@ public class Baladoc.TreeBuilder : Bala.CodeVisitor {
 	}
 
 	/**
-	 * Add the specified source file to the context. Only .bala, .vapi, .gs,
+	 * Add the specified source file to the context. Only .bala, .bapi, .gs,
 	 * and .c files are supported.
 	 */
 	private void add_documented_files (Bala.CodeContext context, string[] sources) {
@@ -448,7 +448,7 @@ public class Baladoc.TreeBuilder : Bala.CodeVisitor {
 					}
 
 					context.add_source_file (source_file);
-				} else if (source.has_suffix (".vapi") || source.has_suffix (".gir")) {
+				} else if (source.has_suffix (".bapi") || source.has_suffix (".gir")) {
 					string file_name = get_package_name (source);
 
 					var vfile = new Bala.SourceFile (context, Bala.SourceFileType.PACKAGE, rpath);
@@ -465,7 +465,7 @@ public class Baladoc.TreeBuilder : Bala.CodeVisitor {
 					context.add_c_source_file (rpath);
 					tree.add_external_c_files (rpath);
 				} else {
-					Bala.Report.error (null, "%s is not a supported source file type. Only .bala, .vapi, .gs, and .c files are supported.".printf (source));
+					Bala.Report.error (null, "%s is not a supported source file type. Only .bala, .bapi, .gs, and .c files are supported.".printf (source));
 				}
 			} else {
 				Bala.Report.error (null, "%s not found".printf (source));
@@ -477,7 +477,7 @@ public class Baladoc.TreeBuilder : Bala.CodeVisitor {
 		// settings:
 		context.experimental = settings.experimental;
 		context.experimental_non_null = settings.experimental || settings.experimental_non_null;
-		context.vapi_directories = settings.vapi_directories;
+		context.bapi_directories = settings.bapi_directories;
 		context.report.enable_warnings = settings.verbose;
 		context.metadata_directories = settings.metadata_directories;
 		context.gir_directories = settings.gir_directories;

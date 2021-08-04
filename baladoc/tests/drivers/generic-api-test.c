@@ -296,7 +296,7 @@ test_enum_global (BaladocApiEnum* en,
 	_g_free0 (_tmp9_);
 	_tmp10_ = baladoc_documentation_get_filename ((BaladocDocumentation*) en);
 	_tmp11_ = _tmp10_;
-	_bala_assert (g_strcmp0 (_tmp11_, "api-test.data.vapi") == 0, "en.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp11_, "api-test.data.bapi") == 0, "en.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp11_);
 	_tmp12_ = baladoc_api_node_get_name ((BaladocApiNode*) en);
 	_tmp13_ = _tmp12_;
@@ -428,7 +428,7 @@ test_enum_global (BaladocApiEnum* en,
 						_tmp58_ = enval;
 						_tmp59_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp58_);
 						_tmp60_ = _tmp59_;
-						_bala_assert (g_strcmp0 (_tmp60_, "api-test.data.vapi") == 0, "enval.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp60_, "api-test.data.bapi") == 0, "enval.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp60_);
 						_tmp61_ = enval;
 						_tmp62_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp61_);
@@ -502,7 +502,7 @@ test_enum_global (BaladocApiEnum* en,
 						_tmp85_ = enval;
 						_tmp86_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp85_);
 						_tmp87_ = _tmp86_;
-						_bala_assert (g_strcmp0 (_tmp87_, "api-test.data.vapi") == 0, "enval.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp87_, "api-test.data.bapi") == 0, "enval.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp87_);
 						_tmp88_ = enval;
 						_tmp89_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp88_);
@@ -600,7 +600,7 @@ test_enum_global (BaladocApiEnum* en,
 	_tmp139_ = method;
 	_tmp140_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp139_);
 	_tmp141_ = _tmp140_;
-	_bala_assert (g_strcmp0 (_tmp141_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp141_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp141_);
 	_tmp142_ = method;
 	_tmp143_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp142_);
@@ -685,7 +685,7 @@ test_enum_global (BaladocApiEnum* en,
 	_tmp196_ = method;
 	_tmp197_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp196_);
 	_tmp198_ = _tmp197_;
-	_bala_assert (g_strcmp0 (_tmp198_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp198_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp198_);
 	_tmp199_ = method;
 	_tmp200_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp199_);
@@ -832,7 +832,7 @@ test_erroromain_global (BaladocApiErrorDomain* err,
 	_g_free0 (_tmp9_);
 	_tmp10_ = baladoc_documentation_get_filename ((BaladocDocumentation*) err);
 	_tmp11_ = _tmp10_;
-	_bala_assert (g_strcmp0 (_tmp11_, "api-test.data.vapi") == 0, "err.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp11_, "api-test.data.bapi") == 0, "err.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp11_);
 	_tmp12_ = baladoc_api_node_get_name ((BaladocApiNode*) err);
 	_tmp13_ = _tmp12_;
@@ -950,7 +950,7 @@ test_erroromain_global (BaladocApiErrorDomain* err,
 						_tmp52_ = errc;
 						_tmp53_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp52_);
 						_tmp54_ = _tmp53_;
-						_bala_assert (g_strcmp0 (_tmp54_, "api-test.data.vapi") == 0, "errc.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp54_, "api-test.data.bapi") == 0, "errc.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp54_);
 						_tmp55_ = errc;
 						_tmp56_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp55_);
@@ -1010,7 +1010,7 @@ test_erroromain_global (BaladocApiErrorDomain* err,
 						_tmp73_ = errc;
 						_tmp74_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp73_);
 						_tmp75_ = _tmp74_;
-						_bala_assert (g_strcmp0 (_tmp75_, "api-test.data.vapi") == 0, "errc.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp75_, "api-test.data.bapi") == 0, "errc.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp75_);
 						_tmp76_ = errc;
 						_tmp77_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp76_);
@@ -1092,7 +1092,7 @@ test_erroromain_global (BaladocApiErrorDomain* err,
 	_g_free0 (_tmp111_);
 	_tmp112_ = baladoc_documentation_get_filename ((BaladocDocumentation*) method);
 	_tmp113_ = _tmp112_;
-	_bala_assert (g_strcmp0 (_tmp113_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp113_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp113_);
 	_tmp114_ = baladoc_api_node_get_name ((BaladocApiNode*) method);
 	_tmp115_ = _tmp114_;
@@ -1554,7 +1554,7 @@ test_class_global (BaladocApiClass* cl,
 	_g_free0 (_tmp37_);
 	_tmp38_ = baladoc_documentation_get_filename ((BaladocDocumentation*) cl);
 	_tmp39_ = _tmp38_;
-	_bala_assert (g_strcmp0 (_tmp39_, "api-test.data.vapi") == 0, "cl.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp39_, "api-test.data.bapi") == 0, "cl.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp39_);
 	_tmp40_ = baladoc_api_node_get_name ((BaladocApiNode*) cl);
 	_tmp41_ = _tmp40_;
@@ -1634,7 +1634,7 @@ test_class_global (BaladocApiClass* cl,
 	_tmp91_ = method;
 	_tmp92_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp91_);
 	_tmp93_ = _tmp92_;
-	_bala_assert (g_strcmp0 (_tmp93_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp93_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp93_);
 	_tmp94_ = method;
 	_tmp95_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp94_);
@@ -1719,7 +1719,7 @@ test_class_global (BaladocApiClass* cl,
 	_tmp148_ = method;
 	_tmp149_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp148_);
 	_tmp150_ = _tmp149_;
-	_bala_assert (g_strcmp0 (_tmp150_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp150_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp150_);
 	_tmp151_ = method;
 	_tmp152_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp151_);
@@ -1893,7 +1893,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp215_ = method;
 						_tmp216_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp215_);
 						_tmp217_ = _tmp216_;
-						_bala_assert (g_strcmp0 (_tmp217_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp217_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp217_);
 						_tmp218_ = method;
 						_tmp219_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp218_);
@@ -2009,7 +2009,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp260_ = method;
 						_tmp261_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp260_);
 						_tmp262_ = _tmp261_;
-						_bala_assert (g_strcmp0 (_tmp262_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp262_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp262_);
 						_tmp263_ = method;
 						_tmp264_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp263_);
@@ -2298,7 +2298,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp324_ = property;
 						_tmp325_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp324_);
 						_tmp326_ = _tmp325_;
-						_bala_assert (g_strcmp0 (_tmp326_, "api-test.data.vapi") == 0, "property.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp326_, "api-test.data.bapi") == 0, "property.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp326_);
 						_tmp327_ = property;
 						_tmp328_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp327_);
@@ -2356,7 +2356,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp370_ = _tmp369_;
 						_tmp371_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp370_);
 						_tmp372_ = _tmp371_;
-						_bala_assert (g_strcmp0 (_tmp372_, "api-test.data.vapi") == 0, "property.getter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp372_, "api-test.data.bapi") == 0, "property.getter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp372_);
 						_tmp373_ = property;
 						_tmp374_ = baladoc_api_property_get_getter (_tmp373_);
@@ -2418,7 +2418,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp420_ = _tmp419_;
 						_tmp421_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp420_);
 						_tmp422_ = _tmp421_;
-						_bala_assert (g_strcmp0 (_tmp422_, "api-test.data.vapi") == 0, "property.setter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp422_, "api-test.data.bapi") == 0, "property.setter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp422_);
 						_tmp423_ = property;
 						_tmp424_ = baladoc_api_property_get_setter (_tmp423_);
@@ -2588,7 +2588,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp469_ = property;
 						_tmp470_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp469_);
 						_tmp471_ = _tmp470_;
-						_bala_assert (g_strcmp0 (_tmp471_, "api-test.data.vapi") == 0, "property.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp471_, "api-test.data.bapi") == 0, "property.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp471_);
 						_tmp472_ = property;
 						_tmp473_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp472_);
@@ -2646,7 +2646,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp515_ = _tmp514_;
 						_tmp516_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp515_);
 						_tmp517_ = _tmp516_;
-						_bala_assert (g_strcmp0 (_tmp517_, "api-test.data.vapi") == 0, "property.getter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp517_, "api-test.data.bapi") == 0, "property.getter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp517_);
 						_tmp518_ = property;
 						_tmp519_ = baladoc_api_property_get_getter (_tmp518_);
@@ -2866,7 +2866,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp564_ = property;
 						_tmp565_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp564_);
 						_tmp566_ = _tmp565_;
-						_bala_assert (g_strcmp0 (_tmp566_, "api-test.data.vapi") == 0, "property.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp566_, "api-test.data.bapi") == 0, "property.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp566_);
 						_tmp567_ = property;
 						_tmp568_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp567_);
@@ -2924,7 +2924,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp610_ = _tmp609_;
 						_tmp611_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp610_);
 						_tmp612_ = _tmp611_;
-						_bala_assert (g_strcmp0 (_tmp612_, "api-test.data.vapi") == 0, "property.getter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp612_, "api-test.data.bapi") == 0, "property.getter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp612_);
 						_tmp613_ = property;
 						_tmp614_ = baladoc_api_property_get_getter (_tmp613_);
@@ -2986,7 +2986,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp660_ = _tmp659_;
 						_tmp661_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp660_);
 						_tmp662_ = _tmp661_;
-						_bala_assert (g_strcmp0 (_tmp662_, "api-test.data.vapi") == 0, "property.setter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp662_, "api-test.data.bapi") == 0, "property.setter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp662_);
 						_tmp663_ = property;
 						_tmp664_ = baladoc_api_property_get_setter (_tmp663_);
@@ -3060,7 +3060,7 @@ test_class_global (BaladocApiClass* cl,
 	_tmp697_ = del;
 	_tmp698_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp697_);
 	_tmp699_ = _tmp698_;
-	_bala_assert (g_strcmp0 (_tmp699_, "api-test.data.vapi") == 0, "del.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp699_, "api-test.data.bapi") == 0, "del.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp699_);
 	_tmp700_ = del;
 	_tmp701_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp700_);
@@ -3110,7 +3110,7 @@ test_class_global (BaladocApiClass* cl,
 	_tmp730_ = sig;
 	_tmp731_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp730_);
 	_tmp732_ = _tmp731_;
-	_bala_assert (g_strcmp0 (_tmp732_, "api-test.data.vapi") == 0, "sig.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp732_, "api-test.data.bapi") == 0, "sig.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp732_);
 	_tmp733_ = sig;
 	_tmp734_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp733_);
@@ -3157,7 +3157,7 @@ test_class_global (BaladocApiClass* cl,
 	_tmp760_ = constant;
 	_tmp761_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp760_);
 	_tmp762_ = _tmp761_;
-	_bala_assert (g_strcmp0 (_tmp762_, "api-test.data.vapi") == 0, "constant.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp762_, "api-test.data.bapi") == 0, "constant.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp762_);
 	_tmp763_ = constant;
 	_tmp764_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp763_);
@@ -3288,7 +3288,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp809_ = field;
 						_tmp810_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp809_);
 						_tmp811_ = _tmp810_;
-						_bala_assert (g_strcmp0 (_tmp811_, "api-test.data.vapi") == 0, "field.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp811_, "api-test.data.bapi") == 0, "field.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp811_);
 						_tmp812_ = field;
 						_tmp813_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp812_);
@@ -3362,7 +3362,7 @@ test_class_global (BaladocApiClass* cl,
 						_tmp836_ = field;
 						_tmp837_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp836_);
 						_tmp838_ = _tmp837_;
-						_bala_assert (g_strcmp0 (_tmp838_, "api-test.data.vapi") == 0, "field.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp838_, "api-test.data.bapi") == 0, "field.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp838_);
 						_tmp839_ = field;
 						_tmp840_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp839_);
@@ -3419,7 +3419,7 @@ test_class_global (BaladocApiClass* cl,
 	_g_free0 (_tmp858_);
 	_tmp859_ = baladoc_documentation_get_filename ((BaladocDocumentation*) subcl);
 	_tmp860_ = _tmp859_;
-	_bala_assert (g_strcmp0 (_tmp860_, "api-test.data.vapi") == 0, "subcl.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp860_, "api-test.data.bapi") == 0, "subcl.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp860_);
 	_tmp861_ = baladoc_api_node_get_nspace ((BaladocApiNode*) subcl);
 	_tmp862_ = _tmp861_;
@@ -3471,7 +3471,7 @@ test_class_global (BaladocApiClass* cl,
 	_g_free0 (_tmp886_);
 	_tmp887_ = baladoc_documentation_get_filename ((BaladocDocumentation*) substru);
 	_tmp888_ = _tmp887_;
-	_bala_assert (g_strcmp0 (_tmp888_, "api-test.data.vapi") == 0, "substru.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp888_, "api-test.data.bapi") == 0, "substru.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp888_);
 	_tmp889_ = baladoc_api_node_get_name ((BaladocApiNode*) substru);
 	_tmp890_ = _tmp889_;
@@ -3791,7 +3791,7 @@ test_interface_global (BaladocApiInterface* iface,
 	_g_free0 (_tmp19_);
 	_tmp20_ = baladoc_documentation_get_filename ((BaladocDocumentation*) iface);
 	_tmp21_ = _tmp20_;
-	_bala_assert (g_strcmp0 (_tmp21_, "api-test.data.vapi") == 0, "iface.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp21_, "api-test.data.bapi") == 0, "iface.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp21_);
 	_tmp22_ = baladoc_api_node_get_name ((BaladocApiNode*) iface);
 	_tmp23_ = _tmp22_;
@@ -3871,7 +3871,7 @@ test_interface_global (BaladocApiInterface* iface,
 	_tmp73_ = method;
 	_tmp74_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp73_);
 	_tmp75_ = _tmp74_;
-	_bala_assert (g_strcmp0 (_tmp75_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp75_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp75_);
 	_tmp76_ = method;
 	_tmp77_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp76_);
@@ -3956,7 +3956,7 @@ test_interface_global (BaladocApiInterface* iface,
 	_tmp130_ = method;
 	_tmp131_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp130_);
 	_tmp132_ = _tmp131_;
-	_bala_assert (g_strcmp0 (_tmp132_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp132_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp132_);
 	_tmp133_ = method;
 	_tmp134_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp133_);
@@ -4231,7 +4231,7 @@ test_interface_global (BaladocApiInterface* iface,
 						_tmp197_ = property;
 						_tmp198_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp197_);
 						_tmp199_ = _tmp198_;
-						_bala_assert (g_strcmp0 (_tmp199_, "api-test.data.vapi") == 0, "property.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp199_, "api-test.data.bapi") == 0, "property.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp199_);
 						_tmp200_ = property;
 						_tmp201_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp200_);
@@ -4289,7 +4289,7 @@ test_interface_global (BaladocApiInterface* iface,
 						_tmp243_ = _tmp242_;
 						_tmp244_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp243_);
 						_tmp245_ = _tmp244_;
-						_bala_assert (g_strcmp0 (_tmp245_, "api-test.data.vapi") == 0, "property.getter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp245_, "api-test.data.bapi") == 0, "property.getter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp245_);
 						_tmp246_ = property;
 						_tmp247_ = baladoc_api_property_get_getter (_tmp246_);
@@ -4351,7 +4351,7 @@ test_interface_global (BaladocApiInterface* iface,
 						_tmp293_ = _tmp292_;
 						_tmp294_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp293_);
 						_tmp295_ = _tmp294_;
-						_bala_assert (g_strcmp0 (_tmp295_, "api-test.data.vapi") == 0, "property.setter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp295_, "api-test.data.bapi") == 0, "property.setter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp295_);
 						_tmp296_ = property;
 						_tmp297_ = baladoc_api_property_get_setter (_tmp296_);
@@ -4521,7 +4521,7 @@ test_interface_global (BaladocApiInterface* iface,
 						_tmp342_ = property;
 						_tmp343_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp342_);
 						_tmp344_ = _tmp343_;
-						_bala_assert (g_strcmp0 (_tmp344_, "api-test.data.vapi") == 0, "property.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp344_, "api-test.data.bapi") == 0, "property.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp344_);
 						_tmp345_ = property;
 						_tmp346_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp345_);
@@ -4579,7 +4579,7 @@ test_interface_global (BaladocApiInterface* iface,
 						_tmp388_ = _tmp387_;
 						_tmp389_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp388_);
 						_tmp390_ = _tmp389_;
-						_bala_assert (g_strcmp0 (_tmp390_, "api-test.data.vapi") == 0, "property.getter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp390_, "api-test.data.bapi") == 0, "property.getter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp390_);
 						_tmp391_ = property;
 						_tmp392_ = baladoc_api_property_get_getter (_tmp391_);
@@ -4799,7 +4799,7 @@ test_interface_global (BaladocApiInterface* iface,
 						_tmp437_ = property;
 						_tmp438_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp437_);
 						_tmp439_ = _tmp438_;
-						_bala_assert (g_strcmp0 (_tmp439_, "api-test.data.vapi") == 0, "property.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp439_, "api-test.data.bapi") == 0, "property.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp439_);
 						_tmp440_ = property;
 						_tmp441_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp440_);
@@ -4857,7 +4857,7 @@ test_interface_global (BaladocApiInterface* iface,
 						_tmp483_ = _tmp482_;
 						_tmp484_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp483_);
 						_tmp485_ = _tmp484_;
-						_bala_assert (g_strcmp0 (_tmp485_, "api-test.data.vapi") == 0, "property.getter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp485_, "api-test.data.bapi") == 0, "property.getter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp485_);
 						_tmp486_ = property;
 						_tmp487_ = baladoc_api_property_get_getter (_tmp486_);
@@ -4919,7 +4919,7 @@ test_interface_global (BaladocApiInterface* iface,
 						_tmp533_ = _tmp532_;
 						_tmp534_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp533_);
 						_tmp535_ = _tmp534_;
-						_bala_assert (g_strcmp0 (_tmp535_, "api-test.data.vapi") == 0, "property.setter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp535_, "api-test.data.bapi") == 0, "property.setter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp535_);
 						_tmp536_ = property;
 						_tmp537_ = baladoc_api_property_get_setter (_tmp536_);
@@ -4984,7 +4984,7 @@ test_interface_global (BaladocApiInterface* iface,
 	_bala_assert (_tmp561_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "del.accessibility == Bala.SymbolAccessibility.PUBLIC");
 	_tmp562_ = baladoc_documentation_get_filename ((BaladocDocumentation*) del);
 	_tmp563_ = _tmp562_;
-	_bala_assert (g_strcmp0 (_tmp563_, "api-test.data.vapi") == 0, "del.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp563_, "api-test.data.bapi") == 0, "del.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp563_);
 	_tmp564_ = baladoc_api_node_get_nspace ((BaladocApiNode*) del);
 	_tmp565_ = _tmp564_;
@@ -5023,7 +5023,7 @@ test_interface_global (BaladocApiInterface* iface,
 	_bala_assert (_tmp583_ == BALA_SYMBOL_ACCESSIBILITY_PUBLIC, "sig.accessibility == Bala.SymbolAccessibility.PUBLIC");
 	_tmp584_ = baladoc_documentation_get_filename ((BaladocDocumentation*) sig);
 	_tmp585_ = _tmp584_;
-	_bala_assert (g_strcmp0 (_tmp585_, "api-test.data.vapi") == 0, "sig.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp585_, "api-test.data.bapi") == 0, "sig.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp585_);
 	_tmp586_ = baladoc_api_node_get_nspace ((BaladocApiNode*) sig);
 	_tmp587_ = _tmp586_;
@@ -5060,7 +5060,7 @@ test_interface_global (BaladocApiInterface* iface,
 	_g_free0 (_tmp603_);
 	_tmp604_ = baladoc_documentation_get_filename ((BaladocDocumentation*) constant);
 	_tmp605_ = _tmp604_;
-	_bala_assert (g_strcmp0 (_tmp605_, "api-test.data.vapi") == 0, "constant.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp605_, "api-test.data.bapi") == 0, "constant.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp605_);
 	_tmp606_ = baladoc_api_node_get_name ((BaladocApiNode*) constant);
 	_tmp607_ = _tmp606_;
@@ -5340,7 +5340,7 @@ test_struct_global (BaladocApiStruct* stru,
 	_g_free0 (_tmp15_);
 	_tmp16_ = baladoc_documentation_get_filename ((BaladocDocumentation*) stru);
 	_tmp17_ = _tmp16_;
-	_bala_assert (g_strcmp0 (_tmp17_, "api-test.data.vapi") == 0, "stru.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp17_, "api-test.data.bapi") == 0, "stru.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp17_);
 	_tmp18_ = baladoc_api_node_get_name ((BaladocApiNode*) stru);
 	_tmp19_ = _tmp18_;
@@ -5420,7 +5420,7 @@ test_struct_global (BaladocApiStruct* stru,
 	_tmp69_ = method;
 	_tmp70_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp69_);
 	_tmp71_ = _tmp70_;
-	_bala_assert (g_strcmp0 (_tmp71_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp71_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp71_);
 	_tmp72_ = method;
 	_tmp73_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp72_);
@@ -5505,7 +5505,7 @@ test_struct_global (BaladocApiStruct* stru,
 	_tmp126_ = method;
 	_tmp127_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp126_);
 	_tmp128_ = _tmp127_;
-	_bala_assert (g_strcmp0 (_tmp128_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp128_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp128_);
 	_tmp129_ = method;
 	_tmp130_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp129_);
@@ -5679,7 +5679,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp193_ = method;
 						_tmp194_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp193_);
 						_tmp195_ = _tmp194_;
-						_bala_assert (g_strcmp0 (_tmp195_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp195_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp195_);
 						_tmp196_ = method;
 						_tmp197_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp196_);
@@ -5795,7 +5795,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp238_ = method;
 						_tmp239_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp238_);
 						_tmp240_ = _tmp239_;
-						_bala_assert (g_strcmp0 (_tmp240_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp240_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp240_);
 						_tmp241_ = method;
 						_tmp242_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp241_);
@@ -5860,7 +5860,7 @@ test_struct_global (BaladocApiStruct* stru,
 	_tmp268_ = constant;
 	_tmp269_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp268_);
 	_tmp270_ = _tmp269_;
-	_bala_assert (g_strcmp0 (_tmp270_, "api-test.data.vapi") == 0, "constant.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp270_, "api-test.data.bapi") == 0, "constant.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp270_);
 	_tmp271_ = constant;
 	_tmp272_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp271_);
@@ -5991,7 +5991,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp317_ = field;
 						_tmp318_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp317_);
 						_tmp319_ = _tmp318_;
-						_bala_assert (g_strcmp0 (_tmp319_, "api-test.data.vapi") == 0, "field.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp319_, "api-test.data.bapi") == 0, "field.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp319_);
 						_tmp320_ = field;
 						_tmp321_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp320_);
@@ -6065,7 +6065,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp344_ = field;
 						_tmp345_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp344_);
 						_tmp346_ = _tmp345_;
-						_bala_assert (g_strcmp0 (_tmp346_, "api-test.data.vapi") == 0, "field.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp346_, "api-test.data.bapi") == 0, "field.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp346_);
 						_tmp347_ = field;
 						_tmp348_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp347_);
@@ -6355,7 +6355,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp408_ = property;
 						_tmp409_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp408_);
 						_tmp410_ = _tmp409_;
-						_bala_assert (g_strcmp0 (_tmp410_, "api-test.data.vapi") == 0, "property.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp410_, "api-test.data.bapi") == 0, "property.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp410_);
 						_tmp411_ = property;
 						_tmp412_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp411_);
@@ -6413,7 +6413,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp454_ = _tmp453_;
 						_tmp455_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp454_);
 						_tmp456_ = _tmp455_;
-						_bala_assert (g_strcmp0 (_tmp456_, "api-test.data.vapi") == 0, "property.getter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp456_, "api-test.data.bapi") == 0, "property.getter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp456_);
 						_tmp457_ = property;
 						_tmp458_ = baladoc_api_property_get_getter (_tmp457_);
@@ -6475,7 +6475,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp504_ = _tmp503_;
 						_tmp505_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp504_);
 						_tmp506_ = _tmp505_;
-						_bala_assert (g_strcmp0 (_tmp506_, "api-test.data.vapi") == 0, "property.setter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp506_, "api-test.data.bapi") == 0, "property.setter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp506_);
 						_tmp507_ = property;
 						_tmp508_ = baladoc_api_property_get_setter (_tmp507_);
@@ -6645,7 +6645,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp553_ = property;
 						_tmp554_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp553_);
 						_tmp555_ = _tmp554_;
-						_bala_assert (g_strcmp0 (_tmp555_, "api-test.data.vapi") == 0, "property.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp555_, "api-test.data.bapi") == 0, "property.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp555_);
 						_tmp556_ = property;
 						_tmp557_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp556_);
@@ -6703,7 +6703,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp599_ = _tmp598_;
 						_tmp600_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp599_);
 						_tmp601_ = _tmp600_;
-						_bala_assert (g_strcmp0 (_tmp601_, "api-test.data.vapi") == 0, "property.getter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp601_, "api-test.data.bapi") == 0, "property.getter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp601_);
 						_tmp602_ = property;
 						_tmp603_ = baladoc_api_property_get_getter (_tmp602_);
@@ -6923,7 +6923,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp648_ = property;
 						_tmp649_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp648_);
 						_tmp650_ = _tmp649_;
-						_bala_assert (g_strcmp0 (_tmp650_, "api-test.data.vapi") == 0, "property.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp650_, "api-test.data.bapi") == 0, "property.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp650_);
 						_tmp651_ = property;
 						_tmp652_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp651_);
@@ -6981,7 +6981,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp694_ = _tmp693_;
 						_tmp695_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp694_);
 						_tmp696_ = _tmp695_;
-						_bala_assert (g_strcmp0 (_tmp696_, "api-test.data.vapi") == 0, "property.getter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp696_, "api-test.data.bapi") == 0, "property.getter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp696_);
 						_tmp697_ = property;
 						_tmp698_ = baladoc_api_property_get_getter (_tmp697_);
@@ -7043,7 +7043,7 @@ test_struct_global (BaladocApiStruct* stru,
 						_tmp744_ = _tmp743_;
 						_tmp745_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp744_);
 						_tmp746_ = _tmp745_;
-						_bala_assert (g_strcmp0 (_tmp746_, "api-test.data.vapi") == 0, "property.setter.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp746_, "api-test.data.bapi") == 0, "property.setter.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp746_);
 						_tmp747_ = property;
 						_tmp748_ = baladoc_api_property_get_setter (_tmp747_);
@@ -7447,7 +7447,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp66_ = param;
 						_tmp67_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp66_);
 						_tmp68_ = _tmp67_;
-						_bala_assert (g_strcmp0 (_tmp68_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp68_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp68_);
 						_tmp69_ = param;
 						_tmp70_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp69_);
@@ -7681,7 +7681,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp162_ = param;
 						_tmp163_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp162_);
 						_tmp164_ = _tmp163_;
-						_bala_assert (g_strcmp0 (_tmp164_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp164_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp164_);
 						_tmp165_ = param;
 						_tmp166_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp165_);
@@ -7915,7 +7915,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp258_ = param;
 						_tmp259_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp258_);
 						_tmp260_ = _tmp259_;
-						_bala_assert (g_strcmp0 (_tmp260_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp260_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp260_);
 						_tmp261_ = param;
 						_tmp262_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp261_);
@@ -8149,7 +8149,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp354_ = param;
 						_tmp355_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp354_);
 						_tmp356_ = _tmp355_;
-						_bala_assert (g_strcmp0 (_tmp356_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp356_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp356_);
 						_tmp357_ = param;
 						_tmp358_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp357_);
@@ -8383,7 +8383,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp450_ = param;
 						_tmp451_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp450_);
 						_tmp452_ = _tmp451_;
-						_bala_assert (g_strcmp0 (_tmp452_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp452_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp452_);
 						_tmp453_ = param;
 						_tmp454_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp453_);
@@ -8617,7 +8617,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp546_ = param;
 						_tmp547_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp546_);
 						_tmp548_ = _tmp547_;
-						_bala_assert (g_strcmp0 (_tmp548_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp548_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp548_);
 						_tmp549_ = param;
 						_tmp550_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp549_);
@@ -8851,7 +8851,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp642_ = param;
 						_tmp643_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp642_);
 						_tmp644_ = _tmp643_;
-						_bala_assert (g_strcmp0 (_tmp644_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp644_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp644_);
 						_tmp645_ = param;
 						_tmp646_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp645_);
@@ -9041,7 +9041,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp738_ = param;
 						_tmp739_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp738_);
 						_tmp740_ = _tmp739_;
-						_bala_assert (g_strcmp0 (_tmp740_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp740_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp740_);
 						_tmp741_ = param;
 						_tmp742_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp741_);
@@ -9221,7 +9221,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp790_ = param;
 						_tmp791_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp790_);
 						_tmp792_ = _tmp791_;
-						_bala_assert (g_strcmp0 (_tmp792_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp792_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp792_);
 						_tmp793_ = param;
 						_tmp794_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp793_);
@@ -9969,7 +9969,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp886_ = param;
 						_tmp887_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp886_);
 						_tmp888_ = _tmp887_;
-						_bala_assert (g_strcmp0 (_tmp888_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp888_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp888_);
 						_tmp889_ = param;
 						_tmp890_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp889_);
@@ -10094,7 +10094,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp979_ = param;
 						_tmp980_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp979_);
 						_tmp981_ = _tmp980_;
-						_bala_assert (g_strcmp0 (_tmp981_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp981_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp981_);
 						_tmp982_ = param;
 						_tmp983_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp982_);
@@ -10219,7 +10219,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1072_ = param;
 						_tmp1073_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1072_);
 						_tmp1074_ = _tmp1073_;
-						_bala_assert (g_strcmp0 (_tmp1074_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1074_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1074_);
 						_tmp1075_ = param;
 						_tmp1076_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1075_);
@@ -10344,7 +10344,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1165_ = param;
 						_tmp1166_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1165_);
 						_tmp1167_ = _tmp1166_;
-						_bala_assert (g_strcmp0 (_tmp1167_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1167_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1167_);
 						_tmp1168_ = param;
 						_tmp1169_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1168_);
@@ -10469,7 +10469,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1258_ = param;
 						_tmp1259_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1258_);
 						_tmp1260_ = _tmp1259_;
-						_bala_assert (g_strcmp0 (_tmp1260_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1260_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1260_);
 						_tmp1261_ = param;
 						_tmp1262_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1261_);
@@ -10594,7 +10594,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1351_ = param;
 						_tmp1352_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1351_);
 						_tmp1353_ = _tmp1352_;
-						_bala_assert (g_strcmp0 (_tmp1353_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1353_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1353_);
 						_tmp1354_ = param;
 						_tmp1355_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1354_);
@@ -10719,7 +10719,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1444_ = param;
 						_tmp1445_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1444_);
 						_tmp1446_ = _tmp1445_;
-						_bala_assert (g_strcmp0 (_tmp1446_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1446_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1446_);
 						_tmp1447_ = param;
 						_tmp1448_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1447_);
@@ -10919,7 +10919,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1496_ = param;
 						_tmp1497_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1496_);
 						_tmp1498_ = _tmp1497_;
-						_bala_assert (g_strcmp0 (_tmp1498_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1498_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1498_);
 						_tmp1499_ = param;
 						_tmp1500_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1499_);
@@ -11208,7 +11208,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1612_ = param;
 						_tmp1613_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1612_);
 						_tmp1614_ = _tmp1613_;
-						_bala_assert (g_strcmp0 (_tmp1614_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1614_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1614_);
 						_tmp1615_ = param;
 						_tmp1616_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1615_);
@@ -11498,7 +11498,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1741_ = param;
 						_tmp1742_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1741_);
 						_tmp1743_ = _tmp1742_;
-						_bala_assert (g_strcmp0 (_tmp1743_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1743_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1743_);
 						_tmp1744_ = param;
 						_tmp1745_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1744_);
@@ -11774,7 +11774,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1857_ = param;
 						_tmp1858_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1857_);
 						_tmp1859_ = _tmp1858_;
-						_bala_assert (g_strcmp0 (_tmp1859_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1859_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1859_);
 						_tmp1860_ = param;
 						_tmp1861_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1860_);
@@ -12063,7 +12063,7 @@ param_test (BaladocApiNamespace* ns,
 						_tmp1973_ = param;
 						_tmp1974_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp1973_);
 						_tmp1975_ = _tmp1974_;
-						_bala_assert (g_strcmp0 (_tmp1975_, "api-test.data.vapi") == 0, "param.get_filename () == \"api-test.data.vapi\"");
+						_bala_assert (g_strcmp0 (_tmp1975_, "api-test.data.bapi") == 0, "param.get_filename () == \"api-test.data.bapi\"");
 						_g_free0 (_tmp1975_);
 						_tmp1976_ = param;
 						_tmp1977_ = baladoc_api_node_get_nspace ((BaladocApiNode*) _tmp1976_);
@@ -14022,7 +14022,7 @@ test_global_ns (BaladocApiNamespace* global_ns,
 	_tmp45_ = method;
 	_tmp46_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp45_);
 	_tmp47_ = _tmp46_;
-	_bala_assert (g_strcmp0 (_tmp47_, "api-test.data.vapi") == 0, "method.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp47_, "api-test.data.bapi") == 0, "method.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp47_);
 	_tmp48_ = method;
 	_tmp49_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp48_);
@@ -14081,7 +14081,7 @@ test_global_ns (BaladocApiNamespace* global_ns,
 	_tmp84_ = del;
 	_tmp85_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp84_);
 	_tmp86_ = _tmp85_;
-	_bala_assert (g_strcmp0 (_tmp86_, "api-test.data.vapi") == 0, "del.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp86_, "api-test.data.bapi") == 0, "del.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp86_);
 	_tmp87_ = del;
 	_tmp88_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp87_);
@@ -14140,7 +14140,7 @@ test_global_ns (BaladocApiNamespace* global_ns,
 	_tmp123_ = field;
 	_tmp124_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp123_);
 	_tmp125_ = _tmp124_;
-	_bala_assert (g_strcmp0 (_tmp125_, "api-test.data.vapi") == 0, "field.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp125_, "api-test.data.bapi") == 0, "field.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp125_);
 	_tmp126_ = field;
 	_tmp127_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp126_);
@@ -14191,7 +14191,7 @@ test_global_ns (BaladocApiNamespace* global_ns,
 	_tmp156_ = constant;
 	_tmp157_ = baladoc_documentation_get_filename ((BaladocDocumentation*) _tmp156_);
 	_tmp158_ = _tmp157_;
-	_bala_assert (g_strcmp0 (_tmp158_, "api-test.data.vapi") == 0, "constant.get_filename () == \"api-test.data.vapi\"");
+	_bala_assert (g_strcmp0 (_tmp158_, "api-test.data.bapi") == 0, "constant.get_filename () == \"api-test.data.bapi\"");
 	_g_free0 (_tmp158_);
 	_tmp159_ = constant;
 	_tmp160_ = baladoc_api_node_get_name ((BaladocApiNode*) _tmp159_);
@@ -14552,7 +14552,7 @@ test_driver (void)
 	_tmp1_ = baladoc_error_reporter_new (NULL);
 	reporter = _tmp1_;
 	_tmp2_ = settings;
-	_tmp3_ = g_strdup (TOP_SRC_DIR "/baladoc/tests/drivers/api-test.data.vapi");
+	_tmp3_ = g_strdup (TOP_SRC_DIR "/baladoc/tests/drivers/api-test.data.bapi");
 	_tmp4_ = g_new0 (gchar*, 1 + 1);
 	_tmp4_[0] = _tmp3_;
 	_tmp2_->source_files = (_bala_array_free (_tmp2_->source_files, _tmp2_->source_files_length1, (GDestroyNotify) g_free), NULL);
@@ -14572,12 +14572,12 @@ test_driver (void)
 	_g_free0 (_tmp10_->wiki_directory);
 	_tmp10_->wiki_directory = NULL;
 	_tmp11_ = settings;
-	_tmp12_ = g_build_filename (TOP_SRC_DIR, "vapi", NULL);
+	_tmp12_ = g_build_filename (TOP_SRC_DIR, "bapi", NULL);
 	_tmp13_ = g_new0 (gchar*, 1 + 1);
 	_tmp13_[0] = _tmp12_;
-	_tmp11_->vapi_directories = (_bala_array_free (_tmp11_->vapi_directories, _tmp11_->vapi_directories_length1, (GDestroyNotify) g_free), NULL);
-	_tmp11_->vapi_directories = _tmp13_;
-	_tmp11_->vapi_directories_length1 = 1;
+	_tmp11_->bapi_directories = (_bala_array_free (_tmp11_->bapi_directories, _tmp11_->bapi_directories_length1, (GDestroyNotify) g_free), NULL);
+	_tmp11_->bapi_directories = _tmp13_;
+	_tmp11_->bapi_directories_length1 = 1;
 	_tmp14_ = settings;
 	_tmp15_ = g_strdup ("out");
 	_g_free0 (_tmp14_->pkg_name);

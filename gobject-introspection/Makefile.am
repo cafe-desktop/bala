@@ -47,4 +47,4 @@ gen_introspect_LDADD = \
 	libgidl.la \
 	$(NULL)
 
-EXTRA_DIST = gidl.vapi
+EXTRA_DIST = gidl.bapi

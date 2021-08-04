@@ -1,4 +1,4 @@
-/* xcb.vapi
+/* xcb.bapi
  *
  * Copyright (C) 2009  Jürg Billeter
  * Copyright (C) 2013  Sergio Costas
@@ -22,7 +22,7 @@
  *  Sergio Costas <raster@rastersoft.com>
  */
 
-[Version (deprecated_since = "bala-0.26", replacement = "bindings distributed with bala-extra-vapis")]
+[Version (deprecated_since = "bala-0.26", replacement = "bindings distributed with bala-extra-bapis")]
 [CCode (lower_case_cprefix = "xcb_", cheader_filename = "xcb/xcb.h,xcb/xproto.h")]
 namespace Xcb {
 	[Compact]

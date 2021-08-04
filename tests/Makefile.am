@@ -1,7 +1,7 @@
 NULL =
 
 SUBDIRS = \
-	fastvapi \
+	fastbapi \
 	girwriter \
 	gtktemplate \
 	$(NULL)

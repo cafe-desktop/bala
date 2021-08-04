@@ -506,7 +506,7 @@ bala_flow_analyzer_real_visit_field (BalaCodeVisitor* base,
 				gboolean _tmp12_;
 				gboolean _tmp13_;
 				_tmp11_ = self->priv->context;
-				_tmp12_ = bala_code_context_get_use_fast_vapi (_tmp11_);
+				_tmp12_ = bala_code_context_get_use_fast_bapi (_tmp11_);
 				_tmp13_ = _tmp12_;
 				_tmp7_ = _tmp13_;
 			}
@@ -673,7 +673,7 @@ bala_flow_analyzer_real_visit_method (BalaCodeVisitor* base,
 				gboolean _tmp25_;
 				gboolean _tmp26_;
 				_tmp24_ = self->priv->context;
-				_tmp25_ = bala_code_context_get_use_fast_vapi (_tmp24_);
+				_tmp25_ = bala_code_context_get_use_fast_bapi (_tmp24_);
 				_tmp26_ = _tmp25_;
 				_tmp20_ = _tmp26_;
 			}

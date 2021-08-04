@@ -34,7 +34,7 @@ public abstract class Baladoc.Api.Visitor : GLib.Object {
 	}
 
 	/**
-	 * Visit operation called for packages like gir-files and vapi-files.
+	 * Visit operation called for packages like gir-files and bapi-files.
 	 *
 	 * @param item a package
 	 */

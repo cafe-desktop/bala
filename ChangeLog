@@ -97,7 +97,7 @@
 
 	webkit2gtk-4.0: Update to 2.31.91
 
-	vapi: Fix a couple of attribute typos
+	bapi: Fix a couple of attribute typos
 
 	gio-2.0: Add some missing NoWrapper and CCode.has_typedef attributes
 
@@ -435,7 +435,7 @@
 
 	girparser: Discover our very own array length fields
 
-	tests: Extend "girparser" test and use vapigen to parse generated gir
+	tests: Extend "girparser" test and use bapigen to parse generated gir
 
 	bala: Let method representing property accessor inherit GIR.visible attribute
 
@@ -595,7 +595,7 @@
 
 2020-11-19  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapigen: Avoid superfluous cast
+	bapigen: Avoid superfluous cast
 
 2020-11-19  Reuben Thomas  <rrt@sc3d.org>
 
@@ -674,7 +674,7 @@
 
 	gio-2.0: Fix binding of Resolver.lookup_service*()
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk4: Attribute Gsk.ShaderArgsBuilder.free_to_args with DestroysInstance
 
@@ -738,7 +738,7 @@
 
 	webkit2gtk-4.0: Update to 2.30.1
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.18.0+ git master
 
@@ -1049,7 +1049,7 @@
 	codegen: Inline allocated and constant arrays are never NULL
 	Found by -Werror=tautological-pointer-compare
 
-	vapi: Disable deprecation warnings when checking bindings
+	bapi: Disable deprecation warnings when checking bindings
 
 	gtk4: Update to 3.98.5+191e0e8d
 
@@ -1110,7 +1110,7 @@
 
 	Release 0.48.7
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.1+ git master
 
@@ -1290,7 +1290,7 @@
 
 	Release 0.48.5
 
-	tests: Extend "fastvapi" test to increase coverage
+	tests: Extend "fastbapi" test to increase coverage
 
 	Revert "bala: Set default_construction_method in semantic-analyzer check if required"
 	This reverts commit d176f179581fac880f5598bb53b3475392af2c4b.
@@ -1325,7 +1325,7 @@
 
 	gtk4: Update to 3.98.2+6a4f7889
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2020-04-17  Princeton Ferro  <princetonferro@gmail.com>
 
@@ -1534,7 +1534,7 @@
 
 	manual: Update from wiki.gnome.org
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -1622,7 +1622,7 @@
 
 	Regression of e436f2833dc332e3fd728fe6f6b2cd7f224dcf33
 
-	vapi: Add cairo-gobject binding
+	bapi: Add cairo-gobject binding
 	and update reverse depends if appropriate
 
 2020-03-13  Corentin Noël  <corentin@elementary.io>
@@ -1644,7 +1644,7 @@
 	codegen: Reset outdated array _size_ variable after use as ref parameter
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/929
 
-	vapigen: Define "GOBJECT" corresponding to set profile of CodeContext
+	bapigen: Define "GOBJECT" corresponding to set profile of CodeContext
 	This is required to evaluate pre-processor directives correctly in
 	sourced bindings.
 
@@ -1683,7 +1683,7 @@
 
 	gtk4: Update to 3.98+2da445f9
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2020-03-08  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -1780,7 +1780,7 @@
 
 2020-03-01  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2020-02-24  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -1825,7 +1825,7 @@
 
 	tests: Add invalid "return" tests to increase coverage
 
-	vapi: Add some fundamental deps files
+	bapi: Add some fundamental deps files
 	When using --nostdpkg those are important to have.
 
 	See https://gitlab.gnome.org/GNOME/bala/issues/911
@@ -1895,7 +1895,7 @@
 	pango: Update and add harfbuzz-gobject as dependency
 	See https://gitlab.gnome.org/GNOME/pango/issues/458
 
-	vapi: Add harfbuzz-gobject binding
+	bapi: Add harfbuzz-gobject binding
 	Mark it as experimental while is it subject to change.
 
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/909
@@ -1957,7 +1957,7 @@
 
 	codegen: Make *_try_id specific to emit-context instead being global states
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk4: Update to 3.96.0+4ab12ab7
 
@@ -2020,7 +2020,7 @@
 
 2020-01-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -2110,7 +2110,7 @@
 
 	tests: Fix make distcheck
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -2144,7 +2144,7 @@
 
 2019-12-09  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	bala: Check before accessing "name" of parent_symbol which might be null
 
@@ -2230,7 +2230,7 @@
 
 	pango: Update to 1.44+
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk4: Update to 3.96.0+5e11a2ae
 
@@ -2243,7 +2243,7 @@
 
 2019-11-19  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	tests: Fix and make fast-vapi test actually fatal
+	tests: Fix and make fast-bapi test actually fatal
 
 	bala: Keep formal_target_type when transforming method-call/object-creation
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/835
@@ -2279,10 +2279,10 @@
 
 2019-11-15  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	bala: Don't require constant initializer in fast-vapi
+	bala: Don't require constant initializer in fast-bapi
 	Regression of 984c034256de3830d6daa0ab6f5eff108dea09bb
 
-	Extend --fast-vapi test by using --use-fast-vapi
+	Extend --fast-bapi test by using --use-fast-bapi
 
 	See https://github.com/dino/dino/issues/646
 	and https://gitlab.gnome.org/GNOME/bala/issues/461
@@ -2340,7 +2340,7 @@
 	compiler: Add "--list-sources" options to output a list of all sources
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/872
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -2373,7 +2373,7 @@
 	bala: Don't mark method as used on recursive usage of itself
 	See https://gitlab.gnome.org/GNOME/bala/issues/100
 
-	bala: Write value of constants/enums in fast-vapi if they are constant only
+	bala: Write value of constants/enums in fast-bapi if they are constant only
 	Introduced by 89a1243a4f066cc9652b26f86eb94fd038874982
 
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/461
@@ -2463,7 +2463,7 @@
 
 2019-10-22  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	webkit2gtk-4.0: Update to 2.27.2
 
@@ -2564,7 +2564,7 @@
 	girwriter: Restore behaviour for delegate-types
 	Regression introduced by 061c02a91056b2f8c8b4cc985db4aec9c0a235fc
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	webkit2gtk-4.0: Update to 2.27.1
 
@@ -2654,7 +2654,7 @@
 
 2019-10-05  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Perform syntax and semantic check for all bindings on "make check"
+	bapi: Perform syntax and semantic check for all bindings on "make check"
 
 	bala: Don't issue a warning for non-public struct fields in bindings
 
@@ -2675,7 +2675,7 @@
 
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/861
 
-	tests: Extend "fastvapi" test to increase coverage
+	tests: Extend "fastbapi" test to increase coverage
 
 2019-10-03  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -2842,7 +2842,7 @@
 2019-09-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	libbaladoc: Include baladoc@PACKAGE_SUFFIX@.deps into tarball
-	While baladoc@PACKAGE_SUFFIX@.vapi is included there is no reason to
+	While baladoc@PACKAGE_SUFFIX@.bapi is included there is no reason to
 	exclude this one.
 
 2019-09-16  Rico Tzschichholz  <ricotz@ubuntu.com>
@@ -2880,7 +2880,7 @@
 
 2019-09-09  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	baladoc: Explicitly pass --pkg libbala@PACKAGE_SUFFIX@ as for doclets/tests
 
@@ -2993,7 +2993,7 @@
 
 	glib-2.0: Add new symbols from 2.62
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -3010,7 +3010,7 @@
 	libsoup-2.4: soup_auth_new is not a constructor but a factory method
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/791
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -3054,7 +3054,7 @@
 
 2019-08-04  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	glib-2.0: Add new symbols and deprecations from 2.62
 
@@ -3092,7 +3092,7 @@
 	Avoids "comparison of distinct pointer types lacks a cast" warning for
 	such cases.
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -3158,7 +3158,7 @@
 
 	glib-2.0: Fix RecMutexLocker binding
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk4: Update to 3.96.0+b05d1676
 
@@ -3238,7 +3238,7 @@
 
 	gtk4: Update to 3.96.0+8cfdd6c5
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -3281,7 +3281,7 @@
 
 2019-05-23  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -3331,7 +3331,7 @@
 
 2019-05-15  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -3365,7 +3365,7 @@
 
 	Regression of d8e810680f370fac7e9a5e80f8d94316707625c2
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.17.0+ git master
 
@@ -3411,7 +3411,7 @@
 	This makes sure to pick up the dependency on GObject-2.0.gir
 
 	girwriter: Mention that this file is generated and not meant to be modified
-	Same as already done for generated vapi files.
+	Same as already done for generated bapi files.
 
 2019-04-24  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -3423,13 +3423,13 @@
 
 2019-04-19  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Add graphene-1.0 to allow smoother transition to graphene-gobject-1.0
+	bapi: Add graphene-1.0 to allow smoother transition to graphene-gobject-1.0
 
 2019-04-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	tests: Add "fast-vapi" test to increase coverage
+	tests: Add "fast-bapi" test to increase coverage
 
-	bala: Write "Source" attribute in fast-vapi mode
+	bala: Write "Source" attribute in fast-bapi mode
 	This enables users to reference to the original source of a symbol.
 
 	[Source (filename = "...", line = ..., column = ...)]
@@ -3574,7 +3574,7 @@
 
 	See https://bugzilla.gnome.org/show_bug.cgi?id=585063
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.15.2+ git master
 
@@ -3628,12 +3628,12 @@
 
 2019-03-18  Corentin Noël  <corentin@elementary.io>
 
-	vapi: Rename graphene-1.0 to graphene-gobject-1.0
+	bapi: Rename graphene-1.0 to graphene-gobject-1.0
 	It is the actual name of the pkg-config to use
 
 2019-03-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Remove vte, vte-2.90 bindings
+	bapi: Remove vte, vte-2.90 bindings
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/584
 
 	codegen: Handle ArrayType in visit_delete_statement() as delete allows them
@@ -3663,7 +3663,7 @@
 
 2019-03-16  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk4: Update to 3.94.0+f14d998c
 
@@ -3733,7 +3733,7 @@
 
 	gtk4: Update to 3.94.0+eacbeb9e
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.15.2+ git master
 
@@ -3751,7 +3751,7 @@
 
 	tests: Extent "post-condition" method test to increase coverage
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk4: Update to 3.94.0+b4ae491b
 
@@ -3864,7 +3864,7 @@
 
 2019-02-16  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk4: Update to 3.94.0+bea1a02e
 
@@ -3886,7 +3886,7 @@
 
 2019-02-10  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Drop gdk-x11-3.0 from GIDL_BINDINGS
+	bapi: Drop gdk-x11-3.0 from GIDL_BINDINGS
 
 	gio-unix-2.0: Add DesktopAppInfo.get_string_list() since 2.60
 
@@ -3911,7 +3911,7 @@
 
 	gtk4: Update to 3.94.0+d2d35e52
 
-	vapi: Follow GTK upstream rename to gtk4 and gtk4-unix-print
+	bapi: Follow GTK upstream rename to gtk4 and gtk4-unix-print
 
 2019-02-03  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -3921,10 +3921,10 @@
 
 2019-01-30  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Add goocanvas-2.0 bindings
+	bapi: Add goocanvas-2.0 bindings
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/739
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gdk-3.0: Update to 3.24.4+a0129f55
 
@@ -4039,7 +4039,7 @@
 
 2019-01-16  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.94.0+9b15c690
 
@@ -4120,7 +4120,7 @@
 
 	See https://gitlab.gnome.org/GNOME/bala/issues/318
 
-	vapi: Regenerate GIR-based bindings to fix non-standard error position
+	bapi: Regenerate GIR-based bindings to fix non-standard error position
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/265
 
 	girparser: Recognize error parameter before delegate target parameter
@@ -4221,7 +4221,7 @@
 
 	gtk+-3.0: Update to 3.24.2+a8e07254
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.15+ git master
 
@@ -4346,7 +4346,7 @@
 
 2018-12-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.94.0+a99bd2a4
 
@@ -4378,7 +4378,7 @@
 
 	gobject-introspection-1.0: Pick up version attribute fixes
 
-	vapi: Regenerate GIR-based bindings to fix non-standard async methods
+	bapi: Regenerate GIR-based bindings to fix non-standard async methods
 	See https://gitlab.gnome.org/GNOME/bala/issues/709
 
 	codegen: Handle non-default AsyncResult parameter position
@@ -4434,7 +4434,7 @@
 
 2018-12-05  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.94.0+8de1ba2c
 
@@ -4638,7 +4638,7 @@
 	codegen: Make sure to include declarations for delegate typed parameters
 	So call generate_type_declaration() with all parameter types.
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.94.0+40ae5c13
 
@@ -4792,7 +4792,7 @@
 
 2018-11-08  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Some random fixes on old bindings
+	bapi: Some random fixes on old bindings
 
 	bala: Copy CCode instance_pos argument from virtual/abstract base methods
 	https://bugzilla.gnome.org/show_bug.cgi?id=540483
@@ -5007,7 +5007,7 @@
 
 2018-10-21  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.15+ git master
 
@@ -5082,7 +5082,7 @@
 
 2018-09-23  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.15+ git master
 
@@ -5147,7 +5147,7 @@
 
 2018-09-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIDL-based bindings to fix unsupported type-arguments
+	bapi: Update GIDL-based bindings to fix unsupported type-arguments
 
 	baladoc: Fix some string escaping which gettext complains about
 
@@ -5193,13 +5193,13 @@
 
 	Release 0.42.1
 
-	vapigen: Warn if the library argument doesn't match any package attribute
+	bapigen: Warn if the library argument doesn't match any package attribute
 	GIR files can contain a package key referring to the pkg-config name which
-	is the recommended and even required naming of a vapi.
+	is the recommended and even required naming of a bapi.
 
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/669
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.94.0+f3e6d00d
 
@@ -5211,10 +5211,10 @@
 
 	tests: Check uchar[] and uint8[] compatibility
 
-	vapi: Add gnome-desktop-3.0 bindings
+	bapi: Add gnome-desktop-3.0 bindings
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/668
 
-	vapi: Remove libgda-4.0, libgda-report-4.0 bindings
+	bapi: Remove libgda-4.0, libgda-report-4.0 bindings
 	Fixes https://gitlab.gnome.org/GNOME/bala/issues/667
 
 2018-09-07  Rico Tzschichholz  <ricotz@ubuntu.com>
@@ -5223,7 +5223,7 @@
 
 2018-09-06  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2018-08-31  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -5235,7 +5235,7 @@
 
 2018-08-28  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	webkit2gtk-4.0: Update to 2.21.92
 
@@ -5300,7 +5300,7 @@
 
 	tests: No, really, stacked arrays are not supported
 
-	vapi: Regenerate GIR-based bindings to fix unsupported type-arguments
+	bapi: Regenerate GIR-based bindings to fix unsupported type-arguments
 
 	girparser: Actually resolve type-arguments to be able to box them if needed
 
@@ -5318,7 +5318,7 @@
 
 2018-08-02  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	tests: Deal with libtool differences resulting in lt-balac vs balac in vapi
+	tests: Deal with libtool differences resulting in lt-balac vs balac in bapi
 
 2018-08-01  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -5482,7 +5482,7 @@
 
 	gio-unix-2.0: Add DesktopAppInfo.launch_uris_as_manager_with_fds()
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.15+ git master
 
@@ -5524,7 +5524,7 @@
 
 2018-06-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.93.0+29fee2e8
 
@@ -5627,7 +5627,7 @@
 
 2018-06-03  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Add gst-editing-services-1.0 bindings
+	bapi: Add gst-editing-services-1.0 bindings
 
 	gstreamer: Update from 1.15+ git master
 
@@ -5742,7 +5742,7 @@
 
 	gio-unix-2.0: Add UnixMountEntry.get_options()
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.93.0+3a860719
 
@@ -5825,7 +5825,7 @@
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=735437
 
-	vapi: Remove mx-1.0 bindings
+	bapi: Remove mx-1.0 bindings
 	https://bugzilla.gnome.org/show_bug.cgi?id=796041
 
 2018-05-09  Rico Tzschichholz  <ricotz@ubuntu.com>
@@ -5855,7 +5855,7 @@
 
 	gtk+-4.0: Update to 3.93.0+d506799e
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer: Update from 1.15+ git master
 
@@ -6026,7 +6026,7 @@
 
 2018-04-13  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.93.0+fc6018f1
 
@@ -6110,7 +6110,7 @@
 
 2018-03-25  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	webkit2gtk-4.0: Update to 2.20.0
 
@@ -6127,17 +6127,17 @@
 2018-03-24  Dr. Michael Lauer  <mickey@vanille-media.de>
 
 	posix: Add to_string to NLItem and add NLTime
-	Patch based on https://github.com/elementary/calendar/blob/master/vapi/posix-extension.vapi
+	Patch based on https://github.com/elementary/calendar/blob/master/bapi/posix-extension.bapi
 
-	Note: NLTime is actually a glibc'ism, but in the absence of a glibc.vapi, posix.vapi
+	Note: NLTime is actually a glibc'ism, but in the absence of a glibc.bapi, posix.bapi
 	is an acceptable place. See also bug #793443.
 
 2018-03-22  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Remove twitter-glib-1.0 bindings
+	bapi: Remove twitter-glib-1.0 bindings
 	https://bugzilla.gnome.org/show_bug.cgi?id=794609
 
-	vapi: Remove gdu and gdu-gtk bindings
+	bapi: Remove gdu and gdu-gtk bindings
 	Their replacement is udisks2 for a long time.
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=794608
@@ -6187,19 +6187,19 @@
 
 	webkit-1.0: Update to 2.4.11
 
-	vapi: Remove libsoup-2.2 bindings
+	bapi: Remove libsoup-2.2 bindings
 	https://bugzilla.gnome.org/show_bug.cgi?id=794480
 
-	vapi: Remove tracker-indexer-module-1.0 bindings
+	bapi: Remove tracker-indexer-module-1.0 bindings
 	https://bugzilla.gnome.org/show_bug.cgi?id=794479
 
-	vapi: Remove rest-0.6 bindings
+	bapi: Remove rest-0.6 bindings
 	https://bugzilla.gnome.org/show_bug.cgi?id=794477
 
-	vapi: Remove GStreamer 0.10 bindings
+	bapi: Remove GStreamer 0.10 bindings
 	https://bugzilla.gnome.org/show_bug.cgi?id=793417
 
-	vapi: Remove clutter-gst-1.0 binding
+	bapi: Remove clutter-gst-1.0 binding
 	https://bugzilla.gnome.org/show_bug.cgi?id=793418
 
 	Bump version suffix
@@ -6220,7 +6220,7 @@
 
 	gdk-3.0,gtk+-3.0: Update to 3.22.29
 
-	vapi: Add libgeoclue-2.0 bindings
+	bapi: Add libgeoclue-2.0 bindings
 	https://bugzilla.gnome.org/show_bug.cgi?id=794376
 
 	gstreamer-1.0: Add gstreamer-webrtc-1.0 bindings
@@ -6283,7 +6283,7 @@
 
 2018-03-05  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer-1.0: Update to 1.13.90
 
@@ -6317,7 +6317,7 @@
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=793859
 
-	vapi: Fix wrong attributes
+	bapi: Fix wrong attributes
 
 	libgnome-menu-3.0: Add deps file
 
@@ -6369,7 +6369,7 @@
 
 	codegen: Add source_reference to some store_local/_field() calls
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2018-02-19  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -6403,7 +6403,7 @@
 
 2018-02-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer-1.0: Update to 1.13.1
 
@@ -6441,10 +6441,10 @@
 
 2018-02-12  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
-	build: Don't install vapicheck
-	This tool can't be used to check the syntax of vapi files as the name
+	build: Don't install bapicheck
+	This tool can't be used to check the syntax of bapi files as the name
 	suggests. So better drop it until it gets some fixing.
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=793370
@@ -6484,7 +6484,7 @@
 
 2018-02-07  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	glib-2.0: Add KeyFile.get_locale_for_key()
 
@@ -6590,7 +6590,7 @@
 
 2018-01-25  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2018-01-24  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -6691,7 +6691,7 @@
 
 2018-01-16  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2018-01-15  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -6777,9 +6777,9 @@
 
 	bala: Add pkgdatadir and pkglibdir to pkg-config file
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
-	vapigen: Add coverage build-flags
+	bapigen: Add coverage build-flags
 
 2018-01-07  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -6823,7 +6823,7 @@
 	codegen: Add destroy out-param when invoking delegate returned by delegate
 	https://bugzilla.gnome.org/show_bug.cgi?id=792077
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.93.0+3c38ebb9
 
@@ -6851,7 +6851,7 @@
 
 2018-01-02  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer-1.0: Update from 1.13+ git master
 
@@ -6914,19 +6914,19 @@
 	gtk+-2.0: Mark MessageDialog constructor parameter, message_format, as nullable
 	https://bugzilla.gnome.org/show_bug.cgi?id=791570
 
-	vapi: Remove librsvg-2.0 binding
+	bapi: Remove librsvg-2.0 binding
 	This binding was upstreamed 19 June 2012. See:
 	https://git.gnome.org/browse/librsvg/commit/?id=729a3d6b6486faa92c7a56a5a4f5bf04173c8624
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=776025
 
-	vapi: Remove libgdata bindings
+	bapi: Remove libgdata bindings
 	This binding was upstreamed 24 February 2013. See:
 	https://git.gnome.org/browse/libgdata/commit/?id=2186969875520d535704f61280f62145932b4948
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=776024
 
-	vapi: Remove gtksourceview-3.0 bindings
+	bapi: Remove gtksourceview-3.0 bindings
 	This binding was upstreamed 12 August 2014. See:
 	https://git.gnome.org/browse/gtksourceview/commit/?id=44742519a806240a528fd61a19027cf2c24bdf02
 	and have been partially removed from Bala back in 2014:
@@ -6934,13 +6934,13 @@
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=776023
 
-	vapi: Remove libgnome-keyring binding
+	bapi: Remove libgnome-keyring binding
 	This binding has been upstreamed since 28 June 2012. See
 	https://git.gnome.org/browse/libgnome-keyring/commit/?id=ea1476c1a941d71d6d7be90aa6fc5b8ba8da7c83
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=776022
 
-	vapi: Remove gedit 3 binding
+	bapi: Remove gedit 3 binding
 	The bindings have been upstreamed since 17 February 2014. See
 	https://git.gnome.org/browse/gedit/commit/?id=e16b196c32cd288bc186abff19e5a23af5f83422
 
@@ -6978,7 +6978,7 @@
 
 2017-12-09  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer-1.0: Update from 1.13+ git master
 
@@ -7203,7 +7203,7 @@
 
 2017-11-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.93.0+a8531605
 
@@ -7228,7 +7228,7 @@
 
 2017-11-04  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	webkit2gtk-4.0: Update to 2.19.1
 
@@ -7246,13 +7246,13 @@
 
 2017-10-24  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.93.0+4d44865f
 
 2017-10-21  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.93.0+9e78fbaa
 
@@ -7265,7 +7265,7 @@
 	gio-2.0: Fix FileReadMoreCallback and File.load_partial_contents_async()
 	FileReadMoreCallback expects the same target as AsyncReadyCallback here.
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.91.2+1c232ed5
 
@@ -7294,7 +7294,7 @@
 
 2017-10-05  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gstreamer-1.0: Update from 1.13+ git master
 
@@ -7309,7 +7309,7 @@
 
 2017-09-25  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.91.2+d09f6951
 
@@ -7353,7 +7353,7 @@
 
 2017-09-08  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	build: Fix vapidir args for libgvc
+	build: Fix bapidir args for libgvc
 
 	codegen: Try to use a more unique internal define for properties
 	https://bugzilla.gnome.org/show_bug.cgi?id=787436
@@ -7434,7 +7434,7 @@
 
 	gtk+-3.0: Update to 3.22.19
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	codegen: Use given dup_function for structs
 
@@ -7468,7 +7468,7 @@
 	codegen: Don't transfer ownership of local-variable if target-type is unknown
 	https://bugzilla.gnome.org/show_bug.cgi?id=736774
 
-	vapi: Add javascriptcoregtk-4.0 and avoid skips in webkit2gtk*-4.0
+	bapi: Add javascriptcoregtk-4.0 and avoid skips in webkit2gtk*-4.0
 
 2017-08-23  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -7511,7 +7511,7 @@
 
 	Release 0.37.90
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-08-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -7524,12 +7524,12 @@
 
 2017-08-19  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapigen: Mark given source-files as such and force girparser to handle them
+	bapigen: Mark given source-files as such and force girparser to handle them
 	E.g. gtk+-4.0 is *one* library with multiple namespaces and gir files. So
 	we need to handle this case and allow all explicitly given GIR files to be
 	parsed.
 
-	baladoc/tests: Add the source vapi directory to driver-test
+	baladoc/tests: Add the source bapi directory to driver-test
 	https://bugzilla.gnome.org/show_bug.cgi?id=786505
 
 2017-08-16  Rico Tzschichholz  <ricotz@ubuntu.com>
@@ -7548,7 +7548,7 @@
 
 	Release 0.37.2
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-08-09  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -7569,11 +7569,11 @@
 
 2017-08-01  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-07-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	libbaladoc: Avoid nullable enum as property-type
 	https://bugzilla.gnome.org/show_bug.cgi?id=784927
@@ -7603,7 +7603,7 @@
 	build: Use --use-header for libbaladoc
 	Reduces the size of generated c-sources while avoiding redefinitions.
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-06-27  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -7626,7 +7626,7 @@
 
 	gee: Add some useful symbols from gee-0.8
 
-	build: Generate libbala-0.XX.vapi in bala
+	build: Generate libbala-0.XX.bapi in bala
 
 	Drop superfluous inheriting from GLib.Object
 
@@ -7670,7 +7670,7 @@
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=783897
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-06-12  Carlos Garnacho  <carlosg@gnome.org>
 
@@ -7709,7 +7709,7 @@
 
 2017-06-07  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gio-2.0: Use default 'length = null' for DataInputStream.read_line_utf8*
 	https://bugzilla.gnome.org/show_bug.cgi?id=783351
@@ -7735,11 +7735,11 @@
 
 2017-05-23  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-05-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-05-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -7747,7 +7747,7 @@
 
 	glib-2.0: Always use valid version-string for Version.deprecated_since
 
-	Install libbala-0.xx.vapi to "global" vapi directory
+	Install libbala-0.xx.bapi to "global" bapi directory
 	This is how libraries with bala bindings are expected to behave and so
 	should bala itself.
 
@@ -7772,7 +7772,7 @@
 
 2017-05-13  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	poppler-glib: Update to 0.54.0
 
@@ -7796,7 +7796,7 @@
 
 	glib-2.0: Add bindings for g_ptr_array_find/_find_with_equal_func()
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-05-02  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -7886,7 +7886,7 @@
 
 	build: Add missing '\'
 
-	build: vapigen and vapicheck don't require ccode
+	build: bapigen and bapicheck don't require ccode
 
 	Bump version suffix
 
@@ -7900,7 +7900,7 @@
 
 	Release 0.36.1
 
-	vapigen: Add --nostdpkg option like in balac
+	bapigen: Add --nostdpkg option like in balac
 
 2017-04-01  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -7914,7 +7914,7 @@
 
 2017-03-27  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	glib-2.0: Add missing version macro and constants
 
@@ -7964,7 +7964,7 @@
 
 2017-03-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	Release 0.36.0
 
@@ -8058,7 +8058,7 @@
 
 2017-03-11  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	codegen: Accessor of interface-property might be absent
 	Avoid criticals while unconditionaly trying to chain-up to non-existing
@@ -8177,7 +8177,7 @@
 
 2017-03-06  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-03-05  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -8228,7 +8228,7 @@
 	Keep backwards compatibility for those async-constructor which were dropped
 	with 4123914c1eecf16696d53cc25367440c221be94d
 
-	vapi: Add libgrss bindings
+	bapi: Add libgrss bindings
 	https://bugzilla.gnome.org/show_bug.cgi?id=779318
 
 2017-03-01  Daniel Espinosa  <daniel.espinosa@pwmc.mx>
@@ -8272,7 +8272,7 @@
 	glib-2.0: Mark delegates in Test.add_data_func/add_func() as scope=async
 	https://bugzilla.gnome.org/show_bug.cgi?id=739725
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	codegen: Cast vfunc pointer assigns of abstract overrides
 	https://bugzilla.gnome.org/show_bug.cgi?id=777958
@@ -8339,7 +8339,7 @@
 
 2017-02-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	glib-2.0: Add G_CHECKSUM_SHA384
 
@@ -8425,7 +8425,7 @@
 
 2017-02-13  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	codegen: Don't create duplicated complete-async code
 	Treat methods with non-void return-type special while they require a return
@@ -8495,20 +8495,20 @@
 
 2017-02-01  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-01-22  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2017-01-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
-	vapi: Remove clutter-json-1.0
+	bapi: Remove clutter-json-1.0
 	It went obsolete since Clutter 1.6.0 has been released, 6 years ago.
 
-	vapi: "ref" functions must return an unowned value
+	bapi: "ref" functions must return an unowned value
 	Otherwise bala would automatically add a corresponding "unref" call.
 
 	gtk+-4.0: Update to 3.89.3
@@ -8535,7 +8535,7 @@
 
 2017-01-07  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.89.2+1e6fce97
 
@@ -8585,11 +8585,11 @@
 
 2017-01-03  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Add gtk+-unix-print-4.0 bindings
+	bapi: Add gtk+-unix-print-4.0 bindings
 
-	vapi: Add gtk+-unix-print-2.0 bindings
+	bapi: Add gtk+-unix-print-2.0 bindings
 
-	vapi: Add gtk+-unix-print-3.0 bindings
+	bapi: Add gtk+-unix-print-3.0 bindings
 
 2017-01-02  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -8599,11 +8599,11 @@
 
 	gtk+-3.0: Update to 3.22.5+a1aee460
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-12-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-12-14  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -8633,7 +8633,7 @@
 
 2016-12-11  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-12-10  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -8670,7 +8670,7 @@
 
 2016-12-05  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-12-05  Yu Feng  <rainwoodman@gmail.com>
 
@@ -8705,7 +8705,7 @@
 
 2016-11-29  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-11-27  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -8713,7 +8713,7 @@
 
 2016-11-24  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	girparser: No support for fixed-size array as return-value
 	Due to the special syntax for those arrays it lead to omitting the
@@ -8730,7 +8730,7 @@
 
 2016-11-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-11-19  Carlos Garnacho  <carlosg@gnome.org>
 
@@ -8758,7 +8758,7 @@
 
 2016-11-13  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.89.0+2520662d
 
@@ -8912,7 +8912,7 @@
 
 	glib-2.0: Add simple fast-path to string.replace()
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-4.0: Update to 3.89.0+c9a313a1
 
@@ -8928,7 +8928,7 @@
 
 2016-11-01  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Add unstable bindings for gtk+-4.0 (based on 3.89.0+3c1f7267)
+	bapi: Add unstable bindings for gtk+-4.0 (based on 3.89.0+3c1f7267)
 
 	Don't create constant Regex on demand and use static field where possible
 
@@ -8960,7 +8960,7 @@
 
 2016-10-27  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-10-25  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -8990,7 +8990,7 @@
 
 2016-10-20  Matthias Berndt  <matthias_berndt@gmx.de>
 
-	vapi: Add missing type parameters for delegates
+	bapi: Add missing type parameters for delegates
 	https://bugzilla.gnome.org/show_bug.cgi?id=772204
 
 2016-10-19  Rico Tzschichholz  <ricotz@ubuntu.com>
@@ -9008,7 +9008,7 @@
 
 	gio-unix-2.0: Fix "g_unix_mount_at" binding
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	girparser: Avoid fatal handling of nameless unions
 
@@ -9078,7 +9078,7 @@
 
 2016-10-12  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-10-12  Alistair Thomas  <astavale@yahoo.co.uk>
 
@@ -9190,7 +9190,7 @@
 	glib-2.0: Add UCS-4 and UTF-16 related bindings
 	https://bugzilla.gnome.org/show_bug.cgi?id=740818
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-10-02  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -9228,7 +9228,7 @@
 
 2016-09-27  George Barrett  <bob@bob131.so>
 
-	gsl.vapi: Fix attribute typos
+	gsl.bapi: Fix attribute typos
 	At the moment, the are a few CCode attributes containing typos in the
 	bindings for the GNU Scientific Library. This patch rectifies the ones
 	that balac explicitly complains about.
@@ -9294,9 +9294,9 @@
 
 2016-09-19  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
-	vapi: Add PolicyKit bindings, polkit-agent-1 and polkit-gobject-1
+	bapi: Add PolicyKit bindings, polkit-agent-1 and polkit-gobject-1
 	https://bugzilla.gnome.org/show_bug.cgi?id=605465
 
 2016-09-18  Simon Werbeck  <simon.werbeck@gmail.com>
@@ -9319,7 +9319,7 @@
 	glib-2.0: Update Unicode symbols
 
 	Revert "balainterface: Don't allow 'type' properties"
-	Breaks build of udisks2.vapi
+	Breaks build of udisks2.bapi
 
 	This reverts commit 8e4cdfd6488c467a3028831e8d6183286c4f399d.
 
@@ -9334,7 +9334,7 @@
 
 2016-09-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update gobject-introspection-1.0 and libsoup-2.4
+	bapi: Update gobject-introspection-1.0 and libsoup-2.4
 	https://bugzilla.gnome.org/show_bug.cgi?id=760491
 	https://bugzilla.gnome.org/show_bug.cgi?id=732070
 
@@ -9368,7 +9368,7 @@
 
 2016-09-15  Andreas Henriksson  <andreas.henriksson@endian.se>
 
-	vapigen: Install vapigen*.pc in multiarch compatible location
+	bapigen: Install bapigen*.pc in multiarch compatible location
 	This makes the pkgconfigdir path consistent to what is already used in
 	(toplevel) Makefile.am.
 
@@ -9411,7 +9411,7 @@
 
 2016-09-13  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	glib-2.0: Update to 2.49.7
 
@@ -9440,7 +9440,7 @@
 
 	gtk+-3.0: Update to 3.21.5+4cd8e6c5
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-09-01  Evan Nemerson  <evan@nemerson.com>
 
@@ -9466,25 +9466,25 @@
 
 	gtk+-3.0: Update to 3.21.5
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-08-19  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	gtk+-3.0: Update to 3.21.4+edce8f4d
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-08-11  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	gtk+-3.0: Update to 3.21.4+64c15545
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-08-01  Rico Tzschichholz  <ricotz@ubuntu.com>
 
 	gtk+-3.0: Update to 3.21.4+e4c072fc
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-07-27  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -9494,7 +9494,7 @@
 
 	gidlparser: Make sure to only handle the needed cairo symbols
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-07-21  Guillaume Poirier-Morency  <guillaumepoiriermorency@gmail.com>
 
@@ -9528,7 +9528,7 @@
 
 2016-07-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gidlparser: Special handling for some ambiguous cairo symbols
 
@@ -9549,7 +9549,7 @@
 
 	cairo: Add new symbols for 1.16
 
-	cairo: Pass through vapigen to sort and fully qualify symbols
+	cairo: Pass through bapigen to sort and fully qualify symbols
 
 2016-07-08  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -9561,11 +9561,11 @@
 
 	glib-2.0: Add new symbols for 2.50
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-06-26  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-06-25  Matthias Berndt  <matthias_berndt@gmx.de>
 
@@ -9591,7 +9591,7 @@
 
 2016-06-18  Ting-Wei Lan  <lantw@src.gnome.org>
 
-	vapigen: Call setlocale in main function
+	bapigen: Call setlocale in main function
 	It is required to correctly show translated messages on some locales.
 
 	https://bugzilla.gnome.org/show_bug.cgi?id=760436
@@ -9611,7 +9611,7 @@
 
 	genie: Warn about "const static" declarations where "static" is superfluous
 
-	vapi: Fix "static consts" warnings
+	bapi: Fix "static consts" warnings
 
 	tests: Fix "static const" warning
 
@@ -9619,7 +9619,7 @@
 
 2016-06-12  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-06-01  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -9647,17 +9647,17 @@
 
 2016-05-25  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-05-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	driver: Add support for bala-0.34
 
 2016-05-11  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-05-09  Jürg Billeter  <j@bitron.ch>
 
@@ -9667,9 +9667,9 @@
 
 	gtk+-3.0: Update to 3.21.1+
 
-	vapi: Add graphene-1.0
+	bapi: Add graphene-1.0
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	Regenerate GIR-based bindings
 
@@ -9696,7 +9696,7 @@
 
 2016-04-07  Maciej Borzecki  <maciej.borzecki@open-rnd.pl>
 
-	libnl-3.0.vapi: extend BAPI
+	libnl-3.0.bapi: extend BAPI
 	The patch extends BAPI of libnl-3.0 with cache
 	manager (nl_cache_mngr_*), additional methods of LinkCache and a helper
 	CachedLink type. The CachedLink type is a wrapper for the Link object,
@@ -9717,7 +9717,7 @@
 
 2016-03-21  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-03-21  Jürg Billeter  <j@bitron.ch>
 
@@ -9725,7 +9725,7 @@
 
 2016-03-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-3.0: Update to 3.19.12
 
@@ -9748,7 +9748,7 @@
 
 2016-03-01  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-02-25  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -9760,7 +9760,7 @@
 
 2016-02-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-02-19  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -9772,7 +9772,7 @@
 
 2016-02-14  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-3.0: Update to 3.19.8+3f4f914f
 
@@ -9799,7 +9799,7 @@
 
 2016-02-07  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Regenerate all bindings due Cond/Mutex changes
+	bapi: Regenerate all bindings due Cond/Mutex changes
 
 	glib-2.0: Add Version annotations and more new symbols
 
@@ -9829,7 +9829,7 @@
 
 2016-02-03  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	gobject-2.0: Pass through vapigen to sort and fully qualify symbols
+	gobject-2.0: Pass through bapigen to sort and fully qualify symbols
 
 	glib-2.0: StringBuilder.free_to_bytes() consumes the given instance
 
@@ -9841,14 +9841,14 @@
 
 2016-01-31  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	girparser: Do not unconditionally make a delegate owned
 	Actually check if there are closure and destroy arguments available.
 
 2016-01-30  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gdk-3.0, gtk+-3.0: Update to 3.19.8
 
@@ -9949,7 +9949,7 @@
 
 2016-01-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-01-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -10010,7 +10010,7 @@
 
 2016-01-08  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2016-01-05  Ben Iofel  <iofelben+github@gmail.com>
 
@@ -10024,11 +10024,11 @@
 
 	girparser: add support for gintptr and guintptr types.
 	Modelled after existing size_t/ssize_t support, i.e. map to corresponding
-	types from glib-2.0.vapi.
+	types from glib-2.0.bapi.
 
 2015-12-28  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gdk-3.0, gtk+-3.0: Update to 3.19.5+8bfbb2c1
 
@@ -10046,7 +10046,7 @@
 
 2015-12-21  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Add gio-windows-2.0
+	bapi: Add gio-windows-2.0
 	Includes some more g_win32 bindings and fixes.
 
 	Fixes bug 650052
@@ -10057,13 +10057,13 @@
 
 2015-12-16  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gdk-3.0, gtk+-3.0: Update to 3.19.5
 
 2015-12-05  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-3.0: Update to 3.19.4
 
@@ -10080,7 +10080,7 @@
 
 2015-11-24  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gdk-x11-3.0: Add to GIR_BINDINGS
 
@@ -10127,7 +10127,7 @@
 
 	gobject-2.0: ObjectClass.list_properties returns unowned elements
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-11-11  Ben Iofel  <iofelben@gmail.com>
 
@@ -10161,7 +10161,7 @@
 
 2015-10-26  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-10-22  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -10202,7 +10202,7 @@
 
 	gtk+-3.0: Update to 3.17.8+d5f17549
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-3.0: Make callback-scope async according to introspection annoations
 
@@ -10210,7 +10210,7 @@
 
 	glib-2.0: add new symbols for 2.46
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-09-07  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -10222,13 +10222,13 @@
 
 	gtk+-3.0: use wildcard for Gtk.Clipboard request methods
 
-	gtk+-3.0: lt-vapigen -> vapigen
+	gtk+-3.0: lt-bapigen -> bapigen
 
 	gtk+-3.0: add scope async to Gtk.Clipboard request methods
 
 2015-08-18  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	webkit2gtk-4.0: Update to 2.9.90
 
@@ -10254,7 +10254,7 @@
 
 2015-08-10  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	webkit2gtk-4.0: Update to 2.9.5
 
@@ -10277,7 +10277,7 @@
 
 2015-07-21  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-3.0: Update to 3.17.5
 
@@ -10311,7 +10311,7 @@
 
 	gtk+-3.0: Update to 3.17.3+3b43951b
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-06-21  Luca Bruno  <lucabru@src.gnome.org>
 
@@ -10349,21 +10349,21 @@
 
 	gtk+-3.0: Update to 3.17.1+39f91d7c
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-05-09  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-04-30  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-3.0: Update to 3.17.1
 
 2015-04-23  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-04-22  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -10396,13 +10396,13 @@
 
 	posix: add gethostbyname(3) and assorted struct
 
-	linux.vapi: add missing structs for wireless extension API
+	linux.bapi: add missing structs for wireless extension API
 
-	libnl-1.vapi libnl-2.0.vapi libnl-3.0.vapi: fix Netlink.Address.get_label binding
+	libnl-1.bapi libnl-2.0.bapi libnl-3.0.bapi: fix Netlink.Address.get_label binding
 
 2015-03-25  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-03-22  Jürg Billeter  <j@bitron.ch>
 
@@ -10434,7 +10434,7 @@
 
 2015-03-17  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gio-unix-2.0: Update to 2.43.92
 
@@ -10472,7 +10472,7 @@
 
 2015-02-26  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-3.0: Update to 3.15.9
 
@@ -10489,7 +10489,7 @@
 
 	glib-2.0: Conditionally use boxed OptionContext since 2.44
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-3.0: Fix model argument type for ListBox.bind_model()
 
@@ -10504,7 +10504,7 @@
 
 	gtk+-3.0: Update to 3.15.5~4dee1646
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-01-29  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -10519,7 +10519,7 @@
 
 2015-01-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2015-01-13  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -10543,7 +10543,7 @@
 
 2015-01-03  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 2014-12-28  Luca Bruno  <lucabru@src.gnome.org>
 
@@ -10594,7 +10594,7 @@
 
 	gtk+-3.0: Mark gtk_scrollable_get_border as virtual
 
-	vapi: Update GIR-based bindings
+	bapi: Update GIR-based bindings
 
 	gtk+-3.0: Update to 3.15.3
 
@@ -10722,12 +10722,12 @@
 
 2014-11-15  Marc-André Lureau  <marcandre.lureau@gmail.com>
 
-	vapigen: add delegate_target_cname
+	bapigen: add delegate_target_cname
 	Fixes bug 740154
 
 2014-11-15  Luca Bruno  <lucabru@src.gnome.org>
 
-	Update gio vapi after bala-girs update
+	Update gio bapi after bala-girs update
 
 2014-11-14  Luca Bruno  <luca.bruno@immobiliare.it>
 
@@ -10860,7 +10860,7 @@
 
 	driver: Add support for bala-0.28
 
-	vapi: Actually build and install rest-extras-0.7 bindings
+	bapi: Actually build and install rest-extras-0.7 bindings
 
 	Add rest-extras-0.7 bindings
 
@@ -10905,8 +10905,8 @@
 
 2014-09-20  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapigen: Don't override BALAC and use the available one like the rest
-	There is no reason to special case vapigen while the rest of the source
+	bapigen: Don't override BALAC and use the available one like the rest
+	There is no reason to special case bapigen while the rest of the source
 	is built with the available balac version. For a proper build bootstrapping
 	is required anyway.
 
@@ -10961,7 +10961,7 @@
 
 2014-09-03  Richard Wiedenhöft  <richard@wiedenhoeft.xyz>
 
-	Added option --vapi-comments to include comments in vapi-files
+	Added option --bapi-comments to include comments in bapi-files
 
 2014-09-03  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -11123,7 +11123,7 @@
 
 	build: Generate only xz-tarballs
 
-	build: Make building vapigen non-optional
+	build: Make building bapigen non-optional
 
 	build: Avoid using ".." for referencing paths and reorganize balac-calls
 
@@ -11190,14 +11190,14 @@
 
 	glib-2.0: make VariantDict.end return a floating reference
 	The underlying implementation returns a floating reference. Reflecting
-	this in the vapi silences the warning about g_variant_unref called once
+	this in the bapi silences the warning about g_variant_unref called once
 	too many.
 
 	Fixes bug 734611
 
 	glib: make the parameter of VariantDict constructor nullable
 	The underlying glib implementation accepts null to initialize an empty
-	dictionary. The vapi now reflects this, defaulting the single parameter
+	dictionary. The bapi now reflects this, defaulting the single parameter
 	to null.
 
 	Fixes bug 734612
@@ -11370,7 +11370,7 @@
 	codewriter: Do not write (unowned string)[] for constants
 	The element type of a constant array is forced to be unowned
 	in the parser. Therefore we don't write (unowned string) to avoid
-	breaking vapi parsing uselessly with older balac versions.
+	breaking bapi parsing uselessly with older balac versions.
 
 	Fixes bug 732080
 
@@ -11457,7 +11457,7 @@
 
 2014-06-13  Evan Nemerson  <evan@nemerson.com>
 
-	cairo-xcb, xcb-iccm, xcb: deprecate in favor of bala-extra-vapis
+	cairo-xcb, xcb-iccm, xcb: deprecate in favor of bala-extra-bapis
 
 2014-06-12  Evan Nemerson  <evan@nemerson.com>
 
@@ -11653,7 +11653,7 @@
 
 	girparser: Make array element type owned by default
 
-	Fix writing vapis with (unowned type)[]
+	Fix writing bapis with (unowned type)[]
 
 	Support (unowned type)[] syntax for transfer-container arrays
 	Fixes bug 571486
@@ -12191,7 +12191,7 @@
 
 2014-01-25  Richard Wiedenhöft  <richard.wiedenhoeft@gmail.com>
 
-	libpq.vapi: added condition LIBPQ_9_3
+	libpq.bapi: added condition LIBPQ_9_3
 	Fixes bug 698004.
 
 2014-01-25  Evan Nemerson  <evan@coeus-group.com>
@@ -12294,7 +12294,7 @@
 
 	librsvg-2.0: Switch to GIR
 	This binding is still deprecated and it shipped upstream since 2.26.2.
-	Despite that update it one last time to ship a proper vapi rather than
+	Despite that update it one last time to ship a proper bapi rather than
 	an out-dated erroneous one.
 
 2014-01-04  Luca Bruno  <lucabru@src.gnome.org>
@@ -12379,7 +12379,7 @@
 
 2013-12-14  Nathan Summers  <rock@gimp.org>
 
-	codegen: Fix crash vapi properties with no get body but with set body
+	codegen: Fix crash bapi properties with no get body but with set body
 	Fixes bug 657348.
 
 2013-12-14  Richard Schwarting  <aquarichy@gmail.com>
@@ -12458,7 +12458,7 @@
 
 2013-11-05  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Install packagekit-glib2 bindings
+	bapi: Install packagekit-glib2 bindings
 
 2013-11-04  Jesse van den Kieboom  <jessevdk@gmail.com>
 
@@ -12467,7 +12467,7 @@
 
 2013-11-03  Jesse van den Kieboom  <jessevdk@gmail.com>
 
-	gtk+ 3.0 vapi: make Gtk.Range.get_range_rect return rect
+	gtk+ 3.0 bapi: make Gtk.Range.get_range_rect return rect
 	https://bugzilla.gnome.org/show_bug.cgi?id=711337
 
 2013-10-30  Rico Tzschichholz  <ricotz@ubuntu.com>
@@ -12550,7 +12550,7 @@
 	gstreamer-1.0: fix functions which return floating references
 	GStreamer uses the (transfer floating) annotation for these, which
 	g-i recognizes as an alias for (transfer none), therefore there is
-	no way to pick them up in vapigen.
+	no way to pick them up in bapigen.
 
 2013-10-12  Richard Schwarting  <aquarichy@gmail.com>
 
@@ -12609,9 +12609,9 @@
 	the goal of removing them at some point, and I think that time has
 	come.
 
-	vapi: Add missing has_type_id = false in non-GObject bindings.
+	bapi: Add missing has_type_id = false in non-GObject bindings.
 
-	vapi: Remove trailing whitespace.
+	bapi: Remove trailing whitespace.
 
 	sqlite3: add missing has_type_id = false annotations to enums.
 
@@ -12684,7 +12684,7 @@
 
 2013-09-17  Richard Schwarting  <aquarichy@gmail.com>
 
-	Add a modified libgvc-vapi
+	Add a modified libgvc-bapi
 	Contains the new CGraph API
 
 2013-09-16  Rico Tzschichholz  <ricotz@t-online.de>
@@ -12753,7 +12753,7 @@
 
 2013-09-05  Rico Tzschichholz  <ricotz@ubuntu.com>
 
-	vapi: Some more scope=async updates
+	bapi: Some more scope=async updates
 	In addition to 3e20fd82c05daa60005aaff11411cd1814beb778
 
 2013-09-04  Rico Tzschichholz  <ricotz@ubuntu.com>
@@ -12828,10 +12828,10 @@
 
 2013-08-24  Richard Wiedenhöft  <richard.wiedenhoeft@gmail.com>
 
-	posix.vapi: Added bindings for getaddrinfo
+	posix.bapi: Added bindings for getaddrinfo
 	Fixes bug 705204.
 
-	posix.vapi: Added constant AF_UNSPEC
+	posix.bapi: Added constant AF_UNSPEC
 	Fixes bug 705204.
 
 2013-08-24  Simon Werbeck  <simon.werbeck@gmail.com>
@@ -12877,7 +12877,7 @@
 
 2013-08-08  Rico Tzschichholz  <ricotz@t-online.de>
 
-	vapi: Update GIDL/GIR binding lists
+	bapi: Update GIDL/GIR binding lists
 
 2013-08-08  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -13006,7 +13006,7 @@
 
 2013-06-29  Ignacio Casal Quinteiro  <icq@gnome.org>
 
-	Update gtk+ 3 vapi to latest upstream
+	Update gtk+ 3 bapi to latest upstream
 
 2013-06-28  Luca Bruno  <lucabru@src.gnome.org>
 
@@ -13048,7 +13048,7 @@
 
 2013-06-17  Ignacio Casal Quinteiro  <icq@gnome.org>
 
-	gtk+ 3.0 vapi: mark listbox funcs as owned
+	gtk+ 3.0 bapi: mark listbox funcs as owned
 
 2013-06-17  Stefano Facchini  <stefano.facchini@gmail.com>
 
@@ -13056,7 +13056,7 @@
 
 2013-06-16  Ignacio Casal Quinteiro  <icq@gnome.org>
 
-	Update gtk+ 3.0 vapi to latest upstream
+	Update gtk+ 3.0 bapi to latest upstream
 
 2013-06-15  Rico Tzschichholz  <ricotz@ubuntu.com>
 
@@ -13205,7 +13205,7 @@
 
 2013-04-14  Nikolay Orlyuk  <virkony@gmail.com>
 
-	posix.vapi: add missing getopt part
+	posix.bapi: add missing getopt part
 	Fixes bug 694508.
 
 2013-04-13  Paolo Borelli  <pborelli@gnome.org>
@@ -13304,7 +13304,7 @@
 	gtk+-3.0: make drag_begin event arg nullable
 	Fixes bug 691237.
 
-	vapis: regenerate GIR-based bindings
+	bapis: regenerate GIR-based bindings
 
 	girparser: mark non-simpletype struct return values as nullable
 	Functions which return structs currently generate incorrect C code
@@ -13408,7 +13408,7 @@
 	posix: add read_vectors and write_vectors
 	Fixes bug 679035.
 
-	vapigen.m4: emit error if no GOBJECT_INTROSPECTION_* macro is called
+	bapigen.m4: emit error if no GOBJECT_INTROSPECTION_* macro is called
 	Fixes bug 684275.
 
 	x11: add has_destroy_function = false to WindowAttributes
@@ -13757,7 +13757,7 @@
 	Fix build for Windows
 	- Replace POSIX calls for spawning process with functions from Windows
 	  API when compiling for Windows
-	- Add EXEEXT to balac and vapigen paths
+	- Add EXEEXT to balac and bapigen paths
 	- Remove EXEEXT from scripts
 
 	Fixes bug 685180.
@@ -13877,7 +13877,7 @@
 
 2012-10-10  Evan Nemerson  <evan@coeus-group.com>
 
-	vapigen: support GIRDIRS variable in Makefile.vapigen
+	bapigen: support GIRDIRS variable in Makefile.bapigen
 
 2012-10-09  Evan Nemerson  <evan@coeus-group.com>
 
@@ -14026,7 +14026,7 @@
 
 2012-08-20  Florian Brosch  <flo.brosch@gmail.com>
 
-	tests: Add missing vapi
+	tests: Add missing bapi
 
 2012-08-20  Jürg Billeter  <j@bitron.ch>
 
@@ -14039,10 +14039,10 @@
 
 2012-08-20  Alexandre Rostovtsev  <tetromino@gentoo.org>
 
-	vapigen.m4: use $vapigen_pkg_name as the name of the vapigen package
-	We should use $vapigen_pkg_name, not "vapigen", as the name of the
-	vapigen package; if the second parameter to BAPIGEN_CHECK is set, then
-	$vapigen_pkg_name != "vapigen".
+	bapigen.m4: use $bapigen_pkg_name as the name of the bapigen package
+	We should use $bapigen_pkg_name, not "bapigen", as the name of the
+	bapigen package; if the second parameter to BAPIGEN_CHECK is set, then
+	$bapigen_pkg_name != "bapigen".
 
 	Fixes bug 682203.
 
@@ -14332,9 +14332,9 @@
 
 	Do not access static members with instance references
 
-	Drop warnings about unused internal symbols when using fast vapi files
+	Drop warnings about unused internal symbols when using fast bapi files
 	It is impossible to determine whether internal symbols are used when
-	using fast vapi files.
+	using fast bapi files.
 
 	Fixes bug 680218.
 
@@ -14504,7 +14504,7 @@
 
 2012-07-18  Simon Werbeck  <simon.werbeck@gmail.com>
 
-	Support 'using' directive with nested namespace in fast-vapi
+	Support 'using' directive with nested namespace in fast-bapi
 	Fixes bug 672960.
 
 2012-07-18  Jürg Billeter  <j@bitron.ch>
@@ -14600,11 +14600,11 @@
 
 2012-06-25  Florian Müllner  <fmuellner@gnome.org>
 
-	vapi: Add missing GVariantTypes to glib-2.0
+	bapi: Add missing GVariantTypes to glib-2.0
 
 2012-06-25  Alexander Larsson  <alexl@redhat.com>
 
-	Update vapi file for latest gtk+ git master
+	Update bapi file for latest gtk+ git master
 
 2012-06-24  Evan Nemerson  <evan@coeus-group.com>
 
@@ -14659,9 +14659,9 @@
 	These libraries now distribute Bala bindings upstream which should be
 	preferred over those distributed with Bala.
 
-	vapigen: support deprecated namespace annotations in metadata files
+	bapigen: support deprecated namespace annotations in metadata files
 
-	Give priority to unversioned vapi directory
+	Give priority to unversioned bapi directory
 	This allows bindings distributed with upstream libraries to be
 	prioritized over bindings distributed with Bala.
 
@@ -14670,7 +14670,7 @@
 	glib-2.0: make GLib.Pid inherit from int
 	Partially fixes bug 678420.
 
-	vapigen.m4: add an argument for the default value
+	bapigen.m4: add an argument for the default value
 	The new argument allows people to specify a default value for enabling
 	Bala API generation (the default default value remains "auto").  This
 	is to accomodate projects, such as librsvg, which want more predictable
@@ -14719,7 +14719,7 @@
 
 2012-06-11  Alberto Ruiz  <alberto.ruiz@canonical.com>
 
-	bindings: Add gir_namespace and gir_version to dbus-glib-1.vapi
+	bindings: Add gir_namespace and gir_version to dbus-glib-1.bapi
 
 2012-06-09  Evan Nemerson  <evan@coeus-group.com>
 
@@ -14874,7 +14874,7 @@
 
 2012-05-29  Alexander Larsson  <alexl@redhat.com>
 
-	Update clutter vapi to final Clutter 1.10.
+	Update clutter bapi to final Clutter 1.10.
 
 2012-05-28  Michal Hruby  <michal.mhr@gmail.com>
 
@@ -14988,7 +14988,7 @@
 
 2012-04-30  Christian Persch  <chpe@gnome.org>
 
-	Use correct variable name to add vapigen directories
+	Use correct variable name to add bapigen directories
 	Fixes bug 675097.
 
 2012-04-29  Luca Bruno  <lucabru@src.gnome.org>
@@ -15250,8 +15250,8 @@
 
 2012-02-05  Philip Withnall  <philip@tecnocode.co.uk>
 
-	vapi: Add glib-unix.h functions to glib-2.0.vapi
-	To bind the things in glib-unix.h. Creating a separate glib-unix-2.0.vapi is
+	bapi: Add glib-unix.h functions to glib-2.0.bapi
+	To bind the things in glib-unix.h. Creating a separate glib-unix-2.0.bapi is
 	unneccessary because these functions are present in libglib-2.0.so itself,
 	rather than a separate library. They just require the glib-unix.h header to
 	be included.
@@ -15308,7 +15308,7 @@
 
 	x11: add GIR name for XID
 
-	Add gir-bindings and gidl-bindings Makefile targets in vapi/
+	Add gir-bindings and gidl-bindings Makefile targets in bapi/
 
 	poppler-glib: switch to GIR
 
@@ -15462,7 +15462,7 @@
 
 2012-01-23  Colin Walters  <walters@verbum.org>
 
-	vapigen: Use install-data-hook for .pc file symbolic link
+	bapigen: Use install-data-hook for .pc file symbolic link
 	The $(pkgconfigdir) may not have been created when we're just in
 	the install-exec phase.
 
@@ -15536,11 +15536,11 @@
 
 2012-01-21  Evan Nemerson  <evan@coeus-group.com>
 
-	Makefile.vapigen: use *_FILES instead of *_GIR
+	Makefile.bapigen: use *_FILES instead of *_GIR
 	The more generic variable name is more appropriate since there may be
 	one or more custom bala file in addition to the GIR.
 
-	Add autotools vapigen integration for upstream bindings
+	Add autotools bapigen integration for upstream bindings
 	Fixes bug 649526.
 
 2012-01-20  Evan Nemerson  <evan@coeus-group.com>
@@ -15709,7 +15709,7 @@
 
 2012-01-06  Ryan Lortie  <desrt@desrt.ca>
 
-	glib-2.0.vapi: add new GHashTable API
+	glib-2.0.bapi: add new GHashTable API
 	g_hash_table_add() and g_hash_table_contains() were just added to GLib
 	so add them here.
 
@@ -15721,7 +15721,7 @@
 
 2012-01-06  Ryan Lortie  <desrt@desrt.ca>
 
-	gio-2.0.vapi: some action related updates
+	gio-2.0.bapi: some action related updates
 
 2012-01-06  Florian Brosch  <flo.brosch@gmail.com>
 
@@ -15871,9 +15871,9 @@
 
 2011-12-20  Ryan Lortie  <desrt@desrt.ca>
 
-	gtk3 vapi: GtkApplication additions
+	gtk3 bapi: GtkApplication additions
 
-	gio vapi: GApplication, Menus, ActionGroup updates
+	gio bapi: GApplication, Menus, ActionGroup updates
 
 2011-12-19  Florian Brosch  <flo.brosch@gmail.com>
 
@@ -15955,7 +15955,7 @@
 
 2011-12-05  Florian Brosch  <flo.brosch@gmail.com>
 
-	vapis: strip documentation comments
+	bapis: strip documentation comments
 
 2011-12-04  Michael 'Mickey' Lauer  <mickey@vanille-media.de>
 
@@ -16043,7 +16043,7 @@
 
 2011-11-15  Daniel Silverstone  <dsilvers@codethink.co.uk>
 
-	Make .vapi files on the command line generate quoted includes
+	Make .bapi files on the command line generate quoted includes
 	Use #include "..." rather than #include <...>
 
 2011-11-15  Luca Bruno  <lucabru@src.gnome.org>
@@ -16090,7 +16090,7 @@
 
 2011-11-05  Florian Brosch  <flo.brosch@gmail.com>
 
-	driver/0.13: vapidir-fix
+	driver/0.13: bapidir-fix
 
 2011-11-04  Fabian Deutsch  <fabian.deutsch@gmx.de>
 
@@ -16640,7 +16640,7 @@
 
 2011-08-16  Luca Bruno  <lucabru@src.gnome.org>
 
-	Do not lookup for .deps file when passing .vapi files to balac
+	Do not lookup for .deps file when passing .bapi files to balac
 	Fixes bug 648336.
 
 	Add syntax for creating array of pointers
@@ -16847,7 +16847,7 @@
 
 	girparser: Support lower_case_csuffix
 
-	build: Use in-tree vapis when building the bindings
+	build: Use in-tree bapis when building the bindings
 
 2011-08-01  Florian Brosch  <flo.brosch@gmail.com>
 
@@ -17003,7 +17003,7 @@
 
 	drivers: Add 0.12.x driver
 
-	driver/0.13.x: Allow to process vapis directly just as source files
+	driver/0.13.x: Allow to process bapis directly just as source files
 
 	driver/0.13.x: Add ChildSymbolRegistrar
 
@@ -17144,9 +17144,9 @@
 
 2011-07-21  Ryan Lortie  <desrt@desrt.ca>
 
-	glib vapi: fgets() can return NULL
+	glib bapi: fgets() can return NULL
 
-	posix vapi: fgets() can return NULL
+	posix bapi: fgets() can return NULL
 
 2011-07-20  Luca Bruno  <lucabru@src.gnome.org>
 
@@ -17298,7 +17298,7 @@
 
 	libsoup-2.4: Switch to GIR
 
-	libpeas-1.0: Add missing libpeas-1.0.vapi to Makefile.am
+	libpeas-1.0: Add missing libpeas-1.0.bapi to Makefile.am
 
 	vte-2.90: Add new bindings
 	Fixes bug 627410.
@@ -17415,9 +17415,9 @@
 
 2011-07-05  Ryan Lortie  <desrt@desrt.ca>
 
-	Update gio-2.0 vapi to GLib git master
+	Update gio-2.0 bapi to GLib git master
 
-	Regenerate gtk+-3.0 vapi
+	Regenerate gtk+-3.0 bapi
 	Drop -DGTK_DISABLE_DEPRECATED to avoid losing a bunch of old symbols
 	(mostly the H/V variants of boxes, scrollbars and so on).
 
@@ -17431,7 +17431,7 @@
 
 2011-07-02  Michal Hruby  <michal.mhr@gmail.com>
 
-	libpeas-1.0: Added vapi based on Peas-1.0
+	libpeas-1.0: Added bapi based on Peas-1.0
 
 2011-07-01  Luca Bruno  <lucabru@src.gnome.org>
 
@@ -17564,7 +17564,7 @@
 
 	Release 0.13.0
 
-	Enable vapigen by default
+	Enable bapigen by default
 
 	cogl-1.0: Add cogl_color_init_from_{4f,4ub} bindings
 
@@ -17591,7 +17591,7 @@
 
 2011-06-14  Luca Bruno  <lucabru@src.gnome.org>
 
-	gobject-introspection: Fix TypeTag in gidl.vapi
+	gobject-introspection: Fix TypeTag in gidl.bapi
 
 2011-06-14  Jürg Billeter  <j@bitron.ch>
 
@@ -18202,7 +18202,7 @@
 
 2011-04-29  Luca Bruno  <lucabru@src.gnome.org>
 
-	Add documentation for --metadatadir in the balac and vapigen manpage
+	Add documentation for --metadatadir in the balac and bapigen manpage
 
 	gstreamer-0.10: Mark Clock.wait jitter parameter to be out
 	Fixes bug 648684.
@@ -18451,7 +18451,7 @@
 
 2011-04-05  Emmanuele Bassi  <ebassi@linux.intel.com>
 
-	vapi: Update clutter-gtk-1.0 bindings
+	bapi: Update clutter-gtk-1.0 bindings
 	The metadata and files of clutter-gtk-1.0 were still referencing
 	clutter-gtk-0.10 includes and shared object.
 
@@ -18535,7 +18535,7 @@
 
 	girparser: Support negative integer literals in metadata.
 
-	vapigen: Fix marking gir metadata as source.
+	bapigen: Fix marking gir metadata as source.
 
 	girparser: Support aliases whose base type is a SimpleType.
 
@@ -18778,7 +18778,7 @@
 	We must explicitly specify that the array is null-terminated.
 
 	gio: fix binding for GActionGroup.list_actions()
-	vapigen was detecting
+	bapigen was detecting
 
 	  gchar ** g_action_group_list_actions (GActionGroup *action_group);
 
@@ -18786,7 +18786,7 @@
 
 	  public abstract unowned string list_actions ();
 
-	Add some metadata to clear that up and regenerate the vapi.
+	Add some metadata to clear that up and regenerate the bapi.
 
 2011-03-14  Michal Hruby  <michal.mhr@gmail.com>
 
@@ -18794,12 +18794,12 @@
 
 2011-03-13  Ryan Lortie  <desrt@desrt.ca>
 
-	Revert "GModule vapi: add missing close() method"
+	Revert "GModule bapi: add missing close() method"
 	This reverts commit 09b06c19dd7eb965f02d26305e810a9126e9bc93.
 
 	g_module_close() is the free function.
 
-	GModule vapi: add missing close() method
+	GModule bapi: add missing close() method
 
 2011-03-12  Jürg Billeter  <j@bitron.ch>
 
@@ -19435,7 +19435,7 @@
 
 	gstreamer-0.10: Correct metadata order and use void* instead of pointer
 
-	vapigen: Fix handling of arrays and nullability when parsing types
+	bapigen: Fix handling of arrays and nullability when parsing types
 
 2011-01-19  Luca Bruno  <lucabru@src.gnome.org>
 
@@ -19473,7 +19473,7 @@
 
 	Move handling of common attributes from Field and Parameter to Variable
 
-	vapigen: Fix metadata pattern handling
+	bapigen: Fix metadata pattern handling
 
 2011-01-15  Javier Jardón  <jjardon@gnome.org>
 
@@ -19533,7 +19533,7 @@
 
 	gtk+-3.0: Update to 2.99.2
 
-	vapigen: Support hidden attribute for interface implementations
+	bapigen: Support hidden attribute for interface implementations
 
 	gdk-pixbuf-2.0: Update to 2.23.0
 
@@ -19599,7 +19599,7 @@
 	Fixes bug 638912.
 
 	gio-2.0: Add missing metadata for previous commit setting IOError throws.
-	Previous commit was 58f542837b1f0204b4 that only affected the gio-2.0.vapi.
+	Previous commit was 58f542837b1f0204b4 that only affected the gio-2.0.bapi.
 
 	webkit-1.0: Last parameter of WebKitWebView::load_error is GLib.Error.
 	Fixes bug 639096.
@@ -19746,7 +19746,7 @@
 	gen-introspect: Fix exit code for missing header files
 	Fixes bug 633596.
 
-	vapigen: Fix GIDL parse error reporting
+	bapigen: Fix GIDL parse error reporting
 	Fixes bug 633597.
 
 	codegen: Fix C warning when deserializing GVariant arrays
@@ -19870,7 +19870,7 @@
 
 2010-11-21  Evan Nemerson  <evan@coeus-group.com>
 
-	Regenerate several bindings to account changes to vapigen and libbala
+	Regenerate several bindings to account changes to bapigen and libbala
 	Regenerated gdl-1.0, gstreamer-app-0.10, gstreamer-cdda-0.10,
 	gstreamer-controller-0.10, gudev-1.0, hildon-1, libgda-report-4.0
 	purple rest-extras-0.6 unique-1.0.
@@ -19931,7 +19931,7 @@
 
 	glib-2.0: Add missing GIR names for (u)char and (s)size_t
 
-	vapigen: Improve type_name and type_arguments parsing
+	bapigen: Improve type_name and type_arguments parsing
 
 	girwriter: Flatten symbols nested in a way not supported by GIR
 	Fixes bug 619865.
@@ -19959,7 +19959,7 @@
 
 2010-11-08  Luca Bruno  <lucabru@src.gnome.org>
 
-	vapi: Remove nested namespaces GIR information.
+	bapi: Remove nested namespaces GIR information.
 	Affected packages are gdk-3.0, gio-2.0, gtk+-2.0 and gtk+-3.0.
 
 2010-11-08  Abderrahim Kitouni  <a.kitouni@gmail.com>
@@ -20031,7 +20031,7 @@
 
 	girparser: Replace parse_metadata with MetadataParser
 
-	vapigen: Add --disable-warnings and use --quiet to tune reports verbosity
+	bapigen: Add --disable-warnings and use --quiet to tune reports verbosity
 
 2010-11-08  Luca Bruno  <lethalman88@gmail.com>
 
@@ -20043,12 +20043,12 @@
 
 	girparser: Stop parsing if the context already has the provided package
 
-	vapigen: Remove misleading --metadata, each .gir must have its own .metadata.
+	bapigen: Remove misleading --metadata, each .gir must have its own .metadata.
 	Fixes bug 624278.
 
-	vapigen: Honor --directory option as output directory
+	bapigen: Honor --directory option as output directory
 
-	vapigen: Remove obsolete code for handling omitted --library option
+	bapigen: Remove obsolete code for handling omitted --library option
 
 2010-11-08  Alban Browaeys  <prahal@yahoo.com>
 
@@ -20203,11 +20203,11 @@
 
 	gtk+-3.0: Update to GTK+ master
 
-	vapigen: Support type_name attribute for signal return types
+	bapigen: Support type_name attribute for signal return types
 
 	gio-2.0: Update to GLib master
 
-	vapigen: Support hidden attribute for signal parameters
+	bapigen: Support hidden attribute for signal parameters
 
 	Fix use of uninitialized variable in static constructors
 	Fixes bug 633013.
@@ -20306,7 +20306,7 @@
 
 	gio-2.0: use uint8[] for buffers instead of void*
 
-	vapigen: fix handling of type_name on fields
+	bapigen: fix handling of type_name on fields
 
 2010-10-22  Evan Nemerson  <evan@coeus-group.com>
 
@@ -20721,7 +20721,7 @@
 	This greatly reduces the number of dependencies listed for compilations
 	that touch a large number of symbols in trivial ways without really
 	making use of them (for example, when listing a very large number of
-	unused fast-vapi files, as parbala does).
+	unused fast-bapi files, as parbala does).
 
 	Fixes bug 630144.
 
@@ -20747,7 +20747,7 @@
 
 2010-10-05  Jürg Billeter  <j@bitron.ch>
 
-	Rename bala.vapi to libbala.vapi to match pkg-config name
+	Rename bala.bapi to libbala.bapi to match pkg-config name
 
 2010-10-04  Jürg Billeter  <j@bitron.ch>
 
@@ -20967,11 +20967,11 @@
 	Report error for private virtual methods
 
 	CodeWriter: Do not do any sorting in FAST mode
-	Order of virtual methods matters for fast-vapis
+	Order of virtual methods matters for fast-bapis
 
 	UnresolvedType: Override is_disposable method
 
-	Do not require interface implementations in fast-vapi
+	Do not require interface implementations in fast-bapi
 
 	CodeWriter: Support external symbols
 
@@ -21011,22 +21011,22 @@
 
 2010-09-09  Ryan Lortie  <desrt@desrt.ca>
 
-	codegen: Skip visiting fast-vapis
-	Skip visiting fast-vapis in the code generator when not writing a header
-	file.  For builds with a very large number of fast-vapi files this can
+	codegen: Skip visiting fast-bapis
+	Skip visiting fast-bapis in the code generator when not writing a header
+	file.  For builds with a very large number of fast-bapi files this can
 	reduce compile time by more than 50%.
 
-	CodeWriter: Do not replace .vapi if unchanged
-	Steal some logic from the CCodeWriter to avoid replacing .vapi output if
+	CodeWriter: Do not replace .bapi if unchanged
+	Steal some logic from the CCodeWriter to avoid replacing .bapi output if
 	nothing has changed.
 
-	codegen: Run partial codegen on fast vapi files
-	Run the C code generator for fast-vapi files in order to populate the
+	codegen: Run partial codegen on fast bapi files
+	Run the C code generator for fast-bapi files in order to populate the
 	header file.  Add some early-exits to avoid doing unnecessary work (and
 	to avoid crashes caused by assumptions that there will actually be
 	code to output).
 
-	CodeWriter: Omit cheader_filename for fast vapi
+	CodeWriter: Omit cheader_filename for fast bapi
 
 	balac: Output make-style dependency file
 	Add a --deps= option to the compiler to write out a make-style
@@ -21039,7 +21039,7 @@
 
 	Properties, Methods: Relax some checks
 	Only enforce property/method body requirements in the case that the
-	SourceFileType is SOURCE.  This allows fast-vapi to slip through without
+	SourceFileType is SOURCE.  This allows fast-bapi to slip through without
 	complaints.
 
 	Symbol: Add SourceFileType source_type
@@ -21050,17 +21050,17 @@
 
 	SourceFileType: Add SourceFileType.NONE
 
-	balac: Add --use-fast-vapi commandline argument
-	Accepts an input file that was previously produced with the --fast-vapi=
+	balac: Add --use-fast-bapi commandline argument
+	Accepts an input file that was previously produced with the --fast-bapi=
 	commandline argument.
 
 	SourceFile: Add SourceFileType.FAST enum value
 
-	balac: Add --fast-vapi= commandline argument
+	balac: Add --fast-bapi= commandline argument
 	Outputs a file with the given name using CodeWriterType.FAST
 
 	CodeWriter: Add CodeWriterType.FAST enum value
-	Designed to emit .vapi files before the resolution stage has run.
+	Designed to emit .bapi files before the resolution stage has run.
 
 	Includes 'using' in the output so that the resolver can figure it out
 	later.
@@ -21218,13 +21218,13 @@
 
 	gdk-2.0, gdk-3.0: Move Gdk.selection_* into Gdk.Selection namespace.
 
-	vapigen: Automatically adjust method names when setting parent.
+	bapigen: Automatically adjust method names when setting parent.
 
 	gtk+-2.0, gtk+-3.0: Move Gtk.STOCK_* into a Gtk.Stock namespace.
 
 	codewriter: Correctly write deprecated replacement attributes.
 
-	vapigen: Support setting the parent of a symbol.
+	bapigen: Support setting the parent of a symbol.
 
 	gdk-2.0: Update to 2.21.7 and mark deprecated symbols as such.
 
@@ -21234,7 +21234,7 @@
 
 	Unable to chain up to base constructor is fatal
 
-	vapigen: Fix chain up warning in subclasses of generated bindings
+	bapigen: Fix chain up warning in subclasses of generated bindings
 
 	Fix writing of construct_function attribute
 
@@ -21265,7 +21265,7 @@
 
 	Fix error handling for character literals
 
-	vapigen: Replace use of string.len () by string.length
+	bapigen: Replace use of string.len () by string.length
 
 	glib-2.0: Deprecate string.len () in favor of string.length
 
@@ -21348,7 +21348,7 @@
 
 	libsoup-2.4: Many small argument and data type fixes.
 
-	vapigen: Allow metadata to specify the type_name of properties.
+	bapigen: Allow metadata to specify the type_name of properties.
 
 	gdk-pixbuf-2.0: Use uint8[] for binary data.
 
@@ -21410,7 +21410,7 @@
 	codegen: check delegate type has_target in object creation expr
 	Fixes bug 626949.
 
-	readline.vapi: include stdio.h before readline.h
+	readline.bapi: include stdio.h before readline.h
 	This solves compilation error with the readline sample
 	from the wiki http://live.gnome.org/Bala/InputSamples.
 
@@ -21459,7 +21459,7 @@
 
 2010-08-12  Evan Nemerson  <evan@coeus-group.com>
 
-	vapigen: support for setting exception types in metadata files
+	bapigen: support for setting exception types in metadata files
 	Fixes bug 620677.
 
 2010-08-10  Jürg Billeter  <j@bitron.ch>
@@ -21544,10 +21544,10 @@
 
 2010-08-06  Ryan Lortie  <desrt@desrt.ca>
 
-	finish removing dconf vapi
+	finish removing dconf bapi
 	oops :)
 
-	drop dconf vapi
+	drop dconf bapi
 	dconf ships it for itself
 
 2010-08-05  Florian Brosch  <flo.brosch@gmail.com>
@@ -21810,7 +21810,7 @@
 
 2010-07-21  Michal Hruby  <michal.mhr@gmail.com>
 
-	vapigen: Support shared finish methods
+	bapigen: Support shared finish methods
 
 2010-07-21  Jürg Billeter  <j@bitron.ch>
 
@@ -21834,7 +21834,7 @@
 
 2010-07-20  Jürg Billeter  <j@bitron.ch>
 
-	vapigen: Support array_length_type for method return values
+	bapigen: Support array_length_type for method return values
 
 	GAsync: Fix extern async methods
 
@@ -21846,7 +21846,7 @@
 	0.11.1, libgnome-menu to 2.30.0, libnotify to 0.5.0, libsoup-2.4 to
 	2.30.2, libwnck-1.0 to 2.30.0
 
-	vapigen: do not remove all values from enums in custom.bala files
+	bapigen: do not remove all values from enums in custom.bala files
 
 2010-07-19  Martin Olsson  <martin@minimum.se>
 
@@ -22074,7 +22074,7 @@
 	gstreamer-0.10: Use generic delegates for the Gst.Iterator functions
 	This fixes memory leaks among other things when using the iterators.
 
-	vapigen: Add support for type_parameters for delegates
+	bapigen: Add support for type_parameters for delegates
 	Also add support for type_name for delegate parameters.
 
 2010-07-08  Jürg Billeter  <j@bitron.ch>
@@ -22242,7 +22242,7 @@
 
 2010-06-28  Evan Nemerson  <evan@coeus-group.com>
 
-	vapigen: Hide async *_finish methods
+	bapigen: Hide async *_finish methods
 	Fixes bug 614045.
 
 2010-06-28  Jürg Billeter  <j@bitron.ch>
@@ -22559,7 +22559,7 @@
 
 2010-06-15  Evan Nemerson  <evan@coeus-group.com>
 
-	vapigen: Add support for deprecated metadata attributes
+	bapigen: Add support for deprecated metadata attributes
 
 	codegen: write G_GNUC_DEPRECATED in generated C where appropriate
 
@@ -22581,7 +22581,7 @@
 
 	rest-0.6: Make Rest.ProxyCall a GObject
 	The Rest.ProxyCall class was incorrectly detected as a Compact, non
-	GObject class by vapigen.
+	GObject class by bapigen.
 
 2010-06-13  Evan Nemerson  <evan@coeus-group.com>
 
@@ -22784,7 +22784,7 @@
 
 	libgdata bindings: Fix type_id for PicasaWebFile
 
-	vapi: update libgdata bindings
+	bapi: update libgdata bindings
 
 2010-05-24  Jamie McCracken  <jamie.mccrack gmail com>
 
@@ -22944,7 +22944,7 @@
 
 2010-05-11  Michael 'Mickey' Lauer  <mickey@vanille-media.de>
 
-	linux.vapi: bind sethostname(2) exposing both parameters
+	linux.bapi: bind sethostname(2) exposing both parameters
 
 2010-05-10  Alexander Kojevnikov  <alexander@kojevnikov.com>
 
@@ -22955,7 +22955,7 @@
 2010-05-10  Michael 'Mickey' Lauer  <mickey@vanille-media.de>
 
 	linux: add ioctl(2)
-	ioctl(2) is also defined in Posix.vapi, however the POSIX XSR option
+	ioctl(2) is also defined in Posix.bapi, however the POSIX XSR option
 	(with stropts.h) is only supported on some Linux distributions.
 
 2010-05-07  Michael 'Mickey' Lauer  <mickey@vanille-media.de>
@@ -23047,7 +23047,7 @@
 
 2010-04-29  Evan Nemerson  <evan@coeus-group.com>
 
-	vapigen: support setting array_length_type for parameters
+	bapigen: support setting array_length_type for parameters
 
 	glib-2.0: add GLib.FileUtils.get/set_data methods
 
@@ -23074,9 +23074,9 @@
 
 2010-04-28  Michal Hruby  <michal.mhr@gmail.com>
 
-	vapigen: Apply array attributes from finish method to async as well
+	bapigen: Apply array attributes from finish method to async as well
 
-	vapigen: Support finish_name attribute for async methods
+	bapigen: Support finish_name attribute for async methods
 
 2010-04-28  Jukka-Pekka Iivonen  <jp0409@jippii.fi>
 
@@ -23143,7 +23143,7 @@
 
 2010-04-27  Víctor Manuel Jáquez Leal  <vjaquez@igalia.com>
 
-	vapigen: Support type_id attribute for classes
+	bapigen: Support type_id attribute for classes
 	Fixes bug 615633.
 
 2010-04-27  Marc-André Lureau  <marcandre.lureau@gmail.com>
@@ -23187,7 +23187,7 @@
 
 2010-04-20  Travis Reitter  <treitter@gmail.com>
 
-	vapigen: Support is_array attribute for delegate parameters
+	bapigen: Support is_array attribute for delegate parameters
 	Fixes bug 615971.
 
 2010-04-19  Michael 'Mickey' Lauer  <mickey@vanille-media.de>
@@ -23200,7 +23200,7 @@
 
 2010-04-19  Sebastian Dröge  <sebastian.droege@collabora.co.uk>
 
-	vapigen: support type_arguments for signal/delegate return types
+	bapigen: support type_arguments for signal/delegate return types
 	Fixes bug 615837.
 
 2010-04-19  Evan Nemerson  <evan@coeus-group.com>
@@ -23222,7 +23222,7 @@
 
 2010-04-16  Jürg Billeter  <j@bitron.ch>
 
-	vapigen: Support instance_pos attribute for delegates
+	bapigen: Support instance_pos attribute for delegates
 
 2010-04-16  Luca Bruno  <lethalman88@gmail.com>
 
@@ -23231,7 +23231,7 @@
 
 2010-04-15  Evan Nemerson  <evan@coeus-group.com>
 
-	vapigen: add support for type_arguments on signal parameters
+	bapigen: add support for type_arguments on signal parameters
 
 2010-04-11  Ole André Vadla Ravnås  <ole.andre.ravnas@tandberg.com>
 
@@ -23276,9 +23276,9 @@
 
 	gstreamer-0.10: make GstIterator a generic
 
-	vapigen: add support for type_parameters attribute
+	bapigen: add support for type_parameters attribute
 
-	vapigen: fix a crash if type_name is used for pointer arguments
+	bapigen: fix a crash if type_name is used for pointer arguments
 	Fixes bug 614348.
 
 	Make argument of NullType constructor nullable
@@ -23310,7 +23310,7 @@
 
 	gstreamer: The Gst.Bin and Gst.Pipeline constructors can take null-strings as parameter
 
-	gstreamer: Enable all the enum methods/constants after vapigen was fixed
+	gstreamer: Enable all the enum methods/constants after bapigen was fixed
 
 	gstreamer: First go at fixing Gst.Iterator bindings
 	This has to be converted to simple generics later once
@@ -23387,7 +23387,7 @@
 
 2010-04-08  Jürg Billeter  <j@bitron.ch>
 
-	vapigen: Support declaration of enum methods in -custom.bala
+	bapigen: Support declaration of enum methods in -custom.bala
 	Based on patch by Sebastian Drög, fixes bug 614543.
 
 	dbus-glib-1: Add stub DBusGMethodInvocation binding
@@ -23426,7 +23426,7 @@
 
 	gtk+-2.0: Make Gtk.Window's arg default value Gtk.WindowType.TOPLEVEL
 
-	vapigen: add support for member access based default values
+	bapigen: add support for member access based default values
 
 	gsl: Do not use `weak' modifier where it is not applicable
 
@@ -23557,7 +23557,7 @@
 
 	gstreamer: Add gstreamer-app-0.10 bindings
 
-	gstreamer: Regenerate vapi files and update metadata files to use the correct headers
+	gstreamer: Regenerate bapi files and update metadata files to use the correct headers
 
 	gstreamer: Update GStreamer introspection files to 0.10.28
 	...and also remove lots of unstable API which was included here, most
@@ -23566,7 +23566,7 @@
 
 2010-03-27  Jürg Billeter  <j@bitron.ch>
 
-	vapigen: Support pointer type for type arguments and field types
+	bapigen: Support pointer type for type arguments and field types
 
 	D-Bus: Support [DBus (timeout = ...)] attribute in static clients
 	The attribute can be applied to D-Bus methods, properties, and parent
@@ -23595,15 +23595,15 @@
 
 2010-03-25  Sebastian Dröge  <sebastian.droege@collabora.co.uk>
 
-	glib-2.0.vapi: Fix stupid typo in the GByteArray type ID
+	glib-2.0.bapi: Fix stupid typo in the GByteArray type ID
 
 	compiler: Automatically define GLIB_2_XX if --target-glib is used
 
-	glib-2.0.vapi: Add some more type ids
+	glib-2.0.bapi: Add some more type ids
 
-	gobject-2.0.vapi: Add free function for GValueArray
+	gobject-2.0.bapi: Add free function for GValueArray
 
-	glib-2.0.vapi: Add some more unref/ref functions when using newer GLib
+	glib-2.0.bapi: Add some more unref/ref functions when using newer GLib
 
 2010-03-25  Jürg Billeter  <j@bitron.ch>
 
@@ -23638,7 +23638,7 @@
 	gdk-pixbuf-2.0: GdkPixbufDestroyNotify doesn't have a length parameter
 	Fixes bug 613855.
 
-	vapigen: support no_array_length for delegate parameters
+	bapigen: support no_array_length for delegate parameters
 
 2010-03-24  Luca Bruno  <lethalman88@gmail.com>
 
@@ -23874,7 +23874,7 @@
 
 	gtk+-2.0: Fix GtkRadioToolButton:group binding
 
-	vapigen: Report error when omitting --library option
+	bapigen: Report error when omitting --library option
 	Fixes bug 611322.
 
 	Do not allow access to members using generic types without type args
@@ -24085,7 +24085,7 @@
 	json-glib-1.0: Make json_parser_load_from_data.length default to -1
 	Fixes bug 612601.
 
-	vapigen: Support default_value for arguments
+	bapigen: Support default_value for arguments
 
 	Make all Literal constructors accept null SourceReferences
 
@@ -24134,7 +24134,7 @@
 	gtk+-2.0: Add many missing type arguments
 	Partially fixes bug 609875.
 
-	vapigen: Improve support for type_arguments
+	bapigen: Improve support for type_arguments
 	Fixes bug 609693.
 
 	gstreamer-video-0.10: don't hide Gst.VideoFormat members
@@ -24271,9 +24271,9 @@
 
 	__compar_fn_t at least has the advantage of always working on glibc.
 
-	more GVariant vapi updates
+	more GVariant bapi updates
 
-	fix typo in posix vapi ([CCOde] -> [CCode])
+	fix typo in posix bapi ([CCOde] -> [CCode])
 
 2010-03-09  Jürg Billeter  <j@bitron.ch>
 
@@ -24312,7 +24312,7 @@
 	gstreamer-0.10: Clean up Gst.Buffer.data binding
 	Fixes bug 610330.
 
-	vapigen: fix changing the type_name of an array field via metadata
+	bapigen: fix changing the type_name of an array field via metadata
 
 2010-03-05  Adrien Bustany  <abustany@gnome.org>
 
@@ -24350,7 +24350,7 @@
 
 2010-03-01  Evan Nemerson  <evan@coeus-group.com>
 
-	vapigen: Add support for array_length_cname for fields
+	bapigen: Add support for array_length_cname for fields
 
 2010-02-28  Rob Taylor  <rob.taylor@codethink.co.uk>
 
@@ -24358,7 +24358,7 @@
 
 2010-02-28  Luca Bruno  <lethalman88@gmail.com>
 
-	Add CharacterLiteral.to_string() to fix writing vapi file
+	Add CharacterLiteral.to_string() to fix writing bapi file
 
 2010-02-26  Florian Brosch  <flo.brosch@gmail.com>
 
@@ -24388,9 +24388,9 @@
 
 2010-02-24  Ryan Lortie  <desrt@desrt.ca>
 
-	glib vapi: add new GVariant binding
+	glib bapi: add new GVariant binding
 
-	glib vapi: rip out old GVariant bindings
+	glib bapi: rip out old GVariant bindings
 
 2010-02-24  Luca Bruno  <lethalman88@gmail.com>
 
@@ -24433,7 +24433,7 @@
 
 2010-02-19  Florian Brosch  <flo.brosch@gmail.com>
 
-	libbaladoc/vapi: index for sub-classes / required classes / implementing classes / sub-interfaces libbaladoc/html: provides new indexed information (Bug #599960)
+	libbaladoc/bapi: index for sub-classes / required classes / implementing classes / sub-interfaces libbaladoc/html: provides new indexed information (Bug #599960)
 
 2010-02-19  Martin Olsson  <martin@minimum.se>
 
@@ -24516,7 +24516,7 @@
 	Put the instance_pos attribute in delegates in code writer
 	Fixes bug 609591.
 
-	gstreamer-0.10: regenerate gi and vapi files
+	gstreamer-0.10: regenerate gi and bapi files
 
 	gstreamer-0.10: hide the members of the GstIterator structure
 	The members of the GstIterator structure are private, so they should
@@ -24751,7 +24751,7 @@
 	In the absense of annotations, the old 'guess it' method will be
 	applied.
 
-	This commit also adds annotations to some core vapis.
+	This commit also adds annotations to some core bapis.
 
 	Fixes bug 584683.
 
@@ -24846,15 +24846,15 @@
 
 2010-01-29  Adrien Bustany  <madcat@mymadcat.com>
 
-	Update rest.vapi file
+	Update rest.bapi file
 
 	Fix cheader_filename in rest-custom.bala
 	Automatic generation generates the wrong header filename for RestProxy
 
 2010-01-28  Adrien Bustany  <madcat@mymadcat.com>
 
-	Restore missing function in rest.vapi
-	The last commit on rest.vapi removed rest_proxy_new_call, probably because
+	Restore missing function in rest.bapi
+	The last commit on rest.bapi removed rest_proxy_new_call, probably because
 	the -custom file was omitted during generation. This commit restores it.
 
 2010-01-27  Jürg Billeter  <j@bitron.ch>
@@ -24918,12 +24918,12 @@
 
 2010-01-25  Evan Nemerson  <evan@coeus-group.com>
 
-	vapigen: Add support for base types and ranks in structs
+	bapigen: Add support for base types and ranks in structs
 	Fixes bug 605039.
 
 2010-01-25  Jürg Billeter  <j@bitron.ch>
 
-	vapigen: Support base_class attribute for boxed types
+	bapigen: Support base_class attribute for boxed types
 
 2010-01-25  Evan Nemerson  <evan@coeus-group.com>
 
@@ -25032,7 +25032,7 @@
 
 	libsoup-2.4: Fix SoupBuffer binding
 
-	vapigen: Support ref_function attribute for boxed types
+	bapigen: Support ref_function attribute for boxed types
 
 2010-01-14  Jürg Billeter  <j@bitron.ch>
 
@@ -25232,7 +25232,7 @@
 
 	gtk+-2.0: Fix gtk_rc_style_create_style binding
 
-	vapigen: Fix crash in parse_signal
+	bapigen: Fix crash in parse_signal
 
 	Use dominance algorithm by Cooper, Harvey, and Kennedy
 	Improves performance of flow analysis.
@@ -25349,7 +25349,7 @@
 
 2009-12-08  Jürg Billeter  <j@bitron.ch>
 
-	Fix vapi/Makefile.am
+	Fix bapi/Makefile.am
 
 2009-12-06  Jürg Billeter  <j@bitron.ch>
 
@@ -25488,7 +25488,7 @@
 
 2009-11-13  Johann Prieur  <johann.prieur@gmail.com>
 
-	vapigen: Support hidden attribute for enum values
+	bapigen: Support hidden attribute for enum values
 
 2009-11-13  Florian Brosch  <flo.brosch@gmail.com>
 
@@ -25527,9 +25527,9 @@
 
 2009-11-11  Evan Nemerson  <evan@coeus-group.com>
 
-	Add ccss-1 and remove gl-1.0 from vapi/Makefile.am
+	Add ccss-1 and remove gl-1.0 from bapi/Makefile.am
 
-	Don't use "using" in *.vapi.
+	Don't use "using" in *.bapi.
 	Fixes bug 593195.
 
 2009-11-11  Ali Sabil  <ali.sabil@gmail.com>
@@ -25603,7 +25603,7 @@
 	Partially fixes bug 598656.
 
 	hildon-1: add Hildon specific gtk+-2.0 modifications in hildon-1-custom.bala
-	Hildon depends on a modified GTK. Instead of polluting gtk+-2.0.vapi with
+	Hildon depends on a modified GTK. Instead of polluting gtk+-2.0.bapi with
 	Hildon specific modifications, add those bindings here.
 
 	Partially fixes bug 598656.
@@ -25692,15 +25692,15 @@
 
 2009-10-31  Michael 'Mickey' Lauer  <mickey@vanille-media.de>
 
-	linux.vapi: add more posix extensions and BSDisms: * inet_aton(3) * openpty(3) * forkpty(3) * login_tty(3)
+	linux.bapi: add more posix extensions and BSDisms: * inet_aton(3) * openpty(3) * forkpty(3) * login_tty(3)
 
-	posix.vapi: add accept(2), connect(2), and listen(2)
+	posix.bapi: add accept(2), connect(2), and listen(2)
 
-	posix.vapi: add inet_addr(3), inet_ntoa(3), htonl(3), htons(3), ntohl(3), ntohs(3), and InAddr
+	posix.bapi: add inet_addr(3), inet_ntoa(3), htonl(3), htons(3), ntohl(3), ntohs(3), and InAddr
 
-	posix.vapi: add {get|set}priority(2) and PRIO_ constants from resource.h
+	posix.bapi: add {get|set}priority(2) and PRIO_ constants from resource.h
 
-	posix.vapi: add nice(2)
+	posix.bapi: add nice(2)
 
 2009-10-31  Didier 'Ptitjes  <ptitjes at free dot fr>
 
@@ -25948,11 +25948,11 @@
 	Allow use of .gir directly from balac
 	  - add a --girdir parameter to the compiler
 	  - make --pkg fall back to searching for a .gir file if it can't find
-	    a .vapi file
+	    a .bapi file
 
 	also:
 
-	  - change the search order for .vapi files: XDG dirs are searched
+	  - change the search order for .bapi files: XDG dirs are searched
 	    before the compiled-in (--prefix) data directory, now.
 
 	Fixes bug 598817.
@@ -25973,7 +25973,7 @@
 
 2009-10-17  Ryan Lortie  <desrt@desrt.ca>
 
-	vapigen: Don't emit ".@new" on default constructor
+	bapigen: Don't emit ".@new" on default constructor
 	Special-case a constructor name of "new" appearing in a .gir file to be
 	the default constructor.
 
@@ -25995,7 +25995,7 @@
 
 	Api: Fix handling of constructors
 
-	Remove the vapis from git and fix Makefiles
+	Remove the bapis from git and fix Makefiles
 
 2009-10-16  Jürg Billeter  <j@bitron.ch>
 
@@ -26144,7 +26144,7 @@
 
 2009-10-10  John Carr  <john.carr@unrouted.co.uk>
 
-	gobject-2.0.vapi: Add get_class method that returns an ObjectClass
+	gobject-2.0.bapi: Add get_class method that returns an ObjectClass
 
 2009-10-10  Jürg Billeter  <j@bitron.ch>
 
@@ -26233,7 +26233,7 @@
 
 	GError: Fix error propagation in creation methods
 
-	vapicheck: Fix unhandled error
+	bapicheck: Fix unhandled error
 
 	Fix detection of unhandled errors in blocks
 
@@ -26283,7 +26283,7 @@
 
 	gio-2.0: Fix g_file_mount_enclosing_volume binding
 
-	vapigen: Support async attribute for methods
+	bapigen: Support async attribute for methods
 
 2009-09-27  Michael B. Trausch  <mike@trausch.us>
 
@@ -26616,7 +26616,7 @@
 
 2009-09-17  Jürg Billeter  <j@bitron.ch>
 
-	vapigen: Fix signals in interfaces
+	bapigen: Fix signals in interfaces
 
 2009-09-17  Florian Brosch  <flo.brosch@gmail.com>
 
@@ -26646,7 +26646,7 @@
 
 	linux: Add mremap(2) call
 	This is a Linux-specific enhancement to the mmap() function
-	set implemented in posix.vapi.
+	set implemented in posix.bapi.
 
 2009-09-16  Jürg Billeter  <j@bitron.ch>
 
@@ -26842,7 +26842,7 @@
 
 2009-09-14  Jürg Billeter  <j@bitron.ch>
 
-	vapigen: Support owned_get metadata attribute for properties
+	bapigen: Support owned_get metadata attribute for properties
 	Fixes bug 592462.
 
 2009-09-14  Mark Lee  <marklee@src.gnome.org>
@@ -26890,7 +26890,7 @@
 	        ...
 	    </implements>
 
-	by Bala.GIRWriter. Note, that vapigen expects the same format as
+	by Bala.GIRWriter. Note, that bapigen expects the same format as
 	gobject-introspection, so it was not able to read bala-written .girs
 	before the change and is able to read them properly now.
 
@@ -27007,7 +27007,7 @@
 
 2009-09-05  Florian Brosch  <flo.brosch@gmail.com>
 
-	- vapi documentation
+	- bapi documentation
 
 2009-09-05  Jürg Billeter  <j@bitron.ch>
 
@@ -27091,7 +27091,7 @@
 
 2009-09-02  Ryan Lortie  <desrt@desrt.ca>
 
-	add dconf vapi (hand-written)
+	add dconf bapi (hand-written)
 
 	add conditional GTree refcounts with -D GLIB_2_22
 
@@ -27111,7 +27111,7 @@
 
 2009-09-02  Ryan Lortie  <desrt@desrt.ca>
 
-	add initial GSettings support to gio-2.0 vapi
+	add initial GSettings support to gio-2.0 bapi
 
 	Add partial GVariant bindings to glib BAPI
 
@@ -27153,7 +27153,7 @@
 
 2009-08-31  Jürg Billeter  <j@bitron.ch>
 
-	vapigen: Support virtual="0"
+	bapigen: Support virtual="0"
 
 2009-08-31  Nicolas Bruguier  <nicolas.bruguier@supersonicimagine.fr>
 
@@ -27218,7 +27218,7 @@
 
 2009-08-18  Alberto Ruiz  <aruiz@codethink.co.uk>
 
-	vapigen: Interfaces should be marked as external by default.
+	bapigen: Interfaces should be marked as external by default.
 
 2009-08-17  Mark Lee  <marklee@src.gnome.org>
 
@@ -27635,13 +27635,13 @@
 
 2009-07-27  Evan Nemerson  <evan@coeus-group.com>
 
-	vapigen: Make quotes around metadata arguments optional
+	bapigen: Make quotes around metadata arguments optional
 	Fixes bug 588171.
 
 	pango: Various PangoAttribute-related fixes
 	Fixes bug 587645.
 
-	vapigen: Support overriding memory management functions in metadata
+	bapigen: Support overriding memory management functions in metadata
 	Fixes bug 589307.
 
 2009-07-27  Jürg Billeter  <j@bitron.ch>
@@ -27697,7 +27697,7 @@
 
 	Remove debug statements in the gir parser positional parameter handling
 
-	Make vapigen obey deps files for --pkg arguments.
+	Make bapigen obey deps files for --pkg arguments.
 
 	debugging for empty struct warning
 
@@ -27732,7 +27732,7 @@
 	Patch by Evan Nemerson <evan@polussystems.com>
 	Fixes bug #588652
 
-	vapigen: allow metadata to set type_id
+	bapigen: allow metadata to set type_id
 	Patch by Evan Nemerson <evan@polussystems.com>
 	Fixes bug #588703
 
@@ -27765,7 +27765,7 @@
 
 2009-07-13  Jaap A. Haitsma  <jaap@haitsma.org>
 
-	gtk+-2.0: regenerate binding with new vapigen
+	gtk+-2.0: regenerate binding with new bapigen
 
 2009-07-12  Jürg Billeter  <j@bitron.ch>
 
@@ -27879,8 +27879,8 @@
 
 2009-07-08  Mark Lee  <marklee@src.gnome.org>
 
-	vapigen: Do not doubly-link to the static libgee
-	In the Bala Team PPA, it was reported that the vapigen binary did not run,
+	bapigen: Do not doubly-link to the static libgee
+	In the Bala Team PPA, it was reported that the bapigen binary did not run,
 	due to the fact that Gee classes were being registered multiple times. The
 	problem was fixed by removing the explicit reference to libgee in LDADD, as
 	it is already included via libbala.
@@ -28012,7 +28012,7 @@
 
 2009-06-25  Jürg Billeter  <j@bitron.ch>
 
-	vapigen: Use GObject profile
+	bapigen: Use GObject profile
 
 2009-06-25  lariamat  <interflug1@gmx.net>
 
@@ -28357,7 +28357,7 @@
 
 	gtk+-2.0: Fix GtkTextBuffer:text binding
 
-	vapigen: Add accessor_method metadata for properties
+	bapigen: Add accessor_method metadata for properties
 
 2009-05-24  Jim Nelson  <jim@yorba.org>
 
@@ -28442,8 +28442,8 @@
 
 	Remove unused CodeContext.memory_management property
 
-	Add --vapi command-line option
-	The --vapi command-line option generates a .vapi file with the
+	Add --bapi command-line option
+	The --bapi command-line option generates a .bapi file with the
 	public API.
 
 	Remove unused CodeContext.library property
@@ -28702,7 +28702,7 @@
 
 	gstreamer-rtp-0.10: Turn GstRTCPPacket into a struct
 
-	libxml-2.0.vapi: use the owned modifier instead of the deprecated # modifier
+	libxml-2.0.bapi: use the owned modifier instead of the deprecated # modifier
 
 2009-04-16  Ali Sabil  <ali.sabil@gmail.com>
 
@@ -28773,7 +28773,7 @@
 	libgnomeui-2.0: Replace references to Gtk.DestroyNotify
 	Fixes bug 578947.
 
-	vapigen: Fix constants
+	bapigen: Fix constants
 
 	Support external constants
 
@@ -28830,7 +28830,7 @@
 
 	Ensure string.h is included when using memcpy
 
-	vapigen: Remove unused method
+	bapigen: Remove unused method
 
 	Include glib-object.h when declaring fundamental classes
 
@@ -28887,9 +28887,9 @@
 
 2009-04-08  Rob Taylor  <rob.taylor@codethink.co.uk>
 
-	Merge branch 'master' into internal-vapi
+	Merge branch 'master' into internal-bapi
 
-	Override cheader to internal cheader when writing the internal vapi.
+	Override cheader to internal cheader when writing the internal bapi.
 
 2009-04-08  Jürg Billeter  <j@bitron.ch>
 
@@ -28923,7 +28923,7 @@
 
 2009-04-08  Rob Taylor  <rob.taylor@codethink.co.uk>
 
-	Merge branch 'master' into internal-vapi
+	Merge branch 'master' into internal-bapi
 
 2009-04-08  Jürg Billeter  <j@bitron.ch>
 
@@ -28939,7 +28939,7 @@
 
 2009-04-08  Rob Taylor  <rob.taylor@codethink.co.uk>
 
-	Merge branch 'master' into internal-vapi
+	Merge branch 'master' into internal-bapi
 
 2009-04-08  Jürg Billeter  <j@bitron.ch>
 
@@ -28966,7 +28966,7 @@
 
 2009-04-07  Rob Taylor  <rob.taylor@codethink.co.uk>
 
-	small fixes for invocation with --internal-vapi
+	small fixes for invocation with --internal-bapi
 
 2009-04-07  Michael B. Trausch  <mike@trausch.us>
 
@@ -28982,7 +28982,7 @@
 
 2009-04-07  Rob Taylor  <rob.taylor@codethink.co.uk>
 
-	Add support for saving out the internal api as a vapi
+	Add support for saving out the internal api as a bapi
 
 2009-04-07  Jürg Billeter  <j@bitron.ch>
 
@@ -29251,7 +29251,7 @@
 	libsoup-2.4: Fixes for several xmlrpc-related functions
 	Fixes bug 576768.
 
-	vapigen: Allow metadata files to set PrintfFormat
+	bapigen: Allow metadata files to set PrintfFormat
 	Fixes bug 576765.
 
 2009-03-29  Víctor Manuel Jáquez Leal  <vjaquez@igalia.com>
@@ -29324,7 +29324,7 @@
 
 	Bug 575099: Add librsvg-2.0 bindings
 
-	vapigen: Bug 575098: Allow is_ref and is_out for delegate parameters
+	bapigen: Bug 575098: Allow is_ref and is_out for delegate parameters
 
 2009-03-26  Jukka-Pekka Iivonen  <jukka-pekka.iivonen@nokia.com>
 
@@ -29347,13 +29347,13 @@
 
 2009-03-26  Hans Baier  <hansfbaier@googlemail.com>
 
-	libglade-2.0.vapi: nullable arguments in register_widget
+	libglade-2.0.bapi: nullable arguments in register_widget
 
 2009-03-25  Jürg Billeter  <j@bitron.ch>
 
 	libglade-2.0: Fix GladeNewFunc binding
 
-	vapigen: Support transfer_ownership for delegates
+	bapigen: Support transfer_ownership for delegates
 	Add attribute to support owned delegate return values.
 
 2009-03-25  Ali Sabil  <ali.sabil@gmail.com>
@@ -29363,9 +29363,9 @@
 
 2009-03-17  Michael 'Mickey' Lauer  <mickey@vanille-media.de>
 
-	posix.vapi: signal is allowed to be null (restoring the original handler)
+	posix.bapi: signal is allowed to be null (restoring the original handler)
 
-	posix.vapi: rename stat struct and add actual stat + fstat calls
+	posix.bapi: rename stat struct and add actual stat + fstat calls
 
 2009-03-17  Zeeshan Ali (Khattak)  <zeeshanak@gnome.org>
 
@@ -29408,7 +29408,7 @@
 
 2009-03-07  Hans Baier  <hansfbaier@googlemail.com>
 
-	posix.vapi: add pid_t and kill
+	posix.bapi: add pid_t and kill
 
 2009-03-07  Jürg Billeter  <j@bitron.ch>
 
@@ -29428,7 +29428,7 @@
 
 2009-03-04  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	posix.vapi: Fix type of mode argumentent on creat function
+	posix.bapi: Fix type of mode argumentent on creat function
 
 2009-03-03  Jukka-Pekka Iivonen  <jukka-pekka.iivonen@nokia.com>
 
@@ -29451,11 +29451,11 @@
 
 2009-03-02  Michael 'Mickey' Lauer  <mickey@vanille-media.de>
 
-	posix.vapi: add remaining syslog constants
+	posix.bapi: add remaining syslog constants
 
-	posix.vapi: add syslog and friends
+	posix.bapi: add syslog and friends
 
-	posix.vapi: open has two forms, one with a mode_t, one without
+	posix.bapi: open has two forms, one with a mode_t, one without
 
 	glib-2.0: Fix get_system_config_dirs binding
 	get_system_config_dirs() needs the same treatment as get_system_data_dirs()
@@ -29486,7 +29486,7 @@
 
 	Mark arrays as null terminated in GLib binding
 	Add [CCode (array_null_terminated = true)] to array parameters and
-	return values in glib-2.0.vapi.
+	return values in glib-2.0.bapi.
 
 2009-02-27  Jürg Billeter  <j@bitron.ch>
 

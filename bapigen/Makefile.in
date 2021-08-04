@@ -87,9 +87,9 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-bin_PROGRAMS = vapigen$(EXEEXT) $(am__EXEEXT_1)
-noinst_PROGRAMS = vapicheck$(EXEEXT) $(am__EXEEXT_1)
-subdir = vapigen
+bin_PROGRAMS = bapigen$(EXEEXT) $(am__EXEEXT_1)
+noinst_PROGRAMS = bapicheck$(EXEEXT) $(am__EXEEXT_1)
+subdir = bapigen
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -101,18 +101,18 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = vapigen.pc
+CONFIG_CLEAN_FILES = bapigen.pc
 CONFIG_CLEAN_VPATH_FILES =
 am__EXEEXT_1 =
 am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(aclocaldir)" \
 	"$(DESTDIR)$(makedir)" "$(DESTDIR)$(pkgconfigdir)"
 PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
 am__objects_1 =
-am__objects_2 = balavapicheck.$(OBJEXT) $(am__objects_1)
-am_vapicheck_OBJECTS = $(am__objects_2) $(am__objects_1)
-vapicheck_OBJECTS = $(am_vapicheck_OBJECTS)
+am__objects_2 = balabapicheck.$(OBJEXT) $(am__objects_1)
+am_bapicheck_OBJECTS = $(am__objects_2) $(am__objects_1)
+bapicheck_OBJECTS = $(am_bapicheck_OBJECTS)
 am__DEPENDENCIES_1 =
-vapicheck_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+bapicheck_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(am__DEPENDENCIES_1)
@@ -120,11 +120,11 @@ AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-am__objects_3 = balagidlparser.$(OBJEXT) balavapigen.$(OBJEXT) \
+am__objects_3 = balagidlparser.$(OBJEXT) balabapigen.$(OBJEXT) \
 	$(am__objects_1)
-am_vapigen_OBJECTS = $(am__objects_3) $(am__objects_1)
-vapigen_OBJECTS = $(am_vapigen_OBJECTS)
-vapigen_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+am_bapigen_OBJECTS = $(am__objects_3) $(am__objects_1)
+bapigen_OBJECTS = $(am_bapigen_OBJECTS)
+bapigen_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(am__DEPENDENCIES_1)
@@ -144,7 +144,7 @@ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/balagidlparser.Po \
-	./$(DEPDIR)/balavapicheck.Po ./$(DEPDIR)/balavapigen.Po
+	./$(DEPDIR)/balabapicheck.Po ./$(DEPDIR)/balabapigen.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -164,8 +164,8 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(vapicheck_SOURCES) $(vapigen_SOURCES)
-DIST_SOURCES = $(vapicheck_SOURCES) $(vapigen_SOURCES)
+SOURCES = $(bapicheck_SOURCES) $(bapigen_SOURCES)
+DIST_SOURCES = $(bapicheck_SOURCES) $(bapigen_SOURCES)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -235,7 +235,7 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 DIST_SUBDIRS = $(SUBDIRS)
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/vapigen.pc.in \
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/bapigen.pc.in \
 	$(top_srcdir)/Makefile.common $(top_srcdir)/build-aux/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 am__relativize = \
@@ -421,7 +421,7 @@ SUBDIRS = \
 	$(NULL)
 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"vapigen\" \
+	-DG_LOG_DOMAIN=\"bapigen\" \
 	$(COVERAGE_CFLAGS) \
 	$(GLIB_CFLAGS) \
 	-I$(top_srcdir)/gee \
@@ -430,34 +430,34 @@ AM_CPPFLAGS = \
 	-I$(top_srcdir)/gobject-introspection \
 	$(NULL)
 
-BUILT_SOURCES = vapigen.bala.stamp vapicheck.bala.stamp
-vapigen_BALASOURCES = \
+BUILT_SOURCES = bapigen.bala.stamp bapicheck.bala.stamp
+bapigen_BALASOURCES = \
 	balagidlparser.bala \
-	balavapigen.bala \
+	balabapigen.bala \
 	$(NULL)
 
-vapigen_SOURCES = \
-	vapigen.bala.stamp \
-	$(vapigen_BALASOURCES:.bala=.c) \
+bapigen_SOURCES = \
+	bapigen.bala.stamp \
+	$(bapigen_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-vapicheck_BALASOURCES = \
-	balavapicheck.bala \
+bapicheck_BALASOURCES = \
+	balabapicheck.bala \
 	$(NULL)
 
-vapicheck_SOURCES = \
-	vapicheck.bala.stamp \
-	$(vapicheck_BALASOURCES:.bala=.c) \
+bapicheck_SOURCES = \
+	bapicheck.bala.stamp \
+	$(bapicheck_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-vapigen_LDADD = \
+bapigen_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(NULL)
 
-vapicheck_LDADD = \
+bapicheck_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
@@ -465,26 +465,26 @@ vapicheck_LDADD = \
 	$(NULL)
 
 @ENABLE_UNVERSIONED_TRUE@makedir = $(datadir)/bala
-@ENABLE_UNVERSIONED_TRUE@make_DATA = Makefile.vapigen
+@ENABLE_UNVERSIONED_TRUE@make_DATA = Makefile.bapigen
 @ENABLE_UNVERSIONED_TRUE@aclocaldir = $(datadir)/aclocal
-@ENABLE_UNVERSIONED_TRUE@aclocal_DATA = vapigen.m4
+@ENABLE_UNVERSIONED_TRUE@aclocal_DATA = bapigen.m4
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = vapigen@PACKAGE_SUFFIX@.pc
+pkgconfig_DATA = bapigen@PACKAGE_SUFFIX@.pc
 EXTRA_DIST = \
-	$(vapigen_BALASOURCES) \
-	$(vapicheck_BALASOURCES) \
-	Makefile.vapigen \
-	vapigen.m4 \
-	vapigen.bala.stamp \
-	vapicheck.bala.stamp \
+	$(bapigen_BALASOURCES) \
+	$(bapicheck_BALASOURCES) \
+	Makefile.bapigen \
+	bapigen.m4 \
+	bapigen.bala.stamp \
+	bapicheck.bala.stamp \
 	$(NULL)
 
 CLEANFILES = \
-	vapigen@PACKAGE_SUFFIX@.pc
+	bapigen@PACKAGE_SUFFIX@.pc
 
 MAINTAINERCLEANFILES = \
-	$(vapigen_BALASOURCES:.bala=.c) \
-	$(vapicheck_BALASOURCES:.bala=.c) \
+	$(bapigen_BALASOURCES:.bala=.c) \
+	$(bapicheck_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -501,9 +501,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu vapigen/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu bapigen/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu vapigen/Makefile
+	  $(AUTOMAKE) --gnu bapigen/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -522,7 +522,7 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-vapigen.pc: $(top_builddir)/config.status $(srcdir)/vapigen.pc.in
+bapigen.pc: $(top_builddir)/config.status $(srcdir)/bapigen.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 install-binPROGRAMS: $(bin_PROGRAMS)
 	@$(NORMAL_INSTALL)
@@ -583,13 +583,13 @@ clean-noinstPROGRAMS:
 	echo " rm -f" $$list; \
 	rm -f $$list
 
-vapicheck$(EXEEXT): $(vapicheck_OBJECTS) $(vapicheck_DEPENDENCIES) $(EXTRA_vapicheck_DEPENDENCIES) 
-	@rm -f vapicheck$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(vapicheck_OBJECTS) $(vapicheck_LDADD) $(LIBS)
+bapicheck$(EXEEXT): $(bapicheck_OBJECTS) $(bapicheck_DEPENDENCIES) $(EXTRA_bapicheck_DEPENDENCIES) 
+	@rm -f bapicheck$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(bapicheck_OBJECTS) $(bapicheck_LDADD) $(LIBS)
 
-vapigen$(EXEEXT): $(vapigen_OBJECTS) $(vapigen_DEPENDENCIES) $(EXTRA_vapigen_DEPENDENCIES) 
-	@rm -f vapigen$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(vapigen_OBJECTS) $(vapigen_LDADD) $(LIBS)
+bapigen$(EXEEXT): $(bapigen_OBJECTS) $(bapigen_DEPENDENCIES) $(EXTRA_bapigen_DEPENDENCIES) 
+	@rm -f bapigen$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(bapigen_OBJECTS) $(bapigen_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -598,8 +598,8 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagidlparser.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balavapicheck.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balavapigen.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balabapicheck.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balabapigen.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -910,8 +910,8 @@ clean-am: clean-binPROGRAMS clean-generic clean-libtool \
 
 distclean: distclean-recursive
 		-rm -f ./$(DEPDIR)/balagidlparser.Po
-	-rm -f ./$(DEPDIR)/balavapicheck.Po
-	-rm -f ./$(DEPDIR)/balavapigen.Po
+	-rm -f ./$(DEPDIR)/balabapicheck.Po
+	-rm -f ./$(DEPDIR)/balabapigen.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -961,8 +961,8 @@ installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
 		-rm -f ./$(DEPDIR)/balagidlparser.Po
-	-rm -f ./$(DEPDIR)/balavapicheck.Po
-	-rm -f ./$(DEPDIR)/balavapigen.Po
+	-rm -f ./$(DEPDIR)/balabapicheck.Po
+	-rm -f ./$(DEPDIR)/balabapigen.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -1007,41 +1007,41 @@ uninstall-am: uninstall-aclocalDATA uninstall-binPROGRAMS \
 .PRECIOUS: Makefile
 
 
-vapigen.bala.stamp: $(vapigen_BALASOURCES)
+bapigen.bala.stamp: $(bapigen_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi \
-		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/bala --pkg bala \
-		--vapidir $(top_srcdir)/gobject-introspection --pkg gidl \
+		--bapidir $(top_srcdir)/bapi \
+		--bapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/bala --pkg bala \
+		--bapidir $(top_srcdir)/gobject-introspection --pkg gidl \
 		--pkg config \
 		$^
 	@touch $@
 
-vapicheck.bala.stamp: $(vapicheck_BALASOURCES)
+bapicheck.bala.stamp: $(bapicheck_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi \
-		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/bala --pkg bala \
-		--vapidir $(top_srcdir)/gobject-introspection --pkg gidl \
+		--bapidir $(top_srcdir)/bapi \
+		--bapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/bala --pkg bala \
+		--bapidir $(top_srcdir)/gobject-introspection --pkg gidl \
 		--pkg config \
 		$^
 	@touch $@
 
-vapigen@PACKAGE_SUFFIX@.pc: vapigen.pc
+bapigen@PACKAGE_SUFFIX@.pc: bapigen.pc
 	cp $< $@
 	$(NULL)
 
 @ENABLE_UNVERSIONED_TRUE@install-exec-hook:
-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f vapigen@PACKAGE_SUFFIX@$(EXEEXT) vapigen$(EXEEXT)
+@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f bapigen@PACKAGE_SUFFIX@$(EXEEXT) bapigen$(EXEEXT)
 
 @ENABLE_UNVERSIONED_TRUE@install-data-hook:
-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(pkgconfigdir) && $(LN_S) -f vapigen@PACKAGE_SUFFIX@.pc vapigen.pc
+@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(pkgconfigdir) && $(LN_S) -f bapigen@PACKAGE_SUFFIX@.pc bapigen.pc
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

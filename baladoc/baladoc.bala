@@ -61,7 +61,7 @@ public class BalaDoc : Object {
 	[CCode (array_length = false, array_null_terminated = true)]
 	private static string[] import_directories;
 	[CCode (array_length = false, array_null_terminated = true)]
-	private static string[] vapi_directories;
+	private static string[] bapi_directories;
 	[CCode (array_length = false, array_null_terminated = true)]
 	private static string[] metadata_directories;
 	[CCode (array_length = false, array_null_terminated = true)]
@@ -86,7 +86,7 @@ public class BalaDoc : Object {
 
 		{ "metadatadir", 0, 0, OptionArg.FILENAME_ARRAY, ref metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..." },
 		{ "girdir", 0, 0, OptionArg.FILENAME_ARRAY, ref gir_directories, "Look for .gir files in DIRECTORY", "DIRECTORY..." },
-		{ "vapidir", 0, 0, OptionArg.FILENAME_ARRAY, ref vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..." },
+		{ "bapidir", 0, 0, OptionArg.FILENAME_ARRAY, ref bapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..." },
 		{ "pkg", 0, 0, OptionArg.STRING_ARRAY, ref packages, "Include binding for PACKAGE", "PACKAGE..." },
 
 		{ "driver", 0, OptionFlags.OPTIONAL_ARG, OptionArg.CALLBACK, (void*) option_deprecated, "Name of an driver or path to a custom driver (DEPRECATED AND IGNORED)", null },
@@ -223,7 +223,7 @@ public class BalaDoc : Object {
 		settings.experimental_non_null = experimental_non_null;
 		settings.basedir = basedir;
 		settings.directory = directory;
-		settings.vapi_directories = vapi_directories;
+		settings.bapi_directories = bapi_directories;
 		settings.metadata_directories = metadata_directories;
 		settings.gir_directories = gir_directories;
 		settings.target_glib = target_glib;

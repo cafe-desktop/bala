@@ -1,12 +1,12 @@
 [NAME]
-vapigen \- generate a Bala API
+bapigen \- generate a Bala API
 
 [SYNOPSIS]
-.B vapigen \fISOURCE\fP \fIPKGBASE\fP
+.B bapigen \fISOURCE\fP \fIPKGBASE\fP
 [\fIOPTION\fR]... [\fIFILE\fR]...
 
 [DESCRIPTION]
-.B vapigen
+.B bapigen
 is a utility which generates Bala API (BAPI) files from GI files,
 which may be generated using the bala-gen-introspect(1) utility.
 
@@ -15,7 +15,7 @@ After compilation, the following command generates a GI for pango:
 .B bala-gen-introspect pango packages/pango
 .TP
 This can then be converted to a Bala API as follows:
-.B vapigen --pkg cairo --vapidir . --library pango packages/pango/pango.gi
+.B bapigen --pkg cairo --bapidir . --library pango packages/pango/pango.gi
 
 [BUGS]
 https://gitlab.gnome.org/GNOME/bala/issues

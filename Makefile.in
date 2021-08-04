@@ -194,8 +194,8 @@ am__define_uniq_tagged_files = \
 ETAGS = etags
 CTAGS = ctags
 CSCOPE = cscope
-DIST_SUBDIRS = gee bala ccode codegen compiler vapi tests doc \
-	gobject-introspection vapigen libbaladoc baladoc
+DIST_SUBDIRS = gee bala ccode codegen compiler bapi tests doc \
+	gobject-introspection bapigen libbaladoc baladoc
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/config.h.in \
 	$(srcdir)/libbala.pc.in $(top_srcdir)/build-aux/compile \
 	$(top_srcdir)/build-aux/config.guess \
@@ -401,8 +401,8 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 ACLOCAL_AMFLAGS = --install -I m4 ${ACLOCAL_FLAGS}
 NULL = 
-SUBDIRS = gee bala ccode codegen compiler vapi tests doc \
-	gobject-introspection vapigen $(NULL) $(am__append_1)
+SUBDIRS = gee bala ccode codegen compiler bapi tests doc \
+	gobject-introspection bapigen $(NULL) $(am__append_1)
 DISTCHECK_CONFIGURE_FLAGS = \
 	--enable-baladoc \
 	--enable-unversioned \
@@ -1001,7 +1001,7 @@ coverage:
 
 coverage-report: coverage
 	lcov --directory $(top_srcdir) --capture --output-file $(top_builddir)/lcov.info
-	lcov --directory $(top_srcdir) --output-file $(top_builddir)/lcov.info --remove $(top_builddir)/lcov.info "*.c" "*.h" "*.vapi"
+	lcov --directory $(top_srcdir) --output-file $(top_builddir)/lcov.info --remove $(top_builddir)/lcov.info "*.c" "*.h" "*.bapi"
 	rm -rf $(top_builddir)/coverage
 	$(mkdir_p) $(top_builddir)/coverage
 	genhtml --title "@PACKAGE_STRING@" --output-directory $(top_builddir)/coverage $(top_builddir)/lcov.info

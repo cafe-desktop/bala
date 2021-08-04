@@ -700,7 +700,7 @@ bala_code_writer_real_visit_namespace (BalaCodeVisitor* base,
 	_tmp5_ = _bala_iterable_ref0 (_tmp4_);
 	comments = _tmp5_;
 	_tmp7_ = self->priv->context;
-	_tmp8_ = bala_code_context_get_vapi_comments (_tmp7_);
+	_tmp8_ = bala_code_context_get_bapi_comments (_tmp7_);
 	_tmp9_ = _tmp8_;
 	if (_tmp9_) {
 		BalaList* _tmp10_;
@@ -1250,7 +1250,7 @@ bala_code_writer_real_visit_class (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp3_ = self->priv->context;
-	_tmp4_ = bala_code_context_get_vapi_comments (_tmp3_);
+	_tmp4_ = bala_code_context_get_bapi_comments (_tmp3_);
 	_tmp5_ = _tmp4_;
 	if (_tmp5_) {
 		BalaComment* _tmp6_;
@@ -1612,7 +1612,7 @@ bala_code_writer_real_visit_struct (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp3_ = self->priv->context;
-	_tmp4_ = bala_code_context_get_vapi_comments (_tmp3_);
+	_tmp4_ = bala_code_context_get_bapi_comments (_tmp3_);
 	_tmp5_ = _tmp4_;
 	if (_tmp5_) {
 		BalaComment* _tmp6_;
@@ -1758,7 +1758,7 @@ bala_code_writer_real_visit_interface (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp3_ = self->priv->context;
-	_tmp4_ = bala_code_context_get_vapi_comments (_tmp3_);
+	_tmp4_ = bala_code_context_get_bapi_comments (_tmp3_);
 	_tmp5_ = _tmp4_;
 	if (_tmp5_) {
 		BalaComment* _tmp6_;
@@ -1909,7 +1909,7 @@ bala_code_writer_real_visit_enum (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp3_ = self->priv->context;
-	_tmp4_ = bala_code_context_get_vapi_comments (_tmp3_);
+	_tmp4_ = bala_code_context_get_bapi_comments (_tmp3_);
 	_tmp5_ = _tmp4_;
 	if (_tmp5_) {
 		BalaComment* _tmp6_;
@@ -1986,7 +1986,7 @@ bala_code_writer_real_visit_enum (BalaCodeVisitor* base,
 				bala_code_writer_write_newline (self);
 			}
 			_tmp22_ = self->priv->context;
-			_tmp23_ = bala_code_context_get_vapi_comments (_tmp22_);
+			_tmp23_ = bala_code_context_get_bapi_comments (_tmp22_);
 			_tmp24_ = _tmp23_;
 			if (_tmp24_) {
 				BalaEnumValue* _tmp25_;
@@ -2201,7 +2201,7 @@ bala_code_writer_real_visit_error_domain (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp3_ = self->priv->context;
-	_tmp4_ = bala_code_context_get_vapi_comments (_tmp3_);
+	_tmp4_ = bala_code_context_get_bapi_comments (_tmp3_);
 	_tmp5_ = _tmp4_;
 	if (_tmp5_) {
 		BalaComment* _tmp6_;
@@ -2275,7 +2275,7 @@ bala_code_writer_real_visit_error_domain (BalaCodeVisitor* base,
 				bala_code_writer_write_newline (self);
 			}
 			_tmp22_ = self->priv->context;
-			_tmp23_ = bala_code_context_get_vapi_comments (_tmp22_);
+			_tmp23_ = bala_code_context_get_bapi_comments (_tmp22_);
 			_tmp24_ = _tmp23_;
 			if (_tmp24_) {
 				BalaErrorCode* _tmp25_;
@@ -2407,7 +2407,7 @@ bala_code_writer_real_visit_constant (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp3_ = self->priv->context;
-	_tmp4_ = bala_code_context_get_vapi_comments (_tmp3_);
+	_tmp4_ = bala_code_context_get_bapi_comments (_tmp3_);
 	_tmp5_ = _tmp4_;
 	if (_tmp5_) {
 		BalaComment* _tmp6_;
@@ -2509,7 +2509,7 @@ bala_code_writer_real_visit_field (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp3_ = self->priv->context;
-	_tmp4_ = bala_code_context_get_vapi_comments (_tmp3_);
+	_tmp4_ = bala_code_context_get_bapi_comments (_tmp3_);
 	_tmp5_ = _tmp4_;
 	if (_tmp5_) {
 		BalaComment* _tmp6_;
@@ -2822,7 +2822,7 @@ bala_code_writer_real_visit_delegate (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp3_ = self->priv->context;
-	_tmp4_ = bala_code_context_get_vapi_comments (_tmp3_);
+	_tmp4_ = bala_code_context_get_bapi_comments (_tmp3_);
 	_tmp5_ = _tmp4_;
 	if (_tmp5_) {
 		BalaComment* _tmp6_;
@@ -2889,7 +2889,7 @@ bala_code_writer_real_visit_constructor (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp2_ = self->priv->context;
-	_tmp3_ = bala_code_context_get_vapi_comments (_tmp2_);
+	_tmp3_ = bala_code_context_get_bapi_comments (_tmp2_);
 	_tmp4_ = _tmp3_;
 	if (_tmp4_) {
 		BalaComment* _tmp5_;
@@ -2956,7 +2956,7 @@ bala_code_writer_real_visit_destructor (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp2_ = self->priv->context;
-	_tmp3_ = bala_code_context_get_vapi_comments (_tmp2_);
+	_tmp3_ = bala_code_context_get_bapi_comments (_tmp2_);
 	_tmp4_ = _tmp3_;
 	if (_tmp4_) {
 		BalaComment* _tmp5_;
@@ -3069,7 +3069,7 @@ bala_code_writer_real_visit_method (BalaCodeVisitor* base,
 		}
 	}
 	_tmp13_ = self->priv->context;
-	_tmp14_ = bala_code_context_get_vapi_comments (_tmp13_);
+	_tmp14_ = bala_code_context_get_bapi_comments (_tmp13_);
 	_tmp15_ = _tmp14_;
 	if (_tmp15_) {
 		BalaComment* _tmp16_;
@@ -3282,7 +3282,7 @@ bala_code_writer_real_visit_property (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp10_ = self->priv->context;
-	_tmp11_ = bala_code_context_get_vapi_comments (_tmp10_);
+	_tmp11_ = bala_code_context_get_bapi_comments (_tmp10_);
 	_tmp12_ = _tmp11_;
 	if (_tmp12_) {
 		BalaComment* _tmp13_;
@@ -3477,7 +3477,7 @@ bala_code_writer_real_visit_signal (BalaCodeVisitor* base,
 		return;
 	}
 	_tmp1_ = self->priv->context;
-	_tmp2_ = bala_code_context_get_vapi_comments (_tmp1_);
+	_tmp2_ = bala_code_context_get_bapi_comments (_tmp1_);
 	_tmp3_ = _tmp2_;
 	if (_tmp3_) {
 		BalaComment* _tmp4_;
@@ -6532,7 +6532,7 @@ bala_code_writer_get_type (void)
 static GType
 bala_code_writer_type_get_type_once (void)
 {
-	static const GEnumValue values[] = {{BALA_CODE_WRITER_TYPE_EXTERNAL, "BALA_CODE_WRITER_TYPE_EXTERNAL", "external"}, {BALA_CODE_WRITER_TYPE_INTERNAL, "BALA_CODE_WRITER_TYPE_INTERNAL", "internal"}, {BALA_CODE_WRITER_TYPE_FAST, "BALA_CODE_WRITER_TYPE_FAST", "fast"}, {BALA_CODE_WRITER_TYPE_DUMP, "BALA_CODE_WRITER_TYPE_DUMP", "dump"}, {BALA_CODE_WRITER_TYPE_BAPIGEN, "BALA_CODE_WRITER_TYPE_BAPIGEN", "vapigen"}, {0, NULL, NULL}};
+	static const GEnumValue values[] = {{BALA_CODE_WRITER_TYPE_EXTERNAL, "BALA_CODE_WRITER_TYPE_EXTERNAL", "external"}, {BALA_CODE_WRITER_TYPE_INTERNAL, "BALA_CODE_WRITER_TYPE_INTERNAL", "internal"}, {BALA_CODE_WRITER_TYPE_FAST, "BALA_CODE_WRITER_TYPE_FAST", "fast"}, {BALA_CODE_WRITER_TYPE_DUMP, "BALA_CODE_WRITER_TYPE_DUMP", "dump"}, {BALA_CODE_WRITER_TYPE_BAPIGEN, "BALA_CODE_WRITER_TYPE_BAPIGEN", "bapigen"}, {0, NULL, NULL}};
 	GType bala_code_writer_type_type_id;
 	bala_code_writer_type_type_id = g_enum_register_static ("BalaCodeWriterType", values);
 	return bala_code_writer_type_type_id;

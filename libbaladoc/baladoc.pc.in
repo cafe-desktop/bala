@@ -6,7 +6,7 @@ datarootdir=@datarootdir@
 datadir=@datadir@
 pkgdatadir=@pkgdocdatadir@
 pkglibdir=@pkgdoclibdir@
-vapidir=@datadir@/bala/vapi
+bapidir=@datadir@/bala/bapi
 
 Name: Baladoc
 Description: The Bala documentation compiler library

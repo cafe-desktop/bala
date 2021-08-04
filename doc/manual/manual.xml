@@ -42,7 +42,7 @@
 
 <section>
 <title>Bala source files</title>
-<para>There are two types of Bala input files.  Bala source files (with a &quot;.bala&quot; extension) contain compileable Bala code. BAPI files (with a &quot;.vapi&quot; extension) describe an interface to a library, which can be written in either Bala or C.  BAPI files are not compileable, and cannot contain any executable code - they are used when compiling Bala source files. </para>
+<para>There are two types of Bala input files.  Bala source files (with a &quot;.bala&quot; extension) contain compileable Bala code. BAPI files (with a &quot;.bapi&quot; extension) describe an interface to a library, which can be written in either Bala or C.  BAPI files are not compileable, and cannot contain any executable code - they are used when compiling Bala source files. </para>
 <para>There are no requirements for how Bala source files are named, although there are conventions that can be followed. BAPI files are usually named to matched the pkg-config name of the library they relate to; they are described more fully in the documentation about bindings. </para>
 <para>All Bala input files should be encoded in UTF-8. </para>
 </section>
@@ -2855,7 +2855,7 @@ $ ./preprocessor-debug]]></screen>
 
 <section>
 <title>GIDL metadata format</title>
-<para>This section describes the format of .metadata files as used by <emphasis>vapigen</emphasis> as additional information for .vapi file generation. Some of the information specified in the metadata can be used to set <ulink url="https://wiki.gnome.org/Projects/Bala/Manual/Export/Projects/Bala/Manual/Attributes#">symbol attributes</ulink> as well. </para>
+<para>This section describes the format of .metadata files as used by <emphasis>bapigen</emphasis> as additional information for .bapi file generation. Some of the information specified in the metadata can be used to set <ulink url="https://wiki.gnome.org/Projects/Bala/Manual/Export/Projects/Bala/Manual/Attributes#">symbol attributes</ulink> as well. </para>
 
 <section>
 <title>Comments</title>
@@ -3029,7 +3029,7 @@ $ ./preprocessor-debug]]></screen>
 <para> <code>hidden</code> </para></entry><entry colsep="1" rowsep="1">
 <para> Anything </para></entry><entry colsep="1" rowsep="1">
 <para> 0, 1 </para></entry><entry colsep="1" rowsep="1">
-<para> Causes the selected thing to not be output in the vapi file. </para></entry></row><row rowsep="1"><entry colsep="1" rowsep="1">
+<para> Causes the selected thing to not be output in the bapi file. </para></entry></row><row rowsep="1"><entry colsep="1" rowsep="1">
 <para> <code>immutable</code> </para></entry><entry colsep="1" rowsep="1">
 <para> Struct </para></entry><entry colsep="1" rowsep="1">
 <para> 0, 1 </para></entry><entry colsep="1" rowsep="1">
@@ -3178,7 +3178,7 @@ $ ./preprocessor-debug]]></screen>
 
 <section>
 <title>GIR metadata format</title>
-<para>The <code>GIR</code> format actually has a lot of information for generating bindings, but it's a different language than Bala. Therefore, it's almost impossible to directly map a whole .gir file into a Bala tree, hence the need of metadata. On the other side we might want to use directly .gir + .metadata instead of generating a .vapi, but .vapi is more humanly readable and faster to parse than the GIR, hence the need of vapigen for generating a .vapi. </para>
+<para>The <code>GIR</code> format actually has a lot of information for generating bindings, but it's a different language than Bala. Therefore, it's almost impossible to directly map a whole .gir file into a Bala tree, hence the need of metadata. On the other side we might want to use directly .gir + .metadata instead of generating a .bapi, but .bapi is more humanly readable and faster to parse than the GIR, hence the need of bapigen for generating a .bapi. </para>
 
 <section>
 <title>Locating metadata</title>

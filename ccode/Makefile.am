@@ -78,14 +78,14 @@ libbalaccode_la_SOURCES = \
 	$(libbalaccode_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-ccode.vapi ccode.bala.stamp: $(libbalaccode_la_BALASOURCES)
+ccode.bapi ccode.bala.stamp: $(libbalaccode_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
-		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/bala --pkg bala \
+		--bapidir $(top_srcdir)/bapi --pkg gobject-2.0 \
+		--bapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/bala --pkg bala \
 		--pkg config \
 		--use-header \
 		-H balaccode.h \
@@ -99,10 +99,10 @@ libbalaccode_la_LIBADD = \
 	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(NULL)
 
-EXTRA_DIST = $(libbalaccode_la_BALASOURCES) ccode.vapi ccode.bala.stamp balaccode.h
+EXTRA_DIST = $(libbalaccode_la_BALASOURCES) ccode.bapi ccode.bala.stamp balaccode.h
 
 MAINTAINERCLEANFILES = \
-	ccode.vapi \
+	ccode.bapi \
 	balaccode.h \
 	$(libbalaccode_la_BALASOURCES:.bala=.c) \
 	$(NULL)

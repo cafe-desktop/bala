@@ -197,13 +197,13 @@ balainclude_HEADERS = \
 	bala.h \
 	$(NULL)
 
-bala.vapi bala.bala.stamp: $(libbala_la_BALASOURCES)
+bala.bapi bala.bala.stamp: $(libbala_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi --pkg gmodule-2.0 --pkg gobject-2.0 \
-		--vapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/bapi --pkg gmodule-2.0 --pkg gobject-2.0 \
+		--bapidir $(top_srcdir)/gee --pkg gee \
 		--pkg config \
 		--use-header \
 		-H bala.h \
@@ -222,16 +222,16 @@ libbala@PACKAGE_SUFFIX@_la_LIBADD = \
 	$(top_builddir)/gee/libgee.la \
 	$(NULL)
 
-vapidir = $(datadir)/bala/vapi
-dist_vapi_DATA = libbala@PACKAGE_SUFFIX@.vapi
+bapidir = $(datadir)/bala/bapi
+dist_bapi_DATA = libbala@PACKAGE_SUFFIX@.bapi
 
-libbala@PACKAGE_SUFFIX@.vapi: $(top_srcdir)/gee/gee.vapi $(top_srcdir)/bala/bala.vapi
+libbala@PACKAGE_SUFFIX@.bapi: $(top_srcdir)/gee/gee.bapi $(top_srcdir)/bala/bala.bapi
 	cat $^ > $@
 
-EXTRA_DIST = $(libbala_la_BALASOURCES) bala.vapi bala.bala.stamp bala.h balaversion.bala.in
+EXTRA_DIST = $(libbala_la_BALASOURCES) bala.bapi bala.bala.stamp bala.h balaversion.bala.in
 
 MAINTAINERCLEANFILES = \
-	bala.vapi \
+	bala.bapi \
 	bala.h \
 	$(libbala_la_BALASOURCES:.bala=.c) \
 	$(NULL)

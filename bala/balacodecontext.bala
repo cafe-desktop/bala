@@ -124,9 +124,9 @@ public class Bala.CodeContext {
 	public string directory { get; set; }
 
 	/**
-	 * List of directories where to find .vapi files.
+	 * List of directories where to find .bapi files.
 	 */
-	public string[] vapi_directories { get; set; default = {}; }
+	public string[] bapi_directories { get; set; default = {}; }
 
 	/**
 	 * List of directories where to find .gir files.
@@ -171,7 +171,7 @@ public class Bala.CodeContext {
 
 	public bool nostdpkg { get; set; }
 
-	public bool use_fast_vapi { get; set; }
+	public bool use_fast_bapi { get; set; }
 
 	/**
 	 * Continue as much as possible after an error.
@@ -179,9 +179,9 @@ public class Bala.CodeContext {
 	public bool keep_going { get; set; }
 
 	/**
-	 * Include comments in generated vapi.
+	 * Include comments in generated bapi.
 	 */
-	public bool vapi_comments { get; set; }
+	public bool bapi_comments { get; set; }
 
 	/**
 	 * Returns true if the target version of glib is greater than or
@@ -386,8 +386,8 @@ public class Bala.CodeContext {
 			return true;
 		}
 
-		// first try .vapi
-		var path = get_vapi_path (pkg);
+		// first try .bapi
+		var path = get_bapi_path (pkg);
 		if (path == null) {
 			// try with .gir
 			path = get_gir_path (pkg);
@@ -449,7 +449,7 @@ public class Bala.CodeContext {
 	}
 
 	/**
-	 * Add the specified source file to the context. Only .bala, .vapi, .gs,
+	 * Add the specified source file to the context. Only .bala, .bapi, .gs,
 	 * and .c extensions are supported.
 	 *
 	 * @param filename a filename
@@ -484,7 +484,7 @@ public class Bala.CodeContext {
 			if (rpath != filename) {
 				source_files_map.set (filename, source_file);
 			}
-		} else if (filename.has_suffix (".vapi") || filename.has_suffix (".gir")) {
+		} else if (filename.has_suffix (".bapi") || filename.has_suffix (".gir")) {
 			var source_file = new SourceFile (this, SourceFileType.PACKAGE, rpath, null, cmdline);
 			source_file.relative_filename = filename;
 
@@ -497,7 +497,7 @@ public class Bala.CodeContext {
 		} else if (filename.has_suffix (".h")) {
 			/* Ignore */
 		} else {
-			Report.error (null, "%s is not a supported source file type. Only .bala, .vapi, .gs, and .c files are supported.".printf (filename));
+			Report.error (null, "%s is not a supported source file type. Only .bala, .bapi, .gs, and .c files are supported.".printf (filename));
 			return false;
 		}
 
@@ -636,12 +636,12 @@ public class Bala.CodeContext {
 		target_glib_minor = glib_minor;
 	}
 
-	public string? get_vapi_path (string pkg) {
-		var path = get_file_path (pkg + ".vapi", "bala" + Config.PACKAGE_SUFFIX + "/vapi", "bala/vapi", vapi_directories);
+	public string? get_bapi_path (string pkg) {
+		var path = get_file_path (pkg + ".bapi", "bala" + Config.PACKAGE_SUFFIX + "/bapi", "bala/bapi", bapi_directories);
 
 		if (path == null) {
-			/* last chance: try the package compiled-in vapi dir */
-			var filename = Path.build_path ("/", Config.PACKAGE_DATADIR, "vapi", pkg + ".vapi");
+			/* last chance: try the package compiled-in bapi dir */
+			var filename = Path.build_path ("/", Config.PACKAGE_DATADIR, "bapi", pkg + ".bapi");
 			if (FileUtils.test (filename, FileTest.EXISTS)) {
 				path = filename;
 			}

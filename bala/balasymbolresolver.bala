@@ -382,7 +382,7 @@ public class Bala.SymbolResolver : CodeVisitor {
 	private DataType resolve_type (UnresolvedType unresolved_type) {
 		DataType type = null;
 
-		// still required for vapigen
+		// still required for bapigen
 		if (unresolved_type.unresolved_symbol.name == "void") {
 			return new VoidType ();
 		}

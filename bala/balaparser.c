@@ -497,7 +497,7 @@ bala_parser_new (void)
 }
 
 /**
- * Parses all .bala and .vapi source files in the specified code
+ * Parses all .bala and .bapi source files in the specified code
  * context and builds a code tree.
  *
  * @param context a code context
@@ -562,7 +562,7 @@ bala_parser_real_visit_source_file (BalaCodeVisitor* base,
 		const gchar* _tmp10_;
 		_tmp9_ = bala_source_file_get_filename (source_file);
 		_tmp10_ = _tmp9_;
-		_tmp0_ = g_str_has_suffix (_tmp10_, ".vapi");
+		_tmp0_ = g_str_has_suffix (_tmp10_, ".bapi");
 	}
 	if (_tmp0_) {
 		bala_parser_parse_file (self, source_file);

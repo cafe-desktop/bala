@@ -112,9 +112,9 @@ public class Baladoc.Settings : Object {
 	public string[] defines;
 
 	/**
-	 * List of directories where to find .vapi files.
+	 * List of directories where to find .bapi files.
 	 */
-	public string[] vapi_directories;
+	public string[] bapi_directories;
 
 	/**
 	 * A list of all packages

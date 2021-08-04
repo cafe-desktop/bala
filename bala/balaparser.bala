@@ -69,7 +69,7 @@ public class Bala.Parser : CodeVisitor {
 	}
 
 	/**
-	 * Parses all .bala and .vapi source files in the specified code
+	 * Parses all .bala and .bapi source files in the specified code
 	 * context and builds a code tree.
 	 *
 	 * @param context a code context
@@ -81,7 +81,7 @@ public class Bala.Parser : CodeVisitor {
 	}
 
 	public override void visit_source_file (SourceFile source_file) {
-		if ((context != null && context.run_output) || source_file.filename.has_suffix (".bala") || source_file.filename.has_suffix (".vapi")) {
+		if ((context != null && context.run_output) || source_file.filename.has_suffix (".bala") || source_file.filename.has_suffix (".bapi")) {
 			parse_file (source_file);
 		}
 	}

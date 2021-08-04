@@ -768,9 +768,9 @@ libdoclet.bala.stamp: $(libdoclet_la_BALASOURCES)
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/bala --pkg libbala@PACKAGE_SUFFIX@ \
-		--vapidir $(top_srcdir)/vapi \
-		--vapidir $(top_srcdir)/libbaladoc --pkg baladoc@PACKAGE_SUFFIX@ \
+		--bapidir $(top_srcdir)/bala --pkg libbala@PACKAGE_SUFFIX@ \
+		--bapidir $(top_srcdir)/bapi \
+		--bapidir $(top_srcdir)/libbaladoc --pkg baladoc@PACKAGE_SUFFIX@ \
 		$(filter %.bala %.c,$^)
 	touch $@
 

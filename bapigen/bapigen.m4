@@ -1,4 +1,4 @@
-dnl vapigen.m4
+dnl bapigen.m4
 dnl
 dnl Copyright 2012 Evan Nemerson
 dnl
@@ -18,7 +18,7 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  US
 
 # BAPIGEN_CHECK([VERSION], [API_VERSION], [FOUND_INTROSPECTION], [DEFAULT])
 # --------------------------------------
-# Check vapigen existence and version
+# Check bapigen existence and version
 #
 # See http://live.gnome.org/Bala/UpstreamGuide for detailed documentation
 AC_DEFUN([BAPIGEN_CHECK],
@@ -54,40 +54,40 @@ AC_DEFUN([BAPIGEN_CHECK],
       ])
 
   AS_IF([test "x$2" = "x"], [
-      vapigen_pkg_name=vapigen
+      bapigen_pkg_name=bapigen
     ], [
-      vapigen_pkg_name=vapigen-$2
+      bapigen_pkg_name=bapigen-$2
     ])
   AS_IF([test "x$1" = "x"], [
-      vapigen_pkg="$vapigen_pkg_name"
+      bapigen_pkg="$bapigen_pkg_name"
     ], [
-      vapigen_pkg="$vapigen_pkg_name >= $1"
+      bapigen_pkg="$bapigen_pkg_name >= $1"
     ])
 
   PKG_PROG_PKG_CONFIG
 
-  PKG_CHECK_EXISTS([$vapigen_pkg], [
+  PKG_CHECK_EXISTS([$bapigen_pkg], [
       AS_IF([test "$enable_bala" = "auto"], [
           enable_bala=yes
         ])
     ], [
       AS_CASE([$enable_bala], [yes], [
-          AC_MSG_ERROR([$vapigen_pkg not found])
+          AC_MSG_ERROR([$bapigen_pkg not found])
         ], [auto], [
           enable_bala=no
         ])
     ])
 
-  AC_MSG_CHECKING([for vapigen])
+  AC_MSG_CHECKING([for bapigen])
 
   AS_CASE([$enable_bala],
     [yes], [
-      BAPIGEN=`$PKG_CONFIG --variable=vapigen $vapigen_pkg_name`
-      BAPIGEN_MAKEFILE=`$PKG_CONFIG --variable=datadir $vapigen_pkg_name`/bala/Makefile.vapigen
+      BAPIGEN=`$PKG_CONFIG --variable=bapigen $bapigen_pkg_name`
+      BAPIGEN_MAKEFILE=`$PKG_CONFIG --variable=datadir $bapigen_pkg_name`/bala/Makefile.bapigen
       AS_IF([test "x$2" = "x"], [
-          BAPIGEN_BAPIDIR=`$PKG_CONFIG --variable=vapidir $vapigen_pkg_name`
+          BAPIGEN_BAPIDIR=`$PKG_CONFIG --variable=bapidir $bapigen_pkg_name`
         ], [
-          BAPIGEN_BAPIDIR=`$PKG_CONFIG --variable=vapidir_versioned $vapigen_pkg_name`
+          BAPIGEN_BAPIDIR=`$PKG_CONFIG --variable=bapidir_versioned $bapigen_pkg_name`
         ])
     ])
 

@@ -3,7 +3,7 @@ NULL =
 check-gtktemplate: $(top_builddir)/compiler/balac
 	G_DEBUG=fatal-warnings $(top_builddir)/compiler/balac \
 		-C \
-		--vapidir $(top_srcdir)/vapi \
+		--bapidir $(top_srcdir)/bapi \
 		--pkg gtk+-3.0 \
 		--gresources $(srcdir)/gtktemplate.gresource.xml \
 		$(srcdir)/gtktemplate.bala; \

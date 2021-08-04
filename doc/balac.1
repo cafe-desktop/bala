@@ -24,7 +24,7 @@ balac [OPTION?] FILE... \- Bala Compiler
 Show help options
 .SS "Application Options:"
 .TP
-\fB\-\-vapidir\fR=\fI\,DIRECTORY\/\fR...
+\fB\-\-bapidir\fR=\fI\,DIRECTORY\/\fR...
 Look for package bindings in DIRECTORY
 .TP
 \fB\-\-girdir\fR=\fI\,DIRECTORY\/\fR...
@@ -36,7 +36,7 @@ Look for GIR .metadata files in DIRECTORY
 \fB\-\-pkg\fR=\fI\,PACKAGE\/\fR...
 Include binding for PACKAGE
 .TP
-\fB\-\-vapi\fR=\fI\,FILE\/\fR
+\fB\-\-bapi\fR=\fI\,FILE\/\fR
 Output BAPI file name
 .TP
 \fB\-\-library\fR=\fI\,NAME\/\fR
@@ -75,17 +75,17 @@ Directory used to include the C header file
 \fB\-h\fR, \fB\-\-internal\-header\fR=\fI\,FILE\/\fR
 Output internal C header file
 .TP
-\fB\-\-internal\-vapi\fR=\fI\,FILE\/\fR
-Output vapi with internal api
+\fB\-\-internal\-bapi\fR=\fI\,FILE\/\fR
+Output bapi with internal api
 .TP
-\fB\-\-fast\-vapi\fR
-Output vapi without performing symbol resolution
+\fB\-\-fast\-bapi\fR
+Output bapi without performing symbol resolution
 .TP
-\fB\-\-use\-fast\-vapi\fR
-Use \fB\-\-fast\-vapi\fR output during this compile
+\fB\-\-use\-fast\-bapi\fR
+Use \fB\-\-fast\-bapi\fR output during this compile
 .TP
-\fB\-\-vapi\-comments\fR
-Include comments in generated vapi
+\fB\-\-bapi\-comments\fR
+Include comments in generated bapi
 .TP
 \fB\-\-deps\fR
 Write make\-style dependency information to this file

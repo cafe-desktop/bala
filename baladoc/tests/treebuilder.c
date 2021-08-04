@@ -1340,7 +1340,7 @@ baladoc_tree_builder_add_package (BaladocTreeBuilder* self,
                                   BalaCodeContext* context,
                                   const gchar* pkg)
 {
-	gchar* vapi_name = NULL;
+	gchar* bapi_name = NULL;
 	gchar* _tmp0_;
 	gchar* gir_name = NULL;
 	gchar* _tmp1_;
@@ -1379,8 +1379,8 @@ baladoc_tree_builder_add_package (BaladocTreeBuilder* self,
 		result = TRUE;
 		return result;
 	}
-	_tmp0_ = g_strconcat (pkg, ".vapi", NULL);
-	vapi_name = _tmp0_;
+	_tmp0_ = g_strconcat (pkg, ".bapi", NULL);
+	bapi_name = _tmp0_;
 	_tmp1_ = g_strconcat (pkg, ".gir", NULL);
 	gir_name = _tmp1_;
 	_tmp2_ = self->priv->settings;
@@ -1409,7 +1409,7 @@ baladoc_tree_builder_add_package (BaladocTreeBuilder* self,
 				_tmp6_ = g_path_get_basename (_tmp5_);
 				basename = _tmp6_;
 				_tmp8_ = basename;
-				_tmp9_ = vapi_name;
+				_tmp9_ = bapi_name;
 				if (g_strcmp0 (_tmp8_, _tmp9_) == 0) {
 					_tmp7_ = TRUE;
 				} else {
@@ -1424,7 +1424,7 @@ baladoc_tree_builder_add_package (BaladocTreeBuilder* self,
 					_g_free0 (basename);
 					_g_free0 (source_file);
 					_g_free0 (gir_name);
-					_g_free0 (vapi_name);
+					_g_free0 (bapi_name);
 					return result;
 				}
 				_g_free0 (basename);
@@ -1432,7 +1432,7 @@ baladoc_tree_builder_add_package (BaladocTreeBuilder* self,
 			}
 		}
 	}
-	_tmp13_ = bala_code_context_get_vapi_path (context, pkg);
+	_tmp13_ = bala_code_context_get_bapi_path (context, pkg);
 	_tmp12_ = _tmp13_;
 	if (_tmp12_ == NULL) {
 		gchar* _tmp14_;
@@ -1456,7 +1456,7 @@ baladoc_tree_builder_add_package (BaladocTreeBuilder* self,
 		_g_free0 (package_path);
 		_g_free0 (_tmp12_);
 		_g_free0 (gir_name);
-		_g_free0 (vapi_name);
+		_g_free0 (bapi_name);
 		return result;
 	}
 	bala_code_context_add_package (context, pkg);
@@ -1492,7 +1492,7 @@ baladoc_tree_builder_add_package (BaladocTreeBuilder* self,
 	_g_free0 (package_path);
 	_g_free0 (_tmp12_);
 	_g_free0 (gir_name);
-	_g_free0 (vapi_name);
+	_g_free0 (bapi_name);
 	return result;
 }
 
@@ -1661,7 +1661,7 @@ baladoc_tree_builder_add_depencies (BaladocTreeBuilder* self,
 }
 
 /**
- * Add the specified source file to the context. Only .bala, .vapi, .gs,
+ * Add the specified source file to the context. Only .bala, .bapi, .gs,
  * and .c files are supported.
  */
 static void
@@ -1809,7 +1809,7 @@ baladoc_tree_builder_add_documented_files (BaladocTreeBuilder* self,
 						gboolean _tmp42_ = FALSE;
 						const gchar* _tmp43_;
 						_tmp43_ = source;
-						if (g_str_has_suffix (_tmp43_, ".vapi")) {
+						if (g_str_has_suffix (_tmp43_, ".bapi")) {
 							_tmp42_ = TRUE;
 						} else {
 							const gchar* _tmp44_;
@@ -1899,7 +1899,7 @@ baladoc_tree_builder_add_documented_files (BaladocTreeBuilder* self,
 								gchar* _tmp74_;
 								gchar* _tmp75_;
 								_tmp73_ = source;
-								_tmp74_ = g_strdup_printf ("%s is not a supported source file type. Only .bala, .vapi, .gs, and .c" \
+								_tmp74_ = g_strdup_printf ("%s is not a supported source file type. Only .bala, .bapi, .gs, and .c" \
 " files are supported.", _tmp73_);
 								_tmp75_ = _tmp74_;
 								bala_report_error (NULL, _tmp75_);
@@ -1979,9 +1979,9 @@ baladoc_tree_builder_create_balac_tree (BaladocTreeBuilder* self,
 		_tmp0_ = settings->experimental_non_null;
 	}
 	bala_code_context_set_experimental_non_null (context, _tmp0_);
-	_tmp1_ = settings->vapi_directories;
-	_tmp1__length1 = settings->vapi_directories_length1;
-	bala_code_context_set_vapi_directories (context, _tmp1_, _tmp1__length1);
+	_tmp1_ = settings->bapi_directories;
+	_tmp1__length1 = settings->bapi_directories_length1;
+	bala_code_context_set_bapi_directories (context, _tmp1_, _tmp1__length1);
 	_tmp2_ = bala_code_context_get_report (context);
 	_tmp3_ = _tmp2_;
 	bala_report_set_enable_warnings (_tmp3_, settings->verbose);

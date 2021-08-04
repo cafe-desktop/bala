@@ -121,13 +121,13 @@ AC_DEFUN([BALA_CHECK_MODULES],
 # BALA_PROG_BAPIGEN([MINIMUM-VERSION])
 # ------------------------------------
 AC_DEFUN([BALA_PROG_BAPIGEN],
-[AC_PATH_PROG([BAPIGEN], [vapigen], [])
+[AC_PATH_PROG([BAPIGEN], [bapigen], [])
   AS_IF([test -z "$BAPIGEN"],
-    [AC_MSG_WARN([No Bala API Generator found. You will not be able to generate .vapi files.])],
+    [AC_MSG_WARN([No Bala API Generator found. You will not be able to generate .bapi files.])],
     [AS_IF([test -n "$1"],
         [AC_MSG_CHECKING([$BAPIGEN is at least version $1])
-         am__vapigen_version=`$BAPIGEN --version | sed 's/Bala API Generator  *//'`
-         AS_VERSION_COMPARE([$1], ["$am__vapigen_version"],
+         am__bapigen_version=`$BAPIGEN --version | sed 's/Bala API Generator  *//'`
+         AS_VERSION_COMPARE([$1], ["$am__bapigen_version"],
            [AC_MSG_RESULT([yes])],
            [AC_MSG_RESULT([yes])],
            [AC_MSG_RESULT([no])

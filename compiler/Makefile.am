@@ -33,11 +33,11 @@ balac.bala.stamp: $(balac_BALASOURCES)
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
-		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/ccode --pkg ccode \
-		--vapidir $(top_srcdir)/bala --pkg bala \
-		--vapidir $(top_srcdir)/codegen --pkg codegen \
+		--bapidir $(top_srcdir)/bapi --pkg gobject-2.0 \
+		--bapidir $(top_srcdir)/gee --pkg gee \
+		--bapidir $(top_srcdir)/ccode --pkg ccode \
+		--bapidir $(top_srcdir)/bala --pkg bala \
+		--bapidir $(top_srcdir)/codegen --pkg codegen \
 		--pkg config \
 		$^
 	@touch $@

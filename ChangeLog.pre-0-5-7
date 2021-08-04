@@ -8,42 +8,42 @@
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/Makefile.am:
-	* vapi/fuse.deps:
-	* vapi/fuse.vapi:
-	* vapi/posix.vapi:
+	* bapi/Makefile.am:
+	* bapi/fuse.deps:
+	* bapi/fuse.bapi:
+	* bapi/posix.bapi:
 
 	Add FUSE bindings, patch by John Carr, fixes bug 571187
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add g_io_add_watch_full binding, patch by Michael Lauer
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Complete GByteArray binding, patch by Michael Lauer
 
 2009-02-20  Ryan Lortie  <desrt@desrt.ca>
 
-	* vapi/gio-2.0.vapi
-	* vapi/gio-unix-2.0.vapi
-	* vapi/packages/gio-2.0/gio-2.0.gi
-	* vapi/packages/gio-unix-2.0/gio-unix-2.0.gi
+	* bapi/gio-2.0.bapi
+	* bapi/gio-unix-2.0.bapi
+	* bapi/packages/gio-2.0/gio-2.0.gi
+	* bapi/packages/gio-unix-2.0/gio-unix-2.0.gi
 
 	Generate gio GIDL on a machine with my gresolver glib branch
-	installed. Regenerate vapi. Fixes bug 572474.
+	installed. Regenerate bapi. Fixes bug 572474.
 
 2009-02-20  Ryan Lortie  <desrt@desrt.ca>
 
 	* configure.ac:
 	* bala-1.0.pc.in:
 
-	Output 'vapigen' 'gen_introspect' and 'bala_gen_introspect' variables
-	into the bala-1.0.pc file if --enable-vapigen, fixes bug 572554
+	Output 'bapigen' 'gen_introspect' and 'bala_gen_introspect' variables
+	into the bala-1.0.pc file if --enable-bapigen, fixes bug 572554
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
@@ -78,69 +78,69 @@
 	* bala/balaparser.bala:
 	* gobject/balaccodebasemodule.bala:
 	* compiler/balacompiler.bala:
-	* vapigen/balavapigen.bala:
+	* bapigen/balabapigen.bala:
 
 	Adapt to interface changes
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/Makefile.am:
-	* vapi/libdaemon.vapi:
+	* bapi/Makefile.am:
+	* bapi/libdaemon.bapi:
 
 	Add libdaemon bindings, patch by Jukka-Pekka Iivonen,
 	fixes bug 568758
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add GDateDMY binding, patch by Frederik, fixes bug 568691
 
 2009-02-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gdk-2.0/:
+	* bapi/packages/gdk-2.0/:
 
 	Fix gdk_event_handler_set binding
 
-	* vapi/gdk-2.0.vapi: regenerated
+	* bapi/gdk-2.0.bapi: regenerated
 
 2009-02-19  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10-custom.bala:
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10-custom.bala:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Various ownership and missing type parameters fixes
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2009-02-19  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Support to_string attribute for enums
 
 2009-02-19  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapi/packages/gstreamer-rtp-0.10/:
+	* bapi/packages/gstreamer-rtp-0.10/:
 
 	Fix gst_rtp_buffer_get_extension_data binding
 
-	* vapi/gstreamer-rtp-0.10.vapi: regenerated
+	* bapi/gstreamer-rtp-0.10.bapi: regenerated
 
 2009-02-19  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add byte order conversion methods to int types
 
 2009-02-19  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/pango/:
+	* bapi/packages/pango/:
 
 	Fix pango_font_description_from_string binding and support implicit
 	copies of PangoFontDescription
 
-	* vapi/pango.vapi: regenerated
+	* bapi/pango.bapi: regenerated
 
 2009-02-18  Jürg Billeter  <j@bitron.ch>
 
@@ -161,11 +161,11 @@
 
 2009-02-18  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_tree_view_insert_column_with_data_func binding
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-02-17  Jürg Billeter  <j@bitron.ch>
 
@@ -176,13 +176,13 @@
 
 2009-02-17  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Support takes_ownership attribute for delegate parameters
 
 2009-02-17  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapi/gstreamer-rtp-0.10.vapi: regenerated
+	* bapi/gstreamer-rtp-0.10.bapi: regenerated
 
 2009-02-16  Ali Sabil  <ali.sabil@gmail.com>
 
@@ -194,18 +194,18 @@
 	* gobject/balaccodebasemodule.bala:
 	* bala/balacodewriter.bala:
 	* bala/balastruct.bala:
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Add support for a 'use_const' CCode attribute and GIDL XML attribute
 	that, when set to false, causes Bala not to emit the 'const' modifier
 	on structure type input arguments.  This is useful for structure types
 	that, by convention, are not used with const (eg: GtkTreeIter).
 
-	* vapi/packages/gtk+-2.0/gtk+-2.0.metadata:
-	* vapi/gtk+-2.0.vapi:
+	* bapi/packages/gtk+-2.0/gtk+-2.0.metadata:
+	* bapi/gtk+-2.0.bapi:
 
 	Add 'use_const' for GtkTreeIter to the gtk+-2.0 metadata.  Regenerate
-	vapi.
+	bapi.
 
 2009-02-16  Ryan Lortie  <desrt@desrt.ca>
 
@@ -226,15 +226,15 @@
 
 2009-02-14  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gdk-2.0/:
-	* vapi/packages/gtk+-2.0/:
-	* vapi/packages/libsoup-2.4/:
+	* bapi/packages/gdk-2.0/:
+	* bapi/packages/gtk+-2.0/:
+	* bapi/packages/libsoup-2.4/:
 
 	Nullable fixes, patch by Mark Lee, fixes bug 571407
 
-	* vapi/gdk-2.0.vapi:
-	* vapi/gtk+-2.0.vapi:
-	* vapi/libsoup-2.4.vapi:
+	* bapi/gdk-2.0.bapi:
+	* bapi/gtk+-2.0.bapi:
+	* bapi/libsoup-2.4.bapi:
 
 	Regenerated
 
@@ -367,7 +367,7 @@
 	* bala/balaenum.bala:
 	* bala/balainterface.bala:
 	* bala/balastruct.bala:
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Recognize c:type attributes in .gir
 
@@ -386,7 +386,7 @@
 	Use this instead of hardcoding g_object_ref_sink() for
 	GInitiallyUnowned.
 
-	* vapi/gobject-2.0.vapi:
+	* bapi/gobject-2.0.bapi:
 
 	Set ref_sink_function on InitiallyUnowned class.
 
@@ -404,7 +404,7 @@
 
 2009-02-04  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/posix.vapi:
+	* bapi/posix.bapi:
 
 	Add bindings for signal functions and constants,
 	patch by Michael Lauer
@@ -429,7 +429,7 @@
 
 2009-02-04  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add GTestCase and GTestSuite bindings, patch by John Carr,
 	fixes bug 570518
@@ -440,9 +440,9 @@
 
 	Write type_id attribute for GBoxed compact classes
 
-	* vapi/gdk-2.0.vapi:
-	* vapi/gtk+-2.0.vapi:
-	* vapi/pango.vapi:
+	* bapi/gdk-2.0.bapi:
+	* bapi/gtk+-2.0.bapi:
+	* bapi/pango.bapi:
 
 	Regenerated
 
@@ -456,7 +456,7 @@
 
 	* bala/balaproperty.bala:
 
-	Support overriding members in .vapi files
+	Support overriding members in .bapi files
 
 2009-01-31  Jürg Billeter  <j@bitron.ch>
 
@@ -524,13 +524,13 @@
 
 2009-01-30  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/posix.vapi:
+	* bapi/posix.bapi:
 
 	Add more bindings, patch by Matías De la Puente
 
 2009-01-29  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Support transfer_ownership attribute for signal parameters
 
@@ -550,7 +550,7 @@
 
 2009-01-27  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/posix.vapi:
+	* bapi/posix.bapi:
 
 	Add bindings for open and associated functions and constants,
 	patch by Michael Lauer
@@ -560,7 +560,7 @@
 	* bala/balacodewriter.bala:
 	* bala/balamethod.bala:
 
-	Add overriding members to .vapi files, fixes bug 569219
+	Add overriding members to .bapi files, fixes bug 569219
 
 2009-01-27  Jürg Billeter  <j@bitron.ch>
 
@@ -571,15 +571,15 @@
 
 2009-01-27  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gdk-pixbuf-2.0/gdk-pixbuf-2.0.metadata:
+	* bapi/packages/gdk-pixbuf-2.0/gdk-pixbuf-2.0.metadata:
 
 	Fix binding for gdk_pixbuf_scale_simple
 
-	* vapi/gdk-pixbuf-2.0.vapi: regenerated
+	* bapi/gdk-pixbuf-2.0.bapi: regenerated
 
 2009-01-26  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/posix.vapi:
+	* bapi/posix.bapi:
 
 	Add bindings for ioctl and associated constants
 
@@ -625,7 +625,7 @@
 
 2009-01-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Support struct methods
 
@@ -637,7 +637,7 @@
 
 2009-01-19  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gsl.vapi:
+	* bapi/gsl.bapi:
 
 	More fixes, patch by Matías De la Puente
 
@@ -656,11 +656,11 @@
 
 2009-01-18  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Fix binding for gst_pad_chain
 
-	* vapi/gstreamer-0.10.vapi: Regenerated
+	* bapi/gstreamer-0.10.bapi: Regenerated
 
 2009-01-18  Jürg Billeter  <j@bitron.ch>
 
@@ -681,15 +681,15 @@
 2009-01-18  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/balaccodememberaccessmodule.bala:
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add Log.FILE, Log.LINE, and Log.METHOD constants as replacements
 	for __FILE__ and __LINE__ as they are used in C
 
 2009-01-18  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/Makefile.am:
-	* vapi/posix.vapi:
+	* bapi/Makefile.am:
+	* bapi/posix.bapi:
 
 	Add stub POSIX binding
 
@@ -701,7 +701,7 @@
 
 2009-01-18  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix sincos binding, patch by Jukka-Pekka Iivonen, fixes bug 568038
 
@@ -735,43 +735,43 @@
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/Makefile.am:
-	* vapi/lua.vapi:
+	* bapi/Makefile.am:
+	* bapi/lua.bapi:
 
 	Add Lua binding, patch by pancake and Phil Housley,
 	fixes bug 540820
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gsl.vapi:
+	* bapi/gsl.bapi:
 
 	Fix delegate bindings, patch by Matías De la Puente
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Parse callback parameter annotations
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balamarkupreader.bala:
+	* bapigen/balamarkupreader.bala:
 
 	Fix infinite loop when reading entity references
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balamarkupreader.bala:
+	* bapigen/balamarkupreader.bala:
 
 	Read comments
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_widget_create_pango_* bindings
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-01-17  Jürg Billeter  <j@bitron.ch>
 
@@ -794,11 +794,11 @@
 
 2009-01-17  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10-custom.bala:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10-custom.bala:
 
 	Add missing bindings for GstValue. fixes bug 530812
 
-	* vapi/gstreamer-0.10.vapi: Regenerated
+	* bapi/gstreamer-0.10.bapi: Regenerated
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
@@ -841,33 +841,33 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gconf-2.0/:
+	* bapi/packages/gconf-2.0/:
 
 	Remove gconf_init binding, it is broken and deprecated,
 	fixes bug 548435
 
-	* vapi/gconf-2.0.vapi: regenerated
+	* bapi/gconf-2.0.bapi: regenerated
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
 	* bala/balacodewriter.bala:
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Support vfunc_name attribute
 
-	* vapi/packages/gio-2.0/:
+	* bapi/packages/gio-2.0/:
 
 	Fix g_seekable_truncate binding, fixes bug 564448
 
-	* vapi/gio-2.0.vapi: regenerated
+	* bapi/gio-2.0.bapi: regenerated
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix GtkTreePath binding, fixes bug 566274
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
@@ -878,19 +878,19 @@
 	* bala/balasemanticanalyzer.bala:
 	* bala/balastruct.bala:
 	* bala/balasymbolresolver.bala:
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Do not allow structs to have more than one base type and detect
 	cycles, patch by Andreas Brauchli, fixes bug 556063 and bug 567661
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_text_iter_forward_find_char binding,
 	patch by Nicolas Joseph, fixes bug 567543
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
@@ -906,8 +906,8 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/Makefile.am:
-	* vapi/mysql.vapi:
+	* bapi/Makefile.am:
+	* bapi/mysql.bapi:
 
 	Add MySQL bindings, patch by Jukka-Pekka Iivonen, fixes bug 567342
 
@@ -920,7 +920,7 @@
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix g_datalist*_get bindings, patch by Yu Feng, fixes bug 567324
 
@@ -938,12 +938,12 @@
 
 	Support void ref functions
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Detect void ref functions, patch by Andreas Brauchli,
 	fixes bug 549061
 
-	* vapi/gconf-2.0.vapi: regenerated
+	* bapi/gconf-2.0.bapi: regenerated
 
 2009-01-16  Jürg Billeter  <j@bitron.ch>
 
@@ -1001,15 +1001,15 @@
 
 2009-01-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Fix accessor detection for properties
 
-	* vapi/: regenerated
+	* bapi/: regenerated
 
 2009-01-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/sdl-mixer.vapi:
+	* bapi/sdl-mixer.bapi:
 
 	Fix syntax error, patch by Frederik
 
@@ -1039,11 +1039,11 @@
 
 	Improve output for owned property getters
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Getters of properties without accessor have to return owned value
 
-	* vapi/: regenerated
+	* bapi/: regenerated
 
 2009-01-14  Jürg Billeter  <j@bitron.ch>
 
@@ -1076,27 +1076,27 @@
 
 2009-01-13  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Fix binding of gst_caps_from_string
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2009-01-12  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/gdk-pixbuf-2.0.vapi: regenerated
+	* bapi/gdk-pixbuf-2.0.bapi: regenerated
 
 2009-01-11  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Ownership fixes  in gst_bin_* bindings, patch by Sebastian Pölsterl
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2009-01-11  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix GMarkupParser binding, patch by Ali Sabil
 
@@ -1109,12 +1109,12 @@
 
 2009-01-11  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Fix GstMessage ownership in gst_bus_* bindings,
 	patch by Sebastian Pölsterl
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2009-01-11  Jürg Billeter  <j@bitron.ch>
 
@@ -1142,15 +1142,15 @@
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
 	* bala/balacodewriter.bala:
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Support methods returning null-terminated arrays
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_selection_data_get_uris binding
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-01-10  Jürg Billeter  <j@bitron.ch>
 
@@ -1162,8 +1162,8 @@
 	* bala/balasemanticanalyzer.bala:
 	* gobject/balaccodebasemodule.bala:
 	* gobject/balaccodememberaccessmodule.bala:
-	* vapigen/balagidlparser.bala:
-	* vapigen/balagirparser.bala:
+	* bapigen/balagidlparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Replace `#' in property declarations by `owned' modifier
 	before `get'
@@ -1266,42 +1266,42 @@
 
 	Add CodeNode.get_type_name method
 
-	* vapi/gobject-2.0.vapi:
+	* bapi/gobject-2.0.bapi:
 
 	Add G_TYPE_FROM_INSTANCE binding
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-netbuffer-0.10/:
+	* bapi/packages/gstreamer-netbuffer-0.10/:
 
 	Fix GstNetAddress binding, fixes bug 564924
 
-	* vapi/gstreamer-netbuffer-0.10.vapi: regenerated
+	* bapi/gstreamer-netbuffer-0.10.bapi: regenerated
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-base-0.10/:
+	* bapi/packages/gstreamer-base-0.10/:
 
 	Fix gst_base_transform_get_unit_size bindings, fixes bug 565978
 
-	* vapi/gstreamer-base-0.10.vapi: regenerated
+	* bapi/gstreamer-base-0.10.bapi: regenerated
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Fix gst_uri_handler_get_protocols* bindings, fixes bug 566375
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Fix gst_object_get_name, gst_object_get_name_prefix, and
 	gst_object_get_path_string bindings, fixes bug 566353
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
@@ -1388,17 +1388,17 @@
 
 2009-01-09  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gsl.vapi:
+	* bapi/gsl.bapi:
 
 	Fix gsl_error_set_error_handler binding
 
 2009-01-08  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_selection_data_set_uris binding, fixes bug 566742
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-01-08  Jürg Billeter  <j@bitron.ch>
 
@@ -1435,22 +1435,22 @@
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/taglib_c.vapi:
+	* bapi/taglib_c.bapi:
 
 	Fix TagLib_AudioProperties binding, patch by Andreas Brauchli,
 	fixes bug 566919
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix GtkStockItem binding
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-01-07  Étienne BERSAC  <bersace03@laposte.net>
 
-	* vapi/gtk+-2.0.vapi:
+	* bapi/gtk+-2.0.bapi:
 
 	Use struct instead of compact class for GtkStockItem.
 
@@ -1471,13 +1471,13 @@
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/taglib_c.vapi:
+	* bapi/taglib_c.bapi:
 
 	Update to taglib_c 1.5, patch by Andreas Brauchli, fixes bug 566919
 
 2009-01-07  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gobject-2.0.vapi:
+	* bapi/gobject-2.0.bapi:
 
 	Fix g_object_class_find_property binding,
 	patch by Zeeshan Ali Khattak, fixes bug 566889
@@ -1522,25 +1522,25 @@
 
 2009-01-05  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Do not accidentally generate stacked arrays
 
-	* vapi/packages/gdk-2.0/:
+	* bapi/packages/gdk-2.0/:
 
 	Fix gdk_keymap_get_entries_for_keyval, gdk_threads_add_idle, and
 	gdk_window_remove_filter bindings, patch by Mark Lee,
 	fixes bug 566679
 
-	* vapi/gdk-2.0.vapi: regenerated
+	* bapi/gdk-2.0.bapi: regenerated
 
 2009-01-05  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix GtkWidget::style_set and gtk_rc_get_style_by_paths bindings
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
@@ -1550,11 +1550,11 @@
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_init_with_args binding, fixes bug 547135
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
@@ -1573,31 +1573,31 @@
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/curses.vapi:
-	* vapi/enchant.vapi:
-	* vapi/gnome-keyring-1.vapi:
-	* vapi/gobject-2.0.vapi:
-	* vapi/goocanvas.vapi:
-	* vapi/gsl.vapi:
-	* vapi/hildon-1.vapi:
-	* vapi/libftdi.vapi:
-	* vapi/libpanelapplet-2.0.vapi:
-	* vapi/libusb.vapi:
-	* vapi/libxml-2.0.vapi:
-	* vapi/packages/unique-1.0/:
-	* vapi/sdl-gfx.vapi:
-	* vapi/sdl-mixer.vapi:
-	* vapi/sdl-net.vapi:
-	* vapi/sdl-ttf.vapi:
-	* vapi/sqlite3.vapi:
-	* vapi/tiff.vapi:
-	* vapi/unique-1.0.vapi:
+	* bapi/curses.bapi:
+	* bapi/enchant.bapi:
+	* bapi/gnome-keyring-1.bapi:
+	* bapi/gobject-2.0.bapi:
+	* bapi/goocanvas.bapi:
+	* bapi/gsl.bapi:
+	* bapi/hildon-1.bapi:
+	* bapi/libftdi.bapi:
+	* bapi/libpanelapplet-2.0.bapi:
+	* bapi/libusb.bapi:
+	* bapi/libxml-2.0.bapi:
+	* bapi/packages/unique-1.0/:
+	* bapi/sdl-gfx.bapi:
+	* bapi/sdl-mixer.bapi:
+	* bapi/sdl-net.bapi:
+	* bapi/sdl-ttf.bapi:
+	* bapi/sqlite3.bapi:
+	* bapi/tiff.bapi:
+	* bapi/unique-1.0.bapi:
 
 	Array length attribute fixes
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Fix array length handling for get_attributes method
 
@@ -1619,18 +1619,18 @@
 	* bala/balacodecontext.bala:
 	* gobject/balaccodecompiler.bala:
 	* compiler/balacompiler.bala:
-	* vapi/glib-2.0.vapi:
-	* vapigen/balavapigen.bala:
+	* bapi/glib-2.0.bapi:
+	* bapigen/balabapigen.bala:
 
 	Use array_null_termianted attribute where appropriate
 
 2009-01-04  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/vte/vte.metadata:
+	* bapi/packages/vte/vte.metadata:
 
 	Fix fork_command binding
 
-	* vapi/vte.vapi: Regenerated
+	* bapi/vte.bapi: Regenerated
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
@@ -1644,28 +1644,28 @@
 	Support [CCode (array_null_terminated = true)] attribute to fix
 	length handling of null terminated arrays, fixes bug 514186
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix g_strsplit binding
 
 2009-01-04  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/cairo.vapi:
-	* vapi/packages/gdk-2.0/:
-	* vapi/packages/gdk-pixbuf-2.0/:
-	* vapi/packages/gstreamer-netbuffer-0.10/:
-	* vapi/packages/gtk+-2.0/:
+	* bapi/cairo.bapi:
+	* bapi/packages/gdk-2.0/:
+	* bapi/packages/gdk-pixbuf-2.0/:
+	* bapi/packages/gstreamer-netbuffer-0.10/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix parameters without array length
 
-	* vapi/gdk-2.0.vapi:
-	* vapi/gdk-pixbuf-2.0.vapi:
-	* vapi/gio-2.0.vapi:
-	* vapi/gstreamer-0.10.vapi:
-	* vapi/gstreamer-audio-0.10.vapi:
-	* vapi/gstreamer-net-0.10.vapi:
-	* vapi/gstreamer-netbuffer-0.10.vapi:
-	* vapi/gtk+-2.0.vapi:
+	* bapi/gdk-2.0.bapi:
+	* bapi/gdk-pixbuf-2.0.bapi:
+	* bapi/gio-2.0.bapi:
+	* bapi/gstreamer-0.10.bapi:
+	* bapi/gstreamer-audio-0.10.bapi:
+	* bapi/gstreamer-net-0.10.bapi:
+	* bapi/gstreamer-netbuffer-0.10.bapi:
+	* bapi/gtk+-2.0.bapi:
 
 	Regenerated
 
@@ -1682,9 +1682,9 @@
 
 	* gobject/balaccodecompiler.bala:
 	* compiler/balacompiler.bala:
-	* vapi/glib-2.0.vapi:
-	* vapigen/balagidlparser.bala:
-	* vapigen/balavapigen.bala:
+	* bapi/glib-2.0.bapi:
+	* bapigen/balagidlparser.bala:
+	* bapigen/balabapigen.bala:
 
 	Adapt to attribute changes
 
@@ -1708,21 +1708,21 @@
 
 2009-01-03  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-netbuffer-0.10/:
+	* bapi/packages/gstreamer-netbuffer-0.10/:
 
 	Fix gst_netaddress_*_ip6_address bindings, patch by Andrew Feren,
 	fixes bug 566068
 
-	* vapi/gstreamer-netbuffer-0.10.vapi: regenerated
+	* bapi/gstreamer-netbuffer-0.10.bapi: regenerated
 
 2009-01-03  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gio-2.0/:
+	* bapi/packages/gio-2.0/:
 
 	Fix g_file_load_contents bindings, patch by Zeeshan Ali Khattak,
 	fixes bug 565779
 
-	* vapi/gio-2.0.vapi: regenerated
+	* bapi/gio-2.0.bapi: regenerated
 
 2009-01-03  Jürg Billeter  <j@bitron.ch>
 
@@ -1734,12 +1734,12 @@
 
 2009-01-03  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Fix gst_parse_* bindings, patch by Zeeshan Ali Khattak,
 	fixes bug 539817
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2009-01-03  Jürg Billeter  <j@bitron.ch>
 
@@ -1782,39 +1782,39 @@
 	* bala/balavaluetype.bala:
 	* gobject/balaccodebasemodule.bala:
 	* gobject/balaccodemethodmodule.bala:
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add BooleanType, EnumValueType, FloatingType, and StructValueType
 	as ValueType subclasses
 
 2009-01-02  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gdk-2.0/gdk-2.0.metadata:
+	* bapi/packages/gdk-2.0/gdk-2.0.metadata:
 
 	Bind GdkXEvent as compact class, it is an opaque pointer
 
-	* vapi/gdk-2.0.vapi: regenerated
+	* bapi/gdk-2.0.bapi: regenerated
 
 2009-01-02  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Drop gconstpointer binding
 
 2009-01-01  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Do not use g_warn_if_fail to not require glib 2.16
 
 2009-01-01  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_{list,tree}_store_newv bindings,
 	based on patch by Michael Lawrence, fixes bug 565462
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2009-01-01  Jürg Billeter  <j@bitron.ch>
 
@@ -1833,19 +1833,19 @@
 
 2008-12-30  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gnome-vfs-2.0/:
+	* bapi/packages/gnome-vfs-2.0/:
 
 	Fix gnome_vfs_*xfer* bindings, patch by Michael Terry,
 	fixes bug 565412
 
-	* vapi/gnome-vfs-2.0.vapi: regenerated
+	* bapi/gnome-vfs-2.0.bapi: regenerated
 
 2008-12-30  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/sdl-mixer.vapi:
-	* vapi/sdl-net.vapi:
-	* vapi/sdl-ttf.vapi:
-	* vapi/sdl.vapi:
+	* bapi/sdl-mixer.bapi:
+	* bapi/sdl-net.bapi:
+	* bapi/sdl-ttf.bapi:
+	* bapi/sdl.bapi:
 
 	Various enum and struct fixes, patch by Levi Bard, fixes bug 565359
 
@@ -1857,18 +1857,18 @@
 
 2008-12-30  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix g_printerr binding
 
 2008-12-30  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Fix gst_element_get_static_pad and gst_regitry_* bindings,
 	patch by Zeeshan Ali Khattak, fixes bug 539817
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-12-30  Jürg Billeter  <j@bitron.ch>
 
@@ -1910,11 +1910,11 @@
 
 2008-12-22  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add g_remove binding
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Fix typo
 
@@ -1929,7 +1929,7 @@
 	* bala/balastruct.bala:
 	* gobject/balaccodebasemodule.bala:
 	* gobject/balagobjectmodule.bala:
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Support boxed structs as GObject properties,
 	based on patch by Étienne Bersac, fixes bug 520001
@@ -1942,12 +1942,12 @@
 
 2008-12-21  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-base-0.10/:
+	* bapi/packages/gstreamer-base-0.10/:
 
 	Fix GstBaseSrc and GstBaseTransform bindings,
 	patch by Evan Nemerson, fixes bug 552562
 
-	* vapi/gstreamer-base-0.10.vapi: regenerated
+	* bapi/gstreamer-base-0.10.bapi: regenerated
 
 2008-12-20  Jürg Billeter  <j@bitron.ch>
 
@@ -1962,30 +1962,30 @@
 
 2008-12-19  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/atk.vapi:
-	* vapi/gdk-2.0.vapi:
-	* vapi/gdk-pixbuf-2.0.vapi:
-	* vapi/gio-2.0.vapi:
-	* vapi/gio-unix-2.0.vapi:
-	* vapi/gstreamer-0.10.vapi:
-	* vapi/gstreamer-audio-0.10.vapi:
-	* vapi/gstreamer-base-0.10.vapi:
-	* vapi/gstreamer-check-0.10.vapi:
-	* vapi/gstreamer-controller-0.10.vapi:
-	* vapi/gstreamer-dataprotocol-0.10.vapi:
-	* vapi/gstreamer-fft-0.10.vapi:
-	* vapi/gstreamer-interfaces-0.10.vapi:
-	* vapi/gstreamer-net-0.10.vapi:
-	* vapi/gstreamer-pbutils-0.10.vapi:
-	* vapi/gstreamer-riff-0.10.vapi:
-	* vapi/gstreamer-rtp-0.10.vapi:
-	* vapi/gstreamer-rtsp-0.10.vapi:
-	* vapi/gstreamer-sdp-0.10.vapi:
-	* vapi/gstreamer-tag-0.10.vapi:
-	* vapi/gstreamer-video-0.10.vapi:
-	* vapi/gtk+-2.0.vapi:
-	* vapi/pango.vapi:
-	* vapi/pangocairo.vapi:
+	* bapi/atk.bapi:
+	* bapi/gdk-2.0.bapi:
+	* bapi/gdk-pixbuf-2.0.bapi:
+	* bapi/gio-2.0.bapi:
+	* bapi/gio-unix-2.0.bapi:
+	* bapi/gstreamer-0.10.bapi:
+	* bapi/gstreamer-audio-0.10.bapi:
+	* bapi/gstreamer-base-0.10.bapi:
+	* bapi/gstreamer-check-0.10.bapi:
+	* bapi/gstreamer-controller-0.10.bapi:
+	* bapi/gstreamer-dataprotocol-0.10.bapi:
+	* bapi/gstreamer-fft-0.10.bapi:
+	* bapi/gstreamer-interfaces-0.10.bapi:
+	* bapi/gstreamer-net-0.10.bapi:
+	* bapi/gstreamer-pbutils-0.10.bapi:
+	* bapi/gstreamer-riff-0.10.bapi:
+	* bapi/gstreamer-rtp-0.10.bapi:
+	* bapi/gstreamer-rtsp-0.10.bapi:
+	* bapi/gstreamer-sdp-0.10.bapi:
+	* bapi/gstreamer-tag-0.10.bapi:
+	* bapi/gstreamer-video-0.10.bapi:
+	* bapi/gtk+-2.0.bapi:
+	* bapi/pango.bapi:
+	* bapi/pangocairo.bapi:
 
 	Regenerated
 
@@ -2123,7 +2123,7 @@
 
 2008-12-18  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/sqlite3.vapi:
+	* bapi/sqlite3.bapi:
 
 	Fix sqlite3_callback binding
 
@@ -2174,45 +2174,45 @@
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	GTree binding improvements, patch by Evan Nemerson,
 	fixes bug 564823
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Fix gst_element_make_from_uri binding,
 	patch by Zeeshan Ali Khattak, fixes bug 539817
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_ui_manager_new_merge_id binding, patch by Evan Nemerson,
 	fixes bug 527381
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/pango/:
+	* bapi/packages/pango/:
 
 	Add PangoScale binding, patch by Evan Nemerson, fixes bug 519922
 
-	* vapi/pango.vapi: regenerated
+	* bapi/pango.bapi: regenerated
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_notebook_page_num binding, patch by Evan Nemerson,
 	fixes bug 512437
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-12-17  Jürg Billeter  <j@bitron.ch>
 
@@ -2261,32 +2261,32 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Fix handling of int16, uint16, int32, and uint32
 
-	* vapi/packages/gstreamer-netbuffer-0.10/:
+	* bapi/packages/gstreamer-netbuffer-0.10/:
 
 	Fix gst_netaddress_get_ip4_address binding, patch by Evan Nemerson,
 	fixes bug 564676
 
-	* vapi/gstreamer-netbuffer-0.10.vapi: regenerated
+	* bapi/gstreamer-netbuffer-0.10.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-netbuffer-0.10/:
+	* bapi/packages/gstreamer-netbuffer-0.10/:
 
 	Fix GstNetBuffer binding, patch by Evan Nemerson, fixes bug 564670
 
-	* vapi/gstreamer-netbuffer-0.10.vapi: regenerated
+	* bapi/gstreamer-netbuffer-0.10.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Fix gst_version binding, patch by Evan Nemerson, fixes bug 564669
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
@@ -2314,18 +2314,18 @@
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/balaccodebasemodule.bala:
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix GByteArray binding, patch by Evan Nemerson, fixes bug 561867
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gdk-pixbuf-2.0/:
+	* bapi/packages/gdk-pixbuf-2.0/:
 
 	Fix gdk_pixbuf_new_from_stream* bindings, patch by Evan Nemerson,
 	fixes bug 560721
 
-	* vapi/gdk-pixbuf-2.0.vapi: regenerated
+	* bapi/gdk-pixbuf-2.0.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
@@ -2337,20 +2337,20 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Extend metadata support for delegates
 
-	* vapi/packages/libnotify/:
+	* bapi/packages/libnotify/:
 
 	Fix NotifyActionCallback and notify_notification_add_action
 	bindings, fixes bug 562726
 
-	* vapi/libnotify.vapi: regenerated
+	* bapi/libnotify.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Fix crash when parsing metadata, fixes bug 563390
 
@@ -2363,11 +2363,11 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Fix gst_bus_sync_signal_handler binding, fixes bug 559721
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
@@ -2380,21 +2380,21 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/json-glib-1.0/:
+	* bapi/packages/json-glib-1.0/:
 
 	Various ownership fixes, patch by Evan Nemerson, fixes bug 547450
 
-	* vapi/json-glib-1.0.vapi: regenerated
+	* bapi/json-glib-1.0.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add g_string_truncate binding, patch by Yu Feng, fixes bug 564428
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/sqlite3.vapi:
+	* bapi/sqlite3.bapi:
 
 	Add transaction hook, tracing, profiling, and mutex bindings,
 	patch by Evan Nemerson, fixes bug 564571
@@ -2403,28 +2403,28 @@
 
 	* gobject/balaccodebasemodule.bala:
 	* gobject/balaccodemethodcallmodule.bala:
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Move substring method to BAPI file, handle negative and out of
 	bounds values, fixes bug 443524
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gnome-keyring-1/:
+	* bapi/packages/gnome-keyring-1/:
 
 	Various delegate parameter fixes, patch by Michael Terry,
 	fixes bug 564068
 
-	* vapi/gnome-keyring-1.vapi: regenerated
+	* bapi/gnome-keyring-1.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gio-2.0/:
+	* bapi/packages/gio-2.0/:
 
 	Add g_io_extension_get_type binding, patch by Jared Moore,
 	fixes bug 537522
 
-	* vapi/gio-2.0.vapi: regenerated
+	* bapi/gio-2.0.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
@@ -2442,12 +2442,12 @@
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_status_icon_position_menu and GtkMenuPositionFunc bindings,
 	fixes bug 563457
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-12-16  Jürg Billeter  <j@bitron.ch>
 
@@ -2457,20 +2457,20 @@
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_container_get_children binding
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Add GTK_WIDGET_* bindings, patch by Víctor Manuel Jáquez Leal,
 	fixes bug 561341
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
@@ -2488,52 +2488,52 @@
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/unique-1.0/:
+	* bapi/packages/unique-1.0/:
 
 	Fix unique_app_new* bindings, patch by Michael Terry,
 	fixes bug 564064
 
-	* vapi/unique-1.0.vapi: regenerated
+	* bapi/unique-1.0.bapi: regenerated
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gio-2.0/:
+	* bapi/packages/gio-2.0/:
 
 	Fix g_themed_icon_new_from_names binding, patch by Michael Terry,
 	fixes bug 564062
 
-	* vapi/gio-2.0.vapi: regenerated
+	* bapi/gio-2.0.bapi: regenerated
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix g_main_current_source binding, patch by Zeeshan Ali Khattak,
 	fixes bug 563349
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Various ownership fixes, patch by Evan Nemerson, fixes bug 553032
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add fileno, ferror, and clearerr bindings and fix a few other
 	bindings, patch by Evan Nemerson, fixes bug 547921 and bug 558206
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Various delegate binding fixes, patch by Evan Nemerson,
 	fixes bug 547657
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
@@ -2543,7 +2543,7 @@
 
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add abs, labs, and llabs bindings, patch by Rob Taylor
 
@@ -2593,7 +2593,7 @@
 2008-12-15  Jürg Billeter  <j@bitron.ch>
 
 	* gobject/balaccodebasemodule.bala:
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Support empty ref_function and unref_function attributes,
 	fix GSequenceIter binding
@@ -2616,7 +2616,7 @@
 	* gobject/balaccodebasemodule.bala:
 	* gobject/baladbusservermodule.bala:
 	* gobject/balagsignalmodule.bala:
-	* vapi/dbus-glib-1.vapi:
+	* bapi/dbus-glib-1.bapi:
 
 	Rewrite D-Bus server support to directly use libdbus without
 	dbus-glib marshalling, fixes bug 560034 and bug 549980
@@ -2625,7 +2625,7 @@
 
 2008-12-14  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add type_id for GHashTable
 
@@ -2656,14 +2656,14 @@
 
 2008-12-13  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gsl.vapi:
+	* bapi/gsl.bapi:
 
 	Improve gsl_histogram_calloc_range binding,
 	patch by Matías De la Puente, fixes bug 564387
 
 2008-12-13  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Remove g_thread_init binding, should never be called manually
 
@@ -2689,7 +2689,7 @@
 	* gobject/balaccodecontrolflowmodule.bala:
 	* gobject/balaccodemethodcallmodule.bala:
 	* gobject/balagobjectmodule.bala:
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Fix conflicting local variables
 
@@ -2709,21 +2709,21 @@
 
 2008-12-12  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/curses.vapi:
+	* bapi/curses.bapi:
 
 	Add missing [Compact]
 
 2008-12-11  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/libsoup-2.4/:
+	* bapi/packages/libsoup-2.4/:
 
 	Updated to libsoup 2.25.2
 
-	* vapi/libsoup-2.4.vapi: regenerated
+	* bapi/libsoup-2.4.bapi: regenerated
 
 2008-12-10  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/rasqal.vapi:
+	* bapi/rasqal.bapi:
 
 	Add bindings to support LAQRS extensions
 
@@ -2736,23 +2736,23 @@
 
 2008-12-09  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gdk-pixbuf-2.0/gdk-pixbuf-2.0.metadata:
+	* bapi/packages/gdk-pixbuf-2.0/gdk-pixbuf-2.0.metadata:
 
 	Fix gdk_pixbuf_new_from_inline binding
 
-	* vapi/gdk-pixbuf-2.0.vapi: regenerated
+	* bapi/gdk-pixbuf-2.0.bapi: regenerated
 
 2008-12-09  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/Makefile.am:
-	* vapi/raptor.vapi:
-	* vapi/rasqal.vapi:
+	* bapi/Makefile.am:
+	* bapi/raptor.bapi:
+	* bapi/rasqal.bapi:
 
 	Add partial raptor and rasqal bindings
 
 2008-12-09  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gobject-2.0.vapi:
+	* bapi/gobject-2.0.bapi:
 
 	Fix g_value_set_boxed binding, remove broken g_value_take_boxed
 	binding
@@ -2773,17 +2773,17 @@
 2008-12-09  Thijs Vermeir  <thijsvermeir@gmail.com>
 
 	* bala/balacodewriter.bala:
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10-custom.bala:
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10-custom.bala:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Fix *_make_writable functions in gstreamer by marking them
 	with ReturnsModifiedPointer
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-12-09  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Improve Time.to_string method and add Time.format method
 
@@ -2795,19 +2795,19 @@
 
 2008-12-07  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Fix gst_buffer functions
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-12-06  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Fix gst_segment_clip binding
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-12-06  Jürg Billeter  <j@bitron.ch>
 
@@ -2830,24 +2830,24 @@
 
 2008-12-05  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_target_list_new binding
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-12-04  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/libsoup-2.4/:
+	* bapi/packages/libsoup-2.4/:
 
 	Fix soup_server_add_handler binding,
 	patch by Zeeshan Ali Khattak, fixes bug 562978
 
-	* vapi/libsoup-2.4.vapi: regenerated
+	* bapi/libsoup-2.4.bapi: regenerated
 
 2008-12-04  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Use generics in GAsyncQueue binding,
 	patch by Zeeshan Ali Khattak, fixes bug 563225
@@ -2875,11 +2875,11 @@
 
 2008-12-01  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_text_view_get_line_at_y binding
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-12-01  Jürg Billeter  <j@bitron.ch>
 
@@ -2898,11 +2898,11 @@
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_tree_model_get_value binding
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
@@ -2920,7 +2920,7 @@
 
 2008-11-30  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gstreamer-rtsp-0.10.vapi:
+	* bapi/gstreamer-rtsp-0.10.bapi:
 
 	Regenerated
 
@@ -2956,7 +2956,7 @@
 	* bala/Makefile.am:
 	* bala/balacodewriter.bala:
 	* compiler/balacompiler.bala:
-	* vapigen/balavapigen.bala:
+	* bapigen/balabapigen.bala:
 
 	Add --dump-tree command-line option to write code tree to file
 
@@ -3157,7 +3157,7 @@
 
 2008-11-28  Étienne Bersac  <bersace03@laposte.net>
 
-	* vapi/gobject-2.0.vapi:
+	* bapi/gobject-2.0.bapi:
 
 	Fix g_flags_get_first_value binding
 
@@ -3169,38 +3169,38 @@
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagidlparser.bala:
+	* bapigen/balagidlparser.bala:
 
 	Support ssize_t and size_t
 
-	* vapi/gdk-pixbuf-2.0.vapi:
-	* vapi/gio-2.0.vapi:
-	* vapi/gtk+-2.0.vapi:
-	* vapi/pango.vapi:
+	* bapi/gdk-pixbuf-2.0.bapi:
+	* bapi/gio-2.0.bapi:
+	* bapi/gtk+-2.0.bapi:
+	* bapi/pango.bapi:
 
 	Regenerated
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Support construct properties
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Support nullable parameters
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Support interface prerequisites
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Support functions in classes
 
@@ -3212,7 +3212,7 @@
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add g_unsetenv binding, patch by Jorn Baayen, fixes bug 562590
 
@@ -3232,7 +3232,7 @@
 
 2008-11-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add string.contains method
 
@@ -3302,11 +3302,11 @@
 
 2008-11-27  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	gst_element_found_tags takes ownership on TagList
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-11-26  Jürg Billeter  <j@bitron.ch>
 
@@ -3316,7 +3316,7 @@
 
 2008-11-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add string.replace method, patch by Ali Sabil
 
@@ -3327,7 +3327,7 @@
 	* gobject/balaccodebasemodule.bala:
 	* gobject/balaccodemethodcallmodule.bala:
 	* bala/balasemanticanalyzer.bala:
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add g_array_index binding and fix g_array_free calls,
 	fixes bug 519978
@@ -3411,57 +3411,57 @@
 	* gobject/balaccodebasemodule.bala:
 	* gobject/baladbusclientmodule.bala:
 	* gobject/baladbusmodule.bala:
-	* vapi/dbus-glib-1.vapi:
+	* bapi/dbus-glib-1.bapi:
 
 	Add partial static D-Bus client support without dbus-glib
 	marshalling
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add g_quark_try_string binding, patch by Rob Taylor
 
 2008-11-21  Étienne Bersac  <bersace03@laposte.net>
 
-	* vapi/gmodule-2.0.vapi:
+	* bapi/gmodule-2.0.bapi:
 
 	Add binding for G_MODULE_SUFFIX, fixes bug 561120
 
 2008-11-21  Étienne Bersac  <bersace03@laposte.net>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add G_SEARCHPATH_SEPARATOR binding, fixes bug 561117
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gdk-2.0/:
+	* bapi/packages/gdk-2.0/:
 
 	Fix gdk_region_polygon and gdk_region_rectangle bindings,
 	patch by Víctor Manuel Jáquez Leal, fixes bug 561655
 
-	* vapi/gdk-2.0.vapi: regenerated
+	* bapi/gdk-2.0.bapi: regenerated
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/dbus-glib-1.vapi:
+	* bapi/dbus-glib-1.bapi:
 
 	Fix DBusError binding, patch by Sebastian Pölsterl,
 	fixes bug 556340
 
 2008-11-21  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix g_hscale_new and g_vscale_new bindings,
 	based on patch by Geert Jan Alsem, fixes bug 560053
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-11-21  Étienne Bersac  <bersace03@laposte.net>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add g_strjoin binding, fixes bug 561124
 
@@ -3515,16 +3515,16 @@
 
 2008-11-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-interfaces-0.10/:
+	* bapi/packages/gstreamer-interfaces-0.10/:
 
 	Fix GstColorBalance binding, patch by Víctor Manuel Jáquez Leal,
 	fixes bug 560840
 
-	* vapi/gstreamer-interfaces-0.10.vapi: regenerated
+	* bapi/gstreamer-interfaces-0.10.bapi: regenerated
 
 2008-11-20  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/libxml-2.0.vapi:
+	* bapi/libxml-2.0.bapi:
 
 	Mark encoding parameters as nullable,
 	patch by Víctor Manuel Jáquez Leal, fixes bug 560062
@@ -3559,19 +3559,19 @@
 
 2008-11-18  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gtk+-2.0/gtk+-2.0.metadata:
+	* bapi/packages/gtk+-2.0/gtk+-2.0.metadata:
 
 	Transfer ownership on gtk_container_get_children
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-11-18  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
+	* bapi/packages/gstreamer-0.10/gstreamer-0.10.metadata:
 
 	Transfer ownership on gst_tag_list_merge
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-11-17  Jürg Billeter  <j@bitron.ch>
 
@@ -3617,7 +3617,7 @@
 
 2008-11-17  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix g_queue_*_nth bindings, patch by John Carr
 
@@ -3629,11 +3629,11 @@
 
 2008-11-14  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gstreamer-0.10/:
+	* bapi/packages/gstreamer-0.10/:
 
 	Fix gst_bin_add_many binding
 
-	* vapi/gstreamer-0.10.vapi: regenerated
+	* bapi/gstreamer-0.10.bapi: regenerated
 
 2008-11-14  Jürg Billeter  <j@bitron.ch>
 
@@ -3700,11 +3700,11 @@
 	* gobject/balaccodeassignmentmodule.bala:
 	* gobject/balaccodebasemodule.bala:
 	* gobject/balaccodeinvocationexpressionmodule.bala:
-	* vapi/glib-2.0.vapi:
-	* vapigen/balagidlparser.bala:
-	* vapigen/balagirparser.bala:
-	* vapigen/balamarkupreader.bala:
-	* vapigen/balavapicheck.bala:
+	* bapi/glib-2.0.bapi:
+	* bapigen/balagidlparser.bala:
+	* bapigen/balagirparser.bala:
+	* bapigen/balamarkupreader.bala:
+	* bapigen/balabapicheck.bala:
 	* gen-project/balaprojectgenerator.bala:
 
 	Do not use possibly uninitialized variables
@@ -3734,8 +3734,8 @@
 	* gobject/balaccodememberaccessmodule.bala:
 	* gobject/baladbusservermodule.bala:
 	* gobject/balagobjectmodule.bala:
-	* vapigen/balagirparser.bala:
-	* vapigen/balamarkupreader.bala:
+	* bapigen/balagirparser.bala:
+	* bapigen/balamarkupreader.bala:
 
 	Remove unused symbols
 
@@ -3934,7 +3934,7 @@
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add g_rmdir binding
 
@@ -4011,7 +4011,7 @@
 
 2008-11-07  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Set source_reference in parsed nodes
 
@@ -4236,23 +4236,23 @@
 
 2008-11-03  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix fgets binding
 
 2008-11-03  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapi/packages/loudmouth-1.0/loudmouth-1.0.metadata:
+	* bapi/packages/loudmouth-1.0/loudmouth-1.0.metadata:
 
 	Mark lm_message_new.to as nullable, and unhide lm_connection_new
 
-	* vapi/packages/loudmouth-1.0/loudmouth-1.0-custom.bala:
+	* bapi/packages/loudmouth-1.0/loudmouth-1.0-custom.bala:
 
 	Add the missing Message.get_type () method, and remove the now unecessary
 	creation method from Connection
 
-	* vapi/loudmouth-1.0.vapi:
-	* vapi/packages/loudmouth-1.0/loudmouth-1.0.gi:
+	* bapi/loudmouth-1.0.bapi:
+	* bapi/packages/loudmouth-1.0/loudmouth-1.0.gi:
 
 	Regenerated
 
@@ -4352,7 +4352,7 @@
 
 2008-11-02  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Add errno and g_strerror bindings
 
@@ -4365,7 +4365,7 @@
 2008-11-02  Jürg Billeter  <j@bitron.ch>
 
 	* bala/baladatatype.bala:
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Return the right D-Bus type signature for GHashTable,
 	patch by Marc-André Lureau
@@ -4394,8 +4394,8 @@
 	* bala/balasemanticanalyzer.bala:
 	* bala/balastruct.bala:
 	* compiler/balacompiler.bala:
-	* vapigen/balagidlparser.bala:
-	* vapigen/balavapigen.bala:
+	* bapigen/balagidlparser.bala:
+	* bapigen/balabapigen.bala:
 
 	Move attribute processing to semantic analyzer
 
@@ -4492,26 +4492,26 @@
 
 2008-10-29  Thijs Vermeir  <thijsvermeir@gmail.com>
 
-	* vapi/packages/gdk-2.0/gdk-2.0.metadata:
+	* bapi/packages/gdk-2.0/gdk-2.0.metadata:
 
 	Hide gdk_window_add_filter.data
 
-	* vapi/packages/gtk+-2.0/gtk+-2.0.metadata:
+	* bapi/packages/gtk+-2.0/gtk+-2.0.metadata:
 
 	use ctype GCallback for gtk_action_group_add_radio_actions
 
-	* vapi/gdk-2.0.vapi:
-	* vapi/gtk+-2.0.vapi:
+	* bapi/gdk-2.0.bapi:
+	* bapi/gtk+-2.0.bapi:
 
 	Regenerate bindings
 
 2008-10-28  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/libgnome-menu/:
+	* bapi/packages/libgnome-menu/:
 
 	Fix GMenuTreeItem binding
 	
-	* vapi/*.vapi:
+	* bapi/*.bapi:
 
 	Regenerate bindings
 
@@ -4519,7 +4519,7 @@
 
 	* bala/balainterfacewriter.bala:
 
-	Don't sort struct fields in vapi files to fix struct
+	Don't sort struct fields in bapi files to fix struct
 	initialization, patch by Hans Vercammen
 
 2008-10-27  Jürg Billeter  <j@bitron.ch>
@@ -4598,15 +4598,15 @@
 
 2008-10-26  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix binding for GtkWidget::size_request
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-10-26  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Fix binding for g_sequence_get
 
@@ -4627,20 +4627,20 @@
 
 2008-10-25  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Removed the "v_" prefix from the TokenValue fields name
 
 2008-10-25  Ali Sabil  <ali.sabil@gmail.com>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Changed the ScannerConfig string fields to string* to avoid balac
 	looking for a g_scanner_config_destroy function
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
+	* bapi/glib-2.0.bapi:
 
 	Remove redundant g_scanner_cur_* bindings
 
@@ -4684,7 +4684,7 @@
 	* bala/balasemanticanalyzer.bala:
 	* bala/balasymbolresolver.bala:
 	* gobject/balaccodegenerator.bala:
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Support type checks for error domains and error codes
 
@@ -4697,28 +4697,28 @@
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gobject-2.0.vapi:
+	* bapi/gobject-2.0.bapi:
 
 	Add GValueArray binding, patch by Mark Lee, fixes bug 557843
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/packages/gconf-2.0/:
+	* bapi/packages/gconf-2.0/:
 
 	Fix gconf_client_notify_add binding
 
-	* vapi/gconf-2.0.vapi: regenerated
+	* bapi/gconf-2.0.bapi: regenerated
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/libgnome-menu.vapi:
+	* bapi/libgnome-menu.bapi:
 
 	Fix GMenuTreeItem binding
 
 2008-10-25  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/libbonoboui-2.0.vapi:
-	* vapi/libpanelapplet-2.0.vapi:
+	* bapi/libbonoboui-2.0.bapi:
+	* bapi/libpanelapplet-2.0.bapi:
 
 	Fix PanelApplet and BonoboUIVerb bindings
 
@@ -4748,9 +4748,9 @@
 	* tests/exceptions.exp:
 	* tests/exceptions.bala:
 	* tests/testrunner.sh:
-	* vapi/Makefile.am:
+	* bapi/Makefile.am:
 
-	Remove libgee test to avoid conflict in vapidir
+	Remove libgee test to avoid conflict in bapidir
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
@@ -4778,25 +4778,25 @@
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Support virtual methods
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Support methods throwing errors
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Support shared namespaces
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/*.vapi:
+	* bapi/*.bapi:
 
 	Regenerate bindings
 
@@ -4804,18 +4804,18 @@
 
 	* bala/balainterfacewriter.bala:
 
-	Sort output to allow comparison of generated vapi files
+	Sort output to allow comparison of generated bapi files
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Recognize goffset
 
 2008-10-24  Jürg Billeter  <j@bitron.ch>
 
 	* bala/balanamespace.bala:
-	* vapigen/balagirparser.bala:
+	* bapigen/balagirparser.bala:
 
 	Remove Class and Iface structs
 
@@ -5043,7 +5043,7 @@
 
 2008-10-23  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/dbus-glib-1.vapi:
+	* bapi/dbus-glib-1.bapi:
 
 	Add dbus_g_connection_get_connection and
 	dbus_connection_get_g_connection bindings, patch by Jan Luebbe
@@ -5065,17 +5065,17 @@
 
 2008-10-23  Levi Bard  <taktaktaktaktaktaktaktaktaktak@gmail.com>
 
-	* vapi/sdl.vapi: Fix SysWMEvent link issue.
+	* bapi/sdl.bapi: Fix SysWMEvent link issue.
 
 2008-10-23  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gobject-2.0.vapi:
+	* bapi/gobject-2.0.bapi:
 
 	Fix runtime error when using GValue with D-Bus
 
 2008-10-23  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/gobject-2.0.vapi:
+	* bapi/gobject-2.0.bapi:
 
 	Support passing GValues as variants over D-Bus
 
@@ -5087,11 +5087,11 @@
 
 2008-10-22  Andrea Del Signore  <sejerpz@tin.it>
 
-	* vapi/packages/gtk+-2.0/:
+	* bapi/packages/gtk+-2.0/:
 
 	Fix gtk_text_buffer_new binding
 
-	* vapi/gtk+-2.0.vapi: regenerated
+	* bapi/gtk+-2.0.bapi: regenerated
 
 2008-10-22  Jürg Billeter  <j@bitron.ch>
 
@@ -5108,14 +5108,14 @@
 
 2008-10-22  Jürg Billeter  <j@bitron.ch>
 
-	* vapi/glib-2.0.vapi:
-	* vapi/gobject-2.0.vapi:
-	* vapi/Makefile.am:
+	* bapi/glib-2.0.bapi:
+	* bapi/gobject-2.0.bapi:
+	* bapi/Makefile.am:
 
 	Move gobject-2.0 bindings to separate BAPI file
 
 	* compiler/balacompiler.bala:
-	* vapigen/balavapigen.bala:
+	* bapigen/balabapigen.bala:
 
 	Include gobject-2.0 by default
 

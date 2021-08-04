@@ -1,4 +1,4 @@
-# Makefile for Bala API Generator (vapigen)
+# Makefile for Bala API Generator (bapigen)
 # Written by Evan Nemerson
 #
 # The author disclaims copyright to this source code.  In place of
@@ -36,26 +36,26 @@
 #
 #       The files which should be used to generate the BAPI.
 
-_vapigen_silent_prefix = $(_vapigen_silent_prefix_$(V))
-_vapigen_silent_prefix_ = $(_vapigen_silent_prefix_$(AM_DEFAULT_VERBOSITY))
-_vapigen_silent_prefix_0 = @echo " BAPIGEN $(1)";
-_vapigen_silent_opts = $(_vapigen_silent_opts_$(V))
-_vapigen_silent_opts_ = $(_vapigen_silent_opts_$(AM_DEFAULT_VERBOSITY))
-_vapigen_silent_opts_0 = --quiet
+_bapigen_silent_prefix = $(_bapigen_silent_prefix_$(V))
+_bapigen_silent_prefix_ = $(_bapigen_silent_prefix_$(AM_DEFAULT_VERBOSITY))
+_bapigen_silent_prefix_0 = @echo " BAPIGEN $(1)";
+_bapigen_silent_opts = $(_bapigen_silent_opts_$(V))
+_bapigen_silent_opts_ = $(_bapigen_silent_opts_$(AM_DEFAULT_VERBOSITY))
+_bapigen_silent_opts_0 = --quiet
 
 $(if $(BAPIGEN),,$(error You must define BAPIGEN))
 
-_vapi_name = $(subst /,_,$(subst -,_,$(subst .,_,$(1))))
+_bapi_name = $(subst /,_,$(subst -,_,$(subst .,_,$(1))))
 
-define vapigen
-$(1): $$($(_vapi_name)_GIR)
-	$(_vapigen_silent_prefix) $(BAPIGEN) $(_vapigen_silent_opts) \
-	  --library $(1:.vapi=) \
-	  $(foreach _vapi_metadatadir_name,$(if $($(_vapi_name)_METADATADIRS),$($(_vapi_name)_METADATADIRS),$(BAPIGEN_METADATADIRS)),--metadatadir $(_vapi_metadatadir_name)) \
-	  $(foreach _vapi_dir_name,$(if $($(_vapi_name)_BAPIDIRS),$($(_vapi_name)_BAPIDIRS),$(BAPIGEN_BAPIDIRS)),--vapidir $(_vapi_dir_name)) \
-	  $(foreach _gir_dir_name,$(if $($(_vapi_name)_GIRDIRS),$($(_vapi_name)_GIRDIRS),$(BAPIGEN_GIRDIRS)),--girdir $(_gir_dir_name)) \
-	  $(foreach _vapi_dep_name,$(if $($(_vapi_name)_DEPS),$($(_vapi_name)_DEPS),$(BAPIGEN_DEPS)),--pkg $(_vapi_dep_name)) \
-	  $$($(_vapi_name)_FILES)
+define bapigen
+$(1): $$($(_bapi_name)_GIR)
+	$(_bapigen_silent_prefix) $(BAPIGEN) $(_bapigen_silent_opts) \
+	  --library $(1:.bapi=) \
+	  $(foreach _bapi_metadatadir_name,$(if $($(_bapi_name)_METADATADIRS),$($(_bapi_name)_METADATADIRS),$(BAPIGEN_METADATADIRS)),--metadatadir $(_bapi_metadatadir_name)) \
+	  $(foreach _bapi_dir_name,$(if $($(_bapi_name)_BAPIDIRS),$($(_bapi_name)_BAPIDIRS),$(BAPIGEN_BAPIDIRS)),--bapidir $(_bapi_dir_name)) \
+	  $(foreach _gir_dir_name,$(if $($(_bapi_name)_GIRDIRS),$($(_bapi_name)_GIRDIRS),$(BAPIGEN_GIRDIRS)),--girdir $(_gir_dir_name)) \
+	  $(foreach _bapi_dep_name,$(if $($(_bapi_name)_DEPS),$($(_bapi_name)_DEPS),$(BAPIGEN_DEPS)),--pkg $(_bapi_dep_name)) \
+	  $$($(_bapi_name)_FILES)
 endef
 
-$(foreach vapi,$(BAPIGEN_BAPIS),$(eval $(call vapigen,$(vapi))))
+$(foreach bapi,$(BAPIGEN_BAPIS),$(eval $(call bapigen,$(bapi))))

@@ -88,11 +88,11 @@ struct _BalaParamSpecCompiler {
 
 static gint BalaCompiler_private_offset;
 static gpointer bala_compiler_parent_class = NULL;
-static gchar** bala_compiler_vapi_directories;
+static gchar** bala_compiler_bapi_directories;
 static gchar** bala_compiler_gir_directories;
 static gchar** bala_compiler_metadata_directories;
 static gchar** bala_compiler_packages;
-static gchar* bala_compiler_vapi_filename;
+static gchar* bala_compiler_bapi_filename;
 static gchar* bala_compiler_library;
 static gchar* bala_compiler_shared_library;
 static gchar* bala_compiler_gir;
@@ -105,10 +105,10 @@ static gchar* bala_compiler_header_filename;
 static gboolean bala_compiler_use_header;
 static gchar* bala_compiler_includedir;
 static gchar* bala_compiler_internal_header_filename;
-static gchar* bala_compiler_internal_vapi_filename;
-static gchar* bala_compiler_fast_vapi_filename;
-static gchar** bala_compiler_fast_vapis;
-static gboolean bala_compiler_vapi_comments;
+static gchar* bala_compiler_internal_bapi_filename;
+static gchar* bala_compiler_fast_bapi_filename;
+static gchar** bala_compiler_fast_bapis;
+static gboolean bala_compiler_bapi_comments;
 static gchar* bala_compiler_dependencies;
 static gchar* bala_compiler_depfile;
 static gboolean bala_compiler_list_sources;
@@ -153,15 +153,15 @@ static gchar* bala_compiler_directory = NULL;
 static gboolean bala_compiler_version = FALSE;
 static gboolean bala_compiler_api_version = FALSE;
 static gchar** bala_compiler_sources = NULL;
-static gchar** bala_compiler_vapi_directories = NULL;
+static gchar** bala_compiler_bapi_directories = NULL;
 static gchar** bala_compiler_gir_directories = NULL;
 static gchar** bala_compiler_metadata_directories = NULL;
-static gchar* bala_compiler_vapi_filename = NULL;
+static gchar* bala_compiler_bapi_filename = NULL;
 static gchar* bala_compiler_library = NULL;
 static gchar* bala_compiler_shared_library = NULL;
 static gchar* bala_compiler_gir = NULL;
 static gchar** bala_compiler_packages = NULL;
-static gchar** bala_compiler_fast_vapis = NULL;
+static gchar** bala_compiler_fast_bapis = NULL;
 static gchar* bala_compiler_target_glib = NULL;
 static gchar** bala_compiler_gresources = NULL;
 static gchar** bala_compiler_gresources_directories = NULL;
@@ -170,9 +170,9 @@ static gboolean bala_compiler_abi_stability = FALSE;
 static gchar* bala_compiler_header_filename = NULL;
 static gboolean bala_compiler_use_header = FALSE;
 static gchar* bala_compiler_internal_header_filename = NULL;
-static gchar* bala_compiler_internal_vapi_filename = NULL;
-static gchar* bala_compiler_fast_vapi_filename = NULL;
-static gboolean bala_compiler_vapi_comments = FALSE;
+static gchar* bala_compiler_internal_bapi_filename = NULL;
+static gchar* bala_compiler_fast_bapi_filename = NULL;
+static gboolean bala_compiler_bapi_comments = FALSE;
 static gchar* bala_compiler_symbols_filename = NULL;
 static gchar* bala_compiler_includedir = NULL;
 static gboolean bala_compiler_compile_only = FALSE;
@@ -266,7 +266,7 @@ static void _bala_array_free (gpointer array,
                        GDestroyNotify destroy_func);
 static gint _bala_array_length (gpointer array);
 
-static const GOptionEntry BALA_COMPILER_options[63] = {{"vapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_compiler_vapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_compiler_gir_directories, "Look for .gir files in DIRECTORY", "DIRECTORY..."}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_compiler_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &bala_compiler_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"vapi", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &bala_compiler_vapi_filename, "Output BAPI file name", "FILE"}, {"library", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_library, "Library name", "NAME"}, {"shared-library", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_shared_library, "Shared library name used in generated gir", "NAME"}, {"gir", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_gir, "GObject-Introspection repository file name", "NAME-VERSION.gir"}, {"basedir", 'b', 0, G_OPTION_ARG_FILENAME, &bala_compiler_basedir, "Base source directory", "DIRECTORY"}, {"directory", 'd', 0, G_OPTION_ARG_FILENAME, &bala_compiler_directory, "Change output directory from current working directory", "DIRECTORY"}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_version, "Display version number", NULL}, {"api-version", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_api_version, "Display API version number", NULL}, {"ccode", 'C', 0, G_OPTION_ARG_NONE, &bala_compiler_ccode_only, "Output C code", NULL}, {"header", 'H', 0, G_OPTION_ARG_FILENAME, &bala_compiler_header_filename, "Output C header file", "FILE"}, {"use-header", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_use_header, "Use C header file", NULL}, {"includedir", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &bala_compiler_includedir, "Directory used to include the C header file", "DIRECTORY"}, {"internal-header", 'h', 0, G_OPTION_ARG_FILENAME, &bala_compiler_internal_header_filename, "Output internal C header file", "FILE"}, {"internal-vapi", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &bala_compiler_internal_vapi_filename, "Output vapi with internal api", "FILE"}, {"fast-vapi", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_fast_vapi_filename, "Output vapi without performing symbol resolution", NULL}, {"use-fast-vapi", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &bala_compiler_fast_vapis, "Use --fast-vapi output during this compile", NULL}, {"vapi-comments", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_vapi_comments, "Include comments in generated vapi", NULL}, {"deps", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_dependencies, "Write make-style dependency information to this file", NULL}, {"depfile", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_depfile, "Write make-style external dependency information for build systems to " \
+static const GOptionEntry BALA_COMPILER_options[63] = {{"bapidir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_compiler_bapi_directories, "Look for package bindings in DIRECTORY", "DIRECTORY..."}, {"girdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_compiler_gir_directories, "Look for .gir files in DIRECTORY", "DIRECTORY..."}, {"metadatadir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_compiler_metadata_directories, "Look for GIR .metadata files in DIRECTORY", "DIRECTORY..."}, {"pkg", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &bala_compiler_packages, "Include binding for PACKAGE", "PACKAGE..."}, {"bapi", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &bala_compiler_bapi_filename, "Output BAPI file name", "FILE"}, {"library", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_library, "Library name", "NAME"}, {"shared-library", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_shared_library, "Shared library name used in generated gir", "NAME"}, {"gir", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_gir, "GObject-Introspection repository file name", "NAME-VERSION.gir"}, {"basedir", 'b', 0, G_OPTION_ARG_FILENAME, &bala_compiler_basedir, "Base source directory", "DIRECTORY"}, {"directory", 'd', 0, G_OPTION_ARG_FILENAME, &bala_compiler_directory, "Change output directory from current working directory", "DIRECTORY"}, {"version", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_version, "Display version number", NULL}, {"api-version", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_api_version, "Display API version number", NULL}, {"ccode", 'C', 0, G_OPTION_ARG_NONE, &bala_compiler_ccode_only, "Output C code", NULL}, {"header", 'H', 0, G_OPTION_ARG_FILENAME, &bala_compiler_header_filename, "Output C header file", "FILE"}, {"use-header", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_use_header, "Use C header file", NULL}, {"includedir", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &bala_compiler_includedir, "Directory used to include the C header file", "DIRECTORY"}, {"internal-header", 'h', 0, G_OPTION_ARG_FILENAME, &bala_compiler_internal_header_filename, "Output internal C header file", "FILE"}, {"internal-bapi", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &bala_compiler_internal_bapi_filename, "Output bapi with internal api", "FILE"}, {"fast-bapi", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_fast_bapi_filename, "Output bapi without performing symbol resolution", NULL}, {"use-fast-bapi", (gchar) 0, 0, G_OPTION_ARG_STRING_ARRAY, &bala_compiler_fast_bapis, "Use --fast-bapi output during this compile", NULL}, {"bapi-comments", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_bapi_comments, "Include comments in generated bapi", NULL}, {"deps", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_dependencies, "Write make-style dependency information to this file", NULL}, {"depfile", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_depfile, "Write make-style external dependency information for build systems to " \
 "this file", NULL}, {"list-sources", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_list_sources, "Output a list of all source and binding files which are used", NULL}, {"symbols", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &bala_compiler_symbols_filename, "Output symbols file", "FILE"}, {"compile", 'c', 0, G_OPTION_ARG_NONE, &bala_compiler_compile_only, "Compile but do not link", NULL}, {"output", 'o', 0, G_OPTION_ARG_FILENAME, &bala_compiler_output, "Place output in file FILE", "FILE"}, {"debug", 'g', 0, G_OPTION_ARG_NONE, &bala_compiler_debug, "Produce debug information", NULL}, {"thread", (gchar) 0, (gint) (G_OPTION_FLAG_OPTIONAL_ARG | G_OPTION_FLAG_NO_ARG), G_OPTION_ARG_CALLBACK, (void*) bala_compiler_option_deprecated, "Enable multithreading support (DEPRECATED AND IGNORED)", NULL}, {"enable-mem-profiler", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_mem_profiler, "Enable GLib memory profiler", NULL}, {"define", 'D', 0, G_OPTION_ARG_STRING_ARRAY, &bala_compiler_defines, "Define SYMBOL", "SYMBOL..."}, {"main", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_entry_point, "Use SYMBOL as entry point", "SYMBOL..."}, {"nostdpkg", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_nostdpkg, "Do not include standard packages", NULL}, {"disable-assert", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_disable_assert, "Disable assertions", NULL}, {"enable-checking", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_enable_checking, "Enable additional run-time checks", NULL}, {"enable-deprecated", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_deprecated, "Enable deprecated features", NULL}, {"hide-internal", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_hide_internal, "Hide symbols marked as internal", NULL}, {"enable-experimental", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_experimental, "Enable experimental features", NULL}, {"disable-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_disable_warnings, "Disable warnings", NULL}, {"fatal-warnings", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_fatal_warnings, "Treat warnings as fatal", NULL}, {"disable-since-check", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_disable_since_check, "Do not check whether used symbols exist in local packages", NULL}, {"keep-going", 'k', 0, G_OPTION_ARG_NONE, &bala_compiler_keep_going, "Continue as much as possible after an error", NULL}, {"enable-experimental-non-null", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_experimental_non_null, "Enable experimental enhancements for non-null types", NULL}, {"enable-gobject-tracing", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_gobject_tracing, "Enable GObject creation tracing", NULL}, {"cc", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_cc_command, "Use COMMAND as C compiler command", "COMMAND"}, {"Xcc", 'X', 0, G_OPTION_ARG_STRING_ARRAY, &bala_compiler_cc_options, "Pass OPTION to the C compiler", "OPTION..."}, {"pkg-config", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_pkg_config_command, "Use COMMAND as pkg-config command", "COMMAND"}, {"dump-tree", (gchar) 0, 0, G_OPTION_ARG_FILENAME, &bala_compiler_dump_tree, "Write code tree to FILE", "FILE"}, {"save-temps", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_save_temps, "Keep temporary files", NULL}, {"profile", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_profile, "Use the given profile instead of the default", "PROFILE"}, {"quiet", 'q', 0, G_OPTION_ARG_NONE, &bala_compiler_quiet_mode, "Do not print messages to the console", NULL}, {"verbose", 'v', 0, G_OPTION_ARG_NONE, &bala_compiler_verbose_mode, "Print additional messages to the console", NULL}, {"no-color", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_disable_colored_output, "Disable colored output, alias for --color=never", NULL}, {"color", (gchar) 0, (gint) G_OPTION_FLAG_OPTIONAL_ARG, G_OPTION_ARG_CALLBACK, (void*) bala_compiler_option_parse_color, "Enable color output, options are 'always', 'never', or 'auto'", "WHEN"}, {"target-glib", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_target_glib, "Target version of glib for code generation", "'MAJOR.MINOR', or 'auto'"}, {"gresources", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_compiler_gresources, "XML of gresources", "FILE..."}, {"gresourcesdir", (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_compiler_gresources_directories, "Look for resources in DIRECTORY", "DIRECTORY..."}, {"enable-version-header", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_enable_version_header, "Write bala build version in generated files", NULL}, {"disable-version-header", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_disable_version_header, "Do not write bala build version in generated files", NULL}, {"run-args", (gchar) 0, 0, G_OPTION_ARG_STRING, &bala_compiler_run_args, "Arguments passed to directly compiled executable", NULL}, {"abi-stability", (gchar) 0, 0, G_OPTION_ARG_NONE, &bala_compiler_abi_stability, "Enable support for ABI stability", NULL}, {G_OPTION_REMAINING, (gchar) 0, 0, G_OPTION_ARG_FILENAME_ARRAY, &bala_compiler_sources, NULL, "FILE..."}, {NULL}};
 
 static inline gpointer
@@ -926,11 +926,11 @@ bala_compiler_run (BalaCompiler* self)
 		bala_code_context_set_directory (_tmp76_, _tmp79_);
 	}
 	_tmp80_ = self->priv->context;
-	_tmp81_ = bala_compiler_vapi_directories;
-	_tmp81__length1 = _bala_array_length (bala_compiler_vapi_directories);
-	bala_code_context_set_vapi_directories (_tmp80_, _tmp81_, _tmp81__length1);
+	_tmp81_ = bala_compiler_bapi_directories;
+	_tmp81__length1 = _bala_array_length (bala_compiler_bapi_directories);
+	bala_code_context_set_bapi_directories (_tmp80_, _tmp81_, _tmp81__length1);
 	_tmp82_ = self->priv->context;
-	bala_code_context_set_vapi_comments (_tmp82_, bala_compiler_vapi_comments);
+	bala_code_context_set_bapi_comments (_tmp82_, bala_compiler_bapi_comments);
 	_tmp83_ = self->priv->context;
 	_tmp84_ = bala_compiler_gir_directories;
 	_tmp84__length1 = _bala_array_length (bala_compiler_gir_directories);
@@ -998,7 +998,7 @@ bala_compiler_run (BalaCompiler* self)
 			_g_free0 (_tmp103_);
 		}
 	}
-	_tmp104_ = bala_compiler_fast_vapi_filename;
+	_tmp104_ = bala_compiler_fast_bapi_filename;
 	bala_compiler_nostdpkg = bala_compiler_nostdpkg | (_tmp104_ != NULL);
 	_tmp105_ = self->priv->context;
 	bala_code_context_set_nostdpkg (_tmp105_, bala_compiler_nostdpkg);
@@ -1122,26 +1122,26 @@ bala_compiler_run (BalaCompiler* self)
 		bala_compiler_packages = (_bala_array_free (bala_compiler_packages, _bala_array_length (bala_compiler_packages), (GDestroyNotify) g_free), NULL);
 		bala_compiler_packages = NULL;
 	}
-	_tmp137_ = bala_compiler_fast_vapis;
-	_tmp137__length1 = _bala_array_length (bala_compiler_fast_vapis);
+	_tmp137_ = bala_compiler_fast_bapis;
+	_tmp137__length1 = _bala_array_length (bala_compiler_fast_bapis);
 	if (_tmp137_ != NULL) {
 		gchar** _tmp138_;
 		gint _tmp138__length1;
 		BalaCodeContext* _tmp147_;
-		_tmp138_ = bala_compiler_fast_vapis;
-		_tmp138__length1 = _bala_array_length (bala_compiler_fast_vapis);
+		_tmp138_ = bala_compiler_fast_bapis;
+		_tmp138__length1 = _bala_array_length (bala_compiler_fast_bapis);
 		{
-			gchar** vapi_collection = NULL;
-			gint vapi_collection_length1 = 0;
-			gint _vapi_collection_size_ = 0;
-			gint vapi_it = 0;
-			vapi_collection = _tmp138_;
-			vapi_collection_length1 = _tmp138__length1;
-			for (vapi_it = 0; vapi_it < vapi_collection_length1; vapi_it = vapi_it + 1) {
+			gchar** bapi_collection = NULL;
+			gint bapi_collection_length1 = 0;
+			gint _bapi_collection_size_ = 0;
+			gint bapi_it = 0;
+			bapi_collection = _tmp138_;
+			bapi_collection_length1 = _tmp138__length1;
+			for (bapi_it = 0; bapi_it < bapi_collection_length1; bapi_it = bapi_it + 1) {
 				gchar* _tmp139_;
-				gchar* vapi = NULL;
-				_tmp139_ = g_strdup (vapi_collection[vapi_it]);
-				vapi = _tmp139_;
+				gchar* bapi = NULL;
+				_tmp139_ = g_strdup (bapi_collection[bapi_it]);
+				bapi = _tmp139_;
 				{
 					gchar* rpath = NULL;
 					const gchar* _tmp140_;
@@ -1152,7 +1152,7 @@ bala_compiler_run (BalaCompiler* self)
 					BalaSourceFile* _tmp144_;
 					BalaCodeContext* _tmp145_;
 					BalaSourceFile* _tmp146_;
-					_tmp140_ = vapi;
+					_tmp140_ = bapi;
 					_tmp141_ = bala_code_context_realpath (_tmp140_);
 					rpath = _tmp141_;
 					_tmp142_ = self->priv->context;
@@ -1164,12 +1164,12 @@ bala_compiler_run (BalaCompiler* self)
 					bala_code_context_add_source_file (_tmp145_, _tmp146_);
 					_bala_source_file_unref0 (source_file);
 					_g_free0 (rpath);
-					_g_free0 (vapi);
+					_g_free0 (bapi);
 				}
 			}
 		}
 		_tmp147_ = self->priv->context;
-		bala_code_context_set_use_fast_vapi (_tmp147_, TRUE);
+		bala_code_context_set_use_fast_bapi (_tmp147_, TRUE);
 	}
 	_tmp148_ = self->priv->context;
 	_tmp149_ = bala_compiler_gresources;
@@ -1437,7 +1437,7 @@ bala_compiler_run (BalaCompiler* self)
 		_bala_code_visitor_unref0 (parser);
 		return result;
 	}
-	_tmp226_ = bala_compiler_fast_vapi_filename;
+	_tmp226_ = bala_compiler_fast_bapi_filename;
 	if (_tmp226_ != NULL) {
 		BalaCodeWriter* interface_writer = NULL;
 		BalaCodeWriter* _tmp227_;
@@ -1448,7 +1448,7 @@ bala_compiler_run (BalaCompiler* self)
 		interface_writer = _tmp227_;
 		_tmp228_ = interface_writer;
 		_tmp229_ = self->priv->context;
-		_tmp230_ = bala_compiler_fast_vapi_filename;
+		_tmp230_ = bala_compiler_fast_bapi_filename;
 		bala_code_writer_write_file (_tmp228_, _tmp229_, _tmp230_);
 		result = bala_compiler_quit (self);
 		_bala_code_visitor_unref0 (interface_writer);
@@ -1589,7 +1589,7 @@ bala_compiler_run (BalaCompiler* self)
 		_bala_code_visitor_unref0 (parser);
 		return result;
 	}
-	_tmp273_ = bala_compiler_vapi_filename;
+	_tmp273_ = bala_compiler_bapi_filename;
 	if (_tmp273_ == NULL) {
 		const gchar* _tmp274_;
 		_tmp274_ = bala_compiler_library;
@@ -1601,9 +1601,9 @@ bala_compiler_run (BalaCompiler* self)
 		const gchar* _tmp275_;
 		gchar* _tmp276_;
 		_tmp275_ = bala_compiler_library;
-		_tmp276_ = g_strdup_printf ("%s.vapi", _tmp275_);
-		_g_free0 (bala_compiler_vapi_filename);
-		bala_compiler_vapi_filename = _tmp276_;
+		_tmp276_ = g_strdup_printf ("%s.bapi", _tmp275_);
+		_g_free0 (bala_compiler_bapi_filename);
+		bala_compiler_bapi_filename = _tmp276_;
 	}
 	_tmp277_ = bala_compiler_library;
 	if (_tmp277_ != NULL) {
@@ -1765,7 +1765,7 @@ bala_compiler_run (BalaCompiler* self)
 			bala_compiler_gir = NULL;
 		}
 	}
-	_tmp324_ = bala_compiler_vapi_filename;
+	_tmp324_ = bala_compiler_bapi_filename;
 	if (_tmp324_ != NULL) {
 		BalaCodeWriter* interface_writer = NULL;
 		BalaCodeWriter* _tmp325_;
@@ -1779,7 +1779,7 @@ bala_compiler_run (BalaCompiler* self)
 		_tmp327_ = bala_compiler_directory;
 		if (_tmp327_ != NULL) {
 			const gchar* _tmp328_;
-			_tmp328_ = bala_compiler_vapi_filename;
+			_tmp328_ = bala_compiler_bapi_filename;
 			_tmp326_ = !g_path_is_absolute (_tmp328_);
 		} else {
 			_tmp326_ = FALSE;
@@ -1793,18 +1793,18 @@ bala_compiler_run (BalaCompiler* self)
 			_tmp329_ = self->priv->context;
 			_tmp330_ = bala_code_context_get_directory (_tmp329_);
 			_tmp331_ = _tmp330_;
-			_tmp332_ = bala_compiler_vapi_filename;
+			_tmp332_ = bala_compiler_bapi_filename;
 			_tmp333_ = g_strdup_printf ("%s%c%s", _tmp331_, (gint) G_DIR_SEPARATOR, _tmp332_);
-			_g_free0 (bala_compiler_vapi_filename);
-			bala_compiler_vapi_filename = _tmp333_;
+			_g_free0 (bala_compiler_bapi_filename);
+			bala_compiler_bapi_filename = _tmp333_;
 		}
 		_tmp334_ = interface_writer;
 		_tmp335_ = self->priv->context;
-		_tmp336_ = bala_compiler_vapi_filename;
+		_tmp336_ = bala_compiler_bapi_filename;
 		bala_code_writer_write_file (_tmp334_, _tmp335_, _tmp336_);
 		_bala_code_visitor_unref0 (interface_writer);
 	}
-	_tmp337_ = bala_compiler_internal_vapi_filename;
+	_tmp337_ = bala_compiler_internal_bapi_filename;
 	if (_tmp337_ != NULL) {
 		gboolean _tmp338_ = FALSE;
 		const gchar* _tmp339_;
@@ -1813,7 +1813,7 @@ bala_compiler_run (BalaCompiler* self)
 		BalaCodeContext* _tmp342_;
 		const gchar* _tmp343_;
 		const gchar* _tmp344_;
-		gchar* vapi_filename = NULL;
+		gchar* bapi_filename = NULL;
 		const gchar* _tmp367_;
 		gchar* _tmp368_;
 		gboolean _tmp369_ = FALSE;
@@ -1830,7 +1830,7 @@ bala_compiler_run (BalaCompiler* self)
 			_tmp338_ = _tmp340_ == NULL;
 		}
 		if (_tmp338_) {
-			bala_report_error (NULL, "--internal-vapi may only be used in combination with --header and --in" \
+			bala_report_error (NULL, "--internal-bapi may only be used in combination with --header and --in" \
 "ternal-header");
 			result = bala_compiler_quit (self);
 			_bala_code_visitor_unref0 (gir_parser);
@@ -1900,13 +1900,13 @@ bala_compiler_run (BalaCompiler* self)
 			_tmp366_ = bala_compiler_internal_header_filename;
 			bala_code_writer_set_cheader_override (_tmp364_, _tmp365_, _tmp366_);
 		}
-		_tmp367_ = bala_compiler_internal_vapi_filename;
+		_tmp367_ = bala_compiler_internal_bapi_filename;
 		_tmp368_ = g_strdup (_tmp367_);
-		vapi_filename = _tmp368_;
+		bapi_filename = _tmp368_;
 		_tmp370_ = bala_compiler_directory;
 		if (_tmp370_ != NULL) {
 			const gchar* _tmp371_;
-			_tmp371_ = vapi_filename;
+			_tmp371_ = bapi_filename;
 			_tmp369_ = !g_path_is_absolute (_tmp371_);
 		} else {
 			_tmp369_ = FALSE;
@@ -1920,18 +1920,18 @@ bala_compiler_run (BalaCompiler* self)
 			_tmp372_ = self->priv->context;
 			_tmp373_ = bala_code_context_get_directory (_tmp372_);
 			_tmp374_ = _tmp373_;
-			_tmp375_ = vapi_filename;
+			_tmp375_ = bapi_filename;
 			_tmp376_ = g_strdup_printf ("%s%c%s", _tmp374_, (gint) G_DIR_SEPARATOR, _tmp375_);
-			_g_free0 (vapi_filename);
-			vapi_filename = _tmp376_;
+			_g_free0 (bapi_filename);
+			bapi_filename = _tmp376_;
 		}
 		_tmp377_ = interface_writer;
 		_tmp378_ = self->priv->context;
-		_tmp379_ = vapi_filename;
+		_tmp379_ = bapi_filename;
 		bala_code_writer_write_file (_tmp377_, _tmp378_, _tmp379_);
-		_g_free0 (bala_compiler_internal_vapi_filename);
-		bala_compiler_internal_vapi_filename = NULL;
-		_g_free0 (vapi_filename);
+		_g_free0 (bala_compiler_internal_bapi_filename);
+		bala_compiler_internal_bapi_filename = NULL;
+		_g_free0 (bapi_filename);
 		_bala_code_visitor_unref0 (interface_writer);
 	}
 	_tmp380_ = bala_compiler_dependencies;
@@ -2477,8 +2477,8 @@ bala_compiler_main (gchar** args,
 	if (_tmp22_ == NULL) {
 		gchar** _tmp23_;
 		gint _tmp23__length1;
-		_tmp23_ = bala_compiler_fast_vapis;
-		_tmp23__length1 = _bala_array_length (bala_compiler_fast_vapis);
+		_tmp23_ = bala_compiler_fast_bapis;
+		_tmp23__length1 = _bala_array_length (bala_compiler_fast_bapis);
 		_tmp21_ = _tmp23_ == NULL;
 	} else {
 		_tmp21_ = FALSE;

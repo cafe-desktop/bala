@@ -51,19 +51,19 @@ baladoc_LDADD = \
 	$(LIBGVC_LIBS) \
 	$(NULL)
 
-baladoc.bala.stamp: $(baladoc_BALASOURCES) $(top_srcdir)/bala/libbala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libbaladoc/baladoc@PACKAGE_SUFFIX@.vapi
+baladoc.bala.stamp: $(baladoc_BALASOURCES) $(top_srcdir)/bala/libbala@PACKAGE_SUFFIX@.bapi $(top_srcdir)/libbaladoc/baladoc@PACKAGE_SUFFIX@.bapi
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vapi \
+		--bapidir $(top_srcdir)/bapi \
 		--pkg gmodule-2.0 \
 		--pkg gobject-2.0 \
 		--pkg libgvc \
-		--vapidir $(top_srcdir)/bala --pkg libbala@PACKAGE_SUFFIX@ \
-		--vapidir $(top_srcdir)/ccode --pkg ccode \
-		--vapidir $(top_srcdir)/codegen --pkg codegen \
-		--vapidir $(top_srcdir)/libbaladoc --pkg baladoc@PACKAGE_SUFFIX@ \
+		--bapidir $(top_srcdir)/bala --pkg libbala@PACKAGE_SUFFIX@ \
+		--bapidir $(top_srcdir)/ccode --pkg ccode \
+		--bapidir $(top_srcdir)/codegen --pkg codegen \
+		--bapidir $(top_srcdir)/libbaladoc --pkg baladoc@PACKAGE_SUFFIX@ \
 		--pkg config \
 		$(filter %.bala %.c,$^)
 	touch $@

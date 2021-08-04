@@ -4333,9 +4333,9 @@ void bala_code_context_set_basedir (BalaCodeContext* self,
 const gchar* bala_code_context_get_directory (BalaCodeContext* self);
 void bala_code_context_set_directory (BalaCodeContext* self,
                                       const gchar* value);
-gchar** bala_code_context_get_vapi_directories (BalaCodeContext* self,
+gchar** bala_code_context_get_bapi_directories (BalaCodeContext* self,
                                                 gint* result_length1);
-void bala_code_context_set_vapi_directories (BalaCodeContext* self,
+void bala_code_context_set_bapi_directories (BalaCodeContext* self,
                                              gchar** value,
                                              gint value_length1);
 gchar** bala_code_context_get_gir_directories (BalaCodeContext* self,
@@ -4376,14 +4376,14 @@ void bala_code_context_set_version_header (BalaCodeContext* self,
 gboolean bala_code_context_get_nostdpkg (BalaCodeContext* self);
 void bala_code_context_set_nostdpkg (BalaCodeContext* self,
                                      gboolean value);
-gboolean bala_code_context_get_use_fast_vapi (BalaCodeContext* self);
-void bala_code_context_set_use_fast_vapi (BalaCodeContext* self,
+gboolean bala_code_context_get_use_fast_bapi (BalaCodeContext* self);
+void bala_code_context_set_use_fast_bapi (BalaCodeContext* self,
                                           gboolean value);
 gboolean bala_code_context_get_keep_going (BalaCodeContext* self);
 void bala_code_context_set_keep_going (BalaCodeContext* self,
                                        gboolean value);
-gboolean bala_code_context_get_vapi_comments (BalaCodeContext* self);
-void bala_code_context_set_vapi_comments (BalaCodeContext* self,
+gboolean bala_code_context_get_bapi_comments (BalaCodeContext* self);
+void bala_code_context_set_bapi_comments (BalaCodeContext* self,
                                           gboolean value);
 gboolean bala_code_context_require_glib_version (BalaCodeContext* self,
                                                  gint major,
@@ -4492,7 +4492,7 @@ gboolean bala_code_context_is_defined (BalaCodeContext* self,
                                        const gchar* define);
 void bala_code_context_set_target_glib_version (BalaCodeContext* self,
                                                 const gchar* target_glib);
-gchar* bala_code_context_get_vapi_path (BalaCodeContext* self,
+gchar* bala_code_context_get_bapi_path (BalaCodeContext* self,
                                         const gchar* pkg);
 gchar* bala_code_context_get_gir_path (BalaCodeContext* self,
                                        const gchar* gir);
