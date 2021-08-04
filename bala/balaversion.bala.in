@@ -1,4 +1,4 @@
-/* valaversion.vala
+/* balaversion.bala
  *
  * Copyright (C) 2018  Rico Tzschichholz
  *
@@ -48,63 +48,63 @@ namespace Vala {
 	public const string BUILD_VERSION = "@PACKAGE_VERSION@";
 
 	/**
-	 * Returns the major version number of the vala library.
+	 * Returns the major version number of the bala library.
 	 *
 	 * This function is in the library, so it represents the GTK+
 	 * library your code is running against.
 	 *
-	 * @return the major version number of the vala library
+	 * @return the major version number of the bala library
 	 */
 	public uint get_major_version () {
 		return MAJOR_VERSION;
 	}
 
 	/**
-	 * Returns the minor version number of the vala library.
+	 * Returns the minor version number of the bala library.
 	 *
-	 * This function is in the library, so it represents the vala
+	 * This function is in the library, so it represents the bala
 	 * library your code is are running against.
 	 *
-	 * @return the minor version number of the vala library
+	 * @return the minor version number of the bala library
 	 */
 	public uint get_minor_version () {
 		return MINOR_VERSION;
 	}
 
 	/**
-	 * Returns the micro version number of the vala library.
+	 * Returns the micro version number of the bala library.
 	 *
-	 * This function is in the library, so it represents the vala
+	 * This function is in the library, so it represents the bala
 	 * library your code is running against.
 	 *
-	 * @return the micro version number of the vala library
+	 * @return the micro version number of the bala library
 	 */
 	public uint get_micro_version () {
 		return MICRO_VERSION;
 	}
 
 	/**
-	 * Returns the full build-version string of the vala library.
+	 * Returns the full build-version string of the bala library.
 	 *
-	 * This function is in the library, so it represents the vala
+	 * This function is in the library, so it represents the bala
 	 * library your code is running against.
 	 *
-	 * @return the full build-version string of the vala library
+	 * @return the full build-version string of the bala library
 	 */
 	public unowned string get_build_version () {
 		return BUILD_VERSION;
 	}
 
 	/**
-	 * Checks that the vala library in use is compatible with the given version.
+	 * Checks that the bala library in use is compatible with the given version.
 	 *
-	 * This function is in the library, so it represents the vala
+	 * This function is in the library, so it represents the bala
 	 * library your code is running against.
 	 *
 	 * @param required_major the required major version
 	 * @param required_minor the required minor version
 	 * @param required_micro the required micro version
-	 * @return null if the vala library is compatible with the given version,
+	 * @return null if the bala library is compatible with the given version,
 	 * or a string describing the version mismatch.
 	 */
 	public unowned string? check_version (uint required_major, uint required_minor, uint required_micro)
@@ -113,10 +113,10 @@ namespace Vala {
 		uint required_effective_micro = 100 * required_minor + required_micro;
 
 		if (required_major > MAJOR_VERSION)
-			return "vala version too old (major mismatch)";
+			return "bala version too old (major mismatch)";
 
 		if (required_effective_micro > effective_micro)
-			return "vala version too old (micro mismatch)";
+			return "bala version too old (micro mismatch)";
 
 		return null;
 	}

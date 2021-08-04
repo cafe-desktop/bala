@@ -1,4 +1,4 @@
-/* generator.vala
+/* generator.bala
  *
  * Copyright (C) 2010 Luca Bruno
  *
@@ -1110,7 +1110,7 @@ It is important that your <link linkend="GValue"><type>GValue</type></link> hold
 
 			gcomment = add_symbol (m.get_filename(), m.get_cname (), m.documentation);
 			gcomment.returns = null; // async method has no return value
-			var see_also = gcomment.see_also; // vala bug
+			var see_also = gcomment.see_also; // bala bug
 			see_also += get_docbook_link (m, false, true);
 			gcomment.see_also = see_also;
 		} else {
@@ -1179,7 +1179,7 @@ It is important that your <link linkend="GValue"><type>GValue</type></link> hold
 				finish_gcomment.headers.add (error_header);
 			}
 
-			var see_also = finish_gcomment.see_also; // vala bug
+			var see_also = finish_gcomment.see_also; // bala bug
 			see_also += get_docbook_link (m);
 			finish_gcomment.see_also = see_also;
 

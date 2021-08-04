@@ -1,4 +1,4 @@
-/* tokyocabinet.vala
+/* tokyocabinet.bala
  *
  * Copyright (C) 2008-2010  Evan Nemerson
  *
@@ -118,13 +118,13 @@ namespace TokyoCabinet {
 		public void push_string (string str);
 		[CCode (cname = "tclistpop")]
 		public unowned uint8[] _pop ();
-		[CCode (cname = "_vala_tclistpop")]
+		[CCode (cname = "_bala_tclistpop")]
 		public uint8[] pop () {
 			return TokyoCabinet.Memory.copy_and_free (this._pop ());
 		}
 		[CCode (cname = "tclistpop2")]
 		public unowned string _pop_string ();
-		[CCode (cname = "_vala_tclistpop2")]
+		[CCode (cname = "_bala_tclistpop2")]
 		public string pop_string () {
 			return TokyoCabinet.Memory.copy_and_free_string (this._pop_string ());
 		}
@@ -133,13 +133,13 @@ namespace TokyoCabinet {
 		public void unshift_string (string str);
 		[CCode (cname = "tclistshift")]
 		public unowned uint8[] _shift ();
-		[CCode (cname = "_vala_tclistshift")]
+		[CCode (cname = "_bala_tclistshift")]
 		public uint8[] shift () {
 			return TokyoCabinet.Memory.copy_and_free (this._shift ());
 		}
 		[CCode (cname = "tclistshift2")]
 		public unowned string _shift_string ();
-		[CCode (cname = "_vala_tclistshift2")]
+		[CCode (cname = "_bala_tclistshift2")]
 		public string shift_string () {
 			return TokyoCabinet.Memory.copy_and_free_string (this._shift_string ());
 		}
@@ -148,13 +148,13 @@ namespace TokyoCabinet {
 		public void insert_string (int index, string str);
 		[CCode (cname = "tclistremove")]
 		public unowned uint8[] _remove (int index);
-		[CCode (cname = "_vala_tclistremove")]
+		[CCode (cname = "_bala_tclistremove")]
 		public uint8[] remove (int index) {
 			return TokyoCabinet.Memory.copy_and_free (this._remove (index));
 		}
 		[CCode (cname = "tclistremove2")]
 		public unowned string _remove_string (int index);
-		[CCode (cname = "_vala_tclistremove2")]
+		[CCode (cname = "_bala_tclistremove2")]
 		public string remove_string (int index) {
 			return TokyoCabinet.Memory.copy_and_free_string (this._remove_string (index));
 		}
@@ -174,7 +174,7 @@ namespace TokyoCabinet {
 		public void clear ();
 		[CCode (cname = "tclistdump")]
 		public unowned uint8[] _dump ();
-		[CCode (cname = "_vala_tclistdump")]
+		[CCode (cname = "_bala_tclistdump")]
 		public uint8[] dump () {
 			return TokyoCabinet.Memory.copy_and_free (this._dump ());
 		}
@@ -259,7 +259,7 @@ namespace TokyoCabinet {
 		public void cut_front (int num);
 		[CCode (cname = "tcmapdump")]
 		public unowned uint8[] _dump ();
-		[CCode (cname = "_vala_tcmapdump")]
+		[CCode (cname = "_bala_tcmapdump")]
 		public uint8[] dump () {
 			return TokyoCabinet.Memory.copy_and_free (this._dump ());
 		}
@@ -433,7 +433,7 @@ namespace TokyoCabinet {
 		public bool remove_string (string key);
 		[CCode (cname = "tcndbget")]
 		private unowned uint8[]? _get (uint8[] key);
-		[CCode (cname = "_vala_tcndbget")]
+		[CCode (cname = "_bala_tcndbget")]
 		public uint8[]? get (uint8[] key) {
 			return TokyoCabinet.Memory.copy_and_free (this._get (key));
 		}
@@ -572,7 +572,7 @@ namespace TokyoCabinet {
 		public bool remove_string (string key);
 		[CCode (cname = "tchdbget3")]
 		public int _get (uint8[] kbuf, uint8[] vbuf);
-		[CCode (cname = "_vala_tchdbget")]
+		[CCode (cname = "_bala_tchdbget")]
 		public uint8[]? get (uint8[] key) {
 			int vsiz = this.value_size (key);
 			if ( vsiz < 0 )
@@ -582,7 +582,7 @@ namespace TokyoCabinet {
 			this._get (key, vbuf);
 			return vbuf;
 		}
-		[CCode (cname = "_vala_tchdbget2")]
+		[CCode (cname = "_bala_tchdbget2")]
 		public string? get_string (string key) {
 			unowned uint8[] kbuf = (uint8[]) key;
 			kbuf.length = key.length;
@@ -650,13 +650,13 @@ namespace TokyoCabinet {
 			public bool remove ();
 			[CCode (cname = "tcbdbcurkey3")]
 			public unowned uint8[]? key ();
-			[CCode (cname = "_vala_tcbdbcurkey2")]
+			[CCode (cname = "_bala_tcbdbcurkey2")]
 			public unowned string? key_string () {
 				return (string) this.key ();
 			}
 			[CCode (cname = "tcbdbcurval3")]
 			public unowned uint8[]? value ();
-			[CCode (cname = "_vala_tcbdbcurval2")]
+			[CCode (cname = "_bala_tcbdbcurval2")]
 			public unowned string? value_string () {
 				return (string) this.value ();
 			}
@@ -724,7 +724,7 @@ namespace TokyoCabinet {
 		private unowned uint8[]? _get (uint8[] key);
 		[CCode (cname = "tcbdbsetdfunit")]
 		public bool set_defragment_unit (int32 dfunit);
-		[CCode (cname = "_vala_tcbdbget")]
+		[CCode (cname = "_bala_tcbdbget")]
 		public uint8[]? get (uint8[] key) {
 			return this._get (key);
 		}
@@ -815,7 +815,7 @@ namespace TokyoCabinet {
 		public bool remove (int64 id);
 		[CCode (cname = "tcfdbget4")]
 		public int _get (int64 id, uint8[] value);
-		[CCode (cname = "_vala_tcfdbget")]
+		[CCode (cname = "_bala_tcfdbget")]
 		public uint8[]? get (int64 id) {
 			var vsiz = this.get_value_size (id);
 			if ( vsiz < 0 )
@@ -880,7 +880,7 @@ namespace TokyoCabinet {
 		public bool remove_string (string key);
 		[CCode (cname = "tcadbget")]
 		public unowned uint8[]? _get (uint8[] key);
-		[CCode (cname = "_vala_tcadbget")]
+		[CCode (cname = "_bala_tcadbget")]
 		public uint8[]? get (uint8[] key) {
 			return TokyoCabinet.Memory.copy_and_free (this._get (key));
 		}
@@ -898,13 +898,13 @@ namespace TokyoCabinet {
 
 		[CCode (cname = "tcadbiternext")]
 		public unowned uint8[]? _iterator_next ();
-		[CCode (cname = "_vala_tcadbiternext")]
+		[CCode (cname = "_bala_tcadbiternext")]
 		public uint8[]? iterator_next () {
 			return TokyoCabinet.Memory.copy_and_free (this._iterator_next ());
 		}
 		[CCode (cname = "tcadbiternext2")]
 		public unowned string? _iterator_next_string ();
-		[CCode (cname = "_vala_tcadbiternext")]
+		[CCode (cname = "_bala_tcadbiternext")]
 		public string? iterator_next_string () {
 			return TokyoCabinet.Memory.copy_and_free_string (this._iterator_next_string ());
 		}

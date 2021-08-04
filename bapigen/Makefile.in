@@ -108,24 +108,24 @@ am__installdirs = "$(DESTDIR)$(bindir)" "$(DESTDIR)$(aclocaldir)" \
 	"$(DESTDIR)$(makedir)" "$(DESTDIR)$(pkgconfigdir)"
 PROGRAMS = $(bin_PROGRAMS) $(noinst_PROGRAMS)
 am__objects_1 =
-am__objects_2 = valavapicheck.$(OBJEXT) $(am__objects_1)
+am__objects_2 = balavapicheck.$(OBJEXT) $(am__objects_1)
 am_vapicheck_OBJECTS = $(am__objects_2) $(am__objects_1)
 vapicheck_OBJECTS = $(am_vapicheck_OBJECTS)
 am__DEPENDENCIES_1 =
 vapicheck_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(am__DEPENDENCIES_1)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-am__objects_3 = valagidlparser.$(OBJEXT) valavapigen.$(OBJEXT) \
+am__objects_3 = balagidlparser.$(OBJEXT) balavapigen.$(OBJEXT) \
 	$(am__objects_1)
 am_vapigen_OBJECTS = $(am__objects_3) $(am__objects_1)
 vapigen_OBJECTS = $(am_vapigen_OBJECTS)
 vapigen_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(am__DEPENDENCIES_1)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -143,8 +143,8 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/valagidlparser.Po \
-	./$(DEPDIR)/valavapicheck.Po ./$(DEPDIR)/valavapigen.Po
+am__depfiles_remade = ./$(DEPDIR)/balagidlparser.Po \
+	./$(DEPDIR)/balavapicheck.Po ./$(DEPDIR)/balavapigen.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -417,7 +417,7 @@ BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
 BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 SUBDIRS = \
-	vala-gen-introspect \
+	bala-gen-introspect \
 	$(NULL)
 
 AM_CPPFLAGS = \
@@ -426,45 +426,45 @@ AM_CPPFLAGS = \
 	$(GLIB_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	-I$(top_srcdir)/gobject-introspection \
 	$(NULL)
 
-BUILT_SOURCES = vapigen.vala.stamp vapicheck.vala.stamp
+BUILT_SOURCES = vapigen.bala.stamp vapicheck.bala.stamp
 vapigen_BALASOURCES = \
-	valagidlparser.vala \
-	valavapigen.vala \
+	balagidlparser.bala \
+	balavapigen.bala \
 	$(NULL)
 
 vapigen_SOURCES = \
-	vapigen.vala.stamp \
-	$(vapigen_BALASOURCES:.vala=.c) \
+	vapigen.bala.stamp \
+	$(vapigen_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 vapicheck_BALASOURCES = \
-	valavapicheck.vala \
+	balavapicheck.bala \
 	$(NULL)
 
 vapicheck_SOURCES = \
-	vapicheck.vala.stamp \
-	$(vapicheck_BALASOURCES:.vala=.c) \
+	vapicheck.bala.stamp \
+	$(vapicheck_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 vapigen_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(NULL)
 
 vapicheck_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(NULL)
 
-@ENABLE_UNVERSIONED_TRUE@makedir = $(datadir)/vala
+@ENABLE_UNVERSIONED_TRUE@makedir = $(datadir)/bala
 @ENABLE_UNVERSIONED_TRUE@make_DATA = Makefile.vapigen
 @ENABLE_UNVERSIONED_TRUE@aclocaldir = $(datadir)/aclocal
 @ENABLE_UNVERSIONED_TRUE@aclocal_DATA = vapigen.m4
@@ -475,16 +475,16 @@ EXTRA_DIST = \
 	$(vapicheck_BALASOURCES) \
 	Makefile.vapigen \
 	vapigen.m4 \
-	vapigen.vala.stamp \
-	vapicheck.vala.stamp \
+	vapigen.bala.stamp \
+	vapicheck.bala.stamp \
 	$(NULL)
 
 CLEANFILES = \
 	vapigen@PACKAGE_SUFFIX@.pc
 
 MAINTAINERCLEANFILES = \
-	$(vapigen_BALASOURCES:.vala=.c) \
-	$(vapicheck_BALASOURCES:.vala=.c) \
+	$(vapigen_BALASOURCES:.bala=.c) \
+	$(vapicheck_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -597,9 +597,9 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valagidlparser.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valavapicheck.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/valavapigen.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balagidlparser.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balavapicheck.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/balavapigen.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -909,9 +909,9 @@ clean-am: clean-binPROGRAMS clean-generic clean-libtool \
 	clean-noinstPROGRAMS mostlyclean-am
 
 distclean: distclean-recursive
-		-rm -f ./$(DEPDIR)/valagidlparser.Po
-	-rm -f ./$(DEPDIR)/valavapicheck.Po
-	-rm -f ./$(DEPDIR)/valavapigen.Po
+		-rm -f ./$(DEPDIR)/balagidlparser.Po
+	-rm -f ./$(DEPDIR)/balavapicheck.Po
+	-rm -f ./$(DEPDIR)/balavapigen.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-tags
@@ -960,9 +960,9 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
-		-rm -f ./$(DEPDIR)/valagidlparser.Po
-	-rm -f ./$(DEPDIR)/valavapicheck.Po
-	-rm -f ./$(DEPDIR)/valavapigen.Po
+		-rm -f ./$(DEPDIR)/balagidlparser.Po
+	-rm -f ./$(DEPDIR)/balavapicheck.Po
+	-rm -f ./$(DEPDIR)/balavapigen.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
@@ -1007,27 +1007,27 @@ uninstall-am: uninstall-aclocalDATA uninstall-binPROGRAMS \
 .PRECIOUS: Makefile
 
 
-vapigen.vala.stamp: $(vapigen_BALASOURCES)
+vapigen.bala.stamp: $(vapigen_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--vapidir $(top_srcdir)/gobject-introspection --pkg gidl \
 		--pkg config \
 		$^
 	@touch $@
 
-vapicheck.vala.stamp: $(vapicheck_BALASOURCES)
+vapicheck.bala.stamp: $(vapicheck_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--vapidir $(top_srcdir)/gobject-introspection --pkg gidl \
 		--pkg config \
 		$^

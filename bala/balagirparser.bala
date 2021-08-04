@@ -1,4 +1,4 @@
-/* valagirparser.vala
+/* balagirparser.bala
  *
  * Copyright (C) 2008-2012  Jürg Billeter
  * Copyright (C) 2011-2014  Luca Bruno
@@ -1384,7 +1384,7 @@ public class Vala.GirParser : CodeVisitor {
 		tree_stack = new ArrayList<Node> ();
 		current = root;
 
-		map_vala_to_gir ();
+		map_bala_to_gir ();
 
 		context.accept (this);
 
@@ -1411,7 +1411,7 @@ public class Vala.GirParser : CodeVisitor {
 		this.context = null;
 	}
 
-	void map_vala_to_gir () {
+	void map_bala_to_gir () {
 		foreach (var source_file in context.get_source_files ()) {
 			string gir_namespace = source_file.gir_namespace;
 			string gir_version = source_file.gir_version;
@@ -1958,7 +1958,7 @@ public class Vala.GirParser : CodeVisitor {
 	}
 
 	void set_array_ccode (Symbol sym, ParameterInfo info) {
-		sym.set_attribute_double ("CCode", "array_length_pos", info.vala_idx);
+		sym.set_attribute_double ("CCode", "array_length_pos", info.bala_idx);
 		if (sym is Parameter) {
 			sym.set_attribute_string ("CCode", "array_length_cname", info.param.name);
 		}
@@ -2139,7 +2139,7 @@ public class Vala.GirParser : CodeVisitor {
 		}
 
 		string? lower_case_cprefix = reader.get_attribute ("c:symbol-prefixes");
-		string vala_namespace = cprefix;
+		string bala_namespace = cprefix;
 		string gir_namespace = reader.get_attribute ("name");
 		string gir_version = reader.get_attribute ("version");
 
@@ -2167,19 +2167,19 @@ public class Vala.GirParser : CodeVisitor {
 
 		var ns_metadata = metadata.match_child (gir_namespace);
 		if (ns_metadata.has_argument (ArgumentType.NAME)) {
-			vala_namespace = ns_metadata.get_string (ArgumentType.NAME);
+			bala_namespace = ns_metadata.get_string (ArgumentType.NAME);
 		}
-		if (vala_namespace == null) {
-			vala_namespace = gir_namespace;
+		if (bala_namespace == null) {
+			bala_namespace = gir_namespace;
 		}
 
 		current_source_file.gir_namespace = gir_namespace;
 		current_source_file.gir_version = gir_version;
 
 		Namespace ns;
-		push_node (vala_namespace, true);
+		push_node (bala_namespace, true);
 		if (current.new_symbol) {
-			ns = new Namespace (vala_namespace, current.source_reference);
+			ns = new Namespace (bala_namespace, current.source_reference);
 			current.symbol = ns;
 		} else {
 			ns = (Namespace) current.symbol;
@@ -3183,13 +3183,13 @@ public class Vala.GirParser : CodeVisitor {
 			this.array_length_idx = array_length_idx;
 			this.closure_idx = closure_idx;
 			this.destroy_idx = destroy_idx;
-			this.vala_idx = 0.0F;
+			this.bala_idx = 0.0F;
 			this.keep = true;
 			this.is_async = is_async;
 		}
 
 		public Parameter param;
-		public float vala_idx;
+		public float bala_idx;
 		public int array_length_idx;
 		public int closure_idx;
 		public int destroy_idx;
@@ -3972,7 +3972,7 @@ public class Vala.GirParser : CodeVisitor {
 			unowned DataType type = info.param.variable_type;
 
 			// Do not mark out-parameters as nullable if they are simple-types,
-			// since it would result in a boxed-type in vala
+			// since it would result in a boxed-type in bala
 			if (info.param.direction == ParameterDirection.OUT && type.nullable) {
 				Struct? st = null;
 				if (type is UnresolvedType) {
@@ -4057,25 +4057,25 @@ public class Vala.GirParser : CodeVisitor {
 					   && !node.array_length_parameters.contains (i)
 					   && !node.closure_parameters.contains (i)
 					   && !node.destroy_parameters.contains (i)) {
-				info.vala_idx = (float) j;
+				info.bala_idx = (float) j;
 				info.keep = true;
 
-				/* interpolate for vala_idx between this and last*/
+				/* interpolate for bala_idx between this and last*/
 				float last_idx = 0.0F;
 				if (last != -1) {
-					last_idx = parameters[last].vala_idx;
+					last_idx = parameters[last].bala_idx;
 				}
 				for (int k=last+1; k < i; k++) {
-					parameters[k].vala_idx =  last_idx + (((j - last_idx) / (i-last)) * (k-last));
+					parameters[k].bala_idx =  last_idx + (((j - last_idx) / (i-last)) * (k-last));
 				}
 				last = i;
 				j++;
 			} else {
 				info.keep = false;
-				// make sure that vala_idx is always set
-				// the above if branch does not set vala_idx for
+				// make sure that bala_idx is always set
+				// the above if branch does not set bala_idx for
 				// hidden parameters at the end of the parameter list
-				info.vala_idx = (j - 1) + (i - last) * 0.1F;
+				info.bala_idx = (j - 1) + (i - last) * 0.1F;
 			}
 			if (first_out < 0 && info.param.direction == ParameterDirection.OUT) {
 				first_out = i;
@@ -4116,8 +4116,8 @@ public class Vala.GirParser : CodeVisitor {
 					Report.error (info.param.source_reference, "invalid closure index");
 					continue;
 				}
-				if ("%g".printf (parameters[info.closure_idx].vala_idx) != "%g".printf (info.vala_idx + 0.1)) {
-					info.param.set_attribute_double ("CCode", "delegate_target_pos", parameters[info.closure_idx].vala_idx);
+				if ("%g".printf (parameters[info.closure_idx].bala_idx) != "%g".printf (info.bala_idx + 0.1)) {
+					info.param.set_attribute_double ("CCode", "delegate_target_pos", parameters[info.closure_idx].bala_idx);
 				}
 			}
 			if (info.destroy_idx != -1) {
@@ -4125,8 +4125,8 @@ public class Vala.GirParser : CodeVisitor {
 					Report.error (info.param.source_reference, "invalid destroy index");
 					continue;
 				}
-				if ("%g".printf (parameters[info.destroy_idx].vala_idx) != "%g".printf (info.vala_idx + 0.2)) {
-					info.param.set_attribute_double ("CCode", "destroy_notify_pos", parameters[info.destroy_idx].vala_idx);
+				if ("%g".printf (parameters[info.destroy_idx].bala_idx) != "%g".printf (info.bala_idx + 0.2)) {
+					info.param.set_attribute_double ("CCode", "destroy_notify_pos", parameters[info.destroy_idx].bala_idx);
 				}
 			}
 

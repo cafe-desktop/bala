@@ -3,106 +3,106 @@ include $(top_srcdir)/Makefile.common
 NULL =
 
 AM_CPPFLAGS = \
-	-DG_LOG_DOMAIN=\"vala-ccode\" \
+	-DG_LOG_DOMAIN=\"bala-ccode\" \
 	$(COVERAGE_CFLAGS) \
 	-I$(top_srcdir)/gee \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	$(GLIB_CFLAGS) \
 	$(NULL)
 
-BUILT_SOURCES = ccode.vala.stamp
+BUILT_SOURCES = ccode.bala.stamp
 
 noinst_LTLIBRARIES = \
-	libvalaccode.la \
+	libbalaccode.la \
 	$(NULL)
 
-libvalaccode_la_BALASOURCES = \
-	valaccodeassignment.vala \
-	valaccodebinaryexpression.vala \
-	valaccodeblock.vala \
-	valaccodebreakstatement.vala \
-	valaccodecasestatement.vala \
-	valaccodecastexpression.vala \
-	valaccodecommaexpression.vala \
-	valaccodecomment.vala \
-	valaccodeconditionalexpression.vala \
-	valaccodeconstant.vala \
-	valaccodecontinuestatement.vala \
-	valaccodedeclaration.vala \
-	valaccodedeclarator.vala \
-	valaccodedefine.vala \
-	valaccodedostatement.vala \
-	valaccodeemptystatement.vala \
-	valaccodeenum.vala \
-	valaccodeenumvalue.vala \
-	valaccodeexpression.vala \
-	valaccodeexpressionstatement.vala \
-	valaccodefile.vala \
-	valaccodeforstatement.vala \
-	valaccodefragment.vala \
-	valaccodefunction.vala \
-	valaccodefunctioncall.vala \
-	valaccodefunctiondeclarator.vala \
-	valaccodeggnucsection.vala \
-	valaccodegotostatement.vala \
-	valaccodeidentifier.vala \
-	valaccodeifstatement.vala \
-	valaccodeincludedirective.vala \
-	valaccodeinitializerlist.vala \
-	valaccodeinvalidexpression.vala \
-	valaccodelabel.vala \
-	valaccodelinedirective.vala \
-	valaccodeifsection.vala \
-	valaccodemacroreplacement.vala \
-	valaccodememberaccess.vala \
-	valaccodemodifiers.vala \
-	valaccodenewline.vala \
-	valaccodenode.vala \
-	valaccodeoncesection.vala \
-	valaccodeparameter.vala \
-	valaccodeparenthesizedexpression.vala \
-	valaccodereturnstatement.vala \
-	valaccodestatement.vala \
-	valaccodestruct.vala \
-	valaccodeswitchstatement.vala \
-	valaccodetypedefinition.vala \
-	valaccodeunaryexpression.vala \
-	valaccodevariabledeclarator.vala \
-	valaccodewhilestatement.vala \
-	valaccodewriter.vala \
-	valaccodeelementaccess.vala \
+libbalaccode_la_BALASOURCES = \
+	balaccodeassignment.bala \
+	balaccodebinaryexpression.bala \
+	balaccodeblock.bala \
+	balaccodebreakstatement.bala \
+	balaccodecasestatement.bala \
+	balaccodecastexpression.bala \
+	balaccodecommaexpression.bala \
+	balaccodecomment.bala \
+	balaccodeconditionalexpression.bala \
+	balaccodeconstant.bala \
+	balaccodecontinuestatement.bala \
+	balaccodedeclaration.bala \
+	balaccodedeclarator.bala \
+	balaccodedefine.bala \
+	balaccodedostatement.bala \
+	balaccodeemptystatement.bala \
+	balaccodeenum.bala \
+	balaccodeenumvalue.bala \
+	balaccodeexpression.bala \
+	balaccodeexpressionstatement.bala \
+	balaccodefile.bala \
+	balaccodeforstatement.bala \
+	balaccodefragment.bala \
+	balaccodefunction.bala \
+	balaccodefunctioncall.bala \
+	balaccodefunctiondeclarator.bala \
+	balaccodeggnucsection.bala \
+	balaccodegotostatement.bala \
+	balaccodeidentifier.bala \
+	balaccodeifstatement.bala \
+	balaccodeincludedirective.bala \
+	balaccodeinitializerlist.bala \
+	balaccodeinvalidexpression.bala \
+	balaccodelabel.bala \
+	balaccodelinedirective.bala \
+	balaccodeifsection.bala \
+	balaccodemacroreplacement.bala \
+	balaccodememberaccess.bala \
+	balaccodemodifiers.bala \
+	balaccodenewline.bala \
+	balaccodenode.bala \
+	balaccodeoncesection.bala \
+	balaccodeparameter.bala \
+	balaccodeparenthesizedexpression.bala \
+	balaccodereturnstatement.bala \
+	balaccodestatement.bala \
+	balaccodestruct.bala \
+	balaccodeswitchstatement.bala \
+	balaccodetypedefinition.bala \
+	balaccodeunaryexpression.bala \
+	balaccodevariabledeclarator.bala \
+	balaccodewhilestatement.bala \
+	balaccodewriter.bala \
+	balaccodeelementaccess.bala \
 	$(NULL)
 
-libvalaccode_la_SOURCES = \
-	ccode.vala.stamp \
-	$(libvalaccode_la_BALASOURCES:.vala=.c) \
+libbalaccode_la_SOURCES = \
+	ccode.bala.stamp \
+	$(libbalaccode_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-ccode.vapi ccode.vala.stamp: $(libvalaccode_la_BALASOURCES)
+ccode.vapi ccode.bala.stamp: $(libbalaccode_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi --pkg gobject-2.0 \
 		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--pkg config \
 		--use-header \
-		-H valaccode.h \
+		-H balaccode.h \
 		--library ccode \
 		$^
 	touch $@
 
-libvalaccode_la_LIBADD = \
+libbalaccode_la_LIBADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(NULL)
 
-EXTRA_DIST = $(libvalaccode_la_BALASOURCES) ccode.vapi ccode.vala.stamp valaccode.h
+EXTRA_DIST = $(libbalaccode_la_BALASOURCES) ccode.vapi ccode.bala.stamp balaccode.h
 
 MAINTAINERCLEANFILES = \
 	ccode.vapi \
-	valaccode.h \
-	$(libvalaccode_la_BALASOURCES:.vala=.c) \
+	balaccode.h \
+	$(libbalaccode_la_BALASOURCES:.bala=.c) \
 	$(NULL)

@@ -31,26 +31,26 @@ AC_DEFUN([VAPIGEN_CHECK],
         ])
     ])
 
-  AC_ARG_ENABLE([vala],
-    [AS_HELP_STRING([--enable-vala[=@<:@no/auto/yes@:>@]],[build Vala bindings @<:@default=]ifelse($4,,auto,$4)[@:>@])],,[
+  AC_ARG_ENABLE([bala],
+    [AS_HELP_STRING([--enable-bala[=@<:@no/auto/yes@:>@]],[build Vala bindings @<:@default=]ifelse($4,,auto,$4)[@:>@])],,[
       AS_IF([test "x$4" = "x"], [
-          enable_vala=auto
+          enable_bala=auto
         ], [
-          enable_vala=$4
+          enable_bala=$4
         ])
     ])
 
-  AS_CASE([$enable_vala], [no], [enable_vala=no],
+  AS_CASE([$enable_bala], [no], [enable_bala=no],
       [yes], [
         AS_IF([test "x$3" != "xyes" -a "x$found_introspection" != "xyes"], [
             AC_MSG_ERROR([Vala bindings require GObject Introspection])
           ])
       ], [auto], [
         AS_IF([test "x$3" != "xyes" -a "x$found_introspection" != "xyes"], [
-            enable_vala=no
+            enable_bala=no
           ])
       ], [
-        AC_MSG_ERROR([Invalid argument passed to --enable-vala, should be one of @<:@no/auto/yes@:>@])
+        AC_MSG_ERROR([Invalid argument passed to --enable-bala, should be one of @<:@no/auto/yes@:>@])
       ])
 
   AS_IF([test "x$2" = "x"], [
@@ -67,23 +67,23 @@ AC_DEFUN([VAPIGEN_CHECK],
   PKG_PROG_PKG_CONFIG
 
   PKG_CHECK_EXISTS([$vapigen_pkg], [
-      AS_IF([test "$enable_vala" = "auto"], [
-          enable_vala=yes
+      AS_IF([test "$enable_bala" = "auto"], [
+          enable_bala=yes
         ])
     ], [
-      AS_CASE([$enable_vala], [yes], [
+      AS_CASE([$enable_bala], [yes], [
           AC_MSG_ERROR([$vapigen_pkg not found])
         ], [auto], [
-          enable_vala=no
+          enable_bala=no
         ])
     ])
 
   AC_MSG_CHECKING([for vapigen])
 
-  AS_CASE([$enable_vala],
+  AS_CASE([$enable_bala],
     [yes], [
       VAPIGEN=`$PKG_CONFIG --variable=vapigen $vapigen_pkg_name`
-      VAPIGEN_MAKEFILE=`$PKG_CONFIG --variable=datadir $vapigen_pkg_name`/vala/Makefile.vapigen
+      VAPIGEN_MAKEFILE=`$PKG_CONFIG --variable=datadir $vapigen_pkg_name`/bala/Makefile.vapigen
       AS_IF([test "x$2" = "x"], [
           VAPIGEN_VAPIDIR=`$PKG_CONFIG --variable=vapidir $vapigen_pkg_name`
         ], [
@@ -91,11 +91,11 @@ AC_DEFUN([VAPIGEN_CHECK],
         ])
     ])
 
-  AC_MSG_RESULT([$enable_vala])
+  AC_MSG_RESULT([$enable_bala])
 
   AC_SUBST([VAPIGEN])
   AC_SUBST([VAPIGEN_VAPIDIR])
   AC_SUBST([VAPIGEN_MAKEFILE])
 
-  AM_CONDITIONAL(ENABLE_VAPIGEN, test "x$enable_vala" = "xyes")
+  AM_CONDITIONAL(ENABLE_VAPIGEN, test "x$enable_bala" = "xyes")
 ])

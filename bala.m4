@@ -1,4 +1,4 @@
-dnl vala.m4
+dnl bala.m4
 dnl
 dnl Copyright 2010 Marc-Andre Lureau
 dnl Copyright 2011 Rodney Dawes <dobey.pwns@gmail.com>
@@ -25,11 +25,11 @@ dnl Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301  US
 AC_DEFUN([_BALA_CHECK_COMPILE_WITH_ARGS],
 [AC_REQUIRE([AM_PROG_BALAC])[]dnl
 
-  cat <<_ACEOF >conftest.vala
+  cat <<_ACEOF >conftest.bala
 void main(){}
 _ACEOF
 
-  AS_IF([vala_error=`$BALAC $1 -q --cc="${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS}" -o conftest$ac_exeext conftest.vala 2>&1`],
+  AS_IF([bala_error=`$BALAC $1 -q --cc="${CC} ${CPPFLAGS} ${CFLAGS} ${LDFLAGS}" -o conftest$ac_exeext conftest.bala 2>&1`],
         [$2], [$3])
 ])
 
@@ -42,24 +42,24 @@ _ACEOF
 #
 AC_DEFUN([BALA_CHECK_PACKAGES],
 [
-  unset vala_pkgs
-  unset vala_bindings
+  unset bala_pkgs
+  unset bala_bindings
   ac_save_ifs="$IFS"; unset IFS
-  for vala_pkg in $(echo "$1"); do
-      vala_pkgs="${vala_pkgs:+$vala_pkgs }--pkg $vala_pkg"
-      vala_bindings="${vala_bindings:+$vala_bindings }$vala_pkg"
+  for bala_pkg in $(echo "$1"); do
+      bala_pkgs="${bala_pkgs:+$bala_pkgs }--pkg $bala_pkg"
+      bala_bindings="${bala_bindings:+$bala_bindings }$bala_pkg"
   done
   IFS="$ac_save_ifs"
-  AC_MSG_CHECKING([for $vala_bindings vala bindings])
-  _BALA_CHECK_COMPILE_WITH_ARGS([$vala_pkgs],
-    [vala_pkg_exists=yes],
-    [vala_pkg_exists=no])
+  AC_MSG_CHECKING([for $bala_bindings bala bindings])
+  _BALA_CHECK_COMPILE_WITH_ARGS([$bala_pkgs],
+    [bala_pkg_exists=yes],
+    [bala_pkg_exists=no])
 
-AS_IF([test x${vala_pkg_exists} = xno],[
+AS_IF([test x${bala_pkg_exists} = xno],[
   ifelse([$3], , [AC_MSG_ERROR([]dnl
 [Package requirements were not met: $1
 
-$vala_error
+$bala_error
 
 Consider adjusting the XDG_DATA_DIRS environment variable if you
 installed bindings in a non-standard prefix.
@@ -97,7 +97,7 @@ AC_DEFUN([BALA_CHECK_MODULES],
         PKG_CHECK_MODULES([$1], [$2], [$3], [$4])
 
         pkg_failed=no
-		AC_MSG_CHECKING([for $1 vala modules])
+		AC_MSG_CHECKING([for $1 bala modules])
 
         _BALA_CHECK_COMPILE_WITH_ARGS([$1][_BALAFLAGS],
                                       [pkg_failed=yes],

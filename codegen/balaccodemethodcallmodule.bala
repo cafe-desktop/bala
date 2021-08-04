@@ -1,4 +1,4 @@
-/* valaccodemethodcallmodule.vala
+/* balaccodemethodcallmodule.bala
  *
  * Copyright (C) 2006-2010  Jürg Billeter
  * Copyright (C) 2006-2008  Raffaele Sandrini
@@ -435,7 +435,7 @@ public class Vala.CCodeMethodCallModule : CCodeAssignmentModule {
 									cexpr = new CCodeConditionalExpression (new CCodeBinaryExpression (CCodeBinaryOperator.EQUALITY, cexpr, new CCodeConstant ("NULL")), new CCodeConstant ("NULL"), closure_new);
 								} else {
 									// Override previously given target/destroy only if it was NULL
-									// TODO https://gitlab.gnome.org/GNOME/vala/issues/59
+									// TODO https://gitlab.gnome.org/GNOME/bala/issues/59
 									var node = carg_map.get (get_param_pos (get_ccode_delegate_target_pos (param)));
 									if (node == null || (node is CCodeConstant && ((CCodeConstant) node).name == "NULL")) {
 										carg_map.set (get_param_pos (get_ccode_delegate_target_pos (param)), delegate_target);
@@ -579,7 +579,7 @@ public class Vala.CCodeMethodCallModule : CCodeAssignmentModule {
 					ccall_expr = new CCodeAssignment (temp_ref, ccall_expr);
 
 					requires_array_length = true;
-					var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_vala_array_length"));
+					var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_bala_array_length"));
 					len_call.add_argument (temp_ref);
 
 					append_array_length (expr, len_call);
@@ -646,7 +646,7 @@ public class Vala.CCodeMethodCallModule : CCodeAssignmentModule {
 					ccall_expr = new CCodeAssignment (temp_ref, ccall_expr);
 
 					requires_array_length = true;
-					var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_vala_array_length"));
+					var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_bala_array_length"));
 					len_call.add_argument (temp_ref);
 
 					append_array_length (expr, len_call);
@@ -803,7 +803,7 @@ public class Vala.CCodeMethodCallModule : CCodeAssignmentModule {
 
 		if (expr.is_assert) {
 			string message = ((string) expr.source_reference.begin.pos).substring (0, (int) (expr.source_reference.end.pos - expr.source_reference.begin.pos));
-			ccall.call = new CCodeIdentifier ("_vala_assert");
+			ccall.call = new CCodeIdentifier ("_bala_assert");
 			ccall.add_argument (new CCodeConstant ("\"%s\"".printf (message.replace ("\n", " ").escape (""))));
 			requires_assert = true;
 
@@ -972,7 +972,7 @@ public class Vala.CCodeMethodCallModule : CCodeAssignmentModule {
 			// handle out null terminated arrays
 			if (param != null && get_ccode_array_null_terminated (param)) {
 				requires_array_length = true;
-				var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_vala_array_length"));
+				var len_call = new CCodeFunctionCall (new CCodeIdentifier ("_bala_array_length"));
 				len_call.add_argument (get_cvalue_ (unary.inner.target_value));
 
 				ccode.add_assignment (get_array_length_cvalue (unary.inner.target_value, 1), len_call);

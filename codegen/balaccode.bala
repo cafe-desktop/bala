@@ -1,4 +1,4 @@
-/* valaccode.vala
+/* balaccode.bala
  *
  * Copyright (C) 2017  Rico Tzschichholz
  *
@@ -115,9 +115,9 @@ namespace Vala {
 			unowned PointerType type = (PointerType) node;
 			return get_ccode_lower_case_name (type.base_type, infix);
 		} else if (node is GenericType) {
-			return "valageneric";
+			return "balageneric";
 		} else if (node is VoidType) {
-			return "valavoid";
+			return "balavoid";
 		} else {
 			unowned DataType type = (DataType) node;
 			return get_ccode_lower_case_name (type.type_symbol, infix);

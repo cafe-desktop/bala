@@ -350,7 +350,7 @@ namespace LibUSB {
 	[CCode (cname = "libusb_device_handle", cprefix = "libusb_", free_function = "libusb_close")]
 	[Compact]
 	public class DeviceHandle {
-		[CCode (cname = "_vala_libusb_device_handle_from_device")]
+		[CCode (cname = "_bala_libusb_device_handle_from_device")]
 		public DeviceHandle from_device (Device device) {
 			DeviceHandle handle;
 			device.open (out handle);
@@ -419,7 +419,7 @@ namespace LibUSB {
 		public void set_debug (LogLevel level);
 		[CCode (cname = "libusb_get_device_list")]
 		public ssize_t _get_device_list ([CCode (array_length = false, array_null_terminated = true)] out Device[] list);
-		[CCode (cname = "_vala_libusb_get_device_list")]
+		[CCode (cname = "_bala_libusb_get_device_list")]
 		public Device[] get_device_list () {
 			Device[] result;
 			var result_length = _get_device_list (out result);

@@ -86,7 +86,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = vapigen/vala-gen-introspect
+subdir = vapigen/bala-gen-introspect
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -98,7 +98,7 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = vala-gen-introspect
+CONFIG_CLEAN_FILES = bala-gen-introspect
 CONFIG_CLEAN_VPATH_FILES =
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
@@ -150,7 +150,7 @@ am__can_run_installinfo = \
   esac
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/Makefile.in \
-	$(srcdir)/vala-gen-introspect.in
+	$(srcdir)/bala-gen-introspect.in
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 pkgdatadir = @pkgdatadir@
 pkglibdir = @pkglibdir@
@@ -303,11 +303,11 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 NULL = 
 bin_SCRIPTS = \
-	vala-gen-introspect \
+	bala-gen-introspect \
 	$(NULL)
 
 EXTRA_DIST = \
-	vala-gen-introspect.in
+	bala-gen-introspect.in
 
 all: all-am
 
@@ -321,9 +321,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am  $(am__confi
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu vapigen/vala-gen-introspect/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu vapigen/bala-gen-introspect/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu vapigen/vala-gen-introspect/Makefile
+	  $(AUTOMAKE) --gnu vapigen/bala-gen-introspect/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -341,7 +341,7 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-vala-gen-introspect: $(top_builddir)/config.status $(srcdir)/vala-gen-introspect.in
+bala-gen-introspect: $(top_builddir)/config.status $(srcdir)/bala-gen-introspect.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 install-binSCRIPTS: $(bin_SCRIPTS)
 	@$(NORMAL_INSTALL)
@@ -549,7 +549,7 @@ uninstall-am: uninstall-binSCRIPTS
 	$(NULL)
 
 @ENABLE_UNVERSIONED_TRUE@install-exec-hook:
-@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f vala-gen-introspect@PACKAGE_SUFFIX@ vala-gen-introspect
+@ENABLE_UNVERSIONED_TRUE@	cd $(DESTDIR)$(bindir) && $(LN_S) -f bala-gen-introspect@PACKAGE_SUFFIX@ bala-gen-introspect
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.

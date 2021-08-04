@@ -1,7 +1,7 @@
 NULL =
 
-check-girwriter: $(top_builddir)/compiler/valac
-	G_DEBUG=fatal-warnings $(top_builddir)/compiler/valac \
+check-girwriter: $(top_builddir)/compiler/balac
+	G_DEBUG=fatal-warnings $(top_builddir)/compiler/balac \
 		-C \
 		--disable-version-header \
 		--vapidir $(top_srcdir)/vapi \
@@ -9,7 +9,7 @@ check-girwriter: $(top_builddir)/compiler/valac
 		--gir GirTest-1.0.gir \
 		--library girtest \
 		--shared-library girtest \
-		$(srcdir)/girtest.vala; \
+		$(srcdir)/girtest.bala; \
 	tail -n +3 girtest.vapi | diff -wu $(srcdir)/girtest.vapi-expected - || exit 1; \
 	tail -n +3 GirTest-1.0.gir | diff -wu $(srcdir)/GirTest-1.0.gir-expected - || exit 1;
 if HAVE_G_IR_COMPILER
@@ -28,7 +28,7 @@ endif
 check: check-girwriter
 
 EXTRA_DIST = \
-	girtest.vala \
+	girtest.bala \
 	girtest.vapi-expected \
 	girtest.vapigen-expected \
 	GirTest-1.0.gir-expected \

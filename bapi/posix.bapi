@@ -1175,94 +1175,94 @@ namespace Posix {
 	[CCode (cheader_filename = "sys/resource.h")]
 	public const int PRIO_USER;
 
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.ABRT")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.ABRT")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGABRT;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.ALRM")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.ALRM")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGALRM;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.BUS")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.BUS")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGBUS;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.CHLD")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.CHLD")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGCHLD;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.CONT")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.CONT")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGCONT;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.FPE")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.FPE")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGFPE;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.HUP")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.HUP")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGHUP;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.ILL")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.ILL")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGILL;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.INT")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.INT")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGINT;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.KILL")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.KILL")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGKILL;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.PIPE")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.PIPE")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGPIPE;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.QUIT")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.QUIT")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGQUIT;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.SEGV")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.SEGV")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGSEGV;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.STOP")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.STOP")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGSTOP;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.TERM")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.TERM")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGTERM;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.TSTP")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.TSTP")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGTSTP;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.TTIN")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.TTIN")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGTTIN;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.TTOU")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.TTOU")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGTTOU;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.USR1")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.USR1")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGUSR1;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.USR2")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.USR2")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGUSR2;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.POLL")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.POLL")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGPOLL;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.PROF")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.PROF")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGPROF;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.SYS")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.SYS")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGSYS;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.TRAP")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.TRAP")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGTRAP;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.URG")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.URG")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGURG;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.VTALRM")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.VTALRM")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGVTALRM;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.XCPU")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.XCPU")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGXCPU;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.XFSZ")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.XFSZ")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGXFSZ;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.IOT")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.IOT")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGIOT;
-	[Version (deprecated = true, deprecated_since = "vala-0.40", replacement = "Posix.Signal.STKFLT")]
+	[Version (deprecated = true, deprecated_since = "bala-0.40", replacement = "Posix.Signal.STKFLT")]
 	[CCode (cheader_filename = "signal.h")]
 	public const int SIGSTKFLT;
 
@@ -3246,7 +3246,7 @@ namespace Posix {
 	 */
 	[Compact]
 	[CCode (cname = "FILE", free_function = "pclose", cheader_filename = "stdio.h")]
-	[Version (since = "vala-0.44")]
+	[Version (since = "bala-0.44")]
 	public class CommandPipe : FILE {
 		/**
 		 * A pipe to the given command run in a child process

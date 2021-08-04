@@ -1,4 +1,4 @@
-/* tree.vala
+/* tree.bala
  *
  * Copyright (C) 2008-2011  Florian Brosch
  *
@@ -222,7 +222,7 @@ public class Valadoc.Api.Tree {
 		this.context = context;
 	}
 
-	// copied from valacodecontext.vala
+	// copied from balacodecontext.bala
 	private string? get_file_path (string basename, string[] directories) {
 		string filename = null;
 

@@ -19,8 +19,8 @@ void test_value_array () {
 		assert (viarray[i].get_int () == iarray[i]);
 	}
 
-	string[] sarray = { "hello", "vala", "world" };
-	Value[] vsarray = { "hello", "vala", "world" };
+	string[] sarray = { "hello", "bala", "world" };
+	Value[] vsarray = { "hello", "bala", "world" };
 	assert (vsarray.length == sarray.length);
 	for (int i = 0; i < vsarray.length; i++) {
 		assert (vsarray[i].get_string () == sarray[i]);
@@ -48,8 +48,8 @@ void test_nullable_value_array () {
 		assert (viarray[i].get_int () == iarray[i]);
 	}
 
-	string[] sarray = { "hello", "vala", "world" };
-	Value?[] vsarray = { "hello", "vala", "world" };
+	string[] sarray = { "hello", "bala", "world" };
+	Value?[] vsarray = { "hello", "bala", "world" };
 	assert (vsarray.length == sarray.length);
 	for (int i = 0; i < vsarray.length; i++) {
 		assert (vsarray[i].get_string () == sarray[i]);
@@ -109,11 +109,11 @@ void test_try_cast_value () {
 	FooStruct s2 = (FooStruct) vs;
 	assert (s2.i == 42);
 
-	string[] sarray = { "hello", "vala", "world" };
+	string[] sarray = { "hello", "bala", "world" };
 	Value va = sarray;
 
 	string[] sarray2 = (string[]) va;
-	assert (sarray2[1] == "vala");
+	assert (sarray2[1] == "bala");
 
 	unowned string[] sarray3 = (string[]) va;
 	assert (sarray3[2] == "world");

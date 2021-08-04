@@ -86,7 +86,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = valadoc/doclets/gtkdoc
+subdir = baladoc/doclets/gtkdoc
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -131,8 +131,8 @@ am__installdirs = "$(DESTDIR)$(docletdir)"
 LTLIBRARIES = $(doclet_LTLIBRARIES)
 am__DEPENDENCIES_1 =
 libdoclet_la_DEPENDENCIES =  \
-	$(top_builddir)/libvaladoc/libvaladoc@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/libbaladoc/libbaladoc@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1)
 am__objects_1 =
@@ -368,48 +368,48 @@ BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
 BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 AM_CFLAGS = \
-	-DG_LOG_DOMAIN=\"valadoc-gtkdoc\" \
-	-DPACKAGE_BALADOC_ICONDIR=\"$(datadir)/valadoc@PACKAGE_SUFFIX@/icons/\" \
+	-DG_LOG_DOMAIN=\"baladoc-gtkdoc\" \
+	-DPACKAGE_BALADOC_ICONDIR=\"$(datadir)/baladoc@PACKAGE_SUFFIX@/icons/\" \
 	-I$(top_srcdir)/gee/ \
-	-I$(top_srcdir)/vala/ \
-	-I$(top_srcdir)/libvaladoc/ \
+	-I$(top_srcdir)/bala/ \
+	-I$(top_srcdir)/libbaladoc/ \
 	$(COVERAGE_CFLAGS) \
 	$(GLIB_CFLAGS) \
 	$(LIBGVC_CFLAGS) \
 	$(NULL)
 
-BUILT_SOURCES = libdoclet.vala.stamp
+BUILT_SOURCES = libdoclet.bala.stamp
 doclet_LTLIBRARIES = libdoclet.la
-docletdir = $(libdir)/valadoc@PACKAGE_SUFFIX@/doclets/gtkdoc
+docletdir = $(libdir)/baladoc@PACKAGE_SUFFIX@/doclets/gtkdoc
 libdoclet_la_LDFLAGS = -module -avoid-version -no-undefined
 libdoclet_la_BALASOURCES = \
-	commentconverter.vala \
-	dbus.vala \
-	doclet.vala \
-	gcomment.vala \
-	generator.vala \
-	utils.vala \
+	commentconverter.bala \
+	dbus.bala \
+	doclet.bala \
+	gcomment.bala \
+	generator.bala \
+	utils.bala \
 	$(NULL)
 
 libdoclet_la_SOURCES = \
-	libdoclet.vala.stamp \
-	$(libdoclet_la_BALASOURCES:.vala=.c) \
+	libdoclet.bala.stamp \
+	$(libdoclet_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 libdoclet_la_LIBADD = \
-	$(top_builddir)/libvaladoc/libvaladoc@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/libbaladoc/libbaladoc@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(NULL)
 
 EXTRA_DIST = \
 	$(libdoclet_la_BALASOURCES) \
-	libdoclet.vala.stamp \
+	libdoclet.bala.stamp \
 	$(NULL)
 
 MAINTAINERCLEANFILES = \
-	$(libdoclet_la_BALASOURCES:.vala=.c) \
+	$(libdoclet_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -426,9 +426,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu valadoc/doclets/gtkdoc/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu baladoc/doclets/gtkdoc/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu valadoc/doclets/gtkdoc/Makefile
+	  $(AUTOMAKE) --gnu baladoc/doclets/gtkdoc/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -763,15 +763,15 @@ uninstall-am: uninstall-docletLTLIBRARIES
 .PRECIOUS: Makefile
 
 
-libdoclet.vala.stamp: $(libdoclet_la_BALASOURCES)
+libdoclet.bala.stamp: $(libdoclet_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
-		--vapidir $(top_srcdir)/vala --pkg libvala@PACKAGE_SUFFIX@ \
+		--vapidir $(top_srcdir)/bala --pkg libbala@PACKAGE_SUFFIX@ \
 		--vapidir $(top_srcdir)/vapi \
-		--vapidir $(top_srcdir)/libvaladoc --pkg valadoc@PACKAGE_SUFFIX@ \
-		$(filter %.vala %.c,$^)
+		--vapidir $(top_srcdir)/libbaladoc --pkg baladoc@PACKAGE_SUFFIX@ \
+		$(filter %.bala %.c,$^)
 	touch $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

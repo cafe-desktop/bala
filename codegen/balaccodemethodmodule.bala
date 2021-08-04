@@ -1,4 +1,4 @@
-/* valaccodemethodmodule.vala
+/* balaccodemethodmodule.bala
  *
  * Copyright (C) 2007-2010  Jürg Billeter
  *
@@ -358,7 +358,7 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 		}
 
 		if (profile) {
-			string prefix = "_vala_prof_%s".printf (real_name);
+			string prefix = "_bala_prof_%s".printf (real_name);
 
 			cfile.add_include ("stdio.h");
 
@@ -566,7 +566,7 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 						}
 					} else if (!m.coroutine) {
 						// declare local variable for out parameter to allow assignment even when caller passes NULL
-						var vardecl = new CCodeVariableDeclarator.zero ("_vala_%s".printf (get_ccode_name (param)), default_value_for_type (param.variable_type, true), get_ccode_declarator_suffix (param.variable_type));
+						var vardecl = new CCodeVariableDeclarator.zero ("_bala_%s".printf (get_ccode_name (param)), default_value_for_type (param.variable_type, true), get_ccode_declarator_suffix (param.variable_type));
 						ccode.add_declaration (get_ccode_name (param.variable_type), vardecl);
 
 						if (param.variable_type is ArrayType) {
@@ -576,7 +576,7 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 							if (!array_type.fixed_length) {
 								var length_ctype = get_ccode_array_length_type (param);
 								for (int dim = 1; dim <= array_type.rank; dim++) {
-									vardecl = new CCodeVariableDeclarator.zero (get_array_length_cname ("_vala_%s".printf (get_ccode_name (param)), dim), new CCodeConstant ("0"));
+									vardecl = new CCodeVariableDeclarator.zero (get_array_length_cname ("_bala_%s".printf (get_ccode_name (param)), dim), new CCodeConstant ("0"));
 									ccode.add_declaration (length_ctype, vardecl);
 								}
 							}
@@ -584,11 +584,11 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 							var deleg_type = (DelegateType) param.variable_type;
 							if (deleg_type.delegate_symbol.has_target) {
 								// create variable to store delegate target
-								vardecl = new CCodeVariableDeclarator.zero ("_vala_%s".printf (get_ccode_delegate_target_name (param)), new CCodeConstant ("NULL"));
+								vardecl = new CCodeVariableDeclarator.zero ("_bala_%s".printf (get_ccode_delegate_target_name (param)), new CCodeConstant ("NULL"));
 								ccode.add_declaration (get_ccode_name (delegate_target_type), vardecl);
 
 								if (deleg_type.is_disposable ()) {
-									vardecl = new CCodeVariableDeclarator.zero ("_vala_%s".printf (get_ccode_delegate_target_destroy_notify_name (param)), new CCodeConstant ("NULL"));
+									vardecl = new CCodeVariableDeclarator.zero ("_bala_%s".printf (get_ccode_delegate_target_destroy_notify_name (param)), new CCodeConstant ("NULL"));
 									ccode.add_declaration (get_ccode_name (delegate_target_destroy_type), vardecl);
 								}
 							}
@@ -685,7 +685,7 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 		}
 
 		if (profile) {
-			string prefix = "_vala_prof_%s".printf (real_name);
+			string prefix = "_bala_prof_%s".printf (real_name);
 
 			var level = new CCodeIdentifier (prefix + "_level");
 			ccode.open_if (new CCodeUnaryExpression (CCodeUnaryOperator.LOGICAL_NEGATION, new CCodeUnaryExpression (CCodeUnaryOperator.POSTFIX_INCREMENT, level)));
@@ -725,7 +725,7 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 
 		// we generate the same code if we see a return statement, this handles the case without returns
 		if (profile && m.return_type is VoidType) {
-			string prefix = "_vala_prof_%s".printf (real_name);
+			string prefix = "_bala_prof_%s".printf (real_name);
 
 			var level = new CCodeIdentifier (prefix + "_level");
 			ccode.open_if (new CCodeUnaryExpression (CCodeUnaryOperator.LOGICAL_NEGATION, new CCodeUnaryExpression (CCodeUnaryOperator.PREFIX_DECREMENT, level)));
@@ -784,7 +784,7 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 
 		if (m.is_abstract && current_type_symbol is Class) {
 			// generate helpful error message if a sublcass does not implement an abstract method.
-			// This is only meaningful for subclasses implemented in C since the vala compiler would
+			// This is only meaningful for subclasses implemented in C since the bala compiler would
 			// complain during compile time of such en error.
 
 			// add critical warning that this method should not have been called
@@ -896,7 +896,7 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 				cparam.modifiers = CCodeModifiers.FORMAT_ARG;
 			}
 		} else {
-			var va_list_name = "_vala_va_list";
+			var va_list_name = "_bala_va_list";
 
 			// Add _first_* parameter for the params array parameter
 			if (param.params_array) {
@@ -1192,21 +1192,21 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 
 		if (m is CreationMethod) {
 			if (m.parent_symbol is Class) {
-				ccheck.call = new CCodeIdentifier ("_vala_return_val_if_fail");
+				ccheck.call = new CCodeIdentifier ("_bala_return_val_if_fail");
 				ccheck.add_argument (new CCodeConstant ("NULL"));
 			} else {
 				// creation method of struct
-				ccheck.call = new CCodeIdentifier ("_vala_return_if_fail");
+				ccheck.call = new CCodeIdentifier ("_bala_return_if_fail");
 			}
 		} else if (m.coroutine) {
 			// _co function
-			ccheck.call = new CCodeIdentifier ("_vala_return_val_if_fail");
+			ccheck.call = new CCodeIdentifier ("_bala_return_val_if_fail");
 			ccheck.add_argument (new CCodeConstant ("FALSE"));
 		} else if (ret_type is VoidType) {
 			/* void function */
-			ccheck.call = new CCodeIdentifier ("_vala_return_if_fail");
+			ccheck.call = new CCodeIdentifier ("_bala_return_if_fail");
 		} else {
-			ccheck.call = new CCodeIdentifier ("_vala_return_val_if_fail");
+			ccheck.call = new CCodeIdentifier ("_bala_return_val_if_fail");
 
 			var cdefault = default_value_for_type (ret_type, false);
 			if (cdefault != null) {
@@ -1294,13 +1294,13 @@ public abstract class Vala.CCodeMethodModule : CCodeStructModule {
 			}
 
 			var va_start = new CCodeFunctionCall (new CCodeIdentifier ("va_start"));
-			va_start.add_argument (new CCodeIdentifier ("_vala_va_list_obj"));
+			va_start.add_argument (new CCodeIdentifier ("_bala_va_list_obj"));
 			va_start.add_argument (carg);
 
-			ccode.add_declaration ("va_list", new CCodeVariableDeclarator ("_vala_va_list_obj"));
+			ccode.add_declaration ("va_list", new CCodeVariableDeclarator ("_bala_va_list_obj"));
 			ccode.add_expression (va_start);
 
-			vcall.add_argument (new CCodeIdentifier("_vala_va_list_obj"));
+			vcall.add_argument (new CCodeIdentifier("_bala_va_list_obj"));
 		}
 
 		ccode.add_return (vcall);

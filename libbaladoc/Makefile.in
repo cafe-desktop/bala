@@ -88,7 +88,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-subdir = libvaladoc
+subdir = libbaladoc
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 	$(top_srcdir)/m4/libtool.m4 $(top_srcdir)/m4/ltoptions.m4 \
@@ -98,10 +98,10 @@ am__aclocal_m4_deps = $(top_srcdir)/m4/ax_check_compile_flag.m4 \
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(dist_vapi_DATA) \
-	$(libvaladocinclude_HEADERS) $(am__DIST_COMMON)
+	$(libbaladocinclude_HEADERS) $(am__DIST_COMMON)
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
-CONFIG_CLEAN_FILES = valadoc.pc valadoc.deps
+CONFIG_CLEAN_FILES = baladoc.pc baladoc.deps
 CONFIG_CLEAN_VPATH_FILES =
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
@@ -132,14 +132,14 @@ am__uninstall_files_from_dir = { \
   }
 am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(vapidir)" \
 	"$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(vapidir)" \
-	"$(DESTDIR)$(libvaladocincludedir)"
+	"$(DESTDIR)$(libbaladocincludedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
 am__DEPENDENCIES_1 =
-libvaladoc@PACKAGE_SUFFIX@_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
+libbaladoc@PACKAGE_SUFFIX@_la_DEPENDENCIES = $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
 	$(am__DEPENDENCIES_1) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(am__DEPENDENCIES_1)
 am__dirstamp = $(am__leading_dot)dirstamp
 am__objects_1 =
@@ -156,8 +156,8 @@ am__objects_2 = doclet.lo errorreporter.lo filehelper.lo \
 	documentation/gtkdocmarkdownscanner.lo \
 	documentation/importerhelper.lo documentation/girmetadata.lo \
 	importer/documentationimporter.lo \
-	importer/valadocdocumentationimporter.lo \
-	importer/valadocdocumentationimporterscanner.lo \
+	importer/baladocdocumentationimporter.lo \
+	importer/baladocdocumentationimporterscanner.lo \
 	importer/girdocumentationimporter.lo \
 	importer/internalidregistrar.lo api/sourcecomment.lo \
 	api/girsourcecomment.lo api/attribute.lo api/array.lo \
@@ -198,18 +198,18 @@ am__objects_2 = doclet.lo errorreporter.lo filehelper.lo \
 	html/basicdoclet.lo html/htmlchartfactory.lo \
 	html/linkhelper.lo html/cssclassresolver.lo \
 	html/htmlmarkupwriter.lo html/htmlrenderer.lo $(am__objects_1)
-am_libvaladoc@PACKAGE_SUFFIX@_la_OBJECTS = $(am__objects_2) \
+am_libbaladoc@PACKAGE_SUFFIX@_la_OBJECTS = $(am__objects_2) \
 	gvc-compat.lo $(am__objects_1)
-libvaladoc@PACKAGE_SUFFIX@_la_OBJECTS =  \
-	$(am_libvaladoc@PACKAGE_SUFFIX@_la_OBJECTS)
+libbaladoc@PACKAGE_SUFFIX@_la_OBJECTS =  \
+	$(am_libbaladoc@PACKAGE_SUFFIX@_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-libvaladoc@PACKAGE_SUFFIX@_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+libbaladoc@PACKAGE_SUFFIX@_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(AM_CFLAGS) $(CFLAGS) \
-	$(libvaladoc@PACKAGE_SUFFIX@_la_LDFLAGS) $(LDFLAGS) -o $@
+	$(libbaladoc@PACKAGE_SUFFIX@_la_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -297,8 +297,8 @@ am__depfiles_remade = ./$(DEPDIR)/ctyperesolver.Plo \
 	importer/$(DEPDIR)/documentationimporter.Plo \
 	importer/$(DEPDIR)/girdocumentationimporter.Plo \
 	importer/$(DEPDIR)/internalidregistrar.Plo \
-	importer/$(DEPDIR)/valadocdocumentationimporter.Plo \
-	importer/$(DEPDIR)/valadocdocumentationimporterscanner.Plo \
+	importer/$(DEPDIR)/baladocdocumentationimporter.Plo \
+	importer/$(DEPDIR)/baladocdocumentationimporterscanner.Plo \
 	parser/$(DEPDIR)/manyrule.Plo parser/$(DEPDIR)/oneofrule.Plo \
 	parser/$(DEPDIR)/optionalrule.Plo parser/$(DEPDIR)/parser.Plo \
 	parser/$(DEPDIR)/parsercallback.Plo parser/$(DEPDIR)/rule.Plo \
@@ -333,15 +333,15 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
-SOURCES = $(libvaladoc@PACKAGE_SUFFIX@_la_SOURCES)
-DIST_SOURCES = $(libvaladoc@PACKAGE_SUFFIX@_la_SOURCES)
+SOURCES = $(libbaladoc@PACKAGE_SUFFIX@_la_SOURCES)
+DIST_SOURCES = $(libbaladoc@PACKAGE_SUFFIX@_la_SOURCES)
 am__can_run_installinfo = \
   case $$AM_UPDATE_INFO_DIR in \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
 DATA = $(dist_vapi_DATA) $(nodist_pkgconfig_DATA) $(nodist_vapi_DATA)
-HEADERS = $(libvaladocinclude_HEADERS)
+HEADERS = $(libbaladocinclude_HEADERS)
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 # Read a list of newline-separated strings from the standard input,
 # and print each of them once, without duplicates.  Input order is
@@ -361,8 +361,8 @@ am__define_uniq_tagged_files = \
   done | $(am__uniquify_input)`
 ETAGS = etags
 CTAGS = ctags
-am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/valadoc.deps.in \
-	$(srcdir)/valadoc.pc.in $(top_srcdir)/Makefile.common \
+am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/baladoc.deps.in \
+	$(srcdir)/baladoc.pc.in $(top_srcdir)/Makefile.common \
 	$(top_srcdir)/build-aux/depcomp
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 pkgdatadir = @pkgdatadir@
@@ -519,8 +519,8 @@ BALA_V_ = $(BALA_V_$(AM_DEFAULT_VERBOSITY))
 BALA_V_0 = @echo "  BALAC " $^;
 NULL = 
 AM_CFLAGS = \
-	-DG_LOG_DOMAIN=\"valadoc\" \
-	-DPACKAGE_BALADOC_LIBDIR=\"$(libdir)/valadoc@PACKAGE_SUFFIX@\" \
+	-DG_LOG_DOMAIN=\"baladoc\" \
+	-DPACKAGE_BALADOC_LIBDIR=\"$(libdir)/baladoc@PACKAGE_SUFFIX@\" \
 	-DPACKAGE_VERSION=\"$(VERSION)\" \
 	$(COVERAGE_CFLAGS) \
 	$(LIBGVC_CFLAGS) \
@@ -528,7 +528,7 @@ AM_CFLAGS = \
 	$(GMODULE_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	-I$(top_srcdir)/codegen \
 	$(NULL)
 
@@ -536,188 +536,188 @@ AM_BALAFLAGS = \
 	$(NULL)
 
 BUILT_SOURCES = \
-	libvaladoc.vala.stamp \
-	valadoc.h \
+	libbaladoc.bala.stamp \
+	baladoc.h \
 	$(NULL)
 
-lib_LTLIBRARIES = libvaladoc@PACKAGE_SUFFIX@.la
-libvaladoc_la_BALASOURCES = \
-	doclet.vala \
-	errorreporter.vala \
-	filehelper.vala \
-	moduleloader.vala \
-	settings.vala \
-	markupwriter.vala \
-	gtkdocmarkupwriter.vala \
-	devhelp-markupwriter.vala \
-	ctyperesolver.vala \
-	gtkdocrenderer.vala \
-	documentation/commentscanner.vala \
-	documentation/documentation.vala \
-	documentation/documentationparser.vala \
-	documentation/wiki.vala \
-	documentation/wikiscanner.vala \
-	documentation/gtkdoccommentparser.vala \
-	documentation/gtkdoccommentscanner.vala \
-	documentation/gtkdocmarkdownparser.vala \
-	documentation/gtkdocmarkdownscanner.vala \
-	documentation/importerhelper.vala \
-	documentation/girmetadata.vala \
-	importer/documentationimporter.vala \
-	importer/valadocdocumentationimporter.vala \
-	importer/valadocdocumentationimporterscanner.vala \
-	importer/girdocumentationimporter.vala \
-	importer/internalidregistrar.vala \
-	api/sourcecomment.vala \
-	api/girsourcecomment.vala \
-	api/attribute.vala \
-	api/array.vala \
-	api/callable.vala \
-	api/childsymbolregistrar.vala \
-	api/class.vala \
-	api/constant.vala \
-	api/delegate.vala \
-	api/enum.vala \
-	api/enumvalue.vala \
-	api/errorcode.vala \
-	api/errordomain.vala \
-	api/field.vala \
-	api/interface.vala \
-	api/item.vala \
-	api/method.vala \
-	api/namespace.vala \
-	api/node.vala \
-	api/nodetype.vala \
-	api/ownership.vala \
-	api/package.vala \
-	api/parameter.vala \
-	api/pointer.vala \
-	api/property.vala \
-	api/propertyaccessor.vala \
-	api/signal.vala \
-	api/signaturebuilder.vala \
-	api/sourcefile.vala \
-	api/struct.vala \
-	api/symbol.vala \
-	api/tree.vala \
-	api/typeparameter.vala \
-	api/typereference.vala \
-	api/typesymbol.vala \
-	api/visitor.vala \
-	content/block.vala \
-	content/blockcontent.vala \
-	content/comment.vala \
-	content/contentfactory.vala \
-	content/contentelement.vala \
-	content/contentrenderer.vala \
-	content/contentvisitor.vala \
-	content/embedded.vala \
-	content/headline.vala \
-	content/inline.vala \
-	content/inlinetaglet.vala \
-	content/inlinecontent.vala \
-	content/wikilink.vala \
-	content/link.vala \
-	content/list.vala \
-	content/listitem.vala \
-	content/page.vala \
-	content/paragraph.vala \
-	content/warning.vala \
-	content/note.vala \
-	content/resourcelocator.vala \
-	content/run.vala \
-	content/sourcecode.vala \
-	content/styleattributes.vala \
-	content/symbollink.vala \
-	content/table.vala \
-	content/tablecell.vala \
-	content/tablerow.vala \
-	content/taglet.vala \
-	content/text.vala \
-	charts/chart.vala \
-	charts/chartfactory.vala \
-	charts/hierarchychart.vala \
-	charts/simplechartfactory.vala \
-	parser/manyrule.vala \
-	parser/oneofrule.vala \
-	parser/optionalrule.vala \
-	parser/parser.vala \
-	parser/parsercallback.vala \
-	parser/rule.vala \
-	parser/scanner.vala \
-	parser/sequencerule.vala \
-	parser/stubrule.vala \
-	parser/token.vala \
-	parser/tokentype.vala \
-	taglets/tagletdeprecated.vala \
-	taglets/tagletinheritdoc.vala \
-	taglets/tagletinit.vala \
-	taglets/tagletlink.vala \
-	taglets/tagletparam.vala \
-	taglets/tagletreturn.vala \
-	taglets/tagletsee.vala \
-	taglets/tagletsince.vala \
-	taglets/tagletthrows.vala \
-	highlighter/scanner.vala \
-	highlighter/codescanner.vala \
-	highlighter/xmlscanner.vala \
-	highlighter/codetoken.vala \
-	highlighter/highlighter.vala \
-	html/basicdoclet.vala \
-	html/htmlchartfactory.vala \
-	html/linkhelper.vala \
-	html/cssclassresolver.vala \
-	html/htmlmarkupwriter.vala \
-	html/htmlrenderer.vala \
+lib_LTLIBRARIES = libbaladoc@PACKAGE_SUFFIX@.la
+libbaladoc_la_BALASOURCES = \
+	doclet.bala \
+	errorreporter.bala \
+	filehelper.bala \
+	moduleloader.bala \
+	settings.bala \
+	markupwriter.bala \
+	gtkdocmarkupwriter.bala \
+	devhelp-markupwriter.bala \
+	ctyperesolver.bala \
+	gtkdocrenderer.bala \
+	documentation/commentscanner.bala \
+	documentation/documentation.bala \
+	documentation/documentationparser.bala \
+	documentation/wiki.bala \
+	documentation/wikiscanner.bala \
+	documentation/gtkdoccommentparser.bala \
+	documentation/gtkdoccommentscanner.bala \
+	documentation/gtkdocmarkdownparser.bala \
+	documentation/gtkdocmarkdownscanner.bala \
+	documentation/importerhelper.bala \
+	documentation/girmetadata.bala \
+	importer/documentationimporter.bala \
+	importer/baladocdocumentationimporter.bala \
+	importer/baladocdocumentationimporterscanner.bala \
+	importer/girdocumentationimporter.bala \
+	importer/internalidregistrar.bala \
+	api/sourcecomment.bala \
+	api/girsourcecomment.bala \
+	api/attribute.bala \
+	api/array.bala \
+	api/callable.bala \
+	api/childsymbolregistrar.bala \
+	api/class.bala \
+	api/constant.bala \
+	api/delegate.bala \
+	api/enum.bala \
+	api/enumvalue.bala \
+	api/errorcode.bala \
+	api/errordomain.bala \
+	api/field.bala \
+	api/interface.bala \
+	api/item.bala \
+	api/method.bala \
+	api/namespace.bala \
+	api/node.bala \
+	api/nodetype.bala \
+	api/ownership.bala \
+	api/package.bala \
+	api/parameter.bala \
+	api/pointer.bala \
+	api/property.bala \
+	api/propertyaccessor.bala \
+	api/signal.bala \
+	api/signaturebuilder.bala \
+	api/sourcefile.bala \
+	api/struct.bala \
+	api/symbol.bala \
+	api/tree.bala \
+	api/typeparameter.bala \
+	api/typereference.bala \
+	api/typesymbol.bala \
+	api/visitor.bala \
+	content/block.bala \
+	content/blockcontent.bala \
+	content/comment.bala \
+	content/contentfactory.bala \
+	content/contentelement.bala \
+	content/contentrenderer.bala \
+	content/contentvisitor.bala \
+	content/embedded.bala \
+	content/headline.bala \
+	content/inline.bala \
+	content/inlinetaglet.bala \
+	content/inlinecontent.bala \
+	content/wikilink.bala \
+	content/link.bala \
+	content/list.bala \
+	content/listitem.bala \
+	content/page.bala \
+	content/paragraph.bala \
+	content/warning.bala \
+	content/note.bala \
+	content/resourcelocator.bala \
+	content/run.bala \
+	content/sourcecode.bala \
+	content/styleattributes.bala \
+	content/symbollink.bala \
+	content/table.bala \
+	content/tablecell.bala \
+	content/tablerow.bala \
+	content/taglet.bala \
+	content/text.bala \
+	charts/chart.bala \
+	charts/chartfactory.bala \
+	charts/hierarchychart.bala \
+	charts/simplechartfactory.bala \
+	parser/manyrule.bala \
+	parser/oneofrule.bala \
+	parser/optionalrule.bala \
+	parser/parser.bala \
+	parser/parsercallback.bala \
+	parser/rule.bala \
+	parser/scanner.bala \
+	parser/sequencerule.bala \
+	parser/stubrule.bala \
+	parser/token.bala \
+	parser/tokentype.bala \
+	taglets/tagletdeprecated.bala \
+	taglets/tagletinheritdoc.bala \
+	taglets/tagletinit.bala \
+	taglets/tagletlink.bala \
+	taglets/tagletparam.bala \
+	taglets/tagletreturn.bala \
+	taglets/tagletsee.bala \
+	taglets/tagletsince.bala \
+	taglets/tagletthrows.bala \
+	highlighter/scanner.bala \
+	highlighter/codescanner.bala \
+	highlighter/xmlscanner.bala \
+	highlighter/codetoken.bala \
+	highlighter/highlighter.bala \
+	html/basicdoclet.bala \
+	html/htmlchartfactory.bala \
+	html/linkhelper.bala \
+	html/cssclassresolver.bala \
+	html/htmlmarkupwriter.bala \
+	html/htmlrenderer.bala \
 	$(NULL)
 
-libvaladoc@PACKAGE_SUFFIX@_la_SOURCES = \
-	libvaladoc.vala.stamp \
-	$(libvaladoc_la_BALASOURCES:.vala=.c) \
+libbaladoc@PACKAGE_SUFFIX@_la_SOURCES = \
+	libbaladoc.bala.stamp \
+	$(libbaladoc_la_BALASOURCES:.bala=.c) \
 	gvc-compat.c \
 	$(NULL)
 
-libvaladoc@PACKAGE_SUFFIX@_la_LDFLAGS = \
+libbaladoc@PACKAGE_SUFFIX@_la_LDFLAGS = \
 	-no-undefined \
 	$(NULL)
 
-libvaladoc@PACKAGE_SUFFIX@_la_LIBADD = \
+libbaladoc@PACKAGE_SUFFIX@_la_LIBADD = \
 	$(COVERAGE_LIBS) \
 	$(LIBGVC_LIBS) \
 	$(GLIB_LIBS) \
 	$(GMODULE_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(NULL)
 
-libvaladocincludedir = $(includedir)/valadoc@PACKAGE_SUFFIX@
-libvaladocinclude_HEADERS = \
-	valadoc.h \
+libbaladocincludedir = $(includedir)/baladoc@PACKAGE_SUFFIX@
+libbaladocinclude_HEADERS = \
+	baladoc.h \
 	$(NULL)
 
 pkgconfigdir = $(libdir)/pkgconfig
-nodist_pkgconfig_DATA = valadoc@PACKAGE_SUFFIX@.pc
-vapidir = $(datadir)/vala/vapi
-dist_vapi_DATA = valadoc@PACKAGE_SUFFIX@.vapi
-nodist_vapi_DATA = valadoc@PACKAGE_SUFFIX@.deps
+nodist_pkgconfig_DATA = baladoc@PACKAGE_SUFFIX@.pc
+vapidir = $(datadir)/bala/vapi
+dist_vapi_DATA = baladoc@PACKAGE_SUFFIX@.vapi
+nodist_vapi_DATA = baladoc@PACKAGE_SUFFIX@.deps
 EXTRA_DIST = \
-	$(libvaladoc_la_BALASOURCES) \
-	libvaladoc.vala.stamp \
-	valadoc.deps.in \
-	valadoc.pc.in \
+	$(libbaladoc_la_BALASOURCES) \
+	libbaladoc.bala.stamp \
+	baladoc.deps.in \
+	baladoc.pc.in \
 	$(NULL)
 
 CLEANFILES = \
-	valadoc@PACKAGE_SUFFIX@.deps \
-	valadoc@PACKAGE_SUFFIX@.pc \
+	baladoc@PACKAGE_SUFFIX@.deps \
+	baladoc@PACKAGE_SUFFIX@.pc \
 	$(NULL)
 
 MAINTAINERCLEANFILES = \
-	valadoc.deps \
-	valadoc.pc \
-	valadoc.vapi \
-	valadoc.h \
-	$(libvaladoc_la_BALASOURCES:.vala=.c) \
+	baladoc.deps \
+	baladoc.pc \
+	baladoc.vapi \
+	baladoc.h \
+	$(libbaladoc_la_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 all: $(BUILT_SOURCES)
@@ -734,9 +734,9 @@ $(srcdir)/Makefile.in: @MAINTAINER_MODE_TRUE@ $(srcdir)/Makefile.am $(top_srcdir
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu libvaladoc/Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu libbaladoc/Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu libvaladoc/Makefile
+	  $(AUTOMAKE) --gnu libbaladoc/Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \
@@ -755,9 +755,9 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	cd $(top_builddir) && $(MAKE) $(AM_MAKEFLAGS) am--refresh
 $(am__aclocal_m4_deps):
-valadoc.pc: $(top_builddir)/config.status $(srcdir)/valadoc.pc.in
+baladoc.pc: $(top_builddir)/config.status $(srcdir)/baladoc.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
-valadoc.deps: $(top_builddir)/config.status $(srcdir)/valadoc.deps.in
+baladoc.deps: $(top_builddir)/config.status $(srcdir)/baladoc.deps.in
 	cd $(top_builddir) && $(SHELL) ./config.status $(subdir)/$@
 
 install-libLTLIBRARIES: $(lib_LTLIBRARIES)
@@ -830,9 +830,9 @@ importer/$(DEPDIR)/$(am__dirstamp):
 	@: > importer/$(DEPDIR)/$(am__dirstamp)
 importer/documentationimporter.lo: importer/$(am__dirstamp) \
 	importer/$(DEPDIR)/$(am__dirstamp)
-importer/valadocdocumentationimporter.lo: importer/$(am__dirstamp) \
+importer/baladocdocumentationimporter.lo: importer/$(am__dirstamp) \
 	importer/$(DEPDIR)/$(am__dirstamp)
-importer/valadocdocumentationimporterscanner.lo:  \
+importer/baladocdocumentationimporterscanner.lo:  \
 	importer/$(am__dirstamp) importer/$(DEPDIR)/$(am__dirstamp)
 importer/girdocumentationimporter.lo: importer/$(am__dirstamp) \
 	importer/$(DEPDIR)/$(am__dirstamp)
@@ -1054,8 +1054,8 @@ html/htmlmarkupwriter.lo: html/$(am__dirstamp) \
 html/htmlrenderer.lo: html/$(am__dirstamp) \
 	html/$(DEPDIR)/$(am__dirstamp)
 
-libvaladoc@PACKAGE_SUFFIX@.la: $(libvaladoc@PACKAGE_SUFFIX@_la_OBJECTS) $(libvaladoc@PACKAGE_SUFFIX@_la_DEPENDENCIES) $(EXTRA_libvaladoc@PACKAGE_SUFFIX@_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libvaladoc@PACKAGE_SUFFIX@_la_LINK) -rpath $(libdir) $(libvaladoc@PACKAGE_SUFFIX@_la_OBJECTS) $(libvaladoc@PACKAGE_SUFFIX@_la_LIBADD) $(LIBS)
+libbaladoc@PACKAGE_SUFFIX@.la: $(libbaladoc@PACKAGE_SUFFIX@_la_OBJECTS) $(libbaladoc@PACKAGE_SUFFIX@_la_DEPENDENCIES) $(EXTRA_libbaladoc@PACKAGE_SUFFIX@_la_DEPENDENCIES) 
+	$(AM_V_CCLD)$(libbaladoc@PACKAGE_SUFFIX@_la_LINK) -rpath $(libdir) $(libbaladoc@PACKAGE_SUFFIX@_la_OBJECTS) $(libbaladoc@PACKAGE_SUFFIX@_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -1187,8 +1187,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@importer/$(DEPDIR)/documentationimporter.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@importer/$(DEPDIR)/girdocumentationimporter.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@importer/$(DEPDIR)/internalidregistrar.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@importer/$(DEPDIR)/valadocdocumentationimporter.Plo@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@importer/$(DEPDIR)/valadocdocumentationimporterscanner.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@importer/$(DEPDIR)/baladocdocumentationimporter.Plo@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@importer/$(DEPDIR)/baladocdocumentationimporterscanner.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@parser/$(DEPDIR)/manyrule.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@parser/$(DEPDIR)/oneofrule.Plo@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@parser/$(DEPDIR)/optionalrule.Plo@am__quote@ # am--include-marker
@@ -1317,27 +1317,27 @@ uninstall-nodist_vapiDATA:
 	@list='$(nodist_vapi_DATA)'; test -n "$(vapidir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
 	dir='$(DESTDIR)$(vapidir)'; $(am__uninstall_files_from_dir)
-install-libvaladocincludeHEADERS: $(libvaladocinclude_HEADERS)
+install-libbaladocincludeHEADERS: $(libbaladocinclude_HEADERS)
 	@$(NORMAL_INSTALL)
-	@list='$(libvaladocinclude_HEADERS)'; test -n "$(libvaladocincludedir)" || list=; \
+	@list='$(libbaladocinclude_HEADERS)'; test -n "$(libbaladocincludedir)" || list=; \
 	if test -n "$$list"; then \
-	  echo " $(MKDIR_P) '$(DESTDIR)$(libvaladocincludedir)'"; \
-	  $(MKDIR_P) "$(DESTDIR)$(libvaladocincludedir)" || exit 1; \
+	  echo " $(MKDIR_P) '$(DESTDIR)$(libbaladocincludedir)'"; \
+	  $(MKDIR_P) "$(DESTDIR)$(libbaladocincludedir)" || exit 1; \
 	fi; \
 	for p in $$list; do \
 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
 	  echo "$$d$$p"; \
 	done | $(am__base_list) | \
 	while read files; do \
-	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(libvaladocincludedir)'"; \
-	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(libvaladocincludedir)" || exit $$?; \
+	  echo " $(INSTALL_HEADER) $$files '$(DESTDIR)$(libbaladocincludedir)'"; \
+	  $(INSTALL_HEADER) $$files "$(DESTDIR)$(libbaladocincludedir)" || exit $$?; \
 	done
 
-uninstall-libvaladocincludeHEADERS:
+uninstall-libbaladocincludeHEADERS:
 	@$(NORMAL_UNINSTALL)
-	@list='$(libvaladocinclude_HEADERS)'; test -n "$(libvaladocincludedir)" || list=; \
+	@list='$(libbaladocinclude_HEADERS)'; test -n "$(libbaladocincludedir)" || list=; \
 	files=`for p in $$list; do echo $$p; done | sed -e 's|^.*/||'`; \
-	dir='$(DESTDIR)$(libvaladocincludedir)'; $(am__uninstall_files_from_dir)
+	dir='$(DESTDIR)$(libbaladocincludedir)'; $(am__uninstall_files_from_dir)
 
 ID: $(am__tagged_files)
 	$(am__define_uniq_tagged_files); mkid -fID $$unique
@@ -1429,7 +1429,7 @@ check: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) check-am
 all-am: Makefile $(LTLIBRARIES) $(DATA) $(HEADERS)
 installdirs:
-	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(vapidir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(vapidir)" "$(DESTDIR)$(libvaladocincludedir)"; do \
+	for dir in "$(DESTDIR)$(libdir)" "$(DESTDIR)$(vapidir)" "$(DESTDIR)$(pkgconfigdir)" "$(DESTDIR)$(vapidir)" "$(DESTDIR)$(libbaladocincludedir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: $(BUILT_SOURCES)
@@ -1597,8 +1597,8 @@ distclean: distclean-am
 	-rm -f importer/$(DEPDIR)/documentationimporter.Plo
 	-rm -f importer/$(DEPDIR)/girdocumentationimporter.Plo
 	-rm -f importer/$(DEPDIR)/internalidregistrar.Plo
-	-rm -f importer/$(DEPDIR)/valadocdocumentationimporter.Plo
-	-rm -f importer/$(DEPDIR)/valadocdocumentationimporterscanner.Plo
+	-rm -f importer/$(DEPDIR)/baladocdocumentationimporter.Plo
+	-rm -f importer/$(DEPDIR)/baladocdocumentationimporterscanner.Plo
 	-rm -f parser/$(DEPDIR)/manyrule.Plo
 	-rm -f parser/$(DEPDIR)/oneofrule.Plo
 	-rm -f parser/$(DEPDIR)/optionalrule.Plo
@@ -1636,7 +1636,7 @@ info: info-am
 info-am:
 
 install-data-am: install-dist_vapiDATA \
-	install-libvaladocincludeHEADERS install-nodist_pkgconfigDATA \
+	install-libbaladocincludeHEADERS install-nodist_pkgconfigDATA \
 	install-nodist_vapiDATA
 
 install-dvi: install-dvi-am
@@ -1772,8 +1772,8 @@ maintainer-clean: maintainer-clean-am
 	-rm -f importer/$(DEPDIR)/documentationimporter.Plo
 	-rm -f importer/$(DEPDIR)/girdocumentationimporter.Plo
 	-rm -f importer/$(DEPDIR)/internalidregistrar.Plo
-	-rm -f importer/$(DEPDIR)/valadocdocumentationimporter.Plo
-	-rm -f importer/$(DEPDIR)/valadocdocumentationimporterscanner.Plo
+	-rm -f importer/$(DEPDIR)/baladocdocumentationimporter.Plo
+	-rm -f importer/$(DEPDIR)/baladocdocumentationimporterscanner.Plo
 	-rm -f parser/$(DEPDIR)/manyrule.Plo
 	-rm -f parser/$(DEPDIR)/oneofrule.Plo
 	-rm -f parser/$(DEPDIR)/optionalrule.Plo
@@ -1811,7 +1811,7 @@ ps: ps-am
 ps-am:
 
 uninstall-am: uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
-	uninstall-libvaladocincludeHEADERS \
+	uninstall-libbaladocincludeHEADERS \
 	uninstall-nodist_pkgconfigDATA uninstall-nodist_vapiDATA
 
 .MAKE: all check install install-am install-exec install-strip
@@ -1824,7 +1824,7 @@ uninstall-am: uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
 	install-data-am install-dist_vapiDATA install-dvi \
 	install-dvi-am install-exec install-exec-am install-html \
 	install-html-am install-info install-info-am \
-	install-libLTLIBRARIES install-libvaladocincludeHEADERS \
+	install-libLTLIBRARIES install-libbaladocincludeHEADERS \
 	install-man install-nodist_pkgconfigDATA \
 	install-nodist_vapiDATA install-pdf install-pdf-am install-ps \
 	install-ps-am install-strip installcheck installcheck-am \
@@ -1832,14 +1832,14 @@ uninstall-am: uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
 	mostlyclean mostlyclean-compile mostlyclean-generic \
 	mostlyclean-libtool pdf pdf-am ps ps-am tags tags-am uninstall \
 	uninstall-am uninstall-dist_vapiDATA uninstall-libLTLIBRARIES \
-	uninstall-libvaladocincludeHEADERS \
+	uninstall-libbaladocincludeHEADERS \
 	uninstall-nodist_pkgconfigDATA uninstall-nodist_vapiDATA
 
 .PRECIOUS: Makefile
 
 
-valadoc@PACKAGE_SUFFIX@.vapi valadoc.h: libvaladoc.vala.stamp
-libvaladoc.vala.stamp: $(libvaladoc_la_BALASOURCES)
+baladoc@PACKAGE_SUFFIX@.vapi baladoc.h: libbaladoc.bala.stamp
+libbaladoc.bala.stamp: $(libbaladoc_la_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -1847,23 +1847,23 @@ libvaladoc.vala.stamp: $(libvaladoc_la_BALASOURCES)
 		--directory $(builddir) \
 		-C \
 		--use-header \
-		-H valadoc.h \
-		--library valadoc \
-		--vapi valadoc@PACKAGE_SUFFIX@.vapi \
+		-H baladoc.h \
+		--library baladoc \
+		--vapi baladoc@PACKAGE_SUFFIX@.vapi \
 		--vapidir $(top_srcdir)/vapi --pkg gmodule-2.0 \
 		--vapidir $(top_srcdir)/vapi --pkg libgvc \
 		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--vapidir $(top_srcdir)/ccode --pkg ccode \
 		--vapidir $(top_srcdir)/codegen --pkg codegen \
 		--pkg config \
-		$(filter %.vala %.c,$^)
+		$(filter %.bala %.c,$^)
 	touch $@
 
-valadoc@PACKAGE_SUFFIX@.pc: valadoc.pc
+baladoc@PACKAGE_SUFFIX@.pc: baladoc.pc
 	cp $< $@
 
-valadoc@PACKAGE_SUFFIX@.deps: valadoc.deps
+baladoc@PACKAGE_SUFFIX@.deps: baladoc.deps
 	cp $< $@
 
 # Tell versions [3.59,3.63) of GNU make to not export all variables.

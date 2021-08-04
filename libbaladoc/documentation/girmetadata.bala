@@ -1,4 +1,4 @@
-/* girmetadata.vala
+/* girmetadata.bala
  *
  * Copyright (C) 2012-2014 Florian Brosch
  *
@@ -56,7 +56,7 @@ public class Valadoc.GirMetaData : Object {
 		}
 
 		metadata_file_name = metadata_file_name.substring (0, last_dot_pos);
-		return metadata_file_name + ".valadoc.metadata";
+		return metadata_file_name + ".baladoc.metadata";
 	}
 
 	private string? get_metadata_path (string gir_file_path, string[] metadata_dirs) {

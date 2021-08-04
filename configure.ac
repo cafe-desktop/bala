@@ -1,7 +1,7 @@
 AC_PREREQ([2.65])
-AC_INIT([vala], m4_esyscmd([build-aux/git-version-gen --prefix '' .tarball-version]),
-	[https://gitlab.gnome.org/GNOME/vala/issues],
-	[vala],
+AC_INIT([bala], m4_esyscmd([build-aux/git-version-gen --prefix '' .tarball-version]),
+	[https://gitlab.gnome.org/GNOME/bala/issues],
+	[bala],
 	[https://wiki.gnome.org/Projects/Vala])
 AC_CONFIG_SRCDIR([Makefile.am])
 AC_CONFIG_AUX_DIR([build-aux])
@@ -31,10 +31,10 @@ AC_DEFINE_UNQUOTED(PACKAGE_SUFFIX, "$PACKAGE_SUFFIX", [Define to the suffix of t
 
 program_transform_name="s,\$\$,${PACKAGE_SUFFIX},"
 
-AC_SUBST(pkgdatadir, [${datadir}/vala${PACKAGE_SUFFIX}])
-AC_SUBST(pkglibdir, [${libdir}/vala${PACKAGE_SUFFIX}])
-AC_SUBST(pkgdocdatadir, [${datadir}/valadoc${PACKAGE_SUFFIX}])
-AC_SUBST(pkgdoclibdir, [${libdir}/valadoc${PACKAGE_SUFFIX}])
+AC_SUBST(pkgdatadir, [${datadir}/bala${PACKAGE_SUFFIX}])
+AC_SUBST(pkglibdir, [${libdir}/bala${PACKAGE_SUFFIX}])
+AC_SUBST(pkgdocdatadir, [${datadir}/baladoc${PACKAGE_SUFFIX}])
+AC_SUBST(pkgdoclibdir, [${libdir}/baladoc${PACKAGE_SUFFIX}])
 
 # Checks for programs.
 AC_PROG_CC
@@ -70,12 +70,12 @@ if test "$YACC" = :; then
 	AC_MSG_ERROR([bison not found but required])
 fi
 
-AC_PATH_PROG(BALAC, valac, valac)
+AC_PATH_PROG(BALAC, balac, balac)
 AC_SUBST(BALAC)
 
 BALAC_BOOTSTRAP_REQUIRED=0.39.5.8
 
-AS_IF([test "$BALAC" != valac], [FOUND_BALAC_VERION=`$BALAC --version | sed 's/Vala  *//'`
+AS_IF([test "$BALAC" != balac], [FOUND_BALAC_VERION=`$BALAC --version | sed 's/Vala  *//'`
 	AS_VERSION_COMPARE(["$BALAC_BOOTSTRAP_REQUIRED"], ["$FOUND_BALAC_VERION"],
 		[enable_boostrap=yes], [enable_boostrap=yes], [enable_boostrap=no])])
 
@@ -163,8 +163,8 @@ AC_SUBST(GMODULE_CFLAGS)
 AC_SUBST(GMODULE_LIBS)
 
 AC_ARG_WITH(cgraph, AS_HELP_STRING([--with-cgraph], [Required flag for cross-compilation to define capability of graphviz]), [], with_cgraph=check)
-AC_ARG_ENABLE(valadoc, AS_HELP_STRING([--disable-valadoc], [Disable valadoc]), enable_valadoc=$enableval, enable_valadoc=yes)
-if test x$enable_valadoc = xyes; then
+AC_ARG_ENABLE(baladoc, AS_HELP_STRING([--disable-baladoc], [Disable baladoc]), enable_baladoc=$enableval, enable_baladoc=yes)
+if test x$enable_baladoc = xyes; then
 	PKG_CHECK_MODULES(LIBGVC, libgvc >= $LIBGVC_REQUIRED)
 	AC_MSG_CHECKING([for CGRAPH])
 	cgraph_tmp_LIBADD="$LIBADD"
@@ -205,7 +205,7 @@ if test x$enable_valadoc = xyes; then
 	CFLAGS="$cgraph_tmp_CFLAGS"
 fi
 AM_CONDITIONAL(HAVE_CGRAPH, test "$have_cgraph" = "yes")
-AM_CONDITIONAL(ENABLE_BALADOC, test x$enable_valadoc = xyes)
+AM_CONDITIONAL(ENABLE_BALADOC, test x$enable_baladoc = xyes)
 
 AC_PATH_PROG([G_IR_COMPILER], [g-ir-compiler], :)
 AM_CONDITIONAL(HAVE_G_IR_COMPILER, test "$G_IR_COMPILER" != :)
@@ -222,10 +222,10 @@ AM_CONDITIONAL([HAVE_HELP2MAN], [test x$HELP2MAN = xhelp2man])
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
 AC_CONFIG_FILES([Makefile
-           libvala.pc
+           libbala.pc
            gee/Makefile
            ccode/Makefile
-           vala/Makefile
+           bala/Makefile
            codegen/Makefile
            compiler/Makefile
            vapi/Makefile
@@ -239,18 +239,18 @@ AC_CONFIG_FILES([Makefile
            gobject-introspection/Makefile
            vapigen/vapigen.pc
            vapigen/Makefile
-           vapigen/vala-gen-introspect/Makefile
-           vapigen/vala-gen-introspect/vala-gen-introspect
-           libvaladoc/valadoc.pc
-           libvaladoc/valadoc.deps
-           libvaladoc/Makefile
-           valadoc/Makefile
-           valadoc/doclets/Makefile
-           valadoc/doclets/html/Makefile
-           valadoc/doclets/devhelp/Makefile
-           valadoc/doclets/gtkdoc/Makefile
-           valadoc/icons/Makefile
-           valadoc/tests/Makefile
+           vapigen/bala-gen-introspect/Makefile
+           vapigen/bala-gen-introspect/bala-gen-introspect
+           libbaladoc/baladoc.pc
+           libbaladoc/baladoc.deps
+           libbaladoc/Makefile
+           baladoc/Makefile
+           baladoc/doclets/Makefile
+           baladoc/doclets/html/Makefile
+           baladoc/doclets/devhelp/Makefile
+           baladoc/doclets/gtkdoc/Makefile
+           baladoc/icons/Makefile
+           baladoc/tests/Makefile
 ])
 
 AC_OUTPUT

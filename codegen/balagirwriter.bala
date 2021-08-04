@@ -1,4 +1,4 @@
-/* valagirwriter.vala
+/* balagirwriter.bala
  *
  * Copyright (C) 2008-2012  Jürg Billeter
  *
@@ -174,7 +174,7 @@ public class Vala.GIRWriter : CodeVisitor {
 
 		string filename = "%s%c%s".printf (directory, Path.DIR_SEPARATOR, gir_filename);
 		var file_exists = FileUtils.test (filename, FileTest.EXISTS);
-		var temp_filename = "%s.valatmp".printf (filename);
+		var temp_filename = "%s.balatmp".printf (filename);
 
 		if (file_exists) {
 			stream = FileStream.open (temp_filename, "w");

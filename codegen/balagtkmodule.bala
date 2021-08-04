@@ -1,4 +1,4 @@
-/* valagtkmodule.vala
+/* balagtkmodule.bala
  *
  * Copyright (C) 2013  Jürg Billeter
  * Copyright (C) 2013-2014  Luca Bruno
@@ -24,9 +24,9 @@
 
 public class Vala.GtkModule : GSignalModule {
 	/* C type-func name to Vala class mapping */
-	private HashMap<string, Class> type_id_to_vala_map = null;
+	private HashMap<string, Class> type_id_to_bala_map = null;
 	/* C class name to Vala class mapping */
-	private HashMap<string, Class> cclass_to_vala_map = null;
+	private HashMap<string, Class> cclass_to_bala_map = null;
 	/* GResource name to real file name mapping */
 	private HashMap<string, string> gresource_to_file_map = null;
 	/* GtkBuilder xml handler to Vala signal mapping */
@@ -36,16 +36,16 @@ public class Vala.GtkModule : GSignalModule {
 	/* Required custom application-specific gtype classes to be ref'd before initializing the template */
 	private List<Class> current_required_app_classes = new ArrayList<Class>();
 
-	private void ensure_type_id_to_vala_map () {
+	private void ensure_type_id_to_bala_map () {
 		// map C type-func name of gtypeinstance classes to Vala classes
-		if (type_id_to_vala_map != null) {
+		if (type_id_to_bala_map != null) {
 			return;
 		}
-		type_id_to_vala_map = new HashMap<string, Class>(str_hash, str_equal);
-		recurse_type_id_to_vala_map (context.root);
+		type_id_to_bala_map = new HashMap<string, Class>(str_hash, str_equal);
+		recurse_type_id_to_bala_map (context.root);
 	}
 
-	private void recurse_type_id_to_vala_map (Namespace ns) {
+	private void recurse_type_id_to_bala_map (Namespace ns) {
 		foreach (var cl in ns.get_classes()) {
 			if (!cl.is_compact) {
 				var type_id = get_ccode_type_id (cl);
@@ -58,31 +58,31 @@ public class Vala.GtkModule : GSignalModule {
 				} else {
 					type_id = type_id.strip ();
 				}
-				type_id_to_vala_map.set (type_id, cl);
+				type_id_to_bala_map.set (type_id, cl);
 			}
 		}
 		foreach (var inner in ns.get_namespaces()) {
-			recurse_type_id_to_vala_map (inner);
+			recurse_type_id_to_bala_map (inner);
 		}
 	}
 
-	private void ensure_cclass_to_vala_map () {
+	private void ensure_cclass_to_bala_map () {
 		// map C name of gtypeinstance classes to Vala classes
-		if (cclass_to_vala_map != null) {
+		if (cclass_to_bala_map != null) {
 			return;
 		}
-		cclass_to_vala_map = new HashMap<string, Class>(str_hash, str_equal);
-		recurse_cclass_to_vala_map (context.root);
+		cclass_to_bala_map = new HashMap<string, Class>(str_hash, str_equal);
+		recurse_cclass_to_bala_map (context.root);
 	}
 
-	private void recurse_cclass_to_vala_map (Namespace ns) {
+	private void recurse_cclass_to_bala_map (Namespace ns) {
 		foreach (var cl in ns.get_classes()) {
 			if (!cl.is_compact) {
-				cclass_to_vala_map.set (get_ccode_name (cl), cl);
+				cclass_to_bala_map.set (get_ccode_name (cl), cl);
 			}
 		}
 		foreach (var inner in ns.get_namespaces()) {
-			recurse_cclass_to_vala_map (inner);
+			recurse_cclass_to_bala_map (inner);
 		}
 	}
 
@@ -128,8 +128,8 @@ public class Vala.GtkModule : GSignalModule {
 	private void process_current_ui_resource (string ui_resource, CodeNode node) {
 		/* Scan a single gtkbuilder file for signal handlers in <object> elements,
 		   and save an handler string -> Vala.Signal mapping for each of them */
-		ensure_type_id_to_vala_map ();
-		ensure_cclass_to_vala_map();
+		ensure_type_id_to_bala_map ();
+		ensure_cclass_to_bala_map();
 		ensure_gresource_to_file_map();
 
 		current_handler_to_signal_map = null;
@@ -156,7 +156,7 @@ public class Vala.GtkModule : GSignalModule {
 				if (current_name == "object") {
 					var type_id = reader.get_attribute ("type-func");
 					if (type_id != null) {
-						current_class = type_id_to_vala_map.get (type_id);
+						current_class = type_id_to_bala_map.get (type_id);
 					}
 				} else if (current_name == "template") {
 					template_tag_found = true;
@@ -169,7 +169,7 @@ public class Vala.GtkModule : GSignalModule {
 						current_token = reader.read_token (null, null);
 						continue;
 					}
-					current_class = cclass_to_vala_map.get (class_name);
+					current_class = cclass_to_bala_map.get (class_name);
 				}
 
 				if (current_class != null) {

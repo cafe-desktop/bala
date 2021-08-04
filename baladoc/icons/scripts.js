@@ -1,4 +1,4 @@
-/* markupwriter.vala
+/* markupwriter.bala
  *
  * Copyright (C) 2008-2009 Florian Brosch
  *

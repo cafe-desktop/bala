@@ -1,4 +1,4 @@
-/* valacompiler.vala
+/* balacompiler.bala
  *
  * Copyright (C) 2006-2012  Jürg Billeter
  * Copyright (C) 1996-2002, 2004, 2005, 2006 Free Software Foundation, Inc.
@@ -162,8 +162,8 @@ class Vala.Compiler {
 		{ "target-glib", 0, 0, OptionArg.STRING, ref target_glib, "Target version of glib for code generation", "'MAJOR.MINOR', or 'auto'" },
 		{ "gresources", 0, 0, OptionArg.FILENAME_ARRAY, ref gresources, "XML of gresources", "FILE..." },
 		{ "gresourcesdir", 0, 0, OptionArg.FILENAME_ARRAY, ref gresources_directories, "Look for resources in DIRECTORY", "DIRECTORY..." },
-		{ "enable-version-header", 0, 0, OptionArg.NONE, ref enable_version_header, "Write vala build version in generated files", null },
-		{ "disable-version-header", 0, 0, OptionArg.NONE, ref disable_version_header, "Do not write vala build version in generated files", null },
+		{ "enable-version-header", 0, 0, OptionArg.NONE, ref enable_version_header, "Write bala build version in generated files", null },
+		{ "disable-version-header", 0, 0, OptionArg.NONE, ref disable_version_header, "Do not write bala build version in generated files", null },
 		{ "run-args", 0, 0, OptionArg.STRING, ref run_args, "Arguments passed to directly compiled executable", null },
 		{ "abi-stability", 0, 0, OptionArg.NONE, ref abi_stability, "Enable support for ABI stability", null },
 		{ OPTION_REMAINING, 0, 0, OptionArg.FILENAME_ARRAY, ref sources, null, "FILE..." },
@@ -638,7 +638,7 @@ class Vala.Compiler {
 		// initialize locale
 		Intl.setlocale (LocaleCategory.ALL, "");
 
-		if (Path.get_basename (args[0]) == "vala" || Path.get_basename (args[0]) == "vala" + Config.PACKAGE_SUFFIX) {
+		if (Path.get_basename (args[0]) == "bala" || Path.get_basename (args[0]) == "bala" + Config.PACKAGE_SUFFIX) {
 			return run_source (args);
 		}
 

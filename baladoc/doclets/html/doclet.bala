@@ -1,4 +1,4 @@
-/* doclet.vala
+/* doclet.bala
  *
  * Copyright (C) 2008-2012 Florian Brosch
  *
@@ -37,7 +37,7 @@ public class Valadoc.Html.Doclet : Valadoc.Html.BasicDoclet {
 
 	private class IndexLinkHelper : LinkHelper {
 		protected override string? from_wiki_to_package (WikiPage from, Api.Package to) {
-			if (from.name != "index.valadoc") {
+			if (from.name != "index.baladoc") {
 				return base.from_wiki_to_package (from, to);;
 			}
 
@@ -45,7 +45,7 @@ public class Valadoc.Html.Doclet : Valadoc.Html.BasicDoclet {
 		}
 
 		protected override string? from_wiki_to_wiki (WikiPage from, WikiPage to) {
-			if (from.name != "index.valadoc") {
+			if (from.name != "index.baladoc") {
 				return base.from_wiki_to_wiki (from, to);
 			}
 
@@ -53,7 +53,7 @@ public class Valadoc.Html.Doclet : Valadoc.Html.BasicDoclet {
 		}
 
 		protected override string? from_wiki_to_node (WikiPage from, Api.Node to) {
-			if (from.name != "index.valadoc") {
+			if (from.name != "index.baladoc") {
 				return base.from_wiki_to_node (from, to);
 			}
 

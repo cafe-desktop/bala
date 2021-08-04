@@ -1,4 +1,4 @@
-/* valasourcefile.vala
+/* balasourcefile.bala
  *
  * Copyright (C) 2006-2009  Jürg Billeter
  *
@@ -269,7 +269,7 @@ public class Vala.SourceFile {
 				csource_filename = Path.build_path ("/", get_destination_directory (), get_basename () + ".c");
 			} else {
 				// temporary file
-				csource_filename = Path.build_path ("/", get_destination_directory (), get_basename () + ".vala.c");
+				csource_filename = Path.build_path ("/", get_destination_directory (), get_basename () + ".bala.c");
 			}
 		}
 		return csource_filename;

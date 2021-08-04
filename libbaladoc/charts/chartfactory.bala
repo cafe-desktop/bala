@@ -1,4 +1,4 @@
-/* chartfactory.vala
+/* chartfactory.bala
  *
  * Copyright (C) 2008  Florian Brosch
  *
@@ -20,12 +20,12 @@
  * 	Florian Brosch <flo.brosch@gmail.com>
  */
 
-[CCode (cname = "valadoc_compat_gvc_graph_create_node")]
-extern Gvc.Node valadoc_gvc_graph_create_node (Gvc.Graph graph, string name);
+[CCode (cname = "baladoc_compat_gvc_graph_create_node")]
+extern Gvc.Node baladoc_gvc_graph_create_node (Gvc.Graph graph, string name);
 
 public abstract class Valadoc.Charts.Factory : Object {
 	protected Gvc.Node create_type (Gvc.Graph graph, Api.Node item) {
-		return valadoc_gvc_graph_create_node (graph, item.get_full_name ());
+		return baladoc_gvc_graph_create_node (graph, item.get_full_name ());
 	}
 
 	public abstract Gvc.Graph create_graph (Api.Node item);

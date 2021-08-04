@@ -40,7 +40,7 @@ void main () {
 		string t, u;
 		u = test.test_string ("hello", out t);
 		assert (t == "world");
-		assert (u == "vala");
+		assert (u == "bala");
 		assert_not_reached ();
 	} catch {
 	}

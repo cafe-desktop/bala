@@ -30,7 +30,7 @@ void main () {
 	assert (g.i == 23);
 	assert (g.s == "world");
 	assert (h.i == 11);
-	assert (h.s == "vala");
+	assert (h.s == "bala");
 
 	test.test_property = f;
 	g = test.test_property;
@@ -58,7 +58,7 @@ class Test : Object {
 		assert (f.i == 42);
 		assert (f.s == "hello");
 		g = FooStruct (23, "world");
-		return FooStruct (11, "vala");
+		return FooStruct (11, "bala");
 	}
 }
 

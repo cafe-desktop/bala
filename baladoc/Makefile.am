@@ -9,13 +9,13 @@ SUBDIRS = \
 	$(NULL)
 
 AM_CFLAGS = \
-	-DG_LOG_DOMAIN=\"valadoc\" \
+	-DG_LOG_DOMAIN=\"baladoc\" \
 	-DPACKAGE_BALADOC_LIBDIR=\"$(pkgdoclibdir)\" \
 	-DPACKAGE_VERSION=\"$(VERSION)\" \
-	-I$(top_srcdir)/libvaladoc/ \
+	-I$(top_srcdir)/libbaladoc/ \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	-I$(top_srcdir)/codegen \
 	$(COVERAGE_CFLAGS) \
 	$(GLIB_CFLAGS) \
@@ -23,35 +23,35 @@ AM_CFLAGS = \
 	$(LIBGVC_CFLAGS) \
 	$(NULL)
 
-BUILT_SOURCES = valadoc.vala.stamp
+BUILT_SOURCES = baladoc.bala.stamp
 
-bin_PROGRAMS = valadoc
+bin_PROGRAMS = baladoc
 
-valadoc_BALASOURCES = \
-	girwriter.vala \
-	initializerbuilder.vala \
-	symbolresolver.vala \
-	treebuilder.vala \
-	valadoc.vala \
+baladoc_BALASOURCES = \
+	girwriter.bala \
+	initializerbuilder.bala \
+	symbolresolver.bala \
+	treebuilder.bala \
+	baladoc.bala \
     $(NULL)
 
-valadoc_SOURCES = \
-	valadoc.vala.stamp \
-	$(valadoc_BALASOURCES:.vala=.c) \
+baladoc_SOURCES = \
+	baladoc.bala.stamp \
+	$(baladoc_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-valadoc_LDADD = \
-	$(top_builddir)/libvaladoc/libvaladoc@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+baladoc_LDADD = \
+	$(top_builddir)/libbaladoc/libbaladoc@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(GMODULE_LIBS) \
 	$(LIBGVC_LIBS) \
 	$(NULL)
 
-valadoc.vala.stamp: $(valadoc_BALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libvaladoc/valadoc@PACKAGE_SUFFIX@.vapi
+baladoc.bala.stamp: $(baladoc_BALASOURCES) $(top_srcdir)/bala/libbala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libbaladoc/baladoc@PACKAGE_SUFFIX@.vapi
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -60,24 +60,24 @@ valadoc.vala.stamp: $(valadoc_BALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SU
 		--pkg gmodule-2.0 \
 		--pkg gobject-2.0 \
 		--pkg libgvc \
-		--vapidir $(top_srcdir)/vala --pkg libvala@PACKAGE_SUFFIX@ \
+		--vapidir $(top_srcdir)/bala --pkg libbala@PACKAGE_SUFFIX@ \
 		--vapidir $(top_srcdir)/ccode --pkg ccode \
 		--vapidir $(top_srcdir)/codegen --pkg codegen \
-		--vapidir $(top_srcdir)/libvaladoc --pkg valadoc@PACKAGE_SUFFIX@ \
+		--vapidir $(top_srcdir)/libbaladoc --pkg baladoc@PACKAGE_SUFFIX@ \
 		--pkg config \
-		$(filter %.vala %.c,$^)
+		$(filter %.bala %.c,$^)
 	touch $@
 
 EXTRA_DIST = \
-	$(valadoc_BALASOURCES) \
-	valadoc.vala.stamp \
+	$(baladoc_BALASOURCES) \
+	baladoc.bala.stamp \
 	$(NULL)
 
 if ENABLE_UNVERSIONED
 install-exec-hook:
-	cd $(DESTDIR)$(bindir) && $(LN_S) -f valadoc@PACKAGE_SUFFIX@$(EXEEXT) valadoc$(EXEEXT)
+	cd $(DESTDIR)$(bindir) && $(LN_S) -f baladoc@PACKAGE_SUFFIX@$(EXEEXT) baladoc$(EXEEXT)
 endif
 
 MAINTAINERCLEANFILES = \
-	$(valadoc_BALASOURCES:.vala=.c) \
+	$(baladoc_BALASOURCES:.bala=.c) \
 	$(NULL)

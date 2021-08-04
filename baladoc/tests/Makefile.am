@@ -17,27 +17,27 @@ AM_TESTS_ENVIRONMENT = \
 	export CC='$(CC)';
 
 TESTS = \
-	libvaladoc/errorreporter.vala \
-	libvaladoc/markupreader.vala \
-	libvaladoc/gtkdoc-scanner.vala \
-	libvaladoc/parser-manyrule.vala \
-	libvaladoc/parser-oneofrule.vala \
-	libvaladoc/parser-sequencerule.vala \
-	libvaladoc/parser-optionalrule.vala \
-	libvaladoc/parser-stubrule.vala \
+	libbaladoc/errorreporter.bala \
+	libbaladoc/markupreader.bala \
+	libbaladoc/gtkdoc-scanner.bala \
+	libbaladoc/parser-manyrule.bala \
+	libbaladoc/parser-oneofrule.bala \
+	libbaladoc/parser-sequencerule.bala \
+	libbaladoc/parser-optionalrule.bala \
+	libbaladoc/parser-stubrule.bala \
 	$(NULL)
 
 check-local:
 	G_DEBUG=fatal_warnings $(builddir)/driver
 
 AM_CFLAGS = \
-	-DPACKAGE_BALADOC_LIBDIR=\"$(libdir)/valadoc@PACKAGE_SUFFIX@\" \
+	-DPACKAGE_BALADOC_LIBDIR=\"$(libdir)/baladoc@PACKAGE_SUFFIX@\" \
 	-DPACKAGE_VERSION=\"$(VERSION)\" \
 	-DTOP_SRC_DIR=\"$(abs_top_srcdir)\" \
-	-I$(top_srcdir)/libvaladoc/ \
+	-I$(top_srcdir)/libbaladoc/ \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	-I$(top_srcdir)/codegen \
 	$(COVERAGE_CFLAGS) \
 	$(GLIB_CFLAGS) \
@@ -45,21 +45,21 @@ AM_CFLAGS = \
 	$(LIBGVC_CFLAGS) \
 	$(NULL)
 
-BUILT_SOURCES = driver.vala.stamp
+BUILT_SOURCES = driver.bala.stamp
 
 check_PROGRAMS = driver
 
 driver_BALASOURCES = \
-	drivers/driver-test.vala \
-	drivers/generic-api-test.vala \
-	$(top_srcdir)/valadoc/girwriter.vala \
-	$(top_srcdir)/valadoc/initializerbuilder.vala \
-	$(top_srcdir)/valadoc/symbolresolver.vala \
-	$(top_srcdir)/valadoc/treebuilder.vala \
+	drivers/driver-test.bala \
+	drivers/generic-api-test.bala \
+	$(top_srcdir)/baladoc/girwriter.bala \
+	$(top_srcdir)/baladoc/initializerbuilder.bala \
+	$(top_srcdir)/baladoc/symbolresolver.bala \
+	$(top_srcdir)/baladoc/treebuilder.bala \
     $(NULL)
 
 driver_SOURCES = \
-	driver.vala.stamp \
+	driver.bala.stamp \
 	drivers/driver-test.c \
 	drivers/generic-api-test.c \
 	girwriter.c \
@@ -69,17 +69,17 @@ driver_SOURCES = \
 	$(NULL)
 
 driver_LDADD = \
-	$(top_builddir)/libvaladoc/libvaladoc@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
-	$(top_builddir)/ccode/libvalaccode.la \
-	$(top_builddir)/codegen/libvalaccodegen.la \
+	$(top_builddir)/libbaladoc/libbaladoc@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/ccode/libbalaccode.la \
+	$(top_builddir)/codegen/libbalaccodegen.la \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
 	$(GMODULE_LIBS) \
 	$(LIBGVC_LIBS) \
 	$(NULL)
 
-driver.vala.stamp: $(driver_BALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libvaladoc/valadoc@PACKAGE_SUFFIX@.vapi
+driver.bala.stamp: $(driver_BALASOURCES) $(top_srcdir)/bala/libbala@PACKAGE_SUFFIX@.vapi $(top_srcdir)/libbaladoc/baladoc@PACKAGE_SUFFIX@.vapi
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
@@ -88,26 +88,26 @@ driver.vala.stamp: $(driver_BALASOURCES) $(top_srcdir)/vala/libvala@PACKAGE_SUFF
 		--pkg gmodule-2.0 \
 		--pkg gobject-2.0 \
 		--pkg libgvc \
-		--vapidir $(top_srcdir)/vala --pkg libvala@PACKAGE_SUFFIX@ \
+		--vapidir $(top_srcdir)/bala --pkg libbala@PACKAGE_SUFFIX@ \
 		--vapidir $(top_srcdir)/ccode --pkg ccode \
 		--vapidir $(top_srcdir)/codegen --pkg codegen \
-		--vapidir $(top_srcdir)/libvaladoc --pkg valadoc@PACKAGE_SUFFIX@ \
+		--vapidir $(top_srcdir)/libbaladoc --pkg baladoc@PACKAGE_SUFFIX@ \
 		--pkg config \
-		$(filter %.vala %.c,$^)
+		$(filter %.bala %.c,$^)
 	touch $@
 
 EXTRA_DIST = \
-	driver.vala.stamp \
+	driver.bala.stamp \
 	$(driver_SOURCES) \
 	drivers/api-test.data.vapi \
-	drivers/driver-test.vala \
-	drivers/generic-api-test.vala \
-	libvaladoc/parser-generic-scanner.vala \
-	libvaladoc/tests-extra-environment.sh \
+	drivers/driver-test.bala \
+	drivers/generic-api-test.bala \
+	libbaladoc/parser-generic-scanner.bala \
+	libbaladoc/tests-extra-environment.sh \
 	$(TESTS) \
 	$(NULL)
 
 MAINTAINERCLEANFILES = \
-	driver.vala.stamp \
+	driver.bala.stamp \
 	$(driver_SOURCES) \
 	$(NULL)

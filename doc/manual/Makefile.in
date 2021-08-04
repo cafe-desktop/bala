@@ -302,7 +302,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 NULL = 
-BOOK_NAME = vala@PACKAGE_SUFFIX@
+BOOK_NAME = bala@PACKAGE_SUFFIX@
 bookdir = $(datadir)/devhelp/books/$(BOOK_NAME)
 @HAVE_XSLTPROC_TRUE@book_DATA = \
 @HAVE_XSLTPROC_TRUE@	devhelp/* \

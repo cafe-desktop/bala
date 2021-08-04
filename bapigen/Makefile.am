@@ -3,7 +3,7 @@ include $(top_srcdir)/Makefile.common
 NULL =
 
 SUBDIRS = \
-	vala-gen-introspect \
+	bala-gen-introspect \
 	$(NULL)
 
 AM_CPPFLAGS = \
@@ -12,7 +12,7 @@ AM_CPPFLAGS = \
 	$(GLIB_CFLAGS) \
 	-I$(top_srcdir)/gee \
 	-I$(top_srcdir)/ccode \
-	-I$(top_srcdir)/vala \
+	-I$(top_srcdir)/bala \
 	-I$(top_srcdir)/gobject-introspection \
 	$(NULL)
 
@@ -24,48 +24,48 @@ noinst_PROGRAMS = \
 	vapicheck \
 	$(NULL)
 
-BUILT_SOURCES = vapigen.vala.stamp vapicheck.vala.stamp
+BUILT_SOURCES = vapigen.bala.stamp vapicheck.bala.stamp
 
 vapigen_BALASOURCES = \
-	valagidlparser.vala \
-	valavapigen.vala \
+	balagidlparser.bala \
+	balavapigen.bala \
 	$(NULL)
 
 vapigen_SOURCES = \
-	vapigen.vala.stamp \
-	$(vapigen_BALASOURCES:.vala=.c) \
+	vapigen.bala.stamp \
+	$(vapigen_BALASOURCES:.bala=.c) \
 	$(NULL)
 
 vapicheck_BALASOURCES = \
-	valavapicheck.vala \
+	balavapicheck.bala \
 	$(NULL)
 
 vapicheck_SOURCES = \
-	vapicheck.vala.stamp \
-	$(vapicheck_BALASOURCES:.vala=.c) \
+	vapicheck.bala.stamp \
+	$(vapicheck_BALASOURCES:.bala=.c) \
 	$(NULL)
 
-vapigen.vala.stamp: $(vapigen_BALASOURCES)
+vapigen.bala.stamp: $(vapigen_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--vapidir $(top_srcdir)/gobject-introspection --pkg gidl \
 		--pkg config \
 		$^
 	@touch $@
 
-vapicheck.vala.stamp: $(vapicheck_BALASOURCES)
+vapicheck.bala.stamp: $(vapicheck_BALASOURCES)
 	$(BALA_V)$(BALAC) \
 		$(COVERAGE_BALAFLAGS) \
 		$(BALAFLAGS) \
 		-C \
 		--vapidir $(top_srcdir)/vapi \
 		--vapidir $(top_srcdir)/gee --pkg gee \
-		--vapidir $(top_srcdir)/vala --pkg vala \
+		--vapidir $(top_srcdir)/bala --pkg bala \
 		--vapidir $(top_srcdir)/gobject-introspection --pkg gidl \
 		--pkg config \
 		$^
@@ -74,19 +74,19 @@ vapicheck.vala.stamp: $(vapicheck_BALASOURCES)
 vapigen_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(NULL)
 
 vapicheck_LDADD = \
 	$(COVERAGE_LIBS) \
 	$(GLIB_LIBS) \
-	$(top_builddir)/vala/libvala@PACKAGE_SUFFIX@.la \
+	$(top_builddir)/bala/libbala@PACKAGE_SUFFIX@.la \
 	$(top_builddir)/gobject-introspection/libgidl.la \
 	$(NULL)
 
 if ENABLE_UNVERSIONED
-makedir = $(datadir)/vala
+makedir = $(datadir)/bala
 make_DATA = Makefile.vapigen
 
 aclocaldir = $(datadir)/aclocal
@@ -104,8 +104,8 @@ EXTRA_DIST = \
 	$(vapicheck_BALASOURCES) \
 	Makefile.vapigen \
 	vapigen.m4 \
-	vapigen.vala.stamp \
-	vapicheck.vala.stamp \
+	vapigen.bala.stamp \
+	vapicheck.bala.stamp \
 	$(NULL)
 
 CLEANFILES = \
@@ -121,6 +121,6 @@ install-data-hook:
 endif
 
 MAINTAINERCLEANFILES = \
-	$(vapigen_BALASOURCES:.vala=.c) \
-	$(vapicheck_BALASOURCES:.vala=.c) \
+	$(vapigen_BALASOURCES:.bala=.c) \
+	$(vapicheck_BALASOURCES:.bala=.c) \
 	$(NULL)

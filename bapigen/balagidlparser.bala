@@ -1,4 +1,4 @@
-/* valagidlparser.vala
+/* balagidlparser.bala
  *
  * Copyright (C) 2006-2010  Jürg Billeter
  * Copyright (C) 2006-2008  Raffaele Sandrini
@@ -1343,7 +1343,7 @@ public class Vala.GIdlParser : CodeVisitor {
 			en.access = SymbolAccessibility.PUBLIC;
 			existing = false;
 		} else {
-			// ignore dummy enum values in -custom.vala files
+			// ignore dummy enum values in -custom.bala files
 			// they exist for syntactical reasons
 			var dummy = (EnumValue) en.scope.lookup ("__DUMMY__");
 			if (dummy != null) {

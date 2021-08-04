@@ -2334,9 +2334,9 @@ namespace Ctk {
 		public void child_set_property (Ctk.Widget child, string property_name, GLib.Value value);
 		public void child_set_valist (Ctk.Widget child, string first_property_name, va_list var_args);
 		public virtual GLib.Type child_type ();
-		[Version (deprecated_since = "vala-0.40", replacement = "find_child_property")]
+		[Version (deprecated_since = "bala-0.40", replacement = "find_child_property")]
 		public class unowned GLib.ParamSpec? class_find_child_property (string property_name);
-		[Version (deprecated_since = "vala-0.40", replacement = "list_child_properties")]
+		[Version (deprecated_since = "bala-0.40", replacement = "list_child_properties")]
 		public class (unowned GLib.ParamSpec)[] class_list_child_properties ();
 		[NoWrapper]
 		public virtual string composite_name (Ctk.Widget child);
@@ -11611,21 +11611,21 @@ namespace Ctk {
 	}
 	[CCode (cheader_filename = "ctk/ctk.h", cprefix = "CTK_NUMBER_UP_LAYOUT_", type_id = "ctk_number_up_layout_get_type ()")]
 	public enum NumberUpLayout {
-		[Version (deprecated_since = "vala-0.40", replacement = "LRTB")]
+		[Version (deprecated_since = "bala-0.40", replacement = "LRTB")]
 		LEFT_TO_RIGHT_TOP_TO_BOTTOM,
-		[Version (deprecated_since = "vala-0.40", replacement = "LRBT")]
+		[Version (deprecated_since = "bala-0.40", replacement = "LRBT")]
 		LEFT_TO_RIGHT_BOTTOM_TO_TOP,
-		[Version (deprecated_since = "vala-0.40", replacement = "RLTB")]
+		[Version (deprecated_since = "bala-0.40", replacement = "RLTB")]
 		RIGHT_TO_LEFT_TOP_TO_BOTTOM,
-		[Version (deprecated_since = "vala-0.40", replacement = "RLBT")]
+		[Version (deprecated_since = "bala-0.40", replacement = "RLBT")]
 		RIGHT_TO_LEFT_BOTTOM_TO_TOP,
-		[Version (deprecated_since = "vala-0.40", replacement = "TBLR")]
+		[Version (deprecated_since = "bala-0.40", replacement = "TBLR")]
 		TOP_TO_BOTTOM_LEFT_TO_RIGHT,
-		[Version (deprecated_since = "vala-0.40", replacement = "TBRL")]
+		[Version (deprecated_since = "bala-0.40", replacement = "TBRL")]
 		TOP_TO_BOTTOM_RIGHT_TO_LEFT,
-		[Version (deprecated_since = "vala-0.40", replacement = "BTLR")]
+		[Version (deprecated_since = "bala-0.40", replacement = "BTLR")]
 		BOTTOM_TO_TOP_LEFT_TO_RIGHT,
-		[Version (deprecated_since = "vala-0.40", replacement = "BTRL")]
+		[Version (deprecated_since = "bala-0.40", replacement = "BTRL")]
 		BOTTOM_TO_TOP_RIGHT_TO_LEFT,
 		[CCode (cname = "CTK_NUMBER_UP_LAYOUT_LEFT_TO_RIGHT_TOP_TO_BOTTOM")]
 		LRTB,

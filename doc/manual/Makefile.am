@@ -1,6 +1,6 @@
 NULL =
 
-BOOK_NAME = vala@PACKAGE_SUFFIX@
+BOOK_NAME = bala@PACKAGE_SUFFIX@
 
 bookdir = $(datadir)/devhelp/books/$(BOOK_NAME)
 

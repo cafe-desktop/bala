@@ -1,4 +1,4 @@
-/* treebuilder.vala
+/* treebuilder.bala
  *
  * Copyright (C) 2011  Florian Brosch
  *
@@ -24,7 +24,7 @@
 using Valadoc.Api;
 
 /**
- * Creates an simpler, minimized, more abstract AST for valacs AST.
+ * Creates an simpler, minimized, more abstract AST for balacs AST.
  */
 public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	private Vala.ArrayList<PackageMetaData> packages = new Vala.ArrayList<PackageMetaData> ();
@@ -238,9 +238,9 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 
 				Vala.MapIterator<string, Vala.Comment> it = ((Vala.GirComment) comment).parameter_iterator ();
 				while (it.next ()) {
-					Vala.Comment vala_param = it.get_value ();
-					Vala.SourceReference param_pos = vala_param.source_reference;
-					var param_comment = new SourceComment (vala_param.content,
+					Vala.Comment bala_param = it.get_value ();
+					Vala.SourceReference param_pos = bala_param.source_reference;
+					var param_comment = new SourceComment (bala_param.content,
 														   file,
 														   param_pos.begin.line,
 														   param_pos.begin.column,
@@ -325,7 +325,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 
 
 	private Namespace get_namespace (Package pkg, Vala.Symbol symbol, SourceFile? file) {
-		// Find the closest namespace in our vala-tree
+		// Find the closest namespace in our bala-tree
 		Vala.Symbol namespace_symbol = symbol;
 		while (!(namespace_symbol is Vala.Namespace)) {
 			namespace_symbol = namespace_symbol.parent_symbol;
@@ -415,7 +415,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 	}
 
 	/**
-	 * Add the specified source file to the context. Only .vala, .vapi, .gs,
+	 * Add the specified source file to the context. Only .bala, .vapi, .gs,
 	 * and .c files are supported.
 	 */
 	private void add_documented_files (Vala.CodeContext context, string[] sources) {
@@ -426,7 +426,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		foreach (string source in sources) {
 			if (FileUtils.test (source, FileTest.EXISTS)) {
 				var rpath = Vala.CodeContext.realpath (source);
-				if (source.has_suffix (".vala") || source.has_suffix (".gs")) {
+				if (source.has_suffix (".bala") || source.has_suffix (".gs")) {
 					var source_file = new Vala.SourceFile (context, Vala.SourceFileType.SOURCE, rpath);
 
 					if (source_package == null) {
@@ -465,7 +465,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 					context.add_c_source_file (rpath);
 					tree.add_external_c_files (rpath);
 				} else {
-					Vala.Report.error (null, "%s is not a supported source file type. Only .vala, .vapi, .gs, and .c files are supported.".printf (source));
+					Vala.Report.error (null, "%s is not a supported source file type. Only .bala, .vapi, .gs, and .c files are supported.".printf (source));
 				}
 			} else {
 				Vala.Report.error (null, "%s not found".printf (source));
@@ -473,7 +473,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		}
 	}
 
-	private void create_valac_tree (Vala.CodeContext context, Settings settings) {
+	private void create_balac_tree (Vala.CodeContext context, Settings settings) {
 		// settings:
 		context.experimental = settings.experimental;
 		context.experimental_non_null = settings.experimental || settings.experimental_non_null;
@@ -534,7 +534,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 			return;
 		}
 
-		// parse vala-code:
+		// parse bala-code:
 		Vala.Parser parser = new Vala.Parser ();
 
 		parser.parse (context);
@@ -575,8 +575,8 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 			return current_node;
 		}
 
-		Vala.SourceFile vala_source_file = element.source_reference.file;
-		Package package = find_package_for_file (vala_source_file);
+		Vala.SourceFile bala_source_file = element.source_reference.file;
+		Package package = find_package_for_file (bala_source_file);
 		SourceFile? source_file = get_source_file (element);
 
 		return get_namespace (package, element, source_file);
@@ -607,12 +607,12 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		parent.add_child (node);
 
 		// relations
-		foreach (Vala.DataType vala_type_ref in element.get_base_types ()) {
-			var type_ref = create_type_reference (vala_type_ref, node, node);
+		foreach (Vala.DataType bala_type_ref in element.get_base_types ()) {
+			var type_ref = create_type_reference (bala_type_ref, node, node);
 
-			if (vala_type_ref.type_symbol is Vala.Interface) {
+			if (bala_type_ref.type_symbol is Vala.Interface) {
 				node.add_interface (type_ref);
-			} else if (vala_type_ref.type_symbol is Vala.Class) {
+			} else if (bala_type_ref.type_symbol is Vala.Class) {
 				node.base_type = type_ref;
 			}
 		}
@@ -644,9 +644,9 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		parent.add_child (node);
 
 		// prerequisites:
-		foreach (Vala.DataType vala_type_ref in element.get_prerequisites ()) {
-			TypeReference type_ref = create_type_reference (vala_type_ref, node, node);
-			if (vala_type_ref.type_symbol is Vala.Interface) {
+		foreach (Vala.DataType bala_type_ref in element.get_prerequisites ()) {
+			TypeReference type_ref = create_type_reference (bala_type_ref, node, node);
+			if (bala_type_ref.type_symbol is Vala.Interface) {
 				node.add_interface (type_ref);
 			} else {
 				node.base_type = type_ref;
@@ -992,7 +992,7 @@ public class Valadoc.TreeBuilder : Vala.CodeVisitor {
 		var context = Vala.CodeContext.get ();
 
 		this.tree = new Api.Tree (reporter, settings, context);
-		create_valac_tree (context, settings);
+		create_balac_tree (context, settings);
 
 		reporter.warnings_offset = context.report.get_warnings ();
 		reporter.errors_offset = context.report.get_errors ();

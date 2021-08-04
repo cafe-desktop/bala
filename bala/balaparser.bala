@@ -1,4 +1,4 @@
-/* valaparser.vala
+/* balaparser.bala
  *
  * Copyright (C) 2006-2013  Jürg Billeter
  *
@@ -69,7 +69,7 @@ public class Vala.Parser : CodeVisitor {
 	}
 
 	/**
-	 * Parses all .vala and .vapi source files in the specified code
+	 * Parses all .bala and .vapi source files in the specified code
 	 * context and builds a code tree.
 	 *
 	 * @param context a code context
@@ -81,7 +81,7 @@ public class Vala.Parser : CodeVisitor {
 	}
 
 	public override void visit_source_file (SourceFile source_file) {
-		if ((context != null && context.run_output) || source_file.filename.has_suffix (".vala") || source_file.filename.has_suffix (".vapi")) {
+		if ((context != null && context.run_output) || source_file.filename.has_suffix (".bala") || source_file.filename.has_suffix (".vapi")) {
 			parse_file (source_file);
 		}
 	}
