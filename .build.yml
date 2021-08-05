@@ -39,4 +39,4 @@ build_scripts:
   - make install
 
 after_scripts:
-  - ./gen-index -l 20
+  - ./gen-index -l 6
