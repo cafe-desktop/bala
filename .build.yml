@@ -15,7 +15,6 @@ requires:
     - make
     - bison
     - flex
-    - balac
 
 variables:
   - CXXFLAGS="-Wall -Woverloaded-virtual -Wextra -Wshadow -Wformat-nonliteral -Werror=format-security -Wpointer-arith -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wpointer-arith -Wredundant-decls -Wshadow -Werror=format-security -Wunused-macros"
