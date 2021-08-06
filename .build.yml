@@ -5,16 +5,17 @@ requires:
   debian:
     - autoconf
     - autoconf-archive
+    - bison
     - clang-tools
     - cppcheck
+    - flex
     - git
     - libgirepository1.0-dev
     - libglib2.0-dev
     - libgraphviz-dev
     - libtool
     - make
-    - bison
-    - flex
+    - wget
 
 variables:
   - CXXFLAGS="-Wall -Woverloaded-virtual -Wextra -Wshadow -Wformat-nonliteral -Werror=format-security -Wpointer-arith -Wcast-align -Wmissing-declarations -Wredundant-decls -Wall -Wcast-align -Wextra -Wformat-nonliteral -Wmissing-declarations -Wmissing-field-initializers -Wpointer-arith -Wredundant-decls -Wshadow -Werror=format-security -Wunused-macros"
@@ -25,10 +26,15 @@ before_scripts:
   - cppcheck --xml --output-file=cppcheck.xml --enable=warning,style,performance,portability,information,missingInclude .
   - cppcheck-htmlreport --title="$TITLECPPCHECK" --file=cppcheck.xml --report-dir=cppcheck-htmlreport
 
-build_scripts:
-  #install bala deb packages
+  # Install required bala .deb packages
+  - wget https://github.com/cafe-desktop/bala/releases/download/`echo $BALA_MASTERV`/balac-0.48-bapi_`echo $BALA_MASTERV`-1_all.deb
+  - wget https://github.com/cafe-desktop/bala/releases/download/`echo $BALA_MASTERV`/balac-bin_`echo $BALA_MASTERV`-1_amd64.deb
+  - wget https://github.com/cafe-desktop/bala/releases/download/`echo $BALA_MASTERV`/balac_`echo $BALA_MASTERV`-1_amd64.deb
+  - wget https://github.com/cafe-desktop/bala/releases/download/`echo $BALA_MASTERV`/libbala-0.48-0_`echo $BALA_MASTERV`-1_amd64.deb
+  - wget https://github.com/cafe-desktop/bala/releases/download/`echo $BALA_MASTERV`/libbalacodegen-0.48-0_`echo $BALA_MASTERV`-1_amd64.deb
   - dpkg -i *.deb
 
+build_scripts:
   - export TITLESCANBUILD="${REPO_NAME} (clang-tools `dpkg -s clang-tools|grep -i version|cut -d " " -f 2`) - scan-build results"
   - mkdir html-report
   - cppcheck --enable=warning,style,performance,portability,information,missingInclude . 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
