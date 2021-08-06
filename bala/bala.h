@@ -6873,7 +6873,7 @@ BalaVarType* bala_var_type_construct (GType object_type,
 #define BALA_MINOR_VERSION 48
 #define BALA_MICRO_VERSION 17
 #define BALA_API_VERSION "0.48"
-#define BALA_BUILD_VERSION "0.48.17"
+#define BALA_BUILD_VERSION "0.48.19"
 guint bala_get_major_version (void);
 guint bala_get_minor_version (void);
 guint bala_get_micro_version (void);
